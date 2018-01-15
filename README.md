@@ -30,6 +30,28 @@ If that fails, try using the "frozen" list:
 pip install -r requirements-frozen.txt
 ```
 
+To run, simply run the script with the law number and year that you wish to clean up. You can also choose to clean up everything, which may take a while.
+
+### Examples:
+
+The Constitution of the Republic of Iceland:
+
+```
+python althingi-document-cleaner 33/1944
+```
+
+The general criminal code:
+
+```
+python althingi-document-cleaner 19/1940
+```
+
+Clean up everything (may take a while):
+
+```
+python althingi-document-cleaner -a
+```
+
 ## License
 
 See the document `LICENSE.md`. (It's MIT.)
