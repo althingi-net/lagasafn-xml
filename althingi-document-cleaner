@@ -15,7 +15,7 @@ from sys import stderr
 from sys import stdout
 
 LAW_FILENAME = 'current/%d%s.html' # % (law_year, law_num)
-OUT_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
+CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
 
 def clean_content(content):
     # Decode ISO-8859-1 character encoding.
@@ -115,6 +115,26 @@ def clean_content(content):
     return xhtml
 
 
+def clean_law(law_num, law_year):
+    with open(LAW_FILENAME % (law_year, str(law_num).zfill(3))) as infile:
+        raw_content = infile.read()
+        infile.close()
+
+    content = clean_content(raw_content)
+
+    if content is None:
+        stdout.write(' failed.\n')
+        stderr.write('Error: Law %d/%d does not seem to exist\n' % (law_year, law_num))
+        quit(1)
+
+    if not os.path.isdir(os.path.dirname(CLEAN_FILENAME)):
+        os.mkdir(os.path.dirname(CLEAN_FILENAME))
+
+    with open(CLEAN_FILENAME % (law_year, law_num), 'w') as clean_file:
+        clean_file.write(content.encode('utf-8'))
+        clean_file.close()
+
+
 def process_law(law_id):
 
     stdout.write('Processing law nr. %s...' % law_id)
@@ -124,26 +144,9 @@ def process_law(law_id):
     law_num = int(law_num)
     law_year = int(law_year)
 
-    outfile_name = '%d-%d.html' % (law_year, law_num)
-
-    law_filename = LAW_FILENAME % (law_year, str(law_num).zfill(3))
-    infile = open(law_filename)
-    raw_content = infile.read()
-    infile.close()
-
-    content = clean_content(raw_content)
-
-    if content is None:
-        stdout.write(' failed.\n')
-        stderr.write('Error: Law %d/%d does not seem to exist\n' % (law_year, law_num))
-        quit(1)
-
-    if not os.path.isdir(os.path.dirname(OUT_FILENAME)):
-        os.mkdir(os.path.dirname(OUT_FILENAME))
-
-    outfile = open(OUT_FILENAME % (law_year, law_num), 'w')
-    outfile.write(content.encode('utf-8'))
-    outfile.close()
+    stdout.write('cleaning...')
+    stdout.flush()
+    clean_law(law_num, law_year)
 
     stdout.write(' done\n')
 
