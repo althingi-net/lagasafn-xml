@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-# coding=utf-8
-
 # althingi-document-cleaner
 # Version 0.1
 
 from bs4 import BeautifulSoup
+import codecs
 import urllib
 import re
 
@@ -39,7 +38,7 @@ def clean_content(content):
         u'Frumvarp til laga.',
     )
     for s in strings_to_remove:
-        content = content.replace(s.encode('latin1'), '')
+        content = content.replace(s, '')
 
     # Make sure that image tags are closed properly.
     e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
@@ -116,7 +115,7 @@ def clean_content(content):
 
 
 def clean_law(law_num, law_year):
-    with open(LAW_FILENAME % (law_year, str(law_num).zfill(3))) as infile:
+    with codecs.open(LAW_FILENAME % (law_year, str(law_num).zfill(3)), 'r', 'ISO-8859-1') as infile:
         raw_content = infile.read()
         infile.close()
 
@@ -131,7 +130,7 @@ def clean_law(law_num, law_year):
         os.mkdir(os.path.dirname(CLEAN_FILENAME))
 
     with open(CLEAN_FILENAME % (law_year, law_num), 'w') as clean_file:
-        clean_file.write(content.encode('utf-8'))
+        clean_file.write(content)
         clean_file.close()
 
 
