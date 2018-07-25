@@ -13,7 +13,9 @@ import sys
 from sys import stderr
 from sys import stdout
 
-LAW_FILENAME = 'current/%d%s.html' # % (law_year, law_num)
+CURRENT_PARLIAMENT_VERSION = '148a'
+
+LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
 
 def clean_content(content):
