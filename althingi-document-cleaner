@@ -10,13 +10,19 @@ import re
 import os
 import sys
 
+from copy import copy
+from lxml import etree
+from lxml.builder import E
 from sys import stderr
 from sys import stdout
+
+DEBUG = True
 
 CURRENT_PARLIAMENT_VERSION = '148a'
 
 LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
+XML_FILENAME = 'xml/%d-%d-%s.xml' # % (law_year, law_num, parliament_version)
 
 def clean_content(content):
     # Decode ISO-8859-1 character encoding.
@@ -35,12 +41,12 @@ def clean_content(content):
     content = content.replace('[', '').replace(']', '')
 
     # Remove links to website
-    strings_to_remove = (
-        u'Ferill málsins á Alþingi.',
-        u'Frumvarp til laga.',
-    )
-    for s in strings_to_remove:
-        content = content.replace(s, '')
+    #strings_to_remove = (
+    #    u'Ferill málsins á Alþingi.',
+    #    u'Frumvarp til laga.',
+    #)
+    #for s in strings_to_remove:
+    #    content = content.replace(s, '')
 
     # Make sure that image tags are closed properly.
     e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
@@ -64,12 +70,12 @@ def clean_content(content):
             s.extract()
 
     # Remove links
-    anchors = soup.find_all('a')
-    for a in anchors:
-        a.replace_with(a.text)
+    #anchors = soup.find_all('a')
+    #for a in anchors:
+    #    a.replace_with(a.text)
 
     # Remove tags entirely irrelevant to content
-    tags_to_remove = ['small', 'hr'] # Previously also ['script', 'noscript', 'head']
+    tags_to_remove = ['small'] # Previously also ['hr', 'script', 'noscript', 'head']
     for target_tag in tags_to_remove:
         [s.extract() for s in soup(target_tag)]
 
@@ -136,6 +142,273 @@ def clean_law(law_num, law_year):
         clean_file.close()
 
 
+def make_xml(law_num, law_year, parliament_version):
+
+    # A super-iterator for containing all sorts of extra functionality that we
+    # dont' get with a regular Python iterator. Note that this thing is
+    # incompatible with yields and is NOT a subclass of `iter` (since that's
+    # not possible), but rather a class trying its best to masquerade as one.
+    #
+    # TODO: See if the collection functions below rather belong in here.
+    class super_iter():
+        def __init__(self, collection):
+            self.collection = collection
+            self.index = 0
+
+        def __next__(self):
+            try:
+                result = self.collection[self.index]
+                self.index += 1
+            except IndexError:
+                raise StopIteration
+            return result
+
+        '''
+        def prev(self):
+            self.index -= 1
+            if self.index < 0:
+                raise StopIteration
+            return self.collection[self.index]
+        '''
+
+        def __iter__(self):
+            return self
+
+        # Peek into the next item of the iterator without advancing it.
+        # Works with negative numbers to take a peek at previous items.
+        def peek(self, number_of_lines=1):
+            peek_index = self.index - 1 + number_of_lines
+            if peek_index >= len(self.collection) or peek_index < 0:
+                return None
+            return self.collection[peek_index]
+
+    # Make sure that the XML output directory exists.
+    if not os.path.isdir(os.path.dirname(XML_FILENAME)):
+        os.mkdir(os.path.dirname(XML_FILENAME))
+
+    # Construct the output XML object.
+    law = E.law('', {'nr': str(law_num), 'year': str(law_year), 'parliament': parliament_version})
+
+    # Open and read the cleaned HTML version of the law.
+    with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
+        lines = super_iter(clean_file.readlines())
+        clean_file.close()
+
+    # Keeps track of the turn of events. We can query this list to check for
+    # example whether the name of the document has been processed, or what the
+    # last thing to be processed was. This gives us context when determining
+    # what to do next.
+    trail = ['start']
+
+    # A helper class to be able to check if a regex matches in an
+    # if-statement, but then process the results in its body, if there's a
+    # match. This is essentially to make up for Python's (consciously decided)
+    # inability to assign values to variables inside if-statements. Note that
+    # a single instance of it is created and then used repeatedly.
+    #
+    # Usage:
+    #
+    # if matcher.check(line, '<tag goo="(\d+)" splah="(\d+)">'):
+    #     goo, splah = matcher.result()
+    #
+    class Matcher():
+        match = None
+        def check(self, line, test_string):
+            self.match = re.match(test_string, line)
+            return self.match != None
+
+        def result(self):
+            return self.match.groups()
+    matcher = Matcher()
+
+    # Functions for collecting heaps of text, then returning it all in one go
+    # and resetting the collection for the next time we need to collect a
+    # bunch of text.
+    def collect(string):
+        if not hasattr(collect, 'collection'):
+            collect.collection = []
+        collect.collection.append(string.strip())
+    def uncollect():
+        result = ' '.join(collect.collection).strip()
+        collect.collection = []
+        return result
+
+    # Will collect lines until the given string is found, and then return the
+    # collected lines.
+    def collect_until(lines, end_string):
+        done = False
+        while not done:
+            line = next(lines).strip()
+            if matcher.check(line, end_string):
+                done = True
+                continue
+            collect(line)
+
+        total = uncollect().strip()
+
+        return total
+
+    # Scrolls the lines until the given string is found. It works internally
+    # the same as the collect_until-function, but is provided here with a
+    # different name to provide a semantic distinction in the code below.
+    scroll_until = collect_until
+
+    # Iterators for keeping track of the order of things.
+    chapter_i = 0
+
+    # Objects that help us figure out the current state of affairs.
+    chapter = None
+
+    # The cleaned document that we're processing is expected to put every tag,
+    # both its opening and closing, on a separate line. This allows us to
+    # browse the HTML contents on a per-line basis.
+    for line in lines:
+        line = line.strip()
+
+        if line == '<h2>':
+            # Parse law name.
+            name = collect_until(lines, '</h2>')
+
+            law.append(E.name(name))
+
+            trail.append('name')
+
+        elif line == '<strong>':
+            if trail[-1] == 'name':
+                # Parse the num and date, which appears directly below the law name.
+                num_and_date = collect_until(lines, '</strong>')
+
+                law.append(E('num-and-date', num_and_date))
+
+                trail.append('num-and-date')
+
+        elif line == '<hr/>':
+            if trail[-1] == 'num-and-date':
+                # Parse the whole clause about which minister the law refers
+                # to. It contains HTML goo, but we'll just let it float along.
+                # It's not even certain that we'll be using it, but there's no
+                # harm in keeping it around.
+                minister_clause = collect_until(lines, '<hr/>')
+
+                law.append(E('minister-clause', minister_clause))
+
+                trail.append('minister-clause')
+
+        elif line == '<b>':
+            # Chapters are found by finding a <b> tag that comes right after a
+            # <br/> tag that occurs after the ministerial clause is done.
+            if 'minister-clause' in trail and lines.peek(-1).strip() == '<br/>':
+                # Parse what we will believe to be a chapter.
+
+                # Chapter names are a bit tricky. They may be divided into two
+                # <b> clauses, in which case the former one is what we call a
+                # nr-title (I. kafli, II. kafli etc.), and then a name
+                # describing its content (Almenn ákvæði, Tilgangur og markmið
+                # etc.).
+                #
+                # Sometimes however, there is only one <b> and not two. In
+                # these cases, there is no nr-title and only a name. Here we
+                # check 3 lines into the future to see if there's another <b>
+                # tag coming (because we know that the former <b>text</b>
+                # clause will be precisely 3 lines), and if so, we'll process
+                # the nr-title and move on. The next <b>, containing the name,
+                # will be caught in the next iteration). If there is no such
+                # impending tag, we'll interpret the entire contents of this
+                # <b> as the name of the chapter and be done with it.
+                #
+                # Note in particular, the difference in trails that we leave.
+                if lines.peek(3).strip() == '<b>':
+                    chapter_nr_title = collect_until(lines, '</b>')
+
+                    chapter_i += 1
+                    chapter = E.chapter(
+                        {'nr': str(chapter_i)},
+                        E('nr-title', chapter_nr_title)
+                    )
+
+                    trail.append('chapter-nr-title')
+
+                else:
+                    chapter_name = collect_until(lines, '</b>')
+
+                    chapter = E.chapter(
+                        E('name', chapter_name)
+                    )
+
+                    trail.append('chapter-name')
+
+                law.append(chapter)
+
+            elif trail[-1] == 'chapter-nr-title':
+                # Parse the name of the chapter. This only happens if the
+                # chapter name is split into two distinct <b> tags, separated
+                # into nr-title and name. See comment above for details.
+                chapter_name = collect_until(lines, '</b>')
+
+                chapter.append(E('name', chapter_name))
+
+                trail.append('chapter-name')
+
+        elif matcher.check(line, '<span id="G(\d+)">'):
+            # Parse an article.
+            art_nr = matcher.result()[0]
+
+            art = E('art', {'nr': art_nr })
+            chapter.append(art)
+
+            scroll_until(lines, '<b>')
+            art_nr_title = collect_until(lines, '</b>')
+
+            art.append(E('nr-title', art_nr_title))
+
+            # Check if the next line is an <em>, because if so, then the
+            # article has a name title and we need to grab it. Note that not
+            # all articles have names.
+            if lines.peek().strip() == '<em>':
+                scroll_until(lines, '<em>')
+                art_name = collect_until(lines, '</em>')
+
+                art.append(E('name', art_name))
+
+            # TODO: Process article content.
+
+            trail.append('art-nr')
+
+
+    # Write the XML object to output file.
+    with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
+        # Importing a completely different XML library than the one we're
+        # using elsewhere in the code is a bit weird, but this is the only one
+        # we could find that does pretty printing with proper indenting. That
+        # happens to be very important for seeing whether the end result
+        # works. Since it's only used when DEBUG=True and is very much an
+        # anomaly in the code, it is imported here instead of at the top of
+        # the file.
+        #
+        # When not in DEBUG mode, we'll skip those shenanigans and write it
+        # out with the same library as the one we use elsewhere.
+        if DEBUG:
+            import xml.dom.minidom
+            xml = xml.dom.minidom.parseString(etree.tostring(
+                    law,
+                    pretty_print=True,
+                    xml_declaration=True,
+                    encoding='utf-8'
+                ).decode('utf-8')
+            )
+            pretty_xml_as_string = xml.toprettyxml(indent='  ')
+            f.write(pretty_xml_as_string)
+        else:
+            f.write(
+                etree.tostring(
+                    law,
+                    pretty_print=True,
+                    xml_declaration=True,
+                    encoding='utf-8'
+                ).decode('utf-8')
+            )
+
+
 def process_law(law_id):
 
     stdout.write('Processing law nr. %s...' % law_id)
@@ -148,6 +421,10 @@ def process_law(law_id):
     stdout.write('cleaning...')
     stdout.flush()
     clean_law(law_num, law_year)
+
+    stdout.write('making XML...')
+    stdout.flush()
+    make_xml(law_num, law_year, CURRENT_PARLIAMENT_VERSION)
 
     stdout.write(' done\n')
 
@@ -196,5 +473,7 @@ try:
 except KeyboardInterrupt:
     quit()
 except Exception as e:
-    stderr.write('Error: %s\n' % e)
-
+    if DEBUG:
+        raise
+    else:
+        stderr.write('Error: %s\n' % e)
