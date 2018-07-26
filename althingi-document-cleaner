@@ -380,6 +380,9 @@ def make_xml(law_num, law_year, parliament_version):
         elif matcher.check(line, '<img alt="" height="11" id="G(\d+)M(\d+)" src="\/lagas\/hk.jpg" width="11"\/>'):
             art_nr, subart_nr = matcher.result()
 
+            # TODO: This content needs to be separated down further, but it's
+            # a bit of an independent science that we will deal with
+            # independently.
             content = collect_until(lines, '<br/>')
 
             subart = E('subart', {'nr': subart_nr }, E('sen', content))
