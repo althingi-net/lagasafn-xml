@@ -256,8 +256,13 @@ def make_xml(law_num, law_year, parliament_version):
     # Iterators for keeping track of the order of things.
     chapter_i = 0
 
-    # Objects that help us figure out the current state of affairs.
+    # Objects that help us figure out the current state of affairs. These
+    # variables are used between iterations, meaning that whenever possible,
+    # their values should make sense at the end of the processing of a
+    # particular line or clause. Never put nonsense into them because it will
+    # completely confuse the processing elsewhere.
     chapter = None
+    art = None
 
     # The cleaned document that we're processing is expected to put every tag,
     # both its opening and closing, on a separate line. This allows us to
@@ -370,9 +375,17 @@ def make_xml(law_num, law_year, parliament_version):
 
                 art.append(E('name', art_name))
 
-            # TODO: Process article content.
-
             trail.append('art-nr')
+
+        elif matcher.check(line, '<img alt="" height="11" id="G(\d+)M(\d+)" src="\/lagas\/hk.jpg" width="11"\/>'):
+            art_nr, subart_nr = matcher.result()
+
+            content = collect_until(lines, '<br/>')
+
+            subart = E('subart', {'nr': subart_nr }, E('sen', content))
+            art.append(subart)
+
+            trail.append('subart')
 
 
     # Write the XML object to output file.
