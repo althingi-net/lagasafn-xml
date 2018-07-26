@@ -263,6 +263,7 @@ def make_xml(law_num, law_year, parliament_version):
     # completely confuse the processing elsewhere.
     chapter = None
     art = None
+    subart = None
 
     # The cleaned document that we're processing is expected to put every tag,
     # both its opening and closing, on a separate line. This allows us to
@@ -377,6 +378,10 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('art-nr')
 
+            # There can be no current subarticle if we've just discovered a
+            # new article.
+            subart = None
+
         elif matcher.check(line, '<img alt="" height="11" id="G(\d+)M(\d+)" src="\/lagas\/hk.jpg" width="11"\/>'):
             art_nr, subart_nr = matcher.result()
 
@@ -389,6 +394,43 @@ def make_xml(law_num, law_year, parliament_version):
             art.append(subart)
 
             trail.append('subart')
+
+        elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
+            art_nr, goo, numart_nr = matcher.result()
+
+            # Which entity will we append this numerical article to? We don't
+            # really know, because it could be an article or a subarticle, so
+            # we'll simply have to check. In any case, the entity that we'll
+            # append the numerical article to will simply be called "parent".
+            if subart is not None:
+                parent = subart
+            else:
+                # We sure as $h17 assume "art" exists.
+                parent = art
+
+            # Create numerical article.
+            numart = E('numart', {'nr': numart_nr })
+
+            # Add the numerical article to its parent.
+            parent.append(numart)
+
+            numart_nr_title = collect_until(lines, '</span>')
+            numart.append(E('nr-title', numart_nr_title))
+            if not numart_nr_title.strip('.').isdigit():
+                numart.attrib.update({'type': 'alphabet'})
+
+            if lines.peek().strip() == '<i>':
+                # Looks like this numerical article has a name.
+                scroll_until(lines, '<i>')
+                numart_name = collect_until(lines, '</i>')
+
+                numart.append(E('name', numart_name))
+
+            content = collect_until(lines, '<br/>')
+
+            numart.append(E('sen', content))
+
+            trail.append('numart')
 
 
     # Write the XML object to output file.
