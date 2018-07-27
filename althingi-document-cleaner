@@ -398,6 +398,12 @@ def make_xml(law_num, law_year, parliament_version):
         elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
             art_nr, goo, numart_nr = matcher.result()
 
+            # NOTE/TODO: The reality is that numart_nr may be wrong, for
+            # example in [29. gr. laga nr. 80/2016] because the <span>s in the
+            # HTML do not account for recursion. We will need to figure out
+            # the recursion ourselves, thus fixing numart_nr, but this is
+            # still unimplemented.
+
             # Which entity will we append this numerical article to? We don't
             # really know, because it could be an article or a subarticle, so
             # we'll simply have to check. In any case, the entity that we'll
