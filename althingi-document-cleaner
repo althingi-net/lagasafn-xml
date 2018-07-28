@@ -428,7 +428,7 @@ def make_xml(law_num, law_year, parliament_version):
             # new article.
             subart = None
 
-        elif matcher.check(line, '<img alt="" height="11" id="G(\d+)M(\d+)" src="\/lagas\/hk.jpg" width="11"\/>'):
+        elif matcher.check(line, '<img alt="" height="11" id="[GB](\d+)M(\d+)" src="\/lagas\/hk.jpg" width="11"\/>'):
             art_nr, subart_nr = matcher.result()
 
             # TODO: This content needs to be separated down further, but it's
