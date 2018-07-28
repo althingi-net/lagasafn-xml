@@ -340,6 +340,16 @@ def make_xml(law_num, law_year, parliament_version):
                         E('name', chapter_name)
                     )
 
+                # Some laws have a chapter for temporary clauses, which may be
+                # named something like "Bráðabirgðaákvæði", "Ákvæði til
+                # bráðabirgða" and probably something else as well. We will
+                # assume that a chapter name that includes that string
+                # "bráðabirgð" is a chapter for temporary clauses and
+                # furthermore that the string does NOT appear in any other
+                # kind of chapter.
+                if 'bráðabirgð' in chapter_name:
+                    chapter.attrib['type'] = 'temporary-clauses'
+
                 law.append(chapter)
 
                 trail.append('chapter')
