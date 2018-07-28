@@ -407,15 +407,69 @@ def make_xml(law_num, law_year, parliament_version):
             # correct type.
             numart_nr = lines.peek().strip().strip('.')
 
-            # Which entity will we append this numerical article to? We don't
-            # really know, because it could be an article or a subarticle, so
-            # we'll simply have to check. In any case, the entity that we'll
-            # append the numerical article to will simply be called "parent".
-            if subart is not None:
-                parent = subart
-            else:
-                # We sure as $h17 assume "art" exists.
-                parent = art
+            # Dictates where we will place this numart.
+            parent = None
+
+            if trail[-1] == 'numart':
+                # `prev_numart` is only defined here for readability. `numart` hasn't
+                # been set yet, so it's still equivalent to the previous
+                # `numart`, so technically we could just use `numart` instead.
+                # But `numart` is going to change later, so we'd rather be
+                # clear on the code semantics when using `numart` but still
+                # referring to the previous one.
+                prev_numart = numart
+
+                prev_numart_nr = prev_numart.attrib['nr']
+
+                # Check if the type of the numart has changed from numeric to
+                # alphabetic or vice versa.
+                different_type = any([
+                    prev_numart_nr.isdigit() and not numart_nr.isdigit(),
+                    not prev_numart_nr.isdigit() and numart_nr.isdigit()
+                ])
+
+                if prev_numart_nr.isdigit():
+                    expected_numart_nr = str(int(prev_numart_nr) + 1)
+                else:
+                    expected_numart_nr = chr(int(ord(prev_numart_nr)) + 1)
+
+                if expected_numart_nr != numart_nr or different_type:
+                    if numart_nr == 'a' or (numart_nr.isdigit() and int(numart_nr) == 1):
+                        # A new list has started within the one we were
+                        # already processing, which we can tell because there
+                        # was a `numart` before this one, but this `numart`
+                        # says it's at the beginning, being either 'a' or 1.
+                        # In this case, we'll choose the previous `numart` as
+                        # the parent, so that this new list will be inside the
+                        # previous one.
+                        parent = prev_numart
+                    else:
+                        # A different list is being handled now, but it's not
+                        # starting at the beginning (is neither 'a' nor 1).
+                        # This means that we've been dealing with a sub-list
+                        # which has now finished, so we want to continue
+                        # appending this `numart` to the parent of the parent
+                        # of the list we've been working on recently, which is
+                        # the same parent as the nodes that came before we
+                        # started the sub-list.
+                        parent = prev_numart.getparent().getparent()
+                else:
+                    # This `numart` is simply the next one, so we'll want to
+                    # append it to whatever node that the previous `numart`
+                    # was appended to.
+                    parent = prev_numart.getparent()
+
+            # A parent may already be set above if `numart` currently being
+            # handled is not the first one in its parent article/subarticle.
+            # However, if it is indeed the first one, we need to figure out
+            # where to place it. It can be placed wither in a subarticle or in
+            # some cases, directly into an article without a subarticle.
+            if parent is None:
+                if subart is not None:
+                    parent = subart
+                else:
+                    # We sure as $h17 assume "art" exists.
+                    parent = art
 
             # Create numerical article.
             numart = E('numart', {'nr': numart_nr })
