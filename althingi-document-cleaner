@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import codecs
 import urllib
 import re
+import roman
 
 import os
 import sys
@@ -355,17 +356,64 @@ def make_xml(law_num, law_year, parliament_version):
 
                 trail.append('chapter-name')
 
-        elif matcher.check(line, '<span id="G(\d+)">'):
+        elif line == '<img alt="" height="11" src="/lagas/sk.jpg" width="11"/>':
             # Parse an article.
-            art_nr = matcher.result()[0]
-
-            art = E('art', {'nr': art_nr })
-            chapter.append(art)
-
             scroll_until(lines, '<b>')
             art_nr_title = collect_until(lines, '</b>')
 
-            art.append(E('nr-title', art_nr_title))
+            # Hopefully this stays None. Not because anything will break
+            # otherwise, but because Roman numerals suck ass.
+            art_roman_nr = None
+
+            # Analyze the displayed article name.
+            try:
+                # A typical article is called something like "13. gr." or
+                # "13. gr. b". The common theme among typical articles is that
+                # the string ". gr." will appear in them somewhere. Anything
+                # before it is the article number. Anything after it, is an
+                # extra thing which is appended to article names when new
+                # articles are placed between two existing ones. For example,
+                # if there already are articles 13 and 14 but the legislature
+                # believes that a new article properly belongs between them,
+                # the article will probably be called "13. gr. a". We would
+                # want that translated into an sortable `art_nr` f.e. "13a".
+
+                # Find index of common string. If the string does not exist,
+                # it's some sort of a special article. A ValueError will be
+                # raised and we'll deal with it below.
+                gr_index = art_nr_title.index('. gr.')
+
+                # Determine the numeric part of the article's name.
+                art_nr = art_nr_title[0:gr_index]
+
+                # Check if there is an extra part to the name which we'll want
+                # appended to the `art_nr`.
+                #
+                # Note: len('.gr.') + 1 = 6
+                art_nr_extra = art_nr_title[gr_index+6:].strip('.')
+                if len(art_nr_extra):
+                    art_nr = '%s%s' % (art_nr, art_nr_extra)
+
+            except ValueError:
+                # This means that the article's name is formatted in an
+                # unconventional way. Typically this occurs only in temporary
+                # clauses that tend to be numbered with some stupid fucking
+                # Roman bullshit.
+                art_nr = None
+                try:
+                    art_roman_nr = str(roman.fromRoman(art_nr_title.strip('.')))
+                except roman.InvalidRomanNumeralError:
+                    # Good. Fuck Roman numerals.
+                    pass
+
+            # Create the tags, configure them and append to the chapter.
+            art = E('art', E('nr-title', art_nr_title))
+            if art_nr is not None:
+                art.attrib['nr'] = art_nr
+            if art_roman_nr is not None:
+                art.attrib['roman-nr'] = art_roman_nr
+                art.attrib['number-type'] = 'roman'
+            chapter.append(art)
 
             # Check if the next line is an <em>, because if so, then the
             # article has a name title and we need to grab it. Note that not
