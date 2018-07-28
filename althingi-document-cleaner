@@ -318,22 +318,20 @@ def make_xml(law_num, law_year, parliament_version):
                 # check 3 lines into the future to see if there's another <b>
                 # tag coming (because we know that the former <b>text</b>
                 # clause will be precisely 3 lines), and if so, we'll process
-                # the nr-title and move on. The next <b>, containing the name,
-                # will be caught in the next iteration). If there is no such
-                # impending tag, we'll interpret the entire contents of this
-                # <b> as the name of the chapter and be done with it.
-                #
-                # Note in particular, the difference in trails that we leave.
+                # the nr-title and name, but otherwise we will only process
+                # the name and skip nr-title altogether.
                 if lines.peek(3).strip() == '<b>':
                     chapter_nr_title = collect_until(lines, '</b>')
+
+                    scroll_until(lines, '<b>')
+                    chapter_name = collect_until(lines, '</b>')
 
                     chapter_i += 1
                     chapter = E.chapter(
                         {'nr': str(chapter_i)},
-                        E('nr-title', chapter_nr_title)
+                        E('nr-title', chapter_nr_title),
+                        E('name', chapter_name)
                     )
-
-                    trail.append('chapter-nr-title')
 
                 else:
                     chapter_name = collect_until(lines, '</b>')
@@ -342,19 +340,9 @@ def make_xml(law_num, law_year, parliament_version):
                         E('name', chapter_name)
                     )
 
-                    trail.append('chapter-name')
-
                 law.append(chapter)
 
-            elif trail[-1] == 'chapter-nr-title':
-                # Parse the name of the chapter. This only happens if the
-                # chapter name is split into two distinct <b> tags, separated
-                # into nr-title and name. See comment above for details.
-                chapter_name = collect_until(lines, '</b>')
-
-                chapter.append(E('name', chapter_name))
-
-                trail.append('chapter-name')
+                trail.append('chapter')
 
         elif line == '<img alt="" height="11" src="/lagas/sk.jpg" width="11"/>':
             # Parse an article.
