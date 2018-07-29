@@ -381,9 +381,6 @@ def make_xml(law_num, law_year, parliament_version):
     # different name to provide a semantic distinction in the code below.
     scroll_until = collect_until
 
-    # Iterators for keeping track of the order of things.
-    chapter_i = 0
-
     # Objects that help us figure out the current state of affairs. These
     # variables are used between iterations, meaning that whenever possible,
     # their values should make sense at the end of the processing of a
@@ -450,12 +447,23 @@ def make_xml(law_num, law_year, parliament_version):
                 if lines.peek(3).strip() == '<b>':
                     chapter_nr_title = collect_until(lines, '</b>')
 
+                    # Let's see if we can figure out the number of this
+                    # chapter. We're going to assume the format "II. kafli"
+                    # for the second chapter, and "II. kafli B." for the
+                    # second chapter B, and in those examples, nr-titles will
+                    # be "2" and "2b" respectively.
+                    t = chapter_nr_title
+                    nr = str(roman.fromRoman(t[0:t.index('.')]))
+                    alpha = t[t.index('kafli') + 6:].strip('.')
+                    if alpha:
+                        nr += alpha.lower()
+                    del t
+
                     scroll_until(lines, '<b>')
                     chapter_name = collect_until(lines, '</b>')
 
-                    chapter_i += 1
                     chapter = E.chapter(
-                        {'nr': str(chapter_i)},
+                        {'nr': str(nr)},
                         E('nr-title', chapter_nr_title),
                         E('name', chapter_name)
                     )
