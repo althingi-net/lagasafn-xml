@@ -41,6 +41,9 @@ def clean_content(content):
     # Remove markers for previous changes
     content = content.replace('[', '').replace(']', '')
 
+    # Remove markers for removed content
+    content = content.replace('…', '').replace('&hellip;', '')
+
     # Remove links to website
     #strings_to_remove = (
     #    u'Ferill málsins á Alþingi.',
@@ -368,7 +371,7 @@ def make_xml(law_num, law_year, parliament_version):
         # after the split, and so we'll just remove it here. This could
         # probably be done somewhere inside the loop, but it would probably
         # just be less readable.
-        if content[-1] != '.' and sens[-1][-1] == '.':
+        if content and content[-1] != '.' and sens[-1][-1] == '.':
             sens[-1] = sens[-1].strip('.')
 
         return sens
