@@ -686,6 +686,7 @@ def make_xml(law_num, law_year, parliament_version):
 
         elif line == '<small>':
             if 'minister-clause' in trail:
+                # Footnote section. Contains footnotes.
 
                 footnotes = E('footnotes')
 
@@ -698,6 +699,8 @@ def make_xml(law_num, law_year, parliament_version):
 
         elif line == '<sup style="font-size:60%">':
             if trail[-1] in ['footnotes', 'footnote']:
+                # We've found a footnote inside the footnote section!
+
                 footnote_nr = collect_until(lines, '</sup>').strip(')')
 
                 peek = lines.peek().strip()
