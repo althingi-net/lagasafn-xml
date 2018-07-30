@@ -711,9 +711,7 @@ def make_xml(law_num, law_year, parliament_version):
 
                     trail.append('footnote')
 
-                elif matcher.check(peek, '<!--a href="ekkitil/ekkitil.*"-->'):
-                    scroll_until(lines, '<!--a href="ekkitil/ekkitil.*"-->')
-
+                else:
                     # We will gather everything we run across into a string
                     # called `gathered`, until we run into a string that
                     # indicates that either this footnote section has ended,
