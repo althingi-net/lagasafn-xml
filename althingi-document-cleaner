@@ -67,10 +67,11 @@ def clean_content(content):
 
     soup = BeautifulSoup(soup_law.__str__(), 'html5lib') # Parse the law content
 
-    # Remove superscripts indicating previous change
+    # Remove superscripts indicating previous change. Only removes them when
+    # they are found outside of footnotes.
     superscripts = soup.find_all('sup')
     for s in superscripts:
-        if re.match('^\d{1,3}\)$', s.text):
+        if s.parent.name != 'small' and re.match('^\d{1,3}\)$', s.text):
             s.extract()
 
     # Remove links
@@ -79,9 +80,9 @@ def clean_content(content):
     #    a.replace_with(a.text)
 
     # Remove tags entirely irrelevant to content
-    tags_to_remove = ['small'] # Previously also ['hr', 'script', 'noscript', 'head']
-    for target_tag in tags_to_remove:
-        [s.extract() for s in soup(target_tag)]
+    #tags_to_remove = ['small'] # Previously also ['hr', 'script', 'noscript', 'head']
+    #for target_tag in tags_to_remove:
+    #    [s.extract() for s in soup(target_tag)]
 
     # Remove empty tags, but only if they're empty
     empty_tags_to_remove = ['p', 'h2', 'i']
@@ -676,6 +677,87 @@ def make_xml(law_num, law_year, parliament_version):
                 numart.append(E('sen', sen))
 
             trail.append('numart')
+
+        elif line == '<small>':
+            if 'minister-clause' in trail:
+
+                footnotes = E('footnotes')
+
+                if trail[-1] == 'chapter':
+                    chapter.append(footnotes)
+                else:
+                    art.append(footnotes)
+
+                trail.append('footnotes')
+
+        elif line == '<sup style="font-size:60%">':
+            if trail[-1] in ['footnotes', 'footnote']:
+                footnote_nr = collect_until(lines, '</sup>').strip(')')
+
+                peek = lines.peek().strip()
+                if matcher.check(peek, '<a href="(\/altext\/.*)">'):
+                    # This is a footnote regarding a legal change.
+                    href = 'https://www.althingi.is%s' % matcher.result()[0]
+
+                    scroll_until(lines, '<a href="(\/altext\/.*)">')
+                    footnote_sen = collect_until(lines, '</a>')
+
+                    footnote = E('footnote', {'href': href}, E('footnote-sen', footnote_sen))
+
+                    if matcher.check(footnote_sen, 'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
+                        fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
+                        footnote.attrib['nr'] = fn_law_nr
+                        footnote.attrib['year'] = fn_law_year
+                        footnote.attrib['art'] = fn_art_nr
+
+                    footnotes.append(footnote)
+
+                    trail.append('footnote')
+
+                elif matcher.check(peek, '<!--a href="ekkitil/ekkitil.*"-->'):
+                    scroll_until(lines, '<!--a href="ekkitil/ekkitil.*"-->')
+
+                    # We will gather everything we run across into a string
+                    # called `gathered`, until we run into a string that
+                    # indicates that either this footnote section has ended,
+                    # or we've run across a new footnote.
+                    #
+                    # Either one of the expected tags should absolutely
+                    # appear, but even if they don't, this will still error
+                    # out instead of looping forever, despite the "while True"
+                    # condition, because "next(lines)" will eventually run out
+                    # of lines.
+                    gathered = ''
+                    while True:
+                        if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
+                            break
+                        else:
+                            # The text we want is separated into lines with
+                            # arbitrary indenting and HTML comments which will
+                            # later be removed. As a result, meaningless
+                            # whitespace is all over the place. To fix this,
+                            # we'll remove whitespace from either side of the
+                            # string, but add a space at the end, which will
+                            # occasionally result in a double whitespace or a
+                            # whitespace between tags and content. Those will
+                            # be fixed later, resulting in a neat string
+                            # without any unwanted whitespace.
+                            gathered += next(lines).strip() + ' '
+
+                    # Get rid of HTML comments.
+                    gathered = re.sub(r'<!--.*?"-->', '', gathered)
+
+                    # Get rid of remaining unwanted whitespace (see above).
+                    gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</').strip()
+
+                    # Create the footnote node with the gathered content.
+                    footnote = E('footnote', E('footnote-sen', gathered))
+
+                    # Append the footnote to the `footnotes` node which is
+                    # expected to exist from an earlier iteration.
+                    footnotes.append(footnote)
+
+                    trail.append('footnote')
 
 
     # Write the XML object to output file.
