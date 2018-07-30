@@ -570,8 +570,17 @@ def make_xml(law_num, law_year, parliament_version):
             content = collect_until(lines, '<br/>')
 
             subart = E('subart', {'nr': subart_nr })
-            for sen in separate_sentences(content):
-                subart.append(E('sen', sen))
+            sens = separate_sentences(content)
+            if len(sens) > 0:
+                for sen in sens:
+                    subart.append(E('sen', sen))
+            else:
+                # When a `subart` tag is empty, we must put a space into it so
+                # that the output XML will be "<subart> </subart>" instead of
+                # "<subart/>". The latter is perfectly valid XML, but browsers
+                # tend to misinterpret it as an opening tag, since HTML is a
+                # far more lax standard than XML.
+                subart.text = ' '
             art.append(subart)
 
             trail.append('subart')
