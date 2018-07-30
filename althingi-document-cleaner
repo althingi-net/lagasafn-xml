@@ -482,7 +482,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # "bráðabirgð" is a chapter for temporary clauses and
                 # furthermore that the string does NOT appear in any other
                 # kind of chapter.
-                if 'bráðabirgð' in chapter_name:
+                if 'bráðabirgð' in chapter_name.lower():
                     chapter.attrib['type'] = 'temporary-clauses'
 
                 law.append(chapter)
