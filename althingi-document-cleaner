@@ -24,8 +24,6 @@ from utils import strip_markers
 from utils import super_iter
 from utils import xml_lists_identical
 
-DEBUG = True
-
 CURRENT_PARLIAMENT_VERSION = '148a'
 
 LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
@@ -876,7 +874,7 @@ def make_xml(law_num, law_year, parliament_version):
         #
         # When not in DEBUG mode, we'll skip those shenanigans and write it
         # out with the same library as the one we use elsewhere.
-        if DEBUG:
+        if settings.DEBUG:
             import xml.dom.minidom
             xml = xml.dom.minidom.parseString(etree.tostring(
                     law,
@@ -962,7 +960,7 @@ try:
 except KeyboardInterrupt:
     quit()
 except Exception as e:
-    if DEBUG:
+    if settings.DEBUG:
         raise
     else:
         stderr.write('Error: %s\n' % e)
