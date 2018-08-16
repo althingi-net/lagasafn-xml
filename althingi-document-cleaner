@@ -381,81 +381,76 @@ def make_xml(law_num, law_year, parliament_version):
 
                 trail.append('num-and-date')
 
-        elif line == '<hr/>':
-            if trail[-1] == 'num-and-date':
-                # Parse the whole clause about which minister the law refers
-                # to. It contains HTML goo, but we'll just let it float along.
-                # It's not even certain that we'll be using it, but there's no
-                # harm in keeping it around.
-                minister_clause = collect_until(lines, '<hr/>')
+        elif line == '<hr/>' and trail[-1] == 'num-and-date':
+            # Parse the whole clause about which minister the law refers to.
+            # It contains HTML goo, but we'll just let it float along. It's
+            # not even certain that we'll be using it, but there's no harm in
+            # keeping it around.
+            minister_clause = collect_until(lines, '<hr/>')
 
-                law.append(E('minister-clause', minister_clause))
+            law.append(E('minister-clause', minister_clause))
 
-                trail.append('minister-clause')
+            trail.append('minister-clause')
 
-        elif line == '<b>':
-            # Chapters are found by finding a <b> tag that comes right after a
-            # <br/> tag that occurs after the ministerial clause is done.
-            if 'minister-clause' in trail and lines.peek(-1).strip() == '<br/>':
-                # Parse what we will believe to be a chapter.
+        # Chapters are found by finding a <b> tag that comes right after a
+        # <br/> tag that occurs after the ministerial clause is done.
+        elif line == '<b>' and 'minister-clause' in trail and lines.peek(-1).strip() == '<br/>':
+            # Parse what we will believe to be a chapter.
 
-                # Chapter names are a bit tricky. They may be divided into two
-                # <b> clauses, in which case the former one is what we call a
-                # nr-title (I. kafli, II. kafli etc.), and then a name
-                # describing its content (Almenn ákvæði, Tilgangur og markmið
-                # etc.).
-                #
-                # Sometimes however, there is only one <b> and not two. In
-                # these cases, there is no nr-title and only a name. Here we
-                # check 3 lines into the future to see if there's another <b>
-                # tag coming (because we know that the former <b>text</b>
-                # clause will be precisely 3 lines), and if so, we'll process
-                # the nr-title and name, but otherwise we will only process
-                # the name and skip nr-title altogether.
-                if lines.peek(3).strip() == '<b>':
-                    chapter_nr_title = collect_until(lines, '</b>')
+            # Chapter names are a bit tricky. They may be divided into two <b>
+            # clauses, in which case the former one is what we call a nr-title
+            # (I. kafli, II. kafli etc.), and then a name describing its
+            # content (Almenn ákvæði, Tilgangur og markmið etc.).
+            #
+            # Sometimes however, there is only one <b> and not two. In these
+            # cases, there is no nr-title and only a name. Here we check 3
+            # lines into the future to see if there's another <b> tag coming
+            # (because we know that the former <b>text</b> clause will be
+            # precisely 3 lines), and if so, we'll process the nr-title and
+            # name, but otherwise we will only process the name and skip
+            # nr-title altogether.
+            if lines.peek(3).strip() == '<b>':
+                chapter_nr_title = collect_until(lines, '</b>')
 
-                    # Let's see if we can figure out the number of this
-                    # chapter. We're going to assume the format "II. kafli"
-                    # for the second chapter, and "II. kafli B." for the
-                    # second chapter B, and in those examples, nr-titles will
-                    # be "2" and "2b" respectively.
-                    t = strip_markers(chapter_nr_title)
-                    nr = str(roman.fromRoman(t[0:t.index('.')]))
-                    alpha = t[t.index('kafli') + 6:].strip('.')
-                    if alpha:
-                        nr += alpha.lower()
-                    del t
+                # Let's see if we can figure out the number of this chapter.
+                # We're going to assume the format "II. kafli" for the second
+                # chapter, and "II. kafli B." for the second chapter B, and in
+                # those examples, nr-titles will be "2" and "2b" respectively.
+                t = strip_markers(chapter_nr_title)
+                nr = str(roman.fromRoman(t[0:t.index('.')]))
+                alpha = t[t.index('kafli') + 6:].strip('.')
+                if alpha:
+                    nr += alpha.lower()
+                del t
 
-                    scroll_until(lines, '<b>')
-                    chapter_name = collect_until(lines, '</b>')
+                scroll_until(lines, '<b>')
+                chapter_name = collect_until(lines, '</b>')
 
-                    chapter = E.chapter(
-                        {'nr': str(nr)},
-                        E('nr-title', chapter_nr_title),
-                        E('name', chapter_name)
-                    )
+                chapter = E.chapter(
+                    {'nr': str(nr)},
+                    E('nr-title', chapter_nr_title),
+                    E('name', chapter_name)
+                )
 
-                else:
-                    chapter_name = collect_until(lines, '</b>')
+            else:
+                chapter_name = collect_until(lines, '</b>')
 
-                    chapter = E.chapter(
-                        E('name', chapter_name)
-                    )
+                chapter = E.chapter(
+                    E('name', chapter_name)
+                )
 
-                # Some laws have a chapter for temporary clauses, which may be
-                # named something like "Bráðabirgðaákvæði", "Ákvæði til
-                # bráðabirgða" and probably something else as well. We will
-                # assume that a chapter name that includes that string
-                # "bráðabirgð" is a chapter for temporary clauses and
-                # furthermore that the string does NOT appear in any other
-                # kind of chapter.
-                if 'bráðabirgð' in chapter_name.lower():
-                    chapter.attrib['type'] = 'temporary-clauses'
+            # Some laws have a chapter for temporary clauses, which may be
+            # named something like "Bráðabirgðaákvæði", "Ákvæði til
+            # bráðabirgða" and probably something else as well. We will assume
+            # that a chapter name that includes that string "bráðabirgð" is a
+            # chapter for temporary clauses and furthermore that the string
+            # does NOT appear in any other kind of chapter.
+            if 'bráðabirgð' in chapter_name.lower():
+                chapter.attrib['type'] = 'temporary-clauses'
 
-                law.append(chapter)
+            law.append(chapter)
 
-                trail.append('chapter')
+            trail.append('chapter')
 
         elif line == '<img alt="" height="11" src="/lagas/sk.jpg" width="11"/>':
             # Parse an article.
@@ -661,342 +656,335 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('numart')
 
-        elif line == '<small>':
-            if 'minister-clause' in trail:
-                # Footnote section. Contains footnotes.
+        elif line == '<small>' and 'minister-clause' in trail:
+            # Footnote section. Contains footnotes.
 
-                footnotes = E('footnotes')
+            footnotes = E('footnotes')
 
-                if trail[-1] == 'chapter':
-                    chapter.append(footnotes)
-                else:
-                    art.append(footnotes)
+            if trail[-1] == 'chapter':
+                chapter.append(footnotes)
+            else:
+                art.append(footnotes)
 
-                trail.append('footnotes')
+            trail.append('footnotes')
 
-        elif line == '<sup style="font-size:60%">':
-            if trail[-1] in ['footnotes', 'footnote']:
-                # We've found a footnote inside the footnote section!
+        elif line == '<sup style="font-size:60%">' and trail[-1] in ['footnotes', 'footnote']:
+            # We've found a footnote inside the footnote section!
 
-                footnote_nr = collect_until(lines, '</sup>').strip(')')
+            footnote_nr = collect_until(lines, '</sup>').strip(')')
 
-                peek = lines.peek().strip()
-                if matcher.check(peek, '<a href="(\/altext\/.*)">'):
-                    # This is a footnote regarding a legal change.
-                    href = 'https://www.althingi.is%s' % matcher.result()[0]
+            peek = lines.peek().strip()
+            if matcher.check(peek, '<a href="(\/altext\/.*)">'):
+                # This is a footnote regarding a legal change.
+                href = 'https://www.althingi.is%s' % matcher.result()[0]
 
-                    scroll_until(lines, '<a href="(\/altext\/.*)">')
-                    footnote_sen = collect_until(lines, '</a>')
+                scroll_until(lines, '<a href="(\/altext\/.*)">')
+                footnote_sen = collect_until(lines, '</a>')
 
-                    footnote = E('footnote', {'href': href}, E('footnote-sen', footnote_sen))
+                footnote = E('footnote', {'href': href}, E('footnote-sen', footnote_sen))
 
-                    if matcher.check(footnote_sen, 'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
-                        fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
-                        footnote.attrib['nr'] = fn_law_nr
-                        footnote.attrib['year'] = fn_law_year
-                        footnote.attrib['art'] = fn_art_nr
+                if matcher.check(footnote_sen, 'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
+                    fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
+                    footnote.attrib['nr'] = fn_law_nr
+                    footnote.attrib['year'] = fn_law_year
+                    footnote.attrib['art'] = fn_art_nr
 
-                    footnotes.append(footnote)
+                footnotes.append(footnote)
 
-                    trail.append('footnote')
+                trail.append('footnote')
 
-                else:
-                    # We will gather everything we run across into a string
-                    # called `gathered`, until we run into a string that
-                    # indicates that either this footnote section has ended,
-                    # or we've run across a new footnote.
-                    #
-                    # Either one of the expected tags should absolutely
-                    # appear, but even if they don't, this will still error
-                    # out instead of looping forever, despite the "while True"
-                    # condition, because "next(lines)" will eventually run out
-                    # of lines.
-                    gathered = ''
-                    while True:
-                        if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
-                            break
-                        else:
-                            # The text we want is separated into lines with
-                            # arbitrary indenting and HTML comments which will
-                            # later be removed. As a result, meaningless
-                            # whitespace is all over the place. To fix this,
-                            # we'll remove whitespace from either side of the
-                            # string, but add a space at the end, which will
-                            # occasionally result in a double whitespace or a
-                            # whitespace between tags and content. Those will
-                            # be fixed later, resulting in a neat string
-                            # without any unwanted whitespace.
-                            gathered += next(lines).strip() + ' '
+            else:
+                # We will gather everything we run across into a string called
+                # `gathered`, until we run into a string that indicates that
+                # either this footnote section has ended, or we've run across
+                # a new footnote.
+                #
+                # Either one of the expected tags should absolutely appear,
+                # but even if they don't, this will still error out instead of
+                # looping forever, despite the "while True" condition, because
+                # "next(lines)" will eventually run out of lines.
+                gathered = ''
+                while True:
+                    if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
+                        break
+                    else:
+                        # The text we want is separated into lines with
+                        # arbitrary indenting and HTML comments which will
+                        # later be removed. As a result, meaningless
+                        # whitespace is all over the place. To fix this, we'll
+                        # remove whitespace from either side of the string,
+                        # but add a space at the end, which will occasionally
+                        # result in a double whitespace or a whitespace
+                        # between tags and content. Those will be fixed later,
+                        # resulting in a neat string without any unwanted
+                        # whitespace.
+                        gathered += next(lines).strip() + ' '
 
-                    # Get rid of HTML comments.
-                    gathered = re.sub(r'<!--.*?"-->', '', gathered)
+                # Get rid of HTML comments.
+                gathered = re.sub(r'<!--.*?"-->', '', gathered)
 
-                    # Get rid of remaining unwanted whitespace (see above).
-                    gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</').strip()
+                # Get rid of remaining unwanted whitespace (see above).
+                gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</').strip()
 
-                    # Create the footnote node with the gathered content.
-                    footnote = E('footnote', E('footnote-sen', gathered))
+                # Create the footnote node with the gathered content.
+                footnote = E('footnote', E('footnote-sen', gathered))
 
-                    # Append the footnote to the `footnotes` node which is
-                    # expected to exist from an earlier iteration.
-                    footnotes.append(footnote)
+                # Append the footnote to the `footnotes` node which is expected to exist from an earlier iteration.
+                footnotes.append(footnote)
 
-                    trail.append('footnote')
+                trail.append('footnote')
 
-                if lines.peek().strip() == '</small>':
-                    # At this point, the basic footnote XML has been produced,
-                    # enough to show the footnotes themselves below each
-                    # article. We will now see if we can parse the markers in
-                    # the content that the footnotes apply to, and add marker
-                    # locations to the footnote XML. We will then remove the
-                    # markers from the text. This way, the text and the marker
-                    # location information are separated.
+            if lines.peek().strip() == '</small>':
+                # At this point, the basic footnote XML has been produced,
+                # enough to show the footnotes themselves below each article.
+                # We will now see if we can parse the markers in the content
+                # that the footnotes apply to, and add marker locations to the
+                # footnote XML. We will then remove the markers from the text.
+                # This way, the text and the marker location information are
+                # separated.
 
-                    # Check the content for markers.
-                    parent = footnotes.getparent()
-                    opening_locations = []
-                    marker_locations = []
-                    for desc in parent.iterdescendants():
-                        # Leave the footnotes out of this, since we're only
-                        # looking for markers in text.
-                        if 'footnotes' in [a.tag for a in desc.iterancestors()]:
-                            continue
+                # Check the content for markers.
+                parent = footnotes.getparent()
+                opening_locations = []
+                marker_locations = []
+                for desc in parent.iterdescendants():
+                    # Leave the footnotes out of this, since we're only
+                    # looking for markers in text.
+                    if 'footnotes' in [a.tag for a in desc.iterancestors()]:
+                        continue
 
-                        # Not interested if the node contains no text.
-                        if not desc.text:
-                            continue
+                    # Not interested if the node contains no text.
+                    if not desc.text:
+                        continue
 
-                        text = desc.text # Short-hand.
+                    text = desc.text # Short-hand.
 
-                        if desc.tag == 'sen':
-                            # Sentences are not formally numbered in the XML,
-                            # so we have to infer their numbers from their
-                            # location within their parent nodes.
+                    if desc.tag == 'sen':
+                        # Sentences are not formally numbered in the XML, so
+                        # we have to infer their numbers from their location
+                        # within their parent nodes.
+                        #
+                        # Note that sen_nr is not necessarily ever used. In
+                        # fact, the <sen> node may not even be added. Last but
+                        # not least, it may be removed, if it is found to
+                        # contain no relevant information once we're done
+                        # processing.
+                        for i, sibling in enumerate(desc.getparent().findall('sen')):
+                            if sibling == desc:
+                                sen_nr = str(i + 1)
+                                break
+
+                    # Sometimes markers are not placed according to an entire
+                    # entity, such as subarticle or sentence, but rather by a
+                    # fraction of text within it. This can be determined by
+                    # checking whether an opening marker occurs elsewhere than
+                    # at the beginning of the entity. When this occurs, the
+                    # closing marker is pre-emptively found and we figure out
+                    # what "words" are between them. Those words are then
+                    # added to the footnote location XML.
+                    words = ''
+
+                    # Keeps track of where we are currently looking for
+                    # markers within the entity being checked.
+                    cursor = 0
+
+                    opening_found = desc.text.find('[', cursor)
+                    closing_found = desc.text.find(']', cursor)
+                    while opening_found > -1 or closing_found > -1:
+                        if opening_found > -1 and (opening_found < closing_found or closing_found == -1):
+                            # We have found an opening marker: [
+
+                            # Indicate that our next search for an opening tag
+                            # will continue from here.
+                            cursor = opening_found + 1
+
+                            # Locations of markers in footnote XML are denoted
+                            # as a list of tags, whose name correspond to the
+                            # tag name where the marker is to be located, and 
+                            # whose value represents the target node's "nr"
+                            # attribute. Example:
                             #
-                            # Note that sen_nr is not necessarily ever used.
-                            # In fact, the <sen> node may not even be added.
-                            # Last but not least, it may be removed, if it is
-                            # found to contain no relevant information once
-                            # we're done processing.
-                            for i, sibling in enumerate(desc.getparent().findall('sen')):
-                                if sibling == desc:
-                                    sen_nr = str(i + 1)
+                            # <art nr="5">
+                            #   <subart nr="1">
+                            #     <sen>[Notice the markers?]</sen>
+                            #   </subart>
+                            # </art>
+                            #
+                            # This will result in location XML in the footnote
+                            # XML as such:
+                            #
+                            # <location>
+                            #   <art>5</art>
+                            #   <subart>1</subart>
+                            # </location>
+                            #
+                            # To achieve this, we iterate through the
+                            # ancestors of the node currently being processed.
+                            # For each ancestor that we find, we add to the
+                            # location XML.
+                            ancestors = []
+                            for ancestor in desc.iterancestors():
+                                ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+                                if ancestor == parent:
+                                    # We're not interested in anything
+                                    # beyond the parent node.
                                     break
 
-                        # Sometimes markers are not placed according to an
-                        # entire entity, such as subarticle or sentence, but
-                        # rather by a fraction of text within it. This can be
-                        # determined by checking whether an opening marker
-                        # occurs elsewhere than at the beginning of the
-                        # entity. When this occurs, the closing marker is
-                        # pre-emptively found and we figure out what "words"
-                        # are between them. Those words are then added to the
-                        # footnote location XML.
-                        words = ''
+                            # Normally, we don't want to add sentences in
+                            # footnotes, because they're not formally
+                            # numbered. If we do want to add it, we'll do it
+                            # under special circumstances later in the code.
+                            if desc.tag != 'sen':
+                                ancestors.append(E(desc.tag))
 
-                        # Keeps track of where we are currently looking for
-                        # markers within the entity being checked.
-                        cursor = 0
+                            # If an opening markers is found anywhere else
+                            # than at the beginning, then it's around a
+                            # fraction of the text, instead of engulfing an
+                            # entire entity, such as a subarticle.
+                            if opening_found > 0:
+                                words = desc.text[opening_found + 1:desc.text.find(']', opening_found)]
+                                ancestors.append(E(desc.tag, {'words': words}, sen_nr))
 
-                        opening_found = desc.text.find('[', cursor)
-                        closing_found = desc.text.find(']', cursor)
-                        while opening_found > -1 or closing_found > -1:
-                            if opening_found > -1 and (opening_found < closing_found or closing_found == -1):
-                                # We have found an opening marker: [
+                            # We'll "pop" this list when we find the closing
+                            # marker, as per below.
+                            opening_locations.append(ancestors)
 
-                                # Indicate that our next search for an opening
-                                # tag will continue from here.
-                                cursor = opening_found + 1
+                        elif closing_found > -1 and (closing_found < opening_found or opening_found == -1):
+                            # We have found a closing marker: ]
 
-                                # Locations of markers in footnote XML are
-                                # denoted as a list of tags, whose name
-                                # correspond to the tag name where the marker
-                                # is to be located, and whose value represents
-                                # the target node's "nr" attribute. Example:
-                                #
-                                # <art nr="5">
-                                #   <subart nr="1">
-                                #     <sen>[Notice the markers?]</sen>
-                                #   </subart>
-                                # </art>
-                                #
-                                # This will result in location XML in the
-                                # footnote XML as such:
-                                #
-                                # <location>
-                                #   <art>5</art>
-                                #   <subart>1</subart>
-                                # </location>
-                                #
-                                # To achieve this, we iterate through the
-                                # ancestors of the node currently being
-                                # processed. For each ancestor that we find,
-                                # we add to the location XML.
-                                ancestors = []
-                                for ancestor in desc.iterancestors():
-                                    ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
-                                    if ancestor == parent:
-                                        # We're not interested in anything
-                                        # beyond the parent node.
-                                        break
+                            cursor = closing_found + 1
 
-                                # Normally, we don't want to add sentences in
-                                # footnotes, because they're not formally
-                                # numbered. If we do want to add it, we'll do
-                                # it under special circumstances later in the code.
-                                if desc.tag != 'sen':
-                                    ancestors.append(E(desc.tag))
-
-                                # If an opening markers is found anywhere else
-                                # than at the beginning, then it's around a
-                                # fraction of the text, instead of engulfing
-                                # an entire entity, such as a subarticle.
-                                if opening_found > 0:
-                                    words = desc.text[opening_found + 1:desc.text.find(']', opening_found)]
-                                    ancestors.append(E(desc.tag, {'words': words}, sen_nr))
-
-                                # We'll "pop" this list when we find the
-                                # closing marker, as per below.
-                                opening_locations.append(ancestors)
-
-                            elif closing_found > -1 and (closing_found < opening_found or opening_found == -1):
-                                # We have found a closing marker: ]
-
-                                cursor = closing_found + 1
-
-                                # Grab the footnote number of the highlighted
-                                # text. Sometimes the number is located in the
-                                # next <sen> element, for example: "or not the
-                                # [minister]. <sup ...> 2) </sup>". In these
-                                # cases we'll need to peek into the next <sen>
-                                # element. We'll do this by changing the
-                                # haystack in which we look. We won't use the
-                                # cursor when looking for it though, because
-                                # it will definitely be the first <sup> we run
-                                # into, inside the next <sen>
-                                #
-                                # By the way:
-                                #     len('<sup style="font-size:60%">') == 27
-                                if desc.text.find('<sup style="font-size:60%">', cursor) > -1:
-                                    haystack = desc.text
-                                    num_start = haystack.find('<sup style="font-size:60%">', cursor) + 27
-                                    num_end = haystack.find('</sup>', cursor)
-                                    num_text = haystack[num_start:num_end]
-                                    num = num_text.strip().strip(')')
-                                else:
-                                    haystack = desc.getnext().text
-                                    num_start = haystack.find('<sup style="font-size:60%">') + 27
-                                    num_end = haystack.find('</sup>')
-                                    num_text = haystack[num_start:num_end]
-                                    num = num_text.strip().strip(')')
-
-                                # We have figured out the starting location in
-                                # the former clause of the if-sentence.
-                                started_at = opening_locations.pop()
-
-                                # Figure out the end location. Same deal as
-                                # when figuring out the opening marker's
-                                # location, see comments above.
-                                ancestors = []
-                                for ancestor in desc.iterancestors():
-                                    ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
-                                    if ancestor == parent:
-                                        # We're not interested in anything
-                                        # beyond the parent node.
-                                        break
-
-                                # See comment for opening marker.
-                                if desc.tag != 'sen':
-                                    ancestors.append(E(desc.tag))
-
-                                # If 'words' were used to designate
-                                # markers, then we shouldn't have an end
-                                # location at all. To achieve this, we simply
-                                # make the end-location identical to start
-                                # location (assuming, of course, that the rest
-                                # of the nodes are indeed identical), so they
-                                # will be truncated into...
-                                #
-                                #     <location>...</location>
-                                #
-                                # ...instead of:
-                                #
-                                #     <location>
-                                #       <start>...</start>
-                                #       <end>...</end>
-                                #     </location>
-                                #
-                                # The truncating mechanism comes later. Right
-                                # here we're just making sure that they are
-                                # the same, if appropriate, so that the
-                                # truncating mechanism can catch it.
-                                if words:
-                                    ancestors.append(E(desc.tag, {'words': words}, sen_nr))
-                                    words = None
-
-                                ended_at = ancestors
-
-                                # Stuff our findings into a list of marker
-                                # locations that can be appended to the
-                                # footnote XML.
-                                marker_locations.append({
-                                    'num': int(num),
-                                    'subart_nr': desc.getparent().attrib['nr'],
-                                    'art_nr': parent.attrib['nr'],
-                                    'started_at': started_at,
-                                    'ended_at': ended_at
-                                })
-
-                            # Check again for the next opening and closing
-                            # markers, except from our cursor, this time.
-                            closing_found = desc.text.find(']', cursor)
-                            opening_found = desc.text.find('[', cursor)
-
-                        # Now that we're done processing the markers and can
-                        # add them to the footnotes in XML format, we'll
-                        # delete them from the text itself.
-                        desc.text = strip_markers(desc.text)
-
-                        # In fact, if it turns out that this is an empty
-                        # sentence node (presumably because all the juicy info
-                        # has been sucked out of it), we'll just delete it.
-                        if desc.tag == 'sen' and desc.text.strip() == '':
-                            desc.getparent().remove(desc)
-
-                    if len(marker_locations):
-
-                        # Finally, we'll start to build and add the location
-                        # XML to the footnotes, out of all this information
-                        # we've crunched from the text!
-
-                        for ml in marker_locations:
-                            # Get the marker's appropriate footnote XML.
-                            footnote = footnotes.getchildren()[ml['num'] - 1]
-
-                            # Create the location XML node itself and add it
-                            # to the footnote.
-                            location = E('location', {'type': 'range'})
-                            footnote.append(location)
-
-                            # If the starting and ending locations of the
-                            # opening/closing markers are in different
-                            # entities, we'll need to communicate that with
-                            # special subnodes, aptly named "start" and "end".
-                            if not xml_lists_identical(ml['started_at'], ml['ended_at']):
-                                start = E('start')
-                                end = E('end')
-                                for node in ml['started_at']:
-                                    start.append(node)
-                                for node in ml['ended_at']:
-                                    end.append(node)
-
-                                location.append(start)
-                                location.append(end)
+                            # Grab the footnote number of the highlighted
+                            # text. Sometimes the number is located in the
+                            # next <sen> element, for example: "or not the
+                            # [minister]. <sup ...> 2) </sup>". In these cases
+                            # we'll need to peek into the next <sen> element.
+                            # We'll do this by changing the haystack in which
+                            # we look. We won't use the cursor when looking
+                            # for it though, because it will definitely be the
+                            # first <sup> we run into, inside the next <sen>
+                            #
+                            # By the way:
+                            #     len('<sup style="font-size:60%">') == 27
+                            if desc.text.find('<sup style="font-size:60%">', cursor) > -1:
+                                haystack = desc.text
+                                num_start = haystack.find('<sup style="font-size:60%">', cursor) + 27
+                                num_end = haystack.find('</sup>', cursor)
+                                num_text = haystack[num_start:num_end]
+                                num = num_text.strip().strip(')')
                             else:
-                                # Otherwise, we'll just stash what we found in
-                                # the location XML.
-                                for node in ml['started_at']:
-                                    location.append(node)
+                                haystack = desc.getnext().text
+                                num_start = haystack.find('<sup style="font-size:60%">') + 27
+                                num_end = haystack.find('</sup>')
+                                num_text = haystack[num_start:num_end]
+                                num = num_text.strip().strip(')')
+
+                            # We have figured out the starting location in the
+                            # former clause of the if-sentence.
+                            started_at = opening_locations.pop()
+
+                            # Figure out the end location. Same deal as when
+                            # figuring out the opening marker's location, see
+                            # comments above.
+                            ancestors = []
+                            for ancestor in desc.iterancestors():
+                                ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+                                if ancestor == parent:
+                                    # We're not interested in anything beyond
+                                    # the parent node.
+                                    break
+
+                            # See comment for opening marker.
+                            if desc.tag != 'sen':
+                                ancestors.append(E(desc.tag))
+
+                            # If 'words' were used to designate markers, then
+                            # we shouldn't have an end location at all. To
+                            # achieve this, we simply make the end-location
+                            # identical to start location (assuming, of
+                            # course, that the rest of the nodes are indeed
+                            # identical), so they will be truncated into...
+                            #
+                            #     <location>...</location>
+                            #
+                            # ...instead of:
+                            #
+                            #     <location>
+                            #       <start>...</start>
+                            #       <end>...</end>
+                            #     </location>
+                            #
+                            # The truncating mechanism comes later. Right here
+                            # we're just making sure that they are the same,
+                            # if appropriate, so that the truncating mechanism
+                            # can catch it.
+                            if words:
+                                ancestors.append(E(desc.tag, {'words': words}, sen_nr))
+                                words = None
+
+                            ended_at = ancestors
+
+                            # Stuff our findings into a list of marker
+                            # locations that can be appended to the footnote
+                            # XML.
+                            marker_locations.append({
+                                'num': int(num),
+                                'subart_nr': desc.getparent().attrib['nr'],
+                                'art_nr': parent.attrib['nr'],
+                                'started_at': started_at,
+                                'ended_at': ended_at
+                            })
+
+                        # Check again for the next opening and closing
+                        # markers, except from our cursor, this time.
+                        closing_found = desc.text.find(']', cursor)
+                        opening_found = desc.text.find('[', cursor)
+
+                    # Now that we're done processing the markers and can add
+                    # them to the footnotes in XML format, we'll delete them
+                    # from the text itself.
+                    desc.text = strip_markers(desc.text)
+
+                    # In fact, if it turns out that this is an empty sentence
+                    # node (presumably because all the juicy info has been
+                    # sucked out of it), we'll just delete it.
+                    if desc.tag == 'sen' and desc.text.strip() == '':
+                        desc.getparent().remove(desc)
+
+                if len(marker_locations):
+
+                    # Finally, we'll start to build and add the location XML
+                    # to the footnotes, out of all this information we've
+                    # crunched from the text!
+
+                    for ml in marker_locations:
+                        # Get the marker's appropriate footnote XML.
+                        footnote = footnotes.getchildren()[ml['num'] - 1]
+
+                        # Create the location XML node itself and add it to
+                        # the footnote.
+                        location = E('location', {'type': 'range'})
+                        footnote.append(location)
+
+                        # If the starting and ending locations of the
+                        # opening/closing markers are in different entities,
+                        # we'll need to communicate that with special
+                        # subnodes, aptly named "start" and "end".
+                        if not xml_lists_identical(ml['started_at'], ml['ended_at']):
+                            start = E('start')
+                            end = E('end')
+                            for node in ml['started_at']:
+                                start.append(node)
+                            for node in ml['ended_at']:
+                                end.append(node)
+
+                            location.append(start)
+                            location.append(end)
+                        else:
+                            # Otherwise, we'll just stash what we found in the
+                            # location XML.
+                            for node in ml['started_at']:
+                                location.append(node)
 
     # Write the XML object to output file.
     with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
