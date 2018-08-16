@@ -20,6 +20,7 @@ from sys import stdout
 
 from contenthandlers import separate_sentences
 
+from utils import Matcher
 from utils import strip_markers
 from utils import super_iter
 from utils import xml_lists_identical
@@ -172,25 +173,7 @@ def make_xml(law_num, law_year, parliament_version):
     # what to do next.
     trail = ['start']
 
-    # A helper class to be able to check if a regex matches in an
-    # if-statement, but then process the results in its body, if there's a
-    # match. This is essentially to make up for Python's (consciously decided)
-    # inability to assign values to variables inside if-statements. Note that
-    # a single instance of it is created and then used repeatedly.
-    #
-    # Usage:
-    #
-    # if matcher.check(line, '<tag goo="(\d+)" splah="(\d+)">'):
-    #     goo, splah = matcher.result()
-    #
-    class Matcher():
-        match = None
-        def check(self, line, test_string):
-            self.match = re.match(test_string, line)
-            return self.match != None
-
-        def result(self):
-            return self.match.groups()
+    # See utils.py.
     matcher = Matcher()
 
     # Functions for collecting heaps of text, then returning it all in one go

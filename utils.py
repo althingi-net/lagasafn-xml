@@ -77,3 +77,26 @@ class super_iter():
         if peek_index >= len(self.collection) or peek_index < 0:
             return None
         return self.collection[peek_index]
+
+
+class Matcher():
+    '''
+    A helper class to be able to check if a regex matches in an if-statement,
+    but then process the results in its body, if there's a match. This is
+    essentially to make up for Python's (consciously decided) inability to
+    assign values to variables inside if-statements. Note that a single
+    instance of it is created and then used repeatedly.
+
+    Usage:
+
+    if matcher.check(line, '<tag goo="(\d+)" splah="(\d+)">'):
+        goo, splah = matcher.result()
+    '''
+
+    match = None
+    def check(self, line, test_string):
+        self.match = re.match(test_string, line)
+        return self.match != None
+
+    def result(self):
+        return self.match.groups()
