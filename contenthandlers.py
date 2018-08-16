@@ -86,7 +86,7 @@ def separate_sentences(content):
             # Don't start a new sentence if the character immediately
             # following the dot is a symbol indicating that the sentence's end
             # has not yet been reached (comma, semicomma etc.).
-            if len(next_chunk)> 0 and next_chunk[0] in [',', ';', '–', '-', '[', ']', '…']:
+            if len(next_chunk) > 0 and next_chunk[0] in [',', ';', '–', '-', '[', ']', '…']:
                 split = False
 
             # Don't split if dealing with a reference to an article,
