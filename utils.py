@@ -13,11 +13,6 @@ def strip_markers(text):
     while text.find('  ') > -1:
         text = text.replace('  ', ' ')
 
-    # Only strip if there is content remaining, because we don't want to leave
-    # empty entities.
-    if text.strip() != '':
-        text = text.strip()
-
     return text
 
 

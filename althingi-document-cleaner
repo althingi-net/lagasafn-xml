@@ -355,7 +355,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # appended to the `art_nr`.
                 #
                 # Note: len('.gr.') + 1 = 6
-                art_nr_extra = clean_art_nr_title[gr_index+6:].strip('.')
+                art_nr_extra = clean_art_nr_title[gr_index+6:].strip().strip('.')
                 if len(art_nr_extra):
                     art_nr = '%s%s' % (art_nr, art_nr_extra)
 
@@ -701,7 +701,21 @@ def make_xml(law_num, law_year, parliament_version):
                             # fraction of the text, instead of engulfing an
                             # entire entity, such as a subarticle.
                             if opening_found > 0:
-                                words = desc.text[opening_found + 1:desc.text.find(']', opening_found)]
+                                closing_index = desc.text.find(']', opening_found)
+                                if closing_index == -1:
+                                    # If the closing marker isn't found in
+                                    # this node, then it must be in the next
+                                    # one (probably at the beginning). This is
+                                    # only likely to happen near the end of a
+                                    # subarticle/numarticle, but when it does,
+                                    # we'll grab the content from the next
+                                    # node, up to the closing marker. Almost
+                                    # certainly, there will be none, but we'll
+                                    # grab it, just in case.
+                                    next_text = desc.getnext().text
+                                    words += desc.text[opening_found + 1:] + next_text[0:next_text.find(']')]
+                                else:
+                                    words = desc.text[opening_found + 1:closing_index]
                                 ancestors.append(E(desc.tag, {'words': words}, sen_nr))
 
                             # We'll "pop" this list when we find the closing
@@ -801,8 +815,14 @@ def make_xml(law_num, law_year, parliament_version):
 
                     # Now that we're done processing the markers and can add
                     # them to the footnotes in XML format, we'll delete them
-                    # from the text itself.
+                    # from the text itself. This may leave spaces on the edges
+                    # which we'll remove as well, unless it's a <subart> tag
+                    # with space in it, because those are required to keep the
+                    # XML as legal HTML as well ("<subart> </subart>" instead
+                    # of "<subart/>").
                     desc.text = strip_markers(desc.text)
+                    if desc.tag != 'subart' or desc.text.strip() != '':
+                        desc.text = desc.text.strip()
 
                     # In fact, if it turns out that this is an empty sentence
                     # node (presumably because all the juicy info has been

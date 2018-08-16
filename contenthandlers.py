@@ -1,3 +1,4 @@
+from utils import strip_markers
 from utils import super_iter
 
 # A function for intelligently splitting textual content into separate
@@ -78,6 +79,11 @@ def separate_sentences(content):
         next_chunk = chunks.peek()
 
         if next_chunk is not None:
+            # We need to strip markers from the next chunk, because various
+            # symbols may get in the way of us accurately figuring out how the
+            # next chunk starts.
+            next_chunk = strip_markers(next_chunk)
+
             # Don't start a new sentence if the first character in the next
             # chunk is lowercase.
             if len(next_chunk) > 1 and next_chunk[0] == ' ' and next_chunk[1].islower():
