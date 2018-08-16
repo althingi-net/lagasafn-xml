@@ -58,7 +58,7 @@ def separate_sentences(content):
     chunks = super_iter(content.split('.'))
 
     for chunk in chunks:
-        # There is usually a period at the en and therefore a trailing, empty
+        # There is usually a period at the end and therefore a trailing, empty
         # chunk that we're not interested in.
         if chunk == '':
             continue
