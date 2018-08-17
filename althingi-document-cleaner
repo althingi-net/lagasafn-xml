@@ -203,6 +203,22 @@ def make_xml(law_num, law_year, parliament_version):
 
         return total
 
+    # Checks how much iteration is required to hit a line that matches the
+    # given regex. Optional limit parameter allows limiting search to a specific
+    # number of lines into the future.
+    def occurrence_distance(lines, regex, limit=None):
+        i = 0
+        line = lines.peek(i)
+        while line is not None and (limit is None or i <= limit):
+            line = line.strip()
+            if matcher.check(line, regex):
+                return i
+
+            i += 1
+            line = lines.peek(i)
+
+        return None
+
     # Scrolls the lines until the given string is found. It works internally
     # the same as the collect_until-function, but is provided here with a
     # different name to provide a semantic distinction in the code below.
@@ -398,7 +414,21 @@ def make_xml(law_num, law_year, parliament_version):
         elif matcher.check(line, '<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".+\/hk.jpg" .+\/>'):
             art_nr, subart_nr = matcher.result()
 
-            content = collect_until(lines, '<br/>')
+            # Check how far we are from the typical subart end.
+            linecount_to_br = occurrence_distance(lines, '<br/>')
+
+            # Check if there's a table inside the subarticle.
+            linecount_to_table = occurrence_distance(lines, '<\/table>', linecount_to_br)
+
+            # If a table is found inside the subarticle, we'll want to end the
+            # subarticle when the table ends.
+            if linecount_to_table is not None:
+                # We must append the string '</table>' because it gets left
+                # behind by the collet_until function.
+                content = collect_until(lines, '</table>') + '</table>'
+            else:
+                # Everyting is normal.
+                content = collect_until(lines, '<br/>')
 
             subart = E('subart', {'nr': subart_nr })
             sens = separate_sentences(content)
