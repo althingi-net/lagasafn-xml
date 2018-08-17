@@ -95,6 +95,10 @@ def separate_sentences(content):
             if len(next_chunk) > 0 and next_chunk[0] in [',', ';', '–', '-', '[', ']', '…']:
                 split = False
 
+            # Don't start a new sentence if the dot is a part of a number.
+            if len(next_chunk) > 0 and next_chunk[0].isdigit():
+                split = False
+
             # Don't split if dealing with a reference to an article,
             # sub-article, numerical article or whatever.
             # Example:
