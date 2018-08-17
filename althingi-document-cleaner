@@ -726,7 +726,7 @@ def make_xml(law_num, law_year, parliament_version):
                                 # to add a <sen> to the location, with the
                                 # number of the current sentence, to mark it
                                 # appropriately.
-                                if closing_index == -1:
+                                if closing_index == -1 and desc.tag == 'sen':
                                     try:
                                         next_text = desc.getnext().text
                                         if next_text[0] == ']':
@@ -734,6 +734,8 @@ def make_xml(law_num, law_year, parliament_version):
                                     except:
                                         # Nevermind.
                                         pass
+
+
 
                             # We'll "pop" this list when we find the closing
                             # marker, as per below.
@@ -798,8 +800,42 @@ def make_xml(law_num, law_year, parliament_version):
                             # and end locations clauses get truncated into a
                             # single location clause denoting the <sen> in the
                             # opening location as the marked area.
-                            if started_at[-1].tag == 'sen':
-                                ancestors.append(E(desc.tag, started_at[-1].text))
+                            #
+                            # There is also a corner case in which the closing
+                            # mark is at the start of a sentence, but is
+                            # supposed to close a previous entity. An example
+                            # can be found in 17. tölul. 6. gr. laga nr.
+                            # 19/1940. What identifies this scenario is that
+                            # the closing marker is the first character in the
+                            # sentence, but the sentence itself also has text
+                            # content. Note that this is different from when
+                            # the current sentence has no content other than
+                            # markers, because such marker-only sentences are
+                            # leftovers from the processing of the prior
+                            # sentence, and the marker-only sentence will thus
+                            # be deleted later, once the markers have been
+                            # removed from the content and the sentence
+                            # remains empty. If, on the other hand, the
+                            # closing marker is at the beginning but there is
+                            # also content, it means that the closing marker
+                            # actually belongs to the previous entity. In
+                            # these cases we also wish to add the previous
+                            # entity to the end location so that it gets
+                            # truncated from <start><end> to <location>. For
+                            # examples of this, compare 10. tölul. 6. gr. laga
+                            # nr. 19/1940, which has a tailing marker-only
+                            # sentence and should therefore be left alone
+                            # here, to 17. tölul. 6. gr. laga nr. 19/1940
+                            # which has a closing marker at the beginning of a
+                            # legitimate sentence with content.
+                            desc_has_content = len(strip_markers(desc.text).strip()) > 0
+                            if started_at[-1].tag == 'sen' or (closing_found == 0 and desc_has_content):
+                                # Add a new node to the end location,
+                                # identical to the last node in start
+                                # location.
+                                ancestors.append(E(started_at[-1].tag))
+                                if started_at[-1].text:
+                                    ancestors[-1].text = started_at[-1].text
 
                             ended_at = ancestors
 
