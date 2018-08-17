@@ -625,16 +625,6 @@ def make_xml(law_num, law_year, parliament_version):
                                 sen_nr = str(i + 1)
                                 break
 
-                    # Sometimes markers are not placed according to an entire
-                    # entity, such as subarticle or sentence, but rather by a
-                    # fraction of text within it. This can be determined by
-                    # checking whether an opening marker occurs elsewhere than
-                    # at the beginning of the entity. When this occurs, the
-                    # closing marker is pre-emptively found and we figure out
-                    # what "words" are between them. Those words are then
-                    # added to the footnote location XML.
-                    words = ''
-
                     # Keeps track of where we are currently looking for
                     # markers within the entity being checked.
                     cursor = 0
@@ -691,7 +681,11 @@ def make_xml(law_num, law_year, parliament_version):
                             # If an opening markers is found anywhere else
                             # than at the beginning, then it's around a
                             # fraction of the text, instead of engulfing an
-                            # entire entity, such as a subarticle.
+                            # entire entity, such as a subarticle. That
+                            # fraction of text will be added as an attribute
+                            # to the location element, called "words".
+                            # Example:
+                            #    <sen words="some marked text">2</sen>
                             closing_index = desc.text.find(']', opening_found)
                             if opening_found > 0:
                                 if closing_index == -1:
@@ -705,11 +699,19 @@ def make_xml(law_num, law_year, parliament_version):
                                     # certainly, there will be none, but we'll
                                     # grab it, just in case.
                                     next_text = desc.getnext().text
-                                    words += desc.text[opening_found + 1:] + next_text[0:next_text.find(']')]
+                                    words = desc.text[opening_found + 1:] + next_text[0:next_text.find(']')]
                                 else:
                                     words = desc.text[opening_found + 1:closing_index]
 
-                                ancestors.append(E(desc.tag, {'words': words}, sen_nr))
+                                if desc.tag == 'sen':
+                                    # If this is a sentence tag, then it
+                                    # wasn't added earlier and we have to add
+                                    # it here because we need it to set the
+                                    # "words" attribute.
+                                    ancestors.append(E(desc.tag, sen_nr))
+
+                                # Add the "words" attribute to the last element.
+                                ancestors[-1].attrib['words'] = words
 
                             elif opening_found == 0:
                                 # The closing bracket of a changed sentence
@@ -786,43 +788,18 @@ def make_xml(law_num, law_year, parliament_version):
                             if desc.tag != 'sen':
                                 ancestors.append(E(desc.tag))
 
-                            # If 'words' were used to designate markers, then
-                            # we shouldn't have an end location at all. To
-                            # achieve this, we simply make the end-location
-                            # identical to start location (assuming, of
-                            # course, that the rest of the nodes are indeed
-                            # identical), so they will be truncated into...
-                            #
-                            #     <location>...</location>
-                            #
-                            # ...instead of:
-                            #
-                            #     <location>
-                            #       <start>...</start>
-                            #       <end>...</end>
-                            #     </location>
-                            #
-                            # The truncating mechanism comes later. Right here
-                            # we're just making sure that they are the same,
-                            # if appropriate, so that the truncating mechanism
-                            # can catch it.
-                            if words:
-                                ancestors.append(E(desc.tag, {'words': words}, sen_nr))
-                                words = None
-                            else:
-                                # <sen> is normally not explicitly mentioned
-                                # in the location clause unless there are
-                                # words to mark. So if it's the last element
-                                # in the last opening location, it must be
-                                # there because the opening mechanism figured
-                                # that the marking is around the entire <sen>.
-                                # In this case, we will also add the <sen>
-                                # here, so that the start- and end locations
-                                # clauses get truncated into a single location
-                                # clause denoting the <sen> in the opening
-                                # location as the marked area.
-                                if started_at[-1].tag == 'sen':
-                                    ancestors.append(E(desc.tag, started_at[-1].text))
+                            # <sen> is normally not explicitly mentioned in
+                            # the location clause unless there are words to
+                            # mark. So if the last element in the last opening
+                            # location is a <sen>, it must be there because
+                            # the opening mechanism figured that the marking
+                            # is around the entire <sen>. In this case, we
+                            # will also add the <sen> here, so that the start
+                            # and end locations clauses get truncated into a
+                            # single location clause denoting the <sen> in the
+                            # opening location as the marked area.
+                            if started_at[-1].tag == 'sen':
+                                ancestors.append(E(desc.tag, started_at[-1].text))
 
                             ended_at = ancestors
 
@@ -869,25 +846,33 @@ def make_xml(law_num, law_year, parliament_version):
                         location = E('location', {'type': 'range'})
                         footnote.append(location)
 
-                        # If the starting and ending locations of the
-                        # opening/closing markers are in different entities,
-                        # we'll need to communicate that with special
-                        # subnodes, aptly named "start" and "end".
-                        if not xml_lists_identical(ml['started_at'], ml['ended_at']):
+                        # If the starting and ending locations are identical,
+                        # or if we're using the "words" attribute to mark a
+                        # region of text, we will only want a <location>
+                        # element to denote the marker's locations.
+                        started_at = ml['started_at']
+                        ended_at = ml['ended_at']
+                        if xml_lists_identical(started_at, ended_at) or 'words' in started_at[-1].attrib:
+                            for node in started_at:
+                                location.append(node)
+                        else:
+                            # If, however, the the starting and ending
+                            # locations differ and we are not denoting a
+                            # region of text with "words", we'll need
+                            # sub-location nodes, <start> and <end>, within
+                            # the <location> element, so that the opening and
+                            # closing markers can be placed in completely
+                            # different places.
                             start = E('start')
                             end = E('end')
-                            for node in ml['started_at']:
+                            for node in started_at:
                                 start.append(node)
-                            for node in ml['ended_at']:
+                            for node in ended_at:
                                 end.append(node)
 
                             location.append(start)
                             location.append(end)
-                        else:
-                            # Otherwise, we'll just stash what we found in the
-                            # location XML.
-                            for node in ml['started_at']:
-                                location.append(node)
+
 
     # Write the XML object to output file.
     with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
