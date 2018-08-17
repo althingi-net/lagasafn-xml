@@ -48,6 +48,28 @@ def separate_sentences(content):
     for r in recognized_shorts:
         content = content.replace(r, r.replace('.', '[DOT]'))
 
+    # HTML tables should never be split up into separate sentences, so we'll
+    # encode every dot in them.
+    cursor = 0
+    html_loc = content.find('<table width="100%">', cursor)
+    while html_loc > -1:
+        html_end_loc = content.find('</table>', cursor) + len('</table>')
+
+        # Fish out the HTML table.
+        table_content = content[html_loc:html_end_loc]
+
+        # Encode the dots in the HTML table.
+        table_content = table_content.replace('.', '[DOT]')
+
+        # Stitch the encoded table back into the content.
+        content = content[:html_loc] + table_content + content[html_end_loc:]
+
+        # Continue to see if we find more tables.
+        cursor = html_loc + 1
+        html_loc = content.find('<table width="100%">', cursor)
+    del cursor
+    del html_loc
+
     # The collected sentence so far. Chunks are appended to this string until
     # a new sentence is determined to be appropriate. Starts empty and and is
     # reset for every new sentence.
