@@ -409,13 +409,6 @@ def make_xml(law_num, law_year, parliament_version):
             trail.append('subart')
 
         elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
-            # fake_numart_nr is named so because it doesn't give the current
-            # numart_nr. Not only is it always a digit, when in fact a real
-            # numart_nr can be alphabetical, but even if we only had numbers,
-            # they would still be wrong in some recursive lists. This is why
-            # we won't trust it, and will rather analyze the content of the
-            # next line, which will contain the correct numart_nr in the
-            # correct type.
             numart_nr = strip_markers(lines.peek().strip().strip('.'))
 
             # Dictates where we will place this numart.
