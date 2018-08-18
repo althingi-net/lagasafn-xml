@@ -782,7 +782,7 @@ def make_xml(law_num, law_year, parliament_version):
                                 # may be located in the next sentence.
                                 #
                                 # Example:
-                                #     [Some changed text]. Some other text.
+                                #     [Some changed text.] Some other text.
                                 #
                                 # In these cases we need to check if the first
                                 # letter in the next sentence is a closing
