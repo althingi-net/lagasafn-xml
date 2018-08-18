@@ -710,7 +710,48 @@ def make_xml(law_num, law_year, parliament_version):
                             # Example:
                             #    <sen words="some marked text">2</sen>
                             closing_index = desc.text.find(']', opening_found)
-                            if opening_found > 0:
+
+                            if desc.text.find('tiltekur hverju sinni upphafstíma frestsins') > -1:
+                                pass #import ipdb; ipdb.set_trace()
+
+                            # We now try to figure out whether we want to mark
+                            # an entire entity, such as a sentence or a
+                            # subarticle, or if we want to mark a portion of a
+                            # sentence. If we want to mark a portion,
+                            # "use_words" shall be True.
+
+                            # Find the opening marker after the current one,
+                            # if it exists.
+                            next_opening = desc.text.find('[', opening_found + 1)
+
+                            # Check whether the next opening marker, if it
+                            # exists, is between the current opening marker
+                            # and the next closing marker.
+                            no_opening_between = next_opening == -1 or next_opening > closing_found
+
+                            # Use "words" if 1) the opening marker is at the
+                            # start of the sentence and 2) there is also a
+                            # closing marker found but 3) there's no opening
+                            # marker between the current marker and its
+                            # corresponding closing marker.
+                            partial_at_start = opening_found == 0 and closing_found > -1 and no_opening_between
+
+                            use_words = opening_found > 0 or partial_at_start
+
+                            # NOTE: There is a possible unhandled corner case
+                            # here, if a partial change occurs within a
+                            # partial change that occurs at the beginning of a
+                            # sentence, like so:
+                            #
+                            #  "[Changes [in] the beginning] and bla bla."
+                            #
+                            # So far, we are unaware of such an occurrence.
+                            # We'll deal with that when that happens, as we're
+                            # currently trying to make it through all the
+                            # problems that already manifest themselves in the
+                            # more complicated legal texts.
+
+                            if use_words:
                                 if closing_index == -1:
                                     # If the closing marker isn't found in
                                     # this node, then it must be in the next
