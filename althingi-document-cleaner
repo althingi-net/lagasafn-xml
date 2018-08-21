@@ -711,9 +711,6 @@ def make_xml(law_num, law_year, parliament_version):
                             #    <sen words="some marked text">2</sen>
                             closing_index = desc.text.find(']', opening_found)
 
-                            if desc.text.find('tiltekur hverju sinni upphafstíma frestsins') > -1:
-                                pass #import ipdb; ipdb.set_trace()
-
                             # We now try to figure out whether we want to mark
                             # an entire entity, such as a sentence or a
                             # subarticle, or if we want to mark a portion of a
