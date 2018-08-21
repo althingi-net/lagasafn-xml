@@ -785,15 +785,20 @@ def make_xml(law_num, law_year, parliament_version):
                                 #     [Some changed text.] Some other text.
                                 #
                                 # In these cases we need to check if the first
-                                # letter in the next sentence is a closing
-                                # bracket, and if so, we deduce that we need
-                                # to add a <sen> to the location, with the
-                                # number of the current sentence, to mark it
-                                # appropriately.
+                                # letter in the next sentence is the next
+                                # closing marker, and if so, we deduce that we
+                                # need to add a <sen> to the location, with
+                                # the number of the current sentence, to mark
+                                # it appropriately.
+
+                                # Note that this only applies if there is no
+                                # other opening marker between the current
+                                # one, and the closing marker that might be at
+                                # the beginnin of the next sentence.
                                 if closing_index == -1 and desc.tag == 'sen':
                                     try:
                                         next_text = desc.getnext().text
-                                        if next_text[0] == ']':
+                                        if next_text[0] == ']' and next_opening == -1:
                                             ancestors.append(E(desc.tag, sen_nr))
                                     except:
                                         # Nevermind.
