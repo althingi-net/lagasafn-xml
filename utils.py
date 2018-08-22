@@ -22,6 +22,9 @@ def xml_lists_identical(one, two):
     tagnames, texts (values) and attributes. Does not check subnodes.
     '''
 
+    if type(one) is not list or type(two) is not list:
+        raise TypeError('xml_lists_identical takes exactly two lists')
+
     if len(one) != len(two):
         return False
 
