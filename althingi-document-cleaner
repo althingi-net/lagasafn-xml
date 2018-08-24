@@ -13,6 +13,7 @@ import sys
 
 import settings
 
+from formencode.doctest_xml_compare import xml_compare
 from lxml import etree
 from lxml.builder import E
 from sys import stderr
@@ -939,14 +940,18 @@ def make_xml(law_num, law_year, parliament_version):
                     # to the footnotes, out of all this information we've
                     # crunched from the text!
 
+                    # We'll want to be able to "peek" backwards easily, so
+                    # we'll use the super_iterator. We could also use
+                    # enumerate() but we figure that using the peek function
+                    # is more readable than playing around with iterators.
+                    marker_locations = super_iter(marker_locations)
+
                     for ml in marker_locations:
                         # Get the marker's appropriate footnote XML.
                         footnote = footnotes.getchildren()[ml['num'] - 1]
 
-                        # Create the location XML node itself and add it to
-                        # the footnote.
+                        # Create the location XML node itself.
                         location = E('location', {'type': 'range'})
-                        footnote.append(location)
 
                         # If the starting and ending locations are identical,
                         # or if we're using the "words" attribute to mark a
@@ -974,6 +979,26 @@ def make_xml(law_num, law_year, parliament_version):
 
                             location.append(start)
                             location.append(end)
+
+                        # If the location XML that we're adding is identical
+                        # to the previous location node in the same footnote
+                        # node, then instead of adding the same location node
+                        # again, we'll configure the previous one as
+                        # repetitive. We assume that if the same words are
+                        # marked twice, that all instances of the same words
+                        # should be marked in the given element.
+                        #
+                        # This is done to make it easier to use the XML when
+                        # the same set of words should be marked repeatedly in
+                        # the same sentence.
+                        prev_location = footnotes.getchildren()[ml['num'] - 2].find('location')
+                        if prev_location is not None and xml_compare(prev_location, location):
+                            last_item_in_prev_location = prev_location.getchildren()[-1]
+                            last_item_in_prev_location.attrib['repeat'] = 'true'
+                        else:
+                            # Finally, we add the location node to the
+                            # footnote node.
+                            footnote.append(location)
 
 
     # Write the XML object to output file.
