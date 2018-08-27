@@ -560,9 +560,9 @@ def make_xml(law_num, law_year, parliament_version):
 
                 if matcher.check(footnote_sen, 'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
                     fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
-                    footnote.attrib['nr'] = fn_law_nr
-                    footnote.attrib['year'] = fn_law_year
-                    footnote.attrib['art'] = fn_art_nr
+                    footnote.attrib['law-nr'] = fn_law_nr
+                    footnote.attrib['law-year'] = fn_law_year
+                    footnote.attrib['law-art'] = fn_art_nr
 
             else:
                 # We will gather everything we run across into a string called
@@ -599,6 +599,11 @@ def make_xml(law_num, law_year, parliament_version):
 
                 # Create the footnote node with the gathered content.
                 footnote = E('footnote', E('footnote-sen', gathered))
+
+            # Explicitly state the footnote number as an attribute in the
+            # footnote, so that a parser doesn't have to infer it from the
+            # order of footnotes.
+            footnote.attrib['nr'] = footnote_nr
 
             # Append the footnote to the `footnotes` node which is expected to
             # exist from an earlier iteration.
