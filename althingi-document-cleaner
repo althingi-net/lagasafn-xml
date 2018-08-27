@@ -618,8 +618,62 @@ def make_xml(law_num, law_year, parliament_version):
                 # This way, the text and the marker location information are
                 # separated.
 
-                # Check the content for markers.
+                # The parent is the uppermost node to which footnotes are
+                # relevant. In most cases, it's an <art> node, but it may also
+                # be a <chapter> node, for example.
                 parent = footnotes.getparent()
+
+                # Closing markers have a tendency to appear after the sentence
+                # that they refer to, like so:
+                #
+                # [Here is some sentence.] 2)
+                #
+                # This will result in two sentences:
+                # 1. [Here is some sentence.
+                # 2. ] 2)
+                #
+                # We'll want to combine these two, so we iterate through the
+                # sentences that we have produced and find those that start
+                # with closing markers and move the closing markers to the
+                # previous sentence. This will make parsing end markers much
+                # simpler. If the sentence where we found the closing marker
+                # is empty, we'll delete it.
+                close_mark_re = r'( ?\]? ?<sup style="font-size:60%"> \d+\) </sup>)'
+                nodes_to_kill = []
+                for desc in parent.iterdescendants():
+                    peek = desc.getnext()
+
+                    # We have nothing to do here if the following node doesn't
+                    # exist or contain anything.
+                    if peek is None or peek.text is None:
+                        continue
+
+                    # Keep moving the closing markers from the next node
+                    # ("peek") to the current one ("desc"), until there are no
+                    # closing markers in the next node. (Probably there is
+                    # only one, but you never know.)
+                    while matcher.check(peek.text, close_mark_re):
+                        # Get the actual closing marker from the next node.
+                        stuff_to_move = matcher.result()[0]
+
+                        # Add the closing marker to the current node.
+                        desc.text += stuff_to_move
+
+                        # Remove the closing marker from the next node.
+                        peek.text = re.sub(close_mark_re, '', peek.text, 1)
+
+                    # If there's no content left in the next node, aside from
+                    # the closing markers that we just moved, then we'll put
+                    # the next node on a list of nodes that we'll delete
+                    # later. We can't delete it here because it will break the
+                    # iteration (parent.iterdescendants).
+                    if len(peek.text) == 0:
+                        nodes_to_kill.append(peek)
+
+                # Delete nodes marked for deletion.
+                for node_to_kill in nodes_to_kill:
+                    node_to_kill.getparent().remove(node_to_kill)
+
                 opening_locations = []
                 marker_locations = []
                 for desc in parent.iterdescendants():
@@ -638,14 +692,11 @@ def make_xml(law_num, law_year, parliament_version):
                         # Sentences are not formally numbered in the XML, so
                         # we have to infer their numbers from their location
                         # within their parent nodes.
-                        #
-                        # Note that sen_nr is not necessarily ever used. In
-                        # fact, the <sen> node may not even be added. Last but
-                        # not least, it may be removed, if it is found to
-                        # contain no relevant information once we're done
-                        # processing.
                         for i, sibling in enumerate(desc.getparent().findall('sen')):
                             if sibling == desc:
+                                # Element "numbers" are really used more like
+                                # names than actual numbers, so we'll always
+                                # use them as strings.
                                 sen_nr = str(i + 1)
                                 break
 
@@ -681,6 +732,7 @@ def make_xml(law_num, law_year, parliament_version):
                             # <location>
                             #   <art>5</art>
                             #   <subart>1</subart>
+                            #   <sen>1</sen>
                             # </location>
                             #
                             # To achieve this, we iterate through the
@@ -695,11 +747,13 @@ def make_xml(law_num, law_year, parliament_version):
                                     # beyond the parent node.
                                     break
 
-                            # Normally, we don't want to add sentences in
-                            # footnotes, because they're not formally
-                            # numbered. If we do want to add it, we'll do it
-                            # under special circumstances later in the code.
-                            if desc.tag != 'sen':
+                            # Add the current node. We need to explicitly set
+                            # the sentence number if it's a <sen> node,
+                            # because their numbers are not expressed in
+                            # node's "nr" attribute.
+                            if desc.tag == 'sen':
+                                ancestors.append(E(desc.tag, sen_nr))
+                            else:
                                 ancestors.append(E(desc.tag))
 
                             # If an opening markers is found anywhere else
@@ -734,75 +788,25 @@ def make_xml(law_num, law_year, parliament_version):
                             # corresponding closing marker.
                             partial_at_start = opening_found == 0 and closing_found > -1 and no_opening_between
 
+                            # Boil this logic down into the question: to use
+                            # words or not to use words?
                             use_words = opening_found > 0 or partial_at_start
 
-                            # NOTE: There is a possible unhandled corner case
-                            # here, if a partial change occurs within a
-                            # partial change that occurs at the beginning of a
-                            # sentence, like so:
-                            #
-                            #  "[Changes [in] the beginning] and bla bla."
-                            #
-                            # So far, we are unaware of such an occurrence.
-                            # We'll deal with that when that happens, as we're
-                            # currently trying to make it through all the
-                            # problems that already manifest themselves in the
-                            # more complicated legal texts.
-
                             if use_words:
-                                if closing_index == -1:
-                                    # If the closing marker isn't found in
-                                    # this node, then it must be in the next
-                                    # one (probably at the beginning). This is
-                                    # only likely to happen near the end of a
-                                    # subarticle/numarticle, but when it does,
-                                    # we'll grab the content from the next
-                                    # node, up to the closing marker. Almost
-                                    # certainly, there will be none, but we'll
-                                    # grab it, just in case.
-                                    next_text = desc.getnext().text
-                                    words = desc.text[opening_found + 1:] + next_text[0:next_text.find(']')]
-                                else:
-                                    words = desc.text[opening_found + 1:closing_index]
+                                # NOTE/TODO: We will need to add support for
+                                # using "words" across multiple sentences,
+                                # which is currently unsupported but happens
+                                # in 1-2. málsl. 1. mgr. 95. gr. laga nr.
+                                # 19/1940. We'll need to check for the closing
+                                # marker in the next sentence, presumably
+                                # (and, dare I mention, possibly more than one
+                                # sentence into the future).
 
-                                if desc.tag == 'sen':
-                                    # If this is a sentence tag, then it
-                                    # wasn't added earlier and we have to add
-                                    # it here because we need it to set the
-                                    # "words" attribute.
-                                    ancestors.append(E(desc.tag, sen_nr))
+                                # Figure out which words we want to mark.
+                                words = desc.text[opening_found + 1:closing_index]
 
                                 # Add the "words" attribute to the last element.
                                 ancestors[-1].attrib['words'] = words
-
-                            elif opening_found == 0:
-                                # The closing bracket of a changed sentence
-                                # may be located in the next sentence.
-                                #
-                                # Example:
-                                #     [Some changed text.] Some other text.
-                                #
-                                # In these cases we need to check if the first
-                                # letter in the next sentence is the next
-                                # closing marker, and if so, we deduce that we
-                                # need to add a <sen> to the location, with
-                                # the number of the current sentence, to mark
-                                # it appropriately.
-
-                                # Note that this only applies if there is no
-                                # other opening marker between the current
-                                # one, and the closing marker that might be at
-                                # the beginnin of the next sentence.
-                                if closing_index == -1 and desc.tag == 'sen':
-                                    try:
-                                        next_text = desc.getnext().text
-                                        if next_text[0] == ']' and next_opening == -1:
-                                            ancestors.append(E(desc.tag, sen_nr))
-                                    except:
-                                        # Nevermind.
-                                        pass
-
-
 
                             # We'll "pop" this list when we find the closing
                             # marker, as per below.
@@ -853,56 +857,14 @@ def make_xml(law_num, law_year, parliament_version):
                                     # the parent node.
                                     break
 
-                            # See comment for opening marker.
-                            if desc.tag != 'sen':
+                            # Add the current node. We need to explicitly set
+                            # the sentence number if it's a <sen> node,
+                            # because their numbers are not expressed in
+                            # node's "nr" attribute.
+                            if desc.tag == 'sen':
+                                ancestors.append(E(desc.tag, sen_nr))
+                            else:
                                 ancestors.append(E(desc.tag))
-
-                            # <sen> is normally not explicitly mentioned in
-                            # the location clause unless there are words to
-                            # mark. So if the last element in the last opening
-                            # location is a <sen>, it must be there because
-                            # the opening mechanism figured that the marking
-                            # is around the entire <sen>. In this case, we
-                            # will also add the <sen> here, so that the start
-                            # and end locations clauses get truncated into a
-                            # single location clause denoting the <sen> in the
-                            # opening location as the marked area.
-                            #
-                            # There is also a corner case in which the closing
-                            # mark is at the start of a sentence, but is
-                            # supposed to close a previous entity. An example
-                            # can be found in 17. tölul. 6. gr. laga nr.
-                            # 19/1940. What identifies this scenario is that
-                            # the closing marker is the first character in the
-                            # sentence, but the sentence itself also has text
-                            # content. Note that this is different from when
-                            # the current sentence has no content other than
-                            # markers, because such marker-only sentences are
-                            # leftovers from the processing of the prior
-                            # sentence, and the marker-only sentence will thus
-                            # be deleted later, once the markers have been
-                            # removed from the content and the sentence
-                            # remains empty. If, on the other hand, the
-                            # closing marker is at the beginning but there is
-                            # also content, it means that the closing marker
-                            # actually belongs to the previous entity. In
-                            # these cases we also wish to add the previous
-                            # entity to the end location so that it gets
-                            # truncated from <start><end> to <location>. For
-                            # examples of this, compare 10. tölul. 6. gr. laga
-                            # nr. 19/1940, which has a tailing marker-only
-                            # sentence and should therefore be left alone
-                            # here, to 17. tölul. 6. gr. laga nr. 19/1940
-                            # which has a closing marker at the beginning of a
-                            # legitimate sentence with content.
-                            desc_has_content = len(strip_markers(desc.text).strip()) > 0
-                            if started_at[-1].tag == 'sen' or (closing_found == 0 and desc_has_content):
-                                # Add a new node to the end location,
-                                # identical to the last node in start
-                                # location.
-                                ancestors.append(E(started_at[-1].tag))
-                                if started_at[-1].text:
-                                    ancestors[-1].text = started_at[-1].text
 
                             ended_at = ancestors
 
@@ -927,12 +889,6 @@ def make_xml(law_num, law_year, parliament_version):
                     # from the text itself. This may leave spaces on the edges
                     # which we'll remove as well.
                     desc.text = strip_markers(desc.text).strip()
-
-                    # In fact, if it turns out that this is an empty sentence
-                    # node (presumably because all the juicy info has been
-                    # sucked out of it), we'll just delete it.
-                    if desc.tag == 'sen' and desc.text.strip() == '':
-                        desc.getparent().remove(desc)
 
                 if len(marker_locations):
 
