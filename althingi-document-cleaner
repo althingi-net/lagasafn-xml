@@ -564,10 +564,6 @@ def make_xml(law_num, law_year, parliament_version):
                     footnote.attrib['year'] = fn_law_year
                     footnote.attrib['art'] = fn_art_nr
 
-                footnotes.append(footnote)
-
-                trail.append('footnote')
-
             else:
                 # We will gather everything we run across into a string called
                 # `gathered`, until we run into a string that indicates that
@@ -604,10 +600,9 @@ def make_xml(law_num, law_year, parliament_version):
                 # Create the footnote node with the gathered content.
                 footnote = E('footnote', E('footnote-sen', gathered))
 
-                # Append the footnote to the `footnotes` node which is expected to exist from an earlier iteration.
-                footnotes.append(footnote)
-
-                trail.append('footnote')
+            # Append the footnote to the `footnotes` node which is expected to
+            # exist from an earlier iteration.
+            footnotes.append(footnote)
 
             if lines.peek().strip() == '</small>':
                 # At this point, the basic footnote XML has been produced,
@@ -956,6 +951,8 @@ def make_xml(law_num, law_year, parliament_version):
                             # footnote node.
                             footnote.append(location)
 
+            # Leave a trail saying we're done processing a footnote.
+            trail.append('footnote')
 
     # Write the XML object to output file.
     with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
