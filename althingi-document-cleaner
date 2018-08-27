@@ -756,21 +756,24 @@ def make_xml(law_num, law_year, parliament_version):
                             else:
                                 ancestors.append(E(desc.tag))
 
-                            # If an opening markers is found anywhere else
-                            # than at the beginning, then it's around a
-                            # fraction of the text, instead of engulfing an
-                            # entire entity, such as a subarticle. That
-                            # fraction of text will be added as an attribute
-                            # to the location element, called "words".
-                            # Example:
-                            #    <sen words="some marked text">2</sen>
-                            closing_index = desc.text.find(']', opening_found)
-
                             # We now try to figure out whether we want to mark
-                            # an entire entity, such as a sentence or a
-                            # subarticle, or if we want to mark a portion of a
-                            # sentence. If we want to mark a portion,
-                            # "use_words" shall be True.
+                            # an entire entity (typically a sentence), or if
+                            # we want to mark a portion of it. If we want to
+                            # mark a portion, "use_words" shall be True and
+                            # the footnote XML will contain something like
+                            # this:
+                            #
+                            #    <sen words="some marked text">2</sen>
+                            #
+                            # Instead of:
+                            #
+                            #    <sen>2</sen>
+                            #
+
+                            # At this point, the variable `opening_found`
+                            # contains the location of the first opening
+                            # marker (the symbol "]") in the current node's
+                            # text.
 
                             # Find the opening marker after the current one,
                             # if it exists.
@@ -802,8 +805,48 @@ def make_xml(law_num, law_year, parliament_version):
                                 # (and, dare I mention, possibly more than one
                                 # sentence into the future).
 
-                                # Figure out which words we want to mark.
-                                words = desc.text[opening_found + 1:closing_index]
+                                # We'll start with everything from the opening
+                                # marker onward. Because of possible markers
+                                # in the text that should end up in "words",
+                                # we'll need to do a bit of processing to
+                                # figure out where exactly the appropriate
+                                # closing marker is located. Quite possibly,
+                                # it's not simply the first one.
+                                words = desc.text[opening_found + 1:]
+
+                                # Eliminate **pairs** of opening and closing
+                                # markers beyond the opening marker we're
+                                # currently dealing with. When this has been
+                                # accomplished, the next closing marker should
+                                # be the one that goes with the opening marker
+                                # that we're currently dealing with. Example:
+                                #
+                                #     a word [and another] that says] boo
+                                #
+                                # Should become:
+                                #
+                                #     a word and another that says] boo
+                                #
+                                # Note that the opening/closing marker pair
+                                # around "and another" have disappeared
+                                # because they came in a pair. With such pairs
+                                # removed, we can conclude our "words"
+                                # variable from the remaining non-paired
+                                # closing marker, and the result should be:
+                                #
+                                #     a word and another that says
+                                #
+                                words = re.sub(
+                                    '\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
+                                    r'\1',
+                                    words
+                                )
+
+                                # Find the first non-paired closing marker.
+                                closing_index = words.find(']')
+
+                                # Cut the "words" variable appropriately.
+                                words = words[:closing_index]
 
                                 # Add the "words" attribute to the last element.
                                 ancestors[-1].attrib['words'] = words
