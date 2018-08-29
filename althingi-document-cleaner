@@ -845,8 +845,17 @@ def make_xml(law_num, law_year, parliament_version):
                                 # Find the first non-paired closing marker.
                                 closing_index = words.find(']')
 
-                                # Cut the "words" variable appropriately.
-                                words = words[:closing_index]
+                                # Cut the "words" variable appropriately. If
+                                # closing_index wasn't found, it means that
+                                # the "words" actually span beyond this
+                                # sentence. Instead of cutting the words
+                                # string (by -1 because the closing symbol
+                                # wasn't found, which would make no sense), we
+                                # leave it intact. The rest of the "words"
+                                # string will be placed in an <end> element by
+                                # the closing-marker mechanism.
+                                if closing_index > -1:
+                                    words = words[:closing_index]
 
                                 # Add the "words" attribute to the last element.
                                 ancestors[-1].attrib['words'] = words
@@ -909,6 +918,43 @@ def make_xml(law_num, law_year, parliament_version):
                             else:
                                 ancestors.append(E(desc.tag))
 
+                            # If the start location had a "words" attribute,
+                            # indicating that a specific set of words should
+                            # be marked, then we'll copy that attribute here
+                            # to the end location, so that the <start> and
+                            # <end> tags will get truncated into a unified
+                            # <location> tag...
+                            if 'words' in started_at[-1].attrib:
+                                # ...except, if it turns out that we're
+                                # actually dealing with a different sentence
+                                # than was specified in the start location,
+                                # but the "words" attribute is being used, it
+                                # means that a string is to be marked that
+                                # spans more than one sentence.
+                                #
+                                # In such a case, the start location will
+                                # determine the opening marker via its "words"
+                                # attribute, but the end location (being
+                                # processed here) wlil determine the closing
+                                # marker with its distinct set of "words",
+                                # each attribute containing the set of words
+                                # contained in their respective sentences.
+                                if sen_nr != started_at[-1].text:
+                                    # Remove pairs of opening/closing markers
+                                    # from the "words", so that we find the
+                                    # correct closing marker. (See comment on
+                                    # same process in processing of opening
+                                    # markers above.)
+                                    words = re.sub(
+                                        '\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
+                                        r'\1',
+                                        words
+                                    )
+                                    words = desc.text[:desc.text.find(']')]
+                                else:
+                                    words = started_at[-1].attrib['words']
+                                ancestors[-1].attrib['words'] = words
+
                             ended_at = ancestors
 
                             # Stuff our findings into a list of marker
@@ -953,12 +999,11 @@ def make_xml(law_num, law_year, parliament_version):
                         location = E('location', {'type': 'range'})
 
                         # If the starting and ending locations are identical,
-                        # or if we're using the "words" attribute to mark a
-                        # region of text, we will only want a <location>
-                        # element to denote the marker's locations.
+                        # we will only want a <location> element to denote the
+                        # marker's locations.
                         started_at = ml['started_at']
                         ended_at = ml['ended_at']
-                        if xml_lists_identical(started_at, ended_at) or 'words' in started_at[-1].attrib:
+                        if xml_lists_identical(started_at, ended_at):
                             for node in started_at:
                                 location.append(node)
                         else:
