@@ -940,7 +940,7 @@ def make_xml(law_num, law_year, parliament_version):
                                 # In such a case, the start location will
                                 # determine the opening marker via its "words"
                                 # attribute, but the end location (being
-                                # processed here) wlil determine the closing
+                                # processed here) will determine the closing
                                 # marker with its distinct set of "words",
                                 # each attribute containing the set of words
                                 # contained in their respective sentences.
