@@ -638,7 +638,12 @@ def make_xml(law_num, law_year, parliament_version):
                 # previous sentence. This will make parsing end markers much
                 # simpler. If the sentence where we found the closing marker
                 # is empty, we'll delete it.
-                close_mark_re = r'( ?\]? ?<sup style="font-size:60%"> \d+\) </sup>)'
+                #
+                # In `close_mark_re` we allow for a preceding deletion mark
+                # and move that as well, since it must belong to the previous
+                # sentence if it precedes the closing marker that clear does.
+                # (Happens in 2. mgr. 165. gr. laga nr. 19/1940.)
+                close_mark_re = r'((… <sup style="font-size:60%"> \d+\) </sup>)? ?\]? ?<sup style="font-size:60%"> \d+\) </sup>)'
                 nodes_to_kill = []
                 for desc in parent.iterdescendants():
                     peek = desc.getnext()
