@@ -1,5 +1,17 @@
 import re
 
+def strip_links(text):
+    '''
+    Strips links from text. Also strips trailing whitespace after the link,
+    because there is always a newline and a tab after the links in our input.
+    '''
+
+    regex = r'<a.*?>\s*(.*?)\s*</a>\s*'
+    text = re.sub(regex, r'\1', text)
+
+    return text
+
+
 def strip_markers(text):
     '''
     Strips markers from text.

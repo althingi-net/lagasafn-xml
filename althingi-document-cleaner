@@ -22,6 +22,7 @@ from sys import stdout
 from contenthandlers import separate_sentences
 
 from utils import Matcher
+from utils import strip_links
 from utils import strip_markers
 from utils import super_iter
 from utils import xml_lists_identical
@@ -439,7 +440,7 @@ def make_xml(law_num, law_year, parliament_version):
                 content = collect_until(lines, '<br/>')
 
             subart = E('subart', {'nr': subart_nr })
-            sens = separate_sentences(content)
+            sens = separate_sentences(strip_links(content))
             for sen in sens:
                 subart.append(E('sen', sen))
             art.append(subart)
@@ -533,7 +534,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             content = collect_until(lines, '<br/>')
 
-            for sen in separate_sentences(content):
+            for sen in separate_sentences(strip_links(content)):
                 numart.append(E('sen', sen))
 
             trail.append('numart')
