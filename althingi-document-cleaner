@@ -406,6 +406,13 @@ def make_xml(law_num, law_year, parliament_version):
 
                 art.append(E('name', art_name))
 
+            # Check if the article is empty aside from markers that need to be
+            # included in the article <nr-title> or <name> (depending on
+            # whether <name> exists at all).
+            while lines.peek().strip() in ['…', ']']:
+                marker = collect_until(lines, '</sup>')
+                art.getchildren()[-1].text += ' ' + marker + ' </sup>'
+
             trail.append('art-nr')
 
             # There can be no current subarticle if we've just discovered a
@@ -862,6 +869,13 @@ def make_xml(law_num, law_year, parliament_version):
                                 if closing_index > -1:
                                     words = words[:closing_index]
 
+                                # Explicitly remove marker stuff, even though
+                                # most likely it will already be gone because
+                                # the marker parsing implicitly avoids
+                                # including them. Such removal may leave stray
+                                # space that we also clear.
+                                words = strip_markers(words).strip()
+
                                 # Add the "words" attribute to the last element.
                                 ancestors[-1].attrib['words'] = words
 
@@ -944,7 +958,7 @@ def make_xml(law_num, law_year, parliament_version):
                                 # marker with its distinct set of "words",
                                 # each attribute containing the set of words
                                 # contained in their respective sentences.
-                                if sen_nr != started_at[-1].text:
+                                if desc.tag == 'sen' and sen_nr != started_at[-1].text:
                                     # Remove pairs of opening/closing markers
                                     # from the "words", so that we find the
                                     # correct closing marker. (See comment on
@@ -958,6 +972,7 @@ def make_xml(law_num, law_year, parliament_version):
                                     words = desc.text[:desc.text.find(']')]
                                 else:
                                     words = started_at[-1].attrib['words']
+
                                 ancestors[-1].attrib['words'] = words
 
                             ended_at = ancestors
