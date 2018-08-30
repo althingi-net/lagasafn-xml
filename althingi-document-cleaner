@@ -554,59 +554,77 @@ def make_xml(law_num, law_year, parliament_version):
         elif line == '<sup style="font-size:60%">' and trail[-1] in ['footnotes', 'footnote']:
             # We've found a footnote inside the footnote section!
 
+            # Determine the footnote number.
             footnote_nr = collect_until(lines, '</sup>').strip(')')
+
+            # Create the footnote XML node.
+            footnote = E('footnote')
 
             peek = lines.peek().strip()
             if matcher.check(peek, '<a href="(\/altext\/.*)">'):
                 # This is a footnote regarding a legal change.
                 href = 'https://www.althingi.is%s' % matcher.result()[0]
 
+                # Retrieve the the content of the link to the external law that we found.
                 scroll_until(lines, '<a href="(\/altext\/.*)">')
                 footnote_sen = collect_until(lines, '</a>')
 
-                footnote = E('footnote', {'href': href}, E('footnote-sen', footnote_sen))
+                # Update the footnote with the content discovered so far.
+                footnote.attrib['href'] = href
+                footnote.append(E('footnote-sen', footnote_sen))
 
+                # If the content found so far adheres to the recognized
+                # pattern of external law, we'll put that information in
+                # attributes as well. (It should.)
                 if matcher.check(footnote_sen, 'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
                     fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
                     footnote.attrib['law-nr'] = fn_law_nr
                     footnote.attrib['law-year'] = fn_law_year
                     footnote.attrib['law-art'] = fn_art_nr
 
-            else:
-                # We will gather everything we run across into a string called
-                # `gathered`, until we run into a string that indicates that
-                # either this footnote section has ended, or we've run across
-                # a new footnote.
-                #
-                # Either one of the expected tags should absolutely appear,
-                # but even if they don't, this will still error out instead of
-                # looping forever, despite the "while True" condition, because
-                # "next(lines)" will eventually run out of lines.
-                gathered = ''
-                while True:
-                    if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
-                        break
-                    else:
-                        # The text we want is separated into lines with
-                        # arbitrary indenting and HTML comments which will
-                        # later be removed. As a result, meaningless
-                        # whitespace is all over the place. To fix this, we'll
-                        # remove whitespace from either side of the string,
-                        # but add a space at the end, which will occasionally
-                        # result in a double whitespace or a whitespace
-                        # between tags and content. Those will be fixed later,
-                        # resulting in a neat string without any unwanted
-                        # whitespace.
-                        gathered += next(lines).strip() + ' '
+            # Some footnotes don't contain a link to an external law like
+            # above but rather some arbitrary information. In these cases
+            # we'll need to parse the content differently. But also, sometimes
+            # a link to an external law is followed by extra content, which
+            # will also be parsed here and included in the footnote.
+            #
+            # We will gather everything we run across into a string called
+            # `gathered`, until we run into a string that indicates that
+            # either this footnote section has ended, or we've run across a
+            # new footnote. Either one of the expected tags should absolutely
+            # appear, but even if they don't, this will still error out
+            # instead of looping forever, despite the "while True" condition,
+            # because "next(lines)" will eventually run out of lines.
+            gathered = ''
+            while True:
+                if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
+                    break
+                else:
+                    # The text we want is separated into lines with arbitrary
+                    # indenting and HTML comments which will later be removed.
+                    # As a result, meaningless whitespace is all over the
+                    # place. To fix this, we'll remove whitespace from either
+                    # side of the string, but add a space at the end, which
+                    # will occasionally result in a double whitespace or a
+                    # whitespace between tags and content. Those will be fixed
+                    # later, resulting in a neat string without any unwanted
+                    # whitespace.
+                    gathered += next(lines).strip() + ' '
 
                 # Get rid of HTML comments.
                 gathered = re.sub(r'<!--.*?"-->', '', gathered)
 
                 # Get rid of remaining unwanted whitespace (see above).
-                gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</').strip()
+                gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</')
 
-                # Create the footnote node with the gathered content.
-                footnote = E('footnote', E('footnote-sen', gathered))
+            # If extra content was found, we'll put that in a separate
+            # sentence inside the footnote. If there already was a
+            # <footnote-sen> because we found a link to an external law, then
+            # there will be two sentences in the footnote. If this is the only
+            # content found and there is no link to an external law, then
+            # there will only be this one.
+            if len(gathered):
+                footnote.append(E('footnote-sen', gathered.strip()))
 
             # Explicitly state the footnote number as an attribute in the
             # footnote, so that a parser doesn't have to infer it from the
