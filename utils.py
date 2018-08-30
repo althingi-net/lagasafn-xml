@@ -14,7 +14,7 @@ def strip_links(text):
 
 def strip_markers(text):
     '''
-    Strips markers from text.
+    Strips markers from text and cleans up resulting weirdness.
     '''
 
     text = text.replace('…', '')
@@ -24,6 +24,8 @@ def strip_markers(text):
 
     while text.find('  ') > -1:
         text = text.replace('  ', ' ')
+
+    text = text.replace(' ,', ',')
 
     return text
 
