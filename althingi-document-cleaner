@@ -565,7 +565,8 @@ def make_xml(law_num, law_year, parliament_version):
                 # This is a footnote regarding a legal change.
                 href = 'https://www.althingi.is%s' % matcher.result()[0]
 
-                # Retrieve the the content of the link to the external law that we found.
+                # Retrieve the the content of the link to the external law
+                # that we found.
                 scroll_until(lines, '<a href="(\/altext\/.*)">')
                 footnote_sen = collect_until(lines, '</a>')
 
