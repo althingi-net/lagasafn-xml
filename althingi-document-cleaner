@@ -554,8 +554,27 @@ def make_xml(law_num, law_year, parliament_version):
         elif line == '<sup style="font-size:60%">' and trail[-1] in ['footnotes', 'footnote']:
             # We've found a footnote inside the footnote section!
 
+            # Scroll past the closing tag, since we're not going to use its
+            # content (see comment below).
+            scroll_until(lines, '</sup>')
+
             # Determine the footnote number.
-            footnote_nr = collect_until(lines, '</sup>').strip(')')
+            # In a perfect world, we should be able to get the footnote number with a line like this:
+            #
+            #     footnote_nr = collect_until(lines, '</sup>').strip(')')
+            #
+            # But it may in fact be wrong, like in 149. gr. laga nr. 19/1940,
+            # where two consecutive footnotes are numbered as 1 below the
+            # article. The numbers are correct in the reference in the article
+            # itself, though. For this reason, we'll deduce the correct number
+            # from the number of <footnote> tags present in the current
+            # <footnotes> tag. That count plus one should be the correct
+            # number.
+            #
+            # The footnote number, and in fact other numbers, are always used
+            # as strings because they really function more like names rather
+            # than numbers. So we make it a string right away.
+            footnote_nr = str(len(footnotes.findall('footnote')) + 1)
 
             # Create the footnote XML node.
             footnote = E('footnote')
