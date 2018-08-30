@@ -532,10 +532,66 @@ def make_xml(law_num, law_year, parliament_version):
 
                 numart.append(E('name', numart_name))
 
+            # Read in the remainder of the content.
             content = collect_until(lines, '<br/>')
 
-            for sen in separate_sentences(strip_links(content)):
-                numart.append(E('sen', sen))
+            # Split the content into sentences.
+            sens = separate_sentences(strip_links(content))
+
+            # Check if this numart is actually just a content-less container
+            # for a sub-numart, by checking if the beginning of the content is
+            # in fact the starting of a new list, numeric or alphabetic.
+            possible_nr_title = strip_markers(sens[0]) if len(sens) else ''
+            if possible_nr_title in ['a.', '1.']:
+                new_numart_nr = possible_nr_title.strip('.')
+
+                # Instead of adding the found sentences to the numart that
+                # we've just made above, we'll create an entirely new numart,
+                # called new_numart, and add that to the current numart.
+                new_numart = E(
+                    'numart',
+                    {
+                        'nr': new_numart_nr,
+                        # The style-note is to communicate information to a
+                        # possible layouting mechanism. In the official
+                        # documents, a sub-numart that appears this way is not
+                        # shown in a new line as normally, but rather inside
+                        # its parent as if it were content. It's the layouting
+                        # mechanism's responsibility to react to this
+                        # information, if needed.
+                        'style-note': 'inline-with-parent'
+                    },
+                    # Note that we go back for the 'sens' list because we'll
+                    # want to include markers that might be there, but have
+                    # been removed from `possible_nr_title` for comparison
+                    # purposes.
+                    E('nr-title', sens[0])
+                )
+
+                # Mark the new numart as alphabetic, if appropriate.
+                if not new_numart_nr.isdigit():
+                    new_numart.attrib['type'] = 'alphabet'
+
+                # The first entity in the list will be the nr-title, which
+                # we've already used and we don't want in the content, so
+                # popped out here.
+                sens.pop(0)
+
+                # Add the sentences to the new numart.
+                for sen in sens:
+                    new_numart.append(E('sen', sen))
+
+                # Add the new numart to the current numart.
+                numart.append(new_numart)
+
+                # Make sure that future iterations recognize the new numart as
+                # the last one processed.
+                numart = new_numart
+
+            else:
+                # Add the sentences to the numart.
+                for sen in sens:
+                    numart.append(E('sen', sen))
 
             trail.append('numart')
 
