@@ -1012,8 +1012,6 @@ def make_xml(law_num, law_year, parliament_version):
                             # XML.
                             marker_locations.append({
                                 'num': int(num),
-                                'subart_nr': desc.getparent().attrib['nr'],
-                                'art_nr': parent.attrib['nr'],
                                 'started_at': started_at,
                                 'ended_at': ended_at
                             })
