@@ -1,5 +1,47 @@
+from lxml.builder import E
+
+from utils import order_among_siblings
 from utils import strip_markers
 from utils import super_iter
+
+def generate_ancestors(elem, parent):
+    # Locations of markers in footnote XML are denoted as a list of tags,
+    # whose name correspond to the tag name where the marker is to be located,
+    # and  whose value represents the target node's "nr" attribute.
+    # Example:
+    #
+    # <art nr="5">
+    #   <subart nr="1">
+    #     <sen>[Notice the markers?]</sen>
+    #   </subart>
+    # </art>
+    #
+    # This will result in location XML in the footnote XML as such:
+    #
+    # <location>
+    #   <art>5</art>
+    #   <subart>1</subart>
+    #   <sen>1</sen>
+    # </location>
+    #
+    # To achieve this, we iterate through the ancestors of the node currently
+    # being processed. For each ancestor that we find, we add to the location
+    # XML.
+    ancestors = []
+    for ancestor in elem.iterancestors():
+        ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+        if ancestor == parent:
+            # We're not interested in anything
+            # beyond the parent node.
+            break
+
+    # If we cannot find a 'nr' attribute, we'll figure it out and still put it in.
+    if 'nr' in elem.attrib:
+        ancestors.append(E(elem.tag))
+    else:
+        ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
+
+    return ancestors
 
 # A function for intelligently splitting textual content into separate
 # sentences based on linguistic rules and patterns.

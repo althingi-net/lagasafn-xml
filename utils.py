@@ -30,6 +30,23 @@ def strip_markers(text):
     return text
 
 
+def order_among_siblings(elem):
+    '''
+    Returns the order of the given element among its siblings. For example, if
+    there are three <doodoo> elements in a row, and you call this function
+    with the second one, it will return 2.
+    '''
+
+    result = None
+
+    for i, sibling in enumerate(elem.getparent().findall(elem.tag)):
+        if sibling == elem:
+            result = i + 1
+            break
+
+    return result
+
+
 def xml_lists_identical(one, two):
     '''
     Takes two lists of XML nodes and checks whether they have the same

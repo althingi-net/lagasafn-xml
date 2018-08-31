@@ -19,9 +19,11 @@ from lxml.builder import E
 from sys import stderr
 from sys import stdout
 
+from contenthandlers import generate_ancestors
 from contenthandlers import separate_sentences
 
 from utils import Matcher
+from utils import order_among_siblings
 from utils import strip_links
 from utils import strip_markers
 from utils import super_iter
@@ -795,18 +797,6 @@ def make_xml(law_num, law_year, parliament_version):
 
                     text = desc.text # Short-hand.
 
-                    if desc.tag == 'sen':
-                        # Sentences are not formally numbered in the XML, so
-                        # we have to infer their numbers from their location
-                        # within their parent nodes.
-                        for i, sibling in enumerate(desc.getparent().findall('sen')):
-                            if sibling == desc:
-                                # Element "numbers" are really used more like
-                                # names than actual numbers, so we'll always
-                                # use them as strings.
-                                sen_nr = str(i + 1)
-                                break
-
                     # Keeps track of where we are currently looking for
                     # markers within the entity being checked.
                     cursor = 0
@@ -821,47 +811,9 @@ def make_xml(law_num, law_year, parliament_version):
                             # will continue from here.
                             cursor = opening_found + 1
 
-                            # Locations of markers in footnote XML are denoted
-                            # as a list of tags, whose name correspond to the
-                            # tag name where the marker is to be located, and 
-                            # whose value represents the target node's "nr"
-                            # attribute. Example:
-                            #
-                            # <art nr="5">
-                            #   <subart nr="1">
-                            #     <sen>[Notice the markers?]</sen>
-                            #   </subart>
-                            # </art>
-                            #
-                            # This will result in location XML in the footnote
-                            # XML as such:
-                            #
-                            # <location>
-                            #   <art>5</art>
-                            #   <subart>1</subart>
-                            #   <sen>1</sen>
-                            # </location>
-                            #
-                            # To achieve this, we iterate through the
-                            # ancestors of the node currently being processed.
-                            # For each ancestor that we find, we add to the
-                            # location XML.
-                            ancestors = []
-                            for ancestor in desc.iterancestors():
-                                ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
-                                if ancestor == parent:
-                                    # We're not interested in anything
-                                    # beyond the parent node.
-                                    break
-
-                            # Add the current node. We need to explicitly set
-                            # the sentence number if it's a <sen> node,
-                            # because their numbers are not expressed in
-                            # node's "nr" attribute.
-                            if desc.tag == 'sen':
-                                ancestors.append(E(desc.tag, sen_nr))
-                            else:
-                                ancestors.append(E(desc.tag))
+                            # Get the ancestors of the node (see function's
+                            # comments for details.)
+                            ancestors = generate_ancestors(desc, parent)
 
                             # We now try to figure out whether we want to mark
                             # an entire entity (typically a sentence), or if
@@ -1012,25 +964,9 @@ def make_xml(law_num, law_year, parliament_version):
                             # former clause of the if-sentence.
                             started_at = opening_locations.pop()
 
-                            # Figure out the end location. Same deal as when
-                            # figuring out the opening marker's location, see
-                            # comments above.
-                            ancestors = []
-                            for ancestor in desc.iterancestors():
-                                ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
-                                if ancestor == parent:
-                                    # We're not interested in anything beyond
-                                    # the parent node.
-                                    break
-
-                            # Add the current node. We need to explicitly set
-                            # the sentence number if it's a <sen> node,
-                            # because their numbers are not expressed in
-                            # node's "nr" attribute.
-                            if desc.tag == 'sen':
-                                ancestors.append(E(desc.tag, sen_nr))
-                            else:
-                                ancestors.append(E(desc.tag))
+                            # Get the ancestors of the node (see function's
+                            # comments for details.)
+                            ancestors = generate_ancestors(desc, parent)
 
                             # If the start location had a "words" attribute,
                             # indicating that a specific set of words should
@@ -1053,6 +989,7 @@ def make_xml(law_num, law_year, parliament_version):
                                 # marker with its distinct set of "words",
                                 # each attribute containing the set of words
                                 # contained in their respective sentences.
+                                sen_nr = str(order_among_siblings(desc))
                                 if desc.tag == 'sen' and sen_nr != started_at[-1].text:
                                     # Remove pairs of opening/closing markers
                                     # from the "words", so that we find the
