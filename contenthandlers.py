@@ -1,8 +1,27 @@
+import re
+
 from lxml.builder import E
 
 from utils import order_among_siblings
-from utils import strip_markers
 from utils import super_iter
+
+def strip_markers(text):
+    '''
+    Strips markers from text and cleans up resulting weirdness.
+    '''
+
+    text = text.replace('…', '')
+    text = text.replace('[', '')
+    text = text.replace(']', '')
+    text = re.sub(r'<sup style="font-size:60%"> \d+\) </sup>', '', text)
+
+    while text.find('  ') > -1:
+        text = text.replace('  ', ' ')
+
+    text = text.replace(' ,', ',')
+
+    return text
+
 
 def next_footnote_sup(elem, cursor):
     '''

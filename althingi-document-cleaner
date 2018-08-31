@@ -22,11 +22,11 @@ from sys import stdout
 from contenthandlers import generate_ancestors
 from contenthandlers import next_footnote_sup
 from contenthandlers import separate_sentences
+from contenthandlers import strip_markers
 
 from utils import Matcher
 from utils import order_among_siblings
 from utils import strip_links
-from utils import strip_markers
 from utils import super_iter
 from utils import xml_lists_identical
 

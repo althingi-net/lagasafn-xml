@@ -12,24 +12,6 @@ def strip_links(text):
     return text
 
 
-def strip_markers(text):
-    '''
-    Strips markers from text and cleans up resulting weirdness.
-    '''
-
-    text = text.replace('…', '')
-    text = text.replace('[', '')
-    text = text.replace(']', '')
-    text = re.sub(r'<sup style="font-size:60%"> \d+\) </sup>', '', text)
-
-    while text.find('  ') > -1:
-        text = text.replace('  ', ' ')
-
-    text = text.replace(' ,', ',')
-
-    return text
-
-
 def order_among_siblings(elem):
     '''
     Returns the order of the given element among its siblings. For example, if
