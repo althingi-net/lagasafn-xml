@@ -795,8 +795,6 @@ def make_xml(law_num, law_year, parliament_version):
                     if not desc.text:
                         continue
 
-                    text = desc.text # Short-hand.
-
                     # Keeps track of where we are currently looking for
                     # markers within the entity being checked.
                     cursor = 0
@@ -1024,6 +1022,8 @@ def make_xml(law_num, law_year, parliament_version):
                         # markers, except from our cursor, this time.
                         closing_found = desc.text.find(']', cursor)
                         opening_found = desc.text.find('[', cursor)
+
+
 
                     # Now that we're done processing the markers and can add
                     # them to the footnotes in XML format, we'll delete them
