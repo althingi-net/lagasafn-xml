@@ -4,6 +4,34 @@ from utils import order_among_siblings
 from utils import strip_markers
 from utils import super_iter
 
+def next_footnote_sup(elem, cursor):
+    '''
+    Returns the next footnote number in the given element. Sometimes the
+    number is located in the next element, for example: "or not the
+    [minister]. <sup ...> 2) </sup>". In these cases we'll need to peek into
+    the next element. We'll do this by changing the haystack in which we look.
+    We won't use the cursor when looking for it though, because it will
+    definitely be the first <sup> we run into, inside the next element.
+
+    By the way:
+        len('<sup style="font-size:60%">') == 27
+    '''
+    if elem.text.find('<sup style="font-size:60%">', cursor) > -1:
+        haystack = elem.text
+        num_start = haystack.find('<sup style="font-size:60%">', cursor) + 27
+        num_end = haystack.find('</sup>', cursor)
+        num_text = haystack[num_start:num_end]
+        num = num_text.strip().strip(')')
+    else:
+        haystack = elem.getnext().text
+        num_start = haystack.find('<sup style="font-size:60%">') + 27
+        num_end = haystack.find('</sup>')
+        num_text = haystack[num_start:num_end]
+        num = num_text.strip().strip(')')
+
+    return num
+
+
 def generate_ancestors(elem, parent):
     # Locations of markers in footnote XML are denoted as a list of tags,
     # whose name correspond to the tag name where the marker is to be located,

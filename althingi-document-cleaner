@@ -20,6 +20,7 @@ from sys import stderr
 from sys import stdout
 
 from contenthandlers import generate_ancestors
+from contenthandlers import next_footnote_sup
 from contenthandlers import separate_sentences
 
 from utils import Matcher
@@ -933,30 +934,9 @@ def make_xml(law_num, law_year, parliament_version):
 
                             cursor = closing_found + 1
 
-                            # Grab the footnote number of the highlighted
-                            # text. Sometimes the number is located in the
-                            # next <sen> element, for example: "or not the
-                            # [minister]. <sup ...> 2) </sup>". In these cases
-                            # we'll need to peek into the next <sen> element.
-                            # We'll do this by changing the haystack in which
-                            # we look. We won't use the cursor when looking
-                            # for it though, because it will definitely be the
-                            # first <sup> we run into, inside the next <sen>
-                            #
-                            # By the way:
-                            #     len('<sup style="font-size:60%">') == 27
-                            if desc.text.find('<sup style="font-size:60%">', cursor) > -1:
-                                haystack = desc.text
-                                num_start = haystack.find('<sup style="font-size:60%">', cursor) + 27
-                                num_end = haystack.find('</sup>', cursor)
-                                num_text = haystack[num_start:num_end]
-                                num = num_text.strip().strip(')')
-                            else:
-                                haystack = desc.getnext().text
-                                num_start = haystack.find('<sup style="font-size:60%">') + 27
-                                num_end = haystack.find('</sup>')
-                                num_text = haystack[num_start:num_end]
-                                num = num_text.strip().strip(')')
+                            # Find the footnote number next to the closing
+                            # marker that we've found.
+                            num = next_footnote_sup(desc, cursor)
 
                             # We have figured out the starting location in the
                             # former clause of the if-sentence.
