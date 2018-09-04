@@ -5,6 +5,33 @@ from lxml.builder import E
 from utils import order_among_siblings
 from utils import super_iter
 
+def regexify_markers(text):
+    '''
+    Replaces markers in given text with regex that will match those same
+    markers. The point is to have a regex that will match the string both with
+    and without markers.
+    '''
+
+    text = re.sub(
+        r'\[ ?',
+        r'(\[? ?)?',
+        text
+    )
+    text = re.sub(
+        r'\],? <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
+        r'(\],? <sup( style="font-size:60%")?> ?\d+\) ?</sup>)?,? ?',
+        text
+    )
+    text = re.sub(
+        r'… <sup style="font-size:60%"> \d+\) </sup>,? ?',
+        r'(… <sup( style="font-size:60%")?> \d+\) </sup>)?,? ?',
+        text
+    )
+    text = text.replace(' ,', r' ?,')
+
+    return text
+
+
 def strip_markers(text):
     '''
     Strips markers from text and cleans up resulting weirdness.

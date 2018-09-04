@@ -21,6 +21,7 @@ from sys import stdout
 
 from contenthandlers import generate_ancestors
 from contenthandlers import next_footnote_sup
+from contenthandlers import regexify_markers
 from contenthandlers import separate_sentences
 from contenthandlers import strip_markers
 
@@ -992,6 +993,7 @@ def make_xml(law_num, law_year, parliament_version):
                             # XML.
                             marker_locations.append({
                                 'num': int(num),
+                                'type': 'range',
                                 'started_at': started_at,
                                 'ended_at': ended_at
                             })
@@ -1001,7 +1003,51 @@ def make_xml(law_num, law_year, parliament_version):
                         closing_found = desc.text.find(']', cursor)
                         opening_found = desc.text.find('[', cursor)
 
+                    # Keeps track of where we are currently looking for
+                    # markers within the entity being checked, like above.
+                    cursor = 0
 
+                    deletion_found = desc.text.find('…', cursor)
+                    while deletion_found > -1:
+                        # Keep track of how far we've already searched.
+                        cursor = deletion_found + 1
+
+                        # Find the footnote number next to the deletion marker
+                        # that we've found.
+                        num = next_footnote_sup(desc, cursor)
+
+                        # See function's comments for details.
+                        ancestors = generate_ancestors(desc, parent)
+
+                        # len('</sup>') == 6
+                        sup_end = desc.text.find('</sup>', deletion_found + 1) + 6
+
+                        # We'll take the text that comes before and after the
+                        # deletion mark, and replace their markers with
+                        # regular expressions that match them, both with the
+                        # markers and without them. This way, any mechanism
+                        # intended to put the deletion markers back in works
+                        # on the text regardless of whether the oher deletion
+                        # or replacement markers are already there or not.
+                        before_mark = regexify_markers(desc.text[:deletion_found])
+                        after_mark = regexify_markers(desc.text[sup_end:])
+
+                        # Assign the regular expressions for the texts before
+                        # and after the deletion mark, to the last node in the
+                        # location XML.
+                        ancestors[-1].attrib['before-mark'] = before_mark
+                        ancestors[-1].attrib['after-mark'] = after_mark
+
+                        # Just for nomenclature's sake, really.
+                        deleted_at = ancestors
+
+                        marker_locations.append({
+                            'num': int(num),
+                            'type': 'deletion',
+                            'deleted_at': deleted_at
+                        })
+
+                        deletion_found = desc.text.find('…', cursor)
 
                     # Now that we're done processing the markers and can add
                     # them to the footnotes in XML format, we'll delete them
@@ -1029,52 +1075,60 @@ def make_xml(law_num, law_year, parliament_version):
                     footnote = footnotes.getchildren()[ml['num'] - 1]
 
                     # Create the location XML node itself.
-                    location = E('location', {'type': 'range'})
+                    location = E('location', {'type': ml['type']})
 
-                    # If the starting and ending locations are identical, we
-                    # will only want a <location> element to denote the
-                    # marker's locations.
-                    started_at = ml['started_at']
-                    ended_at = ml['ended_at']
-                    if xml_lists_identical(started_at, ended_at):
-                        for node in started_at:
+                    if ml['type'] == 'deletion':
+                        for node in ml['deleted_at']:
                             location.append(node)
-                    else:
-                        # If, however, the the starting and ending locations
-                        # differ and we are not denoting a region of text with
-                        # "words", we'll need sub-location nodes, <start> and
-                        # <end>, within the <location> element, so that the
-                        # opening and closing markers can be placed in
-                        # completely different places.
-                        start = E('start')
-                        end = E('end')
-                        for node in started_at:
-                            start.append(node)
-                        for node in ended_at:
-                            end.append(node)
 
-                        location.append(start)
-                        location.append(end)
-
-                    # If the location XML that we're adding is identical to
-                    # the previous location node in the same footnote node,
-                    # then instead of adding the same location node again,
-                    # we'll configure the previous one as repetitive. We
-                    # assume that if the same words are marked twice, that all
-                    # instances of the same words should be marked in the
-                    # given element.
-                    #
-                    # This is done to make it easier to use the XML when the
-                    # same set of words should be marked repeatedly in the
-                    # same sentence.
-                    prev_location = footnotes.getchildren()[ml['num'] - 2].find('location')
-                    if prev_location is not None and xml_compare(prev_location, location):
-                        last_item_in_prev_location = prev_location.getchildren()[-1]
-                        last_item_in_prev_location.attrib['repeat'] = 'true'
-                    else:
-                        # Finally, we add the location node to the footnote
-                        # node.
                         footnote.append(location)
+
+                    elif ml['type'] == 'range':
+                        # If the starting and ending locations are identical,
+                        # we will only want a <location> element to denote the
+                        # marker's locations.
+                        started_at = ml['started_at']
+                        ended_at = ml['ended_at']
+                        if xml_lists_identical(started_at, ended_at):
+                            for node in started_at:
+                                location.append(node)
+                        else:
+                            # If, however, the the starting and ending
+                            # locations differ and we are not denoting a
+                            # region of text with "words", we'll need
+                            # sub-location nodes, <start> and <end>, within
+                            # the <location> element, so that the opening and
+                            # closing markers can be placed in completely
+                            # different places.
+                            start = E('start')
+                            end = E('end')
+                            for node in started_at:
+                                start.append(node)
+                            for node in ended_at:
+                                end.append(node)
+
+                            location.append(start)
+                            location.append(end)
+
+                        # If the location XML that we're adding is identical
+                        # to the previous location node in the same footnote
+                        # node, then instead of adding the same location node
+                        # again, we'll configure the previous one as
+                        # repetitive. We assume that if the same words are
+                        # marked twice, that all instances of the same words
+                        # should be marked in the given element.
+                        #
+                        # This is done to make it easier to use the XML when
+                        # the same set of words should be marked repeatedly in
+                        # the same sentence.
+                        prev_location = footnotes.getchildren()[ml['num'] - 2].find('location')
+                        if prev_location is not None and xml_compare(prev_location, location):
+                            last_item_in_prev_location = prev_location.getchildren()[-1]
+                            last_item_in_prev_location.attrib['repeat'] = 'true'
+                        else:
+                            # Finally, we add the location node to the footnote
+                            # node.
+                            footnote.append(location)
 
             # Leave a trail saying we're done processing a footnote.
             trail.append('footnote')
