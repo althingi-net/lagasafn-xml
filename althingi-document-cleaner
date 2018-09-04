@@ -1113,7 +1113,7 @@ def make_xml(law_num, law_year, parliament_version):
                             location.append(end)
 
                         # If the location XML that we're adding is identical
-                        # to the previous location node in the same footnote
+                        # to a previous location node in the same footnote
                         # node, then instead of adding the same location node
                         # again, we'll configure the previous one as
                         # repetitive. We assume that if the same words are
@@ -1123,11 +1123,14 @@ def make_xml(law_num, law_year, parliament_version):
                         # This is done to make it easier to use the XML when
                         # the same set of words should be marked repeatedly in
                         # the same sentence.
-                        prev_location = footnotes.getchildren()[ml['num'] - 2].find('location')
-                        if prev_location is not None and xml_compare(prev_location, location):
-                            last_item_in_prev_location = prev_location.getchildren()[-1]
-                            last_item_in_prev_location.attrib['repeat'] = 'true'
-                        else:
+                        twin_found = False
+                        for maybe_twin in footnote.findall('location'):
+                            if xml_compare(maybe_twin, location):
+                                maybe_twin.getchildren()[-1].attrib['repeat'] = 'true'
+                                twin_found = True
+                                break
+
+                        if not twin_found:
                             # Finally, we add the location node to the footnote
                             # node.
                             footnote.append(location)
