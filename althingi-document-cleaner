@@ -1029,8 +1029,8 @@ def make_xml(law_num, law_year, parliament_version):
                         # intended to put the deletion markers back in works
                         # on the text regardless of whether the oher deletion
                         # or replacement markers are already there or not.
-                        before_mark = regexify_markers(desc.text[:deletion_found])
-                        after_mark = regexify_markers(desc.text[sup_end:])
+                        before_mark = '^' + regexify_markers(desc.text[:deletion_found])
+                        after_mark = regexify_markers(desc.text[sup_end:]) + '$'
 
                         # Assign the regular expressions for the texts before
                         # and after the deletion mark, to the last node in the
