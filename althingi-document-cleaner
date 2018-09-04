@@ -1035,8 +1035,10 @@ def make_xml(law_num, law_year, parliament_version):
                         # Assign the regular expressions for the texts before
                         # and after the deletion mark, to the last node in the
                         # location XML.
-                        ancestors[-1].attrib['before-mark'] = before_mark
-                        ancestors[-1].attrib['after-mark'] = after_mark
+                        if before_mark:
+                            ancestors[-1].attrib['before-mark'] = before_mark
+                        if after_mark:
+                            ancestors[-1].attrib['after-mark'] = after_mark
 
                         # Just for nomenclature's sake, really.
                         deleted_at = ancestors
