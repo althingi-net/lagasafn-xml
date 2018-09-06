@@ -855,15 +855,6 @@ def make_xml(law_num, law_year, parliament_version):
                             use_words = opening_found > 0 or partial_at_start
 
                             if use_words:
-                                # NOTE/TODO: We will need to add support for
-                                # using "words" across multiple sentences,
-                                # which is currently unsupported but happens
-                                # in 1-2. málsl. 1. mgr. 95. gr. laga nr.
-                                # 19/1940. We'll need to check for the closing
-                                # marker in the next sentence, presumably
-                                # (and, dare I mention, possibly more than one
-                                # sentence into the future).
-
                                 # We'll start with everything from the opening
                                 # marker onward. Because of possible markers
                                 # in the text that should end up in "words",
