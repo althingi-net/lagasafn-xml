@@ -996,16 +996,21 @@ def make_xml(law_num, law_year, parliament_version):
 
                                 ancestors[-1].attrib['words'] = words
 
-                            ended_at = ancestors
-
                             # Stuff our findings into a list of marker
                             # locations that can be appended to the footnote
                             # XML.
                             marker_locations.append({
                                 'num': int(num),
                                 'type': 'range',
+
+                                # 'starte_at' is determined from previous
+                                # processing of the corresponding opening marker.
                                 'started_at': started_at,
-                                'ended_at': ended_at
+
+                                # 'ended_at' is determined from the processing
+                                # of the closing marker, which is what we just
+                                # performed.
+                                'ended_at': ancestors
                             })
 
                         # Check again for the next opening and closing
@@ -1077,13 +1082,10 @@ def make_xml(law_num, law_year, parliament_version):
                         if after_mark:
                             ancestors[-1].attrib['after-mark'] = after_mark
 
-                        # Just for nomenclature's sake, really.
-                        deleted_at = ancestors
-
                         marker_locations.append({
                             'num': int(num),
                             'type': 'deletion',
-                            'deleted_at': deleted_at
+                            'started_at': ancestors
                         })
 
                         deletion_found = desc.text.find('…', cursor)
@@ -1117,7 +1119,7 @@ def make_xml(law_num, law_year, parliament_version):
                     location = E('location', {'type': ml['type']})
 
                     if ml['type'] == 'deletion':
-                        for node in ml['deleted_at']:
+                        for node in ml['started_at']:
                             location.append(node)
 
                         footnote.append(location)
