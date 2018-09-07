@@ -797,6 +797,12 @@ def make_xml(law_num, law_year, parliament_version):
                     if not desc.text:
                         continue
 
+                    ###########################################################
+                    # Detection of opening and closing markers, "[" and "]",
+                    # respectively, as well as accompanied superscripted text
+                    # denoting their number.
+                    ###########################################################
+
                     # Keeps track of where we are currently looking for
                     # markers within the entity being checked.
                     cursor = 0
@@ -1006,6 +1012,12 @@ def make_xml(law_num, law_year, parliament_version):
                         # markers, except from our cursor, this time.
                         closing_found = desc.text.find(']', cursor)
                         opening_found = desc.text.find('[', cursor)
+
+                    ##########################################################
+                    # Detection of deletion markers, indicated by the "…"
+                    # character, followed by superscripted text indicating its
+                    # reference number.
+                    ##########################################################
 
                     # Keeps track of where we are currently looking for
                     # markers within the entity being checked, like above.
