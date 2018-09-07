@@ -850,9 +850,22 @@ def make_xml(law_num, law_year, parliament_version):
                             # corresponding closing marker.
                             partial_at_start = opening_found == 0 and closing_found > -1 and no_opening_between
 
+                            # Check if the opening and closing markers
+                            # encompass the entire entity. In these cases, it
+                            # makes no sense to use "words".
+                            all_encompassing = all([
+                                opening_found == 0,
+                                no_opening_between,
+                                desc.text[0] == '[',
+                                matcher.check(
+                                    desc.text[closing_found:],
+                                    '\] <sup style="font-size:60%"> \d+\) </sup>$'
+                                )
+                            ])
+
                             # Boil this logic down into the question: to use
                             # words or not to use words?
-                            use_words = opening_found > 0 or partial_at_start
+                            use_words = (opening_found > 0 or partial_at_start) and not all_encompassing
 
                             if use_words:
                                 # We'll start with everything from the opening
