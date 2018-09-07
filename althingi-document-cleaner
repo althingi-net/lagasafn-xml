@@ -1090,6 +1090,87 @@ def make_xml(law_num, law_year, parliament_version):
 
                         deletion_found = desc.text.find('…', cursor)
 
+                    ##########################################################
+                    # Detect single superscripted numbers, which indicate
+                    # points that belong to a reference without indicating any
+                    # kind of change to the text itself. Such markers will be
+                    # called pointers from now on.
+                    ##########################################################
+
+                    # Keeps track of where we are currently looking for
+                    # pointers within the entity being checked, like above.
+                    cursor = 0
+
+                    pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                    while pointer_found > -1:
+                        # Keep track of how far we've already searched.
+                        cursor = pointer_found + 1
+
+                        # See function's comments for details.
+                        ancestors = generate_ancestors(desc, parent)
+
+                        # If this is in fact a closing or deletion marker,
+                        # then either the symbol "[" or "…" will appear
+                        # somewhere among the 3 characters before the
+                        # superscript. Their exact location may depend on the
+                        # applied styling or punctuation, since spacing style
+                        # differs slightly according to the location of
+                        # closing and deletion markers, and punctuation can
+                        # appear between the symbol and superscript (i.e.
+                        # "bla]. 2)".
+                        chars_before_start = pointer_found - 3 if pointer_found >= 3 else 0
+                        chars_before = desc.text[chars_before_start:pointer_found].strip()
+                        if '…' in chars_before or ']' in chars_before:
+                            # This is a closing or deletion marker, which
+                            # we're not interested in at this point.
+                            pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                            continue
+
+                        # Catch all the superscript content, so that we may
+                        # its length, and while we're at it, grab the footnote
+                        # number as well.
+                        matcher.check(
+                            desc.text[pointer_found:],
+                            '(<sup style="font-size:60%"> (\d+)\) </sup>)'
+                        )
+                        sup, num = matcher.result()
+
+                        # Determine where the symbol ends.
+                        sup_end = pointer_found + len(sup)
+
+                        # We'll take the text that comes before and after the
+                        # pointer, and replace their markers with regular
+                        # expressions that match them, both with the markers
+                        # and without them. This way, any mechanism intended
+                        # to put the deletion markers back in works on the
+                        # text regardless of whether the other deletion or
+                        # replacement markers are already there or not.
+                        before_mark = '^' + regexify_markers(desc.text[:pointer_found])
+                        after_mark = regexify_markers(desc.text[sup_end:]) + '$'
+
+                        # Assign the regular expressions for the texts before
+                        # and after the pointer, to the last node in the
+                        # location XML.
+                        if before_mark:
+                            ancestors[-1].attrib['before-mark'] = before_mark
+                        if after_mark:
+                            ancestors[-1].attrib['after-mark'] = after_mark
+
+                        marker_locations.append({
+                            'num': int(num),
+                            'type': 'pointer',
+                            'started_at': ancestors
+                        })
+
+                        pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+
+                    ##########################################################
+                    # At this point, we're done processing the following:
+                    # 1. Opening/closing markers ("[" and "]")
+                    # 2. Deletion markers ("…")
+                    # 3. Pointers (indicated by superscripted number)
+                    ##########################################################
+
                     # Now that we're done processing the markers and can add
                     # them to the footnotes in XML format, we'll delete them
                     # from the text itself. This may leave spaces on the edges
@@ -1118,7 +1199,7 @@ def make_xml(law_num, law_year, parliament_version):
                     # Create the location XML node itself.
                     location = E('location', {'type': ml['type']})
 
-                    if ml['type'] == 'deletion':
+                    if ml['type'] in ['pointer', 'deletion']:
                         for node in ml['started_at']:
                             location.append(node)
 
