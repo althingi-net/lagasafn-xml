@@ -316,9 +316,23 @@ def make_xml(law_num, law_year, parliament_version):
             else:
                 chapter_name = collect_until(lines, '</b>')
 
-                chapter = E.chapter(
-                    E('name', chapter_name)
-                )
+                # When the chapter doesn't have both a nr-title and a name,
+                # what we see may be either a name or a Roman numeral. If it's
+                # a Roman numerals, we'll want to do two things; 1) Include
+                # the number in the "nr" attribute (in Latin) and 2) Use the
+                # "nr-title" tag instead of the "name" tag. If it's not a
+                # Roman numeral, we'll just set a name.
+                try:
+                    nr = str(roman.fromRoman(strip_markers(chapter_name).strip('.')))
+                    chapter = E.chapter(
+                        {'nr': nr},
+                        E('nr-title', chapter_name)
+                    )
+                except roman.InvalidRomanNumeralError:
+                    # Nope! It's a name.
+                    chapter = E.chapter(
+                        E('name', chapter_name)
+                    )
 
             # Some laws have a chapter for temporary clauses, which may be
             # named something like "Bráðabirgðaákvæði", "Ákvæði til
