@@ -1258,6 +1258,54 @@ def make_xml(law_num, law_year, parliament_version):
             # Leave a trail saying we're done processing a footnote.
             trail.append('footnote')
 
+    ##########################################################################
+    # At this point, the XML object `law` contains the entire document with
+    # all its content. Now, we do some post-processing of the already existing
+    # content. This is kept separate mostly for reasons of clarity.
+    ##########################################################################
+
+    # Turn HTML tables, currently encoded into HTML characters, into properly
+    # structured and clean XML tables with properly presented content.
+    #
+    # We have no reason to create a table structure different from the HTML
+    # structure. We'll just make sure that the data is sanitized properly and
+    # that there is no useless information, by recreating the table in XML.
+    # This way, it'll be quite easy for a layout engine in a browser to render
+    # it correctly.
+    for sen in law.xpath('//sen'):
+        if sen.text.find('<table ') == 0:
+
+            # The XML table that we are going to produce.
+            table = E('table')
+
+            # The HTML table from which we're fetching information.
+            html_table = etree.HTML(sen.text).find('body/table/tbody')
+
+            # Find the rows and headers inside the HTML.
+            rows = iter(html_table)
+            headers = [col.find('b').text.strip() for col in next(rows)]
+
+            # Create the table's header and body sections.
+            thead = E('thead', E('tr'))
+            tbody = E('tbody')
+            table.append(thead)
+            table.append(tbody)
+
+            # Add headers to the XML table.
+            for header in headers:
+                thead.find('tr').append(E('th', header))
+
+            # Add rows.
+            for row in rows:
+                tr = E('tr')
+                tbody.append(tr)
+                for col in row:
+                    tr.append(E('td', col.text.strip()))
+
+            # Replace HTML-encoded text with XML table.
+            sen.text = None
+            sen.append(table)
+
     # Write the XML object to output file.
     with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
         # Importing a completely different XML library than the one we're
