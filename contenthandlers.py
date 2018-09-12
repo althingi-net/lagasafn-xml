@@ -269,4 +269,20 @@ def separate_sentences(content):
     if content and content[-1] != '.' and sens[-1][-1] == '.':
         sens[-1] = sens[-1].strip('.')
 
+    # Make sure that tables always live in their own sentence.
+    new_sens = []
+    for sen in sens:
+        # Note: We don't check if the table is in the beginning, because if it
+        # is, it already lives in its own sentence. We're only interested in
+        # it if it's inside the sentence but not at the beginning.
+        table_loc = sen.find('<table ')
+        if table_loc > 0:
+            # Quite likely, there's a space between the table and the
+            # preceding text, which we strip away.
+            new_sens.append(sen[:table_loc].strip())
+            new_sens.append(sen[table_loc:])
+        else:
+            new_sens.append(sen)
+    sens = new_sens
+
     return sens
