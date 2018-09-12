@@ -724,10 +724,11 @@ def make_xml(law_num, law_year, parliament_version):
                 # This way, the text and the marker location information are
                 # separated.
 
-                # The parent is the uppermost node to which footnotes are
-                # relevant. In most cases, it's an <art> node, but it may also
-                # be a <chapter> node, for example.
+                # The parent is the uppermost node above the footnotes but
+                # below the document root node.
                 parent = footnotes.getparent()
+                while parent.getparent() != law:
+                    parent = parent.getparent()
 
                 # Closing markers have a tendency to appear after the sentence
                 # that they refer to, like so:
