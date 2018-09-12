@@ -327,6 +327,7 @@ def make_xml(law_num, law_year, parliament_version):
             # chapter for temporary clauses and furthermore that the string
             # does NOT appear in any other kind of chapter.
             if 'bráðabirgð' in chapter_name.lower():
+                chapter.attrib['nr'] = 't'
                 chapter.attrib['type'] = 'temporary-clauses'
 
             law.append(chapter)
@@ -386,17 +387,16 @@ def make_xml(law_num, law_year, parliament_version):
                 # unconventional way. Typically this occurs only in temporary
                 # clauses that tend to be numbered with some stupid fucking
                 # Roman bullshit.
-                art_nr = None
+                art_nr = clean_art_nr_title.strip('.')
                 try:
-                    art_roman_nr = str(roman.fromRoman(clean_art_nr_title.strip('.')))
+                    art_roman_nr = str(roman.fromRoman(art_nr))
                 except roman.InvalidRomanNumeralError:
                     # Good. Fuck Roman numerals.
                     pass
 
             # Create the tags, configure them and append to the chapter.
             art = E('art', E('nr-title', art_nr_title))
-            if art_nr is not None:
-                art.attrib['nr'] = art_nr
+            art.attrib['nr'] = art_nr
             if art_roman_nr is not None:
                 art.attrib['roman-nr'] = art_roman_nr
                 art.attrib['number-type'] = 'roman'
