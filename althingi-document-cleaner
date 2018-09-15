@@ -67,6 +67,14 @@ def clean_content(content):
     e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
     content = e.sub(r'<img \1 />', content)
 
+    # Remove superscript/subscript when ratios are presented in the form of
+    # divisions. For example, "3/4" tends to be stylized with a superscripted
+    # "3" and a subscripted "4". We'll want to remove such styling because
+    # we're only interested in content. Layouting mechanisms will have to
+    # stylize them again if needed.
+    e = re.compile(r'<sup style="font-size:60%">(\d+)</sup>/<span style="font-size:60%">(\d+)</span>')
+    content = e.sub(r'\1/\2', content)
+
     # Remove <a id=""> tags which are unclosed and seem without purpose.
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
     content = content.replace('<a id="">', '')
