@@ -46,6 +46,7 @@ def strip_markers(text):
         text = text.replace('  ', ' ')
 
     text = text.replace(' ,', ',')
+    text = text.replace(' .', '.')
 
     return text
 
@@ -283,6 +284,114 @@ def separate_sentences(content):
             new_sens.append(sen[table_loc:])
         else:
             new_sens.append(sen)
+    sens = new_sens
+
+    #########################################################################
+    # Consider the following texts in law nr. 33/1940.
+    #
+    # Case 1:
+    #
+    # "...og skulu þá forsætisráðherra, forseti … 1) Alþingis og forseti..."
+    #
+    # Case 2:
+    #
+    # "...hlotið fylgi 3/4 hluta þingmanna … 1) Þjóðaratkvæðagreiðslan skal
+    # þá..."
+    #
+    # In the former example, the deletion marker simply indicates the deletion
+    # of content in the middle of a sentence. In the latter example, the
+    # deletion has taken place at the end of a prior sentence which is still
+    # followed by a new sentence, but without a period.
+    #
+    # This is a design choice in the official HTML that creates ambiguity when
+    # a deletion marker is found in the middle of a sentence followed by a
+    # capitalized word. The problem is that human knowledge is required to
+    # determine the difference between a word that is capitalized because it's
+    # a name ("Alþingi") versus a word that is capitalized because it's
+    # starting a new sentence ("Þjóðaratkvæðagreiðslan").
+    #
+    # To combat this, we'll iterate through sentences that contain a deletion
+    # marker followed by a capitalized word. We will try our best to determine
+    # whether it's a name or the start of a new sentence, and if it's the
+    # latter, we'll split the sentence, and otherwise we won't.
+    #
+    # This mechanism will almost certainly never be complete, but rather will
+    # need to be updated as new ambiguous cases are discovered through the
+    # processing of more and more law.
+    #########################################################################
+
+    # Determines whether a provided text is likely to start a new sentence
+    # given what we know about occurrences in the legal text. This is
+    # essentially a hack and is not reliable. As we process laws, with time we
+    # will figure out characteristics of sentences that don't start new
+    # sentences, presumably mostly by which words they start with, and we will
+    # update this function to reflect that knowledge as it comes in.
+    def probable_sentence_start(text):
+        # We're not interested in markers, only content.
+        text = strip_markers(text).strip()
+
+        # Find the first word, if one exists.
+        next_word = text[0:text.find(' ')]
+
+        # Empty string does not count as a sentence.
+        if not next_word:
+            return False
+
+        # Sentence must start with the first word capitalized.
+        if not next_word[0].isalpha() or not next_word[0].isupper():
+            return False
+
+        # Words that we know never start new sentences. (Note: This is based
+        # on Icelandic's grammar. We know that a sentence doesn't start with
+        # "Alþingis" because it is in the genitive case.)
+        if next_word in ['Alþingis']:
+            return False
+
+        # By default, provided texts are new sentences. If we haven't found a
+        # reason to conclude that it is not, then we'll suggest that it
+        # probably is.
+        return True
+
+    # Iterate the sentences, find deletion markers, and split by need.
+    new_sens = []
+    for sen in sens:
+        cursor = 0
+        deletion_found = sen.find('…', cursor)
+        while deletion_found > -1:
+
+            # Check if there's content before the marker. If not, then we
+            # don't want to split, because then it belongs at the beginning of
+            # the next sentence instead of having an entire sentence just for
+            # the marker.
+            before = len(strip_markers(sen[0:deletion_found]).strip()) > 0
+
+            if before and probable_sentence_start(sen[deletion_found:]):
+                # At this point, we've determined that the deletion marker
+                # starts a new sentence.
+
+                # Add the missing period, the lack of which is the source of
+                # the problem we're solving here. It may seem like a weird
+                # place to put it, between the deletion marker and the
+                # superscript, but this is in fact where commas are placed
+                # when deletions occur immediately before them. In other
+                # words, we'll want periods to act like commas.
+                sen = sen[0:deletion_found+1] + '.' + sen[deletion_found+2:]
+
+                # Find the location where we want to split, which is
+                # immediately following the deletion marker's next closing
+                # superscript tag. BTW: len('</sup>') == 6
+                split_loc = sen.find('</sup>', deletion_found+1) + 6
+
+                # Mark the place in the sentence where we intend to split.
+                # We'll also add a period to denote the end of the sentence in
+                # the text; the lack of which is responsible for us having to
+                # perform this peculiar operation.
+                sen = sen[0:split_loc] + '[SPLIT]' + sen[split_loc+1:]
+
+            cursor = deletion_found + 1
+            deletion_found = sen.find('…', cursor)
+
+        new_sens.extend(sen.split('[SPLIT]'))
     sens = new_sens
 
     return sens
