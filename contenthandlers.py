@@ -287,7 +287,7 @@ def separate_sentences(content):
     sens = new_sens
 
     #########################################################################
-    # Consider the following texts in law nr. 33/1940.
+    # Consider the following texts in law nr. 33/1944.
     #
     # Case 1:
     #
