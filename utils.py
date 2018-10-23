@@ -1,4 +1,10 @@
 import re
+import subprocess
+
+def terminal_width_and_height():
+    height, width = [int(v) for v in subprocess.check_output(['stty', 'size']).split()]
+    return width, height
+
 
 def strip_links(text):
     '''
