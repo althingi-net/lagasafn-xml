@@ -1,9 +1,11 @@
+import json
 import re
 
 from lxml.builder import E
 
 from utils import order_among_siblings
 from utils import super_iter
+from utils import terminal_width_and_height
 
 def regexify_markers(text):
     '''
@@ -311,46 +313,78 @@ def separate_sentences(content):
     # starting a new sentence ("Þjóðaratkvæðagreiðslan").
     #
     # To combat this, we'll iterate through sentences that contain a deletion
-    # marker followed by a capitalized word. We will try our best to determine
-    # whether it's a name or the start of a new sentence, and if it's the
-    # latter, we'll split the sentence, and otherwise we won't.
+    # marker and check for basic things like whether the marker is followed by
+    # a capitalized word.
     #
-    # This mechanism will almost certainly never be complete, but rather will
-    # need to be updated as new ambiguous cases are discovered through the
-    # processing of more and more law.
+    # The user is then asked whether the deletion marker also indicates a new
+    # sentence. The choice of the user is then recorded in a file called
+    # "splitmap.json" for future reference. In future iterations, that file
+    # will first be checked, so that we never ask the user twice. This way, a
+    # map of splits ("splitmap") is built up over time as we run into more of
+    # these instances and receive answers from the user as we go.
     #########################################################################
 
     # Determines whether a provided text is likely to start a new sentence
-    # given what we know about occurrences in the legal text. This is
-    # essentially a hack and is not reliable. As we process laws, with time we
-    # will figure out characteristics of sentences that don't start new
-    # sentences, presumably mostly by which words they start with, and we will
-    # update this function to reflect that knowledge as it comes in.
-    def probable_sentence_start(text):
+    # given what we know from "splitmap.json", asking the user if the answer
+    # cannot be found there.
+    def check_sentence_start(pre_text, post_text):
         # We're not interested in markers, only content.
-        text = strip_markers(text).strip()
+        pre_text = strip_markers(pre_text).strip()
+        post_text = strip_markers(post_text).strip()
 
         # Find the first word, if one exists.
-        next_word = text[0:text.find(' ')]
+        next_post_word = post_text[0:post_text.find(' ')]
 
         # Empty string does not count as a sentence.
-        if not next_word:
+        if not next_post_word:
             return False
 
         # Sentence must start with the first word capitalized.
-        if not next_word[0].isalpha() or not next_word[0].isupper():
+        if not next_post_word[0].isalpha() or not next_post_word[0].isupper():
             return False
 
-        # Words that we know never start new sentences. (Note: This is based
-        # on Icelandic's grammar. We know that a sentence doesn't start with
-        # "Alþingis" because it is in the genitive case.)
-        if next_word in ['Alþingis']:
-            return False
+        # The "splitmap" keeps a record of which combinations of pre_text and
+        # post_text classify as split (two sentences) or unsplit (two
+        # sentences). Here we read the splitmap to check the current text.
+        with open('splitmap.json', 'r') as f:
+            splitmap = json.load(f)
 
-        # By default, provided texts are new sentences. If we haven't found a
-        # reason to conclude that it is not, then we'll suggest that it
-        # probably is.
-        return True
+        # This is the variable that will be stored in "splitmap.json". It's
+        # worth noting why this format is chosen instead of an MD5 sum, for
+        # example. One design goal is for "splitmap.json" to be easily
+        # searchable by a human in case the wrong selection is made at some
+        # point. The "[MAYBE-SPLIT]" string is used instead of a period or
+        # some other symbol for readability reasons as well.
+        combined_text = pre_text + '[MAYBE-SPLIT]' + post_text
+
+        if combined_text in splitmap:
+            return splitmap[combined_text]
+
+        # If the string cannot be found in the splitmap, we'll need to ask the
+        # user. We'll then record that decision for future reference.
+        width, height = terminal_width_and_height()
+        print()
+        print('-' * width)
+        print('Ambiguity found in determining the possible end of a sentence.')
+        print()
+        print('Former chunk: %s' % pre_text)
+        print()
+        print('Latter chunk: %s' % post_text)
+        print()
+        answer = input('Do these two chunks of text constitute 1 sentence or 2? [1/2] ')
+        while answer not in ['1', '2']:
+            answer = input('Please select either 1 or 2: ')
+
+        # If the user determines that the text is composed of two sentences,
+        # it means that the text should be split (True).
+        split = True if answer == '2' else False
+
+        # Write the answer.
+        splitmap[combined_text] = split
+        with open('splitmap.json', 'w') as f:
+            json.dump(splitmap, f)
+
+        return split
 
     # Iterate the sentences, find deletion markers, and split by need.
     new_sens = []
@@ -365,7 +399,7 @@ def separate_sentences(content):
             # the marker.
             before = len(strip_markers(sen[0:deletion_found]).strip()) > 0
 
-            if before and probable_sentence_start(sen[deletion_found:]):
+            if before and check_sentence_start(sen[0:deletion_found], sen[deletion_found:]):
                 # At this point, we've determined that the deletion marker
                 # starts a new sentence.
 
