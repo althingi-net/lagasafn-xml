@@ -261,6 +261,11 @@ def separate_sentences(content):
                 if next_chunk.strip().isdigit() and next_chunk2.strip() in reference_shorthands:
                     split = False
 
+                # Support for referencing things like:
+                #     3. tölul. C-liðar 7. gr.
+                if re.match('^ [A-Z]-lið', next_chunk) is not None:
+                    split = False
+
         # Add the dot that we dropped when splitting.
         collected += '.'
 
