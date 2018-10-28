@@ -431,7 +431,7 @@ def make_xml(law_num, law_year, parliament_version):
                 scroll_until(lines, '<em>')
                 art_name = collect_until(lines, '</em>')
 
-                art.append(E('name', art_name))
+                art.append(E('name', strip_links(art_name)))
 
             # Check if the article is empty aside from markers that need to be
             # included in the article <nr-title> or <name> (depending on
