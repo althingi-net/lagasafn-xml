@@ -1287,6 +1287,41 @@ def make_xml(law_num, law_year, parliament_version):
     # content. This is kept separate mostly for reasons of clarity.
     ##########################################################################
 
+    # Turn remaining links which are currently encoded in HTML characters,
+    # into XML nodes. Note that most links are filtered out, but some remain,
+    # such as those intended as comments. We'll want those to be parsable XML
+    # as opposed to text content, so that they can be manipulated by a
+    # displaying mechanism, or easily stripped out if needed.
+    for node in law.xpath('//sen') + law.xpath('//name'):
+        cursor = 0
+        html_loc = node.text.find('<a ', cursor)
+        while html_loc > -1:
+            html_end_loc = node.text.find('</a>', cursor) + len('</a>')
+
+            comment_content = node.text[html_loc:html_end_loc]
+
+            subnode = etree.XML(comment_content)
+            text = node.text[0:html_loc].strip()
+            tail = node.text[html_end_loc:].strip()
+
+            subnode.text = subnode.text.strip()
+
+            node.text = text
+            node.append(subnode)
+            subnode.tail = tail
+
+            cursor = html_loc + 1
+            html_loc = node.text.find('<a ', cursor)
+
+            del html_end_loc
+            del comment_content
+            del text
+            del tail
+            del subnode
+
+        del cursor
+        del html_loc
+
     # Turn HTML tables, currently encoded into HTML characters, into properly
     # structured and clean XML tables with properly presented content.
     #

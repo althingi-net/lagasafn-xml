@@ -12,7 +12,15 @@ def strip_links(text):
     because there is always a newline and a tab after the links in our input.
     '''
 
-    regex = r'<a.*?>\s*(.*?)\s*</a>\s*'
+    # There is an occasional link that we would like to preserve. So far, they
+    # can identified by their content containing the special character "…",
+    # which means that the link is in fact a comment. Instead of stripping
+    # these from the HTML, we'll leave them alone and post-process them into
+    # proper XML in the main processing function. Note that for the time
+    # being, they are left as HTML-encoded text and not actual XML (until the
+    # aforementioned XML post-processing takes place).
+
+    regex = r'<a.*?>\s*([^…]*?)\s*</a>\s*'
     text = re.sub(regex, r'\1', text)
 
     return text

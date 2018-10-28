@@ -167,27 +167,38 @@ def separate_sentences(content):
     for r in recognized_shorts:
         content = content.replace(r, r.replace('.', '[DOT]'))
 
-    # HTML tables should never be split up into separate sentences, so we'll
-    # encode every dot in them.
-    cursor = 0
-    html_loc = content.find('<table width="100%">', cursor)
-    while html_loc > -1:
-        html_end_loc = content.find('</table>', cursor) + len('</table>')
+    # Certain things, like HTML tables (<table>) and links (<a>) should never
+    # be split into separate sentence. We'll run through those tags and encode
+    # every dot within them.
+    non_splittable_tags = ['table', 'a']
+    for nst in non_splittable_tags:
+        cursor = 0
 
-        # Fish out the HTML table.
-        table_content = content[html_loc:html_end_loc]
+        # Location of the start tag.
+        html_loc = content.find('<%s' % nst, cursor)
 
-        # Encode the dots in the HTML table.
-        table_content = table_content.replace('.', '[DOT]')
+        while html_loc > -1:
+            # Location of the end tag.
+            html_end_loc = content.find('</%s>' % nst, cursor) + len('</%s>' % nst)
 
-        # Stitch the encoded table back into the content.
-        content = content[:html_loc] + table_content + content[html_end_loc:]
+            # Fish out the tag contnet.
+            tag_content = content[html_loc:html_end_loc]
 
-        # Continue to see if we find more tables.
-        cursor = html_loc + 1
-        html_loc = content.find('<table width="100%">', cursor)
-    del cursor
-    del html_loc
+            # Encode the dots in the tag content.
+            tag_content = tag_content.replace('.', '[DOT]')
+
+            # Stitch the encoded tag content back into the content.
+            content = content[:html_loc] + tag_content + content[html_end_loc:]
+
+            # Continue to see if we find more non-splittable tags.
+            cursor = html_loc + 1
+            html_loc = content.find('<%s' % nst, cursor)
+
+            del html_end_loc
+            del tag_content
+        del cursor
+        del html_loc
+    del non_splittable_tags
 
     # The collected sentence so far. Chunks are appended to this string until
     # a new sentence is determined to be appropriate. Starts empty and and is
