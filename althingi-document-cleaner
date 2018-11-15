@@ -474,7 +474,12 @@ def make_xml(law_num, law_year, parliament_version):
             trail.append('subart')
 
         elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
-            numart_nr = strip_markers(lines.peek().strip().strip('.'))
+            # The removal of ". " is to turn a human readable numerical
+            # article that contains both a numerical component and an
+            # alphabetic one, into something easier to work with
+            # programmatically. Example: "9. a" becomes "9a" in law nr.
+            # 20/2003.
+            numart_nr = strip_markers(lines.peek().strip().strip('.')).replace('. ', '')
 
             # Dictates where we will place this numart.
             parent = None
@@ -491,18 +496,47 @@ def make_xml(law_num, law_year, parliament_version):
                 prev_numart_nr = prev_numart.attrib['nr']
 
                 # Check if the type of the numart has changed from numeric to
-                # alphabetic or vice versa.
+                # alphabetic or vice versa. The first letter is checked
+                # because occasionally an alphabetic character follows a
+                # numeric character, for example a numerical article "9. a" in
+                # law nr. 90/2003. Such a designation shall be interpreted as
+                # a numerical number, not an alphabetic one.
                 different_type = any([
-                    prev_numart_nr.isdigit() and not numart_nr.isdigit(),
-                    not prev_numart_nr.isdigit() and numart_nr.isdigit()
+                    prev_numart_nr[0].isdigit() and not numart_nr[0].isdigit(),
+                    not prev_numart_nr[0].isdigit() and numart_nr[0].isdigit()
                 ])
 
-                if prev_numart_nr.isdigit():
-                    expected_numart_nr = str(int(prev_numart_nr) + 1)
-                else:
-                    expected_numart_nr = chr(int(ord(prev_numart_nr)) + 1)
+                expected_numart_nrs = []
+                # Check the first letter to support numerical articles with
+                # both a numerical and alphabetic component.
+                if prev_numart_nr[0].isdigit():
+                    if prev_numart_nr.isdigit():
+                        # If the whole thing is numerical, we may expect
+                        # either the next numerical number (i.e. a 10 after a
+                        # 9), or a numart with a numerical and alphabetic
+                        # component (i.e. 9a following a 9).
+                        expected_numart_nrs = [
+                            str(int(prev_numart_nr) + 1),
+                            str(int(prev_numart_nr)) + 'a',
+                        ]
+                    else:
+                        # If, however, the whole thing starts with a number
+                        # but is not entirely a number, it means that the
+                        # numart is a mixture of both (f.e. 9a). In these
+                        # cases we'll expect either the next number (10
+                        # following 9a) or the same number with the next
+                        # alphabetic character (9b following 9a).
+                        alpha_component = prev_numart_nr.strip('0123456789')
+                        num_component = int(prev_numart_nr.replace(alpha_component, ''))
 
-                if expected_numart_nr != numart_nr or different_type:
+                        expected_numart_nrs = [
+                            str(num_component + 1),
+                            str(num_component) + chr(int(ord(alpha_component)) + 1),
+                        ]
+                else:
+                    expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+
+                if numart_nr not in expected_numart_nrs or different_type:
                     if numart_nr == 'a' or (numart_nr.isdigit() and int(numart_nr) == 1):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
