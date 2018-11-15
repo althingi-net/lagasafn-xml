@@ -283,7 +283,7 @@ def make_xml(law_num, law_year, parliament_version):
 
         # Chapters are found by finding a <b> tag that comes right after a
         # <br/> tag that occurs after the ministerial clause is done.
-        elif line == '<b>' and 'minister-clause' in trail and lines.peek(-1).strip() == '<br/>':
+        elif line == '<b>' and 'minister-clause' in trail and lines.peek(-1).strip() == '<br/>' and lines.peek(-2).strip() in ['<br/>', '<hr/>']:
             # Parse what we will believe to be a chapter.
 
             # Chapter names are a bit tricky. They may be divided into two <b>
