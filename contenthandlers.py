@@ -3,6 +3,7 @@ import re
 
 from lxml.builder import E
 
+from utils import Matcher
 from utils import order_among_siblings
 from utils import super_iter
 from utils import terminal_width_and_height
@@ -119,6 +120,56 @@ def generate_ancestors(elem, parent):
         ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
 
     return ancestors
+
+
+# Examines the often mysterious issue of whether we're dealing with a new
+# chapter or not. There is quite a bit of ambiguity possible so this question
+# needs to be dealt with in more than a one-liner, both for flow and code
+# clarity.
+def check_chapter(lines):
+
+    matcher = Matcher()
+
+    # Short-hand.
+    peek_stripped = strip_markers(lines.peek()).strip()
+
+    return (
+        lines.peek(-1).strip() == '<br/>'
+        and (
+            # IMPORTANT: There is an inherent ambiguity between a certain kind
+            # of in-article separation, where content is designated by letters
+            # in uppercase, such as "A.", "B." and such, in the same way as
+            # numarts. In fact, those should at some point be parsed as
+            # numarts. However, in certain cases, Roman numerals are used as
+            # chapter names. Both cases are rare, and it is so far assumed
+            # that A-B-C separation of clauses within articles are never many
+            # enough to reach the letter "I" or "V", but this is admittedly a
+            # bit of a hack.
+            #
+            # In the future, we should do something to properly distinguish
+            # between these two if possible. Once we implement a way to parse
+            # the A-Z in-article items as numarts, we will be able to keep
+            # track of whether the previous numart was an "H" when we run into
+            # "I" and whether a "U" numart preceded a "V". This relies on us
+            # having implemented parsing those as numarts. This will allow us
+            # to distinguish between these two situations by context instead
+            # of content.
+            #
+            # Chapters are typically followed by either two "<br/>"s or a
+            # "<hr/>" followed by a "<br/>". However, this is not entirely
+            # universal and thus we cannot rely on that either.
+            #
+            # Examples:
+            #     33/1944: Chapters designated with Roman numerals.
+            #     50/1988: Chapter I fails to have two "<br/>" before it.
+            #     90/2003: Single-letter, uppercase and bold (unsupported)
+            #              numart clauses, see article 7.
+            #
+            not matcher.check(peek_stripped, '^[A-Z]{1}\.$')
+            or matcher.check(peek_stripped, '^[IVX]{1}\.$')
+        )
+    )
+
 
 # A function for intelligently splitting textual content into separate
 # sentences based on linguistic rules and patterns.
