@@ -1509,8 +1509,7 @@ def main(argv):
                 with open('errormap.json', 'r') as f:
                     errormap = json.load(f, object_pairs_hook=OrderedDict)
 
-                if law_id in errormap:
-                    del errormap[law_id]
+                errormap[law_id] = None
 
                 with open('errormap.json', 'w') as f:
                     json.dump(errormap, f)
@@ -1535,11 +1534,23 @@ def main(argv):
         with open('errormap.json', 'r') as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
 
+            # Counters.
+            failures = 0
+            successes = 0
+
             # The way we want to display this is basically the opposite of
             # how we want to store it. We shall invert the errormap.
             inverted_errormap = {}
             for law_id in errormap.keys():
                 error_msg = errormap[law_id]
+
+                if error_msg:
+                    failures += 1
+                else:
+                    # If there is no error, it's success.
+                    successes += 1
+                    continue
+
                 if not error_msg in inverted_errormap:
                     inverted_errormap[error_msg] = []
 
@@ -1554,7 +1565,10 @@ def main(argv):
                 for law_id in inverted_errormap[error_msg]:
                     stdout.write(' - %s' % law_id)
 
-                stdout.write('\n')
+            stdout.write('\n')
+            stdout.write('%s\n' % ('-' * width))
+            stdout.write('Successes: %d. Failures: %d.\n' % (successes, failures))
+
 
 try:
     main(sys.argv)
