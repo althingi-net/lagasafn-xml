@@ -4,6 +4,7 @@
 
 from bs4 import BeautifulSoup
 import codecs
+import json
 import urllib
 import re
 import roman
@@ -13,6 +14,7 @@ import sys
 
 import settings
 
+from datetime import datetime
 from formencode.doctest_xml_compare import xml_compare
 from lxml import etree
 from lxml.builder import E
@@ -30,6 +32,7 @@ from utils import Matcher
 from utils import order_among_siblings
 from utils import strip_links
 from utils import super_iter
+from utils import terminal_width_and_height
 from utils import xml_lists_identical
 
 CURRENT_PARLIAMENT_VERSION = '148a'
@@ -1448,16 +1451,22 @@ def process_law(law_id):
 
     stdout.write('making XML...')
     stdout.flush()
-    make_xml(law_num, law_year, CURRENT_PARLIAMENT_VERSION)
 
-    stdout.write(' done\n')
+    try:
+        make_xml(law_num, law_year, CURRENT_PARLIAMENT_VERSION)
+        stdout.write(' done\n')
+    except:
+        stdout.write( 'failed\n')
+        raise
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [year] [-a]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>] [year] [-a] [-e] [-E]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    -a    Process all available laws.\n')
+    stderr.write('    -e    Record errors to file (errormap.json).\n')
+    stderr.write('    -E    Display errors recorded to errormap.\n')
     stderr.write('\n')
     if message:
         stderr.write('Error: %s\n' % message)
@@ -1465,6 +1474,9 @@ def usage(exec_name, message=None):
 
 
 def main(argv):
+
+    record_errors = '-e' in argv
+    display_errors = '-E' in argv
 
     law_ids = set()
     for arg in argv:
@@ -1489,8 +1501,63 @@ def main(argv):
         usage(argv[0], 'No files matched the given criteria.')
 
     for law_id in law_ids:
-        process_law(law_id)
+        if record_errors:
+            try:
+                process_law(law_id)
 
+                with open('errormap.json', 'r') as f:
+                    errormap = json.load(f)
+
+                if law_id in errormap:
+                    del errormap[law_id]
+
+                with open('errormap.json', 'w') as f:
+                    json.dump(errormap, f)
+
+            except Exception as ex:
+                import traceback
+                lines = ''.join(traceback.format_exception(*sys.exc_info()))
+
+                with open('errormap.json', 'r') as f:
+                    errormap = json.load(f)
+
+                if not law_id in errormap:
+                    errormap[law_id] = {}
+
+                errormap[law_id]['error'] = lines
+                errormap[law_id]['timing'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+                with open('errormap.json', 'w') as f:
+                    json.dump(errormap, f)
+
+        else:
+            process_law(law_id)
+
+    # List the errors and identify laws in which they occurred.
+    if display_errors:
+        with open('errormap.json', 'r') as f:
+            errormap = json.load(f)
+
+            # The way we want to display this is basically the opposite of
+            # how we want to store it. We shall invert the errormap.
+            inverted_errormap = {}
+            for law_id in errormap.keys():
+                error_msg = errormap[law_id]['error']
+                if not error_msg in inverted_errormap:
+                    inverted_errormap[error_msg] = []
+
+                inverted_errormap[error_msg].append(law_id)
+
+            width, height = terminal_width_and_height()
+            for error_msg in inverted_errormap.keys():
+                stdout.write('\n')
+                stdout.write('%s\n' % ('-' * width))
+                stdout.write('%s\n' % error_msg)
+                stdout.write('\n')
+                for law_id in inverted_errormap[error_msg]:
+                    stdout.write(' - %s' % law_id)
+
+                stdout.write('\n')
 
 try:
     main(sys.argv)
