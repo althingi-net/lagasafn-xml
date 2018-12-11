@@ -1478,7 +1478,7 @@ def main(argv):
     record_errors = '-e' in argv
     display_errors = '-E' in argv
 
-    law_ids = set()
+    law_ids = []
     for arg in argv:
         if arg == '-a':
             for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
@@ -1486,16 +1486,16 @@ def main(argv):
                     law_year = int(filename[0:4])
                     law_num = int(filename[4:7])
                     law_id = '%d/%d' % (law_num, law_year)
-                    law_ids.add(law_id)
+                    law_ids.append(law_id)
         elif re.match('^\d{4}$', arg):
             for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
                 if re.match('^%s\d{3}\.html$' % arg, filename):
                     law_year = int(filename[0:4])
                     law_num = int(filename[4:7])
                     law_id = '%d/%d' % (law_num, law_year)
-                    law_ids.add(law_id)
+                    law_ids.append(law_id)
         elif re.match('^\d{1,4}\/\d{4}$', arg):
-            law_ids.add(arg)
+            law_ids.append(arg)
 
     if len(law_ids) == 0:
         usage(argv[0], 'No files matched the given criteria.')
