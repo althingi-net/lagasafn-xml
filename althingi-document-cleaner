@@ -1503,7 +1503,7 @@ def main(argv):
         elif re.match('^\d{1,4}\/\d{4}$', arg):
             law_ids.append(arg)
 
-    if len(law_ids) == 0:
+    if len(law_ids) == 0 and not display_errors:
         usage(argv[0], 'No files matched the given criteria.')
 
     for law_id in law_ids:
