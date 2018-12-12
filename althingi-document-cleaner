@@ -427,7 +427,12 @@ def make_xml(law_num, law_year, parliament_version):
             if art_roman_nr is not None:
                 art.attrib['roman-nr'] = art_roman_nr
                 art.attrib['number-type'] = 'roman'
-            chapter.append(art)
+
+            # Some laws don't have chapters, but some do.
+            if chapter is not None:
+                chapter.append(art)
+            else:
+                law.append(art)
 
             # Check if the next line is an <em>, because if so, then the
             # article has a name title and we need to grab it. Note that not
