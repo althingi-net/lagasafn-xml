@@ -1588,6 +1588,7 @@ def main(argv):
                 stdout.write('\n')
                 stdout.write('%s\n' % ('-' * width))
                 stdout.write('%s\n' % error_msg)
+                stdout.write('Errors: %d\n' % len(inverted_errormap[error_msg]))
                 stdout.write('\n')
                 for law_id in inverted_errormap[error_msg]:
                     stdout.write(' - %s' % law_id)
