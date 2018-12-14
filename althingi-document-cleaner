@@ -1595,7 +1595,12 @@ def main(argv):
 
             stdout.write('\n')
             stdout.write('%s\n' % ('-' * width))
-            stdout.write('Successes: %d. Failures: %d.\n' % (successes, failures))
+            stdout.write('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.\n' % (
+                successes + failures,
+                successes,
+                failures,
+                100 * (successes / (successes + failures))
+            ))
 
 
 try:
