@@ -1561,7 +1561,7 @@ def main(argv):
 
             # The way we want to display this is basically the opposite of
             # how we want to store it. We shall invert the errormap.
-            inverted_errormap = {}
+            inverted_errormap = OrderedDict()
             for law_id in errormap.keys():
                 error_msg = errormap[law_id]
 
@@ -1576,6 +1576,12 @@ def main(argv):
                     inverted_errormap[error_msg] = []
 
                 inverted_errormap[error_msg].append(law_id)
+
+            # Sort errors so that the most common ones are shown last.
+            inverted_errormap = OrderedDict(sorted(
+                inverted_errormap.items(),
+                key=lambda x: len(x[1])
+            ))
 
             width, height = terminal_width_and_height()
             for error_msg in inverted_errormap.keys():
