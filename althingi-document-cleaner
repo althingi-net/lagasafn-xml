@@ -297,20 +297,26 @@ def make_xml(law_num, law_year, parliament_version):
             # content (Almenn ákvæði, Tilgangur og markmið etc.).
             #
             # Sometimes however, there is only one <b> and not two. In these
-            # cases, there is no nr-title and only a name. Here we check 3
-            # lines into the future to see if there's another <b> tag coming
-            # (because we know that the former <b>text</b> clause will be
-            # precisely 3 lines), and if so, we'll process the nr-title and
-            # name, but otherwise we will only process the name and skip
-            # nr-title altogether.
-            if lines.peek(3).strip() == '<b>':
-                chapter_nr_title = collect_until(lines, '</b>')
+            # cases, there is no nr-title and only a name.
+            #
+            # To solve this, we first collect the content between the first
+            # <b> and </b> and store that in a variable called
+            # `name_or_nr_title` because we still don't know whether it's a
+            # chapter name or a chapter nr-title. If however, a <b> is found
+            # immediately following it, we conclude that what we've gathered
+            # is the chapter nr-title and that the content in the next <b>
+            # clause will be the chapter name.
+
+            name_or_nr_title = collect_until(lines, '</b>')
+
+            if lines.peek().strip() == '<b>':
+                chapter_nr_title = name_or_nr_title
 
                 # Let's see if we can figure out the number of this chapter.
                 # We're going to assume the format "II. kafli" for the second
                 # chapter, and "II. kafli B." for the second chapter B, and in
                 # those examples, nr-titles will be "2" and "2b" respectively.
-                t = strip_markers(chapter_nr_title)
+                t = strip_markers(chapter_nr_title).strip()
                 nr = str(roman.fromRoman(t[0:t.index('.')]))
                 alpha = t[t.index('kafli') + 6:].strip('.')
                 if alpha:
@@ -327,7 +333,7 @@ def make_xml(law_num, law_year, parliament_version):
                 )
 
             else:
-                chapter_name = collect_until(lines, '</b>')
+                chapter_name = name_or_nr_title
 
                 # When the chapter doesn't have both a nr-title and a name,
                 # what we see may be either a name or a Roman numeral. If it's
