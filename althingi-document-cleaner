@@ -1100,6 +1100,16 @@ def make_xml(law_num, law_year, parliament_version):
                         # Keep track of how far we've already searched.
                         cursor = deletion_found + 1
 
+                        # If the deletion marker is immediately followed by a
+                        # closing link tag, it means that this is in fact not
+                        # a deletion marker, but a comment. They are not
+                        # processed here, so we'll update the deletion_found
+                        # variable (in the same way as is done at the end of
+                        # this loop) and continue.
+                        if desc.text[cursor:cursor+5] == ' </a>':
+                            deletion_found = desc.text.find('…', cursor)
+                            continue
+
                         # Find the footnote number next to the deletion marker
                         # that we've found.
                         num = next_footnote_sup(desc, cursor)
