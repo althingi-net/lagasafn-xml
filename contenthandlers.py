@@ -85,7 +85,7 @@ def next_footnote_sup(elem, cursor):
 def generate_ancestors(elem, parent):
     # Locations of markers in footnote XML are denoted as a list of tags,
     # whose name correspond to the tag name where the marker is to be located,
-    # and  whose value represents the target node's "nr" attribute.
+    # and whose value represents the target node's "nr" attribute.
     # Example:
     #
     # <art nr="5">
