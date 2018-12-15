@@ -1482,7 +1482,7 @@ def process_law(law_id):
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [year] [-a] [-e] [-E]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>] [-a] [-e] [-E]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    -a    Process all available laws.\n')
