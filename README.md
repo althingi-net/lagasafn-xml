@@ -1,56 +1,54 @@
 # althingi-document-cleaner
 
-Experimental and incomplete tool for cleaning up the HTML in which Icelandic law is published.
+A tool for turning the HTML in which Icelandic law is published into machine-readable XML.
 
-## Purpose
+## About
 
-This script is an incomplete experiment to see how far the HTML version of Icelandic law can be deduced into something programmatically useful.
+Icelandic law is currently published in PDF and HTML, neither of which is easy or convenient to manage programmatically. This tool parses the HTML version of Icelandic law and generates orderly XML files which can then be used programmatically.
 
-## History
+*Example (constitution of Iceland):*
 
-Icelandic law can be downloaded in its entirety in HTML form at this location: `http://www.althingi.is/lagasafn/zip-skra-af-lagasafni/`. The appropriate zip file (typically the newest one) can be downloaded and extracted. This script assumes that it has been downloaded, extracted and its folder named `current`. The Icelandic law is included in the project, but may not be the newest version, depending on how much time has passed since this was written and if anyone has bothered to update it.
+| Format   | URL                                                                                   |
+| :------: | :------------------------------------------------------------------------------------ |
+| HTML     | https://www.althingi.is/lagas/148c/1944033.html                                       |
+| PDF      | https://www.althingi.is/lagasafn/pdf/148c/1944033.pdf                                 |
+| **XML**  | https://github.com/piratar/althingi-document-cleaner/blob/master/xml/1944.33.148c.xml |
 
-The problem with the HTML is that its format is archaic, old-fashioned and not easy to parse as it appears in the downloaded zip. This script is an attempt to remove anything irrelevant to the content, fix various problems in the HTML (`<img>` tags not being properly closed, for example) and format the HTML in a way that makes it easier to manage programmatically.
+The entire law can be downloaded in HTML form, in a zip file, at http://www.althingi.is/lagasafn/zip-skra-af-lagasafni/. Versions are denoted by Parliament number, higher numbers meaning more recent. The version number "148c" for example, means "the 148th Parliament" and the letter "a" means that it's the version of the legal codex that was in effect when that Parliament convened.
 
-The ultimate goal is to produce a version of the legal content that can easily be turned into XML, imported to a database or whatever, so that the content can be referenced managed and produced programmatically.
+It is developed and tested on Ubuntu, but should work on anything that runs Python 3. These instructions assume a Unix-based operating system.
 
-As stated earlier, this is currently an incomplete experiment, not fit for production use. In fact, it may very well be discontinued at some point or replaced with something that makes more sense.
+## Running
 
-## Installing / Running
+The script is run in a command line.
 
-You're assumed to know how to use Python and how to use virtual environments or how to install Python requirements on your operating system. The required Python libraries are listed in `requirements.txt`. So-called "frozen" requirements are listed in `requirements-frozen.txt`, which contain prerequisited of libraries with the version numbers that were known to work at some point.
+As per Pythonic tradition, the required Python packages are listed in a text file called `requirements.txt`. There is also an alternative file called `requirements-frozen.txt`, which contains specific versions of the required packages, known to work.
 
-```
-pip install -r requirements.txt
-```
+To install the required packages, run:
+
+    pip install -r requirements.txt
 
 If that fails, try using the "frozen" list:
 
-```
-pip install -r requirements-frozen.txt
-```
+    pip install -r requirements-frozen.txt
 
-To run, simply run the script with the law number and year that you wish to clean up. You can also choose to clean up everything, which may take a while.
+Alternatively, if using a Debian-derivative (such as Ubuntu), you can install the libraries system-wide with:
 
-### Examples:
+    apt-get -y install python3-bs4 python3-html5lib python3-lxml python3-roman python3-formencode
 
-The Constitution of the Republic of Iceland:
+Run the script in a terminal with no parameters for usage instructions.
 
-```
-python althingi-document-cleaner 33/1944
-```
+    ./althingi-document-cleaner
 
-The general criminal code:
+## Data
 
-```
-python althingi-document-cleaner 19/1940
-```
+If you are only interested in the generated XML files themselves, then feel free to dig around in the `xml` directory. Just make sure that you're viewing the most recent, available version.
 
-Clean up everything (may take a while):
+Icelandic laws have a number/year combination. For example, the constitution of Iceland is law nr. 33/1944, meaning that it was the 33rd law enacted in the year 1944. The XML files are named `[year].[nr].[version].xml`.
 
-```
-python althingi-document-cleaner -a
-```
+The version is the third value in the XML file's name. For example, `1944.33.148c.xml` is newer than `1944.33.148a.xml` and both are newer than `1944.33.147.xml`.
+
+**Please note that this is still a work in progress and the XML is not guaranteed to be correct. In fact, not all laws are yet available due to unsolved problems with parsing them.** To see how many of them are available, you can run the script with the `-E` option, which will show you what errors remain processing which laws, as well as success/failure statistics.
 
 ## License
 
