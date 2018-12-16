@@ -35,7 +35,7 @@ from utils import super_iter
 from utils import terminal_width_and_height
 from utils import xml_lists_identical
 
-CURRENT_PARLIAMENT_VERSION = '148a'
+CURRENT_PARLIAMENT_VERSION = '148c'
 
 LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
@@ -366,7 +366,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('chapter')
 
-        elif line == '<img alt="" height="11" src="/lagas/sk.jpg" width="11"/>':
+        elif matcher.check(line, '<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
             scroll_until(lines, '<b>')
             art_nr_title = collect_until(lines, '</b>')
@@ -461,7 +461,7 @@ def make_xml(law_num, law_year, parliament_version):
             # new article.
             subart = None
 
-        elif matcher.check(line, '<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".+\/hk.jpg" .+\/>'):
+        elif matcher.check(line, '<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'):
             art_nr, subart_nr = matcher.result()
 
             # Check how far we are from the typical subart end.
