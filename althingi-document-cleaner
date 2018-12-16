@@ -336,8 +336,8 @@ def make_xml(law_num, law_year, parliament_version):
 
                 # When the chapter doesn't have both a nr-title and a name,
                 # what we see may be either a name or a Roman numeral. If it's
-                # a Roman numerals, we'll want to do two things; 1) Include
-                # the number in the "nr" attribute (in Latin) and 2) Use the
+                # a Roman numeral, we'll want to do two things; 1) Include the
+                # number in the "nr" attribute (in Latin) and 2) Use the
                 # "nr-title" tag instead of the "name" tag. If it's not a
                 # Roman numeral, we'll just set a name.
                 try:
