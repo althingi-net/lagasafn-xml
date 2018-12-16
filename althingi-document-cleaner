@@ -317,9 +317,19 @@ def make_xml(law_num, law_year, parliament_version):
                 # those examples, nr-titles will be "2" and "2b" respectively.
                 t = strip_markers(chapter_nr_title).strip()
                 nr = str(roman.fromRoman(t[0:t.index('.')]))
-                alpha = t[t.index('kafli') + 6:].strip('.')
-                if alpha:
-                    nr += alpha.lower()
+
+                # We assume that a chapter nr-title with an alphabetical
+                # character (like "II. kafli B" or "2b") can only occur in
+                # chapters that contain the word "kafli". This is by
+                # necessity, because we need to be able to parse chapter names
+                # like "II. Nefndir." which contain a Roman numeral and name.
+                # A chapter name like "II B. Nefndir" looks pretty outlandish
+                # though, so this should be safe. Instead, the legislature
+                # would surely name the chapter to "II. kafli B. Nefndir".
+                if 'kafli' in t:
+                    alpha = t[t.index('kafli') + 6:].strip('.')
+                    if alpha:
+                        nr += alpha.lower()
                 del t
 
                 scroll_until(lines, '<b>')
