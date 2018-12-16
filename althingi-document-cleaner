@@ -340,8 +340,20 @@ def make_xml(law_num, law_year, parliament_version):
                 # number in the "nr" attribute (in Latin) and 2) Use the
                 # "nr-title" tag instead of the "name" tag. If it's not a
                 # Roman numeral, we'll just set a name.
+                #
+                # Chapters with no name but a Roman numeral may be marked
+                # either with the Roman numeral alone, like "IX.", or they may
+                # include the word "kafli", looking like "IX. kafli.". We
+                # remove the string ". kafli" in the nr-title so that we're
+                # always just dealing with the Roman numeral itself when
+                # looking for a nr-title.
                 try:
-                    nr = str(roman.fromRoman(strip_markers(chapter_name).strip('.')))
+                    maybe_roman_nr = strip_markers(chapter_name).replace(
+                        '. kafli',
+                        ''
+                    ).strip('.')
+
+                    nr = str(roman.fromRoman(maybe_roman_nr))
                     chapter = E.chapter(
                         {'nr': nr},
                         E('nr-title', chapter_name)
