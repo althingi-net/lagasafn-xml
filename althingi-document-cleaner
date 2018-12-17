@@ -380,7 +380,12 @@ def make_xml(law_num, law_year, parliament_version):
             # that a chapter name that includes that string "bráðabirgð" is a
             # chapter for temporary clauses and furthermore that the string
             # does NOT appear in any other kind of chapter.
-            if 'bráðabirgð' in chapter_name.lower():
+            #
+            # NOTE: The string 'bráðbirgð' is also checked due to a typo in
+            # the 148c version of the temporary clauses in law nr. 36/1993.
+            # This check can be removed once the content has been fixed on
+            # Althingi's side. -2018-12-17.
+            if 'bráðabirgð' in chapter_name.lower() or 'bráðbirgð' in chapter_name.lower():
                 chapter.attrib['nr'] = 't'
                 chapter.attrib['type'] = 'temporary-clauses'
 
