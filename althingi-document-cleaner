@@ -287,7 +287,7 @@ def make_xml(law_num, law_year, parliament_version):
 
         # Chapters are found by finding a <b> tag that comes right after a
         # <br/> tag that occurs after the ministerial clause is done.
-        elif line == '<b>' and 'minister-clause' in trail and check_chapter(lines):
+        elif line == '<b>' and 'minister-clause' in trail and check_chapter(lines, law) == 'chapter':
             # Parse what we will believe to be a chapter.
 
             # Chapter names are a bit tricky. They may be divided into two <b>
@@ -392,6 +392,14 @@ def make_xml(law_num, law_year, parliament_version):
             law.append(chapter)
 
             trail.append('chapter')
+
+        elif line == '<b>' and 'minister-clause' in trail and check_chapter(lines, law) == 'extra-docs':
+            # Accompanying documents vary in origin and format, and are not a
+            # part of the formal legal text itself, even though legal text may
+            # reference them. Parsing them is beyond the scope of this tool.
+            # They always show up at the end, so at this point, our work is
+            # done. We'll escape the loop and go for post-processing.
+            break
 
         elif matcher.check(line, '<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.

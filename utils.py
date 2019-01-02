@@ -1,5 +1,15 @@
 import re
+import roman
 import subprocess
+
+def is_roman(goo):
+    try:
+        roman.fromRoman(goo)
+        result = True
+    except roman.InvalidRomanNumeralError:
+        result = False
+
+    return result
 
 def terminal_width_and_height():
     height, width = [int(v) for v in subprocess.check_output(['stty', 'size']).split()]

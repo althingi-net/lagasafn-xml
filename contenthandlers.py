@@ -1,9 +1,11 @@
 import json
 import re
+import roman
 
 from lxml.builder import E
 
 from utils import Matcher
+from utils import is_roman
 from utils import order_among_siblings
 from utils import super_iter
 from utils import terminal_width_and_height
@@ -126,49 +128,98 @@ def generate_ancestors(elem, parent):
 # chapter or not. There is quite a bit of ambiguity possible so this question
 # needs to be dealt with in more than a one-liner, both for flow and code
 # clarity.
-def check_chapter(lines):
+def check_chapter(lines, law):
 
     matcher = Matcher()
 
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
 
-    return (
-        lines.peek(-1).strip() == '<br/>'
-        and (
-            # IMPORTANT: There is an inherent ambiguity between a certain kind
-            # of in-article separation, where content is designated by letters
-            # in uppercase, such as "A.", "B." and such, in the same way as
-            # numarts. In fact, those should at some point be parsed as
-            # numarts. However, in certain cases, Roman numerals are used as
-            # chapter names. Both cases are rare, and it is so far assumed
-            # that A-B-C separation of clauses within articles are never many
-            # enough to reach the letter "I" or "V", but this is admittedly a
-            # bit of a hack.
-            #
-            # In the future, we should do something to properly distinguish
-            # between these two if possible. Once we implement a way to parse
-            # the A-Z in-article items as numarts, we will be able to keep
-            # track of whether the previous numart was an "H" when we run into
-            # "I" and whether a "U" numart preceded a "V". This relies on us
-            # having implemented parsing those as numarts. This will allow us
-            # to distinguish between these two situations by context instead
-            # of content.
-            #
-            # Chapters are typically followed by either two "<br/>"s or a
-            # "<hr/>" followed by a "<br/>". However, this is not entirely
-            # universal and thus we cannot rely on that either.
-            #
-            # Examples:
-            #     33/1944: Chapters designated with Roman numerals.
-            #     50/1988: Chapter I fails to have two "<br/>" before it.
-            #     90/2003: Single-letter, uppercase and bold (unsupported)
-            #              numart clauses, see article 7.
-            #
-            not matcher.check(peek_stripped, '^[A-Z]{1}\.$')
-            or matcher.check(peek_stripped, '^[IVX]{1}\.$')
-        )
-    )
+    # An inner function for setting the content-setup when needed.
+    def set_content_setup(line_type, value):
+        content_setup = law.find('content-setup')
+        if content_setup is None:
+            content_setup = E('content-setup')
+            law.insert(0, content_setup)
+
+        if content_setup.find(line_type) == None:
+            content_setup.append(E(line_type, value))
+        else:
+            content_setup.find(line_type).text = value
+
+    try:
+        cs_chapter = law.find('content-setup/chapter').text
+    except AttributeError:
+        cs_chapter = ''
+
+    try:
+        cs_subchapter = law.find('content-setup/subchapter').text
+    except AttributeError:
+        cs_subchapter = ''
+
+    # Examples of what results mean:
+    #
+    # chapter: roman-chapter:
+    #     I. kafli. Optional title.
+    #
+    # chapter: roman-standalone:
+    #     I.
+
+    line_type = ''
+
+    # If the line matches "fylgiskj[aö]l", it indicates that we've run into
+    # accompanying documents that are not a part of the legal text itself. We
+    # are unable to predict their format and parsing them will always remain
+    # error-prone when possible to begin with.
+    if matcher.check(peek_stripped.lower(), 'fylgiskj[aö]l'):
+        line_type = 'extra-docs'
+
+    # We'll assume that temporary clauses are always in a chapter and never in
+    # a subchapter. This has not been researched.
+    elif peek_stripped.lower().find('bráðabirgð') > -1:
+        line_type = 'chapter'
+
+    elif cs_chapter:
+        if cs_chapter == 'roman-chapter':
+            # We now expect a chapter to begin with a Roman numeral. If this
+            # is not the case, we know that this is not a chapter but a
+            # subchapter, article-chapter or something of the sort.
+            first_thing = peek_stripped[0:peek_stripped.find('.')]
+            if is_roman(first_thing) and peek_stripped.find('. kafli') > -1:
+                line_type = 'chapter'
+            else:
+                # If we know that chapters are denoted by Roman numerals and
+                # this one isn't denoted by Roman numeral, we assume that it's
+                # a subchapter.
+                if cs_subchapter:
+                    line_type = 'subchapter'
+                else:
+                    if peek_stripped.find('A.') == 0:
+                        set_content_setup('subchapter', 'arabic')
+                        line_type = 'subchapter'
+
+        elif cs_chapter == 'roman-standalone':
+            if is_roman(peek_stripped[0:peek_stripped.find('.')]):
+                line_type = 'chapter'
+
+    else:
+        # Here we're running into a possible chapter for the first time.
+        if peek_stripped.find('. kafli') > -1:
+            number = peek_stripped[0:peek_stripped.find('.')]
+
+            # Just to make sure it's a Roman numeral. We currently don't
+            # support Arabic numerals in chapters, but we may need to.
+            if is_roman(number):
+                set_content_setup('chapter', 'roman-chapter')
+            else:
+                set_content_setup('chapter', 'arabic-chapter')
+
+            line_type = 'chapter'
+        elif peek_stripped.find('I.') == 0:
+            set_content_setup('chapter', 'roman-standalone')
+            line_type = 'chapter'
+
+    return line_type
 
 
 # A function for intelligently splitting textual content into separate
