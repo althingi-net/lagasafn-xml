@@ -29,6 +29,7 @@ from contenthandlers import separate_sentences
 from contenthandlers import strip_markers
 
 from utils import Matcher
+from utils import determine_month
 from utils import order_among_siblings
 from utils import strip_links
 from utils import super_iter
@@ -270,7 +271,48 @@ def make_xml(law_num, law_year, parliament_version):
                 # Parse the num and date, which appears directly below the law name.
                 num_and_date = collect_until(lines, '</strong>')
 
-                law.append(E('num-and-date', num_and_date))
+                # The num-and-date tends to contain excess whitespace.
+                num_and_date = num_and_date.replace('  ', ' ')
+
+                # Find the law's number, if it is specified, as well as the
+                # location of the date section within the string.
+                if 'nr.' in num_and_date:
+                    # Note: len('1980 nr. ') == 9
+                    number = num_and_date[9:num_and_date.find(' ', 9)]
+
+                    # Note: len(' ') == 1
+                    date_start = 9 + len(number) + 1
+                else:
+                    number = None
+
+                    # Note: len('1980 ') == 5
+                    date_start = 5
+
+                # Example: "6. júní"
+                human_date = num_and_date[date_start:]
+
+                # Parse the date in its entirety.
+                year = int(num_and_date[0:4])
+                if human_date.find('.') > -1:
+                    day = int(human_date[0:human_date.find('.')])
+                    month = int(determine_month(human_date[len(str(day))+2:]))
+                else:
+                    # There is at least one case of a the timing of the
+                    # enacted law only being designated by year and month, but
+                    # without a day. In these cases, human_date should simply
+                    # be the name of the month.
+                    # Example: https://www.althingi.is/lagas/148c/1764000.html
+                    day = 0
+                    month = int(determine_month(human_date))
+
+                # Produce an ISO-formatted date.
+                iso_date = '%04d-%02d-%02d' % (year, month, day)
+
+                # Construct the XML node and add it to the main doc.
+                xml_num_and_date = E('num-and-date', E('date', iso_date))
+                if number is not None:
+                    xml_num_and_date.append(E('num', number))
+                law.append(xml_num_and_date)
 
                 trail.append('num-and-date')
 
@@ -279,6 +321,7 @@ def make_xml(law_num, law_year, parliament_version):
             # It contains HTML goo, but we'll just let it float along. It's
             # not even certain that we'll be using it, but there's no harm in
             # keeping it around.
+
             minister_clause = collect_until(lines, '<hr/>')
 
             law.append(E('minister-clause', minister_clause))

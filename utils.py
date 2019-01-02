@@ -2,6 +2,52 @@ import re
 import roman
 import subprocess
 
+def determine_month(month_string):
+    '''
+    Takes a human-readable, Icelandic month name and returns its corresponding
+    number in the year. January ("janúar") is 1 and December ("desember") is
+    12. The reason for hand-rolling this function instead of using something
+    built in Python is because we expect inconsistencies somewhere in the
+    legal codex, if not spelling errors then different traditions for
+    designating them at different times.
+
+    Another, perhaps more arguable reason, is that we don't want to mix
+    assumed localization with the content that we are processing. The content
+    will never be in any other locale than Icelandic except in the
+    circumstance of an historical exception, in which case Python's handling
+    of locale will be a problem, and not a solution. In other words, this is
+    mapping of data and not a localization issue.
+
+    Last but not least, this is simply much simpler than doing this through
+    locale libraries, both in terms of readability and performance.
+    '''
+
+    # We know of one instance where the year gets re-added at the end, in
+    # version 148c. We'll deal with this by replacing that known string with
+    # the month's name only. When the data gets fixed, this line can be
+    # removed, but will still be harmless. -2019-01-02
+    # String: 2003 nr. 7 11. febrúar 2003
+    # UR: https://www.althingi.is/lagas/nuna/2003007.html
+    month_string = month_string.replace('febrúar 2003', 'febrúar')
+
+    months = [
+        'janúar',
+        'febrúar',
+        'mars',
+        'apríl',
+        'maí',
+        'júní',
+        'júlí',
+        'ágúst',
+        'september',
+        'október',
+        'nóvember',
+        'desember',
+    ]
+
+    return months.index(month_string) + 1
+
+
 def is_roman(goo):
     try:
         roman.fromRoman(goo)
