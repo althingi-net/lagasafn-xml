@@ -526,7 +526,17 @@ def make_xml(law_num, law_year, parliament_version):
                     art_roman_nr = str(roman.fromRoman(art_nr))
                 except roman.InvalidRomanNumeralError:
                     # Good. Fuck Roman numerals.
-                    pass
+
+                    # Another possibility is that it's a really old-school way
+                    # of denoting articles (early 19th century and before),
+                    # which looks like "5)" instead of "5. gr.".
+                    if matcher.check(art_nr, '^\d+\)$'):
+                        art_nr = art_nr.strip(')')
+                    else:
+                        # At this point we've run into some kind of article
+                        # that we don't know how to deal with yet. We'll just
+                        # move on.
+                        pass
 
             # Create the tags, configure them and append to the chapter.
             art = E('art', E('nr-title', art_nr_title))
