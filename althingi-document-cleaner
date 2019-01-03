@@ -536,6 +536,14 @@ def make_xml(law_num, law_year, parliament_version):
                         # At this point we've run into some kind of article
                         # that we don't know how to deal with yet. We'll just
                         # move on.
+                        #
+                        # TODO: To investigate what kind of article numbers
+                        # are still not supported, an exception could be
+                        # thrown here and the script run with options
+                        # "-a -e -E":
+                        #     raise Exception(
+                        #         "Can't figure out: %s" % clean_art_nr_title
+                        #     )
                         pass
 
             # Create the tags, configure them and append to the chapter.
