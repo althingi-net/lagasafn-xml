@@ -341,15 +341,19 @@ def make_xml(law_num, law_year, parliament_version):
             # not even certain that we'll be using it, but there's no harm in
             # keeping it around.
 
-            minister_clause = collect_until(lines, '<hr/>')
+            try:
+                minister_clause = collect_until(lines, '<hr/>')
+                law.append(E('minister-clause', minister_clause))
+            except StopIteration:
+                # This happens when there is no minister clause. There's
+                # nothing to react to, we'll just move on.
+                pass
 
-            law.append(E('minister-clause', minister_clause))
-
-            trail.append('minister-clause')
+            trail.append('intro-finished')
 
         # Chapters are found by finding a <b> tag that comes right after a
         # <br/> tag that occurs after the ministerial clause is done.
-        elif line == '<b>' and 'minister-clause' in trail and check_chapter(lines, law) == 'chapter':
+        elif line == '<b>' and 'intro-finished' in trail and check_chapter(lines, law) == 'chapter':
             # Parse what we will believe to be a chapter.
 
             # Chapter names are a bit tricky. They may be divided into two <b>
@@ -456,7 +460,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('chapter')
 
-        elif line == '<b>' and 'minister-clause' in trail and check_chapter(lines, law) == 'extra-docs':
+        elif line == '<b>' and 'intro-finished' in trail and check_chapter(lines, law) == 'extra-docs':
             # Accompanying documents vary in origin and format, and are not a
             # part of the formal legal text itself, even though legal text may
             # reference them. Parsing them is beyond the scope of this tool.
@@ -768,7 +772,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('numart')
 
-        elif line == '<small>' and 'minister-clause' in trail:
+        elif line == '<small>' and 'intro-finished' in trail:
             # Footnote section. Contains footnotes.
 
             footnotes = E('footnotes')
