@@ -226,7 +226,8 @@ def make_xml(law_num, law_year, parliament_version):
     # given regex. Optional limit parameter allows limiting search to a specific
     # number of lines into the future.
     def occurrence_distance(lines, regex, limit=None):
-        i = 0
+        # We start at +1 to avoid matching the current line.
+        i = 1
         line = lines.peek(i)
         while line is not None and (limit is None or i <= limit):
             line = line.strip()
@@ -341,13 +342,12 @@ def make_xml(law_num, law_year, parliament_version):
             # not even certain that we'll be using it, but there's no harm in
             # keeping it around.
 
-            try:
+            # If there is no <hr/> clause in the future, it means that there
+            # is no minister clause.
+            hr_distance = occurrence_distance(lines, '<hr/>')
+            if hr_distance is not None and hr_distance > 0:
                 minister_clause = collect_until(lines, '<hr/>')
                 law.append(E('minister-clause', minister_clause))
-            except StopIteration:
-                # This happens when there is no minister clause. There's
-                # nothing to react to, we'll just move on.
-                pass
 
             trail.append('intro-finished')
 
