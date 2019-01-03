@@ -40,7 +40,7 @@ CURRENT_PARLIAMENT_VERSION = '148c'
 
 LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
-XML_FILENAME = 'xml/%d.%d.%s.xml' # % (law_year, law_num, parliament_version)
+XML_FILENAME = 'xml/%d.%s.%s.xml' # % (law_year, law_num, parliament_version)
 
 def clean_content(content):
     # Decode ISO-8859-1 character encoding.
@@ -310,7 +310,26 @@ def make_xml(law_num, law_year, parliament_version):
 
                 # Construct the XML node and add it to the main doc.
                 xml_num_and_date = E('num-and-date', E('date', iso_date))
-                if number is not None:
+                if number is None:
+                    # If no law number is specified, then the one defined in
+                    # the main XML document is actually not a law number, but
+                    # a concatenation of date elements, for example 61/1847
+                    # for January 6th, 1847.
+                    #
+                    # Here we correct for the mistaken data, so that instead
+                    # of being wrong, the law number will be "m01d06" where
+                    # "m" stands for month and "d" stands for day. Note that
+                    # the output of the script will still say "61/1847"
+                    # instead of "m01d06/1847" because we can't know this
+                    # until we've parsed the data this far.
+                    #
+                    # We will still retain the wrong legal number as
+                    # "primitive-nr" for traceability.
+                    law.attrib['primitive-nr'] = str(law_num)
+                    law_num = 'm%02dd%02d' % (month, day)
+                    law.attrib['nr'] = law_num
+                else:
+                    # Otherwise, of course, we'll just record the number.
                     xml_num_and_date.append(E('num', number))
                 law.append(xml_num_and_date)
 
