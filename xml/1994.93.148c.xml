@@ -844,65 +844,73 @@
           <nr-title>3.</nr-title>
           <name>Efni:</name>
           <sen>Hvers konar efni, óháð uppruna, úr:</sen>
+          <numart nr="—" type="en-dash">
+            <nr-title>—</nr-title>
+            <sen>mönnum, t.d. blóð og efni unnin úr blóði,</sen>
+          </numart>
+          <numart nr="—" type="en-dash">
+            <nr-title>—</nr-title>
+            <sen>dýrum, t.d. örverur, dýr, líffærahlutar, seyti, eiturefni, seyði, efni unnin úr blóði o.fl.,</sen>
+          </numart>
+          <numart nr="—" type="en-dash">
+            <nr-title>—</nr-title>
+            <sen>jurtum, t.d. örverur, plöntur, plöntuhlutar, seyti, seyði, o.fl.,</sen>
+          </numart>
+          <numart nr="—" type="en-dash">
+            <nr-title>—</nr-title>
+            <sen>öðrum efnum, t.d. frumefni, efni úr náttúrunni og efni sem mynduð eru með efnabreytingum eða samtengingu.</sen>
+          </numart>
         </numart>
-        <numart nr="—" type="alphabet">
-          <nr-title>—</nr-title>
-          <sen>öðrum efnum, t.d. frumefni, efni úr náttúrunni og efni sem mynduð eru með efnabreytingum eða samtengingu.</sen>
+        <numart nr="4" type="numeric">
+          <nr-title>4.</nr-title>
+          <name>Forskriftarlyf lækna (magistral formula):</name>
+          <sen>Öll lyf sem framleidd eru í lyfjabúð samkvæmt forskrift læknis á lyfseðli fyrir einstaka sjúklinga.</sen>
+        </numart>
+        <numart nr="5" type="numeric">
+          <nr-title>5.</nr-title>
+          <name>Stöðluð forskriftarlyf (officinal formula):</name>
+          <sen>Öll lyf sem framleidd eru í lyfjabúð eða lyfjagerð, samkvæmt forskrift er Lyfjastofnun staðfestir, og afgreidd eru í lyfjabúðum.</sen>
+          <sen>Lyfjagerð er framleiðslustaður lyfja þar sem lyf eru framleidd í samræmi við góða framleiðsluhætti í lyfjagerð (Good Manufacturing Practice) og sem hefur fengið framleiðsluleyfi samkvæmt ákvæðum XIII. kafla laga þessara.</sen>
+        </numart>
+        <numart nr="6" type="numeric">
+          <nr-title>6.</nr-title>
+          <name>Virkt efni:</name>
+          <sen>Hvers konar efni eða blöndur sem ætlaðar eru til framleiðslu á lyfi og verða, ef þau eru notuð í framleiðslu lyfsins, að virku efni í því lyfi sem ætlað er að endurheimta, lagfæra eða breyta lífeðlisfræðilegri starfsemi fyrir tilstilli lyfjafræðilegrar eða ónæmisfræðilegrar verkunar eða verkunar á efnaskipti eða til þess að staðfesta sjúkdómsgreiningu.</sen>
+        </numart>
+        <numart nr="7" type="numeric">
+          <nr-title>7.</nr-title>
+          <name>Hjálparefni:</name>
+          <sen>Sérhver hluti lyfs annar en virka efnið og umbúðaefnið.</sen>
+        </numart>
+        <numart nr="8" type="numeric">
+          <nr-title>8.</nr-title>
+          <name>Heildsöludreifing lyfja:</name>
+          <sen>Starfsemi sem felst í því að kaupa inn, geyma, afgreiða eða flytja út lyf, að undanskilinni afgreiðslu lyfja til neytenda.</sen>
+          <sen>Þessi starfsemi fer fram í samvinnu við framleiðendur eða umboðsmenn þeirra, innflytjendur, aðra heildsala eða lyfsala og þá sem hafa leyfi eða rétt til að afgreiða lyf til neytenda.</sen>
+        </numart>
+        <numart nr="9" type="numeric">
+          <nr-title>9.</nr-title>
+          <name>Miðlun lyfja:</name>
+          <sen>Öll starfsemi í tengslum við sölu eða kaup á lyfjum, nema heildsöludreifing, sem felur ekki í sér meðhöndlun á vörunni og felst í því að semja um viðskipti sjálfstætt og fyrir hönd annars lögaðila eða einstaklings.</sen>
+        </numart>
+        <numart nr="10" type="numeric">
+          <nr-title>10.</nr-title>
+          <name>Fölsuð lyf:</name>
+          <sen>Sérhvert lyf með rangar upplýsingar um:</sen>
+          <numart nr="a" type="alphabet">
+            <nr-title>a.</nr-title>
+            <sen>auðkenni lyfsins, þ.m.t. pakkningu og merkingu þess, heiti þess eða samsetningu varðandi innihaldsefni, svo sem hjálparefni og styrkleika þessara innihaldsefna,</sen>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <nr-title>b.</nr-title>
+            <sen>uppruna þess, þ.m.t. framleiðanda, framleiðsluland, upprunaland eða markaðsleyfishafa þess, eða</sen>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <nr-title>c.</nr-title>
+            <sen>sögu þess, þ.m.t. skrár og gögn varðandi dreifileiðina sem er notuð.</sen>
+          </numart>
         </numart>
       </subart>
-      <numart nr="—" type="alphabet">
-        <nr-title>—</nr-title>
-        <sen>mönnum, t.d. blóð og efni unnin úr blóði,</sen>
-      </numart>
-      <numart nr="4" type="numeric">
-        <nr-title>4.</nr-title>
-        <name>Forskriftarlyf lækna (magistral formula):</name>
-        <sen>Öll lyf sem framleidd eru í lyfjabúð samkvæmt forskrift læknis á lyfseðli fyrir einstaka sjúklinga.</sen>
-      </numart>
-      <numart nr="5" type="numeric">
-        <nr-title>5.</nr-title>
-        <name>Stöðluð forskriftarlyf (officinal formula):</name>
-        <sen>Öll lyf sem framleidd eru í lyfjabúð eða lyfjagerð, samkvæmt forskrift er Lyfjastofnun staðfestir, og afgreidd eru í lyfjabúðum.</sen>
-        <sen>Lyfjagerð er framleiðslustaður lyfja þar sem lyf eru framleidd í samræmi við góða framleiðsluhætti í lyfjagerð (Good Manufacturing Practice) og sem hefur fengið framleiðsluleyfi samkvæmt ákvæðum XIII. kafla laga þessara.</sen>
-      </numart>
-      <numart nr="6" type="numeric">
-        <nr-title>6.</nr-title>
-        <name>Virkt efni:</name>
-        <sen>Hvers konar efni eða blöndur sem ætlaðar eru til framleiðslu á lyfi og verða, ef þau eru notuð í framleiðslu lyfsins, að virku efni í því lyfi sem ætlað er að endurheimta, lagfæra eða breyta lífeðlisfræðilegri starfsemi fyrir tilstilli lyfjafræðilegrar eða ónæmisfræðilegrar verkunar eða verkunar á efnaskipti eða til þess að staðfesta sjúkdómsgreiningu.</sen>
-      </numart>
-      <numart nr="7" type="numeric">
-        <nr-title>7.</nr-title>
-        <name>Hjálparefni:</name>
-        <sen>Sérhver hluti lyfs annar en virka efnið og umbúðaefnið.</sen>
-      </numart>
-      <numart nr="8" type="numeric">
-        <nr-title>8.</nr-title>
-        <name>Heildsöludreifing lyfja:</name>
-        <sen>Starfsemi sem felst í því að kaupa inn, geyma, afgreiða eða flytja út lyf, að undanskilinni afgreiðslu lyfja til neytenda.</sen>
-        <sen>Þessi starfsemi fer fram í samvinnu við framleiðendur eða umboðsmenn þeirra, innflytjendur, aðra heildsala eða lyfsala og þá sem hafa leyfi eða rétt til að afgreiða lyf til neytenda.</sen>
-      </numart>
-      <numart nr="9" type="numeric">
-        <nr-title>9.</nr-title>
-        <name>Miðlun lyfja:</name>
-        <sen>Öll starfsemi í tengslum við sölu eða kaup á lyfjum, nema heildsöludreifing, sem felur ekki í sér meðhöndlun á vörunni og felst í því að semja um viðskipti sjálfstætt og fyrir hönd annars lögaðila eða einstaklings.</sen>
-      </numart>
-      <numart nr="10" type="numeric">
-        <nr-title>10.</nr-title>
-        <name>Fölsuð lyf:</name>
-        <sen>Sérhvert lyf með rangar upplýsingar um:</sen>
-        <numart nr="a" type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen>auðkenni lyfsins, þ.m.t. pakkningu og merkingu þess, heiti þess eða samsetningu varðandi innihaldsefni, svo sem hjálparefni og styrkleika þessara innihaldsefna,</sen>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen>uppruna þess, þ.m.t. framleiðanda, framleiðsluland, upprunaland eða markaðsleyfishafa þess, eða</sen>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen>sögu þess, þ.m.t. skrár og gögn varðandi dreifileiðina sem er notuð.</sen>
-        </numart>
-      </numart>
       <subart nr="2">
         <sen>Leiki vafi á því hvort einstök efni eða efnasambönd teljist lyf sker Lyfjastofnun úr.</sen>
         <sen>Ef vafi leikur á því hvort vara geti, að teknu tilliti til allra eiginleika hennar, fallið undir skilgreiningu á lyfi og skilgreiningu á vöru sem heyrir undir aðra löggjöf gilda ákvæði þessara laga.</sen>
@@ -940,12 +948,14 @@
             <start>
               <chapter>2</chapter>
               <art>5</art>
+              <subart>1</subart>
               <numart>5</numart>
               <name>1</name>
             </start>
             <end>
               <chapter>2</chapter>
               <art>5</art>
+              <subart>1</subart>
               <numart>5</numart>
               <sen>2</sen>
             </end>
@@ -971,12 +981,14 @@
             <start>
               <chapter>2</chapter>
               <art>5</art>
+              <subart>1</subart>
               <numart>6</numart>
               <nr-title>1</nr-title>
             </start>
             <end>
               <chapter>2</chapter>
               <art>5</art>
+              <subart>1</subart>
               <numart>10</numart>
               <numart>c</numart>
               <sen>1</sen>
@@ -1038,15 +1050,7 @@
         </footnote>
       </footnotes>
     </art>
-    <numart nr="—" type="alphabet">
-      <nr-title>—</nr-title>
-      <sen>dýrum, t.d. örverur, dýr, líffærahlutar, seyti, eiturefni, seyði, efni unnin úr blóði o.fl.,</sen>
-    </numart>
   </chapter>
-  <numart nr="—" type="alphabet">
-    <nr-title>—</nr-title>
-    <sen>jurtum, t.d. örverur, plöntur, plöntuhlutar, seyti, seyði, o.fl.,</sen>
-  </numart>
   <chapter nr="3">
     <nr-title>III. kafli.</nr-title>
     <name>Lyfjaskrár.</name>
