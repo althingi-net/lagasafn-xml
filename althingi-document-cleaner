@@ -635,6 +635,8 @@ def make_xml(law_num, law_year, parliament_version):
             # Figure out the numart's type.
             if numart_nr[0].isdigit():
                 numart_type = 'numeric'
+            elif numart_nr == '—':
+                numart_type = 'en-dash'
             else:
                 numart_type = 'alphabet'
 
@@ -673,6 +675,8 @@ def make_xml(law_num, law_year, parliament_version):
                             str(num_component + 1),
                             str(num_component) + chr(int(ord(alpha_component)) + 1),
                         ]
+                elif prev_numart.attrib['type'] == 'en-dash':
+                    expected_numart_nrs.append('—')
                 else:
                     expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -681,7 +685,7 @@ def make_xml(law_num, law_year, parliament_version):
                 different_type = numart.attrib['type'] != prev_numart.attrib['type']
 
                 if numart_nr not in expected_numart_nrs or different_type:
-                    if numart_nr == 'a' or (numart_nr.isdigit() and int(numart_nr) == 1):
+                    if numart_nr in ['a', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
                         # was a `numart` before this one, but this `numart`
