@@ -719,6 +719,8 @@ def make_xml(law_num, law_year, parliament_version):
             numart.append(E('nr-title', numart_nr_title))
             if not numart_nr_title.strip('.').strip('[').isdigit():
                 numart.attrib.update({'type': 'alphabet'})
+            else:
+                numart.attrib.update({'type': 'numeric'})
 
             if lines.peek().strip() == '<i>':
                 # Looks like this numerical article has a name.
