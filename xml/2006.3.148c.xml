@@ -17,15 +17,15 @@
       <subart nr="1">
         <sen>Lög þessi gilda um félög með takmarkaðri ábyrgð félagsaðila eins og greinir í 1. og 2. tölul. og félög með ótakmarkaðri ábyrgð félagsaðila eins og greinir í 3. tölul.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hlutafélög, einkahlutafélög, samlagshlutafélög, samvinnufélög og samvinnusambönd, sparisjóði og skráð útibú erlendra félaga og sjálfseignarstofnanir sem stunda atvinnurekstur, sbr. lög nr. 33/1999.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Félög sem hafa verðbréf sín skráð á skipulegum verðbréfamarkaði í ríki innan Evrópska efnahagssvæðisins, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Sameignarfélög og önnur félög með ótakmarkaðri ábyrgð félagsaðila, svo og samlagsfélög, ef félagsaðilar þeirra eru eingöngu félög sem talin eru upp í 1. tölul., sem og samlagsfélög þar sem ábyrgðaraðilar eru félög sem talin eru upp í 1. og 2. tölul.</sen>
           <sen>Enn fremur gilda lög þessi um sameignarfélög, og önnur félög með ótakmarkaðri ábyrgð félagsaðila, svo og samlagsfélög, enda séu þau skráð í firmaskrá og séu meðalstór eða stór félög, sbr. ákvæði c- og d-liðar 11. tölul. 2. gr.</sen>
@@ -77,17 +77,17 @@
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
         <sen>Í lögum þessum er merking hugtaka sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Alþjóðlegir reikningsskilastaðlar:</name>
           <sen>Reikningsskilastaðlar (IAS/IFRS) samkvæmt skilgreiningu 2. gr. reglugerðar (EB) nr. 1606/2002sem framkvæmdastjórn ESB hefur samþykkt skv. 3. gr. reglugerðar (EB) nr. 1606/2002.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Ársreikningaskrá:</name>
           <sen>Skrá sem starfrækt er í því skyni að taka á móti, varðveita og veita aðgang að skilaskyldum gögnum ásamt því að hafa eftirlit með að þessi gögn séu í samræmi við ákvæði laga, reglugerða og settra reikningsskilareglna.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Ársverk:</name>
           <sen>Jafngildi vinnuframlags eins manns í fullu starfi í eitt ár.</sen>
@@ -102,32 +102,32 @@
             <sen>eigendur og/eða framkvæmdastjórar sem starfa hjá félaginu.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Dótturfélag:</name>
           <sen>Félag sem móðurfélag hefur yfirráð yfir, þ.m.t. öll dótturfélög endanlegs móðurfélags.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <name>Eign:</name>
           <sen>Fjármunur sem félag hefur yfirráð yfir á grundvelli viðskipta eða í tengslum við atburði sem hafa átt sér stað og sem talið er að félagið muni hafa fjárhagslegan ávinning af í framtíðinni.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <name>Eignarhaldsfélag:</name>
           <sen>Félag sem hefur það eitt að markmiði að eignast hluti í öðrum félögum og fara með umsýslu þeirra og skila arði af þeim, án þess að taka sjálft beinan eða óbeinan þátt í að reka félögin, þó með fyrirvara um rétt þeirra sem hluthafa.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <name>Eignarhluti:</name>
           <sen>Hlutdeild félagsaðila í hlutafélögum, einkahlutafélögum og eigin fé annarra félaga.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <name>Eignatengd félög:</name>
           <sen>Tvö eða fleiri félög innan samstæðu.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <name>Eining tengd almannahagsmunum:</name>
           <numart nr="a" type="alphabet">
@@ -147,27 +147,27 @@
             <sen>félag sem hefur starfsleyfi til að reka vátryggingastarfsemi hér á landi samkvæmt lögum um vátryggingastarfsemi.</sen>
           </numart>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <name>Fastafjármunir:</name>
           <sen>Eignir sem eru ætlaðar til notkunar í starfsemi fyrirtækis í a.m.k. 12 mánuði frá reikningsskiladegi.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <name>Félag:</name>
           <sen>Félag skv. 1. gr. sem semja skal ársreikning og samstæðureikning samkvæmt lögum þessum:</sen>
           <numart nr="a" type="alphabet">
             <nr-title>a.</nr-title>
             <sen>örfélag: félag sem við uppgjörsdag fer ekki yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>heildareignum: 20.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 40.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 3,</sen>
             </numart>
@@ -175,15 +175,15 @@
           <numart nr="b" type="alphabet">
             <nr-title>b.</nr-title>
             <sen>lítið félag: félag sem við uppgjörsdag fer ekki yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>heildareignum: 600.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 1.200.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 50,</sen>
             </numart>
@@ -191,15 +191,15 @@
           <numart nr="c" type="alphabet">
             <nr-title>c.</nr-title>
             <sen>meðalstórt félag: félag sem er ekki lítið félag og sem við uppgjörsdag fer ekki yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>heildareignum: 3.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 6.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 250,</sen>
             </numart>
@@ -207,15 +207,15 @@
           <numart nr="d" type="alphabet">
             <nr-title>d.</nr-title>
             <sen>stórt félag: félag sem við uppgjörsdag fer yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>heildareignum: 3.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 6.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 250,</sen>
             </numart>
@@ -225,27 +225,27 @@
             <sen>fara skal með fyrirtæki skv. 1. gr. sem er eining tengd almannahagsmunum sem stórt félag án tillits til hreinnar veltu, niðurstöðutölu efnahagsreiknings eða fjölda ársverka á fjárhagsárinu.</sen>
           </numart>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <name>Félagsaðili:</name>
           <sen>Hluthafi í hlutafélagi eða eigandi eignarhluta í öðru félagi sem lög þessi taka til.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <name>Fjáreign:</name>
           <sen>Sérhver eign sem felst í reiðufé, rétti samkvæmt samningi til að fá greitt reiðufé eða aðra fjáreign frá öðrum aðila, rétti samkvæmt samningi til að skipta á skjölum við annan aðila með kjörum sem geta verið hagstæð, eða skírteini fyrir hlut í eigu annars aðila.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <name>Fjáreignir tilgreindar á gangvirði gegnum rekstur við upphaflega skráningu:</name>
           <sen>Fjármálagerningar sem ekki teljast vera veltufjáreignir en félag hefur kosið að færa á gangvirði og gangvirðisbreytingar í rekstrarreikning.</sen>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <name>Fjárfestingarfasteign:</name>
           <sen>Fasteign, land, bygging eða hluti byggingar, sem ætluð er til öflunar tekna, svo sem til útleigu eða í öðru ágóðaskyni, en ekki til notkunar í rekstri félags við framleiðslu, vörslu vörubirgða, þjónustu í rekstri félagsins, í stjórnunarlegum tilgangi eða til sölu í hefðbundnum rekstrartilgangi.</sen>
         </numart>
-        <numart nr="16">
+        <numart nr="16" type="numeric">
           <nr-title>16.</nr-title>
           <name>Fjárfestingarfélag:</name>
           <numart nr="a" type="alphabet">
@@ -257,73 +257,73 @@
             <sen>félag tengt fjárfestingarfélögum með fastafjármuni, ef eina markmið þess er að eignast hluti sem greiddir eru að fullu og gefnir hafa verið út af fjárfestingarfélögum.</sen>
           </numart>
         </numart>
-        <numart nr="17">
+        <numart nr="17" type="numeric">
           <nr-title>17.</nr-title>
           <name>Fjármálagerningur:</name>
           <sen>Fjármálagerningur samkvæmt skilgreiningu laga um verðbréfaviðskipti.</sen>
         </numart>
-        <numart nr="18">
+        <numart nr="18" type="numeric">
           <nr-title>18.</nr-title>
           <name>Framleiðslukostnaður:</name>
           <sen>Innkaupsverð hráefnis, kostnaðarverð óvaranlegra neysluvara og annar kostnaður sem má rekja til viðkomandi vöru.</sen>
           <sen>Sanngjarnt hlutfall fasts kostnaðar eða breytilegs óbeins kostnaðar, sem rekja má til vörunnar, er fellt inn í verðið að því marki sem slíkur kostnaður tengist framleiðslutímabilinu.</sen>
           <sen>Dreifingarkostnaður fellur þó ekki undir þessa skilgreiningu.</sen>
         </numart>
-        <numart nr="19">
+        <numart nr="19" type="numeric">
           <nr-title>19.</nr-title>
           <name>Gangvirði:</name>
           <sen>Verðið sem fengist við sölu á eign eða yrði greitt við yfirfærslu skuldar í eðlilegum viðskiptum á milli markaðsaðila á matsdegi.</sen>
         </numart>
-        <numart nr="20">
+        <numart nr="20" type="numeric">
           <nr-title>20.</nr-title>
           <name>Glögg mynd:</name>
           <sen>Glögg mynd felst í áreiðanlegri framsetningu á áhrifum viðskipta, öðrum atburðum og skilyrðum í samræmi við skilgreiningar og reglur um skráningu eigna, skulda, tekna og gjalda sem fram koma í lögum þessum, reglugerðum og settum reikningsskilareglum.</sen>
         </numart>
-        <numart nr="21">
+        <numart nr="21" type="numeric">
           <nr-title>21.</nr-title>
           <name>Hlutdeild:</name>
           <sen>Réttur til eigin fjár annarra félaga, hvort sem skírteini hefur verið gefið út fyrir honum eða ekki, sem ætlað er að efla starfsemi félagsins sem réttinn á með því að mynda varanleg tengsl við þau.</sen>
           <sen>Eignarhald á hluta af eigin fé annars félags telst hlutdeild ef það er a.m.k. 20%.</sen>
         </numart>
-        <numart nr="22">
+        <numart nr="22" type="numeric">
           <nr-title>22.</nr-title>
           <name>Hlutdeildarfélag:</name>
           <sen>Félag, þó ekki dótturfélag, sem annað félag á hlutdeild í og það félag hefur veruleg áhrif á rekstrar- og fjármálastefnu hins félagsins.</sen>
           <sen>Félag er álitið hafa veruleg áhrif í öðru félagi ef það á 20% eða meira af atkvæðisrétti félagsaðila í því fyrirtæki.</sen>
         </numart>
-        <numart nr="23">
+        <numart nr="23" type="numeric">
           <nr-title>23.</nr-title>
           <name>Hrein velta:</name>
           <sen>Tekjur af sölu og þjónustu í reglulegri starfsemi að frádregnum afslætti og sköttum sem tengjast sölunni beint.</sen>
         </numart>
-        <numart nr="24">
+        <numart nr="24" type="numeric">
           <nr-title>24.</nr-title>
           <name>Kaupverð:</name>
           <sen>Verð sem greiða skal og útgjöld sem falla til að frádregnum hugsanlegum lækkunum sem verða á kostnaðarverði þess sem keypt er.</sen>
         </numart>
-        <numart nr="25">
+        <numart nr="25" type="numeric">
           <nr-title>25.</nr-title>
           <name>Langtímakröfur og áhættufjármunir:</name>
           <sen>Kröfur eða aðrar fjárfestingar sem reiknað er með að verði áfram í eign viðkomandi í a.m.k. eitt ár.</sen>
           <sen>Langtímakröfur og áhættufjármunir í ársreikningum fyrirtækja eru hlutabréf í öðrum félögum, önnur verðbréf, ásamt öðrum sérstaklega skilgreindum langtímakröfum.</sen>
         </numart>
-        <numart nr="26">
+        <numart nr="26" type="numeric">
           <nr-title>26.</nr-title>
           <name>Langtímaskuldir:</name>
           <sen>Allar aðrar skuldir en þær sem falla undir ákvæði 37. tölul.</sen>
         </numart>
-        <numart nr="27">
+        <numart nr="27" type="numeric">
           <nr-title>27.</nr-title>
           <name>Matsgrundvöllur:</name>
           <sen>Þær aðferðir sem beitt er við mat á virði einstakra flokka eigna og skuldbindinga í reikningsskilum, svo sem kostnaðarverðsmat eða gangvirðismat.</sen>
         </numart>
-        <numart nr="28">
+        <numart nr="28" type="numeric">
           <nr-title>28.</nr-title>
           <name>Mikilvægi:</name>
           <sen>Upplýsingar eru mikilvægar ef það að þeim sé sleppt eða þær séu rangar getur haft áhrif á efnahagslegar ákvarðanir sem notendur reikningsskilanna kunna að taka á grundvelli þeirra.</sen>
           <sen>Mikilvægi einstakra liða skal metið í tengslum við aðra sambærilega liði.</sen>
         </numart>
-        <numart nr="29">
+        <numart nr="29" type="numeric">
           <nr-title>29.</nr-title>
           <name>Móðurfélag:</name>
           <sen>Félag sem hefur yfirráð í öðru félagi.</sen>
@@ -340,38 +340,38 @@
             <sen>draga frá atkvæðamagni móðurfélagsins það atkvæðamagn sem það hefur til tryggingar ef félagið beitir aðeins atkvæðisréttinum í samræmi við fyrirmæli þess sem setti trygginguna, eða ef umráðin eru liður í lánastarfsemi og atkvæðisréttinum er aðeins beitt í þágu þess sem setti trygginguna.</sen>
           </numart>
         </numart>
-        <numart nr="30">
+        <numart nr="30" type="numeric">
           <nr-title>30.</nr-title>
           <name>Óefnisleg eign:</name>
           <sen>Eign sem er aðgreinanleg og ópeningaleg og er ekki í hlutkenndu formi.</sen>
         </numart>
-        <numart nr="31">
+        <numart nr="31" type="numeric">
           <nr-title>31.</nr-title>
           <name>Reikningsskilaaðferðir:</name>
           <sen>Meginreglur, matsgrundvöllur, reglur og starfshættir sem beitt er við gerð ársreiknings.</sen>
         </numart>
-        <numart nr="32">
+        <numart nr="32" type="numeric">
           <nr-title>32.</nr-title>
           <name>Rekstrarhæfi:</name>
           <sen>Félag er talið vera rekstrarhæft nema stjórnendur þess ætli sér að leysa félagið upp eða hætta rekstri þess eða hafa ekki raunhæft val um annað en að hætta starfsemi félagsins.</sen>
           <sen>Við mat á rekstrarhæfi skulu stjórnendur taka tillit til allra fyrirliggjandi upplýsinga um framtíðarhorfur í rekstri félags.</sen>
         </numart>
-        <numart nr="33">
+        <numart nr="33" type="numeric">
           <nr-title>33.</nr-title>
           <name>Samstæða:</name>
           <sen>Móðurfélag og öll dótturfélög þess:</sen>
           <numart nr="a" type="alphabet">
             <nr-title>a.</nr-title>
             <sen>lítil samstæða: samstæða sem á samstæðugrundvelli fer ekki yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum við uppgjörsdag móðurfélagsins:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>niðurstöðutölu efnahagsreiknings: 600.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 1.200.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 50,</sen>
             </numart>
@@ -379,15 +379,15 @@
           <numart nr="b" type="alphabet">
             <nr-title>b.</nr-title>
             <sen>meðalstór samstæða: samstæða, þó ekki lítil samstæða, sem á samstæðugrundvelli fer ekki yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum við uppgjörsdag móðurfélagsins:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>niðurstöðutölu efnahagsreiknings: 3.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 6.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 250,</sen>
             </numart>
@@ -395,35 +395,35 @@
           <numart nr="c" type="alphabet">
             <nr-title>c.</nr-title>
             <sen>stór samstæða: samstæða sem á samstæðugrundvelli fer yfir mörkin á a.m.k. tveimur af þremur eftirfarandi viðmiðunum við uppgjörsdag móðurfélagsins:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>niðurstöðutölu efnahagsreiknings: 3.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>hreinni veltu: 6.000.000.000 kr.,</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>meðalfjölda ársverka á fjárhagsárinu: 250.</sen>
             </numart>
           </numart>
-          <numart nr="34">
+          <numart nr="34" type="numeric">
             <nr-title>34.</nr-title>
             <name>Samstæðureikningur:</name>
             <sen>Reikningsskil þar sem reikningar móðurfélags og dótturfélaga þess eru sameinaðir í eitt.</sen>
           </numart>
-          <numart nr="35">
+          <numart nr="35" type="numeric">
             <nr-title>35.</nr-title>
             <name>Settar reikningsskilareglur:</name>
             <sen>Reglur sem reikningsskilaráð gefur út, sbr. 119. gr., og alþjóðlegir reikningsskilastaðlar, sbr. 1. tölul.</sen>
           </numart>
-          <numart nr="36">
+          <numart nr="36" type="numeric">
             <nr-title>36.</nr-title>
             <name>Skammtímakröfur:</name>
             <sen>Kröfur sem gert er ráð fyrir að fáist greiddar innan tólf mánaða.</sen>
           </numart>
-          <numart nr="37">
+          <numart nr="37" type="numeric">
             <nr-title>37.</nr-title>
             <name>Skammtímaskuldir:</name>
             <sen>Skuldir sem uppfylla eitt af eftirfarandi skilyrðum:</sen>
@@ -440,57 +440,57 @@
               <sen>ekki er til staðar réttur til að fresta greiðslu skuldarinnar lengur en í tólf mánuði frá dagsetningu efnahagsreiknings.</sen>
             </numart>
           </numart>
-          <numart nr="38">
+          <numart nr="38" type="numeric">
             <nr-title>38.</nr-title>
             <name>Skipulegur verðbréfamarkaður:</name>
             <sen>Markaður með verðbréf samkvæmt skilgreiningu laga um kauphallir.</sen>
           </numart>
-          <numart nr="39">
+          <numart nr="39" type="numeric">
             <nr-title>39.</nr-title>
             <name>Skuld:</name>
             <sen>Núverandi skuldbinding félags sem hefur orðið til vegna viðskipta eða atburða sem hafa átt sér stað og gert er ráð fyrir að uppgjör skuldarinnar muni hafa í för með sér útstreymi verðmæta sem fela í sér fjárhagslegan ávinning.</sen>
           </numart>
-          <numart nr="40">
+          <numart nr="40" type="numeric">
             <nr-title>40.</nr-title>
             <name>Tekjur:</name>
             <sen>Aukning eigna eða lækkun skulda á yfirstandandi reikningstímabili vegna afhendingar á vörum eða þjónustu eða vegna annarrar starfsemi félags, annarrar en þeirrar sem stafar af framlögum eigenda félagsins í hlutverki þeirra sem eigendur félagsins.</sen>
           </numart>
-          <numart nr="41">
+          <numart nr="41" type="numeric">
             <nr-title>41.</nr-title>
             <name>Tengdur aðili:</name>
             <sen>Hefur sömu merkingu og samkvæmt viðeigandi alþjóðlegum reikningsskilastaðli sem settur er á grundvelli reglugerðar (EB) nr. 1606/2002sem framkvæmdastjórn ESB hefur samþykkt.</sen>
           </numart>
-          <numart nr="42">
+          <numart nr="42" type="numeric">
             <nr-title>42.</nr-title>
             <name>Útgjöld:</name>
             <sen>Lækkun eigna eða hækkun skulda á yfirstandandi reikningstímabili vegna móttöku á vörum eða þjónustu eða vegna annarrar starfsemi eða atburða í rekstri félags, annarra en þeirra sem stafa af úttektum eigenda í hlutverki þeirra sem eigendur félagsins.</sen>
           </numart>
-          <numart nr="43">
+          <numart nr="43" type="numeric">
             <nr-title>43.</nr-title>
             <name>Varanlegir rekstrarfjármunir:</name>
             <sen>Efnislegar eignir sem eru notaðar til framleiðslu á vörum eða þjónustu, til útleigu eða í stjórnunarlegum tilgangi og eru ætlaðar til nota lengur en í eitt ár.</sen>
           </numart>
-          <numart nr="44">
+          <numart nr="44" type="numeric">
             <nr-title>44.</nr-title>
             <name>Veltufjáreignir:</name>
             <sen>Þær fjáreignir sem hafa verið keyptar í þeim tilgangi að hagnast á skammtímaverðbreytingum eða á miðlaraþóknun.</sen>
           </numart>
-          <numart nr="45">
+          <numart nr="45" type="numeric">
             <nr-title>45.</nr-title>
             <name>Veltufjármunir:</name>
             <sen>Þær eignir sem ekki teljast til fastafjármuna samkvæmt skilgreiningu 10. tölul.</sen>
           </numart>
-          <numart nr="46">
+          <numart nr="46" type="numeric">
             <nr-title>46.</nr-title>
             <name>Verðbréf:</name>
             <sen>Verðbréf samkvæmt skilgreiningu á fjármálagerningi í lögum nr. 108/2007, um verðbréfaviðskipti.</sen>
           </numart>
-          <numart nr="47">
+          <numart nr="47" type="numeric">
             <nr-title>47.</nr-title>
             <name>Virðisbreyting:</name>
             <sen>Breytingar á verðgildi einstakra eigna eða skuldbindinga sem staðfestast við dagsetningu efnahagsreiknings hvort sem breytingin er varanleg eða ekki.</sen>
           </numart>
-          <numart nr="48">
+          <numart nr="48" type="numeric">
             <nr-title>48.</nr-title>
             <name>Yfirráð:</name>
             <sen>Hefur sömu merkingu og samkvæmt viðeigandi alþjóðlegum reikningsskilastaðli sem settur er á grundvelli reglugerðar (EB) nr. 1606/2002sem framkvæmdastjórn ESB hefur samþykkt.</sen>
@@ -708,19 +708,19 @@
       <subart nr="2">
         <sen>Ef ákvæði laga þessara nægja ekki til að gefa glögga mynd af afkomu, efnahag og breytingu á handbæru fé skal félagið veita viðbótarupplýsingar svo að reikningurinn gefi glögga mynd.</sen>
         <sen>Ef ákvæði laga þessara leiða til þess að reikningurinn gefi villandi mynd skal vikið frá þeim í undantekningartilvikum til þess að reikningurinn gefi glögga mynd í skilningi 20. tölul. 2. gr. og skal félagið þá upplýsa um eftirfarandi atriði í skýringum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>að stjórnendur félagsins telji að ársreikningurinn gefi glögga mynd af fjárhagsstöðu, afkomu og breytingum á handbæru fé ef við á,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>að gerð og framsetning ársreikningsins sé í samræmi við lög þessi fyrir utan frávik frá tilteknum ákvæðum laga þessara í því skyni að ársreikningurinn gefi glögga mynd,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>í hverju frávikið er fólgið, ástæðu þess að beiting laganna hefði haft það í för með sér að reikningurinn hefði ekki gefið glögga mynd og hvaða reikningshaldslegu aðferð var beitt þess í stað og</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>hvaða fjárhagslegu áhrif það hefði haft á einstaka liði ársreikningsins hefði ákvæðum laga verið beitt í stað þess að víkja frá þeim.</sen>
         </numart>
@@ -952,17 +952,17 @@
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
         <sen>Semja skal ársreikning miðað við eftirfarandi grunnforsendur:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gera skal ráð fyrir að félagið haldi starfsemi sinni áfram.</sen>
           <sen>Leggist starfsemi niður að hluta skal taka tillit til þess varðandi mat og framsetningu ársreikningsins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Reikningsskilaaðferðum skal beitt með hliðstæðum hætti frá ári til árs.</sen>
           <sen>Ef ákvæði laga þessara, reglugerða eða settra reikningsskilareglna kveða ekki á um beitingu á tilteknum reikningsskilaaðferðum skulu stjórnendur nota dómgreind sína við val á reikningsskilaaðferð sem er viðeigandi miðað við þarfir notenda ársreikningsins og áreiðanleg þannig að hún gefi glögga mynd af afkomu félagsins, fjárhagsstöðu þess og breytingum á handbæru fé.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Við mat á einstökum liðum skal gætt tilhlýðilegrar varkárni og skal þannig m.a.:</sen>
           <numart nr="a" type="alphabet">
@@ -978,27 +978,27 @@
             <sen>sýna í reikningsskilum allar matsbreytingar sem taka til skerðingar á verðgildi einstakra eigna, sbr. 30. gr., án tillits til þess hvaða áhrif það hefur á eigið fé og afkomu.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Fjárhæðir sem færðar eru í efnahagsreikning eða rekstrarreikning skulu vera reiknaðar á rekstrargrunni.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Einstaka þætti eigna- og skuldaliða skal meta til verðs hvern fyrir sig.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Efnahagsreikningur við upphaf hvers reikningsárs skal samsvara efnahagsreikningi við lok fyrra reikningsárs.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Óheimilt er að jafna út eignir á móti skuldum eða tekjur á móti gjöldum nema slíkt sé sérstaklega heimilað í öðrum greinum laga þessara eða slík jöfnun sé í samræmi við settar reikningsskilareglur.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Einstaka liði í rekstrarreikningi og efnahagsreikningi skal færa og setja fram miðað við efni eða fyrirkomulag viðkomandi liðar.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Ekki þarf að uppfylla skilyrði laga þessara um færslu, mat, framsetningu og skýringar ef viðkomandi liður telst ekki einn og sér eða ásamt öðrum vera mikilvægur, sbr. 28. tölul. 2. gr.</sen>
         </numart>
@@ -1559,31 +1559,31 @@
       </subart>
       <subart nr="2">
         <sen>Ákvæði 1. mgr. nær þó ekki til:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>útlána og viðskiptakrafna viðkomandi félags sem ekki er fyrirhugað að versla með,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>fjármálagerninga, annarra en afleiðusamninga, sem ætlunin er að eiga fram að gjalddaga,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>eignarhluta í dótturfélögum,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>eignarhluta í hlutdeildarfélögum,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>eignarhluta í samrekstrarfélögum, sbr. 3. mgr. 40. gr.,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>eigin eignarhluta, skilyrts viðbótarverðs við sameiningu fyrirtækja, sem og annarra fjármálagerninga sem tengjast eigin fé viðkomandi félags,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>allra annarra fjármálagerninga sem ekki er viðeigandi að færa á gangvirði samkvæmt settum reikningsskilareglum.</sen>
         </numart>
@@ -1623,15 +1623,15 @@
       </subart>
       <subart nr="2">
         <sen>Gangvirði skal ákvarðað með tilliti til:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>markaðsverðs þeirra fjármálagerninga sem eru á virkum markaði,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>markaðsverðs undirliggjandi þátta í viðkomandi fjármálagerningi ef viðkomandi fjármálagerningur er ekki skráður á markaði,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>virðis sem reiknað er út með almennum viðurkenndum matslíkönum eða matsaðferðum fyrir þær eignir sem ekki eru á markaði; slík matslíkön og matsaðferðir skulu gefa góða mynd af markaðsverði.</sen>
         </numart>
@@ -1648,15 +1648,15 @@
       </subart>
       <subart nr="2">
         <sen>Slík breyting skal þó færð beint á gangvirðisreikning sem færður er með eigin fé þegar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>í reikningsskilum afleiðusamnings er byggt á að um sé að ræða áhættuvörn í skilningi settra reikningsskilareglna, að því marki sem þær leyfa að matsbreyting sé ekki tekin með í rekstrarreikningi eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>um er að ræða matsbreytingu fjáreignar til sölu eða</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>matsbreytingar tengjast gengismun sem verður á peningalegum liðum sem eru hluti af nettófjárfestingu félagsins í starfsemi erlendis.</sen>
         </numart>
@@ -1860,19 +1860,19 @@
       <subart nr="1">
         <sen>Í skýringum í ársreikningi skal a.m.k. veita upplýsingar um þau atriði sem tilgreind eru í 44.–64. gr., auk þeirra upplýsinga sem krafist er samkvæmt öðrum ákvæðum laga þessara.</sen>
         <sen>Enn fremur skulu veittar upplýsingar um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>heiti félagsins, félagsform, heimilisfesti aðalskrifstofu félagsins og ef við á hvort verið sé að slíta félaginu,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>grundvöll reikningsskilanna auk helstu reikningsskilaaðferða, þ.m.t. matsaðferðir og útskýringar á viðkomandi reikningsskilaaðferðum,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>fjárhæðir og eðli einstakra liða í rekstrarreikningi og efnahagsreikningi sem eru óvenjulegir miðað við stærð eða tíðni,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>það gengi sem miðað er við þegar fjárhæðir í reikningsskilunum eru byggðar á erlendum gjaldmiðlum og til samanburðar það gengi sem við var miðað í reikningsskilum fyrra árs.</sen>
         </numart>
@@ -1905,15 +1905,15 @@
       <subart nr="1">
         <sen>Veita skal upplýsingar um eftirfarandi þegar varanlegir rekstrarfjármunir eru endurmetnir skv. 31. gr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>aðferðir sem beitt var við endurmatið, ásamt upplýsingum um helstu forsendur sem liggja að baki matsaðferðum, upplýsingum um afskriftir endurmetinna varanlegra rekstrarfjármuna og hvort endurmatið hafi verið unnið af óháðum aðila eða ekki,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>fyrir hvern flokk varanlegra rekstrarfjármuna sem hefur verið endurmetinn skal upplýsa um hvert bókfært verð viðkomandi eigna hefði verið ef endurmat hefði ekki farið fram og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>hreyfingar á endurmatsreikningi á árinu, þ.m.t. matsbreytingar ársins og uppsafnaðar matsbreytingar við upphaf og lok fjárhagsárs ásamt upplýsingum um skattalega meðferð viðkomandi liða.</sen>
         </numart>
@@ -1943,19 +1943,19 @@
       <nr-title>45. gr.</nr-title>
       <subart nr="1">
         <sen>Veita skal eftirfarandi upplýsingar þegar fjármálagerningar, fjárfestingarfasteignir eða eignir sem verða til við eldi lifandi dýra og ræktun plantna eru metnar til gangvirðis skv. 37. eða 39. gr:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>helstu forsendur sem liggja að baki matslíkönum og matsaðferðum þegar gangvirði er ákvarðað skv. 3. tölul. 2. mgr. 37. gr.,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>breytingar á virði fyrir hvern flokk fjármálagerninga og annarra eigna skv. 1.–3. tölul. 2. mgr. 37. gr.,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>umfang og eðli hvers flokks afleiðusamninga, þ.m.t. mikilvægi skilmála og skilyrði sem gætu haft áhrif á fjárhæð, tímasetningu og áreiðanleika framtíðarfjárstreymis og</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>hreyfingar á gangvirðisreikningi á árinu.</sen>
         </numart>
@@ -2025,15 +2025,15 @@
       </subart>
       <subart nr="2">
         <sen>Heimilt er að víkja frá ákvæðum 1. mgr. um upplýsingar um eigið fé og rekstrarárangur dóttur- og hlutdeildarfélaga ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>hlutdeildarfélag birtir ekki ársreikning sinn og hlutur félagsins í eigin fé þess er minni en 50%,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>reikningsskil dótturfélags eru hluti af samstæðureikningi félagsins eða</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>félagið metur eignarhluta sína samkvæmt hlutdeildaraðferð, sbr. 40. gr.</sen>
         </numart>
@@ -2197,15 +2197,15 @@
       <nr-title>60. gr.</nr-title>
       <subart nr="1">
         <sen>Eftirfarandi upplýsingar skal veita um eign félags á eigin hlutum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>fjölda og nafnverð eigin hluta, svo og hlutfall þeirra af heildarhlutum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>fjölda og nafnverð eigin hluta sem hafa verið keyptir eða seldir á reikningsárinu, svo og kaup- og söluverð þeirra og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>ástæður þess að félagið eignaðist eigin hluti á reikningsárinu.</sen>
         </numart>
@@ -2276,27 +2276,27 @@
       <nr-title>65. gr.</nr-title>
       <subart nr="1">
         <sen>Í skýrslu stjórnar með ársreikningi skal upplýsa um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>aðalstarfsemi félagsins,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>atriði sem mikilvæg eru við mat á fjárhagslegri stöðu félagsins og afkomu þess á reikningsárinu og ekki koma fram í efnahagsreikningi eða rekstrarreikningi eða skýringum með þeim,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>mögulega óvissu við mat eða óvenjulegar aðstæður sem kunna að hafa áhrif á það og, eftir því sem við á, tilgreina fjárhæðir,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>þróunina í starfsemi félagsins og fjárhagslegri stöðu þess,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>markverða atburði sem hafa gerst eftir að reikningsárinu lauk,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>fjölda ársverka á reikningsári.</sen>
         </numart>
@@ -2429,19 +2429,19 @@
         <sen>Upplýsa skal sérstaklega með hvaða hætti mat á einstökum liðum í reikningsskilum, svo sem afleiðusamningum, byggist á slíkri markmiðssetningu í áhættustýringu og þeim áhættuþáttum sem máli geta skipt við mat á eignum og skuldum, fjárhagsstöðu og rekstrarafkomu.</sen>
         <sen>Gera skal grein fyrir markaðsáhættu, þ.e. vaxta-, gjaldeyris- og hlutabréfaáhættu, sem og útlánaáhættu og lausafjáráhættu í rekstri félagsins.</sen>
         <sen>Enn fremur skal í skýrslu stjórnar fjallað um, eftir því sem við á:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>væntanlega þróun félagsins, að meðtöldum sérstökum forsendum og óvissuþáttum sem stjórnin hefur lagt til grundvallar í skýrslunni,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>sérstaka áhættu umfram venjulega áhættu í starfsgrein félagsins, þ.m.t. viðskiptaleg og fjármálaleg áhætta sem kann að hafa áhrif á félagið,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>áhrif ytra umhverfis á félagið og ráðstafanir sem hindra, draga úr eða bæta tjón sem það verður fyrir,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
         </numart>
       </subart>
@@ -2513,48 +2513,48 @@
       <name>Upplýsingaskylda.</name>
       <subart nr="1">
         <sen>Í skýrslu stjórnar félaga sem fengið hafa skráningu fyrir einn eða fleiri flokka hlutabréfa á skipulegum verðbréfamarkaði skal birta nákvæmar upplýsingar um eftirtalin atriði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>uppbyggingu hlutafjár, þar á meðal hluti sem ekki eru skráðir á skipulegum verðbréfamarkaði, mismunandi hlutaflokka og réttindi og skyldur tengdar þeim, sem og hlutfall þeirra af heildarhlutafé,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>allar takmarkanir á framsali hluta, t.d. takmarkanir varðandi hlutafjáreign einstakra aðila eða ef samþykki félagsins eða annarra hluthafa þarf fyrir framsali,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>verulega beina eða óbeina hlutafjáreign, þar á meðal óbeina eign í gegnum önnur félög eða gagnkvæma hlutafjáreign félaga,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>eigendur hluta með sérstök stjórnunarréttindi og lýsingu á þeim réttindum,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>helstu ákvæði kaupréttaráætlana starfsmanna,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>allar takmarkanir varðandi atkvæðisrétt, t.d. takmarkanir á atkvæðisrétti hluthafa sem eiga ákveðið hlutfall eða fjölda atkvæða, frest til að nýta atkvæðisrétt eða ef fjárhagsleg réttindi tengd hlutum eru ekki tengd eignarhaldi þeirra,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>alla samninga milli hluthafa sem félaginu er kunnugt um og geta haft í för með sér takmarkanir varðandi framsal og/eða atkvæðisrétt,</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>reglur varðandi tilnefningar og endurnýjun stjórnarmanna og breytingar á samþykktum félags,</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>sérstakar heimildir stjórnar, þar á meðal heimildir til að gefa út nýja hluti eða kaupa eigin hluti,</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>samninga sem félagið er aðili að og taka gildi, breytast eða falla úr gildi ef breytingar verða á stjórnun eða yfirráðum í félagi í kjölfar yfirtökutilboðs og áhrif þess á félagið, nema um sé að ræða upplýsingar sem haft geta skaðleg áhrif á starfsemi félagsins eða hafa óveruleg áhrif á starfsemi félagsins.</sen>
           <sen>Þær undantekningar eiga þó ekki við ef um er að ræða upplýsingar sem félagi er skylt að birta á grundvelli laga,</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>samninga félagsins við stjórnarmenn eða starfsmenn um greiðslur eða bætur ef þeir segja upp eða ef þeim er sagt upp án gildrar ástæðu eða ef starfi þeirra lýkur vegna yfirtökutilboðs.</sen>
         </numart>
@@ -2626,20 +2626,20 @@
       </subart>
       <subart nr="2">
         <sen>Í yfirlýsingunni skal að lágmarki koma fram eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tilvísanir í þær reglur sem og leiðbeiningar, handbækur og fleira um stjórnarhætti sem félagið fylgir eða fylgja ber samkvæmt lögum og upplýsingar um hvar slíkt er aðgengilegt almenningi.</sen>
           <sen>Víki félag frá reglum eða öðru skv. 1. málsl. í heild eða að hluta skal greina frá því hver frávikin eru og ástæðu fráviksins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Lýsing á helstu þáttum innra eftirlits og áhættustýringarkerfa félagsins í tengslum við reikningsskilaferlið.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Lýsing á samsetningu og starfsemi fulltrúanefndar, stjórnar, framkvæmdastjórnar og nefnda stjórnar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Lýsing á stefnunni um fjölbreytileika í tengslum við stjórn, framkvæmdastjórn og eftirlitsstjórn félagsins með tilliti til þátta á borð við aldur, kyn eða menntunarlegan og faglegan bakgrunn, markmið stefnunnar, hvernig henni er komið til framkvæmda og niðurstöður skýrslutímabilsins.</sen>
           <sen>Ef engri slíkri stefnu er fylgt skal ástæða þess tilgreind í skýrslunni.</sen>
@@ -2899,11 +2899,11 @@
       <nr-title>69. gr.</nr-title>
       <subart nr="1">
         <sen>Félag, sem jafnframt er dótturfélag og starfar á grundvelli laga í EES-ríki og ársreikningur þess er hluti af samstæðureikningi móðurfélags sem lýtur löggjöf EES-ríkis, þarf ekki að semja samstæðureikning, sbr. þó 2. málsl. 1. mgr. 67. gr., ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>móðurfélagið á öll hlutabréfin eða hlutina í félaginu sem fær undanþáguna; hlutabréf eða hlutir í því félagi í eigu stjórnarmanna eða stjórnenda samkvæmt ákvæðum í lögum, stofnsamningi eða samþykktum skulu ekki taldir með eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>móðurfélagið:</sen>
           <numart nr="a" type="alphabet">
@@ -2915,11 +2915,11 @@
             <sen>á minna en 90% eignarhlut í félaginu sem fær undanþáguna og eigendur minni hluta, sem eiga minnst 10% eignarhlut, hafa ekki krafist innan sex mánaða fyrir lok reikningsárs að samstæðureikningur verði saminn,</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>móðurfélagið sendir ársreikningaskrá ársreikning sinn ásamt samstæðureikningi og</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>félagið gerir grein fyrir því í skýringum í ársreikningi að með stoð í þessari grein hafi það ekki samið samstæðureikning og skýrir frá nafni og aðsetri móðurfélagsins.</sen>
         </numart>
@@ -2930,22 +2930,22 @@
       </subart>
       <subart nr="3">
         <sen>Félag getur enn fremur sleppt að semja samstæðureikning ef það er sjálft dótturfélag félags sem heyrir undir lög í ríki sem ekki er EES-ríki og</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>stjórn félagsins hefur ekki innan sex mánaða fyrir lok reikningsárs móttekið kröfu um samningu samstæðureiknings og</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>móðurfélag þess semur samstæðureikning í samræmi við löggjöf EES-ríkis um samstæðureikninga og endurskoðandi móðurfélagsins endurskoðar samstæðureikninginn.</sen>
         </numart>
       </subart>
       <subart nr="4">
         <sen>Félag, sem nýtir sér undanþáguheimildir skv. 1.–3. mgr., skal enn fremur:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>upplýsa í ársreikningum sínum að það hafi skv. 1.–3. mgr. ekki samið samstæðureikning og tilgreina nafn og aðsetur móðurfélags þess og</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>senda ársreikningaskrá samstæðureikning móðurfélags þess ásamt upplýsingum sem ársreikningaskrá krefst skv. 117. gr.</sen>
         </numart>
@@ -2955,19 +2955,19 @@
       <nr-title>70. gr.</nr-title>
       <subart nr="1">
         <sen>Halda má dótturfélagi utan samstæðureiknings, sbr. þó 2. málsl. 1. mgr. 67. gr., ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>það hefur óverulega þýðingu fyrir rekstur eða efnahag samstæðunnar vegna smæðar þess,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>stjórnun þess er ekki lengur í höndum eigenda þess eða verulegar og varanlegar hömlur koma að miklu leyti í veg fyrir að móðurfélagið nýti rétt sinn yfir eignum dótturfélagsins eða til að stjórna því,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>í algjörum undantekningartilvikum ekki er unnt að afla nauðsynlegra upplýsinga tímanlega og án óeðlilegs kostnaðar eða</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>það hefur ekki áður verið fellt inn í samstæðureikning og móðurfélagið aflaði eignarhlutanna eingöngu í þeim tilgangi að endurselja þá.</sen>
         </numart>
@@ -3191,15 +3191,15 @@
       <subart nr="1">
         <sen>Í samstæðureikningi skal gera grein fyrir samanlögðum eignum og skuldum, tekjum og gjöldum félaganna í heild.</sen>
         <sen>Við gerð reikningsins skulu eftirfarandi liðir falla niður:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>kröfur og skuldir félaga innan samstæðunnar gagnvart öðrum félögum innan hennar,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>tekjur og gjöld af gagnkvæmum viðskiptum félaga innan samstæðunnar og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>óinnleystur hagnaður eða tap af þeim viðskiptum.</sen>
         </numart>
@@ -3216,15 +3216,15 @@
       </subart>
       <subart nr="3">
         <sen>Samlegðaraðferðinni skv. 80. gr. má enn fremur beita ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>verðmæti félaganna innan samstæðunnar er ekki verulega frábrugðið hvort öðru,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>móðurfélagið á a.m.k. 90% eignarhlut og atkvæðisrétt dótturfélagsins eftir skiptin á eignarhlutum og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>móðurfélagið hefur við stofnun samstæðunnar aflað eignarhlutarins í krafti samkomulags sem felur í sér að:</sen>
           <numart nr="a" type="alphabet">
@@ -3307,20 +3307,20 @@
       </subart>
       <subart nr="2">
         <sen>Í skýringum um reikningsskilaaðferðir skal enn fremur eftirfarandi koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ef dótturfélag er ekki tekið með í samstæðureikninginn ásamt nákvæmum og fullnægjandi rökstuðningi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ef annar uppgjörsdagur er hjá dótturfélagi í samstæðu en móðurfélagi, sbr. 72. gr.</sen>
           <sen>Hafi þýðingarmiklir atburðir átt sér stað milli þessara tveggja dagsetninga sem hafa haft áhrif á eignir og skuldir dótturfélagsins, á fjárhagsstöðu þess eða rekstrarafkomu skal það upplýst.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ef notaðar eru aðrar aðferðir við útreikning og mat en notaðar eru í ársreikningi móðurfélags ásamt nákvæmum og fullnægjandi rökstuðningi fyrir notkun annarra aðferða.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Eftirstöðvar af viðskiptavild skv. 79. og 80. gr. ásamt aðferðum sem notaðar eru við uppgjörið.</sen>
         </numart>
@@ -3344,53 +3344,53 @@
       <nr-title>84. gr.</nr-title>
       <subart nr="1">
         <sen>Fyrir hvert dótturfélag í samstæðureikningi og utan hans skal tilgreina í skýringum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nafn og aðsetur,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>hve stór hluti eigin fjár er í eigu samstæðunnar í heild,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>ástæðu þess að dótturfélag er tekið með í samstæðureikningi ef hluti eigin fjár í eigu samstæðunnar og atkvæðisréttur er ekki sá sami,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>nákvæman og fullnægjandi rökstuðning ef félagi er haldið utan við samstæðuna, sbr. 70. gr. og</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>hvort samlegðaraðferðin skv. 80. gr. hafi verið notuð.</sen>
         </numart>
       </subart>
       <subart nr="2">
         <sen>Fyrir hvert hlutdeildarfélag skal gera grein fyrir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nafni og aðsetri,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>hve stór hluti eigin fjár er í eigu samstæðunnar í heild og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>hvort félagið er metið samkvæmt hlutdeildaraðferð.</sen>
         </numart>
       </subart>
       <subart nr="3">
         <sen>Ef félag skv. 81. gr. er tekið með í samstæðureikning skal fyrir hvert slíkt félag gera grein fyrir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nafni og aðsetri,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>hve stór hluti eigin fjár er í eigu samstæðunnar í heild og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>grundvelli fyrir sameiginlegri stjórn.</sen>
         </numart>
@@ -4187,15 +4187,15 @@
       <nr-title>98. gr.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 1. mgr. 96. gr. er félögum, sem eru undir tveimur af eftirfarandi stærðarmörkum tvö næstliðin reikningsár, ekki skylt að kjósa endurskoðanda eða endurskoðunarfyrirtæki, sbr. þó 3.–5. mgr., til að endurskoða ársreikninga sína:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>niðurstöðutala efnahagsreiknings: 200.000.000 kr.,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>hrein velta: 400.000.000 kr.,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>meðalfjöldi ársverka á fjárhagsárinu: 50.</sen>
         </numart>
@@ -4647,23 +4647,23 @@
       <nr-title>108. gr. b.</nr-title>
       <subart nr="1">
         <sen>Endurskoðunarnefnd skal meðal annars hafa eftirfarandi hlutverk án tillits til ábyrgðar stjórnar, stjórnenda eða annarra á þessu sviði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Eftirlit með vinnuferli við gerð reikningsskila.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Eftirlit með fyrirkomulagi og virkni innra eftirlits einingarinnar, innri endurskoðun, ef við á, og áhættustýringu.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Eftirlit með endurskoðun ársreiknings og samstæðureiknings einingarinnar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Mat á óhæði endurskoðanda eða endurskoðunarfyrirtækis og eftirlit með öðrum störfum endurskoðanda eða endurskoðunarfyrirtækis.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Setja fram tillögu til stjórnar um val á endurskoðanda eða endurskoðunarfyrirtæki.</sen>
         </numart>
@@ -4886,38 +4886,38 @@
       <nr-title>113. gr.</nr-title>
       <subart nr="1">
         <sen>Í stað þess að senda ársreikningaskrá ársreikning sinn getur erlent dótturfélag, sem rekur útibú hér á landi og lýtur löggjöf annars EES-ríkis, sent ársreikningaskrá samstæðureikning móðurfélags síns ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>móðurfélagið lýtur löggjöf EES-ríkis,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>allir félagsaðilar hafa samþykkt þessa aðferð,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>móðurfélagið ábyrgist skuldbindingar félagsins,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>reikningar félagsins og dótturfélaga þess eru teknir með í samstæðureikningi móðurfélagsins í samræmi við ákvæði laga þessara um samstæðureikninga,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>getið er um reikningsskilaaðferðir við gerð samstæðureikningsins og</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>samstæðureikningurinn ásamt skýrslu stjórnar og áritun endurskoðenda er sendur ársreikningaskrá ásamt staðfestingu á því sem tilgreint er í 2. og 3. tölul.</sen>
         </numart>
       </subart>
       <subart nr="2">
         <sen>Í stað þess að senda ársreikningaskrá ársreikninga sína geta önnur erlend félög sent henni samstæðureikning móðurfélaga sinna ef það samræmist þeirri löggjöf sem um þau gildir og</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>skilyrði 2., 3., 5. og 6. tölul. 1. mgr. eru uppfyllt og</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>ársreikningaskrá telur að samstæðureikningarnir séu gerðir í samræmi við ákvæði laga þessara.</sen>
         </numart>
@@ -4934,15 +4934,15 @@
       </subart>
       <subart nr="2">
         <sen>Félag, sem um ræðir í 1. mgr. þar sem enginn félagsaðili er heimilisfastur hér á landi, þarf ekki að senda ársreikningaskrá ársreikning sinn ef einhver félagsaðili þess:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>lýtur löggjöf EES-ríkis,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>semur ársreikning fyrir félagið og lætur endurskoða hann samkvæmt ákvæðum þeirrar löggjafar og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>sendir ársreikningaskrá ársreikninginn innan þeirra tímamarka, sem greinir í 1. mgr. 109. gr., ásamt sínum eigin ársreikningi eða opinbera staðfestingu á að ársreikningar félagsins hafi verið birtir í samræmi við löggjöfina sem nefnd er í 1. tölul.</sen>
         </numart>
@@ -5173,183 +5173,183 @@
       <name>Sektir eða fangelsi.</name>
       <subart nr="1">
         <sen>Það varðar viðurlögum skv. 124. gr. að brjóta gegn eftirtöldum ákvæðum laga þessara og reglum settum á grundvelli þeirra:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>11. tölul. 2. gr. ef félag er ranglega flokkað sem lítið félag eða örfélag í því skyni að komast hjá að birta þær upplýsingar sem meðalstórum og stórum félögum ber að birta.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>3. gr. um skyldu til að semja ársreikning í samræmi við lög þessi, reglugerðir og settar reikningsskilareglur eftir því sem við á.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>5. gr. ef ársreikningur, samstæðureikningur eða sjóðstreymi gefur ekki glögga mynd af afkomu, efnahag og breytingu á handbæru fé.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>11. gr. um grunnforsendur ársreiknings.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>14. gr. um efnahagsreikning.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>16. gr. um eignfærslu þróunarkostnaðar og óefnislegra réttinda.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>17. gr. um færslu kostnaðar við stofnun félags eða hækkun hlutafjár.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>18. gr. um afföll og lántökukostnað af seldum eða keyptum verðbréfum.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>20. gr. um tekjur og gjöld reikningsárs.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>22. gr. um tekjur og gjöld sem tengjast ekki reglulegri starfsemi.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>23. gr. um varanlega rekstrarfjármuni sem nýtast takmarkaðan tíma.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>26. gr. um gjöld sem stofnað er til á reikningsárinu en varða síðari reikningsár.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <sen>28. gr. um sjóðstreymi.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <sen>29.–42. gr. um matsreglur.</sen>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <sen>43. gr. um skýringar í ársreikningi.</sen>
         </numart>
-        <numart nr="16">
+        <numart nr="16" type="numeric">
           <nr-title>16.</nr-title>
           <sen>65. og 66. gr. um upplýsingagjöf í skýrslu stjórnar með ársreikningi.</sen>
         </numart>
-        <numart nr="17">
+        <numart nr="17" type="numeric">
           <nr-title>17.</nr-title>
           <sen>66. gr. a um skyldu stjórnar félaga sem fengið hafa skráningu fyrir einn eða fleiri flokka hlutabréfa á skipulegum verðbréfamarkaði til upplýsingagjafar.</sen>
         </numart>
-        <numart nr="18">
+        <numart nr="18" type="numeric">
           <nr-title>18.</nr-title>
           <sen>66. gr. b um undirritun yfirlýsingar stjórnarmanna í félagi sem gefið hefur út verðbréf sem tekin hafa verið til viðskipta á skipulegum verðbréfamarkaði innan Evrópska efnahagssvæðisins.</sen>
         </numart>
-        <numart nr="19">
+        <numart nr="19" type="numeric">
           <nr-title>19.</nr-title>
           <sen>66. gr. c um birtingu yfirlýsingar um stjórnarhætti.</sen>
         </numart>
-        <numart nr="20">
+        <numart nr="20" type="numeric">
           <nr-title>20.</nr-title>
           <sen>66. gr. d um birtingu ófjárhagslegra upplýsinga.</sen>
         </numart>
-        <numart nr="21">
+        <numart nr="21" type="numeric">
           <nr-title>21.</nr-title>
           <sen>67. gr. um skyldu til að semja samstæðureikning.</sen>
         </numart>
-        <numart nr="22">
+        <numart nr="22" type="numeric">
           <nr-title>22.</nr-title>
           <sen>73. gr. um skyldu til að semja samstæðureikning samkvæmt ákvæðum VII. kafla.</sen>
         </numart>
-        <numart nr="23">
+        <numart nr="23" type="numeric">
           <nr-title>23.</nr-title>
           <sen>74. gr. um eignarhluti í dótturfélögum.</sen>
         </numart>
-        <numart nr="24">
+        <numart nr="24" type="numeric">
           <nr-title>24.</nr-title>
           <sen>75. gr. um aðferðir við mat á eignum og skuldum samstæðu.</sen>
         </numart>
-        <numart nr="25">
+        <numart nr="25" type="numeric">
           <nr-title>25.</nr-title>
           <sen>77. gr. um samstæðureikning.</sen>
         </numart>
-        <numart nr="26">
+        <numart nr="26" type="numeric">
           <nr-title>26.</nr-title>
           <sen>79. gr. um kaupaðferð við stofnun samstæðu.</sen>
         </numart>
-        <numart nr="27">
+        <numart nr="27" type="numeric">
           <nr-title>27.</nr-title>
           <sen>82.–84. gr. um skýringar með samstæðureikningi.</sen>
         </numart>
-        <numart nr="28">
+        <numart nr="28" type="numeric">
           <nr-title>28.</nr-title>
           <sen>85. gr. um skýrslu stjórnar um samstæðu.</sen>
         </numart>
-        <numart nr="29">
+        <numart nr="29" type="numeric">
           <nr-title>29.</nr-title>
           <sen>86. gr. um reikningsskil við samruna og skiptingu.</sen>
         </numart>
-        <numart nr="30">
+        <numart nr="30" type="numeric">
           <nr-title>30.</nr-title>
           <sen>87. gr. a um skyldu félags sem gefið hefur út hlutabréf eða skuldabréf sem tekin hafa verið til viðskipta á skipulegum verðbréfamarkaði í ríki innan Evrópska efnahagssvæðisins til að semja árshlutareikning vegna fyrstu sex mánaða reikningsársins.</sen>
         </numart>
-        <numart nr="31">
+        <numart nr="31" type="numeric">
           <nr-title>31.</nr-title>
           <sen>87. gr. b um árshlutaskýrslu stjórnar félaga skv. 2. tölul. 1. mgr. 1. gr. vegna fyrstu sex mánaða reikningsársins.</sen>
         </numart>
-        <numart nr="32">
+        <numart nr="32" type="numeric">
           <nr-title>32.</nr-title>
           <sen>87. gr. e um skyldu félags sem gefið hefur út hlutabréf eða skuldabréf sem tekin hafa verið til viðskipta á skipulegum verðbréfamarkaði í ríki innan Evrópska efnahagssvæðisins til að birta árshlutareikning.</sen>
         </numart>
-        <numart nr="33">
+        <numart nr="33" type="numeric">
           <nr-title>33.</nr-title>
           <sen>90. gr. um skyldu félags skv. 2. tölul. 1. mgr. 1. gr. til að beita alþjóðlegum reikningsskilastöðlum við gerð samstæðureiknings síns.</sen>
         </numart>
-        <numart nr="34">
+        <numart nr="34" type="numeric">
           <nr-title>34.</nr-title>
           <sen>91. gr. um skyldu félags, sem ekki uppfyllir lengur skráningu á skipulögðum verðbréfamarkaði í ríki innan Evrópska efnahagssvæðisins, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum, til að beita alþjóðlegum reikningsskilastöðlum.</sen>
         </numart>
-        <numart nr="35">
+        <numart nr="35" type="numeric">
           <nr-title>35.</nr-title>
           <sen>96. gr. um val á endurskoðanda, endurskoðunarfyrirtæki eða skoðunarmönnum ársreikninga.</sen>
         </numart>
-        <numart nr="36">
+        <numart nr="36" type="numeric">
           <nr-title>36.</nr-title>
           <sen>2. mgr. 97. gr. um hæfi skoðunarmanna.</sen>
         </numart>
-        <numart nr="37">
+        <numart nr="37" type="numeric">
           <nr-title>37.</nr-title>
           <sen>99. gr. um skyldu móðurfélags, sem skylt er að semja samstæðureikning skv. VII. kafla, til að kjósa einn eða fleiri endurskoðendur eða endurskoðunarfyrirtæki sem jafnframt skulu endurskoða dótturfélag þess ef þess er nokkur kostur.</sen>
         </numart>
-        <numart nr="38">
+        <numart nr="38" type="numeric">
           <nr-title>38.</nr-title>
           <sen>102. gr. um endurskoðun og yfirferð ársreiknings.</sen>
         </numart>
-        <numart nr="39">
+        <numart nr="39" type="numeric">
           <nr-title>39.</nr-title>
           <sen>103. gr. um upplýsingaskyldu stjórnar félags og framkvæmdastjóra við endurskoðendur og skoðunarmenn.</sen>
         </numart>
-        <numart nr="40">
+        <numart nr="40" type="numeric">
           <nr-title>40.</nr-title>
           <sen>1. og 2. mgr. 104. gr. um áritun endurskoðenda á ársreikning og samstæðureikning.</sen>
         </numart>
-        <numart nr="41">
+        <numart nr="41" type="numeric">
           <nr-title>41.</nr-title>
           <sen>3. mgr. 104. gr. um undirritun skoðunarmanna á ársreikning og samstæðureikning.</sen>
         </numart>
-        <numart nr="42">
+        <numart nr="42" type="numeric">
           <nr-title>42.</nr-title>
           <sen>105. gr. um ábendingar og athugasemdir endurskoðanda eða skoðunarmanns.</sen>
         </numart>
-        <numart nr="43">
+        <numart nr="43" type="numeric">
           <nr-title>43.</nr-title>
           <sen>108. gr. um bann við því að endurskoðendur eða skoðunarmenn og samstarfsmenn þeirra veiti einstökum félagsaðilum eða óviðkomandi aðilum upplýsingar um hag félagsins.</sen>
         </numart>
-        <numart nr="44">
+        <numart nr="44" type="numeric">
           <nr-title>44.</nr-title>
           <sen>108. gr. a um skipun endurskoðunarnefndar við einingu tengda almannahagsmunum.</sen>
         </numart>
-        <numart nr="45">
+        <numart nr="45" type="numeric">
           <nr-title>45.</nr-title>
           <sen>108. gr. d um skyldu endurskoðanda eða endurskoðunarfyrirtækis til að gera endurskoðunarnefnd árlega grein fyrir störfum sínum og óhæði og skila skriflegri skýrslu um mikilvæg atriði sem fram hafa komið við endurskoðunina.</sen>
         </numart>
@@ -5378,15 +5378,15 @@
       <nr-title>123. gr.</nr-title>
       <subart nr="1">
         <sen>Endurskoðendur eða skoðunarmenn gerast sekir um refsiverð brot gegn lögum þessum með athöfnum eða athafnaleysi því sem hér greinir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ef þeir taka að sér að framkvæma endurskoðun eða yfirferð ársreiknings án þess að uppfylla hæfisskilyrði laganna.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ef þeir haga störfum sínum andstætt ákvæðum laga þessara eða í ósamræmi við góða endurskoðunarvenju.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ef þeir með áritun eða undirritun sinni gefa rangar eða villandi upplýsingar eða láta hjá líða að geta um mikilsverð atriði er snerta rekstrarafkomu eða efnahag félags.</sen>
         </numart>

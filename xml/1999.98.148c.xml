@@ -280,11 +280,11 @@
         <sen>Nái heildareign sjóðsins ekki lágmarki skv. 1. mgr. skulu aðildarfyrirtæki greiða eigi síðar en 1. mars ár hvert gjald til sjóðsins sem nemur samtals 20 millj. kr., þar til sjóðurinn hefur náð tilskilinni lágmarksstærð.</sen>
         <sen>Hvert aðildarfyrirtæki skal greiða lágmarksgjald að fjárhæð 50.000 kr.</sen>
         <sen>Árleg greiðsla að frádregnu lágmarksgjaldi skiptist í tvo jafna hluta eftir eftirfarandi gjaldstofnum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hlut aðildarfyrirtækis í samanlagðri fjárhæð verðbréfaviðskipta aðildarfyrirtækja á næstliðnu ári við þá viðskiptavini sem tryggðir eru skv. 9. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hlut aðildarfyrirtækis í samanlögðum fjölda viðskiptareikninga hjá aðildarfyrirtækjum í tengslum við viðskipti með verðbréf.</sen>
           <sen>Leggja skal saman fjölda viðskiptareikninga skv. c-lið 1. tölul. og a- og b-lið 2. tölul. 8. gr. laga um verðbréfaviðskipti.</sen>
@@ -426,35 +426,35 @@
       <subart nr="6">
         <sen>Eftirfarandi innstæður eru undanskildar tryggingu skv. 1. mgr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>innstæður í eigu fjármálafyrirtækja, fjármálafyrirtækja í slita- eða gjaldþrotameðferð og fyrirtækja sem hafa misst starfsleyfi sem fjármálafyrirtæki,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>innstæður sem tengjast málum þar sem sakfellt hefur verið fyrir peningaþvætti,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>innstæður fyrirtækis þar sem fjármálafyrirtæki er meirihlutaeigandi,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>innstæður ríkis, sveitarfélaga, stofnana þeirra og fyrirtækja að meiri hluta í eigu opinberra aðila,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>innstæður rekstrarfélaga verðbréfasjóða og annarra sjóða um sameiginlega fjárfestingu samkvæmt lögum um verðbréfasjóði og fjárfestingarsjóði,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>innstæður félaga í sömu samsteypu og þau sem falla undir 1. tölul.,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>innstæður sem eru ekki skráðar á nafn,</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>innstæður lífeyrissjóða aðrar en hlutdeild viðskiptamanns í reikningi innlánsleiðar vörsluaðila lífeyrissparnaðar hjá innlánsstofnun.</sen>
         </numart>

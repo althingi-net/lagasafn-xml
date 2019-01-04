@@ -226,13 +226,13 @@
       </subart>
       <subart nr="4">
         <sen>Leyfi til frístundaveiða, sbr. 3 mgr., eru tvenns konar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Leyfi til að veiða tiltekinn fjölda fiska af kvótabundnum fisktegundum á hvert handfæri eða sjóstöng dag hvern og reiknast sá afli ekki til aflamarks viðkomandi báts.</sen>
           <sen>Ráðherra setur frekari leiðbeiningar um þessi atriði í reglugerð.</sen>
           <sen>Óheimilt er að selja eða fénýta á annan hátt afla sem fæst við veiðar sem heimilar eru samkvæmt þessum tölulið.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Leyfi til veiða sem takmarkast af aflamarki eða krókaaflamarki viðkomandi báts.</sen>
           <sen>Allur afli þessara báta skal veginn í samræmi við gildandi reglur um vigtun og skráningu sjávarafla.</sen>
@@ -407,31 +407,31 @@
       </subart>
       <subart nr="5">
         <sen>Leyfi til strandveiða samkvæmt þessari grein eru bundin eftirfarandi skilyrðum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Óheimilt er að stunda veiðar föstudaga, laugardaga og sunnudaga.</sen>
           <sen>Ráðherra er heimilt með reglugerð að banna strandveiðar á almennum frídögum.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hver veiðiferð skal eigi standa lengur en 14 klukkustundir.</sen>
           <sen>Miðað er við þann tíma er fiskiskip lætur úr höfn til veiða til þess tíma er það kemur til hafnar aftur til löndunar.</sen>
           <sen>Aðeins er heimilt að fara í eina veiðiferð á hverjum degi.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tilkynna skal Fiskistofu um sjósókn fiskiskipsins í samræmi við reglur sem ráðherra setur.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Aldrei er heimilt að hafa fleiri en fjórar handfærarúllur um borð í fiskiskipi.</sen>
           <sen>Engin önnur veiðarfæri en handfærarúllur skulu vera um borð.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Á hverju fiskiskipi er aðeins heimilt að draga 650 kg, í þorskígildum talið, af kvótabundnum tegundum í hverri veiðiferð.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Skylt er að landa öllum afla í lok hverrar veiðiferðar og skal hann veginn og skráður endanlega hér á landi.</sen>
           <sen>Um vigtun, skráningu og meðferð afla fer að öðru leyti samkvæmt ákvæðum laga nr. 57/1996, um umgengni um nytjastofna sjávar, og ákvæðum gildandi reglugerðar þar um.</sen>
@@ -693,11 +693,11 @@
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
         <sen>Á hverju fiskveiðiári er ráðherra heimilt að ráðstafa aflamagni í óslægðum botnfiski skv. 5. mgr. 8. gr. sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Til að mæta áföllum sem fyrirsjáanleg eru vegna verulegra breytinga á aflamarki einstakra tegunda.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Til stuðnings byggðarlögum, í samráði við Byggðastofnun, þannig:</sen>
           <numart nr="a" type="alphabet">
@@ -915,11 +915,11 @@
         <sen>Sá hluti sem þannig reiknast ekki til aflamarks skipsins skal þó aldrei nema meira en 0,5% af uppsjávarafla og 5% af öðrum sjávarafla sem hlutaðeigandi skip veiðir á hverju tímabili.</sen>
         <sen>Ráðherra skal binda heimild þessa við ákveðin tímabil.</sen>
         <sen>Heimild þessi er háð eftirfarandi skilyrðum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Að aflanum sé haldið aðskildum frá öðrum afla skipsins og hann veginn sérstaklega og skráður.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Að aflinn sé seldur á viðurkenndum uppboðsmarkaði fyrir sjávarafurðir og andvirði hans renni til sjóðs, sbr. 3. mgr. 1. gr. laga nr. 37/1992, um sérstakt gjald vegna ólögmæts sjávarafla, með síðari breytingum.</sen>
         </numart>
@@ -1179,17 +1179,17 @@
       </subart>
       <subart nr="4">
         <sen>Tengdir aðilar teljast:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Aðilar, þar sem annar aðilinn, einstaklingur eða lögaðili, á beint eða óbeint meiri hluta hlutafjár eða stofnfjár í hinum aðilanum eða fer með meiri hluta atkvæðisréttar.</sen>
           <sen>Fyrrnefndi aðilinn telst móðurfyrirtæki en hinn síðarnefndi dótturfyrirtæki.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Aðilar, þar sem annar aðilinn, einstaklingur eða lögaðili, hefur með öðrum hætti en greinir í 1. tölul. raunveruleg yfirráð yfir hinum.</sen>
           <sen>Fyrrnefndi aðilinn telst móðurfyrirtæki en hinn síðarnefndi dótturfyrirtæki.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Lögaðilar, þar sem svo háttar til að sami aðili eða sömu aðilar, einstaklingar eða lögaðilar, eða tengdir aðilar skv. 1. eða 2. tölul., eiga meiri hluta hlutafjár, stofnfjár eða atkvæðisréttar í báðum eða öllum lögaðilunum enda nemi eignarhlutur hvers þeirra um sig a.m.k. 10% af hlutafé, stofnfé eða atkvæðafjölda í viðkomandi lögaðilum.</sen>
           <sen>Sama á við ef aðili eða aðilar, einstaklingar eða lögaðilar, eða tengdir aðilar skv. 1. eða 2. tölul., sem eiga meiri hluta hlutafjár, stofnfjár eða atkvæðisréttar í lögaðila og hver um sig á a.m.k. 10% hlutafjár, stofnfjár eða atkvæðisréttar í lögaðilanum, eiga ásamt viðkomandi lögaðila meiri hluta hlutafjár, stofnfjár eða atkvæðisréttar í öðrum lögaðila.</sen>

@@ -30,12 +30,12 @@
       <name>Orðskýringar.</name>
       <subart nr="1">
         <sen>Í lögunum er merking eftirtalinna orða og orðasambanda þessi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Frístundabyggð:</name>
           <sen>Afmarkað svæði innan jarðar eða jarða þar sem eru a.m.k. 10 lóðir undir frístundahús.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Frístundahús:</name>
           <sen>Hús utan þéttbýlis sem aðallega er nýtt til að fólk geti dvalist þar tímabundið til að eyða frítíma sínum og þar sem að öðru jöfnu er óheimilt að hafa skráð lögheimili.</sen>
@@ -43,12 +43,12 @@
           <sen>Þó teljast eftirfarandi mannvirki ekki frístundahús í skilningi laga þessara: fjallaskálar, gangnamannaskálar, aðstöðuhús, neyðarskýli, kofar og önnur slík mannvirki utan þéttbýlis.</sen>
           <sen>Enn fremur teljast hús og önnur mannvirki, sem standa á landi sem fellur utan 3. tölul., ekki frístundahús í skilningi laga þessara.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Lóð undir frístundahús:</name>
           <sen>Skiki lands utan þéttbýlis sem afmarkaður er í samningi eða skipulagi, sem á grundvelli sérgreindrar hagnýtingar, auðkenna eða landamerkja getur talist sjálfstæð eind og hefur a.m.k. að hluta til verið nýttur undir frístundahús eða heimilt er að reisa slíkt hús þar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Umráðamaður lóðar undir frístundahús:</name>
           <sen>Nú er lóð ekki leigð út og er þá eigandi lóðar umráðamaður.</sen>
@@ -70,62 +70,62 @@
       </subart>
       <subart nr="2">
         <sen>Í leigusamningi skv. 1. mgr. skal m.a. koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nöfn, heimilisföng og kennitölur samningsaðila,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>staðsetning og hnit hins leigða lands,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>hvort samningur sé tímabundinn eða ótímabundinn,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>fjárhæð leigu, þar á meðal ákvæði um verðtryggingu og endurskoðun leigufjárhæðar á leigutíma ef því er að skipta,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>hvar og hvernig skuli greiða leiguna,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>réttur leigutaka til að framlengja leigusamning,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>hvort leigutaki njóti forkaupsréttar við sölu,</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>hvort leigusali öðlist forkaupsrétt við framsal leiguréttinda leigutaka og við framsal mannvirkja á lóð,</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>hvort leigutaki skuli setja tryggingu og með hvaða hætti og</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>hvort senda megi orðsendingar í rafrænu formi og þá á hvaða netfang.</sen>
         </numart>
       </subart>
       <subart nr="3">
         <sen>Í samningnum skal enn fremur ákvarða hvort og að hve miklu leyti skal greiða kostnað vegna:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>aðgangs að vatni,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>aðgangs að rafmagni,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>lagningar og viðhalds vega og</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>uppsetningar og viðhalds girðinga.</sen>
         </numart>
@@ -277,11 +277,11 @@
       </subart>
       <subart nr="5">
         <sen>Nú hefur leigusali nýtt sér málskotsrétt sinn og getur hann þá fyrir kærunefnd húsamála haft uppi kröfu um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>hver skuli vera fjárhæð ársleigu í framlengdum leigusamningi, sbr. 13. gr.,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>innlausn og hvert skuli vera innlausnarverð fyrir mannvirki leigutaka og eftir atvikum um fjárhæð greiðslu sérstakra bóta eða lækkun innlausnarverðs vegna ástands lóðar í samningslok, sbr. 14. gr.</sen>
         </numart>
@@ -372,15 +372,15 @@
       </subart>
       <subart nr="2">
         <sen>Við mat á markaðsverðmæti skal m.a. hafa til viðmiðunar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>hver sé ársleiga lóða sem eru svipaðar að stærð og búa yfir svipuðum eiginleikum á sömu jörð eða aðliggjandi jörðum; einnig má líta til ársleigu lóða sem eru svipaðar að stærð og búa yfir sams konar eiginleikum innan þess sveitarfélags sem lóðin er á eða þá eftir atvikum innan sveitarfélaga í nágrenninu,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>legu, útsýni, gróðursæld, staðsetningu og önnur slík atriði sem áhrif geta haft á fjárhæð ársleigu lóðar,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>hvert hið eldra leigugjald hafi verið og hvort það hafi fylgt breytingum á vísitölu neysluverðs eða vísitölu byggingaverðs.</sen>
         </numart>
@@ -420,15 +420,15 @@
       <subart nr="4">
         <sen>Ákvörðun um innlausnarverð fyrir mannvirki skal taka mið af kröfum aðila og hvað nefndin álítur vera markaðsverðmæti á hverjum tíma.</sen>
         <sen>Við mat á markaðsverðmæti mannvirkja skal m.a. hafa til viðmiðunar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nýlegt söluverð á mannvirkjum sem eru af svipaðri stærð og gerð og standa á lóðum á sömu jörð eða nálægum jörðum í sveitarfélaginu; einnig má líta til nýlegra söluverða sambærilegra frístundahúsa og annarra mannvirkja á lóðum undir frístundahús innan sveitarfélaga í nágrenninu; heimilt er að líta til sölu mannvirkja þar sem lóðarleiguréttindi eru til a.m.k. 20 ára og til sölu mannvirkja á eignarlóðum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>ástand, gerð og skipulag mannvirkja,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>fasteignamat, brunabótamat og annað er til leiðbeiningar má verða.</sen>
         </numart>
@@ -470,11 +470,11 @@
       </subart>
       <subart nr="2">
         <sen>Við mat á markaðsverðmæti skal m.a. hafa til viðmiðunar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>hvert sé kaupverð lóða sem eru svipaðar að stærð og búa yfir svipuðum eiginleikum á sömu jörð eða aðliggjandi jörðum; einnig má líta til kaupverðs lóða sem eru svipaðar að stærð og búa yfir sams konar eiginleikum innan þess sveitarfélags sem lóðin er á eða þá eftir atvikum innan sveitarfélaga í nágrenninu,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>legu, útsýni, gróðursæld, staðsetningu og önnur slík atriði sem áhrif geta haft á fjárhæð kaupverðs lóðar.</sen>
         </numart>
@@ -514,15 +514,15 @@
       <subart nr="1">
         <sen>Í frístundabyggð er umráðamönnum lóða undir frístundahús skylt að hafa með sér félagsskap um sameiginlega hagsmuni.</sen>
         <sen>Þó er ekki skylt að hafa slíkan félagsskap þegar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>umráðamenn lóða undir frístundahús eru fimm eða færri,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>einn og sami aðilinn hefur umráð yfir helmingi lóða í frístundabyggðinni eða</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>engir eða afar takmarkaðir sameiginlegir hagsmunir eru í frístundabyggðinni.</sen>
         </numart>
@@ -544,35 +544,35 @@
       </subart>
       <subart nr="2">
         <sen>Á stofnfundi skal setja félaginu samþykktir sem hafa a.m.k. að geyma ákvæði um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>nafn félags,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>heimilisfang og varnarþing,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>félagssvæði og skulu þar taldar upp allar lóðir í viðkomandi frístundabyggð,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>verkefni félagsins,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>skipun og starfssvið félagsstjórnar,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>málsmeðferðarreglur, reikninga félags og skoðunarmenn þeirra,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>skyldu til framlagningar endurskoðaðra reikninga,</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>árgjald vegna starfsemi félagsins.</sen>
         </numart>
@@ -586,27 +586,27 @@
       <name>Hlutverk félags.</name>
       <subart nr="1">
         <sen>Sé ekki á annan veg samið er hlutverk félags í frístundabyggð m.a. að taka ákvarðanir um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>lagningu og viðhald akvega og göngustíga að og innan svæðis,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>gerð og rekstur á sameiginlegum svæðum í frístundabyggðinni, svo sem leiksvæðum og bílastæðum,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>gerð og rekstur á sameiginlegum aðveitum og fráveitum,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>gerð og viðhald sameiginlegrar girðingar um svæðið,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>uppsetningu og rekstur öryggiskerfa,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>almennar samskipta- og umgengnisreglur innan frístundabyggðarinnar.</sen>
         </numart>
@@ -626,43 +626,43 @@
       </subart>
       <subart nr="3">
         <sen>Á aðalfundi skulu a.m.k. vera eftirtalin mál á dagskrá:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>skýrsla stjórnar um starfsemi félagsins,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>endurskoðaðir reikningar lagðir fram til samþykktar og umræður um þá,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>kosning formanns,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>kosning annarra stjórnarmanna,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>kosning varamanna,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>kosning skoðunarmanna reikninga og varamanna þeirra,</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>framlagning rekstrar- og framkvæmdaáætlunar fyrir næsta ár,</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>ákvörðun um árgjald til félagsins,</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>mál sem tiltekin eru í fundarboði og</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>önnur mál.</sen>
         </numart>
@@ -997,11 +997,11 @@
         <sen>Lög þessi taka til samninga um leigu á lóð undir frístundahús sem eru í gildi við gildistöku laga þessara.</sen>
         <sen>Ákvæði slíkra samninga, sem brjóta í bága við lög þessi, eru ógild nema annað sé tekið fram eða leiði af eðli máls.</sen>
         <sen>Þó skulu ákvæði slíkra samninga vera óhögguð um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>leigutíma, sbr. þó ákvæði til bráðabirgða um samninga sem falla úr gildi fyrir 1. júlí 2010,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>að framleiga og framsal leiguréttinda á lóð undir frístundahús sé leigutaka óheimil án samþykkis leigusala.</sen>
         </numart>

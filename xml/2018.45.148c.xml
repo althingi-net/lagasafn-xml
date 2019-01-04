@@ -36,39 +36,39 @@
       <subart nr="3">
         <sen>Aðili telst opinber ef hann getur borið réttindi og skyldur að lögum og sérstaklega hefur verið stofnað til hans í því skyni að þjóna almannahagsmunum, enda reki hann ekki starfsemi sem jafnað verður til starfsemi einkaaðila, svo sem á sviði viðskipta eða iðnaðar.</sen>
         <sen>Auk þess skal eitthvert eftirfarandi atriða eiga við um hann:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Starfsemi hans er að mestu leyti rekin á kostnað ríkis eða sveitarfélaga, stofnana þeirra eða annarra opinberra aðila.</sen>
           <sen>Miðað skal við að aðili sé að mestu leyti rekinn á kostnað ríkis eða sveitarfélaga, stofnana þeirra eða annarra opinberra aðila ef opinber fjármögnun nemur meira en 50% af árlegum rekstrarkostnaði.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hann lýtur yfirstjórn ríkis eða sveitarfélaga, stofnana þeirra eða annarra opinberra aðila.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hann lýtur sérstakri stjórn sem ríki eða sveitarfélög, stofnanir þeirra eða aðrir opinberir aðilar skipa að meiri hluta.</sen>
         </numart>
       </subart>
       <subart nr="4">
         <sen>Ákvæði laga þessara gilda ekki um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ríkisútvarpið.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Skóla eða rannsóknastofnanir.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Aðrar menningarstofnanir en söfn, skjalasöfn og bókasöfn, þ.m.t. háskólabókasöfn.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Alþingi og stofnanir þess.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Dómstóla.</sen>
         </numart>
@@ -93,15 +93,15 @@
       </subart>
       <subart nr="2">
         <sen>Réttur til endurnota opinberra upplýsinga tekur ekki til:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Upplýsinga sem opinberir aðilar taka saman í viðskiptalegum tilgangi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tölfræðilegra gagna sem um gildir trúnaður.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Gagna, skráa og upplýsinga úr gagnagrunnum sem þriðji maður á lögvarin réttindi yfir samkvæmt lögum um vernd hugverkaréttinda.</sen>
           <sen>Rétturinn er hins vegar til staðar þegar ríki, sveitarfélög eða stofnanir þeirra eiga ein slík réttindi yfir upplýsingum, enda falli opinber aðili sem fer með fyrirsvar réttindanna ekki undir 4. mgr. 2. gr.</sen>
@@ -120,15 +120,15 @@
       <name>Almenn skilyrði fyrir endurnotum opinberra upplýsinga.</name>
       <subart nr="1">
         <sen>Heimilt er að endurnota opinberar upplýsingar sem eru almenningi aðgengilegar lögum samkvæmt, enda séu eftirfarandi skilyrði ávallt uppfyllt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Endurnot upplýsinganna mega ekki brjóta í bága við lög, þ.m.t. ákvæði almennra hegningarlaga, laga um vernd hugverkaréttinda og laga um persónuvernd og vinnslu persónuupplýsinga, eða önnur réttindi þriðja manns.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Geta skal uppruna upplýsinganna.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Skýrt skal koma fram hver ber ábyrgð á vinnslu upplýsinganna þegar þær eru gerðar öðrum aðgengilegar.</sen>
         </numart>

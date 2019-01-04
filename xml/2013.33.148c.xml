@@ -187,11 +187,11 @@
           <nr-title>i.</nr-title>
           <name>Lán tengd erlendum gjaldmiðlum:</name>
           <sen>Lán:</sen>
-          <numart nr="1">
+          <numart nr="1" type="numeric">
             <nr-title>1.</nr-title>
             <sen>tilgreint í eða bundið öðrum gjaldmiðli en tekjur neytanda og eignir sem hann ætlar til endurgreiðslu lánsins, eða</sen>
           </numart>
-          <numart nr="2">
+          <numart nr="2" type="numeric">
             <nr-title>2.</nr-title>
             <sen>tilgreint í eða bundið öðrum gjaldmiðli en gjaldmiðli þess aðildarríkis sem neytandi er búsettur í.</sen>
           </numart>
@@ -1377,19 +1377,19 @@
       <name>Sérstök upplýsingaskylda lánveitanda.</name>
       <subart nr="1">
         <sen>Lánveitandi skal samhliða upplýsingum skv. 7. gr., vegna lánssamnings sem kallar á greiðslumat, veita neytanda upplýsingar, á pappír eða öðrum varanlegum miðli, um eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Sögulega þróun verðlags og áhrif þróunar verðlags á höfuðstól og greiðslubyrði ef lán er verðtryggt.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Sögulega þróun breytilegra vaxta á neytendalánum og áhrif breytinga á vöxtum á greiðslubyrði ef lán er með breytilegum vöxtum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Sögulega gengisþróun viðkomandi gjaldmiðla og áhrif gengisþróunar á höfuðstól og greiðslubyrði ef lán er tengt erlendum gjaldmiðlum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Þróun verðlags og ráðstöfunartekna síðustu 10 ár.</sen>
         </numart>

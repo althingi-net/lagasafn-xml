@@ -199,7 +199,7 @@
       <name>Sjúkrahjálp.</name>
       <subart nr="1">
         <sen>Nú veldur bótaskylt slys sjúkleika og vinnutjóni í minnst 10 daga og skal þá greiða nauðsynlegan kostnað vegna lækningar hins slasaða og tjóns á gervilimum eða hjálpartækjum svo sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Að fullu skal greiða:</sen>
           <numart nr="a" type="alphabet">
@@ -234,7 +234,7 @@
             <sen>Sjúkraþjálfun og orkulækningar.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Greiða skal:</sen>
           <numart nr="a" type="alphabet">
@@ -248,7 +248,7 @@
             <sen>Geti sjúklingur ekki ferðast með áætlunarbíl skal greiða ferð með áætlunarflugvél að 3/4.</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Heimilt er að greiða:</sen>
           <numart nr="a" type="alphabet">

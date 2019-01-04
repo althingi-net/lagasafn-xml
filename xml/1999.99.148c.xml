@@ -231,7 +231,7 @@
     <name>Gjaldskyldir aðilar, álagningarstofn og álagt gjald.</name>
     <subart nr="1">
       <sen>Eftirtaldir eftirlitsskyldir aðilar skulu greiða eftirlitsgjald af álagningarstofni í þeim hlutföllum og stærðum sem hér segir:</sen>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <sen>Viðskiptabankar, sparisjóðir, lánafyrirtæki, greiðslustofnanir og rafeyrisfyrirtæki skulu greiða eftirfarandi hlutföll af eignum samtals, þó eigi lægri fjárhæð en 1.200.000 kr.</sen>
         <sen>:</sen>
@@ -244,58 +244,58 @@
           <sen>Sparisjóðir, lánafyrirtæki, greiðslustofnanir og rafeyrisfyrirtæki 0,0387%.</sen>
         </numart>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <sen>Vátryggingafélög skulu greiða 0,4403% af bókfærðum iðgjöldum, þó eigi lægri fjárhæð en 1.200.000 kr.</sen>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <sen>Félög eða einstaklingar sem stunda vátryggingamiðlun skulu greiða 0,35% af þeim iðgjöldum sem miðlað hefur verið á næstliðnu ári, þó eigi lægri fjárhæð en 550.000 kr.</sen>
       </numart>
-      <numart nr="4">
+      <numart nr="4" type="numeric">
         <nr-title>4.</nr-title>
         <sen>Verðbréfafyrirtæki skulu greiða 0,76% af eignum samtals, þó aldrei lægri fjárhæð en 1.200.000 kr.</sen>
       </numart>
-      <numart nr="5">
+      <numart nr="5" type="numeric">
         <nr-title>5.</nr-title>
         <sen>Verðbréfamiðlanir skulu greiða 0,52% af eignum samtals, þó aldrei lægri fjárhæð en 700.000 kr.</sen>
       </numart>
-      <numart nr="6">
+      <numart nr="6" type="numeric">
         <nr-title>6.</nr-title>
         <sen>Rekstrarfélög verðbréfasjóða skulu greiða 0,0236% af eignum rekstrarfélags og verðbréfa- og fjárfestingarsjóða í rekstri þess samtals, þó aldrei lægri fjárhæð en 1.200.000 kr.</sen>
         <sen>Þá skulu fagfjárfestasjóðir í rekstri rekstrarfélags eða annars aðila greiða 0,0128% af hreinni eign viðkomandi sjóðs, þó aldrei lægri fjárhæð en 150.000 kr.</sen>
       </numart>
-      <numart nr="7">
+      <numart nr="7" type="numeric">
         <nr-title>7.</nr-title>
         <sen>Verðbréfamiðstöðvar skulu greiða 0,8193% af rekstrartekjum, þó eigi lægri fjárhæð en 1.200.000 kr.</sen>
       </numart>
-      <numart nr="8">
+      <numart nr="8" type="numeric">
         <nr-title>8.</nr-title>
         <sen>Kauphallir skulu greiða 1,006% af rekstrartekjum, þó aldrei lægri fjárhæð en 1.200.000 kr.</sen>
       </numart>
-      <numart nr="9">
+      <numart nr="9" type="numeric">
         <nr-title>9.</nr-title>
         <sen>Lífeyrissjóðir skulu samtals greiða 0,0091% af hreinni eign til greiðslu lífeyris.</sen>
         <sen>Greiða skal eftirlitsgjaldið sem 1.400.000 kr. fastagjald vegna þeirra lífeyrissjóða er höfðu hreina eign til greiðslu lífeyris undir einum milljarði króna, 2.500.000 kr. vegna þeirra lífeyrissjóða er höfðu hreina eign til greiðslu lífeyris frá einum til og með tíu milljarða króna, 4.400.000 kr. vegna þeirra lífeyrissjóða er höfðu hreina eign til greiðslu lífeyris frá tíu milljörðum til og með tuttugu og fimm milljarða króna, 8.100.000 kr. vegna þeirra lífeyrissjóða er höfðu hreina eign til greiðslu lífeyris frá tuttugu og fimm milljörðum til og með eitt hundrað milljarða króna og 9.400.000 kr. vegna þeirra lífeyrissjóða er höfðu hreina eign til greiðslu lífeyris þar yfir.</sen>
         <sen>Það sem þá er ógreitt af eftirlitsgjaldi skv. 1. málsl. greiðist í hlutfalli við hreina eign til greiðslu lífeyris.</sen>
       </numart>
-      <numart nr="10">
+      <numart nr="10" type="numeric">
         <nr-title>10.</nr-title>
         <sen>Innlánsdeildir samvinnufélaga skulu greiða fastagjald sem nemur 600.000 kr.</sen>
       </numart>
-      <numart nr="11">
+      <numart nr="11" type="numeric">
         <nr-title>11.</nr-title>
         <sen>Íbúðalánasjóður skal greiða 0,0087% af eignum samtals, þó eigi lægri fjárhæð en 1.200.000 kr.</sen>
       </numart>
-      <numart nr="12">
+      <numart nr="12" type="numeric">
         <nr-title>12.</nr-title>
         <sen>Lánasjóður sveitarfélaga ohf. skal greiða 0,01% af eignum samtals, þó eigi lægri fjárhæð en 700.000 kr.</sen>
       </numart>
-      <numart nr="13">
+      <numart nr="13" type="numeric">
         <nr-title>13.</nr-title>
         <sen>Tryggingarsjóður innstæðueigenda og fjárfesta og öryggissjóðir samkvæmt lögum um innstæðutryggingar og tryggingakerfi fyrir fjárfesta, nr. 98/1999, skulu greiða fastagjald sem nemur 700.000 kr.</sen>
       </numart>
-      <numart nr="14">
+      <numart nr="14" type="numeric">
         <nr-title>14.</nr-title>
         <sen>Aðilar með innheimtuleyfi samkvæmt innheimtulögum, nr. 95/2008, skulu greiða fastagjald sem nemur 700.000 kr.</sen>
       </numart>
@@ -809,15 +809,15 @@
     </subart>
     <subart nr="2">
       <sen>Fastagjöld fyrir afgreiðslu umsókna um starfsleyfi eftirlitsskyldra aðila eru eftirfarandi:</sen>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <sen>Vegna viðskiptabanka, sparisjóða, lánafyrirtækja, rafeyrisfyrirtækja og vátryggingafélaga 1.000.000 kr.</sen>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <sen>Vegna verðbréfafyrirtækja, verðbréfamiðlana, rekstrarfélaga verðbréfasjóða og verðbréfamiðstöðva 500.000 kr.</sen>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <sen>Vegna annarra eftirlitsskyldra aðila 100.000 kr.</sen>
       </numart>

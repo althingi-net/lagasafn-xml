@@ -111,22 +111,22 @@
       <name>Orðskýringar.</name>
       <subart nr="1">
         <sen>Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Notendafyrirtæki:</name>
           <sen>Notendafyrirtæki er einstaklingur, félag, opinber aðili eða annar sá sem stundar atvinnurekstur og hefur á grundvelli þjónustusamnings skv. 4. tölul. leigt starfsmann af starfsmannaleigu gegn gjaldi til að sinna tímabundnum störfum á vinnustað sínum undir verkstjórn sinni.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Starfsmaður:</name>
           <sen>Starfsmaður starfsmannaleigu er hver sá sem er ráðinn til starfa hjá starfsmannaleigu og er leigður gegn gjaldi til notendafyrirtækis á grundvelli þjónustusamnings skv. 4. tölul.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Starfsmannaleiga:</name>
           <sen>Starfsmannaleiga er sjálfstætt starfandi einstaklingur eða félag sem samkvæmt þjónustusamningi skv. 4. tölul. leigir út starfsmenn sína gegn gjaldi til að sinna störfum á vinnustað notendafyrirtækis undir verkstjórn þess síðarnefnda.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Þjónustusamningur:</name>
           <sen>Þjónustusamningur er samningur milli notendafyrirtækis og starfsmannaleigu um að notendafyrirtækið leigi gegn gjaldi tiltekinn starfsmann eða tiltekna starfsmenn af starfsmannaleigunni í ákveðinn tíma til að sinna störfum á vinnustað sínum undir verkstjórn sinni.</sen>
@@ -322,27 +322,27 @@
       <name>Upplýsingaskylda.</name>
       <subart nr="1">
         <sen>Starfsmannaleiga sem hyggst veita þjónustu hér á landi samtals lengur en tíu virka daga á hverjum tólf mánuðum skal veita Vinnumálastofnun eftirfarandi upplýsingar og/eða aðgang að gögnum, eftir því sem við á, eigi síðar en sama dag og starfsemin hefst hér á landi í hvert skipti, m.a. skal eftirfarandi koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Yfirlit yfir starfsmenn sem starfa munu á vegum starfsmannaleigunnar hér á landi þar sem fram kemur nafn, fæðingardagur, heimilisfang í heimaríki, ríkisfang, upplýsingar um hvort viðkomandi starfsmenn njóta almannatryggingaverndar í heimaríki og starfsréttindi eftir því sem við á.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Upplýsingar um dvalarstað og áætlaðan starfstíma starfsmanna starfsmannaleigunnar hér á landi þegar um erlenda starfsmenn er að ræða.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Gildi atvinnuleyfa starfsmanna í heimaríki þegar um er að ræða starfsmenn sem ekki eru ríkisborgarar ríkja á Evrópska efnahagssvæðinu eða EFTA-ríkja eða Færeyingar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Nafn og kennitölu notendafyrirtækis eða annað sambærilegt auðkenni þess.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Afrit af ráðningarsamningum þeirra starfsmanna sem starfa munu á vegum starfsmannaleigunnar hér á landi.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Aðrar upplýsingar sem Vinnumálastofnun kann að óska eftir til að ganga úr skugga um að starfsmannaleiga veiti sannanlega þjónustu hér á grundvelli 36. gr. samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar og að um sé að ræða starfsmenn hennar, svo sem afrit af þjónustusamningum og ráðningarsamningum.</sen>
         </numart>
@@ -662,23 +662,23 @@
         <numart nr="d" type="alphabet">
           <nr-title>d.</nr-title>
           <sen>Þegar notendafyrirtæki hefur með sannanlegum hætti reynt að tryggja eins og því er unnt að starfsmannaleiga greiði starfsmönnum sínum laun í samræmi við 5. gr. a, svo sem með því að afla eftirfarandi upplýsinga hjá þeirri starfsmannaleigu sem um ræðir hverju sinni um þá starfsmenn starfsmannaleigunnar sem veita notendafyrirtækinu þjónustu hér á landi:</sen>
-          <numart nr="1">
+          <numart nr="1" type="numeric">
             <nr-title>1.</nr-title>
             <sen>nafn hvers starfsmanns,</sen>
           </numart>
-          <numart nr="2">
+          <numart nr="2" type="numeric">
             <nr-title>2.</nr-title>
             <sen>afrit af ráðningarsamningi hvers starfsmanns,</sen>
           </numart>
-          <numart nr="3">
+          <numart nr="3" type="numeric">
             <nr-title>3.</nr-title>
             <sen>afrit af vinnutímaskýrslum hvers starfsmanns,</sen>
           </numart>
-          <numart nr="4">
+          <numart nr="4" type="numeric">
             <nr-title>4.</nr-title>
             <sen>afrit af launaseðlum hvers starfsmanns og</sen>
           </numart>
-          <numart nr="5">
+          <numart nr="5" type="numeric">
             <nr-title>5.</nr-title>
             <sen>staðfestingu á að laun hvers starfsmanns hafi verið greidd í samræmi við það sem fram kemur á launaseðli, m.a. hvað varðar launafjárhæð.</sen>
           </numart>

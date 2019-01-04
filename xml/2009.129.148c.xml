@@ -76,11 +76,11 @@
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
         <sen>Gjaldskyldir aðilar samkvæmt lögum þessum eru:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Allir þeir sem flytja til landsins vöru sem gjaldskyld er samkvæmt lögum þessum, hvort sem er til endursölu eða eigin nota.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Allir þeir sem framleiða hér á landi vöru sem gjaldskyld er samkvæmt lögum þessum, vinna að framleiðslu hennar eða setja saman, hvort sem er til endursölu eða eigin nota.</sen>
         </numart>
@@ -178,11 +178,11 @@
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
         <sen>Til skattskyldrar sölu eða afhendingar telst ekki:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Raforka eða heitt vatn sem afhent er öðrum skattskyldum aðila.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Raforka eða heitt vatn sem afhent er eða notað eingöngu til framleiðslu á raforku eða heitu vatni til endursölu.</sen>
         </numart>
@@ -195,27 +195,27 @@
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
         <sen>Skattskyldir aðilar skulu við sölu eða afhendingu á raforku eða heitu vatni gefa út sölureikning þar sem eftirfarandi upplýsingar koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Útgáfudagur.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Útgáfustaður.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Afhendingarstaður ef annar en útgáfustaður.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Nafn og kennitala seljanda.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Nafn og kennitala kaupanda.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Magn, einingarverð og heildarverð á raforku eða heitu vatni.</sen>
         </numart>

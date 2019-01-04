@@ -18,23 +18,23 @@
       <subart nr="1">
         <sen>Markmið laga þessara er að stuðla að þjóðhagslega hagkvæmu raforkukerfi og efla þannig atvinnulíf og byggð í landinu.</sen>
         <sen>Í því skyni skal:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Skapa forsendur fyrir samkeppni í vinnslu og viðskiptum með raforku, með þeim takmörkunum sem nauðsynlegar reynast vegna öryggis raforkuafhendingar og annarra almannahagsmuna.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Stuðla að skilvirkni og hagkvæmni í flutningi og dreifingu raforku.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tryggja öryggi raforkukerfisins og hagsmuni neytenda.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Stuðla að nýtingu endurnýjanlegra orkugjafa.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Taka tillit til umhverfissjónarmiða.</sen>
         </numart>
@@ -71,118 +71,118 @@
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <name>Skilgreiningar.</name>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <name>Dreifikerfi:</name>
         <sen>Raflínur sem ekki teljast til flutningskerfisins ásamt mannvirkjum og búnaði þeim tengdum til og með heimtaug.</sen>
         <sen>Enn fremur mælar og mælabúnaður hjá notendum.</sen>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <name>Dreifiveita:</name>
         <sen>Fyrirtæki sem hefur leyfi til dreifingar raforku á afmörkuðu svæði.</sen>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <name>Dreifiveitusvæði:</name>
         <sen>Landsvæði þar sem dreifiveita hefur einkarétt og skyldu til dreifingar raforku.</sen>
       </numart>
-      <numart nr="4">
+      <numart nr="4" type="numeric">
         <nr-title>4.</nr-title>
         <name>Endurnýjanlegar orkulindir:</name>
         <sen>Orkulindir sem geta endurnýjað sig í sífellu, svo sem fallvötn, jarðhiti, vindorka, sjávarföll og sólarorka.</sen>
       </numart>
-      <numart nr="5">
+      <numart nr="5" type="numeric">
         <nr-title>5.</nr-title>
         <name>Flutningsfyrirtæki:</name>
         <sen>Fyrirtæki sem stýrir rekstri flutningskerfisins og annast kerfisstjórnun.</sen>
       </numart>
-      <numart nr="6">
+      <numart nr="6" type="numeric">
         <nr-title>6.</nr-title>
         <sen>&lt;i&gt; Flutningskerfi: &lt;/i&gt; Raflínur og mannvirki þeim tengd sem eru nauðsynleg til að flytja raforku frá virkjunum til stórnotenda og til dreifiveitna.</sen>
         <sen>Skil milli virkjunar og flutningsfyrirtækis eru við innkomandi rofareit í tengivirki flutningsfyrirtækisins.</sen>
         <sen>Vinnslufyrirtæki á því vélaspenni, eldingavara og tengingu við tengivirki.</sen>
         <sen>Með sama hætti eru skil milli flutningsfyrirtækis annars vegar og dreifiveitna/stórnotenda hins vegar við útgangandi rofareit í tengivirki flutningsfyrirtækisins.</sen>
       </numart>
-      <numart nr="7">
+      <numart nr="7" type="numeric">
         <nr-title>7.</nr-title>
         <name>Flutningsvirki:</name>
         <sen>Raflína og búnaður henni tengdur til flutnings raforku.</sen>
       </numart>
-      <numart nr="8">
+      <numart nr="8" type="numeric">
         <nr-title>8.</nr-title>
         <name>Neyðarsamstarf raforkukerfisins:</name>
         <sen>Samvinnuvettvangur vinnslufyrirtækja, flutningsfyrirtækis, dreifiveitna, stórnotenda og opinberra aðila á Íslandi vegna vár sem steðjar að vinnslu, flutningi eða dreifingu raforku og/eða stórnotendum.</sen>
         <sen>Nánar er kveðið á um starfsemina í samstarfsgrunni neyðarsamstarfs raforkukerfisins.</sen>
       </numart>
-      <numart nr="9">
+      <numart nr="9" type="numeric">
         <nr-title>9.</nr-title>
         <name>Neyðarstjórnun:</name>
         <sen>Skipulag sem lýsir stjórnun í vá.</sen>
       </numart>
-      <numart nr="10">
+      <numart nr="10" type="numeric">
         <nr-title>10.</nr-title>
         <sen>&lt;i&gt; Notandi: &lt;/i&gt; Sá sem kaupir raforku til eigin nota.</sen>
       </numart>
-      <numart nr="11">
+      <numart nr="11" type="numeric">
         <nr-title>11.</nr-title>
         <sen>&lt;i&gt; Orkulind: &lt;/i&gt; Náttúruleg uppspretta orku í ákveðnu formi, svo sem vatnsfall, jarðhitageymir, sjávarföll, vindur og sólarljós, en einnig olíu- og gaslindir og kolanámur.</sen>
       </numart>
-      <numart nr="12">
+      <numart nr="12" type="numeric">
         <nr-title>12.</nr-title>
         <sen>&lt;i&gt; Raflína: &lt;/i&gt; Samsafn af leiðurum, einangrandi efni og tengdum búnaði til að flytja raforku milli tveggja staða innan raforkukerfis.</sen>
       </numart>
-      <numart nr="13">
+      <numart nr="13" type="numeric">
         <nr-title>13.</nr-title>
         <sen>&lt;i&gt; Raforkukerfi: &lt;/i&gt; Allur sá búnaður sem notaður er við vinnslu, flutning og dreifingu raforku og myndar starfræna heild.</sen>
       </numart>
-      <numart nr="14">
+      <numart nr="14" type="numeric">
         <nr-title>14.</nr-title>
         <sen>&lt;i&gt; Raforkumarkaður: &lt;/i&gt; Skipulegur markaður með raforku.</sen>
       </numart>
-      <numart nr="15">
+      <numart nr="15" type="numeric">
         <nr-title>15.</nr-title>
         <sen>&lt;i&gt; Raforkuver/virkjun: &lt;/i&gt; Mannvirki sem notað er til vinnslu raforku.</sen>
         <sen>Tvær eða fleiri einingar sem mynda eðlilega heild og tengjast flutningskerfinu eða dreifikerfi gegnum sameiginleg tengivirki teljast ein virkjun.</sen>
       </numart>
-      <numart nr="16">
+      <numart nr="16" type="numeric">
         <nr-title>16.</nr-title>
         <sen>&lt;i&gt; Raforkuviðskipti/viðskipti: &lt;/i&gt; Kaup og sala raforku.</sen>
       </numart>
-      <numart nr="17">
+      <numart nr="17" type="numeric">
         <nr-title>17.</nr-title>
         <sen>&lt;i&gt; Stórnotandi: &lt;/i&gt; Notandi sem notar innan þriggja ára á einum stað a.m.k. 80 GWst á ári.</sen>
       </numart>
-      <numart nr="18">
+      <numart nr="18" type="numeric">
         <nr-title>18.</nr-title>
         <sen>&lt;i&gt; Sölufyrirtæki: &lt;/i&gt; Fyrirtæki sem selur raforku eða annast raforkuviðskipti, hvort sem er í heildsölu eða smásölu.</sen>
       </numart>
-      <numart nr="19">
+      <numart nr="19" type="numeric">
         <nr-title>19.</nr-title>
         <sen>&lt;i&gt; Tekjumörk: &lt;/i&gt; Hámark leyfilegra árlegra tekna flutningsfyrirtækis og dreifiveitna til að mæta kostnaði.</sen>
         <sen>Þau skulu sett til fimm ára en uppfærð árlega eftir á miðað við breytingar á viðmiðum tekjumarka eins og þau eru tilgreind í 12. og 17. gr.</sen>
       </numart>
-      <numart nr="20">
+      <numart nr="20" type="numeric">
         <nr-title>20.</nr-title>
         <name>Vá:</name>
         <sen>Atburður sem ógnar almannahag, öryggi fólks, mannvirkja og starfsemi, og kallar á að neyðarstjórnun verði gerð virk.</sen>
         <sen>Atburðurinn getur valdið stórfelldum truflunum á raforkuflutningi, framleiðslu eða dreifingu raforku á tilteknu svæði.</sen>
       </numart>
-      <numart nr="21">
+      <numart nr="21" type="numeric">
         <nr-title>21.</nr-title>
         <name>Viðbragðsáætlun:</name>
         <sen>Áætlun sem gerir grein fyrir aðgerðum og tengiliðum viðkomandi aðila í vá.</sen>
         <sen>Nánar er kveðið á um efni hennar í reglugerð.</sen>
       </numart>
-      <numart nr="22">
+      <numart nr="22" type="numeric">
         <nr-title>22.</nr-title>
         <sen>&lt;i&gt; Vinnsla/raforkuvinnsla: &lt;/i&gt; Umbreyting orku, svo sem vatnsorku, jarðvarma eða efnaorku, í raforku.</sen>
       </numart>
-      <numart nr="23">
+      <numart nr="23" type="numeric">
         <nr-title>23.</nr-title>
         <sen>&lt;i&gt; Vinnslufyrirtæki: &lt;/i&gt; Fyrirtæki sem stundar vinnslu á raforku eða hefur fengið virkjunarleyfi.</sen>
       </numart>
-      <numart nr="24">
+      <numart nr="24" type="numeric">
         <nr-title>24.</nr-title>
         <sen>&lt;i&gt; Virkjunarleyfi: &lt;/i&gt; Leyfi sem veitt er samkvæmt lögum þessum til að reisa og reka raforkuver.</sen>
       </numart>
@@ -538,31 +538,31 @@
       <name>Efni virkjunarleyfis.</name>
       <subart nr="1">
         <sen>Í virkjunarleyfi skal m.a. tilgreina:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Stærð virkjunar og afmörkun virkjunarsvæðis.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hvenær framkvæmdir skuli hefjast í síðasta lagi og hvenær þeim skuli lokið.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Upplýsinga- og tilkynningarskyldu leyfishafa til Orkustofnunar og flutningsfyrirtækis sem nauðsynleg er til að viðkomandi aðilar geti rækt hlutverk sitt.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Öryggis- og umhverfisverndarráðstafanir.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Skilyrði um tæknilega og fjárhagslega getu leyfishafa.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Ráðstöfun mannvirkja og tækja þegar notkun þeirra er hætt.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Önnur atriði er lúta að skilyrðum leyfis og skyldum leyfishafa samkvæmt lögum þessum.</sen>
         </numart>
@@ -771,29 +771,29 @@
       </subart>
       <subart nr="3">
         <sen>Í rekstri flutningskerfisins felst m.a. að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tengja alla þá sem eftir því sækjast við flutningskerfið, enda uppfylli þeir tæknileg skilyrði fyrir því og greiði tengigjald samkvæmt ákvæðum í gjaldskrá, sbr. 12. gr. a.</sen>
           <sen>Þó er heimilt að synja nýjum aðilum um aðgang að flutningskerfinu á grundvelli sjónarmiða um flutningsgetu, öryggi og gæði kerfisins.</sen>
           <sen>Synjun skal vera skrifleg og rökstudd.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Útvega rafmagn í stað þess sem tapast í kerfinu.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Útvega launafl fyrir kerfið til að nýta flutningsgetu og tryggja spennugæði.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Tryggja áreiðanleika í rekstri kerfisins.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Sjá til þess að fyrir liggi spá um raforkuþörf og áætlun um uppbyggingu flutningskerfisins.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Greiða þeim dreifiveitum bætur sem verða fyrir langvarandi skerðingu á raforkuafhendingu.</sen>
           <sen>Kveðið skal á um fjárhæð bóta og bótaskyld tilvik í reglugerð.</sen>
@@ -802,23 +802,23 @@
       <subart nr="4">
         <sen>Flutningsfyrirtækið ber ábyrgð á öruggri stýringu raforkukerfisins og skal tryggja öryggi og gæði við raforkuafhendingu.</sen>
         <sen>Í slíkri kerfisstjórnun felst m.a. að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Stilla saman raforkuvinnslu og raforkuþörf svo að hægt sé að mæta frávikum milli umsaminna kaupa og raforkunotkunar, sem og að gera samninga við vinnslufyrirtæki í þessu sambandi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tryggja nægjanlegt framboð reiðuafls við rekstur kerfisins.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Samræma notkunarferla þar sem aflmæling fer ekki fram.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Mæla það rafmagn sem afhent er inn á og út af flutningskerfinu í samræmi við reglugerð þar að lútandi, halda utan um mælingar og skila gögnum til viðkomandi aðila svo að unnt sé að gera upp viðskipti með raforku.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Hafa tiltækar viðbragðsáætlanir og annast samræmingu neyðaraðgerða í flutningskerfinu, bregðast við í vá og ef einhver aðili að neyðarsamstarfi raforkukerfisins óskar þess og tryggja tengsl við yfirstjórn almannavarna.</sen>
         </numart>
@@ -981,11 +981,11 @@
       </subart>
       <subart nr="2">
         <sen>Í kerfisáætlun skulu felast eftirfarandi áætlanir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Langtímaáætlun kerfisáætlunar sem sýnir þá þætti í meginflutningskerfinu sem fyrirhugað er að byggja upp eða uppfæra á næstu tíu árum og tímaáætlun þeirra.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Framkvæmdaáætlun kerfisáætlunar sem sýnir ákvarðanir um fjárfestingar í flutningskerfinu sem hafa þegar verið teknar og fjárfestingar sem þarf að ráðast í á næstu þremur árum og tímaáætlun þeirra.</sen>
           <sen>Í framkvæmdaáætlun skal greining valkosta útskýrð og rökstuddur sá kostur sem valinn er.</sen>
@@ -1283,14 +1283,14 @@
       </subart>
       <subart nr="3">
         <sen>Tekjumörkin skulu ákveðin út frá eftirfarandi viðmiðum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Rekstrarkostnaði sem tengist flutningsstarfsemi fyrirtækisins, þ.m.t. kostnaði vegna viðhalds, leigukostnaði vegna flutningsvirkja, almennum rekstrarkostnaði og kostnaði við kerfisstjórnun.</sen>
           <sen>Við ákvörðun rekstrarkostnaðar við setningu tekjumarka skal taka tillit til meðalrekstrarkostnaðar síðustu fimm ára með eins árs töf að teknu tilliti til verðlagsbreytinga og áhrifa nýrra stórra fjárfestinga á rekstrarkostnað flutningsfyrirtækisins.</sen>
           <sen>Þegar stórar fjárfestingar bætast við fastafjármuni flutningsfyrirtækisins skal skipting rekstrarkostnaðar milli tekjumarka annars vegar fyrir stórnotendur og hins vegar fyrir dreifiveitur uppfærð.</sen>
           <sen>Við setningu nýrra tekjumarka skal liggja fyrir endurskoðuð skipting rekstrarkostnaðar á milli stórnotenda og dreifiveitna.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Arðsemi flutningsfyrirtækisins af flutningsstarfsemi skal vera sem næst vegnum fjármagnskostnaði, að teknu tilliti til skatta og að frátöldum verðlagsbreytingum.</sen>
           <sen>Arðsemi til grundvallar tekjumörkum skal vera jöfn hlutfalli milli annars vegar hagnaðar fyrir fjármunatekjur og fjármagnsgjöld en að frádregnum sköttum (EBIT að frádregnum sköttum) og hins vegar bókfærðs virðis fastafjármuna sem nauðsynlegir eru til reksturs flutningskerfisins auk 20% af tekjumörkum síðasta árs til að mæta kostnaði af veltufjármunum.</sen>
@@ -1305,11 +1305,11 @@
           <sen>Á grundvelli þessa töluliðar skal arðsemi ákvörðuð að fengnu mati sérfróðra aðila.</sen>
           <sen>Við mat hinna sérfróðu aðila ber þeim að hafa samráð við framleiðendur raforku, neytendur, stórnotendur, dreifiveitur og Landsnet.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Afskriftum af fastafjármunum, sbr. 2. tölul.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Sköttum.</sen>
         </numart>
@@ -1391,15 +1391,15 @@
       </subart>
       <subart nr="3">
         <sen>Greiða skal úttektargjald til flutningsfyrirtækisins vegna framleiðslu virkjana sem tengjast flutningskerfinu um dreifiveitu sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vegna þeirrar orku sem framleidd er í virkjun sem er undir 1,42 MW skal ekki greiða úttektargjald til flutningsfyrirtækisins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vegna orku sem framleidd er í virkjunum á stærðarbilinu 1,42–3,1 MW skal ekki greiða úttektargjald við neðri stærðarmörkin en síðan skal gjaldið fara hlutfallslega hækkandi þar til það nemur 60% fulls úttektargjalds við efri mörkin.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vegna orku frá virkjun sem er 3,1–10 MW skal greiða 60% fulls úttektargjalds.</sen>
         </numart>
@@ -1570,27 +1570,27 @@
       <name>Efni sérleyfis.</name>
       <subart nr="1">
         <sen>Í sérleyfi skal m.a. tilgreina eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Afmörkun svæðis sem sérleyfi til dreifingar nær til.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Upplýsinga- og tilkynningarskyldu leyfishafa til Orkustofnunar og flutningsfyrirtækis sem nauðsynleg er til að viðkomandi aðilar geti rækt hlutverk sitt samkvæmt lögunum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Öryggis- og umhverfisráðstafanir á framkvæmda- og rekstrartíma.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Skilyrði um tæknilega og fjárhagslega getu leyfishafa.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Hvernig skuli ráðstafa mannvirkjum og búnaði þegar notkun þeirra er hætt.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Önnur atriði er tengjast skilyrðum leyfis og skyldum dreifiveitna samkvæmt lögum þessum.</sen>
         </numart>
@@ -1615,39 +1615,39 @@
       </subart>
       <subart nr="3">
         <sen>Dreifiveitu er m.a. skylt að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tengja alla sem eftir því sækjast við dreifikerfið, enda uppfylli þeir tæknileg skilyrði fyrir því og greiði tengigjald sem skal tilgreint í gjaldskrá.</sen>
           <sen>Þó er heimilt að synja nýjum aðilum um aðgang að kerfinu á grundvelli sjónarmiða um flutningsgetu, öryggi og gæði kerfisins.</sen>
           <sen>Synjun skal vera skrifleg og rökstudd.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tryggja áreiðanleika í rekstri kerfisins.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Útvega rafmagn í stað þess sem tapast í kerfinu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Útvega launafl fyrir kerfið til að nýta flutningsgetu og tryggja spennugæði.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Mæla eða láta mæla með nákvæmum hætti þá raforku sem hún afhendir eða tekur við í samræmi við reglur þar að lútandi.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Veita stjórnvöldum, viðskiptavinum og almenningi upplýsingar sem nauðsynlegar eru við mat á því hvort hún fullnægi skyldum sínum.</sen>
           <sen>Rísi ágreiningur um hvort fyrirtækinu sé skylt að veita umbeðnar upplýsingar sker Orkustofnun úr.</sen>
           <sen>Úrskurður Orkustofnunar í þessu efni sætir kæru til úrskurðarnefndar raforkumála.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Gæta jafnræðis við starfrækslu sína og trúnaðar um upplýsingar er varða viðskiptahagsmuni notenda og aðrar þær upplýsingar sem sanngjarnt er og eðlilegt að leynt fari.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Greiða þeim notendum bætur sem verða fyrir langvarandi skerðingu á raforkuafhendingu.</sen>
           <sen>Kveðið skal á um fjárhæð bóta og bótaskyld tilvik í reglugerð.</sen>
@@ -1741,12 +1741,12 @@
       </subart>
       <subart nr="3">
         <sen>Tekjumörkin skulu ákveðin út frá eftirfarandi viðmiðum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Rekstrarkostnaði sem tengist dreifingu fyrirtækisins á rafmagni, þ.m.t. kostnaði vegna viðhalds, kostnaði vegna flutnings um flutningskerfið, kostnaði við orkutap, almennum rekstrarkostnaði og kostnaði við kerfisstjórnun í dreifikerfinu.</sen>
           <sen>Við ákvörðun rekstrarkostnaðar við setningu tekjumarka skal taka tillit til rekstrarkostnaðar síðustu fimm ára með eins árs töf, að teknu tilliti til verðlagsbreytinga og áhrifa nýrra stórra fjárfestinga á rekstrarkostnað dreififyrirtækisins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Arðsemi dreifiveitu af dreifingu raforku skal vera sem næst vegnum fjármagnskostnaði, að teknu tilliti til skatta og að frátöldum verðlagsbreytingum.</sen>
           <sen>Arðsemi til grundvallar tekjumörkum skal vera jöfn hlutfalli milli annars vegar hagnaðar fyrir fjármunatekjur og fjármagnsgjöld en að frádregnum sköttum (EBIT að frádregnum sköttum) og hins vegar bókfærðs virðis fastafjármuna sem nauðsynlegir eru til reksturs dreifiveitunnar auk 20% af tekjumörkum síðasta árs til að mæta kostnaði af veltufjármunum.</sen>
@@ -1754,11 +1754,11 @@
           <sen>Fjárfestingar skulu teljast til fastafjármuna frá þeim tíma sem fjárfestingin á sér stað.</sen>
           <sen>Á grundvelli þessa töluliðar skal arðsemi ákvörðuð að fengnu mati sérfróðra aðila.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Afskriftum af fastafjármunum, sbr. 2. tölul.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Sköttum.</sen>
         </numart>
@@ -1835,11 +1835,11 @@
       </subart>
       <subart nr="4">
         <sen>Dreifiveitu er skylt að greiða virkjun sem tengist henni og er undir 3,1 MW þann ávinning, að hluta eða að fullu, sem felst í því að þurfa ekki að greiða úttektargjald að fullu til flutningskerfisins, sbr. ákvæði 3. mgr. 12. gr. a, með eftirfarandi hætti:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Greiða skal virkjun undir 0,3 MW að fullu hreinan ávinning veitunnar af niðurfellingu úttektargjaldsins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Fyrir virkjun sem er 0,3–3,1 MW skal minnka greiðsluna hlutfallslega þar til ekkert er greitt sé virkjunin 3,1 MW eða stærri.</sen>
         </numart>
@@ -1968,23 +1968,23 @@
       <name>Skyldur sölufyrirtækja.</name>
       <subart nr="1">
         <sen>Sölufyrirtæki er m.a. skylt að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Útvega þá raforku sem er nauðsynleg til að unnt sé að standa við orkusölusamninga.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Veita Orkustofnun upplýsingar um starfsemina sem nauðsynlegar eru við mat á því hvort það fullnægi skyldum sínum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Greiða flutningsfyrirtækinu kostnað sem hlýst af frávikum, sbr. 1. tölul. 4. mgr. 9. gr., auk hæfilegrar umsýsluþóknunar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Tilkynna Orkustofnun og flutningsfyrirtæki um öll viðskipti með raforku.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Tilkynna dreifiveitu um upphaf og lok viðskipta við einstaka notendur.</sen>
         </numart>
@@ -2312,11 +2312,11 @@
       <name>Gjaldtaka.</name>
       <subart nr="1">
         <sen>Til að standa undir kostnaði vegna eftirlits samkvæmt lögum þessum skal greiða gjöld sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Flutningsfyrirtækið skal greiða gjald af raforku sem er mötuð inn á flutningskerfið sem nemur 0,4 aurum á hverja kWst.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Dreifiveitur skulu greiða gjald af raforku sem er móttekin frá flutningskerfi eða beint frá virkjunum sem nemur 1 eyri á hverja kWst.</sen>
         </numart>
@@ -2419,17 +2419,17 @@
       <name>Gjaldtaka vegna útgáfu leyfa.</name>
       <subart nr="1">
         <sen>Til að standa undir kostnaði af undirbúningi og útgáfu leyfa samkvæmt lögum þessum skal greiða gjöld til leyfisveitanda:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Fyrir virkjunarleyfi, sbr. 4. gr., skal greiða gjald.</sen>
           <sen>Gjaldið skal vera sett saman úr fastagjaldi sem nemur 100.000 kr. og gjaldþætti sem er í hlutfalli við stærð virkjunar og nemur 10.000 kr. fyrir hvert MW.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Fyrir leyfi til að reisa og reka dreifikerfi, sbr. 13. gr., skal greiða gjald.</sen>
           <sen>Gjaldið skal vera sett saman úr fastagjaldi sem nemur 50.000 kr. og gjaldþætti sem er í hlutfalli við íbúafjölda á dreifiveitusvæðinu og nemur 10 kr. fyrir hvern íbúa.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Fyrir leyfi til að stunda raforkuviðskipti, sbr. 18. gr., skal greiða 50.000 kr.</sen>
         </numart>
@@ -2614,35 +2614,35 @@
       <subart nr="1">
         <sen>Ráðherra leggur fyrir Alþingi á tveggja ára fresti skýrslu um raforkumálefni.</sen>
         <sen>Í skýrslunni skal m.a. fjalla um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Yfirlit um sölu og notkun raforku síðastliðin fjögur ár.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Raforkuþörf og yfirlit um líklega þróun til lengri tíma á grundvelli raforkuspár og áætlana um orkufrekan iðnað og aðra starfsemi sem raforkuspá tekur ekki til.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Rannsóknir orkulinda og undirbúning þeirra til raforkuvinnslu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Raforkuvinnslu með hliðsjón af raforkuþörf og öryggi raforkukerfisins.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Styrkingu flutningskerfisins í samræmi við aukna raforkuþörf.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Gæði raforku, m.a. með hliðsjón af öryggi afhendingar.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Þjóðhagslega þýðingu áætlaðra framkvæmda á sviði raforkumála og áhrif þeirra á atvinnulíf og byggð í landinu.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Áætlaða uppbyggingu flutningskerfis raforku og þróun kerfisáætlunar flutningsfyrirtækisins.</sen>
         </numart>
@@ -2728,15 +2728,15 @@
       </subart>
       <subart nr="4">
         <sen>Fallist Orkustofnun ekki á skiptireglur fyrirtækis skv. 3. mgr. skal hún taka rökstudda ákvörðun þar um innan sex vikna frá því að óskað var eftir samþykki hennar á skiptireglum og skal Orkustofnun þá ákvarða skiptireglur á grundvelli eftirfarandi meginviðmiða:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Fastafjármunum sem ekki er unnt að heimfæra beint á einstaka starfsemi skal skipt á hverja starfsemi í þeim hlutföllum sem eru á milli bókfærðs verðs þeirra fastafjármuna sem heimfæranlegir eru.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Skipta skal afskriftum af þeim eignum sem ekki er unnt að skipta í sömu hlutföllum og þeim sem skiptanlegar eru.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Rekstrartekjum og rekstrarkostnaði sem ekki er unnt að heimfæra beint á einstaka starfsemi skal skipt í þeim hlutföllum sem eru milli tekna og kostnaðar sem heimfæranlegur er.</sen>
         </numart>
@@ -2749,15 +2749,15 @@
       </subart>
       <subart nr="6">
         <sen>Fallist Orkustofnun ekki á skiptireglur fyrirtækisins skv. 5. mgr. skal hún taka rökstudda ákvörðun þar um innan sex vikna frá því að óskað var eftir samþykki hennar á skiptireglum og skal Orkustofnun þá ákvarða skiptireglur á grundvelli eftirfarandi meginviðmiða:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Þeim sameiginlegu þáttum í rekstrar- og efnahagsreikningi sem getið er um í 3. mgr. skal skipt í hlutfalli við verðmæti þeirrar orku sem afhent er.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Verðmæti raforku, sbr. 1. tölul., skal miðast við meðalverð raforku við stöðvarvegg í viðskiptum til almennra nota hérlendis, en að teknu tilliti til samninga við notendur sem nota meira en 100 GWst á ári.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Til þess að ákvarða verðmæti annarrar orku, sbr. 1. tölul., svo sem heits vatns og gufu, skal Orkustofnun skilgreina eðlilegt einingarverð á þeirri orku við afhendingu frá orkuverinu.</sen>
           <sen>Í því skyni skal stofnunin hafa hliðsjón af verði orkunnar þegar hún kemur til kaupenda en að frádregnum kostnaði við flutning, dreifingu og sölu hennar.</sen>

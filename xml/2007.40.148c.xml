@@ -65,52 +65,52 @@
       <name>Skilgreiningar.</name>
       <subart nr="1">
         <sen>Í lögum þessum hafa eftirfarandi orð svofellda merkingu:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Heilbrigðisþjónusta:</name>
           <sen>Hvers kyns heilsugæsla, lækningar, hjúkrun, almenn og sérhæfð sjúkrahúsþjónusta, sjúkraflutningar, hjálpartækjaþjónusta og þjónusta heilbrigðisstarfsmanna innan og utan heilbrigðisstofnana sem veitt er í því skyni að efla heilbrigði, fyrirbyggja, greina eða meðhöndla sjúkdóma og endurhæfa sjúklinga.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Almenn heilbrigðisþjónusta:</name>
           <sen>Heilsugæsla, þjónusta og hjúkrun á hjúkrunarheimilum og hjúkrunarrýmum stofnana og almenn sjúkrahúsþjónusta.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Sérhæfð heilbrigðisþjónusta:</name>
           <sen>Heilbrigðisþjónusta sem fellur ekki undir almenna heilbrigðisþjónustu skv. 2. tölul.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Heilsugæsla:</name>
           <sen>Almennar lækningar, hjúkrun, heilsuvernd og forvarnir, bráða- og slysamóttaka og önnur heilbrigðisþjónusta sem veitt er á vegum heilsugæslustöðva.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <name>Almenn sjúkrahúsþjónusta:</name>
           <sen>Almennar lyflækningar, hjúkrun, slysamóttaka, endurhæfing og nauðsynleg stoðdeildarþjónusta.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <name>Sérhæfð sjúkrahúsþjónusta:</name>
           <sen>Sjúkrahúsþjónusta sem fellur ekki undir almenna sjúkrahúsþjónustu skv. 5. tölul.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <name>Heilbrigðisstarfsmaður:</name>
           <sen>Einstaklingur sem starfar við heilbrigðisþjónustu og hefur hlotið leyfi landlæknis til að nota starfsheiti löggiltrar heilbrigðisstéttar.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <name>Heilbrigðisstofnun:</name>
           <sen>Stofnun þar sem heilbrigðisþjónusta er veitt.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <name>Hjúkrunarrými:</name>
           <sen>Rými á hjúkrunarheimili eða sjúkrahúsi þar sem hjúkrað er þeim sem þarfnast umönnunar og meðferðar sem hægt er að veita utan sjúkrahúsa.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <name>Háskólasjúkrahús:</name>
           <sen>Sjúkrahús sem veitir þjónustu í nær öllum viðurkenndum sérgreinum læknisfræði og hjúkrunarfræði, með áherslu á rannsóknir, þróun og kennslu.</sen>
@@ -118,13 +118,13 @@
           <sen>Starfsmenn sjúkrahússins, sem uppfylla tilteknar hæfiskröfur háskóla, gegna störfum bæði á sjúkrahúsinu og við háskólann eða hafa önnur starfstengsl við háskólann.</sen>
           <sen>Meðferð sjúklinga, kennsla og rannsóknir eru samþætt í daglegum störfum á sjúkrahúsinu.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <name>Kennslusjúkrahús:</name>
           <sen>Sjúkrahús sem veitir þjónustu í helstu sérgreinum læknisfræði og hjúkrunarfræði og hefur tengsl við háskóla sem sinnir kennslu og rannsóknum í læknisfræði og fleiri greinum heilbrigðisvísinda, svo og eftir atvikum framhaldsskóla.</sen>
           <sen>Starfsmenn sjúkrahússins, sem sinna kennslu og rannsóknum, starfa náið með þeim háskóladeildum er sjúkrahúsinu tengjast.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <name>Starfsstofur heilbrigðisstarfsmanna:</name>
           <sen>Starfsstöðvar sjálfstætt starfandi heilbrigðisstarfsmanna þar sem heilbrigðisþjónusta er veitt með eða án greiðsluþátttöku ríkisins.</sen>
@@ -488,27 +488,27 @@
         <sen>Landspítali er aðalsjúkrahús landsins og háskólasjúkrahús.</sen>
         <sen>Hann veitir sérhæfða sjúkrahúsþjónustu, m.a. á göngu- og dagdeildum, fyrir alla landsmenn og almenna sjúkrahúsþjónustu fyrir íbúa heilbrigðisumdæmis höfuðborgarsvæðisins.</sen>
         <sen>Hlutverk hans er að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>veita heilbrigðisþjónustu sem á hverjum tíma samræmist skyldu slíks sjúkrahúss, m.a. sérfræðiþjónustu í nær öllum viðurkenndum greinum læknisfræði, hjúkrunarfræði og eftir atvikum öðrum greinum heilbrigðisvísinda sem stundaðar eru hér á landi, með aðgengi að stoðdeildum og rannsóknadeildum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>annast starfsnám háskólanema og framhaldsskólanema í heilbrigðisgreinum í grunn- og framhaldsnámi,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>stunda vísindarannsóknir á heilbrigðissviði,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>veita háskólamenntuðum starfsmönnum sérmenntun í heilbrigðisgreinum,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>gera fagfólki kleift að sinna fræðastörfum við Háskóla Íslands eða aðra háskóla og veita háskólamönnum aðstöðu til þess að sinna rannsóknum og öðrum störfum við sjúkrahúsið,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>starfrækja blóðbanka sem hefur með höndum blóðbankaþjónustu á landsvísu.</sen>
         </numart>
@@ -551,27 +551,27 @@
         <sen>Sjúkrahúsið á Akureyri er kennslusjúkrahús.</sen>
         <sen>Það veitir sérhæfða sjúkrahúsþjónustu, m.a. á göngu- og dagdeildum, fyrir landsmenn og almenna sjúkrahúsþjónustu í sínu heilbrigðisumdæmi.</sen>
         <sen>Hlutverk þess er að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>veita heilbrigðisþjónustu sem á hverjum tíma samræmist skyldu slíks sjúkrahúss, m.a. sérfræðiþjónustu í helstu greinum læknisfræði, hjúkrunarfræði og eftir atvikum öðrum greinum heilbrigðisvísinda sem stundaðar eru hér á landi, með aðgengi að stoðdeildum og rannsóknadeildum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>annast starfsnám háskólanema í heilbrigðisvísindagreinum við Háskólann á Akureyri,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>taka þátt í starfsnámi annarra háskólanema og framhaldsskólanema í grunn- og framhaldsnámi á heilbrigðissviði í samvinnu við Landspítala, Háskóla Íslands og aðrar heilbrigðisstofnanir og skóla,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>stunda vísindarannsóknir á heilbrigðissviði,</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>gera fagfólki kleift að sinna fræðastörfum við Háskólann á Akureyri eða eftir atvikum aðra háskóla,</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>vera varasjúkrahús Landspítala.</sen>
         </numart>

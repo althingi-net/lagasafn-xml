@@ -102,7 +102,7 @@
     <name>Skattlagning.</name>
     <subart nr="1">
       <sen>Félögin skulu greiða skatta og önnur opinber gjöld sem almennt eru lögð á hér á landi, eftir þeim reglum sem um þau gilda samkvæmt lögum á hverjum tíma, nema að því leyti sem á annan veg er mælt í lögum þessum:</sen>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <sen>Þrátt fyrir breytingar sem síðar kunna að verða á lögum nr. 90/2003, um tekjuskatt, skulu félögin greiða 15% tekjuskatt með eftirfarandi sérákvæðum:</sen>
         <numart nr="a" type="alphabet">
@@ -122,34 +122,34 @@
           <sen>Ef tekjuskattshlutfall á félög með takmarkaðri ábyrgð, sbr. 1. tölul. 1. mgr. 2. gr. laga nr. 90/2003, um tekjuskatt, er lækkað niður fyrir 15% skal sú lækkun gilda um félögin.</sen>
         </numart>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <sen>Félögunum skal heimilt að draga frá skattskyldum tekjum á hverju ári eftirstöðvar rekstrartapa frá síðustu tíu almanaksárum eins og nánar er kveðið á um í 8. tölul. 31. gr. laga nr. 90/2003, um tekjuskatt.</sen>
         <sen>Ef íslenskum fyrirtækjum verður heimilað að draga eftirstöðvar rekstrartapa frá skattskyldum tekjum vegna fleiri ára, sbr. þessa málsgrein, skal sama gilda um félögin.</sen>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <sen>Félögunum skal heimilt að fyrna að fullu kostnað af búnaði sem er notaður, eða er fyrirhugað að nota, í gagnaverinu yfir líftíma búnaðarins.</sen>
         <sen>Til búnaðar telst m.a. rafbúnaður, vélbúnaður, upplýsingatæknibúnaður og fjarskiptabúnaður sem er nauðsynlegur til þess að halda uppi starfrækslu gagnaversins.</sen>
       </numart>
-      <numart nr="4">
+      <numart nr="4" type="numeric">
         <nr-title>4.</nr-title>
         <sen>Félögin skulu undanþegin iðnaðarmálagjaldi samkvæmt lögum nr. 134/1993, um iðnaðarmálagjald, með síðari breytingum, og markaðsgjaldi samkvæmt lögum nr. 160/2002, um útflutningsaðstoð, með síðari breytingum, sem og sköttum eða gjöldum sömu eða að verulegu leyti svipaðrar tegundar sem síðar kunna að verða lögð á til viðbótar eða í staðinn fyrir iðnaðarmálagjald eða markaðsgjald.</sen>
       </numart>
-      <numart nr="5">
+      <numart nr="5" type="numeric">
         <nr-title>5.</nr-title>
         <sen>Stimpilgjöld sem greiða bæri samkvæmt lögum nr. 36/1978, um stimpilgjald, skulu vera 0,15% af öllum stimpilskyldum skjölum sem félögin gefa út eða stofnað er til í tengslum við byggingu gagnaversins.</sen>
       </numart>
-      <numart nr="6">
+      <numart nr="6" type="numeric">
         <nr-title>6.</nr-title>
         <sen>Félögin skulu undanþegin ákvæðum 1.–5. tölul. 1. mgr. 14. gr. laga nr. 146/1996, um öryggi raforkuvirkja, neysluveitna og raffanga.</sen>
       </numart>
-      <numart nr="7">
+      <numart nr="7" type="numeric">
         <nr-title>7.</nr-title>
         <sen>Félögin skulu þrátt fyrir 35. gr. skipulags- og byggingarlaga, nr. 73/1997, greiða skipulagsgjald, sem nemur 100.000 bandaríkjadölum, af nýbyggingum gagnavers.</sen>
         <sen>Greiðslur skulu standa í hlutfalli við framvindu byggingar gagnaversins.</sen>
       </numart>
-      <numart nr="8">
+      <numart nr="8" type="numeric">
         <nr-title>8.</nr-title>
         <sen>Í stað fasteignaskatts skv. II. kafla laga nr. 4/1995, um tekjustofna sveitarfélaga, með síðari breytingum, svo og sams konar eða efnislega svipaðra gjalda og skatta sem síðar kunna að verða lagðir á til viðbótar við eða í stað fasteignaskatts, skulu félögin greiða Reykjanesbæ fasteignaskatt sem nemur 1,65% af áætluðu verðmæti allra bygginga, húsnæðis og mannvirkja í eigu félaganna eða á leigu hjá þeim, eða þá annað hlutfall fasteignaskatts sem Reykjanesbær kann almennt að leggja á byggingar af sama toga ef hann er lægri.</sen>
         <sen>Skattstofninn nemur 1.030.600.000 kr. að því er varðar núverandi fasteignir félaganna og breytist samkvæmt byggingarvísitölu allt frá þeim mánuði sem félögin hefja viðskipti við viðskiptavini.</sen>
@@ -158,20 +158,20 @@
         <sen>Félögunum verður veittur frádráttur af síðari fasteignagjöldum að fjárhæð 44.660.298 kr. vegna skatta sem þegar hafa verið greiddir til Reykjanesbæjar eða eru gjaldfallnir, og Reykjanesbær mun ekki leggja á slíka skatta árið 2010.</sen>
         <sen>Fasteignaskattur skal lagður á og innheimtur fyrir sérhvert ár á grundvelli fyrrgreinds álagningarstofns svo sem hann er framreiknaður á grundvelli byggingarvísitölu þess mánaðar sem viðskipti við viðskiptavini hefjast.</sen>
       </numart>
-      <numart nr="9">
+      <numart nr="9" type="numeric">
         <nr-title>9.</nr-title>
         <sen>Félögunum skal ekki gert að greiða eignarskatt eða skatta og gjöld sem ekki eru tekjutengd og kunna að verða innleidd eftir undirritun fjárfestingarsamningsins og á gildistíma hans nema slíkir skattar og gjöld séu jafnframt lögð með almennum hætti á önnur íslensk fyrirtæki, þ.m.t. öll önnur gagnaver.</sen>
         <sen>Hins vegar skulu félögin undanþegin öllum eignarskatti sem kann að verða tekinn upp í fimm ár frá gildistöku fjárfestingarsamningsins.</sen>
       </numart>
-      <numart nr="10">
+      <numart nr="10" type="numeric">
         <nr-title>10.</nr-title>
         <sen>Uppfylli félögin og/eða fasteignir þeirra skilyrði til skráningar sem virðisaukaskattsskyldur aðili samkvæmt lögum nr. 50/1988, um virðisaukaskatt, skal félögunum ekki gert að leggja fram sérstaka tryggingu vegna skráningarinnar.</sen>
       </numart>
-      <numart nr="11">
+      <numart nr="11" type="numeric">
         <nr-title>11.</nr-title>
         <sen>Félögin skulu undanþegin gjöldum skv. 14. gr. og 14. gr. a laga nr. 69/2003, um Póst- og fjarskiptastofnun, og hvers kyns núgildandi og síðari gjöldum, enda telst þjónustan sem félögin veita ekki til þeirrar starfsemi sem fellur undir ákvæði laganna.</sen>
       </numart>
-      <numart nr="12">
+      <numart nr="12" type="numeric">
         <nr-title>12.</nr-title>
         <sen>Öll viðskipti milli félaganna og dótturfélaga þeirra skulu samrýmast 57. gr. laga nr. 90/2003, um tekjuskatt, og meginreglum OECD um viðskipti tengdra aðila og milliverðlagningu.</sen>
       </numart>

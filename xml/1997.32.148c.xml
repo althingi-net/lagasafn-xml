@@ -26,15 +26,15 @@
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
         <sen>Helgidagar þjóðkirkjunnar eru þeir sem nú skal greina:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Sunnudagar, annar dagur jóla, nýársdagur, skírdagur, annar dagur páska, uppstigningardagur og annar dagur hvítasunnu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Föstudagurinn langi, páskadagur og hvítasunnudagur.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Aðfangadagur jóla frá kl.</sen>
           <sen>18.00 og jóladagur til kl.</sen>
@@ -56,11 +56,11 @@
       <nr-title>4. gr.</nr-title>
       <subart nr="1">
         <sen>Um starfsemi á helgidögum þjóðkirkjunnar gilda eftirfarandi reglur:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Á helgidögum skv. 1. tölul. 2. gr. er öll almenn starfsemi heimil.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Á helgidögum skv. 2. og 3. tölul. 2. gr. er eftirfarandi starfsemi óheimil:</sen>
           <numart nr="a" type="alphabet">
@@ -80,22 +80,22 @@
       <subart nr="1">
         <sen>Á helgidögum skv. 2. tölul. 2. gr. er eftirfarandi starfsemi undanþegin banni því er greinir í 4. gr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gististarfsemi og tengd þjónusta, starfsemi lyfjabúða, bensínstöðva, bifreiðastöðva, verslana á flugvöllum og fríhafnarsvæðum, blómaverslana, söluturna og myndbandaleigna, svo og starfsemi matvöruverslana með verslunarrými undir 600 fermetrum þar sem a.m.k. 2/3 hluti veltunnar er sala á matvælum, drykkjarvöru og tóbaki.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Íþrótta- og útivistarstarfsemi.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Listsýningar, tónleikar, leiksýningar og kvikmyndasýningar eða sams konar sýningar.</sen>
           <sen>Einnig má halda og veita aðgang að sýningum er varða vísindi eða er ætlað að gegna almennu upplýsingahlutverki, svo og að hafa opin listasöfn og bókasöfn.</sen>
           <sen>Starfsemi þessi má ekki hefjast fyrr en kl.</sen>
           <sen>15.00.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Heimila má að dansleikir er hefjast að kvöldi laugardags fyrir páska eða hvítasunnu standi aðfaranótt páskadags og hvítasunnudags samkvæmt almennum reglum, þó eigi lengur en til kl.</sen>
           <sen>3.00.</sen>

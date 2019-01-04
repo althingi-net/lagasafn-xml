@@ -60,15 +60,15 @@
       <subart nr="1">
         <sen>Ráðuneytið er móttökustjórnvald í málum samkvæmt Evrópusamningnum og Haagsamningnum.</sen>
         <sen>Sem móttökustjórnvald skal ráðuneytið:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>taka við erindum á grundvelli samninganna og framsenda þau hlutaðeigandi yfirvöldum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>eiga samvinnu við móttökustjórnvöld í öðrum ríkjum sem eru aðilar að samningunum og</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>gegna að öðru leyti þeim skyldum sem móttökustjórnvaldi ber að gegna samkvæmt samningunum.</sen>
         </numart>
@@ -103,23 +103,23 @@
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
         <sen>Synja skal um viðurkenningu eða fullnustu ákvörðunar ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>hún er augljóslega ekki í samræmi við grundvallarreglur íslenskra laga um réttarstöðu fjölskyldna og barna,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>ákvörðunin er, vegna breyttra aðstæðna, augljóslega ekki lengur í samræmi við það sem barninu er fyrir bestu,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>barnið var íslenskur ríkisborgari, eða búsett hér á landi, þegar mál var höfðað fyrir dómstóli í upphafsríkinu eða stjórnvaldi þar barst beiðni, án þess að barnið hafi haft hliðstæð tengsl við það ríki eða það hafði bæði ríkisborgararétt í upphafsríkinu og hér á landi og var búsett hér á landi,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>barnið á rétt á að ráða sjálft búsetu sinni samkvæmt lögum þess ríkis þar sem það er ríkisborgari eða búsett eða</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>ákvörðunin er ósamrýmanleg ákvörðun sem tekin hefur verið hér á landi í máli sem hafist hefur áður en beiðni um viðurkenningu eða fullnustu var lögð fram, enda sé synjun talin barninu fyrir bestu.</sen>
           <sen>Ákvörðun, sem tekin hefur verið í öðru ríki, hefur sama gildi og ákvörðun sem tekin hefur verið hér á landi hvað þetta snertir, enda sé unnt að fullnægja henni hér á landi.</sen>
@@ -130,11 +130,11 @@
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
         <sen>Ákvörðun, sem tekin hefur verið að varnaraðila fjarstöddum, er aðeins heimilt að viðurkenna eða fullnægja ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>varnaraðili hefur sjálfur verið kvaddur sannanlega fyrir hlutaðeigandi dómstól eða stjórnvald svo tímanlega að hann hafi haft möguleika á að gæta hagsmuna sinna eða ef það hefur ekki verið unnt vegna þess að varnaraðili hélt dvalarstað sínum leyndum fyrir gagnaðila sínum og</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>dómstóll eða stjórnvald, sem tók ákvörðun, var til þess bært á grundvelli búsetu varnaraðila, síðasta sameiginlegs heimilisfangs foreldra barnsins, svo framarlega sem annað þeirra er ennþá búsett á þeim stað, eða búsetu barnsins.</sen>
         </numart>
@@ -144,15 +144,15 @@
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
         <sen>Fresta má viðurkenningu eða fullnustu ákvörðunar með úrskurði ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>ákvörðuninni hefur verið skotið til æðra dómstóls eða stjórnvalds í upphafsríkinu samkvæmt almennum áfrýjunar- eða málskotsreglum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>mál um forsjá, búsetu eða umgengni barnsins, sem hófst á undan málinu í upphafsríkinu, er til meðferðar hér á landi eða</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>annað mál til viðurkenningar eða fullnustu á annarri ákvörðun um forsjá, búsetu eða umgengni barnsins er til meðferðar.</sen>
         </numart>
@@ -190,11 +190,11 @@
       </subart>
       <subart nr="2">
         <sen>Ólögmætt er að flytja barn eða halda því ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>sú háttsemi brýtur í bága við rétt forsjáraðila eða annars aðila, án tillits til hvort hann fer einn með réttinn eða með öðrum, til að annast barnið samkvæmt lögum þess ríkis þar sem barnið var búsett rétt áður en það var flutt á brott eða hald hófst og</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>hlutaðeigandi aðili fór í raun með þennan rétt, þegar barnið var flutt á brott eða hald hófst, eða hefði farið með hann ef hin ólögmæta háttsemi hefði ekki átt sér stað.</sen>
         </numart>
@@ -204,19 +204,19 @@
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
         <sen>Heimilt er að synja um afhendingu barns ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>meira en eitt ár er liðið frá því að barnið var flutt á brott eða hald hófst þar til beiðni um afhendingu er móttekin hjá héraðsdómi, enda hafi barnið aðlagast nýjum aðstæðum,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>alvarleg hætta er á að afhending muni skaða barnið andlega eða líkamlega eða koma því á annan hátt í óbærilega stöðu,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>barnið er andvígt afhendingu og hefur náð þeim aldri og þroska að rétt sé að taka tillit til skoðana þess, eða</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>afhending er ekki í samræmi við grundvallarreglur hér á landi um verndun mannréttinda.</sen>
         </numart>

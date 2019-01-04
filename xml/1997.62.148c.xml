@@ -172,7 +172,7 @@
     <name>Skattlagning.</name>
     <subart nr="1">
       <sen>Félagið skal greiða skatta og önnur opinber gjöld, sem almennt eru á lögð hér á landi, eftir þeim reglum sem um þau gilda samkvæmt lögum á hverjum tíma, nema að því leyti sem á annan veg er mælt í lögum þessum:</sen>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <sen>Þrátt fyrir breytingar, sem síðar kunna að verða á lögum nr. 90/2003, um tekjuskatt, skal félagið greiða 18% tekjuskatt með eftirfarandi sérákvæðum:</sen>
         <numart nr="a" type="alphabet">
@@ -205,25 +205,25 @@
           <sen>Það sama skal gilda ef félaginu er slitið.</sen>
         </numart>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <sen/>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <sen>Félagið skal vera undanþegið iðnlánasjóðsgjaldi samkvæmt lögum nr. 76/1987, um Iðnlánasjóð, iðnaðarmálagjaldi samkvæmt lögum nr. 134/1993, um iðnaðarmálagjald, og markaðsgjaldi samkvæmt lögum nr. 114/1990, um Útflutningsráð Íslands, með áorðnum breytingum, sem og sköttum eða gjöldum sömu eða að verulegu leyti svipaðrar tegundar sem síðar kynnu að verða lögð á til viðbótar við eða í staðinn fyrir iðnlánasjóðsgjald, iðnaðarmálagjald eða markaðsgjald.</sen>
       </numart>
-      <numart nr="4">
+      <numart nr="4" type="numeric">
         <nr-title>4.</nr-title>
         <sen>Sérákvæði 1., 2. og 3. tölul. að framan skulu gilda fyrsta samningstímabilið (eins og það er skilgreint í samningnum) eða þar til kemur til fyrri uppsagnar á samningnum skv. 1. gr.</sen>
         <sen>Verði gerðar breytingar á lögum um tekjuskatt skal félagið eiga rétt á að sérákvæði verði endurskoðuð í þeim tilgangi að tryggja að ekki séu lagðir á félagið þyngri skattar en ef það væri skattlagt samkvæmt lögunum, án hinna áðurnefndu sérstöku ákvæða.</sen>
       </numart>
-      <numart nr="5">
+      <numart nr="5" type="numeric">
         <nr-title>5.</nr-title>
         <sen>Á því ári þegar nýjar eignir eru teknar í notkun getur félagið valið að fyrna þær í hlutfalli við notkun á árinu í stað fullrar árlegrar fyrningar skv. 34. gr. laga nr. 90/2003, um tekjuskatt.</sen>
         <sen>Þrátt fyrir ákvæði 35. og 42. gr. laga nr. 90/2003, um tekjuskatt, skal félaginu heimilt að fyrna eignir sínar að fullu.</sen>
       </numart>
-      <numart nr="6">
+      <numart nr="6" type="numeric">
         <nr-title>6.</nr-title>
         <sen>Í stað fasteignaskatts skv. II. kafla laga nr. 4/1995, um tekjustofna sveitarfélaga, með áorðnum breytingum, og sérstaks fasteignaskatts á fasteignir, sem nýttar eru til verslunarreksturs eða skrifstofuhalds, samkvæmt bráðabirgðaákvæði sömu laga, sem og sköttum eða gjöldum sömu eða að verulegu leyti svipaðrar tegundar sem síðar kynnu að verða lögð á til viðbótar við eða í staðinn fyrir fasteignaskatt, skal félagið greiða Hvalfjarðarstrandarhreppi og Skilmannahreppi fasteignaskatt sem skal vera 0,75% af 2.393 millj. kr., sem er áætlað verðmæti bygginga, athafnasvæðis og mannvirkja sem þarf til um 60 þús. lesta álframleiðslu á ári, miðað við byggingarvísitölu 1. desember 1996 (217,8 stig).</sen>
         <sen>Þá skal félagið greiða Hvalfjarðarstrandarhreppi og Skilmannahreppi fasteignaskatt sem skal vera 0,75% af 826.444 þús. kr., sem er áætlað verðmæti bygginga sem þarf til aukinnar álframleiðslu um 30 þús. lestir, miðað við byggingarvísitölu 1. desember 1999 (236,6 stig).</sen>
@@ -241,28 +241,28 @@
         <sen>b.</sen>
         <sen>260 þús. lesta álframleiðslu á ári.</sen>
       </numart>
-      <numart nr="7">
+      <numart nr="7" type="numeric">
         <nr-title>7.</nr-title>
         <sen>Stimpilgjöld skulu, þegar þeirra yrði krafist í samræmi við lög nr. 36/1978, um stimpilgjald, vera 0,15% af kaup- eða leigusamningum sem útgefnir eru eða gerðir af hálfu félagsins og af fjárfestingarlánum sem félagið kann að taka í sambandi við byggingu bræðslunnar og hafnarbúnaðar, sem og af öllum stimpilskyldum skjölum sem nauðsynleg eru í sambandi við stofnun félagsins.</sen>
         <sen>Lán, sem tekin eru í stað fjárfestingarlána, sem og hlutabréf í félaginu, skulu undanþegin stimpilgjaldi.</sen>
       </numart>
-      <numart nr="8">
+      <numart nr="8" type="numeric">
         <nr-title>8.</nr-title>
         <sen>Með samningum, sem gerðir verða innan ramma laga þessara, má ákveða að félagið skuli greiða umsamda fjárhæð til Hvalfjarðarstrandarhrepps og Skilmannahrepps í stað byggingarleyfisgjalds samkvæmt lögum nr. 54/1978 og gatnagerðargjalds samkvæmt lögum nr. 17/1996, um gatnagerðargjald, og umsamda fjárhæð til ríkissjóðs í stað skipulagsgjalda samkvæmt lögum nr. 19/1964.</sen>
       </numart>
-      <numart nr="9">
+      <numart nr="9" type="numeric">
         <nr-title>9.</nr-title>
         <sen>Samningar, sem gerðir eru samkvæmt lögum þessum, mega kveða á um meginreglur um endurskoðun skattlagningar félagsins þannig að heildarskattbyrði þess á Íslandi haldist óbreytt.</sen>
       </numart>
-      <numart nr="10">
+      <numart nr="10" type="numeric">
         <nr-title>10.</nr-title>
         <sen>Félagið skal undanþegið ákvæðum 1. og 4. tölul. 1. mgr. 14. gr. laga nr. 146/1996, um öryggi raforkuvirkja, neysluveitna og raffanga.</sen>
       </numart>
-      <numart nr="11">
+      <numart nr="11" type="numeric">
         <nr-title>11.</nr-title>
         <sen>Hafnarsjóði Grundartangahafnar er heimilt að gera sérstakan samning um vörugjöld með öðrum hætti en fram kemur í hafnalögum, nr. 23/1994, með síðari breytingum, sbr. hafnarreglugerð og hafnagjaldskrá sem settar eru á grundvelli þeirra.</sen>
       </numart>
-      <numart nr="12">
+      <numart nr="12" type="numeric">
         <nr-title>12.</nr-title>
         <sen>Félagið skal undanþegið breytingum sem kunna að verða á ákvæðum um frádrátt vaxtakostnaðar í lögum um tekjuskatt eftir undirritun samninga skv. 1. gr.</sen>
       </numart>

@@ -56,43 +56,43 @@
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <name>Orðskýringar.</name>
-      <numart nr="1">
+      <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <name>Höfn</name>
         <sen>táknar í lögum þessum svæði á landi og sjó með mannvirkjum og tækjum til móttöku skipa, losunar og lestunar þeirra, geymslu vöru, móttöku og afgreiðslu þessarar vöru til áframhaldandi sjó- eða landflutninga og til móttöku og brottfarar farþega.</sen>
       </numart>
-      <numart nr="2">
+      <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <name>Hafnarmannvirki</name>
         <sen>eru í lögum þessum varnargarðar, viðlegumannvirki og innsiglingar, leiðarmerki og skipalægi.</sen>
       </numart>
-      <numart nr="3">
+      <numart nr="3" type="numeric">
         <nr-title>3.</nr-title>
         <name>Skjólgarðar</name>
         <sen>eru í lögum þessum varnarmannvirki sem ætlað er að veita viðlegumannvirkjum og innsiglingum skjól fyrir öldum, straumum og sandburði.</sen>
       </numart>
-      <numart nr="4">
+      <numart nr="4" type="numeric">
         <nr-title>4.</nr-title>
         <name>Viðlegumannvirki</name>
         <sen>eru í lögum þessum bryggjur og önnur mannvirki innan hafnar sem ætluð eru til viðlegu fyrir fljótandi för.</sen>
       </numart>
-      <numart nr="5">
+      <numart nr="5" type="numeric">
         <nr-title>5.</nr-title>
         <name>Rekstur hafnar</name>
         <sen>í lögum þessum táknar að byggja, reka, viðhalda og endurnýja hafnarmannvirki sem og rekstur hafntengdrar atvinnuaðstöðu, þ.e. leigu á landi, vöruhúsum, tækjum og þess háttar, upptökumannvirkjum hvers konar í því skyni að þjóna skipum eða fyrirtækjum á hafnarsvæðum sem sinna þjónustu við skip, farþega og farm, og jafnframt rekstur hafntengdrar þjónustu, þ.e. hafnsöguþjónustu, festarþjónustu, vigtarþjónustu, sorphirðu, sölu vatns og rafmagns og sambærilega þjónustu er lýtur að skipum.</sen>
         <sen>Undir rekstur hafna fellur einnig rekstur vöruhúsa og þjónustumiðstöðva á hafnarsvæðum.</sen>
       </numart>
-      <numart nr="6">
+      <numart nr="6" type="numeric">
         <nr-title>6.</nr-title>
         <name>Hafnarstjórn</name>
         <sen>merkir í lögum þessum að sveitarfélög eða aðrir eigendur hafnar kjósi sérstaka hafnarstjórn og feli henni stjórnunarlega ábyrgð á höfninni.</sen>
       </numart>
-      <numart nr="7">
+      <numart nr="7" type="numeric">
         <nr-title>7.</nr-title>
         <name>Málaflokkur</name>
         <sen>merkir í lögum þessum afmarkaða rekstrareiningu í bókhaldi sveitarfélags þar sem tekjum og gjöldum er haldið aðskildum frá öðrum rekstri þess.</sen>
       </numart>
-      <numart nr="8">
+      <numart nr="8" type="numeric">
         <nr-title>8.</nr-title>
         <name>Skipaafdrep</name>
         <sen>er í lögum þessum höfn eða hluti hafnar eða öruggt skipalægi eða akkerislægi eða annað skýlt svæði sem Samgöngustofa útnefnir til að taka á móti nauðstöddum skipum.</sen>
@@ -124,23 +124,23 @@
         <sen>Öllum höfnum sem falla undir lög þessi skv. 1. gr. skal sett reglugerð er tilgreinir mörk hafnar auk annarra nauðsynlegra ákvæða er varða öryggi og stjórnun hennar.</sen>
         <sen>Ráðherra setur samkvæmt lögum þessum, að fengnum tillögum eigenda hafna og umsögn Samgöngustofu og Vegagerðarinnar, reglugerð fyrir hverja höfn.</sen>
         <sen>Í reglugerðinni skulu m.a. vera ákvæði um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Stærð og takmörk hafnarsvæðis á sjó og landi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Starfsheimildir, starfsemi og umferð á hafnarsvæði.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Öryggi við flutninga og varnir gegn mengun.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Viðurlög við brotum.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Kosningu og starfs- og valdsvið hafnarstjórnar.</sen>
         </numart>
@@ -323,20 +323,20 @@
       <name>Rekstrarform hafna.</name>
       <subart nr="1">
         <sen>Höfn má reka sem:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Höfn án sérstakrar hafnarstjórnar í eigu sveitarfélags.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Höfn með hafnarstjórn í eigu sveitarfélags.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hlutafélag, hvort sem það er í eigu opinberra aðila eða ekki, einkahlutafélag, sameignarfélag eða sem einkaaðila í sjálfstæðum rekstri.</sen>
           <sen>Hafnir sem reknar eru samkvæmt þessum tölulið teljast ekki til opinbers rekstrar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Höfn í eigu íslenska ríkisins.</sen>
         </numart>
@@ -578,7 +578,7 @@
       </subart>
       <subart nr="2">
         <sen>Í gjaldskrá er heimilt að ákveða eftirtalin gjöld:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hafnargjald sem nánar sundurliðast á eftirfarandi hátt:</sen>
           <numart nr="a" type="alphabet">
@@ -613,45 +613,45 @@
             <sen>Við ákvörðun fjárhæðar gjalds skal tekið mið, eftir því sem við á, af fjölda skipverja og farþega um borð, lengd sjóferðar og stærð skips.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Farþegagjald og gjald fyrir bifreiðar sem ekið er um borð eða frá borði í ferju og skal gjald þetta standa straum af kostnaði við uppbyggingu á aðstöðu og búnaði fyrir farþega og bifreiðar, sem og kostnaði við rekstur og viðhald.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Geymslugjald fyrir geymslu vöru og gáma á hafnarsvæði, hvort sem er innan húss eða utan, og skal gjald þetta standa straum af kostnaði við uppbyggingu, viðhald, endurnýjun og rekstur á geymsluaðstöðunni.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Leigugjald fyrir afnot af mannvirkjum eða tækjum hafnarinnar, þ.m.t. upptökumannvirkjum og löndunarkrönum.</sen>
           <sen>Gjaldið skal standa undir kostnaði við uppbyggingu, rekstur, viðhald og endurnýjun mannvirkjanna.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Leyfisgjald fyrir bryggjur og önnur mannvirki sem gerð hafa verið skv. 5. gr.</sen>
           <sen>Gjaldið skal standa straum af undirbúningskostnaði veittra leyfa.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Lóðargjald og lóðarleigu fyrir leigu á svæðum innan hafnarinnar.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Festargjald sem nota skal til að greiða kostnað við festarþjónustu sem höfnin veitir.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Gjöld fyrir endursölu á vatni og rafmagni og kostnaði er því fylgir.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Sorpgjöld sem skulu standa straum af kostnaði við sorphirðu frá skipum og fyrirtækjum á hafnarsvæði, sem og eyðingu sorpsins.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Vigtar- og skráningargjald sem skal standa straum af kostnaði við rekstur, viðhald og endurnýjun hafnarvogar.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Umsýslugjald til þess að standa straum af kostnaði við umsýslu og yfirstjórn, t.d. laun og skrifstofuhald.</sen>
           <sen>Heimilt er að láta umsýslugjaldið samkvæmt þessum tölulið vera innifalið í gjaldtöku skv. 1.–10. tölul. með sérstöku álagi á viðkomandi gjald.</sen>
@@ -1183,16 +1183,16 @@
       <subart nr="3">
         <sen>Hafnabótasjóði er heimilt að taka lán vegna starfsemi sinnar samkvæmt ákvörðun Alþingis hverju sinni.</sen>
         <sen>Vegagerðin ráðstafar fé Hafnabótasjóðs með samþykki ráðherra á eftirgreindan hátt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Fjármagnar framkvæmdir ríkisins samkvæmt samgönguáætlun sem samþykkt hefur verið á Alþingi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hafnabótasjóði er heimilt að starfrækja þróunardeild hafna samkvæmt reglugerð sem ráðherra setur að fengnu sérstöku fjárframlagi samkvæmt samþykkt Alþingis.</sen>
           <sen>Markmið þróunardeildarinnar er að styðja minni hafnir á landsbyggðinni sem eru mikilvægar fyrir byggðarlagið og atvinnuuppbyggingu þess.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hafnabótasjóði er heimilt að bæta tjón á hafnarmannvirkjum sem eru styrkhæf skv. a-lið og c-lið 2. mgr. 24. gr., þ.m.t. tjón sem ekki fæst að fullu bætt úr Viðlagasjóði eða vegna ákvæða IX. kafla siglingalaga um takmarkaða ábyrgð útgerðarmanna.</sen>
         </numart>

@@ -46,30 +46,30 @@
       <name>Vanhæfisástæður.</name>
       <subart nr="1">
         <sen>Starfsmaður eða nefndarmaður er vanhæfur til meðferðar máls:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ef hann er aðili máls, fyrirsvarsmaður eða umboðsmaður aðila.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ef hann er eða hefur verið maki aðila, skyldur eða mægður aðila í beinan legg eða að öðrum lið til hliðar eða tengdur aðila með sama hætti vegna ættleiðingar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ef hann tengist fyrirsvarsmanni eða umboðsmanni aðila með þeim hætti sem segir í 2. tölul.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Á kærustigi hafi hann áður tekið þátt í meðferð málsins á lægra stjórnsýslustigi.</sen>
           <sen>Það sama á við um starfsmann sem fer með umsjónar- eða eftirlitsvald hafi hann áður haft afskipti af málinu hjá þeirri stofnun sem eftirlitið lýtur að.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Ef hann á sjálfur sérstakra og verulegra hagsmuna að gæta, venslamenn hans skv. 2. tölul. eða sjálfseignarstofnun eða fyrirtæki í einkaeigu sem hann er í fyrirsvari fyrir.</sen>
           <sen>Sama á við ef næstu yfirmenn hans hjá hlutaðeigandi stjórnvaldi eiga sjálfir sérstakra og verulegra hagsmuna að gæta.</sen>
           <sen>Verði undirmaður vanhæfur til meðferðar máls verða næstu yfirmenn hans aftur á móti ekki vanhæfir til meðferðar þess af þeirri ástæðu einni.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Ef að öðru leyti eru fyrir hendi þær aðstæður sem eru fallnar til þess að draga óhlutdrægni hans í efa með réttu.</sen>
         </numart>
@@ -303,15 +303,15 @@
       <name>Gögn undanþegin upplýsingarétti.</name>
       <subart nr="1">
         <sen>Réttur aðila máls til aðgangs að gögnum tekur ekki til:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Fundargerða ríkisráðs og ríkisstjórnar, minnisgreina á ráðherrafundum eða skjala sem tekin hafa verið saman fyrir slíka fundi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Bréfaskipta stjórnvalda við sérfróða menn til afnota í dómsmáli eða við athugun á því hvort slíkt mál skuli höfðað.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vinnuskjala sem stjórnvald hefur ritað til eigin afnota.</sen>
           <sen>Þó á aðili aðgang að vinnuskjölum ef þau hafa að geyma endanlega ákvörðun um afgreiðslu máls eða upplýsingar sem ekki verður aflað annars staðar frá.</sen>
@@ -374,15 +374,15 @@
       </subart>
       <subart nr="2">
         <sen>Þegar ákvörðun er tilkynnt skriflega án þess að henni fylgi rökstuðningur skal veita leiðbeiningar um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>heimild aðila til þess að fá ákvörðun rökstudda,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>kæruheimild, þegar hún er fyrir hendi, kærufresti og kærugjöld, svo og hvert beina skuli kæru,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>frest til þess að bera ákvörðun undir dómstóla ef slíkur frestur er lögákveðinn.</sen>
         </numart>
@@ -413,15 +413,15 @@
       </subart>
       <subart nr="2">
         <sen>Ákvæði 1. mgr. gildir þó ekki ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>umsókn aðila hefur verið tekin til greina að öllu leyti,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>um er að ræða einkunnir sem veittar eru fyrir frammistöðu á prófum,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>um er að ræða styrki á sviði lista, menningar eða vísinda.</sen>
         </numart>
@@ -469,11 +469,11 @@
       <name>Endurupptaka máls.</name>
       <subart nr="1">
         <sen>Eftir að stjórnvald hefur tekið ákvörðun og hún verið tilkynnt á aðili máls rétt á því að mál sé tekið til meðferðar á ný ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>ákvörðun hefur byggst á ófullnægjandi eða röngum upplýsingum um málsatvik, eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>íþyngjandi ákvörðun um boð eða bann hefur byggst á atvikum sem breyst hafa verulega frá því að ákvörðun var tekin.</sen>
         </numart>
@@ -488,11 +488,11 @@
       <name>Afturköllun.</name>
       <subart nr="1">
         <sen>Stjórnvald getur afturkallað ákvörðun sína að eigin frumkvæði, sem tilkynnt hefur verið aðila máls, þegar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>það er ekki til tjóns fyrir aðila, eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>ákvörðun er ógildanleg.</sen>
         </numart>
@@ -540,11 +540,11 @@
       <name>Kæra berst að liðnum kærufresti.</name>
       <subart nr="1">
         <sen>Hafi kæra borist að liðnum kærufresti skal vísa henni frá, nema:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>afsakanlegt verði talið að kæran hafi ekki borist fyrr, eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>veigamiklar ástæður mæla með því að kæran verði tekin til meðferðar.</sen>
         </numart>
@@ -584,23 +584,23 @@
       <name>Form og efni úrskurða í kærumáli.</name>
       <subart nr="1">
         <sen>Úrskurður æðra stjórnvalds í kærumáli skal ávallt vera skriflegur og skulu eftirtalin atriði m.a. koma fram á stuttan og glöggan hátt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Kröfur aðila.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Efni það sem til úrlausnar er, þar á meðal hin kærða ákvörðun.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Stutt yfirlit um málsatvik og ágreiningsefni málsins.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Rökstuðningur fyrir niðurstöðu máls skv. 22. gr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Aðalniðurstöðu skal draga saman í lok úrskurðar í sérstakt úrskurðarorð.</sen>
         </numart>

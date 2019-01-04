@@ -50,23 +50,23 @@
       </subart>
       <subart nr="3">
         <sen>Ákvæði XV., XVI., XVII., XX. og XXI. kafla auk 2., 5. og 6. tölul. 1. mgr. 24. gr., 2.–5. mgr. 27. gr., 3.–8. mgr. 29. gr., 31. gr., 32. gr., 39. gr., 40. gr., lokamálsliðar 3. mgr. 42. gr., 43.–47. gr., 1. og 2. mgr. 48. gr., 49. gr., 52. gr., 54.–57. gr., d-liðar 2. mgr. 71. gr., 73. gr., 76.–82. gr., 86. gr., 87. gr. og 115.–120. gr. laga þessara eiga hvorki við um Náttúruhamfaratryggingu Íslands né vátryggingafélög sem eftirfarandi skilyrði eiga við um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Árleg bókfærð iðgjöld eru undir jafnvirði 5 milljóna evra í íslenskum krónum.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Fjárhæð vátryggingaskuldar er undir jafnvirði 25 milljóna evra í íslenskum krónum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vátryggingaskuld samstæðunnar er undir jafnvirði 25 milljóna evra í íslenskum krónum ef félagið er hluti af samstæðu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Eru hvorki með starfsemi í ábyrgðartryggingum né greiðslu- og efndavátryggingum, nema slík áhætta flokkist sem hliðaráhætta í samræmi við 3. mgr. 20. gr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Bókfærð iðgjöld í endurtryggingum nema ekki meira en 10% af bókfærðum iðgjöldum félagsins í heild og ekki hærri fjárhæð en jafnvirði 0,5 milljóna evra í íslenskum krónum.</sen>
           <sen>Þá má vátryggingaskuld vegna þeirrar starfsemi ekki nema meira en 10% af vátryggingaskuld félagsins í heild og ekki hærri fjárhæð en jafnvirði 2,5 milljóna evra í íslenskum krónum.</sen>
@@ -143,29 +143,29 @@
       <name>Leyfileg hliðarstarfsemi.</name>
       <subart nr="1">
         <sen>Vátryggingafélagi er heimilt að reka eftirfarandi hliðarstarfsemi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Umboð fyrir vátryggingafélög sem leyfi hafa til að starfa hér á landi og fyrir önnur félög sem lúta eftirliti Fjármálaeftirlitsins eða annarra opinberra aðila.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Að byggja, eiga og reka fasteignir sem lið í fjárfestingu til ávöxtunar á fjármunum félagsins til lengri tíma samkvæmt reglum sem stjórn setur.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Að kaupa og selja skuldabréf og aðra fjármálagerninga og lánveitingar samkvæmt reglum sem stjórn setur.</sen>
           <sen>Ákvæði þetta tekur ekki til fjármálagerninga sem skráðir eru á skipulegum verðbréfamarkaði sem fjárfest er í til ávöxtunar á fjármunum félagsins.</sen>
           <sen>Fjárfestingar samkvæmt þessum tölulið takmarkast af ákvæði 2. mgr. 4. gr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Tjónsuppgjör og tjónavarnastarfsemi.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Rekstur og umsjón með sjóðum er tengjast eða eru hliðstæðir vátryggingastarfsemi.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Aðra umsýslu í beinu framhaldi af og í eðlilegum tengslum við vátryggingastarfsemi.</sen>
         </numart>
@@ -184,12 +184,12 @@
       <name>Skilgreiningar.</name>
       <subart nr="1">
         <sen>Í lögum þessum merkir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Aðildarríki:</name>
           <sen>Ríki sem er aðili að samningnum um Evrópska efnahagssvæðið (EES), aðili að stofnsamningi Fríverslunarsamtaka Evrópu (EFTA) eða Færeyjar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Aðildarríki þar sem frumvátryggingaráhætta er:</name>
           <numart nr="a" type="alphabet">
@@ -209,157 +209,157 @@
             <sen>Í öðrum vátryggingum: Ríkið þar sem vátryggingartaki hefur aðsetur að jafnaði eða, þegar um lögaðila er að ræða, það aðildarríki þar sem aðsetrið er sem helst tengist vátryggingarsamningnum sem gerður er.</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Aðildarríki þar sem þjónusta er veitt:</name>
           <sen>Aðildarríki þar sem vátryggingafélag eða útibú í öðru aðildarríki vátryggir áhættu sem þar er, sbr. 2. tölul., án þess að hafa þar starfsstöð.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Ábyrgðarsjóður vegna ökutækjatrygginga:</name>
           <sen>Stofnun sem greiðir bætur, a.m.k. upp að mörkum vátryggingarfjárhæða, vegna líkamstjóns eða tjóns á eignum sem óþekkt eða óvátryggð ökutæki valda.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <name>Áhættumál (e. risk measure):</name>
           <sen>Stærðfræðilegt hugtak, fall sem úthlutar fjárhæð á tiltekna líkindadreifingu og er vaxandi sem fall af áhættunni sem liggur til grundvallar líkindadreifingunni.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <name>Áhættuvarnir (e. risk-mitigation techniques):</name>
           <sen>Aðferðir sem gera vátryggingafélagi kleift að flytja hluta áhættu sinnar eða alla áhættu til annars aðila.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <name>Áhættuvirði (e. Value-at-Risk (VaR)):</name>
           <sen>Tölfræðileg aðferð til að mæla tapsáhættu.</sen>
           <sen>Áhættuvirði miðað við 99,5% öryggisstig til eins árs þýðir lágmarkstap sem 99,5% líkur eru á að verði ekki á næsta ári, þ.e. einungis 0,5% líkur eru á að slíkt tap verði.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <name>Bundið endurtryggingafélag (e. captive reinsurance undertaking):</name>
           <sen>Endurtryggingafélag sem er í eigu fyrirtækis, þó ekki vátryggingafélags eða samstæðu vátryggingafélaga, eða í eigu fyrirtækis, annars en fjármálafyrirtækis, sem hefur að markmiði að endurtryggja einungis áhættu fyrirtækis eða fyrirtækja sem það tilheyrir eða áhættu fyrirtækis eða fyrirtækja samstæðunnar sem bundna endurtryggingafélagið á aðild að.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <name>Bundið frumtryggingafélag (e. captive insurance undertaking):</name>
           <sen>Frumtryggingafélag sem er í eigu fyrirtækis, þó ekki vátryggingafélags eða samstæðu vátryggingafélaga, eða í eigu fyrirtækis, annars en fjármálafyrirtækis, sem hefur að markmiði að frumtryggja einungis áhættu fyrirtækis eða fyrirtækja sem það tilheyrir eða áhættu fyrirtækis eða fyrirtækja samstæðunnar sem bundna frumtryggingafélagið á aðild að.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <name>Dótturfélag:</name>
           <sen>Félag sem móðurfélag hefur yfirráð yfir; félag undir yfirráðum dótturfélags telst einnig vera dótturfélag móðurfélagsins.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <name>Eftirlitsstjórnvald:</name>
           <sen>Aðili sem samkvæmt lögum hlutaðeigandi ríkis fer með eftirlit með vátryggingafélögum og vátryggingastarfsemi, hér á landi Fjármálaeftirlitið.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <name>Endurtryggingafélag:</name>
           <sen>Vátryggingafélag sem fengið hefur starfsleyfi til endurtryggingastarfsemi skv. 22. gr.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <name>Endurtryggingafélag frá ríki utan aðildarríkja:</name>
           <sen>Endurtryggingafélag með höfuðstöðvar í öðru ríki en aðildarríki og sem væri starfsleyfisskylt skv. 22. gr. ef höfuðstöðvar þess væru í aðildarríki.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <name>Endurtryggingastarfsemi:</name>
           <sen>Starfsemi sem felst í því að taka á sig áhættu sem vátryggingafélag eða annað endurtryggingafélag hefur látið frá sér.</sen>
           <sen>Ef um er að ræða samtök vátryggjenda undir nafninu Lloyd's merkir endurtryggingastarfsemi einnig starfsemi sem felst í því að taka á sig áhættu sem félagi í Lloyd's eða vátryggingafélag eða endurtryggingafélag sem hvorugt er aðili að Lloyd's hafa látið frá sér.</sen>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <name>Félag með sérstakan tilgang:</name>
           <sen>Félag um starfsemi, hvert svo sem félagaformið er, annað en starfandi vátryggingafélag, sem yfirtekur áhættu frá vátryggingafélögum og tryggir sig alfarið gegn slíkri áhættu með hagnaði af útgáfu skuldabréfa eða með einhverju öðru fjármögnunarfyrirkomulagi þar sem endurgreiðsluréttur þeirra sem keypt hafa skuldabréfin eða tekið þátt í fjármögnun víkur fyrir endurtryggingaskuldbindingum félagsins.</sen>
         </numart>
-        <numart nr="16">
+        <numart nr="16" type="numeric">
           <nr-title>16.</nr-title>
           <name>Fjölþættingaráhrif:</name>
           <sen>Áhrif til að minnka áhættu vátryggingafélaga og samstæðna vegna fjölþættingar í starfsemi.</sen>
           <sen>Áhrifin stafa af því að óhagstæð útkoma eins áhættuþáttar mildast af hagstæðari útkomu annars áhættuþáttar þar sem ekki er full fylgni á milli viðkomandi áhættuþátta.</sen>
         </numart>
-        <numart nr="17">
+        <numart nr="17" type="numeric">
           <nr-title>17.</nr-title>
           <name>Frumtryggingafélag:</name>
           <sen>Félag sem hefur með höndum þá starfsemi að vátryggja áhættu einstaklinga og lögaðila, aðra en endurtryggingaráhættu, og hefur hlotið til þess starfsleyfi skv. VI. kafla.</sen>
         </numart>
-        <numart nr="18">
+        <numart nr="18" type="numeric">
           <nr-title>18.</nr-title>
           <name>Frumtryggingafélag frá ríki utan aðildarríkja:</name>
           <sen>Frumtryggingafélag með höfuðstöðvar í öðru ríki en aðildarríki sem væri starfsleyfisskylt skv. VI. kafla ef höfuðstöðvar þess væru í aðildarríki.</sen>
         </numart>
-        <numart nr="19">
+        <numart nr="19" type="numeric">
           <nr-title>19.</nr-title>
           <name>Frumtryggingastarfsemi:</name>
           <sen>Sú starfsemi að vátryggja vátryggingaráhættu annarra en vátryggingafélaga.</sen>
         </numart>
-        <numart nr="20">
+        <numart nr="20" type="numeric">
           <nr-title>20.</nr-title>
           <name>Gistiríki:</name>
           <sen>Aðildarríki þar sem vátryggingafélag með höfuðstöðvar í öðru aðildarríki hefur útibú eða veitir þjónustu án starfsstöðvar.</sen>
         </numart>
-        <numart nr="21">
+        <numart nr="21" type="numeric">
           <nr-title>21.</nr-title>
           <name>Heimaríki:</name>
           <sen>Aðildarríki þar sem höfuðstöðvar vátryggingafélags eða annars eftirlitsskylds aðila eru og starfsleyfi er gefið út.</sen>
         </numart>
-        <numart nr="22">
+        <numart nr="22" type="numeric">
           <nr-title>22.</nr-title>
           <name>Hlutdeild:</name>
           <sen>Eignarhald á minnst 20% atkvæðisréttar eða eigin fjár félags beint eða með yfirráðarétti.</sen>
         </numart>
-        <numart nr="23">
+        <numart nr="23" type="numeric">
           <nr-title>23.</nr-title>
           <name>Kröfuáhætta (útlánaáhætta, e. credit risk):</name>
           <sen>Hætta á tapi eða óhagstæðum breytingum á fjárhagslegri stöðu sem stafa af sveiflum í lánshæfi útgefanda verðbréfa, mótaðila og annarra sem vátryggingafélög eiga kröfu á.</sen>
           <sen>Undir kröfuáhættu fellur mótaðilaáhætta, vikáhætta og samþjöppun markaðsáhættu.</sen>
         </numart>
-        <numart nr="24">
+        <numart nr="24" type="numeric">
           <nr-title>24.</nr-title>
           <name>Landsskrifstofa alþjóðlegra bifreiðatrygginga:</name>
           <sen>Samtök vátryggingaraðila sem stofnuð eru samkvæmt tilmælum Evrópuráðsins nr. 5 frá 25. janúar 1949 og taka til vátryggingafélaga sem hafa fengið starfsleyfi í viðkomandi ríki til að hafa með höndum vátryggingagreinina „ábyrgðartryggingar ökutækja“.</sen>
         </numart>
-        <numart nr="25">
+        <numart nr="25" type="numeric">
           <nr-title>25.</nr-title>
           <name>Lausafjáráhætta (e. liquidity risk):</name>
           <sen>Hætta á að vátryggingafélag hafi ekki yfir nægu lausu fé að ráða eða geti ekki selt eignir í tæka tíð til að mæta skuldbindingum þegar við á.</sen>
         </numart>
-        <numart nr="26">
+        <numart nr="26" type="numeric">
           <nr-title>26.</nr-title>
           <name>Markaðsáhætta (e. market risk):</name>
           <sen>Hætta á tapi eða óhagstæðum breytingum á fjárhagslegri stöðu sem stafa beint eða óbeint af sveiflum á virði eða flökti markaðsvirðis eigna, skuldbindinga og fjármálagerninga.</sen>
         </numart>
-        <numart nr="27">
+        <numart nr="27" type="numeric">
           <nr-title>27.</nr-title>
           <name>Miðlægur mótaðili (e. qualifying central counterparty):</name>
           <sen>Lögaðili sem gengur á milli aðila að samningum sem eru með viðskipti á einum eða fleiri fjármálamörkuðum og verður þar með kaupandi gagnvart seljanda og seljandi gagnvart kaupanda.</sen>
           <sen>Viðurkenndur miðlægur mótaðili er aðili sem fengið hefur starfsleyfi eftirlitsstjórnvalds.</sen>
         </numart>
-        <numart nr="28">
+        <numart nr="28" type="numeric">
           <nr-title>28.</nr-title>
           <name>Móðurfélag:</name>
           <sen>Félag sem hefur yfirráð yfir öðru félagi.</sen>
         </numart>
-        <numart nr="29">
+        <numart nr="29" type="numeric">
           <nr-title>29.</nr-title>
           <name>Náin tengsl:</name>
           <sen>Þegar tveir eða fleiri aðilar, einstaklingar eða lögaðilar, tengjast í gegnum yfirráð eða hlutdeild, eða aðstæður þar sem tveir eða fleiri aðilar, einstaklingar eða lögaðilar, eru varanlega tengdir einum og sama aðilanum yfirráðatengslum.</sen>
         </numart>
-        <numart nr="30">
+        <numart nr="30" type="numeric">
           <nr-title>30.</nr-title>
           <name>Rekstraráhætta (e. operational risk):</name>
           <sen>Hætta á tapi vegna ófullnægjandi eða gallaðra innri kerfa eða ferla, háttsemi starfsmanna eða ytri þátta.</sen>
         </numart>
-        <numart nr="31">
+        <numart nr="31" type="numeric">
           <nr-title>31.</nr-title>
           <name>Samþjöppunaráhætta (e. concentration risk):</name>
           <sen>Allar áhættuskuldbindingar sem eru nógu stórar til að tap af þeim ógni gjaldþoli eða fjárhagslegri stöðu vátryggingafélags.</sen>
         </numart>
-        <numart nr="32">
+        <numart nr="32" type="numeric">
           <nr-title>32.</nr-title>
           <name>Skipulegur verðbréfamarkaður:</name>
           <sen>Markaður með fjármálagerninga samkvæmt skilgreiningu laga um kauphallir.</sen>
@@ -373,24 +373,24 @@
             <sen>fjármálagerningar sem notaðir eru í viðskiptum á markaðnum séu af sambærilegum gæðum og fjármálagerningar á skipulegum verðbréfamarkaði hér á landi.</sen>
           </numart>
         </numart>
-        <numart nr="33">
+        <numart nr="33" type="numeric">
           <nr-title>33.</nr-title>
           <name>Starfsstöð vátryggingafélags:</name>
           <sen>Höfuðstöðvar eða útibú vátryggingafélags.</sen>
         </numart>
-        <numart nr="34">
+        <numart nr="34" type="numeric">
           <nr-title>34.</nr-title>
           <name>Starfssvið (e. function):</name>
           <sen>Framkvæmd tiltekins verkefnis innan stjórnkerfis vátryggingafélags.</sen>
           <sen>Í stjórnkerfi vátryggingafélags eru starfssvið áhættustýringar, regluvörslu, innri endurskoðunar og tryggingastærðfræðings og teljast þau lykilstarfssvið.</sen>
         </numart>
-        <numart nr="35">
+        <numart nr="35" type="numeric">
           <nr-title>35.</nr-title>
           <name>Stóráhætta (e. large risk):</name>
           <sen>Greinaflokkar vátrygginga sem tengjast atvinnurekstri og stærri fyrirtækjum sérstaklega.</sen>
           <sen>Greinaflokkar skv. 1. mgr. 20. gr., 4., 5., 6., 7., 11., 12., 14. og 15. tölul., teljast stóráhætta; einnig teljast skaðatryggingar stórfyrirtækja í greinaflokkum skv. 3., 8., 9., 10., 13. og 16. tölul. til stóráhættu.</sen>
         </numart>
-        <numart nr="36">
+        <numart nr="36" type="numeric">
           <nr-title>36.</nr-title>
           <name>Takmörkuð endurtrygging (e. finite reinsurance):</name>
           <sen>Endurtrygging þar sem beint mögulegt hámarkstap, mælt sem yfirfærð fjárhagsleg hámarksáhætta og er leitt af yfirfærslu verulegrar vátryggingaráhættu sem tengist bæði vátryggingaratburði og tímasetningu yfirfærslu vátryggingaráhættunnar, er hærra en iðgjaldið á gildistíma samningsins sem svarar til takmarkaðrar en þó verulegrar fjárhæðar, ásamt a.m.k. öðru hvoru eftirfarandi atriða:</sen>
@@ -403,49 +403,49 @@
             <sen>samningsbundnum ákvæðum um að ná, til lengri tíma litið, árangri aðila við að ná þeirri yfirfærslu á áhættu sem að er stefnt.</sen>
           </numart>
         </numart>
-        <numart nr="37">
+        <numart nr="37" type="numeric">
           <nr-title>37.</nr-title>
           <name>Utanaðkomandi lánshæfismatsstofnun (ECAI):</name>
           <sen>Fyrirtæki sem hefur fengið starfsleyfi á Evrópska efnahagssvæðinu til að framkvæma lánshæfismat eða seðlabanki sem metur lánshæfi og er undanþeginn slíku starfsleyfi.</sen>
         </numart>
-        <numart nr="38">
+        <numart nr="38" type="numeric">
           <nr-title>38.</nr-title>
           <name>Útibú:</name>
           <sen>Útibú eða umboð vátryggingafélags sem er staðsett í öðru aðildarríki en heimaríki.</sen>
         </numart>
-        <numart nr="39">
+        <numart nr="39" type="numeric">
           <nr-title>39.</nr-title>
           <name>Útvistun (e. outsourcing):</name>
           <sen>Fyrirkomulag sem komið er á milli vátryggingafélags annars vegar og þjónustuaðila hins vegar þar sem þjónustuaðilinn framkvæmir verkefni, veitir þjónustu eða stundar tiltekna starfsemi sem vátryggingafélagið sjálft mundi annars sjá um.</sen>
           <sen>Þjónustuaðilinn vinnur verkið sjálfur eða með endurútvistun.</sen>
           <sen>Þrátt fyrir útvistun ber vátryggingafélagið ábyrgð á því að farið sé að lögum þessum.</sen>
         </numart>
-        <numart nr="40">
+        <numart nr="40" type="numeric">
           <nr-title>40.</nr-title>
           <name>Vátryggingaráhætta (e. underwriting risk):</name>
           <sen>Hætta á tapi eða óhagstæðum breytingum á virði vátryggingaskuldbindinga vegna ófullnægjandi verðlagningar eða vátryggingaskuldar.</sen>
         </numart>
-        <numart nr="41">
+        <numart nr="41" type="numeric">
           <nr-title>41.</nr-title>
           <name>Vátryggingafélag:</name>
           <sen>Frumtryggingafélag eða endurtryggingafélag.</sen>
         </numart>
-        <numart nr="42">
+        <numart nr="42" type="numeric">
           <nr-title>42.</nr-title>
           <name>Vátryggingaskuld:</name>
           <sen>Skuldbinding vátryggingafélags vegna gerðra vátryggingarsamninga.</sen>
         </numart>
-        <numart nr="43">
+        <numart nr="43" type="numeric">
           <nr-title>43.</nr-title>
           <name>Viðskipti innan samstæðu:</name>
           <sen>Hvers konar millifærslur, þar sem vátryggingafélög innan samstæðu eru, beint eða óbeint, um efndir háð öðrum fyrirtækjum innan samstæðunnar eða einstaklingum eða lögaðilum sem mynda náin tengsl við fyrirtæki innan samstæðunnar, hvort sem þær eru samkvæmt samningi eða ekki og hvort sem þær eru gegn greiðslu eða ekki.</sen>
         </numart>
-        <numart nr="44">
+        <numart nr="44" type="numeric">
           <nr-title>44.</nr-title>
           <name>Virkur eignarhlutur:</name>
           <sen>Bein eða óbein eignarhlutdeild í félagi sem nemur 10% eða meira af hlutafé eða atkvæðisrétti eða önnur hlutdeild sem gerir kleift að hafa veruleg áhrif á stjórnun viðkomandi félags.</sen>
         </numart>
-        <numart nr="45">
+        <numart nr="45" type="numeric">
           <nr-title>45.</nr-title>
           <name>Yfirráð:</name>
           <sen>Það teljast yfirráð þegar eitt eða fleiri eftirtalinna tilvika eiga við:</sen>
@@ -488,19 +488,19 @@
       <name>Rekstrarform.</name>
       <subart nr="1">
         <sen>Eftirtalin félög mega reka vátryggingastarfsemi hér á landi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hlutafélög sem hlotið hafa starfsleyfi hér á landi skv. VI. kafla.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vátryggingafélög sem hlotið hafa starfsleyfi í öðru aðildarríki, sbr. 124. og 126. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Evrópufélög samkvæmt lögum um Evrópufélög sem hlotið hafa starfsleyfi í aðildarríki, sbr. 124. og 126. gr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Vátryggingafélög með höfuðstöðvar í öðru ríki en aðildarríki sem fá leyfi til að reka útibú hér á landi, sbr. 131. gr.</sen>
         </numart>
@@ -598,11 +598,11 @@
       <name>Stofnsamningur.</name>
       <subart nr="1">
         <sen>Í stofnsamningi vátryggingafélags skal eftirfarandi koma fram auk þess sem áskilið er í lögum um hlutafélög:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hvort gert skuli samkomulag við stofnendur eða aðra sem hefur í för með sér verulegar fjárskuldbindingar fyrir félagið.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hvort félagið skuli bera kostnað við stofnunina og, ef svo er, hversu hár sá kostnaður megi vera.</sen>
           <sen>Kostnaður þessi má ekki fara yfir 5% af skráðu hlutafé þegar frá eru talin opinber útgjöld og kostnaður við matsgerð, sbr. 14. gr.</sen>
@@ -635,11 +635,11 @@
       <name>Samþykktir vátryggingafélags.</name>
       <subart nr="1">
         <sen>Auk þeirra ákvæða sem lög um hlutafélög gera ráð fyrir um samþykktir hlutafélags skulu eftirtalin atriði koma fram í samþykktum vátryggingafélags:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ráðstöfun tekjuafgangs og hvernig mæta skal halla.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Úthlutun arðs.</sen>
         </numart>
@@ -690,46 +690,46 @@
       <subart nr="1">
         <sen>Umsókn um starfsleyfi skal vera skrifleg.</sen>
         <sen>Vátryggingafélag skal uppfylla eftirfarandi skilyrði til að fá útgefið starfsleyfi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tilgangur þess skal takmarkaður við vátryggingastarfsemi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Áætlun um starfsemi þess skv. 24. gr. skal liggja fyrir.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Viðurkenndir gjaldþolsliðir til að mæta neðstu mörkum lágmarksfjármagns skv. 112. gr. skulu vera til staðar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Gögn skulu staðfesta að það sé með hæfa gjaldþolsliði til að hafa stöðuga gjaldþolskröfu skv. 96. gr. og stöðugt lágmarksfjármagn skv. 111. gr., svo og gögn um að það sé með stjórnkerfi sem stenst kröfur skv. VIII. kafla.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Upplýsingar skulu liggja fyrir um nöfn og heimilisföng allra tjónauppgjörsfulltrúa ef sótt er um leyfi til starfsemi í ábyrgðartryggingum ökutækja skv. 10. tölul. 1. mgr. 20. gr. í öðrum aðildarríkjum.</sen>
         </numart>
       </subart>
       <subart nr="2">
         <sen>Eftirfarandi gögn og upplýsingar skulu fylgja umsókn:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Heiti félagsins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Staðfest endurrit stofnsamnings og fundargerðar stofnfundar úr fundargerðabók.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Skrá yfir stofnendur og hlutafé og staðfesting á því að það sé innborgað, hverjir eigi virkan eignarhlut í félaginu og hve mikinn og greinargerð um önnur náin tengsl félagsins.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Drög að samþykktum.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Greinaflokkar vátrygginga eða vátryggingagreinar sem sótt er um leyfi fyrir, sbr. 20.–22. gr., ef um fyrirhugaða endurtryggingastarfsemi er að ræða.</sen>
         </numart>
@@ -744,31 +744,31 @@
       <subart nr="1">
         <sen>Félag með sérstakan tilgang getur starfað hér á landi að fengnu starfsleyfi Fjármálaeftirlitsins enda uppfylli slíkt félag skilyrði í reglugerð sem ráðherra setur.</sen>
         <sen>Í reglugerðinni skulu vera ákvæði um:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gildissvið starfsleyfis.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Lögboðin skilyrði sem skulu vera í öllum útgefnum samningum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hæfi þeirra sem reka félag með sérstakan tilgang.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Kröfur um hæfi hluthafa eða virkra eigenda.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Stjórnunar- og bókhaldsaðferðir, kerfi fyrir innra eftirlit og kröfur um áhættustýringu.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Reikningsskil, varfærni og tölulegar upplýsingar.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Gjaldþolskröfur.</sen>
         </numart>
@@ -805,7 +805,7 @@
       <name>Starfsleyfi í skaðatryggingum.</name>
       <subart nr="1">
         <sen>Starfsleyfi í skaðatryggingum er bundið við tiltekna greinaflokka vátrygginga eða vátryggingagreinar innan þeirra samkvæmt eftirfarandi skrá:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Slysatryggingar (slys, vinnuslys, atvinnusjúkdómar):</sen>
           <numart nr="a" type="alphabet">
@@ -825,7 +825,7 @@
             <sen>slys á farþegum.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Sjúkratryggingar (veikindi, heilsutjón):</sen>
           <numart nr="a" type="alphabet">
@@ -841,7 +841,7 @@
             <sen>bætur með föstum fjárhæðum / bætur eftir mati á afleiðingum tjóns.</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Húftryggingar ökutækja.</sen>
           <sen>Eignatjón, þ.m.t. altjón á:</sen>
@@ -854,17 +854,17 @@
             <sen>ökutækjum til notkunar á landi öðrum en vélknúnum ökutækjum.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Járnbrautatryggingar.</sen>
           <sen>Eignatjón, þ.m.t. altjón á járnbrautarvögnum.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Húftryggingar loftfara.</sen>
           <sen>Eignatjón, þ.m.t. altjón á loftförum.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Húftryggingar skipa og báta.</sen>
           <sen>Eignatjón, þ.m.t. altjón á:</sen>
@@ -881,12 +881,12 @@
             <sen>fljóta- og síkjabátum.</sen>
           </numart>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Flutningatryggingar.</sen>
           <sen>Eignatjón, þ.m.t. altjón á vörum og farangri í flutningi án tillits til þess hvernig flutt er.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Eignatryggingar (bruni og náttúruöfl).</sen>
           <sen>Eignatjón, þ.m.t. altjón, annað en skv. 3., 4., 5., og 7. flokki vegna:</sen>
@@ -915,32 +915,32 @@
             <sen>landsigs.</sen>
           </numart>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Aðrar eignatryggingar.</sen>
           <sen>Eignatjón, þ.m.t. altjón, annað en skv. 3., 4., 5., 6. og 7. flokki og ekki talið í 8. flokki, þ.m.t. vegna hagls, frosts og atburða svo sem þjófnaðar o.fl.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Ábyrgðartryggingar ökutækja.</sen>
           <sen>Ábyrgð vegna notkunar ökutækja, þ.m.t. ábyrgð flutningsaðila.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Ábyrgðartryggingar loftfara.</sen>
           <sen>Ábyrgð vegna notkunar loftfara, þ.m.t. ábyrgð flutningsaðila.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>Ábyrgðartryggingar skipa og báta.</sen>
           <sen>Ábyrgð vegna notkunar á sjó, vötnum, fljótum og síkjum, þ.m.t. ábyrgð stjórnanda.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <sen>Almennar ábyrgðartryggingar.</sen>
           <sen>Hvers konar ábyrgð önnur en skv. 10., 11. og 12. flokki.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <sen>Greiðsluvátryggingar:</sen>
           <numart nr="a" type="alphabet">
@@ -964,7 +964,7 @@
             <sen>landbúnaðarlán.</sen>
           </numart>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <sen>Efndavátryggingar:</sen>
           <numart nr="a" type="alphabet">
@@ -976,7 +976,7 @@
             <sen>óbeinar efndir.</sen>
           </numart>
         </numart>
-        <numart nr="16">
+        <numart nr="16" type="numeric">
           <nr-title>16.</nr-title>
           <sen>Fjárhagslegar vátryggingar (fjárhagslegt tap):</sen>
           <numart nr="a" type="alphabet">
@@ -1024,12 +1024,12 @@
             <sen>aðrar tegundir fjárhagslegs taps.</sen>
           </numart>
         </numart>
-        <numart nr="17">
+        <numart nr="17" type="numeric">
           <nr-title>17.</nr-title>
           <sen>Réttaraðstoðartryggingar.</sen>
           <sen>Réttaraðstoð og kostnaður við málarekstur.</sen>
         </numart>
-        <numart nr="18">
+        <numart nr="18" type="numeric">
           <nr-title>18.</nr-title>
           <sen>Ferðamannaaðstoð.</sen>
           <sen>Aðstoð til handa þeim sem lenda í erfiðleikum á ferðalagi fjarri heimili sínu eða föstu aðsetri.</sen>
@@ -1038,35 +1038,35 @@
       <subart nr="2">
         <sen>Veita má starfsleyfi sameiginlega fyrir eftirtalda greinaflokka skaðatrygginga, sbr. 1. mgr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Slysa- og sjúkratryggingar skv. 1. og 2. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ökutækja- og farmtryggingar skv. d-lið 1. tölul., 3., 7. og 10. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Sjó- og farmtryggingar skv. d-lið 1. tölul., 4., 6., 7. og 12. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Flug- og farmtryggingar skv. d-lið 1. tölul., 5., 7. og 11. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Eignatryggingar skv. 8. og 9. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Ábyrgðartryggingar skv. 10., 11., 12. og 13. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Greiðslu- og efndavátryggingar skv. 14. og 15. tölul. 1. mgr.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Frumtryggingar skv. 1.–18. tölul. 1. mgr.</sen>
         </numart>
@@ -1074,15 +1074,15 @@
       <subart nr="3">
         <sen>Vátryggingafélag sem fær starfsleyfi í greinaflokkum frumtrygginga skv. 1. og 2. mgr.</sen>
         <sen>(aðaláhætta) má fela í sér hliðargrein (aukaáhættu) án sérstaks leyfis þegar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Aukaáhættan er í tengslum við aðaláhættu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Aukaáhættan tengist þeim verðmætum sem vátryggð eru sem aðaláhætta.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Aukaáhættan er vátryggð samkvæmt vátryggingarsamningi um aðaláhættu.</sen>
         </numart>
@@ -1111,7 +1111,7 @@
       <name>Starfsleyfi í líf- og heilsutryggingum.</name>
       <subart nr="1">
         <sen>Starfsleyfi í líftryggingum og heilsutryggingum afmarkast við tiltekna greinaflokka frumtrygginga eða vátryggingagreinar innan þeirra samkvæmt eftirfarandi skrá:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Áhættu- og söfnunarlíftryggingar án fjárfestingaráhættu:</sen>
           <numart nr="a" type="alphabet">
@@ -1147,7 +1147,7 @@
             <sen>viðbótargreiðslur við örorku vegna slyss eða sjúkdóms.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hjóna- og barnalíftryggingar:</sen>
           <numart nr="a" type="alphabet">
@@ -1159,7 +1159,7 @@
             <sen>líftryggingar barna tengdar fæðingu.</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Áhættu- og söfnunarlíftryggingar með fjárfestingaráhættu:</sen>
           <numart nr="a" type="alphabet">
@@ -1183,11 +1183,11 @@
             <sen>lífeyrisgreiðslur.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Varanlegar heilsutryggingar án uppsagnarréttar.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Aðrar líftryggingar sem fela í sér áhættu á grundvelli ævilengdar.</sen>
         </numart>
@@ -1216,28 +1216,28 @@
       <name>Áætlun um starfsemi vátryggingafélags.</name>
       <subart nr="1">
         <sen>Í áætlun um fyrirhugaða starfsemi, sem fylgja skal umsókn um starfsleyfi, skal eftirfarandi koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Skýrsla um endurtryggingarvernd og hámark þess sem félagið hyggst bera í eigin áhættu í hverjum greinaflokki vátrygginga.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Eignir sem eiga að vera til staðar í félaginu til þess að kröfum um neðstu mörk lágmarksfjármagns skv. 112. gr. sé fullnægt.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Rökstutt mat á kostnaði við að koma starfseminni á fót og hvernig ætlað er að mæta þeim kostnaði.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Áætluð staða félagsins samkvæmt efnahagsreikningi í lok þriggja fyrstu reikningsáranna ásamt áætlun um árlegar tekjur og gjöld.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Áætlun um hvernig félagið hyggst fullnægja gjaldþolskröfu fyrstu þrjú heilu reikningsárin.</sen>
           <sen>Fram skal koma með hvaða reikniaðferð mat á gjaldþolskröfu er gert.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Áætlun um hvernig félagið hyggst fullnægja kröfu um lágmarksfjármagn fyrstu þrjú heilu reikningsárin.</sen>
           <sen>Fram skal koma með hvaða aðferð mat á lágmarksfjármagni er gert.</sen>
@@ -1418,19 +1418,19 @@
       </subart>
       <subart nr="2">
         <sen>Fjármálaeftirlitið skal hafa eftirfarandi upplýsingar aðgengilegar á vef sínum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Lög, reglugerðir, reglur, ákvarðanir og aðrar réttarheimildir og leiðbeiningar sem varða vátryggingastarfsemi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Viðmið og matsaðferðir sem eru lagðar til grundvallar við mat Fjármálaeftirlitsins, þ.m.t. mat skv. 6. mgr. 29. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Samantekt um framkvæmd laga þessara.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Markmið eftirlits með vátryggingamarkaði ásamt tilgangi og starfsemi eftirlitsins.</sen>
         </numart>
@@ -1440,7 +1440,7 @@
       </subart>
       <subart nr="4">
         <sen>Fjármálaeftirlitið skal afhenda Evrópsku vátrygginga- og lífeyrissjóðaeftirlitsstofnuninni árlega eftirfarandi upplýsingar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Meðaltal viðbótargjaldþolskröfu á hvert vátryggingafélag og dreifingu viðbótargjaldþolskrafna sem Fjármálaeftirlitið hefur lagt á árið á undan sem skal mælt sem hlutfall af gjaldþolskröfum og sýnt aðskilið fyrir:</sen>
           <numart nr="a" type="alphabet">
@@ -1464,11 +1464,11 @@
             <sen>endurtryggingafélög.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hlutfall viðbótargjaldþolskrafna sem lagðar eru á skv. 1. mgr. 32. gr., sundurgreint skv. 1. tölul. þessarar málsgreinar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Fjölda vátryggingafélaga sem fá undanþágu frá reglubundnum gagnaskilum til Fjármálaeftirlitsins og fjölda vátryggingafélaga sem fá undanþágu frá því að skila lista yfir allar eignir skv. 6. og 7. mgr. 31. gr. ásamt umfangi gjaldþolskrafna, iðgjalda, vátryggingaskuldar og eigna, mældu, eftir því sem við á, sem hlutfall af heildarumfangi gjaldþolskrafna, iðgjalda, vátryggingaskuldar og eigna vátryggingafélaga hér á landi.</sen>
         </numart>
@@ -1511,15 +1511,15 @@
       <name>Gagnaskil til Fjármálaeftirlitsins.</name>
       <subart nr="1">
         <sen>Vátryggingafélag skal afhenda Fjármálaeftirlitinu gögn og upplýsingar sem nauðsynlegar eru til eftirlits samkvæmt lögum þessum til að:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>meta stjórnkerfi vátryggingafélags, starfsemi, matsreglur vegna gjaldþols, áhættu félagsins, áhættustýringu, uppbyggingu eigin fjár, eiginfjárþörf og eiginfjárstýringu,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>taka ákvarðanir vegna eftirlits og starfa samkvæmt lögum þessum,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>afla gagna um starfsemi í öðrum aðildarríkjum.</sen>
         </numart>
@@ -1645,15 +1645,15 @@
       <name>Viðbótargjaldþolskrafa.</name>
       <subart nr="1">
         <sen>Í kjölfar eftirlitsferlis skv. 29. gr. getur Fjármálaeftirlitið lagt viðbótargjaldþolskröfu á vátryggingafélag í eftirfarandi undantekningartilvikum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Fjármálaeftirlitið kemst að þeirri niðurstöðu að áhættusnið vátryggingafélagsins sé verulega frábrugðið forsendum sem liggja að baki gjaldþolskröfu, eins og hún er reiknuð með staðalreglunni, og krafa um að nota eigið líkan skv. 109. gr. á ekki við eða hefur ekki skilað árangri eða hlutalíkan eða alhliða líkan er í vinnslu í samræmi við 104. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Fjármálaeftirlitið kemst að þeirri niðurstöðu að áhættusnið vátryggingafélagsins sé verulega frábrugðið forsendum gjaldþolskröfunnar, eins og hún er reiknuð með alhliða líkani eða hlutalíkani, vegna þess að tilteknar mælanlegar áhættur eru metnar með ófullnægjandi hætti og aðlögun líkansins að því að endurspegla með betri hætti viðkomandi áhættusnið hefur ekki tekist innan viðunandi tíma.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Fjármálaeftirlitið kemst að þeirri niðurstöðu að stjórnarhættir vátryggingafélags séu verulega frábrugðnir kröfum VIII. kafla og að frávikin komi í veg fyrir að félagið geti með viðeigandi hætti greint, fylgst með, stjórnað og gefið skýrslu um þær áhættur sem það stendur frammi fyrir eða gæti staðið frammi fyrir og ólíklegt er að notkun annarra úrræða bæti úr frávikunum innan viðunandi tíma.</sen>
         </numart>
@@ -1696,15 +1696,15 @@
       <name>Eftirlit með útvistaðri starfsemi.</name>
       <subart nr="1">
         <sen>Vátryggingafélag sem útvistar starfssviði eða hluta af vátryggingastarfsemi sinni skal tryggja að eftirfarandi skilyrðum sé fullnægt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Þjónustuaðilinn starfi með Fjármálaeftirlitinu vegna útvistaðrar starfsemi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vátryggingafélagið, endurskoðandi þess og Fjármálaeftirlitið hafi greiðan aðgang að gögnum sem tengjast hinni útvistuðu starfsemi.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Fjármálaeftirlitið hafi greiðan og nýtilegan aðgang að starfsstöð þjónustuaðilans.</sen>
         </numart>
@@ -1912,11 +1912,11 @@
       <name>Kröfur um hæfi og hæfni.</name>
       <subart nr="1">
         <sen>Stjórn vátryggingafélags skal ásamt forstjóra, og þeim sem bera ábyrgð á lykilstarfssviðum félagsins, uppfylla eftirfarandi skilyrði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Nægileg menntun, þekking og reynsla til að geta sinnt starfinu á tilhlýðilegan hátt.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Gott orðspor.</sen>
         </numart>
@@ -2112,17 +2112,17 @@
       <name>Eigið áhættu- og gjaldþolsmat.</name>
       <subart nr="1">
         <sen>Hluti af áhættustýringu hvers vátryggingafélags skal vera að gera eigið áhættu- og gjaldþolsmat um eftirfarandi atriði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Heildargjaldþolsþörf félagsins þar sem tekið er tillit til áhættusniðs, samþykktra þolmarka og stefnu félagsins.</sen>
           <sen>Vátryggingafélag skal hafa til staðar ferla sem taka mið af eðli, umfangi og margbreytileika þeirrar áhættu sem tengist starfseminni og gera félaginu kleift að greina og meta með fullnægjandi hætti þá áhættuþætti sem geta orðið virkir til lengri eða skemmri tíma.</sen>
           <sen>Félagið skal lýsa þeim ferlum og aðferðum sem það notar við mat sitt.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hvernig gjaldþolskröfum, kröfum um lágmarksfjármagn og kröfum til vátryggingaskuldar verður fullnægt.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hvort og hversu mikið áhættusnið félagsins víki frá forsendum sem lagðar hafa verið til grundvallar gjaldþolskröfu, sbr. 97. gr., hvort sem byggt er á staðalreglunni eða eigin líkani.</sen>
           <sen>Sé eigið líkan notað skal einnig endurkvarða niðurstöður líkansins yfir í áhættumál og kvörðun gjaldþolskröfunnar.</sen>
@@ -2224,11 +2224,11 @@
       </subart>
       <subart nr="3">
         <sen>Líftryggingafélag sem fellur undir undanþáguákvæði laga þessara skv. 3. mgr. 3. gr. skal sjá til þess að tryggingastærðfræðingur eða sérfræðingur með sambærilega þekkingu taki að sér eftirfarandi störf fyrir félagið:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Að fylgjast með því að farið sé eftir reiknigrundvelli iðgjalda, iðgjaldasjóðs og ágóðaúthlutunar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Að fylgjast með því að fylgt sé settum reglum um ákvörðun endurkaupsverðs og fjárhæða gjaldfrjálsra líftrygginga og sjúkra- og heilsutrygginga sem reknar eru á tæknilegum grundvelli.</sen>
         </numart>
@@ -2409,23 +2409,23 @@
       <subart nr="1">
         <sen>Vátryggingafélag skal eigi síðar en 14 vikum eftir lok reikningsárs birta opinberlega skýrslu um gjaldþol og fjárhagslega stöðu.</sen>
         <sen>Í skýrslunni skal vera lýsing á:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Starfsemi og afkomu vátryggingafélagsins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Stjórnkerfi vátryggingafélagsins og hversu vel það samræmist áhættusniði þess.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Áhættuskuldbindingum, samþjöppun, áhættuvörnum og næmni fyrir hverja tegund áhættu fyrir sig.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Grundvelli og aðferðum við mat á eignum, vátryggingaskuld og öðrum skuldbindingum ásamt skýringu á frávikum frá mati í reikningsskilum ef við á.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Fjármagnsstýringu sem inniheldur a.m.k. umfjöllun um:</sen>
           <numart nr="a" type="alphabet">
@@ -2473,11 +2473,11 @@
       <subart nr="1">
         <sen>Þegar meiri háttar atburðir hafa veruleg áhrif á opinberar upplýsingar skal vátryggingafélag birta opinberlega upplýsingar um eðli og áhrif þessara atburða.</sen>
         <sen>Þessir atburðir skulu hið minnsta teljast meiri háttar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vátryggingafélag stenst ekki kröfur um lágmarksfjármagn og Fjármálaeftirlitið telur að félagið geti ekki lagt fram raunhæfa fjármögnunaráætlun eða það fær ekki áætlun innan mánaðar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Veruleg frávik eru frá því að gjaldþolskröfu sé fullnægt og Fjármálaeftirlitið fær ekki raunhæfa endurreisnaráætlun innan tveggja mánaða.</sen>
         </numart>
@@ -2547,51 +2547,51 @@
       </subart>
       <subart nr="3">
         <sen>Í skriflegri tilkynningu til Fjármálaeftirlitsins skulu fylgja eftirfarandi upplýsingar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Nafn og heimili þess sem hyggst eignast eða auka við virkan eignarhlut.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Nafn þess vátryggingafélags sem fyrirhugað er að fjárfesta í.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Stærð þess hlutar eða atkvæðisréttar sem fyrirhugað er að fjárfesta í.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Áform um breytingar á verkefnum vátryggingafélags.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Fjármögnun fjárfestingarinnar.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Fjárhagsstaða þess sem hyggst eignast eða auka við virkan eignarhlut.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Fyrirhuguð viðskiptatengsl þess sem hyggst eignast eða auka við virkan eignarhlut við hlutaðeigandi vátryggingafélag.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Reynsla þess sem hyggst eignast eða auka við virkan eignarhlut af vátryggingastarfsemi og fjármálastarfsemi.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Eignarhald, stjórnarseta eða önnur þátttaka, þess sem hyggst eignast eða auka við virkan eignarhlut, í starfsemi lögaðila.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Refsingar sem sá sem hyggst eignast eða auka við virkan eignarhlut hefur verið dæmdur til að sæta og hvort viðkomandi sæti rannsókn sakamáls.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Náin tengsl þess sem hyggst eignast eða auka við virkan eignarhlut við aðra lögaðila.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>Aðrar upplýsingar sem Fjármálaeftirlitið telur nauðsynlegar og birtir opinberlega upplýsingar um.</sen>
         </numart>
@@ -2678,36 +2678,36 @@
       <subart nr="1">
         <sen>Fjármálaeftirlitið leggur mat á hvort sá sem hyggst eignast eða auka við virkan eignarhlut sé hæfur til að eiga eignarhlutinn með tilliti til heilbrigðs og trausts reksturs vátryggingafélags.</sen>
         <sen>Við mat á hæfi viðkomandi skal höfð hliðsjón af eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Orðspori þess sem hyggst eignast eða auka við virkan eignarhlut.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Orðspori og reynslu þess sem kemur til með að veita vátryggingafélaginu forstöðu komi til hinna fyrirhuguðu kaupa eða aukningar eignarhlutar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Fjárhagslegu heilbrigði þess sem hyggst eignast eða auka við virkan eignarhlut í vátryggingafélaginu, einkum með tilliti til þess reksturs sem vátryggingafélagið hefur með höndum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Hvort eignarhald þess sem hyggst eignast eða auka við virkan eignarhlut skapi hættu á hagsmunaárekstrum á fjármálamarkaði.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Stærð þess hlutar eða atkvæðisréttar sem sá sem hyggst eignast eða auka við virkan eignarhlut hyggst fjárfesta í.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Hvort ætla megi að eignarhald þess sem hyggst eignast eða auka við virkan eignarhlut muni torvelda eftirlit með hlutaðeigandi vátryggingafélagi.</sen>
           <sen>Við mat á því skal m.a. horft til fyrri samskipta þess sem hyggst eignast eða auka við virkan eignarhlut við Fjármálaeftirlitið eða önnur stjórnvöld, til þess hvort náin tengsl þess sem hyggst eignast eða auka við virkan eignarhlut við einstaklinga eða lögaðila geti að mati Fjármálaeftirlitsins hindrað það í eðlilegum eftirlitsaðgerðum og hvort lög og reglur, sem gilda um þann sem hyggst eignast eða auka við virkan eignarhlut, hindra eðlilegt eftirlit.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Hvort ætla megi að eignarhald þess sem hyggst eignast eða auka við virkan eignarhlut muni leiða til peningaþvættis eða fjármögnunar hryðjuverka eða geti aukið líkur á að slíkt athæfi verði látið viðgangast innan hlutaðeigandi vátryggingafélags.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Hvort sá sem hyggst eignast eða auka við virkan eignarhlut hefur gefið Fjármálaeftirlitinu umbeðnar upplýsingar ásamt fylgigögnum og þær upplýsingar hafa reynst réttar.</sen>
         </numart>
@@ -2911,11 +2911,11 @@
       </subart>
       <subart nr="2">
         <sen>Til viðbótar við útreikning gjaldþolskröfu skv. 97. gr. og á lágmarksfjármagni skv. 112. gr. skal vátryggingafélag með heimild til starfsemi í líftryggingum og skaðatryggingum skv. 1. mgr. 72. gr. reikna eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ígildi lágmarksfjármagns, reiknað eingöngu út frá þeim hluta starfseminnar sem telst til líftrygginga.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ígildi lágmarksfjármagns, reiknað eingöngu út frá þeim hluta starfseminnar sem telst til skaðatrygginga.</sen>
         </numart>
@@ -3039,15 +3039,15 @@
       <name>Önnur atriði varðandi mat á vátryggingaskuld.</name>
       <subart nr="1">
         <sen>Auk þeirra atriða sem getið er í 76. gr. skal vátryggingafélag taka mið af eftirfarandi við mat vátryggingaskuldar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Öllum útgjöldum sem á það falla vegna umsýslu við vátryggingaskuldbindingar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Verðbólgu, þ.m.t. breytingum á uppgjörskostnaði og tjónagreiðslum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Öllum greiðslum til vátryggingartaka og rétthafa, þ.m.t. valkvæðum bónusgreiðslum, sem vátryggingafélag gerir ráð fyrir að inna af hendi hvort sem þær eru tryggðar með samningsákvæðum eða ekki.</sen>
         </numart>
@@ -3124,35 +3124,35 @@
       <name>Reglugerð.</name>
       <subart nr="1">
         <sen>Ráðherra setur reglugerð sem útfærir eftirfarandi þætti nánar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tölfræðilegar og tryggingastærðfræðilegar aðferðir til að reikna besta mat í samræmi við 2. mgr. 76. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Aðferðir við að reikna áhættulausan vaxtaferil til núvirðingar á besta mati vátryggingaskuldar skv. 2. mgr. 76. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Við hvaða aðstæður þurfi ekki að reikna besta mat og áhættuálag hvort í sínu lagi og hvaða aðferðir skuli notaðar í þeim tilvikum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Aðferðir og forsendur sem notaðar eru í útreikningi áhættuálags, þar á meðal hvaða viðurkenndu gjaldþolsliðir geta mætt vátryggingaskuldbindingum og ákvörðun vaxta við útreikning fjármagnskostnaðar.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Vátryggingagreinar sem skuldbindingum er skipt í við útreikning vátryggingaskuldar skv. 81. gr.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Staðla sem vátryggingafélag þarf að fylgja til þess að gögn sem eru notuð við útreikning vátryggingaskuldar séu viðeigandi, heildstæð og nákvæm og þær sérstöku aðstæður sem gera að verkum að leyfilegt er að nota nálganir, svo sem mat hvers einstaks tjónstilviks.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Aðferðir við útreikning á mótaðilaáhættu í mati á kröfum á endurtryggjendur og félög með sérstakan tilgang skv. 82. gr.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Þegar nauðsyn krefur, einfaldari aðferðir við útreikning vátryggingaskuldar, sem tryggja að tryggingastærðfræðilegar og tölfræðilegar aðferðir skv. 1. og 4. tölul. séu í samræmi við eðli, stærð og margbreytileika áhættunnar sem vátryggingafélög bera.</sen>
         </numart>
@@ -3225,11 +3225,11 @@
       <subart nr="1">
         <sen>Gjaldþol flokkast í þrjá gjaldþolsþætti.</sen>
         <sen>Flokkunin er háð því hvort um kjarnagjaldþolsliði eða stuðningsgjaldþolsliði er að ræða og að hvaða marki þeir búa yfir eftirtöldum eiginleikum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gjaldþolsliðurinn er tiltækur eða hægt er að innkalla hann til að mæta tapi að fullu, hvort sem er vegna áframhaldandi starfsemi eða vegna slitameðferðar, þ.e. stöðugt aðgengi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Við slitameðferð er unnt að nýta heildarfjárhæð gjaldþolsliðarins til að mæta tapi og liðurinn verður ekki greiddur til baka fyrr en öllum öðrum skuldbindingum, þar á meðal skuldbindingum gagnvart vátryggingartökum og vátryggðum vegna vátryggingarsamninga, hefur verið mætt.</sen>
         </numart>
@@ -3269,11 +3269,11 @@
       </subart>
       <subart nr="5">
         <sen>Að auki skal eftirfarandi gilda um flokkun gjaldþols:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Óráðstöfuð ágóðaskuld líftryggingafélags sem telst til eigin fjár skal flokkast í gjaldþolsþátt 1.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Loforð um lánveitingu og ábyrgðir sem eru í vörslu óháðs vörsluaðila til hags fyrir kröfuhafa vátryggingakrafna og sem gefnar eru út af viðskiptabanka, sparisjóði eða lánafyrirtæki samkvæmt lögum um fjármálafyrirtæki flokkast í gjaldþolsþátt 2.</sen>
         </numart>
@@ -3304,31 +3304,31 @@
       <name>Reglugerð.</name>
       <subart nr="1">
         <sen>Ráðherra setur reglugerð um eftirfarandi þætti:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Viðmið sem Fjármálaeftirlitið leggur til grundvallar við mat á hvort heimilt er að nota stuðningsgjaldþolslið í samræmi við 90. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Meðhöndlun eignarhlutar í fjármálafyrirtækjum við ákvörðun gjaldþols, hvort sem um er að ræða beinan eignarhlut eða víkjandi kröfur á fjármálafyrirtæki.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ferli sem Fjármálaeftirlitið skal fylgja við afgreiðslu umsókna um notkun gjaldþolsliða.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Lista yfir viðurkennda gjaldþolsliði sem uppfylla skilyrði 92. gr. þar sem forsendur flokkunar koma fram fyrir hvern viðurkenndan gjaldþolslið.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Aðferðir sem Fjármálaeftirlitið skal nota til að samþykkja flokkun á gjaldþolsliðum sem ekki eru á listanum skv. 4. tölul.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Sértæka aðlögun á mörkum sem ætlað er að endurspegla takmarkaða möguleika á færslu gjaldþolsliða sem eingöngu er heimilt að nota til að mæta tapi sem stafar af tilgreindum hluta skuldbindinga félagsins eða vegna tiltekinnar áhættu, þ.e. á vörðum sjóðum.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Takmarkanir á notkun gjaldþolsþátta 2 og 3 til að mæta gjaldþolskröfu og lágmarksfjármagni.</sen>
         </numart>
@@ -3445,15 +3445,15 @@
       </subart>
       <subart nr="2">
         <sen>Til að tryggja samræmd skilyrði við notkun staðalreglunnar og til að greiða fyrir útreikningi á markaðsáhættueiningu sem vísað er til í 100. gr., mótaðilaáhættu skv. 100. gr., áhættuvörnum skv. 4. mgr. 97. gr. og útreikningi á vátryggingaskuld gefur Fjármálaeftirlitið út reglur sem byggjast á tæknilegum framkvæmdastöðlum Evrópsku vátrygginga- og lífeyrissjóðaeftirlitsstofnunarinnar þar sem eftirfarandi kemur fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Listi yfir héraðsstjórnir og sveitarstjórnir á EES-svæðinu sem litið skal á sem sambærilega áhættu og viðeigandi ríki hvað varðar sérstaka tekjuöflunarmöguleika og stjórnsýslufyrirkomulag sem minnka áhættu á greiðslufalli.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hlutabréfavísitala sem notuð er vegna samhverfrar aðlögunar við útreikning hlutabréfaáhættu.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ákvæði um tengingu gjaldmiðla við evru til að skýra útreikning gjaldmiðlaáhættu.</sen>
         </numart>
@@ -3505,60 +3505,60 @@
       <name>Reglugerð.</name>
       <subart nr="1">
         <sen>Ráðherra setur reglugerð sem tilgreinir nánar eftirfarandi atriði varðandi útreikning á gjaldþolskröfu með staðalreglu:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Uppbyggingu staðalreglunnar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Undiráhættueiningar sem eru nauðsynlegar til að útfæra nánar þær áhættueiningar sem tilgreindar eru í 1. mgr. 100. gr. auk þess hvernig staðið skuli að uppfærslu á útreikningi áhættueininga og undiráhættueininga.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Aðferðir, forsendur og staðalstika sem notaðir eru við útreikning á hverri áhættueiningu og undiráhættueiningu í grunngjaldþolskröfu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Stika sem lýsa fylgni á milli áhættuþátta og verklag við uppfærslu þeirra.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Aðferðir og forsendur sem notaðar eru til að meta breytingar á áhættusniði vátryggingafélags þegar áhættuvarnir eru notaðar og hvaða áhrif það hefur á gjaldþolskröfu.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Aðferðir og stika sem notaðir eru til að meta mótaðilaáhættu vegna áhættuskuldbindinga gagnvart viðurkenndum miðlægum mótaðilum.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Aðferðir og stika sem notaðir eru við mat á gjaldþolskröfu vegna rekstraráhættu.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Aðferðir og aðlaganir sem nota skal til að endurspegla takmarkaða möguleika vátryggingafélags til áhættudreifingar með tilliti til varinna sjóða.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Aðferð sem nota skal til að reikna út aðlögun gjaldþolskröfu sem myndast af völdum svigrúms í vátryggingaskuld eða vegna frestaðra skatta til að draga úr tapi.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Stika í áhættueiningum staðalreglu vegna líftryggingaráhættu, heilsutryggingaráhættu og skaðatryggingaráhættu sem skipta má út fyrir eigin stika vátryggingafélags skv. 3. mgr. 100. gr.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Staðlaðar aðferðir sem vátryggingafélag á að nota til að reikna út eigin stika skv. 10. tölul. og þau skilyrði sem Fjármálaeftirlitið skal setja um að gögn notuð við útreikninga séu fullnægjandi, nákvæm og viðeigandi áður en samþykki um notkun þeirra er gefið.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>Einfaldaða útreikninga sem nota má á tilteknar áhættueiningar og undiráhættueiningar, auk þeirra skilyrða sem vátryggingafélög, þar á meðal bundin vátryggingafélög, skulu uppfylla til að fá heimild til að nota slíkar einfaldanir.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <sen>Aðferðir sem notaðar eru við mat á tengdum félögum, sér í lagi þegar gjaldþolskrafa vegna hlutabréfaáhættu sem er undireining markaðsáhættu er reiknuð.</sen>
           <sen>Taka skal tillit til líkinda á minna flökti í virði slíkra tengdra félaga sem stafa af stefnumarkandi eðli þessara fjárfestinga og þeirra áhrifa sem vátryggingafélagið getur haft á rekstur hins tengda félags.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <sen>Hvernig nota eigi mat utanaðkomandi lánshæfismatsstofnunar (ECAI) við útreikning gjaldþolskröfu samkvæmt staðalreglu og hvernig matið er yfirfært á kvarða sem gefur til kynna lánshæfisþrep.</sen>
         </numart>
@@ -3625,15 +3625,15 @@
       <name>Sérstök ákvæði um samþykki eigin hlutalíkana.</name>
       <subart nr="1">
         <sen>Fjármálaeftirlitið skal einungis veita leyfi fyrir hlutalíkani ef það uppfyllir skilyrði 104. gr. auk eftirfarandi skilyrða:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Félagið getur rökstutt að umfang líkansins sé takmarkað.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Gjaldþolskrafa sem af því leiðir endurspeglar betur áhættu félagsins en staðalregla.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hönnun líkansins er í samræmi við þær meginreglur um gjaldþolskröfu sem settar eru fram í 99.–101. gr. þannig að líkanið sé að fullu samrýmanlegt staðalreglu.</sen>
         </numart>
@@ -3679,19 +3679,19 @@
       <name>Reglugerð.</name>
       <subart nr="1">
         <sen>Ráðherra setur reglugerð um eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hvaða skilyrði og prófanir eigin líkönum er ætlað að uppfylla.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hvernig skilyrði og prófanir skv. 1. tölul. eiga við um hlutalíkön í ljósi takmarkaðs umfangs þeirra.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hvernig líkanið sé samrýmanlegt staðalreglunni, þ.e. hvernig niðurstaða þess hluta gjaldþolskröfunnar sem reiknaður er með staðalreglunni og niðurstaða hlutalíkansins eru samþættar í heildargjaldþolskröfu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Ferlið sem Fjármálaeftirlitið skal fylgja við:</sen>
           <numart nr="a" type="alphabet">
@@ -3721,32 +3721,32 @@
       <name>Ákvörðun lágmarksfjármagns.</name>
       <subart nr="1">
         <sen>Lágmarksfjármagn vátryggingafélags skal:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Samsvara 85% af áhættuvirði kjarnagjaldþolsliða til eins árs.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ekki vera lægra en 25% af gjaldþolskröfu og ekki hærra en 45%.</sen>
           <sen>Viðbótargjaldþolskröfu skal bætt við gjaldþolskröfuna áður en framangreind hlutföll eru reiknuð, sé hún til staðar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Aldrei vera lægra en jafnvirði 3,7 milljóna evra í íslenskum krónum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Ekki vera lægra en jafnvirði 2,5 milljóna evra í íslenskum krónum hjá félagi sem er ekki með starfsemi í greinaflokkum 10–15 skv. 1. mgr. 20. gr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Ekki vera lægra en jafnvirði 3,7 milljóna evra í íslenskum krónum hjá líftryggingafélagi.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Ekki vera lægra en jafnvirði 3,6 milljóna evra í íslenskum krónum hjá endurtryggingafélagi.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Ekki vera lægra en jafnvirði 1,2 milljóna evra í íslenskum krónum hjá bundnu endurtryggingafélagi.</sen>
         </numart>
@@ -3798,23 +3798,23 @@
       <name>Reglugerð.</name>
       <subart nr="1">
         <sen>Ráðherra setur reglugerð um eftirfarandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Greiningu, mælingu, eftirlit og stýringu áhættu sem tengist fjárfestingum skv. 113. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Greiningu, mælingu, eftirlit og stýringu vegna sérstakrar áhættu sem tilkomin er vegna fjárfestingar í afleiðum og eignum skv. 113. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Skilyrði sem fyrirtæki sem gefa út viðskiptasamninga í verðbréfun þurfa að uppfylla svo að vátryggingafélagi sé heimilt að fjárfesta í slíkum samningum sem gefnir eru út eftir 1. janúar 2011, þar á meðal skilyrði sem tryggja að bakhjarl útgefanda eða upphaflegur lánveitandi haldi eftir á hverjum tíma a.m.k. 5% verðmæta í eigin hlut.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Skilyrði sem vátryggingafélag sem fjárfestir í viðskiptasamningum skv. 3. tölul. þarf að uppfylla.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Við hvaða aðstæður hægt er að leggja á viðbótargjaldþolskröfu ef skilyrði 3. og 4. tölul. eru ekki uppfyllt og hvernig sú viðbótargjaldþolskrafa skuli reiknuð.</sen>
         </numart>
@@ -4053,19 +4053,19 @@
       <name>Vátryggingafélag með höfuðstöðvar hér á landi. Stofnun útibús í öðru aðildarríki.</name>
       <subart nr="1">
         <sen>Frumtryggingafélag sem fengið hefur starfsleyfi hér á landi og óskar eftir að starfrækja útibú í öðru aðildarríki skal tilkynna það Fjármálaeftirlitinu og leggja fram eftirfarandi upplýsingar og gögn:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Upplýsingar um í hvaða aðildarríki útibúið verður starfrækt.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Áætlun um starfsemi og skipulag útibúsins ásamt skrá yfir þá greinaflokka vátrygginga og vátryggingagreinar sem félagið hyggst reka.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Nafn þess aðila sem er í fyrirsvari fyrir útibúið og hefur heimild til að skuldbinda félagið gagnvart þriðja aðila og koma fram á þess vegum gagnvart stjórnvöldum í aðildarríkinu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Yfirlýsingu um að félagið sé aðili að landsskrifstofu alþjóðlegra bifreiðatrygginga og, ef við á, að félagið sé aðili að ábyrgðarsjóði vegna ökutækjatrygginga í viðkomandi aðildarríki þegar fyrirhugað er að reka starfsemi skv. 10. tölul. 1. mgr. 20. gr.</sen>
         </numart>
@@ -4095,24 +4095,24 @@
       </subart>
       <subart nr="2">
         <sen>Óski frumtryggingafélag skv. 1. mgr. eftir að stofna útibú hér á landi skv. 7. gr. skal Fjármálaeftirlitið afla eftirfarandi upplýsinga og gagna hjá eftirlitsstjórnvöldum heimaríkis þess:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Áætlunar um fyrirhugaða starfsemi og skipulag útibúsins hér á landi og staðfestingar á að félagið hafi starfsleyfi í þeim greinaflokkum vátrygginga og vátryggingagreinum sem fyrirhugað er að reka hér á landi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Heimilisfangs útibúsins þar sem skipaður fulltrúi félagsins hefur aðsetur og gagna er aflað um starfsemina og öll gögn eru send til.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Nafns skipaðs fulltrúa útibúsins sem hefur heimild til að skuldbinda félagið gagnvart þriðja aðila og kemur fram fyrir þess hönd gagnvart dómstólum hér á landi.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Staðfestingar á aðild að viðeigandi ábyrgðarsjóði og á þátttöku í starfsemi tjónsuppgjörsmiðstöðvar og upplýsingamiðstöðvar samkvæmt umferðarlögum sé sótt um leyfi skv. 10. tölul. 1. mgr. 20. gr.</sen>
           <sen>Jafnframt skal upplýst um tjónsuppgjörsfulltrúa í hverju aðildarríki utan Íslands.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Vottorðs eftirlitsstjórnvalda um að skilyrði um gjaldþolskröfu og lágmarksfjármagn vegna starfsemi félagsins í heild séu uppfyllt og athugasemda vegna fyrirhugaðrar starfsemi ef einhverjar eru.</sen>
         </numart>
@@ -4131,19 +4131,19 @@
       <subart nr="1">
         <sen>Hyggist frumtryggingafélag sem fengið hefur starfsleyfi hér á landi veita þjónustu í öðru aðildarríki án þess að hafa þar starfsstöð skal félagið tilkynna Fjármálaeftirlitinu um það ásamt upplýsingum um í hvaða greinaflokkum vátrygginga eða vátryggingagreinum fyrirhugað er að veita þjónustu.</sen>
         <sen>Fjármálaeftirlitið skal innan mánaðar senda eftirlitsstjórnvöldum hlutaðeigandi aðildarríkis eftirtalin gögn og skal félaginu jafnframt tilkynnt að upplýsingarnar hafi verið sendar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vottorð um að félagið fullnægi gjaldþolskröfu og kröfu um lágmarksfjármagn vegna starfsemi félagsins í heild.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Skrá yfir þá greinaflokka vátrygginga og vátryggingagreinar sem félagið hefur leyfi til að reka.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Skrá yfir greinaflokka vátrygginga og vátryggingagreinar sem félagið hyggst reka í aðildarríkinu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Yfirlýsingu um að félagið sé aðili að landsskrifstofu og, ef við á, að sérstökum ábyrgðarsjóði í viðkomandi aðildarríki þegar fyrirhugað er að veita þjónustu skv. 10. tölul. 1. mgr. 20. gr. ásamt nafni og heimilisfangi sérstaks fulltrúa sem annast tjónsuppgjör í þeirri grein.</sen>
         </numart>
@@ -4167,19 +4167,19 @@
       </subart>
       <subart nr="2">
         <sen>Hyggist frumtryggingafélag veita þjónustu hér á landi án starfsstöðvar skal Fjármálaeftirlitið afla eftirfarandi upplýsinga og gagna hjá eftirlitsstjórnvöldum heimaríkis:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vottorðs um að félagið fullnægi gjaldþolskröfu og kröfu um lágmarksfjármagn vegna starfsemi félagsins í heild.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Skrár yfir þá greinaflokka vátrygginga og vátryggingagreinar sem félagið hefur leyfi til að reka.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Skrár yfir þær tegundir áhættu sem félagið hyggst vátryggja hér á landi.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Staðfestingar á aðild að viðeigandi ábyrgðarsjóði og á þátttöku í starfsemi tjónsuppgjörsmiðstöðvar og upplýsingamiðstöðvar samkvæmt umferðarlögum sé sótt um leyfi skv. 10. tölul. 1. mgr. 20. gr.</sen>
           <sen>Jafnframt skal upplýst um tjónsuppgjörsfulltrúa í hverju aðildarríki utan Íslands.</sen>
@@ -4349,34 +4349,34 @@
       </subart>
       <subart nr="4">
         <sen>Vátryggingafélag skal standast eftirfarandi skilyrði til að fá starfsleyfi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vera skráð hér á landi og hafa aðalumboðsmann sem Fjármálaeftirlitið samþykkir.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Hafa starfsstöð hér á landi og hafa bókhaldsgögn og önnur gögn um starfsemi útibúsins varðveitt í útibúinu sjálfu.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hafa fjárhagslegan styrk er miðast við starfsemi þess hér, eftir því sem við á, þó þannig að eignir þess hér á landi nemi aldrei minna en helmingi lágmarksfjármagns skv. 112. gr. og geymslufé lagt fram hér á landi sem samsvarar fjórðungi lágmarksfjármagns skv. 112. gr.</sen>
           <sen>Geymsluféð skal einungis notað til að tryggja að útibúið geti staðið við skuldbindingar sínar vegna gerðra vátryggingarsamninga hér á landi.</sen>
           <sen>Einstakir vátryggðir, eða aðrir rétthafar samkvæmt vátryggingarsamningi, geta ekki gert kröfu um fullnustu greiðslu nema að því marki sem það, að mati Fjármálaeftirlitsins, skerðir ekki rétt annarra vátryggðra eða rétthafa til fullnustu á vátryggingaskuldbindingum félagsins.</sen>
           <sen>Geymsluféð skal teljast til viðurkenndra gjaldþolsliða til að mæta lágmarksfjármagni.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Gjaldþolskröfu og kröfu um lágmarksfjármagn.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Upplýsa um nöfn og heimilisföng tjónsuppgjörsfulltrúa í öðrum aðildarríkjum ef sótt er um leyfi til starfsemi í ábyrgðartryggingum ökutækja skv. 10. tölul. 1. mgr. 20. gr.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Áætlun um starfsemi skv. 132. gr. skal liggja fyrir.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Kröfur um stjórnarhætti skv. VIII. kafla.</sen>
         </numart>
@@ -4392,37 +4392,37 @@
       <subart nr="1">
         <sen>Vátryggingafélag sem hefur höfuðstöðvar utan aðildarríkja og hyggst stofna hér útibú skal leggja fram áætlun með umsókn um starfsleyfi.</sen>
         <sen>Í áætluninni skal eftirfarandi koma fram:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hvaða vátryggingarvernd útibúið ætlar að veita.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Endurtryggingarvernd útibúsins í meginatriðum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Áætlun um gjaldþolskröfu útibúsins á grundvelli efnahagsreiknings ásamt reikningsaðferðum sem liggja til grundvallar matinu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Áætlun um lágmarksfjármagn útibúsins á grundvelli efnahagsreiknings ásamt reikningsaðferðum sem liggja til grundvallar matinu.</sen>
           <sen>Félagið skal hafa eignir sem mæta eiga lágmarksfjármagni hér á landi og eignir umfram lágmarksfjármagn sem mæta eiga gjaldþolskröfu hér á landi eða í öðru aðildarríki.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Áætlun um gjaldþolsliði útibúsins að teknu tilliti til gjaldþolskröfu og lágmarksfjármagns.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Að félagið standist kröfur um vátryggingaskuld og viðurkennda gjaldþolsliði skv. XIV.–XVI. kafla.</sen>
           <sen>Mat á eignum og skuldbindingum öðrum en vátryggingaskuld skal vera í samræmi við XIII. kafla.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Áætlun um kostnað við að setja á stofn útibúið, hvernig ætlað er að mæta þeim kostnaði og ef sótt er um starfsleyfi fyrir ferðamannaaðstoð skv. 18. tölul. 1. mgr. 20. gr. skal tiltaka með hvaða hætti ferðamannaaðstoð verður veitt.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Upplýsingar um stjórnarhætti útibúsins.</sen>
         </numart>
@@ -4465,15 +4465,15 @@
       <name>Aðstöðujöfnun vátryggingafélags með starfsemi í fleiri en einu aðildarríki.</name>
       <subart nr="1">
         <sen>Vátryggingafélag með höfuðstöðvar utan aðildarríkja sem rekur útibú í fleiri en einu aðildarríki getur sótt um eftirfarandi ívilnanir sem gilda þá um öll útibúin:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gjaldþolskrafa skv. XVI. kafla sé reiknuð með hliðsjón af allri starfsemi félagsins á Evrópska efnahagssvæðinu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Geymslufé skv. 3. tölul. 4. mgr. 131. gr. sé aðeins varðveitt í einu aðildarríki þar sem vátryggingafélagið hefur starfsemi.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Eignir sem mæta eiga lágmarksfjármagni séu varðveittar í einhverjum af þeim aðildarríkjum þar sem vátryggingafélagið hefur starfsemi.</sen>
         </numart>
@@ -4568,30 +4568,30 @@
       <name>Skilyrði samtryggingar.</name>
       <subart nr="1">
         <sen>Starfsemi telst vera í samtryggingum innan Evrópska efnahagssvæðisins ef áhættan fellur undir 3.–16. tölul. 1. mgr. 20. gr. og uppfyllir eftirfarandi skilyrði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Áhættan telst stóráhætta.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Áhættan er vátryggð með einum vátryggingarsamningi með heildariðgjaldi og á vátryggingartímanum vátryggja tveir eða fleiri frumtryggjendur áhættuna, hver um sig sem samtryggjandi.</sen>
           <sen>Einn frumtryggjandi skal teljast leiðandi frumtryggingafélag.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Áhættan er í aðildarríki.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Leiðandi frumtryggingafélag skal koma fram eins og það beri fulla ábyrgð á frumtryggingu áhættunnar til þess að hún teljist vátryggð.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>A.</sen>
           <sen>m.</sen>
           <sen>k. einn af samtryggjendum sem tekur þátt í samningnum skal hafa höfuðstöðvar eða útibú staðsett í öðru aðildarríki en því sem frumtryggingafélagið hefur starfsleyfi í.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Leiðandi frumtryggingafélag skal hafa forustu í samtryggingunni og ákveður m.a. iðgjöld og skilmála vátryggingarinnar.</sen>
         </numart>
@@ -4750,19 +4750,19 @@
       <name>Skilyrði og upphaf slitameðferðar.</name>
       <subart nr="1">
         <sen>Fjármálaeftirlitið hefur heimild til að taka ákvörðun um upphaf slitameðferðar:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hafi það afturkallað starfsleyfi vátryggingafélagsins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Samkvæmt ósk stjórnar félagsins ef skylt er að slíta því samkvæmt samþykktum þess.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Samkvæmt ósk stjórnar félagsins ef það getur ekki staðið í fullum skilum við lánardrottna sína þegar kröfur þeirra falla í gjalddaga og ekki verður talið sennilegt að greiðsluörðugleikar þess muni líða hjá innan skamms tíma.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Samkvæmt ósk stjórnar félagsins og að fengnu samþykki Fjármálaeftirlitsins ef ákveðið hefur verið að slíta því á hluthafafundi enda hafi tillaga um slit verið samþykkt þar með minnst 2/3 hlutum greiddra atkvæða og af hluthöfum sem ráða yfir minnst 2/3 hlutum þess hlutafjár sem farið var með atkvæði fyrir á fundi.</sen>
         </numart>
@@ -4901,19 +4901,19 @@
       <name>Kröfulýsingar og athugasemdir við kröfur.</name>
       <subart nr="1">
         <sen>Í kröfulýsingu eða athugasemdum sem byggjast á 158. gr. skal tilgreina:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>eðli og fjárhæð kröfu,</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>stofndag kröfu,</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>hvort krafa eigi að njóta forgangs, hafi veðrétt eða eignarréttarfyrirvara,</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>veðandlag kröfu, ef við á.</sen>
         </numart>
@@ -5020,179 +5020,179 @@
       <name>Stjórnvaldssektir.</name>
       <subart nr="1">
         <sen>Fjármálaeftirlitið getur lagt stjórnvaldssektir á hvern þann sem brýtur gegn:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>2. málsl. 1. mgr. 2. gr. varðandi leyfisskylda starfsemi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>4.–5. gr. um starfsheimildir.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>8. gr. um takmörkun á milligöngu vegna frumtryggingastarfsemi.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>3. mgr. 10. gr. um fyrirmæli Fjármálaeftirlitsins um að ráðin verði bót á því sem úrskeiðis hefur farið.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>4. mgr. 10. gr., sbr. 9. gr., um að fara að reglum Fjármálaeftirlitsins um eðlilega og heilbrigða viðskiptahætti vátryggingafélaga.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>11. gr. um heimild til að bera heiti sem gefur vátryggingastarfsemi til kynna.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>16. gr. um að senda skuli breytingar á samþykktum vátryggingafélags til Fjármálaeftirlitsins innan viku frá samþykkt þeirra.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>1. mgr. 27. gr. um leyfisumsókn til Fjármálaeftirlitsins ef vátryggingafélag með starfsleyfi hér á landi hyggst taka upp nýjan greinaflokk vátrygginga eða vátryggingagrein eða breyta starfsemi sinni í verulegum atriðum.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>31. gr. um gagnaskil til Fjármálaeftirlitsins.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>35. og 36. gr. um samruna.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>6. mgr. 39. gr. um fyrirmæli Fjármálaeftirlitsins um úrbætur.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>2.–5. mgr. 40. gr. um viðskipti stjórnarmanna eða tengdra aðila við vátryggingafélagið.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <sen>7. mgr. 40. gr. um tilkynningu um þóknun stjórnarmanna eða forstjóra.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <sen>8. mgr. 40. gr. um tilkynningarskyldu vegna málefna sem geta haft úrslitaþýðingu fyrir áframhaldandi starfsemi félagsins.</sen>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <sen>2. og 4. mgr. 41. gr. um tilkynningu um skipan og síðari breytingar á skipan stjórnar, forstjóra og þeirra sem ábyrgð bera á lykilstarfssviðum.</sen>
         </numart>
-        <numart nr="16">
+        <numart nr="16" type="numeric">
           <nr-title>16.</nr-title>
           <sen>4. mgr. 42. gr. um takmarkanir á störfum stjórnarformanns.</sen>
         </numart>
-        <numart nr="17">
+        <numart nr="17" type="numeric">
           <nr-title>17.</nr-title>
           <sen>44. gr. um áhættustýringu.</sen>
         </numart>
-        <numart nr="18">
+        <numart nr="18" type="numeric">
           <nr-title>18.</nr-title>
           <sen>45. gr. um eigið áhættu- og gjaldþolsmat.</sen>
         </numart>
-        <numart nr="19">
+        <numart nr="19" type="numeric">
           <nr-title>19.</nr-title>
           <sen>48. gr. um hæfi aðila sem sinna starfssviði tryggingastærðfræðings.</sen>
         </numart>
-        <numart nr="20">
+        <numart nr="20" type="numeric">
           <nr-title>20.</nr-title>
           <sen>49. gr. um útvistun.</sen>
         </numart>
-        <numart nr="21">
+        <numart nr="21" type="numeric">
           <nr-title>21.</nr-title>
           <sen>52. gr. um takmörkun arðgreiðslna.</sen>
         </numart>
-        <numart nr="22">
+        <numart nr="22" type="numeric">
           <nr-title>22.</nr-title>
           <sen>53. gr. um ársreikninga.</sen>
         </numart>
-        <numart nr="23">
+        <numart nr="23" type="numeric">
           <nr-title>23.</nr-title>
           <sen>54. gr. um skýrslu um gjaldþol og fjárhagslega stöðu.</sen>
         </numart>
-        <numart nr="24">
+        <numart nr="24" type="numeric">
           <nr-title>24.</nr-title>
           <sen>58. gr. um að tilkynna um virkan eignarhlut.</sen>
         </numart>
-        <numart nr="25">
+        <numart nr="25" type="numeric">
           <nr-title>25.</nr-title>
           <sen>63. gr. um að óhæfur aðili eignist virkan eignarhlut.</sen>
         </numart>
-        <numart nr="26">
+        <numart nr="26" type="numeric">
           <nr-title>26.</nr-title>
           <sen>64. gr. um tilkynningu eiganda um aðilaskipti.</sen>
         </numart>
-        <numart nr="27">
+        <numart nr="27" type="numeric">
           <nr-title>27.</nr-title>
           <sen>65. gr. um tilkynningu vátryggingafélags um aðilaskipti.</sen>
         </numart>
-        <numart nr="28">
+        <numart nr="28" type="numeric">
           <nr-title>28.</nr-title>
           <sen>66. gr. um upplýsingaskyldu.</sen>
         </numart>
-        <numart nr="29">
+        <numart nr="29" type="numeric">
           <nr-title>29.</nr-title>
           <sen>1. mgr. 69. gr. um hámark eigin hluta.</sen>
         </numart>
-        <numart nr="30">
+        <numart nr="30" type="numeric">
           <nr-title>30.</nr-title>
           <sen>2. mgr. 69. gr. um lánveitingu með veði í eigin hlutabréfum.</sen>
         </numart>
-        <numart nr="31">
+        <numart nr="31" type="numeric">
           <nr-title>31.</nr-title>
           <sen>70. og 71. gr. um hæfi og upplýsingaskyldu endurskoðanda.</sen>
         </numart>
-        <numart nr="32">
+        <numart nr="32" type="numeric">
           <nr-title>32.</nr-title>
           <sen>72. gr. um mörk líftryggingafélaga og skaðatryggingafélaga.</sen>
         </numart>
-        <numart nr="33">
+        <numart nr="33" type="numeric">
           <nr-title>33.</nr-title>
           <sen>75. gr. um vátryggingaskuld.</sen>
         </numart>
-        <numart nr="34">
+        <numart nr="34" type="numeric">
           <nr-title>34.</nr-title>
           <sen>90. gr. um notkun stuðningsgjaldþolsliðar.</sen>
         </numart>
-        <numart nr="35">
+        <numart nr="35" type="numeric">
           <nr-title>35.</nr-title>
           <sen>3. mgr. 100. gr. um samþykki Fjármálaeftirlitsins fyrir notkun eigin stika.</sen>
         </numart>
-        <numart nr="36">
+        <numart nr="36" type="numeric">
           <nr-title>36.</nr-title>
           <sen>104. gr. um samþykki Fjármálaeftirlitsins fyrir notkun eigin líkans.</sen>
         </numart>
-        <numart nr="37">
+        <numart nr="37" type="numeric">
           <nr-title>37.</nr-title>
           <sen>2. mgr. 112. gr. um ársfjórðungslega ákvörðun lágmarksfjármagns.</sen>
         </numart>
-        <numart nr="38">
+        <numart nr="38" type="numeric">
           <nr-title>38.</nr-title>
           <sen>123. gr. um heimild vátryggingafélags með starfsleyfi hér á landi til að opna útibú í öðru aðildarríki.</sen>
         </numart>
-        <numart nr="39">
+        <numart nr="39" type="numeric">
           <nr-title>39.</nr-title>
           <sen>124. og 126. gr. vegna starfsemi erlendra aðila hér á landi.</sen>
         </numart>
-        <numart nr="40">
+        <numart nr="40" type="numeric">
           <nr-title>40.</nr-title>
           <sen>125. gr. um heimild vátryggingafélags með starfsleyfi hér á landi til að veita þjónustu í öðru aðildarríki án starfsstöðvar.</sen>
         </numart>
-        <numart nr="41">
+        <numart nr="41" type="numeric">
           <nr-title>41.</nr-title>
           <sen>130. gr. um heimild vátryggingafélags með starfsleyfi hér á landi til að hefja starfsemi í ríki utan aðildarríkja.</sen>
         </numart>
-        <numart nr="42">
+        <numart nr="42" type="numeric">
           <nr-title>42.</nr-title>
           <sen>133. gr. um heimild til flutnings vátryggingastofns.</sen>
         </numart>
-        <numart nr="43">
+        <numart nr="43" type="numeric">
           <nr-title>43.</nr-title>
           <sen>139. gr. um uppgjör vátryggingafélags sem misst hefur starfsleyfi.</sen>
         </numart>
-        <numart nr="44">
+        <numart nr="44" type="numeric">
           <nr-title>44.</nr-title>
           <sen>1. mgr. 164. gr. um skil greinargerðar til Fjármálaeftirlitsins vegna ákvörðunar um frjáls slit.</sen>
         </numart>
@@ -5247,63 +5247,63 @@
       <name>Sektir eða fangelsi.</name>
       <subart nr="1">
         <sen>Það varðar sektum eða fangelsi allt að tveimur árum, liggi þyngri refsing ekki við broti samkvæmt öðrum lögum, að brjóta gegn ákvæðum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>2. málsl. 1. mgr. 2. gr. varðandi leyfisskylda starfsemi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>3. mgr. 10. gr. um að ekki sé farið að fyrirmælum Fjármálaeftirlitsins um að ráðin verði bót á því sem úrskeiðis hefur farið.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>4. mgr. 10. gr., sbr. 9. gr., um að fara að reglum Fjármálaeftirlitsins um eðlilega og heilbrigða viðskiptahætti vátryggingafélaga.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>5. mgr. 48. gr. um tilkynningarskyldu tryggingastærðfræðings til Fjármálaeftirlitsins.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>52. gr. um takmörkun arðgreiðslna.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>53. gr. um ársreikninga.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>58. gr. um að tilkynna ekki um virkan eignarhlut.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>63. gr. um að óhæfur aðili eignist virkan eignarhlut.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>66. gr. um upplýsingaskyldu.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>1. mgr. 69. gr. um hámark eigin hluta.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>2. mgr. 69. gr. um lánveitingu gegn veði í eigin hlutabréfum.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>70. og 71. gr. um hæfi og upplýsingaskyldu endurskoðanda.</sen>
         </numart>
-        <numart nr="13">
+        <numart nr="13" type="numeric">
           <nr-title>13.</nr-title>
           <sen>1. mgr. 117. gr. um tilkynningu vegna ónógs gjaldþols.</sen>
         </numart>
-        <numart nr="14">
+        <numart nr="14" type="numeric">
           <nr-title>14.</nr-title>
           <sen>1. og 2. mgr. 118. gr. um ráðstafanir vegna ónógs lágmarksfjármagns.</sen>
         </numart>
-        <numart nr="15">
+        <numart nr="15" type="numeric">
           <nr-title>15.</nr-title>
           <sen>139. gr. um uppgjör vátryggingafélags sem misst hefur starfsleyfi.</sen>
         </numart>

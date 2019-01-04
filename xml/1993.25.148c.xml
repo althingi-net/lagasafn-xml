@@ -265,7 +265,7 @@
       <subart nr="1">
         <sen>Ráðherra getur samkvæmt lögum þessum og að fengnum tillögum Matvælastofnunar fyrirskipað hverjar þær ráðstafanir sem nauðsynlegar eru til að útrýma eða hindra útbreiðslu tilkynningarskyldra og skráningarskyldra sjúkdóma, sbr. reglugerð skv. 2. mgr. 7. gr., og til að afstýra hættu og tjóni af völdum útbreiðslu þessara sjúkdóma.</sen>
         <sen>Ráðstafanir þessar ná yfir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Dýr:</sen>
           <numart nr="a" type="alphabet">
@@ -297,7 +297,7 @@
             <sen>bann við innflutningi eða útflutningi.</sen>
           </numart>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Dýraafurðir, fóður, húsdýraáburð og annað sem mengað er og kann að bera smit:</sen>
           <numart nr="a" type="alphabet">
@@ -317,7 +317,7 @@
             <sen>bann við innflutningi eða útflutningi.</sen>
           </numart>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Byggingar, starfssvæði, vélar, verkfæri og farartæki:</sen>
           <numart nr="a" type="alphabet">
@@ -329,7 +329,7 @@
             <sen>eftirlit og einangrun.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Eigendur og umráðaaðila dýra, starfsfólk þeirra, fatnað og tæki sem kunna að bera smitefni:</sen>
           <numart nr="a" type="alphabet">

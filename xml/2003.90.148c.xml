@@ -17,20 +17,20 @@
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
         <sen>Skylda til að greiða tekjuskatt af öllum tekjum sínum, hvar sem þeirra er aflað, hvílir á þessum mönnum:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Þeim sem heimilisfastir eru hér á landi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Þeim sem heimilisfastir hafa verið hér á landi en flutt úr landi og fellt hafa niður heimilisfesti sitt hér, nema þeir sanni að þeir séu skattskyldir í öðru ríki á sama hátt og menn heimilisfastir þar og hafi fullnægt þeim skattskyldum sínum.</sen>
           <sen>Skattskylda þessi gildir þó aðeins í þrjú ár frá næstu áramótum eftir brottflutningsdag.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Þeim sem dvelja hér á landi lengur en samtals 183 daga á sérhverju 12 mánaða tímabili, þar með talin eðlileg fjarvera héðan af landi vegna orlofs og þess háttar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Þeim sem eigi falla undir ákvæði 1.–3. tölul. þessarar greinar en starfa samtals lengur en 183 daga á sérhverju 12 mánaða tímabili, þar með talin eðlileg fjarvera frá starfi vegna orlofs og þess háttar, um borð í loftfari eða skipi sem skráð er hér á landi.</sen>
         </numart>
@@ -65,26 +65,26 @@
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
         <sen>Skylda til að greiða tekjuskatt af öllum tekjum sínum, hvar sem þeirra er aflað, hvílir á eftirtöldum lögaðilum sem heimilisfastir eru hér á landi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Skráðum hlutafélögum og einkahlutafélögum, svo og samlagshlutafélögum, enda sé þess óskað við skráningu að samlagshlutafélagið sé sjálfstæður skattaðili.</sen>
           <sen>Hjón ein sér eða með ófjárráða börnum sínum geta ekki myndað samlagshlutafélag er sé sjálfstæður skattaðili.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Gagnkvæmum vátryggingar- og ábyrgðarfélögum, kaupfélögum, öðrum samvinnufélögum og samvinnufélagasamböndum</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Samlagsfélögum og sameignarfélögum með ótakmarkaðri ábyrgð félagsaðila, enda sé félagið skráð í firmaskrá hér á landi, þess óskað við skráningu að félagið sé sjálfstæður skattaðili og við skráningu afhentur félagssamningur þar sem getið sé eignarhlutfalla eigenda, innborgaðs stofnfjár svo og hvernig félagsslitum skuli háttað.</sen>
           <sen>Hjón ein sér eða með ófjárráða börnum sínum geta ekki myndað samlagsfélag eða sameignarfélag er sé sjálfstæður skattaðili.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Samlögum og samtökum sem hafa það að meginmarkmiði að annast vinnslu eða sölu á framleiðsluvörum félagsaðila sinna, innkaup á rekstrarvörum eða þjónustu í beinum tengslum við atvinnurekstur eða sjálfstæða starfsemi þeirra, enda séu þau skráð í firmaskrá hér á landi og þess getið við skráningu að þau séu sjálfstæðir skattaðilar.</sen>
           <sen>Við skráningu skal afhentur félagssamningur þar sem getið sé eignaraðildar, innborgaðs stofnfjár svo og hvernig félagsslitum skuli háttað.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Öðrum félögum, sjóðum og stofnunum, þar með töldum sjálfseignarstofnunum, sem hér eiga heimili, sbr. þó 5. og 6. tölul. 4. gr., svo og dánarbúum og þrotabúum.</sen>
         </numart>
@@ -213,38 +213,38 @@
       <subart nr="1">
         <sen>Takmarkaða skattskyldu bera þessir aðilar, enda falli þeir ekki undir ákvæði 1. eða 2. gr. eða séu undanþegnir skattskyldu skv. 4. gr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Allir menn sem dvelja hér á landi og njóta launa fyrir störf sín hér skulu greiða tekjuskatt af þeim launum.</sen>
           <sen>Hér með teljast þeir menn sem atvinnu stunda hér á landi, eða um borð í loftfari eða skipi sem skráð er hér á landi, þar með talið á grundvelli samninga um útleigu á vinnuafli, þótt dvöl þeirra eða starf vari 183 daga samtals eða skemur á sérhverju 12 mánaða tímabili.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Allir menn sem njóta frá íslenskum aðilum launa fyrir störf, þar með talin stjórnar-, endurskoðenda- eða nefndarstörf, eftirlauna, biðlauna, lífeyris, styrkja eða hliðstæðra greiðslna skulu greiða tekjuskatt af þeim greiðslum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Allir aðilar sem fá greiðslu fyrir þjónustu eða starfsemi innta af hendi hér á landi skulu greiða tekjuskatt af þeim tekjum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Allir aðilar sem reka hér á landi fasta starfsstöð, taka þátt í rekstri fastrar starfsstöðvar eða njóta hluta af ágóða slíkrar starfsstöðvar skulu greiða tekjuskatt af þeim tekjum.</sen>
           <sen>Rekstrartekjur aðila sem eru skattskyldir skv. 2. gr. laga um skattlagningu á kolvetnisvinnslu, og falla ekki undir 2. gr. laga þessara, skal gera upp samkvæmt reglum sem gilda um fastar starfsstöðvar, enda vari starfsemin samtals lengur en 30 daga á 12 mánaða tímabili.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Allir aðilar sem eiga fasteign hér á landi eða hafa rétt yfir fasteign hér á landi er þeir hafa af tekjur eða teljast hafa af tekjur, þar með talinn söluhagnað, samkvæmt ákvæðum laga þessara skulu greiða tekjuskatt af þeim tekjum.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Allir aðilar sem hafa hér á landi tekjur af leigu, afnotum eða rétti til hagnýtingar á lausafé, einkaleyfum, hvers konar réttindum eða sérþekkingu, svo og af söluhagnaði vegna slíkra eigna, skulu greiða tekjuskatt af þeim tekjum.</sen>
           <sen>Ákvæði þetta tekur þó ekki til tekna af leigu loftfara og skipa sem notuð eru til flutninga á alþjóðaleiðum.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Allir aðilar sem hafa tekjur, þar með talinn söluhagnað, af íslenskum hlutabréfum, stofnbréfum eða öðrum réttindum til hlutdeildar í hagnaði eða af rekstri íslenskra fyrirtækja skulu greiða tekjuskatt af þeim tekjum.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Allir aðilar sem hafa vaxtatekjur hér á landi af bankainnstæðum, verðbréfa- og fjárfestingarsjóðum, skuldabréfum eða öðrum kröfum og fjármálagerningum, sbr. 3. tölul. C-liðar 7. gr., skulu greiða tekjuskatt af þeim tekjum.</sen>
           <sen>Ákvæði þetta gildir þó hvorki um vexti sem greiddir eru af Seðlabanka Íslands í eigin nafni eða fyrir hönd ríkissjóðs né þá vexti sem greiðast erlendum ríkjum, alþjóðastofnunum eða öðrum opinberum aðilum sem undanþegnir eru skattskyldu í heimilisfestarríki sínu.</sen>
@@ -254,11 +254,11 @@
           <sen>Ákvæðið á ekki við kveði tvísköttunarsamningur sem Ísland hefur gert við erlent ríki á um að ekki skuli haldið eftir afdráttarskatti af vöxtum.</sen>
           <sen>Ráðherra er heimilt að setja reglugerð er kveður nánar á um framkvæmd þessa ákvæðis.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Erlendir sendiherrar, sendiræðismenn og erlendir starfsmenn sendisveita annarra ríkja hér á landi og aðrir, sem úrlendisréttar njóta, skulu greiða tekjuskatt af tekjum sem þeir njóta frá innlendum aðilum og af tekjum sem um er rætt í 4.–8. tölul.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Allir aðilar sem hafa tekjur af afleiðusamningum hér á landi skulu greiða tekjuskatt af þeim tekjum.</sen>
         </numart>
@@ -479,35 +479,35 @@
       <nr-title>4. gr.</nr-title>
       <subart nr="1">
         <sen>Þessir aðilar greiða ekki tekjuskatt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ríkissjóður, ríkisstofnanir og ríkisfyrirtæki sem hann rekur og ber ótakmarkaða ábyrgð á svo og Fiskifélag Íslands.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Sýslu- og sveitarfélög, fyrirtæki og stofnanir sem þau reka og bera ótakmarkaða ábyrgð á.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Erlend ríki og alþjóðastofnanir, af fasteignum sem þær nota vegna viðurkenndrar starfsemi sinnar hér á landi.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Þeir lögaðilar sem um ræðir í 2. gr. og hér eiga heimili, ef þeir verja hagnaði sínum einungis til almenningsheilla og hafa það að einasta markmiði samkvæmt samþykktum sínum.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Félög, sjóðir og stofnanir, sbr. 5. tölul. 2. gr., sem ekki reka atvinnu.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Lífeyrissjóðir sem starfa skv. III. kafla laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða og starfstengdir eftirlaunasjóðir sem heimild hafa til að taka á móti iðgjöldum til myndunar eftirlaunaréttar samkvæmt lögum nr. 78/2007, um starfstengda eftirlaunasjóði.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Aðilar sem undanþegnir eru skattskyldu með sérstökum lögum.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Stofnanir eða félög í meirihlutaeigu ríkis og/eða sveitarfélaga, að því leyti sem þeim hafa verið falin lögbundin verkefni vegna reksturs vatnsveitu og/eða fráveitu enda sé bæði rekstur og efnahagur hinna lögbundnu verkefna að fullu aðgreindur bókhaldslega frá annarri starfsemi.</sen>
         </numart>
@@ -621,7 +621,7 @@
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
         <sen>Skattskyldar tekjur teljast með þeim undantekningum og takmörkunum, er síðar greinir, hvers konar gæði, arður, laun og hagnaður sem skattaðila hlotnast og metin verða til peningaverðs og skiptir ekki máli hvaðan þær stafa eða í hvaða formi þær eru, svo sem:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Endurgjald fyrir hvers konar vinnu, starf eða þjónustu, án tillits til viðmiðunar, sem innt er af hendi fyrir annan aðila.</sen>
           <sen>Hér með teljast til dæmis hvers konar biðlaun, starfslaun, nefndarlaun, stjórnarlaun, eftirlaun og lífeyrir, fatnaður, fæði, húsnæði, risnufé, verkfærapeningar, ökutækjastyrkir, flutningspeningar og aðrar hliðstæðar starfstengdar greiðslur, fríðindi og hlunnindi, svo og framlög og gjafir sem sýnilega eru gefnar sem kaupauki.</sen>
@@ -630,7 +630,7 @@
           <sen>Reki vinnuveitandi hópferðabifreið til að flytja starfsmenn sína til og frá vinnu teljast hlunnindi starfsmanna af slíkum ferðum þó ekki til skattskyldra tekna.</sen>
           <sen>Sama gildir greiði vinnuveitandi kostnað starfsmanna af ferðum til og frá vinnu samkvæmt samningi milli aðila séu nýttar til ferðanna almenningssamgöngur og vistvænar samgöngur, þó ekki með vélknúnum ökutækjum, enda sé fjárhæðin ekki umfram viðmiðunarmörk samkvæmt mati ríkisskattstjóra.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tryggingabætur, meðlög og styrkir.</sen>
           <sen>Skaðabætur og vátryggingafé vegna sjúkdóms, slysa, atvinnutaps eða launamissis og hvers konar aðrar skaðabætur og vátryggingabætur, sbr. þó 2. tölul. 28. gr.</sen>
@@ -638,48 +638,48 @@
           <sen>Meðlög eða framfærslulífeyrir til maka eða fyrrverandi maka telst ekki til tekna hjá móttakanda hafi hjónin slitið samvistum eða eftir lögskilnað, að því leyti sem greiðslur þessar takmarkast við sömu fjárhæð og lágmarksellilífeyrir (grunnlífeyrir) er til einstaklinga samkvæmt lögum um almannatryggingar.</sen>
           <sen>Styrkir sem foreldrar eða forráðamenn barns fá frá sveitarfélagi til að annast barn heima, frá lokum fæðingarorlofs fram til þess að það hefur leikskólavistun eða grunnskólanám, teljast ekki til tekna hjá móttakanda.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Endurgjald til höfunda og rétthafa fyrir hvers konar hugverk, bókmenntir og listir eða listaverk, hvort sem um er að ræða afnot eða sölu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Verðlaun og heiðurslaun, vinningar í happdrætti, veðmáli eða keppni.</sen>
           <sen>Beinar gjafir í peningum eða öðrum verðmætum, þar með talin afhending slíkra verðmæta í hendur nákominna ættingja, nema um fyrirframgreiðslu upp í arf sé að ræða.</sen>
           <sen>Undanskildar eru þó tækifærisgjafir, enda sé verðmæti þeirra ekki meira en almennt gerist um slíkar gjafir svo og verðlitlir vinningar í almennum happdrættum og keppnum.</sen>
-          <numart nr="1">
+          <numart nr="1" type="numeric">
             <nr-title>1.</nr-title>
             <sen>Leigutekjur og arður af hvers konar lausafé, þar með talin skip og loftför.</sen>
           </numart>
-          <numart nr="2">
+          <numart nr="2" type="numeric">
             <nr-title>2.</nr-title>
             <sen>Arður, landskuld og leiga eftir hvers konar fasteignir og fasteignaréttindi, þar með talin námaréttindi, vatnsréttindi, jarðvarmaréttindi, veiðiréttur og hvers konar önnur fasteignatengd hlunnindi.</sen>
           </numart>
-          <numart nr="3">
+          <numart nr="3" type="numeric">
             <nr-title>3.</nr-title>
             <sen>Vextir, verðbætur, afföll og gengishagnaður, sbr. 8. gr.</sen>
           </numart>
-          <numart nr="4">
+          <numart nr="4" type="numeric">
             <nr-title>4.</nr-title>
             <sen>Arður af hlutum og hlutabréfum í félögum, sbr. 11. gr.</sen>
           </numart>
-          <numart nr="5">
+          <numart nr="5" type="numeric">
             <nr-title>5.</nr-title>
             <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. færa félagsaðilum sínum til séreignar í stofnsjóði vegna viðskipta þeirra.</sen>
           </numart>
-          <numart nr="6">
+          <numart nr="6" type="numeric">
             <nr-title>6.</nr-title>
             <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum vegna viðskipta þeirra, enda séu þessi viðskipti í tengslum við atvinnurekstur eða sjálfstæða starfsemi félagsaðilans eða sé varið til fjárfestingar í eignum sem notaðar eru í atvinnurekstri.</sen>
           </numart>
-          <numart nr="7">
+          <numart nr="7" type="numeric">
             <nr-title>7.</nr-title>
             <sen>Fé sem félög þau sem um ræðir í 4. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum út í hlutfalli við viðskipti þeirra eða færa þeim til séreignar, hvort heldur í stofnsjóð eða á annan hátt.</sen>
           </numart>
-          <numart nr="8">
+          <numart nr="8" type="numeric">
             <nr-title>8.</nr-title>
             <sen>Hagnaður af sölu eigna, sbr. 12.–27. gr.</sen>
           </numart>
-          <numart nr="9">
+          <numart nr="9" type="numeric">
             <nr-title>9.</nr-title>
             <sen>Sérhverjar aðrar tekjur eða ígildi tekna sem eigi eru sérstaklega undanskildar í lögum þessum eða sérlögum.</sen>
           </numart>
@@ -729,27 +729,27 @@
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
         <sen>Til tekna sem vextir, afföll og gengishagnaður skv. 3. tölul. C-liðar 7. gr. teljast:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vextir af innstæðum í innlendum bönkum, sparisjóðum og innlánsdeildum samvinnufélaga, á póstgíróreikningum og orlofsfjárreikningum svo og vextir af verðbréfum sem hliðstæðar reglur gilda um samkvæmt sérlögum.</sen>
           <sen>Með vöxtum teljast áfallnar verðbætur á höfuðstól og vexti, verðbætur á inneignir og kröfur sem bera ekki vexti og happdrættisvinningar sem greiddir eru í stað vaxta.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vextir af stofnsjóðseign í félögum skv. 2. tölul. 1. mgr. 2. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vextir hjá innlendum og erlendum aðilum af sérhverjum öðrum innstæðum og inneignum en um getur í 1. og 2. tölul., þar með taldir vextir af víxlum, verðbréfum og öllum öðrum kröfum sem arð bera eða vexti.</sen>
           <sen>Með vöxtum teljast einnig áfallnar verðbætur og happdrættisvinningar á sama hátt og um getur í 1. tölul.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Afföll af keyptum verðbréfum, víxlum og sérhverjum öðrum kröfum.</sen>
           <sen>Afföllin skal reikna til tekna með hlutfallslegri fjárhæð ár hvert eftir afborgunartíma.</sen>
           <sen>Sé krafan látin af hendi áður en afborgunartíma er lokið telst sá hluti affallanna, sem ekki hefur þegar verið tekjufærður en fæst endurgreiddur í sölu- og afhendingarverði, til tekna í einu lagi á afhendingar- eða söluári.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Gengishagnaður af hvers konar eignum í erlendum verðmæli á því ári sem gengisbreyting á sér stað og miðast við kaupgengi hlutaðeigandi erlends gjaldeyris í árslok.</sen>
         </numart>
@@ -758,33 +758,33 @@
         <sen>Til tekna sem vextir, sbr. 1. mgr., af kröfum eða inneignum, sem ekki eru tengdar atvinnurekstri eða sjálfstæðri starfsemi, teljast vextir sem greiddir eru eða eru greiðslukræfir og greiddar verðbætur á afborganir og vexti.</sen>
         <sen>Til tekna í þessu sambandi telst enn fremur gengishækkun hlutdeildarskírteina, svo og hvers kyns gengishagnaður og afföll af keyptum verðbréfum, víxlum og sérhverjum öðrum kröfum og hvers kyns aðrar tekjur af peningalegum eignum.</sen>
         <sen>Ákvörðun tekna skal vera þannig:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vextir af reikningum í innlánsstofnunum skulu teljast til tekna þegar þeir eru færðir eiganda til eignar á reikningi.</sen>
           <sen>Þó skulu vextir af reikningum þar sem höfuðstóll og vextir eru bundnir til lengri tíma en 36 mánaða ekki teljast til tekna fyrr en þeir eru greiddir eða greiðslukræfir.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vextir af kröfu skulu teljast til tekna þegar þeir eru greiddir eða greiðslukræfir.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Afföll, þ.e. mismunur á uppreiknuðu nafnverði kröfu á kaupdegi að frádregnu kaupverði hennar, skal færa til tekna í hlutfalli við afborganir nafnverðs þegar þær greiðast.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Innleystur gengishagnaður af hvers konar innlánsreikningum og kröfum í erlendri mynt á því ári sem innlausn á sér stað skal færður til tekna og miðast við mismun á kaupgengi hlutaðeigandi erlends gjaldeyris frá 1. janúar 2010 eða síðar og á úttektar- eða greiðsludegi.</sen>
           <sen>Heimilt er að jafna saman gengishagnaði og gengistapi hvers innlánsreiknings fyrir sig innan ársins.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Vextir, arður og önnur ávöxtun af lífeyristryggingum, söfnunartryggingum, einstaklinga hjá líftryggingafélögum skulu teljast til tekna þegar slíkar tekjur koma til greiðslu, nema að því leyti sem lífeyristryggingar, söfnunartryggingar, verða skattlagðar sem tekjur samkvæmt öðrum ákvæðum laga þessara.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Vextir, verðbætur og önnur ávöxtun af lífeyrissparnaði samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða teljast til tekna sem lífeyrir skv. A-lið 7. gr. þegar slíkar greiðslur eru greiddar út.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Vextir af stofnsjóðseign í félögum skv. 2. tölul. 1. mgr. 2. gr. skulu teljast til tekna þegar þeir eru færðir eiganda til eignar eða ráðstöfunar.</sen>
         </numart>
@@ -839,37 +839,37 @@
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
         <sen>Tekjur skv. 9. gr. skulu skattlagðar sem fjármagnstekjur skv. C-lið 7. gr. sé eftirfarandi skilyrðum fullnægt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Kaupréttur að hlutabréfum eða hlutum í viðkomandi félagi hafi náð til allra starfsmanna.</sen>
           <sen>Hlutabréfum og hlutum starfsmanna skulu fylgja sömu réttindi og öðrum hlutabréfum eða hlutum félags.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Starfsmaður hafi verið í föstu starfi hjá félaginu eða í öðru félagi í sömu félagasamstæðu, sbr. lög um ársreikninga.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Að lágmarki 12 mánuðir þurfi að líða frá gerð samnings um kauprétt þar til hann er nýttur.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Kaupverð sé eigi lægra en vegið meðalverð í viðskiptum með hluti/hlutabréf félags tíu heila viðskiptadaga fyrir samningsdag ef slík viðskipti hafa verið skráð í kauphöll.</sen>
           <sen>Ef slík skráning hefur ekki átt sér stað skal miða við gangverð eins og það er skilgreint í 9. gr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Starfsmaður eigi hlutabréfin eða hlutina í tvö ár eftir að kaupréttur er nýttur.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Samningur um kauprétt sé ekki framseljanlegur.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Hámark kaupa hvers starfsmanns sé samanlagt 600.000 kr. á ári miðað við kaupverð samkvæmt samningi.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Félag sem hefur í hyggju að veita starfsmönnum kauprétt hafi sent ríkisskattstjóra fyrir fram til staðfestingar áætlun um kauprétt starfsmanna ásamt upplýsingum um framangreind atriði í því formi sem hann ákveður.</sen>
         </numart>
@@ -1363,59 +1363,59 @@
       <nr-title>28. gr.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði þessa kafla telst ekki til tekna:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Eignaauki vegna arftöku, fyrirframgreiðslu arfs og dánargjafa, enda hafi erfðafjárskattur verið greiddur.</sen>
           <sen>Þetta á þó ekki við um þann hluta lífeyrissparnaðar sem fellur til erfingja samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Eignaauki sem verður vegna greiðslu líftryggingarfjár, vátryggingabóta vegna sjúkdómatrygginga, dánarbóta, miskabóta og bóta fyrir varanlega örorku, enda séu bætur þessar ákveðnar í einu lagi til greiðslu.</sen>
           <sen>Einnig skaðabætur og vátryggingabætur vegna tjóns á eignum sem ekki eru notaðar í atvinnurekstri, sbr. þó 22. gr.</sen>
           <sen>Lækka skal stofnverð eignar vegna tjónsins að svo miklu leyti sem bótagreiðslum er ekki varið til viðgerða vegna tjónsins.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Eignaauki eða aukning ráðstöfunartekna sem stafar af eftirgjöf skulda við nauðasamninga, enda hafi skuldirnar ekki myndast í sambandi við atvinnurekstur skattaðila.</sen>
           <sen>Hið sama á við um eftirgefnar skuldir sem mælt er fyrir um í samningi um greiðsluaðlögun samkvæmt lögum um greiðsluaðlögun einstaklinga eða nauðasamningi til greiðsluaðlögunar skv. X. kafla a í lögum um gjaldþrotaskipti o. fl., nr. 21/1991, með áorðnum breytingum, eða á annan fullnægjandi hátt er sannað að eignir eru ekki til fyrir, að uppfylltum skilyrðum samkvæmt reglugerð sem ráðherra setur um hlutlægt mat á forsendum eftirgjafar, skilyrði þess að eftirgjöf teljist ekki til tekna, upplýsingagjöf skv. 92. gr. o.fl.</sen>
           <sen>Sama gildir um fjárhagsaðstoð til greiðslu tryggingar fyrir kostnaði vegna gjaldþrotaskipta samkvæmt lögum um fjárhagsaðstoð til greiðslu tryggingar fyrir kostnaði vegna gjaldþrotaskipta.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Eignaauki sem stafar af aukavinnu sem maður leggur fram utan venjulegs vinnutíma við byggingu íbúðarhúsnæðis til eigin afnota.</sen>
           <sen>Söluhagnaður íbúðarhúsnæðis, sbr. 15. og 17. gr., telst þó sem mismunur heildarandvirðis að frádregnum beinum kostnaði við söluna annars vegar og stofnverðs án eigin aukavinnu hins vegar.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Framlag launagreiðanda til öflunar lífeyrisréttinda samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða og lögum um starfstengda eftirlaunasjóði.</sen>
           <sen>Þó skal telja framlag launagreiðanda til öflunar lífeyrisréttinda til skattskyldra tekna ef iðgjaldagreiðslur frá launagreiðanda eða sjálfstætt starfandi manni fara fram úr 12% af iðgjaldsstofni auk 2.000.000 kr. á ári.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Hlunnindi forseta Íslands vegna embættisbústaðar og rekstrar hans, risnu og bifreiða eða önnur hlunnindi sem embættinu fylgja.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Persónuafsláttur, barnabætur og vaxtabætur sem um ræðir í VI. kafla laga þessara.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Matshækkun búfjár skv. 2. tölul. 73. gr., enda kemur matslækkun ekki til frádráttar tekjum.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Húsnæðisbætur, sbr. lög um húsnæðisbætur, og sérstakur húsnæðisstuðningur skv. 2. og 3. mgr. 45. gr. laga um félagsþjónustu sveitarfélaga.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Styrkir úr starfsendurhæfingarsjóðum, sem starfræktir eru á grundvelli laga um atvinnutengda starfsendurhæfingu og starfsemi starfsendurhæfingarsjóða, sem ganga til greiðslu kostnaðar vegna endurhæfingar, heilbrigðisþjónustu og tiltekinnar þjónustu fagaðila.</sen>
           <sen>Ráðherra setur reglugerð um nánari framkvæmd þessa ákvæðis.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Sérstakur frádráttur nýsköpunarfyrirtækis samkvæmt lögum um stuðning við nýsköpunarfyrirtæki.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
           <sen>Úttekt viðbótariðgjalds af iðgjaldsstofni manna skv. II. kafla laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, ef öll skilyrði laga um stuðning til kaupa á fyrstu íbúð eru uppfyllt.</sen>
         </numart>
@@ -1614,35 +1614,35 @@
       <nr-title>30. gr.</nr-title>
       <subart nr="1">
         <sen>Frá tekjum manna skv. II. kafla laga þessara, sem ekki eru tengdar atvinnurekstri eða sjálfstæðri starfsemi, má draga:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Útgjöld að hámarki móttekin fjárhæð ökutækjastyrkja, dagpeninga eða hliðstæðra endurgreiðslna á kostnaði sem sannað er að séu ferða- og dvalarkostnaður vegna atvinnurekanda og eru í samræmi við matsreglur ráðherra.</sen>
           <sen>Útgjöld að hámarki móttekinni fjárhæð ættleiðingarstyrks samkvæmt lögum um ættleiðingarstyrki og má frádráttur þessi aldrei vera hærri en fjárhæð styrksins.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Launatekjur sem greiddar eru embættismönnum, fulltrúum og öðrum starfsmönnum sem starfa hjá alþjóðastofnunum eða ríkjasamtökum, enda sé kveðið á um skattfrelsið í samningum sem Ísland er aðili að.</sen>
           <sen>Staðaruppbót sem greidd er vegna starfa erlendis í þjónustu hins íslenska ríkis.</sen>
           <sen>Þeir einir teljast starfa erlendis í þessu sambandi sem eru fastráðnir, settir eða skipaðir starfsmenn við sendiráð Íslands, hjá sendiræðismönnum eða eru fastafulltrúar Íslands við alþjóðastofnanir sem Ísland er aðili að</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tekjur skv. 4. tölul. A-liðar 7. gr. sem skattfrjálsar eru samkvæmt sérlögum eða vinninga í happdrættum sem fengið hafa leyfi þess ráðuneytis er fer með málefni happdrætta, enda sé öllum ágóða af þeim varið til menningarmála, mannúðarmála eða kirkjulegrar starfsemi.</sen>
           <sen>Sama gildir um happdrætti sem starfa samkvæmt leyfi útgefnu af stjórnvöldum á hinu Evrópska efnahagssvæði, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum, að sömu skilyrðum fullnægðum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Iðgjöld launþega til öflunar lífeyrisréttinda samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða að hámarki 4% af iðgjaldsstofni.</sen>
           <sen>Að auki allt að 4% af iðgjaldsstofni samkvæmt ákvörðun sjóðfélaga vegna iðgjalda sem greidd eru til lífeyrissjóða til aukningar lífeyrisréttinda, til aðila skv. 3.–5. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, eða til starfstengdra eftirlaunasjóða samkvæmt lögum um starfstengda eftirlaunasjóði.</sen>
           <sen>Skilyrði frádráttar samkvæmt þessum lið er að iðgjöld séu greidd reglulega.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Iðgjöld manna sem vinna við eigin atvinnurekstur eða sjálfstæða starfsemi vegna öflunar lífeyrisréttinda samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða að hámarki 4% af iðgjaldsstofni.</sen>
           <sen>Að auki allt að 4% af iðgjaldsstofni samkvæmt ákvörðun sjóðfélaga vegna iðgjalda sem greidd eru til lífeyrissjóða til aukningar lífeyrisréttinda, til aðila skv. 3.–5. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, eða til starfstengdra eftirlaunasjóða samkvæmt lögum um starfstengda eftirlaunasjóði.</sen>
           <sen>Skilyrði frádráttar samkvæmt þessum lið er að iðgjöld séu greidd reglulega.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>25% tekna skv. 1. tölul. A-liðar 7. gr. þeirra erlendu sérfræðinga sem skattskyldir eru skv. 1. eða 3. gr., fyrstu þrjú árin frá ráðningu í starf, enda séu eftirfarandi skilyrði uppfyllt:</sen>
           <numart nr="a" type="alphabet">
@@ -1656,31 +1656,31 @@
           <numart nr="c" type="alphabet">
             <nr-title>c.</nr-title>
             <sen>Erlendur sérfræðingur búi yfir þekkingu sem ekki sé fyrir hendi hér á landi nema í litlum mæli.</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>Allt að 50% frá tekjuskattsstofni einstaklings, sbr. 1. og 3. gr., að viðbættum fjármagnstekjum, af fjárhæð sem hann sýnir fram á að sé til komin vegna fjárfestinga í hlutafélagi eða einkahlutafélagi sem uppfyllir skilyrði 2. og 3. mgr., við álagningu opinberra gjalda á árunum 2017, 2018 og 2019 vegna fjárfestinga á árunum 2016, 2017 og 2018.</sen>
               <sen>Fyrst skal dregið frá stofni til tekjuskatts og síðan fjármagnstekjuskattsstofni, að teknu tilliti til frítekjumarks vegna vaxta- og leigutekna.</sen>
-              <numart nr="1">
+              <numart nr="1" type="numeric">
                 <nr-title>1.</nr-title>
                 <sen>Fjárfesting einstaklings í félagi nemi að lágmarki 300 þús. kr. á almanaksári.</sen>
               </numart>
-              <numart nr="2">
+              <numart nr="2" type="numeric">
                 <nr-title>2.</nr-title>
                 <sen>Hver einstaklingur getur nýtt frádráttarheimild vegna heildarfjárfestinga sem nemi að hámarki 10 millj. kr. á almanaksári.</sen>
               </numart>
-              <numart nr="3">
+              <numart nr="3" type="numeric">
                 <nr-title>3.</nr-title>
                 <sen>Einstaklingur geti sýnt fram á að fjárfesting hafi verið að fullu greidd.</sen>
               </numart>
-              <numart nr="4">
+              <numart nr="4" type="numeric">
                 <nr-title>4.</nr-title>
                 <sen>Fjárfesting einstaklings sé til komin vegna hlutafjáraukningar í félagi.</sen>
               </numart>
-              <numart nr="5">
+              <numart nr="5" type="numeric">
                 <nr-title>5.</nr-title>
                 <sen>Félagið skili lista til ríkisskattstjóra yfir þátttakendur hlutafjáraukningarinnar og aukningin sé skráð í hlutafélagaskrá.</sen>
               </numart>
-              <numart nr="6">
+              <numart nr="6" type="numeric">
                 <nr-title>6.</nr-title>
                 <sen>Einstaklingur sé hvorki tengdur félaginu né félagasamstæðum þess, tveimur árum fyrir og þremur árum eftir skráða hlutafjáraukningu, á eftirfarandi hátt:</sen>
                 <numart nr="a" type="alphabet">
@@ -1693,54 +1693,54 @@
                   <sen>Sem beinn eða óbeinn stjórnarmeðlimur eða starfsmaður félagsins, eða annars félags sem á beint eða óbeint eignarhlutdeild í félaginu.</sen>
                   <sen>Einstaklingur telst jafnframt vera tengdur félaginu ef hann er tengdur einstaklingi skv. 1. málsl. þessa stafliðar eða a- lið á grundvelli sifjaréttarlegra tengsla, t.d. með hjónabandi eða staðfestri samvist, þeir eru systkini eða skyldir í beinan legg.</sen>
                   <sen>Það sama á við um viðskiptaleg bönd.</sen>
-                  <numart nr="1">
+                  <numart nr="1" type="numeric">
                     <nr-title>1.</nr-title>
                     <sen>Félagið sé stofnsett á Íslandi eða innan annars EES-ríkis, aðildarríkis stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum og með fasta starfsstöð á Íslandi.</sen>
                   </numart>
-                  <numart nr="2">
+                  <numart nr="2" type="numeric">
                     <nr-title>2.</nr-title>
                     <sen>Hjá félaginu starfi ekki fleiri en 25 starfsmenn og félagið sé með árlega veltu undir 650 millj. kr. og/eða efnahagsreikning undir 650 millj. kr.</sen>
                     <sen>Ef félag er hluti af félagasamstæðu skal miða við samstæðuna í heild á grundvelli samstæðureiknings.</sen>
                   </numart>
-                  <numart nr="3">
+                  <numart nr="3" type="numeric">
                     <nr-title>3.</nr-title>
                     <sen>Félagið hafi lokið greiðslu á öllu lágmarkshlutafé vegna stofnunar þess.</sen>
                   </numart>
-                  <numart nr="4">
+                  <numart nr="4" type="numeric">
                     <nr-title>4.</nr-title>
                     <sen>Félagið hafi ekki verið skráð á skipulegan verðbréfamarkað.</sen>
                   </numart>
-                  <numart nr="5">
+                  <numart nr="5" type="numeric">
                     <nr-title>5.</nr-title>
                     <sen>Félagið hafi ekki, þegar hlutafjáraukning á sér stað, verið starfandi á markaði lengur en sjö ár frá fyrstu sölu þess í viðskiptalegum tilgangi.</sen>
                   </numart>
-                  <numart nr="6">
+                  <numart nr="6" type="numeric">
                     <nr-title>6.</nr-title>
                     <sen>Félagið sé rekið í hagnaðarskyni.</sen>
                   </numart>
-                  <numart nr="7">
+                  <numart nr="7" type="numeric">
                     <nr-title>7.</nr-title>
                     <sen>Félagið eigi ekki í fjárhagsvanda.</sen>
                   </numart>
-                  <numart nr="8">
+                  <numart nr="8" type="numeric">
                     <nr-title>8.</nr-title>
                     <sen>Íslenska ríkið eigi ekki útistandandi endurgreiðslukröfu á félagið vegna ólögmætrar ríkisaðstoðar.</sen>
                   </numart>
-                  <numart nr="9">
+                  <numart nr="9" type="numeric">
                     <nr-title>9.</nr-title>
                     <sen>Félagið hafi sent ríkisskattstjóra ársreikning sinn fyrir næstliðið reikningsár sem gerður hefur verið í samræmi við lög um ársreikninga.</sen>
                   </numart>
-                  <numart nr="10">
+                  <numart nr="10" type="numeric">
                     <nr-title>10.</nr-title>
                     <sen>Félagið sýni fram á að andvirði hlutafjáraukningarinnar verði ráðstafað í þágu viðskiptastarfsemi þess.</sen>
                     <sen>Ef félagið hefur ekki hafið viðskiptastarfsemi ber að nota að lágmarki 30% af andvirðinu til rannsókna eða þróunar á viðskiptastarfsemi sem hefjast skal innan tveggja ára frá skráningardegi hlutafjáraukningarinnar.</sen>
                   </numart>
-                  <numart nr="11">
+                  <numart nr="11" type="numeric">
                     <nr-title>11.</nr-title>
                     <sen>Hlutafjáraukning í félagi geti að hámarki numið 2.000 millj. kr. í heild.</sen>
                     <sen>Ef félag er hluti af félagasamstæðu nær hámarkið til samstæðunnar.</sen>
                   </numart>
-                  <numart nr="12">
+                  <numart nr="12" type="numeric">
                     <nr-title>12.</nr-title>
                     <sen>Áður en hlutafjáraukning fer fram og árlega eftir það skal félag fá staðfestingu ríkisskattstjóra á því að öll skilyrði þessarar málsgreinar séu uppfyllt.</sen>
                     <sen>Sækja skal um staðfestinguna á því formi sem ríkisskattstjóri ákveður og getur hann krafið félagið um öll nauðsynleg gögn vegna hennar.</sen>
@@ -1791,11 +1791,11 @@
                       <sen>starfsemi sem felst í hvers kyns námuvinnslu.</sen>
                     </numart>
                   </numart>
-                  <numart nr="2">
+                  <numart nr="2" type="numeric">
                     <nr-title>2.</nr-title>
                     <sen>Nú verður greiðslufall á kröfu sem vextir, sbr. 2. mgr. 8. gr., hafa verið reiknaðir af og frestast þá greiðsla skatts af slíkum vöxtum.</sen>
                   </numart>
-                  <numart nr="3">
+                  <numart nr="3" type="numeric">
                     <nr-title>3.</nr-title>
                   </numart>
                 </numart>
@@ -1962,40 +1962,40 @@
       <nr-title>31. gr.</nr-title>
       <subart nr="1">
         <sen>Frá tekjum lögaðila og þeim tekjum manna sem stafa af atvinnurekstri eða sjálfstæðri starfsemi eða eru tengdar slíkum rekstri má draga:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Rekstrarkostnað, þ.e. þau gjöld sem eiga á árinu að ganga til að afla teknanna, tryggja þær og halda þeim við, þar á meðal iðgjöld til öflunar lífeyrisréttinda starfsmanna í lífeyrissjóði sem starfa á grundvelli laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, vexti af skuldum, afföll, gengistöp, niðurfærslu og fyrningu eigna, eftir því sem nánar er ákveðið í lögum þessum, og það sem varið er til tryggingar og viðhalds á eignum þeim sem arð bera í rekstrinum.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Einstakar gjafir og framlög til kirkjufélaga, viðurkenndrar líknarstarfsemi, menningarmála, stjórnmálaflokka og vísindalegra rannsóknarstarfa, þó ekki yfir 0,75% af tekjum skv. B-lið 7. gr. á því ári sem gjöf er afhent.</sen>
           <sen>Ráðherra ákveður með reglugerð hvaða málaflokkar og stofnanir falla undir þennan tölulið.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tap á útistandandi viðskiptakröfum, ábyrgðum og lánveitingum, sem beint tengjast atvinnurekstrinum, á því tekjuári sem eignir þessar sannanlega eru tapaðar.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Niðurfærslu vörubirgða í lok reikningsárs um allt að 5% af matsverði, sbr. 4. tölul. 73. gr.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Veittan afslátt af vörum eða þjónustu.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Fé það er innlend vátryggingarfélög færa í árslok í iðgjaldasjóð vegna þess hluta iðgjalda sem fellur á næsta reikningsár og í bótasjóð til að inna af hendi áfallnar skyldur sínar við vátryggingartaka.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Eftirstöðvar rekstrartapa frá síðustu tíu árum á undan tekjuári, enda hafi fullnægjandi grein verið gerð fyrir rekstrartapinu og eftirstöðvum þess á því tekjuári þegar tapið myndaðist.</sen>
           <sen>Þó er ekki heimilt að nýta rekstrartap til frádráttar tekjum ef veruleg breyting hefur orðið á þeim rekstri eða starfsemi sem í hlut á, svo sem með breytingu á eignaraðild að lögaðila eða á tilgangi rekstrar, nema sýnt þyki að umræddar breytingar hafi verið gerðar í eðlilegum og venjulegum rekstrartilgangi.</sen>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Þá fjárhæð sem hlutafélög, sbr. 1. tölul. 1. mgr. 2. gr., og félög og samlög sem falla undir 2. tölul. 1. mgr. 2. gr. hafa fengið greidda í arð skv. 4. tölul. C-liðar 7. gr. af hlutum og hlutabréfum í félögum er greinir í 1. tölul. 1. mgr. 2. gr., sbr. XII. kafla laga nr. 2/1995, um hlutafélög, og laga nr. 138/1994, um einkahlutafélög.</sen>
           <sen>Sama gildir um fjárhæð sem félög í sömu félagaformum sem skattskyld eru skv. 7. tölul. 3. gr. og eru heimilisföst í öðru aðildarríki á Evrópska efnahagssvæðinu, aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum hafa fengið greidda í arð.</sen>
@@ -2010,15 +2010,15 @@
           <sen>Ákvæði þessa töluliðar tekur einnig til hagnaðar af sölu hlutabréfa í félögum sem skráð eru erlendis ef seljandi sýnir fram á að hagnaður af starfsemi hins erlenda félags hafi verið skattlagður með sambærilegum hætti og gert er hér á landi.</sen>
           <sen>Frádráttur skv. 3. málsl. er bundinn því skilyrði að það skatthlutfall sem lagt er á hagnað hins erlenda félags sé eigi lægra en almennt skatthlutfall í einhverju aðildarríkja Efnahags- og framfarastofnunarinnar í París (OECD), aðildarríkja Evrópska efnahagssvæðisins eða aðildarríkja stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Fjárhæð þá er félög, sem um ræðir í 2. tölul. 1. mgr. 2. gr., greiða félagsaðilum sínum í árslok eða færa þeim til séreignar í stofnsjóði í hlutfalli við viðskipti þeirra á árinu samkvæmt lögum um samvinnufélög.</sen>
         </numart>
-        <numart nr="11">
+        <numart nr="11" type="numeric">
           <nr-title>11.</nr-title>
           <sen>Fjárhæð þá er félög, sem um ræðir í 4. tölul. 1. mgr. 2. gr., greiða félagsaðilum sínum í árslok í hlutfalli við viðskipti þeirra á árinu, þó eigi hærra hlutfall af hreinum tekjum félags en sem svarar hlutfalli viðskipta félagsaðila af heildarviðskiptum þess.</sen>
         </numart>
-        <numart nr="12">
+        <numart nr="12" type="numeric">
           <nr-title>12.</nr-title>
         </numart>
       </subart>
@@ -2240,23 +2240,23 @@
       <subart nr="1">
         <sen>Fyrnanlegar eignir eru varanlegir rekstrarfjármunir sem notaðir eru til öflunar tekna í atvinnurekstri eða í sjálfstæðri starfsemi og rýrna að verðmæti við eðlilega notkun eða aldur.</sen>
         <sen>Helstu flokkar þeirra eru þessir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Lausafé, þ.m.t. skip, loftför, bifreiðar, vélar, tæki og borpallar til kolvetnisvinnslu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Mannvirki, þar með talin ræktun á bújörðum og byggingar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Eyðanleg náttúruauðæfi og keyptur réttur til nýtingar þeirra.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Keyptur eignarréttur að verðmætum hugverkum og auðkennum, svo sem höfundaréttur, útgáfuréttur, réttur til hagnýtingar upplýsinga, réttur til einkaleyfis og vörumerkis.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Keypt viðskiptavild.</sen>
           <sen>Kaup á ófyrnanlegum réttindum skv. 48. gr. teljast ekki til keyptrar viðskiptavildar.</sen>
@@ -2305,15 +2305,15 @@
       <nr-title>37. gr.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 2. mgr. 29. gr. og 1. mgr. 1. tölul. 31. gr. skal fyrning vera árlegur hundraðshluti af fyrningargrunni einstakra eigna eða eignarflokks sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Skip og skipsbúnaður, þ.m.t. til notkunar sérstaklega við rannsóknir og vinnslu kolvetnis, svo og fólksbifreiðar fyrir færri en níu menn, aðrar en leigubifreiðar að lágmarki 10%, að hámarki 20%.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Loftför og fylgihlutir þeirra að lágmarki 10%, að hámarki 20%.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <numart nr="a" style-note="inline-with-parent" type="alphabet">
             <nr-title>a.</nr-title>
@@ -2324,7 +2324,7 @@
             <sen>Borpallar, leiðslukerfi og annar búnaður til notkunar sérstaklega við rannsóknir og vinnslu kolvetnis að lágmarki 10%, að hámarki 30%.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <numart nr="a" style-note="inline-with-parent" type="alphabet">
             <nr-title>a.</nr-title>
@@ -2335,21 +2335,21 @@
             <sen>Vélar og tæki til jarðvinnslu og mannvirkjagerðar, bifreiðar og önnur flutningatæki, svo og annað lausafé sem fellur ekki undir 1.–3. tölul. og a-lið þessa töluliðar að lágmarki 20%, að hámarki 35%.</sen>
           </numart>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Fyrning mannvirkja, þar með talin ræktun á bújörðum og byggingar, skal vera árlegur hundraðshluti af fyrningargrunni einstakra eigna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
             <nr-title>a.</nr-title>
             <sen>Af eftirtöldum mannvirkjum skal árleg fyrning vera að lágmarki 1% en að hámarki 3%:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>Íbúðarhúsnæði.</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>Skrifstofubyggingum.</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>Verslunarbyggingum.</sen>
             </numart>
@@ -2357,43 +2357,43 @@
           <numart nr="b" type="alphabet">
             <nr-title>b.</nr-title>
             <sen>Af eftirtöldum mannvirkjum skal árleg fyrning vera að lágmarki 3% en að hámarki 6%:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>Verksmiðjubyggingum.</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>Verkstæðisbyggingum.</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>Vörugeymslubyggingum.</sen>
             </numart>
-            <numart nr="4">
+            <numart nr="4" type="numeric">
               <nr-title>4.</nr-title>
               <sen>Dráttarbrautum.</sen>
             </numart>
-            <numart nr="5">
+            <numart nr="5" type="numeric">
               <nr-title>5.</nr-title>
               <sen>Gisti- og veitingahúsum.</sen>
             </numart>
-            <numart nr="6">
+            <numart nr="6" type="numeric">
               <nr-title>6.</nr-title>
               <sen>Útihúsum á bújörðum.</sen>
             </numart>
-            <numart nr="7">
+            <numart nr="7" type="numeric">
               <nr-title>7.</nr-title>
               <sen>Loðdýrabúum og tilheyrandi girðingum.</sen>
             </numart>
-            <numart nr="8">
+            <numart nr="8" type="numeric">
               <nr-title>8.</nr-title>
               <sen>Lýsis-, olíu- og vatnsgeymum.</sen>
             </numart>
-            <numart nr="9">
+            <numart nr="9" type="numeric">
               <nr-title>9.</nr-title>
               <sen>Ræktun á bújörðum.</sen>
             </numart>
-            <numart nr="10">
+            <numart nr="10" type="numeric">
               <nr-title>10.</nr-title>
               <sen>Hvers konar öðrum mannvirkjum og húsum, notuðum til atvinnurekstrar, sem ekki eru talin annars staðar í þessari grein.</sen>
             </numart>
@@ -2401,11 +2401,11 @@
           <numart nr="c" type="alphabet">
             <nr-title>c.</nr-title>
             <sen>Af eftirtöldum mannvirkjum skal árleg fyrning vera að lágmarki 6% en að hámarki 8%:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>Bryggjum og plönum þeim tengdum.</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>Gróðurhúsum.</sen>
             </numart>
@@ -2413,30 +2413,30 @@
           <numart nr="d" type="alphabet">
             <nr-title>d.</nr-title>
             <sen>Af eftirtöldum mannvirkjum skal árleg fyrning vera að lágmarki 7,5% en að hámarki 10%:</sen>
-            <numart nr="1">
+            <numart nr="1" type="numeric">
               <nr-title>1.</nr-title>
               <sen>Borholum.</sen>
             </numart>
-            <numart nr="2">
+            <numart nr="2" type="numeric">
               <nr-title>2.</nr-title>
               <sen>Raflínum.</sen>
             </numart>
-            <numart nr="3">
+            <numart nr="3" type="numeric">
               <nr-title>3.</nr-title>
               <sen>Vinnubúðum, óvaranlegum.</sen>
             </numart>
           </numart>
-          <numart nr="6">
+          <numart nr="6" type="numeric">
             <nr-title>6.</nr-title>
             <sen>Eyðanleg náttúruauðæfi og keyptan rétt til nýtingar þeirra skal fyrna miðað við áætlaða heildarnýtingu og raunverulega nýtingu ár hvert.</sen>
             <sen>Áætluð heildarnýting er háð samþykki ríkisskattstjóra.</sen>
             <sen>Heildarfjárhæð fyrningar samkvæmt þessum tölulið má aldrei verða hærri en fyrningargrunnur hins fyrnda að frádregnu verðmæti því sem eftir stendur að lokinni nýtingu.</sen>
           </numart>
-          <numart nr="7">
+          <numart nr="7" type="numeric">
             <nr-title>7.</nr-title>
             <sen>Keyptur eignarréttur að verðmætum hugverkum og auðkennum og aðrar eignir sem um er rætt í 4. tölul. 33. gr., 15–20%.</sen>
           </numart>
-          <numart nr="8">
+          <numart nr="8" type="numeric">
             <nr-title>8.</nr-title>
             <sen>Keypt viðskiptavild að lágmarki 10% en að hámarki 20%.</sen>
           </numart>
@@ -2576,24 +2576,24 @@
       <nr-title>49. gr.</nr-title>
       <subart nr="1">
         <sen>Til gjalda sem vextir, afföll og gengistöp af skuldum, sbr. 1. tölul. 31. gr., teljast:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vextir af skuldum, föstum og lausum, þar með taldir dráttarvextir.</sen>
           <sen>Til vaxtagjalda má og telja lántökukostnað, árlegan eða tímabundinn fastakostnað, þóknanir, stimpilgjöld og þinglýsingarkostnað af lánum.</sen>
           <sen>Með vaxtagjöldum í þessu sambandi teljast og áfallnar verðbætur á höfuðstól og vexti.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Afföll af seldum verðbréfum, víxlum og sérhverjum öðrum skuldaviðurkenningum, enda sé kaupandi bréfanna nafngreindur.</sen>
           <sen>Afföllin skulu reiknuð til frádráttar með hlutfallslegri fjárhæð ár hvert eftir afborgunartíma.</sen>
           <sen>Sé skuld yfirtekin af öðrum eða falli greiðsluskylda niður áður en afborgunartíma er lokið teljast eftirstöðvar affalla ekki til frádráttar tekjum.</sen>
           <sen>Hafi skuld verið yfirtekin í sambandi við eignasölu er seljanda þó heimilt að lækka söluverð eignarinnar um fjárhæð sem nemur eftirstöðvum affallanna, enda hafi hann verið upphaflegur skuldari hinnar yfirteknu skuldar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vextir af stofnsjóðsinnstæðum í félögum sem um ræðir í 2. tölul. 1. mgr. 2. gr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Gengistöp af hvers konar skuldum í erlendum verðmæli á því ári sem gengisbreyting á sér stað og miðast þau við sölugengi viðkomandi erlends gjaldeyris í árslok.</sen>
         </numart>
@@ -2611,29 +2611,29 @@
       <nr-title>50. gr.</nr-title>
       <subart nr="1">
         <sen>Til rekstrarkostnaðar skv. 31. gr. eða til frádráttar skattskyldum tekjum á einn eða annan hátt er ekki heimilt að telja:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gjafir, þó ekki tækifærisgjafir í fríðu til starfsmanna eða viðskiptavina þegar verðmæti þeirra er ekki meira en gerist um slíkar gjafir almennt.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Fjársektir eða önnur viðurlög, hverju nafni sem nefnast, vegna refsiverðs verknaðar skattaðila sjálfs, þar með talið verðmæti upptækra eigna eða greiðslur þess í stað.</sen>
           <sen>Enn fremur kostnað, hverju nafni sem nefnist, við öflun ólöglegs upptæks hagnaðar eða tengdan saknæmum brotum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Arð eða vexti af framlögðu fé manns til atvinnurekstrar eða sjálfstæðrar starfsemi, hvort heldur reksturinn er á eigin ábyrgð eiganda eða með ótakmarkaðri ábyrgð í sameign með öðrum, sbr. og 2. mgr. 2. gr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Þær greiðslur vegna fjármögnunarleigu á fólksbifreiðum fyrir færri en níu menn, öðrum en leigubifreiðum, sem eru umfram fyrningar reiknaðar samkvæmt ákvæðum þessara laga að viðbættum reiknuðum vöxtum af fyrningargrunni þegar frá hafa verið dregnar reiknaðar fyrningar fyrri ára.</sen>
           <sen>Ríkisskattstjóri setur reglur um reikning fyrninga og vaxta í þessum tilvikum.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Kostnað við rekstur fólksbifreiða, sem látnar eru starfsmönnum atvinnurekstrar í té til eigin afnota, nema að því marki sem hlunnindi af notkun viðkomandi fólksbifreiðar hafa verið talin til tekna, samkvæmt matsreglum ríkisskattstjóra, hjá þeim aðila sem heimilt er að hafa hana til umráða í eigin þágu.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Kostnað vegna greiðslna, gjafa eða annars sem ólögmætt er skv. 109. gr. almennra hegningarlaga, nr. 19/1940, til manna sem ráðnir eru eða kjörnir til opinberra starfa á sviði löggjafarvalds, dómsvalds eða stjórnsýslu, hvort heldur er á Íslandi eða í öðrum ríkjum eða hjá alþjóðasamtökum og stofnunum sem þjóðríki, ríkisstjórnir eða alþjóðastofnanir eru aðilar að.</sen>
         </numart>
@@ -3227,11 +3227,11 @@
       </subart>
       <subart nr="4">
         <sen>Ákvæði 1. mgr. á ekki við ef:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>félag, sjóður eða stofnun fellur undir samning milli Íslands og lágskattaríkis til að koma í veg fyrir tvísköttun eða annan alþjóðasamning, enda sé unnt á grundvelli samningsins að fá allar nauðsynlegar upplýsingar og tekjur félags, sjóðs eða stofnunar eru ekki að meginstofni til eignatekjur; eða</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>félag, sjóður eða stofnun er stofnsett og skráð í öðru EES-ríki, aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum og hefur þar með höndum raunverulega atvinnustarfsemi, og íslensk skattyfirvöld geta á grundvelli tvísköttunarsamnings eða annars alþjóðasamnings krafist allra nauðsynlegra upplýsinga, sbr. 1. tölul.</sen>
           <sen>Þar sem ekki er fyrir hendi samningur, sbr. 1. málsl., hvílir upplýsingaskyldan á skattaðilanum.</sen>
@@ -3603,15 +3603,15 @@
       <nr-title>61. gr.</nr-title>
       <subart nr="1">
         <sen>Tekjuskattsstofn er sú fjárhæð sem skattur er reiknaður af og ákveðst þannig:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tekjuskattsstofn manna, sem ekki hafa með höndum atvinnurekstur eða sjálfstæða starfsemi, telst tekjur skv. II. kafla, eftir því sem við á, að teknu tilliti til þess frádráttar sem slíkum aðilum er heimilaður skv. 30. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tekjuskattsstofn lögaðila, sbr. 2. gr., telst tekjur skv. II. kafla að teknu tilliti til þess frádráttar sem þessum aðilum er heimilaður skv. 31. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tekjuskattsstofn manna, sem hafa með höndum atvinnurekstur eða sjálfstæða starfsemi, er þessi:</sen>
           <numart nr="a" type="alphabet">
@@ -3629,18 +3629,18 @@
       <nr-title>62. gr.</nr-title>
       <subart nr="1">
         <sen>Hjón sem samvistum eru skulu telja fram tekjur sínar sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hvoru hjóna um sig ber að telja fram tekjur sínar skv. A-lið 7. gr.</sen>
           <sen>Frá þessum tekjum skal síðan draga frádrátt skv. A-lið 1. mgr. 30. gr.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tekjur hjóna skv. C-lið 7. gr. skal leggja saman og telja til tekna hjá því hjóna sem hærri hefur hreinar tekjur skv. 1. tölul. þessarar greinar.</sen>
           <sen>Ekki skiptir máli hvort tekjurnar eru af séreign samkvæmt kaupmála eða hjúskapareign.</sen>
           <sen>Frá tekjum þess hjóna skal síðan draga frádrátt skv. B-lið 1. mgr. 30. gr.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Hreinar tekjur af atvinnurekstri eða sjálfstæðri starfsemi, sbr. B-lið 7. gr. og 31. gr., skal telja hjá því hjóna sem stendur fyrir rekstrinum og skulu þær skattlagðar með öðrum tekjum þess, sbr. ákvæði 3. tölul. 61. gr.</sen>
         </numart>
@@ -3737,27 +3737,27 @@
       <nr-title>65. gr.</nr-title>
       <subart nr="1">
         <sen>Ríkisskattstjóri skal taka til afgreiðslu umsókn manns um lækkun tekjuskattsstofns þegar svo stendur á sem hér greinir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Ef ellihrörleiki, veikindi, slys eða mannslát hafa skert gjaldþol manns verulega.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Ef á framfæri manns er barn sem haldið er langvinnum sjúkdómum eða er fatlað og veldur framfæranda verulegum útgjöldum umfram venjulegan framfærslukostnað og mótteknar bætur.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ef maður hefur foreldra eða aðra vandamenn sannanlega á framfæri sínu.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Ef maður hefur veruleg útgjöld vegna menntunar barna sinna 16 ára og eldri.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Ef maður hefur orðið fyrir verulegu eignartjóni sem hann hefur ekki fengið bætt úr hendi annarra aðila.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Ef gjaldþol manns hefur skerst verulega vegna tapa á útistandandi kröfum sem ekki stafa frá atvinnurekstri hans.</sen>
         </numart>
@@ -3825,31 +3825,31 @@
       <nr-title>66. gr.</nr-title>
       <subart nr="1">
         <sen>Tekjuskattur þeirra manna, sem skattskyldir eru skv. 1. gr. laga þessara og hafa verið heimilisfastir hér á landi allt tekjuárið, skal reiknast af tekjuskattsstofni þeirra skv. 1. og 3. tölul. 61. gr. sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Af tekjuskattsstofni að 8.400.000 kr. reiknast 22,5% tekjuskattur.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Af því sem umfram er 8.400.000 kr. reiknast 31,8% tekjuskattur.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Sé tekjuskattsstofn annars samskattaðs aðila hærri en 8.400.000 kr. skal það sem umfram er skattlagt með 22,5% skatthlutfalli allt að helmingi þeirrar fjárhæðar sem tekjuskattsstofn þess tekjulægri er undir 8.400.000 kr., þó reiknast 22,5% skatthlutfall aldrei af hærri fjárhæð en 4.200.000 kr. við þessar aðstæður.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Fjárhæðarmörk tekjuskattsstofns skv. 1.–4. tölul. skulu taka breytingum í upphafi hvers árs í réttu hlutfalli við hækkun á launavísitölu frá upphafi til loka næstliðins tólf mánaða tímabils.</sen>
           <sen>Breytingarnar á framangreindum viðmiðunarmörkum skal birta með auglýsingu ráðherra fyrir upphaf staðgreiðsluárs í fyrsta sinn í árslok 2010.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Frá reiknaðri fjárhæð skv. 1.–3. tölul. og 5. mgr. dregst persónuafsláttur skv. A-lið 67. gr.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
         </numart>
       </subart>
@@ -4230,16 +4230,16 @@
         <sen>Vaxtagjöld vegna lána, sem tekin eru til skemmri tíma en tveggja ára, er einungis heimilt að telja með á næstu fjórum árum talið frá og með kaupári ef um er að ræða kaup á íbúð til eigin nota.</sen>
         <sen>Sé um nýbyggingu að ræða er heimilt að telja þau með á næstu sjö árum talið frá og með því ári þegar bygging hefst, eða til og með því ári sem húsnæði er tekið til íbúðar ef það er síðar.</sen>
         <sen>Vaxtagjöld teljast í þessu sambandi:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Greiddir vextir og greiddar verðbætur á afborganir og vexti.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Afföll af verðbréfum, víxlum og sérhverjum öðrum skuldaviðurkenningum sem framteljandi hefur gefið út sjálfur og selt þriðja aðila og notað andvirðið til fjármögnunar íbúðar til eigin nota, enda sé kaupandi bréfanna nafngreindur.</sen>
           <sen>Afföllin reiknast hlutfallslega miðað við afborganir á lánstímanum.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Lántökukostnaður, árlegur eða tímabundinn fastakostnaður, þóknanir, stimpilgjöld og þinglýsingarkostnaður af lánum.</sen>
         </numart>
@@ -4747,16 +4747,16 @@
       <nr-title>70. gr.</nr-title>
       <subart nr="1">
         <sen>Tekjuskatt aðila, sem skattskyldir eru skv. 3. gr., skal ákvarða sem hér segir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Tekjuskatt manna, sem um ræðir í 1. tölul. 3. gr., skal ákvarða á sama hátt og um er rætt í 2. mgr. 69. gr.</sen>
           <sen>Sama gildir ef um ónýttan persónuafslátt er að ræða.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Tekjuskattur manns sem um ræðir í 2. tölul. 3. gr. skal nema 20% af tekjuskattsstofni hans.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Tekjuskatt aðila sem fá greiðslur fyrir þjónustu eða starfsemi sem innt er af hendi hér á landi, sbr. 3. tölul. 3. gr., skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -4774,7 +4774,7 @@
             <sen>37,6% af greiðslunni ef um aðra lögaðila er að ræða.</sen>
           </numart>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 4. tölul. 3. gr. skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -4790,7 +4790,7 @@
             <sen>37,6% af tekjuskattsstofni, sbr. 2. tölul. 61. gr., ef um aðra lögaðila er að ræða.</sen>
           </numart>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 5. tölul. 3. gr. skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -4804,11 +4804,11 @@
             <sen>20% af tekjuskattsstofni, sbr. 2. tölul. 61. gr., ef um lögaðila er að ræða.</sen>
           </numart>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Tekjuskattur aðila sem um ræðir í 6. tölul. 3. gr. skal vera 22% af tekjum.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 7. tölul. 3. gr. skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -4820,7 +4820,7 @@
             <sen>20% af tekjum ef um lögaðila er að ræða.</sen>
           </numart>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 8. tölul. 3. gr. skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -4833,11 +4833,11 @@
             <sen>12% af tekjum lögaðila.</sen>
           </numart>
         </numart>
-        <numart nr="9">
+        <numart nr="9" type="numeric">
           <nr-title>9.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 9. tölul. 3. gr. skal reikna á sama hátt og greinir í 4.–8. tölul. þessarar greinar.</sen>
         </numart>
-        <numart nr="10">
+        <numart nr="10" type="numeric">
           <nr-title>10.</nr-title>
           <sen>Tekjuskatt aðila sem um ræðir í 10. tölul. 1. mgr. 3. gr. skal reikna sem hér segir:</sen>
           <numart nr="a" type="alphabet">
@@ -5234,11 +5234,11 @@
       <subart nr="5">
         <sen>Eftirtaldir aðilar eru undanþegnir ákvæðum 4. mgr.</sen>
         <sen>:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Lánasjóður íslenskra námsmanna, Byggðastofnun, Íbúðalánasjóður, Framkvæmdasjóður fatlaðra, Framkvæmdasjóður aldraðra, Framleiðnisjóður landbúnaðarins, Lánasjóður sveitarfélaga ohf., Lánasjóður Vestur-Norðurlanda, Seðlabanki Íslands, Nýsköpunarsjóður atvinnulífsins, Fiskræktarsjóður, lífeyrissjóðir, sbr. lög um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, og starfstengdir eftirlaunasjóðir sem heimild hafa til að taka á móti iðgjöldum til myndunar eftirlaunaréttar.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Lánastofnanir sem skattskyldar eru samkvæmt lögum nr. 65/1982, um skattskyldu lánastofnana, með síðari breytingum, en fjármagnstekjur þeirra falla undir almenna skattskyldu samkvæmt þeim lögum.</sen>
         </numart>
@@ -5432,26 +5432,26 @@
       <nr-title>73. gr.</nr-title>
       <subart nr="1">
         <sen>Við mat framtalsskyldra eigna gilda eftirfarandi reglur:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Allar fasteignir, hverju nafni sem nefnast, skal telja til eignar á gildandi fasteignamatsverði.</sen>
           <sen>Sé fasteignamatsverð ekki fyrir hendi skal eignin talin til eignar á stofnverði, sbr. 2. mgr. 12. gr., að frádregnum fengnum fyrningum, eða á áætluðu fasteignamatsverði sambærilegra eigna, hvort sem hærra er.</sen>
           <sen>Ríkisskattstjóri skal áætla fasteignamatsverð í þessu sambandi með hliðsjón af gildandi ákvæðum um fasteignamat.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Búpening skal telja til eignar svo sem hann væri framgenginn að vori næst á eftir, með verði er ríkisskattstjóri ákveður til eins árs í senn.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Varanlegir rekstrarfjármunir, þ.m.t. skip og loftför, sem nýtast takmarkaðan tíma vegna aldurs, úreldingar eða af hliðstæðum ástæðum, teljast til eignar á stofnverði, sbr. 2. mgr. 12. gr., að frádregnum heimiluðum og notuðum fyrningum.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Vörubirgðir verslana og framleiðsluaðila, þar með taldar rekstrarvörubirgðir, svo sem hráefni, eldsneyti, veiðarfæri og vörur á framleiðslustigi, skal telja til eignar á kostnaðar- eða framleiðsluverði eða dagverði í lok reikningsárs, að frádregnum afföllum á gölluðum og úreltum vörum.</sen>
           <sen>Þó skal heimilt að draga allt að 5% frá þannig reiknuðu matsverði.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Hlutabréf skal telja til eignar á nafnverði nema sannað sé að raunvirði eigna félags að frádregnum skuldum sé lægra en hlutafé þess.</sen>
           <sen>Sama gildir um stofnsjóðsinneignir hjá samvinnufélögum, stofnfjárbréf í sparisjóðum og stofnfjáreignir í sameignarfélögum.</sen>
@@ -5464,16 +5464,16 @@
           <sen>Útistandandi viðskiptakröfur og lánveitingar í þessu sambandi teljast kröfur sem stofnast vegna sölu á vörum og þjónustu og aðrar lánveitingar sem beint tengjast atvinnurekstrinum.</sen>
           <sen>Útistandandi skuldir á hendur viðurkenndum sjálfseignarstofnunum, sem samhliða veita kröfuhafa íbúðarrétt, má telja til eignar samkvæmt fasteignamati viðkomandi íbúðar.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Erlenda peninga, innstæður og kröfur skal telja til eignar á kaupgengi í árslok.</sen>
         </numart>
-        <numart nr="7">
+        <numart nr="7" type="numeric">
           <nr-title>7.</nr-title>
           <sen>Réttindi til stöðugra tekna skal telja til eignar eftir því endurgjaldi sem hæfilegt væri fyrir þau í lok hvers árs.</sen>
           <sen>Ríkisskattstjóri getur metið verð þessara réttinda.</sen>
         </numart>
-        <numart nr="8">
+        <numart nr="8" type="numeric">
           <nr-title>8.</nr-title>
           <sen>Ófyrnanleg réttindi skv. 48. gr. skal telja til eignar á stofnverði, sbr. 2. mgr. 12. gr., að frádregnum fengnum fyrningum og að frádreginni niðurfærslu skv. 6. mgr. 15. gr.</sen>
         </numart>
@@ -5540,23 +5540,23 @@
       <nr-title>74. gr.</nr-title>
       <subart nr="1">
         <sen>Til eignar, sbr. 72. gr., telst ekki:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Skilyrt fjárréttindi, svo sem réttur til líftryggingarfjár sem ekki er fallið til greiðslu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Réttur til eftirlauna, lífeyris, framfærslu eða annarra slíkra tímabilsgreiðslna sem bundinn er við einstaka menn.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Réttur til leigulauss bústaðar og hliðstæð afnotaréttindi, sbr. þó 2. mgr. 1. tölul. 73. gr.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Til eignar hjá mönnum telst ekki fatnaður til einkanota, húsgögn, húsmunir, bækur og munir sem hafa persónulegt gildi.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Eigin hlutabréf hlutafélags, sbr. 1. tölul. 1. mgr. 2. gr.</sen>
         </numart>
@@ -5819,19 +5819,19 @@
       <subart nr="1">
         <sen>Ráðherra skipar ríkisskattstjóra til fimm ára í senn.</sen>
         <sen>Engan má skipa í það embætti nema hann uppfylli eftirgreind skilyrði:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Hafi óflekkað mannorð eða hafi ekki hlotið dóm fyrir refsiverðan verknað, slíkan sem um ræðir í 1. mgr. 68. gr. almennra hegningarlaga.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Sé lögráða og hafi forræði fjár síns.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Sé íslenskur ríkisborgari.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Hafi lokið prófi í lögfræði, hagfræði eða viðskiptafræði eða sé löggiltur endurskoðandi.</sen>
           <sen>Víkja má þó frá ákvæði þessa töluliðar ef maður hefur aflað sér víðtækrar sérmenntunar eða sérþekkingar um skattalöggjöf og framkvæmd hennar.</sen>
@@ -7342,17 +7342,17 @@
       <subart nr="1">
         <sen>Skattar álagðir samkvæmt lögum þessum renna í ríkissjóð og hefur tollstjóri á hendi innheimtu þeirra í umdæmi sýslumanns á höfuðborgarsvæðinu en sýslumenn í öðrum umdæmum, sbr. þó 2.–4. mgr. þessarar greinar og ákvæði laga um staðgreiðslu opinberra gjalda.</sen>
         <sen>Auk þeirra verkefna sem tollstjóra eru falin skv. 1. málsl. skal tollstjóri annast eftirtalin verkefni sem lúta að framkvæmd við innheimtu skatta og gjalda:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Stefnumótun á sviði innheimtumála á landsvísu með hagræðingu, samræmingu, framþróun og öryggi varðandi innheimtu opinberra gjalda að leiðarljósi.</sen>
           <sen>Í þessu skyni skal tollstjóri m.a. annast áhættugreiningu á sviði innheimtu opinberra gjalda.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Samræmingar- og eftirlitshlutverk gagnvart öðrum innheimtumönnum ríkissjóðs, m.a. með setningu verklagsreglna.</sen>
           <sen>Tollstjóra er heimilt að beina bindandi fyrirmælum til annarra innheimtumanna um innheimtuaðgerðir í einstökum málum ef settar reglur eru ekki virtar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Umsjón og þróun tölvukerfa og rafrænnar stjórnsýslu á sviði innheimtu skatta og gjalda.</sen>
         </numart>
@@ -7642,15 +7642,15 @@
       <subart nr="4">
         <sen>Telji innheimtumaður að hagsmunum ríkissjóðs verði betur borgið með nauðasamningi gjaldanda við skuldheimtumenn skal hann gefa ráðherra skýrslu um málavöxtu.</sen>
         <sen>Ráðherra er heimilt að samþykkja nauðasamning, að fenginni umsögn Ríkisendurskoðunar, enda sé eftirfarandi skilyrðum fullnægt:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Gjaldandi sé skuldlaus í virðisaukaskatti, staðgreiðslu opinberra gjalda, tryggingagjaldi og vörugjaldi.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Skattkröfur séu ekki tilkomnar vegna endurákvörðunar skattyfirvalda á gjöldum vegna skattsvika.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Ljóst sé að hagsmunum ríkissjóðs verði betur borgið með nauðasamningi.</sen>
         </numart>

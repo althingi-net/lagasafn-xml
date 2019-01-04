@@ -24,28 +24,28 @@
       <name>Skilgreiningar.</name>
       <subart nr="1">
         <sen>Í lögum þessum merkir:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <name>Ábyrgðarstimplar:</name>
           <sen>Stimplar sem eru notaðir til að auðkenna vörur unnar úr eðalmálmum.</sen>
           <sen>Greinast þeir í nafnastimpla, hreinleikastimpla, staðarmerki og ártöl.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <name>Nafnastimpill:</name>
           <sen>Stimpill sem er samþykktur, merktur og skráður hjá Neytendastofu og auðkennir framleiðanda eða innflytjanda vöru sem unnin er úr eðalmálmum þannig að hægt er að rekja uppruna hennar.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <name>Hreinleikastimpill:</name>
           <sen>Stimpill sem sýnir skýrlega hversu mikið magn af hreinu gulli, silfri, platínu eða palladíum er í viðkomandi vöru.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <name>Eftirlitsstimpill:</name>
           <sen>Opinber stimpill sem staðfestir hreinleika eðalmálma.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <name>Eðalmálmar:</name>
           <sen>Gull sem inniheldur 375 þúsundhluta eða meira af hreinu gulli, silfur sem inniheldur 800 þúsundhluta eða meira af hreinu silfri, platína sem inniheldur 850 þúsundhluta eða meira af hreinni platínu og palladíum sem inniheldur 500 þúsundhluta eða meira af hreinu palladíum.</sen>
@@ -149,27 +149,27 @@
       <name>Undanþágur.</name>
       <subart nr="1">
         <sen>Eftirtaldar vörur eru undanþegnar ákvæðum 4. gr. um stimplanotkun:</sen>
-        <numart nr="1">
+        <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Vörur sem eingöngu eru sýnishorn eða eingöngu eru ætlaðar til notkunar á vörusýningu.</sen>
         </numart>
-        <numart nr="2">
+        <numart nr="2" type="numeric">
           <nr-title>2.</nr-title>
           <sen>Vörur úr gulli, platínu eða palladíum sem vega minna en 1 gramm og vörur úr silfri sem vega minna en 3 grömm eða vörur sem eru svo smáar að ekki er mögulegt að stimpla þær.</sen>
         </numart>
-        <numart nr="3">
+        <numart nr="3" type="numeric">
           <nr-title>3.</nr-title>
           <sen>Vörur sem nota á til tannlækninga eða í öðru lækningaskyni.</sen>
         </numart>
-        <numart nr="4">
+        <numart nr="4" type="numeric">
           <nr-title>4.</nr-title>
           <sen>Hljóðfæri.</sen>
         </numart>
-        <numart nr="5">
+        <numart nr="5" type="numeric">
           <nr-title>5.</nr-title>
           <sen>Mynt sem er í fullu gildi.</sen>
         </numart>
-        <numart nr="6">
+        <numart nr="6" type="numeric">
           <nr-title>6.</nr-title>
           <sen>Vörur sem óumdeilanlega geta talist fornmunir.</sen>
         </numart>
