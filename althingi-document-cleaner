@@ -619,32 +619,37 @@ def make_xml(law_num, law_year, parliament_version):
             # Dictates where we will place this numart.
             parent = None
 
+            # The previous numart gives us context for decision-making for
+            # this numart. It is only filled if the last thing we processed
+            # was a numart as well (in trail[-1]), for example whether this is
+            # actually a sub-numart or a super-numart. Otherwise it will
+            # remain None, indicating that this is the first numart being
+            # processed this time around.
             if trail[-1] == 'numart':
-                # `prev_numart` is only defined here for readability. `numart` hasn't
-                # been set yet, so it's still equivalent to the previous
-                # `numart`, so technically we could just use `numart` instead.
-                # But `numart` is going to change later, so we'd rather be
-                # clear on the code semantics when using `numart` but still
-                # referring to the previous one.
+                # Set the previous numart before current numart gets created.
                 prev_numart = numart
-
                 prev_numart_nr = prev_numart.attrib['nr']
+            else:
+                prev_numart = None
 
-                # Check if the type of the numart has changed from numeric to
-                # alphabetic or vice versa. The first letter is checked
-                # because occasionally an alphabetic character follows a
-                # numeric character, for example a numerical article "9. a" in
-                # law nr. 90/2003. Such a designation shall be interpreted as
-                # a numerical number, not an alphabetic one.
-                different_type = any([
-                    prev_numart_nr[0].isdigit() and not numart_nr[0].isdigit(),
-                    not prev_numart_nr[0].isdigit() and numart_nr[0].isdigit()
-                ])
+            # Figure out the numart's type.
+            if numart_nr[0].isdigit():
+                numart_type = 'numeric'
+            else:
+                numart_type = 'alphabet'
 
+            # Create numerical article.
+            numart = E('numart', {'nr': numart_nr, 'type': numart_type })
+
+            if prev_numart is not None:
+
+                # Create a list of expected numart_nrs, considering the type
+                # of the previous numart. If the current numart_nr is
+                # unexpected, it means that either a sub-numart listing has
+                # started, or ended. Whether it's starting or ending, we'll
+                # figure out slightly further below.
                 expected_numart_nrs = []
-                # Check the first letter to support numerical articles with
-                # both a numerical and alphabetic component.
-                if prev_numart_nr[0].isdigit():
+                if prev_numart.attrib['type'] == 'numeric':
                     if prev_numart_nr.isdigit():
                         # If the whole thing is numerical, we may expect
                         # either the next numerical number (i.e. a 10 after a
@@ -670,6 +675,10 @@ def make_xml(law_num, law_year, parliament_version):
                         ]
                 else:
                     expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+
+                # Check if the numart type has changed, indicating that a
+                # sub-numart has begun or ended.
+                different_type = numart.attrib['type'] != prev_numart.attrib['type']
 
                 if numart_nr not in expected_numart_nrs or different_type:
                     if numart_nr == 'a' or (numart_nr.isdigit() and int(numart_nr) == 1):
@@ -709,18 +718,11 @@ def make_xml(law_num, law_year, parliament_version):
                     # We sure as $h17 assume "art" exists.
                     parent = art
 
-            # Create numerical article.
-            numart = E('numart', {'nr': numart_nr })
-
             # Add the numerical article to its parent.
             parent.append(numart)
 
             numart_nr_title = collect_until(lines, '</span>')
             numart.append(E('nr-title', numart_nr_title))
-            if not numart_nr_title.strip('.').strip('[').isdigit():
-                numart.attrib.update({'type': 'alphabet'})
-            else:
-                numart.attrib.update({'type': 'numeric'})
 
             if lines.peek().strip() == '<i>':
                 # Looks like this numerical article has a name.
