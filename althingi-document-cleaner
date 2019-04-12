@@ -30,6 +30,7 @@ from contenthandlers import strip_markers
 
 from utils import Matcher
 from utils import determine_month
+from utils import is_roman
 from utils import order_among_siblings
 from utils import strip_links
 from utils import super_iter
@@ -632,17 +633,9 @@ def make_xml(law_num, law_year, parliament_version):
             else:
                 prev_numart = None
 
-            # Figure out the numart's type.
-            if numart_nr[0].isdigit():
-                numart_type = 'numeric'
-            elif numart_nr == '—':
-                numart_type = 'en-dash'
-            else:
-                numart_type = 'alphabet'
-
-            # Create numerical article.
-            numart = E('numart', {'nr': numart_nr, 'type': numart_type })
-
+            # Build a list of expected numarts. This will help us determine
+            # whether this numart is the first among sub-numarts, or if a list
+            # of sub-numarts has ended or what.
             if prev_numart is not None:
 
                 # Create a list of expected numart_nrs, considering the type
@@ -677,6 +670,12 @@ def make_xml(law_num, law_year, parliament_version):
                         ]
                 elif prev_numart.attrib['type'] == 'en-dash':
                     expected_numart_nrs.append('—')
+                elif prev_numart.attrib['type'] == 'roman':
+                    expected_numart_nrs.append(
+                        roman.toRoman(
+                            roman.fromRoman(prev_numart_nr.upper()) + 1
+                        ).lower()
+                    )
                 else:
                     expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -685,7 +684,7 @@ def make_xml(law_num, law_year, parliament_version):
                 different_type = numart.attrib['type'] != prev_numart.attrib['type']
 
                 if numart_nr not in expected_numart_nrs or different_type:
-                    if numart_nr in ['a', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
+                    if numart_nr in ['a', 'i', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
                         # was a `numart` before this one, but this `numart`
@@ -721,6 +720,63 @@ def make_xml(law_num, law_year, parliament_version):
                 else:
                     # We sure as $h17 assume "art" exists.
                     parent = art
+
+            # Figure out the numart's type.
+            if numart_nr[0].isdigit():
+                numart_type = 'numeric'
+            elif numart_nr == '—':
+                numart_type = 'en-dash'
+            else:
+                # At this point, we're dealing with a numart that is
+                # represented with a Latin character, OR a Roman numeral.
+                # Because Roman numerals overlap the Latin alphabet, we will
+                # need to check the context in which we run into this numart.
+                # If it's an "i", we'll need to determine whether it's the
+                # alphabetical letter "i" or the Roman numeral "i" for 1, by
+                # examining the previous numart. Once we've correctly figured
+                # out that difference at the beginning of the list, we can
+                # distinguish between Roman numerals and Latin characters by
+                # checking the type of the previous numart.
+                #
+                # NOTE: There is a known bug here. In the unlikely event of a
+                # Roman-denoted list started as a sub-numart of the numart
+                # with the alphabetical letter "h", the script will fail to
+                # recognize it as a Roman numeral. This bug is known to occur
+                # in 50. gr. laga nr. 108/2007.
+
+                if numart_nr == 'i':
+                    if prev_numart is None or prev_numart.attrib['nr'] != 'h':
+                        numart_type = 'roman'
+                    else:
+                        numart_type = 'alphabet'
+
+                elif is_roman(numart_nr.upper()):
+                    # If we run into something that *can* be a Roman numeral,
+                    # we'll simply inherit the type of the previous numart. We
+                    # should never run into these unless there is a previous
+                    # numart, since "a" is not a Roman numeral and therefore
+                    # we'll only run into overlapping characters once we're
+                    # well into the list.
+                    #
+                    # Note that "i" will always alrady have been caught by the
+                    # previous if-statement before this ever gets the chance
+                    # to process it.
+                    #
+                    # We can't look into the last numart because that may be a
+                    # sub-numart of the previous numart. But we're confident
+                    # in this numart being the non-first among its siblings,
+                    # so we'll know that the parent's last child was the
+                    # numart before it. So all we need to do is to find the
+                    # last child of this numart's parent to find the one
+                    # immediately before it at the same stage in the tree.
+
+                    numart_type = parent.getchildren()[-1].attrib['type']
+
+                else:
+                    numart_type = 'alphabet'
+
+            # Create numerical article.
+            numart = E('numart', {'nr': numart_nr, 'type': numart_type })
 
             # Add the numerical article to its parent.
             parent.append(numart)
