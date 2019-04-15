@@ -605,7 +605,19 @@ def make_xml(law_num, law_year, parliament_version):
             sens = separate_sentences(strip_links(content))
             for sen in sens:
                 subart.append(E('sen', sen))
-            art.append(subart)
+
+            # An occasional text, mostly advertisements, declarations, edicts
+            # and at least one really ancient law, contain only subarticles.
+            # So we'll need to check if there's an article before adding the
+            # subart to it. If none exists, we'll check if there's a chapter
+            # and if so, we'll append to that. If not, then we'll just string
+            # it to the law itself.
+            if art is not None:
+                art.append(subart)
+            elif chapter is not None:
+                chapter.append(subart)
+            else:
+                law.append(subart)
 
             trail.append('subart')
 
