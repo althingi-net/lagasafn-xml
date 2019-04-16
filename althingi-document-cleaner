@@ -1316,6 +1316,14 @@ def make_xml(law_num, law_year, parliament_version):
                         # that we've found.
                         num = next_footnote_sup(desc, cursor)
 
+                        # If no footnote number is found, then we're not
+                        # actually dealing with a footnote, but rather the "…"
+                        # symbol being used for something else. For what,
+                        # exactly, is undetermined as of yet.
+                        if num is None:
+                            deletion_found = desc.text.find('…', cursor)
+                            continue
+
                         # See function's comments for details.
                         ancestors = generate_ancestors(desc, parent)
 

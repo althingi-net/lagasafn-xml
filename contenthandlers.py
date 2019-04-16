@@ -74,12 +74,21 @@ def next_footnote_sup(elem, cursor):
         num_end = haystack.find('</sup>', cursor)
         num_text = haystack[num_start:num_end]
         num = num_text.strip().strip(')')
-    else:
+    elif elem.getnext() is not None:
         haystack = elem.getnext().text
         num_start = haystack.find('<sup style="font-size:60%">') + 27
         num_end = haystack.find('</sup>')
         num_text = haystack[num_start:num_end]
         num = num_text.strip().strip(')')
+    else:
+        # This means that the number was not found and typically happens when
+        # a single "…" character is found. The reason that it's found without
+        # indicating deletion are not entirely known, it appears to indicate
+        # an unknown segment of text, i.e. portions of text lost forever
+        # without explanation or cause. In any case, we must conclude that
+        # we're not dealing with a footnote. As a result, we return None and
+        # ask the function's caller to react accordingly.
+        num = None
 
     return num
 
