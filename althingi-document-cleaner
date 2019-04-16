@@ -1271,8 +1271,9 @@ def make_xml(law_num, law_year, parliament_version):
                                 'num': int(num),
                                 'type': 'range',
 
-                                # 'starte_at' is determined from previous
-                                # processing of the corresponding opening marker.
+                                # 'started_at' is determined from previous
+                                # processing of the corresponding opening
+                                # marker.
                                 'started_at': started_at,
 
                                 # 'ended_at' is determined from the processing
