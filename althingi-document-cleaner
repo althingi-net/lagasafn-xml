@@ -1595,18 +1595,54 @@ def make_xml(law_num, law_year, parliament_version):
             html_table = etree.HTML(sen.text).find('body/table/tbody')
 
             # Find the rows and headers inside the HTML.
-            rows = iter(html_table)
-            headers = [col.find('b').text.strip() for col in next(rows)]
+            rows = super_iter(html_table)
 
-            # Create the table's header and body sections.
-            thead = E('thead', E('tr'))
+            # If the table has a header, it will typically be the top row
+            # (exception explained below). We'll check the first column of the
+            # top row to check whether the headers are designated via <b> tags
+            # or <i> tags. If no such tags are found, we are forced to
+            # conclude that there is no header. This is also not always true
+            # (also explained below).
+            #
+            # TODO: In temporary clause XII in law nr. 29/1993, tables are
+            # found with three rows of headers. These are currently not
+            # supported and result in missing data.
+            #
+            # TODO: In 5. mgr. 19. gr. laga nr. 87/2004, headers are not
+            # stylized at all, thereby making them virtually indistinguishable
+            # from headers. These are currently unsupported at the moment,
+            # meaning they will be interpreted as if they were data cells.
+
+            toprow = next(rows)
+            if toprow[0].find('b') is not None:
+                header_style = 'b'
+            elif toprow[0].find('i') is not None:
+                header_style = 'i'
+            else:
+                header_style = ''
+
+            # If we've determined that the table has a header at all...
+            if header_style:
+                thead = E('thead', E('tr'))
+                table.append(thead)
+
+                # Add headers to the XML table.
+                for col in toprow:
+                    header = col.find(header_style).text.strip()
+                    if header_style != 'b':
+                        # Headers are normally bold, but there are exceptions.
+                        # We'll only designate a header style when we run into
+                        # an exception to the rule.
+                        thead.find('tr').append(E('th', header, {'header-style': header_style}))
+                    else:
+                        thead.find('tr').append(E('th', header))
+            else:
+                # Roll one back because we've decided that the first row is
+                # not a header after all.
+                rows.prev()
+
             tbody = E('tbody')
-            table.append(thead)
             table.append(tbody)
-
-            # Add headers to the XML table.
-            for header in headers:
-                thead.find('tr').append(E('th', header))
 
             # Add rows.
             for row in rows:

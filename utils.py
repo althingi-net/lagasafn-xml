@@ -141,13 +141,11 @@ class super_iter():
             raise StopIteration
         return result
 
-    '''
     def prev(self):
         self.index -= 1
         if self.index < 0:
             raise StopIteration
         return self.collection[self.index]
-    '''
 
     def __iter__(self):
         return self
