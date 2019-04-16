@@ -77,7 +77,7 @@ def strip_links(text):
     # being, they are left as HTML-encoded text and not actual XML (until the
     # aforementioned XML post-processing takes place).
 
-    regex = r'<a.*?>\s*([^…]*?)\s*</a>\s*'
+    regex = r'<a [^>]*?>\s*([^…]*?)\s*</a>\s*'
     text = re.sub(regex, r'\1', text)
 
     return text
