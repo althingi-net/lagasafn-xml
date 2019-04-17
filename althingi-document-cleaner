@@ -724,14 +724,17 @@ def make_xml(law_num, law_year, parliament_version):
             # A parent may already be set above if `numart` currently being
             # handled is not the first one in its parent article/subarticle.
             # However, if it is indeed the first one, we need to figure out
-            # where to place it. It can be placed wither in a subarticle or in
-            # some cases, directly into an article without a subarticle.
+            # where to place it. It can be placed in a subarticle, an article
+            # or, in some cases, into a chapter or even the law itself.
             if parent is None:
                 if subart is not None:
                     parent = subart
-                else:
-                    # We sure as $h17 assume "art" exists.
+                elif art is not None:
                     parent = art
+                elif chapter is not None:
+                    parent = chapter
+                else:
+                    parent = law
 
             # Figure out the numart's type.
             if numart_nr[0].isdigit():
