@@ -874,10 +874,19 @@ def make_xml(law_num, law_year, parliament_version):
 
             footnotes = E('footnotes')
 
+            # Try an append the footnotes to whatever's appropriate given the
+            # content we've run into.
             if trail[-1] == 'chapter':
                 chapter.append(footnotes)
-            else:
+            elif art is not None:
+                # Most commonly, footnotes will be appended to articles.
                 art.append(footnotes)
+            elif subart is not None:
+                # In law that don't actually have articles, but only
+                # subarticles (which are rare, but do exist), we'll need to
+                # append the footnotes to the subarticle instead of the
+                # article.
+                subart.append(footnotes)
 
             trail.append('footnotes')
 
