@@ -1332,7 +1332,7 @@ def make_xml(law_num, law_year, parliament_version):
                         # actually dealing with a footnote, but rather the "…"
                         # symbol being used for something else. For what,
                         # exactly, is undetermined as of yet.
-                        if num is None:
+                        if num is None or num == '':
                             deletion_found = desc.text.find('…', cursor)
                             continue
 
