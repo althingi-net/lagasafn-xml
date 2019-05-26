@@ -428,7 +428,7 @@ def make_xml(law_num, law_year, parliament_version):
                     maybe_roman_nr = strip_markers(chapter_name).replace(
                         '. kafli',
                         ''
-                    ).strip('.')
+                    ).strip().strip('.')
 
                     nr = str(roman.fromRoman(maybe_roman_nr))
                     chapter = E.chapter(
