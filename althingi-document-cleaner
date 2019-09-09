@@ -773,9 +773,9 @@ def make_xml(law_num, law_year, parliament_version):
                     # we'll only run into overlapping characters once we're
                     # well into the list.
                     #
-                    # Note that "i" will always alrady have been caught by the
-                    # previous if-statement before this ever gets the chance
-                    # to process it.
+                    # Note that "i" will always already have been caught by
+                    # the previous if-statement before this ever gets the
+                    # chance to process it.
                     #
                     # We can't look into the last numart because that may be a
                     # sub-numart of the previous numart. But we're confident
