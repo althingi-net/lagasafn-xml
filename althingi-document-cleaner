@@ -683,11 +683,11 @@ def make_xml(law_num, law_year, parliament_version):
                 elif prev_numart.attrib['type'] == 'en-dash':
                     expected_numart_nrs.append('—')
                 elif prev_numart.attrib['type'] == 'roman':
-                    expected_numart_nrs.append(
-                        roman.toRoman(
-                            roman.fromRoman(prev_numart_nr.upper()) + 1
-                        ).lower()
-                    )
+                    new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
+                    if prev_numart_nr.islower():
+                        new_roman = new_roman.lower()
+
+                    expected_numart_nrs.append(new_roman)
                 else:
                     expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -696,7 +696,7 @@ def make_xml(law_num, law_year, parliament_version):
                 different_type = numart.attrib['type'] != prev_numart.attrib['type']
 
                 if numart_nr not in expected_numart_nrs or different_type:
-                    if numart_nr in ['a', 'i', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
+                    if numart_nr.lower() in ['a', 'i', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
                         # was a `numart` before this one, but this `numart`
@@ -759,7 +759,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # recognize it as a Roman numeral. This bug is known to occur
                 # in 50. gr. laga nr. 108/2007.
 
-                if numart_nr == 'i':
+                if numart_nr.lower() == 'i':
                     if prev_numart is None or prev_numart.attrib['nr'] != 'h':
                         numart_type = 'roman'
                     else:
