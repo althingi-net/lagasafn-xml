@@ -469,6 +469,46 @@ def make_xml(law_num, law_year, parliament_version):
             # done. We'll escape the loop and go for post-processing.
             break
 
+        elif line == '<em>' and 'intro-finished' in trail:
+            # Parse a mysterious thing which we will call an "ambiguous
+            # section" and is composed of a single italic line. Such a line is
+            # sometimes used as a sort of name for an article (45/1987,
+            # 113/1990, 57/1990), sometimes as some kind of subchapter
+            # (93/1933, 8/1962, 46/1980) and even as some kind of chapter
+            # (37/1992, 55/1992). It is practically impossible to figure out
+            # what exactly they are supposed to be, even for humans. Even
+            # within the same document they may seem like article names in one
+            # place but then seem to cover a few in a latter part. Sometimes
+            # they are numbered, sometimes they have letters, sometimes
+            # neither, and sometimes both in the same document.
+            #
+            # The most convoluted known use of such ambiguous sections is
+            # 31/1993, where they are apparently used as sub-subchapters
+            # numbered with an uppercase Latin letter for each article,
+            # meaning that they can be seen as either letter-numbered article
+            # names or sub-subchapters.
+            #
+            # At any rate, we're not going to try and figure it out and place
+            # them inside articles (like article names) or articles inside
+            # them (like chapters), but instead include them as independent
+            # <ambiguous-section>s, leaving the same ambiguity in the XML as
+            # is apparent in the actual text. They are rarely, if ever, used
+            # to specify a change by a bill anyway, and thus are probably not
+            # significant for programming bills in the future. Furthermore,
+            # when parsing the XML, it is possible to check what the last
+            # <ambiguous-section> contained, if at some point a programmer
+            # needs to deal with them when using the XML.
+            ambiguous_content = collect_until(lines, '</em>')
+
+            ambiguous_section = E('ambiguous-section', ambiguous_content)
+
+            if chapter is not None:
+                chapter.append(ambiguous_section)
+            else:
+                law.append(ambiguous_section)
+
+            trail.append('ambiguous-section')
+
         elif matcher.check(line, '<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
             scroll_until(lines, '<b>')
@@ -878,6 +918,8 @@ def make_xml(law_num, law_year, parliament_version):
             # content we've run into.
             if trail[-1] == 'chapter':
                 chapter.append(footnotes)
+            elif trail[-1] == 'ambiguous-section':
+                ambiguous_section.append(footnotes)
             elif art is not None:
                 # Most commonly, footnotes will be appended to articles.
                 art.append(footnotes)
