@@ -86,6 +86,8 @@ def clean_content(content):
     content = content.replace('<a id="">', '')
 
     # Fix inconsistent deletion markers.
+    # TODO: This only occurs in 160/2010 and should be removed once it has
+    # been fixed in the data.
     e = re.compile(r'&hellip;<sup>(\d+)\)</sup>')
     content = e.sub(r'&hellip;<sup style="font-size:60%">\1)</sup>', content)
 
