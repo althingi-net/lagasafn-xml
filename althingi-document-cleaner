@@ -85,6 +85,10 @@ def clean_content(content):
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
     content = content.replace('<a id="">', '')
 
+    # Fix inconsistent deletion markers.
+    e = re.compile(r'&hellip;<sup>(\d+)\)</sup>')
+    content = e.sub(r'&hellip;<sup style="font-size:60%">\1)</sup>', content)
+
     # Find the law content and exit if it does not exist
     soup_law = BeautifulSoup(content, 'html5lib').find('html')
     if soup_law is None:
@@ -668,6 +672,33 @@ def make_xml(law_num, law_year, parliament_version):
             # programmatically. Example: "9. a" becomes "9a" in law nr.
             # 20/2003.
             numart_nr = strip_markers(lines.peek().strip().strip('.')).replace('. ', '')
+
+            # This is only known to happen in 3. gr. laga nr. 160/2010. A
+            # numart has been removed and the numbers of its following numarts
+            # updated accordingly. We'll just append an empty numart with a
+            # special type "removed" and move on, but we need to add it
+            # because although it contains no content, it needs to have a
+            # container for the delation marker. That way, the next iteration
+            # will make decisions on its context according to this iteration's
+            # prev_numart.
+            #
+            # Its number will be a string, "removed-after-[X]" where "[X]" is
+            # the number of the last numart. This is to make them identifiable
+            # when rendering software wants to add deletion markers. A "sen"
+            # node is also added for the deletion marker to be addable.
+            if numart_nr == '':
+                content = collect_until(lines, '</span>')
+                parent = prev_numart.getparent()
+                parent.append(E(
+                    'numart',
+                    {
+                        'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
+                        'type': 'removed'
+                    },
+                    E('sen', content)
+                ))
+                scroll_until(lines, '<br/>')
+                continue
 
             # Dictates where we will place this numart.
             parent = None
