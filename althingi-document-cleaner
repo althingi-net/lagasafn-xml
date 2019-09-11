@@ -30,6 +30,7 @@ from contenthandlers import strip_markers
 
 from utils import CURRENT_PARLIAMENT_VERSION
 from utils import Matcher
+from utils import numart_next_nrs
 from utils import determine_month
 from utils import is_roman
 from utils import order_among_siblings
@@ -728,41 +729,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # unexpected, it means that either a sub-numart listing has
                 # started, or ended. Whether it's starting or ending, we'll
                 # figure out slightly further below.
-                expected_numart_nrs = []
-                if prev_numart.attrib['type'] == 'numeric':
-                    if prev_numart_nr.isdigit():
-                        # If the whole thing is numerical, we may expect
-                        # either the next numerical number (i.e. a 10 after a
-                        # 9), or a numart with a numerical and alphabetic
-                        # component (i.e. 9a following a 9).
-                        expected_numart_nrs = [
-                            str(int(prev_numart_nr) + 1),
-                            str(int(prev_numart_nr)) + 'a',
-                        ]
-                    else:
-                        # If, however, the whole thing starts with a number
-                        # but is not entirely a number, it means that the
-                        # numart is a mixture of both (f.e. 9a). In these
-                        # cases we'll expect either the next number (10
-                        # following 9a) or the same number with the next
-                        # alphabetic character (9b following 9a).
-                        alpha_component = prev_numart_nr.strip('0123456789')
-                        num_component = int(prev_numart_nr.replace(alpha_component, ''))
-
-                        expected_numart_nrs = [
-                            str(num_component + 1),
-                            str(num_component) + chr(int(ord(alpha_component)) + 1),
-                        ]
-                elif prev_numart.attrib['type'] == 'en-dash':
-                    expected_numart_nrs.append('—')
-                elif prev_numart.attrib['type'] == 'roman':
-                    new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
-                    if prev_numart_nr.islower():
-                        new_roman = new_roman.lower()
-
-                    expected_numart_nrs.append(new_roman)
-                else:
-                    expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+                expected_numart_nrs = numart_next_nrs(prev_numart)
 
                 # Check if the numart type has changed, indicating that a
                 # sub-numart has begun or ended.
@@ -788,6 +755,17 @@ def make_xml(law_num, law_year, parliament_version):
                         # the same parent as the nodes that came before we
                         # started the sub-list.
                         parent = prev_numart.getparent().getparent()
+
+                        # When a sub-sub-numart finishes and goes straight up
+                        # two levels immediately, (1, 2, a, b, i, ii, 3, 4...)
+                        # we'll need the parent to actually be the current
+                        # node's grandparent. We'll check this by examining
+                        # whether the current numart number is expected to be
+                        # the next after the parent's number, since that would
+                        # indicate that the parent is really a sibling.
+                        if parent is not None and parent.tag == 'numart' and numart_nr in numart_next_nrs(parent):
+                            parent = parent.getparent()
+
                 else:
                     # This `numart` is simply the next one, so we'll want to
                     # append it to whatever node that the previous `numart`

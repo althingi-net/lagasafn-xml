@@ -18,6 +18,50 @@ def create_url(law_num, law_year):
     return base_url % (CURRENT_PARLIAMENT_VERSION, law_year, fixed_width_law_num)
 
 
+def numart_next_nrs(prev_numart):
+    '''
+    Returns a list of expected next numbers from the given prev_numart. For
+    example, if the prev_numart's number is "1", then "2" and "1a" are
+    expected. If it's "b", then "c" is expected.
+    '''
+    prev_numart_nr = prev_numart.attrib['nr']
+    expected_numart_nrs = []
+    if prev_numart.attrib['type'] == 'numeric':
+        if prev_numart_nr.isdigit():
+            # If the whole thing is numerical, we may expect either the next
+            # numerical number (i.e. a 10 after a 9), or a numart with a
+            # numerical and alphabetic component (i.e. 9a following a 9).
+            expected_numart_nrs = [
+                str(int(prev_numart_nr) + 1),
+                str(int(prev_numart_nr)) + 'a',
+            ]
+        else:
+            # If, however, the whole thing starts with a number but is not
+            # entirely a number, it means that the numart is a mixture of both
+            # (f.e. 9a). In these cases we'll expect either the next number
+            # (10 following 9a) or the same number with the next alphabetic
+            # character (9b following 9a).
+            alpha_component = prev_numart_nr.strip('0123456789')
+            num_component = int(prev_numart_nr.replace(alpha_component, ''))
+
+            expected_numart_nrs = [
+                str(num_component + 1),
+                str(num_component) + chr(int(ord(alpha_component)) + 1),
+            ]
+    elif prev_numart.attrib['type'] == 'en-dash':
+        expected_numart_nrs.append('—')
+    elif prev_numart.attrib['type'] == 'roman':
+        new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
+        if prev_numart_nr.islower():
+            new_roman = new_roman.lower()
+
+        expected_numart_nrs.append(new_roman)
+    else:
+        expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+
+    return expected_numart_nrs
+
+
 def determine_month(month_string):
     '''
     Takes a human-readable, Icelandic month name and returns its corresponding
