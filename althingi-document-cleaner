@@ -731,11 +731,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # figure out slightly further below.
                 expected_numart_nrs = numart_next_nrs(prev_numart)
 
-                # Check if the numart type has changed, indicating that a
-                # sub-numart has begun or ended.
-                different_type = numart.attrib['type'] != prev_numart.attrib['type']
-
-                if numart_nr not in expected_numart_nrs or different_type:
+                if numart_nr not in expected_numart_nrs:
                     if numart_nr.lower() in ['a', 'i', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
