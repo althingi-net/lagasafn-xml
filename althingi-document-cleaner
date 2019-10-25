@@ -1746,7 +1746,10 @@ def make_xml(law_num, law_year, parliament_version):
                     encoding='utf-8'
                 ).decode('utf-8')
             )
-            pretty_xml_as_string = xml.toprettyxml(indent='  ')
+            pretty_xml_as_string = xml.toprettyxml(
+                indent='  ',
+                encoding='utf-8'
+            ).decode('utf-8')
             f.write(pretty_xml_as_string)
         else:
             f.write(
