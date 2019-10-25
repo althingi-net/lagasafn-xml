@@ -10,9 +10,9 @@ Icelandic law is currently published in PDF and HTML, neither of which is easy o
 
 | Format   | URL                                                                                   |
 | :------: | :------------------------------------------------------------------------------------ |
-| HTML     | https://www.althingi.is/lagas/148c/1944033.html                                       |
-| PDF      | https://www.althingi.is/lagasafn/pdf/148c/1944033.pdf                                 |
-| **XML**  | https://github.com/piratar/althingi-document-cleaner/blob/master/xml/1944.33.148c.xml |
+| HTML     | https://www.althingi.is/lagas/149c/1944033.html                                       |
+| PDF      | https://www.althingi.is/lagasafn/pdf/149c/1944033.pdf                                 |
+| **XML**  | https://github.com/piratar/althingi-document-cleaner/blob/master/xml/1944.33.149c.xml |
 
 The entire law can be downloaded in HTML form, in a zip file, at http://www.althingi.is/lagasafn/zip-skra-af-lagasafni/. Versions are denoted by Parliament number, higher numbers meaning more recent. The version number "148c" for example, means "the 148th Parliament" and the letter "a" means that it's the version of the legal codex that was in effect when that Parliament convened.
 
