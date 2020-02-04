@@ -340,6 +340,9 @@ def make_xml(law_num, law_year, parliament_version):
                 else:
                     # Otherwise, of course, we'll just record the number.
                     xml_num_and_date.append(E('num', number))
+
+                xml_num_and_date.append(E('original', num_and_date))
+
                 law.append(xml_num_and_date)
 
                 trail.append('num-and-date')
