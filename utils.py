@@ -57,7 +57,15 @@ def numart_next_nrs(prev_numart):
 
         expected_numart_nrs.append(new_roman)
     else:
-        expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+        # Check if an alphabetic numart is surrounded by "(" and ")". Only
+        # known to happen in 19/1996, which seems to be, in fact, an
+        # international agreement and not a law.
+        if prev_numart_nr[0] == '(' and prev_numart_nr[-1] == ')':
+            numart_to_increment = prev_numart_nr[1:-1]
+            next_numart_nr = '(%s)' % chr(int(ord(numart_to_increment)) + 1)
+            expected_numart_nrs.append(next_numart_nr)
+        else:
+            expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
     return expected_numart_nrs
 
