@@ -722,6 +722,28 @@ def make_xml(law_num, law_year, parliament_version):
             else:
                 prev_numart = None
 
+            # The variable `special_roman` is true under the unique
+            # circumstances that an alphabetic numart turns from "h" to a new
+            # sub-numart with Roman numeral "i", resulting in a sequence of
+            # "...f,g,h,i,ii,iii".
+            #
+            # The varible is used later to prevent the script mistaking the
+            # first "i" in a Roman sub-list for the next item in an
+            # alpbahetical list.
+            #
+            # This is unique to article 50 in law nr. 108/2007 and is thus
+            # hard-coded so far.
+            try:
+                special_roman = all([
+                    numart_nr == 'i',
+                    law.attrib['nr'] == '108',
+                    law.attrib['year'] == '2007',
+                    art.attrib['nr'] == '50',
+                ])
+            except (AttributeError, IndexError):
+                # Definitely not the special scenario if this goes wrong.
+                special_roman = False
+
             # Build a list of expected numarts. This will help us determine
             # whether this numart is the first among sub-numarts, or if a list
             # of sub-numarts has ended or what.
@@ -733,6 +755,14 @@ def make_xml(law_num, law_year, parliament_version):
                 # started, or ended. Whether it's starting or ending, we'll
                 # figure out slightly further below.
                 expected_numart_nrs = numart_next_nrs(prev_numart)
+
+                # See comment for `special_roman` above. Under the conditions
+                # outlined there, we won't be expecting "i" anymore, even if
+                # it comes after an "h", and will therefore construct a new
+                # sub-list from the "i" after the "h" instead of just adding
+                # another item.
+                if special_roman:
+                    expected_numart_nrs.remove('i')
 
                 if numart_nr not in expected_numart_nrs:
                     if numart_nr.lower() in ['a', 'i', '—'] or (numart_nr.isdigit() and int(numart_nr) == 1):
@@ -810,7 +840,8 @@ def make_xml(law_num, law_year, parliament_version):
                 # in 50. gr. laga nr. 108/2007.
 
                 if numart_nr.lower() == 'i':
-                    if prev_numart is None or prev_numart.attrib['nr'] != 'h':
+                    # See comment for `special_roman` above.
+                    if prev_numart is None or prev_numart.attrib['nr'] != 'h' or special_roman:
                         numart_type = 'roman'
                     else:
                         numart_type = 'alphabet'
