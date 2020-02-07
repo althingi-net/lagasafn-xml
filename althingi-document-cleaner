@@ -730,15 +730,12 @@ def make_xml(law_num, law_year, parliament_version):
             # first "i" in a Roman sub-list for the next item in an
             # alpbahetical list.
             #
-            # This is unique to article 50 in law nr. 108/2007 and is thus
-            # hard-coded so far.
+            # This is tested by checking if the last numart number was "h" but
+            # also if exactly 6 lines later, we run into an "ii.", which then
+            # means that we've run into a Roman-numeric "i" that would
+            # otherwise be mistaken for the letter following "h".
             try:
-                special_roman = all([
-                    numart_nr == 'i',
-                    law.attrib['nr'] == '108',
-                    law.attrib['year'] == '2007',
-                    art.attrib['nr'] == '50',
-                ])
+                special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() == 'ii.'
             except (AttributeError, IndexError):
                 # Definitely not the special scenario if this goes wrong.
                 special_roman = False
