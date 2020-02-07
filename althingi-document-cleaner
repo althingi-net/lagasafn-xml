@@ -718,7 +718,6 @@ def make_xml(law_num, law_year, parliament_version):
             if trail[-1] == 'numart':
                 # Set the previous numart before current numart gets created.
                 prev_numart = numart
-                prev_numart_nr = prev_numart.attrib['nr']
             else:
                 prev_numart = None
 
