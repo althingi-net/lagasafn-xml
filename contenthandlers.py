@@ -145,6 +145,9 @@ def check_chapter(lines, law):
     peek_stripped = strip_markers(lines.peek()).strip()
 
     # An inner function for setting the content-setup when needed.
+    # TODO: This mechanism is obsolete and should be removed. Much rather, we
+    # should include more information in each chapter about whether the number
+    # was Roman/numeric, whether it included "kafli" or "hluti" and such.
     def set_content_setup(line_type, value):
         content_setup = law.find('content-setup')
         if content_setup is None:
@@ -190,11 +193,16 @@ def check_chapter(lines, law):
 
     elif cs_chapter:
         if cs_chapter == 'roman-chapter':
-            # We now expect a chapter to begin with a Roman numeral. If this
-            # is not the case, we know that this is not a chapter but a
-            # subchapter, article-chapter or something of the sort.
-            first_thing = peek_stripped[0:peek_stripped.find('.')]
-            if is_roman(first_thing) and peek_stripped.find('. kafli') > -1:
+
+            # TODO/NOTE: The old plan was to detect changes in the user of
+            # "kafli", "hluti" and Arabic/Roman numerals and organize
+            # subchapters accordingly, but this plan has been abandoned
+            # because the raw data is not consistent or reliable enough.
+            # Instead, we should add more information into the chapter-nodes
+            # so that they can be programmatically distinguished better, for
+            # example in footnotes.
+
+            if peek_stripped.find('. kafli') > -1 or peek_stripped.find('. hluti') > -1:
                 line_type = 'chapter'
             else:
                 # If we know that chapters are denoted by Roman numerals and
@@ -213,16 +221,8 @@ def check_chapter(lines, law):
 
     else:
         # Here we're running into a possible chapter for the first time.
-        if peek_stripped.find('. kafli') > -1:
-            number = peek_stripped[0:peek_stripped.find('.')]
-
-            # Just to make sure it's a Roman numeral. We currently don't
-            # support Arabic numerals in chapters, but we may need to.
-            if is_roman(number):
-                set_content_setup('chapter', 'roman-chapter')
-            else:
-                set_content_setup('chapter', 'arabic-chapter')
-
+        if peek_stripped.find('. kafli') > -1 or peek_stripped.find('. hluti') > -1:
+            set_content_setup('chapter', 'roman-chapter')
             line_type = 'chapter'
         elif peek_stripped.find('I.') == 0:
             set_content_setup('chapter', 'roman-standalone')
