@@ -175,7 +175,7 @@ def check_chapter(lines, law):
         first = peek_stripped[0:peek_stripped.find('.')]
 
         # If f.e. ". kafli" or ". hluti" can be found...
-        if any([peek_stripped.find('. %s' % w) > -1 for w in ['kafli', 'hluti']]):
+        if any([peek_stripped.find('. %s' % w) > -1 for w in ['kafli', 'hluti', 'bók']]):
             line_type = 'chapter'
         # We exclude "C" and "D" because as Roman numerals, they are much too
         # high to ever be used for a chapter. Later we may need to revise this

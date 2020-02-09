@@ -413,7 +413,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # We check for both "kafli" and "hluti" because those are
                 # logically equivalent, but should never appear both in the
                 # same chapter line.
-                for chapter_word in ['kafli', 'hluti']:
+                for chapter_word in ['kafli', 'hluti', 'bók']:
                     if chapter_word in t:
                         alpha = t[t.index(chapter_word) + 6:].strip('.')
                         if alpha:
@@ -451,6 +451,9 @@ def make_xml(law_num, law_year, parliament_version):
                         ''
                     ).replace(
                         '. hluti',
+                        ''
+                    ).replace(
+                        '. bók',
                         ''
                     ).strip().strip('.')
 
