@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <law nr="90" parliament="150a" year="1989">
-  <content-setup>
-    <chapter>roman-standalone</chapter>
-  </content-setup>
   <name>Lög um aðför</name>
   <num-and-date>
     <date>1989-06-01</date>
@@ -13,6 +10,10 @@
   <chapter nr="1">
     <nr-title>I. þáttur.</nr-title>
     <name>Almenn skilyrði fyrir aðför.</name>
+  </chapter>
+  <chapter nr="1">
+    <nr-title>1. kafli.</nr-title>
+    <name>Aðfararheimildir o.fl.</name>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
@@ -153,6 +154,10 @@
         </footnote>
       </footnotes>
     </art>
+  </chapter>
+  <chapter nr="2">
+    <nr-title>2. kafli.</nr-title>
+    <name>Aðfararfrestur.</name>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <subart nr="1">
@@ -172,13 +177,13 @@
         <footnote href="https://www.althingi.is/altext/stjt/1991.091.html#G161" law-art="161" law-nr="91" law-year="1991" nr="1">
           <footnote-sen>L. 91/1991, 161. gr.</footnote-sen>
           <location type="range">
-            <chapter>1</chapter>
+            <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
             <sen words="stefnu">2</sen>
           </location>
           <location type="range">
-            <chapter>1</chapter>
+            <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
             <sen words="stefnu">3</sen>
@@ -225,6 +230,10 @@
   <chapter nr="2">
     <nr-title>II. þáttur.</nr-title>
     <name>Almennar reglur um undirbúning og framkvæmd aðfarar.</name>
+  </chapter>
+  <chapter nr="3">
+    <nr-title>3. kafli.</nr-title>
+    <name>Aðfararbeiðni o.fl.</name>
     <art nr="10">
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
@@ -273,7 +282,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/1998.015.html" law-art="35" law-nr="15" law-year="1998" nr="1">
           <footnote-sen>L. 15/1998, 35. gr.</footnote-sen>
           <location type="deletion">
-            <chapter>2</chapter>
+            <chapter>3</chapter>
             <art>11</art>
             <subart>1</subart>
             <numart>2</numart>
@@ -332,7 +341,7 @@
         <footnote nr="1">
           <footnote-sen>&lt;a href=&quot;https://www.reglugerd.is/reglugerdir/allar/nr/017-1992&quot;&gt;Rg. 17/1992&lt;/a&gt;.</footnote-sen>
           <location type="pointer">
-            <chapter>2</chapter>
+            <chapter>3</chapter>
             <art>15</art>
             <subart>1</subart>
             <sen after-mark=" settum af (\[? ?)?ráðherra].&lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^Þegar héraðsdómara hefur borist aðfararbeiðni, skal hennar getið í sérstakri skrá, sem haldin er eftir nánari reglum, ">1</sen>
@@ -341,7 +350,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="118" law-nr="162" law-year="2010" nr="2">
           <footnote-sen>L. 162/2010, 118. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>3</chapter>
             <art>15</art>
             <subart>1</subart>
             <sen words="ráðherra">1</sen>
@@ -405,7 +414,7 @@
         <footnote nr="1">
           <footnote-sen>&lt;a href=&quot;https://www.reglugerd.is/reglugerdir/allar/nr/017-1992&quot;&gt;Rg. 17/1992&lt;/a&gt;.</footnote-sen>
           <location type="pointer">
-            <chapter>2</chapter>
+            <chapter>3</chapter>
             <art>18</art>
             <subart>1</subart>
             <sen after-mark=" settum af (\[? ?)?ráðherra].&lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^Þegar staðreynt hefur verið að aðfararbeiðni fullnægi skilyrðum 1. mgr. 17. gr., getur sýslumaður hennar í sérstakri skrá, sem haldin er eftir nánari reglum, ">1</sen>
@@ -414,7 +423,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="118" law-nr="162" law-year="2010" nr="2">
           <footnote-sen>L. 162/2010, 118. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>3</chapter>
             <art>18</art>
             <subart>1</subart>
             <sen words="ráðherra">1</sen>
@@ -422,6 +431,10 @@
         </footnote>
       </footnotes>
     </art>
+  </chapter>
+  <chapter nr="4">
+    <nr-title>4. kafli.</nr-title>
+    <name>Upphafsaðgerðir við aðför.</name>
     <art nr="19">
       <nr-title>19. gr.</nr-title>
       <subart nr="1">
@@ -478,6 +491,10 @@
         </numart>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="5">
+    <nr-title>5. kafli.</nr-title>
+    <name>Framkvæmd aðfarar.</name>
     <art nr="22">
       <nr-title>22. gr.</nr-title>
       <subart nr="1">
@@ -518,7 +535,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/1996.090.html#G43" law-art="43" law-nr="90" law-year="1996" nr="1">
           <footnote-sen>L. 90/1996, 43. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>24</art>
             <subart>3</subart>
             <sen words="lögreglu">2</sen>
@@ -605,7 +622,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/1996.090.html#G43" law-art="43" law-nr="90" law-year="1996" nr="1">
           <footnote-sen>L. 90/1996, 43. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>29</art>
             <subart>1</subart>
             <sen words="Lögreglu">2</sen>
@@ -614,7 +631,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="2">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>29</art>
             <subart>1</subart>
             <sen words="sakamála">3</sen>
@@ -643,7 +660,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="1">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>30</art>
             <subart>3</subart>
             <sen words="sakamála">5</sen>
@@ -668,7 +685,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="1">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>31</art>
             <subart>2</subart>
             <sen words="sakamála">3</sen>
@@ -703,7 +720,7 @@
         <footnote nr="1">
           <footnote-sen>&lt;a href=&quot;https://www.reglugerd.is/reglugerdir/allar/nr/017-1992&quot;&gt;Rg. 17/1992&lt;/a&gt;.</footnote-sen>
           <location type="pointer">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>33</art>
             <subart>1</subart>
             <sen after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur.$" before-mark="^Fer um form hennar eftir reglum, ">2</sen>
@@ -712,7 +729,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="118" law-nr="162" law-year="2010" nr="2">
           <footnote-sen>L. 162/2010, 118. gr.</footnote-sen>
           <location type="range">
-            <chapter>2</chapter>
+            <chapter>5</chapter>
             <art>33</art>
             <subart>1</subart>
             <sen words="ráðherra">2</sen>
@@ -746,6 +763,10 @@
   <chapter nr="3">
     <nr-title>III. þáttur.</nr-title>
     <name>Aðför til fullnustu peningakröfu.</name>
+  </chapter>
+  <chapter nr="6">
+    <nr-title>6. kafli.</nr-title>
+    <name>Andlag fjárnáms.</name>
     <art nr="36">
       <nr-title>36. gr.</nr-title>
       <subart nr="1">
@@ -961,6 +982,10 @@
         <sen>Hafi enginn verið við gerðina af hálfu gerðarþola, skal sýslumaður tilkynna honum um fjárnámið, ef vitað er hvar hann er niður kominn.</sen>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="7">
+    <nr-title>7. kafli.</nr-title>
+    <name>Réttaráhrif fjárnáms og vörslur hins fjárnumda.</name>
     <art nr="52">
       <nr-title>52. gr.</nr-title>
       <subart nr="1">
@@ -1058,7 +1083,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
-            <chapter>3</chapter>
+            <chapter>7</chapter>
             <art>60</art>
             <subart>1</subart>
             <sen words="sýslumanni">1</sen>
@@ -1072,6 +1097,10 @@
         <sen>Að því leyti, sem lög þessi kveða ekki sérstaklega á um annað, fer um nauðsyn tryggingarráðstafana fyrir rétti samkvæmt fjárnámi og um stöðu þess réttar gagnvart öðrum réttindum eftir almennum reglum laga.</sen>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="8">
+    <nr-title>8. kafli.</nr-title>
+    <name>Árangurslaust fjárnám.</name>
     <art nr="62">
       <nr-title>62. gr.</nr-title>
       <subart nr="1">
@@ -1094,13 +1123,13 @@
           <footnote-sen>L. 95/2010, 1. gr.</footnote-sen>
           <location type="range">
             <start>
-              <chapter>3</chapter>
+              <chapter>8</chapter>
               <art>62</art>
               <subart>1</subart>
               <sen>1</sen>
             </start>
             <end>
-              <chapter>3</chapter>
+              <chapter>8</chapter>
               <art>62</art>
               <subart>1</subart>
               <numart>3</numart>
@@ -1133,6 +1162,10 @@
         <sen>Skylt er þeim, sem 2. tölul. 1. mgr. tekur til, að veita þær upplýsingar, sem sýslumaður krefst og varða hag gerðarþola.</sen>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="9">
+    <nr-title>9. kafli.</nr-title>
+    <name>Endurupptaka fjárnámsgerðar.</name>
     <art nr="65">
       <nr-title>65. gr.</nr-title>
       <subart nr="1">
@@ -1192,7 +1225,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2010.095.html" law-art="2" law-nr="95" law-year="2010" nr="1">
           <footnote-sen>L. 95/2010, 2. gr.</footnote-sen>
           <location type="range">
-            <chapter>3</chapter>
+            <chapter>9</chapter>
             <art>67</art>
             <subart>1</subart>
             <numart>1</numart>
@@ -1213,6 +1246,10 @@
         <sen>Sýslumaður er óbundinn af fyrri ákvörðunum sínum, að því leyti, sem þær geta komið til endurskoðunar við endurupptöku.</sen>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="10">
+    <nr-title>10. kafli.</nr-title>
+    <name>Fjárnám til fullnustu kröfu um dagsektir.</name>
     <art nr="69">
       <nr-title>69. gr.</nr-title>
       <subart nr="1">
@@ -1240,6 +1277,10 @@
   <chapter nr="4">
     <nr-title>IV. þáttur.</nr-title>
     <name>Fullnusta kröfu um annað en peningagreiðslu.</name>
+  </chapter>
+  <chapter nr="11">
+    <nr-title>11. kafli.</nr-title>
+    <name>Aðför til fullnustu kröfu um annað en peningagreiðslu.</name>
     <art nr="72">
       <nr-title>72. gr.</nr-title>
       <subart nr="1">
@@ -1292,6 +1333,10 @@
         <sen>Héraðsdómari ákveður gerðarbeiðanda endurgjald skv. 2. eða 3. mgr. með úrskurði, sem fullnægja má með fjárnámi samkvæmt almennum reglum.</sen>
       </subart>
     </art>
+  </chapter>
+  <chapter nr="12">
+    <nr-title>12. kafli.</nr-title>
+    <name>Útburðar- og innsetningargerðir án undangengins dóms eða réttarsáttar.</name>
     <art nr="78">
       <nr-title>78. gr.</nr-title>
       <subart nr="1">
@@ -1311,6 +1356,10 @@
   <chapter nr="5">
     <nr-title>V. þáttur.</nr-title>
     <name>Málsmeðferð fyrir héraðsdómi.</name>
+  </chapter>
+  <chapter nr="13">
+    <nr-title>13. kafli.</nr-title>
+    <name>Meðferð máls um aðfararbeiðni.</name>
     <art nr="80">
       <nr-title>80. gr.</nr-title>
       <subart nr="1">
@@ -1357,13 +1406,13 @@
         <footnote href="https://www.althingi.is/altext/stjt/2015.078.html" law-art="31" law-nr="78" law-year="2015" nr="1">
           <footnote-sen>L. 78/2015, 31. gr.</footnote-sen>
           <location type="range">
-            <chapter>5</chapter>
+            <chapter>13</chapter>
             <art>82</art>
             <subart>1</subart>
             <sen>2</sen>
           </location>
           <location type="range">
-            <chapter>5</chapter>
+            <chapter>13</chapter>
             <art>82</art>
             <subart>2</subart>
             <sen words="eða ákvörðun">1</sen>
@@ -1411,13 +1460,13 @@
           <footnote-sen>L. 117/2016, 34. gr.</footnote-sen>
           <location type="range">
             <start>
-              <chapter>5</chapter>
+              <chapter>13</chapter>
               <art>84</art>
               <subart>4</subart>
               <sen>1</sen>
             </start>
             <end>
-              <chapter>5</chapter>
+              <chapter>13</chapter>
               <art>84</art>
               <subart>5</subart>
               <sen>2</sen>
@@ -1426,6 +1475,10 @@
         </footnote>
       </footnotes>
     </art>
+  </chapter>
+  <chapter nr="14">
+    <nr-title>14. kafli.</nr-title>
+    <name>Úrlausn ágreinings sem rís við framkvæmd aðfarargerðar eða um endurupptöku hennar.</name>
     <art nr="85">
       <nr-title>85. gr.</nr-title>
       <subart nr="1">
@@ -1535,13 +1588,13 @@
           <footnote-sen>L. 117/2016, 35. gr.</footnote-sen>
           <location type="range">
             <start>
-              <chapter>5</chapter>
+              <chapter>14</chapter>
               <art>91</art>
               <subart>4</subart>
               <sen>1</sen>
             </start>
             <end>
-              <chapter>5</chapter>
+              <chapter>14</chapter>
               <art>91</art>
               <subart>5</subart>
               <sen>2</sen>
@@ -1550,6 +1603,10 @@
         </footnote>
       </footnotes>
     </art>
+  </chapter>
+  <chapter nr="15">
+    <nr-title>15. kafli.</nr-title>
+    <name>Úrlausn ágreinings eftir lok aðfarargerðar.</name>
     <art nr="92">
       <nr-title>92. gr.</nr-title>
       <subart nr="1">
@@ -1614,13 +1671,13 @@
           <footnote-sen>L. 117/2016, 36. gr.</footnote-sen>
           <location type="range">
             <start>
-              <chapter>5</chapter>
+              <chapter>15</chapter>
               <art>95</art>
               <subart>3</subart>
               <sen>1</sen>
             </start>
             <end>
-              <chapter>5</chapter>
+              <chapter>15</chapter>
               <art>95</art>
               <subart>4</subart>
               <sen>2</sen>
@@ -1633,6 +1690,10 @@
   <chapter nr="6">
     <nr-title>VI. þáttur.</nr-title>
     <name>Ýmis ákvæði.</name>
+  </chapter>
+  <chapter nr="16">
+    <nr-title>16. kafli.</nr-title>
+    <name>Ábyrgð á aðfarargerð.</name>
     <art nr="96">
       <nr-title>96. gr.</nr-title>
       <subart nr="1">
@@ -1663,7 +1724,7 @@
         <footnote href="https://www.althingi.is/altext/stjt/2012.072.html" law-art="5" law-nr="72" law-year="2012" nr="1">
           <footnote-sen>L. 72/2012, 5. gr.</footnote-sen>
           <location type="range">
-            <chapter>6</chapter>
+            <chapter>16</chapter>
             <art>98</art>
             <subart>1</subart>
             <sen words="sex">1</sen>
@@ -1673,6 +1734,7 @@
     </art>
   </chapter>
   <chapter nr="t" type="temporary-clauses">
+    <nr-title>17. kafli.</nr-title>
     <name>Gildistaka, brottfallin lög og ákvæði til bráðabirgða.</name>
     <art nr="99">
       <nr-title>99. gr.</nr-title>
