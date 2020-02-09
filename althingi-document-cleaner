@@ -1804,9 +1804,13 @@ def make_xml(law_num, law_year, parliament_version):
             )
 
 
-def process_law(law_id):
+def process_law(law_id, i, law_count):
 
-    stdout.write('Processing law nr. %s...' % law_id)
+    nr = str(i)
+    while len(nr) < 4:
+        nr = ' %s' % nr
+
+    stdout.write('[%s/%d] Processing law nr. %s...' % (nr, law_count, law_id))
     stdout.flush()
 
     (law_num, law_year) = law_id.split('/')
@@ -1868,10 +1872,11 @@ def main(argv):
     if len(law_ids) == 0 and not display_errors:
         usage(argv[0], 'No files matched the given criteria.')
 
-    for law_id in law_ids:
+    law_count = len(law_ids)
+    for i, law_id in enumerate(law_ids):
         if record_errors:
             try:
-                process_law(law_id)
+                process_law(law_id, i, law_count)
 
                 with open('errormap.json', 'r') as f:
                     errormap = json.load(f, object_pairs_hook=OrderedDict)
@@ -1894,7 +1899,7 @@ def main(argv):
                     json.dump(errormap, f)
 
         else:
-            process_law(law_id)
+            process_law(law_id, 1, law_count)
 
     # List the errors and identify laws in which they occurred.
     if display_errors:
