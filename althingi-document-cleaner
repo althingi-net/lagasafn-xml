@@ -363,8 +363,10 @@ def make_xml(law_num, law_year, parliament_version):
             trail.append('intro-finished')
 
         # Chapters are found by finding a <b> tag that comes right after a
-        # <br/> tag that occurs after the ministerial clause is done.
-        elif line == '<b>' and 'intro-finished' in trail and check_chapter(lines, law) == 'chapter':
+        # <br/> tag that occurs after the ministerial clause is done. We use a
+        # special function for this because we also need to examine a bit of
+        # the content which makes the check more than a one-liner.
+        elif check_chapter(lines, law) == 'chapter' and 'intro-finished' in trail:
             # Parse what we will believe to be a chapter.
 
             # Chapter names are a bit tricky. They may be divided into two <b>
@@ -483,7 +485,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('chapter')
 
-        elif line == '<b>' and 'intro-finished' in trail and check_chapter(lines, law) == 'extra-docs':
+        elif check_chapter(lines, law) == 'extra-docs' and 'intro-finished' in trail:
             # Accompanying documents vary in origin and format, and are not a
             # part of the formal legal text itself, even though legal text may
             # reference them. Parsing them is beyond the scope of this tool.

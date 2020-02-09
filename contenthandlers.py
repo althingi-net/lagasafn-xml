@@ -139,93 +139,50 @@ def generate_ancestors(elem, parent):
 # clarity.
 def check_chapter(lines, law):
 
+    # We assume that chapters always start in bold.
+    if lines.peek(0).strip() != '<b>':
+        return ''
+
     matcher = Matcher()
 
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
-
-    # An inner function for setting the content-setup when needed.
-    # TODO: This mechanism is obsolete and should be removed. Much rather, we
-    # should include more information in each chapter about whether the number
-    # was Roman/numeric, whether it included "kafli" or "hluti" and such.
-    def set_content_setup(line_type, value):
-        content_setup = law.find('content-setup')
-        if content_setup is None:
-            content_setup = E('content-setup')
-            law.insert(0, content_setup)
-
-        if content_setup.find(line_type) == None:
-            content_setup.append(E(line_type, value))
-        else:
-            content_setup.find(line_type).text = value
-
-    try:
-        cs_chapter = law.find('content-setup/chapter').text
-    except AttributeError:
-        cs_chapter = ''
-
-    try:
-        cs_subchapter = law.find('content-setup/subchapter').text
-    except AttributeError:
-        cs_subchapter = ''
-
-    # Examples of what results mean:
-    #
-    # chapter: roman-chapter:
-    #     I. kafli. Optional title.
-    #
-    # chapter: roman-standalone:
-    #     I.
 
     line_type = ''
 
     # If the line matches "fylgiskj[aö]l", it indicates that we've run into
     # accompanying documents that are not a part of the legal text itself. We
     # are unable to predict their format and parsing them will always remain
-    # error-prone when possible to begin with.
+    # error-prone when possible to begin with. Possibly we'll include them as
+    # raw HTML goo later.
     if matcher.check(peek_stripped.lower(), 'fylgiskj[aö]l'):
         line_type = 'extra-docs'
+
+    # Same goes for appendices as extra-docs.
+    elif matcher.check(peek_stripped.lower(), '.* viðauki'):
+        line_type = 'appendix'
 
     # We'll assume that temporary clauses are always in a chapter and never in
     # a subchapter. This has not been researched.
     elif peek_stripped.lower().find('bráðabirgð') > -1:
         line_type = 'chapter'
 
-    elif cs_chapter:
-        if cs_chapter == 'roman-chapter':
-
-            # TODO/NOTE: The old plan was to detect changes in the user of
-            # "kafli", "hluti" and Arabic/Roman numerals and organize
-            # subchapters accordingly, but this plan has been abandoned
-            # because the raw data is not consistent or reliable enough.
-            # Instead, we should add more information into the chapter-nodes
-            # so that they can be programmatically distinguished better, for
-            # example in footnotes.
-
-            if peek_stripped.find('. kafli') > -1 or peek_stripped.find('. hluti') > -1:
-                line_type = 'chapter'
-            else:
-                # If we know that chapters are denoted by Roman numerals and
-                # this one isn't denoted by Roman numeral, we assume that it's
-                # a subchapter.
-                if cs_subchapter:
-                    line_type = 'subchapter'
-                else:
-                    if peek_stripped.find('A.') == 0:
-                        set_content_setup('subchapter', 'arabic')
-                        line_type = 'subchapter'
-
-        elif cs_chapter == 'roman-standalone':
-            if is_roman(peek_stripped[0:peek_stripped.find('.')]):
-                line_type = 'chapter'
-
     else:
-        # Here we're running into a possible chapter for the first time.
-        if peek_stripped.find('. kafli') > -1 or peek_stripped.find('. hluti') > -1:
-            set_content_setup('chapter', 'roman-chapter')
+
+        # We must examine the first "sentence" to see if it constitute a Roman
+        # numeral. Possibly we'll analyze it better later to determine things
+        # like subchapters.
+        first = peek_stripped[0:peek_stripped.find('.')]
+
+        # If f.e. ". kafli" or ". hluti" can be found...
+        if any([peek_stripped.find('. %s' % w) > -1 for w in ['kafli', 'hluti']]):
             line_type = 'chapter'
-        elif peek_stripped.find('I.') == 0:
-            set_content_setup('chapter', 'roman-standalone')
+        # We exclude "C" and "D" because as Roman numerals, they are much too
+        # high to ever be used for a chapter. Later we may need to revise this
+        # when we implement for support chapters/subchapters organized by
+        # Latin letters. But since we don't support it yet, we'll just ignore
+        # them like we do "A" and "B".
+        elif is_roman(first) and first not in ['C', 'D']:
             line_type = 'chapter'
 
     return line_type
