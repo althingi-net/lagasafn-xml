@@ -398,8 +398,12 @@ def make_xml(law_num, law_year, parliament_version):
                 maybe_nr = t[0:t.index('.')]
                 try:
                     nr = str(roman.fromRoman(maybe_nr))
+                    roman_nr = maybe_nr
+                    nr_type = 'roman'
                 except roman.InvalidRomanNumeralError:
                     nr = int(maybe_nr)
+                    roman_nr = None
+                    nr_type = 'arabic'
 
                 # We assume that a chapter nr-title with an alphabetical
                 # character (like "II. kafli B" or "2b") can only occur in
@@ -410,12 +414,15 @@ def make_xml(law_num, law_year, parliament_version):
                 # though, so this should be safe. Instead, the legislature
                 # would surely name the chapter to "II. kafli B. Nefndir".
                 #
-                # We check for both "kafli" and "hluti" because those are
-                # logically equivalent, but should never appear both in the
-                # same chapter line.
-                for chapter_word in ['kafli', 'hluti', 'bók']:
-                    if chapter_word in t:
-                        alpha = t[t.index(chapter_word) + 6:].strip('.')
+                # We check for both "kafli" and other words known to also
+                # designate some kind of chapter, because those are logically
+                # equivalent, but should never appear both in the same chapter
+                # line.
+                chapter_word = None
+                for chapter_word_check in ['kafli', 'hluti', 'bók']:
+                    if chapter_word_check in t:
+                        chapter_word = chapter_word_check
+                        alpha = t[t.index(chapter_word_check) + 6:].strip('.')
                         if alpha:
                             nr += alpha.lower()
                 del t
@@ -424,10 +431,14 @@ def make_xml(law_num, law_year, parliament_version):
                 chapter_name = collect_until(lines, '</b>')
 
                 chapter = E.chapter(
-                    {'nr': str(nr)},
+                    {'nr': str(nr), 'nr-type': nr_type},
                     E('nr-title', chapter_nr_title),
                     E('name', chapter_name)
                 )
+
+                # Record the original Roman numeral if applicable.
+                if roman_nr is not None:
+                    chapter.attrib['roman-nr'] = roman_nr
 
             else:
                 chapter_name = name_or_nr_title
@@ -435,7 +446,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # When the chapter doesn't have both a nr-title and a name,
                 # what we see may be either a name or a Roman numeral. If it's
                 # a Roman numeral, we'll want to do two things; 1) Include the
-                # number in the "nr" attribute (in Latin) and 2) Use the
+                # number in the "nr" attribute (in Arabic) and 2) Use the
                 # "nr-title" tag instead of the "name" tag. If it's not a
                 # Roman numeral, we'll just set a name.
                 #
@@ -459,12 +470,13 @@ def make_xml(law_num, law_year, parliament_version):
 
                     nr = str(roman.fromRoman(maybe_roman_nr))
                     chapter = E.chapter(
-                        {'nr': nr},
+                        {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
                         E('nr-title', chapter_name)
                     )
                 except roman.InvalidRomanNumeralError:
                     # Nope! It's a name.
                     chapter = E.chapter(
+                        {'nr-type': 'name'},
                         E('name', chapter_name)
                     )
 
