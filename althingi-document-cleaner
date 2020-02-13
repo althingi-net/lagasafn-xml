@@ -475,6 +475,7 @@ def make_xml(law_num, law_year, parliament_version):
                     )
                 except roman.InvalidRomanNumeralError:
                     # Nope! It's a name.
+                    nr = None
                     chapter = E.chapter(
                         {'nr-type': 'name'},
                         E('name', chapter_name)
@@ -484,10 +485,27 @@ def make_xml(law_num, law_year, parliament_version):
             # named something like "Bráðabirgðaákvæði", "Ákvæði til
             # bráðabirgða" and probably something else as well. We will assume
             # that a chapter name that includes that string "bráðabirgð" is a
-            # chapter for temporary clauses and furthermore that the string
-            # does NOT appear in any other kind of chapter.
-            if 'bráðabirgð' in chapter_name.lower():
-                chapter.attrib['nr'] = 't'
+            # chapter for temporary clauses. We also make a number of other
+            # tests on the chapter name to account for various special cases
+            # as pointed out in comments below.
+            cn = chapter_name.lower()
+            if (
+                'bráðabirgð' in cn
+                and not 'úrræði' in cn
+                and (
+                    # Various places where something has been removed and
+                    # commented in content with an a-node.
+                    not 'úrelt ákvæði til bráðabirgða' in cn
+                    # Special case in 87/1992 where text is before a-node
+                    or cn.find('ákvæði til bráðabirgða.') == 0
+                )
+                # Special case in law 90/1989
+                and not 'brottfallin lög' in cn
+                # Special case in law 80/2007
+                and not 'bráðabirgðaafnot' in cn
+            ):
+                if nr is None:
+                    chapter.attrib['nr'] = 't'
                 chapter.attrib['type'] = 'temporary-clauses'
 
             law.append(chapter)
