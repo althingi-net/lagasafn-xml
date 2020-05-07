@@ -2,7 +2,7 @@ import re
 import roman
 import subprocess
 
-CURRENT_PARLIAMENT_VERSION = '150a'
+CURRENT_PARLIAMENT_VERSION = '150b'
 
 
 def create_url(law_num, law_year):
