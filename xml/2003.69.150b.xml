@@ -694,6 +694,16 @@
     <name>Gjald fyrir tíðninotkun.</name>
     <subart nr="1">
       <sen>Þeir aðilar sem fengið hafa heimild til að nota tíðnir til þráðlausra fjarskipta skulu greiða árlegt gjald til Póst- og fjarskiptastofnunar samkvæmt því sem hér segir:</sen>
+      <sen-title>Radíóstöðvar með skipa- og flugtíðnum.</sen-title>
+      <sen-title>Farstöðvarásir.</sen-title>
+      <sen-title>Jarðstöðvar.</sen-title>
+      <sen-title>Fastasambönd.</sen-title>
+      <sen-title>Almenn farnet (t.d. GSM, 3G, 4G og 5G).</sen-title>
+      <sen-title>TETRA neyðar- og öryggisnet.</sen-title>
+      <sen>Fyrir hvert MHz 64.100 kr.</sen>
+      <sen-title>Þráðlaus aðgangsnet.</sen-title>
+      <sen-title>Fyrir hverja rás í sjónvarpssendi.</sen-title>
+      <sen-title>Fyrir hverja rás í hljóðvarpssendi.</sen-title>
     </subart>
     <subart nr="2">
       <sen>Gjaldsvæði sem tilgreind eru í 1. mgr. skulu afmörkuð sem hér segir:</sen>
@@ -750,7 +760,8 @@
         <location type="range">
           <start>
             <art>14a</art>
-            <nr-title>1</nr-title>
+            <subart>1</subart>
+            <sen-title>5</sen-title>
           </start>
           <end>
             <art>14a</art>

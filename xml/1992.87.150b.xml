@@ -11,6 +11,8 @@
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
       <sen>Í lögum þessum hafa eftirfarandi orð merkingu sem hér segir:</sen>
+      <sen-title>Innlendur aðili</sen-title>
+      <sen>merkir:</sen>
       <numart nr="1" type="numeric">
         <nr-title>1.</nr-title>
         <sen>sérhvern mann sem hefur fasta búsetu hér á landi samkvæmt lögum um lögheimili og aðsetur án tillits til ríkisfangs; sama á við um íslenskan ríkisborgara og skyldulið hans sem hefur búsetu erlendis en gegnir störfum þar á vegum íslenska ríkisins við sendiráð, fastanefnd eða ræðismannsskrifstofu og tekur laun úr ríkissjóði eða er starfsmaður alþjóðastofnunar sem Ísland er aðili að;</sen>
@@ -18,51 +20,74 @@
       <numart nr="2" type="numeric">
         <nr-title>2.</nr-title>
         <sen>sérhvern lögaðila sem skráður er til heimilis hér á landi á lögmæltan hátt, telur heimili sitt hér á landi samkvæmt samþykktum sínum eða ef raunveruleg framkvæmdastjórn hans er hér á landi; hérlend útibú lögaðila, sem heimili eiga erlendis, teljast til innlendra aðila.</sen>
-        <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>beinum fjárfestingum,</sen>
-        </numart>
-        <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>útgáfu á og viðskiptum með hlutabréf, skuldabréf, víxla, hlutdeildarskírteini verðbréfasjóða og önnur langtíma- eða skammtímaverðbréf,</sen>
-        </numart>
-        <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>lánveitingum, lántökum og greiðslu eða móttöku afborgana af lánum,</sen>
-        </numart>
-        <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>veitingu ábyrgða og hvers konar greiðslutrygginga,</sen>
-        </numart>
-        <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <sen>opnun bankareikninga og notkun þeirra,</sen>
-        </numart>
-        <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <sen>framvirkum viðskiptum, viðskiptum með valrétt (valkvæðum viðskiptum) og gjaldmiðla- og vaxtaskiptum,</sen>
-        </numart>
-        <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <sen>yfirfærslu á fjármunum einstaklinga og fjölskyldna.</sen>
-          <numart nr="1" type="numeric">
-            <nr-title>1.</nr-title>
-            <sen>útgáfu á og viðskiptum með skuldabréf og víxla með lokagjalddaga allt að einu ári frá útgáfudegi og önnur slík skammtímaverðbréf,</sen>
-          </numart>
-          <numart nr="2" type="numeric">
-            <nr-title>2.</nr-title>
-            <sen>útgáfu á og viðskiptum með hlutdeildarskírteini verðbréfasjóða sem fjárfesta í skammtímaverðbréfum,</sen>
-          </numart>
-          <numart nr="3" type="numeric">
-            <nr-title>3.</nr-title>
-            <sen>lánveitingum og lántökum til skemmri tíma en eins árs,</sen>
-          </numart>
-          <numart nr="4" type="numeric">
-            <nr-title>4.</nr-title>
-            <sen>innleggi á og úttekt af reikningum í innlánsstofnunum.</sen>
-          </numart>
-        </numart>
       </numart>
+      <sen-title>Erlendur aðili</sen-title>
+      <sen>merkir alla aðra aðila en innlenda.</sen>
+      <sen-title>Innlendur gjaldeyrir</sen-title>
+      <sen>merkir íslenska peningaseðla, slegna peninga, tékka og aðrar ávísanir, víxla og önnur greiðslufyrirmæli sem hljóða upp á greiðslu í íslenskum krónum, minnispeninga, gull, silfur og aðra dýra málma ef þeir eru notaðir sem gjaldmiðill í viðskiptum hér á landi.</sen>
+      <sen-title>Erlendur gjaldeyrir</sen-title>
+      <sen>merkir erlenda peningaseðla, slegna peninga, tékka og aðrar ávísanir, víxla og önnur greiðslufyrirmæli sem hljóða upp á greiðslu í erlendri mynt, minnispeninga, gull, silfur og aðra dýra málma ef þeir eru notaðir sem gjaldmiðill í viðskiptum erlendis.</sen>
+      <sen-title>Gjaldeyrisviðskipti</sen-title>
+      <sen>merkja það að skipta innlendum gjaldeyri fyrir erlendan, erlendum gjaldeyri fyrir innlendan eða einum erlendum gjaldeyri fyrir annan eða reikningsviðskipti sem eru ígildi þess að erlendur gjaldeyrir sé látinn af hendi eða móttekinn.</sen>
+      <sen-title>Fjármagnshreyfingar á milli landa</sen-title>
+      <sen>merkja yfirfærslu eða flutning á fjármunum milli landa og yfirfærslu eða flutning á fjármunum milli innlendra og erlendra aðila sem tengjast:</sen>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <sen>beinum fjárfestingum,</sen>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <sen>útgáfu á og viðskiptum með hlutabréf, skuldabréf, víxla, hlutdeildarskírteini verðbréfasjóða og önnur langtíma- eða skammtímaverðbréf,</sen>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <sen>lánveitingum, lántökum og greiðslu eða móttöku afborgana af lánum,</sen>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <sen>veitingu ábyrgða og hvers konar greiðslutrygginga,</sen>
+      </numart>
+      <numart nr="5" type="numeric">
+        <nr-title>5.</nr-title>
+        <sen>opnun bankareikninga og notkun þeirra,</sen>
+      </numart>
+      <numart nr="6" type="numeric">
+        <nr-title>6.</nr-title>
+        <sen>framvirkum viðskiptum, viðskiptum með valrétt (valkvæðum viðskiptum) og gjaldmiðla- og vaxtaskiptum,</sen>
+      </numart>
+      <numart nr="7" type="numeric">
+        <nr-title>7.</nr-title>
+        <sen>yfirfærslu á fjármunum einstaklinga og fjölskyldna.</sen>
+      </numart>
+      <sen-title>Skammtímahreyfingar fjármagns</sen-title>
+      <sen>merkja fjármagnshreyfingar milli landa sem tengjast:</sen>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <sen>útgáfu á og viðskiptum með skuldabréf og víxla með lokagjalddaga allt að einu ári frá útgáfudegi og önnur slík skammtímaverðbréf,</sen>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <sen>útgáfu á og viðskiptum með hlutdeildarskírteini verðbréfasjóða sem fjárfesta í skammtímaverðbréfum,</sen>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <sen>lánveitingum og lántökum til skemmri tíma en eins árs,</sen>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <sen>innleggi á og úttekt af reikningum í innlánsstofnunum.</sen>
+      </numart>
+      <sen-title>Langtímahreyfingar fjármagns</sen-title>
+      <sen>merkja allar aðrar fjármagnshreyfingar en skammtímahreyfingar fjármagns.</sen>
+      <sen-title>Bein fjárfesting</sen-title>
+      <sen>merkir fjárframlag eða annað framlag til eigin fjár atvinnufyrirtækis eða kaup á eignarhlut til að öðlast virk áhrif á stjórn þess.</sen>
+      <sen>Langtímalán frá eigendum fyrirtækis til fyrirtækisins teljast einnig bein fjárfesting.</sen>
+      <sen-title>Óbein fjárfesting</sen-title>
+      <sen>merkir alla aðra fjárfestingu en beina fjárfestingu, einkum fjárfestingu í verðbréfum sem er fyrst og fremst til þess ætluð að ávaxta fé en ekki til að öðlast virk áhrif á stjórn fyrirtækis.</sen>
+      <sen-title>Innlend verðbréf</sen-title>
+      <sen>merkja hvers konar framseljanleg kröfuréttindi sem innlendur aðili gefur út, svo sem hlutabréf, arðmiða, skuldabréf, vaxtamiða, hlutdeildarskírteini í verðbréfasjóði, svo og framseljanleg skilríki fyrir eignarréttindum að öðrum eignum en fasteignum eða einstökum lausafjármunum.</sen>
+      <sen-title>Erlend verðbréf</sen-title>
+      <sen>merkja hvers konar framseljanleg kröfuréttindi sem erlendur aðili gefur út, svo sem hlutabréf, arðmiða, skuldabréf, vaxtamiða, hlutdeildarskírteini í verðbréfasjóði, svo og framseljanleg skilríki fyrir eignarréttindum að öðrum eignum en fasteignum eða einstökum lausafjármunum.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.080.html#G20" law-art="20" law-nr="80" law-year="2018" nr="1">
@@ -76,6 +101,18 @@
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.127.html" law-art="1" law-nr="127" law-year="2011" nr="2">
         <footnote-sen>L. 127/2011, 1. gr.</footnote-sen>
+        <location type="range">
+          <start>
+            <art>1</art>
+            <subart>1</subart>
+            <sen-title>6</sen-title>
+          </start>
+          <end>
+            <art>1</art>
+            <subart>1</subart>
+            <sen>7</sen>
+          </end>
+        </location>
       </footnote>
     </footnotes>
   </art>
