@@ -510,7 +510,7 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('chapter')
 
-        elif check_chapter(lines, law) == 'extra-docs' and 'intro-finished' in trail:
+        elif check_chapter(lines, law) in ['extra-docs', 'appendix'] and 'intro-finished' in trail:
             # Accompanying documents vary in origin and format, and are not a
             # part of the formal legal text itself, even though legal text may
             # reference them. Parsing them is beyond the scope of this tool.
