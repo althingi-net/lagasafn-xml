@@ -710,6 +710,19 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('subart')
 
+        elif matcher.check(line, '<table'):
+            # Parse a stray table, that we haven't run across inside a
+            # subarticle. We'll append it to previously parsed thing. The
+            # table width is only for consistency with the typical input.
+
+            content = '<table width="100%">' + collect_until(lines, '</table>') + '</table>'
+            sen = E('sen', separate_sentences(content).pop())
+
+            if subart is not None:
+                subart.append(sen)
+            elif art is not None:
+                art.append(sen)
+
         elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
             # The removal of ". " is to turn a human readable numerical
             # article that contains both a numerical component and an
@@ -1751,6 +1764,9 @@ def make_xml(law_num, law_year, parliament_version):
             # stylized at all, thereby making them virtually indistinguishable
             # from headers. These are currently unsupported at the moment,
             # meaning they will be interpreted as if they were data cells.
+            #
+            # TODO: In 96. gr. laga nr. 55/1991, bold and italic items seem to
+            # be skipped altogether. This must be the code's fault, somehow.
 
             toprow = next(rows)
             if toprow[0].find('b') is not None:
