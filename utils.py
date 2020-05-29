@@ -84,8 +84,23 @@ def numart_next_nrs(prev_numart):
             # TODO: Check if this is still needed if version 150b of the law
             # is obsolete. Althingi was notified of the mistake during that
             # parliament, and may have fixed it.
+            #
+            # Even greater madness exists in 8. gr. laga nr. 51/2016, although
+            # that apparent mistake is also in the bill that became the law,
+            # and so won't be fixed without a bill being passed in Parliament.
+            # I **guess** this is the right way to deal with it. Maybe I'm
+            # wrong and the proper method is just to double the length of the
+            # same string with the same letter.
 
             expected_numart_nrs = ['ab', 'bb']
+        elif prev_numart_nr == 'bb':
+            expected_numart_nrs = ['bc', 'cc']
+        elif prev_numart_nr == 'cc':
+            expected_numart_nrs = ['cd', 'dd']
+        elif prev_numart_nr == 'dd':
+            expected_numart_nrs = ['de', 'ee']
+        elif prev_numart_nr == 'ee':
+            expected_numart_nrs = ['ef', 'ff']
 
         else:
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
