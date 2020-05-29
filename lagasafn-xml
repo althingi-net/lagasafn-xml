@@ -762,7 +762,7 @@ def make_xml(law_num, law_year, parliament_version):
             # updated accordingly. We'll just append an empty numart with a
             # special type "removed" and move on, but we need to add it
             # because although it contains no content, it needs to have a
-            # container for the delation marker. That way, the next iteration
+            # container for the deletion marker. That way, the next iteration
             # will make decisions on its context according to this iteration's
             # prev_numart.
             #
