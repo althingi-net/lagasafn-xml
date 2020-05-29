@@ -64,6 +64,29 @@ def numart_next_nrs(prev_numart):
             numart_to_increment = prev_numart_nr[1:-1]
             next_numart_nr = '(%s)' % chr(int(ord(numart_to_increment)) + 1)
             expected_numart_nrs.append(next_numart_nr)
+
+        elif prev_numart_nr == 'ö':
+
+            # After the last character of the Icelandic alphabet, "ö", the
+            # numart can be continued by using two letters, "aa", "ab", "ac"
+            # and so forth. This is hard-coded for now but should be
+            # implemented logically at some point.
+            #
+            # TODO: Implement this logic logically instead of hard-coding.
+
+            expected_numart_nrs = ['aa']
+
+        elif prev_numart_nr == 'aa':
+
+            # Presumably by mistake, in 43. gr. laga nr. 55/2009, the numart
+            # "aa" is followed by "bb" instead of "ab".
+            #
+            # TODO: Check if this is still needed if version 150b of the law
+            # is obsolete. Althingi was notified of the mistake during that
+            # parliament, and may have fixed it.
+
+            expected_numart_nrs = ['ab', 'bb']
+
         else:
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 

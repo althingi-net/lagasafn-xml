@@ -518,6 +518,27 @@ def make_xml(law_num, law_year, parliament_version):
             # done. We'll escape the loop and go for post-processing.
             break
 
+        elif check_chapter(lines, law) == 'ambiguous' and 'intro-finished' in trail:
+            # Parse a mysterious text that might be a chapter but we're unable
+            # to determine it as such. They are bold, they are bad, but they
+            # don't really make an awful lot of sense. We'll just splash them
+            # in as ambiguous bold text and leave it at that.
+            #
+            # This occurs in 96. gr. laga nr. 55/1991, before the table.
+
+            ambiguous_bold_text = E('ambiguous-bold-text', collect_until(lines, '</b>'))
+
+            if subart is not None:
+                subart.append(ambiguous_bold_text)
+            elif art is not None:
+                art.append(ambiguous_bold_text)
+            elif chapter is not None:
+                chapter.append(ambiguous_bold_text)
+            else:
+                law.append(ambiguous_bold_text)
+
+            trail.append('ambiguous-bold-text')
+
         elif line == '<em>' and 'intro-finished' in trail:
             # Parse a mysterious thing which we will call an "ambiguous
             # section" and is composed of a single italic line. Such a line is
@@ -557,6 +578,32 @@ def make_xml(law_num, law_year, parliament_version):
                 law.append(ambiguous_section)
 
             trail.append('ambiguous-section')
+
+        elif line == '<i>' and lines.peek(2).strip() == '</i>' and 'intro-finished' in trail:
+            # Parse a sentence with a title. These are rare, but occur in 3.
+            # gr. laga nr. 55/2009. Usually they are numbered, parsed as
+            # numarts instead, but not here.
+
+            # In 3. gr. laga nr. 55/2009, sentences with titles have the
+            # opening marks located right before the <i> tag, meaning that we
+            # have no proper place to put it in. We'll place it in the
+            # beginning of the sen-title instead. There can be more than one,
+            # so we'll append continuously until we run out of opening marks.
+
+            sen_title = ''
+            back_peek = lines.peek(-1).strip()
+            while len(back_peek) > 0 and back_peek[-1] == '[':
+                sen_title += '['
+                back_peek = back_peek[0:-1]
+
+            sen_title += collect_until(lines, '</i>')
+            sens = collect_until(lines, '<br/>')
+            if subart is not None:
+                subart.append(E('sen-title', sen_title))
+                for sen in separate_sentences(sens):
+                    subart.append(E('sen', sen))
+
+                trail.append('sen-with-title')
 
         elif matcher.check(line, '<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
