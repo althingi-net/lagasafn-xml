@@ -24,6 +24,9 @@ def numart_next_nrs(prev_numart):
     example, if the prev_numart's number is "1", then "2" and "1a" are
     expected. If it's "b", then "c" is expected.
     '''
+
+    matcher = Matcher()
+
     prev_numart_nr = prev_numart.attrib['nr']
     expected_numart_nrs = []
     if prev_numart.attrib['type'] == 'numeric':
@@ -35,8 +38,21 @@ def numart_next_nrs(prev_numart):
                 str(int(prev_numart_nr) + 1),
                 str(int(prev_numart_nr)) + 'a',
             ]
+
+        elif matcher.check(prev_numart_nr, '(\d+)-(\d+)'):
+            # Numarts may be ranges, (see 145. gr. laga nr. 108/2007), in
+            # which case we only need to concern ourselves with the latter
+            # number to determine the expected values.
+
+            from_numart_nr, to_numart_nr = matcher.result()
+
+            expected_numart_nrs = [
+                str(int(to_numart_nr) + 1),
+                str(int(to_numart_nr)) + 'a',
+            ]
+
         else:
-            # If, however, the whole thing starts with a number but is not
+            # If at this point the whole thing starts with a number but is not
             # entirely a number, it means that the numart is a mixture of both
             # (f.e. 9a). In these cases we'll expect either the next number
             # (10 following 9a) or the same number with the next alphabetic
@@ -48,6 +64,7 @@ def numart_next_nrs(prev_numart):
                 str(num_component + 1),
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
+
     elif prev_numart.attrib['type'] == 'en-dash':
         expected_numart_nrs.append('—')
     elif prev_numart.attrib['type'] == 'roman':

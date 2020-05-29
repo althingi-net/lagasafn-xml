@@ -757,6 +757,13 @@ def make_xml(law_num, law_year, parliament_version):
             # 20/2003.
             numart_nr = strip_markers(lines.peek().strip().strip('.')).replace('. ', '')
 
+            # Support for numart ranges, which are only known to occur when
+            # many numarts have been removed. This occurs for example in 145.
+            # gr. laga nr. 108/2007.
+            if matcher.check(numart_nr, '(\d+)\.–(\d+)'):
+                from_numart_nr, to_numart_nr = matcher.result()
+                numart_nr = '%s-%s' % (from_numart_nr, to_numart_nr)
+
             # This is only known to happen in 3. gr. laga nr. 160/2010. A
             # numart has been removed and the numbers of its following numarts
             # updated accordingly. We'll just append an empty numart with a
