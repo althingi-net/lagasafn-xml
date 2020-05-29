@@ -372,9 +372,65 @@
       <name>Grunnfjárhæðir húsnæðisbóta.</name>
       <subart nr="1">
         <sen>Grunnfjárhæðir húsnæðisbóta taka mið af fjölda heimilismanna óháð aldri samkvæmt eftirfarandi stuðlum:</sen>
+        <sen>
+          <table>
+            <thead>
+              <tr>
+                <th header-style="i">Fjöldi heimilismanna</th>
+                <th header-style="i">Stuðull</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>1,3225806</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>1,5483871</td>
+              </tr>
+              <tr>
+                <td>4 eða fleiri</td>
+                <td>1,6774194</td>
+              </tr>
+            </tbody>
+          </table>
+        </sen>
       </subart>
       <subart nr="2">
         <sen>Grunnfjárhæðir húsnæðisbóta á ári eru sem hér segir:</sen>
+        <sen>
+          <table>
+            <thead>
+              <tr>
+                <th header-style="i">Fjöldi heimilismanna</th>
+                <th header-style="i">Grunnfjárhæð húsnæðisbóta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>372.000 kr.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>492.000 kr.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>576.000 kr.</td>
+              </tr>
+              <tr>
+                <td>4 eða fleiri</td>
+                <td>624.000 kr.</td>
+              </tr>
+            </tbody>
+          </table>
+        </sen>
       </subart>
       <subart nr="3">
         <sen>Tekjur, eignir og greiðsluþátttaka í húsnæðiskostnaði skv. 17.–19. gr. hafa áhrif til lækkunar á grunnfjárhæðum húsnæðisbóta skv. 2. mgr.</sen>
@@ -393,6 +449,34 @@
       <subart nr="1">
         <sen>Við útreikning húsnæðisbóta skal lækka grunnfjárhæðir skv. 2. mgr. 16. gr. um fjárhæð sem nemur 9% af samanlögðum árstekjum heimilismanna, 18 ára og eldri, umfram eftirfarandi frítekjumörk sem miðast við greiðslur húsnæðisbóta fyrir heilt almanaksár og taka mið af fjölda heimilismanna óháð aldri eftir stuðlum skv. 1. mgr. 16. gr.</sen>
         <sen>:</sen>
+        <sen>
+          <table>
+            <thead>
+              <tr>
+                <th header-style="i">Fjöldi heimilismanna</th>
+                <th header-style="i">Frítekjumörk m.v. árstekjur</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>3.100.000 kr.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>4.100.000 kr.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4.800.000 kr.</td>
+              </tr>
+              <tr>
+                <td>4 eða fleiri</td>
+                <td>5.200.000 kr.</td>
+              </tr>
+            </tbody>
+          </table>
+        </sen>
       </subart>
       <subart nr="2">
         <sen>Miða skal við tekjur sem koma til á sama tímabili innan hvers almanaksárs og greiðslur húsnæðisbóta standa yfir, sbr. þó 3. mgr. 20. gr.</sen>
