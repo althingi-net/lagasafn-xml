@@ -684,6 +684,68 @@ def make_xml(law_num, law_year, parliament_version):
 
                 art.append(E('name', strip_links(art_name)))
 
+            # Another way to denote an article's name is by immediately
+            # following it with bold text. This is very rare but does occur.
+            elif lines.peek().strip() == '<b>' and lines.peek(2).strip() != 'Ákvæði til bráðabirgða.':
+                # Exceptional case: 94/1996 contains a very strange temporary
+                # clause chapter. It was originally a temporary article (24.
+                # gr.) with a name denoted differently than other articles in
+                # that bill. It was not a chapter.
+                #
+                # See: https://www.althingi.is/altext/120/s/0751.html
+                #
+                # Then the temporary clauses were altered with law that
+                # assumed that the temporary clause section was, in fact, a
+                # chapter and not an article. This has resulted in an
+                # ambiguity, leaving the legal document itself in unparsable
+                # limbo. The temporary clauses that are current are not
+                # denoted as temporary per se, but rather as strangely
+                # numbered articles that appear after article 24, which is
+                # still called "Temporary clauses" (in Icelandic) and is
+                # technically empty.
+                #
+                # See: https://www.althingi.is/lagas/150b/1996094.html
+                #
+                # Before this block of code was written (for supporting
+                # article names denoted by <b> tags), we would parse this as a
+                # temporary chapter and not as an article, due to the fact
+                # that it contains the word "bráðabirgða". Now that we're
+                # implementing support for bold-denoted article names, it is
+                # parsed as an article name, resulting in the same limbo state
+                # that can be found in the official documents.
+                #
+                # We need to decide whether we wish to imitate the chaotic
+                # limbo in the legal code, or to parse the temporary clauses
+                # as a chapter and leave article 24 as, in effect, empty.
+                #
+                # We have to decided the latter, for the following reasons:
+                #
+                # 1. It is clear that Parliament's most recent treatment of
+                #    these clauses have assumed that they belonged to a
+                #    temporary clause chapter, and not an article. This is
+                #    clear from how bills have treated the clauses after the
+                #    original bill was passed.
+                #
+                # 2. The temporary articles are denoted with Roman numerals,
+                #    typical of articles in temporary chapters but otherwise
+                #    not known to occur to denote temporary clauses.
+                #
+                # 3. The purpose of this script is to create a logical and
+                #    coherent collection of Icelandic law. To imitate the
+                #    limbo would go against this goal, whereas interpreting it
+                #    as a chapter brings us closer to achieving it.
+                #
+                # This decision manifests itself in the latter part of the
+                # elif-line above, where we peek 2 lines into the future and
+                # check if it's the article with that specific name. That
+                # latter part only returns true in the very specific case
+                # outlined here.
+
+                scroll_until(lines, '<b>')
+                art_name = collect_until(lines, '</b>')
+
+                art.append(E('name', strip_links(art_name), { 'original-ui-style': 'bold' }))
+
             # Check if the article is empty aside from markers that need to be
             # included in the article <nr-title> or <name> (depending on
             # whether <name> exists at all).
