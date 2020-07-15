@@ -736,6 +736,28 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('subart')
 
+        elif line.strip() == '…' and trail[-1] == 'intro-finished':
+            # Support for a deletion marker before any other content such as
+            # an article, subarticle, numart, chapter or anything of the sort.
+            # We'll place it in a sentence inside a subart so that the
+            # footnotes-functionality responds accordingly.
+            #
+            # Only known to occur in the following:
+            # - m01d13/1736
+            # - m07d01/1746
+            # - m01d27/1847
+            # - 97/1993
+
+            premature_deletion = collect_until(lines, '<br/>')
+
+            sen = E('sen', premature_deletion)
+            subart = E('subart', sen)
+            subart.attrib['nr'] = '1'
+
+            law.append(subart)
+
+            trail.append('premature-deletion')
+
         elif matcher.check(line, '<table'):
             # Parse a stray table, that we haven't run across inside a
             # subarticle. We'll append it to previously parsed thing. The
