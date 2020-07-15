@@ -310,7 +310,7 @@ def make_xml(law_num, law_year, parliament_version):
                     # be the name of the month.
                     # Example: https://www.althingi.is/lagas/148c/1764000.html
                     day = 0
-                    month = int(determine_month(human_date))
+                    month = int(determine_month(human_date)) if human_date else 0
 
                 # Produce an ISO-formatted date.
                 iso_date = '%04d-%02d-%02d' % (year, month, day)
