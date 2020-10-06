@@ -1528,7 +1528,7 @@ def make_xml(law_num, law_year, parliament_version):
                             # locations that can be appended to the footnote
                             # XML.
                             marker_locations.append({
-                                'num': int(num),
+                                'num': int(num) if num is not None else None,
                                 'type': 'range',
 
                                 # 'started_at' is determined from previous
@@ -1740,8 +1740,35 @@ def make_xml(law_num, law_year, parliament_version):
                 marker_locations = super_iter(marker_locations)
 
                 for ml in marker_locations:
-                    # Get the marker's appropriate footnote XML.
-                    footnote = footnotes.getchildren()[ml['num'] - 1]
+                    # If the num is None, then the range is not attributable
+                    # to a footnote. This occurs in 4. mgr. 10. gr. laga nr.
+                    # 40/2007 to indicate that a lowercase letter has been
+                    # made uppercase as an implicit result of a legal change
+                    # that removed the first portion of the sentence. As far
+                    # as we can tell, this is not a rule but rather just the
+                    # explanation in that case. Unspecified ranges may
+                    # presumably exist for other reasons.
+                    #
+                    # When this happens, we will respond by adding an
+                    # <unspecified-ranges> tag immediately following the
+                    # <footnotes> tag that already exists. We will then then
+                    # simply stuff the <location> element in there instead of
+                    # the footnote that we should find in cases when `num` is
+                    # an integer (i.e. referring to a numbered footnote).
+                    if ml['num'] is None:
+                        # Find the index where we'll want to add the new
+                        # <unspecified-ranges> element.
+                        new_index = footnotes.getparent().index(footnotes) + 1
+
+                        # Create the new <unspecified-ranges> element.
+                        location_target = E('unspecified-ranges')
+
+                        # Add the new element immediately after the
+                        # <footnotes> element.
+                        footnotes.getparent().insert(new_index, location_target)
+                    else:
+                        # Get the marker's appropriate footnote XML.
+                        location_target = footnotes.getchildren()[ml['num'] - 1]
 
                     # Create the location XML node itself.
                     location = E('location', {'type': ml['type']})
@@ -1750,7 +1777,7 @@ def make_xml(law_num, law_year, parliament_version):
                         for node in ml['started_at']:
                             location.append(node)
 
-                        footnote.append(location)
+                        location_target.append(location)
 
                     elif ml['type'] == 'range':
                         # If the starting and ending locations are identical,
@@ -1791,7 +1818,7 @@ def make_xml(law_num, law_year, parliament_version):
                         # the same set of words should be marked repeatedly in
                         # the same sentence.
                         twin_found = False
-                        for maybe_twin in footnote.findall('location'):
+                        for maybe_twin in location_target.findall('location'):
                             if xml_compare(maybe_twin, location):
                                 maybe_twin.getchildren()[-1].attrib['repeat'] = 'true'
                                 twin_found = True
@@ -1799,8 +1826,8 @@ def make_xml(law_num, law_year, parliament_version):
 
                         if not twin_found:
                             # Finally, we add the location node to the footnote
-                            # node.
-                            footnote.append(location)
+                            # node (or unspecified-ranges node).
+                            location_target.append(location)
 
             # Leave a trail saying we're done processing a footnote.
             trail.append('footnote')
