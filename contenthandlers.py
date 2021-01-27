@@ -23,13 +23,13 @@ def regexify_markers(text):
         text
     )
     text = re.sub(
-        r'\],? <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
-        r'(\],? <sup( style="font-size:60%")?> ?\d+\) ?</sup>)?,? ?',
+        r'\],? <sup style="font-size:60%"> ?\\d+\) ?</sup>,? ?',
+        r'(\],? <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
     text = re.sub(
-        r'… <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
-        r'(… <sup( style="font-size:60%")?> ?\d+\) ?</sup>)?,? ?',
+        r'… <sup style="font-size:60%"> ?\\d+\) ?</sup>,? ?',
+        r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
     text = text.replace(' ,', r' ?,')
