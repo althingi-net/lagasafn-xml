@@ -833,7 +833,7 @@ def make_xml(law_num, law_year, parliament_version):
             elif art is not None:
                 art.append(sen)
 
-        elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">'):
+        elif matcher.check(line, '<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or (matcher.check(line, '<span>') and lines.peek().strip() != '</span>'):
             # The removal of ". " is to turn a human readable numerical
             # article that contains both a numerical component and an
             # alphabetic one, into something easier to work with
