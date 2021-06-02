@@ -869,16 +869,160 @@
     <name>Gjald fyrir tíðninotkun.</name>
     <subart nr="1">
       <sen>Þeir aðilar sem fengið hafa heimild til að nota tíðnir til þráðlausra fjarskipta skulu greiða árlegt gjald til Póst- og fjarskiptastofnunar samkvæmt því sem hér segir:</sen>
-      <sen-title>Radíóstöðvar með skipa- og flugtíðnum.</sen-title>
-      <sen-title>Farstöðvarásir.</sen-title>
-      <sen-title>Jarðstöðvar.</sen-title>
-      <sen-title>Fastasambönd.</sen-title>
-      <sen-title>Almenn farnet (t.d. GSM, 3G, 4G og 5G).</sen-title>
-      <sen-title>TETRA neyðar- og öryggisnet.</sen-title>
-      <sen>Fyrir hvert MHz 64.100 kr.</sen>
-      <sen-title>Þráðlaus aðgangsnet.</sen-title>
-      <sen-title>Fyrir hverja rás í sjónvarpssendi.</sen-title>
-      <sen-title>Fyrir hverja rás í hljóðvarpssendi.</sen-title>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <name>Radíóstöðvar með skipa- og flugtíðnum.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Með milli- og stuttbylgju (MF/HF) 6.400 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Án milli- og stuttbylgju (aðeins VHF) 4.100 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <name>Farstöðvarásir.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Fyrir hver 25 kHz á gjaldsvæði 1 63.000 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Fyrir hver 25 kHz á gjaldsvæði 2 eða 3 12.600 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Fyrir samnýttar rásir greiðist 25% af gjaldi skv. a- og b-lið eftir því sem við á.</sen>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <nr-title>d.</nr-title>
+          <sen>Aðilar að landssamtökum björgunarsveita greiða 25% af gjaldi skv. a- og b-lið.</sen>
+        </numart>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <name>Jarðstöðvar.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Jarðstöðvar með sendiafl meira en 50 dBW 25.100 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Jarðstöðvar fyrir almenn fjarskiptanet 25.100 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <name>Fastasambönd.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Grunngjald fyrir hvert fastasamband 10.000 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Að auki fyrir hvert MHz 830 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Fyrir hvert MHz við afnot af 64–66, 71–76 og 81–86 GHz 83 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="5" type="numeric">
+        <nr-title>5.</nr-title>
+        <sen>&lt;i&gt; Almenn farnet (t.d. GSM, 3G, 4G og 5G).</sen>
+        <sen>&lt;/i&gt;</sen>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Fyrir hvert MHz undir 2300 MHz 256.500 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Fyrir hvert MHz milli 2300 MHz og 10 GHz 128.250 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Fyrir hvert MHz yfir 10 GHz 25.650 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="6" type="numeric">
+        <nr-title>6.</nr-title>
+        <name>TETRA neyðar- og öryggisnet.</name>
+        <sen>Fyrir hvert MHz 64.100 kr.</sen>
+      </numart>
+      <numart nr="7" type="numeric">
+        <nr-title>7.</nr-title>
+        <name>Þráðlaus aðgangsnet.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Fyrir hvert MHz á gjaldsvæði 1 33.800 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Fyrir hvert MHz á gjaldsvæði 2 22.500 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Fyrir hvert MHz á gjaldsvæði 3 2.300 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="8" type="numeric">
+        <nr-title>8.</nr-title>
+        <name>Fyrir hverja rás í sjónvarpssendi.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl 1 kW og meira 119.000 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl 100–999 W 89.000 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl minna en 100 W 59.300 kr.</sen>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <nr-title>d.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl 1 kW og meira 29.700 kr.</sen>
+        </numart>
+        <numart nr="e" type="alphabet">
+          <nr-title>e.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl 100–999 W 22.200 kr.</sen>
+        </numart>
+        <numart nr="f" type="alphabet">
+          <nr-title>f.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl minna en 100 W 14.800 kr.</sen>
+        </numart>
+      </numart>
+      <numart nr="9" type="numeric">
+        <nr-title>9.</nr-title>
+        <name>Fyrir hverja rás í hljóðvarpssendi.</name>
+        <numart nr="a" type="alphabet">
+          <nr-title>a.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl 1 kW og meira 29.600 kr.</sen>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <nr-title>b.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl 100–999 W 22.200 kr.</sen>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <nr-title>c.</nr-title>
+          <sen>Gjaldsvæði 2, sendiafl minna en 100 W 14.800 kr.</sen>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <nr-title>d.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl 1 kW og meira 7.400 kr.</sen>
+        </numart>
+        <numart nr="e" type="alphabet">
+          <nr-title>e.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl 100–999 W 5.600 kr.</sen>
+        </numart>
+        <numart nr="f" type="alphabet">
+          <nr-title>f.</nr-title>
+          <sen>Gjaldsvæði 3, sendiafl minna en 100 W 3.700 kr.</sen>
+        </numart>
+      </numart>
     </subart>
     <subart nr="2">
       <sen>Gjaldsvæði sem tilgreind eru í 1. mgr. skulu afmörkuð sem hér segir:</sen>
@@ -916,6 +1060,37 @@
       <footnote href="https://www.althingi.is/altext/stjt/2018.072.html" law-art="1" law-nr="72" law-year="2018" nr="1">
         <footnote-sen>L. 72/2018, 1. gr.</footnote-sen>
         <location type="range">
+          <start>
+            <art>14a</art>
+            <subart>1</subart>
+            <numart>4</numart>
+            <numart>c</numart>
+            <nr-title>1</nr-title>
+          </start>
+          <end>
+            <art>14a</art>
+            <subart>1</subart>
+            <numart>4</numart>
+            <numart>c</numart>
+            <sen>1</sen>
+          </end>
+        </location>
+        <location type="range">
+          <start>
+            <art>14a</art>
+            <subart>1</subart>
+            <numart>5</numart>
+            <sen>1</sen>
+          </start>
+          <end>
+            <art>14a</art>
+            <subart>1</subart>
+            <numart>5</numart>
+            <numart>c</numart>
+            <sen>1</sen>
+          </end>
+        </location>
+        <location type="range">
           <art>14a</art>
           <subart>2</subart>
           <numart>b</numart>
@@ -935,8 +1110,7 @@
         <location type="range">
           <start>
             <art>14a</art>
-            <subart>1</subart>
-            <sen-title>5</sen-title>
+            <nr-title>1</nr-title>
           </start>
           <end>
             <art>14a</art>
