@@ -84,6 +84,14 @@ def clean_content(content):
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
     content = content.replace('<a id="">', '')
 
+    # Remove links to other laws. These are not useful in their current state.
+    # Rather, references to other laws, such as "laga nr. XX/XXXX" or "lög nr.
+    # XX/XXXX" should be automatically turned into precise references. (This
+    # has not been implemented at the time of this writing. Remove this
+    # comment when it has been. 2021-06-25)
+    e = re.compile(r'<a href="\d{7}.html">(.*?)</a>')
+    content = e.sub(r'\1', content)
+
     # Fix inconsistent deletion markers.
     # TODO: This only occurs in 160/2010 and should be removed once it has
     # been fixed in the data.
@@ -104,11 +112,6 @@ def clean_content(content):
         for s in superscripts:
             if s.parent.name != 'small' and re.match('^\d{1,3}\)$', s.text):
                 s.extract()
-
-    # Remove links
-    #anchors = soup.find_all('a')
-    #for a in anchors:
-    #    a.replace_with(a.text)
 
     # Remove tags entirely irrelevant to content
     #tags_to_remove = ['small'] # Previously also ['hr', 'script', 'noscript', 'head']
