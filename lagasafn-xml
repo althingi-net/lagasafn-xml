@@ -348,7 +348,46 @@ def make_xml(law_num, law_year, parliament_version):
 
                 trail.append('num-and-date')
 
-        elif line == '<hr/>' and trail[-1] == 'num-and-date':
+        # This condition is a bit of a mess because on occasion, the name of
+        # the law has been changed, but the footnotes describing them reside
+        # inside what we normally call minister-clause. In other words, we
+        # need to parse the contents of the minister-clause for footnotes.
+        # Luckily, the footnotes to the name change always come first inside
+        # the minister-clause, so what we need to do is to exclude the
+        # footnotes-part of the minister-clause. We do this by checking for
+        # the conditions of a minister-clause in two separate way, one for the
+        # normal circumstance where there are no footnotes inside it, and also
+        # in another way which corresponds with how the HTML looks when
+        # footnotes are present.
+        #
+        # First, it checks the normal way, which is for the first <hr/> tag
+        # after the law number and date, but **not** starting to read it as
+        # the minister-clause **if** the second next tag is a <small>, because
+        # that indicates that before the regular minister-clause content comes
+        # up, there will be some footnotes that we'll want processed
+        # elsewhere. When that happens, we will not process the content as a
+        # minister-clause, but will rather pass this time, and let the
+        # footnote-processing mechanism pick it up.
+        #
+        # Second, it checks if we have hit an indication that the previously
+        # mentioned footnotes-inside-minister-clause part has indeed been
+        # picked up elsewhere is over, and that we should conclude that we've
+        # started processing the traditional minister-clause content after
+        # such footnote-processing. This is done in a way that is not
+        # abundantly clear by just reading the code. It just so happens that
+        # under the circumstance that a law's name has changed and a footnote
+        # appears inside the minister-clause to describe it, that we'll run
+        # into "</small></i><br/>" and this seems consistent. However, that
+        # pattern of tags can appear in money other circumstances as well. So
+        # what we do, is that we check for that pattern, but only match it if
+        # we haven't already processed the minister-clause. The way that this
+        # is indicated is if "intro-finished" is in the processing trail. As a
+        # result, we check for that pattern, but only match if we haven't yet
+        # finished "intro-finished".
+        #
+        # TODO: Consider creating a specified function for this check. It is
+        # ridiculously messy as is.
+        elif (line == '<hr/>' and trail[-1] == 'num-and-date' and lines.peek(2).strip() != '<small>') or (line == '<br/>' and lines.peek(-1).strip() == '</i>' and lines.peek(-2).strip() == '</small>' and 'intro-finished' not in trail):
             # Parse the whole clause about which minister the law refers to.
             # It contains HTML goo, but we'll just let it float along. It's
             # not even certain that we'll be using it, but there's no harm in
@@ -359,7 +398,8 @@ def make_xml(law_num, law_year, parliament_version):
             hr_distance = occurrence_distance(lines, '<hr/>')
             if hr_distance is not None and hr_distance > 0:
                 minister_clause = collect_until(lines, '<hr/>')
-                law.append(E('minister-clause', minister_clause))
+                if len(minister_clause):
+                    law.append(E('minister-clause', minister_clause))
 
             trail.append('intro-finished')
 
@@ -1118,14 +1158,16 @@ def make_xml(law_num, law_year, parliament_version):
 
             trail.append('numart')
 
-        elif line == '<small>' and 'intro-finished' in trail:
+        elif line == '<small>':
             # Footnote section. Contains footnotes.
 
             footnotes = E('footnotes')
 
             # Try an append the footnotes to whatever's appropriate given the
             # content we've run into.
-            if trail[-1] == 'chapter':
+            if trail[-1] == 'num-and-date':
+                law.append(footnotes)
+            elif trail[-1] == 'chapter':
                 chapter.append(footnotes)
             elif trail[-1] == 'ambiguous-section':
                 ambiguous_section.append(footnotes)
@@ -1257,7 +1299,7 @@ def make_xml(law_num, law_year, parliament_version):
                 # The parent is the uppermost node above the footnotes but
                 # below the document root node.
                 parent = footnotes.getparent()
-                while parent.getparent() != law:
+                while parent.getparent() is not None and parent.getparent() != law:
                     parent = parent.getparent()
 
                 # Closing markers have a tendency to appear after the sentence

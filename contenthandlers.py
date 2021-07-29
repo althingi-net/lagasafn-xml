@@ -118,6 +118,12 @@ def generate_ancestors(elem, parent):
     # XML.
     ancestors = []
     for ancestor in elem.iterancestors():
+
+        # We don't need the root node in a list of ancestors. It's obvious
+        # that any tag mentioned here is contained in the root node.
+        if ancestor.tag == 'law':
+            break
+
         ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
         if ancestor == parent:
             # We're not interested in anything
