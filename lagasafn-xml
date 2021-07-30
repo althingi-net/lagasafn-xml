@@ -946,6 +946,11 @@ def make_xml(law_num, law_year, parliament_version):
             # also if exactly 6 lines later, we run into an "ii.", which then
             # means that we've run into a Roman-numeric "i" that would
             # otherwise be mistaken for the letter following "h".
+            #
+            # NOTE: This is practically a deprecated mechanism but should
+            # stlil be retained just in case the same circumstance occurs
+            # again in the future. It previously existed in 50. gr. laga nr.
+            # 108/2007, which was removed in March of 2020.
             try:
                 special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() == 'ii.'
             except (AttributeError, IndexError):
@@ -1040,12 +1045,6 @@ def make_xml(law_num, law_year, parliament_version):
                 # out that difference at the beginning of the list, we can
                 # distinguish between Roman numerals and Latin characters by
                 # checking the type of the previous numart.
-                #
-                # NOTE: There is a known bug here. In the unlikely event of a
-                # Roman-denoted list started as a sub-numart of the numart
-                # with the alphabetical letter "h", the script will fail to
-                # recognize it as a Roman numeral. This bug is known to occur
-                # in 50. gr. laga nr. 108/2007.
 
                 if numart_nr.lower() == 'i':
                     # See comment for `special_roman` above.
