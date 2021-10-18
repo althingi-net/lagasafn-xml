@@ -378,7 +378,7 @@ def make_xml(law_num, law_year, parliament_version):
         # under the circumstance that a law's name has changed and a footnote
         # appears inside the minister-clause to describe it, that we'll run
         # into "</small></i><br/>" and this seems consistent. However, that
-        # pattern of tags can appear in money other circumstances as well. So
+        # pattern of tags can appear in many other circumstances as well. So
         # what we do, is that we check for that pattern, but only match it if
         # we haven't already processed the minister-clause. The way that this
         # is indicated is if "intro-finished" is in the processing trail. As a
