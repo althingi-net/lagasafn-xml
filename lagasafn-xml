@@ -561,6 +561,32 @@ def make_xml(law_num, law_year):
             # done. We'll escape the loop and go for post-processing.
             break
 
+        elif check_chapter(lines, law) == 'ambiguous' and 'intro-finished' in trail:
+            # Parse a mysterious text that might be a chapter but we're unable
+            # to determine it as such. They are bold, they are bad, but they
+            # don't really make an awful lot of sense. We'll just splash them
+            # in as ambiguous bold text and leave it at that.
+            #
+            # This occurs before the table in 96. gr. laga nr. 55/1991, in
+            # version 151b, although the table was removed in version 151c.
+            #
+            # It happens quite a bit, and like `ambiguous-section`, should
+            # theoretically be replaced by something more formal at some
+            # point, should the format of published law ever allow.
+
+            ambiguous_bold_text = E('ambiguous-bold-text', collect_until(lines, '</b>'))
+
+            if subart is not None:
+                subart.append(ambiguous_bold_text)
+            elif art is not None:
+                art.append(ambiguous_bold_text)
+            elif chapter is not None:
+                chapter.append(ambiguous_bold_text)
+            else:
+                law.append(ambiguous_bold_text)
+
+            trail.append('ambiguous-bold-text')
+
         elif line == '<em>' and 'intro-finished' in trail:
             # Parse a mysterious thing which we will call an "ambiguous
             # section" and is composed of a single italic line. Such a line is

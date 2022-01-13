@@ -191,6 +191,12 @@ def check_chapter(lines, law):
         elif is_roman(first) and first not in ['C', 'D']:
             line_type = 'chapter'
 
+    # If we've reached this point without conclusion, this is an ambiguous
+    # bold section that are (as of yet) unable to determine the nature of.
+    # This occurs in 96. gr. laga nr. 55/1991, for example.
+    if line_type == '':
+        line_type = 'ambiguous'
+
     return line_type
 
 
