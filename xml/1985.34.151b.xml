@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="34" parliament="151b" year="1985">
+<law nr="34" year="1985" parliament="151b">
   <name>Siglingalög</name>
   <num-and-date>
     <date>1985-06-19</date>
@@ -48,13 +48,13 @@
         <sen>Um stofnun og vernd eignarréttar og eignarhafta á skrásettu skipi, sem er 5 brúttótonn eða stærra, eða hluta slíks skips, svo og á skrásettu, skráningarskyldu skipi sem er minna en 5 brúttótonn, fer eftir þinglýsingalögum, nr. 39/1978.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2008.069.html" law-art="10" law-nr="69" law-year="2008" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2008.069.html" law-nr="69" law-year="2008" law-art="10" nr="1">
           <footnote-sen>L. 69/2008, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
             <art>3</art>
             <subart>1</subart>
-            <sen repeat="true" words="5 brúttótonn">1</sen>
+            <sen words="5 brúttótonn" repeat="true">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -65,13 +65,13 @@
         <sen>Lögleg eignarhöft á skipi, sem ekki er skrásett hér á landi, halda gildi sínu ef þeirra er getið í eignarheimild og skjöl um þau eru afhent til þinglýsingar innan 3 mánaða frá bráðabirgðaskráningu skipsins í íslenska skipaskrá eða frá fullnaðarskrásetningu þess ef það var ekki skrásett til bráðabirgða.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen after-mark=" til þinglýsingar innan 3 mánaða frá bráðabirgðaskráningu skipsins í íslenska skipaskrá eða frá fullnaðarskrásetningu þess ef það var ekki skrásett til bráðabirgða.$" before-mark="^Lögleg eignarhöft á skipi, sem ekki er skrásett hér á landi, halda gildi sínu ef þeirra er getið í eignarheimild og skjöl um þau eru afhent ">1</sen>
+            <sen before-mark="^Lögleg eignarhöft á skipi, sem ekki er skrásett hér á landi, halda gildi sínu ef þeirra er getið í eignarheimild og skjöl um þau eru afhent " after-mark=" til þinglýsingar innan 3 mánaða frá bráðabirgðaskráningu skipsins í íslenska skipaskrá eða frá fullnaðarskrásetningu þess ef það var ekki skrásett til bráðabirgða.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -104,7 +104,7 @@
         <sen>Það sem hér segir um hættuleg efni og mengun nær einnig til erlendra skipa sem fara um mengunarlögsögu Íslands.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="106" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="106" nr="1">
           <footnote-sen>L. 126/2011, 106. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -113,7 +113,7 @@
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="2">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -149,7 +149,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^Hann hefur yfirumsjón með færslu í bækurnar og með varðveislu þeirra.">2</sen>
+            <sen before-mark="^Hann hefur yfirumsjón með færslu í bækurnar og með varðveislu þeirra." after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -173,7 +173,7 @@
         <sen>h.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -194,7 +194,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
-            <sen after-mark=" um skipsbækur, færslu þeirra og varðveislu, sbr. þó síðari málsgreinar þessarar greinar.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um skipsbækur, færslu þeirra og varðveislu, sbr. þó síðari málsgreinar þessarar greinar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -246,7 +246,7 @@
         <sen>Hann skal og leita skipana útgerðarmanns um öll mikilsverð málefni að því er hann má við koma eða þess manns er útgerðarmaður vísar til.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -275,12 +275,12 @@
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1993.050.html#G29" law-art="29" law-nr="50" law-year="1993" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1993.050.html#G29" law-nr="50" law-year="1993" law-art="29" nr="1">
           <footnote-sen>L. 50/1993, 29. gr.</footnote-sen>
           <location type="deletion">
             <chapter>3</chapter>
             <art>16</art>
-            <nr-title after-mark="$" before-mark="^16. gr. ">1</nr-title>
+            <nr-title before-mark="^16. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -315,7 +315,7 @@
         <sen>Ráðherra getur mælt fyrir um að ákvæði 1. og 2. mgr. skuli einnig ná til erlendra sjómanna eftir því sem við getur átt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -658,7 +658,7 @@
         <sen>Ávallt skal tilkynna farmeiganda ráðstafanir þær sem gerðar voru um farminn.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-nr="90" law-year="1991" law-art="91" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -744,13 +744,13 @@
         <sen>Þegar farmurinn hefur verið afhentur getur farmflytjandi kallað til geymslufjárins enda tálmi viðtakandi því ekki með lögbanni.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>4</chapter>
             <art>63</art>
             <subart>2</subart>
-            <sen after-mark=" lögbanni.$" before-mark="^Þegar farmurinn hefur verið afhentur getur farmflytjandi kallað til geymslufjárins enda tálmi viðtakandi því ekki með ">1</sen>
+            <sen before-mark="^Þegar farmurinn hefur verið afhentur getur farmflytjandi kallað til geymslufjárins enda tálmi viðtakandi því ekki með " after-mark=" lögbanni.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -782,7 +782,7 @@
         <sen>Þegar vara er látin til varðveislu er farmflytjanda heimilt að fá selda svo mikið af henni sem þarf til lúkningar kröfum sem á henni hvíla við nauðungarsölu án þess að þörf sé undangenginnar áskorunar til eiganda hennar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-nr="90" law-year="1991" law-art="91" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -1308,13 +1308,13 @@
         <sen>Þegar stefna í ógildingarmáli hefur verið birt eða fyrr ef heimilað er með sérstökum dómsúrskurði getur höfðandi ógildingarmáls krafist afhendingar á farmi gegn því að sett sé trygging fyrir kröfum sem réttur eigandi farmskírteinis kynni að öðlast á hendur farmflytjanda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.091.html#G160" law-art="160" law-nr="91" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.091.html#G160" law-nr="91" law-year="1991" law-art="160" nr="1">
           <footnote-sen>L. 91/1991, 160. gr.</footnote-sen>
           <location type="deletion">
             <chapter>4</chapter>
             <art>109</art>
             <subart>1</subart>
-            <sen after-mark=" .$" before-mark="^Um ógildingu glataðs eða horfins farmskírteinis fer eftir réttarfarsreglum um ógildingu skjala ">1</sen>
+            <sen before-mark="^Um ógildingu glataðs eða horfins farmskírteinis fer eftir réttarfarsreglum um ógildingu skjala " after-mark=" .$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1431,7 +1431,7 @@
         <footnote-sen>&lt;a href=&quot;https://www.reglugerd.is/reglugerdir/allar/nr/463-1998&quot;&gt;Rg. 463/1998&lt;/a&gt;.</footnote-sen>
         <location type="pointer">
           <chapter>5</chapter>
-          <name after-mark="$" before-mark="^Um flutning á farþegum og farangri. ">1</name>
+          <name before-mark="^Um flutning á farþegum og farangri. " after-mark="$">1</name>
         </location>
       </footnote>
     </footnotes>
@@ -1540,7 +1540,7 @@
         <sen>Heimilt er þá farsala að láta selja svo mikið af farangrinum sem nægir til lúkningar kröfu hans og kostnaði við nauðungarsölu án þess að þörf sé undangenginnar áskorunar til eiganda hans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-nr="90" law-year="1991" law-art="91" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1597,7 +1597,7 @@
     <ambiguous-section>
       2a. Skip í millilandasiglingum og skip í innanlandssiglingum í flokki A og B.
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-art="1" law-nr="49" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-nr="49" law-year="2015" law-art="1" nr="1">
           <footnote-sen>L. 49/2015, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1618,7 +1618,7 @@
         <sen>Ráðherra er heimilt að gefa út reglugerð um form, efni, útgáfu og kostnað við útgáfu skírteina sem staðfesta að skip hafi gildandi vátryggingu eða aðra fjárhagslega tryggingu í samræmi við ákvæði reglugerðar Evrópuþingsins og ráðsins (EB) nr. 392/2009.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-art="1" law-nr="49" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-nr="49" law-year="2015" law-art="1" nr="1">
           <footnote-sen>L. 49/2015, 1. gr.</footnote-sen>
           <footnote-sen>Ákvæði greinarinnar komu til framkvæmda gagnvart skipum í flokki A frá 30. des. 2016 og gagnvart skipum í flokki B frá 30. des. 2018 skv. &lt;a href=&quot;/altext/stjt/2015.049.html&quot;&gt;4. gr. s.l.&lt;/a&gt;</footnote-sen>
           <location type="range">
@@ -1766,7 +1766,7 @@
         <sen>Skipstjóri skal varðveita um borð í skipi skjal er sannar gildi vátryggingarinnar og framvísa því þegar löggæslumaður eða starfsmaður Samgöngustofu krefst þess.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="2" law-nr="59" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 59/2013, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1775,7 +1775,7 @@
             <sen words="Samgöngustofu">4</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.074.html" law-art="2" law-nr="74" law-year="1998" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.074.html" law-nr="74" law-year="1998" law-art="2" nr="2">
           <footnote-sen>L. 74/1998, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1842,7 +1842,7 @@
     <ambiguous-section>
       3a. Réttindi farþega samkvæmt reglugerð Evrópuþingsins og ráðsins (ESB) nr. &lt;a href=&quot;/lagasafn/pdf/151b/i32010R1177.pdf&quot;&gt; 1177/2010 &lt;/a&gt;.
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-art="1" law-nr="12" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-nr="12" law-year="2016" law-art="1" nr="1">
           <footnote-sen>L. 12/2016, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1898,7 +1898,7 @@
             <chapter>5</chapter>
             <art>148a</art>
             <subart>1</subart>
-            <sen after-mark=" að því er varðar farþega:$" before-mark="^Reglugerð Evrópuþingsins og ráðsins (ESB) nr. 1177/2010frá 24. nóvember 2010 um réttindi farþega sem ferðast á sjó eða skipgengum vatnaleiðum, að undanskildum viðaukum, skal hafa lagagildi hér á landi ">1</sen>
+            <sen before-mark="^Reglugerð Evrópuþingsins og ráðsins (ESB) nr. 1177/2010frá 24. nóvember 2010 um réttindi farþega sem ferðast á sjó eða skipgengum vatnaleiðum, að undanskildum viðaukum, skal hafa lagagildi hér á landi " after-mark=" að því er varðar farþega:$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -1907,10 +1907,10 @@
             <chapter>5</chapter>
             <art>148a</art>
             <subart>3</subart>
-            <sen after-mark=" til nánari framkvæmdar á reglugerð (ESB) nr. 1177/2010, m.a. um rétt til endurgreiðslu eða breytinga á ferð, aðstoð í höfnum og um borð í skipum, og meðferð kvartana og tímafresti, sbr. 148. gr. b laga þessara.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$" before-mark="^Ráðherra er heimilt að gefa út reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að gefa út reglugerð " after-mark=" til nánari framkvæmdar á reglugerð (ESB) nr. 1177/2010, m.a. um rétt til endurgreiðslu eða breytinga á ferð, aðstoð í höfnum og um borð í skipum, og meðferð kvartana og tímafresti, sbr. 148. gr. b laga þessara.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-art="1" law-nr="12" law-year="2016" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-nr="12" law-year="2016" law-art="1" nr="3">
           <footnote-sen>L. 12/2016, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1947,7 +1947,7 @@
         <sen>Áliti Samgöngustofu verður ekki skotið til annarra stjórnvalda en aðilar geta lagt ágreining sinn fyrir dómstóla með venjulegum hætti.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-art="1" law-nr="12" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-nr="12" law-year="2016" law-art="1" nr="1">
           <footnote-sen>L. 12/2016, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1972,7 +1972,7 @@
         <sen>Samgöngustofa getur krafist endurgreiðslu vegna kaupanna nema það hafi í för með sér verulegt óhagræði fyrir seljanda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-art="22" law-nr="21" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-nr="21" law-year="2020" law-art="22" nr="1">
           <footnote-sen>L. 21/2020, 22. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2016,7 +2016,7 @@
         <sen>Málshöfðun fyrir almennum dómstólum frestar ekki aðför.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-art="22" law-nr="21" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-nr="21" law-year="2020" law-art="22" nr="1">
           <footnote-sen>L. 21/2020, 22. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2044,7 +2044,7 @@
         <sen>Í sátt skv. 1. mgr. er heimilt að skuldbinda málsaðila til að bjóða neytendum sem brotið hafði áhrif á viðeigandi úrbætur.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-art="22" law-nr="21" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-nr="21" law-year="2020" law-art="22" nr="1">
           <footnote-sen>L. 21/2020, 22. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2102,7 +2102,7 @@
         <sen>Um lögbann samkvæmt þessari grein fer að öðru leyti eftir lögum um kyrrsetningu, lögbann o.fl.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-art="22" law-nr="21" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-nr="21" law-year="2020" law-art="22" nr="1">
           <footnote-sen>L. 21/2020, 22. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2156,7 +2156,7 @@
         <sen>Ráðuneytið lætur gera handhæga útgáfu af reglum þessum, eins og þær eru á hverjum tíma, í íslenskri þýðingu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -2294,7 +2294,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="1" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="1" nr="1">
           <footnote-sen>L. 133/1998, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2330,7 +2330,7 @@
         <sen>Ákvæði þessa kafla gilda ekki um skip eða lausafé sem falla undir III. kafla þjóðminjalaga.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="2" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="2" nr="1">
           <footnote-sen>L. 133/1998, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2364,7 +2364,7 @@
         <sen>Samningi um upphæð björgunarlauna eða sérstakrar þóknunar skv. 170. gr. a má víkja til hliðar eða breyta ef krafan er ekki í eðlilegu samræmi við umfang vinnu að björgun.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="3" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="3" nr="1">
           <footnote-sen>L. 133/1998, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2419,7 +2419,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="4" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="4" nr="1">
           <footnote-sen>L. 133/1998, 4. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2453,7 +2453,7 @@
         <sen>Ákvæði 1. mgr. kemur ekki í veg fyrir að hægt sé að krefjast sérstakrar þóknunar skv. 170. gr. a.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="5" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="5" nr="1">
           <footnote-sen>L. 133/1998, 5. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2522,7 +2522,7 @@
         <sen>Nú var skip það sem bjargað var eigi statt í yfirvofandi hættu en gat þó eigi komist til hafnar fyrir eigin vélarafli og skal þá atriða b–j-liða 1. mgr. einkum gætt við ákvörðun björgunarlauna.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="6" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="6" nr="1">
           <footnote-sen>L. 133/1998, 6. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2547,7 +2547,7 @@
         <sen>Eigandi skips og eigendur annars lausafjár sem bjargað var eru ábyrgir fyrir greiðslu björgunarlauna í hlutfalli við verðmæti hinna björguðu eigna þeirra.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="7" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="7" nr="1">
           <footnote-sen>L. 133/1998, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -2564,7 +2564,7 @@
         <sen>Við skiptingu björgunarlauna milli tveggja eða fleiri björgunarmanna skal viðmiða 1. mgr. 168. gr. gætt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="8" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="8" nr="1">
           <footnote-sen>L. 133/1998, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -2593,7 +2593,7 @@
         <sen>Ef björgunarmaður hefur vegna gáleysis vanrækt að koma í veg fyrir eða draga úr umhverfistjóni má lækka eða fella niður hina sérstöku þóknun.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2624,7 +2624,7 @@
         <sen>Lækka má eða fella niður björgunarlaun eða sérstaka þóknun ef mistök björgunarmanns eða vanræksla hefur gert björgunina nauðsynlega eða erfiðari en ella, eða björgunarmaður hefur gerst sekur um svik eða aðra óheiðarlega háttsemi.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2679,7 +2679,7 @@
         <sen>Ef það er ekki skip sem bjargar skal um skiptingu björgunarlauna fara eftir þeirri löggjöf sem gildir um réttarsambandið milli björgunarmanns og starfsmanna hans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2710,7 +2710,7 @@
         <sen>Þar til sett hefur verið trygging skv. 1. mgr. er óheimilt án samþykkis björgunarmanns að flytja skip eða lausafé sem bjargað var frá þeim stað þar sem því var komið fyrir eftir björgunina.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2735,7 +2735,7 @@
         <sen>Setja má það sem skilyrði fyrir fyrirframgreiðslu að björgunarmaður setji tryggingu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2772,7 +2772,7 @@
         <sen>Sé ekki öllum aðilum stefnt skal málinu vísað frá dómi.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2803,7 +2803,7 @@
         <sen>Ákvæði þessa kafla veita ekki heimild til kyrrsetningar eða annarrar tímabundinnar réttaraðgerðar ef farmur er ætlaður til mannúðarmála og það ríki sem gefið hefur farminn fellst á að greiða björgunarlaun eða sérstaka þóknun vegna farmsins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="9" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="9" nr="1">
           <footnote-sen>L. 133/1998, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2838,7 +2838,7 @@
     <ambiguous-section>
       1a. Ábyrgð á tjóni þriðja aðila.
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-art="1" law-nr="46" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-nr="46" law-year="2012" law-art="1" nr="1">
           <footnote-sen>L. 46/2012, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -2895,7 +2895,7 @@
         <sen>Þegar slík ákvörðun um brottvísun er gefin út skulu EES-ríki meina skipi aðgang að höfnum sínum þar til útgerðarmaðurinn tilkynnir um skírteini sem um getur í 3. mgr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="2" law-nr="59" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 59/2013, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -2910,7 +2910,7 @@
             <sen words="Samgöngustofa">2</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-art="1" law-nr="46" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-nr="46" law-year="2012" law-art="1" nr="2">
           <footnote-sen>L. 46/2012, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2983,7 +2983,7 @@
         <sen>Upphæðir þær, sem um ræðir í 2. mgr., skulu breytast í samræmi við breytingar á launavísitölu og skal Hagstofa Íslands birta tilkynningar um breytingar á framangreindum upphæðum eigi sjaldnar en á þriggja mánaða fresti.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2001.055.html" law-art="2" law-nr="55" law-year="2001" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2001.055.html" law-nr="55" law-year="2001" law-art="2" nr="1">
           <footnote-sen>L. 55/2001, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -3000,7 +3000,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-art="2" law-nr="46" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-nr="46" law-year="2012" law-art="2" nr="2">
           <footnote-sen>L. 46/2012, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3017,7 +3017,7 @@
             <sen words="launavísitölu">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-art="25" law-nr="88" law-year="2015" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="25" nr="3">
           <footnote-sen>L. 88/2015, 25. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3123,7 +3123,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="10" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="10" nr="1">
           <footnote-sen>L. 133/1998, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3200,7 +3200,7 @@
         <sen>Nú er stofnaður takmörkunarsjóður samkvæmt þessum kafla, sbr. og X. kafla, og skal þá umreiknun miðuð við gengi þann dag er sjóðurinn var stofnaður nema áður hafi verið sett trygging fyrir ábyrgð.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-art="1" law-nr="159" law-year="2007" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-nr="159" law-year="2007" law-art="1" nr="1">
           <footnote-sen>L. 159/2007, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3212,7 +3212,7 @@
             <chapter>9</chapter>
             <art>177</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^Þegar krafa rís vegna þess að farþegi skipsins andast eða slasast eru ábyrgðarmörkin (\[? ?)?175.000 SDR] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem margfölduð eru með hæstri leyfilegri farþegatölu samkvæmt vottorðum skipsins ">1</sen>
+            <sen before-mark="^Þegar krafa rís vegna þess að farþegi skipsins andast eða slasast eru ábyrgðarmörkin (\[? ?)?175.000 SDR] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem margfölduð eru með hæstri leyfilegri farþegatölu samkvæmt vottorðum skipsins " after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>9</chapter>
@@ -3241,7 +3241,7 @@
             <art>177</art>
             <subart>2</subart>
             <numart>4</numart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>9</chapter>
@@ -3284,7 +3284,7 @@
             <sen>1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.040.html" law-art="1" law-nr="40" law-year="2017" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.040.html" law-nr="40" law-year="2017" law-art="1" nr="2">
           <footnote-sen>L. 40/2017, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3406,7 +3406,7 @@
         <sen>Ákvæði 1.–3. mgr. eiga því aðeins við að kröfuhafi hafi borið kröfu fram gegn sjóðnum með formlega réttum hætti, að unnt sé að ganga að sjóðnum og að ráðstafa megi úr honum til að greiða kröfuna.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-art="2" law-nr="159" law-year="2007" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-nr="159" law-year="2007" law-art="2" nr="1">
           <footnote-sen>L. 159/2007, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3427,7 +3427,7 @@
             <sen words="bókun þeirri">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="2">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3447,13 +3447,13 @@
         <sen>Nú er synjað um kyrrsetningu eða hún felld niður vegna þess að stofnaður er takmörkunarsjóður samkvæmt 179. gr. og skal þá í staðfestingarmáli kveða á um lögmæti umbeðinnar kyrrsetningar og hugsanlegar skaðabótagreiðslur vegna kyrrsetningarbeiðninnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>9</chapter>
             <art>181</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3482,7 +3482,7 @@
         <sen>Ákvæðin í 173.–182. gr. standa ekki í vegi fyrir því að öðrum lagaákvæðum sé beitt er veita heimild til að lækka ábyrgð tjónvalds gagnvart tjónþola.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-art="3" law-nr="159" law-year="2007" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-nr="159" law-year="2007" law-art="3" nr="1">
           <footnote-sen>L. 159/2007, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -3513,7 +3513,7 @@
         <sen>Sjóðurinn skal enn fremur taka til vaxta af takmörkunarfjárhæðinni frá því að atburður varð og fram til sjóðsstofnunarinnar, með fjárhæð sem svarar til almennra vaxta skv. 2. málsl. 4. gr. laga nr. 38/2001, um vexti og verðtryggingu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-art="4" law-nr="159" law-year="2007" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2007.159.html" law-nr="159" law-year="2007" law-art="4" nr="1">
           <footnote-sen>L. 159/2007, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -3556,7 +3556,7 @@
         <sen>Úthlutunarmaður annast úthlutun úr sjóðnum, en um aðdraganda úthlutunar og hana sjálfa, þar á meðal störf og stöðu úthlutunarmanns, innköllun, meðferð kröfulýsinga, fundi með kröfuhöfum, úthlutunina sjálfa og meðferð ágreiningsmála fer eftir reglum laga um gjaldþrotaskipti o.fl. eftir því sem þær geta átt við.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -3578,12 +3578,12 @@
     <art nr="189-190">
       <nr-title>189.–190. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>10</chapter>
             <art>189-190</art>
-            <nr-title after-mark="$" before-mark="^189.–190. gr. ">1</nr-title>
+            <nr-title before-mark="^189.–190. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3597,12 +3597,12 @@
     <art nr="192-194">
       <nr-title>192.–194. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>10</chapter>
             <art>192-194</art>
-            <nr-title after-mark="$" before-mark="^192.–194. gr. ">1</nr-title>
+            <nr-title before-mark="^192.–194. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3616,19 +3616,19 @@
         <sen>Úthluta skal sjóðnum og viðbótarfjárhæðinni þó svo að ekki liggi fyrir réttur til ábyrgðartakmörkunar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="deletion">
             <chapter>10</chapter>
             <art>195</art>
             <subart>1</subart>
-            <sen after-mark=" úthluta sjóðnum samkvæmt 178. gr.$" before-mark="^Þegar öll ágreiningsmál eru til lykta leidd skal ">1</sen>
+            <sen before-mark="^Þegar öll ágreiningsmál eru til lykta leidd skal " after-mark=" úthluta sjóðnum samkvæmt 178. gr.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>10</chapter>
             <art>195</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">2</sen>
+            <sen before-mark="^" after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3642,7 +3642,7 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="1">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -3654,7 +3654,7 @@
             <chapter>10</chapter>
             <art>196</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3750,7 +3750,7 @@
         <sen>Nú fer nauðungarsala á skipi fram í erlendu ríki og falla þá sjóveð, annars konar veðréttindi og önnur eignarhöft í skipinu niður, að því tilskildu að skipið sé statt í hlutaðeigandi ríki á þeim tíma sem salan fer fram og að salan hafi farið fram í samræmi við löggjöf þess ríkis.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-nr="90" law-year="1991" law-art="91" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -3762,7 +3762,7 @@
             <chapter>11</chapter>
             <art>202</art>
             <subart>3</subart>
-            <sen after-mark=" vegna kyrrsetningarinnar eða fjárnámsins og nauðungarsölunnar.$" before-mark="^Við skiptingu söluandvirðis víkja sjóveð, annars konar veðréttindi og önnur eignarhöft í skipinu fyrir kostnaði ">1</sen>
+            <sen before-mark="^Við skiptingu söluandvirðis víkja sjóveð, annars konar veðréttindi og önnur eignarhöft í skipinu fyrir kostnaði " after-mark=" vegna kyrrsetningarinnar eða fjárnámsins og nauðungarsölunnar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3817,7 +3817,7 @@
         <sen>Sá, sem afhendir vöru er sjóveð fyrir framlagi til sameiginlegs sjótjóns hvílir á, verður þó ekki persónulega ábyrgur fyrir þessari kröfu hafi eigandi vörunnar ábyrgst kröfuna persónulega og sett fullnægjandi tryggingu fyrir henni, sbr. 2. mgr. 156. gr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-art="91" law-nr="90" law-year="1991" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.090.html#G91" law-nr="90" law-year="1991" law-art="91" nr="1">
           <footnote-sen>L. 90/1991, 91. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -3930,7 +3930,7 @@
         <sen>Ráðherra er heimilt að setja reglur sem mæli fyrir um að fullkomnar heimildir um öll skráð eignarhöft í skipum, þ. á m. skipum í smíðum sem skráð eða skráningarskyld eru hér á landi, séu varðveittar á einum stað og um skyldu viðkomandi embættismanna til að skila heimildunum á þann stað.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -3998,7 +3998,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-art="11" law-nr="133" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.133.html" law-nr="133" law-year="1998" law-art="11" nr="1">
           <footnote-sen>L. 133/1998, 11. gr.</footnote-sen>
           <location type="range">
             <chapter>12</chapter>
@@ -4036,12 +4036,12 @@
     <art nr="219">
       <nr-title>219. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="1" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="1" nr="1">
           <footnote-sen>L. 69/2000, 1. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>219</art>
-            <nr-title after-mark="$" before-mark="^219. gr. ">1</nr-title>
+            <nr-title before-mark="^219. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4070,7 +4070,7 @@
         <sen>Aðrir úrskurðir Landsréttar en mælt er fyrir um í 1. mgr. 167. gr. laga um meðferð einkamála verða ekki kærðir til Hæstaréttar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="2" law-nr="59" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 59/2013, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4091,7 +4091,7 @@
             <sen words="Samgöngustofa">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-art="1" law-nr="32" law-year="2013" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-nr="32" law-year="2013" law-art="1" nr="2">
           <footnote-sen>L. 32/2013, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4112,7 +4112,7 @@
             <sen words="rannsóknarnefnd samgönguslysa">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="2" law-nr="69" law-year="2000" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="2" nr="3">
           <footnote-sen>L. 69/2000, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4155,7 +4155,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="106" law-nr="126" law-year="2011" nr="4">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="106" nr="4">
           <footnote-sen>L. 126/2011, 106. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4164,7 +4164,7 @@
             <sen words="því ráðuneyti er fer með samskipti við erlend ríki">2</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="28" law-nr="117" law-year="2016" nr="5">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="28" nr="5">
           <footnote-sen>L. 117/2016, 28. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4200,13 +4200,13 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="3" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="3" nr="1">
           <footnote-sen>L. 69/2000, 3. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>221</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>13</chapter>
@@ -4218,16 +4218,16 @@
             <chapter>13</chapter>
             <art>221</art>
             <subart>4</subart>
-            <sen after-mark=" fari fram.$" before-mark="^Skipstjóra er skylt að óska eftir því að lögreglurannsókn vegna mannskaða eða meiri háttar líkamstjóns ">1</sen>
+            <sen before-mark="^Skipstjóra er skylt að óska eftir því að lögreglurannsókn vegna mannskaða eða meiri háttar líkamstjóns " after-mark=" fari fram.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>13</chapter>
             <art>221</art>
             <subart>5</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-art="1" law-nr="32" law-year="2013" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-nr="32" law-year="2013" law-art="1" nr="2">
           <footnote-sen>L. 32/2013, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4247,13 +4247,13 @@
         <sen>Hafi skip farist skal rannsókn fara fram þar sem hagkvæmast þykir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="4" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="4" nr="1">
           <footnote-sen>L. 69/2000, 4. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>222</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^">5</sen>
+            <sen before-mark="^" after-mark="$">5</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4261,12 +4261,12 @@
     <art nr="223">
       <nr-title>223. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="5" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="5" nr="1">
           <footnote-sen>L. 69/2000, 5. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>223</art>
-            <nr-title after-mark="$" before-mark="^223. gr. ">1</nr-title>
+            <nr-title before-mark="^223. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4274,12 +4274,12 @@
     <art nr="224">
       <nr-title>224. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="5" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="5" nr="1">
           <footnote-sen>L. 69/2000, 5. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>224</art>
-            <nr-title after-mark="$" before-mark="^224. gr. ">1</nr-title>
+            <nr-title before-mark="^224. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4324,7 +4324,7 @@
         <sen>Að sjóprófi loknu skal dómari senda viðkomandi lögreglustjóra, ríkissaksóknara, Samgöngustofu og rannsóknarnefnd samgönguslysa eftirrit af því.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="6" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="6" nr="1">
           <footnote-sen>L. 69/2000, 6. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4344,7 +4344,7 @@
             <chapter>13</chapter>
             <art>226</art>
             <subart>3</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>13</chapter>
@@ -4368,13 +4368,13 @@
             <chapter>13</chapter>
             <art>226</art>
             <subart>6</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="deletion">
             <chapter>13</chapter>
             <art>226</art>
             <subart>7</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>13</chapter>
@@ -4383,16 +4383,16 @@
             <sen words="viðkomandi lögreglustjóra">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-art="194" law-nr="19" law-year="1991" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-nr="19" law-year="1991" law-art="194" nr="2">
           <footnote-sen>L. 19/1991, 194. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>226</art>
             <subart>2</subart>
-            <sen after-mark=" um meðferð (\[? ?)?sakamála], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; eftir því sem við getur átt.$" before-mark="^Um yfirheyrslur fer annars eftir ákvæðum laga ">1</sen>
+            <sen before-mark="^Um yfirheyrslur fer annars eftir ákvæðum laga " after-mark=" um meðferð (\[? ?)?sakamála], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; eftir því sem við getur átt.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="3">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4401,7 +4401,7 @@
             <sen words="sakamála">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="2" law-nr="59" law-year="2013" nr="4">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="2" nr="4">
           <footnote-sen>L. 59/2013, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4416,7 +4416,7 @@
             <sen words="Samgöngustofu">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-art="1" law-nr="32" law-year="2013" nr="5">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-nr="32" law-year="2013" law-art="1" nr="5">
           <footnote-sen>L. 32/2013, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4450,7 +4450,7 @@
         <sen>Ráðuneytið getur sett reglur um það til hvaða erlendra skipa þetta ákvæði nái.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="2" law-nr="59" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 59/2013, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4471,7 +4471,7 @@
             <sen words="Samgöngustofu">3</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="2">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4488,7 +4488,7 @@
         <sen>Nú hefur sjópróf þegar farið fram en síðar koma fram nýjar upplýsingar sem miklu skipta eða í ljós kemur að mikilvægar upplýsingar skorti og geta þá þeir sem sjóprófs geta beiðst, sbr. 1. mgr. 220. gr. krafist þess að sjópróf verði haldið að nýju.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="7" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="7" nr="1">
           <footnote-sen>L. 69/2000, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4502,12 +4502,12 @@
     <art nr="229">
       <nr-title>229. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="8" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="8" nr="1">
           <footnote-sen>L. 69/2000, 8. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>229</art>
-            <nr-title after-mark="$" before-mark="^229. gr. ">1</nr-title>
+            <nr-title before-mark="^229. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4515,12 +4515,12 @@
     <art nr="230">
       <nr-title>230. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="8" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="8" nr="1">
           <footnote-sen>L. 69/2000, 8. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>230</art>
-            <nr-title after-mark="$" before-mark="^230. gr. ">1</nr-title>
+            <nr-title before-mark="^230. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4528,12 +4528,12 @@
     <art nr="231">
       <nr-title>231. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-art="8" law-nr="69" law-year="2000" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2000.069.html" law-nr="69" law-year="2000" law-art="8" nr="1">
           <footnote-sen>L. 69/2000, 8. gr.</footnote-sen>
           <location type="deletion">
             <chapter>13</chapter>
             <art>231</art>
-            <nr-title after-mark="$" before-mark="^231. gr. ">1</nr-title>
+            <nr-title before-mark="^231. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -4547,7 +4547,7 @@
         <sen>Ráðherra getur sett nánari reglur um starfsemi gerðardómsins og um kostnað við málsmeðferð.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4562,7 +4562,7 @@
             <sen words="Ráðherra">4</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-art="82" law-nr="92" law-year="1991" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="82" nr="2">
           <footnote-sen>L. 92/1991, 82. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -4589,7 +4589,7 @@
         <sen>Vanræki skipstjóri, stýrimaður, vélstjóri eða loftskeytamaður skráningu í bækur sem skylt er að halda, varðveislu þeirra eða sýningu, varðar það sektum eða fangelsi allt að tveimur árum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-art="175" law-nr="82" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="175" nr="1">
           <footnote-sen>L. 82/1998, 175. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4612,7 +4612,7 @@
         <sen>Vanræki skipstjóri að gefa sjóferðarskýrslu þegar honum er það skylt samkvæmt 225. gr. varðar það sektum eða fangelsi allt að tveimur árum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-art="175" law-nr="82" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="175" nr="1">
           <footnote-sen>L. 82/1998, 175. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4629,7 +4629,7 @@
         <sen>Ef skipstjóri vanrækir að gegna þeim skyldum sem um ræðir í 161. og 162. gr. þegar árekstur eða svipað slys ber að höndum varðar það sektum eða fangelsi allt að tveimur árum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-art="175" law-nr="82" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="175" nr="1">
           <footnote-sen>L. 82/1998, 175. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4664,7 +4664,7 @@
         <sen>Skip merkir í þessari grein sérhvert fljótandi far, óháð lengd eða knúningsmáta.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2006.101.html" law-art="1" law-nr="101" law-year="2006" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2006.101.html" law-nr="101" law-year="2006" law-art="1" nr="1">
           <footnote-sen>L. 101/2006, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4709,7 +4709,7 @@
         <sen>Hafi skipverji verið sviptur atvinnuréttindum til bráðabirgða samkvæmt því sem fyrr segir skal ákveðið í dómi hvort sá tími skuli dragast frá endanlegum sviptingartíma.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4730,7 +4730,7 @@
             <sen words="ráðherra">2</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2006.101.html" law-art="2" law-nr="101" law-year="2006" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2006.101.html" law-nr="101" law-year="2006" law-art="2" nr="2">
           <footnote-sen>L. 101/2006, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4754,7 +4754,7 @@
         <sen>Stórfelld eða endurtekin brot skipstjóra gegn öðrum skyldum samkvæmt lögum þessum en þeim, sem ákvæði 233.–238. gr. taka til, varða sektum eða fangelsi allt að tveimur árum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-art="175" law-nr="82" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="175" nr="1">
           <footnote-sen>L. 82/1998, 175. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4780,7 +4780,7 @@
         <sen>Ef útgerðarmaður, í merkingu laga þessara, er ekki einstaklingur eiga refsiákvæði 1. mgr. þessarar greinar við um framkvæmdastjóra viðkomandi útgerðarfyrirtækis.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-art="175" law-nr="82" law-year="1998" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="175" nr="1">
           <footnote-sen>L. 82/1998, 175. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4800,7 +4800,7 @@
         <sen>Ef útgerðarmaður, í merkingu laga þessara, er ekki einstaklingur eiga refsiákvæði 1. mgr. við um framkvæmdastjóra viðkomandi útgerðarfyrirtækis eða einstakling í sambærilegri stöðu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-art="2" law-nr="49" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-nr="49" law-year="2015" law-art="2" nr="1">
           <footnote-sen>L. 49/2015, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4824,7 +4824,7 @@
         <sen>Ákvörðun um fyrirhugaða málshöfðun út af brotum gegn ákvæðum þessa kafla skal tilkynnt ráðuneytinu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4841,7 +4841,7 @@
         <sen>Brot gegn ákvæðum reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 1177/2010, sbr. 148. gr. a laga þessara, varðar sektum ef sakir eru miklar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-art="23" law-nr="21" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.021.html" law-nr="21" law-year="2020" law-art="23" nr="1">
           <footnote-sen>L. 21/2020, 23. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -4850,7 +4850,7 @@
             <sen words="ef sakir eru miklar">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-art="2" law-nr="12" law-year="2016" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-nr="12" law-year="2016" law-art="2" nr="2">
           <footnote-sen>L. 12/2016, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4873,7 +4873,7 @@
     <nr-title>XVI. kafli.</nr-title>
     <name>Um aðild að Evrópsku efnahagssvæði.</name>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-art="3" law-nr="62" law-year="1993" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-nr="62" law-year="1993" law-art="3" nr="1">
         <footnote-sen>L. 62/1993, 3. gr.</footnote-sen>
         <location type="range">
           <start>
@@ -4893,7 +4893,7 @@
         <sen>Ráðherra er heimilt að setja reglugerðir á sviði siglingalaga að því leyti sem það er nauðsynlegt vegna skuldbindinga er leiðir af samningi um Evrópskt efnahagssvæði milli Efnahagsbandalags Evrópu, Kola- og stálbandalags Evrópu og aðildarríkja þess annars vegar og aðildarríkja Fríverslunarsamtaka Evrópu hins vegar, sbr. lög um Evrópska efnahagssvæðið.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="206" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="206" nr="1">
           <footnote-sen>L. 162/2010, 206. gr.</footnote-sen>
           <location type="range">
             <chapter>16</chapter>
@@ -4908,10 +4908,10 @@
             <chapter>16</chapter>
             <art>243</art>
             <subart>1</subart>
-            <sen after-mark=" á sviði siglingalaga að því leyti sem það er nauðsynlegt vegna skuldbindinga er leiðir af samningi um Evrópskt efnahagssvæði milli Efnahagsbandalags Evrópu, Kola- og stálbandalags Evrópu og aðildarríkja þess annars vegar og aðildarríkja Fríverslunarsamtaka Evrópu hins vegar, sbr. lög um Evrópska efnahagssvæðið.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglugerðir ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglugerðir " after-mark=" á sviði siglingalaga að því leyti sem það er nauðsynlegt vegna skuldbindinga er leiðir af samningi um Evrópskt efnahagssvæði milli Efnahagsbandalags Evrópu, Kola- og stálbandalags Evrópu og aðildarríkja þess annars vegar og aðildarríkja Fríverslunarsamtaka Evrópu hins vegar, sbr. lög um Evrópska efnahagssvæðið.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-art="3" law-nr="62" law-year="1993" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-nr="62" law-year="1993" law-art="3" nr="3">
           <footnote-sen>L. 62/1993, 3. gr.</footnote-sen>
           <footnote-sen>Augl. 442/1994 og 120/1996.</footnote-sen>
           <location type="range">
@@ -4949,7 +4949,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-art="3" law-nr="12" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.012.html" law-nr="12" law-year="2016" law-art="3" nr="1">
           <footnote-sen>L. 12/2016, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4968,7 +4968,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-art="3" law-nr="49" law-year="2015" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.049.html" law-nr="49" law-year="2015" law-art="3" nr="2">
           <footnote-sen>L. 49/2015, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -4985,7 +4985,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-art="3" law-nr="46" law-year="2012" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.046.html" law-nr="46" law-year="2012" law-art="3" nr="3">
           <footnote-sen>L. 46/2012, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -5009,7 +5009,7 @@
     <nr-title>XVII. kafli.</nr-title>
     <name>Gildistaka og brottfallin lög.</name>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-art="3" law-nr="62" law-year="1993" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-nr="62" law-year="1993" law-art="3" nr="1">
         <footnote-sen>L. 62/1993, 3. gr.</footnote-sen>
         <location type="range">
           <chapter>17</chapter>
@@ -5028,7 +5028,7 @@
         </sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-art="3" law-nr="62" law-year="1993" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/1993.062.html" law-nr="62" law-year="1993" law-art="3" nr="1">
           <footnote-sen>L. 62/1993, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>17</chapter>

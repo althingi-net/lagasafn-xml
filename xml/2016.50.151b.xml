@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="50" parliament="151b" year="2016">
+<law nr="50" year="2016" parliament="151b">
   <name>Lög um dómstóla</name>
   <num-and-date>
     <date>2016-06-07</date>
@@ -78,7 +78,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
-            <sen after-mark=" að fenginni umsögn hlutaðeigandi héraðsdómstóls og dómstólasýslunnar.$" before-mark="^Frá þessu má ráðherra þó víkja með reglugerð ">2</sen>
+            <sen before-mark="^Frá þessu má ráðherra þó víkja með reglugerð " after-mark=" að fenginni umsögn hlutaðeigandi héraðsdómstóls og dómstólasýslunnar.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -92,7 +92,7 @@
         <sen>Um þá gilda ákvæði í öðrum lögum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="1" law-nr="47" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="1" nr="1">
           <footnote-sen>L. 47/2020, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -141,7 +141,7 @@
         <sen>Ráðherra ákveður þóknun fyrir setu í stjórn dómstólasýslunnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-art="8" law-nr="130" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="1">
           <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -177,7 +177,7 @@
         <sen>Stjórn dómstólasýslunnar setur reglur um birtingu dóma og úrskurða héraðsdómstóla, Endurupptökudóms, Landsréttar og Hæstaréttar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="2" law-nr="47" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="2" nr="1">
           <footnote-sen>L. 47/2020, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -186,7 +186,7 @@
             <sen words="Endurupptökudóms">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="41" law-nr="76" law-year="2019" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="41" nr="2">
           <footnote-sen>L. 76/2019, 41. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -257,7 +257,7 @@
         <sen>Stjórn dómstólasýslunnar ákveður þóknun fyrir setu í nefndinni.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-art="8" law-nr="130" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="1">
           <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -299,14 +299,14 @@
             <art>10</art>
             <subart>1</subart>
             <numart>1</numart>
-            <sen after-mark=" um hvers konar aukastörf og eignarhald á hlut í félagi eða atvinnufyrirtæki, eða þátttaka og störf í þágu annarra félaga og samtaka, geti samrýmst embættisstörfum dómara og leysa úr álitaefnum þar að lútandi, sbr. 45. gr.$" before-mark="^Að setja almennar reglur ">1</sen>
+            <sen before-mark="^Að setja almennar reglur " after-mark=" um hvers konar aukastörf og eignarhald á hlut í félagi eða atvinnufyrirtæki, eða þátttaka og störf í þágu annarra félaga og samtaka, geti samrýmst embættisstörfum dómara og leysa úr álitaefnum þar að lútandi, sbr. 45. gr.$">1</sen>
           </location>
           <location type="pointer">
             <chapter>2</chapter>
             <art>10</art>
             <subart>1</subart>
             <numart>2</numart>
-            <sen after-mark=" um hvaða upplýsingar um aukastörf dómara skuli birtar og með hvaða hætti.$" before-mark="^Nefnd um dómarastörf setur í samráði við dómstólasýsluna reglur ">2</sen>
+            <sen before-mark="^Nefnd um dómarastörf setur í samráði við dómstólasýsluna reglur " after-mark=" um hvaða upplýsingar um aukastörf dómara skuli birtar og með hvaða hætti.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -334,7 +334,7 @@
         <sen>Dómnefndin hefur aðstöðu hjá dómstólasýslunni.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="3" law-nr="47" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="3" nr="1">
           <footnote-sen>L. 47/2020, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -365,7 +365,7 @@
             <chapter>3</chapter>
             <art>12</art>
             <subart>1</subart>
-            <sen after-mark=" um störf nefndarinnar.$" before-mark="^Að öðru leyti setur ráðherra nánari reglur ">3</sen>
+            <sen before-mark="^Að öðru leyti setur ráðherra nánari reglur " after-mark=" um störf nefndarinnar.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -419,7 +419,7 @@
         <sen>Í embætti hæstaréttardómara má ekki skipa þann sem er eða hefur verið í hjúskap við dómara sem þar er skipaður fyrir eða skyldur slíkum dómara eða mægður að feðgatali, niðjatali eða öðrum lið til hliðar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="4" law-nr="141" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="4" nr="1">
           <footnote-sen>L. 141/2018, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -429,7 +429,7 @@
             <sen words="hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að hann varð fullra 18 ára">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="77" law-nr="117" law-year="2016" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="77" nr="2">
           <footnote-sen>L. 117/2016, 77. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -476,7 +476,7 @@
         <sen>Um ráðningu og starfslok starfsmanna Hæstaréttar fer eftir lögum um réttindi og skyldur starfsmanna ríkisins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-art="8" law-nr="130" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="1">
           <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -511,7 +511,7 @@
         <sen>Hæstiréttur getur falið forseta einum að ráða til lykta ýmsum minni háttar málum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-art="1" law-nr="90" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-nr="90" law-year="2017" law-art="1" nr="1">
           <footnote-sen>L. 90/2017, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -591,13 +591,13 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="42" law-nr="76" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="42" nr="1">
           <footnote-sen>L. 76/2019, 42. gr.</footnote-sen>
           <location type="deletion">
             <chapter>4</chapter>
             <art>20</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">3</sen>
+            <sen before-mark="^" after-mark="$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -651,7 +651,7 @@
         <sen>Í embætti landsréttardómara má ekki skipa þann sem er eða hefur verið í hjúskap við dómara sem þar er skipaður fyrir eða skyldur slíkum dómara eða mægður að feðgatali, niðjatali eða öðrum lið til hliðar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="5" law-nr="141" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="5" nr="1">
           <footnote-sen>L. 141/2018, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -661,17 +661,17 @@
             <sen words="hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að hann varð fullra 18 ára">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-art="2" law-nr="90" law-year="2017" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-nr="90" law-year="2017" law-art="2" nr="2">
           <footnote-sen>L. 90/2017, 2. gr.</footnote-sen>
           <location type="deletion">
             <chapter>5</chapter>
             <art>21</art>
             <subart>2</subart>
             <numart>7</numart>
-            <sen after-mark=" héraðsdómari, (\[? ?)?lögmaður með málflutningsréttindi fyrir Hæstarétti], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; prófessor eða dósent í lögum, lögreglustjóri, sýslumaður, saksóknari, ráðuneytisstjóri, skrifstofustjóri í ráðuneyti því sem fer með málefni dómstóla og réttarfars eða umboðsmaður Alþingis eða hefur um jafnlangan tíma gegnt öðru líku starfi sem veitir hliðstæða lögfræðilega reynslu.$" before-mark="^Hefur starfað í minnst þrjú ár sem ">1</sen>
+            <sen before-mark="^Hefur starfað í minnst þrjú ár sem " after-mark=" héraðsdómari, (\[? ?)?lögmaður með málflutningsréttindi fyrir Hæstarétti], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; prófessor eða dósent í lögum, lögreglustjóri, sýslumaður, saksóknari, ráðuneytisstjóri, skrifstofustjóri í ráðuneyti því sem fer með málefni dómstóla og réttarfars eða umboðsmaður Alþingis eða hefur um jafnlangan tíma gegnt öðru líku starfi sem veitir hliðstæða lögfræðilega reynslu.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="77" law-nr="117" law-year="2016" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="77" nr="3">
           <footnote-sen>L. 117/2016, 77. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -718,7 +718,7 @@
         <sen>Um ráðningu og starfslok starfsmanna Landsréttar fer eftir lögum um réttindi og skyldur starfsmanna ríkisins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-art="8" law-nr="130" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="1">
           <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -774,7 +774,7 @@
         <sen>Landsréttur ákveður þóknun varadómara fyrir hvert mál sem hann situr í og greiðist hún úr ríkissjóði.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="43" law-nr="76" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="43" nr="1">
           <footnote-sen>L. 76/2019, 43. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -829,13 +829,13 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="44" law-nr="76" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="44" nr="1">
           <footnote-sen>L. 76/2019, 44. gr.</footnote-sen>
           <location type="deletion">
             <chapter>5</chapter>
             <art>28</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">3</sen>
+            <sen before-mark="^" after-mark="$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -886,7 +886,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="6" law-nr="141" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="6" nr="1">
           <footnote-sen>L. 141/2018, 6. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -1051,7 +1051,7 @@
             <chapter>6</chapter>
             <art>36</art>
             <subart>1</subart>
-            <sen after-mark=" sem dómstólasýslan setur að fenginni tillögu hlutaðeigandi dómstóls og skulu þær birtar í B-deild Stjórnartíðinda.$" before-mark="^Um slíka ákvörðun skal mælt í reglum ">2</sen>
+            <sen before-mark="^Um slíka ákvörðun skal mælt í reglum " after-mark=" sem dómstólasýslan setur að fenginni tillögu hlutaðeigandi dómstóls og skulu þær birtar í B-deild Stjórnartíðinda.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1078,13 +1078,13 @@
         <sen>Þegar nöfnum er haldið leyndum skal jafnframt afmá önnur atriði úr dómi sem tengt geta aðila eða aðra við sakarefnið.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="45" law-nr="76" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="45" nr="1">
           <footnote-sen>L. 76/2019, 45. gr.</footnote-sen>
           <location type="deletion">
             <chapter>6</chapter>
             <art>38</art>
             <subart>1</subart>
-            <sen after-mark=" hefur umsjón með útgáfu dóma og úrskurða héraðsdómstóla.$" before-mark="^Dómstólasýslan ">1</sen>
+            <sen before-mark="^Dómstólasýslan " after-mark=" hefur umsjón með útgáfu dóma og úrskurða héraðsdómstóla.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1116,7 +1116,7 @@
         <sen>Sá sem tilnefndur hefur verið í hóp sérfróðra meðdómsmanna skal undirrita drengskaparheit um að hann muni jafnan gegna slíkum störfum af samviskusemi og óhlutdrægni og fara í öllu að lögum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="7" law-nr="141" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="7" nr="1">
           <footnote-sen>L. 141/2018, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -1125,7 +1125,7 @@
             <sen words="hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að þeir urðu fullra 18 ára">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-art="46" law-nr="76" law-year="2019" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.076.html" law-nr="76" law-year="2019" law-art="46" nr="2">
           <footnote-sen>L. 76/2019, 46. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -1241,7 +1241,7 @@
         <sen>Stjórn sjóðsins semur reglur fyrir úthlutun úr honum og tekur ákvarðanir um varðveislu sjóðsins og ávöxtun.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.079.html" law-art="9" law-nr="79" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.079.html" law-nr="79" law-year="2019" law-art="9" nr="1">
           <footnote-sen>L. 79/2019, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1285,7 +1285,7 @@
             <chapter>8</chapter>
             <art>45</art>
             <subart>1</subart>
-            <sen after-mark=" sem hún setur skv. 1. tölul. 1. mgr. 10. gr. ef ljóst er að slíkt er ekki ósamrýmanlegt stöðu dómara eða leiðir af sér hættu á að hann geti ekki sinnt embættisstarfi sínu sem skyldi.$" before-mark="^Frá því getur nefnd um dómarastörf veitt undanþágu eftir reglum ">2</sen>
+            <sen before-mark="^Frá því getur nefnd um dómarastörf veitt undanþágu eftir reglum " after-mark=" sem hún setur skv. 1. tölul. 1. mgr. 10. gr. ef ljóst er að slíkt er ekki ósamrýmanlegt stöðu dómara eða leiðir af sér hættu á að hann geti ekki sinnt embættisstarfi sínu sem skyldi.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1341,7 +1341,7 @@
         <sen>Nefndin skal jafnframt senda dómstólasýslunni afrit af áliti sínu þegar það liggur fyrir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="78" law-nr="117" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="78" nr="1">
           <footnote-sen>L. 117/2016, 78. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -1475,7 +1475,7 @@
     <nr-title>IX. kafli.</nr-title>
     <name>Endurupptökudómur.</name>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="5" law-nr="47" law-year="2020" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="5" nr="1">
         <footnote-sen>L. 47/2020, 5. gr.</footnote-sen>
         <location type="range">
           <chapter>9</chapter>
@@ -1523,7 +1523,7 @@
         <sen>Um réttindi þeirra og skyldur fer að öðru leyti eftir VIII. kafla að því frátöldu að dómanda sem skipaður er skv. 4. mgr. er heimilt að taka sér önnur störf og eiga hlut í félagi eða atvinnufyrirtæki án þess að leita leyfis nefndar um dómarastörf til þess en tilkynna skal hann nefndinni um önnur störf sín og eignarhluti í félagi eða atvinnufyrirtæki.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="4" law-nr="47" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="4" nr="1">
           <footnote-sen>L. 47/2020, 4. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1557,7 +1557,7 @@
         </sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-art="3" law-nr="90" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-nr="90" law-year="2017" law-art="3" nr="1">
           <footnote-sen>L. 90/2017, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -1569,9 +1569,9 @@
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Með gildistöku laga þessara er ekki raskað stöðu þeirra sem þegar hafa verið skipaðir eða settir í dómaraembætti.</sen>
@@ -1585,7 +1585,7 @@
         <sen>Heimilt er að setja dómara samkvæmt ákvæði þessu þótt hann hafi náð 70 ára aldri.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="79" law-nr="117" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="79" nr="1">
           <footnote-sen>L. 117/2016, 79. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1594,7 +1594,7 @@
             <sen words="laga þessara">2</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-art="4" law-nr="90" law-year="2017" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-nr="90" law-year="2017" law-art="4" nr="2">
           <footnote-sen>L. 90/2017, 4. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1613,7 +1613,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Í þeim tilgangi að undirbúa starfsemi dómstólasýslunnar, þ.m.t. að skipa framkvæmdastjóra hennar, skal skipa í stjórn dómstólasýslunnar í fyrsta skipti frá og með 1. ágúst 2017.</sen>
@@ -1628,7 +1628,7 @@
         <sen>Við gildistöku laga þessara fellur niður skipun í dómstólaráð.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-art="1" law-nr="10" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-nr="10" law-year="2017" law-art="1" nr="1">
           <footnote-sen>L. 10/2017, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1637,7 +1637,7 @@
             <sen words="1. ágúst">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="80" law-nr="117" law-year="2016" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="80" nr="2">
           <footnote-sen>L. 117/2016, 80. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1656,13 +1656,13 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Við gildistöku laga þessara er ekki raskað skipun í nefnd um dómarastörf, endurupptökunefnd eða valnefnd skv. 4. gr. a laga um dómstóla, nr. 15/1998, en um skipun nýrra manna í nefndirnar eftir gildistökudag gilda ákvæði laga þessara.</sen>
       </subart>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Skipun dómara við Landsrétt skal lokið eigi síðar en 1. júlí 2017 og skulu dómarar skipaðir í embættið frá og með 1. janúar 2018.</sen>
@@ -1684,7 +1684,7 @@
         <sen>Forseta er frá þeim tíma heimilt að taka nauðsynlegar ákvarðanir til undirbúnings starfsemi Landsréttar, þ.m.t. ráða starfsfólk til réttarins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-art="2" law-nr="10" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-nr="10" law-year="2017" law-art="2" nr="1">
           <footnote-sen>L. 10/2017, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1719,7 +1719,7 @@
             <sen words="1. ágúst">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="81" law-nr="117" law-year="2016" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="81" nr="2">
           <footnote-sen>L. 117/2016, 81. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1738,25 +1738,25 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="V" number-type="roman" roman-nr="5">
+    <art nr="V" roman-nr="5" number-type="roman">
       <nr-title>V.</nr-title>
       <subart nr="1">
         <sen>Þeir sem skipaðir eru hæstaréttardómarar skulu hafa forgang til skipunar í embætti dómara við Landsrétt kjósi þeir það og skulu þá einskis missa í kjörum sínum.</sen>
       </subart>
     </art>
-    <art nr="VI" number-type="roman" roman-nr="6">
+    <art nr="VI" roman-nr="6" number-type="roman">
       <nr-title>VI.</nr-title>
       <subart nr="1">
         <sen>Frá gildistöku ákvæðis þessa skal við skipun í valnefnd skv. 4. gr. a laga um dómstóla, nr. 15/1998, fara að svo sem mælt er fyrir um í 6. málsl. 1. mgr. 11. gr.</sen>
       </subart>
     </art>
-    <art nr="VII" number-type="roman" roman-nr="7">
+    <art nr="VII" roman-nr="7" number-type="roman">
       <nr-title>VII.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 2. gr. getur Landsréttur haft aðsetur utan Reykjavíkur fram til 1. janúar 2022.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-art="3" law-nr="10" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.010.html" law-nr="10" law-year="2017" law-art="3" nr="1">
           <footnote-sen>L. 10/2017, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1774,14 +1774,14 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="VIII" number-type="roman" roman-nr="8">
+    <art nr="VIII" roman-nr="8" number-type="roman">
       <nr-title>VIII.</nr-title>
       <subart nr="1">
         <sen>Nú óskar skipaður dómari við Landsrétt leyfis frá störfum fyrir 1. janúar 2018 og getur ráðherra þá veitt slíkt leyfi til allt að þriggja mánaða ef sérstakar ástæður þykja til.</sen>
         <sen>Nú fær dómari við Landsrétt leyfi samkvæmt þessu ákvæði og verður annar dómari þá ekki settur í hans stað.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-art="5" law-nr="90" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.090.html" law-nr="90" law-year="2017" law-art="5" nr="1">
           <footnote-sen>L. 90/2017, 5. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1799,7 +1799,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="IX" number-type="roman" roman-nr="9">
+    <art nr="IX" roman-nr="9" number-type="roman">
       <nr-title>IX.</nr-title>
       <subart nr="1">
         <sen>Endurupptökudómur tekur frá og með 1. desember 2020 við meðferð beiðna um endurupptöku dómsmála sem ekki hafa verið afgreiddar af endurupptökunefnd fyrir þann tíma.</sen>
@@ -1815,7 +1815,7 @@
         <sen>Ef aðalmaður er skipaður til þriggja ára eða skemmri tíma er heimilt að skipa hann í Endurupptökudóm einu sinni að nýju.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-art="6" law-nr="47" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.047.html" law-nr="47" law-year="2020" law-art="6" nr="1">
           <footnote-sen>L. 47/2020, 6. gr.</footnote-sen>
           <location type="range">
             <start>

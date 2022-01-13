@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="68" parliament="151b" year="2006">
+<law nr="68" year="2006" parliament="151b">
   <name>Lög um stofnun Matvælarannsókna hf.</name>
   <num-and-date>
     <date>2006-06-14</date>
@@ -44,7 +44,7 @@
       <sen>Ráðherra fer með eignarhlut ríkissjóðs í félaginu.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="432" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="432" nr="1">
         <footnote-sen>L. 126/2011, 432. gr.</footnote-sen>
         <location type="range">
           <art>4</art>
@@ -92,22 +92,22 @@
   <art nr="10">
     <nr-title>10. gr.</nr-title>
   </art>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I.–III">
       <nr-title>I.–III.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-art="12" law-nr="88" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="12" nr="1">
           <footnote-sen>L. 88/2020, 12. gr.</footnote-sen>
           <location type="deletion">
             <chapter>t</chapter>
             <art>I.–III</art>
-            <nr-title after-mark="$" before-mark="^I.–III. ">1</nr-title>
+            <nr-title before-mark="^I.–III. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 8. gr. er heimilt að viðhalda Rannsóknastofnun fiskiðnaðarins sem lögaðila án starfsemi vegna uppgjörs og aðildar að samningum sem ákvörðun hefur verið tekin um fyrir 1. janúar 2007.</sen>

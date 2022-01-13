@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="49" parliament="151b" year="1997">
+<law nr="49" year="1997" parliament="151b">
   <name>Lög um varnir gegn snjóflóðum og skriðuföllum</name>
   <num-and-date>
     <date>1997-05-23</date>
@@ -17,7 +17,7 @@
       <sen>Samheitið ofanflóð er hér eftir notað um snjóflóð og skriðuföll.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-art="1" law-nr="127" law-year="2014" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-nr="127" law-year="2014" law-art="1" nr="1">
         <footnote-sen>L. 127/2014, 1. gr.</footnote-sen>
         <location type="range">
           <art>1</art>
@@ -33,7 +33,7 @@
       <sen>Ráðherra fer með yfirstjórn þeirra málefna sem lög þessi taka til, nema þau séu sérstaklega falin öðrum ráðherrum.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="1">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>2</art>
@@ -69,7 +69,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>1</subart>
-          <sen after-mark="$" before-mark="^Hún annast mælingar á snjóalögum og rannsóknir á þeim með sérstöku tilliti til snjóflóðahættu og gefur út viðvörun um hana, sbr. 6. gr.">2</sen>
+          <sen before-mark="^Hún annast mælingar á snjóalögum og rannsóknir á þeim með sérstöku tilliti til snjóflóðahættu og gefur út viðvörun um hana, sbr. 6. gr." after-mark="$">2</sen>
         </location>
       </footnote>
       <footnote nr="2">
@@ -77,7 +77,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>4</subart>
-          <sen after-mark=" um þessar skyldur sveitarstjórnar.$" before-mark="^Ráðherra getur sett nánari reglur ">3</sen>
+          <sen before-mark="^Ráðherra getur sett nánari reglur " after-mark=" um þessar skyldur sveitarstjórnar.$">3</sen>
         </location>
       </footnote>
     </footnotes>
@@ -117,7 +117,7 @@
       <sen>Reglur um gerð og notkun hættumats, flokkun hættusvæða og nýtingu þeirra skulu settar af ráðherra.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2000.071.html" law-art="1" law-nr="71" law-year="2000" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2000.071.html" law-nr="71" law-year="2000" law-art="1" nr="1">
         <footnote-sen>L. 71/2000, 1. gr.</footnote-sen>
         <location type="range">
           <art>4</art>
@@ -142,7 +142,7 @@
           <sen>1</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-art="2" law-nr="127" law-year="2014" nr="2">
+      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-nr="127" law-year="2014" law-art="2" nr="2">
         <footnote-sen>L. 127/2014, 2. gr.</footnote-sen>
         <location type="range">
           <art>4</art>
@@ -150,7 +150,7 @@
           <sen words="eins og það er skilgreint í reglum sem ráðherra setur skv. 6. mgr.">2</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.041.html" law-art="1" law-nr="41" law-year="2008" nr="3">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.041.html" law-nr="41" law-year="2008" law-art="1" nr="3">
         <footnote-sen>L. 41/2008, 1. gr.</footnote-sen>
         <location type="range">
           <art>4</art>
@@ -175,7 +175,7 @@
           <sen>3</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="4">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="4">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>4</art>
@@ -188,7 +188,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>6</subart>
-          <sen after-mark=" um gerð og notkun hættumats, flokkun hættusvæða og nýtingu þeirra skulu settar af ráðherra.$" before-mark="^Reglur ">1</sen>
+          <sen before-mark="^Reglur " after-mark=" um gerð og notkun hættumats, flokkun hættusvæða og nýtingu þeirra skulu settar af ráðherra.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -202,7 +202,7 @@
       <sen>Almannavarnir skulu skipuleggja og annast björgunar- og hjálparstörf vegna hættu eða tjóns sem skapast hefur vegna ofanflóða eftir því sem fyrir er mælt í lögum um almannavarnir og 6. og 7. gr. laga þessara.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.082.html#G35" law-art="35" law-nr="82" law-year="2008" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.082.html#G35" law-nr="82" law-year="2008" law-art="35" nr="1">
         <footnote-sen>L. 82/2008, 35. gr.</footnote-sen>
         <location type="range">
           <art>5</art>
@@ -235,10 +235,10 @@
         <location type="pointer">
           <art>6</art>
           <subart>1</subart>
-          <sen after-mark="$" before-mark="^Þegar Veðurstofa Íslands, að höfðu samráði við lögreglustjóra og almannavarnanefnd, gefur út viðvörun um staðbundna snjóflóðahættu og lýsir yfir hættuástandi skal fólk flytja eða það flutt á brott úr öllu húsnæði á svæði eða svæðum, sem tilgreind skulu í viðvörun Veðurstofunnar, í samræmi við gildandi neyðaráætlun.">1</sen>
+          <sen before-mark="^Þegar Veðurstofa Íslands, að höfðu samráði við lögreglustjóra og almannavarnanefnd, gefur út viðvörun um staðbundna snjóflóðahættu og lýsir yfir hættuástandi skal fólk flytja eða það flutt á brott úr öllu húsnæði á svæði eða svæðum, sem tilgreind skulu í viðvörun Veðurstofunnar, í samræmi við gildandi neyðaráætlun." after-mark="$">1</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="2">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="2">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>6</art>
@@ -246,15 +246,15 @@
           <sen words="ráðherra">3</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.082.html#G35" law-art="35" law-nr="82" law-year="2008" nr="3">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.082.html#G35" law-nr="82" law-year="2008" law-art="35" nr="3">
         <footnote-sen>L. 82/2008, 35. gr.</footnote-sen>
         <location type="deletion">
           <art>6</art>
           <subart>1</subart>
-          <sen after-mark=" og hlutaðeigandi almannavarnanefndum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$" before-mark="^(\[? ?)?Skulu uppdrættirnir staðfestir af (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og kynntir ríkislögreglustjóra ">3</sen>
+          <sen before-mark="^(\[? ?)?Skulu uppdrættirnir staðfestir af (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og kynntir ríkislögreglustjóra " after-mark=" og hlutaðeigandi almannavarnanefndum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">3</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2003.044.html" law-art="13" law-nr="44" law-year="2003" nr="4">
+      <footnote href="https://www.althingi.is/altext/stjt/2003.044.html" law-nr="44" law-year="2003" law-art="13" nr="4">
         <footnote-sen>L. 44/2003, 13. gr.</footnote-sen>
         <location type="range">
           <art>6</art>
@@ -298,7 +298,7 @@
       <sen>Nú fer fram rannsókn á ætlaðri refsiverðri háttsemi í tengslum við ofanflóð og er slík rannsókn óháð rannsókn samkvæmt þessari grein.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="1">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>8</art>
@@ -316,7 +316,7 @@
           <sen words="Hlutaðeigandi ráðherra, sbr. 2. mgr.">1</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="2">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="2">
         <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
         <location type="range">
           <art>8</art>
@@ -348,7 +348,7 @@
       <sen>Ráðherra getur sett nánari reglur um störf nefndarinnar.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="1">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>9</art>
@@ -420,7 +420,7 @@
       <sen>Lán til starfsemi sjóðsins, sem eru með ábyrgð ríkissjóðs, skulu háð samþykki hlutaðeigandi ráðherra.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2018.047.html" law-art="20" law-nr="47" law-year="2018" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2018.047.html" law-nr="47" law-year="2018" law-art="20" nr="1">
         <footnote-sen>L. 47/2018, 20. gr.</footnote-sen>
         <location type="range">
           <start>
@@ -471,7 +471,7 @@
       <sen>Það sem eftir kann að standa af láninu að liðnum lánstíma skal falla niður.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-art="3" law-nr="127" law-year="2014" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-nr="127" law-year="2014" law-art="3" nr="1">
         <footnote-sen>L. 127/2014, 3. gr.</footnote-sen>
         <location type="range">
           <start>
@@ -486,7 +486,7 @@
           </end>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.041.html" law-art="2" law-nr="41" law-year="2008" nr="2">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.041.html" law-nr="41" law-year="2008" law-art="2" nr="2">
         <footnote-sen>L. 41/2008, 2. gr.</footnote-sen>
         <location type="range">
           <art>13</art>
@@ -522,7 +522,7 @@
       <sen>Ráðherra setur með reglugerð nánari ákvæði um framkvæmd laga þessara.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="1">
         <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
         <location type="range">
           <art>16</art>
@@ -535,7 +535,7 @@
         <location type="pointer">
           <art>16</art>
           <subart>1</subart>
-          <sen after-mark=" nánari ákvæði um framkvæmd laga þessara.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð ">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -552,9 +552,9 @@
       <sen>Ef hættumat hefur verið staðfest fyrir 1. janúar 1996 fellur það sjálfkrafa úr gildi við gildistöku laganna.</sen>
     </subart>
   </art>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Sveitarstjórn leggur fram tillögu um skipulag nýrrar byggðar og nýbygginga í sveitarfélögum sem búa við snjóflóðahættu.</sen>
@@ -563,7 +563,7 @@
         <sen>Skal styðjast við þær reglur þar til hættumat hefur verið staðfest fyrir hlutaðeigandi sveitarfélag.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="237" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="237" nr="1">
           <footnote-sen>L. 126/2011, 237. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -574,13 +574,13 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir 1. mgr. 13. gr. laganna er heimilt að nota fé ofanflóðasjóðs til að taka þátt í greiðslu kostnaðar við hættumat vegna eldgosa, vatnsflóða og sjávarflóða frá 1. janúar 2015 til 31. desember 2022.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.092.html" law-art="1" law-nr="92" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.092.html" law-nr="92" law-year="2017" law-art="1" nr="1">
           <footnote-sen>L. 92/2017, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -589,7 +589,7 @@
             <sen words="2022">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-art="4" law-nr="127" law-year="2014" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2014.127.html" law-nr="127" law-year="2014" law-art="4" nr="2">
           <footnote-sen>L. 127/2014, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>

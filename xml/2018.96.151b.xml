@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="96" parliament="151b" year="2018">
+<law nr="96" year="2018" parliament="151b">
   <name>Lög um Ferðamálastofu</name>
   <num-and-date>
     <date>2018-06-26</date>
@@ -83,7 +83,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>3</subart>
-            <sen after-mark=" kveðið nánar á um verkefni Ferðamálastofu.$" before-mark="^Ráðherra getur með reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" kveðið nánar á um verkefni Ferðamálastofu.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -296,7 +296,7 @@
             <chapter>3</chapter>
             <art>10</art>
             <subart>1</subart>
-            <sen after-mark=" um umsóknir um leyfi, framkvæmd leyfisveitinga og eftirlit með leyfishöfum, þar á meðal um flokkun leyfa.$" before-mark="^Ráðherra er heimilt að setja nánari ákvæði í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja nánari ákvæði í reglugerð " after-mark=" um umsóknir um leyfi, framkvæmd leyfisveitinga og eftirlit með leyfishöfum, þar á meðal um flokkun leyfa.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -358,7 +358,7 @@
             <chapter>4</chapter>
             <art>12</art>
             <subart>2</subart>
-            <sen after-mark=" er heimilt að kveða nánar á um söfnun og vinnslu upplýsinga og rannsóknir.$" before-mark="^Í reglugerð ">1</sen>
+            <sen before-mark="^Í reglugerð " after-mark=" er heimilt að kveða nánar á um söfnun og vinnslu upplýsinga og rannsóknir.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -476,9 +476,9 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Ferðaskipuleggjandaleyfi og skráningar bókunarþjónustu samkvæmt lögum nr. 73/2005 sem í gildi eru við gildistöku laga þessara skulu halda gildi sínu til 1. mars 2019.</sen>
@@ -486,13 +486,13 @@
         <sen>Ekki skal taka gjald fyrir nýtt leyfi til þessara aðila.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Þeir ferðaþjónustuaðilar sem skylt er að hafa öryggisáætlun skv. 11. gr. laga þessara skulu hafa sett slíkar áætlanir og tekið þær í notkun eigi síðar en 1. janúar 2019.</sen>
       </subart>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Fram til 1. janúar 2020 skal ferðamálaráð starfa í samræmi við ákvæði 5. og 6. gr. laga um skipan ferðamála, nr. 73/2005.</sen>

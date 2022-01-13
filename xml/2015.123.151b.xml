@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="123" parliament="151b" year="2015">
+<law nr="123" year="2015" parliament="151b">
   <name>Lög um opinber fjármál</name>
   <num-and-date>
     <date>2015-12-28</date>
@@ -560,7 +560,7 @@
         <sen>Stefna um málefni löggjafarvalds skal vera á ábyrgð forsætisnefndar Alþingis.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="17" law-nr="117" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="17" nr="1">
           <footnote-sen>L. 117/2016, 17. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -586,7 +586,7 @@
         <sen>Ef vikið hefur verið frá tillögum dómstólasýslunnar skal hann greina fjárlaganefnd frá ástæðum þess auk þess sem gera skal grein fyrir frávikum í frumvarpi til fjárlaga.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-art="17" law-nr="117" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="17" nr="1">
           <footnote-sen>L. 117/2016, 17. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -1045,7 +1045,7 @@
         <sen>Reikningsskil fyrir B- og C-hluta ríkissjóðs skulu uppfylla kröfur laga um ársreikninga, nr. 3/2006.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-art="40" law-nr="135" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="40" nr="1">
           <footnote-sen>L. 135/2019, 40. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1063,7 +1063,7 @@
             <chapter>5</chapter>
             <art>52</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1103,7 +1103,7 @@
         <sen>Hver ráðherra skal sjá til þess að ríkisaðilar sem undir hann heyra uppfylli ákvæði þessarar greinar um skilafrest ársreikninga.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-art="41" law-nr="135" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="41" nr="1">
           <footnote-sen>L. 135/2019, 41. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -1370,7 +1370,7 @@
             <chapter>6</chapter>
             <art>67</art>
             <subart>1</subart>
-            <sen after-mark=" mæla fyrir um nánari framkvæmd laga þessara, þar á meðal um:$" before-mark="^Ráðherra skal í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" mæla fyrir um nánari framkvæmd laga þessara, þar á meðal um:$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1386,9 +1386,9 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 68. gr. skulu frumvörp til fjáraukalaga og lokafjárlaga til og með árinu 2016 fylgja ákvæðum laga um fjárreiður ríkisins, nr. 88/1997.</sen>
@@ -1406,7 +1406,7 @@
         <sen>Þrátt fyrir ákvæði 3. tölul. 19. gr. er ráðherra heimilt að leggja fram fylgirit með frumvarpi til fjárlaga fyrir árið 2017 án áætlunar um fjárveitingar næstu tveggja ára.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.126.html" law-art="60" law-nr="126" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.126.html" law-nr="126" law-year="2016" law-art="60" nr="1">
           <footnote-sen>L. 126/2016, 60. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1417,7 +1417,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Ársfjórðungsskýrsla um opinber fjármál skv. 12. gr. skal fyrst birt innan átta vikna frá lokum fyrsta ársfjórðungs 2017.</sen>
@@ -1426,7 +1426,7 @@
         <sen>Ársskýrsla ráðherra skv. 62. gr. skal birt eigi síðar en 1. júní 2018 vegna ársins 2017.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.063.html" law-art="6" law-nr="63" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.063.html" law-nr="63" law-year="2017" law-art="6" nr="1">
           <footnote-sen>L. 63/2017, 6. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1437,13 +1437,13 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 9. gr. er ráðherra heimilt að leggja fyrir Alþingi skýrslu þar sem fram kemur mat á líklegri þróun samfélags-, atvinnu-, umhverfis- og byggðaþátta og lýðfræðilegra breytna til næstu áratuga og áhrifum þeirra á afkomu, fjárhagsstöðu og skuldbindingar opinberra aðila eigi síðar en í árslok 2020.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.059.html" law-art="1" law-nr="59" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.059.html" law-nr="59" law-year="2020" law-art="1" nr="1">
           <footnote-sen>L. 59/2020, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -1452,7 +1452,7 @@
             <sen words="2020">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.138.html" law-art="29" law-nr="138" law-year="2018" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.138.html" law-nr="138" law-year="2018" law-art="29" nr="2">
           <footnote-sen>L. 138/2018, 29. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1470,13 +1470,13 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 1. mgr. 5. gr. og 1. mgr. 10. gr. skulu tillaga til þingsályktunar um fjármálaáætlun fyrir árin 2021–2025 og tillaga til þingsályktunar um breytingar á fjármálastefnu fyrir árin 2018–2022 lagðar fram eigi síðar en á samkomudegi reglulegs Alþingis haustið 2020.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.059.html" law-art="2" law-nr="59" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.059.html" law-nr="59" law-year="2020" law-art="2" nr="1">
           <footnote-sen>L. 59/2020, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1494,7 +1494,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="V" number-type="roman" roman-nr="5">
+    <art nr="V" roman-nr="5" number-type="roman">
       <nr-title>V.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 4., 5. og 7. gr. er ráðherra heimilt að víkja frá skilyrðum um heildarjöfnuð og skuldahlutfall hins opinbera í 7. gr. árin 2023–2025.</sen>
@@ -1504,7 +1504,7 @@
         <sen>Í umsögnum fjármálaráðs um þingsályktunartillögur fyrir þessi ár, sem ráðið sendir Alþingi, sbr. 2. mgr. 10. gr. og 4. mgr. 13. gr., skal lagt mat á hvort yfirlýst markmið stjórnvalda í opinberum fjármálum og framfylgd þeirra muni gera kleift að skilyrði í 7. gr. taki aftur gildi frá og með árinu 2026.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.123.html" law-art="1" law-nr="123" law-year="2020" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.123.html" law-nr="123" law-year="2020" law-art="1" nr="1">
           <footnote-sen>L. 123/2020, 1. gr.</footnote-sen>
           <location type="range">
             <start>

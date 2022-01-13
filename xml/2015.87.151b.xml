@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="87" parliament="151b" year="2015">
+<law nr="87" year="2015" parliament="151b">
   <name>Lög um verndarsvæði í byggð</name>
   <num-and-date>
     <date>2015-07-13</date>
@@ -88,7 +88,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>5</subart>
-          <sen after-mark="$" before-mark="^Ákvörðun ráðherra skal birt í Stjórnartíðindum með auglýsingu.">3</sen>
+          <sen before-mark="^Ákvörðun ráðherra skal birt í Stjórnartíðindum með auglýsingu." after-mark="$">3</sen>
         </location>
       </footnote>
       <footnote nr="2">
@@ -96,7 +96,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>6</subart>
-          <sen after-mark=" nánari ákvæði um tilhögun og efni tillagna til ráðherra og um efni ákvörðunar ráðherra, þar á meðal skilmála og skilyrði.$" before-mark="^Ráðherra setur í reglugerð ">1</sen>
+          <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um tilhögun og efni tillagna til ráðherra og um efni ákvörðunar ráðherra, þar á meðal skilmála og skilyrði.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -127,7 +127,7 @@
         <location type="pointer">
           <art>5</art>
           <subart>3</subart>
-          <sen after-mark=" nánari ákvæði um framkvæmd mats á varðveislugildi svæða í byggð, efni greinargerðar til ráðherra, efni auglýsingar um tillögu að verndarsvæði og framkvæmd tengda slíkri auglýsingu að öðru leyti.$" before-mark="^Ráðherra setur í reglugerð ">1</sen>
+          <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um framkvæmd mats á varðveislugildi svæða í byggð, efni greinargerðar til ráðherra, efni auglýsingar um tillögu að verndarsvæði og framkvæmd tengda slíkri auglýsingu að öðru leyti.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -157,7 +157,7 @@
         <location type="pointer">
           <art>6</art>
           <subart>5</subart>
-          <sen after-mark=" nánari ákvæði um sjónarmið sem sveitarstjórnir skulu líta til við mat á því hvort leyfa eigi framkvæmd innan verndarsvæða í byggð, hvað koma skuli fram í auglýsingu um fyrirhugaða framkvæmd, svo og hvar nálgast megi uppdrætti og önnur gögn um framkvæmdina.$" before-mark="^Ráðherra setur í reglugerð ">1</sen>
+          <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um sjónarmið sem sveitarstjórnir skulu líta til við mat á því hvort leyfa eigi framkvæmd innan verndarsvæða í byggð, hvað koma skuli fram í auglýsingu um fyrirhugaða framkvæmd, svo og hvar nálgast megi uppdrætti og önnur gögn um framkvæmdina.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -200,7 +200,7 @@
         <location type="pointer">
           <art>8</art>
           <subart>2</subart>
-          <sen after-mark=" nánari ákvæði um framkvæmd slíkrar heimildar sveitarstjórnar.$" before-mark="^Ráðherra setur í reglugerð ">1</sen>
+          <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um framkvæmd slíkrar heimildar sveitarstjórnar.$">1</sen>
         </location>
       </footnote>
     </footnotes>

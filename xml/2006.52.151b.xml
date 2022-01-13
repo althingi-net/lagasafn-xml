@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="52" parliament="151b" year="2006">
+<law nr="52" year="2006" parliament="151b">
   <name>Lög um Landhelgisgæslu Íslands</name>
   <num-and-date>
     <date>2006-06-14</date>
@@ -31,7 +31,7 @@
         <sen>Skipurit Landhelgisgæslu Íslands skal staðfest af ráðherra.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="421" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="421" nr="1">
           <footnote-sen>L. 126/2011, 421. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -160,7 +160,7 @@
         <sen>Landhelgisgæslan gerir ráðherra grein fyrir verkefninu og umfangi þess ásamt hættumati.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.119.html" law-art="1" law-nr="119" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.119.html" law-nr="119" law-year="2015" law-art="1" nr="1">
           <footnote-sen>L. 119/2015, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -209,7 +209,7 @@
         <sen>Við löggæslustörf skulu starfsmenn fara eftir lögreglulögum og lögum um meðferð sakamála eftir því sem við á.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="1">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -290,7 +290,7 @@
             <chapter>3</chapter>
             <art>13</art>
             <subart>3</subart>
-            <sen after-mark=" um stjórnun björgunaraðgerða og samvinnu við aðra björgunaraðila.$" before-mark="^Ráðherra setur reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um stjórnun björgunaraðgerða og samvinnu við aðra björgunaraðila.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -303,7 +303,7 @@
         <sen>Samgöngustofa stjórnar leitarstarfi fram til þess að slysstaður finnst en Landhelgisgæsla Íslands tekur ábyrgð á vettvangsstjórn ef slysstaður er á hafinu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="29" law-nr="59" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="29" nr="1">
           <footnote-sen>L. 59/2013, 29. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -335,7 +335,7 @@
             <chapter>3</chapter>
             <art>15</art>
             <subart>2</subart>
-            <sen after-mark=" um starfsemi sprengjusérfræðinga.$" before-mark="^Ráðherra setur reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um starfsemi sprengjusérfræðinga.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -378,7 +378,7 @@
             <chapter>3</chapter>
             <art>17</art>
             <subart>4</subart>
-            <sen after-mark=" um sjómælingar, sjókorta- og hafnakortagerð og annað efni á sviði sjómælinga sem Landhelgisgæsla Íslands gefur út.$" before-mark="^Ráðherra setur reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um sjómælingar, sjókorta- og hafnakortagerð og annað efni á sviði sjómælinga sem Landhelgisgæsla Íslands gefur út.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -431,7 +431,7 @@
             <chapter>4</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen after-mark=" sem ráðherra setur.$" before-mark="^Við störf sín skulu starfsmenn Landhelgisgæslu Íslands bera einkennisbúninga samkvæmt reglugerð ">1</sen>
+            <sen before-mark="^Við störf sín skulu starfsmenn Landhelgisgæslu Íslands bera einkennisbúninga samkvæmt reglugerð " after-mark=" sem ráðherra setur.$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -440,7 +440,7 @@
             <chapter>4</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^Ráðherra ákveður útlit, efni og notkun skilríkja með reglugerð.">3</sen>
+            <sen before-mark="^Ráðherra ákveður útlit, efni og notkun skilríkja með reglugerð." after-mark="$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -499,10 +499,10 @@
             <chapter>5</chapter>
             <art>25</art>
             <subart>3</subart>
-            <sen after-mark=" lit og önnur einkenni farartækja Landhelgisgæslu Íslands.$" before-mark="^Ráðherra ákveður með reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra ákveður með reglugerð " after-mark=" lit og önnur einkenni farartækja Landhelgisgæslu Íslands.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-art="29" law-nr="59" law-year="2013" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="29" nr="2">
           <footnote-sen>L. 59/2013, 29. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -551,7 +551,7 @@
             <chapter>6</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen after-mark=" um framkvæmd laga þessara.$" before-mark="^Ráðherra setur nánari reglur ">1</sen>
+            <sen before-mark="^Ráðherra setur nánari reglur " after-mark=" um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

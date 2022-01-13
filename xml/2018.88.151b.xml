@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="88" parliament="151b" year="2018">
+<law nr="88" year="2018" parliament="151b">
   <name>Lög um skipulag haf- og strandsvæða</name>
   <num-and-date>
     <date>2018-06-26</date>
@@ -147,7 +147,7 @@
         <sen>Þær fagstofnanir sem um er að ræða eru m.a. Ferðamálastofa, Fiskistofa, Hafrannsóknastofnun, Landgræðslan, Landhelgisgæslan, Landmælingar Íslands, Húsnæðis- og mannvirkjastofnun, Matvælastofnun, Minjastofnun Íslands, Náttúrufræðistofnun Íslands, Orkustofnun, Samgöngustofa, Umhverfisstofnun, Veðurstofan og Vegagerðin.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.155.html#G28" law-art="28" law-nr="155" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.155.html#G28" law-nr="155" law-year="2018" law-art="28" nr="1">
           <footnote-sen>L. 155/2018, 28. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -156,7 +156,7 @@
             <sen words="Landgræðslan">4</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.137.html#G19" law-art="19" law-nr="137" law-year="2019" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.137.html#G19" law-nr="137" law-year="2019" law-art="19" nr="2">
           <footnote-sen>L. 137/2019, 19. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -348,13 +348,13 @@
             <chapter>6</chapter>
             <art>15</art>
             <subart>1</subart>
-            <sen after-mark=" um gerð strandsvæðisskipulags.$" before-mark="^Ráðherra setur reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um gerð strandsvæðisskipulags.$">1</sen>
           </location>
           <location type="pointer">
             <chapter>6</chapter>
             <art>15</art>
             <subart>2</subart>
-            <sen after-mark=" nánari ákvæði um starfsreglur svæðisráðs.$" before-mark="^Ráðherra er jafnframt heimilt að setja í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra er jafnframt heimilt að setja í reglugerð " after-mark=" nánari ákvæði um starfsreglur svæðisráðs.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -385,9 +385,9 @@
       </name>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir að í lögum þessum sé kveðið á um að í stefnu um skipulag haf- og strandsvæða skuli mælt fyrir um á hvaða afmörkuðu svæðum gera skuli strandsvæðisskipulag, sbr. 1. mgr. 9. gr., skal 1. september 2018 hafin vinna við gerð strandsvæðisskipulags á Vestfjörðum og Austfjörðum.</sen>
@@ -396,7 +396,7 @@
         <sen>Mæli sérstakar ástæður með því skal skipuðum svæðisráðum heimilt að vinna að strandsvæðisskipulaginu í áföngum með því að fresta gerð skipulagsins fyrir ákveðin svæði innan Vestfjarða og Austfjarða.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Lög þessi skulu endurskoðuð í ljósi reynslunnar þegar vinnu við gerð strandsvæðisskipulags samkvæmt ákvæði til bráðabirgða I er lokið en þó eigi síðar en þremur árum eftir gildistöku laga þessara.</sen>

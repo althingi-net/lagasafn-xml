@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="92" parliament="151b" year="2019">
+<law nr="92" year="2019" parliament="151b">
   <name>Lög um Seðlabanka Íslands</name>
   <num-and-date>
     <date>2019-07-01</date>
@@ -110,7 +110,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>8</subart>
-            <sen after-mark=" um hæfi nefndarmanna í hæfnisnefndum skv. 6. og 7. mgr. og um málsmeðferð.$" before-mark="^Ráðherra setur reglur ">1</sen>
+            <sen before-mark="^Ráðherra setur reglur " after-mark=" um hæfi nefndarmanna í hæfnisnefndum skv. 6. og 7. mgr. og um málsmeðferð.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -149,7 +149,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>6</subart>
-            <sen after-mark=" um viðskipti seðlabankastjóra, varaseðlabankastjóra, utanaðkomandi nefndarmanna í peningastefnunefnd, fjármálastöðugleikanefnd og fjármálaeftirlitsnefnd og starfsmanna við eftirlitsskylda aðila.$" before-mark="^Ráðherra setur reglur ">1</sen>
+            <sen before-mark="^Ráðherra setur reglur " after-mark=" um viðskipti seðlabankastjóra, varaseðlabankastjóra, utanaðkomandi nefndarmanna í peningastefnunefnd, fjármálastöðugleikanefnd og fjármálaeftirlitsnefnd og starfsmanna við eftirlitsskylda aðila.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -860,7 +860,7 @@
             <chapter>11</chapter>
             <art>46</art>
             <subart>2</subart>
-            <sen after-mark=" um viðfangsefni sín samkvæmt lögum þessum.$" before-mark="^Seðlabanka Íslands er heimilt að setja reglur ">1</sen>
+            <sen before-mark="^Seðlabanka Íslands er heimilt að setja reglur " after-mark=" um viðfangsefni sín samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -877,9 +877,9 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 47. gr. er ráðherra heimilt að auglýsa og skipa varaseðlabankastjóra fyrir 1. janúar 2020 í samræmi við ákvæði 4. gr., þ.m.t. að gefa út reglur um hæfi nefndarmanna í hæfnisnefndum og um málsmeðferð, sbr. 8. mgr. 4. gr.</sen>
@@ -893,10 +893,10 @@
             <chapter>t</chapter>
             <art>I</art>
             <subart>1</subart>
-            <sen after-mark=" um hæfi nefndarmanna í hæfnisnefndum og um málsmeðferð, sbr. 8. mgr. 4. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^Þrátt fyrir ákvæði 47. gr. er ráðherra heimilt að auglýsa og skipa varaseðlabankastjóra fyrir 1. janúar 2020 (\[? ?)?í samræmi við ákvæði 4. gr., þ.m.t. að gefa út reglur ">1</sen>
+            <sen before-mark="^Þrátt fyrir ákvæði 47. gr. er ráðherra heimilt að auglýsa og skipa varaseðlabankastjóra fyrir 1. janúar 2020 (\[? ?)?í samræmi við ákvæði 4. gr., þ.m.t. að gefa út reglur " after-mark=" um hæfi nefndarmanna í hæfnisnefndum og um málsmeðferð, sbr. 8. mgr. 4. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.117.html" law-art="7" law-nr="117" law-year="2019" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.117.html" law-nr="117" law-year="2019" law-art="7" nr="2">
           <footnote-sen>L. 117/2019, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -907,7 +907,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Seðlabankastjóri skal við gildistöku laga þessara halda embætti sínu til loka skipunartíma síns.</sen>
@@ -917,19 +917,19 @@
         <sen>Laun þeirra sem fluttir eru í embætti varaseðlabankastjóra samkvæmt þeirri grein skulu taka breytingum 1. júlí ár hvert miðað við þær forsendur sem lýst er í 3. mgr. 5. gr. laga þessara.</sen>
       </subart>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Þeir sem sitja í bankaráði Seðlabanka Íslands við gildistöku laga þessara og varamenn þeirra skulu halda umboði sínu til setu í ráðinu þar til nýtt bankaráð hefur verið kjörið að loknum næstu kosningum til Alþingis.</sen>
       </subart>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Þeir tveir sérfræðingar á sviði efnahags- og peningamála sem við gildistöku laga þessara sitja í peningastefnunefnd á grundvelli skipunar ráðherra skulu halda umboði til setu í nefndinni þar til skipunartími þeirra rennur út.</sen>
       </subart>
     </art>
-    <art nr="V" number-type="roman" roman-nr="5">
+    <art nr="V" roman-nr="5" number-type="roman">
       <nr-title>V.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 2. mgr. 28. gr. er Seðlabanka Íslands heimilt að annast viðskipti við einstaklinga og fyrirtæki, enda sé um að ræða viðskipti sem Seðlabankinn metur nauðsynleg til að hægt sé að losa um takmarkanir sem settar hafa verið á fjármagnshreyfingar og gjaldeyrisviðskipti.</sen>
@@ -946,14 +946,14 @@
         <sen>Ráðherra skal hafa samráð við Seðlabankann um mat á áhrifum þessa á efnahagslegan og fjármálalegan stöðugleika og kynna málið fyrir efnahags- og viðskiptanefnd á undirbúningsstigi fjárlagafrumvarps.</sen>
       </subart>
     </art>
-    <art nr="VI" number-type="roman" roman-nr="6">
+    <art nr="VI" roman-nr="6" number-type="roman">
       <nr-title>VI.</nr-title>
       <subart nr="1">
         <sen>Fyrir lok árs 2021 skal ráðherra flytja Alþingi skýrslu þriggja óháðra sérfræðinga á sviði peninga- og fjármálahagfræði og fjármálaeftirlits um reynsluna af starfi nefnda Seðlabanka Íslands eftir gildistöku laganna, m.a. með hliðsjón af skiptingu verkefna á milli fjármálastöðugleikanefndar og fjármálaeftirlitsnefndar.</sen>
         <sen>Meta skal sérstaklega reynsluna af varúðar- og viðskiptaháttaeftirliti innan bankans og mögulega orðsporsáhættu vegna þess.</sen>
       </subart>
     </art>
-    <art nr="VII" number-type="roman" roman-nr="7">
+    <art nr="VII" roman-nr="7" number-type="roman">
       <nr-title>VII.</nr-title>
       <subart nr="1">
         <sen>Úttekt skv. 36. gr. skal gera fyrsta sinni fyrir lok árs 2022.</sen>

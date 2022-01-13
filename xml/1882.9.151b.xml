@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="9" parliament="151b" year="1882">
+<law nr="9" year="1882" parliament="151b">
   <name>Lög um leysing á sóknarbandi</name>
   <num-and-date>
     <date>1882-05-12</date>
@@ -37,12 +37,12 @@
       <sen/>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-art="5" law-nr="116" law-year="1990" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="5" nr="1">
         <footnote-sen>L. 116/1990, 5. gr.</footnote-sen>
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
-          <sen after-mark="$" before-mark="^">4</sen>
+          <sen before-mark="^" after-mark="$">4</sen>
         </location>
       </footnote>
     </footnotes>
@@ -63,11 +63,11 @@
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/1928.022.html#G2" law-art="2" law-nr="22" law-year="1928" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/1928.022.html#G2" law-nr="22" law-year="1928" law-art="2" nr="1">
         <footnote-sen>L. 22/1928, 2. gr.</footnote-sen>
         <location type="deletion">
           <art>7</art>
-          <nr-title after-mark="$" before-mark="^7. gr. ">1</nr-title>
+          <nr-title before-mark="^7. gr. " after-mark="$">1</nr-title>
         </location>
       </footnote>
     </footnotes>
@@ -84,7 +84,7 @@
         <location type="pointer">
           <art>8</art>
           <subart>1</subart>
-          <sen after-mark="$" before-mark="^Sáttatilraun þá, er lögboðin er, ef hjón vilja slíta sambúð eða skilja að fullu, skal kjörprestur þeirra gera.">1</sen>
+          <sen before-mark="^Sáttatilraun þá, er lögboðin er, ef hjón vilja slíta sambúð eða skilja að fullu, skal kjörprestur þeirra gera." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="50" parliament="151b" year="2014">
+<law nr="50" year="2014" parliament="151b">
   <name>Lög um framkvæmdarvald og stjórnsýslu ríkisins í héraði</name>
   <num-and-date>
     <date>2014-05-22</date>
@@ -69,7 +69,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>2</subart>
-          <sen after-mark=" sem ráðherra setur með hliðsjón af skipulagi annarrar opinberrar þjónustu í umdæminu og að höfðu samráði við Samband íslenskra sveitarfélaga, landshlutasamtök sveitarfélaga og viðkomandi sýslumenn.$" before-mark="^Umdæmamörk sýslumannsembætta skv. 1. mgr. skulu ákveðin í reglugerð ">1</sen>
+          <sen before-mark="^Umdæmamörk sýslumannsembætta skv. 1. mgr. skulu ákveðin í reglugerð " after-mark=" sem ráðherra setur með hliðsjón af skipulagi annarrar opinberrar þjónustu í umdæminu og að höfðu samráði við Samband íslenskra sveitarfélaga, landshlutasamtök sveitarfélaga og viðkomandi sýslumenn.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -114,7 +114,7 @@
       <sen>Ráðherra getur ákveðið að fela sýslumanni eða fulltrúa hans embættisverk annars sýslumanns.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="16" law-nr="141" law-year="2018" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="16" nr="1">
         <footnote-sen>L. 141/2018, 16. gr.</footnote-sen>
         <location type="range">
           <art>3</art>
@@ -123,7 +123,7 @@
           <sen words="Hefur hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að hann varð fullra 18 ára">1</sen>
         </location>
       </footnote>
-      <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-art="8" law-nr="130" law-year="2016" nr="2">
+      <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="2">
         <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
         <location type="range">
           <art>3</art>
@@ -198,7 +198,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>1</subart>
-          <sen after-mark=" nánari ákvæði um skipan mála samkvæmt lögum þessum, m.a. um umdæmamörk sýslumannsembætta, aðalskrifstofur og aðrar sýsluskrifstofur, starfs- og upplýsingakerfi sýslumanna, heimild sýslumanna til að nota fjarfundarbúnað við meðferð mála við fyrirtökur og einkennisfatnað og skilríki sýslumanna og löglærðra fulltrúa þeirra.$" before-mark="^Ráðherra setur í reglugerð ">1</sen>
+          <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um skipan mála samkvæmt lögum þessum, m.a. um umdæmamörk sýslumannsembætta, aðalskrifstofur og aðrar sýsluskrifstofur, starfs- og upplýsingakerfi sýslumanna, heimild sýslumanna til að nota fjarfundarbúnað við meðferð mála við fyrirtökur og einkennisfatnað og skilríki sýslumanna og löglærðra fulltrúa þeirra.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -213,9 +213,9 @@
       </sen>
     </subart>
   </art>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Ráðherra skal skipa verkefnisstjórn sem hefur með höndum undirbúning þeirra breytinga sem lög þessi mæla fyrir um samkvæmt nánari ákvörðun ráðherra.</sen>
@@ -236,7 +236,7 @@
         <sen>Þeir sem skipaðir eru sýslumenn skulu eiga þess kost að lýsa yfir að þeir muni ekki sækjast eftir nýjum embættum sýslumanna samkvæmt lögum þessum og hefja þeir þá töku biðlauna samkvæmt ákvæði 34. gr. laga nr. 70/1996þegar embætti þeirra hefur verið lagt niður samkvæmt ákvæðum þessara laga.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Ný embætti sýslumanna samkvæmt lögum þessum taka við öllum réttindum, eignum og skyldum þeirra sýslumannsembætta sem þau leysa af hólmi, þó ekki hvað varðar löggæslu.</sen>
@@ -247,14 +247,14 @@
         <sen>Ákvæði 7. gr. laga nr. 70/1996, um skyldu til að auglýsa laus störf til umsóknar, eiga hins vegar ekki við um ráðstöfun starfa samkvæmt þessu bráðabirgðaákvæði.</sen>
       </subart>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Við samþykkt laga þessara skal ráðherra í samstarfi við forsætisráðherra láta semja aðgerðaáætlun fyrir Stjórnarráðið þar sem afmörkuð skulu þau stjórnsýsluverkefni ráðuneyta og undirstofnana þeirra sem talið er ákjósanlegt að flutt verði til embætta sýslumanna.</sen>
         <sen>Skal aðgerðaáætlun um flutning tilgreindra verkefna liggja fyrir ekki síðar en 1. janúar 2015.</sen>
       </subart>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Ráðherra getur falið sýslumanni að gegna öðru eða öðrum embættum ásamt eigin embætti í samræmi við ákvæði 3. mgr. 3. gr. laga þessara og ákvæði til bráðabirgða í lögum nr. 92/1989.</sen>

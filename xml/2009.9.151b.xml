@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="9" parliament="151b" year="2009">
+<law nr="9" year="2009" parliament="151b">
   <name>Lög um uppbyggingu og rekstur fráveitna</name>
   <num-and-date>
     <date>2009-03-09</date>
@@ -122,7 +122,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-art="1" law-nr="22" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-nr="22" law-year="2016" law-art="1" nr="1">
           <footnote-sen>L. 22/2016, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -445,7 +445,7 @@
         <sen>Gjöld og gjalddagar þeirra samkvæmt þessari grein skulu ákveðin í gjaldskrá skv. 15. gr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-art="2" law-nr="22" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-nr="22" law-year="2016" law-art="2" nr="1">
           <footnote-sen>L. 22/2016, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -503,13 +503,13 @@
         <sen>Sveitarfélag skal láta birta gjaldskrá í B-deild Stjórnartíðinda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-art="3" law-nr="22" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-nr="22" law-year="2016" law-art="3" nr="1">
           <footnote-sen>L. 22/2016, 3. gr.</footnote-sen>
           <location type="deletion">
             <chapter>5</chapter>
             <art>15</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^">2</sen>
+            <sen before-mark="^" after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -596,7 +596,7 @@
             <chapter>6</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen after-mark=" um fráveitur sveitarfélaga þar sem nánar er kveðið á um framkvæmd fráveitumála, m.a. um stjórn og fjármál fráveitu, gjaldtöku og fráveituæðar.$" before-mark="^Ráðherra er heimilt, að höfðu samráði við Samband íslenskra sveitarfélaga og aðra hagsmunaaðila, að setja reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra er heimilt, að höfðu samráði við Samband íslenskra sveitarfélaga og aðra hagsmunaaðila, að setja reglugerð " after-mark=" um fráveitur sveitarfélaga þar sem nánar er kveðið á um framkvæmd fráveitumála, m.a. um stjórn og fjármál fráveitu, gjaldtöku og fráveituæðar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -609,7 +609,7 @@
         <sen>Um aðild, kærufrest, málsmeðferð og annað er varðar kæruna fer samkvæmt lögum um úrskurðarnefnd umhverfis- og auðlindamála.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.131.html" law-art="28" law-nr="131" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.131.html" law-nr="131" law-year="2011" law-art="28" nr="1">
           <footnote-sen>L. 131/2011, 28. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -641,9 +641,9 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Tengingar í einkaeign sem lagðar hafa verið fyrir gildistöku laganna verða eign fráveitu í framhaldi af endurnýjun tenginganna.</sen>
@@ -657,7 +657,7 @@
         <sen>Ákvæði 8. mgr. 4. gr. gildir ekki um fráveitur sem komið hefur verið á fót fyrir gildistöku laga þessara.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-art="4" law-nr="22" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.022.html" law-nr="22" law-year="2016" law-art="4" nr="1">
           <footnote-sen>L. 22/2016, 4. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -676,7 +676,7 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Á árunum 2020–2030 skal veita framlag úr ríkissjóði sem nemur hlutdeild í kostnaði við fráveituframkvæmdir á vegum fráveitna sveitarfélaga eftir því sem nánar er ákveðið í fjárlögum.</sen>
@@ -703,10 +703,10 @@
             <chapter>t</chapter>
             <art>II</art>
             <subart>4</subart>
-            <sen after-mark=" að höfðu samráði við Samband íslenskra sveitarfélaga, Samorku og Umhverfisstofnun, þar á meðal um tímafresti, forgangsröðun framkvæmda og nánar um gögn sem þurfa að fylgja umsóknum og uppgjöri.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^Ráðherra setur nánari ákvæði um framkvæmdina í reglugerð, ">1</sen>
+            <sen before-mark="^Ráðherra setur nánari ákvæði um framkvæmdina í reglugerð, " after-mark=" að höfðu samráði við Samband íslenskra sveitarfélaga, Samorku og Umhverfisstofnun, þar á meðal um tímafresti, forgangsröðun framkvæmda og nánar um gögn sem þurfa að fylgja umsóknum og uppgjöri.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.063.html" law-art="1" law-nr="63" law-year="2020" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.063.html" law-nr="63" law-year="2020" law-art="1" nr="2">
           <footnote-sen>L. 63/2020, 1. gr.</footnote-sen>
           <location type="range">
             <start>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="78" parliament="151b" year="2019">
+<law nr="78" year="2019" parliament="151b">
   <name>Lög um öryggi net- og upplýsingakerfa mikilvægra innviða</name>
   <num-and-date>
     <date>2019-06-25</date>
@@ -63,7 +63,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
-            <sen after-mark=" mæla nánar fyrir um þjónustu sem telst nauðsynleg fyrir viðhald mikilvægrar samfélagslegrar og efnahagslegrar starfsemi í skilningi a-liðar 1. mgr.$" before-mark="^Ráðherra skal í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" mæla nánar fyrir um þjónustu sem telst nauðsynleg fyrir viðhald mikilvægrar samfélagslegrar og efnahagslegrar starfsemi í skilningi a-liðar 1. mgr.$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -72,7 +72,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>4</subart>
-            <sen after-mark=" í B-deild Stjórnartíðinda, að fenginni tillögu Póst- og fjarskiptastofnunar.$" before-mark="^Ráðherra skal halda opinbera skrá yfir rekstraraðila nauðsynlegrar þjónustu hér á landi samkvæmt ákvæði þessu með auglýsingu ">1</sen>
+            <sen before-mark="^Ráðherra skal halda opinbera skrá yfir rekstraraðila nauðsynlegrar þjónustu hér á landi samkvæmt ákvæði þessu með auglýsingu " after-mark=" í B-deild Stjórnartíðinda, að fenginni tillögu Póst- og fjarskiptastofnunar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -295,7 +295,7 @@
             <chapter>2</chapter>
             <art>7</art>
             <subart>4</subart>
-            <sen after-mark=" um lágmarkskröfur samkvæmt ákvæði þessu að fenginni umsögn eftirlitsstjórnvalda og Póst- og fjarskiptastofnunar, m.a. um lágmarksöryggisráðstafanir, innra eftirlit, raunlæga vernd net- og upplýsingakerfa og framfylgni alþjóðlega viðurkenndra forskrifta, staðla eða viðmiða um bestu framkvæmd.$" before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð " after-mark=" um lágmarkskröfur samkvæmt ákvæði þessu að fenginni umsögn eftirlitsstjórnvalda og Póst- og fjarskiptastofnunar, m.a. um lágmarksöryggisráðstafanir, innra eftirlit, raunlæga vernd net- og upplýsingakerfa og framfylgni alþjóðlega viðurkenndra forskrifta, staðla eða viðmiða um bestu framkvæmd.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -339,7 +339,7 @@
             <chapter>2</chapter>
             <art>8</art>
             <subart>4</subart>
-            <sen after-mark=" um tilkynningar atvika til netöryggissveitar, þar á meðal um form, efni og meðferð þeirra.$" before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð " after-mark=" um tilkynningar atvika til netöryggissveitar, þar á meðal um form, efni og meðferð þeirra.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -454,7 +454,7 @@
             <chapter>3</chapter>
             <art>13</art>
             <subart>3</subart>
-            <sen after-mark=" um hlutverk samhæfingarstjórnvalds samkvæmt ákvæði þessu, að viðhöfðu samráði við eftirlitsstjórnvöld.$" before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra getur sett nánari fyrirmæli í reglugerð " after-mark=" um hlutverk samhæfingarstjórnvalds samkvæmt ákvæði þessu, að viðhöfðu samráði við eftirlitsstjórnvöld.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -752,7 +752,7 @@
             <chapter>7</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen after-mark=" um nánari framkvæmd laga þessara.$" before-mark="^Ráðherra er heimilt að setja reglugerð ">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" um nánari framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -772,15 +772,15 @@
       </name>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 29. gr. skal ráðherra tímanlega fyrir 1. september 2020 birta skrá yfir rekstraraðila nauðsynlegrar þjónustu í samræmi við 3. gr.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 29. gr. skal ráðherra þegar hefja vinnu við gerð stefnu um net- og upplýsingaöryggi skv. 1. mgr. 4. gr. og skipa netöryggisráð í samræmi við 2. mgr. 4. gr.</sen>

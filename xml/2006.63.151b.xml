@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="63" parliament="151b" year="2006">
+<law nr="63" year="2006" parliament="151b">
   <name>Lög um háskóla</name>
   <num-and-date>
     <date>2006-06-13</date>
@@ -16,13 +16,13 @@
         <sen>Lög þessi taka til skóla sem veita æðri menntun er leiðir til prófgráðu á háskólastigi og hlotið hafa viðurkenningu, sbr. 3. gr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-art="10" law-nr="91" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="1">
           <footnote-sen>L. 91/2015, 10. gr.</footnote-sen>
           <location type="deletion">
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
-            <sen after-mark=" sbr. 3. gr.$" before-mark="^Lög þessi taka til skóla sem veita æðri menntun er leiðir til prófgráðu á háskólastigi og hlotið hafa viðurkenningu " middle-punctuation=",">1</sen>
+            <sen middle-punctuation="," before-mark="^Lög þessi taka til skóla sem veita æðri menntun er leiðir til prófgráðu á háskólastigi og hlotið hafa viðurkenningu " after-mark=" sbr. 3. gr.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -44,7 +44,7 @@
         <sen>Háskólar ráða skipulagi starfsemi sinnar og ákveða hvernig henni er best fyrir komið.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="1" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="1" nr="1">
           <footnote-sen>L. 67/2012, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -85,7 +85,7 @@
         <sen>Háskólar skulu setja sér siðareglur, m.a. um réttindi og skyldur starfsmanna skv. 1. mgr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="2" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="2" nr="1">
           <footnote-sen>L. 67/2012, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -191,10 +191,10 @@
             <chapter>2</chapter>
             <art>3</art>
             <subart>3</subart>
-            <sen after-mark=" um viðurkenningu háskóla sem byggjast á alþjóðlegum viðmiðum um háskólastarfsemi.$" before-mark="^Ráðherra gefur út reglur ">1</sen>
+            <sen before-mark="^Ráðherra gefur út reglur " after-mark=" um viðurkenningu háskóla sem byggjast á alþjóðlegum viðmiðum um háskólastarfsemi.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-art="10" law-nr="91" law-year="2015" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="2">
           <footnote-sen>L. 91/2015, 10. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -220,7 +220,7 @@
         <sen>Ráðherra er heimilt að fela Menntamálastofnun að annast afturköllun samkvæmt þessari grein.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -229,7 +229,7 @@
             <sen words="ráðherra">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-art="10" law-nr="91" law-year="2015" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="2">
           <footnote-sen>L. 91/2015, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -250,7 +250,7 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -265,10 +265,10 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
-            <sen after-mark=" um æðri menntun og prófgráður.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; gefur út formleg viðmið ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; gefur út formleg viðmið " after-mark=" um æðri menntun og prófgráður.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="4" law-nr="67" law-year="2012" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="4" nr="3">
           <footnote-sen>L. 67/2012, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -286,7 +286,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^">5</sen>
+            <sen before-mark="^" after-mark="$">5</sen>
           </location>
         </footnote>
       </footnotes>
@@ -342,7 +342,7 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="5" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="5" nr="1">
           <footnote-sen>L. 67/2012, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -354,13 +354,13 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>3</subart>
-            <sen after-mark=" Háskólar geta skilgreint nám sem felur í sér starfsþjálfun til námseininga á námsstigum skv. 2. mgr.$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark=" Háskólar geta skilgreint nám sem felur í sér starfsþjálfun til námseininga á námsstigum skv. 2. mgr.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>3</chapter>
             <art>7</art>
             <subart>5</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -369,10 +369,10 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>4</subart>
-            <sen after-mark=" um doktorsnám í háskólum.$" before-mark="^Skal sýnt fram á að viðkomandi háskóli uppfylli viðeigandi kröfur og skilyrði sem tilgreind eru í reglum ">3</sen>
+            <sen before-mark="^Skal sýnt fram á að viðkomandi háskóli uppfylli viðeigandi kröfur og skilyrði sem tilgreind eru í reglum " after-mark=" um doktorsnám í háskólum.$">3</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-art="10" law-nr="91" law-year="2015" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="3">
           <footnote-sen>L. 91/2015, 10. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -400,7 +400,7 @@
         <sen>Við undirbúning og skipulagningu nýrra námsleiða skal háskóli senda ráðuneytinu eða Menntamálastofnun, samkvæmt nánari ákvörðun ráðherra, upplýsingar um hvernig námið uppfyllir viðmið um æðri menntun og prófgráður skv. 5. gr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-art="10" law-nr="91" law-year="2015" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="1">
           <footnote-sen>L. 91/2015, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -420,7 +420,7 @@
         <sen>Með þeim hætti skulu háskólar á Íslandi leitast við að vinna saman til að nýta sem best opinberar fjárveitingar og styrkja stöðu sína á alþjóðlegum vettvangi.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="7" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="7" nr="1">
           <footnote-sen>L. 67/2012, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -445,7 +445,7 @@
         <sen>Farið skal að alþjóðlegum samningum um viðurkenningu á háskólamenntun og hæfi sem íslensk stjórnvöld eru aðilar að.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="8" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="8" nr="1">
           <footnote-sen>L. 67/2012, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -502,7 +502,7 @@
         <sen>Ráðherra setur reglur um eftirlit með gæðum kennslu og rannsókna.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -517,7 +517,7 @@
             <chapter>4</chapter>
             <art>11</art>
             <subart>2</subart>
-            <sen after-mark=" um eftirlit með gæðum kennslu og rannsókna.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur ">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um eftirlit með gæðum kennslu og rannsókna.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -548,7 +548,7 @@
         <sen>Matsskýrslur, sem unnar eru samkvæmt lögum þessum, skulu birtar, auk greinargerðar um hvernig viðkomandi háskóli hyggst bregðast við niðurstöðum matsins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -576,7 +576,7 @@
         <sen>Að því mati skulu koma óháðir sérfræðingar og fulltrúi nemenda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -585,7 +585,7 @@
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="9" law-nr="67" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="9" nr="2">
           <footnote-sen>L. 67/2012, 9. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -623,7 +623,7 @@
         <sen>Að öðru leyti fer um stjórnskipan háskóla eftir sérlögum, skipulagsskrá, samþykktum eða stofnskjölum háskóla.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="10" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="10" nr="1">
           <footnote-sen>L. 67/2012, 10. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -648,7 +648,7 @@
         <sen>Yfirstjórn háskóla skal tryggja að fulltrúar kennara, nemenda og annars starfsliðs geti tekið þátt í ráðgefandi vettvangi um fagleg málefni innan háskólans sem og tekið þátt í fræðilegri stefnumótun.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="11" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="11" nr="1">
           <footnote-sen>L. 67/2012, 11. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -685,7 +685,7 @@
         <sen>Nánari fyrirmæli um dómnefndir, kröfur til kennara, hæfi þeirra og starfsskyldur eru sett í sérlög, samþykktir, skipulagsskrár eða stofnskjal háskóla.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="12" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="12" nr="1">
           <footnote-sen>L. 67/2012, 12. gr.</footnote-sen>
           <footnote-sen>, sbr. einnig brbákv. I í s.l.</footnote-sen>
           <location type="range">
@@ -707,7 +707,7 @@
             <chapter>6</chapter>
             <art>18</art>
             <subart>3</subart>
-            <sen after-mark="$" before-mark="^Nánari fyrirmæli um dómnefndir, kröfur til kennara, hæfi þeirra og starfsskyldur eru sett í sérlög, samþykktir, skipulagsskrár eða stofnskjal háskóla.">1</sen>
+            <sen before-mark="^Nánari fyrirmæli um dómnefndir, kröfur til kennara, hæfi þeirra og starfsskyldur eru sett í sérlög, samþykktir, skipulagsskrár eða stofnskjal háskóla." after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -744,7 +744,7 @@
         <sen>Háskólar skulu jafnframt leitast við að veita þeim nemendum sérstakan stuðning sem eiga við sértæka námsörðugleika að stríða eða veikindi.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="13" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="13" nr="1">
           <footnote-sen>L. 67/2012, 13. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -781,7 +781,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="2">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -796,7 +796,7 @@
             <chapter>7</chapter>
             <art>19</art>
             <subart>4</subart>
-            <sen after-mark=" um aðfaranám í háskólum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$" before-mark="^(\[? ?)?Ráðherra er heimilt að gefa út reglur ">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að gefa út reglur " after-mark=" um aðfaranám í háskólum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -823,7 +823,7 @@
         <sen>Ráðherra er heimilt að setja nánari reglur um störf áfrýjunarnefndar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -844,7 +844,7 @@
             <chapter>7</chapter>
             <art>20</art>
             <subart>5</subart>
-            <sen after-mark=" um störf áfrýjunarnefndar.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja nánari reglur ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja nánari reglur " after-mark=" um störf áfrýjunarnefndar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -885,7 +885,7 @@
         <sen/>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -907,20 +907,20 @@
             <sen words="ráðuneytið">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="14" law-nr="67" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="14" nr="2">
           <footnote-sen>L. 67/2012, 14. gr.</footnote-sen>
           <location type="deletion">
             <chapter>8</chapter>
             <art>21</art>
             <subart>2</subart>
             <numart>e</numart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="deletion">
             <chapter>8</chapter>
             <art>21</art>
             <subart>3</subart>
-            <sen after-mark="$" before-mark="^">1</sen>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -935,7 +935,7 @@
         <sen>Kveðið skal á um gjaldtökuheimildir í ríkisháskólum, sem heyra undir ráðherra, í sérlögum sem um þá gilda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -969,7 +969,7 @@
         <sen>Háskóli skal gefa út kennsluskrá fyrir hvert kennsluár þar sem birt er yfirlit og upplýsingar um öll einingabær námskeið og prófgráður sem skólinn veitir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="15" law-nr="67" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="15" nr="1">
           <footnote-sen>L. 67/2012, 15. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -990,7 +990,7 @@
         <sen>Ef starfsemi háskóla er lögð niður eða færð undir aðra stofnun skulu skjöl hans færð til Þjóðskjalasafns.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2019.072.html" law-art="21" law-nr="72" law-year="2019" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2019.072.html" law-nr="72" law-year="2019" law-art="21" nr="1">
           <footnote-sen>L. 72/2019, 21. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -999,7 +999,7 @@
             <sen>4</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-art="16" law-nr="67" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.067.html" law-nr="67" law-year="2012" law-art="16" nr="2">
           <footnote-sen>L. 67/2012, 16. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1027,7 +1027,7 @@
         <sen>Nefndin setur sér nánari starfsreglur sem ráðherra staðfestir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="430" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="430" nr="1">
           <footnote-sen>L. 126/2011, 430. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>

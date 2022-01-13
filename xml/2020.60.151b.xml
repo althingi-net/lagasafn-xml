@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="60" parliament="151b" year="2020">
+<law nr="60" year="2020" parliament="151b">
   <name>Lög um Menntasjóð námsmanna</name>
   <num-and-date>
     <date>2020-06-21</date>
@@ -786,7 +786,7 @@
             <chapter>9</chapter>
             <art>36</art>
             <subart>1</subart>
-            <sen after-mark=" um útfærslu og framkvæmd laga þessara, þ.m.t. fjárhæð og úthlutun námslána, sem og kröfur um lágmarksnámsframvindu, að fengnum tillögum sjóðstjórnar, eigi síðar en 1. apríl ár hvert.$" before-mark="^Ráðherra setur úthlutunarreglur ">1</sen>
+            <sen before-mark="^Ráðherra setur úthlutunarreglur " after-mark=" um útfærslu og framkvæmd laga þessara, þ.m.t. fjárhæð og úthlutun námslána, sem og kröfur um lágmarksnámsframvindu, að fengnum tillögum sjóðstjórnar, eigi síðar en 1. apríl ár hvert.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -806,9 +806,9 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Lánþegar sem eru í námi sem er lánshæft samkvæmt lögum um Lánasjóð íslenskra námsmanna, nr. 21/1992, við það tímamark er lög þessi koma til framkvæmda skulu halda rétti sínum.</sen>
@@ -819,7 +819,7 @@
         <sen>Lánsréttur lánþega samkvæmt eldri lögum dregst frá lánsrétti samkvæmt lögum þessum.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga skal falla niður við gildistöku laga þessara, enda sé lánþegi í skilum við Lánasjóð íslenskra námsmanna.</sen>
@@ -832,7 +832,7 @@
         <sen>Lánþegi þarf í tilvikum 1. og 2. mgr. ekki að fá annan ábyrgðarmann nema lánþegi teljist ekki tryggur samkvæmt úthlutunarreglum.</sen>
       </subart>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
         <sen>Lánþegar sem velja endurgreiðslu skv. 21. gr. laga þessara og eru jafnframt að endurgreiða námslán samkvæmt eldri lögum geta óskað eftir að haga endurgreiðslu með þeim hætti að þeir endurgreiði fyrst námslán samkvæmt lögum þessum.</sen>
@@ -842,7 +842,7 @@
         <sen>Sé ábyrgðarmaður á einhverju námslánanna verður að afla samþykkis hans.</sen>
       </subart>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <subart nr="1">
         <sen>Þeir sem skulda námslán við gildistöku laga þessara og taka námslán að nýju geta óskað eftir því að breyta eldri námslánum sínum til samræmis við ákvæði laga þessara um lánakjör og endurgreiðslur.</sen>
@@ -854,13 +854,13 @@
         <sen>Nánar skal mæla fyrir um framkvæmd þessa í úthlutunarreglum.</sen>
       </subart>
     </art>
-    <art nr="V" number-type="roman" roman-nr="5">
+    <art nr="V" roman-nr="5" number-type="roman">
       <nr-title>V.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði 1. mgr. 21. gr. geta lánþegar sem hefja nám á tímabilinu 2020–2023 valið að endurgreiða námslán með tekjutengingu séu námslok áður eða á því ári þegar 40 ára aldri er náð.</sen>
       </subart>
     </art>
-    <art nr="VI" number-type="roman" roman-nr="6">
+    <art nr="VI" roman-nr="6" number-type="roman">
       <nr-title>VI.</nr-title>
       <subart nr="1">
         <sen>Viðbótargreiðsla á námslánum, teknum í tíð eldri laga, miðast frá og með gildistöku laga þessara við ákveðinn hundraðshluta af tekjustofni ársins á undan endurgreiðsluári.</sen>
@@ -871,14 +871,14 @@
         <sen>Skal umsókn þess efnis berast Menntasjóði námsmanna.</sen>
       </subart>
     </art>
-    <art nr="VII" number-type="roman" roman-nr="7">
+    <art nr="VII" roman-nr="7" number-type="roman">
       <nr-title>VII.</nr-title>
       <subart nr="1">
         <sen>Lánþegum námslána, tekinna í tíð laga um Lánasjóð íslenskra námsmanna, skal frá og með gildistöku laga þessara veittur afsláttur ef greitt er inn á námslán umfram lögbundnar árlegar endurgreiðslur eða þau að fullu greidd.</sen>
         <sen>Hlutfall afsláttar ræðst af eftirstöðvum námsláns en skal þó ekki vera lægra en 5% og ekki hærra en 15%.</sen>
       </subart>
     </art>
-    <art nr="VIII" number-type="roman" roman-nr="8">
+    <art nr="VIII" roman-nr="8" number-type="roman">
       <nr-title>VIII.</nr-title>
       <subart nr="1">
         <sen>Lög þessi skulu endurskoðuð innan þriggja ára frá því að þau koma til framkvæmda.</sen>

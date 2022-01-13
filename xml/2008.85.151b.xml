@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="85" parliament="151b" year="2008">
+<law nr="85" year="2008" parliament="151b">
   <name>Lög um opinbera háskóla</name>
   <num-and-date>
     <date>2008-06-12</date>
@@ -22,7 +22,7 @@
         <sen>Ráðherra birtir auglýsingu um háskóla sem starfa samkvæmt lögum þessum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="1" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="1" nr="1">
           <footnote-sen>L. 56/2013, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -39,7 +39,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="1" law-nr="50" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="1" nr="2">
           <footnote-sen>L. 50/2010, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -54,7 +54,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>2</subart>
-            <sen after-mark=" um háskóla sem starfa samkvæmt lögum þessum.$" before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; birtir auglýsingu ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; birtir auglýsingu " after-mark=" um háskóla sem starfa samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -62,12 +62,12 @@
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="2" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 56/2013, 2. gr.</footnote-sen>
           <location type="deletion">
             <chapter>1</chapter>
             <art>2</art>
-            <nr-title after-mark="$" before-mark="^2. gr. ">1</nr-title>
+            <nr-title before-mark="^2. gr. " after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -87,7 +87,7 @@
         <sen>Um hlutverk háskóla fer að öðru leyti eftir því sem mælt er fyrir um í lögum nr. 63/2006, um háskóla.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="3" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="3" nr="1">
           <footnote-sen>L. 56/2013, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -102,7 +102,7 @@
             <sen words="sbr. 21. gr. laga um háskóla">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="3" law-nr="50" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="3" nr="2">
           <footnote-sen>L. 50/2010, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -157,7 +157,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>2</subart>
-            <sen after-mark=" er háskólaráð setur, að nota önnur heiti fyrir skóla og deildir, sbr. a-lið 1. mgr., og að háskóli starfi á grundvelli annarra skipulagseininga.$" before-mark="^Heimilt er í reglum, ">1</sen>
+            <sen before-mark="^Heimilt er í reglum, " after-mark=" er háskólaráð setur, að nota önnur heiti fyrir skóla og deildir, sbr. a-lið 1. mgr., og að háskóli starfi á grundvelli annarra skipulagseininga.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -194,7 +194,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>4</subart>
-            <sen after-mark=" og viðmið um ráðningu starfsfólks skóla og háskólastofnana, sbr. b- og c-lið 1. mgr. 4. gr.$" before-mark="^Háskólaráð setur reglur ">1</sen>
+            <sen before-mark="^Háskólaráð setur reglur " after-mark=" og viðmið um ráðningu starfsfólks skóla og háskólastofnana, sbr. b- og c-lið 1. mgr. 4. gr.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -256,7 +256,7 @@
         <sen>Leita skal umsagnar háskólafundar og heildarsamtaka nemenda háskóla áður en slíkar reglur eru settar eða þeim breytt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="4" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="4" nr="1">
           <footnote-sen>L. 50/2010, 4. gr.</footnote-sen>
           <footnote-sen>, sbr. einnig brbákv. I í s.l.</footnote-sen>
           <location type="range">
@@ -344,7 +344,7 @@
         <sen>Rektor ræður starfsfólk sameiginlegrar stjórnsýslu háskóla og setur því erindisbréf eða starfslýsingar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="5" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="5" nr="1">
           <footnote-sen>L. 50/2010, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -375,7 +375,7 @@
         <sen>Ákvörðunum háskólaráðs, rektors, forseta skóla eða forstöðumanna háskólastofnana verður ekki skotið til háskólafundar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="6" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="6" nr="1">
           <footnote-sen>L. 50/2010, 6. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -408,7 +408,7 @@
         <sen>Æski 2/3 hlutar fulltrúa á háskólafundi fundar er rektor skylt að boða til hans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="4" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="4" nr="1">
           <footnote-sen>L. 56/2013, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>3</chapter>
@@ -423,7 +423,7 @@
             <chapter>3</chapter>
             <art>10</art>
             <subart>3</subart>
-            <sen after-mark=" um fjölda fulltrúa sem sæti eiga á háskólafundi og um val þeirra.$" before-mark="^Háskólaráð setur nánari reglur ">1</sen>
+            <sen before-mark="^Háskólaráð setur nánari reglur " after-mark=" um fjölda fulltrúa sem sæti eiga á háskólafundi og um val þeirra.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -456,7 +456,7 @@
             <chapter>4</chapter>
             <art>11</art>
             <subart>3</subart>
-            <sen after-mark=" sem háskólaráð setur.$" before-mark="^Við skóla og deildir er heimilt að starfrækja sérstakar háskólastofnanir, sbr. c-lið 1. mgr. 4. gr., og rannsóknastofur sem settar eru á stofn samkvæmt ákvörðun skólaráðs og samkvæmt nánari reglum ">1</sen>
+            <sen before-mark="^Við skóla og deildir er heimilt að starfrækja sérstakar háskólastofnanir, sbr. c-lið 1. mgr. 4. gr., og rannsóknastofur sem settar eru á stofn samkvæmt ákvörðun skólaráðs og samkvæmt nánari reglum " after-mark=" sem háskólaráð setur.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -492,7 +492,7 @@
         <sen>Háskólaráð setur nánari reglur um starfsemi skóla, stjórn þeirra, skiptingu skóla í deildir, hlutverk deildarformanna og skóla- og deildarfundi.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="8" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="8" nr="1">
           <footnote-sen>L. 50/2010, 8. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -557,7 +557,7 @@
             <chapter>5</chapter>
             <art>15</art>
             <subart>5</subart>
-            <sen after-mark=" um starfsheiti og starfsskyldur þeirra sem ráðnir eru í akademísk störf samkvæmt ákvæðum þessa kafla, sem og um leyfi þeirra frá störfum.$" before-mark="^Háskólaráð setur nánari reglur ">1</sen>
+            <sen before-mark="^Háskólaráð setur nánari reglur " after-mark=" um starfsheiti og starfsskyldur þeirra sem ráðnir eru í akademísk störf samkvæmt ákvæðum þessa kafla, sem og um leyfi þeirra frá störfum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -579,7 +579,7 @@
         <sen>Heimilt er að taka upp fyrirkomulag fastra dómnefnda innan háskóla.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="5" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="5" nr="1">
           <footnote-sen>L. 56/2013, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -594,7 +594,7 @@
             <chapter>5</chapter>
             <art>16</art>
             <subart>3</subart>
-            <sen after-mark=" sem háskólaráð setur að fenginni umsögn háskólafundar.$" before-mark="^Um skipan, störf og niðurstöður dómnefndar fer skv. 18. gr. laga um háskóla og reglum ">1</sen>
+            <sen before-mark="^Um skipan, störf og niðurstöður dómnefndar fer skv. 18. gr. laga um háskóla og reglum " after-mark=" sem háskólaráð setur að fenginni umsögn háskólafundar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -628,10 +628,10 @@
             <chapter>5</chapter>
             <art>17</art>
             <subart>1</subart>
-            <sen after-mark=" settum af háskólaráði en þær afmarka jafnframt umboð forseta og forstöðumanna.$" before-mark="^Veiting starfs skal ákveðin á grundvelli tillögu sem gerð er samkvæmt nánari reglum ">4</sen>
+            <sen before-mark="^Veiting starfs skal ákveðin á grundvelli tillögu sem gerð er samkvæmt nánari reglum " after-mark=" settum af háskólaráði en þær afmarka jafnframt umboð forseta og forstöðumanna.$">4</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="9" law-nr="50" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="9" nr="2">
           <footnote-sen>L. 50/2010, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -654,7 +654,7 @@
             <chapter>5</chapter>
             <art>17</art>
             <subart>3</subart>
-            <sen after-mark=" settum af háskólaráði.$" before-mark="^Starf er ekki auglýst þegar um er að ræða framgang eða tilflutning milli starfsheita samkvæmt reglum ">1</sen>
+            <sen before-mark="^Starf er ekki auglýst þegar um er að ræða framgang eða tilflutning milli starfsheita samkvæmt reglum " after-mark=" settum af háskólaráði.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -704,7 +704,7 @@
             <chapter>6</chapter>
             <art>18</art>
             <subart>3</subart>
-            <sen after-mark=" um eftirfarandi atriði:$" before-mark="^Háskólaráð setur, að fenginni tillögu skóla eftir því sem við á, nánari reglur ">1</sen>
+            <sen before-mark="^Háskólaráð setur, að fenginni tillögu skóla eftir því sem við á, nánari reglur " after-mark=" um eftirfarandi atriði:$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -755,7 +755,7 @@
             <chapter>7</chapter>
             <art>20</art>
             <subart>3</subart>
-            <sen after-mark=" um kennslu og kennsluhætti sem háskólaráð staðfestir.$" before-mark="^Skólar skulu setja almennar reglur ">1</sen>
+            <sen before-mark="^Skólar skulu setja almennar reglur " after-mark=" um kennslu og kennsluhætti sem háskólaráð staðfestir.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -789,10 +789,10 @@
             <chapter>7</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen after-mark=" um prófhald, þ.m.t. viðurkenningu erlendra prófa, inntöku- og undirbúningspróf, einkunnir og annað er að prófum lýtur.$" before-mark="^Háskólaráð skal setja reglur ">1</sen>
+            <sen before-mark="^Háskólaráð skal setja reglur " after-mark=" um prófhald, þ.m.t. viðurkenningu erlendra prófa, inntöku- og undirbúningspróf, einkunnir og annað er að prófum lýtur.$">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="10" law-nr="50" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="10" nr="2">
           <footnote-sen>L. 50/2010, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -817,7 +817,7 @@
             <chapter>7</chapter>
             <art>22</art>
             <subart>1</subart>
-            <sen after-mark=" um prófgráður á grundvelli þeirra.$" before-mark="^Háskólaráði er heimilt að setja nánari reglur ">2</sen>
+            <sen before-mark="^Háskólaráði er heimilt að setja nánari reglur " after-mark=" um prófgráður á grundvelli þeirra.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -851,7 +851,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="11" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="11" nr="1">
           <footnote-sen>L. 50/2010, 11. gr.</footnote-sen>
           <footnote-sen>, sbr. einnig brbákv. II í s.l.</footnote-sen>
           <location type="range">
@@ -923,7 +923,7 @@
         <sen>Í reglum háskólaráðs er jafnframt heimilt að verja hluta skrásetningargjalds til félagssamtaka stúdenta.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.140.html" law-art="23" law-nr="140" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.140.html" law-nr="140" law-year="2013" law-art="23" nr="1">
           <footnote-sen>L. 140/2013, 23. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -933,7 +933,7 @@
             <sen words="75.000 kr.">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="488" law-nr="126" law-year="2011" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="488" nr="2">
           <footnote-sen>L. 126/2011, 488. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -943,7 +943,7 @@
             <sen words="ráðuneytið">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="12" law-nr="50" law-year="2010" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="12" nr="3">
           <footnote-sen>L. 50/2010, 12. gr.</footnote-sen>
           <footnote-sen>, sbr. einnig brbákv. II í s.l.</footnote-sen>
           <location type="range">
@@ -970,7 +970,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="6" law-nr="56" law-year="2013" nr="4">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="6" nr="4">
           <footnote-sen>L. 56/2013, 6. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -989,10 +989,10 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.171.html" law-art="1" law-nr="171" law-year="2011" nr="5">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.171.html" law-nr="171" law-year="2011" law-art="1" nr="5">
           <footnote-sen>L. 171/2011, 1. gr.</footnote-sen>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.115.html" law-art="27" law-nr="115" law-year="2015" nr="6">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.115.html" law-nr="115" law-year="2015" law-art="27" nr="6">
           <footnote-sen>L. 115/2015, 27. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -1030,7 +1030,7 @@
         <sen>Háskóla er heimilt að semja við aðrar stofnanir og fyrirtæki, sem tengjast starfssviði skólans, um kennslu, rannsóknir og ráðningu kennara og annarra starfsmanna.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-art="13" law-nr="50" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.050.html" law-nr="50" law-year="2010" law-art="13" nr="1">
           <footnote-sen>L. 50/2010, 13. gr.</footnote-sen>
           <location type="range">
             <chapter>9</chapter>
@@ -1071,7 +1071,7 @@
             <chapter>9</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen after-mark=" þær, sem háskólaráð setur samkvæmt lögum þessum, skulu birtar í B-deild Stjórnartíðinda.$" before-mark="^Reglur ">1</sen>
+            <sen before-mark="^Reglur " after-mark=" þær, sem háskólaráð setur samkvæmt lögum þessum, skulu birtar í B-deild Stjórnartíðinda.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1089,7 +1089,7 @@
         <sen>Ráðherra skal setja nánari starfsreglur um samstarfsnet opinberra háskóla og skulu þær birtar í B-deild Stjórnartíðinda.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="7" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="7" nr="1">
           <footnote-sen>L. 56/2013, 7. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1123,7 +1123,7 @@
         </sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-art="7" law-nr="56" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.056.html" law-nr="56" law-year="2013" law-art="7" nr="1">
           <footnote-sen>L. 56/2013, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -1163,7 +1163,7 @@
             <chapter>10</chapter>
             <art>Ákvæði til bráðabirgða</art>
             <subart>4</subart>
-            <sen after-mark=" Háskólans á Akureyri &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og Háskóla Íslands &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$" before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, ">1</sen>
+            <sen before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, " after-mark=" Háskólans á Akureyri &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og Háskóla Íslands &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -1172,7 +1172,7 @@
             <chapter>10</chapter>
             <art>Ákvæði til bráðabirgða</art>
             <subart>4</subart>
-            <sen after-mark=" og Háskóla Íslands &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$" before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; Háskólans á Akureyri ">1</sen>
+            <sen before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; Háskólans á Akureyri " after-mark=" og Háskóla Íslands &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$">1</sen>
           </location>
         </footnote>
         <footnote nr="3">
@@ -1181,7 +1181,7 @@
             <chapter>10</chapter>
             <art>Ákvæði til bráðabirgða</art>
             <subart>4</subart>
-            <sen after-mark=" hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$" before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; Háskólans á Akureyri &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og Háskóla Íslands ">1</sen>
+            <sen before-mark="^Ákvæði reglna, sem háskólaráð Kennaraháskóla Íslands, &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; Háskólans á Akureyri &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og Háskóla Íslands " after-mark=" hafa sett á grundvelli gildandi laga um viðkomandi háskóla, gilda með áorðnum breytingum, að svo miklu leyti sem þau fara ekki gegn þessum lögum, þar til háskólaráð hefur sett nýjar reglur samkvæmt ákvæðum þessara laga.$">1</sen>
           </location>
         </footnote>
       </footnotes>

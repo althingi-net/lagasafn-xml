@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="52" parliament="151b" year="2005">
+<law nr="52" year="2005" parliament="151b">
   <name>Lög um gæðamat á æðardúni</name>
   <num-and-date>
     <date>2005-05-18</date>
@@ -31,7 +31,7 @@
       <sen>Nánar er kveðið á um framkvæmd laganna, starfsskyldur og hæfniskröfur dúnmatsmanna í reglugerð.</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="403" law-nr="126" law-year="2011" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="403" nr="1">
         <footnote-sen>L. 126/2011, 403. gr.</footnote-sen>
         <location type="range">
           <art>3</art>
@@ -44,7 +44,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>2</subart>
-          <sen after-mark="$" before-mark="^Nánar er kveðið á um framkvæmd laganna, starfsskyldur og hæfniskröfur dúnmatsmanna í reglugerð.">1</sen>
+          <sen before-mark="^Nánar er kveðið á um framkvæmd laganna, starfsskyldur og hæfniskröfur dúnmatsmanna í reglugerð." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -55,12 +55,12 @@
       <sen>Brot á lögum þessum varða sektum</sen>
     </subart>
     <footnotes>
-      <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-art="233" law-nr="88" law-year="2008" nr="1">
+      <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-nr="88" law-year="2008" law-art="233" nr="1">
         <footnote-sen>L. 88/2008, 233. gr.</footnote-sen>
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
-          <sen after-mark="$" before-mark="^Brot á lögum þessum varða sektum ">1</sen>
+          <sen before-mark="^Brot á lögum þessum varða sektum " after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="24" parliament="151b" year="2000">
+<law nr="24" year="2000" parliament="151b">
   <name>Lög um kosningar til Alþingis</name>
   <num-and-date>
     <date>2000-05-16</date>
@@ -41,7 +41,7 @@
         <sen>Ákvæði þessi gilda á sama hátt um endurnýjun kosningarréttarins.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-art="5" law-nr="77" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
           <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -83,13 +83,13 @@
         <sen>Hæstaréttardómarar eru þó ekki kjörgengir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-art="1" law-nr="16" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-nr="16" law-year="2009" law-art="1" nr="1">
           <footnote-sen>L. 16/2009, 1. gr.</footnote-sen>
           <location type="deletion">
             <chapter>1</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen after-mark=" eru þó ekki kjörgengir.$" before-mark="^Hæstaréttardómarar ">2</sen>
+            <sen before-mark="^Hæstaréttardómarar " after-mark=" eru þó ekki kjörgengir.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -100,7 +100,7 @@
         <sen>Enginn telst hafa óflekkað mannorð sem hlotið hefur dóm fyrir refsivert brot og refsing er óskilorðsbundið fangelsi, frá þeim degi þegar dómur er upp kveðinn og þar til afplánun er að fullu lokið.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-art="2" law-nr="141" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="2" nr="1">
           <footnote-sen>L. 141/2018, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>1</chapter>
@@ -129,22 +129,22 @@
         <sen>Varði slík breyting mörk kjördæma skulu þau þó haldast óbreytt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-art="2" law-nr="16" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-nr="16" law-year="2009" law-art="2" nr="1">
           <footnote-sen>L. 16/2009, 2. gr.</footnote-sen>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.008.html" law-art="1" law-nr="8" law-year="2013" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.008.html" law-nr="8" law-year="2013" law-art="1" nr="2">
           <footnote-sen>L. 8/2013, 1. gr.</footnote-sen>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2020.030.html" law-art="2" law-nr="30" law-year="2020" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2020.030.html" law-nr="30" law-year="2020" law-art="2" nr="3">
           <footnote-sen>L. 30/2020, 2. gr.</footnote-sen>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="1" law-nr="15" law-year="2003" nr="4">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="1" nr="4">
           <footnote-sen>L. 15/2003, 1. gr.</footnote-sen>
         </footnote>
         <footnote nr="5">
           <footnote-sen>Sjá og &lt;a href=&quot;/altext/stjt/2001.062.html&quot;&gt;lög nr. 62/2001&lt;/a&gt;, um breytingu á mörkum Suðvesturkjördæmis og Reykjavíkurkjördæma suður og norður, og lög nr. 70/2003, um breytingu á mörkum Suðvesturkjördæmis og Reykjavíkurkjördæmis suður.</footnote-sen>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-art="1" law-nr="91" law-year="2016" nr="6">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-nr="91" law-year="2016" law-art="1" nr="6">
           <footnote-sen>L. 91/2016, 1. gr.</footnote-sen>
         </footnote>
       </footnotes>
@@ -166,7 +166,7 @@
             <chapter>2</chapter>
             <art>7</art>
             <subart>2</subart>
-            <sen after-mark="$" before-mark="^Landskjörstjórn auglýsir mörk kjördæmanna í Stjórnartíðindum jafnskjótt og þau liggja fyrir, og eigi síðar en fjórum vikum fyrir kjördag.">1</sen>
+            <sen before-mark="^Landskjörstjórn auglýsir mörk kjördæmanna í Stjórnartíðindum jafnskjótt og þau liggja fyrir, og eigi síðar en fjórum vikum fyrir kjördag." after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -250,7 +250,7 @@
         <sen>Heimild landskjörstjórnar til að breyta þingmannatölu í kjördæmum samkvæmt þessari grein nær þó aðeins til þeirra kjördæmissæta sem eru umfram stjórnarskrárbundið lágmark, sbr. 3. mgr. 31. gr. stjórnarskrárinnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-art="3" law-nr="16" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-nr="16" law-year="2009" law-art="3" nr="1">
           <footnote-sen>L. 16/2009, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -273,7 +273,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>3</subart>
-            <sen after-mark="$" before-mark="^Landskjörstjórn auglýsir breytinguna í Stjórnartíðindum jafnskjótt og hún hefur verið gerð.">1</sen>
+            <sen before-mark="^Landskjörstjórn auglýsir breytinguna í Stjórnartíðindum jafnskjótt og hún hefur verið gerð." after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -313,7 +313,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="2" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="2" nr="1">
           <footnote-sen>L. 15/2003, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -334,7 +334,7 @@
         <sen>Áheyrnarfulltrúi hefur sama rétt og kjörinn fulltrúi annan en atkvæðisrétt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-art="1" law-nr="117" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-nr="117" law-year="2012" law-art="1" nr="1">
           <footnote-sen>L. 117/2012, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -372,7 +372,7 @@
         <sen>Við sérstakar aðstæður getur ráðherra heimilað tvær umdæmiskjörstjórnir í hverju kjördæmi sem kosnar skulu á sama hátt.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-art="2" law-nr="117" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-nr="117" law-year="2012" law-art="2" nr="1">
           <footnote-sen>L. 117/2012, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -389,7 +389,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="3" law-nr="15" law-year="2003" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="3" nr="2">
           <footnote-sen>L. 15/2003, 3. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -433,7 +433,7 @@
         <sen>Kjörstjórnir kjósa sér oddvita og skipta að öðru leyti með sér verkum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-art="4" law-nr="16" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-nr="16" law-year="2009" law-art="4" nr="1">
           <footnote-sen>L. 16/2009, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -469,7 +469,7 @@
         <sen>Ráðherra ákveður þóknun fyrir störf og setu í landskjörstjórn, yfirkjörstjórn og umdæmiskjörstjórn en sveitarstjórn ákveður þóknun fyrir störf og setu í undirkjörstjórn og kjörstjórn skv. 2. mgr. 15. gr.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="298" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="298" nr="1">
           <footnote-sen>L. 126/2011, 298. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -478,16 +478,16 @@
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-art="3" law-nr="117" law-year="2012" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.117.html" law-nr="117" law-year="2012" law-art="3" nr="2">
           <footnote-sen>L. 117/2012, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
             <art>18</art>
             <subart>2</subart>
-            <sen repeat="true" words="fyrir störf og setu">1</sen>
+            <sen words="fyrir störf og setu" repeat="true">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="4" law-nr="15" law-year="2003" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="4" nr="3">
           <footnote-sen>L. 15/2003, 4. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -519,7 +519,7 @@
         <sen>Ráðuneytið lætur kjörstjórnum í té embættisinnsigli.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="5" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="5" nr="1">
           <footnote-sen>L. 15/2003, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -534,7 +534,7 @@
             <sen words="yfirkjörstjórna og eftir atvikum umdæmiskjörstjórna">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="2">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>4</chapter>
@@ -568,7 +568,7 @@
         <sen>Kjörtímabilið er fjögur ár.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>5</chapter>
@@ -598,7 +598,7 @@
         <sen>Þjóðskrá Íslands er heimil vinnsla persónuupplýsinga við gerð kjörskrárstofna að fullnægðum heimildum laga sem um persónuvernd og vinnslu persónuupplýsinga gilda hverju sinni.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-art="5" law-nr="77" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
           <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -607,7 +607,7 @@
             <sen words="Þjóðskrá Íslands">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-art="9" law-nr="70" law-year="2018" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-nr="70" law-year="2018" law-art="9" nr="2">
           <footnote-sen>L. 70/2018, 9. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -647,7 +647,7 @@
         <sen>Þegar kjörskrá hefur verið samin skal hún undirrituð af oddvita sveitarstjórnar eða framkvæmdastjóra sveitarfélags.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-art="5" law-nr="77" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
           <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -656,7 +656,7 @@
             <sen words="Þjóðskrá Íslands">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="6" law-nr="15" law-year="2003" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="6" nr="2">
           <footnote-sen>L. 15/2003, 6. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -674,7 +674,7 @@
         <sen>Í auglýsingunni skal tekið fram að þeir sem vilja koma að athugasemdum við kjörskrá skuli senda þær hlutaðeigandi sveitarstjórn.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
@@ -717,13 +717,13 @@
         <sen>Sveitarstjórn skal enn fremur fram á kjördag leiðrétta kjörskrá ef henni berst vitneskja um andlát eða um að einhver hafi öðlast, eftir atvikum misst, íslenskt ríkisfang.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-art="5" law-nr="77" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
           <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>6</chapter>
             <art>27</art>
             <subart>3</subart>
-            <sen repeat="true" words="Þjóðskrá Íslands">1</sen>
+            <sen words="Þjóðskrá Íslands" repeat="true">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -796,7 +796,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-art="9" law-nr="70" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-nr="70" law-year="2018" law-art="9" nr="1">
           <footnote-sen>L. 70/2018, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -840,7 +840,7 @@
         <sen>Þjóðskrá Íslands er heimilt, að beiðni yfirkjörstjórnar, að samkeyra meðmælendalista framboðsaðila við þjóðskrá að fullnægðum heimildum laga sem um persónuvernd og vinnslu persónuupplýsinga gilda hverju sinni.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-art="9" law-nr="70" law-year="2018" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2018.070.html#G9" law-nr="70" law-year="2018" law-art="9" nr="1">
           <footnote-sen>L. 70/2018, 9. gr.</footnote-sen>
           <location type="range">
             <chapter>7</chapter>
@@ -896,7 +896,7 @@
         <sen>Breytingar á auglýsingu ráðuneytisins og viðauka við hana skal þegar birta með auglýsingu og tilkynna landskjörstjórn og yfirkjörstjórnum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>8</chapter>
@@ -982,7 +982,7 @@
         <sen>frv. eftir því sem við á.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -1012,7 +1012,7 @@
         <sen>Jafnframt sendir landskjörstjórn ráðuneytinu listana eins og þeir eru birtir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -1031,7 +1031,7 @@
         <sen>Jafnframt skal landskjörstjórn birta í Ríkisútvarpinu (hljóðvarpi) auglýsingu um breytinguna.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>10</chapter>
@@ -1058,7 +1058,7 @@
         <sen>Kjörstjórar skulu varðveita kjörgögnin á öruggum stað.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1067,7 +1067,7 @@
             <sen words="Ráðuneytið">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="298" law-nr="126" law-year="2011" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="298" nr="2">
           <footnote-sen>L. 126/2011, 298. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1091,7 +1091,7 @@
         <sen>Ráðuneytið kveður nánar á um gerð kjörgagna þessara.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1120,7 +1120,7 @@
         <sen>Sérstakur kjörstjóri skv. 2. mgr. 59. gr., sem veitir viðtöku utankjörfundarkjörgögnum, skal og undirrita og afhenda því ráðuneyti er fer með málefni sendiráða, fastanefnda og ræðisskrifstofa Íslands erlendis eða hlutaðeigandi sendierindreka sams konar yfirlýsingu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="298" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="298" nr="1">
           <footnote-sen>L. 126/2011, 298. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1141,7 +1141,7 @@
         <sen>Skipta skal um lit kjörseðla við hverjar alþingiskosningar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1172,7 +1172,7 @@
         <sen>Þess skal getið um hvern lista fyrir hvaða stjórnmálasamtök hann er í kjöri á þann hátt að prenta með skýru letri neðan við listabókstafinn en ofan við nöfnin á listanum: &lt;b&gt; Listi &lt;/b&gt; (nafn stjórnmálasamtakanna).</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2013.008.html" law-art="2" law-nr="8" law-year="2013" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2013.008.html" law-nr="8" law-year="2013" law-art="2" nr="1">
           <footnote-sen>L. 8/2013, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1189,7 +1189,7 @@
             </end>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="7" law-nr="15" law-year="2003" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="7" nr="2">
           <footnote-sen>L. 15/2003, 7. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1233,7 +1233,7 @@
         <sen>Seðlum, sem eigi eru afgreiddir til undirkjörstjórna, gerir yfirkjörstjórn grein fyrir þegar atkvæði eru talin.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1263,7 +1263,7 @@
         <sen>Yfirkjörstjórn skal einnig senda umdæmiskjörstjórn viðeigandi umslög, sbr. 2. og 3. mgr., eftir því sem við á.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="8" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="8" nr="1">
           <footnote-sen>L. 15/2003, 8. gr.</footnote-sen>
           <location type="range">
             <chapter>11</chapter>
@@ -1338,7 +1338,7 @@
         <sen>Tilkynna skal umboðsmönnum lista, sbr. 39. gr., um hvenær atkvæðagreiðsla skv. 2. mgr. fer fram.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.028.html" law-art="9" law-nr="28" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.028.html" law-nr="28" law-year="2012" law-art="9" nr="1">
           <footnote-sen>L. 28/2012, 9. gr.</footnote-sen>
           <location type="range">
             <chapter>12</chapter>
@@ -1347,7 +1347,7 @@
             <sen words="eða er heimilismaður á dvalarheimili aldraðra eða">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2015.115.html" law-art="7" law-nr="115" law-year="2015" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2015.115.html" law-nr="115" law-year="2015" law-art="7" nr="2">
           <footnote-sen>L. 115/2015, 7. gr.</footnote-sen>
           <location type="range">
             <chapter>12</chapter>
@@ -1356,7 +1356,7 @@
             <sen words="fatlað fólk">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="3">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>12</chapter>
@@ -1371,7 +1371,7 @@
             <chapter>12</chapter>
             <art>58</art>
             <subart>5</subart>
-            <sen after-mark=" um framkvæmd atkvæðagreiðslu skv. 2. og 3. mgr.$" before-mark="^(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur nánari reglur ">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur nánari reglur " after-mark=" um framkvæmd atkvæðagreiðslu skv. 2. og 3. mgr.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1389,7 +1389,7 @@
         <sen>Hlutaðeigandi ráðuneyti, sbr. 1. mgr., auglýsir hvar og hvenær atkvæðagreiðsla getur farið fram erlendis.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="298" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="298" nr="1">
           <footnote-sen>L. 126/2011, 298. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1475,7 +1475,7 @@
         <sen>Á sendiumslagið skal og rita nafn kjósanda, kennitölu og lögheimili.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-art="1" law-nr="111" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-nr="111" law-year="2012" law-art="1" nr="1">
           <footnote-sen>L. 111/2012, 1. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1567,7 +1567,7 @@
         <sen>Yfirkjörstjórn skal gæta þess að jafnan séu til nægir atkvæðakassar til afnota í kjördæminu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="298" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="298" nr="1">
           <footnote-sen>L. 126/2011, 298. gr.</footnote-sen>
           <location type="range">
             <chapter>13</chapter>
@@ -1660,7 +1660,7 @@
         <sen>Í hverri kjördeild skal vera eintak af lögum þessum, sem ráðuneytið lætur gefa út, ásamt stjórnarskránni í handhægri útgáfu með skýringum og leiðbeiningum ef þurfa þykir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -1719,7 +1719,7 @@
         <sen>Afsalið skal færa í kjörbók undirkjörstjórnar þar sem kjósandinn neytir kosningarréttar og vottorðið skal fylgja í frumriti til yfirkjörstjórnar með kjörbók þeirrar kjördeildar þar sem það er lagt fram og notað.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="9" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="9" nr="1">
           <footnote-sen>L. 15/2003, 9. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1777,7 +1777,7 @@
         <sen>Ef kjósandi vill hafna frambjóðanda á þeim lista sem hann kýs strikar hann yfir nafn hans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="10" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="10" nr="1">
           <footnote-sen>L. 15/2003, 10. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -1834,7 +1834,7 @@
         <sen>Við atkvæðagreiðsluna eiga ákvæði 79. gr., 81.–85. gr. og 87. gr. við um fulltrúa kjósandans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-art="2" law-nr="111" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-nr="111" law-year="2012" law-art="2" nr="1">
           <footnote-sen>L. 111/2012, 2. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -1897,7 +1897,7 @@
         <sen>Ef kjósandi, sem sent hefur frá sér utankjörfundaratkvæði, er ekki á kjörskrá í kjördeildinni skal kjörstjórnin geta þess sérstaklega í kjörbókinni og senda slík atkvæðisbréf aðskilin til yfirkjörstjórnar eða umdæmiskjörstjórnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="11" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="11" nr="1">
           <footnote-sen>L. 15/2003, 11. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -1949,7 +1949,7 @@
         <sen>Nú berast fleiri en eitt atkvæði greidd utan kjörfundar frá sama kjósanda sem geta komið til greina og skal þá aðeins hið síðastgreidda atkvæði koma til greina.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -1967,7 +1967,7 @@
         <sen>Nú verður ágreiningur innan kjörstjórnar eða milli kjörstjórnar og umboðsmanns lista um hvort utankjörfundaratkvæði sé gilt eða ógilt og skal þá bóka nákvæmlega í kjörbókina í hverju ágreiningurinn er fólginn og leggja kjörseðilsumslagið óopnað ásamt fylgibréfi aftur í sendiumslagið og senda það til úrskurðar yfirkjörstjórnar eða umdæmiskjörstjórnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="12" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="12" nr="1">
           <footnote-sen>L. 15/2003, 12. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -2012,7 +2012,7 @@
         <sen>Eftir að kjörstjórn hefur þannig gengið frá kjörgögnum mega hin innsigluðu kjörgögn og innsigli kjörstjórnar eigi vera í vörslu sama manns.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="13" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="13" nr="1">
           <footnote-sen>L. 15/2003, 13. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -2038,7 +2038,7 @@
         <sen>Um leið og kosningu er lokið og kjörstjórn hefur unnið nauðsynlegar skýrslur úr kjörskránni sendir hún kjörskráreintök þau sem notuð voru við kosninguna í innsigluðum umbúðum til yfirkjörstjórnar eða eftir atvikum til umdæmiskjörstjórnar.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="14" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="14" nr="1">
           <footnote-sen>L. 15/2003, 14. gr.</footnote-sen>
           <location type="range">
             <chapter>14</chapter>
@@ -2073,7 +2073,7 @@
         <sen>Sé kosningu frestað skv. 114. gr. má talning atkvæða aldrei fara fram fyrr en kosningu er hvarvetna lokið.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="15" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="15" nr="1">
           <footnote-sen>L. 15/2003, 15. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2111,7 +2111,7 @@
         <sen>Nú eru umboðsmenn lista eigi viðstaddir talningu og skal yfirkjörstjórn eða umdæmiskjörstjórn þá kveðja valinkunna menn úr sömu stjórnmálasamtökum, ef unnt er, til að gæta réttar af hendi listans.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="16" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="16" nr="1">
           <footnote-sen>L. 15/2003, 16. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2137,7 +2137,7 @@
         <sen>Heimilt er að hefja flokkun atkvæða og undirbúa talningu þeirra fyrir luktum dyrum áður en kjörfundi lýkur.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="17" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="17" nr="1">
           <footnote-sen>L. 15/2003, 17. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2208,7 +2208,7 @@
         <sen>Lista í kjördæmi telst atkvæði þó að láðst hafi að merkja við listabókstaf ef nafn eða nöfn á honum eru tölusett eða krossað við nafn, enda séu ekki aðrir gallar á.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-art="5" law-nr="16" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.016.html" law-nr="16" law-year="2009" law-art="5" nr="1">
           <footnote-sen>L. 16/2009, 5. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2217,7 +2217,7 @@
             <sen words="einn eða fleiri stafliði 100. gr.">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="18" law-nr="15" law-year="2003" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="18" nr="2">
           <footnote-sen>L. 15/2003, 18. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2258,7 +2258,7 @@
         <sen>Yfirkjörstjórn skal fara með þessi gögn á sama hátt og þau sem eru í hennar vörslu.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="19" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="19" nr="1">
           <footnote-sen>L. 15/2003, 19. gr.</footnote-sen>
           <location type="range">
             <start>
@@ -2292,7 +2292,7 @@
         <sen>Yfirkjörstjórn skal búa um allar kjörskrár í innsigluðum umbúðum og senda ráðuneytinu sem geymir þær í eitt ár, en að því búnu skal eyða þeim.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2332,7 +2332,7 @@
         <sen>Tilkynna skal umboðsmönnum lista, eftir því sem auðið er, hvenær sendingin verður opnuð til þess að þeir eigi kost á að vera þar viðstaddir.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="20" law-nr="15" law-year="2003" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="20" nr="1">
           <footnote-sen>L. 15/2003, 20. gr.</footnote-sen>
           <location type="range">
             <chapter>15</chapter>
@@ -2471,7 +2471,7 @@
         <sen>Jafnskjótt og kjörbréf hafa verið afhent skal landskjörstjórn tilkynna stjórnarráðinu um úrslit kosninganna og senda nöfn hinna kjörnu þingmanna til birtingar í Stjórnartíðindum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>17</chapter>
@@ -2489,7 +2489,7 @@
         <sen>Landskjörstjórn sendir ráðuneytinu eftirrit af gerðabók sinni um úthlutun þingsæta, svo og skýrslur þær og skilríki frá yfirkjörstjórnum sem ágreiningur kann að vera um, en ráðuneytið leggur það fyrir Alþingi í þingbyrjun með sömu ummerkjum og það tók við því.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>17</chapter>
@@ -2554,7 +2554,7 @@
         <sen>Að öðru leyti fer kosning fram samkvæmt fyrirmælum þessara laga.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>18</chapter>
@@ -2620,7 +2620,7 @@
         <sen>Ráðuneytið sendir þegar í stað umboðsmönnum framboðslistans annað samritið en hitt skal lagt fyrir Alþingi þegar í þingbyrjun.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>21</chapter>
@@ -2646,7 +2646,7 @@
         <sen>Engum kjósanda, sem greitt hefur atkvæði við kosningar til Alþingis, er skylt að skýra frá því fyrir rétti í nokkru máli hvernig hann hefur greitt atkvæði.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-art="234" law-nr="88" law-year="2008" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="1">
           <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
           <location type="range">
             <chapter>21</chapter>
@@ -2719,7 +2719,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-art="162" law-nr="162" law-year="2010" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="162" nr="1">
           <footnote-sen>L. 162/2010, 162. gr.</footnote-sen>
           <location type="range">
             <chapter>24</chapter>
@@ -2729,7 +2729,7 @@
             <sen words="ráðuneytið">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-art="21" law-nr="15" law-year="2003" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2003.015.html" law-nr="15" law-year="2003" law-art="21" nr="2">
           <footnote-sen>L. 15/2003, 21. gr.</footnote-sen>
           <location type="range">
             <chapter>24</chapter>
@@ -2739,7 +2739,7 @@
             <sen words="og umdæmiskjörstjórna">1</sen>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2006.162.html#G14" law-art="14" law-nr="162" law-year="2006" nr="3">
+        <footnote href="https://www.althingi.is/altext/stjt/2006.162.html#G14" law-nr="162" law-year="2006" law-art="14" nr="3">
           <footnote-sen>L. 162/2006, 14. gr.</footnote-sen>
           <location type="range">
             <chapter>24</chapter>
@@ -2833,7 +2833,7 @@
         </numart>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-art="3" law-nr="111" law-year="2012" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2012.111.html" law-nr="111" law-year="2012" law-art="3" nr="1">
           <footnote-sen>L. 111/2012, 3. gr.</footnote-sen>
           <location type="range">
             <chapter>25</chapter>
@@ -2916,34 +2916,34 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr="t" nr-type="name" type="temporary-clauses">
+  <chapter nr-type="name" nr="t" type="temporary-clauses">
     <name>Ákvæði til bráðabirgða.</name>
-    <art nr="I" number-type="roman" roman-nr="1">
+    <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
         <sen>Þrátt fyrir ákvæði síðari málsliðar 1. mgr. 130. gr. skal beita lögum nr. 80/1987, um kosningar til Alþingis, með síðari breytingum, við forsetakjör á árinu 2000 eftir því sem við á og ekki er öðruvísi fyrir mælt í lögum nr. 36/1945, um framboð og kjör forseta Íslands, með síðari breytingum.</sen>
         <sen>Jafnframt skulu yfirkjörstjórnir er kosnar voru samkvæmt þeim lögum að loknum alþingiskosningum 1999, á 124. löggjafarþingi, halda umboði sínu að því er það varðar.</sen>
       </subart>
     </art>
-    <art nr="II" number-type="roman" roman-nr="2">
+    <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Við gildistöku laga þessara fellur niður umboð yfirkjörstjórna sem kjörnar voru skv. 1. mgr. 9. gr. laga nr. 80/1987, síðast í júní 1999, sbr. þó ákvæði til bráðabirgða I.</sen>
         <sen>Alþingi skal þegar í stað kjósa yfirkjörstjórnir skv. 1. mgr. 13. gr. í lögum þessum.</sen>
       </subart>
     </art>
-    <art nr="III" number-type="roman" roman-nr="3">
+    <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.007.html" law-art="3" law-nr="7" law-year="2009" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.007.html" law-nr="7" law-year="2009" law-art="3" nr="1">
           <footnote-sen>L. 7/2009, 3. gr.</footnote-sen>
           <location type="deletion">
             <chapter>t</chapter>
             <art>III</art>
-            <nr-title after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^(\[? ?)?III. ">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?III. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2009.007.html" law-art="1" law-nr="7" law-year="2009" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2009.007.html" law-nr="7" law-year="2009" law-art="1" nr="2">
           <footnote-sen>L. 7/2009, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -2953,18 +2953,18 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="IV" number-type="roman" roman-nr="4">
+    <art nr="IV" roman-nr="4" number-type="roman">
       <nr-title>IV.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-art="4" law-nr="91" law-year="2016" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-nr="91" law-year="2016" law-art="4" nr="1">
           <footnote-sen>L. 91/2016, 4. gr.</footnote-sen>
           <location type="deletion">
             <chapter>t</chapter>
             <art>IV</art>
-            <nr-title after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^(\[? ?)?IV. ">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?IV. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-art="2" law-nr="91" law-year="2016" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2016.091.html" law-nr="91" law-year="2016" law-art="2" nr="2">
           <footnote-sen>L. 91/2016, 2. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>
@@ -2974,18 +2974,18 @@
         </footnote>
       </footnotes>
     </art>
-    <art nr="V" number-type="roman" roman-nr="5">
+    <art nr="V" roman-nr="5" number-type="roman">
       <nr-title>V.</nr-title>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.079.html" law-art="3" law-nr="79" law-year="2017" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.079.html" law-nr="79" law-year="2017" law-art="3" nr="1">
           <footnote-sen>L. 79/2017, 3. gr.</footnote-sen>
           <location type="deletion">
             <chapter>t</chapter>
             <art>V</art>
-            <nr-title after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$" before-mark="^(\[? ?)?V. ">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?V. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
           </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2017.079.html" law-art="1" law-nr="79" law-year="2017" nr="2">
+        <footnote href="https://www.althingi.is/altext/stjt/2017.079.html" law-nr="79" law-year="2017" law-art="1" nr="2">
           <footnote-sen>L. 79/2017, 1. gr.</footnote-sen>
           <location type="range">
             <chapter>t</chapter>

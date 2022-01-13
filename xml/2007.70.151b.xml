@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<law nr="70" parliament="151b" year="2007">
+<law nr="70" year="2007" parliament="151b">
   <name>Æskulýðslög</name>
   <num-and-date>
     <date>2007-03-28</date>
@@ -58,7 +58,7 @@
         <sen>Ráðherra fer með yfirstjórn æskulýðsmála samkvæmt lögum þessum.</sen>
       </subart>
       <footnotes>
-        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-art="459" law-nr="126" law-year="2011" nr="1">
+        <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="459" nr="1">
           <footnote-sen>L. 126/2011, 459. gr.</footnote-sen>
           <location type="range">
             <chapter>2</chapter>
@@ -85,7 +85,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
-            <sen after-mark="$" before-mark="^Fimm fulltrúar skulu skipaðir samkvæmt tilnefningu æskulýðssamtaka, samkvæmt nánari ákvæðum í reglugerð.">2</sen>
+            <sen before-mark="^Fimm fulltrúar skulu skipaðir samkvæmt tilnefningu æskulýðssamtaka, samkvæmt nánari ákvæðum í reglugerð." after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -187,7 +187,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>3</subart>
-            <sen after-mark=" um úthlutun úr Æskulýðssjóði.$" before-mark="^Ráðherra er heimilt að setja nánari reglur ">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja nánari reglur " after-mark=" um úthlutun úr Æskulýðssjóði.$">1</sen>
           </location>
         </footnote>
       </footnotes>
