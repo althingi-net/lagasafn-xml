@@ -1336,6 +1336,7 @@
       <nr-title>Ákvæði til bráðabirgða.</nr-title>
       <subart nr="1">
         <sen>Reglugerðir, auglýsingar og önnur fyrirmæli sett samkvæmt lögum nr. 11/1928, með síðari breytingum, lögum nr. 23/1956, með síðari breytingum, og lögum nr. 22/1977, um sauðfjárbaðanir, skulu halda gildi sínu að svo miklu leyti sem þau stangast ekki á við lög þessi þar til nýjar reglugerðir, auglýsingar eða önnur fyrirmæli hafa öðlast gildi.</sen>
+        <ambiguous-bold-text>Viðaukar 1A, 1B og 2.</ambiguous-bold-text>
       </subart>
       <footnotes>
         <footnote nr="1">
@@ -1347,17 +1348,25 @@
             <sen before-mark="^Reglugerðir, auglýsingar og önnur fyrirmæli sett samkvæmt lögum nr. 11/1928, með síðari breytingum, lögum nr. 23/1956, með síðari breytingum, og lögum nr. 22/1977, um sauðfjárbaðanir, skulu halda gildi sínu að svo miklu leyti sem þau stangast ekki á við lög þessi þar til nýjar reglugerðir, auglýsingar eða önnur fyrirmæli hafa öðlast gildi." after-mark="$">1</sen>
           </location>
         </footnote>
-        <footnote nr="2">
-          <footnote-sen>]</footnote-sen>
-        </footnote>
-        <footnote nr="3">
-          <footnote-sen>&lt;/b&gt;&lt;br/&gt;&lt;i&gt;&lt;small&gt;</footnote-sen>
-        </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2014.004.html" law-nr="4" law-year="2014" law-art="6" nr="4">
+      </footnotes>
+      <footnotes>
+        <footnote href="https://www.althingi.is/altext/stjt/2014.004.html" law-nr="4" law-year="2014" law-art="6" nr="1">
           <footnote-sen>L. 4/2014, 6. gr.</footnote-sen>
+          <location type="deletion">
+            <chapter>8</chapter>
+            <art>Ákvæði til bráðabirgða</art>
+            <subart>1</subart>
+            <ambiguous-bold-text before-mark="^(\[? ?)?Viðaukar 1A, 1B og 2. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</ambiguous-bold-text>
+          </location>
         </footnote>
-        <footnote href="https://www.althingi.is/altext/stjt/2001.031.html" law-nr="31" law-year="2001" law-art="11" nr="5">
+        <footnote href="https://www.althingi.is/altext/stjt/2001.031.html" law-nr="31" law-year="2001" law-art="11" nr="2">
           <footnote-sen>L. 31/2001, 11. gr.</footnote-sen>
+          <location type="range">
+            <chapter>8</chapter>
+            <art>Ákvæði til bráðabirgða</art>
+            <subart>1</subart>
+            <ambiguous-bold-text>1</ambiguous-bold-text>
+          </location>
         </footnote>
       </footnotes>
     </art>

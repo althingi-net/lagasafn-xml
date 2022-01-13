@@ -667,6 +667,7 @@
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
         <sen>Skattskyldar tekjur teljast með þeim undantekningum og takmörkunum, er síðar greinir, hvers konar gæði, arður, laun og hagnaður sem skattaðila hlotnast og metin verða til peningaverðs og skiptir ekki máli hvaðan þær stafa eða í hvaða formi þær eru, svo sem:</sen>
+        <ambiguous-bold-text>A.</ambiguous-bold-text>
         <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Endurgjald fyrir hvers konar vinnu, starf eða þjónustu, án tillits til viðmiðunar, sem innt er af hendi fyrir annan aðila.</sen>
@@ -693,42 +694,44 @@
           <sen>Verðlaun og heiðurslaun, vinningar í happdrætti, veðmáli eða keppni.</sen>
           <sen>Beinar gjafir í peningum eða öðrum verðmætum, þar með talin afhending slíkra verðmæta í hendur nákominna ættingja, nema um fyrirframgreiðslu upp í arf sé að ræða.</sen>
           <sen>Undanskildar eru þó tækifærisgjafir, enda sé verðmæti þeirra ekki meira en almennt gerist um slíkar gjafir svo og verðlitlir vinningar í almennum happdrættum og keppnum.</sen>
-          <numart nr="1" type="numeric">
-            <nr-title>1.</nr-title>
-            <sen>Leigutekjur og arður af hvers konar lausafé, þar með talin skip og loftför.</sen>
-          </numart>
-          <numart nr="2" type="numeric">
-            <nr-title>2.</nr-title>
-            <sen>Arður, landskuld og leiga eftir hvers konar fasteignir og fasteignaréttindi, þar með talin námaréttindi, vatnsréttindi, jarðvarmaréttindi, veiðiréttur og hvers konar önnur fasteignatengd hlunnindi.</sen>
-          </numart>
-          <numart nr="3" type="numeric">
-            <nr-title>3.</nr-title>
-            <sen>Vextir, verðbætur, afföll og gengishagnaður, sbr. 8. gr.</sen>
-          </numart>
-          <numart nr="4" type="numeric">
-            <nr-title>4.</nr-title>
-            <sen>Arður af hlutum og hlutabréfum í félögum, sbr. 11. gr.</sen>
-          </numart>
-          <numart nr="5" type="numeric">
-            <nr-title>5.</nr-title>
-            <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. færa félagsaðilum sínum til séreignar í stofnsjóði vegna viðskipta þeirra.</sen>
-          </numart>
-          <numart nr="6" type="numeric">
-            <nr-title>6.</nr-title>
-            <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum vegna viðskipta þeirra, enda séu þessi viðskipti í tengslum við atvinnurekstur eða sjálfstæða starfsemi félagsaðilans eða sé varið til fjárfestingar í eignum sem notaðar eru í atvinnurekstri.</sen>
-          </numart>
-          <numart nr="7" type="numeric">
-            <nr-title>7.</nr-title>
-            <sen>Fé sem félög þau sem um ræðir í 4. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum út í hlutfalli við viðskipti þeirra eða færa þeim til séreignar, hvort heldur í stofnsjóð eða á annan hátt.</sen>
-          </numart>
-          <numart nr="8" type="numeric">
-            <nr-title>8.</nr-title>
-            <sen>Hagnaður af sölu eigna, sbr. 12.–27. gr.</sen>
-          </numart>
-          <numart nr="9" type="numeric">
-            <nr-title>9.</nr-title>
-            <sen>Sérhverjar aðrar tekjur eða ígildi tekna sem eigi eru sérstaklega undanskildar í lögum þessum eða sérlögum.</sen>
-          </numart>
+        </numart>
+        <ambiguous-bold-text>B.</ambiguous-bold-text>
+        <ambiguous-bold-text>C.</ambiguous-bold-text>
+        <numart nr="1" type="numeric">
+          <nr-title>1.</nr-title>
+          <sen>Leigutekjur og arður af hvers konar lausafé, þar með talin skip og loftför.</sen>
+        </numart>
+        <numart nr="2" type="numeric">
+          <nr-title>2.</nr-title>
+          <sen>Arður, landskuld og leiga eftir hvers konar fasteignir og fasteignaréttindi, þar með talin námaréttindi, vatnsréttindi, jarðvarmaréttindi, veiðiréttur og hvers konar önnur fasteignatengd hlunnindi.</sen>
+        </numart>
+        <numart nr="3" type="numeric">
+          <nr-title>3.</nr-title>
+          <sen>Vextir, verðbætur, afföll og gengishagnaður, sbr. 8. gr.</sen>
+        </numart>
+        <numart nr="4" type="numeric">
+          <nr-title>4.</nr-title>
+          <sen>Arður af hlutum og hlutabréfum í félögum, sbr. 11. gr.</sen>
+        </numart>
+        <numart nr="5" type="numeric">
+          <nr-title>5.</nr-title>
+          <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. færa félagsaðilum sínum til séreignar í stofnsjóði vegna viðskipta þeirra.</sen>
+        </numart>
+        <numart nr="6" type="numeric">
+          <nr-title>6.</nr-title>
+          <sen>Fé sem félög þau sem um ræðir í 2. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum vegna viðskipta þeirra, enda séu þessi viðskipti í tengslum við atvinnurekstur eða sjálfstæða starfsemi félagsaðilans eða sé varið til fjárfestingar í eignum sem notaðar eru í atvinnurekstri.</sen>
+        </numart>
+        <numart nr="7" type="numeric">
+          <nr-title>7.</nr-title>
+          <sen>Fé sem félög þau sem um ræðir í 4. tölul. 1. mgr. 2. gr. greiða félagsaðilum sínum út í hlutfalli við viðskipti þeirra eða færa þeim til séreignar, hvort heldur í stofnsjóð eða á annan hátt.</sen>
+        </numart>
+        <numart nr="8" type="numeric">
+          <nr-title>8.</nr-title>
+          <sen>Hagnaður af sölu eigna, sbr. 12.–27. gr.</sen>
+        </numart>
+        <numart nr="9" type="numeric">
+          <nr-title>9.</nr-title>
+          <sen>Sérhverjar aðrar tekjur eða ígildi tekna sem eigi eru sérstaklega undanskildar í lögum þessum eða sérlögum.</sen>
         </numart>
       </subart>
       <footnotes>
@@ -1782,6 +1785,7 @@
       <nr-title>30. gr.</nr-title>
       <subart nr="1">
         <sen>Frá tekjum manna skv. II. kafla laga þessara, sem ekki eru tengdar atvinnurekstri eða sjálfstæðri starfsemi, má draga:</sen>
+        <ambiguous-bold-text>A.</ambiguous-bold-text>
         <numart nr="1" type="numeric">
           <nr-title>1.</nr-title>
           <sen>Útgjöld að hámarki móttekin fjárhæð ökutækjastyrkja, dagpeninga eða hliðstæðra endurgreiðslna á kostnaði sem sannað er að séu ferða- og dvalarkostnaður vegna atvinnurekanda og eru í samræmi við matsreglur ráðherra.</sen>
@@ -1824,146 +1828,147 @@
           <numart nr="c" type="alphabet">
             <nr-title>c.</nr-title>
             <sen>Erlendur sérfræðingur búi yfir þekkingu sem ekki sé fyrir hendi hér á landi nema í litlum mæli.</sen>
-            <numart nr="1" type="numeric">
-              <nr-title>1.</nr-title>
-              <sen>Allt að 50% frá tekjuskattsstofni einstaklings, sbr. 1. og 3. gr., að viðbættum fjármagnstekjum, af fjárhæð sem hann sýnir fram á að sé til komin vegna fjárfestinga í hlutafélagi eða einkahlutafélagi sem uppfyllir skilyrði 2. og 3. mgr., við álagningu opinberra gjalda á árunum 2017, 2018, 2019, 2020, 2021 og 2022 vegna fjárfestinga á árunum 2016, 2017, 2018, 2019, 2020 og 2021.</sen>
-              <sen>Fyrst skal dregið frá stofni til tekjuskatts og síðan fjármagnstekjuskattsstofni, að teknu tilliti til frítekjumarks vegna vaxta- og leigutekna.</sen>
+          </numart>
+        </numart>
+        <ambiguous-bold-text>B.</ambiguous-bold-text>
+        <numart nr="1" type="numeric">
+          <nr-title>1.</nr-title>
+          <sen>Allt að 50% frá tekjuskattsstofni einstaklings, sbr. 1. og 3. gr., að viðbættum fjármagnstekjum, af fjárhæð sem hann sýnir fram á að sé til komin vegna fjárfestinga í hlutafélagi eða einkahlutafélagi sem uppfyllir skilyrði 2. og 3. mgr., við álagningu opinberra gjalda á árunum 2017, 2018, 2019, 2020, 2021 og 2022 vegna fjárfestinga á árunum 2016, 2017, 2018, 2019, 2020 og 2021.</sen>
+          <sen>Fyrst skal dregið frá stofni til tekjuskatts og síðan fjármagnstekjuskattsstofni, að teknu tilliti til frítekjumarks vegna vaxta- og leigutekna.</sen>
+          <numart nr="1" type="numeric">
+            <nr-title>1.</nr-title>
+            <sen>Fjárfesting einstaklings í félagi nemi að lágmarki 300 þús. kr. á almanaksári.</sen>
+          </numart>
+          <numart nr="2" type="numeric">
+            <nr-title>2.</nr-title>
+            <sen>Hver einstaklingur getur nýtt frádráttarheimild vegna heildarfjárfestinga sem nemi að hámarki 10 millj. kr. á almanaksári.</sen>
+          </numart>
+          <numart nr="3" type="numeric">
+            <nr-title>3.</nr-title>
+            <sen>Einstaklingur geti sýnt fram á að fjárfesting hafi verið að fullu greidd.</sen>
+          </numart>
+          <numart nr="4" type="numeric">
+            <nr-title>4.</nr-title>
+            <sen>Fjárfesting einstaklings sé til komin vegna hlutafjáraukningar í félagi.</sen>
+          </numart>
+          <numart nr="5" type="numeric">
+            <nr-title>5.</nr-title>
+            <sen>Félagið skili lista til ríkisskattstjóra yfir þátttakendur hlutafjáraukningarinnar og aukningin sé skráð í hlutafélagaskrá.</sen>
+          </numart>
+          <numart nr="6" type="numeric">
+            <nr-title>6.</nr-title>
+            <sen>Einstaklingur sé hvorki tengdur félaginu né félagasamstæðum þess, tveimur árum fyrir skráða hlutafjáraukningu, á eftirfarandi hátt:</sen>
+            <numart nr="a" type="alphabet">
+              <nr-title>a.</nr-title>
+              <sen>Á grundvelli fjárhagslegra hagsmuna tengdra félaginu eða ef einstaklingur á eða mun eiga rétt á, með beinum eða óbeinum hætti, meira en 30% eignarhlutdeild í félaginu eða atkvæðarétti þess.</sen>
+              <sen>Einstaklingur telst jafnframt vera tengdur félaginu ef viðskipti hans við félagið vegna hlutafjáraukningarinnar eru ekki sambærileg því sem almennt gerist í viðskiptum milli ótengdra aðila.</sen>
+            </numart>
+            <numart nr="b" type="alphabet">
+              <nr-title>b.</nr-title>
               <numart nr="1" type="numeric">
                 <nr-title>1.</nr-title>
-                <sen>Fjárfesting einstaklings í félagi nemi að lágmarki 300 þús. kr. á almanaksári.</sen>
+                <sen>Félagið sé stofnsett á Íslandi eða innan annars EES-ríkis, aðildarríkis stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum og með fasta starfsstöð á Íslandi.</sen>
               </numart>
               <numart nr="2" type="numeric">
                 <nr-title>2.</nr-title>
-                <sen>Hver einstaklingur getur nýtt frádráttarheimild vegna heildarfjárfestinga sem nemi að hámarki 10 millj. kr. á almanaksári.</sen>
+                <sen>Hjá félaginu starfi ekki fleiri en 25 starfsmenn og félagið sé með árlega veltu undir 650 millj. kr. og/eða efnahagsreikning undir 650 millj. kr.</sen>
+                <sen>Ef félag er hluti af félagasamstæðu skal miða við samstæðuna í heild á grundvelli samstæðureiknings.</sen>
               </numart>
               <numart nr="3" type="numeric">
                 <nr-title>3.</nr-title>
-                <sen>Einstaklingur geti sýnt fram á að fjárfesting hafi verið að fullu greidd.</sen>
+                <sen>Félagið hafi lokið greiðslu á öllu lágmarkshlutafé vegna stofnunar þess.</sen>
               </numart>
               <numart nr="4" type="numeric">
                 <nr-title>4.</nr-title>
-                <sen>Fjárfesting einstaklings sé til komin vegna hlutafjáraukningar í félagi.</sen>
+                <sen>Félagið hafi ekki verið skráð á skipulegan verðbréfamarkað.</sen>
               </numart>
               <numart nr="5" type="numeric">
                 <nr-title>5.</nr-title>
-                <sen>Félagið skili lista til ríkisskattstjóra yfir þátttakendur hlutafjáraukningarinnar og aukningin sé skráð í hlutafélagaskrá.</sen>
+                <sen>Félagið hafi ekki, þegar hlutafjáraukning á sér stað, verið starfandi á markaði lengur en sjö ár frá fyrstu sölu þess í viðskiptalegum tilgangi.</sen>
               </numart>
               <numart nr="6" type="numeric">
                 <nr-title>6.</nr-title>
-                <sen>Einstaklingur sé hvorki tengdur félaginu né félagasamstæðum þess, tveimur árum fyrir skráða hlutafjáraukningu, á eftirfarandi hátt:</sen>
+                <sen>Félagið sé rekið í hagnaðarskyni.</sen>
+              </numart>
+              <numart nr="7" type="numeric">
+                <nr-title>7.</nr-title>
+                <sen>Félagið eigi ekki í fjárhagsvanda.</sen>
+              </numart>
+              <numart nr="8" type="numeric">
+                <nr-title>8.</nr-title>
+                <sen>Íslenska ríkið eigi ekki útistandandi endurgreiðslukröfu á félagið vegna ólögmætrar ríkisaðstoðar.</sen>
+              </numart>
+              <numart nr="9" type="numeric">
+                <nr-title>9.</nr-title>
+                <sen>Félagið hafi sent ríkisskattstjóra ársreikning sinn fyrir næstliðið reikningsár sem gerður hefur verið í samræmi við lög um ársreikninga.</sen>
+              </numart>
+              <numart nr="10" type="numeric">
+                <nr-title>10.</nr-title>
+                <sen>Félagið sýni fram á að andvirði hlutafjáraukningarinnar verði ráðstafað í þágu viðskiptastarfsemi þess.</sen>
+                <sen>Ef félagið hefur ekki hafið viðskiptastarfsemi ber að nota að lágmarki 30% af andvirðinu til rannsókna eða þróunar á viðskiptastarfsemi sem hefjast skal innan tveggja ára frá skráningardegi hlutafjáraukningarinnar.</sen>
+              </numart>
+              <numart nr="11" type="numeric">
+                <nr-title>11.</nr-title>
+                <sen>Hlutafjáraukning í félagi geti að hámarki numið 2.000 millj. kr. í heild.</sen>
+                <sen>Ef félag er hluti af félagasamstæðu nær hámarkið til samstæðunnar.</sen>
+              </numart>
+              <numart nr="12" type="numeric">
+                <nr-title>12.</nr-title>
+                <sen>Áður en hlutafjáraukning fer fram skal félag fá staðfestingu ríkisskattstjóra á því að öll skilyrði þessarar málsgreinar séu uppfyllt.</sen>
+                <sen>Sækja skal um staðfestinguna á því formi sem ríkisskattstjóri ákveður og getur hann krafið félagið um öll nauðsynleg gögn vegna hennar.</sen>
+                <sen>Ríkisskattstjóri skal halda sérstaka skrá yfir þau félög sem hljóta staðfestingu samkvæmt ákvæði þessu og skal hún birt á vefsvæði ríkisskattstjóra.</sen>
+                <sen>Ákvörðun ríkisskattstjóra má skjóta til yfirskattanefndar eftir ákvæðum laga um yfirskattanefnd.</sen>
                 <numart nr="a" type="alphabet">
                   <nr-title>a.</nr-title>
-                  <sen>Á grundvelli fjárhagslegra hagsmuna tengdra félaginu eða ef einstaklingur á eða mun eiga rétt á, með beinum eða óbeinum hætti, meira en 30% eignarhlutdeild í félaginu eða atkvæðarétti þess.</sen>
-                  <sen>Einstaklingur telst jafnframt vera tengdur félaginu ef viðskipti hans við félagið vegna hlutafjáraukningarinnar eru ekki sambærileg því sem almennt gerist í viðskiptum milli ótengdra aðila.</sen>
+                  <sen>starfsemi sem felst í viðskiptum með fasteignir,</sen>
                 </numart>
                 <numart nr="b" type="alphabet">
                   <nr-title>b.</nr-title>
-                  <numart nr="1" type="numeric">
-                    <nr-title>1.</nr-title>
-                    <sen>Félagið sé stofnsett á Íslandi eða innan annars EES-ríkis, aðildarríkis stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum og með fasta starfsstöð á Íslandi.</sen>
-                  </numart>
-                  <numart nr="2" type="numeric">
-                    <nr-title>2.</nr-title>
-                    <sen>Hjá félaginu starfi ekki fleiri en 25 starfsmenn og félagið sé með árlega veltu undir 650 millj. kr. og/eða efnahagsreikning undir 650 millj. kr.</sen>
-                    <sen>Ef félag er hluti af félagasamstæðu skal miða við samstæðuna í heild á grundvelli samstæðureiknings.</sen>
-                  </numart>
-                  <numart nr="3" type="numeric">
-                    <nr-title>3.</nr-title>
-                    <sen>Félagið hafi lokið greiðslu á öllu lágmarkshlutafé vegna stofnunar þess.</sen>
-                  </numart>
-                  <numart nr="4" type="numeric">
-                    <nr-title>4.</nr-title>
-                    <sen>Félagið hafi ekki verið skráð á skipulegan verðbréfamarkað.</sen>
-                  </numart>
-                  <numart nr="5" type="numeric">
-                    <nr-title>5.</nr-title>
-                    <sen>Félagið hafi ekki, þegar hlutafjáraukning á sér stað, verið starfandi á markaði lengur en sjö ár frá fyrstu sölu þess í viðskiptalegum tilgangi.</sen>
-                  </numart>
-                  <numart nr="6" type="numeric">
-                    <nr-title>6.</nr-title>
-                    <sen>Félagið sé rekið í hagnaðarskyni.</sen>
-                  </numart>
-                  <numart nr="7" type="numeric">
-                    <nr-title>7.</nr-title>
-                    <sen>Félagið eigi ekki í fjárhagsvanda.</sen>
-                  </numart>
-                  <numart nr="8" type="numeric">
-                    <nr-title>8.</nr-title>
-                    <sen>Íslenska ríkið eigi ekki útistandandi endurgreiðslukröfu á félagið vegna ólögmætrar ríkisaðstoðar.</sen>
-                  </numart>
-                  <numart nr="9" type="numeric">
-                    <nr-title>9.</nr-title>
-                    <sen>Félagið hafi sent ríkisskattstjóra ársreikning sinn fyrir næstliðið reikningsár sem gerður hefur verið í samræmi við lög um ársreikninga.</sen>
-                  </numart>
-                  <numart nr="10" type="numeric">
-                    <nr-title>10.</nr-title>
-                    <sen>Félagið sýni fram á að andvirði hlutafjáraukningarinnar verði ráðstafað í þágu viðskiptastarfsemi þess.</sen>
-                    <sen>Ef félagið hefur ekki hafið viðskiptastarfsemi ber að nota að lágmarki 30% af andvirðinu til rannsókna eða þróunar á viðskiptastarfsemi sem hefjast skal innan tveggja ára frá skráningardegi hlutafjáraukningarinnar.</sen>
-                  </numart>
-                  <numart nr="11" type="numeric">
-                    <nr-title>11.</nr-title>
-                    <sen>Hlutafjáraukning í félagi geti að hámarki numið 2.000 millj. kr. í heild.</sen>
-                    <sen>Ef félag er hluti af félagasamstæðu nær hámarkið til samstæðunnar.</sen>
-                  </numart>
-                  <numart nr="12" type="numeric">
-                    <nr-title>12.</nr-title>
-                    <sen>Áður en hlutafjáraukning fer fram skal félag fá staðfestingu ríkisskattstjóra á því að öll skilyrði þessarar málsgreinar séu uppfyllt.</sen>
-                    <sen>Sækja skal um staðfestinguna á því formi sem ríkisskattstjóri ákveður og getur hann krafið félagið um öll nauðsynleg gögn vegna hennar.</sen>
-                    <sen>Ríkisskattstjóri skal halda sérstaka skrá yfir þau félög sem hljóta staðfestingu samkvæmt ákvæði þessu og skal hún birt á vefsvæði ríkisskattstjóra.</sen>
-                    <sen>Ákvörðun ríkisskattstjóra má skjóta til yfirskattanefndar eftir ákvæðum laga um yfirskattanefnd.</sen>
-                    <numart nr="a" type="alphabet">
-                      <nr-title>a.</nr-title>
-                      <sen>starfsemi sem felst í viðskiptum með fasteignir,</sen>
-                    </numart>
-                    <numart nr="b" type="alphabet">
-                      <nr-title>b.</nr-title>
-                      <sen>starfsemi sem felst í útleigu fasteigna eða lausafjár,</sen>
-                    </numart>
-                    <numart nr="c" type="alphabet">
-                      <nr-title>c.</nr-title>
-                      <sen>starfsemi eignarhaldsfélaga,</sen>
-                    </numart>
-                    <numart nr="d" type="alphabet">
-                      <nr-title>d.</nr-title>
-                      <sen>starfsemi fjárfestingarfélaga,</sen>
-                    </numart>
-                    <numart nr="e" type="alphabet">
-                      <nr-title>e.</nr-title>
-                      <sen>starfsemi eftirlitsskyldra aðila skv. 5. gr. laga um greiðslu kostnaðar við opinbert eftirlit með fjármálastarfsemi, nr. 99/1999,</sen>
-                    </numart>
-                    <numart nr="f" type="alphabet">
-                      <nr-title>f.</nr-title>
-                      <sen>starfsemi sem felst í útseldri þjónustu og ráðgjöf sérfræðinga,</sen>
-                    </numart>
-                    <numart nr="g" type="alphabet">
-                      <nr-title>g.</nr-title>
-                      <sen>starfsemi sem felst í kvikmyndaframleiðslu,</sen>
-                    </numart>
-                    <numart nr="h" type="alphabet">
-                      <nr-title>h.</nr-title>
-                      <sen>starfsemi sem felst í mannvirkjagerð og hvers kyns viðhaldi og endurbótum á mannvirkjum,</sen>
-                    </numart>
-                    <numart nr="i" type="alphabet">
-                      <nr-title>i.</nr-title>
-                      <sen>starfsemi tengd fjárfestingu og/eða rekstri hótela, gistiheimila og veitingastaða,</sen>
-                    </numart>
-                    <numart nr="j" type="alphabet">
-                      <nr-title>j.</nr-title>
-                      <sen>starfsemi sem felst í útflutningi og innflutningi vara sem framleiddar eru og þróaðar af öðrum,</sen>
-                    </numart>
-                    <numart nr="k" type="alphabet">
-                      <nr-title>k.</nr-title>
-                      <sen>starfsemi sem felst í hvers kyns námuvinnslu.</sen>
-                    </numart>
-                  </numart>
-                  <numart nr="2" type="numeric">
-                    <nr-title>2.</nr-title>
-                    <sen>Nú verður greiðslufall á kröfu sem vextir, sbr. 2. mgr. 8. gr., hafa verið reiknaðir af og frestast þá greiðsla skatts af slíkum vöxtum.</sen>
-                  </numart>
-                  <numart nr="3" type="numeric">
-                    <nr-title>3.</nr-title>
-                  </numart>
+                  <sen>starfsemi sem felst í útleigu fasteigna eða lausafjár,</sen>
                 </numart>
+                <numart nr="c" type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <sen>starfsemi eignarhaldsfélaga,</sen>
+                </numart>
+                <numart nr="d" type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <sen>starfsemi fjárfestingarfélaga,</sen>
+                </numart>
+                <numart nr="e" type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <sen>starfsemi eftirlitsskyldra aðila skv. 5. gr. laga um greiðslu kostnaðar við opinbert eftirlit með fjármálastarfsemi, nr. 99/1999,</sen>
+                </numart>
+                <numart nr="f" type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <sen>starfsemi sem felst í útseldri þjónustu og ráðgjöf sérfræðinga,</sen>
+                </numart>
+                <numart nr="g" type="alphabet">
+                  <nr-title>g.</nr-title>
+                  <sen>starfsemi sem felst í kvikmyndaframleiðslu,</sen>
+                </numart>
+                <numart nr="h" type="alphabet">
+                  <nr-title>h.</nr-title>
+                  <sen>starfsemi sem felst í mannvirkjagerð og hvers kyns viðhaldi og endurbótum á mannvirkjum,</sen>
+                </numart>
+                <numart nr="i" type="alphabet">
+                  <nr-title>i.</nr-title>
+                  <sen>starfsemi tengd fjárfestingu og/eða rekstri hótela, gistiheimila og veitingastaða,</sen>
+                </numart>
+                <numart nr="j" type="alphabet">
+                  <nr-title>j.</nr-title>
+                  <sen>starfsemi sem felst í útflutningi og innflutningi vara sem framleiddar eru og þróaðar af öðrum,</sen>
+                </numart>
+                <numart nr="k" type="alphabet">
+                  <nr-title>k.</nr-title>
+                  <sen>starfsemi sem felst í hvers kyns námuvinnslu.</sen>
+                </numart>
+              </numart>
+              <numart nr="2" type="numeric">
+                <nr-title>2.</nr-title>
+                <sen>Nú verður greiðslufall á kröfu sem vextir, sbr. 2. mgr. 8. gr., hafa verið reiknaðir af og frestast þá greiðsla skatts af slíkum vöxtum.</sen>
+              </numart>
+              <numart nr="3" type="numeric">
+                <nr-title>3.</nr-title>
               </numart>
             </numart>
           </numart>
@@ -2093,8 +2098,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <sen words="2019, 2020, 2021 og 2022">1</sen>
           </location>
@@ -2102,8 +2105,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <sen words="2018, 2019, 2020 og 2021">1</sen>
           </location>
@@ -2111,8 +2112,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <numart>6</numart>
             <sen before-mark="^Einstaklingur sé hvorki tengdur félaginu né félagasamstæðum þess, tveimur árum fyrir " after-mark=" skráða hlutafjáraukningu, á eftirfarandi hátt:$">1</sen>
@@ -2121,8 +2120,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <numart>6</numart>
             <numart>b</numart>
@@ -2132,8 +2129,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <numart>6</numart>
             <numart>b</numart>
@@ -2153,8 +2148,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <numart>6</numart>
             <numart>b</numart>
@@ -2168,8 +2161,6 @@
             <chapter>3</chapter>
             <art>30</art>
             <subart>1</subart>
-            <numart>6</numart>
-            <numart>c</numart>
             <numart>1</numart>
             <numart>6</numart>
             <numart>b</numart>
@@ -4452,6 +4443,7 @@
     </art>
     <art nr="67">
       <nr-title>67. gr.</nr-title>
+      <ambiguous-bold-text>A.</ambiguous-bold-text>
       <subart nr="1">
         <sen>Persónuafsláttur manna, sem um ræðir í 1. mgr. 66. gr., skal vera 530.466 kr.</sen>
         <sen>Persónuafsláttur skal í upphafi hvers árs taka breytingu í réttu hlutfalli við mismun á vísitölu neysluverðs við upphaf og lok næstliðins tólf mánaða tímabils.</sen>
@@ -4468,6 +4460,7 @@
         <sen>Ráðherra skal í reglugerð setja ákvæði um ráðstöfun persónuafsláttar launamanna á móti staðgreiðslu á tekjuári samkvæmt lögum um staðgreiðslu opinberra gjalda.</sen>
         <sen>Í reglugerðinni skal og kveðið á um hlutfallslega skiptingu persónuafsláttar sem draga skal frá staðgreiðslu á hverju greiðslutímabili.</sen>
         <sen>Persónuafsláttur er ekki millifæranlegur milli mánaða en í reglugerðinni má heimila að ónotaður persónuafsláttur, sem safnast hefur upp á meðan launagreiðandi hefur haft skattkort launamanns undir höndum, nýtist við síðari launagreiðslur, enda séu uppfyllt þau skilyrði um launabókhald og skilagreinar sem nánar verði ákveðin í henni.</sen>
+        <ambiguous-bold-text>B.</ambiguous-bold-text>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2009.128.html" law-nr="128" law-year="2009" law-art="14" nr="1">
@@ -4549,11 +4542,18 @@
         </footnote>
         <footnote nr="8">
           <footnote-sen>Brbákv. XXX, sbr. &lt;a href=&quot;/altext/stjt/2009.128.html&quot;&gt;l. 128/2009, 24. gr.&lt;/a&gt;</footnote-sen>
+          <location type="deletion">
+            <chapter>6</chapter>
+            <art>67</art>
+            <subart>3</subart>
+            <ambiguous-bold-text before-mark="^B. " after-mark="$">1</ambiguous-bold-text>
+          </location>
         </footnote>
       </footnotes>
     </art>
     <art nr="68">
       <nr-title>68. gr.</nr-title>
+      <ambiguous-bold-text>A. Barnabætur.</ambiguous-bold-text>
       <subart nr="1">
         <sen>Með hverju barni innan 18 ára aldurs á tekjuárinu, sem heimilisfast er hér á landi og er á framfæri þeirra sem skattskyldir eru skv. 1. gr., skal ríkissjóður greiða barnabætur til framfæranda barnsins.</sen>
         <sen>Framfærandi telst sá aðili sem hefur barnið hjá sér og annast framfærslu þess í lok tekjuársins.</sen>
@@ -4604,6 +4604,7 @@
         <sen>Barnabótum verður ekki skuldajafnað á móti opinberum gjöldum til ríkissjóðs, opinberum gjöldum til sveitarfélaga og vangreiddum meðlögum til Innheimtustofnunar sveitarfélaga.</sen>
         <sen>Úrskurður ríkisskattstjóra um fyrirframgreiðslu barnabóta skal vera endanleg úrlausn málsins á stjórnsýslustigi.</sen>
         <sen>Heimilt er að gera aðför til tryggingar greiðslu ofgreiddra barnabóta á grundvelli úrlausna eða ákvarðana erlendra dómstóla eða yfirvalda með sáttum gerðum fyrir þeim sem íslenska ríkið hefur að þjóðarétti og með lögum skuldbundið sig til að viðurkenna.</sen>
+        <ambiguous-bold-text>B. Vaxtabætur.</ambiguous-bold-text>
       </subart>
       <subart nr="9">
         <sen>Maður sem skattskyldur er skv. 1. gr. og ber vaxtagjöld af lánum, sem tekin hafa verið vegna kaupa eða byggingar á íbúðarhúsnæði til eigin nota, þar með talin kaup á búseturétti samkvæmt lögum nr. 66/2003 og kaup á eignarhlut í almennri kaupleiguíbúð samkvæmt eldri lögum, á rétt á sérstökum bótum, vaxtabótum, enda geri hann grein fyrir lánum og vaxtagjöldum af þeim í sérstakri greinargerð með skattframtali skv. 1. mgr. 90. gr. í því formi sem ríkisskattstjóri ákveður.</sen>

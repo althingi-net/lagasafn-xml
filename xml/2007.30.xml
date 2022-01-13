@@ -1397,6 +1397,7 @@
       <nr-title>II.</nr-title>
       <subart nr="1">
         <sen>Hafi skipstjórnarmaður eða vélstjórnarmaður skírteini til starfa á skipum sem eru styttri en 12 metrar að skráningarlengd samkvæmt lögum þessum skal hann þar til 1. janúar 2021 eiga rétt á að fá útgefið skírteini til þess að gegna sömu störfum á skipum sem eru 15 metrar að skráningarlengd eða styttri, að uppfylltum öðrum skilyrðum laga þessara og kröfum um lágmarkssiglingatíma eins og nánar er kveðið á um í reglugerð.</sen>
+        <ambiguous-bold-text>Viðauki.</ambiguous-bold-text>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.166.html" law-nr="166" law-year="2019" law-art="3" nr="1">
@@ -1415,11 +1416,16 @@
             </end>
           </location>
         </footnote>
-        <footnote nr="2">
-          <footnote-sen>&lt;/b&gt;&lt;br/&gt;&lt;i&gt;&lt;small&gt;</footnote-sen>
-        </footnote>
-        <footnote nr="3">
+      </footnotes>
+      <footnotes>
+        <footnote nr="1">
           <footnote-sen>Um texta viðaukans vísast til Stjtíð. A 2007, bls. 67.</footnote-sen>
+          <location type="pointer">
+            <chapter>t</chapter>
+            <art>II</art>
+            <subart>1</subart>
+            <ambiguous-bold-text before-mark="^Viðauki. " after-mark="$">1</ambiguous-bold-text>
+          </location>
         </footnote>
       </footnotes>
     </art>
