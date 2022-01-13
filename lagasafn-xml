@@ -40,7 +40,7 @@ from utils import xml_lists_identical
 
 LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
-XML_FILENAME = 'xml/%d.%s.%s.xml' # % (law_year, law_num, parliament_version)
+XML_FILENAME = 'xml/%d.%s.xml' # % (law_year, law_num)
 
 def clean_content(content):
     # Decode ISO-8859-1 character encoding.
@@ -181,14 +181,14 @@ def clean_law(law_num, law_year):
         clean_file.close()
 
 
-def make_xml(law_num, law_year, parliament_version):
+def make_xml(law_num, law_year):
 
     # Make sure that the XML output directory exists.
     if not os.path.isdir(os.path.dirname(XML_FILENAME)):
         os.mkdir(os.path.dirname(XML_FILENAME))
 
     # Construct the output XML object.
-    law = E.law('', {'nr': str(law_num), 'year': str(law_year), 'parliament': parliament_version})
+    law = E.law('', {'nr': str(law_num), 'year': str(law_year)})
 
     # Open and read the cleaned HTML version of the law.
     with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
@@ -1999,7 +1999,7 @@ def make_xml(law_num, law_year, parliament_version):
             sen.append(table)
 
     # Write the XML object to output file.
-    with open(XML_FILENAME % (law_year, law_num, parliament_version), 'w') as f:
+    with open(XML_FILENAME % (law_year, law_num), 'w') as f:
         # Importing a completely different XML library than the one we're
         # using elsewhere in the code is a bit weird, but this is the only one
         # we could find that does pretty printing with proper indenting. That
@@ -2056,7 +2056,7 @@ def process_law(law_id, i, law_count):
     stdout.flush()
 
     try:
-        make_xml(law_num, law_year, CURRENT_PARLIAMENT_VERSION)
+        make_xml(law_num, law_year)
         stdout.write(' done\n')
     except:
         stdout.write( 'failed\n')
