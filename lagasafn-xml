@@ -9,6 +9,7 @@ import roman
 import os
 import sys
 
+
 import settings
 
 from collections import OrderedDict
@@ -26,7 +27,6 @@ from contenthandlers import regexify_markers
 from contenthandlers import separate_sentences
 from contenthandlers import strip_markers
 
-from utils import CURRENT_PARLIAMENT_VERSION
 from utils import Matcher
 from utils import numart_next_nrs
 from utils import determine_month
@@ -38,7 +38,7 @@ from utils import terminal_width_and_height
 from utils import xml_lists_identical
 
 
-LAW_FILENAME = CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
+LAW_FILENAME = settings.CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
 XML_FILENAME = 'xml/%d.%s.xml' # % (law_year, law_num)
 

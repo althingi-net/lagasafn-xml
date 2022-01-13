@@ -1,8 +1,7 @@
 import re
 import roman
+import settings
 import subprocess
-
-CURRENT_PARLIAMENT_VERSION = '151b'
 
 
 def create_url(law_num, law_year):
@@ -15,7 +14,11 @@ def create_url(law_num, law_year):
         fixed_width_law_num = '0%s' % fixed_width_law_num
 
     base_url = 'https://www.althingi.is/lagas/%s/%s%s.html'
-    return base_url % (CURRENT_PARLIAMENT_VERSION, law_year, fixed_width_law_num)
+    return base_url % (
+        settings.CURRENT_PARLIAMENT_VERSION,
+        law_year,
+        fixed_width_law_num
+    )
 
 
 def numart_next_nrs(prev_numart):
