@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from colorama import Fore
+from colorama import Style
 from bs4 import BeautifulSoup
 import codecs
 import json
@@ -2083,9 +2085,9 @@ def process_law(law_id, i, law_count):
 
     try:
         make_xml(law_num, law_year)
-        stdout.write(' done\n')
+        stdout.write(' %sdone%s\n' % (Fore.GREEN, Style.RESET_ALL))
     except:
-        stdout.write( 'failed\n')
+        stdout.write(' %sfailed%s\n' % (Fore.RED, Style.RESET_ALL))
 
         # Git is used to monitor success of parsing new versions of the legal
         # codex. When we fail at parsing a document, the accurate
