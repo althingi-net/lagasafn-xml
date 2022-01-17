@@ -2090,7 +2090,11 @@ def process_law(law_id, i, law_count):
         # Git is used to monitor success of parsing new versions of the legal
         # codex. When we fail at parsing a document, the accurate
         # representation is the absence of that document.
-        os.remove(XML_FILENAME % (law_year, law_num))
+        try:
+            os.remove(XML_FILENAME % (law_year, law_num))
+        except FileNotFoundError:
+            # This does not matter.
+            pass
 
         raise
 
