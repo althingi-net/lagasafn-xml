@@ -29,6 +29,8 @@ from contenthandlers import regexify_markers
 from contenthandlers import separate_sentences
 from contenthandlers import strip_markers
 
+import diff_patch_utils
+
 from utils import Matcher
 from utils import numart_next_nrs
 from utils import determine_month
@@ -42,6 +44,7 @@ from utils import xml_lists_identical
 
 LAW_FILENAME = settings.CURRENT_PARLIAMENT_VERSION + '/%d%s.html' # % (law_year, law_num)
 CLEAN_FILENAME = 'cleaned/%d-%d.html' # % (law_year, law_num)
+PATCHED_FILENAME = 'patched/%d-%d.html'
 XML_FILENAME = 'xml/%d.%s.xml' # % (law_year, law_num)
 
 def clean_content(content):
@@ -183,6 +186,19 @@ def clean_law(law_num, law_year):
         clean_file.close()
 
 
+def patch_law(law_num, law_year):
+    if not os.path.isdir(os.path.dirname(PATCHED_FILENAME)):
+        os.mkdir(os.path.dirname(PATCHED_FILENAME))
+
+    filename = CLEAN_FILENAME % (law_year, law_num)
+    patch_path = os.path.join(
+        'patches', settings.CURRENT_PARLIAMENT_VERSION, '%d-%d.html.patch' % (law_year, law_num)
+    )
+    patched_content = diff_patch_utils.do_patch(filename, patch_path)
+    with open(PATCHED_FILENAME % (law_year, law_num), 'w') as patched_file:
+        patched_file.write(patched_content)
+
+
 def make_xml(law_num, law_year):
 
     # Make sure that the XML output directory exists.
@@ -192,10 +208,16 @@ def make_xml(law_num, law_year):
     # Construct the output XML object.
     law = E.law('', {'nr': str(law_num), 'year': str(law_year)})
 
-    # Open and read the cleaned HTML version of the law.
-    with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
-        lines = super_iter(clean_file.readlines())
-        clean_file.close()
+    # Check if we have a patched cleaned HTML version of the law.
+    if os.path.isfile(PATCHED_FILENAME % (law_year, law_num)):
+        with open(PATCHED_FILENAME % (law_year, law_num)) as patched_file:
+            lines = super_iter(patched_file.readlines())
+            patched_file.close()
+    else:
+        # Open and read the cleaned HTML version of the law.
+        with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
+            lines = super_iter(clean_file.readlines())
+            clean_file.close()
 
     # Keeps track of the turn of events. We can query this list to check for
     # example whether the name of the document has been processed, or what the
@@ -2079,6 +2101,16 @@ def process_law(law_id, i, law_count):
     stdout.write('cleaning...')
     stdout.flush()
     clean_law(law_num, law_year)
+
+    # check if we have patch for current law and parliament version
+    patch_path = os.path.join(
+        'patches', settings.CURRENT_PARLIAMENT_VERSION, '%d-%d.html.patch' % (law_year, law_num)
+    )
+    if os.path.isfile(patch_path):
+        # use patch file to create patched version of cleaned file
+        stdout.write('patching...')
+        stdout.flush()
+        patch_law(law_num, law_year)
 
     stdout.write('making XML...')
     stdout.flush()

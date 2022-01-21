@@ -50,6 +50,48 @@ The version is the third value in the XML file's name. For example, `1944.33.148
 
 **Please note that this is still a work in progress and the XML is not guaranteed to be correct. In fact, not all laws are yet available due to unsolved problems with parsing them.** To see how many of them are available, you can run the script with the `-E` option, which will show you what errors remain processing which laws, as well as success/failure statistics.
 
+## Patching errors in data
+
+Published law is unfortunately not always perfect, in fact we see quite frequently errors of some kind that cause issues to the parsing process. When an error is somewhat easily fixable we create a patch for the cleaned HTML file and store it for the given published law version.
+
+### Patch creation example
+
+Let's say the current published law version is `151c` and we want to fix some error in law `1995-134`, then we first run:
+
+```bash
+mkdir -p patched
+cp cleaned/1995-134.html patched/1995-134.html
+```
+
+then we fix the error in `parsed/1995-134.html` and save it, then run:
+
+```bash
+mkdir -p patches/151c
+# if you have GNU diff at your disposal then you can just run
+diff -U0 "cleaned/1995-134.html" "patched/1995-134.html" > "patches/151c/1995-134.html.patch"
+# or if you don't have GNU diff you can run
+python diff_patch_utils.py -mp -fa "cleaned/1995-134.html" -fb "patched/1995-134.html" -o "patches/151c/1995-134.html.patch"
+```
+
+Now if we want to document what the error was about we can open the `patches/151c/1995-134.html.patch` file and add comments in the header on what the issue was. Like this for example:
+
+```
+# Two square brackets closed but only one opened
+#
+# Looked it up, new closing square bracket should have opening square bracket for whole 19. gr. a.
+# See 19. gr. a, https://www.althingi.is/lagas/151c/1995134.html
+#     + 1) https://www.althingi.is/altext/stjt/2021.018.html
+#     + 2) https://www.althingi.is/altext/stjt/2005.062.html#G13
+--- cleaned/1995-134.html	2022-01-21 18:16:00.690116352 +0000
++++ patched/1995-134.html	2022-01-21 19:06:13.395058432 +0000
+@@ -1101 +1101 @@
+-   [19. gr. a.
++   [[19. gr. a.
+
+```
+
+and you're done. You can push the new patch file to the repo, or create a pull request.
+
 ## License
 
 See the document `LICENSE.md`. (It's MIT.)
