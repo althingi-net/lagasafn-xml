@@ -4,6 +4,7 @@ from colorama import Style
 from bs4 import BeautifulSoup
 import codecs
 import json
+import pathlib
 import urllib
 import re
 import roman
@@ -2172,6 +2173,12 @@ def main(argv):
 
     if len(law_ids) == 0 and not display_errors:
         usage(argv[0], 'No files matched the given criteria.')
+
+    # clear contents of patched directory so we don't accidentally have outdated patched files when
+    # for example change to another parliament version
+    for path in pathlib.Path(os.path.dirname(PATCHED_FILENAME)).iterdir():
+        if path.is_file():
+            path.unlink()  # unlink is unix-"speak" for remove/delete
 
     law_count = len(law_ids)
     for i, law_id in enumerate(law_ids):
