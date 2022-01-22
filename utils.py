@@ -4,6 +4,46 @@ import settings
 import subprocess
 
 
+class UnexpectedClosingBracketException(Exception):
+    def __str__(self):
+
+        # We'll try to figure out enough information for the user to be able
+        # to locate it in the legal text, so that the problem can be examined,
+        # the law manually patched and Parliament notified about the error.
+
+        try:
+            node = self.args[0]
+        except:
+            return Exception('LegalFormatException expects an argument')
+
+        # Work our way up the node hierarchy to construct a list describing
+        # the problem node's lineage.
+        trail = [node]
+        parent = node.getparent()
+        while parent.tag != 'law':
+            trail.insert(0, parent)
+            parent = parent.getparent()
+
+        # Construct the error message shown when the Exception is thrown.
+        msg = 'Unexpected closing bracket. Location: '
+        for i, node in enumerate(trail):
+
+            # Show arrow between parent/child relationships.
+            if i > 0:
+                msg += ' -> '
+
+            # Construct tag description.
+            msg += '[%s' % node.tag
+            if 'nr' in node.attrib:
+                msg += ':%s' % node.attrib['nr']
+            msg += ']'
+
+        # Append the actual text containing the problem.
+        msg += ', in input text "%s"' % node.text
+
+        return msg
+
+
 def create_url(law_num, law_year):
     '''
     Creates a URL to Alþingi's website from a law_num and law_year. Used for

@@ -32,6 +32,7 @@ from contenthandlers import strip_markers
 
 import diff_patch_utils
 
+from utils import UnexpectedClosingBracketException
 from utils import Matcher
 from utils import numart_next_nrs
 from utils import determine_month
@@ -1574,7 +1575,25 @@ def make_xml(law_num, law_year):
 
                             # We have figured out the starting location in the
                             # former clause of the if-sentence.
-                            started_at = opening_locations.pop()
+                            try:
+                                started_at = opening_locations.pop()
+                            except IndexError:
+                                # Error: We've run into an unexpected closing
+                                # bracket. This happens when Parliament
+                                # updates a law, and the changes are marked in
+                                # the HTML files, but the corresponding
+                                # opening bracket is missing. Typically, a law
+                                # is being changed that has already been
+                                # changed, and there should be two opening
+                                # bracket ("[[") to mark the beginning of a
+                                # change to a change, but there is only one
+                                # ("[") due to human error.
+                                #
+                                # Please see the chapter "Patching errors in
+                                # data" in the `README.md`.
+                                #
+                                # This exception spouts some details.
+                                raise UnexpectedClosingBracketException(desc)
 
                             # Get the ancestors of the node (see function's
                             # comments for details.)
