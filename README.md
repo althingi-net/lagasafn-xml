@@ -63,7 +63,7 @@ mkdir -p patched
 cp cleaned/1995-134.html patched/1995-134.html
 ```
 
-then we fix the error in `parsed/1995-134.html` and save it, then run:
+then we fix the error in `patched/1995-134.html` and save it, then run:
 
 ```bash
 mkdir -p patches/151c
