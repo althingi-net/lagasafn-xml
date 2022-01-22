@@ -2174,11 +2174,14 @@ def main(argv):
     if len(law_ids) == 0 and not display_errors:
         usage(argv[0], 'No files matched the given criteria.')
 
-    # clear contents of patched directory so we don't accidentally have outdated patched files when
-    # for example change to another parliament version
-    for path in pathlib.Path(os.path.dirname(PATCHED_FILENAME)).iterdir():
-        if path.is_file():
-            path.unlink()  # unlink is unix-"speak" for remove/delete
+    # Clear contents of patched-directory so we don't accidentally have
+    # outdated patched files when for example changing to another parliament version.
+    patch_dir = os.path.dirname(PATCHED_FILENAME)
+    if os.path.isdir(patch_dir):
+        for path in pathlib.Path(patch_dir).iterdir():
+            if path.is_file():
+                # unlink is unix-"speak" for remove/delete
+                path.unlink()
 
     law_count = len(law_ids)
     for i, law_id in enumerate(law_ids):
