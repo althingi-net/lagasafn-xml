@@ -23,13 +23,9 @@ to include in diff file for good safety measures, in some usecases it can be arg
 include no additional lines for context, though in other cases like when using git apply it's
 officially discouraged and obstructed yet bypassable using the --unidiff-zero flag.
 
-Diff is implemented using the standard python library difflib, note that files a.txt and b.txt are
-fully loaded into memory and then the diff is generated, kinda silly difflib doesn't provide the
-option to read in the a.txt and b.txt line by line while generating the diff. If working with very
-big files we might want to reimplement diff without difflib and read a.txt and b.txt line by line
-instead of all at once.
+Diff unified format provided by the standard python library difflib.
 
-Patch implemented in pure python.
+Patch implemented in pure python. Assumes comments in lines starting with "#".
 '''
 
 
@@ -48,7 +44,6 @@ def do_diff_str(input_a: str, input_b: str, context: int = 0) -> str:
         _, _ = next(diffs), next(diffs)  # trim top two header lines
     except StopIteration:
         pass
-    # diffs = list(diffs); print(diffs)
     return ''.join([d if d[-1] == '\n' else d + '\n' + no_eol + '\n' for d in diffs])
 
 
@@ -68,8 +63,6 @@ def do_diff(
     ts_format = '%Y-%m-%d %H:%M:%S.%f'
     # Note: we assume pathlib.Path().stat() to have POSIX timestamps (hence tz being utc), however
     # this unfortunately varies between operating systems
-    # https://docs.python.org/3/library/pathlib.html
-    # https://docs.python.org/3/library/os.html#os.stat_result
     tz_utc = datetime.timezone.utc
     a_mod_ts_ns = fname_a.stat().st_mtime_ns
     b_mod_ts_ns = fname_b.stat().st_mtime_ns
