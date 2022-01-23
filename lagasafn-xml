@@ -537,6 +537,7 @@ def make_xml(law_num, law_year):
 
                     # check for possible roman number range numbering which are seen when multiple
                     # articles have been removed and are thus collectively empty
+                    has_ranged_roman = False
                     if '–' in maybe_roman_nr:
                         maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split('–')
                         maybe_roman_nr_a = maybe_roman_nr_a.strip('.')
@@ -549,7 +550,8 @@ def make_xml(law_num, law_year):
                                 {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
                                 E('nr-title', chapter_name)
                             )
-                    else:
+                            has_ranged_roman = True
+                    if has_ranged_roman is False:
                         nr = str(roman.fromRoman(maybe_roman_nr))
                         chapter = E.chapter(
                             {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
