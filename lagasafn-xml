@@ -998,6 +998,31 @@ def make_xml(law_num, law_year):
                 scroll_until(lines, '<br/>')
                 continue
 
+            # In 6. tölul. 1. gr. laga nr. 119/2018, the removal of previous
+            # numarts is communicated differently than above (3. gr. laga nr.
+            # 160/2010). In this case, the <span> that normally contains the
+            # numart_nr contains nothing, not even the deletion marker
+            # (literal string "…"). Instead, the deletion marker comes after
+            # the </span> that immediately follows the opening <span>.
+            #
+            # To deal with it, we will check if the detected numart_nr is
+            # "</span>", which makes no sense, check the next line for the
+            # deletion marker, and if it's there, we'll respond similarly to
+            # how we respond to 3. gr. laga nr. 160/2010 (which was
+            # immediately above this comment on 2022-01-23).
+            elif numart_nr == '</span>' and lines.peek(2).strip() == '…':
+                scroll_until(lines, '</span>')
+                content = collect_until(lines, '<br/>')
+                prev_numart.getparent().append(E(
+                    'numart',
+                    {
+                        'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
+                        'type': 'removed'
+                    },
+                    E('sen', content)
+                ))
+                continue
+
             # Dictates where we will place this numart.
             parent = None
 
