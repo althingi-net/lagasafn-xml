@@ -13,7 +13,7 @@ class UnexpectedClosingBracketException(Exception):
 
         try:
             node = self.args[0]
-        except:
+        except IndexError:
             return Exception('LegalFormatException expects an argument')
 
         # Work our way up the node hierarchy to construct a list describing
@@ -82,7 +82,7 @@ def numart_next_nrs(prev_numart):
                 str(int(prev_numart_nr)) + 'a',
             ]
 
-        elif matcher.check(prev_numart_nr, '(\d+)-(\d+)'):
+        elif matcher.check(prev_numart_nr, r'(\d+)-(\d+)'):
             # Numarts may be ranges, (see 145. gr. laga nr. 108/2007), in
             # which case we only need to concern ourselves with the latter
             # number to determine the expected values.
@@ -335,14 +335,15 @@ class Matcher():
 
     Usage:
 
-    if matcher.check(line, '<tag goo="(\d+)" splah="(\d+)">'):
+    if matcher.check(line, r'<tag goo="(\d+)" splah="(\d+)">'):  # noqa
         goo, splah = matcher.result()
     '''
 
     match = None
+
     def check(self, line, test_string):
         self.match = re.match(test_string, line)
-        return self.match != None
+        return self.match is not None
 
     def result(self):
         return self.match.groups()
