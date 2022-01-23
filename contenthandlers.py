@@ -1,6 +1,5 @@
 import json
 import re
-import roman
 
 from lxml.builder import E
 
@@ -9,6 +8,7 @@ from utils import is_roman
 from utils import order_among_siblings
 from utils import super_iter
 from utils import terminal_width_and_height
+
 
 def regexify_markers(text):
     '''
@@ -336,7 +336,7 @@ def separate_sentences(content):
             # sub-article, numerical article or whatever.
             # Example:
             #    3. mgr. 4. tölul. 1. gr.
-            last_word = chunk[chunk.rfind(' ')+1:]
+            last_word = chunk[chunk.rfind(' ') + 1:]
             if last_word in reference_shorthands:
                 next_chunk2 = chunks.peek(2)
                 if next_chunk.strip().isdigit() and next_chunk2.strip() in reference_shorthands:
@@ -506,18 +506,18 @@ def separate_sentences(content):
                 # superscript, but this is in fact where commas are placed
                 # when deletions occur immediately before them. In other
                 # words, we'll want periods to act like commas.
-                sen = sen[0:deletion_found+1] + '.' + sen[deletion_found+2:]
+                sen = sen[0:deletion_found + 1] + '.' + sen[deletion_found + 2:]
 
                 # Find the location where we want to split, which is
                 # immediately following the deletion marker's next closing
                 # superscript tag. BTW: len('</sup>') == 6
-                split_loc = sen.find('</sup>', deletion_found+1) + 6
+                split_loc = sen.find('</sup>', deletion_found + 1) + 6
 
                 # Mark the place in the sentence where we intend to split.
                 # We'll also add a period to denote the end of the sentence in
                 # the text; the lack of which is responsible for us having to
                 # perform this peculiar operation.
-                sen = sen[0:split_loc] + '[SPLIT]' + sen[split_loc+1:]
+                sen = sen[0:split_loc] + '[SPLIT]' + sen[split_loc + 1:]
 
             cursor = deletion_found + 1
             deletion_found = sen.find('…', cursor)
