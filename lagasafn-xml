@@ -960,6 +960,18 @@ def make_xml(law_num, law_year):
                 from_numart_nr, to_numart_nr = matcher.result()
                 numart_nr = '%s-%s' % (from_numart_nr, to_numart_nr)
 
+            # The previous numart gives us context for decision-making for
+            # this numart. It is only filled if the last thing we processed
+            # was a numart as well (in trail[-1]), for example whether this is
+            # actually a sub-numart or a super-numart. Otherwise it will
+            # remain None, indicating that this is the first numart being
+            # processed this time around.
+            if trail[-1] == 'numart':
+                # Set the previous numart before current numart gets created.
+                prev_numart = numart
+            else:
+                prev_numart = None
+
             # This is only known to happen in 3. gr. laga nr. 160/2010. A
             # numart has been removed and the numbers of its following numarts
             # updated accordingly. We'll just append an empty numart with a
@@ -975,8 +987,7 @@ def make_xml(law_num, law_year):
             # node is also added for the deletion marker to be addable.
             if numart_nr == '':
                 content = collect_until(lines, '</span>')
-                parent = prev_numart.getparent()
-                parent.append(E(
+                prev_numart.getparent().append(E(
                     'numart',
                     {
                         'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
@@ -989,18 +1000,6 @@ def make_xml(law_num, law_year):
 
             # Dictates where we will place this numart.
             parent = None
-
-            # The previous numart gives us context for decision-making for
-            # this numart. It is only filled if the last thing we processed
-            # was a numart as well (in trail[-1]), for example whether this is
-            # actually a sub-numart or a super-numart. Otherwise it will
-            # remain None, indicating that this is the first numart being
-            # processed this time around.
-            if trail[-1] == 'numart':
-                # Set the previous numart before current numart gets created.
-                prev_numart = numart
-            else:
-                prev_numart = None
 
             # The variable `special_roman` is true under the unique
             # circumstances that an alphabetic numart turns from "h" to a new
