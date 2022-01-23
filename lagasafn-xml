@@ -2124,7 +2124,7 @@ def make_xml(law_num, law_year):
 
 def process_law(law_id, i, law_count):
 
-    nr = str(i)
+    nr = str(i+1)
     while len(nr) < 4:
         nr = ' %s' % nr
 
