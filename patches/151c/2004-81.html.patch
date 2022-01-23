@@ -1,0 +1,13 @@
+# missing footnote for 3)
+# figured out what footnote was missing by comparing the following two pages:
+# - https://www.althingi.is/lagas/151c/2004081.html
+# - https://www.althingi.is/lagas/151b/2004081.html
+--- cleaned/2004-81.html	2022-01-23 15:04:03.206517992 +0000
++++ patched/2004-81.html	2022-01-23 15:14:29.037112576 +0000
+@@ -256,0 +257,6 @@
++    <sup style="font-size:60%">
++     3)
++    </sup>
++    <a href="/altext/stjt/2011.126.html">
++     L. 126/2011, 389. gr.
++    </a>
