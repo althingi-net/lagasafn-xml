@@ -535,11 +535,26 @@ def make_xml(law_num, law_year):
                         ''
                     ).strip().strip('.')
 
-                    nr = str(roman.fromRoman(maybe_roman_nr))
-                    chapter = E.chapter(
-                        {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
-                        E('nr-title', chapter_name)
-                    )
+                    # check for possible roman number range numbering which are seen when multiple
+                    # articles have been removed and are thus collectively empty
+                    if '–' in maybe_roman_nr:
+                        maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split('–')
+                        maybe_roman_nr_a = maybe_roman_nr_a.strip('.')
+                        if is_roman(maybe_roman_nr_a) and is_roman(maybe_roman_nr_b):
+                            nr_a = roman.fromRoman(maybe_roman_nr_a)
+                            nr_b = roman.fromRoman(maybe_roman_nr_b)
+                            nr = '%s-%s' % (nr_a, nr_b)
+                            roman_nr = '%s-%s' % (roman.toRoman(nr_a), roman.toRoman(nr_b))
+                            chapter = E.chapter(
+                                {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
+                                E('nr-title', chapter_name)
+                            )
+                    else:
+                        nr = str(roman.fromRoman(maybe_roman_nr))
+                        chapter = E.chapter(
+                            {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
+                            E('nr-title', chapter_name)
+                        )
                 except roman.InvalidRomanNumeralError:
                     # Nope! It's a name.
                     nr = None
