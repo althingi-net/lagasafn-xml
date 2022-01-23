@@ -56,6 +56,8 @@ Published law is unfortunately not always perfect, in fact we see quite frequent
 
 ### Patch creation example
 
+**Note**: In order to create the "cleaned" version, you must first attempt to process a law. Example, by running `./lagasafn-xml 134/1995`, the file `cleaned/1995-134.html` will be created, and it is this latter file that you then patch.
+
 Let's say the current published law version is `151c` and we want to fix some error in law `1995-134`, then we first run:
 
 ```bash
