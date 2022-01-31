@@ -2244,8 +2244,9 @@ def usage(exec_name, message=None):
     stderr.write('Usage: %s [law_number>/<year>] [-a] [-E]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
-    stderr.write('    -a    Process all available laws.\n')
-    stderr.write('    -E    Display errors recorded to errormap.\n')
+    stderr.write('    --help  Display this help message.\n')
+    stderr.write('    -a      Process all available laws.\n')
+    stderr.write('    -E      Display errors recorded to errormap.\n')
     stderr.write('\n')
     if message:
         stderr.write('Error: %s\n' % message)
@@ -2255,6 +2256,9 @@ def usage(exec_name, message=None):
 def main(argv):
 
     display_errors = '-E' in argv
+
+    if '--help' in argv:
+        usage(argv[0])
 
     law_ids = []
     for arg in argv:
