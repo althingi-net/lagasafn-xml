@@ -2256,13 +2256,6 @@ def main(argv):
                     law_num = int(filename[4:7])
                     law_id = '%d/%d' % (law_num, law_year)
                     law_ids.append(law_id)
-        elif re.match(r'^\d{4}$', arg):
-            for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
-                if re.match(r'^%s\d{3}\.html$' % arg, filename):
-                    law_year = int(filename[0:4])
-                    law_num = int(filename[4:7])
-                    law_id = '%d/%d' % (law_num, law_year)
-                    law_ids.append(law_id)
         elif re.match(r'^\d{1,4}\/\d{4}$', arg):
             law_ids.append(arg)
 
