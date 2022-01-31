@@ -2313,6 +2313,10 @@ def usage(exec_name, message=None):
 
 def main(argv):
 
+    # A list of valid options so that we'll know when something is thrown in
+    # that we don't know what to do with.
+    valid_options = ['--help']
+
     if '--help' in argv:
         usage(argv[0])
 
@@ -2320,9 +2324,11 @@ def main(argv):
     law_ids = []
 
     # Add things in command line that match the pattern for a law_id.
-    for arg in argv:
+    for arg in argv[1:]:
         if re.match(r'^\d{1,4}\/\d{4}$', arg):
             law_ids.append(arg)
+        elif arg not in valid_options:
+            usage(argv[0], 'Unknown option "%s"' % arg)
 
     # If nothing is selected, we'll process everything.
     if len(law_ids) == 0:
