@@ -2241,11 +2241,10 @@ def get_available_law_ids():
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [-a] [-e] [-E]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>] [-a] [-E]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    -a    Process all available laws.\n')
-    stderr.write('    -e    Record errors to file (errormap.json).\n')
     stderr.write('    -E    Display errors recorded to errormap.\n')
     stderr.write('\n')
     if message:
