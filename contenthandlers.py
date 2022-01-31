@@ -1,4 +1,5 @@
 import json
+import os
 import re
 
 from lxml.builder import E
@@ -8,6 +9,8 @@ from utils import is_roman
 from utils import order_among_siblings
 from utils import super_iter
 from utils import terminal_width_and_height
+
+SPLITMAP_FILENAME = os.path.join('data', 'json-maps', 'splitmap.json')
 
 
 def regexify_markers(text):
@@ -443,7 +446,7 @@ def separate_sentences(content):
         # The "splitmap" keeps a record of which combinations of pre_text and
         # post_text classify as split (two sentences) or unsplit (two
         # sentences). Here we read the splitmap to check the current text.
-        with open('splitmap.json', 'r') as f:
+        with open(SPLITMAP_FILENAME, 'r') as f:
             splitmap = json.load(f)
 
         # This is the variable that will be stored in "splitmap.json". It's
@@ -478,7 +481,7 @@ def separate_sentences(content):
 
         # Write the answer.
         splitmap[combined_text] = split
-        with open('splitmap.json', 'w') as f:
+        with open(SPLITMAP_FILENAME, 'w') as f:
             json.dump(splitmap, f)
 
         return split
