@@ -4,7 +4,6 @@ from colorama import Style
 from bs4 import BeautifulSoup
 import codecs
 import json
-import pathlib
 import re
 import roman
 
@@ -2200,6 +2199,12 @@ def process_law(law_id, i, law_count):
     stdout.flush()
     clean_law(law_num, law_year)
 
+    # Delete existing patch file so we don't accidentally have outdated
+    # patched files when for example changing to another parliament version.
+    patched_path = PATCHED_FILENAME % (law_year, law_num)
+    if os.path.isfile(patched_path):
+        os.unlink(patched_path)
+
     # check if we have patch for current law and parliament version
     patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
     if os.path.isfile(patch_path):
@@ -2353,15 +2358,6 @@ def main(argv):
     # If nothing is selected, we'll process everything.
     if len(law_ids) == 0:
         law_ids = get_available_law_ids()
-
-    # Clear contents of patched-directory so we don't accidentally have
-    # outdated patched files when for example changing to another parliament version.
-    patch_dir = os.path.dirname(PATCHED_FILENAME)
-    if os.path.isdir(patch_dir):
-        for path in pathlib.Path(patch_dir).iterdir():
-            if path.is_file():
-                # unlink is unix-"speak" for remove/delete
-                path.unlink()
 
     law_count = len(law_ids)
     for i, law_id in enumerate(law_ids):
