@@ -2240,12 +2240,69 @@ def get_available_law_ids():
     return law_ids
 
 
+# Displays errors known according to errormap.
+def display_errors(law_ids):
+    with open(ERRORMAP_FILENAME, 'r') as f:
+        errormap = json.load(f, object_pairs_hook=OrderedDict)
+
+        # Counters.
+        failures = 0
+        successes = 0
+
+        # The way we want to display this is basically the opposite of
+        # how we want to store it. We shall invert the errormap.
+        inverted_errormap = OrderedDict()
+        for law_id in errormap.keys():
+            # Ignore errors that are not a part of the laws currently
+            # being requested for processing.
+            if law_id not in law_ids:
+                continue
+
+            error_msg = errormap[law_id]
+
+            if error_msg:
+                failures += 1
+            else:
+                # If there is no error, it's success.
+                successes += 1
+                continue
+
+            if error_msg not in inverted_errormap:
+                inverted_errormap[error_msg] = []
+
+            inverted_errormap[error_msg].append(law_id)
+
+        # Sort errors so that the most common ones are shown last.
+        inverted_errormap = OrderedDict(sorted(
+            inverted_errormap.items(),
+            key=lambda x: len(x[1])
+        ))
+
+        width, height = terminal_width_and_height()
+        for error_msg in inverted_errormap.keys():
+            stdout.write('\n')
+            stdout.write('%s\n' % ('-' * width))
+            stdout.write('%s\n' % error_msg)
+            stdout.write('Errors: %d\n' % len(inverted_errormap[error_msg]))
+            stdout.write('\n')
+            for law_id in inverted_errormap[error_msg]:
+                stdout.write(' - %s' % law_id)
+
+        stdout.write('\n')
+        stdout.write('%s\n' % ('-' * width))
+        stdout.write('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.\n' % (
+            successes + failures,
+            successes,
+            failures,
+            100 * (successes / (successes + failures))
+        ))
+
+
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [-E]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    --help  Display this help message.\n')
-    stderr.write('    -E      Display errors recorded to errormap.\n')
     stderr.write('\n')
     if message:
         stderr.write('Error: %s\n' % message)
@@ -2253,8 +2310,6 @@ def usage(exec_name, message=None):
 
 
 def main(argv):
-
-    display_errors = '-E' in argv
 
     if '--help' in argv:
         usage(argv[0])
@@ -2313,61 +2368,7 @@ def main(argv):
                 json.dump(errormap, f)
 
     # List the errors and identify laws in which they occurred.
-    if display_errors:
-        with open(ERRORMAP_FILENAME, 'r') as f:
-            errormap = json.load(f, object_pairs_hook=OrderedDict)
-
-            # Counters.
-            failures = 0
-            successes = 0
-
-            # The way we want to display this is basically the opposite of
-            # how we want to store it. We shall invert the errormap.
-            inverted_errormap = OrderedDict()
-            for law_id in errormap.keys():
-                # Ignore errors that are not a part of the laws currently
-                # being requested for processing.
-                if law_id not in law_ids:
-                    continue
-
-                error_msg = errormap[law_id]
-
-                if error_msg:
-                    failures += 1
-                else:
-                    # If there is no error, it's success.
-                    successes += 1
-                    continue
-
-                if error_msg not in inverted_errormap:
-                    inverted_errormap[error_msg] = []
-
-                inverted_errormap[error_msg].append(law_id)
-
-            # Sort errors so that the most common ones are shown last.
-            inverted_errormap = OrderedDict(sorted(
-                inverted_errormap.items(),
-                key=lambda x: len(x[1])
-            ))
-
-            width, height = terminal_width_and_height()
-            for error_msg in inverted_errormap.keys():
-                stdout.write('\n')
-                stdout.write('%s\n' % ('-' * width))
-                stdout.write('%s\n' % error_msg)
-                stdout.write('Errors: %d\n' % len(inverted_errormap[error_msg]))
-                stdout.write('\n')
-                for law_id in inverted_errormap[error_msg]:
-                    stdout.write(' - %s' % law_id)
-
-            stdout.write('\n')
-            stdout.write('%s\n' % ('-' * width))
-            stdout.write('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.\n' % (
-                successes + failures,
-                successes,
-                failures,
-                100 * (successes / (successes + failures))
-            ))
+    display_errors(law_ids)
 
 
 try:
