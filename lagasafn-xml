@@ -2299,7 +2299,9 @@ def display_errors(law_ids):
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>] [law_number>/<year>]...\n' % exec_name)
+    stderr.write('\n')
+    stderr.write('Running without options or specific laws will process all available laws.\n')
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    --help  Display this help message.\n')
