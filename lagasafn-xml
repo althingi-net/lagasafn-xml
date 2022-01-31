@@ -2229,6 +2229,17 @@ def process_law(law_id, i, law_count):
         raise
 
 
+def get_available_law_ids():
+    law_ids = []
+    for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
+        if re.match(r'^\d{7}\.html$', filename):
+            law_year = int(filename[0:4])
+            law_num = int(filename[4:7])
+            law_id = '%d/%d' % (law_num, law_year)
+            law_ids.append(law_id)
+    return law_ids
+
+
 def usage(exec_name, message=None):
     stderr.write('Usage: %s [law_number>/<year>] [-a] [-e] [-E]\n' % exec_name)
     stderr.write('\n')
@@ -2250,12 +2261,7 @@ def main(argv):
     law_ids = []
     for arg in argv:
         if arg == '-a':
-            for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
-                if re.match(r'^\d{7}\.html$', filename):
-                    law_year = int(filename[0:4])
-                    law_num = int(filename[4:7])
-                    law_id = '%d/%d' % (law_num, law_year)
-                    law_ids.append(law_id)
+            law_ids = get_available_law_ids()
         elif re.match(r'^\d{1,4}\/\d{4}$', arg):
             law_ids.append(arg)
 
