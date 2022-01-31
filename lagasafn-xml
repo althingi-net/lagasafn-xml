@@ -2240,6 +2240,18 @@ def get_available_law_ids():
     return law_ids
 
 
+def get_broken_law_ids():
+    law_ids = []
+
+    with open(ERRORMAP_FILENAME, 'r') as f:
+        errormap = json.load(f, object_pairs_hook=OrderedDict)
+        for law_id in errormap.keys():
+            if errormap[law_id] is not None:
+                law_ids.append(law_id)
+
+    return law_ids
+
+
 # Displays errors known according to errormap.
 def display_errors(law_ids):
     with open(ERRORMAP_FILENAME, 'r') as f:
@@ -2304,7 +2316,9 @@ def usage(exec_name, message=None):
     stderr.write('Running without options or specific laws will process all available laws.\n')
     stderr.write('\n')
     stderr.write('Options:\n')
-    stderr.write('    --help  Display this help message.\n')
+    stderr.write('    --help          Display this help message.\n')
+    stderr.write('\n')
+    stderr.write('    --try-broken    Try processing laws known to have failed.\n')
     stderr.write('\n')
     if message:
         stderr.write('Error: %s\n' % message)
@@ -2315,7 +2329,7 @@ def main(argv):
 
     # A list of valid options so that we'll know when something is thrown in
     # that we don't know what to do with.
-    valid_options = ['--help']
+    valid_options = ['--help', '--try-broken']
 
     if '--help' in argv:
         usage(argv[0])
@@ -2323,12 +2337,18 @@ def main(argv):
     # Container for laws that are about to be processed.
     law_ids = []
 
-    # Add things in command line that match the pattern for a law_id.
-    for arg in argv[1:]:
-        if re.match(r'^\d{1,4}\/\d{4}$', arg):
-            law_ids.append(arg)
-        elif arg not in valid_options:
-            usage(argv[0], 'Unknown option "%s"' % arg)
+    if '--try-broken' in argv:
+        law_ids = get_broken_law_ids()
+        if len(law_ids) == 0:
+            stdout.write('Hooray! Nothing seems broken!\n')
+            quit()
+    else:
+        # Add things in command line that match the pattern for a law_id.
+        for arg in argv[1:]:
+            if re.match(r'^\d{1,4}\/\d{4}$', arg):
+                law_ids.append(arg)
+            elif arg not in valid_options:
+                usage(argv[0], 'Unknown option "%s"' % arg)
 
     # If nothing is selected, we'll process everything.
     if len(law_ids) == 0:
