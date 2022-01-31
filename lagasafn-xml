@@ -2321,6 +2321,11 @@ def main(argv):
             # how we want to store it. We shall invert the errormap.
             inverted_errormap = OrderedDict()
             for law_id in errormap.keys():
+                # Ignore errors that are not a part of the laws currently
+                # being requested for processing.
+                if law_id not in law_ids:
+                    continue
+
                 error_msg = errormap[law_id]
 
                 if error_msg:
