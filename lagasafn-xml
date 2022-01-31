@@ -2241,11 +2241,10 @@ def get_available_law_ids():
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [-a] [-E]\n' % exec_name)
+    stderr.write('Usage: %s [law_number>/<year>] [-E]\n' % exec_name)
     stderr.write('\n')
     stderr.write('Options:\n')
     stderr.write('    --help  Display this help message.\n')
-    stderr.write('    -a      Process all available laws.\n')
     stderr.write('    -E      Display errors recorded to errormap.\n')
     stderr.write('\n')
     if message:
@@ -2260,15 +2259,17 @@ def main(argv):
     if '--help' in argv:
         usage(argv[0])
 
+    # Container for laws that are about to be processed.
     law_ids = []
+
+    # Add things in command line that match the pattern for a law_id.
     for arg in argv:
-        if arg == '-a':
-            law_ids = get_available_law_ids()
-        elif re.match(r'^\d{1,4}\/\d{4}$', arg):
+        if re.match(r'^\d{1,4}\/\d{4}$', arg):
             law_ids.append(arg)
 
-    if len(law_ids) == 0 and not display_errors:
-        usage(argv[0], 'No files matched the given criteria.')
+    # If nothing is selected, we'll process everything.
+    if len(law_ids) == 0:
+        law_ids = get_available_law_ids()
 
     # Clear contents of patched-directory so we don't accidentally have
     # outdated patched files when for example changing to another parliament version.
