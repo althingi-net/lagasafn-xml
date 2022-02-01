@@ -44,6 +44,21 @@ class UnexpectedClosingBracketException(Exception):
         return msg
 
 
+# Returns a list of law_ids sorted first by the year ("2020" in "123/2020") as
+# the first key, and the legal number as the second key ("123" in "123/2020").
+# Law number typecasted to integer to get canonical order.
+def sorted_law(law_ids):
+    return list(reversed(
+        sorted(
+            law_ids,
+            key=lambda law_id: (
+                law_id[law_id.find('/')+1:],
+                int(law_id[:law_id.find('/')])
+            )
+        )
+    ))
+
+
 def create_url(law_num, law_year):
     '''
     Creates a URL to Alþingi's website from a law_num and law_year. Used for
