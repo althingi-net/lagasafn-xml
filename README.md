@@ -42,11 +42,11 @@ Run the script in a terminal with no parameters for usage instructions.
 
 ## Data
 
-If you are only interested in the generated XML files themselves, then feel free to dig around in the `xml` directory. Just make sure that you're viewing the most recent, available version.
+If you are only interested in the generated XML files themselves, then feel free to dig around in the `data/xml` directory.
 
 Icelandic laws have a number/year combination. For example, the constitution of Iceland is law nr. 33/1944, meaning that it was the 33rd law enacted in the year 1944. The XML files are named `[year].[nr].xml`.
 
-**Please note that this is still a work in progress and the XML is not guaranteed to be correct. In fact, not all laws are yet available due to unsolved problems with parsing them.** To see how many of them are available, you can run the script with the `-E` option, which will show you what errors remain processing which laws, as well as success/failure statistics.
+**Please note that this is still a work in progress and the XML is not guaranteed to be correct.**
 
 ## Patching errors in data
 
