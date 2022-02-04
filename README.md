@@ -8,11 +8,11 @@ Icelandic law is currently published in PDF and HTML, neither of which is easy o
 
 *Example (constitution of Iceland):*
 
-| Format   | URL                                                                                   |
-| :------: | :------------------------------------------------------------------------------------ |
-| HTML     | https://www.althingi.is/lagas/nuna/1944033.html                                       |
-| PDF      | https://www.althingi.is/lagasafn/pdf/nuna/1944033.pdf                                 |
-| **XML**  | https://github.com/althingi-net/lagasafn-xml/blob/master/xml/1944.33.xml              |
+| Format   | URL                                                                           |
+| :------: | :-----------------------------------------------------------------------------|
+| HTML     | https://www.althingi.is/lagas/nuna/1944033.html                               |
+| PDF      | https://www.althingi.is/lagasafn/pdf/nuna/1944033.pdf                         |
+| **XML**  | https://github.com/althingi-net/lagasafn-xml/blob/master/data/xml/1944.33.xml |
 
 The entire law can be downloaded in HTML form, in a zip file, at http://www.althingi.is/lagasafn/zip-skra-af-lagasafni/. Versions are denoted by Parliament number, higher numbers meaning more recent. The version number "151c" for example, means "the 151th Parliament" and the letter "c" means that it's the version of the legal codex that was in effect when that Parliament convened.
 
