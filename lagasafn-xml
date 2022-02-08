@@ -2249,11 +2249,12 @@ def get_available_law_ids():
 def get_broken_law_ids():
     law_ids = []
 
-    with open(ERRORMAP_FILENAME, 'r') as f:
-        errormap = json.load(f, object_pairs_hook=OrderedDict)
-        for law_id in errormap.keys():
-            if errormap[law_id] is not None:
-                law_ids.append(law_id)
+    if os.path.isfile(ERRORMAP_FILENAME):
+        with open(ERRORMAP_FILENAME, 'r') as f:
+            errormap = json.load(f, object_pairs_hook=OrderedDict)
+            for law_id in errormap.keys():
+                if errormap[law_id] is not None:
+                    law_ids.append(law_id)
 
     return law_ids
 
@@ -2331,6 +2332,20 @@ def usage(exec_name, message=None):
     quit(1)
 
 
+def write_errormap(law_id, content=None):
+
+    if os.path.isfile(ERRORMAP_FILENAME):
+        with open(ERRORMAP_FILENAME, 'r') as f:
+            errormap = json.load(f, object_pairs_hook=OrderedDict)
+    else:
+        errormap = {}
+
+    errormap[law_id] = content
+
+    with open(ERRORMAP_FILENAME, 'w') as f:
+        json.dump(errormap, f)
+
+
 def main(argv):
 
     # A list of valid options so that we'll know when something is thrown in
@@ -2373,27 +2388,14 @@ def main(argv):
 
             # If it works, record the success to errormap by recording a
             # None-error.
-            with open(ERRORMAP_FILENAME, 'r') as f:
-                errormap = json.load(f, object_pairs_hook=OrderedDict)
-
-            errormap[law_id] = None
-
-            with open(ERRORMAP_FILENAME, 'w') as f:
-                json.dump(errormap, f)
-
+            write_errormap(law_id, None)
         except Exception:
             # Something went wrong in processing the law, so we'll record the
             # traceback to the errormap.
             import traceback
             lines = ''.join(traceback.format_exception(*sys.exc_info()))
 
-            with open(ERRORMAP_FILENAME, 'r') as f:
-                errormap = json.load(f, object_pairs_hook=OrderedDict)
-
-            errormap[law_id] = lines
-
-            with open(ERRORMAP_FILENAME, 'w') as f:
-                json.dump(errormap, f)
+            write_errormap(law_id, lines)
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)
