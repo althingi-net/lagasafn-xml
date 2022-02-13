@@ -7,6 +7,7 @@ import json
 import re
 import roman
 
+import signal
 import os
 import sys
 
@@ -28,6 +29,8 @@ from contenthandlers import separate_sentences
 from contenthandlers import strip_markers
 
 import diff_patch_utils
+
+from multiprocessing import Pool
 
 from utils import UnexpectedClosingBracketException
 from utils import Matcher
@@ -2183,56 +2186,55 @@ def make_xml(law_num, law_year):
             )
 
 
-def process_law(law_id, i, law_count):
-
-    nr = str(i + 1)
-    while len(nr) < 4:
-        nr = ' %s' % nr
-
-    stdout.write('[%s/%d] Processing law nr. %s...' % (nr, law_count, law_id))
-    stdout.flush()
-
-    (law_num, law_year) = law_id.split('/')
-    law_num = int(law_num)
-    law_year = int(law_year)
-
-    stdout.write('cleaning...')
-    stdout.flush()
-    clean_law(law_num, law_year)
-
-    # Delete existing patch file so we don't accidentally have outdated
-    # patched files when for example changing to another parliament version.
-    patched_path = PATCHED_FILENAME % (law_year, law_num)
-    if os.path.isfile(patched_path):
-        os.unlink(patched_path)
-
-    # check if we have patch for current law and parliament version
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
-    if os.path.isfile(patch_path):
-        # use patch file to create patched version of cleaned file
-        stdout.write('patching...')
-        stdout.flush()
-        patch_law(law_num, law_year)
-
-    stdout.write('making XML...')
-    stdout.flush()
+def process_law(law_id):
 
     try:
-        make_xml(law_num, law_year)
-        stdout.write(' %sdone%s\n' % (Fore.GREEN, Style.RESET_ALL))
-    except BaseException:
-        stdout.write(' %sfailed%s\n' % (Fore.RED, Style.RESET_ALL))
 
-        # Git is used to monitor success of parsing new versions of the legal
-        # codex. When we fail at parsing a document, the accurate
-        # representation is the absence of that document.
+        (law_num, law_year) = law_id.split('/')
+        law_num = int(law_num)
+        law_year = int(law_year)
+
+        clean_law(law_num, law_year)
+
+        # Delete existing patch file so we don't accidentally have outdated
+        # patched files when for example changing to another parliament version.
+        patched_path = PATCHED_FILENAME % (law_year, law_num)
+        if os.path.isfile(patched_path):
+            os.unlink(patched_path)
+
+        # check if we have patch for current law and parliament version
+        patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
+        if os.path.isfile(patch_path):
+            # use patch file to create patched version of cleaned file
+            patch_law(law_num, law_year)
+
         try:
-            os.remove(XML_FILENAME % (law_year, law_num))
-        except FileNotFoundError:
-            # This does not matter.
-            pass
+            make_xml(law_num, law_year)
 
-        raise
+        except BaseException:
+            # Git is used to monitor success of parsing new versions of the legal
+            # codex. When we fail at parsing a document, the accurate
+            # representation is the absence of that document.
+            try:
+                os.remove(XML_FILENAME % (law_year, law_num))
+            except FileNotFoundError:
+                # This does not matter.
+                pass
+
+            # Make sure that this ends up being someone's problem.
+            raise
+
+        # Report back that law was processed without error.
+        return [law_id, None]
+
+    except Exception:
+        # Something went wrong in processing the law, so we'll record the
+        # traceback to the errormap.
+        import traceback
+        lines = ''.join(traceback.format_exception(*sys.exc_info()))
+
+        # Report back which law was attempted to process, and error.
+        return [law_id, lines]
 
 
 def get_available_law_ids():
@@ -2257,6 +2259,27 @@ def get_broken_law_ids():
                     law_ids.append(law_id)
 
     return law_ids
+
+
+# Displays what's going on to the terminal.
+def report(law_id, i, law_count, msg):
+
+    nr = str(i + 1)
+    while len(nr) < 4:
+        nr = ' %s' % nr
+
+    law_id_str = str(law_id)
+    while len(law_id_str) < 8:
+        law_id_str = ' %s' % law_id_str
+
+    if msg == 'done':
+        color = Fore.GREEN
+    elif msg == 'failed':
+        color = Fore.RED
+    else:
+        raise Exception('Unknown message "%s"' % msg)
+
+    print('[%s/%d] %s %s%s%s' % (nr, law_count, law_id_str, color, msg, Style.RESET_ALL))
 
 
 # Displays errors known according to errormap.
@@ -2332,20 +2355,6 @@ def usage(exec_name, message=None):
     quit(1)
 
 
-def write_errormap(law_id, content=None):
-
-    if os.path.isfile(ERRORMAP_FILENAME):
-        with open(ERRORMAP_FILENAME, 'r') as f:
-            errormap = json.load(f, object_pairs_hook=OrderedDict)
-    else:
-        errormap = {}
-
-    errormap[law_id] = content
-
-    with open(ERRORMAP_FILENAME, 'w') as f:
-        json.dump(errormap, f)
-
-
 def main(argv):
 
     # A list of valid options so that we'll know when something is thrown in
@@ -2378,24 +2387,68 @@ def main(argv):
     # Sort the law_ids in their own special way (year first, num second).
     law_ids = sorted_law(law_ids)
 
-    law_count = len(law_ids)
-    for i, law_id in enumerate(law_ids):
-        # Try to process the laws, but recording successes and errors into a
-        # file called an errormap.
+    # This is apparently safer than `multiprocessing.cpu_count()`,
+    # according to:
+    # https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
+    cpu_count = len(os.sched_getaffinity(0))
+
+    def init_pool():
+        # Start ignoring the KeyboardInterrupt signal in the main thread. The
+        # result is that it gets caught by the sub-processes, which **don't**
+        # inherit this setting. The exception is then thrown when waiting for
+        # the process pool to finish, and caught by the code running the
+        # `main` function.
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+    with Pool(cpu_count, init_pool) as pool:
+        # Start an asynchronous pool of processes, as many as there are CPUS,
+        # giving them a list of the laws that need processing.
+        #
+        # NOTE: Experiments were made (in February, 2022) with splitting up
+        # the list of laws into a CPU-numbered amount of lists, which then
+        # were each passed to each CPU. This had no positive impact on
+        # performance, in fact possibly a negative impact. Even making sure
+        # that each CPU were dealing with a similarly difficult law at any
+        # given time had no discernible impact on performance either. Both of
+        # these results seem strange to the experimenter.
+        results = pool.imap_unordered(process_law, law_ids)
+
+        # Open the errormap for recording successes and errors.
+        with open(ERRORMAP_FILENAME, 'r') as f:
+            errormap = json.load(f, object_pairs_hook=OrderedDict)
+
+        # Monitor and record return successes and errors. We'll want to record
+        # the errormap, no matter what.
         try:
-            # Attempt to process the law.
-            process_law(law_id, i, law_count)
 
-            # If it works, record the success to errormap by recording a
-            # None-error.
-            write_errormap(law_id, None)
-        except Exception:
-            # Something went wrong in processing the law, so we'll record the
-            # traceback to the errormap.
-            import traceback
-            lines = ''.join(traceback.format_exception(*sys.exc_info()))
+            # Initial state of iterator.
+            i = 0
 
-            write_errormap(law_id, lines)
+            # Let's only do this once.
+            law_count = len(law_ids)
+
+            # Keep doing this until we hit a StopIteration exception.
+            while True:
+                try:
+                    # Catch next result.
+                    law_id, error_trace = next(results)
+
+                    # Remember in errormap (gets written later).
+                    errormap[law_id] = error_trace
+
+                    # Tell the user about it.
+                    msg = 'done' if error_trace is None else 'failed'
+                    report(law_id, i, law_count, msg)
+
+                    # Increase iterator.
+                    i += 1
+
+                except StopIteration:
+                    break
+        finally:
+            # Write the errormap.
+            with open(ERRORMAP_FILENAME, 'w') as f:
+                json.dump(errormap, f)
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)
