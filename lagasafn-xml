@@ -2405,6 +2405,10 @@ def main(argv):
             # Multiprocessing has some wide-reaching implications for various
             # under-the-hood mechanics like debugging. We need the ability to
             # have those work, so we offer this option to sidestep threading.
+            #
+            # This is only "yield-ified" so that the results stay compatible
+            # with the code that handles those same results when using
+            # multiprocessing.
             def yieldify_processing(law_ids):
                 for law_id in law_ids:
                     yield process_law(law_id)
