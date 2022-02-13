@@ -2345,9 +2345,10 @@ def usage(exec_name, message=None):
     print('Running without options or specific laws will process all available laws.', file=stderr)
     print(file=stderr)
     print('Options:', file=stderr)
-    print('    --help          Display this help message.', file=stderr)
+    print('    --help              Display this help message.', file=stderr)
     print(file=stderr)
-    print('    --try-broken    Try processing laws known to have failed.', file=stderr)
+    print('    --try-broken        Try processing laws known to have failed.', file=stderr)
+    print('    --single-thread     Skip multi-processing (mostly for debugging).', file=stderr)
     print(file=stderr)
     if message:
         print('Error: %s' % message, file=stderr)
@@ -2358,7 +2359,7 @@ def main(argv):
 
     # A list of valid options so that we'll know when something is thrown in
     # that we don't know what to do with.
-    valid_options = ['--help', '--try-broken']
+    valid_options = ['--help', '--try-broken', '--single-thread']
 
     if '--help' in argv:
         usage(argv[0])
@@ -2400,17 +2401,19 @@ def main(argv):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     with Pool(cpu_count, init_pool) as pool:
-        # Start an asynchronous pool of processes, as many as there are CPUS,
-        # giving them a list of the laws that need processing.
-        #
-        # NOTE: Experiments were made (in February, 2022) with splitting up
-        # the list of laws into a CPU-numbered amount of lists, which then
-        # were each passed to each CPU. This had no positive impact on
-        # performance, in fact possibly a negative impact. Even making sure
-        # that each CPU were dealing with a similarly difficult law at any
-        # given time had no discernible impact on performance either. Both of
-        # these results seem strange to the experimenter.
-        results = pool.imap_unordered(process_law, law_ids)
+        if '--single-thread' in argv:
+            # Multiprocessing has some wide-reaching implications for various
+            # under-the-hood mechanics like debugging. We need the ability to
+            # have those work, so we offer this option to sidestep threading.
+            def yieldify_processing(law_ids):
+                for law_id in law_ids:
+                    yield process_law(law_id)
+
+            results = yieldify_processing(law_ids)
+        else:
+            # Start an asynchronous pool of processes, as many as there are
+            # CPUS, giving them a list of the laws that need processing.
+            results = pool.imap_unordered(process_law, law_ids)
 
         # Open the errormap for recording successes and errors.
         with open(ERRORMAP_FILENAME, 'r') as f:
