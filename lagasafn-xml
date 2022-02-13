@@ -19,7 +19,6 @@ from formencode.doctest_xml_compare import xml_compare
 from lxml import etree
 from lxml.builder import E
 from sys import stderr
-from sys import stdout
 
 from contenthandlers import check_chapter
 from contenthandlers import generate_ancestors
@@ -185,8 +184,8 @@ def clean_law(law_num, law_year):
     content = clean_content(raw_content)
 
     if content is None:
-        stdout.write(' failed.\n')
-        stderr.write('Error: Law %d/%d does not seem to exist\n' % (law_year, law_num))
+        print(' failed.')
+        print('Error: Law %d/%d does not seem to exist' % (law_year, law_num))
         quit(1)
 
     if not os.path.isdir(os.path.dirname(CLEAN_FILENAME)):
@@ -2322,17 +2321,17 @@ def display_errors(law_ids):
 
         width, height = terminal_width_and_height()
         for error_msg in inverted_errormap.keys():
-            stdout.write('\n')
-            stdout.write('%s\n' % ('-' * width))
-            stdout.write('%s\n' % error_msg)
-            stdout.write('Errors: %d\n' % len(inverted_errormap[error_msg]))
-            stdout.write('\n')
+            print()
+            print('%s' % ('-' * width))
+            print(error_msg)
+            print('Errors: %d' % len(inverted_errormap[error_msg]))
+            print()
             for law_id in inverted_errormap[error_msg]:
-                stdout.write(' - %s' % law_id)
+                print(' - %s' % law_id, end='')
 
-        stdout.write('\n')
-        stdout.write('%s\n' % ('-' * width))
-        stdout.write('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.\n' % (
+        print()
+        print('%s' % ('-' * width))
+        print('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.' % (
             successes + failures,
             successes,
             failures,
@@ -2341,17 +2340,17 @@ def display_errors(law_ids):
 
 
 def usage(exec_name, message=None):
-    stderr.write('Usage: %s [law_number>/<year>] [law_number>/<year>]...\n' % exec_name)
-    stderr.write('\n')
-    stderr.write('Running without options or specific laws will process all available laws.\n')
-    stderr.write('\n')
-    stderr.write('Options:\n')
-    stderr.write('    --help          Display this help message.\n')
-    stderr.write('\n')
-    stderr.write('    --try-broken    Try processing laws known to have failed.\n')
-    stderr.write('\n')
+    print('Usage: %s [law_number>/<year>] [law_number>/<year>]...' % exec_name, file=stderr)
+    print(file=stderr)
+    print('Running without options or specific laws will process all available laws.', file=stderr)
+    print(file=stderr)
+    print('Options:', file=stderr)
+    print('    --help          Display this help message.', file=stderr)
+    print(file=stderr)
+    print('    --try-broken    Try processing laws known to have failed.', file=stderr)
+    print(file=stderr)
     if message:
-        stderr.write('Error: %s\n' % message)
+        print('Error: %s' % message, file=stderr)
     quit(1)
 
 
@@ -2370,7 +2369,7 @@ def main(argv):
     if '--try-broken' in argv:
         law_ids = get_broken_law_ids()
         if len(law_ids) == 0:
-            stdout.write('Hooray! Nothing seems broken!\n')
+            print('Hooray! Nothing seems broken!')
             quit()
     else:
         # Add things in command line that match the pattern for a law_id.
@@ -2462,4 +2461,4 @@ except Exception as e:
     if settings.DEBUG:
         raise
     else:
-        stderr.write('Error: %s\n' % e)
+        print('Error: %s' % e, file=stderr)
