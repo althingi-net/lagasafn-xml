@@ -68,9 +68,9 @@ then we fix the error in `patched/1995-134.html` and save it, then run:
 ```bash
 mkdir -p patches/151c
 # if you have GNU diff at your disposal then you can just run
-diff -U0 "cleaned/1995-134.html" "patched/1995-134.html" > "patches/151c/1995-134.html.patch"
+diff -U10 "data/cleaned/1995-134.html" "data/patched/1995-134.html" > "data/patches/151c/1995-134.html.patch"
 # or if you don't have GNU diff you can run
-python diff_patch_utils.py -mp -fa "cleaned/1995-134.html" -fb "patched/1995-134.html" -o "patches/151c/1995-134.html.patch"
+python diff_patch_utils.py -c 10 -mp -fa "data/cleaned/1995-134.html" -fb "data/patched/1995-134.html" -o "data/patches/151c/1995-134.html.patch"
 ```
 
 Now if we want to document what the error was about we can open the `patches/151c/1995-134.html.patch` file and add comments in the header on what the issue was. Like this for example:
