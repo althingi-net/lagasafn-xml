@@ -98,7 +98,7 @@ def clean_content(content):
 
     # Remove <a id=""> tags which are unclosed and seem without purpose.
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
-    content = content.replace('<a id="">', '')
+    #content = content.replace('<a id="">', '')
 
     # Remove links to other laws. These are not useful in their current state.
     # Rather, references to other laws, such as "laga nr. XX/XXXX" or "lög nr.
