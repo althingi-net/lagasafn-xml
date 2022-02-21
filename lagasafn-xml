@@ -60,13 +60,14 @@ def clean_content(content):
     # content = content.decode('ISO-8859-1')
 
     # Replace HTML-specific space for normal space.
+    # Funny. This seems to only affect 88/1991 (151c).
     content = content.replace('&nbsp;', ' ')
 
     # Make sure that horizontal bar tags are closed properly.
-    content = content.replace('<hr>', '<hr />')
+    #content = content.replace('<hr>', '<hr />')
 
     # Make sure that linebreak tags are closed properly.
-    content = content.replace('<br>', '<br />')
+    #content = content.replace('<br>', '<br />')
 
     if not settings.FEATURES['PARSE_MARKERS']:
         # Remove markers for previous changes and removed content.
@@ -82,8 +83,8 @@ def clean_content(content):
     #     content = content.replace(s, '')
 
     # Make sure that image tags are closed properly.
-    e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
-    content = e.sub(r'<img \1 />', content)
+    #e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
+    #content = e.sub(r'<img \1 />', content)
 
     # Remove superscript/subscript when ratios are presented in the form of
     # divisions. For example, "3/4" tends to be stylized with a superscripted
