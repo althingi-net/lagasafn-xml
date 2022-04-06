@@ -59,10 +59,6 @@ def clean_content(content):
 
     # content = content.decode('ISO-8859-1')
 
-    # Replace HTML-specific space for normal space.
-    # Funny. This seems to only affect 88/1991 (151c).
-    content = content.replace('&nbsp;', ' ')
-
     # Make sure that horizontal bar tags are closed properly.
     #content = content.replace('<hr>', '<hr />')
 

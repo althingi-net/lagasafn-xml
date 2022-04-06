@@ -210,6 +210,16 @@ def separate_sentences(content):
     # Contains the resulting list of sentences.
     sens = []
 
+    # This weirdness only occurs in 88/1991 (@151c). We would like to replace
+    # "&nbsp;" with a regular space here, because if we do it during initial
+    # cleaning of original HTML, we will lose syntactic information that
+    # "&nbsp;" may provide, required for planned improvements in parsing.
+    # However, when the code arrives here, the "&nbsp;"s in the text have
+    # turned into "\xa0", so we'll be replacing that instead. (Also, doing
+    # this here instead of during initial cleaning seems to have fixed a bug
+    # in some range markers, where the spaces were creeping in.)
+    content = content.replace("\xa0\xa0\xa0\xa0\xa0", " ")
+
     # Reference shorthands are strings that are used in references. They are
     # often combined to designate a particular location in legal text, for
     # example "7. tölul. 2. mgr. 5. gr.", meaning numerical article 7 in
