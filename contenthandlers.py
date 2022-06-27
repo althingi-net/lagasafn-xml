@@ -20,21 +20,25 @@ def regexify_markers(text):
     and without markers.
     '''
 
+    # Opening markers.
     text = re.sub(
         r'\[ ?',
         r'(\[? ?)?',
         text
     )
+    # Closing markers.
     text = re.sub(
-        r'\],? <sup style="font-size:60%"> ?\\d+\) ?</sup>,? ?',
+        r'\],? <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
         r'(\],? <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
+    # Deletion markers.
     text = re.sub(
-        r'… <sup style="font-size:60%"> ?\\d+\) ?</sup>,? ?',
+        r'… <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
         r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
+    # FIXME: This is unexplained.
     text = text.replace(' ,', r' ?,')
 
     return text
