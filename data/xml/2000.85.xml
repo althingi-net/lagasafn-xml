@@ -146,7 +146,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>1</subart>
-          <sen before-mark="^Til að stuðla að framkvæmd laga þessara setja (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; og (\[? ?)?ráðherra er fer með málefni sjávarútvegs] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; í reglugerð " after-mark=" almenn ákvæði um:$">1</sen>
+          <sen before-mark="^Til að stuðla að framkvæmd laga þessara setja (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og (\[? ?)?ráðherra er fer með málefni sjávarútvegs(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í reglugerð " after-mark=" almenn ákvæði um:$">1</sen>
         </location>
       </footnote>
     </footnotes>

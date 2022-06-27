@@ -817,7 +817,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
-            <sen before-mark="^Fyrirtækið skal vera hlutafélag." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Fyrirtækið skal vera hlutafélag." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -1130,7 +1130,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>10</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra skal í reglugerð " after-mark=" setja nánari ákvæði um hlutverk og starfsemi flutningsfyrirtækisins, kerfisstjórnun, notkunarferla og tengingu virkjana við flutningskerfið.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra skal í reglugerð " after-mark=" setja nánari ákvæði um hlutverk og starfsemi flutningsfyrirtækisins, kerfisstjórnun, notkunarferla og tengingu virkjana við flutningskerfið.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1314,7 +1314,7 @@
             <chapter>3</chapter>
             <art>9d</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" þar sem nánar er kveðið á um kerfisáætlun flutningsfyrirtækisins, upplýsingar sem skulu vera hluti af kerfisáætlun eða fylgja með henni, hvernig standa skuli að samráðsferli við undirbúning hennar, framkvæmd hennar og eftirfylgni, m.a. hvaða úrræði Orkustofnun hefur til að sjá til þess að kerfisáætlun sé fylgt eftir, hvernig haga skuli valkostagreiningu og hvaða forsendur og aðferðafræði skuli styðjast við.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" þar sem nánar er kveðið á um kerfisáætlun flutningsfyrirtækisins, upplýsingar sem skulu vera hluti af kerfisáætlun eða fylgja með henni, hvernig standa skuli að samráðsferli við undirbúning hennar, framkvæmd hennar og eftirfylgni, m.a. hvaða úrræði Orkustofnun hefur til að sjá til þess að kerfisáætlun sé fylgt eftir, hvernig haga skuli valkostagreiningu og hvaða forsendur og aðferðafræði skuli styðjast við.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.026.html" law-nr="26" law-year="2015" law-art="3" nr="2">
@@ -1772,7 +1772,7 @@
             <chapter>3</chapter>
             <art>12a</art>
             <subart>11</subart>
-            <sen before-mark="^Í reglugerð " after-mark=" skal setja nánari ákvæði um gjaldskrá auk þeirra atriða sem ákvæði þetta kveður á um.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Í reglugerð " after-mark=" skal setja nánari ákvæði um gjaldskrá auk þeirra atriða sem ákvæði þetta kveður á um.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.019.html" law-nr="19" law-year="2011" law-art="7" nr="4">
@@ -3325,7 +3325,7 @@
             <chapter>9</chapter>
             <art>37</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.131.html" law-nr="131" law-year="2011" law-art="8" nr="3">
@@ -3665,7 +3665,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>XII. </art>
-            <nr-title before-mark="^(\[? ?)?XII. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?XII. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.089.html" law-nr="89" law-year="2004" law-art="17" nr="2">
@@ -3711,7 +3711,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>XIV.–XV</art>
-            <nr-title before-mark="^(\[? ?)?XIV.–XV. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?XIV.–XV. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.149.html" law-nr="149" law-year="2004" law-art="7" nr="2">
@@ -3813,7 +3813,7 @@
             <chapter>t</chapter>
             <art>XVIII</art>
             <subart>1</subart>
-            <ambiguous-bold-text before-mark="^(\[? ?)?Viðauki. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</ambiguous-bold-text>
+            <ambiguous-bold-text before-mark="^(\[? ?)?Viðauki. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</ambiguous-bold-text>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.089.html" law-nr="89" law-year="2004" law-art="18" nr="2">

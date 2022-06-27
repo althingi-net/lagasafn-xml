@@ -255,7 +255,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal setja nánari reglur " after-mark=" um framkvæmd þessa ákvæðis.$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja nánari reglur " after-mark=" um framkvæmd þessa ákvæðis.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -452,7 +452,7 @@
             <chapter>4</chapter>
             <art>15</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; staðfestir almennar siðareglur " after-mark=" fyrir starfsmenn ríkisins.$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?staðfestir almennar siðareglur " after-mark=" fyrir starfsmenn ríkisins.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="13" nr="3">
@@ -672,7 +672,7 @@
             <art>22</art>
             <subart>1</subart>
             <numart>7</numart>
-            <sen before-mark="^(\[? ?)?Sýslumenn, ríkislögreglustjóri, (\[? ?)?aðstoðarríkislögreglustjórar, lögreglustjórar og aðstoðarlögreglustjórar], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; " after-mark=" (\[? ?)?forstjóri Útlendingastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; og lögreglumenn.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Sýslumenn, ríkislögreglustjóri, (\[? ?)?aðstoðarríkislögreglustjórar, lögreglustjórar og aðstoðarlögreglustjórar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (\[? ?)?forstjóri Útlendingastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og lögreglumenn.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.096.html" law-nr="96" law-year="2002" law-art="59" nr="6">
@@ -1186,7 +1186,7 @@
             <chapter>7</chapter>
             <art>39</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að setja almennar reglur " after-mark=" um starfskjör þeirra sem fá laun samkvæmt sérákvæðum í lögum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að setja almennar reglur " after-mark=" um starfskjör þeirra sem fá laun samkvæmt sérákvæðum í lögum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="5">
@@ -1264,7 +1264,7 @@
             <chapter>7</chapter>
             <art>39a</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Með hliðsjón af þeim forsendum sem settar eru samkvæmt þessari grein] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ákvarðar stjórn dómstólasýslunnar föst laun fyrir dagvinnu í samræmi við grunnmat starfs framkvæmdastjóra dómstólasýslunnar, skrifstofustjóra Hæstaréttar og Landsréttar, sem og önnur laun, viðbótarlaun og starfskjör, (\[? ?)?innan ramma hinna almennu forsendna sem ráðherra setur].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Með hliðsjón af þeim forsendum sem settar eru samkvæmt þessari grein(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ákvarðar stjórn dómstólasýslunnar föst laun fyrir dagvinnu í samræmi við grunnmat starfs framkvæmdastjóra dómstólasýslunnar, skrifstofustjóra Hæstaréttar og Landsréttar, sem og önnur laun, viðbótarlaun og starfskjör, (\[? ?)?innan ramma hinna almennu forsendna sem ráðherra setur].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.079.html" law-nr="79" law-year="2019" law-art="23" nr="2">
@@ -1424,7 +1424,7 @@
             <chapter>8</chapter>
             <art>42</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal setja reglur " after-mark=" um form ráðningarsamninga skv. 1. mgr.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglur " after-mark=" um form ráðningarsamninga skv. 1. mgr.$">1</sen>
           </location>
         </footnote>
       </footnotes>

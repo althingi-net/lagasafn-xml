@@ -913,7 +913,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um svæðisáætlun um meðhöndlun úrgangs, sbr. 43. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um svæðisáætlun um meðhöndlun úrgangs, sbr. 43. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.063.html" law-nr="63" law-year="2014" law-art="5" nr="4">
@@ -1006,7 +1006,7 @@
             <chapter>2</chapter>
             <art>8</art>
             <subart>2</subart>
-            <sen before-mark="^Um gerð og staðfestingu samþykktarinnar fer skv. 25. gr. " after-mark=" laga um hollustuhætti og mengunarvarnir.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Um gerð og staðfestingu samþykktarinnar fer skv. 25. gr. " after-mark=" laga um hollustuhætti og mengunarvarnir.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.063.html" law-nr="63" law-year="2014" law-art="5" nr="2">
@@ -1128,7 +1128,7 @@
             <chapter>2</chapter>
             <art>11</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um endurnýtingu úrgangs og aðgerðir við endurnýtingu hans, sbr. 43. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um endurnýtingu úrgangs og aðgerðir við endurnýtingu hans, sbr. 43. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.063.html" law-nr="63" law-year="2014" law-art="5" nr="2">
@@ -3131,7 +3131,7 @@
             <chapter>6</chapter>
             <art>43</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur, að fengnum tillögum Umhverfisstofnunar og að höfðu samráði við Samband íslenskra sveitarfélaga (\[? ?)?og hlutaðeigandi haghafa], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; reglugerð " after-mark=" um eftirtalin atriði varðandi framkvæmd laga þessara:$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur, að fengnum tillögum Umhverfisstofnunar og að höfðu samráði við Samband íslenskra sveitarfélaga (\[? ?)?og hlutaðeigandi haghafa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?reglugerð " after-mark=" um eftirtalin atriði varðandi framkvæmd laga þessara:$">1</sen>
           </location>
         </footnote>
         <footnote nr="5">
@@ -3141,7 +3141,7 @@
             <art>43</art>
             <subart>1</subart>
             <numart>a</numart>
-            <sen before-mark="^nánari skilgreiningar á spilliefnum og öðrum úrgangi, svo og (\[? ?)?skrá] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; yfir úrgang, " after-mark="$">1</sen>
+            <sen before-mark="^nánari skilgreiningar á spilliefnum og öðrum úrgangi, svo og (\[? ?)?skrá(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?yfir úrgang, " after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote nr="6">
@@ -3161,7 +3161,7 @@
             <art>43</art>
             <subart>1</subart>
             <numart>m</numart>
-            <sen before-mark="^ hvaða úrgang heimilt er að meðhöndla á námuúrgangsstað, flokkun, hönnun og stjórnun námuúrgangsstaðar, kröfur um úrgangsáætlanir frá rekstraraðilum námuúrgangsstaðar og kröfur um starfsleyfistryggingu " after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 8) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ hvaða úrgang heimilt er að meðhöndla á námuúrgangsstað, flokkun, hönnun og stjórnun námuúrgangsstaðar, kröfur um úrgangsáætlanir frá rekstraraðilum námuúrgangsstaðar og kröfur um starfsleyfistryggingu " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>6</chapter>
@@ -3449,7 +3449,7 @@
             <chapter>7</chapter>
             <art>46</art>
             <subart>1</subart>
-            <sen before-mark="^Framleiðandi og innflytjandi skulu í upplýsingum sem ætlaðar eru til dreifingar til kaupanda upplýsa um hvar sé heimilt að skila raf- og rafeindatækjaúrgangi, að hægt sé að skila raf- og rafeindatækjaúrgangi " after-mark=" án greiðslu og að ábyrgst sé að hann verði meðhöndlaður í samræmi við gildandi reglur.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Framleiðandi og innflytjandi skulu í upplýsingum sem ætlaðar eru til dreifingar til kaupanda upplýsa um hvar sé heimilt að skila raf- og rafeindatækjaúrgangi, að hægt sé að skila raf- og rafeindatækjaúrgangi " after-mark=" án greiðslu og að ábyrgst sé að hann verði meðhöndlaður í samræmi við gildandi reglur.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.073.html" law-nr="73" law-year="2008" law-art="2" nr="3">
@@ -3671,7 +3671,7 @@
             <chapter>7</chapter>
             <art>50</art>
             <subart>5</subart>
-            <sen before-mark="^Í reglugerðinni skal fjallað um skyldu framleiðenda og innflytjenda raf- og rafeindatækja til að skrá sig og skila upplýsingum um innflutning eða framleiðslu á raf- og rafeindatækjum til Umhverfisstofnunar og á hvaða hátt það skuli gert." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Í reglugerðinni skal fjallað um skyldu framleiðenda og innflytjenda raf- og rafeindatækja til að skrá sig og skila upplýsingum um innflutning eða framleiðslu á raf- og rafeindatækjum til Umhverfisstofnunar og á hvaða hátt það skuli gert." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2017.065.html" law-nr="65" law-year="2017" law-art="11" nr="3">
@@ -3790,25 +3790,25 @@
             <chapter>7</chapter>
             <art>51</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Umhverfisstofnun " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; er heimilt að óska eftir upplýsingum frá toll- og skattyfirvöldum um heildarmagn, magn í einstökum flokkum, (\[? ?)?sbr. 45. gr.], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og magn frá einstökum framleiðendum og innflytjendum vegna framleiðslu og innflutnings á raf- og rafeindatækjum sem falla undir lögin.$">1</sen>
+            <sen before-mark="^(\[? ?)?Umhverfisstofnun " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að óska eftir upplýsingum frá toll- og skattyfirvöldum um heildarmagn, magn í einstökum flokkum, (\[? ?)?sbr. 45. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og magn frá einstökum framleiðendum og innflytjendum vegna framleiðslu og innflutnings á raf- og rafeindatækjum sem falla undir lögin.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>7</chapter>
             <art>51</art>
             <subart>2</subart>
-            <sen before-mark="^Ákvæði 188. gr. tollalaga, nr. 88/2005, og 117. gr. laga um tekjuskatt, nr. 90/2003, með síðari breytingum, skulu ekki vera því til fyrirstöðu að starfsmenn toll- og skattyfirvalda veiti (\[? ?)?Umhverfisstofnun " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; upplýsingar samkvæmt þessari grein.$">2</sen>
+            <sen before-mark="^Ákvæði 188. gr. tollalaga, nr. 88/2005, og 117. gr. laga um tekjuskatt, nr. 90/2003, með síðari breytingum, skulu ekki vera því til fyrirstöðu að starfsmenn toll- og skattyfirvalda veiti (\[? ?)?Umhverfisstofnun " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?upplýsingar samkvæmt þessari grein.$">2</sen>
           </location>
           <location type="deletion">
             <chapter>7</chapter>
             <art>51</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Til að sannreyna framleiðslu-, innflutnings- og sölumagn raf- og rafeindatækja er Umhverfisstofnun " after-mark=" heimilt að óska eftir gögnum um sölu raf- og rafeindatækja úr bókhaldi … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; framleiðanda og innflytjanda.$">1</sen>
+            <sen before-mark="^(\[? ?)?Til að sannreyna framleiðslu-, innflutnings- og sölumagn raf- og rafeindatækja er Umhverfisstofnun " after-mark=" heimilt að óska eftir gögnum um sölu raf- og rafeindatækja úr bókhaldi (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?framleiðanda og innflytjanda.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>7</chapter>
             <art>51</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Umhverfisstofnun " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; er bundin þagnarskyldu um atriði er varða framleiðslu- og verslunarleynd.$">1</sen>
+            <sen before-mark="^(\[? ?)?Umhverfisstofnun " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er bundin þagnarskyldu um atriði er varða framleiðslu- og verslunarleynd.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="14" nr="3">
@@ -3858,7 +3858,7 @@
             <chapter>7</chapter>
             <art>51</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Til að sannreyna framleiðslu-, innflutnings- og sölumagn raf- og rafeindatækja er Umhverfisstofnun … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; heimilt að óska eftir gögnum um sölu raf- og rafeindatækja úr bókhaldi " after-mark=" framleiðanda og innflytjanda.$">1</sen>
+            <sen before-mark="^(\[? ?)?Til að sannreyna framleiðslu-, innflutnings- og sölumagn raf- og rafeindatækja er Umhverfisstofnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að óska eftir gögnum um sölu raf- og rafeindatækja úr bókhaldi " after-mark=" framleiðanda og innflytjanda.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.073.html" law-nr="73" law-year="2008" law-art="2" nr="5">
@@ -3911,7 +3911,7 @@
             <chapter>7</chapter>
             <art>52</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="15" nr="3">
@@ -4023,7 +4023,7 @@
             <chapter>7</chapter>
             <art>53</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt, að fengnum tillögum Umhverfisstofnunar sem leita skal umsagnar um tillögurnar hjá (\[? ?)?Samtökum atvinnulífsins og] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; Sambandi íslenskra sveitarfélaga, að setja reglugerð " after-mark=" um eftirtalin atriði:$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt, að fengnum tillögum Umhverfisstofnunar sem leita skal umsagnar um tillögurnar hjá (\[? ?)?Samtökum atvinnulífsins og(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Sambandi íslenskra sveitarfélaga, að setja reglugerð " after-mark=" um eftirtalin atriði:$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="16" nr="4">
@@ -5404,7 +5404,7 @@
             <chapter>t</chapter>
             <art>II</art>
             <subart>1</subart>
-            <ambiguous-bold-text before-mark="^(\[? ?)?Viðauki I." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</ambiguous-bold-text>
+            <ambiguous-bold-text before-mark="^(\[? ?)?Viðauki I." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</ambiguous-bold-text>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.073.html" law-nr="73" law-year="2008" law-art="4" nr="2">

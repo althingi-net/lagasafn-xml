@@ -527,7 +527,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; " after-mark=" annast eftirlit með búnaði skipa vegna mengunarvarna, sbr. lög um eftirlit með skipum.$">3</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" annast eftirlit með búnaði skipa vegna mengunarvarna, sbr. lög um eftirlit með skipum.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -545,7 +545,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
-            <sen before-mark="^Umhverfisstofnun, Náttúrufræðistofnun Íslands, " after-mark=" (\[? ?)?Hafrannsóknastofnun], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; landlæknisembættið, (\[? ?)?Samgöngustofa, Vegagerðin], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heilbrigðisnefndir sveitarfélaganna, Landhelgisgæsla Íslands, hafnarstjórnir, ríkislögreglustjóri og Geislavarnir ríkisins eru ráðherra til ráðgjafar um þau atriði sem að lögum þessum lúta og heyra undir starfsemi þeirra.$">1</sen>
+            <sen before-mark="^Umhverfisstofnun, Náttúrufræðistofnun Íslands, " after-mark=" (\[? ?)?Hafrannsóknastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?landlæknisembættið, (\[? ?)?Samgöngustofa, Vegagerðin(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heilbrigðisnefndir sveitarfélaganna, Landhelgisgæsla Íslands, hafnarstjórnir, ríkislögreglustjóri og Geislavarnir ríkisins eru ráðherra til ráðgjafar um þau atriði sem að lögum þessum lúta og heyra undir starfsemi þeirra.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.157.html" law-nr="157" law-year="2012" law-art="16" nr="2">
@@ -709,7 +709,7 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur, að fengnum tillögum Umhverfisstofnunar, og eftir því sem við á í samráði við (\[? ?)?þann ráðherra er fer með samgöngumál og þann ráðherra er fer með málefni sjávarútvegs], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" og Samband íslenskra sveitarfélaga, í reglugerðir almenn ákvæði um:$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur, að fengnum tillögum Umhverfisstofnunar, og eftir því sem við á í samráði við (\[? ?)?þann ráðherra er fer með samgöngumál og þann ráðherra er fer með málefni sjávarútvegs(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" og Samband íslenskra sveitarfélaga, í reglugerðir almenn ákvæði um:$">1</sen>
           </location>
         </footnote>
         <footnote nr="3">
@@ -861,7 +861,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>t</numart>
-            <sen before-mark="^(\[? ?)?varnir og viðbrögð við bráðamengun, flokkun hafna og nauðsynlegan mengunarvarnabúnað í hverri höfn eða flokki hafna sem og rekstur og notkun hans, upplýsingaskyldu, skyldu eftirlitsaðila til samvinnu, viðbragðsáætlanir, stjórn á vettvangi, samkomulag stofnana, sbr. 14. gr., verkefni og verksvið mengunarvarnaráðs], &lt;sup style=&quot;font-size:60%&quot;&gt; 12) &lt;/sup&gt; " after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?varnir og viðbrögð við bráðamengun, flokkun hafna og nauðsynlegan mengunarvarnabúnað í hverri höfn eða flokki hafna sem og rekstur og notkun hans, upplýsingaskyldu, skyldu eftirlitsaðila til samvinnu, viðbragðsáætlanir, stjórn á vettvangi, samkomulag stofnana, sbr. 14. gr., verkefni og verksvið mengunarvarnaráðs(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote nr="14">
@@ -1196,7 +1196,7 @@
             <chapter>3</chapter>
             <art>11c</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um útfærslu og uppbyggingu gjalds skv. 1. og 2. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um útfærslu og uppbyggingu gjalds skv. 1. og 2. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.060.html" law-nr="60" law-year="2014" law-art="4" nr="3">
@@ -1705,13 +1705,13 @@
             <chapter>4</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen before-mark="^Höfnum " after-mark=" er heimilt að innheimta gjöld af mengunarvaldi á grunni gjaldskrár sem ráðherra setur að fenginni umsögn Sambands íslenskra sveitarfélaga um greiðslu kostnaðar við starfsemi á vegum hafna vegna mengunar innan hafnarsvæða … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; .$">1</sen>
+            <sen before-mark="^Höfnum " after-mark=" er heimilt að innheimta gjöld af mengunarvaldi á grunni gjaldskrár sem ráðherra setur að fenginni umsögn Sambands íslenskra sveitarfélaga um greiðslu kostnaðar við starfsemi á vegum hafna vegna mengunar innan hafnarsvæða (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen before-mark="^Höfnum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að innheimta gjöld af mengunarvaldi á grunni gjaldskrár sem ráðherra setur að fenginni umsögn Sambands íslenskra sveitarfélaga um greiðslu kostnaðar við starfsemi á vegum hafna vegna mengunar innan hafnarsvæða " after-mark=" .$">1</sen>
+            <sen before-mark="^Höfnum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að innheimta gjöld af mengunarvaldi á grunni gjaldskrár sem ráðherra setur að fenginni umsögn Sambands íslenskra sveitarfélaga um greiðslu kostnaðar við starfsemi á vegum hafna vegna mengunar innan hafnarsvæða " after-mark=" .$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>

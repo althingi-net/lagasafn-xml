@@ -1100,7 +1100,7 @@
             <chapter>5</chapter>
             <art>17f</art>
             <subart>4</subart>
-            <sen before-mark="^Samkeppniseftirlitið setur nánari reglur " after-mark=" um framkvæmd greinarinnar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Samkeppniseftirlitið setur nánari reglur " after-mark=" um framkvæmd greinarinnar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.052.html" law-nr="52" law-year="2007" law-art="1" nr="5">
@@ -1438,7 +1438,7 @@
             <chapter>7</chapter>
             <art>32</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra er fer með fjárreiður ríkisins] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja nánari reglur um framkvæmd reglna EES-samningsins um ríkisaðstoð til aðila hér á landi." after-mark="$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er fer með fjárreiður ríkisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja nánari reglur um framkvæmd reglna EES-samningsins um ríkisaðstoð til aðila hér á landi." after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1598,7 +1598,7 @@
             <art>37</art>
             <subart>1</subart>
             <numart>f</numart>
-            <sen before-mark="^" after-mark=" fyrirmælum eða skilyrðum samkeppnisyfirvalda á grundvelli (\[? ?)?4. mgr. 17. gr. a, 17. gr. c og 1. mgr. 17. gr. e], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" fyrirmælum eða skilyrðum samkeppnisyfirvalda á grundvelli (\[? ?)?4. mgr. 17. gr. a, 17. gr. c og 1. mgr. 17. gr. e(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>9</chapter>

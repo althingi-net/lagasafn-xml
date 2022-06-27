@@ -796,7 +796,7 @@
             <chapter>5</chapter>
             <art>22</art>
             <subart>5</subart>
-            <sen before-mark="^Seðlabanki Íslands setur nánari reglur " after-mark=" um hæfisskilyrði stjórnarmanna og framkvæmdastjóra, þar á meðal um hvað felst í fullnægjandi þekkingu, hæfni og reynslu, góðu orðspori og fjárhagslegu sjálfstæði, og um hvernig staðið skuli að hæfismati.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Seðlabanki Íslands setur nánari reglur " after-mark=" um hæfisskilyrði stjórnarmanna og framkvæmdastjóra, þar á meðal um hvað felst í fullnægjandi þekkingu, hæfni og reynslu, góðu orðspori og fjárhagslegu sjálfstæði, og um hvernig staðið skuli að hæfismati.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>

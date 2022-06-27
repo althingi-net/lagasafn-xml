@@ -535,7 +535,7 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>2</subart>
-            <sen before-mark="^Ákvörðun nefndar " after-mark=" er varðar mat á því hvað teljist vera framleiðslukostnaður skv. 3. mgr. 2. gr. (\[? ?)?og 5. gr. a], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; fjárhæð endurgreiðslu eða hvað teljist vera heildarframleiðslukostnaður er kæranleg til yfirskattanefndar.$">1</sen>
+            <sen before-mark="^Ákvörðun nefndar " after-mark=" er varðar mat á því hvað teljist vera framleiðslukostnaður skv. 3. mgr. 2. gr. (\[? ?)?og 5. gr. a(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fjárhæð endurgreiðslu eða hvað teljist vera heildarframleiðslukostnaður er kæranleg til yfirskattanefndar.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.058.html" law-nr="58" law-year="2016" law-art="4" nr="2">
@@ -640,7 +640,7 @@
             <chapter>4</chapter>
             <art>8</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur reglugerð " after-mark=" um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.083.html" law-nr="83" law-year="2021" law-art="6" nr="4">
@@ -733,7 +733,7 @@
           <location type="deletion">
             <chapter>4</chapter>
             <art>Ákvæði til bráðabirgða</art>
-            <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2006.159.html" law-nr="159" law-year="2006" law-art="3" nr="2">

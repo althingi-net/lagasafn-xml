@@ -2076,7 +2076,7 @@
             <art>11</art>
             <subart>1</subart>
             <numart>2</numart>
-            <nr-title before-mark="^2." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^2." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
           <location type="range">
             <chapter>5</chapter>
@@ -2972,7 +2972,7 @@
             <art>11</art>
             <subart>1</subart>
             <numart>24</numart>
-            <nr-title before-mark="^24." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 12) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^24." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.085.html#G28" law-nr="85" law-year="2007" law-art="28" nr="12">
@@ -3032,14 +3032,14 @@
             <art>11</art>
             <subart>1</subart>
             <numart>33</numart>
-            <nr-title before-mark="^(\[? ?)?33." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?33." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
           <location type="deletion">
             <chapter>5</chapter>
             <art>11</art>
             <subart>1</subart>
             <numart>51</numart>
-            <nr-title before-mark="^(\[? ?)?51." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 17) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?51." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1998.159.html" law-nr="159" law-year="1998" law-art="3" nr="15">
@@ -4237,7 +4237,7 @@
             <chapter>8</chapter>
             <numart>27</numart>
             <numart>a</numart>
-            <sen before-mark="^Fyrir umsókn um " after-mark=" ríkisborgararétt (\[? ?)?25.000 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Fyrir umsókn um " after-mark=" ríkisborgararétt (\[? ?)?25.000 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>8</chapter>
@@ -4249,7 +4249,7 @@
             <chapter>8</chapter>
             <numart>27</numart>
             <numart>b</numart>
-            <sen before-mark="^Fyrir tilkynningu um " after-mark=" ríkisborgararétt (\[? ?)?12.500 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 12) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 13) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Fyrir tilkynningu um " after-mark=" ríkisborgararétt (\[? ?)?12.500 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -4279,7 +4279,7 @@
           <location type="deletion">
             <chapter>8</chapter>
             <numart>15</numart>
-            <nr-title before-mark="^15." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^15." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.083.html" law-nr="83" law-year="2008" law-art="24" nr="9">
@@ -4287,7 +4287,7 @@
           <location type="deletion">
             <chapter>8</chapter>
             <numart>25</numart>
-            <sen before-mark="^ " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 10) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1994.050.html" law-nr="50" law-year="1994" law-art="2" nr="10">
@@ -4357,7 +4357,7 @@
           <location type="deletion">
             <chapter>8</chapter>
             <numart>29</numart>
-            <sen before-mark="^ Fyrir bráðabirgðaökuskírteini " after-mark=" og ökuskírteini fyrir flokkana M og T (\[? ?)?4.000 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ Fyrir bráðabirgðaökuskírteini " after-mark=" og ökuskírteini fyrir flokkana M og T (\[? ?)?4.000 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -5084,7 +5084,7 @@
             <chapter>12</chapter>
             <art>18</art>
             <subart>2</subart>
-            <sen before-mark="^Lífeyrissjóðir, sem senda reglugerðir sínar til (\[? ?)?ráðuneytisins] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; til staðfestingar samkvæmt lögum nr. 55/1980, um starfskjör launafólks og skyldutryggingu lífeyrisréttinda, " after-mark=" skulu endurgreiða ráðuneytinu kostnað af birtingu reglugerða í B-deild Stjórnartíðinda.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Lífeyrissjóðir, sem senda reglugerðir sínar til (\[? ?)?ráðuneytisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?til staðfestingar samkvæmt lögum nr. 55/1980, um starfskjör launafólks og skyldutryggingu lífeyrisréttinda, " after-mark=" skulu endurgreiða ráðuneytinu kostnað af birtingu reglugerða í B-deild Stjórnartíðinda.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1997.143.html" law-nr="143" law-year="1997" law-art="11" nr="5">
@@ -5248,7 +5248,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>21</art>
-            <nr-title before-mark="^(\[? ?)?21. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?21. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -5282,7 +5282,7 @@
             <chapter>13</chapter>
             <art>22</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt með reglugerð " after-mark=" að kveða nánar á um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt með reglugerð " after-mark=" að kveða nánar á um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

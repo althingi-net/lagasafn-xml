@@ -130,7 +130,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja nánari reglur " after-mark=" um framkvæmd leyfisveitinga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja nánari reglur " after-mark=" um framkvæmd leyfisveitinga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -193,7 +193,7 @@
             <chapter>1</chapter>
             <art>5</art>
             <subart>1</subart>
-            <sen before-mark="^Nánar skal kveðið á um setningu slíks banns, skilyrði, framkvæmd, afléttingu þess og upplýsingamiðlun í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^Nánar skal kveðið á um setningu slíks banns, skilyrði, framkvæmd, afléttingu þess og upplýsingamiðlun í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2006.165.html" law-nr="165" law-year="2006" law-art="1" nr="3">
@@ -264,7 +264,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja nánari reglur, " after-mark=" m.a. um skilyrði útgáfu lofthæfiskírteinis, lofthæfistaðfestingarvottorðs og flugrekendaskírteinis og um íhluti, viðhald, vottun, þjálfun starfsfólks og önnur atriði er lúta að starfrækslu loftfars sem fellur undir grein þessa.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja nánari reglur, " after-mark=" m.a. um skilyrði útgáfu lofthæfiskírteinis, lofthæfistaðfestingarvottorðs og flugrekendaskírteinis og um íhluti, viðhald, vottun, þjálfun starfsfólks og önnur atriði er lúta að starfrækslu loftfars sem fellur undir grein þessa.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.050.html" law-nr="50" law-year="2012" law-art="1" nr="3">
@@ -1227,7 +1227,7 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið " after-mark=" að … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið " after-mark=" að (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="3" nr="3">
@@ -1236,37 +1236,37 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; að " after-mark=" nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; að " after-mark=" nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; að … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum " after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; að (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?nánar tiltekin störf við viðhald, viðgerðir og breytingar á loftförum, búnaði, tækjum og varahlutum þeirra skuli einungis falin viðurkenndum viðhaldsaðilum " after-mark="$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; viðurkennir " after-mark=" viðhaldsaðila samkvæmt umsókn þeirra þar um, enda fullnægi þeir þeim skilyrðum sem ráðherra setur með reglugerð um:$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?viðurkennir " after-mark=" viðhaldsaðila samkvæmt umsókn þeirra þar um, enda fullnægi þeir þeim skilyrðum sem ráðherra setur með reglugerð um:$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er hvenær sem er heimilt að gera úttekt á starfsstöðvum " after-mark=" viðhaldsaðila og er fyrirsvarsmönnum slíks reksturs skylt að veita í því skyni þann aðgang og atbeina sem stofnunin krefst.$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er hvenær sem er heimilt að gera úttekt á starfsstöðvum " after-mark=" viðhaldsaðila og er fyrirsvarsmönnum slíks reksturs skylt að veita í því skyni þann aðgang og atbeina sem stofnunin krefst.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur gefið út lofthæfisfyrirmæli, einnig rekstrarfyrirmæli varðandi einstaka rekstrarþætti hjá " after-mark=" viðhaldsaðilum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur gefið út lofthæfisfyrirmæli, einnig rekstrarfyrirmæli varðandi einstaka rekstrarþætti hjá " after-mark=" viðhaldsaðilum.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>6</subart>
-            <sen before-mark="^Brjóti viðurkenndur " after-mark=" viðhaldsaðili lagaboð, önnur fyrirmæli um starfsemina eða skilyrði leyfis eða reynist hann ófær um að reka starfsemina samkvæmt þeim fyrirmælum sem um hana gilda getur (\[? ?)?Samgöngustofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; svipt hann leyfi að nokkru leyti eða öllu, eftir mati stofnunarinnar á aðstæðum.$">1</sen>
+            <sen before-mark="^Brjóti viðurkenndur " after-mark=" viðhaldsaðili lagaboð, önnur fyrirmæli um starfsemina eða skilyrði leyfis eða reynist hann ófær um að reka starfsemina samkvæmt þeim fyrirmælum sem um hana gilda getur (\[? ?)?Samgöngustofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?svipt hann leyfi að nokkru leyti eða öllu, eftir mati stofnunarinnar á aðstæðum.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.021.html" law-nr="21" law-year="2002" law-art="3" nr="4">
@@ -1292,7 +1292,7 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>7</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um lofthæfi, þ.m.t. um vottun loftfara, íhluta og búnaðar, um viðurkenningu á viðhaldsstöðvum og skilyrði hennar og um hæfniskröfur til starfsfólks á þessu sviði.] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um lofthæfi, þ.m.t. um vottun loftfara, íhluta og búnaðar, um viðurkenningu á viðhaldsstöðvum og skilyrði hennar og um hæfniskröfur til starfsfólks á þessu sviði.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.050.html" law-nr="50" law-year="2012" law-art="5" nr="6">
@@ -1563,7 +1563,7 @@
             <chapter>4</chapter>
             <art>28c</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" m.a. um tilhögun og fjölda tilnefndra fluglækna og fluglæknasetra, framkvæmd heilbrigðisskoðana, starfrækslu fluglæknasetra, heimildarveitingar og eftirlit (\[? ?)?Samgöngustofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; með fluglæknum og fluglæknasetrum, upplýsingagjöf, menntun á sviði fluglæknisfræði og útgáfu heilbrigðisvottorða.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" m.a. um tilhögun og fjölda tilnefndra fluglækna og fluglæknasetra, framkvæmd heilbrigðisskoðana, starfrækslu fluglæknasetra, heimildarveitingar og eftirlit (\[? ?)?Samgöngustofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?með fluglæknum og fluglæknasetrum, upplýsingagjöf, menntun á sviði fluglæknisfræði og útgáfu heilbrigðisvottorða.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.015.html" law-nr="15" law-year="2009" law-art="2" nr="3">
@@ -1747,7 +1747,7 @@
             <chapter>5</chapter>
             <art>31</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ákveður með reglugerð " after-mark=" hvaða skilyrðum (\[? ?)?flugverjar] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; er í loftfari starfa skuli fullnægja um ríkisfang, aldur, líkamlegt og andlegt hæfi, reglusemi, menntun og þjálfun.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ákveður með reglugerð " after-mark=" hvaða skilyrðum (\[? ?)?flugverjar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er í loftfari starfa skuli fullnægja um ríkisfang, aldur, líkamlegt og andlegt hæfi, reglusemi, menntun og þjálfun.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.021.html" law-nr="21" law-year="2002" law-art="4" nr="3">
@@ -1822,7 +1822,7 @@
             <chapter>5</chapter>
             <art>32</art>
             <subart>3</subart>
-            <sen before-mark="^Skírteini skal gefa út í samræmi við reglugerð " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur, enda fullnægi handhafi þess lögmæltum skilyrðum til starfans.$">1</sen>
+            <sen before-mark="^Skírteini skal gefa út í samræmi við reglugerð " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur, enda fullnægi handhafi þess lögmæltum skilyrðum til starfans.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="1" nr="3">
@@ -2180,7 +2180,7 @@
             <chapter>5a</chapter>
             <art>47</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" þar sem kveðið er nánar á um tilkynningarskylduna, m.a. um til hvaða atvika tilkynningarskylda nái, að skyldan taki til fleiri aðila en taldir eru upp í þessari grein, um form úrvinnslu, um öryggisáhættuflokkun, greiningu atvika og eftirfylgni, tímamörk og birtingu skýrslna á grundvelli tilkynninga og annað er máli kann að skipta til að rekja megi orsakir atvika.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" þar sem kveðið er nánar á um tilkynningarskylduna, m.a. um til hvaða atvika tilkynningarskylda nái, að skyldan taki til fleiri aðila en taldir eru upp í þessari grein, um form úrvinnslu, um öryggisáhættuflokkun, greiningu atvika og eftirfylgni, tímamörk og birtingu skýrslna á grundvelli tilkynninga og annað er máli kann að skipta til að rekja megi orsakir atvika.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2017.040.html" law-nr="40" law-year="2017" law-art="2" nr="2">
@@ -2217,7 +2217,7 @@
             <chapter>5a</chapter>
             <art>47a</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra er heimilt að útfæra tilkynningakerfi skv. 1. mgr. í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að útfæra tilkynningakerfi skv. 1. mgr. í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2017.040.html" law-nr="40" law-year="2017" law-art="2" nr="2">
@@ -2638,7 +2638,7 @@
             <chapter>7</chapter>
             <art>56</art>
             <subart>1</subart>
-            <sen before-mark="^Flugvellir og búnaður þeirra skulu fullnægja þeim kröfum sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur í reglugerð " after-mark=" eða gilda samkvæmt alþjóðasamningum sem Ísland er aðili að, eftir því sem landfræðilegar aðstæður leyfa.$">2</sen>
+            <sen before-mark="^Flugvellir og búnaður þeirra skulu fullnægja þeim kröfum sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur í reglugerð " after-mark=" eða gilda samkvæmt alþjóðasamningum sem Ísland er aðili að, eftir því sem landfræðilegar aðstæður leyfa.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="12" nr="3">
@@ -2691,7 +2691,7 @@
             <chapter>7</chapter>
             <art>56</art>
             <subart>7</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.021.html" law-nr="21" law-year="2002" law-art="8" nr="6">
@@ -2783,7 +2783,7 @@
             <chapter>7</chapter>
             <art>57</art>
             <subart>7</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.021.html" law-nr="21" law-year="2002" law-art="9" nr="4">
@@ -2981,7 +2981,7 @@
             <chapter>7</chapter>
             <art>57b</art>
             <subart>1</subart>
-            <sen before-mark="^Á flugvöllum sem eru opnir fyrir flugumferð í atvinnuskyni og þar sem fjöldi farþega og magn farms er yfir nánar tilgreindum mörkum skal heimilt að gera hlutaðeigandi leyfishafa að tryggja jafnt aðgengi að flugafgreiðslu í samræmi við reglur " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur.$">1</sen>
+            <sen before-mark="^Á flugvöllum sem eru opnir fyrir flugumferð í atvinnuskyni og þar sem fjöldi farþega og magn farms er yfir nánar tilgreindum mörkum skal heimilt að gera hlutaðeigandi leyfishafa að tryggja jafnt aðgengi að flugafgreiðslu í samræmi við reglur " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="1" nr="2">
@@ -3008,7 +3008,7 @@
             <chapter>7</chapter>
             <art>57b</art>
             <subart>1</subart>
-            <sen before-mark="^Heimilt er ráðherra að kveða á um eftirlit með þeim sem sinna flugafgreiðslu í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Heimilt er ráðherra að kveða á um eftirlit með þeim sem sinna flugafgreiðslu í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.015.html" law-nr="15" law-year="2009" law-art="7" nr="5">
@@ -3131,7 +3131,7 @@
             <chapter>7</chapter>
             <art>57c</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Flugmálayfirvöld geta tekið til athugunar skipulag afgreiðslugetu flugvallar og krafist úrbóta, ef kostur er, í samræmi við reglur " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur]: &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Flugmálayfirvöld geta tekið til athugunar skipulag afgreiðslugetu flugvallar og krafist úrbóta, ef kostur er, í samræmi við reglur " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur]: &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="1" nr="2">
@@ -3266,7 +3266,7 @@
             <chapter>7</chapter>
             <art>57d</art>
             <subart>2</subart>
-            <sen before-mark="^Nánar skal kveðið á um aðstoð flugrekanda og rekstraraðila flugvallar, fyrirkomulag aðstoðar, réttindi fatlaðra og hreyfihamlaðra farþega og upplýsingaskyldu flugrekanda, umboðsmanna hans og ferðaskrifstofu með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Nánar skal kveðið á um aðstoð flugrekanda og rekstraraðila flugvallar, fyrirkomulag aðstoðar, réttindi fatlaðra og hreyfihamlaðra farþega og upplýsingaskyldu flugrekanda, umboðsmanna hans og ferðaskrifstofu með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2006.165.html" law-nr="165" law-year="2006" law-art="4" nr="2">
@@ -3684,7 +3684,7 @@
             <chapter>7</chapter>
             <art>70</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Samgöngustofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt að takmarka aðgang að flugvöllum og flugvallarsvæðum, umferð um þau og dvöl loftfara á þeim, svo og að banna umgengni eða dvöl á slíkum svæðum ef hún telur það nauðsynlegt vegna öryggis." after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?Samgöngustofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að takmarka aðgang að flugvöllum og flugvallarsvæðum, umferð um þau og dvöl loftfara á þeim, svo og að banna umgengni eða dvöl á slíkum svæðum ef hún telur það nauðsynlegt vegna öryggis." after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="1" nr="4">
@@ -3702,7 +3702,7 @@
             <chapter>7</chapter>
             <art>70</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; skal setja reglugerð " after-mark=" um bannaða hluti, um í hvaða tilvikum heimilt er að víkja frá banninu, um meðferð, geymslu og eyðingu þeirra og um miðlun upplýsinga til flugfarþega og eigenda farms.] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglugerð " after-mark=" um bannaða hluti, um í hvaða tilvikum heimilt er að víkja frá banninu, um meðferð, geymslu og eyðingu þeirra og um miðlun upplýsinga til flugfarþega og eigenda farms.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="8" nr="6">
@@ -4408,7 +4408,7 @@
             <chapter>7</chapter>
             <art>71a</art>
             <subart>7</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um notendanefndir flugvalla þar sem m.a. er kveðið á um skipun nefndarinnar, skipunartíma, hlutverk, fundarboðun og meðferð ágreiningsmála og upplýsingaskyldu til (\[? ?)?Samgöngustofu].&lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja í reglugerð " after-mark=" nánari ákvæði um notendanefndir flugvalla þar sem m.a. er kveðið á um skipun nefndarinnar, skipunartíma, hlutverk, fundarboðun og meðferð ágreiningsmála og upplýsingaskyldu til (\[? ?)?Samgöngustofu].&lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.015.html" law-nr="15" law-year="2009" law-art="12" nr="5">
@@ -4567,7 +4567,7 @@
             <chapter>7</chapter>
             <art>73</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að kveða á um hvaða skilyrðum þeir þurfa að fullnægja sem starfa við flugumferðarstjórn, á flugvelli eða við flugleiðsögubúnað eða hafa á hendi annað það starf utan loftfars sem mikilsvert er fyrir öryggi loftferða." after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að kveða á um hvaða skilyrðum þeir þurfa að fullnægja sem starfa við flugumferðarstjórn, á flugvelli eða við flugleiðsögubúnað eða hafa á hendi annað það starf utan loftfars sem mikilsvert er fyrir öryggi loftferða." after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2017.040.html" law-nr="40" law-year="2017" law-art="5" nr="3">
@@ -4677,7 +4677,7 @@
             <chapter>8</chapter>
             <art>75</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur reglur " after-mark=" um flugumferðarþjónustuna og framkvæmd hennar.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um flugumferðarþjónustuna og framkvæmd hennar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4755,7 +4755,7 @@
             <chapter>8</chapter>
             <art>76</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um flugleiðir loftfara inn á íslenskt yfirráðasvæði og yfir því og hverja flugvelli megi nota í millilandaflugi.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um flugleiðir loftfara inn á íslenskt yfirráðasvæði og yfir því og hverja flugvelli megi nota í millilandaflugi.$">1</sen>
           </location>
         </footnote>
         <footnote nr="5">
@@ -4864,7 +4864,7 @@
             <chapter>8</chapter>
             <art>78</art>
             <subart>1</subart>
-            <sen before-mark="^Hergögn má eigi flytja í loftförum án leyfis (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; eða þess sem hann felur leyfisveitinguna samkvæmt reglum " after-mark=" þar um.$">1</sen>
+            <sen before-mark="^Hergögn má eigi flytja í loftförum án leyfis (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða þess sem hann felur leyfisveitinguna samkvæmt reglum " after-mark=" þar um.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="153" nr="3">
@@ -4873,7 +4873,7 @@
             <chapter>8</chapter>
             <art>78</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur fyrirmæli um hvað telst hergögn og veitir almenna undanþágu frá ákvæðum þessarar greinar " after-mark="$">3</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur fyrirmæli um hvað telst hergögn og veitir almenna undanþágu frá ákvæðum þessarar greinar " after-mark="$">3</sen>
           </location>
           <location type="range">
             <chapter>8</chapter>
@@ -4885,13 +4885,13 @@
             <chapter>8</chapter>
             <art>78</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið að vopnaðir verðir séu um borð í íslensku loftfari í almenningsflugi enda séu til þess brýnar ástæður … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; og " after-mark=" (\[? ?)?ráðherra er fer með varnarmál] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; mæli með því.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið að vopnaðir verðir séu um borð í íslensku loftfari í almenningsflugi enda séu til þess brýnar ástæður (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og " after-mark=" (\[? ?)?ráðherra er fer með varnarmál(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?mæli með því.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>8</chapter>
             <art>78</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglugerð " after-mark=" um hæfni og þjálfun vopnaðra varða sem og fyrirkomulag við vopnaburð, verklag, samþykki þess og eftirlit.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerð " after-mark=" um hæfni og þjálfun vopnaðra varða sem og fyrirkomulag við vopnaburð, verklag, samþykki þess og eftirlit.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.015.html" law-nr="15" law-year="2009" law-art="14" nr="4">
@@ -4900,7 +4900,7 @@
             <chapter>8</chapter>
             <art>78</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið að vopnaðir verðir séu um borð í íslensku loftfari í almenningsflugi enda séu til þess brýnar ástæður " after-mark=" og … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; (\[? ?)?ráðherra er fer með varnarmál] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; mæli með því.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið að vopnaðir verðir séu um borð í íslensku loftfari í almenningsflugi enda séu til þess brýnar ástæður " after-mark=" og (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?ráðherra er fer með varnarmál(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?mæli með því.$">1</sen>
           </location>
           <location type="range">
             <chapter>8</chapter>
@@ -4924,7 +4924,7 @@
             <chapter>8</chapter>
             <art>78</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að banna eða setja reglur " after-mark=" um flutning annars varnings en hergagna til að halda uppi allsherjarreglu og öryggi.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að banna eða setja reglur " after-mark=" um flutning annars varnings en hergagna til að halda uppi allsherjarreglu og öryggi.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="9" nr="7">
@@ -4997,7 +4997,7 @@
             <chapter>9</chapter>
             <art>80</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt að ákvarða með reglugerð " after-mark=" að nánar tiltekin flugstarfsemi skuli vegna almannaöryggis leyfisskyld þótt hún sé ekki rekin í atvinnuskyni.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að ákvarða með reglugerð " after-mark=" að nánar tiltekin flugstarfsemi skuli vegna almannaöryggis leyfisskyld þótt hún sé ekki rekin í atvinnuskyni.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="10" nr="4">
@@ -5223,7 +5223,7 @@
             <chapter>9</chapter>
             <art>85a</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja frekari reglur " after-mark=" til fyllingar ákvæðum þessa kafla þar sem fram komi skilyrði flugrekstrar, þ.m.t. þær fjárhagskröfur sem gerðar eru til flugrekenda.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja frekari reglur " after-mark=" til fyllingar ákvæðum þessa kafla þar sem fram komi skilyrði flugrekstrar, þ.m.t. þær fjárhagskröfur sem gerðar eru til flugrekenda.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="11" nr="3">
@@ -5390,7 +5390,7 @@
             <chapter>10</chapter>
             <art>89</art>
             <subart>7</subart>
-            <sen before-mark="^Ráðherra er heimilt að kveða frekar á um rafræna bókun, útgáfu farseðils og tilkynningu flytjanda skv. 5. mgr. með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að kveða frekar á um rafræna bókun, útgáfu farseðils og tilkynningu flytjanda skv. 5. mgr. með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.088.html" law-nr="88" law-year="2004" law-art="3" nr="2">
@@ -6754,7 +6754,7 @@
             <chapter>10</chapter>
             <art>125</art>
             <subart>7</subart>
-            <sen before-mark="^Ráðherra er heimilt að kveða nánar á um upplýsingagjöf vegna kostnaðar farmiða eða flutnings í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að kveða nánar á um upplýsingagjöf vegna kostnaðar farmiða eða flutnings í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="13" nr="3">
@@ -7310,7 +7310,7 @@
             <chapter>11</chapter>
             <art>131</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; er heimilt að setja með reglugerð nánari reglur um vátryggingarskyldu " after-mark=" þá sem hér er mælt fyrir um, þar á meðal um vátryggingarfjárhæðir og afleiðingar þess að vátryggingu eða tryggingu er eigi haldið í gildi.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð nánari reglur um vátryggingarskyldu " after-mark=" þá sem hér er mælt fyrir um, þar á meðal um vátryggingarfjárhæðir og afleiðingar þess að vátryggingu eða tryggingu er eigi haldið í gildi.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -7352,7 +7352,7 @@
             <chapter>12</chapter>
             <art>132</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um leit og björgun er viðhafa skal þegar loftfars er saknað eða því hefur hlekkst á eða það hefur farist, þar á meðal um aðstoð þá sem einstaklingum og fyrirtækjum er skylt að veita við leit og björgunarstörf og um þóknun fyrir slíka aðstoð.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um leit og björgun er viðhafa skal þegar loftfars er saknað eða því hefur hlekkst á eða það hefur farist, þar á meðal um aðstoð þá sem einstaklingum og fyrirtækjum er skylt að veita við leit og björgunarstörf og um þóknun fyrir slíka aðstoð.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2013.032.html" law-nr="32" law-year="2013" law-art="4" nr="3">
@@ -7753,7 +7753,7 @@
             <chapter>13</chapter>
             <art>137</art>
             <subart>1</subart>
-            <sen before-mark="^Til aukins öryggis við loftferðir er (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; heimilt að setja reglur " after-mark=" um meðferð, geymslu og afhendingu eldsneytis og annars sem til búnaðar loftfara þarf og um eftirlit með því að reglurnar séu haldnar.$">1</sen>
+            <sen before-mark="^Til aukins öryggis við loftferðir er (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að setja reglur " after-mark=" um meðferð, geymslu og afhendingu eldsneytis og annars sem til búnaðar loftfara þarf og um eftirlit með því að reglurnar séu haldnar.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -7877,7 +7877,7 @@
             <chapter>13</chapter>
             <art>140</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra er heimilt að kveða nánar á um útgáfu þeirra með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Ráðherra er heimilt að kveða nánar á um útgáfu þeirra með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="16" nr="3">
@@ -8133,7 +8133,7 @@
             <chapter>13</chapter>
             <art>145</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglugerðir " after-mark=" til framkvæmda og skýringar á lögum þessum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerðir " after-mark=" til framkvæmda og skýringar á lögum þessum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -8165,7 +8165,7 @@
             <chapter>13</chapter>
             <art>146</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra skal setja reglugerð, " after-mark=" sbr. 1. mgr., sem felur í sér innleiðingu þeirra reglugerða Evrópuþingsins og ráðsins er varða stofnun Flugöryggisstofnunar Evrópu í íslenskan rétt.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra skal setja reglugerð, " after-mark=" sbr. 1. mgr., sem felur í sér innleiðingu þeirra reglugerða Evrópuþingsins og ráðsins er varða stofnun Flugöryggisstofnunar Evrópu í íslenskan rétt.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.087.html" law-nr="87" law-year="2010" law-art="17" nr="3">
@@ -8228,7 +8228,7 @@
             <chapter>13</chapter>
             <art>146a</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um styrkveitingar til áætlunarflugs til jaðarsvæða eða á flugleiðum til flugvalla með litla flugumferð.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um styrkveitingar til áætlunarflugs til jaðarsvæða eða á flugleiðum til flugvalla með litla flugumferð.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.075.html" law-nr="75" law-year="2005" law-art="14" nr="3">
@@ -8344,7 +8344,7 @@
             <chapter>13</chapter>
             <art>146c</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" m.a. um starfrækslu slíkra kerfa, aðgengi, áreiðanleika og röðun upplýsinga, skilmála, bann við mismunun, eftirlit með starfsemi tölvufarskráningarkerfa, ráðstafanir til varnar jafnri samkeppni og vernd persónuupplýsinga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" m.a. um starfrækslu slíkra kerfa, aðgengi, áreiðanleika og röðun upplýsinga, skilmála, bann við mismunun, eftirlit með starfsemi tölvufarskráningarkerfa, ráðstafanir til varnar jafnri samkeppni og vernd persónuupplýsinga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.015.html" law-nr="15" law-year="2009" law-art="17" nr="2">

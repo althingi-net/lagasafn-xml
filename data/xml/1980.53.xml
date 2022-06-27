@@ -217,7 +217,7 @@
             <chapter>5</chapter>
             <art>16</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; fer með framkvæmd laganna og er heimilt að setja með reglugerð nánari ákvæði um framkvæmd þeirra." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fer með framkvæmd laganna og er heimilt að setja með reglugerð nánari ákvæði um framkvæmd þeirra." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1985057?g1" law-nr="57" law-year="1985" law-art="1" nr="3">

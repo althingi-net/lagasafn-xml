@@ -101,7 +101,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>2</subart>
-          <sen before-mark="^Setja skal með reglugerð " after-mark=" nánari ákvæði um nauðsynlegan búnað í þessu skyni og önnur atriði varðandi framkvæmd laganna.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+          <sen before-mark="^Setja skal með reglugerð " after-mark=" nánari ákvæði um nauðsynlegan búnað í þessu skyni og önnur atriði varðandi framkvæmd laganna.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1996.058.html" law-nr="58" law-year="1996" law-art="2" nr="3">
@@ -207,7 +207,7 @@
         <location type="deletion">
           <art>6</art>
           <subart>2</subart>
-          <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1996.058.html" law-nr="58" law-year="1996" law-art="4" nr="3">

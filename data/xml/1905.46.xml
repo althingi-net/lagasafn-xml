@@ -52,7 +52,7 @@
         <location type="deletion">
           <art>4</art>
           <subart>2</subart>
-          <sen before-mark="^Nú er réttur hefðanda til eignarhaldsins vefengdur með löglega birtri " after-mark=" dómstefnu, áður en hefðartíminn er fullnaður, og málið því næst rekið með hæfilegum hraða, eða vefengingarkröfu er lýst í bú hefðanda og skal þá álíta hefðarhaldið slitið þann dag, (\[? ?)?sem dómsmál er höfðað], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ef dómur gengur sækjanda í vil, en dagsetningardag vefengingarkröfu, verði hún gild metin … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Nú er réttur hefðanda til eignarhaldsins vefengdur með löglega birtri " after-mark=" dómstefnu, áður en hefðartíminn er fullnaður, og málið því næst rekið með hæfilegum hraða, eða vefengingarkröfu er lýst í bú hefðanda og skal þá álíta hefðarhaldið slitið þann dag, (\[? ?)?sem dómsmál er höfðað(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ef dómur gengur sækjanda í vil, en dagsetningardag vefengingarkröfu, verði hún gild metin (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1991.020.html#G135" law-nr="20" law-year="1991" law-art="135" nr="2">
@@ -60,7 +60,7 @@
         <location type="deletion">
           <art>4</art>
           <subart>2</subart>
-          <sen before-mark="^Nú er réttur hefðanda til eignarhaldsins vefengdur með löglega birtri … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; dómstefnu, áður en hefðartíminn er fullnaður, og málið því næst rekið með hæfilegum hraða, eða vefengingarkröfu er lýst í bú hefðanda og skal þá álíta hefðarhaldið slitið þann dag, (\[? ?)?sem dómsmál er höfðað], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ef dómur gengur sækjanda í vil, en dagsetningardag vefengingarkröfu, verði hún gild metin " after-mark="$">1</sen>
+          <sen before-mark="^Nú er réttur hefðanda til eignarhaldsins vefengdur með löglega birtri (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?dómstefnu, áður en hefðartíminn er fullnaður, og málið því næst rekið með hæfilegum hraða, eða vefengingarkröfu er lýst í bú hefðanda og skal þá álíta hefðarhaldið slitið þann dag, (\[? ?)?sem dómsmál er höfðað(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ef dómur gengur sækjanda í vil, en dagsetningardag vefengingarkröfu, verði hún gild metin " after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

@@ -189,7 +189,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
-            <sen before-mark="^Lög þessi gilda um lífeyristryggingar almannatrygginga, ráðstöfunarfé " after-mark=" og fyrirframgreiðslu meðlaga og annarra framfærsluframlaga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Lög þessi gilda um lífeyristryggingar almannatrygginga, ráðstöfunarfé " after-mark=" og fyrirframgreiðslu meðlaga og annarra framfærsluframlaga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="1" nr="2">
@@ -313,7 +313,7 @@
             <chapter>1</chapter>
             <art>7</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt að setja reglugerðir " after-mark=" um einstök ákvæði þessa kafla, m.a. um skráningu tryggingaréttinda, tryggingavernd, hvað teljast skuli viðurkennt nám og um tímabundna dvöl erlendis.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að setja reglugerðir " after-mark=" um einstök ákvæði þessa kafla, m.a. um skráningu tryggingaréttinda, tryggingavernd, hvað teljast skuli viðurkennt nám og um tímabundna dvöl erlendis.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="1" nr="2">
@@ -491,7 +491,7 @@
             <chapter>2</chapter>
             <art>11</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra setur stjórninni starfsreglur " after-mark=" og ákveður þóknun til stjórnarmanna sem skal greidd af rekstrarfé stofnunarinnar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur stjórninni starfsreglur " after-mark=" og ákveður þóknun til stjórnarmanna sem skal greidd af rekstrarfé stofnunarinnar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="2" nr="2">
@@ -731,14 +731,14 @@
             <art>16</art>
             <subart>2</subart>
             <numart>a</numart>
-            <sen before-mark="^(\[? ?)?Tekjur umfram 90.000 kr. á ári skv. C-lið 7. gr. laga nr. 90/2003, um tekjuskatt, skulu (\[? ?)?teljast til tekna] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; við útreikning á " after-mark=" örorkulífeyri, örorkustyrk, (\[? ?)?aldurstengdri örorkuuppbót] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; og tekjutryggingu skv. (\[? ?)?18.–19. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og (\[? ?)?21.–22. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; þessara laga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Tekjur umfram 90.000 kr. á ári skv. C-lið 7. gr. laga nr. 90/2003, um tekjuskatt, skulu (\[? ?)?teljast til tekna(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?við útreikning á " after-mark=" örorkulífeyri, örorkustyrk, (\[? ?)?aldurstengdri örorkuuppbót(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og tekjutryggingu skv. (\[? ?)?18.–19. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og (\[? ?)?21.–22. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?þessara laga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="deletion">
             <chapter>3</chapter>
             <art>16</art>
             <subart>2</subart>
             <numart>b</numart>
-            <sen before-mark="^(\[? ?)?" after-mark=" Örorkulífeyrisþegi skal hafa 300.000 kr. frítekjumark vegna atvinnutekna við útreikning tekjutryggingar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?" after-mark=" Örorkulífeyrisþegi skal hafa 300.000 kr. frítekjumark vegna atvinnutekna við útreikning tekjutryggingar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.070.html" law-nr="70" law-year="2009" law-art="12" nr="3">
@@ -1039,7 +1039,7 @@
             <chapter>3</chapter>
             <art>17</art>
             <subart>7</subart>
-            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um einstök atriði er varða framkvæmd þessarar greinar, m.a. um réttindaávinnslu og búsetutíma og sveigjanlega töku ellilífeyris.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um einstök atriði er varða framkvæmd þessarar greinar, m.a. um réttindaávinnslu og búsetutíma og sveigjanlega töku ellilífeyris.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.116.html" law-nr="116" law-year="2016" law-art="2" nr="3">
@@ -1428,7 +1428,7 @@
             <chapter>3</chapter>
             <art>22</art>
             <subart>1</subart>
-            <sen before-mark="^Rétt til tekjutryggingar eiga þeir sem hafa verið búsettir hér á landi, (\[? ?)?sbr. I. kafla], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; sbr. " after-mark=" og 1. mgr. og 2. málsl. 4. mgr. 18. gr.$">3</sen>
+            <sen before-mark="^Rétt til tekjutryggingar eiga þeir sem hafa verið búsettir hér á landi, (\[? ?)?sbr. I. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sbr. " after-mark=" og 1. mgr. og 2. málsl. 4. mgr. 18. gr.$">3</sen>
           </location>
           <location type="deletion">
             <chapter>3</chapter>
@@ -1555,7 +1555,7 @@
             <chapter>3</chapter>
             <art>23</art>
             <subart>6</subart>
-            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um einstök atriði er varða framkvæmd þessarar greinar, m.a. um breytingar á hlutfalli vegna frestunar eða flýttrar töku lífeyris sem byggjast skulu á tryggingafræðilegum forsendum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um einstök atriði er varða framkvæmd þessarar greinar, m.a. um breytingar á hlutfalli vegna frestunar eða flýttrar töku lífeyris sem byggjast skulu á tryggingafræðilegum forsendum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.116.html" law-nr="116" law-year="2016" law-art="6" nr="3">
@@ -2229,7 +2229,7 @@
             <chapter>6</chapter>
             <art>48</art>
             <subart>8</subart>
-            <sen before-mark="^(\[? ?)?Ráðstöfunarfé fellur] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; alveg niður við tekjur sem nema (\[? ?)?1.179.180 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; á ári." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^(\[? ?)?Ráðstöfunarfé fellur(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?alveg niður við tekjur sem nema (\[? ?)?1.179.180 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á ári." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2017.009.html" law-nr="9" law-year="2017" law-art="2" nr="5">
@@ -2369,7 +2369,7 @@
             <chapter>6</chapter>
             <art>52</art>
             <subart>5</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.008.html" law-nr="8" law-year="2014" law-art="3" nr="3">
@@ -2521,13 +2521,13 @@
             <chapter>6</chapter>
             <art>55</art>
             <subart>1</subart>
-            <sen before-mark="^Einnig á Tryggingastofnun " after-mark=" endurkröfurétt á hendur bótaþega (\[? ?)?eða dánarbúi hans] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; samkvæmt almennum reglum.$">2</sen>
+            <sen before-mark="^Einnig á Tryggingastofnun " after-mark=" endurkröfurétt á hendur bótaþega (\[? ?)?eða dánarbúi hans(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?samkvæmt almennum reglum.$">2</sen>
           </location>
           <location type="deletion">
             <chapter>6</chapter>
             <art>55</art>
             <subart>4</subart>
-            <sen before-mark="^Hafi Tryggingastofnun ríkisins " after-mark=" vangreitt bótaþega bætur skal stofnunin greiða honum (\[? ?)?eða dánarbúi hans] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; það sem upp á vantar.$">1</sen>
+            <sen before-mark="^Hafi Tryggingastofnun ríkisins " after-mark=" vangreitt bótaþega bætur skal stofnunin greiða honum (\[? ?)?eða dánarbúi hans(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?það sem upp á vantar.$">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
@@ -2539,7 +2539,7 @@
             <chapter>6</chapter>
             <art>55</art>
             <subart>4</subart>
-            <sen middle-punctuation="," before-mark="^Sama á við þegar niðurstaða úrskurðarnefndar (\[? ?)?velferðarmála, sbr. 13. gr.], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; leiðir til þess að einstaklingur á rétt á bótum en hafði fengið synjun eða lægri bætur hjá Tryggingastofnun ríkisins " after-mark=" sbr. þó 53. gr.$">3</sen>
+            <sen middle-punctuation="," before-mark="^Sama á við þegar niðurstaða úrskurðarnefndar (\[? ?)?velferðarmála, sbr. 13. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?leiðir til þess að einstaklingur á rétt á bótum en hafði fengið synjun eða lægri bætur hjá Tryggingastofnun ríkisins " after-mark=" sbr. þó 53. gr.$">3</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
@@ -2705,7 +2705,7 @@
             <chapter>6</chapter>
             <art>58</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" ákveðið að frá bótum, sem bótaþegi á rétt á hér á landi, dragist bætur sem hann fær samkvæmt erlendri löggjöf fyrir sama tímabil og bætur eru greiddar fyrir hér á landi.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" ákveðið að frá bótum, sem bótaþegi á rétt á hér á landi, dragist bætur sem hann fær samkvæmt erlendri löggjöf fyrir sama tímabil og bætur eru greiddar fyrir hér á landi.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="18" nr="2">
@@ -2870,7 +2870,7 @@
             <chapter>6</chapter>
             <art>70</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.088.html" law-nr="88" law-year="2015" law-art="21" nr="2">

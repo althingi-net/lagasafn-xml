@@ -43,7 +43,7 @@
         <location type="deletion">
           <art>1</art>
           <subart>2</subart>
-          <sen before-mark="^Skal gjaldið nema (\[? ?)?16,22 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; án virðisaukaskatts á hverja umbúðaeiningu " after-mark=" .$">2</sen>
+          <sen before-mark="^Skal gjaldið nema (\[? ?)?16,22 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?án virðisaukaskatts á hverja umbúðaeiningu " after-mark=" .$">2</sen>
         </location>
         <location type="deletion">
           <art>1</art>
@@ -66,7 +66,7 @@
         <location type="deletion">
           <art>1</art>
           <subart>2</subart>
-          <sen before-mark="^" after-mark=" (\[? ?)?Til viðbótar skilagjaldi skal með sama hætti taka umsýsluþóknun fyrir hverja umbúðaeiningu úr stáli, áli, gleri og plastefni og skal fjárhæð hennar án virðisaukaskatts vera (\[? ?)?6,60 kr. fyrir umbúðir úr stáli, 0,80 kr. fyrir umbúðir úr áli, 12,30 kr. fyrir umbúðir úr gleri stærri en 500 ml, 9,40 kr. fyrir umbúðir úr gleri 500 ml og minni, 4,30 kr. fyrir umbúðir úr lituðu plastefni, 2,40 kr. fyrir umbúðir úr ólituðu plastefni og 1,40 kr. fyrir umbúðir úr endurunnu ólituðu plastefni].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">4</sen>
+          <sen before-mark="^" after-mark=" (\[? ?)?Til viðbótar skilagjaldi skal með sama hætti taka umsýsluþóknun fyrir hverja umbúðaeiningu úr stáli, áli, gleri og plastefni og skal fjárhæð hennar án virðisaukaskatts vera (\[? ?)?6,60 kr. fyrir umbúðir úr stáli, 0,80 kr. fyrir umbúðir úr áli, 12,30 kr. fyrir umbúðir úr gleri stærri en 500 ml, 9,40 kr. fyrir umbúðir úr gleri 500 ml og minni, 4,30 kr. fyrir umbúðir úr lituðu plastefni, 2,40 kr. fyrir umbúðir úr ólituðu plastefni og 1,40 kr. fyrir umbúðir úr endurunnu ólituðu plastefni].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
         </location>
         <location type="deletion">
           <art>1</art>
@@ -222,7 +222,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Í reglugerð " after-mark=" sem (\[? ?)?ráðherra er fer með meðhöndlun úrgangs] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur skal kveðið nánar á um framkvæmd laga þessara, m.a. (\[? ?)?um markmið um söfnun, innheimtu og endurgreiðslu skilagjaldsins og stærð, gerð og efnisval skilagjaldsskyldra umbúða fyrir drykkjarvörur].&lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Í reglugerð " after-mark=" sem (\[? ?)?ráðherra er fer með meðhöndlun úrgangs(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur skal kveðið nánar á um framkvæmd laga þessara, m.a. (\[? ?)?um markmið um söfnun, innheimtu og endurgreiðslu skilagjaldsins og stærð, gerð og efnisval skilagjaldsskyldra umbúða fyrir drykkjarvörur].&lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="131" nr="2">
@@ -316,7 +316,7 @@
           <art>5</art>
           <subart>1</subart>
           <numart>3</numart>
-          <sen before-mark="^Öllum þeim sem hafa fengið leyfi (\[? ?)?tollyfirvalda] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; til að selja farþegum og áhöfnum millilandafara " after-mark=" vörur úr tollfrjálsri verslun, sbr. (\[? ?)?4. og 5. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; 1. gr.$">1</sen>
+          <sen before-mark="^Öllum þeim sem hafa fengið leyfi (\[? ?)?tollyfirvalda(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?til að selja farþegum og áhöfnum millilandafara " after-mark=" vörur úr tollfrjálsri verslun, sbr. (\[? ?)?4. og 5. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?1. gr.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2014.124.html" law-nr="124" law-year="2014" law-art="10" nr="3">

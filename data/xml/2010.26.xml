@@ -442,7 +442,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari fyrirmæli í reglugerð " after-mark=" um innleiðingu og framkvæmd tilskipunarinnar, þar á meðal um heimildir til þess að afla upplýsinga hjá þeim stjórnvöldum sem veita leyfi eða löggildingu samkvæmt tilskipuninni.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari fyrirmæli í reglugerð " after-mark=" um innleiðingu og framkvæmd tilskipunarinnar, þar á meðal um heimildir til þess að afla upplýsinga hjá þeim stjórnvöldum sem veita leyfi eða löggildingu samkvæmt tilskipuninni.$">1</sen>
         </location>
       </footnote>
       <footnote nr="3">
@@ -450,7 +450,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra sem í hlut á, í samræmi við löggjöf og reglur um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands, er heimilt að gefa út reglugerðir " after-mark=" með samsvarandi hætti og segir í 2. mgr. fyrir þær starfsstéttir sem undir hann heyra.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra sem í hlut á, í samræmi við löggjöf og reglur um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands, er heimilt að gefa út reglugerðir " after-mark=" með samsvarandi hætti og segir í 2. mgr. fyrir þær starfsstéttir sem undir hann heyra.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2012.063.html" law-nr="63" law-year="2012" law-art="1" nr="4">

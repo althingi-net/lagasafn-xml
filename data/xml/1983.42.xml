@@ -448,7 +448,7 @@
         <location type="deletion">
           <art>8</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?Aðalfundur] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; Landsvirkjunar kýs löggiltan endurskoðanda eða endurskoðunarfélag til að endurskoða reikninga fyrirtækisins samkvæmt tillögu Ríkisendurskoðunar " after-mark="$">1</sen>
+          <sen before-mark="^(\[? ?)?Aðalfundur(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Landsvirkjunar kýs löggiltan endurskoðanda eða endurskoðunarfélag til að endurskoða reikninga fyrirtækisins samkvæmt tillögu Ríkisendurskoðunar " after-mark="$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1997.009.html" law-nr="9" law-year="1997" law-art="7" nr="3">
@@ -513,7 +513,7 @@
         <footnote-sen>L. 154/2006, 14. gr.</footnote-sen>
         <location type="deletion">
           <art>10-15</art>
-          <nr-title before-mark="^(\[? ?)?10.–15. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+          <nr-title before-mark="^(\[? ?)?10.–15. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
         </location>
       </footnote>
     </footnotes>

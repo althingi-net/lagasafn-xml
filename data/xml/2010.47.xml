@@ -62,12 +62,12 @@
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
-          <sen before-mark="^Sá sem vistaður var á stofnun " after-mark=" sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; innköllun sýslumanns.$">1</sen>
+          <sen before-mark="^Sá sem vistaður var á stofnun " after-mark=" sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?innköllun sýslumanns.$">1</sen>
         </location>
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
-          <sen before-mark="^Sá sem vistaður var á stofnun … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir " after-mark=" innköllun sýslumanns.$">1</sen>
+          <sen before-mark="^Sá sem vistaður var á stofnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir " after-mark=" innköllun sýslumanns.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -172,12 +172,12 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun " after-mark=" á tilgreindu tímabili … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
+          <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun " after-mark=" á tilgreindu tímabili (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
         </location>
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; á tilgreindu tímabili " after-mark=" og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
+          <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á tilgreindu tímabili " after-mark=" og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
         </location>
         <location type="deletion">
           <art>5</art>
@@ -503,7 +503,7 @@
         <footnote-sen>L. 148/2020, 12. gr.</footnote-sen>
         <location type="deletion">
           <art>Ákvæði til bráðabirgða</art>
-          <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+          <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2015.117.html" law-nr="117" law-year="2015" law-art="1" nr="2">

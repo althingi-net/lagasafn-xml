@@ -103,7 +103,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen before-mark="^" after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^" after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.120.html#G17" law-nr="120" law-year="2012" law-art="17" nr="3">
@@ -112,7 +112,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; " after-mark="$">2</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>

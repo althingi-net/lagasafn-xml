@@ -258,7 +258,7 @@
         <location type="pointer">
           <art>7</art>
           <subart>5</subart>
-          <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" um nánari framkvæmd ákvæðis þessa, m.a. um hvaða aðila skuli falið að annast gerð endurhæfingaráætlunar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" um nánari framkvæmd ákvæðis þessa, m.a. um hvaða aðila skuli falið að annast gerð endurhæfingaráætlunar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2009.120.html" law-nr="120" law-year="2009" law-art="11" nr="2">
@@ -415,7 +415,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>6</subart>
-          <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" um nánari framkvæmd ákvæðis þessa, m.a. um tekju- og eignamörk.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Ráðherra er heimilt að setja reglugerð " after-mark=" um nánari framkvæmd ákvæðis þessa, m.a. um tekju- og eignamörk.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2009.120.html" law-nr="120" law-year="2009" law-art="12" nr="5">
@@ -468,7 +468,7 @@
         <location type="pointer">
           <art>10</art>
           <subart>3</subart>
-          <sen before-mark="^ Ráðherra setur reglugerð " after-mark=" um greiðslur samkvæmt ákvæði þessu, m.a. um sex mánaða búsetuskilyrði.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">3</sen>
+          <sen before-mark="^ Ráðherra setur reglugerð " after-mark=" um greiðslur samkvæmt ákvæði þessu, m.a. um sex mánaða búsetuskilyrði.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2008.112.html" law-nr="112" law-year="2008" law-art="58" nr="3">
@@ -570,7 +570,7 @@
         <location type="pointer">
           <art>14</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; getur með reglugerð " after-mark=" sett frekari ákvæði um greiðslu félagslegrar aðstoðar samkvæmt lögum þessum.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur með reglugerð " after-mark=" sett frekari ákvæði um greiðslu félagslegrar aðstoðar samkvæmt lögum þessum.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -626,7 +626,7 @@
         <location type="deletion">
           <art>Ákvæði til bráðabirgða</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?(\[? ?)?Við útreikning heimilisuppbótar þeirra örorku- og endurhæfingarlífeyrisþega sem fá greiðslur úr skyldubundnum atvinnutengdum lífeyrissjóðum skal á tímabilinu 1. janúar (\[? ?)?2021] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; til og með 31. desember (\[? ?)?2021] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; gera samanburð á útreikningi heimilisuppbótar annars vegar samkvæmt þeim reglum sem gilda á árinu (\[? ?)?2021] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og hins vegar þeim reglum sem voru í gildi á árinu 2013 auk (\[? ?)?46,36%] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; hækkunar og að teknu tilliti til þess tekjumarks sem myndast hefur við framkvæmd 16. tölul. ákvæðis til bráðabirgða í lögum um almannatryggingar." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?(\[? ?)?Við útreikning heimilisuppbótar þeirra örorku- og endurhæfingarlífeyrisþega sem fá greiðslur úr skyldubundnum atvinnutengdum lífeyrissjóðum skal á tímabilinu 1. janúar (\[? ?)?2021(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?til og með 31. desember (\[? ?)?2021(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?gera samanburð á útreikningi heimilisuppbótar annars vegar samkvæmt þeim reglum sem gilda á árinu (\[? ?)?2021(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og hins vegar þeim reglum sem voru í gildi á árinu 2013 auk (\[? ?)?46,36%(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hækkunar og að teknu tilliti til þess tekjumarks sem myndast hefur við framkvæmd 16. tölul. ákvæðis til bráðabirgða í lögum um almannatryggingar." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2015.125.html" law-nr="125" law-year="2015" law-art="57" nr="4">

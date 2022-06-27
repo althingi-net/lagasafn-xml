@@ -96,13 +96,13 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til " after-mark=" rannsóknar og/eða vinnslu kolvetnis skv. … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; IV. kafla.$">1</sen>
+            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til " after-mark=" rannsóknar og/eða vinnslu kolvetnis skv. (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?IV. kafla.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
             <art>2</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; rannsóknar og/eða vinnslu kolvetnis skv. " after-mark=" IV. kafla.$">1</sen>
+            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?rannsóknar og/eða vinnslu kolvetnis skv. " after-mark=" IV. kafla.$">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -159,7 +159,7 @@
             <chapter>2</chapter>
             <art>3</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.049.html" law-nr="49" law-year="2007" law-art="2" nr="3">
@@ -853,7 +853,7 @@
             <chapter>4</chapter>
             <art>10</art>
             <subart>4</subart>
-            <sen before-mark="^Heimilt er að afturkalla leyfi ef bú leyfishafa er tekið til gjaldþrotaskipta eða hann leitar nauðasamninga." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Heimilt er að afturkalla leyfi ef bú leyfishafa er tekið til gjaldþrotaskipta eða hann leitar nauðasamninga." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.166.html" law-nr="166" law-year="2008" law-art="8" nr="3">
@@ -931,7 +931,7 @@
             <chapter>4</chapter>
             <art>10</art>
             <subart>8</subart>
-            <sen before-mark="^ Nánar skal kveðið á um markmið og hlutverk menntunar- og rannsóknarsjóðs í reglugerð " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt; setur.$">4</sen>
+            <sen before-mark="^ Nánar skal kveðið á um markmið og hlutverk menntunar- og rannsóknarsjóðs í reglugerð " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur.$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="317" nr="7">
@@ -1510,7 +1510,7 @@
             <chapter>6</chapter>
             <art>24</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Orkustofnun skal hafa eftirlit með því að (\[? ?)?handhafar leitar-, rannsóknar- og vinnsluleyfa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; starfi samkvæmt lögum þessum og leyfum " after-mark=" sem gefin hafa verið út á grundvelli laganna.$">1</sen>
+            <sen before-mark="^(\[? ?)?Orkustofnun skal hafa eftirlit með því að (\[? ?)?handhafar leitar-, rannsóknar- og vinnsluleyfa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?starfi samkvæmt lögum þessum og leyfum " after-mark=" sem gefin hafa verið út á grundvelli laganna.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="317" nr="2">
@@ -1557,7 +1557,7 @@
             <chapter>6</chapter>
             <art>24</art>
             <subart>3</subart>
-            <sen before-mark="^Í samráðshópnum skulu sitja 11 fulltrúar skipaðir af Brunamálastofnun, " after-mark=" Geislavörnum ríkisins, (\[? ?)?Hafrannsóknastofnun], &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; Landhelgisgæslu Íslands, Náttúrufræðistofnun Íslands, Orkustofnun, (\[? ?)?Samgöngustofu], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; Skipulagsstofnun, Umhverfisstofnun og Vinnueftirliti ríkisins.$">2</sen>
+            <sen before-mark="^Í samráðshópnum skulu sitja 11 fulltrúar skipaðir af Brunamálastofnun, " after-mark=" Geislavörnum ríkisins, (\[? ?)?Hafrannsóknastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Landhelgisgæslu Íslands, Náttúrufræðistofnun Íslands, Orkustofnun, (\[? ?)?Samgöngustofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Skipulagsstofnun, Umhverfisstofnun og Vinnueftirliti ríkisins.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.157.html" law-nr="157" law-year="2012" law-art="13" nr="5">
@@ -2114,7 +2114,7 @@
             <chapter>8</chapter>
             <art>31</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

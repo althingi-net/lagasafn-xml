@@ -80,7 +80,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
-            <sen before-mark="^eru markaðshæf skuldabréf sem " after-mark=" hafa verið gefin út í nafni Íbúðalánasjóðs, Byggingarsjóðs ríkisins og Byggingarsjóðs verkamanna (húsbréf og húsnæðisbréf) í tengslum við lánveitingar og fjármögnun þessara sjóða.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">7</sen>
+            <sen before-mark="^eru markaðshæf skuldabréf sem " after-mark=" hafa verið gefin út í nafni Íbúðalánasjóðs, Byggingarsjóðs ríkisins og Byggingarsjóðs verkamanna (húsbréf og húsnæðisbréf) í tengslum við lánveitingar og fjármögnun þessara sjóða.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">7</sen>
           </location>
           <location type="range">
             <start>
@@ -144,7 +144,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
-            <sen before-mark="^eru lán sem (\[? ?)?veitt eru] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; einstaklingum til viðbótar almennu húsnæðisláni til öflunar eigin húsnæðis með veði í hlutaðeigandi eign, næst á eftir fasteignaveðbréfi, eftir tilvísun húsnæðisnefndar sveitarfélags " after-mark="$">17</sen>
+            <sen before-mark="^eru lán sem (\[? ?)?veitt eru(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?einstaklingum til viðbótar almennu húsnæðisláni til öflunar eigin húsnæðis með veði í hlutaðeigandi eign, næst á eftir fasteignaveðbréfi, eftir tilvísun húsnæðisnefndar sveitarfélags " after-mark="$">17</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.057.html" law-nr="57" law-year="2004" law-art="1" nr="2">
@@ -639,7 +639,7 @@
             <chapter>4</chapter>
             <art>14</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra setur reglugerð " after-mark=" um húsnæðisáætlanir sveitarfélaga, m.a. um innihald þeirra og efnistök, á hvaða formi þær skuli vera, skil til (\[? ?)?Húsnæðis- og mannvirkjastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og endurskoðun þeirra.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra setur reglugerð " after-mark=" um húsnæðisáætlanir sveitarfélaga, m.a. um innihald þeirra og efnistök, á hvaða formi þær skuli vera, skil til (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og endurskoðun þeirra.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -881,7 +881,7 @@
             <chapter>5</chapter>
             <art>16</art>
             <subart>2</subart>
-            <sen before-mark="^Um nánari skilyrði lánveitinga samkvæmt þessari grein fer eftir því sem ákveðið er í lögum þessum og reglugerð " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur að fenginni umsögn stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Um nánari skilyrði lánveitinga samkvæmt þessari grein fer eftir því sem ákveðið er í lögum þessum og reglugerð " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur að fenginni umsögn stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -971,7 +971,7 @@
             <chapter>6</chapter>
             <art>18</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.057.html" law-nr="57" law-year="2004" law-art="8" nr="3">
@@ -1154,7 +1154,7 @@
             <chapter>6</chapter>
             <art>19</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" ákveðið hámarksfjárhæð (\[? ?)?HMS-veðbréfa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem miðast við að veðbréfið hvíli á fyrsta veðrétti.$">3</sen>
+            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" ákveðið hámarksfjárhæð (\[? ?)?HMS-veðbréfa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sem miðast við að veðbréfið hvíli á fyrsta veðrétti.$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.120.html" law-nr="120" law-year="2004" law-art="3" nr="6">
@@ -1298,7 +1298,7 @@
             <chapter>6</chapter>
             <art>21</art>
             <subart>4</subart>
-            <sen before-mark="^Kveða skal í reglugerð " after-mark=" nánar á um hvenær slík heimild er fyrir hendi og með hvaða skilyrðum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Kveða skal í reglugerð " after-mark=" nánar á um hvenær slík heimild er fyrir hendi og með hvaða skilyrðum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.057.html" law-nr="57" law-year="2004" law-art="10" nr="4">
@@ -1454,7 +1454,7 @@
             <chapter>6</chapter>
             <art>29</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur sett frekari fyrirmæli í reglugerð " after-mark=" um lánveitingar (\[? ?)?Húsnæðis- og mannvirkjastofnunar], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; tilhögun viðskipta og útgáfu íbúðabréfa.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett frekari fyrirmæli í reglugerð " after-mark=" um lánveitingar (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tilhögun viðskipta og útgáfu íbúðabréfa.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.137.html#G19" law-nr="137" law-year="2019" law-art="19" nr="3">
@@ -1472,7 +1472,7 @@
             <chapter>6</chapter>
             <art>29</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur sett frekari fyrirmæli í reglugerð &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; um lánveitingar (\[? ?)?Húsnæðis- og mannvirkjastofnunar], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; " after-mark=" tilhögun viðskipta og útgáfu íbúðabréfa.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett frekari fyrirmæli í reglugerð &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; um lánveitingar (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" tilhögun viðskipta og útgáfu íbúðabréfa.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.057.html" law-nr="57" law-year="2004" law-art="18" nr="5">
@@ -1856,7 +1856,7 @@
             <chapter>7</chapter>
             <art>30</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur með reglugerð " after-mark=" frekari ákvæði um skilyrði lána vegna hjúkrunarheimila, svo sem lánsumsóknir, lánskjör og lánveitingu, þar með talið lánveitingu á framkvæmdatíma.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" frekari ákvæði um skilyrði lána vegna hjúkrunarheimila, svo sem lánsumsóknir, lánskjör og lánveitingu, þar með talið lánveitingu á framkvæmdatíma.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.120.html" law-nr="120" law-year="2009" law-art="21" nr="5">
@@ -1999,7 +1999,7 @@
             <chapter>8</chapter>
             <art>35</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra setur með reglugerð " after-mark=" frekari ákvæði um skilyrði lána til leiguíbúða, þar á meðal um lágmarksfjölda íbúða, gerð íbúða, stærðir þeirra, viðmið um ákvörðun leigufjárhæðar, hagkvæmni og byggingarkostnað, úrræði til þess að tryggja sem lægst íbúðarverð, takmarkanir við arðgreiðslum og þinglýsingu leigusamninga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra setur með reglugerð " after-mark=" frekari ákvæði um skilyrði lána til leiguíbúða, þar á meðal um lágmarksfjölda íbúða, gerð íbúða, stærðir þeirra, viðmið um ákvörðun leigufjárhæðar, hagkvæmni og byggingarkostnað, úrræði til þess að tryggja sem lægst íbúðarverð, takmarkanir við arðgreiðslum og þinglýsingu leigusamninga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2079,7 +2079,7 @@
             <chapter>8</chapter>
             <art>36</art>
             <subart>4</subart>
-            <sen before-mark="^ Fastir vextir og vaxtaálag ákveðast á sama hátt og vextir (\[? ?)?HMS-veðbréfa], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; sbr. 21. " after-mark=" gr., en stjórn (\[? ?)?Húsnæðis- og mannvirkjastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; skal við gerð fjárhagsáætlunar ár hvert ákveða breytilega vexti.$">2</sen>
+            <sen before-mark="^ Fastir vextir og vaxtaálag ákveðast á sama hátt og vextir (\[? ?)?HMS-veðbréfa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sbr. 21. " after-mark=" gr., en stjórn (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal við gerð fjárhagsáætlunar ár hvert ákveða breytilega vexti.$">2</sen>
           </location>
           <location type="range">
             <chapter>8</chapter>
@@ -2106,7 +2106,7 @@
             <chapter>8</chapter>
             <art>36</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra getur heimilað (\[? ?)?Húsnæðis- og mannvirkjastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; með reglugerð " after-mark=" að bjóða lántakendum skv. 1. mgr. að afsala sér rétti til þess að greiða án þóknunar upp lán eða greiða aukaafborganir, gegn lægra vaxtaálagi.$">3</sen>
+            <sen before-mark="^Ráðherra getur heimilað (\[? ?)?Húsnæðis- og mannvirkjastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?með reglugerð " after-mark=" að bjóða lántakendum skv. 1. mgr. að afsala sér rétti til þess að greiða án þóknunar upp lán eða greiða aukaafborganir, gegn lægra vaxtaálagi.$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.120.html" law-nr="120" law-year="2004" law-art="7" nr="4">
@@ -2163,7 +2163,7 @@
             <chapter>8</chapter>
             <art>37</art>
             <subart>3</subart>
-            <sen before-mark="^Þegar framangreind skilyrði leiða til þess að fjárhæðir skv. 1. og 2. mgr. hækka skal ráðherra breyta þeim með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Þegar framangreind skilyrði leiða til þess að fjárhæðir skv. 1. og 2. mgr. hækka skal ráðherra breyta þeim með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.148.html" law-nr="148" law-year="2019" law-art="13" nr="2">
@@ -2291,7 +2291,7 @@
             <chapter>8</chapter>
             <art>39</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að ákveða í reglugerð " after-mark=" að mánaðarlegt leigugjald íbúða sem njóta láns til leiguíbúða úr (\[? ?)?Húsnæðis- og mannvirkjastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; skuli miðast við afborganir og vexti af slíku láni og vaxtakostnað af framlagi eiganda íbúðar auk almenns rekstrarkostnaðar.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að ákveða í reglugerð " after-mark=" að mánaðarlegt leigugjald íbúða sem njóta láns til leiguíbúða úr (\[? ?)?Húsnæðis- og mannvirkjastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skuli miðast við afborganir og vexti af slíku láni og vaxtakostnað af framlagi eiganda íbúðar auk almenns rekstrarkostnaðar.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.137.html#G19" law-nr="137" law-year="2019" law-art="19" nr="3">
@@ -2582,13 +2582,13 @@
             <art>44</art>
             <subart>1</subart>
             <numart>1</numart>
-            <sen before-mark="^Rekstrarframlög til sveitarfélaga skulu reiknuð út (\[? ?)?að teknu tilliti til tekjumöguleika þeirra og nýtingar tekjustofna] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; í samræmi við sérstakt reiknilíkan sem nánar skal skilgreina í reglugerð." after-mark="$">2</sen>
+            <sen before-mark="^Rekstrarframlög til sveitarfélaga skulu reiknuð út (\[? ?)?að teknu tilliti til tekjumöguleika þeirra og nýtingar tekjustofna(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í samræmi við sérstakt reiknilíkan sem nánar skal skilgreina í reglugerð." after-mark="$">2</sen>
           </location>
           <location type="pointer">
             <chapter>10</chapter>
             <art>44</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um nánari framkvæmd á grundvelli rammasamkomulags ríkis og Sambands íslenskra sveitarfélaga um verkefni varasjóðs húsnæðismála.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">5</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um nánari framkvæmd á grundvelli rammasamkomulags ríkis og Sambands íslenskra sveitarfélaga um verkefni varasjóðs húsnæðismála.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">5</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.120.html" law-nr="120" law-year="2004" law-art="8" nr="3">
@@ -2662,7 +2662,7 @@
             <chapter>10</chapter>
             <art>45</art>
             <subart>3</subart>
-            <sen before-mark="^Nánari ákvæði um varasjóð viðbótarlána skulu sett í reglugerð " after-mark=" um varasjóð húsnæðismála sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; gefur út að höfðu samráði við ráðgjafarnefnd varasjóðs húsnæðismála.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Nánari ákvæði um varasjóð viðbótarlána skulu sett í reglugerð " after-mark=" um varasjóð húsnæðismála sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?gefur út að höfðu samráði við ráðgjafarnefnd varasjóðs húsnæðismála.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="19" nr="4">
@@ -2911,7 +2911,7 @@
             <chapter>11</chapter>
             <art>47</art>
             <subart>6</subart>
-            <sen before-mark="^Telji (\[? ?)?Húsnæðissjóður og Húsnæðis- og mannvirkjastofnun], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; m.a. með hliðsjón af 1. gr., að hagsmunum (\[? ?)?stofnunarinnar] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; verði betur borgið með slíkum samningi sendir (\[? ?)?stofnunin] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; tillögu þess efnis til umsagnar (\[? ?)?ráðuneytisins], &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; (\[? ?)?(\[? ?)?og] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; þess ráðuneytis er fer með fjárreiður ríkisins] &lt;sup style=&quot;font-size:60%&quot;&gt; 8) &lt;/sup&gt; " after-mark=" .$">2</sen>
+            <sen before-mark="^Telji (\[? ?)?Húsnæðissjóður og Húsnæðis- og mannvirkjastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?m.a. með hliðsjón af 1. gr., að hagsmunum (\[? ?)?stofnunarinnar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?verði betur borgið með slíkum samningi sendir (\[? ?)?stofnunin(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tillögu þess efnis til umsagnar (\[? ?)?ráðuneytisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?(\[? ?)?og(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?þess ráðuneytis er fer með fjárreiður ríkisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" .$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.057.html" law-nr="57" law-year="2004" law-art="21" nr="3">
@@ -3058,7 +3058,7 @@
             <chapter>11</chapter>
             <art>47</art>
             <subart>8</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; setur, að fenginni umsögn stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; reglugerð " after-mark=" um nánari framkvæmd innheimtu krafna skv. 1. mgr. og um skilyrði fyrir afskriftum samkvæmt þessari grein.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur, að fenginni umsögn stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?reglugerð " after-mark=" um nánari framkvæmd innheimtu krafna skv. 1. mgr. og um skilyrði fyrir afskriftum samkvæmt þessari grein.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3175,7 +3175,7 @@
             <chapter>11</chapter>
             <art>48</art>
             <subart>2</subart>
-            <sen before-mark="^Þá er " after-mark=" heimilt að fresta hluta greiðslunnar með þeim hætti að færa hluta eftirstöðva á jöfnunarreikning, sbr. lög nr. 63/1985, og ákveða að endurgreiðsla lánsins fylgi greiðslumarki sem miðist við þann hluta eftirstöðvanna sem ekki var færður á jöfnunarreikning.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Þá er " after-mark=" heimilt að fresta hluta greiðslunnar með þeim hætti að færa hluta eftirstöðva á jöfnunarreikning, sbr. lög nr. 63/1985, og ákveða að endurgreiðsla lánsins fylgi greiðslumarki sem miðist við þann hluta eftirstöðvanna sem ekki var færður á jöfnunarreikning.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
           <location type="range">
             <chapter>11</chapter>
@@ -3252,7 +3252,7 @@
             <chapter>11</chapter>
             <art>48</art>
             <subart>8</subart>
-            <sen before-mark="^Ráðherra setur (\[? ?)?reglugerð " after-mark=" um skilyrði fyrir beitingu úrræða, svo sem að greiðsluvandi stafi af tímabundnum erfiðleikum vegna veikinda, slysa, minni atvinnu og atvinnuleysis, og] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; framkvæmd þessa ákvæðis að fengnum tillögum stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur (\[? ?)?reglugerð " after-mark=" um skilyrði fyrir beitingu úrræða, svo sem að greiðsluvandi stafi af tímabundnum erfiðleikum vegna veikinda, slysa, minni atvinnu og atvinnuleysis, og(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?framkvæmd þessa ákvæðis að fengnum tillögum stjórnar (\[? ?)?Húsnæðis- og mannvirkjastofnunar].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2001.077.html" law-nr="77" law-year="2001" law-art="4" nr="6">
@@ -3309,7 +3309,7 @@
             <chapter>11</chapter>
             <art>50</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

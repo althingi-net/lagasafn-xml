@@ -291,7 +291,7 @@
             <art>5</art>
             <subart>1</subart>
             <numart>i</numart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari reglur " after-mark=" um þessar skrár], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um þessar skrár(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2000.015.html" law-nr="15" law-year="2000" law-art="10" nr="3">
@@ -355,7 +355,7 @@
             <art>5</art>
             <subart>2</subart>
             <numart>f</numart>
-            <sen before-mark="^" after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 9) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.047.html" law-nr="47" law-year="2015" law-art="23" nr="6">
@@ -451,7 +451,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; mælir nánar fyrir " after-mark=" um starfsemi ríkislögreglustjóra.$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?mælir nánar fyrir " after-mark=" um starfsemi ríkislögreglustjóra.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.051.html" law-nr="51" law-year="2014" law-art="2" nr="13">
@@ -578,7 +578,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>8</subart>
-            <sen before-mark="^Ráðherra setur reglur " after-mark=" um samstarf lögreglu og björgunarsveita.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Ráðherra setur reglur " after-mark=" um samstarf lögreglu og björgunarsveita.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.051.html" law-nr="51" law-year="2014" law-art="3" nr="4">
@@ -938,7 +938,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>1</subart>
-            <sen before-mark="^Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, héraðssaksóknari, varahéraðssaksóknari, lögreglustjórar, aðstoðarlögreglustjórar á höfuðborgarsvæðinu og á Suðurnesjum, " after-mark=" löglærðir fulltrúar lögreglustjóra og lögreglumenn fara með lögregluvald.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, héraðssaksóknari, varahéraðssaksóknari, lögreglustjórar, aðstoðarlögreglustjórar á höfuðborgarsvæðinu og á Suðurnesjum, " after-mark=" löglærðir fulltrúar lögreglustjóra og lögreglumenn fara með lögregluvald.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>
@@ -1092,7 +1092,7 @@
             <chapter>2</chapter>
             <art>10</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur reglur " after-mark=" um fjölda héraðslögreglumanna og störf þeirra.$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um fjölda héraðslögreglumanna og störf þeirra.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1239,7 +1239,7 @@
             <chapter>3</chapter>
             <art>13</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra ákveður útlit, efni og notkun lögregluskilríkja með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^Ráðherra ákveður útlit, efni og notkun lögregluskilríkja með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1998.029.html" law-nr="29" law-year="1998" law-art="4" nr="2">
@@ -1697,7 +1697,7 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>2</subart>
-            <sen before-mark="^Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, lögreglustjórar (\[? ?)?og] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; aðstoðarlögreglustjórar sem eru staðgenglar lögreglustjóra " after-mark=" skulu auk almennra hæfisskilyrða til þess að hljóta skipun í embætti á vegum ríkisins jafnframt fullnægja eftirtöldum skilyrðum:$">2</sen>
+            <sen before-mark="^Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, lögreglustjórar (\[? ?)?og(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?aðstoðarlögreglustjórar sem eru staðgenglar lögreglustjóra " after-mark=" skulu auk almennra hæfisskilyrða til þess að hljóta skipun í embætti á vegum ríkisins jafnframt fullnægja eftirtöldum skilyrðum:$">2</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -1945,7 +1945,7 @@
             <chapter>5</chapter>
             <art>32</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur almennar reglur " after-mark=" um hvaða aukastörf teljist heimil.$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur almennar reglur " after-mark=" um hvaða aukastörf teljist heimil.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2001,7 +2001,7 @@
             <chapter>6</chapter>
             <art>34</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Lögreglustjóra er heimilt í sérstökum reglum " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur að] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; kveða á um greiðslu kostnaðar af gæslustörfum vegna framkvæmda á almannafæri og flutnings á óvenjulegum eða hættulegum farmi þar sem lögreglustjóri telur nauðsynlegt að fyrirskipa slíka löggæslu.$">2</sen>
+            <sen before-mark="^(\[? ?)?Lögreglustjóra er heimilt í sérstökum reglum " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur að(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?kveða á um greiðslu kostnaðar af gæslustörfum vegna framkvæmda á almannafæri og flutnings á óvenjulegum eða hættulegum farmi þar sem lögreglustjóri telur nauðsynlegt að fyrirskipa slíka löggæslu.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="141" nr="3">
@@ -2139,7 +2139,7 @@
             <chapter>7</chapter>
             <art>35a</art>
             <subart>8</subart>
-            <sen before-mark="^Ráðherra setur nánari reglur " after-mark=" um starfsemi nefndarinnar, þar á meðal um tímafresti, eftirfylgni mála og birtingu upplýsinga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Ráðherra setur nánari reglur " after-mark=" um starfsemi nefndarinnar, þar á meðal um tímafresti, eftirfylgni mála og birtingu upplýsinga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.050.html" law-nr="50" law-year="2021" law-art="8" nr="2">
@@ -2440,7 +2440,7 @@
             <chapter>8</chapter>
             <art>39a</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð, " after-mark=" að fenginni tillögu mennta- og starfsþróunarseturs, nánari fyrirmæli um framboð sérhæfðra námskeiða, inntökuskilyrði nema í starfsnám og starfsemi mennta- og starfsþróunarseturs lögreglu.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð, " after-mark=" að fenginni tillögu mennta- og starfsþróunarseturs, nánari fyrirmæli um framboð sérhæfðra námskeiða, inntökuskilyrði nema í starfsnám og starfsemi mennta- og starfsþróunarseturs lögreglu.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.061.html" law-nr="61" law-year="2016" law-art="5" nr="2">
@@ -2611,7 +2611,7 @@
             <chapter>10</chapter>
             <art>43</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur nánari reglur " after-mark=" um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

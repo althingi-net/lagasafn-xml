@@ -361,7 +361,7 @@
             <art>8</art>
             <subart>1</subart>
             <numart>a</numart>
-            <sen before-mark="^(\[? ?)?Ríkisborgarar og lögaðilar " after-mark=" ríkja innan Evrópska efnahagssvæðisins og aðildarríkja stofnsamnings Fríverslunarsamtaka Evrópu, svo og Færeyingar og lögaðilar í Færeyjum, eru undanþegnir búsetuskilyrðinu.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Ríkisborgarar og lögaðilar " after-mark=" ríkja innan Evrópska efnahagssvæðisins og aðildarríkja stofnsamnings Fríverslunarsamtaka Evrópu, svo og Færeyingar og lögaðilar í Færeyjum, eru undanþegnir búsetuskilyrðinu.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -783,13 +783,13 @@
             <chapter>4</chapter>
             <art>15</art>
             <subart>1</subart>
-            <sen before-mark="^" after-mark=" Rekstrarleyfi telst … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; niður fallið frá þeim tíma þegar það er móttekið hjá leyfisveitanda kjósi leyfishafi að leggja það inn.$">1</sen>
+            <sen before-mark="^" after-mark=" Rekstrarleyfi telst (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?niður fallið frá þeim tíma þegar það er móttekið hjá leyfisveitanda kjósi leyfishafi að leggja það inn.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>15</art>
             <subart>1</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; Rekstrarleyfi telst " after-mark=" niður fallið frá þeim tíma þegar það er móttekið hjá leyfisveitanda kjósi leyfishafi að leggja það inn.$">1</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Rekstrarleyfi telst " after-mark=" niður fallið frá þeim tíma þegar það er móttekið hjá leyfisveitanda kjósi leyfishafi að leggja það inn.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>

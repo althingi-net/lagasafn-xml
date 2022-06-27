@@ -463,7 +463,7 @@
             <chapter>3</chapter>
             <art>18</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Sjúkratryggingar taka til ókeypis vistar að ráði læknis í sjúkrahúsum sem rekin eru af ríkinu eða samkvæmt samningum skv. IV. kafla, þ.m.t. á fæðingarstofnunum, sbr. þó 23. gr. " after-mark=" eða ákvæði sérlaga.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Sjúkratryggingar taka til ókeypis vistar að ráði læknis í sjúkrahúsum sem rekin eru af ríkinu eða samkvæmt samningum skv. IV. kafla, þ.m.t. á fæðingarstofnunum, sbr. þó 23. gr. " after-mark=" eða ákvæði sérlaga.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.173.html" law-nr="173" law-year="2008" law-art="16" nr="2">
@@ -690,7 +690,7 @@
             <chapter>3</chapter>
             <art>23a</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra skal með reglugerð " after-mark=" kveða nánar á um framkvæmd greinarinnar, m.a. um hvenær sækja skuli um fyrirframsamþykki fyrir endurgreiðslu á grundvelli 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal með reglugerð " after-mark=" kveða nánar á um framkvæmd greinarinnar, m.a. um hvenær sækja skuli um fyrirframsamþykki fyrir endurgreiðslu á grundvelli 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.013.html" law-nr="13" law-year="2016" law-art="3" nr="2">
@@ -753,7 +753,7 @@
             <chapter>3</chapter>
             <art>25</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Sjúkratrygging tekur til nauðsynlegra lyfja sem hafa markaðsleyfi hér á landi, hefur verið ávísað til notkunar utan heilbrigðisstofnana, þ.m.t. " after-mark=" leyfisskyld lyf, og ákveðið hefur verið að sjúkratryggingar taki þátt í að greiða, sbr. lyfjalög.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Sjúkratrygging tekur til nauðsynlegra lyfja sem hafa markaðsleyfi hér á landi, hefur verið ávísað til notkunar utan heilbrigðisstofnana, þ.m.t. " after-mark=" leyfisskyld lyf, og ákveðið hefur verið að sjúkratryggingar taki þátt í að greiða, sbr. lyfjalög.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.125.html" law-nr="125" law-year="2014" law-art="17" nr="2">
@@ -1025,7 +1025,7 @@
             <art>29</art>
             <subart>1</subart>
             <numart>2</numart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Almenna] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; og sérhæfða heilbrigðisþjónustu á göngudeild, dagdeild, slysadeild og bráðamóttöku sjúkrahúsa sem veitt er án þess að um innlögn á sjúkrahús sé að ræða, sbr. 2. mgr. 18. gr.$">1</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Almenna(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og sérhæfða heilbrigðisþjónustu á göngudeild, dagdeild, slysadeild og bráðamóttöku sjúkrahúsa sem veitt er án þess að um innlögn á sjúkrahús sé að ræða, sbr. 2. mgr. 18. gr.$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -1061,13 +1061,13 @@
             <art>29</art>
             <subart>1</subart>
             <numart>8</numart>
-            <sen before-mark="^Fyrir dvöl á sjúkrahóteli skulu sjúkratryggðir greiða gjald sem nemur að hámarki 20% af kostnaði við gistingu og fæði og skal gjaldið ákveðið með reglugerð " after-mark=" sem ráðherra setur.] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Fyrir dvöl á sjúkrahóteli skulu sjúkratryggðir greiða gjald sem nemur að hámarki 20% af kostnaði við gistingu og fæði og skal gjaldið ákveðið með reglugerð " after-mark=" sem ráðherra setur.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="pointer">
             <chapter>3</chapter>
             <art>29</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?Þeir sem ekki eru sjúkratryggðir hér á landi samkvæmt lögum þessum skulu greiða gjald fyrir dvöl á sjúkrahóteli sem nemur öllum kostnaði sem til fellur vegna dvalar á sjúkrahóteli í samræmi við reglugerð " after-mark=" sem ráðherra setur, nema í gildi sé samningur um þjónustuna við það ríki sem þeir koma frá.] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Þeir sem ekki eru sjúkratryggðir hér á landi samkvæmt lögum þessum skulu greiða gjald fyrir dvöl á sjúkrahóteli sem nemur öllum kostnaði sem til fellur vegna dvalar á sjúkrahóteli í samræmi við reglugerð " after-mark=" sem ráðherra setur, nema í gildi sé samningur um þjónustuna við það ríki sem þeir koma frá.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.131.html" law-nr="131" law-year="2009" law-art="1" nr="6">
@@ -2079,7 +2079,7 @@
             <chapter>t</chapter>
             <art>IV</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Fram til (\[? ?)?1. janúar 2015], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sbr. 2. málsl. 2. mgr. 56. gr., er ráðherra heimilt að ákveða með reglugerð " after-mark=" daggjöld vegna heilbrigðisþjónustu sem veitt er í hjúkrunarrýmum sjúkrahúsa og hjúkrunarrýmum öldrunarstofnana og hjúkrunarheimila.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Fram til (\[? ?)?1. janúar 2015(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sbr. 2. málsl. 2. mgr. 56. gr., er ráðherra heimilt að ákveða með reglugerð " after-mark=" daggjöld vegna heilbrigðisþjónustu sem veitt er í hjúkrunarrýmum sjúkrahúsa og hjúkrunarrýmum öldrunarstofnana og hjúkrunarheimila.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.147.html" law-nr="147" law-year="2010" law-art="2" nr="3">

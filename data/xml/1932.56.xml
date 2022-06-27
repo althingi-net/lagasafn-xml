@@ -69,7 +69,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari reglur " after-mark=" um ákvæði þessarar greinar.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðuneytið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um ákvæði þessarar greinar.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -129,7 +129,7 @@
         <location type="deletion">
           <art>6</art>
           <subart>3</subart>
-          <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1982075?g38" law-nr="75" law-year="1982" law-art="38" nr="3">

@@ -173,7 +173,7 @@
             <art>5</art>
             <subart>2</subart>
             <numart>a</numart>
-            <sen before-mark="^(\[? ?)?yfirstjórn og eftirlit með störfum " after-mark=" dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?yfirstjórn og eftirlit með störfum " after-mark=" dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>
@@ -292,7 +292,7 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Matvælastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heldur skrá yfir dýralækna sem hafa leyfi til að stunda dýralækningar.$">1</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Matvælastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heldur skrá yfir dýralækna sem hafa leyfi til að stunda dýralækningar.$">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -304,7 +304,7 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?Matvælastofnun er heimilt] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; að fela dýralæknanemum á síðari hluta námsferils að gegna tímabundið ákveðnum dýralæknisstörfum undir stjórn dýralæknis " after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?Matvælastofnun er heimilt(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?að fela dýralæknanemum á síðari hluta námsferils að gegna tímabundið ákveðnum dýralæknisstörfum undir stjórn dýralæknis " after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="63" nr="3">
@@ -799,7 +799,7 @@
             <chapter>6</chapter>
             <art>17</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

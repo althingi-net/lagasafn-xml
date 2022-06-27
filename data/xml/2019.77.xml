@@ -2105,7 +2105,7 @@
             <chapter>12</chapter>
             <art>63</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð, " after-mark=" að höfðu samráði við ráðherra sem fer með málefni heilbrigðisþjónustu og landlækni, nánari ákvæði um … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; verklag við framkvæmd mats á aksturshæfni og takmarkaða afturköllun ökuréttinda, svo sem ef ökumaður telst uppfylla kröfur til að aka á ákveðnum tíma dags eða innan ákveðinnar fjarlægðar frá heimili.$">1</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð, " after-mark=" að höfðu samráði við ráðherra sem fer með málefni heilbrigðisþjónustu og landlækni, nánari ákvæði um (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?verklag við framkvæmd mats á aksturshæfni og takmarkaða afturköllun ökuréttinda, svo sem ef ökumaður telst uppfylla kröfur til að aka á ákveðnum tíma dags eða innan ákveðinnar fjarlægðar frá heimili.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3248,7 +3248,7 @@
             <chapter>18</chapter>
             <art>97</art>
             <subart>1</subart>
-            <sen before-mark="^Sektir … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; fyrir brot skv. 94. og 95. gr. og ákvæðum reglugerða settra samkvæmt þeim skulu ákveðnar í reglugerð " after-mark=" sem ráðherra setur að fengnum tillögum ríkissaksóknara.$">1</sen>
+            <sen before-mark="^Sektir (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fyrir brot skv. 94. og 95. gr. og ákvæðum reglugerða settra samkvæmt þeim skulu ákveðnar í reglugerð " after-mark=" sem ráðherra setur að fengnum tillögum ríkissaksóknara.$">1</sen>
           </location>
         </footnote>
       </footnotes>

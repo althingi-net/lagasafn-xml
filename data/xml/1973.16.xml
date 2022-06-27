@@ -112,7 +112,7 @@
         <location type="pointer">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^Ráðherra setur með reglugerð " after-mark=" nánari ákvæði um starfsemi happdrættisins, þar á meðal um endurskoðun ársreikninga happdrættisins … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Ráðherra setur með reglugerð " after-mark=" nánari ákvæði um starfsemi happdrættisins, þar á meðal um endurskoðun ársreikninga happdrættisins (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1987024?g2" law-nr="24" law-year="1987" law-art="2" nr="2">

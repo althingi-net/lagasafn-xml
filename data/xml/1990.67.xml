@@ -160,7 +160,7 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^" after-mark=" (\[? ?)?Um ráðningu hans fer eins og segir í háskólalögum um prófessora.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">3</sen>
+          <sen before-mark="^" after-mark=" (\[? ?)?Um ráðningu hans fer eins og segir í háskólalögum um prófessora.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="144" nr="2">
@@ -195,7 +195,7 @@
         <location type="deletion">
           <art>6</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Forstöðumaður ræður] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sérfræðinga til rannsóknastarfa við tilraunastöðina á sama hátt og kennara við læknadeild að fengnu áliti dómnefnda sem skipaðar eru samkvæmt háskólalögum og einnig að fengnu áliti " after-mark=" stjórnar.$">1</sen>
+          <sen before-mark="^(\[? ?)?Forstöðumaður ræður(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sérfræðinga til rannsóknastarfa við tilraunastöðina á sama hátt og kennara við læknadeild að fengnu áliti dómnefnda sem skipaðar eru samkvæmt háskólalögum og einnig að fengnu áliti " after-mark=" stjórnar.$">1</sen>
         </location>
         <location type="range">
           <art>6</art>

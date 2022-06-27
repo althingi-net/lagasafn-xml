@@ -215,7 +215,7 @@
             <chapter>2</chapter>
             <art>3</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að ákveða með reglugerð " after-mark=" tiltekinn lágmarksfjölda félagsmanna til þess að heimilt sé að skrá trúfélag eða lífsskoðunarfélag samkvæmt lögum þessum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að ákveða með reglugerð " after-mark=" tiltekinn lágmarksfjölda félagsmanna til þess að heimilt sé að skrá trúfélag eða lífsskoðunarfélag samkvæmt lögum þessum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>

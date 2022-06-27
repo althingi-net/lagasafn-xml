@@ -207,7 +207,7 @@
             <chapter>1</chapter>
             <art>7</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Brot gegn lögum þessum varða sektum nema þyngri refsing liggi við samkvæmt öðrum lögum " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Brot gegn lögum þessum varða sektum nema þyngri refsing liggi við samkvæmt öðrum lögum " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="8" nr="2">

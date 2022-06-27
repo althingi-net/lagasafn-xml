@@ -147,7 +147,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra leggur á (\[? ?)?að minnsta kosti þriggja] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ára fresti fram á Alþingi tillögu til þingsályktunar " after-mark=" um fjarskiptaáætlun þar sem mörkuð skal stefna fyrir næstu (\[? ?)?fimmtán] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; árin.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra leggur á (\[? ?)?að minnsta kosti þriggja(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ára fresti fram á Alþingi tillögu til þingsályktunar " after-mark=" um fjarskiptaáætlun þar sem mörkuð skal stefna fyrir næstu (\[? ?)?fimmtán(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?árin.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -846,7 +846,7 @@
             <art>3</art>
             <subart>1</subart>
             <numart>44</numart>
-            <sen before-mark="^ " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -1079,7 +1079,7 @@
             <chapter>3</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen before-mark="^Heimild þessi nær til einstaklinga og lögaðila sem staðfestu hafa innan Evrópska efnahagssvæðisins og enn fremur í aðildarríkjum Alþjóðaviðskiptastofnunarinnar, eftir því sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ákveður með reglugerð." after-mark="$">2</sen>
+            <sen before-mark="^Heimild þessi nær til einstaklinga og lögaðila sem staðfestu hafa innan Evrópska efnahagssvæðisins og enn fremur í aðildarríkjum Alþjóðaviðskiptastofnunarinnar, eftir því sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ákveður með reglugerð." after-mark="$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.075.html#G32" law-nr="75" law-year="2021" law-art="32" nr="3">
@@ -1260,7 +1260,7 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal setja reglur " after-mark=" um almennar heimildir.$">1</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglur " after-mark=" um almennar heimildir.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.047.html" law-nr="47" law-year="2018" law-art="28" nr="3">
@@ -1853,7 +1853,7 @@
             <chapter>4</chapter>
             <art>14</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; getur í reglugerð " after-mark=" sett nánari reglur um skipulagningu og úthlutun tíðna, jafnt til fjarskiptafyrirtækja sem notenda.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur í reglugerð " after-mark=" sett nánari reglur um skipulagningu og úthlutun tíðna, jafnt til fjarskiptafyrirtækja sem notenda.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1932,7 +1932,7 @@
             <chapter>4</chapter>
             <art>15</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal setja reglur " after-mark=" um númer, númeraraðir og vistföng.$">1</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglur " after-mark=" um númer, númeraraðir og vistföng.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="239" nr="4">
@@ -2087,7 +2087,7 @@
             <chapter>5</chapter>
             <art>18</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt að setja reglugerð " after-mark=" um nánari sundurliðun markaða skv. 16. gr., um greiningu á stöðu markaða og um mælikvarða sem nota skal við mat á því hvort fyrirtæki, eitt eða fleiri saman, hafi (\[? ?)?umtalsverðan markaðsstyrk] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; samkvæmt þessari grein.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerð " after-mark=" um nánari sundurliðun markaða skv. 16. gr., um greiningu á stöðu markaða og um mælikvarða sem nota skal við mat á því hvort fyrirtæki, eitt eða fleiri saman, hafi (\[? ?)?umtalsverðan markaðsstyrk(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?samkvæmt þessari grein.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2235,7 +2235,7 @@
             <chapter>6</chapter>
             <art>20</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur reglugerð " after-mark=" um alþjónustu.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um alþjónustu.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2449,7 +2449,7 @@
             <chapter>6</chapter>
             <art>22</art>
             <subart>7</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur í reglugerð " after-mark=" um alþjónustu nánari fyrirmæli um fjárframlög og jöfnunargjöld í fjarskiptaþjónustu, þar á meðal um útreikning á kostnaði við að reka almenn fjarskiptanet eða veita almenna fjarskiptaþjónustu og um útreikning rekstrartaps.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur í reglugerð " after-mark=" um alþjónustu nánari fyrirmæli um fjárframlög og jöfnunargjöld í fjarskiptaþjónustu, þar á meðal um útreikning á kostnaði við að reka almenn fjarskiptanet eða veita almenna fjarskiptaþjónustu og um útreikning rekstrartaps.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2853,7 +2853,7 @@
             <chapter>7</chapter>
             <art>29</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um hvert skuli vera efni samtengingarsamninga og viðmiðunartilboða.$">3</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um hvert skuli vera efni samtengingarsamninga og viðmiðunartilboða.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2995,7 +2995,7 @@
             <chapter>7</chapter>
             <art>32</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; er heimilt að setja reglugerð " after-mark=" um útfærslu bókhaldslegs aðskilnaðar í rekstri fjarskiptafyrirtækja skv. 31. gr., þ.m.t. skiptingu eftir netum og þjónustu, og um nánara fyrirkomulag kostnaðargreiningar samkvæmt þessari grein, m.a. um aðferðir við eignamat, afskriftir, ávöxtunarkröfu og gerð kostnaðarlíkana.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerð " after-mark=" um útfærslu bókhaldslegs aðskilnaðar í rekstri fjarskiptafyrirtækja skv. 31. gr., þ.m.t. skiptingu eftir netum og þjónustu, og um nánara fyrirkomulag kostnaðargreiningar samkvæmt þessari grein, m.a. um aðferðir við eignamat, afskriftir, ávöxtunarkröfu og gerð kostnaðarlíkana.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3087,7 +3087,7 @@
             <chapter>7</chapter>
             <art>34</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um hvert skuli vera efni viðmiðunartilboðs.$">5</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um hvert skuli vera efni viðmiðunartilboðs.$">5</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="239" nr="4">
@@ -3105,7 +3105,7 @@
             <chapter>7</chapter>
             <art>34</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; er heimilt að setja reglugerð " after-mark=" um sundurgreindan aðgang að heimtaugum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerð " after-mark=" um sundurgreindan aðgang að heimtaugum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -3221,7 +3221,7 @@
             <chapter>7</chapter>
             <art>35</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur reglugerð " after-mark=" um (\[? ?)?reikiþjónustu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; í almennum farsímanetum, þar sem m.a. er heimilt að kveða á um eftirfarandi:$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um (\[? ?)?reikiþjónustu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í almennum farsímanetum, þar sem m.a. er heimilt að kveða á um eftirfarandi:$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.118.html" law-nr="118" law-year="2008" law-art="3" nr="4">
@@ -3361,7 +3361,7 @@
             <chapter>8</chapter>
             <art>37</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur sett nánari reglur " after-mark=" um þjónustuflutning.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett nánari reglur " after-mark=" um þjónustuflutning.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.039.html" law-nr="39" law-year="2007" law-art="4" nr="3">
@@ -3455,7 +3455,7 @@
             <chapter>8</chapter>
             <art>38</art>
             <subart>1</subart>
-            <sen before-mark="^Áskrifendur (\[? ?)?tal- og farsímaþjónustu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; eiga rétt á að fá reikninga fyrir fjarskiptanotkun sína sundurliðaða " after-mark=" og skulu áskrifendur alþjónustu eiga rétt á slíkum reikningum án þess að greiðsla komi fyrir.$">1</sen>
+            <sen before-mark="^Áskrifendur (\[? ?)?tal- og farsímaþjónustu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eiga rétt á að fá reikninga fyrir fjarskiptanotkun sína sundurliðaða " after-mark=" og skulu áskrifendur alþjónustu eiga rétt á slíkum reikningum án þess að greiðsla komi fyrir.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.090.html#G54" law-nr="90" law-year="2018" law-art="54" nr="3">
@@ -3482,7 +3482,7 @@
             <chapter>8</chapter>
             <art>38</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; er heimilt að setja reglugerð " after-mark=" um meðferð upplýsinga sem nauðsynlegar eru fyrir gerð reikninga, sundurliðun þeirra og málsmeðferð vegna kvartana.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerð " after-mark=" um meðferð upplýsinga sem nauðsynlegar eru fyrir gerð reikninga, sundurliðun þeirra og málsmeðferð vegna kvartana.$">1</sen>
           </location>
         </footnote>
         <footnote nr="6">
@@ -3491,7 +3491,7 @@
             <chapter>8</chapter>
             <art>38</art>
             <subart>5</subart>
-            <sen before-mark="^Nánar skal kveðið á um símtöl og aðra virðisaukandi þjónustu í (\[? ?)?tal- og farsímanetum] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; með yfirgjaldi í reglugerð." after-mark="$">3</sen>
+            <sen before-mark="^Nánar skal kveðið á um símtöl og aðra virðisaukandi þjónustu í (\[? ?)?tal- og farsímanetum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?með yfirgjaldi í reglugerð." after-mark="$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.075.html#G32" law-nr="75" law-year="2021" law-art="32" nr="7">
@@ -3727,7 +3727,7 @@
             <chapter>8</chapter>
             <art>41</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; getur gefið út reglur " after-mark=" um gæði fjarskiptaþjónustu og framsetningu upplýsinga sem birtar eru svo að notendur hafi aðgang að ítarlegum, samanburðarhæfum og auðskiljanlegum upplýsingum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur gefið út reglur " after-mark=" um gæði fjarskiptaþjónustu og framsetningu upplýsinga sem birtar eru svo að notendur hafi aðgang að ítarlegum, samanburðarhæfum og auðskiljanlegum upplýsingum.$">1</sen>
           </location>
         </footnote>
         <footnote nr="4">
@@ -3736,7 +3736,7 @@
             <chapter>8</chapter>
             <art>41</art>
             <subart>2</subart>
-            <sen before-mark="^Er (\[? ?)?Fjarskiptastofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; heimilt að setja reglur " after-mark=" um slíkar ráðstafanir þar sem nánar er mælt fyrir um:$">2</sen>
+            <sen before-mark="^Er (\[? ?)?Fjarskiptastofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að setja reglur " after-mark=" um slíkar ráðstafanir þar sem nánar er mælt fyrir um:$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.039.html" law-nr="39" law-year="2007" law-art="6" nr="5">
@@ -4193,7 +4193,7 @@
             <chapter>9</chapter>
             <art>47</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur reglur " after-mark=" um vernd upplýsinga í almennum fjarskiptanetum þar sem nánar er mælt fyrir um þær kröfur sem gerðar eru til skipulags upplýsingaöryggis.$">2</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um vernd upplýsinga í almennum fjarskiptanetum þar sem nánar er mælt fyrir um þær kröfur sem gerðar eru til skipulags upplýsingaöryggis.$">2</sen>
           </location>
         </footnote>
         <footnote nr="4">
@@ -4202,7 +4202,7 @@
             <chapter>9</chapter>
             <art>47</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur sérstakar reglur " after-mark=" um virkni almennra fjarskiptaneta.$">2</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur sérstakar reglur " after-mark=" um virkni almennra fjarskiptaneta.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="5">
@@ -4583,7 +4583,7 @@
             <chapter>10</chapter>
             <art>51</art>
             <subart>1</subart>
-            <sen before-mark="^ (\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; skal setja reglur " after-mark=" um fyrirkomulag númerabirtingar.$">2</sen>
+            <sen before-mark="^ (\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglur " after-mark=" um fyrirkomulag númerabirtingar.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4623,7 +4623,7 @@
             <chapter>10</chapter>
             <art>52</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur sett nánari reglur " after-mark=" um númeraflutning og tímasetningar í því sambandi og sker úr ágreiningi um framkvæmd hans.$">1</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett nánari reglur " after-mark=" um númeraflutning og tímasetningar í því sambandi og sker úr ágreiningi um framkvæmd hans.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4682,7 +4682,7 @@
             <chapter>10</chapter>
             <art>53</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofu] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um forval og fast forval.$">1</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um forval og fast forval.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4751,7 +4751,7 @@
             <chapter>11</chapter>
             <art>56</art>
             <subart>1</subart>
-            <sen before-mark="^Skilyrtur aðgangur að stafrænni hljóð- og sjónvarpsþjónustu skal fullnægja reglum " after-mark=" sem (\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur á grundvelli skuldbindinga samkvæmt samningnum um Evrópska efnahagssvæðið.$">1</sen>
+            <sen before-mark="^Skilyrtur aðgangur að stafrænni hljóð- og sjónvarpsþjónustu skal fullnægja reglum " after-mark=" sem (\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur á grundvelli skuldbindinga samkvæmt samningnum um Evrópska efnahagssvæðið.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.075.html#G32" law-nr="75" law-year="2021" law-art="32" nr="2">
@@ -4838,7 +4838,7 @@
             <chapter>12</chapter>
             <art>59</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; getur sett reglugerð " after-mark=" um nánari útfærslu þessara ákvæða.$">5</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett reglugerð " after-mark=" um nánari útfærslu þessara ákvæða.$">5</sen>
           </location>
         </footnote>
       </footnotes>
@@ -4872,7 +4872,7 @@
             <chapter>12</chapter>
             <art>60</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um frágang aðgangspunkta (húskassa) og lagna í þeim tilgangi að tryggja vernd fjarskipta og skilgreina aðgangsheimild fjarskiptafyrirtækja.$">5</sen>
+            <sen before-mark="^(\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um frágang aðgangspunkta (húskassa) og lagna í þeim tilgangi að tryggja vernd fjarskipta og skilgreina aðgangsheimild fjarskiptafyrirtækja.$">5</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.125.html#G15" law-nr="125" law-year="2019" law-art="15" nr="3">
@@ -4994,7 +4994,7 @@
             <chapter>12</chapter>
             <art>61</art>
             <subart>4</subart>
-            <sen before-mark="^Notendabúnaður fyrir stafrænt sjónvarp skal uppfylla kröfur um samvirkni í samræmi við reglur " after-mark=" sem (\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur um:$">1</sen>
+            <sen before-mark="^Notendabúnaður fyrir stafrænt sjónvarp skal uppfylla kröfur um samvirkni í samræmi við reglur " after-mark=" sem (\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur um:$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.075.html#G32" law-nr="75" law-year="2021" law-art="32" nr="3">
@@ -5131,7 +5131,7 @@
             <chapter>12</chapter>
             <art>62</art>
             <subart>1</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Ekki þarf leyfisbréf fyrir lágaflsbúnaði sem vinnur á samræmdum tíðnisviðum sem (\[? ?)?Fjarskiptastofa] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; hefur tilkynnt að nota megi fyrir slíkan búnað.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">9</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Ekki þarf leyfisbréf fyrir lágaflsbúnaði sem vinnur á samræmdum tíðnisviðum sem (\[? ?)?Fjarskiptastofa(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hefur tilkynnt að nota megi fyrir slíkan búnað.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">9</sen>
           </location>
           <location type="range">
             <start>
@@ -5341,7 +5341,7 @@
             <chapter>12</chapter>
             <art>63</art>
             <subart>1</subart>
-            <sen before-mark="^Íslensk skip, loftför og önnur farartæki skulu búin fjarskiptabúnaði í samræmi við alþjóðasamþykktir og reglugerðir " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur.$">1</sen>
+            <sen before-mark="^Íslensk skip, loftför og önnur farartæki skulu búin fjarskiptabúnaði í samræmi við alþjóðasamþykktir og reglugerðir " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="239" nr="2">
@@ -5751,7 +5751,7 @@
             <chapter>13</chapter>
             <art>68</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur reglugerð " after-mark=" um starfsemi radíóáhugamanna.$">3</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um starfsemi radíóáhugamanna.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -5926,7 +5926,7 @@
             <chapter>15</chapter>
             <art>72</art>
             <subart>2</subart>
-            <sen before-mark="^frv., getur (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; að beiðni ríkislögreglustjóra " after-mark=" mælt fyrir um takmörkun fjarskipta sem truflað geta neyðar- og öryggisfjarskipti.$">3</sen>
+            <sen before-mark="^frv., getur (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?að beiðni ríkislögreglustjóra " after-mark=" mælt fyrir um takmörkun fjarskipta sem truflað geta neyðar- og öryggisfjarskipti.$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.075.html#G32" law-nr="75" law-year="2021" law-art="32" nr="3">
@@ -6209,7 +6209,7 @@
             <chapter>17</chapter>
             <art>75</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur í reglugerð " after-mark=" nánari fyrirmæli um framkvæmd fjarskiptamála.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur í reglugerð " after-mark=" nánari fyrirmæli um framkvæmd fjarskiptamála.$">1</sen>
           </location>
         </footnote>
       </footnotes>

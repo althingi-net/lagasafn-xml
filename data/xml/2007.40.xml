@@ -317,7 +317,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um starfsemi heilbrigðisstofnana, sem reknar eru af ríkinu eða á grundvelli samnings skv. VII. kafla og lögum um sjúkratryggingar, og þá heilbrigðisþjónustu sem þeim ber að veita.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um starfsemi heilbrigðisstofnana, sem reknar eru af ríkinu eða á grundvelli samnings skv. VII. kafla og lögum um sjúkratryggingar, og þá heilbrigðisþjónustu sem þeim ber að veita.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="3" nr="2">
@@ -354,7 +354,7 @@
             <chapter>2</chapter>
             <art>7</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um starfsemi heilsugæslustöðva og þá þjónustu sem þeim ber að veita.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um starfsemi heilsugæslustöðva og þá þjónustu sem þeim ber að veita.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="4" nr="2">
@@ -393,7 +393,7 @@
             <chapter>2</chapter>
             <art>7a</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um hlutverk og starfsemi Landspítala og þá heilbrigðisþjónustu sem þar skal veitt.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um hlutverk og starfsemi Landspítala og þá heilbrigðisþjónustu sem þar skal veitt.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="5" nr="2">
@@ -432,7 +432,7 @@
             <chapter>2</chapter>
             <art>7b</art>
             <subart>2</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um hlutverk og starfsemi Sjúkrahússins á Akureyri og þá heilbrigðisþjónustu sem þar skal veitt.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um hlutverk og starfsemi Sjúkrahússins á Akureyri og þá heilbrigðisþjónustu sem þar skal veitt.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="5" nr="2">
@@ -699,7 +699,7 @@
             <chapter>3</chapter>
             <art>13</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um skipan og verklag fagráða heilbrigðisstofnana.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal í reglugerð " after-mark=" kveða nánar á um skipan og verklag fagráða heilbrigðisstofnana.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="11" nr="2">
@@ -982,13 +982,13 @@
             <chapter>7</chapter>
             <art>31</art>
             <subart>3</subart>
-            <sen before-mark="^Landspítala, Sjúkrahúsinu á Akureyri og öðrum " after-mark=" heilbrigðisstofnunum sem ríkið rekur er heimilt, með leyfi ráðherra, að semja við aðrar heilbrigðisstofnanir eða heilbrigðisstarfsmenn um að ákveðnir þættir þeirrar … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; heilbrigðisþjónustu sem þeim er ætlað að veita séu veittir á viðkomandi heilbrigðisstofnun eða starfsstofu heilbrigðisstarfsmanna.$">1</sen>
+            <sen before-mark="^Landspítala, Sjúkrahúsinu á Akureyri og öðrum " after-mark=" heilbrigðisstofnunum sem ríkið rekur er heimilt, með leyfi ráðherra, að semja við aðrar heilbrigðisstofnanir eða heilbrigðisstarfsmenn um að ákveðnir þættir þeirrar (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heilbrigðisþjónustu sem þeim er ætlað að veita séu veittir á viðkomandi heilbrigðisstofnun eða starfsstofu heilbrigðisstarfsmanna.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>7</chapter>
             <art>31</art>
             <subart>3</subart>
-            <sen before-mark="^Landspítala, Sjúkrahúsinu á Akureyri og öðrum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; heilbrigðisstofnunum sem ríkið rekur er heimilt, með leyfi ráðherra, að semja við aðrar heilbrigðisstofnanir eða heilbrigðisstarfsmenn um að ákveðnir þættir þeirrar " after-mark=" heilbrigðisþjónustu sem þeim er ætlað að veita séu veittir á viðkomandi heilbrigðisstofnun eða starfsstofu heilbrigðisstarfsmanna.$">1</sen>
+            <sen before-mark="^Landspítala, Sjúkrahúsinu á Akureyri og öðrum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heilbrigðisstofnunum sem ríkið rekur er heimilt, með leyfi ráðherra, að semja við aðrar heilbrigðisstofnanir eða heilbrigðisstarfsmenn um að ákveðnir þættir þeirrar " after-mark=" heilbrigðisþjónustu sem þeim er ætlað að veita séu veittir á viðkomandi heilbrigðisstofnun eða starfsstofu heilbrigðisstarfsmanna.$">1</sen>
           </location>
           <location type="range">
             <start>

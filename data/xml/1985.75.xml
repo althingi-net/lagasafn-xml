@@ -354,7 +354,7 @@
             <chapter>2</chapter>
             <art>14</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur í reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara, þar á meðal um starfshætti og verkefni samstarfsnefndar tónlistarfræðslunnar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðuneytið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur í reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara, þar á meðal um starfshætti og verkefni samstarfsnefndar tónlistarfræðslunnar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1989.087.html" law-nr="87" law-year="1989" law-art="71" nr="3">

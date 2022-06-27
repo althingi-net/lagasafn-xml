@@ -143,7 +143,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur í reglugerð " after-mark=" nánari reglur um vátryggingarskylduna, þar með talið gildissvið vátrygginga þessara og vátryggingarfjárhæðir.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur í reglugerð " after-mark=" nánari reglur um vátryggingarskylduna, þar með talið gildissvið vátrygginga þessara og vátryggingarfjárhæðir.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.023.html" law-nr="23" law-year="2004" law-art="1" nr="3">

@@ -172,7 +172,7 @@
         <location type="pointer">
           <art>7</art>
           <subart>4</subart>
-          <sen before-mark="^Heimilt er (\[? ?)?þeim ráðherra er fer með launa- og kjaramál] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; að ákveða að starfskostnaður " after-mark=" reiknist sem ákveðið hlutfall af launum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+          <sen before-mark="^Heimilt er (\[? ?)?þeim ráðherra er fer með launa- og kjaramál(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?að ákveða að starfskostnaður " after-mark=" reiknist sem ákveðið hlutfall af launum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1983013?g2" law-nr="13" law-year="1983" law-art="2" nr="3">

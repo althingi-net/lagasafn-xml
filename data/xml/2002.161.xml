@@ -691,7 +691,7 @@
             <chapter>2</chapter>
             <art>2</art>
             <subart>5</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.130.html" law-nr="130" law-year="2004" law-art="1" nr="2">
@@ -917,7 +917,7 @@
             <subart>1</subart>
             <numart>6</numart>
             <numart>f</numart>
-            <sen before-mark="^(\[? ?)?Umsjón með útboði fjármálagerninga án sölutryggingar " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Umsjón með útboði fjármálagerninga án sölutryggingar " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -1411,7 +1411,7 @@
             <art>9</art>
             <subart>1</subart>
             <numart>6</numart>
-            <sen before-mark="^(\[? ?)?hafi ráðstafanir sem gripið hefur verið til á grundvelli ákvæða 86. gr. h – 86. gr. j um tímanleg inngrip Fjármálaeftirlitsins " after-mark=" ekki skilað árangri eða hafi verið kveðinn upp úrskurður um slit fyrirtækisins skv. XII. kafla], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?hafi ráðstafanir sem gripið hefur verið til á grundvelli ákvæða 86. gr. h – 86. gr. j um tímanleg inngrip Fjármálaeftirlitsins " after-mark=" ekki skilað árangri eða hafi verið kveðinn upp úrskurður um slit fyrirtækisins skv. XII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>
@@ -1557,7 +1557,7 @@
             <chapter>3</chapter>
             <art>12</art>
             <subart>1</subart>
-            <sen before-mark="^Fjármálafyrirtækjum er einum heimilt að nota í firma sínu eða til nánari skýringar á starfsemi sinni orðin „banki“, „viðskiptabanki“, „fjárfestingarbanki“, „sparisjóður“, " after-mark=" (\[? ?)?og „verðbréfafyrirtæki“], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ein sér eða samtengd öðrum orðum, í samræmi við starfsleyfi sitt.$">1</sen>
+            <sen before-mark="^Fjármálafyrirtækjum er einum heimilt að nota í firma sínu eða til nánari skýringar á starfsemi sinni orðin „banki“, „viðskiptabanki“, „fjárfestingarbanki“, „sparisjóður“, " after-mark=" (\[? ?)?og „verðbréfafyrirtæki“(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ein sér eða samtengd öðrum orðum, í samræmi við starfsleyfi sitt.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.116.html#G137" law-nr="116" law-year="2021" law-art="137" nr="2">
@@ -2135,7 +2135,7 @@
             <chapter>3</chapter>
             <art>19</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um hvað teljist eðlilegir og heilbrigðir viðskiptahættir fjármálafyrirtækja samkvæmt lögum þessum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um hvað teljist eðlilegir og heilbrigðir viðskiptahættir fjármálafyrirtækja samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="6" nr="3">
@@ -2216,7 +2216,7 @@
             <chapter>3</chapter>
             <art>19a</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.075.html" law-nr="75" law-year="2010" law-art="13" nr="2">
@@ -2821,13 +2821,13 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>2</subart>
-            <sen before-mark="^Samtala virkra eignarhluta skv. 1. mgr. má ekki nema hærri fjárhæð en 60% af (\[? ?)?hæfu fjármagni] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; fjármálafyrirtækis " after-mark=" .$">1</sen>
+            <sen before-mark="^Samtala virkra eignarhluta skv. 1. mgr. má ekki nema hærri fjárhæð en 60% af (\[? ?)?hæfu fjármagni(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fjármálafyrirtækis " after-mark=" .$">1</sen>
           </location>
           <location type="deletion">
             <chapter>4</chapter>
             <art>28</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Tímabundinn eignarhlutur fjármálafyrirtækis, þó ekki eignarhlutur í veltubók, í fyrirtæki í tengslum við fjárhagslega endurskipulagningu í þeim tilgangi að verja kröfur fjármálafyrirtækisins skal undanþeginn við útreikning skv. 1. mgr. og 1. " after-mark=" málsl. þessarar málsgreinar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Tímabundinn eignarhlutur fjármálafyrirtækis, þó ekki eignarhlutur í veltubók, í fyrirtæki í tengslum við fjárhagslega endurskipulagningu í þeim tilgangi að verja kröfur fjármálafyrirtækisins skal undanþeginn við útreikning skv. 1. mgr. og 1. " after-mark=" málsl. þessarar málsgreinar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -2892,7 +2892,7 @@
             <chapter>4</chapter>
             <art>28</art>
             <subart>5</subart>
-            <sen before-mark="^Fjármálafyrirtæki skulu gefa Fjármálaeftirlitinu sundurliðað yfirlit yfir eignarhluti í öðrum (\[? ?)?fyrirtækjum] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem þau hafa eignast eða tekið að veði " after-mark="$">1</sen>
+            <sen before-mark="^Fjármálafyrirtæki skulu gefa Fjármálaeftirlitinu sundurliðað yfirlit yfir eignarhluti í öðrum (\[? ?)?fyrirtækjum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sem þau hafa eignast eða tekið að veði " after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.075.html" law-nr="75" law-year="2010" law-art="18" nr="4">
@@ -3058,7 +3058,7 @@
             <chapter>4</chapter>
             <art>29a</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur reglur &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; um útreikning láns eða annarrar fyrirgreiðslu skv. 2. mgr., um hvað teljist til traustrar tryggingar, um hámarksfjárhæðir lána eða annarra fyrirgreiðslna án trygginga " after-mark=" og um tryggingar sem heimila að farið sé yfir fjárhæð skv. 2. mgr.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; um útreikning láns eða annarrar fyrirgreiðslu skv. 2. mgr., um hvað teljist til traustrar tryggingar, um hámarksfjárhæðir lána eða annarra fyrirgreiðslna án trygginga " after-mark=" og um tryggingar sem heimila að farið sé yfir fjárhæð skv. 2. mgr.$">1</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -3082,7 +3082,7 @@
             <chapter>4</chapter>
             <art>29a</art>
             <subart>2</subart>
-            <sen before-mark="^Viðskipti fjármálafyrirtækis við eigendur virkra eignarhluta, (\[? ?)?stjórnarmanna " after-mark=" og nána fjölskyldumeðlimi þeirra], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; eða aðila í nánum tengslum við þá, skulu lúta sömu reglum og viðskipti við almenna viðskiptamenn í sambærilegum viðskiptum.$">4</sen>
+            <sen before-mark="^Viðskipti fjármálafyrirtækis við eigendur virkra eignarhluta, (\[? ?)?stjórnarmanna " after-mark=" og nána fjölskyldumeðlimi þeirra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða aðila í nánum tengslum við þá, skulu lúta sömu reglum og viðskipti við almenna viðskiptamenn í sambærilegum viðskiptum.$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="36" nr="4">
@@ -3106,7 +3106,7 @@
             <chapter>4</chapter>
             <art>29a</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur reglur " after-mark=" um útreikning láns eða annarrar fyrirgreiðslu skv. 2. mgr., um hvað teljist til traustrar tryggingar, um hámarksfjárhæðir lána eða annarra fyrirgreiðslna án trygginga … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; og um tryggingar sem heimila að farið sé yfir fjárhæð skv. 2. mgr.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um útreikning láns eða annarrar fyrirgreiðslu skv. 2. mgr., um hvað teljist til traustrar tryggingar, um hámarksfjárhæðir lána eða annarra fyrirgreiðslna án trygginga (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og um tryggingar sem heimila að farið sé yfir fjárhæð skv. 2. mgr.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="37" nr="6">
@@ -3417,7 +3417,7 @@
             <chapter>4</chapter>
             <art>30</art>
             <subart>4</subart>
-            <sen before-mark="^Ákvæði 1.–3. mgr. eiga ekki við um verðbréfafyrirtæki sem ekki hafa starfsheimildir skv. (\[? ?)?c- og f-lið 15. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ákvæði 1.–3. mgr. eiga ekki við um verðbréfafyrirtæki sem ekki hafa starfsheimildir skv. (\[? ?)?c- og f-lið 15. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -3432,7 +3432,7 @@
             <chapter>4</chapter>
             <art>30</art>
             <subart>4</subart>
-            <sen before-mark="^Ákvæði 1.–3. mgr. eiga ekki við um verðbréfafyrirtæki sem ekki hafa starfsheimildir skv. (\[? ?)?c- og f-lið 15. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; " after-mark="$">1</sen>
+            <sen before-mark="^Ákvæði 1.–3. mgr. eiga ekki við um verðbréfafyrirtæki sem ekki hafa starfsheimildir skv. (\[? ?)?c- og f-lið 15. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="10" nr="6">
@@ -3926,7 +3926,7 @@
           <location type="deletion">
             <chapter>6</chapter>
             <art>40a</art>
-            <nr-title before-mark="^(\[? ?)?40. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?40. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2006.067.html" law-nr="67" law-year="2006" law-art="12" nr="2">
@@ -4257,7 +4257,7 @@
           <location type="deletion">
             <chapter>6</chapter>
             <art>46a</art>
-            <nr-title before-mark="^(\[? ?)?46. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?46. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.075.html" law-nr="75" law-year="2010" law-art="34" nr="2">
@@ -4291,7 +4291,7 @@
             <chapter>6</chapter>
             <art>47</art>
             <subart>1</subart>
-            <sen before-mark="^Fari eignarhluturinn niður fyrir 20%, " after-mark=" 33%, 50% eða svo mikið að fjármálafyrirtækið hættir að vera (\[? ?)?dótturfélag] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; hlutaðeigandi skal það einnig tilkynnt.$">2</sen>
+            <sen before-mark="^Fari eignarhluturinn niður fyrir 20%, " after-mark=" 33%, 50% eða svo mikið að fjármálafyrirtækið hættir að vera (\[? ?)?dótturfélag(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hlutaðeigandi skal það einnig tilkynnt.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.075.html" law-nr="75" law-year="2010" law-art="35" nr="2">
@@ -4553,7 +4553,7 @@
             <chapter>7</chapter>
             <art>52</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur nánari reglur " after-mark=" um hæfisskilyrði stjórnarmanna og framkvæmdastjóra, þar á meðal um hvað felst í fullnægjandi þekkingu, hæfni og reynslu, góðu orðspori og fjárhagslegu sjálfstæði, og um hvernig staðið skuli að hæfismati.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur nánari reglur " after-mark=" um hæfisskilyrði stjórnarmanna og framkvæmdastjóra, þar á meðal um hvað felst í fullnægjandi þekkingu, hæfni og reynslu, góðu orðspori og fjárhagslegu sjálfstæði, og um hvernig staðið skuli að hæfismati.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.082.html" law-nr="82" law-year="2021" law-art="64" nr="3">
@@ -5000,7 +5000,7 @@
             <chapter>7</chapter>
             <art>57</art>
             <subart>2</subart>
-            <sen before-mark="^ Skulu þau " after-mark=" lúta sömu reglum og viðskipti við almenna viðskiptamenn í sambærilegum viðskiptum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^ Skulu þau " after-mark=" lúta sömu reglum og viðskipti við almenna viðskiptamenn í sambærilegum viðskiptum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="27" nr="2">
@@ -5064,7 +5064,7 @@
             <chapter>7</chapter>
             <art>57a</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari reglur " after-mark=" um kaupaukakerfi.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um kaupaukakerfi.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="24" nr="3">
@@ -6381,7 +6381,7 @@
             <chapter>9</chapter>
             <art>78h</art>
             <subart>10</subart>
-            <sen before-mark="^(\[? ?)?(\[? ?)?Seðlabanka Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglur " after-mark=" um meðhöndlun lausafjáráhættu og útfæra nánar skyldur fjármálafyrirtækis samkvæmt þessari grein.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?(\[? ?)?Seðlabanka Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur " after-mark=" um meðhöndlun lausafjáráhættu og útfæra nánar skyldur fjármálafyrirtækis samkvæmt þessari grein.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="37" nr="3">
@@ -6484,7 +6484,7 @@
             <chapter>9</chapter>
             <art>79</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="39" nr="2">
@@ -6861,7 +6861,7 @@
             <chapter>9a</chapter>
             <art>82a</art>
             <subart>4</subart>
-            <sen before-mark="^Seðlabanki Íslands skal setja reglur " after-mark=" þar sem m.a. er kveðið á um nánari kröfur um innihald endurbótaáætlana skv. 1. mgr. og endurbótaáætlun samstæðu skv. 82. gr. d.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Seðlabanki Íslands skal setja reglur " after-mark=" þar sem m.a. er kveðið á um nánari kröfur um innihald endurbótaáætlana skv. 1. mgr. og endurbótaáætlun samstæðu skv. 82. gr. d.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote nr="3">
@@ -6870,7 +6870,7 @@
             <chapter>9a</chapter>
             <art>82a</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" þar sem m.a. er kveðið á um nánari kröfur um innihald endurbótaáætlana skv. 1. mgr. og endurbótaáætlun samstæðu skv. 82. gr. d.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" þar sem m.a. er kveðið á um nánari kröfur um innihald endurbótaáætlana skv. 1. mgr. og endurbótaáætlun samstæðu skv. 82. gr. d.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.054.html" law-nr="54" law-year="2018" law-art="5" nr="4">
@@ -6922,7 +6922,7 @@
             <chapter>9a</chapter>
             <art>82b</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands skal setja reglur " after-mark=" þar sem fram koma lágmarksviðmið sem líta ber til við mat á efnisþáttum skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands skal setja reglur " after-mark=" þar sem fram koma lágmarksviðmið sem líta ber til við mat á efnisþáttum skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.070.html#G103" law-nr="70" law-year="2020" law-art="103" nr="2">
@@ -7103,7 +7103,7 @@
             <chapter>9a</chapter>
             <art>82e</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur reglur " after-mark=" um viðmið vegna ákvörðunar um einfalda endurbótaáætlun skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur reglur " after-mark=" um viðmið vegna ákvörðunar um einfalda endurbótaáætlun skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.070.html#G103" law-nr="70" law-year="2020" law-art="103" nr="2">
@@ -7315,7 +7315,7 @@
             <chapter>10</chapter>
             <art>84</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um útreikning á eiginfjárgrunni og áhættugrunni fyrir fjármálasamsteypur.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um útreikning á eiginfjárgrunni og áhættugrunni fyrir fjármálasamsteypur.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="42" nr="3">
@@ -8242,7 +8242,7 @@
             <chapter>10</chapter>
             <art>86a</art>
             <subart>7</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur reglur " after-mark=" um hámarksútgreiðslufjárhæð og takmarkanir á útgreiðslum fjármálafyrirtækja á arði til hluthafa, (\[? ?)?kaupaukum] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; til starfsmanna og öðrum sambærilegum greiðslum þegar fjármálafyrirtæki uppfyllir ekki að fullu kröfu til þess að viðhalda eiginfjárauka skv. (\[? ?)?86. gr. b] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; – (\[? ?)?86. gr. e].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um hámarksútgreiðslufjárhæð og takmarkanir á útgreiðslum fjármálafyrirtækja á arði til hluthafa, (\[? ?)?kaupaukum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?til starfsmanna og öðrum sambærilegum greiðslum þegar fjármálafyrirtæki uppfyllir ekki að fullu kröfu til þess að viðhalda eiginfjárauka skv. (\[? ?)?86. gr. b(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?– (\[? ?)?86. gr. e].&lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="28" nr="5">
@@ -8461,7 +8461,7 @@
             <chapter>10</chapter>
             <art>86c</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands skal setja reglur " after-mark=" um eiginfjárauka fyrir kerfislega mikilvæg fjármálafyrirtæki að undangengnu samþykki fjármálastöðugleikanefndar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands skal setja reglur " after-mark=" um eiginfjárauka fyrir kerfislega mikilvæg fjármálafyrirtæki að undangengnu samþykki fjármálastöðugleikanefndar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="48" nr="3">
@@ -8502,13 +8502,13 @@
             <chapter>10</chapter>
             <art>86c</art>
             <subart>1</subart>
-            <sen before-mark="^" after-mark=" Ráðherra setur reglugerð, eftir umsögn (\[? ?)?Seðlabanka Íslands], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; um nánari framkvæmd þessarar greinar.$">6</sen>
+            <sen before-mark="^" after-mark=" Ráðherra setur reglugerð, eftir umsögn (\[? ?)?Seðlabanka Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?um nánari framkvæmd þessarar greinar.$">6</sen>
           </location>
           <location type="deletion">
             <chapter>10</chapter>
             <art>86c</art>
             <subart>1</subart>
-            <sen before-mark="^Reglugerðin skal m.a. innihalda nánari reglur um málsmeðferð og samskipti við erlendar eftirlitsstofnanir " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">7</sen>
+            <sen before-mark="^Reglugerðin skal m.a. innihalda nánari reglur um málsmeðferð og samskipti við erlendar eftirlitsstofnanir " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">7</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="28" nr="4">
@@ -8592,7 +8592,7 @@
             <chapter>10</chapter>
             <art>86d</art>
             <subart>4</subart>
-            <sen before-mark="^Fjármálafyrirtæki með starfsleyfi sem verðbréfafyrirtæki " after-mark=" (\[? ?)?skv. 5. tölul.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; 1. mgr. 4. gr., sbr. 6. gr., er undanskilið skyldu til þess að viðhalda sveiflujöfnunarauka skv. 1. mgr. ef það uppfyllir öll eftirtalin skilyrði:$">1</sen>
+            <sen before-mark="^Fjármálafyrirtæki með starfsleyfi sem verðbréfafyrirtæki " after-mark=" (\[? ?)?skv. 5. tölul.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?1. mgr. 4. gr., sbr. 6. gr., er undanskilið skyldu til þess að viðhalda sveiflujöfnunarauka skv. 1. mgr. ef það uppfyllir öll eftirtalin skilyrði:$">1</sen>
           </location>
         </footnote>
         <footnote nr="2">
@@ -8642,19 +8642,19 @@
             <chapter>10</chapter>
             <art>86d</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ef áhættuþættir sem liggja til grundvallar mati … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ef áhættuþættir sem liggja til grundvallar mati (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>10</chapter>
             <art>86d</art>
             <subart>2</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; (\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni " after-mark=" ef áhættuþættir sem liggja til grundvallar mati … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni " after-mark=" ef áhættuþættir sem liggja til grundvallar mati (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>10</chapter>
             <art>86d</art>
             <subart>2</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; (\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni … &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; ef áhættuþættir sem liggja til grundvallar mati " after-mark=" á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?Seðlabanka Íslands er í reglum skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að kveða á um sveiflujöfnunarauka sem er hærri en 2,5% af áhættugrunni (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ef áhættuþættir sem liggja til grundvallar mati " after-mark=" á gildi sveiflujöfnunarauka gefa tilefni til.$">1</sen>
           </location>
           <location type="range">
             <chapter>10</chapter>
@@ -8748,7 +8748,7 @@
             <chapter>10</chapter>
             <art>86e</art>
             <subart>2</subart>
-            <sen before-mark="^Fjármálafyrirtæki með starfsleyfi sem verðbréfafyrirtæki " after-mark=" (\[? ?)?skv. 5. tölul.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; 1. mgr. 4. gr., sbr. 6. gr., er undanskilið skyldu til þess að viðhalda verndunarauka skv. 1. mgr. ef það uppfyllir öll eftirtalin skilyrði:$">1</sen>
+            <sen before-mark="^Fjármálafyrirtæki með starfsleyfi sem verðbréfafyrirtæki " after-mark=" (\[? ?)?skv. 5. tölul.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?1. mgr. 4. gr., sbr. 6. gr., er undanskilið skyldu til þess að viðhalda verndunarauka skv. 1. mgr. ef það uppfyllir öll eftirtalin skilyrði:$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.116.html#G137" law-nr="116" law-year="2021" law-art="137" nr="2">
@@ -9575,7 +9575,7 @@
             <chapter>11</chapter>
             <art>88</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" að höfðu samráði við reikningsskilaráð um uppsetningu ársreiknings, innihald einstakra liða rekstrar- og efnahagsreiknings og liða utan efnahagsreiknings og skýringar og mat á einstökum liðum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" að höfðu samráði við reikningsskilaráð um uppsetningu ársreiknings, innihald einstakra liða rekstrar- og efnahagsreiknings og liða utan efnahagsreiknings og skýringar og mat á einstökum liðum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -9753,7 +9753,7 @@
             <chapter>11</chapter>
             <art>93</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglur " after-mark=" um endurskoðun fjármálafyrirtækja.$">2</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur " after-mark=" um endurskoðun fjármálafyrirtækja.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="30" nr="3">
@@ -9768,7 +9768,7 @@
             <chapter>11</chapter>
             <art>93</art>
             <subart>3</subart>
-            <sen before-mark="^Ákvæði 1. mgr. eiga einnig við um (\[? ?)?dótturfélög] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; fjármálafyrirtækis, svo og eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag " after-mark=" og (\[? ?)?dótturfélög] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; slíkra félaga.$">1</sen>
+            <sen before-mark="^Ákvæði 1. mgr. eiga einnig við um (\[? ?)?dótturfélög(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fjármálafyrirtækis, svo og eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag " after-mark=" og (\[? ?)?dótturfélög(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?slíkra félaga.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -9796,7 +9796,7 @@
             <chapter>11</chapter>
             <art>94</art>
             <subart>2</subart>
-            <sen before-mark="^Ákvæði 1. mgr. eiga einnig við um (\[? ?)?dótturfélög] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; fjármálafyrirtækis, svo og eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag " after-mark=" og (\[? ?)?dótturfélög] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; slíkra félaga.$">1</sen>
+            <sen before-mark="^Ákvæði 1. mgr. eiga einnig við um (\[? ?)?dótturfélög(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fjármálafyrirtækis, svo og eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag " after-mark=" og (\[? ?)?dótturfélög(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?slíkra félaga.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -9830,7 +9830,7 @@
             <chapter>11</chapter>
             <art>96</art>
             <subart>1</subart>
-            <sen before-mark="^Fjármálafyrirtæki skulu semja og birta árshlutauppgjör í samræmi við reglur " after-mark=" sem (\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur.$">1</sen>
+            <sen before-mark="^Fjármálafyrirtæki skulu semja og birta árshlutauppgjör í samræmi við reglur " after-mark=" sem (\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="36" nr="2">
@@ -9971,7 +9971,7 @@
             <chapter>11</chapter>
             <art>97</art>
             <subart>10</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur að höfðu samráði við reikningsskilaráð nánari reglur " after-mark=" um gerð samstæðureikningsskila fyrir samstæðu fyrirtækja þar sem (\[? ?)?móðurfélagið] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er fjármálafyrirtæki eða eignarhaldsfélag á fjármálasviði.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur að höfðu samráði við reikningsskilaráð nánari reglur " after-mark=" um gerð samstæðureikningsskila fyrir samstæðu fyrirtækja þar sem (\[? ?)?móðurfélagið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er fjármálafyrirtæki eða eignarhaldsfélag á fjármálasviði.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -10375,13 +10375,13 @@
             <chapter>12</chapter>
             <art>99</art>
             <subart>3</subart>
-            <sen before-mark="^Fjármálaeftirlitið skal koma upplýsingum um beiðnina og ákvörðun um hana til lögbærra yfirvalda og kröfuhafa lánastofnunarinnar (\[? ?)?eða verðbréfafyrirtækisins] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; í viðkomandi ríkjum í samræmi við reglur " after-mark=" sem ráðherra setur.$">2</sen>
+            <sen before-mark="^Fjármálaeftirlitið skal koma upplýsingum um beiðnina og ákvörðun um hana til lögbærra yfirvalda og kröfuhafa lánastofnunarinnar (\[? ?)?eða verðbréfafyrirtækisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í viðkomandi ríkjum í samræmi við reglur " after-mark=" sem ráðherra setur.$">2</sen>
           </location>
           <location type="pointer">
             <chapter>12</chapter>
             <art>99</art>
             <subart>4</subart>
-            <sen before-mark="^Lögboðnar tilkynningar til þekktra erlendra kröfuhafa lánastofnunar (\[? ?)?eða verðbréfafyrirtækis] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; í tengslum við greiðslustöðvun eða nauðasamninga skulu vera í samræmi við reglur " after-mark=" sem ráðherra setur.$">1</sen>
+            <sen before-mark="^Lögboðnar tilkynningar til þekktra erlendra kröfuhafa lánastofnunar (\[? ?)?eða verðbréfafyrirtækis(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í tengslum við greiðslustöðvun eða nauðasamninga skulu vera í samræmi við reglur " after-mark=" sem ráðherra setur.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.130.html" law-nr="130" law-year="2004" law-art="9" nr="8">
@@ -10516,7 +10516,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>100a</art>
-            <nr-title before-mark="^(\[? ?)?100. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?100. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.125.html" law-nr="125" law-year="2008" law-art="5" nr="2">
@@ -10627,7 +10627,7 @@
             <chapter>12</chapter>
             <art>101</art>
             <subart>4</subart>
-            <sen before-mark="^(\[? ?)?Þeir menn sem eiga sæti í slitastjórn " after-mark=" skulu einnig uppfylla hæfisskilyrði (\[? ?)?2. mgr. og 1. málsl. 5. mgr. 52. gr. og 52. gr. a].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^(\[? ?)?Þeir menn sem eiga sæti í slitastjórn " after-mark=" skulu einnig uppfylla hæfisskilyrði (\[? ?)?2. mgr. og 1. málsl. 5. mgr. 52. gr. og 52. gr. a].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
           <location type="range">
             <chapter>12</chapter>
@@ -10710,7 +10710,7 @@
             <chapter>12</chapter>
             <art>101a</art>
             <subart>5</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.078.html" law-nr="78" law-year="2011" law-art="3" nr="2">
@@ -10959,7 +10959,7 @@
             <chapter>12</chapter>
             <art>103</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Slitastjórn " after-mark=" er jafnframt skylt að kynna kröfuhöfum um allar umtalsverðar ráðstafanir sem varða sölu eða ráðstöfun eigna eða annarra réttinda fjármálafyrirtækis á fundum sem slitastjórn boðar til með almennum hætti.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^(\[? ?)?Slitastjórn " after-mark=" er jafnframt skylt að kynna kröfuhöfum um allar umtalsverðar ráðstafanir sem varða sölu eða ráðstöfun eigna eða annarra réttinda fjármálafyrirtækis á fundum sem slitastjórn boðar til með almennum hætti.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.078.html" law-nr="78" law-year="2011" law-art="5" nr="4">
@@ -11159,7 +11159,7 @@
             <chapter>12</chapter>
             <art>103a</art>
             <subart>3</subart>
-            <sen before-mark="^ Jafnframt er áskilið (\[? ?)?samþykki 60 hundraðshluta] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; atkvæða þeirra atkvæðismanna sem greiða atkvæði um nauðasamninginn." after-mark="$">19</sen>
+            <sen before-mark="^ Jafnframt er áskilið (\[? ?)?samþykki 60 hundraðshluta(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?atkvæða þeirra atkvæðismanna sem greiða atkvæði um nauðasamninginn." after-mark="$">19</sen>
           </location>
           <location type="range">
             <start>
@@ -11383,13 +11383,13 @@
             <chapter>12</chapter>
             <art>104</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ef (\[? ?)?fyrirtæki skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; starfrækir útibú í öðrum aðildarríkjum skal Fjármálaeftirlitið koma upplýsingum um beiðnina til lögbærra yfirvalda í viðkomandi ríkjum í samræmi við reglur " after-mark=" er ráðherra setur.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ef (\[? ?)?fyrirtæki skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?starfrækir útibú í öðrum aðildarríkjum skal Fjármálaeftirlitið koma upplýsingum um beiðnina til lögbærra yfirvalda í viðkomandi ríkjum í samræmi við reglur " after-mark=" er ráðherra setur.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>12</chapter>
             <art>104</art>
             <subart>4</subart>
-            <sen before-mark="^ Í tilkynningunni skal greina frá kröfulýsingarfresti, hvert beina skuli kröfulýsingu og afleiðingum vanlýsingar í samræmi við reglur " after-mark=" sem ráðherra setur.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^ Í tilkynningunni skal greina frá kröfulýsingarfresti, hvert beina skuli kröfulýsingu og afleiðingum vanlýsingar í samræmi við reglur " after-mark=" sem ráðherra setur.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.130.html" law-nr="130" law-year="2004" law-art="11" nr="4">
@@ -12074,7 +12074,7 @@
             <chapter>13</chapter>
             <art>109</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt; setur nánari reglur &lt;sup style=&quot;font-size:60%&quot;&gt; 8) &lt;/sup&gt; um skilgreiningu á fjármálasamsteypum og eftirlit með þeim.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur &lt;sup style=&quot;font-size:60%&quot;&gt; 8) &lt;/sup&gt; um skilgreiningu á fjármálasamsteypum og eftirlit með þeim.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="36" nr="7">
@@ -12098,7 +12098,7 @@
             <chapter>13</chapter>
             <art>109</art>
             <subart>3</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; (\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt; setur nánari reglur " after-mark=" um skilgreiningu á fjármálasamsteypum og eftirlit með þeim.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um skilgreiningu á fjármálasamsteypum og eftirlit með þeim.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -12347,7 +12347,7 @@
             <chapter>13</chapter>
             <art>109d</art>
             <subart>2</subart>
-            <sen before-mark="^Skilyrði fyrir fjárstuðningi innan samstæðu skv. 1. mgr. skal afmarka nánar með (\[? ?)?reglum " after-mark=" Seðlabanka Íslands sem skulu a.m.k. kveða] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; á um nánari skilyrði skv. 1., 3. og 5. tölul. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Skilyrði fyrir fjárstuðningi innan samstæðu skv. 1. mgr. skal afmarka nánar með (\[? ?)?reglum " after-mark=" Seðlabanka Íslands sem skulu a.m.k. kveða(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á um nánari skilyrði skv. 1., 3. og 5. tölul. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.054.html" law-nr="54" law-year="2018" law-art="13" nr="3">
@@ -12476,7 +12476,7 @@
             <chapter>13</chapter>
             <art>109f</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur reglur " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; um innihald og form birtinga skv. 1. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands setur reglur " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?um innihald og form birtinga skv. 1. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.070.html#G103" law-nr="70" law-year="2020" law-art="103" nr="2">
@@ -12868,7 +12868,7 @@
             <art>110</art>
             <subart>1</subart>
             <numart>8</numart>
-            <sen before-mark="^ 1. og 2. mgr. 19. gr. um að starfa í samræmi við eðlilega og heilbrigða viðskiptahætti og venjur á fjármálamarkaði " after-mark=" og hafa aðgengilegar upplýsingar um úrskurðar- og réttarúrræði (\[? ?)?og 4. mgr. 19. gr. um að birta ekki eða uppfæra upplýsingar á vefsvæði um nöfn og ríkisfang þeirra sem eiga umfram 1% hlutafjár eða stofnfjár í fyrirtækinu], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ 1. og 2. mgr. 19. gr. um að starfa í samræmi við eðlilega og heilbrigða viðskiptahætti og venjur á fjármálamarkaði " after-mark=" og hafa aðgengilegar upplýsingar um úrskurðar- og réttarúrræði (\[? ?)?og 4. mgr. 19. gr. um að birta ekki eða uppfæra upplýsingar á vefsvæði um nöfn og ríkisfang þeirra sem eiga umfram 1% hlutafjár eða stofnfjár í fyrirtækinu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -12891,7 +12891,7 @@
             <art>110</art>
             <subart>1</subart>
             <numart>16</numart>
-            <sen before-mark="^ " after-mark=" 30. gr. um takmarkanir á stórum (\[? ?)?áhættuskuldbindingum], &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ " after-mark=" 30. gr. um takmarkanir á stórum (\[? ?)?áhættuskuldbindingum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="55" nr="3">
@@ -13695,7 +13695,7 @@
             <chapter>14</chapter>
             <art>111</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur nánari reglur " after-mark=" um framkvæmd ákvæðisins.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um framkvæmd ákvæðisins.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.055.html" law-nr="55" law-year="2007" law-art="8" nr="4">
@@ -14783,7 +14783,7 @@
             <chapter>16</chapter>
             <art>117b</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um nánari útfærslu á birtingu Fjármálaeftirlitsins á þeirri aðferðafræði og þeim almennu viðmiðum sem (\[? ?)?það] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; styðst við vegna könnunar- og matsferlis, sbr. 116. gr. a.$">1</sen>
+            <sen before-mark="^Ráðherra skal setja reglugerð " after-mark=" um nánari útfærslu á birtingu Fjármálaeftirlitsins á þeirri aðferðafræði og þeim almennu viðmiðum sem (\[? ?)?það(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?styðst við vegna könnunar- og matsferlis, sbr. 116. gr. a.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="57" nr="2">
@@ -14858,7 +14858,7 @@
             <art>117b</art>
             <subart>2</subart>
             <numart>a</numart>
-            <sen before-mark="^gagnaskil vegna i) útreikninga á eiginfjárkröfum og stórum áhættuskuldbindingum, ii) fjárhagslegra upplýsinga, iii) fasteignaveðlána, iv) vogunarhlutfalls, (\[? ?)?v) veðsetningar á eignum, vi) lausafjárhlutfalls og vii) stöðugrar fjármögnunar " after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^gagnaskil vegna i) útreikninga á eiginfjárkröfum og stórum áhættuskuldbindingum, ii) fjárhagslegra upplýsinga, iii) fasteignaveðlána, iv) vogunarhlutfalls, (\[? ?)?v) veðsetningar á eignum, vi) lausafjárhlutfalls og vii) stöðugrar fjármögnunar " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="57" nr="4">
@@ -14908,7 +14908,7 @@
             <art>117b</art>
             <subart>2</subart>
             <numart>b</numart>
-            <sen before-mark="^gagnsæi vegna eiginfjárgrunns, (\[? ?)?eiginfjárauka], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; (\[? ?)?lausafjárhlutfalls] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og vogunarhlutfalls, " after-mark="$">1</sen>
+            <sen before-mark="^gagnsæi vegna eiginfjárgrunns, (\[? ?)?eiginfjárauka(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?lausafjárhlutfalls(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og vogunarhlutfalls, " after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote nr="6">
@@ -14918,21 +14918,21 @@
             <art>117b</art>
             <subart>2</subart>
             <numart>c</numart>
-            <sen before-mark="^tilkynningar um starfsemi á milli landa, sbr. 36. og 37. gr., " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^tilkynningar um starfsemi á milli landa, sbr. 36. og 37. gr., " after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>16</chapter>
             <art>117b</art>
             <subart>3</subart>
             <numart>f</numart>
-            <sen before-mark="^útreikning vegna lausafjárhlutfalls og stöðugrar fjármögnunar " after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^útreikning vegna lausafjárhlutfalls og stöðugrar fjármögnunar " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>16</chapter>
             <art>117b</art>
             <subart>3</subart>
             <numart>g</numart>
-            <sen before-mark="^ tilkynningar um starfsemi á milli landa, sbr. 36. og 37. gr., " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^ tilkynningar um starfsemi á milli landa, sbr. 36. og 37. gr., " after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.044.html" law-nr="44" law-year="2021" law-art="6" nr="7">
@@ -15001,7 +15001,7 @@
             <art>117b</art>
             <subart>2</subart>
             <numart>f</numart>
-            <sen before-mark="^útlistanir í tengslum við áhættuþætti í starfsemi fjármálafyrirtækja, sbr. 78. gr. a – 78. gr. i." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^útlistanir í tengslum við áhættuþætti í starfsemi fjármálafyrirtækja, sbr. 78. gr. a – 78. gr. i." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>16</chapter>
@@ -15018,7 +15018,7 @@
             <art>117b</art>
             <subart>3</subart>
             <numart>a</numart>
-            <sen before-mark="^útreikning á eiginfjárgrunni (\[? ?)?og eiginfjáraukum " after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^útreikning á eiginfjárgrunni (\[? ?)?og eiginfjáraukum " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote nr="11">
@@ -15038,7 +15038,7 @@
             <art>117b</art>
             <subart>3</subart>
             <numart>d</numart>
-            <sen before-mark="^útreikning á eiginfjárkröfum byggðum á innri líkönum " after-mark=" ], &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^útreikning á eiginfjárkröfum byggðum á innri líkönum " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="40" nr="13">
@@ -15065,7 +15065,7 @@
             <art>117b</art>
             <subart>3</subart>
             <numart>i</numart>
-            <sen before-mark="^afmörkun á kerfislega mikilvægu fjármálafyrirtæki á alþjóðavísu, sbr. 52. gr. e." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^afmörkun á kerfislega mikilvægu fjármálafyrirtæki á alþjóðavísu, sbr. 52. gr. e." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -15093,7 +15093,7 @@
             <chapter>16</chapter>
             <art>117c</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal setja reglur " after-mark=" um útreikning á vogunarhlutfalli, sbr. 30. gr. a, og skulu reglurnar byggjast á reglugerð framkvæmdastjórnarinnar (ESB) nr. 2015/62 um útreikning á vogunarhlutfalli.$">1</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglur " after-mark=" um útreikning á vogunarhlutfalli, sbr. 30. gr. a, og skulu reglurnar byggjast á reglugerð framkvæmdastjórnarinnar (ESB) nr. 2015/62 um útreikning á vogunarhlutfalli.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="58" nr="3">
@@ -15312,7 +15312,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>VI</art>
-            <nr-title before-mark="^(\[? ?)?VI. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?VI. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.044.html" nr="2">
@@ -15408,7 +15408,7 @@
             <chapter>t</chapter>
             <art>IX</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.119.html" law-nr="119" law-year="2011" law-art="10" nr="2">
@@ -15437,7 +15437,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>X</art>
-            <nr-title before-mark="^(\[? ?)?X. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?X. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.072.html" law-nr="72" law-year="2012" law-art="8" nr="2">

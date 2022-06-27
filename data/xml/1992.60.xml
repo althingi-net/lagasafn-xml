@@ -77,7 +77,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari fyrirmæli um hlutverk og starfsskyldur forstjóra og forstöðumanna, svo og um aðsetur forstjóra á hverjum tíma.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari fyrirmæli um hlutverk og starfsskyldur forstjóra og forstöðumanna, svo og um aðsetur forstjóra á hverjum tíma.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1998.169.html" law-nr="169" law-year="1998" law-art="2" nr="2">
@@ -171,7 +171,7 @@
             <art>4</art>
             <subart>2</subart>
             <numart>i</numart>
-            <sen middle-punctuation="," before-mark="^að skrá berg- og jarðgrunna landsins með kerfisbundnum hætti og vinna að flokkun námasvæða eftir efni, magni, aðgengi, gæðum og verndargildi. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen middle-punctuation="," before-mark="^að skrá berg- og jarðgrunna landsins með kerfisbundnum hætti og vinna að flokkun námasvæða eftir efni, magni, aðgengi, gæðum og verndargildi. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <start>
@@ -538,7 +538,7 @@
             <chapter>3</chapter>
             <art>16</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" sett nánari ákvæði um skipulag og starfsemi Náttúrufræðistofnunar Íslands og náttúrustofa … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra getur með reglugerð " after-mark=" sett nánari ákvæði um skipulag og starfsemi Náttúrufræðistofnunar Íslands og náttúrustofa (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.092.html" law-nr="92" law-year="2002" law-art="8" nr="2">

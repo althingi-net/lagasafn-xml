@@ -135,7 +135,7 @@
         <location type="deletion">
           <art>3</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?Við ákvörðun sekta skv. 3. mgr. 2. gr. kemur skattrannsóknarstjóri " after-mark=" fram sem kröfuaðili nema annað sé tekið fram í lögum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Við ákvörðun sekta skv. 3. mgr. 2. gr. kemur skattrannsóknarstjóri " after-mark=" fram sem kröfuaðili nema annað sé tekið fram í lögum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -191,12 +191,12 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Kærufrestur til yfirskattanefndar skal vera þrír mánuðir frá (\[? ?)?dagsetningu ákvörðunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" (\[? ?)?stjórnvalds].&lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Kærufrestur til yfirskattanefndar skal vera þrír mánuðir frá (\[? ?)?dagsetningu ákvörðunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (\[? ?)?stjórnvalds].&lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
         </location>
         <location type="deletion">
           <art>5</art>
           <subart>2</subart>
-          <sen before-mark="^Kærunni skal fylgja frumrit eða endurrit (\[? ?)?ákvörðunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" (\[? ?)?stjórnvalds] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; sem kæran tekur til.$">2</sen>
+          <sen before-mark="^Kærunni skal fylgja frumrit eða endurrit (\[? ?)?ákvörðunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (\[? ?)?stjórnvalds(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sem kæran tekur til.$">2</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2014.123.html" law-nr="123" law-year="2014" law-art="3" nr="3">
@@ -340,12 +340,12 @@
         <location type="deletion">
           <art>6</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Stjórnvald] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal í tilefni af málsmeðferð fyrir yfirskattanefnd afla frumgagna " after-mark=" varðandi hina kærðu ákvörðun … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Stjórnvald(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal í tilefni af málsmeðferð fyrir yfirskattanefnd afla frumgagna " after-mark=" varðandi hina kærðu ákvörðun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
         <location type="deletion">
           <art>6</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Stjórnvald] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal í tilefni af málsmeðferð fyrir yfirskattanefnd afla frumgagna … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; varðandi hina kærðu ákvörðun " after-mark="$">1</sen>
+          <sen before-mark="^(\[? ?)?Stjórnvald(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal í tilefni af málsmeðferð fyrir yfirskattanefnd afla frumgagna (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?varðandi hina kærðu ákvörðun " after-mark="$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1998.096.html" law-nr="96" law-year="1998" law-art="2" nr="5">
@@ -684,7 +684,7 @@
         <location type="deletion">
           <art>13</art>
           <subart>1</subart>
-          <sen before-mark="^Fari (\[? ?)?málsaðili] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; fram á endurákvörðun skal (\[? ?)?stjórnvald] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; tilkynna það yfirskattanefnd þegar í stað." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">4</sen>
+          <sen before-mark="^Fari (\[? ?)?málsaðili(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fram á endurákvörðun skal (\[? ?)?stjórnvald(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tilkynna það yfirskattanefnd þegar í stað." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1998.096.html" law-nr="96" law-year="1998" law-art="5" nr="4">
@@ -903,7 +903,7 @@
         <location type="pointer">
           <art>20</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að kveða nánar á um starfshætti og störf yfirskattanefndar með reglugerð, " after-mark=" þar með talið um réttarfarsreglur sem nefndin skal starfa eftir.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að kveða nánar á um starfshætti og störf yfirskattanefndar með reglugerð, " after-mark=" þar með talið um réttarfarsreglur sem nefndin skal starfa eftir.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -973,7 +973,7 @@
         <location type="deletion">
           <art>22</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Skattrannsóknarstjóri " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; kemur fram af hálfu hins opinbera fyrir nefndinni við ákvörðun sekta (\[? ?)?og þegar ákvörðun sekta hefur verið kærð] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og annast kröfugerð í sektarmálum.$">3</sen>
+          <sen before-mark="^(\[? ?)?Skattrannsóknarstjóri " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?kemur fram af hálfu hins opinbera fyrir nefndinni við ákvörðun sekta (\[? ?)?og þegar ákvörðun sekta hefur verið kærð(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og annast kröfugerð í sektarmálum.$">3</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1992.111.html" law-nr="111" law-year="1992" law-art="27" nr="3">

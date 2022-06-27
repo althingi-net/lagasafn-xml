@@ -728,7 +728,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra skal setja nánari reglur um störf nefndarinnar með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">10</sen>
+            <sen before-mark="^Ráðherra skal setja nánari reglur um störf nefndarinnar með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">10</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.101.html" law-nr="101" law-year="2019" law-art="2" nr="6">
@@ -934,7 +934,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur, að fenginni umsögn Fiskistofu, Matvælastofnunar, " after-mark=" (\[? ?)?Hafrannsóknastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; og viðkomandi sveitarstjórnar, takmarkað eða bannað fiskeldi eða ákveðnar eldisaðferðir í einstaka fjörðum, flóum eða á svæðum sem teljast sérlega viðkvæm gagnvart starfsemi þeirri sem fram fer samkvæmt lögum þessum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur, að fenginni umsögn Fiskistofu, Matvælastofnunar, " after-mark=" (\[? ?)?Hafrannsóknastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og viðkomandi sveitarstjórnar, takmarkað eða bannað fiskeldi eða ákveðnar eldisaðferðir í einstaka fjörðum, flóum eða á svæðum sem teljast sérlega viðkvæm gagnvart starfsemi þeirri sem fram fer samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.157.html" law-nr="157" law-year="2012" law-art="22" nr="3">
@@ -1462,7 +1462,7 @@
             <chapter>4</chapter>
             <art>12</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Matvælastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt, að fenginni umsögn " after-mark=" (\[? ?)?Hafrannsóknastofnunar], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; að ákveða friðunarsvæði í sjó framan við frárennsli fiskeldisstöðva með sömu skilyrðum og kveðið er á um í 5. mgr. 15. gr. og 16. gr. laga um lax- og silungsveiði.$">1</sen>
+            <sen before-mark="^(\[? ?)?Matvælastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt, að fenginni umsögn " after-mark=" (\[? ?)?Hafrannsóknastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?að ákveða friðunarsvæði í sjó framan við frárennsli fiskeldisstöðva með sömu skilyrðum og kveðið er á um í 5. mgr. 15. gr. og 16. gr. laga um lax- og silungsveiði.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.157.html" law-nr="157" law-year="2012" law-art="22" nr="3">
@@ -1591,7 +1591,7 @@
             <chapter>4</chapter>
             <art>13a</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra setur frekari ákvæði um innra eftirlit í reglugerð, " after-mark=" þ.m.t. um viðbragðsáætlanir og skyldu rekstrarleyfishafa til starfrækslu gæðakerfis.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur frekari ákvæði um innra eftirlit í reglugerð, " after-mark=" þ.m.t. um viðbragðsáætlanir og skyldu rekstrarleyfishafa til starfrækslu gæðakerfis.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.101.html" law-nr="101" law-year="2019" law-art="15" nr="2">
@@ -2072,7 +2072,7 @@
             <chapter>6</chapter>
             <art>19</art>
             <subart>1</subart>
-            <sen before-mark="^Þó getur Fiskistofa veitt rannsóknaraðila undanþágu til sleppitilrauna í óverulegum mæli, að fenginni umsögn Matvælastofnunar, (\[? ?)?Hafrannsóknastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" eða annarra fagaðila ef ástæða þykir til.$">2</sen>
+            <sen before-mark="^Þó getur Fiskistofa veitt rannsóknaraðila undanþágu til sleppitilrauna í óverulegum mæli, að fenginni umsögn Matvælastofnunar, (\[? ?)?Hafrannsóknastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" eða annarra fagaðila ef ástæða þykir til.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2265,7 +2265,7 @@
             <chapter>6a</chapter>
             <art>20a</art>
             <subart>1</subart>
-            <sen before-mark="^Með sjóðnum skal greiða kostnað við rannsóknir vegna burðarþolsmats, vöktunar og annarra verkefna sem stjórn sjóðsins ákveður." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^Með sjóðnum skal greiða kostnað við rannsóknir vegna burðarþolsmats, vöktunar og annarra verkefna sem stjórn sjóðsins ákveður." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.049.html" law-nr="49" law-year="2014" law-art="14" nr="2">
@@ -2435,7 +2435,7 @@
             <chapter>6a</chapter>
             <art>20e</art>
             <subart>2</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.049.html" law-nr="49" law-year="2014" law-art="14" nr="2">
@@ -2561,7 +2561,7 @@
             <chapter>7</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari reglur um framkvæmd laga þessara með reglugerð." after-mark="$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur um framkvæmd laga þessara með reglugerð." after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2014.049.html" law-nr="49" law-year="2014" law-art="3" nr="3">

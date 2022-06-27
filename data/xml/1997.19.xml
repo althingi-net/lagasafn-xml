@@ -606,7 +606,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
-            <sen before-mark="^Læknir, sem kemst að því í starfi sínu að einstaklingur hefur smitast af smitsjúkdómi sem samkvæmt lögum þessum er tilkynningarskyldur eða hefur " after-mark=" grun um að svo sé, skal þegar í stað tilkynna það … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; sóttvarnalækni.$">1</sen>
+            <sen before-mark="^Læknir, sem kemst að því í starfi sínu að einstaklingur hefur smitast af smitsjúkdómi sem samkvæmt lögum þessum er tilkynningarskyldur eða hefur " after-mark=" grun um að svo sé, skal þegar í stað tilkynna það (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sóttvarnalækni.$">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -621,7 +621,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
-            <sen before-mark="^Læknir, sem kemst að því í starfi sínu að einstaklingur hefur smitast af smitsjúkdómi sem samkvæmt lögum þessum er tilkynningarskyldur eða hefur … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; grun um að svo sé, skal þegar í stað tilkynna það " after-mark=" sóttvarnalækni.$">1</sen>
+            <sen before-mark="^Læknir, sem kemst að því í starfi sínu að einstaklingur hefur smitast af smitsjúkdómi sem samkvæmt lögum þessum er tilkynningarskyldur eða hefur (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?grun um að svo sé, skal þegar í stað tilkynna það " after-mark=" sóttvarnalækni.$">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -834,7 +834,7 @@
             <chapter>4</chapter>
             <art>12</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra ákveður " after-mark=" að fenginni tillögu sóttvarnalæknis hvort grípa skuli til opinberra sóttvarnaráðstafana, svo sem ónæmisaðgerða, (\[? ?)?skimana, sóttkvíar], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; einangrunar smitaðra, sótthreinsunar, afkvíunar byggðarlaga eða landsins alls, lokunar skóla, (\[? ?)?stöðvunar atvinnurekstrar] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; eða samkomubanns.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra ákveður " after-mark=" að fenginni tillögu sóttvarnalæknis hvort grípa skuli til opinberra sóttvarnaráðstafana, svo sem ónæmisaðgerða, (\[? ?)?skimana, sóttkvíar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?einangrunar smitaðra, sótthreinsunar, afkvíunar byggðarlaga eða landsins alls, lokunar skóla, (\[? ?)?stöðvunar atvinnurekstrar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða samkomubanns.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.002.html" law-nr="2" law-year="2021" law-art="9" nr="3">
@@ -1017,7 +1017,7 @@
             <chapter>4</chapter>
             <art>13</art>
             <subart>12</subart>
-            <sen before-mark="^Ráðherra getur kveðið á um nánara fyrirkomulag ráðstafana samkvæmt þessu ákvæði í reglugerð " after-mark=" og innleitt að öðru leyti alþjóðaheilbrigðisreglugerð Alþjóðaheilbrigðismálastofnunarinnar.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra getur kveðið á um nánara fyrirkomulag ráðstafana samkvæmt þessu ákvæði í reglugerð " after-mark=" og innleitt að öðru leyti alþjóðaheilbrigðisreglugerð Alþjóðaheilbrigðismálastofnunarinnar.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.002.html" law-nr="2" law-year="2021" law-art="10" nr="2">
@@ -1408,7 +1408,7 @@
             <chapter>5</chapter>
             <art>18</art>
             <subart>1</subart>
-            <sen before-mark="^Ráðherra skal með reglugerð " after-mark=" setja nánari ákvæði um fyrirkomulag skráninga og tilkynninga skv. 3. gr., starfsemi rannsóknastofa sem fást við rannsóknir á sýnum frá sjúklingum með smitsjúkdóma sem lögin taka til skv. 9. gr., opinberar sóttvarnaráðstafanir skv. 12. gr., (\[? ?)?heimild til að kveða á um læknisrannsókn eftir tilmælum sóttvarnalæknis skv. 14. gr.], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; starfsemi göngudeilda skv. 16. gr. og hvaða deildir geti veitt þjónustu, sjúklingum að kostnaðarlausu, skv. 17. gr.$">1</sen>
+            <sen before-mark="^Ráðherra skal með reglugerð " after-mark=" setja nánari ákvæði um fyrirkomulag skráninga og tilkynninga skv. 3. gr., starfsemi rannsóknastofa sem fást við rannsóknir á sýnum frá sjúklingum með smitsjúkdóma sem lögin taka til skv. 9. gr., opinberar sóttvarnaráðstafanir skv. 12. gr., (\[? ?)?heimild til að kveða á um læknisrannsókn eftir tilmælum sóttvarnalæknis skv. 14. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?starfsemi göngudeilda skv. 16. gr. og hvaða deildir geti veitt þjónustu, sjúklingum að kostnaðarlausu, skv. 17. gr.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2000.090.html" law-nr="90" law-year="2000" law-art="6" nr="2">
@@ -1426,7 +1426,7 @@
             <chapter>5</chapter>
             <art>18</art>
             <subart>1</subart>
-            <sen before-mark="^Þá er ráðherra heimilt að setja reglur " after-mark=" ef grípa þarf til sérstakra ráðstafana vegna sóttvarna við náttúruhamfarir (\[? ?)?og aðra vá] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; og að setja í reglugerð nánari ákvæði um framkvæmd laga þessara.$">2</sen>
+            <sen before-mark="^Þá er ráðherra heimilt að setja reglur " after-mark=" ef grípa þarf til sérstakra ráðstafana vegna sóttvarna við náttúruhamfarir (\[? ?)?og aðra vá(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og að setja í reglugerð nánari ákvæði um framkvæmd laga þessara.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.093.html" law-nr="93" law-year="2002" law-art="21" nr="4">

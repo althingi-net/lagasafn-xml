@@ -147,7 +147,7 @@
         <location type="pointer">
           <art>7</art>
           <subart>1</subart>
-          <sen before-mark="^Með (\[? ?)?reglugerð] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; skal kveða á um fánadaga og hve lengi dags fánanum megi halda við hún." after-mark="$">1</sen>
+          <sen before-mark="^Með (\[? ?)?reglugerð(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal kveða á um fánadaga og hve lengi dags fánanum megi halda við hún." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -368,7 +368,7 @@
         <location type="pointer">
           <art>12</art>
           <subart>12</subart>
-          <sen before-mark="^Ráðherra sem fer með málefni neytendamála er heimilt með reglugerð " after-mark=" að setja nánari ákvæði um skilyrði fyrir notkun fánans samkvæmt ákvæði þessu, svo sem um hvað teljist nægileg aðvinnsla, um mat á því hvað teljist einkennandi hluti vöru og eðlislíkt hráefni og um skilgreiningu framleiðslulands.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Ráðherra sem fer með málefni neytendamála er heimilt með reglugerð " after-mark=" að setja nánari ákvæði um skilyrði fyrir notkun fánans samkvæmt ákvæði þessu, svo sem um hvað teljist nægileg aðvinnsla, um mat á því hvað teljist einkennandi hluti vöru og eðlislíkt hráefni og um skilgreiningu framleiðslulands.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -415,7 +415,7 @@
         <location type="pointer">
           <art>13</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" sérstök ákvæði til skýringar ákvæðum laga þessara.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?(\[? ?)?Ráðuneytið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" sérstök ákvæði til skýringar ákvæðum laga þessara.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1998.067.html" law-nr="67" law-year="1998" law-art="11" nr="3">

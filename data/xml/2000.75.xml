@@ -323,7 +323,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>3</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um starfsemi Brunamálaskólans og hlutverk fagráðs.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um starfsemi Brunamálaskólans og hlutverk fagráðs.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.161.html" law-nr="161" law-year="2010" law-art="7" nr="3">
@@ -476,7 +476,7 @@
             <art>12</art>
             <subart>1</subart>
             <numart>b</numart>
-            <sen before-mark="^(\[? ?)?gera úttekt á mannvirkjum " after-mark=" og starfsemi í þeim, með tilliti til brunavarna, og á lóðum og öðrum svæðum utan dyra þar sem eldhætta getur skapast, t.d. vegna starfsemi á svæðinu, söfnunar úrgangs eða geymslu eldfimra efna, og gera kröfur um nauðsynlegar úrbætur á brunavörnum til að vernda líf, heilsu fólks, umhverfi og eignir], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?gera úttekt á mannvirkjum " after-mark=" og starfsemi í þeim, með tilliti til brunavarna, og á lóðum og öðrum svæðum utan dyra þar sem eldhætta getur skapast, t.d. vegna starfsemi á svæðinu, söfnunar úrgangs eða geymslu eldfimra efna, og gera kröfur um nauðsynlegar úrbætur á brunavörnum til að vernda líf, heilsu fólks, umhverfi og eignir(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
@@ -830,13 +830,13 @@
             <chapter>4</chapter>
             <art>17</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Slökkviliðsmenn sem stunda reykköfun skulu hafa staðist læknisskoðun, þrekpróf, þolpróf og aðra mælingu líkamsástands samkvæmt því sem nánar er kveðið á um í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Slökkviliðsmenn sem stunda reykköfun skulu hafa staðist læknisskoðun, þrekpróf, þolpróf og aðra mælingu líkamsástands samkvæmt því sem nánar er kveðið á um í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="pointer">
             <chapter>4</chapter>
             <art>17</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra skal að fenginni tillögu (\[? ?)?Húsnæðis- og mannvirkjastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setja reglugerð " after-mark=" um menntun og önnur skilyrði til að öðlast löggildingu, um reglubundna læknisskoðun vegna reykköfunar og um réttindi og skyldur slökkviliðsstjóra og slökkviliðsmanna.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra skal að fenginni tillögu (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setja reglugerð " after-mark=" um menntun og önnur skilyrði til að öðlast löggildingu, um reglubundna læknisskoðun vegna reykköfunar og um réttindi og skyldur slökkviliðsstjóra og slökkviliðsmanna.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.161.html" law-nr="161" law-year="2010" law-art="14" nr="3">
@@ -1071,7 +1071,7 @@
             <chapter>6</chapter>
             <art>24</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra skal að fengnum tillögum (\[? ?)?Húsnæðis- og mannvirkjastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setja reglugerð " after-mark=" um brunahönnun mannvirkja.$">1</sen>
+            <sen before-mark="^Ráðherra skal að fengnum tillögum (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setja reglugerð " after-mark=" um brunahönnun mannvirkja.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1631,7 +1631,7 @@
             <chapter>7</chapter>
             <art>27</art>
             <subart>1</subart>
-            <sen before-mark="^Hún tilkynnir (\[? ?)?Húsnæðis- og mannvirkjastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; " after-mark=" um eldsvoðann og rannsókn sína.$">2</sen>
+            <sen before-mark="^Hún tilkynnir (\[? ?)?Húsnæðis- og mannvirkjastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" um eldsvoðann og rannsókn sína.$">2</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1773,7 +1773,7 @@
             <chapter>8</chapter>
             <art>29</art>
             <subart>2</subart>
-            <sen middle-punctuation="," before-mark="^Slökkviliðsstjóri getur beitt eftirfarandi aðgerðum til að knýja fram úrbætur vegna mannvirkis " after-mark=" (\[? ?)?starfsemi í því eða á lóðum og öðrum svæðum utan dyra þar sem eldhætta getur skapast, t.d. vegna starfsemi á svæðinu, söfnunar sorps og annars úrgangs eða geymslu eldfimra efna (\[? ?)?eða vegna brota á ákvæðum laga þessara eða reglugerða settra samkvæmt þeim] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ]: &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen middle-punctuation="," before-mark="^Slökkviliðsstjóri getur beitt eftirfarandi aðgerðum til að knýja fram úrbætur vegna mannvirkis " after-mark=" (\[? ?)?starfsemi í því eða á lóðum og öðrum svæðum utan dyra þar sem eldhætta getur skapast, t.d. vegna starfsemi á svæðinu, söfnunar sorps og annars úrgangs eða geymslu eldfimra efna (\[? ?)?eða vegna brota á ákvæðum laga þessara eða reglugerða settra samkvæmt þeim(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?]: &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
           </location>
           <location type="range">
             <chapter>8</chapter>
@@ -2075,7 +2075,7 @@
             <chapter>9</chapter>
             <art>38a</art>
             <subart>1</subart>
-            <sen before-mark="^ Skilyrði til að öðlast slíkt starfsleyfi er að viðkomandi þjónustuaðili uppfylli kröfur reglugerðar " after-mark=" sem ráðherra setur um húsnæði, öryggi og lágmarkstækjabúnað vegna starfseminnar og að þeir starfsmenn sem annast uppsetningu, viðhald og skoðun slíks búnaðar hafi lokið námi og staðist próf sem (\[? ?)?Húsnæðis- og mannvirkjastofnun] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; heldur.$">2</sen>
+            <sen before-mark="^ Skilyrði til að öðlast slíkt starfsleyfi er að viðkomandi þjónustuaðili uppfylli kröfur reglugerðar " after-mark=" sem ráðherra setur um húsnæði, öryggi og lágmarkstækjabúnað vegna starfseminnar og að þeir starfsmenn sem annast uppsetningu, viðhald og skoðun slíks búnaðar hafi lokið námi og staðist próf sem (\[? ?)?Húsnæðis- og mannvirkjastofnun(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heldur.$">2</sen>
           </location>
           <location type="pointer">
             <chapter>9</chapter>
@@ -2145,7 +2145,7 @@
             <chapter>9</chapter>
             <art>39</art>
             <subart>2</subart>
-            <sen before-mark="^Reglugerð " after-mark=" um brunavarnir í samgöngumannvirkjum setur ráðherra að fengnum tillögum (\[? ?)?Húsnæðis- og mannvirkjastofnunar] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og að fenginni umsögn (\[? ?)?þess ráðherra er fer með samgöngumál].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Reglugerð " after-mark=" um brunavarnir í samgöngumannvirkjum setur ráðherra að fengnum tillögum (\[? ?)?Húsnæðis- og mannvirkjastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og að fenginni umsögn (\[? ?)?þess ráðherra er fer með samgöngumál].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="307" nr="4">

@@ -141,7 +141,7 @@
             <chapter>2</chapter>
             <art>3</art>
             <subart>5</subart>
-            <sen before-mark="^Ef hafnarstjórn eða einstaklingur vill setja upp leiðarmerki fyrir sjófarendur skal gerð þess og staðsetning ákveðin í samráði við (\[? ?)?Vegagerðina] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</sen>
+            <sen before-mark="^Ef hafnarstjórn eða einstaklingur vill setja upp leiðarmerki fyrir sjófarendur skal gerð þess og staðsetning ákveðin í samráði við (\[? ?)?Vegagerðina(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>

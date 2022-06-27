@@ -1275,7 +1275,7 @@
             <chapter>14</chapter>
             <art>133</art>
             <subart>6</subart>
-            <sen before-mark="^Telji Fjármálaeftirlitið að ekki hafi verið farið að reglum um opinbera birtingu upplýsinga skv. 25. gr. … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" er því heimilt að grípa til nauðsynlegra ráðstafana til að almenningur sé réttilega upplýstur.$">1</sen>
+            <sen before-mark="^Telji Fjármálaeftirlitið að ekki hafi verið farið að reglum um opinbera birtingu upplýsinga skv. 25. gr. (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" er því heimilt að grípa til nauðsynlegra ráðstafana til að almenningur sé réttilega upplýstur.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1318,19 +1318,19 @@
             <chapter>14</chapter>
             <art>135</art>
             <subart>1</subart>
-            <sen before-mark="^Fjármálaeftirlitið skal fylgjast með því að útgefendur birti upplýsingar vegna (\[? ?)?" after-mark=" XIII. kafla] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; tímanlega með það að markmiði að sjá til þess að almenningur á Evrópska efnahagssvæðinu hafi virkan og jafnan aðgang að þeim.$">1</sen>
+            <sen before-mark="^Fjármálaeftirlitið skal fylgjast með því að útgefendur birti upplýsingar vegna (\[? ?)?" after-mark=" XIII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tímanlega með það að markmiði að sjá til þess að almenningur á Evrópska efnahagssvæðinu hafi virkan og jafnan aðgang að þeim.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>14</chapter>
             <art>135</art>
             <subart>2</subart>
-            <sen before-mark="^Fjármálaeftirlitið skal jafnframt fylgjast með því að útgefendur verðbréfa, sem tekin hafa verið til viðskipta á skipulegum verðbréfamarkaði á Íslandi en ekki í heimaríki útgefandans, birti upplýsingar vegna (\[? ?)?" after-mark=" XIII. kafla] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; tímanlega með það að markmiði að sjá til þess að almenningur á Evrópska efnahagssvæðinu hafi virkan og jafnan aðgang að þeim.$">1</sen>
+            <sen before-mark="^Fjármálaeftirlitið skal jafnframt fylgjast með því að útgefendur verðbréfa, sem tekin hafa verið til viðskipta á skipulegum verðbréfamarkaði á Íslandi en ekki í heimaríki útgefandans, birti upplýsingar vegna (\[? ?)?" after-mark=" XIII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tímanlega með það að markmiði að sjá til þess að almenningur á Evrópska efnahagssvæðinu hafi virkan og jafnan aðgang að þeim.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>14</chapter>
             <art>135</art>
             <subart>3</subart>
-            <sen before-mark="^Afli Fjármálaeftirlitið upplýsinga skv. 2. mgr. 133. gr. frá endurskoðendum, útgefendum, eigendum hluta og annarra fjármálagerninga eða aðilum sem nefndir eru í 79. og 80. gr., auk aðila sem hafa framangreinda aðila undir yfirráðum sínum eða framangreindir aðilar hafa yfirráð yfir, í tengslum við tiltekið mál vegna (\[? ?)?" after-mark=" XIII. kafla], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; er því heimilt að fara fram á að útgefandi birti upplýsingarnar opinberlega með þeim aðferðum og innan þess frests sem Fjármálaeftirlitið telur nauðsynlegt.$">1</sen>
+            <sen before-mark="^Afli Fjármálaeftirlitið upplýsinga skv. 2. mgr. 133. gr. frá endurskoðendum, útgefendum, eigendum hluta og annarra fjármálagerninga eða aðilum sem nefndir eru í 79. og 80. gr., auk aðila sem hafa framangreinda aðila undir yfirráðum sínum eða framangreindir aðilar hafa yfirráð yfir, í tengslum við tiltekið mál vegna (\[? ?)?" after-mark=" XIII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er því heimilt að fara fram á að útgefandi birti upplýsingarnar opinberlega með þeim aðferðum og innan þess frests sem Fjármálaeftirlitið telur nauðsynlegt.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.096.html" law-nr="96" law-year="2008" law-art="6" nr="2">
@@ -1373,7 +1373,7 @@
             <chapter>14</chapter>
             <art>136</art>
             <subart>1</subart>
-            <sen before-mark="^Fjármálaeftirlitið, eða aðili sem Fjármálaeftirlitið tilnefnir, skal varðveita upplýsingar sem birtar eru opinberlega í samræmi við ákvæði (\[? ?)?" after-mark=" XIII. kafla] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; með rafrænum hætti í miðlægu geymslukerfi.$">1</sen>
+            <sen before-mark="^Fjármálaeftirlitið, eða aðili sem Fjármálaeftirlitið tilnefnir, skal varðveita upplýsingar sem birtar eru opinberlega í samræmi við ákvæði (\[? ?)?" after-mark=" XIII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?með rafrænum hætti í miðlægu geymslukerfi.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.096.html" law-nr="96" law-year="2008" law-art="6" nr="2">
@@ -1410,7 +1410,7 @@
             <chapter>14</chapter>
             <art>137</art>
             <subart>1</subart>
-            <sen before-mark="^Ef Ísland er gistiríki og Fjármálaeftirlitið kemst að því að útgefandi eða flöggunarskyldur aðili (\[? ?)?samkvæmt lögum um upplýsingaskyldu útgefenda verðbréfa og flöggunarskyldu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; hefur sýnt af sér háttsemi sem bryti gegn ákvæðum (\[? ?)?" after-mark=" XIII. kafla] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; laga þessara eða skyldum samkvæmt þeim, væri viðkomandi aðili með heimaríki á Íslandi, skal Fjármálaeftirlitið vísa málinu til lögbærs stjórnvalds í heimaríki útgefanda.$">1</sen>
+            <sen before-mark="^Ef Ísland er gistiríki og Fjármálaeftirlitið kemst að því að útgefandi eða flöggunarskyldur aðili (\[? ?)?samkvæmt lögum um upplýsingaskyldu útgefenda verðbréfa og flöggunarskyldu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hefur sýnt af sér háttsemi sem bryti gegn ákvæðum (\[? ?)?" after-mark=" XIII. kafla(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?laga þessara eða skyldum samkvæmt þeim, væri viðkomandi aðili með heimaríki á Íslandi, skal Fjármálaeftirlitið vísa málinu til lögbærs stjórnvalds í heimaríki útgefanda.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>14</chapter>
@@ -1712,7 +1712,7 @@
             <chapter>15</chapter>
             <art>142</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur nánari reglur " after-mark=" um framkvæmd ákvæðisins.$">3</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um framkvæmd ákvæðisins.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1938,7 +1938,7 @@
             <chapter>16</chapter>
             <art>149</art>
             <subart>1</subart>
-            <sen before-mark="^Lög þessi eru sett til þess að taka upp í innlendan rétt ákvæði tilskipana ráðsins 89/298/EBE um samræmingu á kröfum við gerð, athugun og dreifingu á útboðslýsingu sem birta skal við almennt útboð framseljanlegra verðbréfa, " after-mark=" 2001/34/EB um samræmingu á skráningarkröfum sem gerðar eru til verðbréfa í kauphöllum og upplýsingaskyldu vegna slíkra verðbréfa … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og tilskipunar Evrópuþingsins og ráðsins 2004/109/EB um samræmingu krafna um gagnsæi í tengslum við upplýsingar um útgefendur verðbréfa sem eru skráð á skipulegan markað og um breytingu á tilskipun 2001/34/EB.$">1</sen>
+            <sen before-mark="^Lög þessi eru sett til þess að taka upp í innlendan rétt ákvæði tilskipana ráðsins 89/298/EBE um samræmingu á kröfum við gerð, athugun og dreifingu á útboðslýsingu sem birta skal við almennt útboð framseljanlegra verðbréfa, " after-mark=" 2001/34/EB um samræmingu á skráningarkröfum sem gerðar eru til verðbréfa í kauphöllum og upplýsingaskyldu vegna slíkra verðbréfa (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og tilskipunar Evrópuþingsins og ráðsins 2004/109/EB um samræmingu krafna um gagnsæi í tengslum við upplýsingar um útgefendur verðbréfa sem eru skráð á skipulegan markað og um breytingu á tilskipun 2001/34/EB.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>16</chapter>
@@ -1953,7 +1953,7 @@
             <chapter>16</chapter>
             <art>149</art>
             <subart>1</subart>
-            <sen before-mark="^Lög þessi eru sett til þess að taka upp í innlendan rétt ákvæði tilskipana ráðsins 89/298/EBE um samræmingu á kröfum við gerð, athugun og dreifingu á útboðslýsingu sem birta skal við almennt útboð framseljanlegra verðbréfa, … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; 2001/34/EB um samræmingu á skráningarkröfum sem gerðar eru til verðbréfa í kauphöllum og upplýsingaskyldu vegna slíkra verðbréfa " after-mark=" og tilskipunar Evrópuþingsins og ráðsins 2004/109/EB um samræmingu krafna um gagnsæi í tengslum við upplýsingar um útgefendur verðbréfa sem eru skráð á skipulegan markað og um breytingu á tilskipun 2001/34/EB.$">1</sen>
+            <sen before-mark="^Lög þessi eru sett til þess að taka upp í innlendan rétt ákvæði tilskipana ráðsins 89/298/EBE um samræmingu á kröfum við gerð, athugun og dreifingu á útboðslýsingu sem birta skal við almennt útboð framseljanlegra verðbréfa, (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?2001/34/EB um samræmingu á skráningarkröfum sem gerðar eru til verðbréfa í kauphöllum og upplýsingaskyldu vegna slíkra verðbréfa " after-mark=" og tilskipunar Evrópuþingsins og ráðsins 2004/109/EB um samræmingu krafna um gagnsæi í tengslum við upplýsingar um útgefendur verðbréfa sem eru skráð á skipulegan markað og um breytingu á tilskipun 2001/34/EB.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2013.048.html" law-nr="48" law-year="2013" law-art="16" nr="3">
@@ -2007,7 +2007,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>VI</art>
-            <nr-title before-mark="^(\[? ?)?VI. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?VI. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.022.html" law-nr="22" law-year="2009" law-art="17" nr="2">

@@ -244,12 +244,12 @@
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Álagningarstofnar eftirlitsgjalds eftirlitsskylds aðila skv. (\[? ?)?1.–12. tölul. 1. mgr. og 13. og 14. mgr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; 5. gr., þó ekki þeirra er greiða skulu fast gjald, eru efnahags- eða rekstrarliðir samkvæmt ársreikningi eftirlitsskylds aðila fyrir næstliðið ár þegar skýrsla " after-mark=" skv. 2. gr. er samin.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Álagningarstofnar eftirlitsgjalds eftirlitsskylds aðila skv. (\[? ?)?1.–12. tölul. 1. mgr. og 13. og 14. mgr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?5. gr., þó ekki þeirra er greiða skulu fast gjald, eru efnahags- eða rekstrarliðir samkvæmt ársreikningi eftirlitsskylds aðila fyrir næstliðið ár þegar skýrsla " after-mark=" skv. 2. gr. er samin.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
         <location type="deletion">
           <art>4</art>
           <subart>4</subart>
-          <sen before-mark="^Álagningarstofn eftirlitsgjalds á útgefendur fjármálagerninga, sem teknir hafa verið til viðskipta á skipulegum verðbréfamarkaði og markaðstorgi fjármálagerninga hér á landi, er markaðsvirði þeirra í árslok næstliðins árs þegar skýrsla " after-mark=" skv. 2. gr. er samin, sbr. nánar (\[? ?)?6. og 7. mgr. 5. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Álagningarstofn eftirlitsgjalds á útgefendur fjármálagerninga, sem teknir hafa verið til viðskipta á skipulegum verðbréfamarkaði og markaðstorgi fjármálagerninga hér á landi, er markaðsvirði þeirra í árslok næstliðins árs þegar skýrsla " after-mark=" skv. 2. gr. er samin, sbr. nánar (\[? ?)?6. og 7. mgr. 5. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
         <location type="deletion">
           <art>4</art>
@@ -1014,7 +1014,7 @@
         <location type="deletion">
           <art>7</art>
           <subart>4</subart>
-          <sen before-mark="^(\[? ?)?Gjaldskrá fyrir eftirlit skv. 1. mgr., afgreiðslu umsókna skv. 2. mgr. og þjónustu skv. 3. mgr. skal " after-mark=" birt í Stjórnartíðindum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Gjaldskrá fyrir eftirlit skv. 1. mgr., afgreiðslu umsókna skv. 2. mgr. og þjónustu skv. 3. mgr. skal " after-mark=" birt í Stjórnartíðindum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2020.133.html" law-nr="133" law-year="2020" law-art="16" nr="2">
@@ -1084,7 +1084,7 @@
         <location type="deletion">
           <art>8</art>
           <subart>1</subart>
-          <sen before-mark="^Ákvörðunum " after-mark=" um álagningu eftirlitsgjalds verður ekki skotið til ráðherra.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">4</sen>
+          <sen before-mark="^Ákvörðunum " after-mark=" um álagningu eftirlitsgjalds verður ekki skotið til ráðherra.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2006.168.html" law-nr="168" law-year="2006" law-art="3" nr="2">
@@ -1131,7 +1131,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að kveða nánar á um framkvæmd laga þessara með reglugerð." after-mark="$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að kveða nánar á um framkvæmd laga þessara með reglugerð." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

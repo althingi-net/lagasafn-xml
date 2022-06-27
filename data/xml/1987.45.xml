@@ -438,7 +438,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>4</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.129.html" law-nr="129" law-year="2004" law-art="54" nr="2">
@@ -649,7 +649,7 @@
             <chapter>1</chapter>
             <art>8</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; getur ákveðið með reglugerð " after-mark=" að ákveðin laun eða tegund launa, sem 5. gr. nær til, skuli ekki falla undir staðgreiðslu.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið með reglugerð " after-mark=" að ákveðin laun eða tegund launa, sem 5. gr. nær til, skuli ekki falla undir staðgreiðslu.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1987090?g1" law-nr="90" law-year="1987" law-art="1" nr="4">
@@ -777,7 +777,7 @@
             <chapter>1</chapter>
             <art>9</art>
             <subart>2</subart>
-            <sen middle-punctuation="," before-mark="^(\[? ?)?Að tekjuári loknu skal fara fram ákvörðun og álagning tekjuskatts samkvæmt ákvæðum laga um tekjuskatt " after-mark=" útsvars samkvæmt ákvæðum laga um tekjustofna sveitarfélaga og tryggingagjalds samkvæmt ákvæðum laga um tryggingagjald.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen middle-punctuation="," before-mark="^(\[? ?)?Að tekjuári loknu skal fara fram ákvörðun og álagning tekjuskatts samkvæmt ákvæðum laga um tekjuskatt " after-mark=" útsvars samkvæmt ákvæðum laga um tekjustofna sveitarfélaga og tryggingagjalds samkvæmt ákvæðum laga um tryggingagjald.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1990.111.html" law-nr="111" law-year="1990" law-art="3" nr="7">
@@ -1404,7 +1404,7 @@
             <chapter>3</chapter>
             <art>20</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; setur nánari reglur " after-mark=" um framkvæmd 2. mgr. að höfðu samráði við (\[? ?)?þann ráðherra er fer með málefni vinnumarkaðar].&lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur nánari reglur " after-mark=" um framkvæmd 2. mgr. að höfðu samráði við (\[? ?)?þann ráðherra er fer með málefni vinnumarkaðar].&lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.129.html" law-nr="129" law-year="2004" law-art="64" nr="7">
@@ -1472,7 +1472,7 @@
           <location type="deletion">
             <chapter>3</chapter>
             <art>21a</art>
-            <nr-title before-mark="^(\[? ?)?21. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?21. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.038.html" law-nr="38" law-year="2008" law-art="4" nr="2">
@@ -1574,7 +1574,7 @@
             <chapter>4</chapter>
             <art>24</art>
             <subart>3</subart>
-            <sen before-mark="^Getur hann í því skyni krafist allra upplýsinga og gagna sem hann telur þörf á að fá, m.a. frá " after-mark=" (\[? ?)?öðrum] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; innheimtumönnum ríkissjóðs, gjaldheimtum, bönkum, sparisjóðum og póststöðvum.$">2</sen>
+            <sen before-mark="^Getur hann í því skyni krafist allra upplýsinga og gagna sem hann telur þörf á að fá, m.a. frá " after-mark=" (\[? ?)?öðrum(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?innheimtumönnum ríkissjóðs, gjaldheimtum, bönkum, sparisjóðum og póststöðvum.$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.142.html" law-nr="142" law-year="2018" law-art="8" nr="3">
@@ -1827,7 +1827,7 @@
             <chapter>5</chapter>
             <art>26</art>
             <subart>3</subart>
-            <sen before-mark="^Þegar aðgerðir (\[? ?)?skattrannsóknarstjóra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; gefa tilefni til ákvörðunar eða endurákvörðunar á gjald- og skilaskyldu samkvæmt lögum þessum skal ríkisskattstjóri annast ákvörðunina eða endurákvörðunina " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Þegar aðgerðir (\[? ?)?skattrannsóknarstjóra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?gefa tilefni til ákvörðunar eða endurákvörðunar á gjald- og skilaskyldu samkvæmt lögum þessum skal ríkisskattstjóri annast ákvörðunina eða endurákvörðunina " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.029.html" law-nr="29" law-year="2021" law-art="12" nr="2">
@@ -1904,7 +1904,7 @@
             <chapter>5</chapter>
             <art>27</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; hefur heimild til að setja reglur " after-mark=" um sérstakt launabókhald launagreiðenda.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hefur heimild til að setja reglur " after-mark=" um sérstakt launabókhald launagreiðenda.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2021,7 +2021,7 @@
             <chapter>6</chapter>
             <art>28</art>
             <subart>7</subart>
-            <sen before-mark="^Heimilt er að áætla gjaldskylda fjárhæð launagreiðanda ef í ljós kemur að skilagrein hans styðst ekki við tilskilið bókhald samkvæmt lögum nr. 51/1968" after-mark=" eða ákvæði reglna um sérstakt launabókhald sem settar hafa verið af (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; samkvæmt heimild í 27. gr.$">1</sen>
+            <sen before-mark="^Heimilt er að áætla gjaldskylda fjárhæð launagreiðanda ef í ljós kemur að skilagrein hans styðst ekki við tilskilið bókhald samkvæmt lögum nr. 51/1968" after-mark=" eða ákvæði reglna um sérstakt launabókhald sem settar hafa verið af (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?samkvæmt heimild í 27. gr.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="119" nr="6">
@@ -2343,7 +2343,7 @@
             <chapter>6</chapter>
             <art>31</art>
             <subart>5</subart>
-            <sen before-mark="^… &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; Skattrannsóknarstjóri getur vísað máli til (\[? ?)?rannsóknar lögreglu] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; af sjálfsdáðum " after-mark=" ].&lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?Skattrannsóknarstjóri getur vísað máli til (\[? ?)?rannsóknar lögreglu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?af sjálfsdáðum " after-mark=" ].&lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.029.html" law-nr="29" law-year="2021" law-art="12" nr="2">
@@ -2378,7 +2378,7 @@
             <chapter>6</chapter>
             <art>31</art>
             <subart>5</subart>
-            <sen before-mark="^" after-mark=" Skattrannsóknarstjóri getur vísað máli til (\[? ?)?rannsóknar lögreglu] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; af sjálfsdáðum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ].&lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" Skattrannsóknarstjóri getur vísað máli til (\[? ?)?rannsóknar lögreglu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?af sjálfsdáðum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?].&lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
@@ -2464,7 +2464,7 @@
           <location type="deletion">
             <chapter>6</chapter>
             <art>31a</art>
-            <nr-title before-mark="^(\[? ?)?31. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?31. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.024.html" law-nr="24" law-year="2011" law-art="1" nr="2">
@@ -2512,7 +2512,7 @@
             <chapter>7</chapter>
             <art>32</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Þrátt fyrir það að innheimtuhlutfall útsvars í staðgreiðslu sé hið sama á öllu landinu, sbr. 1. mgr. 9. gr., skal við skiptingu og skil bráðabirgðagreiðslu útsvars til sveitarfélaga miðað við þann hundraðshluta sem hver sveitarstjórn hefur ákveðið að verði álagningarhlutfall útsvars í sveitarfélaginu, sbr. 26. gr. laga nr. 73/1980, " after-mark=" með síðari breytingum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Þrátt fyrir það að innheimtuhlutfall útsvars í staðgreiðslu sé hið sama á öllu landinu, sbr. 1. mgr. 9. gr., skal við skiptingu og skil bráðabirgðagreiðslu útsvars til sveitarfélaga miðað við þann hundraðshluta sem hver sveitarstjórn hefur ákveðið að verði álagningarhlutfall útsvars í sveitarfélaginu, sbr. 26. gr. laga nr. 73/1980, " after-mark=" með síðari breytingum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1988042?g2" law-nr="42" law-year="1988" law-art="2" nr="3">

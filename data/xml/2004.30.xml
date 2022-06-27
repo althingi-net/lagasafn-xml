@@ -1574,7 +1574,7 @@
             <chapter>2</chapter>
             <art>12e</art>
             <subart>6</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.061.html" law-nr="61" law-year="2019" law-art="14" nr="2">
@@ -3159,7 +3159,7 @@
             <chapter>15</chapter>
             <art>100</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Vátryggingarfjárhæð, sem fellur til við andlát vátryggingartaka, rennur til maka hans " after-mark=" .] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Vátryggingarfjárhæð, sem fellur til við andlát vátryggingartaka, rennur til maka hans " after-mark=" .(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.118.html" law-nr="118" law-year="2005" law-art="5" nr="2">
@@ -4323,7 +4323,7 @@
           <location type="deletion">
             <chapter>20</chapter>
             <art>140h</art>
-            <nr-title before-mark="^(\[? ?)?140. gr. h. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?140. gr. h. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.061.html" law-nr="61" law-year="2019" law-art="25" nr="2">
@@ -4390,7 +4390,7 @@
           <location type="deletion">
             <chapter>21</chapter>
             <art>141a</art>
-            <nr-title before-mark="^(\[? ?)?141. gr. a. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?141. gr. a. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.061.html" law-nr="61" law-year="2019" law-art="27" nr="2">
@@ -5012,7 +5012,7 @@
           <location type="deletion">
             <chapter>24</chapter>
             <art>Ákvæði til bráðabirgða. </art>
-            <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?Ákvæði til bráðabirgða. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.061.html" law-nr="61" law-year="2019" law-art="32" nr="2">

@@ -1117,7 +1117,7 @@
             <chapter>7</chapter>
             <art>30</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra er heimilt að mæla nánar fyrir um ábyrgð og skyldur aðila skólasamfélagsins í reglugerð " after-mark=" sem sett er sameiginlega á grundvelli þessarar greinar og 14. gr.… &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að mæla nánar fyrir um ábyrgð og skyldur aðila skólasamfélagsins í reglugerð " after-mark=" sem sett er sameiginlega á grundvelli þessarar greinar og 14. gr.(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.102.html" law-nr="102" law-year="2021" law-art="1" nr="2">
@@ -1126,7 +1126,7 @@
             <chapter>7</chapter>
             <art>30</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra er heimilt að mæla nánar fyrir um ábyrgð og skyldur aðila skólasamfélagsins í reglugerð &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem sett er sameiginlega á grundvelli þessarar greinar og 14. gr." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra er heimilt að mæla nánar fyrir um ábyrgð og skyldur aðila skólasamfélagsins í reglugerð &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sem sett er sameiginlega á grundvelli þessarar greinar og 14. gr." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.091.html" law-nr="91" law-year="2011" law-art="7" nr="3">
@@ -1382,7 +1382,7 @@
             <chapter>7</chapter>
             <art>34</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðuneyti] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; hefur umsjón með sjóðnum og setur reglugerð " after-mark=" um styrkveitingar.$">3</sen>
+            <sen before-mark="^(\[? ?)?Ráðuneyti(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?hefur umsjón með sjóðnum og setur reglugerð " after-mark=" um styrkveitingar.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1554,7 +1554,7 @@
             <chapter>8</chapter>
             <art>39</art>
             <subart>4</subart>
-            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um fyrirkomulag og framkvæmd samræmds námsmats, prófa og rannsókna í grunnskólum og undanþágur nemenda frá samræmdu námsmati samkvæmt þessari grein.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^Ráðherra setur í reglugerð " after-mark=" nánari ákvæði um fyrirkomulag og framkvæmd samræmds námsmats, prófa og rannsókna í grunnskólum og undanþágur nemenda frá samræmdu námsmati samkvæmt þessari grein.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.091.html#G10" law-nr="91" law-year="2015" law-art="10" nr="3">
@@ -1707,7 +1707,7 @@
             <chapter>9</chapter>
             <art>40</art>
             <subart>7</subart>
-            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um (\[? ?)?skólaþjónustu] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; og starfsemi nemendaverndarráða í samráði við Samband íslenskra sveitarfélaga.$">1</sen>
+            <sen before-mark="^Ráðherra setur reglugerð " after-mark=" um (\[? ?)?skólaþjónustu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og starfsemi nemendaverndarráða í samráði við Samband íslenskra sveitarfélaga.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2268,7 +2268,7 @@
             <chapter>11</chapter>
             <art>46</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra setur reglugerð " after-mark=" um skilyrði til heimakennslu á grunnskólastigi og viðurkenningu grunnskóla samkvæmt þessari grein.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra setur reglugerð " after-mark=" um skilyrði til heimakennslu á grunnskólastigi og viðurkenningu grunnskóla samkvæmt þessari grein.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.091.html" law-nr="91" law-year="2011" law-art="10" nr="7">

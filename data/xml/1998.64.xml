@@ -213,7 +213,7 @@
         <location type="pointer">
           <art>8</art>
           <subart>4</subart>
-          <sen before-mark="^Í reglugerð, " after-mark=" sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur að fengnum tillögum íþróttanefndar, má kveða á um skilyrði fyrir styrkveitingum úr Íþróttasjóði og hvernig umsóknum og úthlutun skuli hagað.$">1</sen>
+          <sen before-mark="^Í reglugerð, " after-mark=" sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur að fengnum tillögum íþróttanefndar, má kveða á um skilyrði fyrir styrkveitingum úr Íþróttasjóði og hvernig umsóknum og úthlutun skuli hagað.$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -297,7 +297,7 @@
         <location type="pointer">
           <art>15</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur í reglugerð " after-mark=" sett nánari ákvæði um framkvæmd þessara laga.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur í reglugerð " after-mark=" sett nánari ákvæði um framkvæmd þessara laga.$">1</sen>
         </location>
       </footnote>
     </footnotes>

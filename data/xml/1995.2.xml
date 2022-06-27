@@ -75,7 +75,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
-            <sen before-mark="^ " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">3</sen>
+            <sen before-mark="^ " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1997.041.html" law-nr="41" law-year="1997" law-art="1" nr="2">
@@ -1712,7 +1712,7 @@
             <chapter>7</chapter>
             <art>53</art>
             <subart>2</subart>
-            <sen before-mark="^Sanni félag að það eigi fyrir skuldum er (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; (\[? ?)?eða þeim sem hann framselur " after-mark=" vald sitt] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; heimilt að veita því undanþágu frá innköllunarskyldu skv. 1. mgr. ef ljóst þykir að kröfuhafar félagsins bíði ekki af því tjón.$">1</sen>
+            <sen before-mark="^Sanni félag að það eigi fyrir skuldum er (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?eða þeim sem hann framselur " after-mark=" vald sitt(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að veita því undanþágu frá innköllunarskyldu skv. 1. mgr. ef ljóst þykir að kröfuhafar félagsins bíði ekki af því tjón.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2010.068.html" law-nr="68" law-year="2010" law-art="3" nr="3">
@@ -2229,7 +2229,7 @@
             <chapter>9</chapter>
             <art>66</art>
             <subart>2</subart>
-            <sen before-mark="^Framkvæmdastjórar og minnst helmingur stjórnarmanna skulu vera búsettir hér á landi nema ráðherra (\[? ?)?eða sá sem hann framselur vald sitt] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; veiti undanþágu frá því." after-mark="$">1</sen>
+            <sen before-mark="^Framkvæmdastjórar og minnst helmingur stjórnarmanna skulu vera búsettir hér á landi nema ráðherra (\[? ?)?eða sá sem hann framselur vald sitt(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?veiti undanþágu frá því." after-mark="$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -2559,7 +2559,7 @@
             <chapter>9</chapter>
             <art>79a</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Félagsstjórn í félagi sem ber skylda til að kjósa sér endurskoðanda skv. 1.–3. mgr. 98. gr. laga nr. 3/2006, um ársreikninga, skal samþykkja starfskjarastefnu félagsins varðandi laun og aðrar greiðslur til forstjóra og annarra æðstu stjórnenda félagsins, svo og stjórnarmanna þess " after-mark=" .] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Félagsstjórn í félagi sem ber skylda til að kjósa sér endurskoðanda skv. 1.–3. mgr. 98. gr. laga nr. 3/2006, um ársreikninga, skal samþykkja starfskjarastefnu félagsins varðandi laun og aðrar greiðslur til forstjóra og annarra æðstu stjórnenda félagsins, svo og stjórnarmanna þess " after-mark=" .(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.087.html" law-nr="87" law-year="2009" law-art="11" nr="2">
@@ -4952,7 +4952,7 @@
           <location type="deletion">
             <chapter>14a</chapter>
             <art>133d</art>
-            <nr-title before-mark="^(\[? ?)?133. gr. d. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?133. gr. d. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.054.html" law-nr="54" law-year="2007" law-art="1" nr="2">
@@ -5507,7 +5507,7 @@
             <chapter>17</chapter>
             <art>147</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Þeim ráðherra er fer með skráningu félaga] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja með reglugerð " after-mark=" nánari ákvæði um skráningu hlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Þeim ráðherra er fer með skráningu félaga(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð " after-mark=" nánari ákvæði um skráningu hlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1997.041.html" law-nr="41" law-year="1997" law-art="9" nr="3">
@@ -6037,7 +6037,7 @@
             <chapter>19</chapter>
             <art>158</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra getur með reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 147. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra getur með reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 147. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1997.041.html" law-nr="41" law-year="1997" law-art="10" nr="2">

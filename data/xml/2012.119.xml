@@ -137,7 +137,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>5</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að kveða nánar á um hlutverk og starfshætti Samgöngustofu með reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra er heimilt að kveða nánar á um hlutverk og starfshætti Samgöngustofu með reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>

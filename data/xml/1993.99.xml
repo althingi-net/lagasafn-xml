@@ -551,7 +551,7 @@
             <chapter>4</chapter>
             <art>8</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Verðlagsnefnd ákveður " after-mark=" lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi (\[? ?)?nema annað sé tekið fram í samningi milli (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; f.$">1</sen>
+            <sen before-mark="^(\[? ?)?Verðlagsnefnd ákveður " after-mark=" lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi (\[? ?)?nema annað sé tekið fram í samningi milli (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?f.$">1</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -953,7 +953,7 @@
             <chapter>6</chapter>
             <art>29</art>
             <subart>4</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="182" nr="4">
@@ -1493,7 +1493,7 @@
             <chapter>9</chapter>
             <art>39</art>
             <subart>6</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.155.html#G28" law-nr="155" law-year="2018" law-art="28" nr="3">
@@ -1637,7 +1637,7 @@
             <chapter>9</chapter>
             <art>41</art>
             <subart>3</subart>
-            <sen before-mark="^ " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^ " after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
           <location type="range">
             <chapter>9</chapter>
@@ -1649,7 +1649,7 @@
             <chapter>9</chapter>
             <art>41</art>
             <subart>6</subart>
-            <sen before-mark="^Óheimilt er að framselja þennan rétt." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Óheimilt er að framselja þennan rétt." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
           <location type="range">
             <chapter>9</chapter>
@@ -1664,7 +1664,7 @@
             <chapter>9</chapter>
             <art>41</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" (\[? ?)?Ráðherra er heimilt að gera samninga við ríkisstofnanir og/eða einkaaðila um að annast verkefni við úttekt og eftirlit á landi sem nýtt er við gæðastýrða framleiðslu.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\[? ?)?Ráðherra er heimilt að gera samninga við ríkisstofnanir og/eða einkaaðila um að annast verkefni við úttekt og eftirlit á landi sem nýtt er við gæðastýrða framleiðslu.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="27" nr="4">
@@ -1679,7 +1679,7 @@
             <chapter>9</chapter>
             <art>41</art>
             <subart>3</subart>
-            <sen before-mark="^ … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; " after-mark="$">2</sen>
+            <sen before-mark="^ (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2009.067.html" law-nr="67" law-year="2009" law-art="2" nr="5">
@@ -2390,7 +2390,7 @@
             <chapter>11</chapter>
             <art>59</art>
             <subart>2</subart>
-            <sen before-mark="^ " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^ " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.084.html" law-nr="84" law-year="2002" law-art="2" nr="5">
@@ -2516,7 +2516,7 @@
             <chapter>11</chapter>
             <art>61</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur með reglugerðum " after-mark=" og öðrum stjórnvaldsreglum &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; nánari ákvæði um framkvæmd þessa kafla.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerðum " after-mark=" og öðrum stjórnvaldsreglum &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; nánari ákvæði um framkvæmd þessa kafla.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote nr="6">
@@ -2525,7 +2525,7 @@
             <chapter>11</chapter>
             <art>61</art>
             <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; setur með reglugerðum &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; og öðrum stjórnvaldsreglum " after-mark=" nánari ákvæði um framkvæmd þessa kafla.] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerðum &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt; og öðrum stjórnvaldsreglum " after-mark=" nánari ákvæði um framkvæmd þessa kafla.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.084.html" law-nr="84" law-year="2002" law-art="2" nr="7">
@@ -2582,7 +2582,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>62</art>
-            <nr-title before-mark="^(\[? ?)?62. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?62. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -2603,7 +2603,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>63</art>
-            <nr-title before-mark="^(\[? ?)?63. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?63. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -2654,7 +2654,7 @@
             <chapter>12</chapter>
             <art>64</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; ákveður með reglugerð " after-mark=" á hvern hátt hagað skuli eftirliti með innflutningi afurðanna, sýnatöku og rannsóknum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">2</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ákveður með reglugerð " after-mark=" á hvern hátt hagað skuli eftirliti með innflutningi afurðanna, sýnatöku og rannsóknum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1995.087.html" law-nr="87" law-year="1995" law-art="18" nr="4">
@@ -3006,7 +3006,7 @@
             <chapter>12</chapter>
             <art>66</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; getur með reglugerð ákveðið að mjólk og mjólkurvörur, egg, kartöflur, garðávextir og grænmeti, sem selja á innan lands eða flytja skal á erlendan markað, skuli metið, flokkað og merkt eftir tegundum, gæðum og uppruna enda fullnægi varan reglum um heilbrigði og hollustuhætti sem settar eru á grundvelli " after-mark=" (\[? ?)?laga nr. 93 28. júní 1995, um matvæli].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur með reglugerð ákveðið að mjólk og mjólkurvörur, egg, kartöflur, garðávextir og grænmeti, sem selja á innan lands eða flytja skal á erlendan markað, skuli metið, flokkað og merkt eftir tegundum, gæðum og uppruna enda fullnægi varan reglum um heilbrigði og hollustuhætti sem settar eru á grundvelli " after-mark=" (\[? ?)?laga nr. 93 28. júní 1995, um matvæli].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2000.088.html" law-nr="88" law-year="2000" law-art="13" nr="4">
@@ -3082,7 +3082,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>68-70</art>
-            <nr-title before-mark="^(\[? ?)?68.–70. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?68.–70. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3128,7 +3128,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>72-73</art>
-            <nr-title before-mark="^(\[? ?)?72.–73. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?72.–73. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3149,7 +3149,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>74</art>
-            <nr-title before-mark="^(\[? ?)?74. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?74. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3170,7 +3170,7 @@
           <location type="deletion">
             <chapter>12</chapter>
             <art>75</art>
-            <nr-title before-mark="^(\[? ?)?75. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?75. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3258,7 +3258,7 @@
             <chapter>13</chapter>
             <art>77</art>
             <subart>2</subart>
-            <sen before-mark="^Skylt er öllum þeim er hafa með höndum vinnslu eða sölu búvara að láta (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; í té allar upplýsingar sem að gagni geta komið " after-mark=" og þeir geta veitt, þar með talið upplýsingar um verð búvöru til framleiðenda.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Skylt er öllum þeim er hafa með höndum vinnslu eða sölu búvara að láta (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í té allar upplýsingar sem að gagni geta komið " after-mark=" og þeir geta veitt, þar með talið upplýsingar um verð búvöru til framleiðenda.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2015.046.html" law-nr="46" law-year="2015" law-art="8" nr="3">
@@ -3365,7 +3365,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>80</art>
-            <nr-title before-mark="^(\[? ?)?80. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?80. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3548,7 +3548,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>83</art>
-            <nr-title before-mark="^(\[? ?)?83. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?83. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3569,7 +3569,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>84</art>
-            <nr-title before-mark="^(\[? ?)?84. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?84. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>
@@ -3590,7 +3590,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>85</art>
-            <nr-title before-mark="^(\[? ?)?(\[? ?)?85. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?(\[? ?)?85. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1993.126.html" law-nr="126" law-year="1993" law-art="2" nr="3">
@@ -3611,7 +3611,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>85A</art>
-            <nr-title before-mark="^(\[? ?)?85. gr. A. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?85. gr. A. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2003.082.html" law-nr="82" law-year="2003" law-art="1" nr="2">
@@ -3691,7 +3691,7 @@
           <location type="deletion">
             <chapter>13</chapter>
             <art>87</art>
-            <nr-title before-mark="^(\[? ?)?(\[? ?)?87. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?(\[? ?)?87. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1995.087.html" law-nr="87" law-year="1995" law-art="24" nr="3">

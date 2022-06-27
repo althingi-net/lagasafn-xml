@@ -257,7 +257,7 @@
         <location type="pointer">
           <art>11</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðuneytið] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur í reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðuneytið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur í reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
     </footnotes>

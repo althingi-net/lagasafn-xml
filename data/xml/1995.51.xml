@@ -88,7 +88,7 @@
         <location type="deletion">
           <art>1</art>
           <subart>4</subart>
-          <sen before-mark="^Greiðsla samkvæmt þessari grein skal nema fjárhæð (\[? ?)?óskertra grunnatvinnuleysisbóta] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; samkvæmt lögum um atvinnuleysistryggingar " after-mark=" fyrir hvern starfsmann í fullu starfi sem orðið hefur verkefnalaus vegna vinnslustöðvunar meðan hún varir, þó ekki lengur en (\[? ?)?15 greiðsludaga] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; í senn og aldrei lengur en (\[? ?)?35 greiðsludaga] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; á hverju almanaksári.$">1</sen>
+          <sen before-mark="^Greiðsla samkvæmt þessari grein skal nema fjárhæð (\[? ?)?óskertra grunnatvinnuleysisbóta(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?samkvæmt lögum um atvinnuleysistryggingar " after-mark=" fyrir hvern starfsmann í fullu starfi sem orðið hefur verkefnalaus vegna vinnslustöðvunar meðan hún varir, þó ekki lengur en (\[? ?)?15 greiðsludaga(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í senn og aldrei lengur en (\[? ?)?35 greiðsludaga(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á hverju almanaksári.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2007.152.html" law-nr="152" law-year="2007" law-art="1" nr="4">
@@ -258,7 +258,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>I</art>
-            <nr-title before-mark="^I. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^I. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.152.html" law-nr="152" law-year="2007" law-art="2" nr="2">
@@ -285,7 +285,7 @@
           <location type="deletion">
             <chapter>t</chapter>
             <art>II</art>
-            <nr-title before-mark="^(\[? ?)?II. " after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?II. " after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2020.025.html" law-nr="25" law-year="2020" law-art="19" nr="2">

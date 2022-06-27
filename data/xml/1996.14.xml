@@ -32,7 +32,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að setja reglugerðir að því leyti sem það er nauðsynlegt vegna skuldbindinga á grundvelli 1. gr. laga þessara." after-mark="$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerðir að því leyti sem það er nauðsynlegt vegna skuldbindinga á grundvelli 1. gr. laga þessara." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

@@ -345,7 +345,7 @@
             <chapter>4</chapter>
             <art>7</art>
             <subart>2</subart>
-            <sen before-mark="^Í reglugerðum, " after-mark=" sem settar eru samkvæmt tillögum (\[? ?)?Umhverfisstofnunar], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; skal kveðið á um vernd, friðun og veiðar einstakra tegunda villtra dýra.$">1</sen>
+            <sen before-mark="^Í reglugerðum, " after-mark=" sem settar eru samkvæmt tillögum (\[? ?)?Umhverfisstofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal kveðið á um vernd, friðun og veiðar einstakra tegunda villtra dýra.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.164.html" law-nr="164" law-year="2002" law-art="36" nr="2">
@@ -764,7 +764,7 @@
             <chapter>5</chapter>
             <art>11</art>
             <subart>1</subart>
-            <sen before-mark="^Ef veiðiskýrsla berst eftir lögmæltan skiladag hækkar gjald (\[? ?)?í ríkissjóð] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; fyrir útgáfu nýs veiðikorts í 5.000 kr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt; " after-mark="$">9</sen>
+            <sen before-mark="^Ef veiðiskýrsla berst eftir lögmæltan skiladag hækkar gjald (\[? ?)?í ríkissjóð(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?fyrir útgáfu nýs veiðikorts í 5.000 kr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">9</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1999.131.html" law-nr="131" law-year="1999" law-art="1" nr="6">
@@ -962,7 +962,7 @@
             <chapter>6</chapter>
             <art>13</art>
             <subart>3</subart>
-            <sen before-mark="^ (\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur reglugerð " after-mark=" um framkvæmd veiðanna og um tilhögun endurgreiðslna á hlut ríkissjóðs í kostnaði við þær.$">3</sen>
+            <sen before-mark="^ (\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um framkvæmd veiðanna og um tilhögun endurgreiðslna á hlut ríkissjóðs í kostnaði við þær.$">3</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1217,7 +1217,7 @@
             <chapter>6</chapter>
             <art>14</art>
             <subart>16</subart>
-            <sen before-mark="^Ráðherra setur að fengnum tillögum Umhverfisstofnunar nánari reglur " after-mark=" um framkvæmdina, m.a. um skiptingu arðs af hreindýraveiðum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra setur að fengnum tillögum Umhverfisstofnunar nánari reglur " after-mark=" um framkvæmdina, m.a. um skiptingu arðs af hreindýraveiðum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1343,7 +1343,7 @@
             <chapter>6</chapter>
             <art>17</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur í reglugerð, " after-mark=" að fengnum tillögum (\[? ?)?Umhverfisstofnunar og Náttúrufræðistofnunar Íslands], &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; aflétt friðun eftirtalinna fuglategunda innan þeirra tímamarka er hér segir, sbr. 7. gr.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur í reglugerð, " after-mark=" að fengnum tillögum (\[? ?)?Umhverfisstofnunar og Náttúrufræðistofnunar Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?aflétt friðun eftirtalinna fuglategunda innan þeirra tímamarka er hér segir, sbr. 7. gr.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.164.html" law-nr="164" law-year="2002" law-art="44" nr="3">
@@ -1396,7 +1396,7 @@
             <chapter>6</chapter>
             <art>17a</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt með reglugerð, " after-mark=" þegar friðun einstakra fuglategunda er aflétt í samræmi við ákvæði 17. gr., að banna sölu á þeim fuglum og afurðum þeirra, enda sé talið nauðsynlegt vegna ástands viðkomandi stofns að takmarka veiðar.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt með reglugerð, " after-mark=" þegar friðun einstakra fuglategunda er aflétt í samræmi við ákvæði 17. gr., að banna sölu á þeim fuglum og afurðum þeirra, enda sé talið nauðsynlegt vegna ástands viðkomandi stofns að takmarka veiðar.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2005.036.html" law-nr="36" law-year="2005" law-art="3" nr="3">
@@ -1605,7 +1605,7 @@
             <chapter>8</chapter>
             <art>20</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; setur reglugerð " after-mark=" um hvernig staðið skuli að skilgreiningu og friðlýsingu æðarvarps samkvæmt lögum þessum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um hvernig staðið skuli að skilgreiningu og friðlýsingu æðarvarps samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1702,7 +1702,7 @@
           <location type="deletion">
             <chapter>9</chapter>
             <art>22</art>
-            <nr-title before-mark="^(\[? ?)?22. gr.] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</nr-title>
+            <nr-title before-mark="^(\[? ?)?22. gr.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</nr-title>
           </location>
         </footnote>
       </footnotes>

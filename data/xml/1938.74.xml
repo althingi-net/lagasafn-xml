@@ -129,12 +129,12 @@
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
-          <sen before-mark="^Niðurjöfnun löggilts niðurjöfnunarmanns jafngildir niðurjöfnun " after-mark=" tveggja dómkvaddra manna … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Niðurjöfnun löggilts niðurjöfnunarmanns jafngildir niðurjöfnun " after-mark=" tveggja dómkvaddra manna (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
-          <sen before-mark="^Niðurjöfnun löggilts niðurjöfnunarmanns jafngildir niðurjöfnun … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; tveggja dómkvaddra manna " after-mark="$">1</sen>
+          <sen before-mark="^Niðurjöfnun löggilts niðurjöfnunarmanns jafngildir niðurjöfnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tveggja dómkvaddra manna " after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

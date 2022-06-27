@@ -86,7 +86,7 @@
         <location type="pointer">
           <art>1</art>
           <subart>3</subart>
-          <sen before-mark="^Ráðherra setur reglur " after-mark=" um stjórn sjóðsins og úthlutun úr honum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">4</sen>
+          <sen before-mark="^Ráðherra setur reglur " after-mark=" um stjórn sjóðsins og úthlutun úr honum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2003.146.html" law-nr="146" law-year="2003" law-art="1" nr="4">
@@ -334,7 +334,7 @@
         <location type="deletion">
           <art>11</art>
           <subart>1</subart>
-          <sen before-mark="^Slík tilkynning eða " after-mark=" rannsókn eða höfðun (\[? ?)?sakamáls] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; í tilefni hennar raskar því ekki að gjald verði lagt á eftir fyrirmælum þessara laga.$">2</sen>
+          <sen before-mark="^Slík tilkynning eða " after-mark=" rannsókn eða höfðun (\[? ?)?sakamáls(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?í tilefni hennar raskar því ekki að gjald verði lagt á eftir fyrirmælum þessara laga.$">2</sen>
         </location>
       </footnote>
     </footnotes>
@@ -410,7 +410,7 @@
         <location type="pointer">
           <art>14</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; setur reglugerð " after-mark=" um nánari framkvæmd laga þessara.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð " after-mark=" um nánari framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
     </footnotes>

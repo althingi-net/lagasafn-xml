@@ -30,12 +30,12 @@
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
-          <sen before-mark="^Ófrjósemisaðgerð samkvæmt lögum þessum er þegar sáðgöngum " after-mark=" eða eggjaleiðurum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er lokað til að binda enda á frjósemi.$">1</sen>
+          <sen before-mark="^Ófrjósemisaðgerð samkvæmt lögum þessum er þegar sáðgöngum " after-mark=" eða eggjaleiðurum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er lokað til að binda enda á frjósemi.$">1</sen>
         </location>
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
-          <sen before-mark="^Ófrjósemisaðgerð samkvæmt lögum þessum er þegar sáðgöngum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; eða eggjaleiðurum " after-mark=" er lokað til að binda enda á frjósemi.$">1</sen>
+          <sen before-mark="^Ófrjósemisaðgerð samkvæmt lögum þessum er þegar sáðgöngum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða eggjaleiðurum " after-mark=" er lokað til að binda enda á frjósemi.$">1</sen>
         </location>
       </footnote>
     </footnotes>

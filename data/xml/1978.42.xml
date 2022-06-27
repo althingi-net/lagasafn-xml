@@ -135,7 +135,7 @@
         <location type="pointer">
           <art>8</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Iðngreinar, sem reknar eru sem handiðnaður og löggiltar hafa verið í reglugerð " after-mark=" (\[? ?)?ráðherra], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; skulu ávallt reknar undir forstöðu meistara.$">1</sen>
+          <sen before-mark="^(\[? ?)?Iðngreinar, sem reknar eru sem handiðnaður og löggiltar hafa verið í reglugerð " after-mark=" (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skulu ávallt reknar undir forstöðu meistara.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="81" nr="2">
@@ -258,7 +258,7 @@
         <location type="deletion">
           <art>12</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?(\[? ?)?Sýslumaður], &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; þar sem aðili á lögheimili, lætur af hendi meistarabréf " after-mark=" .$">1</sen>
+          <sen before-mark="^(\[? ?)?(\[? ?)?Sýslumaður(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?þar sem aðili á lögheimili, lætur af hendi meistarabréf " after-mark=" .$">1</sen>
         </location>
         <location type="range">
           <art>12</art>
@@ -268,12 +268,12 @@
         <location type="deletion">
           <art>12</art>
           <subart>2</subart>
-          <sen middle-punctuation="," before-mark="^Nú synjar (\[? ?)?sýslumaður] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; um meistarabréf " after-mark=" eða ágreiningur verður um það, hvort aðili hafi misst rétt sinn, og er aðila þá rétt að bera málið undir (\[? ?)?ráðherra].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+          <sen middle-punctuation="," before-mark="^Nú synjar (\[? ?)?sýslumaður(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?um meistarabréf " after-mark=" eða ágreiningur verður um það, hvort aðili hafi misst rétt sinn, og er aðila þá rétt að bera málið undir (\[? ?)?ráðherra].&lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
         </location>
         <location type="deletion">
           <art>12</art>
           <subart>4</subart>
-          <sen before-mark="^Greiða skal gjald samkvæmt lögum um aukatekjur ríkissjóðs fyrir " after-mark=" meistarabréf og sveinsbréf.] &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Greiða skal gjald samkvæmt lögum um aukatekjur ríkissjóðs fyrir " after-mark=" meistarabréf og sveinsbréf.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2002.007.html" law-nr="7" law-year="2002" law-art="1" nr="3">
@@ -455,7 +455,7 @@
         <location type="deletion">
           <art>16</art>
           <subart>1</subart>
-          <sen before-mark="^Heimilt er að dæma mann, er sekur gerist um ítrekað brot gegn lögum þessum, (\[? ?)?til missis " after-mark=" meistarabréfs og sveinsbréfs], &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; tímabundið eða jafnvel ævilangt, ef um mjög gróft brot er að ræða.$">1</sen>
+          <sen before-mark="^Heimilt er að dæma mann, er sekur gerist um ítrekað brot gegn lögum þessum, (\[? ?)?til missis " after-mark=" meistarabréfs og sveinsbréfs(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?tímabundið eða jafnvel ævilangt, ef um mjög gróft brot er að ræða.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1999.133.html" law-nr="133" law-year="1999" law-art="4" nr="2">

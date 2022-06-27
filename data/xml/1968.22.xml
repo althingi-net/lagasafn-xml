@@ -106,7 +106,7 @@
         <location type="pointer">
           <art>8</art>
           <subart>1</subart>
-          <sen before-mark="^Seðlabankinn ákveður alla nánari framkvæmd þessa ákvæðis." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">3</sen>
+          <sen before-mark="^Seðlabankinn ákveður alla nánari framkvæmd þessa ákvæðis." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1998.036.html" law-nr="36" law-year="1998" law-art="1" nr="2">

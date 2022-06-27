@@ -46,7 +46,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>2</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; er heimilt að mæla svo fyrir í reglugerð, " after-mark=" að varsla og meðferð annarra ávana- og fíkniefna, sem sérstaklega mikil hætta er talin stafa af samkvæmt alþjóðasamningum, sé á sama hátt óheimil á íslensku forráðasvæði.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að mæla svo fyrir í reglugerð, " after-mark=" að varsla og meðferð annarra ávana- og fíkniefna, sem sérstaklega mikil hætta er talin stafa af samkvæmt alþjóðasamningum, sé á sama hátt óheimil á íslensku forráðasvæði.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.042.html" law-nr="42" law-year="2011" law-art="1" nr="3">
@@ -300,7 +300,7 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?(\[? ?)?Brot á lögum þessum og reglugerðum og öðrum fyrirmælum settum samkvæmt þeim varða sektum " after-mark=" eða fangelsi allt að 6 árum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?(\[? ?)?Brot á lögum þessum og reglugerðum og öðrum fyrirmælum settum samkvæmt þeim varða sektum " after-mark=" eða fangelsi allt að 6 árum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1985013?g1" law-nr="13" law-year="1985" law-art="1" nr="2">

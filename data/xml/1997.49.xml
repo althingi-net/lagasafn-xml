@@ -251,7 +251,7 @@
         <location type="deletion">
           <art>6</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Skulu uppdrættirnir staðfestir af (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; og kynntir ríkislögreglustjóra " after-mark=" og hlutaðeigandi almannavarnanefndum.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">3</sen>
+          <sen before-mark="^(\[? ?)?Skulu uppdrættirnir staðfestir af (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og kynntir ríkislögreglustjóra " after-mark=" og hlutaðeigandi almannavarnanefndum.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2003.044.html" law-nr="44" law-year="2003" law-art="13" nr="4">
@@ -535,7 +535,7 @@
         <location type="pointer">
           <art>16</art>
           <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
     </footnotes>

@@ -112,7 +112,7 @@
         <location type="deletion">
           <art>2</art>
           <subart>3</subart>
-          <sen before-mark="^(\[? ?)?Þrátt fyrir ákvæði 1. og 2. mgr. greiða engan erfðafjárskatt maki " after-mark=" og sambúðarmaki sem stofnað hefur til óvígðrar sambúðar við arfleifanda og tekur arf eftir hann samkvæmt erfðaskrá þar sem stöðu hans sem sambúðarmaka arfleifanda er ótvírætt getið.] &lt;sup style=&quot;font-size:60%&quot;&gt; 4) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^(\[? ?)?Þrátt fyrir ákvæði 1. og 2. mgr. greiða engan erfðafjárskatt maki " after-mark=" og sambúðarmaki sem stofnað hefur til óvígðrar sambúðar við arfleifanda og tekur arf eftir hann samkvæmt erfðaskrá þar sem stöðu hans sem sambúðarmaka arfleifanda er ótvírætt getið.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2006.065.html" law-nr="65" law-year="2006" law-art="13" nr="4">
@@ -354,7 +354,7 @@
         <location type="deletion">
           <art>9</art>
           <subart>1</subart>
-          <sen before-mark="^" after-mark=" Geti (\[? ?)?ríkisskattstjóri] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; ekki vegna aðstæðna erfingja gert nauðsynlegar athuganir á erfðafjárskýrslu framlengist framangreindur frestur um þann tíma sem slíkar aðstæður ríkja.$">2</sen>
+          <sen before-mark="^" after-mark=" Geti (\[? ?)?ríkisskattstjóri(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ekki vegna aðstæðna erfingja gert nauðsynlegar athuganir á erfðafjárskýrslu framlengist framangreindur frestur um þann tíma sem slíkar aðstæður ríkja.$">2</sen>
         </location>
       </footnote>
     </footnotes>

@@ -132,7 +132,7 @@
         <location type="deletion">
           <art>11</art>
           <subart>1</subart>
-          <sen before-mark="^Brot gegn lögum þessum varða, eftir málavöxtum, embættismissi, sektum " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt; eða fangelsi allt að 2 árum.$">1</sen>
+          <sen before-mark="^Brot gegn lögum þessum varða, eftir málavöxtum, embættismissi, sektum " after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða fangelsi allt að 2 árum.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1998.082.html" law-nr="82" law-year="1998" law-art="157" nr="2">
@@ -140,7 +140,7 @@
         <location type="deletion">
           <art>11</art>
           <subart>1</subart>
-          <sen before-mark="^Brot gegn lögum þessum varða, eftir málavöxtum, embættismissi, sektum … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark=" eða fangelsi allt að 2 árum.$">1</sen>
+          <sen before-mark="^Brot gegn lögum þessum varða, eftir málavöxtum, embættismissi, sektum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark=" eða fangelsi allt að 2 árum.$">1</sen>
         </location>
       </footnote>
     </footnotes>

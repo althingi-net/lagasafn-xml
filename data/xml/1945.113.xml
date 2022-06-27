@@ -77,7 +77,7 @@
         <location type="deletion">
           <art>9</art>
           <subart>1</subart>
-          <sen before-mark="^Brot gegn lögum þessum varða sektum til ríkissjóðs " after-mark=" … &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+          <sen before-mark="^Brot gegn lögum þessum varða sektum til ríkissjóðs " after-mark=" (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-nr="88" law-year="2008" law-art="233" nr="2">
@@ -85,7 +85,7 @@
         <location type="deletion">
           <art>9</art>
           <subart>1</subart>
-          <sen before-mark="^Brot gegn lögum þessum varða sektum til ríkissjóðs … &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</sen>
+          <sen before-mark="^Brot gegn lögum þessum varða sektum til ríkissjóðs (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>

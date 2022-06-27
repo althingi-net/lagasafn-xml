@@ -275,7 +275,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
-            <sen before-mark="^Varamenn skulu skipaðir á sama hátt og aðalmenn." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">4</sen>
+            <sen before-mark="^Varamenn skulu skipaðir á sama hátt og aðalmenn." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">4</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.038.html" law-nr="38" law-year="2004" law-art="1" nr="3">
@@ -863,7 +863,7 @@
             <chapter>3</chapter>
             <art>12</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; setur með reglugerð " after-mark=" nánari ákvæði um Framkvæmdasjóð aldraðra og setur honum jafnframt starfsreglur.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð " after-mark=" nánari ákvæði um Framkvæmdasjóð aldraðra og setur honum jafnframt starfsreglur.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -1108,7 +1108,7 @@
             <chapter>4</chapter>
             <art>15</art>
             <subart>5</subart>
-            <sen before-mark="^Ráðherra kveður nánar á um færni- og heilsumat í reglugerð." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 2) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^Ráðherra kveður nánar á um færni- og heilsumat í reglugerð." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.028.html" law-nr="28" law-year="2012" law-art="4" nr="2">
@@ -1729,13 +1729,13 @@
             <chapter>5</chapter>
             <art>23</art>
             <subart>2</subart>
-            <sen before-mark="^Stofnun sem er á föstum fjárlögum skal innheimta hjá (\[? ?)?heimilismanni] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; sjálfum í byrjun hvers mánaðar hlut hans í dvalarkostnaði " after-mark=" nýliðins mánaðar þegar hann tekur þátt í greiðslu dvalarkostnaðar skv. 22. gr.$">1</sen>
+            <sen before-mark="^Stofnun sem er á föstum fjárlögum skal innheimta hjá (\[? ?)?heimilismanni(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sjálfum í byrjun hvers mánaðar hlut hans í dvalarkostnaði " after-mark=" nýliðins mánaðar þegar hann tekur þátt í greiðslu dvalarkostnaðar skv. 22. gr.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>5</chapter>
             <art>23</art>
             <subart>3</subart>
-            <sen before-mark="^" after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 7) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^" after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.028.html" law-nr="28" law-year="2012" law-art="6" nr="3">
@@ -1978,7 +1978,7 @@
             <chapter>5</chapter>
             <art>26</art>
             <subart>2</subart>
-            <sen before-mark="^(\[? ?)?Þrátt fyrir 1. mgr. teljast ekki til tekna bætur frá lífeyristryggingum almannatrygginga samkvæmt lögum um almannatryggingar, bætur samkvæmt lögum um félagslega aðstoð, fjárhagsaðstoð sveitarfélaga, greiðslur úr séreignarlífeyrissparnaði og sambærilegar greiðslur frá ríkjum sem Ísland hefur gert samninga við skv. 68. gr. laga um almannatryggingar, nr. 100/2007." after-mark=" ] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Þrátt fyrir 1. mgr. teljast ekki til tekna bætur frá lífeyristryggingum almannatrygginga samkvæmt lögum um almannatryggingar, bætur samkvæmt lögum um félagslega aðstoð, fjárhagsaðstoð sveitarfélaga, greiðslur úr séreignarlífeyrissparnaði og sambærilegar greiðslur frá ríkjum sem Ísland hefur gert samninga við skv. 68. gr. laga um almannatryggingar, nr. 100/2007." after-mark=" (\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.028.html" law-nr="28" law-year="2012" law-art="6" nr="2">
@@ -2387,7 +2387,7 @@
             <chapter>6</chapter>
             <art>29</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt;$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra setur með reglugerð " after-mark=" nánari ákvæði um framkvæmd laga þessara.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2007.160.html" law-nr="160" law-year="2007" law-art="34" nr="3">

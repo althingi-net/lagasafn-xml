@@ -142,7 +142,7 @@
             <art>4</art>
             <subart>1</subart>
             <numart>b</numart>
-            <sen before-mark="^hefur (\[? ?)?gott orðspor] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; " after-mark="$">1</sen>
+            <sen before-mark="^hefur (\[? ?)?gott orðspor(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.055.html" law-nr="55" law-year="2018" law-art="2" nr="3">
@@ -350,7 +350,7 @@
             <chapter>5</chapter>
             <art>12</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur ákveðið í reglugerð " after-mark=" hámarksfjárhæð innheimtukostnaðar, m.a. þóknunar, sem heimilt er að krefja skuldara um samkvæmt lögum þessum.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur ákveðið í reglugerð " after-mark=" hámarksfjárhæð innheimtukostnaðar, m.a. þóknunar, sem heimilt er að krefja skuldara um samkvæmt lögum þessum.$">1</sen>
           </location>
         </footnote>
       </footnotes>
@@ -648,7 +648,7 @@
             <chapter>6</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; getur með reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara.$">1</sen>
+            <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur með reglugerð " after-mark=" sett nánari ákvæði um framkvæmd laga þessara.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="68" nr="3">
@@ -666,7 +666,7 @@
             <chapter>6</chapter>
             <art>21</art>
             <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Seðlabanki Íslands] &lt;sup style=&quot;font-size:60%&quot;&gt; 3) &lt;/sup&gt; getur sett reglur " after-mark=" um framkvæmd eftirlits.$">2</sen>
+            <sen before-mark="^(\[? ?)?Seðlabanki Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett reglur " after-mark=" um framkvæmd eftirlits.$">2</sen>
           </location>
         </footnote>
       </footnotes>

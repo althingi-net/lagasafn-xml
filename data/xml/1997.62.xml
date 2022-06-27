@@ -87,7 +87,7 @@
         <location type="pointer">
           <art>1</art>
           <subart>3</subart>
-          <sen before-mark="^Samningur sá, sem (\[? ?)?ráðherra] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; undirritar fyrir hönd ríkisstjórnarinnar, samkvæmt lögum þessum, um meginatriði varðandi verkefnið, skal birtur í B-deild Stjórnartíðinda." after-mark="$">1</sen>
+          <sen before-mark="^Samningur sá, sem (\[? ?)?ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?undirritar fyrir hönd ríkisstjórnarinnar, samkvæmt lögum þessum, um meginatriði varðandi verkefnið, skal birtur í B-deild Stjórnartíðinda." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>
@@ -568,7 +568,7 @@
         <location type="pointer">
           <art>Ákvæði til bráðabirgða</art>
           <subart>2</subart>
-          <sen before-mark="^Þrátt fyrir ákvæði 112. gr. laga nr. 90/2003, um tekjuskatt, er (\[? ?)?ráðherra er fer með tekjuöflun ríkisins] &lt;sup style=&quot;font-size:60%&quot;&gt; 1) &lt;/sup&gt; heimilt að kveða sérstaklega á um í reglugerð " after-mark=" að félagið skuli greiða fyrir fram í þremur jöfnum greiðslum á árunum 2010, 2011 og 2012 upp í væntanlega álagningu á tekjuskatti og öðrum opinberum gjöldum á árunum 2013–2018.$">1</sen>
+          <sen before-mark="^Þrátt fyrir ákvæði 112. gr. laga nr. 90/2003, um tekjuskatt, er (\[? ?)?ráðherra er fer með tekjuöflun ríkisins(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?heimilt að kveða sérstaklega á um í reglugerð " after-mark=" að félagið skuli greiða fyrir fram í þremur jöfnum greiðslum á árunum 2010, 2011 og 2012 upp í væntanlega álagningu á tekjuskatti og öðrum opinberum gjöldum á árunum 2013–2018.$">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2009.151.html" law-nr="151" law-year="2009" law-art="3" nr="3">
