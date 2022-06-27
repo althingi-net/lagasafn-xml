@@ -20,24 +20,36 @@ def regexify_markers(text):
     and without markers.
     '''
 
+    # These must be escaped so that they are not interpreted as regex from
+    # renderer's point of view.
+    text = text.replace('(', '\)')
+    text = text.replace(')', '\)')
+
     # Opening markers.
     text = re.sub(
         r'\[ ?',
         r'(\[? ?)?',
         text
     )
+
     # Closing markers.
+    # NOTE: The three backslashes before the closing parentheses is because
+    # we must seek the string after it has been modified by the
+    # parentheses-escaping code above. We're looking for "/)" instead of ")".
     text = re.sub(
-        r'\],? <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
+        r'\],? <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
         r'(\],? <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
+
     # Deletion markers.
+    # NOTE: See comment for closing markers above.
     text = re.sub(
-        r'… <sup style="font-size:60%"> ?\d+\) ?</sup>,? ?',
+        r'… <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
         r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
+
     # FIXME: This is unexplained.
     text = text.replace(' ,', r' ?,')
 
