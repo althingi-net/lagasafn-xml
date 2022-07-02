@@ -305,6 +305,49 @@ def xml_lists_identical(one, two):
     return True
 
 
+def explain_legally(input_node):
+    '''
+    Takes an XML node and returns a string representing the formal way of
+    referring to the same location in the legal codex.
+    '''
+    result = ''
+    node = input_node
+    matcher = Matcher()
+
+    while node.tag != 'law':
+        if node.tag == 'numart':
+            if node.attrib['type'] == 'alphabet':
+                result += '%s-stafl. ' % node.attrib['nr']
+            elif node.attrib['type'] in ['numeric', 'roman']:
+                result += '%s. tölul. ' % node.attrib['nr']
+            else:
+                import ipdb; ipdb.set_trace()
+                raise Exception('Parsing of node not implemented')
+        elif node.tag == 'subart':
+            result += '%s. málsgr. ' % node.attrib['nr']
+        elif node.tag == 'art':
+            if node.attrib['nr'].isdigit():
+                result += '%s. gr. ' % node.attrib['nr']
+            else:
+                if matcher.check(node.attrib['nr'], r'(\d+)(.+)'):
+                    matches = matcher.result()
+                    result += '%s. gr. %s ' % (matches[0], matches[1])
+                else:
+                    raise Exception('Parsing of node not implemented')
+        elif node.tag == 'chapter':
+            pass
+        else:
+            raise Exception('Parsing of node not implemented')
+
+        node = node.getparent()
+
+    # `node` has the tag `law` at this point.
+    # Add the reference to the law.
+    result += 'laga nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
+
+    return result
+
+
 # A super-iterator for containing all sorts of extra functionality that we
 # don't get with a regular Python iterator. Note that this thing is
 # incompatible with yields and is NOT a subclass of `iter` (since that's not
