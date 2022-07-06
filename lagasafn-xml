@@ -1282,6 +1282,34 @@ def make_xml(law_num, law_year):
                 for sen in sens:
                     numart.append(E('sen', sen))
 
+                # In e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002, a
+                # sentence follows the numart that belongs to the same
+                # subart. Except, for some reason, there are actually two of
+                # them, in separate paragraphs. This is most unusual and
+                # breaks the typical format, creating some kind of
+                # "sub-paragraphs", i.e. paragraphs of sentences that are
+                # still not subarts, and wouldn't make any sense if referred
+                # to in that way.
+                #
+                # So they are a sort of "half-sentence", "half-paragraph",
+                # but in reality, they should (probably and hopefully) be
+                # treated as sentences and not paragraphs, since that
+                # wouldn't make sense when being referred to formally.
+                #
+                # However, a renderer needs to know that they should be
+                # displayed in this strange paragraphy way. To make that
+                # possible, we use this variable, `force_paragraph_in`. When
+                # stray text is found, and its target location determined,
+                # this variable records the target location.
+                #
+                # When we run into two consecutive instances of stray text,
+                # that both have the same target destination, we will add an
+                # attribute to the first sentence in the "paragraph", called
+                # `force-paragraph`, indicating to a renderer that even
+                # though it's a regular sentence, following another sentence,
+                # it should actually be displayed as a paragraph.
+                force_paragraph_in = None
+
                 # Handle following sentences that we don't know where to place.
                 while begins_with_regular_content(lines.peek()):
 
@@ -1299,7 +1327,7 @@ def make_xml(law_num, law_year):
 
                     #########################################################
                     # Consider the following paragraphs below e-stafl.
-                    # 9.tölul. 1. gr. a laga nr. 161/2002 (151c).
+                    # 9. tölul. 1. gr. a laga nr. 161/2002 (151c).
                     #
                     # "Við mat á atkvæðisrétti og réttindum til að tilnefna
                     # eða víkja frá stjórnarmönnum eða stjórnendum skal
@@ -1340,8 +1368,18 @@ def make_xml(law_num, law_year):
                     # such paragraphs appear one after another. This is
                     # currently (2022-07-06) only known to happen immediately
                     # after e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002.
-                    for extra_sen in extra_sens:
-                        extra_sens_target.append(E('sen', extra_sen, {'force-paragraph': 'true'}))
+                    for i, extra_sen in enumerate(extra_sens):
+                        # Add attribute to tag, if and only if it's the first
+                        # sentence in a cluster, but a second cluster in the
+                        # same target destination. See comment to
+                        # `force_paragraph_in` above loop.
+                        if i == 0 and force_paragraph_in == extra_sens_target:
+                            extra_sens_target.append(E('sen', extra_sen, {'force-paragraph': 'true'}))
+                        else:
+                            extra_sens_target.append(E('sen', extra_sen))
+
+                    # See comment for `force_paragraph_in` above loop.
+                    force_paragraph_in = extra_sens_target
 
             trail.append('numart')
 
