@@ -1332,21 +1332,16 @@ def make_xml(law_num, law_year):
 
                     extra_sens_target = ask_user_about_location(extra_sens, numart)
 
-                    if extra_sens_target == numart or False:
-                        # This means that we might need to separate the extra
-                        # sentences somehow from the numart's content, but we
-                        # are currently not accounting for paragraphs in
-                        # numarts.
-                        #
-                        # TODO: Implement paragraphs or are least solve this
-                        # somehow. This clause is disabled until that's
-                        # complete.'
-                        pass
-                    else:
-                        # This means that we can just insert the extra
-                        # sentences into the selected node, at the very end.
-                        for extra_sen in extra_sens:
-                            extra_sens_target.append(E('sen', extra_sen))
+                    # Add these extra sentences in their proper place. We add
+                    # an attribute, `force-paragraph` to show a parser that
+                    # this sentences starts a new paragraph.
+                    #
+                    # This is probably only important in the case that two
+                    # such paragraphs appear one after another. This is
+                    # currently (2022-07-06) only known to happen immediately
+                    # after e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002.
+                    for extra_sen in extra_sens:
+                        extra_sens_target.append(E('sen', extra_sen, {'force-paragraph': 'true'}))
 
             trail.append('numart')
 
