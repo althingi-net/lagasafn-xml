@@ -1,7 +1,11 @@
+import json
+import os
 import re
 import roman
 import settings
 import subprocess
+
+STRAYTEXTMAP_FILENAME = os.path.join('data', 'json-maps', 'straytextmap.json')
 
 
 class UnexpectedClosingBracketException(Exception):
@@ -358,7 +362,6 @@ def generate_legal_reference(input_node, skip_law=False):
             elif node.attrib['type'] in ['numeric', 'roman']:
                 result += '%s. tölul. ' % node.attrib['nr']
             else:
-                import ipdb; ipdb.set_trace()
                 raise Exception('Parsing of node not implemented')
         elif node.tag == 'subart':
             result += '%s. málsgr. ' % node.attrib['nr']
@@ -392,8 +395,39 @@ def generate_legal_reference(input_node, skip_law=False):
 # We are given some extra sentences, that we don't know where to locate
 # because it cannot be determined by the input text alone.
 def ask_user_about_location(extra_sens, numart):
-    legal_reference = generate_legal_reference(numart)
+    legal_reference = generate_legal_reference(numart, skip_law=True)
     url = generate_url(numart)
+
+    # Calculated values that we'll have to use more than once.
+    joined_extra_sens = ' '.join(extra_sens)
+    numart_xpath = numart.getroottree().getpath(numart)
+    law = numart.getroottree().getroot()
+
+    # Open the straytext map.
+    with open(STRAYTEXTMAP_FILENAME, 'r') as f:
+        straytextmap = json.load(f)
+
+    # Construct the straytext map key. It must be quite detailed because we
+    # may have multiple instances of the same text, even in the same document.
+    straytextmap_key = '%s/%s:%s:%s' % (
+        law.attrib['nr'],
+        law.attrib['year'],
+        numart_xpath,
+        joined_extra_sens
+    )
+
+    # Check if the straytext map already has our answer.
+    if straytextmap_key in straytextmap:
+        # Okay, we have an entry for this text.
+        entry = straytextmap[straytextmap_key]
+
+        # Check if the purported XPath destination fits with the legal
+        # reference. If so, we can be confident that the location is correct,
+        # even if the law has changed somewhat. This will break if the text
+        # gets moved about, but then the user will simply be asked again.
+        destination_node = law.xpath(entry['xpath'])[0]
+        if generate_legal_reference(destination_node, skip_law=True) == entry['legal_reference']:
+            return destination_node
 
     # Figure out the possible locations to which the text might belong.
     possible_locations = []
@@ -413,7 +447,7 @@ def ask_user_about_location(extra_sens, numart):
     print()
     print('The text in question is:')
     print()
-    print('"%s"' % ''.join(extra_sens))
+    print('"%s"' % joined_extra_sens)
     print()
     print('Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text.');
     print()
@@ -430,9 +464,22 @@ def ask_user_about_location(extra_sens, numart):
         except ValueError:
             # Ignore nonsensical answer and keep asking.
             pass
-    selected_node = possible_locations[response-1]
 
-    print('Selected location: %s' % generate_legal_reference(selected_node, skip_law=True))
+    # Determine the selected node and get its reference.
+    selected_node = possible_locations[response-1]
+    selected_node_legal_reference = generate_legal_reference(selected_node, skip_law=True)
+
+    # Tell the user what they selected.
+    print('Selected location: %s' % selected_node_legal_reference)
+
+    # Write this down in our straytextmap for later consultation, using the
+    # sentences as a key to location information.
+    straytextmap[straytextmap_key] = {
+        'xpath': selected_node.getroottree().getpath(selected_node),
+        'legal_reference': selected_node_legal_reference,
+    }
+    with open(STRAYTEXTMAP_FILENAME, 'w') as f:
+        json.dump(straytextmap, f)
 
     return selected_node
 
