@@ -33,6 +33,7 @@ from multiprocessing import Pool
 
 from utils import UnexpectedClosingBracketException
 from utils import Matcher
+from utils import ask_user_about_location
 from utils import numart_next_nrs
 from utils import determine_month
 from utils import is_roman
@@ -1205,6 +1206,21 @@ def make_xml(law_num, law_year):
 
                 numart.append(E('name', numart_name))
 
+            # Checks if the given argument begins with regular text, as
+            # opposed to an article or something of the sort. It is used to
+            # determine if we've found content after a numart, that we don't
+            # know where to place.
+            #
+            # WARNING: This was a test that seemed to work in the first try,
+            # which was a surprise. It may require more sophisticated means
+            # of determining regular content in all cases.
+            def begins_with_regular_content(argument):
+                question = strip_markers(strip_links(argument)).strip()
+                if len(question) and question[0] != '<':
+                    return True
+                else:
+                    return False
+
             # Read in the remainder of the content.
             content = collect_until(lines, '<br/>')
 
@@ -1265,6 +1281,72 @@ def make_xml(law_num, law_year):
                 # Add the sentences to the numart.
                 for sen in sens:
                     numart.append(E('sen', sen))
+
+                # Handle following sentences that we don't know where to place.
+                while begins_with_regular_content(lines.peek()):
+
+                    # When regular (text) content immediately follows a
+                    # numart, and not a new location like an article,
+                    # subarticle or another numart, we must determine its
+                    # nature. We'll start by finding the content and stepping
+                    # over linebreaks.
+                    extra_content = next(lines).strip()
+                    if lines.peek().strip() == '<br/>':
+                        next(lines)
+
+                    # Process the extra content into extra sentences.
+                    extra_sens = separate_sentences(strip_links(extra_content))
+
+                    #########################################################
+                    # Consider the following paragraphs below e-stafl.
+                    # 9.tölul. 1. gr. a laga nr. 161/2002 (151c).
+                    #
+                    # "Við mat á atkvæðisrétti og réttindum til að tilnefna
+                    # eða víkja frá stjórnarmönnum eða stjórnendum skal
+                    # leggja saman réttindi sem móðurfélag og dótturfélag
+                    # ráða yfir."
+                    #
+                    # and immediately below it:
+                    #
+                    # "Við mat á atkvæðisrétti í dótturfélagi skal ekki
+                    # talinn með atkvæðisréttur sem fylgir eigin hlutum
+                    # dótturfélagsins eða dótturfélögum þess."
+                    #
+                    # These are extra paragraphs to numarts. They are not
+                    # very common but not exactly rare, either. By far most
+                    # numarts only contain one paragraph.
+                    #
+                    # It is tricky to figure out exactly where they belong,
+                    # as this can really only be determined by context.
+                    #
+                    # In the above example, it could be that the stray
+                    # paragraphs belonged to 'e-stafl. 9. tölul.', but in
+                    # reality, they both belong to '9. tölul.' and are thus
+                    # siblings, and not children, of the numart 'e-stafl.
+                    # 9. tölul.'.
+                    #
+                    # This can only be determined by a human reading the text
+                    # and explaining the context. We thus ask the user here
+                    # for input, to locate these stray paragraphs.
+                    #########################################################
+
+                    extra_sens_target = ask_user_about_location(extra_sens, numart)
+
+                    if extra_sens_target == numart or False:
+                        # This means that we might need to separate the extra
+                        # sentences somehow from the numart's content, but we
+                        # are currently not accounting for paragraphs in
+                        # numarts.
+                        #
+                        # TODO: Implement paragraphs or are least solve this
+                        # somehow. This clause is disabled until that's
+                        # complete.'
+                        pass
+                    else:
+                        # This means that we can just insert the extra
+                        # sentences into the selected node, at the very end.
+                        for extra_sen in extra_sens:
+                            extra_sens_target.append(E('sen', extra_sen))
 
             trail.append('numart')
 

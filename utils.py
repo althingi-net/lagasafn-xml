@@ -305,7 +305,44 @@ def xml_lists_identical(one, two):
     return True
 
 
-def explain_legally(input_node):
+def generate_url(input_node):
+    '''
+    Takes an XML node and returns its URL, or the closest thing we have.
+    There is a certain limit to how precise we want to make the URL, both
+    because it's not necessarily useful for the user to go deeper than into
+    the relevant article, but also because with numarts and such, the anchors
+    in the HTML tend to become both unreliable and unpredictable.
+    '''
+    article_nr = None
+
+    node = input_node
+    while node.tag != 'law':
+        if node.tag == 'art':
+            # If the article is denoted in Roman numerals, it will be upper-case in the URL.
+            article_nr = node.attrib['nr'].upper()
+
+        node = node.getparent()
+
+    #########################################################
+    # At this point, `node` will be the top-most `law` tag. #
+    #########################################################
+
+    # Make sure that the law number is always exactly three digits.
+    law_nr = str(node.attrib['nr'])
+    while len(law_nr) < 3:
+        law_nr = '0%s' % law_nr
+
+    url = 'https://www.althingi.is/lagas/%s/%s%s.html#G%s' % (
+        settings.CURRENT_PARLIAMENT_VERSION,
+        node.attrib['year'],
+        law_nr,
+        article_nr
+    )
+
+    return url
+
+
+def generate_legal_reference(input_node, skip_law=False):
     '''
     Takes an XML node and returns a string representing the formal way of
     referring to the same location in the legal codex.
@@ -341,11 +378,63 @@ def explain_legally(input_node):
 
         node = node.getparent()
 
-    # `node` has the tag `law` at this point.
-    # Add the reference to the law.
-    result += 'laga nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
+    #########################################################
+    # At this point, `node` will be the top-most `law` tag. #
+    #########################################################
+
+    # Add the reference to the law if requested.
+    if not skip_law:
+        result += 'laga nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
 
     return result
+
+
+# We are given some extra sentences, that we don't know where to locate
+# because it cannot be determined by the input text alone.
+def ask_user_about_location(extra_sens, numart):
+    legal_reference = generate_legal_reference(numart)
+    url = generate_url(numart)
+
+    # Figure out the possible locations to which the text might belong.
+    possible_locations = []
+    node = numart
+    while node.getparent().tag != 'law':
+        possible_locations.append(node)
+        node = node.getparent()
+
+    # Try to explain the situation to the user.
+    width, height = terminal_width_and_height()
+    print()
+    print('-' * width)
+    print('We have discovered the following text that we are unable to programmatically locate in the XML.')
+    print()
+    print('It can be found in: %s' % legal_reference)
+    print('Link: %s' % url)
+    print()
+    print('The text in question is:')
+    print()
+    print('"%s"' % ''.join(extra_sens))
+    print()
+    print('Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text.');
+    print()
+    print('The options are:')
+    for i, possible_location in enumerate(possible_locations):
+        print(' - %d: %s' % (i+1, generate_legal_reference(possible_location, skip_law=True)))
+    print()
+
+    # Get the user to decide.
+    response = None
+    while response not in range(1, len(possible_locations)+1):
+        try:
+            response = int(input('Select appropriate option: '))
+        except ValueError:
+            # Ignore nonsensical answer and keep asking.
+            pass
+    selected_node = possible_locations[response-1]
+
+    print('Selected location: %s' % generate_legal_reference(selected_node, skip_law=True))
+
+    return selected_node
 
 
 # A super-iterator for containing all sorts of extra functionality that we
