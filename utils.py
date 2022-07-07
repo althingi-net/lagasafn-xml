@@ -355,6 +355,13 @@ def generate_legal_reference(input_node, skip_law=False):
     node = input_node
     matcher = Matcher()
 
+    # If we're given the top-most node, which refers to the law itself, then
+    # we'll return the legal reference to the law itself (in the nominative
+    # case), regardless of whether `skip_law` was true or not, since
+    # otherwise we return nothing and that's not useful.
+    if node.tag == 'law':
+        return 'lög nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
+
     while node.tag != 'law':
         if node.tag == 'numart':
             if node.attrib['type'] == 'alphabet':
@@ -436,6 +443,11 @@ def ask_user_about_location(extra_sens, numart):
         possible_locations.append(node)
         node = node.getparent()
 
+    # Add the law itself as a possible location. Extremely rare, but happens
+    # for example in "forsetaúrskurður" nr. 105/2020
+    # (https://www.althingi.is/lagas/151c/2020105.html).
+    possible_locations.append(law)
+
     # Try to explain the situation to the user.
     width, height = terminal_width_and_height()
     print()
@@ -453,7 +465,7 @@ def ask_user_about_location(extra_sens, numart):
     print()
     print('The options are:')
     for i, possible_location in enumerate(possible_locations):
-        print(' - %d: %s' % (i+1, generate_legal_reference(possible_location, skip_law=True)))
+        print(' - %d: %s' % (i+1, generate_legal_reference(possible_location)))
     print()
 
     # Get the user to decide.
