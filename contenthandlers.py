@@ -7,10 +7,27 @@ from lxml.builder import E
 from utils import Matcher
 from utils import is_roman
 from utils import order_among_siblings
+from utils import strip_links
 from utils import super_iter
 from utils import terminal_width_and_height
 
 SPLITMAP_FILENAME = os.path.join('data', 'json-maps', 'splitmap.json')
+
+
+def begins_with_regular_content(argument):
+    # Checks if the given argument begins with regular text, as
+    # opposed to an article or something of the sort. It is used to
+    # determine if we've found content after a numart, that we don't
+    # know where to place.
+    #
+    # WARNING: This was a test that seemed to work in the first try,
+    # which was a surprise. It may require more sophisticated means
+    # of determining regular content in all cases.
+    question = strip_markers(strip_links(argument)).strip()
+    if len(question) and question[0] != '<':
+        return True
+    else:
+        return False
 
 
 def regexify_markers(text):
