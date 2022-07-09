@@ -1360,6 +1360,10 @@ def make_xml(law_num, law_year):
 
                     extra_sens_target = ask_user_about_location(extra_sens, numart)
 
+                    # User opted to skip. We'll break the loop.
+                    if extra_sens_target is None:
+                        break
+
                     # Add these extra sentences in their proper place. We add
                     # an attribute, `force-paragraph` to show a parser that
                     # this sentences starts a new paragraph.
