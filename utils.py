@@ -467,15 +467,20 @@ def ask_user_about_location(extra_sens, numart):
     for i, possible_location in enumerate(possible_locations):
         print(' - %d: %s' % (i+1, generate_legal_reference(possible_location)))
     print()
+    print(' - 0: Skip (use only when answer cannot be provided)')
 
     # Get the user to decide.
     response = None
-    while response not in range(1, len(possible_locations)+1):
+    while response not in range(0, len(possible_locations)+1):
         try:
             response = int(input('Select appropriate option: '))
         except ValueError:
             # Ignore nonsensical answer and keep asking.
             pass
+
+    # User opted to skip this one.
+    if response == 0:
+        return None
 
     # Determine the selected node and get its reference.
     selected_node = possible_locations[response-1]
