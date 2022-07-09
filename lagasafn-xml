@@ -1369,11 +1369,18 @@ def make_xml(law_num, law_year):
                     # currently (2022-07-06) only known to happen immediately
                     # after e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002.
                     for i, extra_sen in enumerate(extra_sens):
-                        # Add attribute to tag, if and only if it's the first
-                        # sentence in a cluster, but a second cluster in the
-                        # same target destination. See comment to
-                        # `force_paragraph_in` above loop.
-                        if i == 0 and force_paragraph_in == extra_sens_target:
+                        # Add `force-paragraph` attribute to tag if:
+                        #
+                        # It's the **first sentence** in a cluster of
+                        # sentences and either:
+                        #
+                        # a) a **second cluster of sentences** in the same
+                        #    target destination tag or
+                        # b) belongs to the **same numart** currently being
+                        #    processed.
+                        #
+                        # # See comment to `force_paragraph_in` above loop.
+                        if i == 0 and (force_paragraph_in == extra_sens_target or numart == extra_sens_target):
                             extra_sens_target.append(E('sen', extra_sen, {'force-paragraph': 'true'}))
                         else:
                             extra_sens_target.append(E('sen', extra_sen))
