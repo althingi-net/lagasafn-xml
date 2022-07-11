@@ -2454,10 +2454,11 @@ def usage(exec_name, message=None):
     print('Running without options or specific laws will process all available laws.', file=stderr)
     print(file=stderr)
     print('Options:', file=stderr)
-    print('    --help              Display this help message.', file=stderr)
+    print('    --help                    Display this help message.', file=stderr)
     print(file=stderr)
-    print('    --try-broken        Try processing laws known to have failed.', file=stderr)
-    print('    --single-thread     Skip multi-processing (mostly for debugging).', file=stderr)
+    print('    --try-broken              Try processing laws known to have failed.', file=stderr)
+    print('    --single-thread           Skip multi-processing (mostly for debugging).', file=stderr)
+    print('    --rebuild-straytextmap    Force the asking of user about stray text following numarts', file=stderr)
     print(file=stderr)
     if message:
         print('Error: %s' % message, file=stderr)
@@ -2468,7 +2469,7 @@ def main(argv):
 
     # A list of valid options so that we'll know when something is thrown in
     # that we don't know what to do with.
-    valid_options = ['--help', '--try-broken', '--single-thread']
+    valid_options = ['--help', '--try-broken', '--single-thread', '--rebuild-straytextmap']
 
     if '--help' in argv:
         usage(argv[0])
@@ -2483,9 +2484,13 @@ def main(argv):
             quit()
     else:
         # Add things in command line that match the pattern for a law_id.
+        # FIXME: This should preferably also be checked when using the
+        # --try-broken option.
         for arg in argv[1:]:
             if re.match(r'^\d{1,4}\/\d{4}$', arg):
                 law_ids.append(arg)
+            elif arg in valid_options:
+                settings.options[arg] = True
             elif arg not in valid_options:
                 usage(argv[0], 'Unknown option "%s"' % arg)
 

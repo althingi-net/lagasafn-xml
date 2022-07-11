@@ -424,7 +424,7 @@ def ask_user_about_location(extra_sens, numart):
     )
 
     # Check if the straytext map already has our answer.
-    if straytextmap_key in straytextmap:
+    if '--rebuild-straytextmap' not in settings.options and straytextmap_key in straytextmap:
         # Okay, we have an entry for this text.
         entry = straytextmap[straytextmap_key]
 
