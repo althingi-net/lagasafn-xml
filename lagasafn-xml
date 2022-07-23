@@ -1054,10 +1054,10 @@ def make_xml(law_num, law_year):
             # means that we've run into a Roman-numeric "i" that would
             # otherwise be mistaken for the letter following "h".
             #
-            # NOTE: This is practically a deprecated mechanism but should
-            # stlil be retained just in case the same circumstance occurs
-            # again in the future. It previously existed in 50. gr. laga nr.
-            # 108/2007, which was removed in March of 2020.
+            # This was previously only known to happen in 50. gr. laga nr.
+            # 108/2007, which was removed in March of 2020. However, the same
+            # happens in 1. mgr. 21. gr. laga nr. 19/1996, although the
+            # symbols are displayed in parentheses.
             try:
                 special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() == 'ii.'
             except (AttributeError, IndexError):
