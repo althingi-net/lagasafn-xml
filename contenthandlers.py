@@ -70,6 +70,9 @@ def regexify_markers(text):
     # FIXME: This is unexplained.
     text = text.replace(' ,', r' ?,')
 
+    # Remove stray spaces.
+    text = text.strip()
+
     return text
 
 
