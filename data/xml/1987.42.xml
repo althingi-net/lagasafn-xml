@@ -18,10 +18,12 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Hagstofa Íslands skal reikna og birta vísitölu byggingarkostnaðar.</sen>
-      <sen>Vísitalan skal reist á þeim grunni sem Hagstofan ákveður skv. 3. gr.</sen>
-      <sen>Grunnur vísitölunnar skal miðaður við tiltekna gerð íbúðarhúsnæðis.</sen>
-      <sen>Auk þess er Hagstofunni heimilt að reikna vísitölur sem miðast við aðrar gerðir húsa, byggingarmannvirkja eða hluta þeirra.</sen>
+      <paragraph nr="1">
+        <sen>Hagstofa Íslands skal reikna og birta vísitölu byggingarkostnaðar.</sen>
+        <sen>Vísitalan skal reist á þeim grunni sem Hagstofan ákveður skv. 3. gr.</sen>
+        <sen>Grunnur vísitölunnar skal miðaður við tiltekna gerð íbúðarhúsnæðis.</sen>
+        <sen>Auk þess er Hagstofunni heimilt að reikna vísitölur sem miðast við aðrar gerðir húsa, byggingarmannvirkja eða hluta þeirra.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.025.html#G11" law-nr="25" law-year="2021" law-art="11" nr="1">
@@ -29,6 +31,7 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="skv. 3. gr.">2</sen>
         </location>
       </footnote>
@@ -37,27 +40,35 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Vísitala byggingarkostnaðar skal miðuð við byggingarkostnað á höfuðborgarsvæði.</sen>
-      <sen>Vísitalan skal reiknuð samkvæmt verðlagi um miðjan hvern mánuð og gilda í mánaðartíma frá fyrsta degi mánaðarins næsta eftir útreikningsmánuð.</sen>
-      <sen>Vísitalan skal reiknuð og birt með einum aukastaf.</sen>
+      <paragraph nr="1">
+        <sen>Vísitala byggingarkostnaðar skal miðuð við byggingarkostnað á höfuðborgarsvæði.</sen>
+        <sen>Vísitalan skal reiknuð samkvæmt verðlagi um miðjan hvern mánuð og gilda í mánaðartíma frá fyrsta degi mánaðarins næsta eftir útreikningsmánuð.</sen>
+        <sen>Vísitalan skal reiknuð og birt með einum aukastaf.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Hagstofan skal eigi sjaldnar en á fimm ára fresti láta fara fram athugun á grundvelli vísitölunnar með hliðsjón af breytingum á byggingarháttum, byggingarefnum svo og á tilhögun launagreiðslna, verðskráningar og útreikninga.</sen>
+      <paragraph nr="1">
+        <sen>Hagstofan skal eigi sjaldnar en á fimm ára fresti láta fara fram athugun á grundvelli vísitölunnar með hliðsjón af breytingum á byggingarháttum, byggingarefnum svo og á tilhögun launagreiðslna, verðskráningar og útreikninga.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Sé ákveðið að breyta um grunn vísitölunnar skal Hagstofan ákveða og birta opinberlega hvernig vísitalan, miðuð við hinn nýja grunn, skuli tengd eldri vísitölum byggingarkostnaðar.</sen>
+      <paragraph nr="1">
+        <sen>Sé ákveðið að breyta um grunn vísitölunnar skal Hagstofan ákveða og birta opinberlega hvernig vísitalan, miðuð við hinn nýja grunn, skuli tengd eldri vísitölum byggingarkostnaðar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast gildi 1. júlí 1987.</sen>
-      <sen>
-        <a href="http://www.althingi.is/lagasafn/leidbeiningar" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða. Sjá 7. lið í leiðbeiningum um notkun lagasafns.">…</a>
-      </sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast gildi 1. júlí 1987.</sen>
+        <sen>
+          <a href="http://www.althingi.is/lagasafn/leidbeiningar" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða. Sjá 7. lið í leiðbeiningum um notkun lagasafns.">…</a>
+        </sen>
+      </paragraph>
     </subart>
   </art>
   <chapter nr-type="name" nr="t" type="temporary-clauses">
@@ -65,14 +76,18 @@
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
-        <sen>Ákvæði 2. gr. þessara laga um mánaðarlegan útreikning og gildistíma vísitölu byggingarkostnaðar breyta ekki gildi ákvæða um verðbætur í skuldabréfum, verksamningum og þess háttar sem sett eru í samræmi við fyrri lög um vísitölu byggingarkostnaðar.</sen>
-        <sen>Sé ekki um annað samið skulu þær verðbætur, sem hér um ræðir, því miðast við vísitölur sem gilda í mánuðunum janúar, apríl, júlí og október og skal hver vísitala þá gilda í þrjá mánuði hvert sinn.</sen>
+        <paragraph nr="1">
+          <sen>Ákvæði 2. gr. þessara laga um mánaðarlegan útreikning og gildistíma vísitölu byggingarkostnaðar breyta ekki gildi ákvæða um verðbætur í skuldabréfum, verksamningum og þess háttar sem sett eru í samræmi við fyrri lög um vísitölu byggingarkostnaðar.</sen>
+          <sen>Sé ekki um annað samið skulu þær verðbætur, sem hér um ræðir, því miðast við vísitölur sem gilda í mánuðunum janúar, apríl, júlí og október og skal hver vísitala þá gilda í þrjá mánuði hvert sinn.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <sen>Eftir upptöku virðisaukaskatts hinn 1. janúar 1990 skal Hagstofa Íslands við útreikning vísitölu byggingarkostnaðar frá og með janúar 1990 taka tillit til endurgreiðslna virðisaukaskatts af byggingu íbúðarhúsnæðis vegna vinnu á byggingarstað, sbr. 2. mgr. 42. gr. laga nr. 50/1988, með áorðnum breytingum, þannig að endurgreiddur virðisaukaskattur sé dreginn frá byggingarkostnaði reiknuðum með fullum virðisaukaskatti.</sen>
+        <paragraph nr="1">
+          <sen>Eftir upptöku virðisaukaskatts hinn 1. janúar 1990 skal Hagstofa Íslands við útreikning vísitölu byggingarkostnaðar frá og með janúar 1990 taka tillit til endurgreiðslna virðisaukaskatts af byggingu íbúðarhúsnæðis vegna vinnu á byggingarstað, sbr. 2. mgr. 42. gr. laga nr. 50/1988, með áorðnum breytingum, þannig að endurgreiddur virðisaukaskattur sé dreginn frá byggingarkostnaði reiknuðum með fullum virðisaukaskatti.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1989.137.html" law-nr="137" law-year="1989" law-art="1" nr="1">
@@ -87,6 +102,7 @@
               <chapter>t</chapter>
               <art>II</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>

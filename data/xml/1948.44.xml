@@ -10,12 +10,16 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðuneytið skal með reglugerð ákvarða takmörk verndarsvæða við strendur landsins innan endimarka landgrunnsins, eða á hafsvæði allt að 200 sjómílum utan við grunnlínu, þar sem allar veiðar skuli háðar íslenskum reglum og eftirliti, enda verði friðun á landgrunninu á engan hátt rýrð frá því, sem verið hefur.</sen>
-      <sen>Ráðuneytið skal einnig ákvarða allar þær reglur, sem nauðsynlegar eru til verndar fiskimiðunum á ofangreindum svæðum.</sen>
-      <sen>Ráðstafanir þessar skulu gerðar að fengnum tillögum Fiskifélags Íslands og Atvinnudeildar Háskóla Íslands.</sen>
+      <paragraph nr="1">
+        <sen>Ráðuneytið skal með reglugerð ákvarða takmörk verndarsvæða við strendur landsins innan endimarka landgrunnsins, eða á hafsvæði allt að 200 sjómílum utan við grunnlínu, þar sem allar veiðar skuli háðar íslenskum reglum og eftirliti, enda verði friðun á landgrunninu á engan hátt rýrð frá því, sem verið hefur.</sen>
+        <sen>Ráðuneytið skal einnig ákvarða allar þær reglur, sem nauðsynlegar eru til verndar fiskimiðunum á ofangreindum svæðum.</sen>
+        <sen>Ráðstafanir þessar skulu gerðar að fengnum tillögum Fiskifélags Íslands og Atvinnudeildar Háskóla Íslands.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Reglugerðin skal endurskoðuð eftir því, sem vísindalegar rannsóknir gefa tilefni til.</sen>
+      <paragraph nr="1">
+        <sen>Reglugerðin skal endurskoðuð eftir því, sem vísindalegar rannsóknir gefa tilefni til.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="23" nr="1">
@@ -23,6 +27,7 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðuneytið">1</sen>
         </location>
       </footnote>
@@ -31,6 +36,7 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="eða á hafsvæði allt að 200 sjómílum utan við grunnlínu">1</sen>
         </location>
       </footnote>
@@ -39,6 +45,7 @@
         <location type="pointer">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Ráðuneytið skal einnig ákvarða allar þær reglur," after-mark="sem nauðsynlegar eru til verndar fiskimiðunum á ofangreindum svæðum.$">2</sen>
         </location>
       </footnote>
@@ -47,13 +54,17 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Reglum þeim, sem settar verða samkvæmt 1. gr. laga þessara, skal framfylgt þannig, að þær séu ávallt í samræmi við milliríkjasamninga um þessi mál, sem Ísland er aðili að á hverjum tíma.</sen>
+      <paragraph nr="1">
+        <sen>Reglum þeim, sem settar verða samkvæmt 1. gr. laga þessara, skal framfylgt þannig, að þær séu ávallt í samræmi við milliríkjasamninga um þessi mál, sem Ísland er aðili að á hverjum tíma.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967, um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960, um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922, um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum</sen>
+      <paragraph nr="1">
+        <sen>Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967, um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960, um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922, um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -61,6 +72,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967," after-mark="um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960, &lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt; um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922, &lt;sup style=&quot;font-size:60%&quot;&gt; 3\) &lt;/sup&gt; um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -70,6 +82,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967, &lt;sup style=&quot;font-size:60%&quot;&gt; 1\) &lt;/sup&gt; um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960," after-mark="um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922, &lt;sup style=&quot;font-size:60%&quot;&gt; 3\) &lt;/sup&gt; um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -78,6 +91,7 @@
         <location type="pointer">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967, &lt;sup style=&quot;font-size:60%&quot;&gt; 1\) &lt;/sup&gt; um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960, &lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt; um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922," after-mark="um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -86,6 +100,7 @@
         <location type="deletion">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Brot á reglum, sem settar verða samkvæmt 1. gr. laga þessara, varða viðurlögum samkvæmt ákvæðum laga nr. 62 18. maí 1967, &lt;sup style=&quot;font-size:60%&quot;&gt; 1\) &lt;/sup&gt; um bann gegn veiðum með botnvörpu og flotvörpu, með síðari breytingum, laga nr. 40 9. júní 1960, &lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt; um takmarkað leyfi til dragnótaveiða í fiskveiðilandhelgi Íslands undir vísindalegu eftirliti, laga nr. 33 19. júní 1922, &lt;sup style=&quot;font-size:60%&quot;&gt; 3\) &lt;/sup&gt; um rétt til fiskveiða í landhelgi, með síðari breytingum eða, ef um brot er að ræða, sem ekki fellur undir framangreind lög, sektum" after-mark="(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -94,6 +109,7 @@
         <location type="range">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -102,7 +118,9 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðuneytið skal, eftir því sem unnt er, taka þátt í alþjóðlegum vísindarannsóknum, er miða að verndun fiskimiða.</sen>
+      <paragraph nr="1">
+        <sen>Ráðuneytið skal, eftir því sem unnt er, taka þátt í alþjóðlegum vísindarannsóknum, er miða að verndun fiskimiða.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="23" nr="1">
@@ -110,6 +128,7 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðuneytið">1</sen>
         </location>
       </footnote>

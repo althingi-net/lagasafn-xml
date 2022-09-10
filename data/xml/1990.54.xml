@@ -10,28 +10,50 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Merking orða er í lögum þessum sem hér segir:</sen>
-      <sen-title>Búfé:</sen-title>
-      <sen>Alifuglar, geitfé, hross, kanínur, loðdýr, nautgripir, sauðfé og svín.</sen>
-      <sen>Rísi ágreiningur um hvað skuli falla undir hugtakið búfé sker ráðherra úr.</sen>
-      <sen-title>Dýr:</sen-title>
-      <sen>Öll lifandi landdýr, bæði hryggdýr, hryggleysingjar og lagardýr sem lifa að hluta eða öllu leyti í fersku vatni.</sen>
-      <sen-title>Einangrunarstöð:</sen-title>
-      <sen>Sóttvarnaraðstaða fyrir loðdýr, gæludýr, fugla og fiska auk svína og nautgripa og erfðaefnis þeirra.</sen>
-      <sen-title>Eldisdýr:</sen-title>
-      <sen>Lifandi fiskur, krabbadýr eða lindýr frá eldisstöð, óháð þroskastigi, að meðtöldum dýrum sem lifa upprunalega villt en eru ætluð fyrir eldisstöð.</sen>
-      <sen-title>Erfðaefni:</sen-title>
-      <sen>Hvers kyns efni sem geymir erfðaeiginleika dýra, svo sem fósturvísir (frjóvgað egg eða fóstur á frumstigi), egg eða sæði.</sen>
-      <sen-title>Fagráð:</sen-title>
-      <sen>Nefnd sem mótar stefnu í kynbótum, rannsóknum, fræðslumálum og þróunarstarfi búgreinar samkvæmt ákvæðum búnaðarlaga, nr. 70/1998.</sen>
-      <sen-title>Gæludýr:</sen-title>
-      <sen>Dýr af eftirgreindum tegundum og flokkum: Hundar, kettir, kanínur, skrautfiskar, vatnadýr, nagdýr og búrfuglar.</sen>
-      <sen-title>Sóttvarnardýralæknir:</sen-title>
-      <sen>Faglegur opinber eftirlitsaðili sóttvarnastöðvar þar sem dýr hafa verið flutt inn samkvæmt lögum þessum.</sen>
-      <sen-title>Sóttvarnastöð:</sen-title>
-      <sen>Staður þar sem dýr og erfðaefni eru geymd meðan rannsakað er hvort þau eru haldin smitsjúkdómi.</sen>
-      <sen-title>Umsjónardýralæknir:</sen-title>
-      <sen>Hver sá dýralæknir sem hefur verið skipaður til eftirlits vegna innflutnings samkvæmt lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen>Merking orða er í lögum þessum sem hér segir:</sen>
+      </paragraph>
+      <paragraph nr="2">
+        <sen-title>Búfé:</sen-title>
+        <sen>Alifuglar, geitfé, hross, kanínur, loðdýr, nautgripir, sauðfé og svín.</sen>
+        <sen>Rísi ágreiningur um hvað skuli falla undir hugtakið búfé sker ráðherra úr.</sen>
+      </paragraph>
+      <paragraph nr="3">
+        <sen-title>Dýr:</sen-title>
+        <sen>Öll lifandi landdýr, bæði hryggdýr, hryggleysingjar og lagardýr sem lifa að hluta eða öllu leyti í fersku vatni.</sen>
+      </paragraph>
+      <paragraph nr="4">
+        <sen-title>Einangrunarstöð:</sen-title>
+        <sen>Sóttvarnaraðstaða fyrir loðdýr, gæludýr, fugla og fiska auk svína og nautgripa og erfðaefnis þeirra.</sen>
+      </paragraph>
+      <paragraph nr="5">
+        <sen-title>Eldisdýr:</sen-title>
+        <sen>Lifandi fiskur, krabbadýr eða lindýr frá eldisstöð, óháð þroskastigi, að meðtöldum dýrum sem lifa upprunalega villt en eru ætluð fyrir eldisstöð.</sen>
+      </paragraph>
+      <paragraph nr="6">
+        <sen-title>Erfðaefni:</sen-title>
+        <sen>Hvers kyns efni sem geymir erfðaeiginleika dýra, svo sem fósturvísir (frjóvgað egg eða fóstur á frumstigi), egg eða sæði.</sen>
+      </paragraph>
+      <paragraph nr="7">
+        <sen-title>Fagráð:</sen-title>
+        <sen>Nefnd sem mótar stefnu í kynbótum, rannsóknum, fræðslumálum og þróunarstarfi búgreinar samkvæmt ákvæðum búnaðarlaga, nr. 70/1998.</sen>
+      </paragraph>
+      <paragraph nr="8">
+        <sen-title>Gæludýr:</sen-title>
+        <sen>Dýr af eftirgreindum tegundum og flokkum: Hundar, kettir, kanínur, skrautfiskar, vatnadýr, nagdýr og búrfuglar.</sen>
+      </paragraph>
+      <paragraph nr="9">
+        <sen-title>Sóttvarnardýralæknir:</sen-title>
+        <sen>Faglegur opinber eftirlitsaðili sóttvarnastöðvar þar sem dýr hafa verið flutt inn samkvæmt lögum þessum.</sen>
+      </paragraph>
+      <paragraph nr="10">
+        <sen-title>Sóttvarnastöð:</sen-title>
+        <sen>Staður þar sem dýr og erfðaefni eru geymd meðan rannsakað er hvort þau eru haldin smitsjúkdómi.</sen>
+      </paragraph>
+      <paragraph nr="11">
+        <sen-title>Umsjónardýralæknir:</sen-title>
+        <sen>Hver sá dýralæknir sem hefur verið skipaður til eftirlits vegna innflutnings samkvæmt lögum þessum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="141" nr="1">
@@ -39,7 +61,8 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
-          <sen words="ráðherra">3</sen>
+          <paragraph>2</paragraph>
+          <sen words="ráðherra">2</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2007.141.html" law-nr="141" law-year="2007" law-art="1" nr="2">
@@ -48,29 +71,34 @@
           <start>
             <art>1</art>
             <subart>1</subart>
-            <sen>2</sen>
+            <paragraph>2</paragraph>
+            <sen>1</sen>
           </start>
           <end>
             <art>1</art>
             <subart>1</subart>
-            <sen>3</sen>
+            <paragraph>2</paragraph>
+            <sen>2</sen>
           </end>
         </location>
         <location type="range">
           <art>1</art>
           <subart>1</subart>
-          <sen words="auk svína og nautgripa og erfðaefnis þeirra">5</sen>
+          <paragraph>4</paragraph>
+          <sen words="auk svína og nautgripa og erfðaefnis þeirra">1</sen>
         </location>
         <location type="range">
           <start>
             <art>1</art>
             <subart>1</subart>
-            <sen-title>7</sen-title>
+            <paragraph>8</paragraph>
+            <sen-title>1</sen-title>
           </start>
           <end>
             <art>1</art>
             <subart>1</subart>
-            <sen>9</sen>
+            <paragraph>8</paragraph>
+            <sen>1</sen>
           </end>
         </location>
       </footnote>
@@ -79,24 +107,28 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
-          <sen>5</sen>
+          <paragraph>4</paragraph>
+          <sen>1</sen>
         </location>
         <location type="range">
           <start>
             <art>1</art>
             <subart>1</subart>
-            <sen-title>6</sen-title>
+            <paragraph>7</paragraph>
+            <sen-title>1</sen-title>
           </start>
           <end>
             <art>1</art>
             <subart>1</subart>
-            <sen>8</sen>
+            <paragraph>7</paragraph>
+            <sen>1</sen>
           </end>
         </location>
         <location type="range">
           <art>1</art>
           <subart>1</subart>
-          <sen>10</sen>
+          <paragraph>9</paragraph>
+          <sen>1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2015.048.html" law-nr="48" law-year="2015" law-art="1" nr="4">
@@ -104,7 +136,8 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
-          <sen words="og nautgripa">5</sen>
+          <paragraph>4</paragraph>
+          <sen words="og nautgripa">1</sen>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2003.116.html" law-nr="116" law-year="2003" law-art="5" nr="5">
@@ -113,12 +146,14 @@
           <start>
             <art>1</art>
             <subart>1</subart>
-            <sen-title>4</sen-title>
+            <paragraph>5</paragraph>
+            <sen-title>1</sen-title>
           </start>
           <end>
             <art>1</art>
             <subart>1</subart>
-            <sen>6</sen>
+            <paragraph>5</paragraph>
+            <sen>1</sen>
           </end>
         </location>
       </footnote>
@@ -127,32 +162,44 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Óheimilt er að flytja til landsins hvers konar dýr, tamin eða villt, svo og erfðaefni þeirra.</sen>
-      <sen>Um alþjóðaverslun með tegundir villtra dýra og plantna sem eru í útrýmingarhættu gilda lög um framkvæmd samnings um alþjóðaverslun með tegundir villtra dýra og plantna sem eru í útrýmingarhættu.</sen>
+      <paragraph nr="1">
+        <sen>Óheimilt er að flytja til landsins hvers konar dýr, tamin eða villt, svo og erfðaefni þeirra.</sen>
+        <sen>Um alþjóðaverslun með tegundir villtra dýra og plantna sem eru í útrýmingarhættu gilda lög um framkvæmd samnings um alþjóðaverslun með tegundir villtra dýra og plantna sem eru í útrýmingarhættu.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Þrátt fyrir innflutningsbann skv. 1. mgr. er heimilt að flytja til landsins lifandi fisk, krabbadýr eða lindýr frá eldisstöð, óháð þroskastigi, þ.m.t. hrogn og svil, að meðtöldum dýrum sem lifa upprunalega villt en eru ætluð til eldis í eldisstöð, enda skal innflutningurinn háður skilyrðum reglugerða sem ráðherra setur að fengnum umsögnum Matvælastofnunar, fisksjúkdómanefndar, Hafrannsóknastofnunar og erfðanefndar landbúnaðarins.</sen>
-      <sen>Við innflutning skal framvísa skriflegri staðfestingu Matvælastofnunar á að uppfyllt séu skilyrði samkvæmt þessu ákvæði.</sen>
+      <paragraph nr="1">
+        <sen>Þrátt fyrir innflutningsbann skv. 1. mgr. er heimilt að flytja til landsins lifandi fisk, krabbadýr eða lindýr frá eldisstöð, óháð þroskastigi, þ.m.t. hrogn og svil, að meðtöldum dýrum sem lifa upprunalega villt en eru ætluð til eldis í eldisstöð, enda skal innflutningurinn háður skilyrðum reglugerða sem ráðherra setur að fengnum umsögnum Matvælastofnunar, fisksjúkdómanefndar, Hafrannsóknastofnunar og erfðanefndar landbúnaðarins.</sen>
+        <sen>Við innflutning skal framvísa skriflegri staðfestingu Matvælastofnunar á að uppfyllt séu skilyrði samkvæmt þessu ákvæði.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ráðherra er heimilt, að fengnu vísindalegu áliti Hafrannsóknastofnunar, að takmarka eða banna innflutning á lifandi laxfiskum, óháð þroskastigi, þ.m.t. hrognum og sviljum, ef ljóst má vera að aðrar verndar- og friðunaraðgerðir sem kveðið er á um í lögum og stjórnvaldsfyrirmælum duga ekki til að koma í veg fyrir erfðablöndun slíkra laxfiska við staðbundna náttúrulega stofna sem ógnað gæti líffræðilegri fjölbreytni og stefnt náttúrulegu stofnunum í hættu.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt, að fengnu vísindalegu áliti Hafrannsóknastofnunar, að takmarka eða banna innflutning á lifandi laxfiskum, óháð þroskastigi, þ.m.t. hrognum og sviljum, ef ljóst má vera að aðrar verndar- og friðunaraðgerðir sem kveðið er á um í lögum og stjórnvaldsfyrirmælum duga ekki til að koma í veg fyrir erfðablöndun slíkra laxfiska við staðbundna náttúrulega stofna sem ógnað gæti líffræðilegri fjölbreytni og stefnt náttúrulegu stofnunum í hættu.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Matvælastofnun getur vikið frá banni því sem um getur í 1. mgr. og leyft innflutning dýra og erfðaefnis, sbr. þó 4. gr. a og 3. mgr. 13. gr., enda sé stranglega fylgt þeim fyrirmælum, sem felast í lögum þessum, og reglugerðum er settar verða samkvæmt þeim.</sen>
-      <sen>Ákvörðun um leyfi til innflutnings skal byggjast á viðeigandi áhættumati sem framkvæmt er í samræmi við viðurkennda alþjóðlega staðla og samninga sem Ísland er aðili að.</sen>
-      <sen>Heimilt er að krefja innflytjanda um upplýsingar um heilbrigði, rannsóknir og meðhöndlun dýra eða erfðaefnis og hverjar aðrar upplýsingar sem nauðsynlegar eru til að meta áhættu innflutnings.</sen>
+      <paragraph nr="1">
+        <sen>Matvælastofnun getur vikið frá banni því sem um getur í 1. mgr. og leyft innflutning dýra og erfðaefnis, sbr. þó 4. gr. a og 3. mgr. 13. gr., enda sé stranglega fylgt þeim fyrirmælum, sem felast í lögum þessum, og reglugerðum er settar verða samkvæmt þeim.</sen>
+        <sen>Ákvörðun um leyfi til innflutnings skal byggjast á viðeigandi áhættumati sem framkvæmt er í samræmi við viðurkennda alþjóðlega staðla og samninga sem Ísland er aðili að.</sen>
+        <sen>Heimilt er að krefja innflytjanda um upplýsingar um heilbrigði, rannsóknir og meðhöndlun dýra eða erfðaefnis og hverjar aðrar upplýsingar sem nauðsynlegar eru til að meta áhættu innflutnings.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Dýrum sem eru flutt inn án heimildar eða sleppa úr flutningsförum skal tafarlaust lógað og fargað bótalaust á kostnað umráðanda svo eigi stafi hætta af.</sen>
-      <sen>Matvælastofnun er þó heimilt að gefa kost á að slík dýr séu tafarlaust send úr landi sé smitvörnum ekki ógnað.</sen>
-      <sen>Umráðamaður dýrs sem er flutt inn án heimildar skal þá tafarlaust gera ráðstafanir þar að lútandi á eigin kostnað.</sen>
-      <sen>Sá sem er ábyrgur fyrir flutningi dýrs sem sleppur úr flutningsfari fyrir slysni skal á sama hátt tafarlaust gera ráðstafanir þar að lútandi á eigin kostnað.</sen>
-      <sen>Á meðan ráðstafanir eru gerðar um afdrif dýra sem eru flutt inn án heimildar eða sloppið hafa úr flutningsförum skal einangra þau í vörslu Matvælastofnunar.</sen>
-      <sen>Eggjum, sæði eða fósturvísum skal á sama hátt eyða eða senda úr landi á kostnað innflytjanda, svo og dýrum sem sædd kunna að hafa verið eða notuð sem fósturmæður og afkvæmum sem kunna að hafa fæðst eftir ólögmætan innflutning.</sen>
-      <sen>Matvælastofnun er þó heimilt að láta framkvæma áhættumat með tilliti til smitvarna áður en ákvörðun um ráðstöfun er tekin skv. 6. málsl. og getur á grundvelli þeirrar niðurstöðu heimilað dvöl á landinu að uppfylltum skilyrðum.</sen>
+      <paragraph nr="1">
+        <sen>Dýrum sem eru flutt inn án heimildar eða sleppa úr flutningsförum skal tafarlaust lógað og fargað bótalaust á kostnað umráðanda svo eigi stafi hætta af.</sen>
+        <sen>Matvælastofnun er þó heimilt að gefa kost á að slík dýr séu tafarlaust send úr landi sé smitvörnum ekki ógnað.</sen>
+        <sen>Umráðamaður dýrs sem er flutt inn án heimildar skal þá tafarlaust gera ráðstafanir þar að lútandi á eigin kostnað.</sen>
+        <sen>Sá sem er ábyrgur fyrir flutningi dýrs sem sleppur úr flutningsfari fyrir slysni skal á sama hátt tafarlaust gera ráðstafanir þar að lútandi á eigin kostnað.</sen>
+        <sen>Á meðan ráðstafanir eru gerðar um afdrif dýra sem eru flutt inn án heimildar eða sloppið hafa úr flutningsförum skal einangra þau í vörslu Matvælastofnunar.</sen>
+        <sen>Eggjum, sæði eða fósturvísum skal á sama hátt eyða eða senda úr landi á kostnað innflytjanda, svo og dýrum sem sædd kunna að hafa verið eða notuð sem fósturmæður og afkvæmum sem kunna að hafa fæðst eftir ólögmætan innflutning.</sen>
+        <sen>Matvælastofnun er þó heimilt að láta framkvæma áhættumat með tilliti til smitvarna áður en ákvörðun um ráðstöfun er tekin skv. 6. málsl. og getur á grundvelli þeirrar niðurstöðu heimilað dvöl á landinu að uppfylltum skilyrðum.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen>Innflutningi samkvæmt lögum þessum telst lokið þegar öll skilyrði innflutnings hafa verið uppfyllt að mati Matvælastofnunar.</sen>
+      <paragraph nr="1">
+        <sen>Innflutningi samkvæmt lögum þessum telst lokið þegar öll skilyrði innflutnings hafa verið uppfyllt að mati Matvælastofnunar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2002.164.html" law-nr="164" law-year="2002" law-art="16" nr="1">
@@ -160,6 +207,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>2</sen>
         </location>
       </footnote>
@@ -168,11 +216,13 @@
         <location type="range">
           <art>2</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="ráðherra">1</sen>
         </location>
         <location type="range">
           <art>2</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -181,11 +231,13 @@
         <location type="range">
           <art>2</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">1</sen>
         </location>
         <location type="range">
           <art>2</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">2</sen>
         </location>
       </footnote>
@@ -194,11 +246,13 @@
         <location type="range">
           <art>2</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Hafrannsóknastofnunar">1</sen>
         </location>
         <location type="range">
           <art>2</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Hafrannsóknastofnunar">1</sen>
         </location>
       </footnote>
@@ -208,11 +262,13 @@
           <start>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>2</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -222,17 +278,20 @@
         <location type="range">
           <art>2</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun getur">1</sen>
         </location>
         <location type="range">
           <start>
             <art>2</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </start>
           <end>
             <art>2</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -242,6 +301,7 @@
         <location type="range">
           <art>2</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="sbr. þó 4. gr. a">1</sen>
         </location>
       </footnote>
@@ -250,6 +310,7 @@
         <location type="range">
           <art>2</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="og 3. mgr. 13. gr.">1</sen>
         </location>
       </footnote>
@@ -259,11 +320,13 @@
           <start>
             <art>2</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>2</art>
             <subart>6</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -285,11 +348,15 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Áður en leyfi til innflutnings á búfé eða erfðaefni þess er veitt skal Matvælastofnun leita álits fagráðs í viðkomandi búgrein og skal það meta þörf eða hugsanlegan ábata fyrir íslenska búfjárrækt af slíkum innflutningi.</sen>
-      <sen>Skal fagráð gera tillögur um hvaða kyn og tegund skuli flytja inn, með hvaða hætti og frá hvaða landi.</sen>
+      <paragraph nr="1">
+        <sen>Áður en leyfi til innflutnings á búfé eða erfðaefni þess er veitt skal Matvælastofnun leita álits fagráðs í viðkomandi búgrein og skal það meta þörf eða hugsanlegan ábata fyrir íslenska búfjárrækt af slíkum innflutningi.</sen>
+        <sen>Skal fagráð gera tillögur um hvaða kyn og tegund skuli flytja inn, með hvaða hætti og frá hvaða landi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Nefndin getur lagt til annað form á innflutningi en umsækjandi gerir ráð fyrir telji hún það tryggara og forsendur fyrir meðmælum með umsókninni.</sen>
+      <paragraph nr="1">
+        <sen>Nefndin getur lagt til annað form á innflutningi en umsækjandi gerir ráð fyrir telji hún það tryggara og forsendur fyrir meðmælum með umsókninni.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.071.html" law-nr="71" law-year="2021" law-art="16" nr="1">
@@ -297,6 +364,7 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
       </footnote>
@@ -305,16 +373,19 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráðs">1</sen>
         </location>
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="það">1</sen>
         </location>
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráð">2</sen>
         </location>
       </footnote>
@@ -323,6 +394,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Nefndin" after-mark="getur lagt til annað form á innflutningi en umsækjandi gerir ráð fyrir telji hún það tryggara og forsendur fyrir meðmælum með umsókninni.$">1</sen>
         </location>
       </footnote>
@@ -331,14 +403,20 @@
   <art nr="4a">
     <nr-title>4. gr. a.</nr-title>
     <subart nr="1">
-      <sen>Yfirdýralæknir getur vikið frá því banni sem um getur í 1. mgr. 2. gr. og leyft innflutning á gæludýrum og erfðaefni þeirra sem ekki teljast til nýrra dýrategunda eða erlendra stofna tegunda sem hér eru fyrir, sbr. 5. gr., enda sé fylgt fyrirmælum sem felast í lögum þessum og reglugerðum er settar eru samkvæmt þeim.</sen>
+      <paragraph nr="1">
+        <sen>Yfirdýralæknir getur vikið frá því banni sem um getur í 1. mgr. 2. gr. og leyft innflutning á gæludýrum og erfðaefni þeirra sem ekki teljast til nýrra dýrategunda eða erlendra stofna tegunda sem hér eru fyrir, sbr. 5. gr., enda sé fylgt fyrirmælum sem felast í lögum þessum og reglugerðum er settar eru samkvæmt þeim.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Meta skal áhættu af innflutningi og er heimilt að krefja innflytjanda um upplýsingar um heilbrigði gæludýrs, þ.m.t. heilbrigðis- og upprunavottorð, sem staðfesta nauðsynlega bólusetningu, rannsóknir og meðhöndlun gæludýrs eða erfðaefnis fyrir innflutning.</sen>
+      <paragraph nr="1">
+        <sen>Meta skal áhættu af innflutningi og er heimilt að krefja innflytjanda um upplýsingar um heilbrigði gæludýrs, þ.m.t. heilbrigðis- og upprunavottorð, sem staðfesta nauðsynlega bólusetningu, rannsóknir og meðhöndlun gæludýrs eða erfðaefnis fyrir innflutning.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Heimilt er að krefjast skapgerðarmats á hundum sem sótt er um innflutningsleyfi fyrir, einnig er heimilt að krefjast skapgerðarmats á hundum sem sótt er um leyfi til að flytja inn erfðaefni úr.</sen>
-      <sen>Ekki skal veita undanþágu til innflutnings á hundum, blendingum af úlfum og hundum, eða öðrum gæludýrum sem hætta getur stafað af.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að krefjast skapgerðarmats á hundum sem sótt er um innflutningsleyfi fyrir, einnig er heimilt að krefjast skapgerðarmats á hundum sem sótt er um leyfi til að flytja inn erfðaefni úr.</sen>
+        <sen>Ekki skal veita undanþágu til innflutnings á hundum, blendingum af úlfum og hundum, eða öðrum gæludýrum sem hætta getur stafað af.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2007.141.html" law-nr="141" law-year="2007" law-art="3" nr="1">
@@ -351,6 +429,7 @@
           <end>
             <art>4a</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -360,9 +439,11 @@
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen>Áður en leyfi er veitt til innflutnings á nýjum dýrategundum eða erlendum stofnum tegunda sem hér eru fyrir skal Matvælastofnun afla umsagnar erfðanefndar landbúnaðarins.</sen>
-      <sen>Umsókn um leyfi til slíks innflutnings skal afgreidd samhliða umsókn til Umhverfisstofnunar um leyfi til innflutnings á grundvelli laga um náttúruvernd.</sen>
-      <sen>Þegar Matvælastofnun og Umhverfisstofnun hafa lokið vinnslu umsóknar skal tilkynna umsækjanda um niðurstöður beggja stofnana.</sen>
+      <paragraph nr="1">
+        <sen>Áður en leyfi er veitt til innflutnings á nýjum dýrategundum eða erlendum stofnum tegunda sem hér eru fyrir skal Matvælastofnun afla umsagnar erfðanefndar landbúnaðarins.</sen>
+        <sen>Umsókn um leyfi til slíks innflutnings skal afgreidd samhliða umsókn til Umhverfisstofnunar um leyfi til innflutnings á grundvelli laga um náttúruvernd.</sen>
+        <sen>Þegar Matvælastofnun og Umhverfisstofnun hafa lokið vinnslu umsóknar skal tilkynna umsækjanda um niðurstöður beggja stofnana.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.071.html" law-nr="71" law-year="2021" law-art="17" nr="1">
@@ -370,17 +451,20 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
         <location type="range">
           <start>
             <art>5</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </start>
           <end>
             <art>5</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -391,11 +475,13 @@
           <start>
             <art>5</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>5</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -405,10 +491,12 @@
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðuneytið hefur eftirlit með og ber ábyrgð á innflutningi búfjár sem heimilaður kann að verða samkvæmt lögum þessum.</sen>
-      <sen>Á sama hátt hefur það eftirlit með framræktun kynja sem inn verða flutt, en ráðherra er þó heimilt að fela hana einstökum búgreinasamböndum eða ræktunarfélögum, enda mæli yfirdýralæknir og viðkomandi fagráð með því.</sen>
-      <sen>Viðkomandi aðili skal þá sýna fram á að hann geti fullnægt öllum skilyrðum um sóttvarnir og aðbúnað og kostað framræktunina að öllu leyti.</sen>
-      <sen>Slíkt framsal skal ávallt bundið við eitt innflutningsleyfi með ákveðnum tímamörkum.</sen>
+      <paragraph nr="1">
+        <sen>Ráðuneytið hefur eftirlit með og ber ábyrgð á innflutningi búfjár sem heimilaður kann að verða samkvæmt lögum þessum.</sen>
+        <sen>Á sama hátt hefur það eftirlit með framræktun kynja sem inn verða flutt, en ráðherra er þó heimilt að fela hana einstökum búgreinasamböndum eða ræktunarfélögum, enda mæli yfirdýralæknir og viðkomandi fagráð með því.</sen>
+        <sen>Viðkomandi aðili skal þá sýna fram á að hann geti fullnægt öllum skilyrðum um sóttvarnir og aðbúnað og kostað framræktunina að öllu leyti.</sen>
+        <sen>Slíkt framsal skal ávallt bundið við eitt innflutningsleyfi með ákveðnum tímamörkum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="141" nr="1">
@@ -416,11 +504,13 @@
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðuneytið">1</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="ráðherra">2</sen>
         </location>
       </footnote>
@@ -429,21 +519,25 @@
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="hefur eftirlit með og ber ábyrgð á">1</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Á sama hátt hefur það eftirlit með">2</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="búgreinasamböndum">2</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráð">2</sen>
         </location>
       </footnote>
@@ -452,10 +546,12 @@
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen>Vegna innflutnings á dýrum og erfðaefni er heimilt að starfrækja sóttvarna- og einangrunarstöðvar.</sen>
-      <sen>Stöðvarnar skulu hafa leyfi til reksturs og lúta eftirliti Matvælastofnunar.</sen>
-      <sen>Ráðherra ákveður með reglugerð, að fengnum tillögum Matvælastofnunar, hvaða kröfur skuli gerðar til sóttvarna- og einangrunarstöðva.</sen>
-      <sen>Matvælastofnun getur heimilað innflytjendum að annast einangrun einstakra dýra í þeirra eigu, að uppfylltum skilyrðum um smitvarnir og aðbúnað sem sett eru og undir eftirliti Matvælastofnunar.</sen>
+      <paragraph nr="1">
+        <sen>Vegna innflutnings á dýrum og erfðaefni er heimilt að starfrækja sóttvarna- og einangrunarstöðvar.</sen>
+        <sen>Stöðvarnar skulu hafa leyfi til reksturs og lúta eftirliti Matvælastofnunar.</sen>
+        <sen>Ráðherra ákveður með reglugerð, að fengnum tillögum Matvælastofnunar, hvaða kröfur skuli gerðar til sóttvarna- og einangrunarstöðva.</sen>
+        <sen>Matvælastofnun getur heimilað innflytjendum að annast einangrun einstakra dýra í þeirra eigu, að uppfylltum skilyrðum um smitvarnir og aðbúnað sem sett eru og undir eftirliti Matvælastofnunar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.053.html" law-nr="53" law-year="2020" law-art="2" nr="1">
@@ -464,11 +560,13 @@
           <start>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>4</sen>
           </end>
         </location>
@@ -478,9 +576,11 @@
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen>Þegar dýr eða erfðaefni er valið til innflutnings skal hvert einstakt dýr, sem flytja skal inn, karldýr, sem eru fyrirhugaðir sæðisgjafar, og foreldrar, sem gefið hafa frjóvguð egg, heilbrigðisskoðuð af embættisdýralækni og skulu vottorð og aðrar nauðsynlegar upplýsingar liggja fyrir áður en innflutningur fer fram.</sen>
-      <sen>Fósturvísa, egg eða sæði má aðeins flytja frá viðurkenndum kynbótastöðvum þar sem fylgst hefur verið með heilbrigði foreldra eða foreldris nægilega lengi að mati Matvælastofnunar.</sen>
-      <sen>Ráðherra skal setja reglur samkvæmt tillögum Matvælastofnunar um kröfur til hvers kyns upplýsinga og vottorða sem þurfa að liggja fyrir áður en slíkur innflutningur er leyfður.</sen>
+      <paragraph nr="1">
+        <sen>Þegar dýr eða erfðaefni er valið til innflutnings skal hvert einstakt dýr, sem flytja skal inn, karldýr, sem eru fyrirhugaðir sæðisgjafar, og foreldrar, sem gefið hafa frjóvguð egg, heilbrigðisskoðuð af embættisdýralækni og skulu vottorð og aðrar nauðsynlegar upplýsingar liggja fyrir áður en innflutningur fer fram.</sen>
+        <sen>Fósturvísa, egg eða sæði má aðeins flytja frá viðurkenndum kynbótastöðvum þar sem fylgst hefur verið með heilbrigði foreldra eða foreldris nægilega lengi að mati Matvælastofnunar.</sen>
+        <sen>Ráðherra skal setja reglur samkvæmt tillögum Matvælastofnunar um kröfur til hvers kyns upplýsinga og vottorða sem þurfa að liggja fyrir áður en slíkur innflutningur er leyfður.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="70" nr="1">
@@ -488,11 +588,13 @@
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">2</sen>
         </location>
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">3</sen>
         </location>
       </footnote>
@@ -501,6 +603,7 @@
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">3</sen>
         </location>
       </footnote>
@@ -509,15 +612,21 @@
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen>Einangra skal öll innflutt dýr og erfðaefni, að undanskildum eldisdýrum skv. 2. mgr. 2. gr., á sóttvarnastöð svo lengi sem Matvælastofnun telur þörf á undir stöðugu eftirliti sóttvarnardýralæknis stöðvarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Einangra skal öll innflutt dýr og erfðaefni, að undanskildum eldisdýrum skv. 2. mgr. 2. gr., á sóttvarnastöð svo lengi sem Matvælastofnun telur þörf á undir stöðugu eftirliti sóttvarnardýralæknis stöðvarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Sóttvarnardýralæknir sóttvarnastöðvar getur verið viðkomandi héraðsdýralæknir eða dýralæknir sem Matvælastofnun ræður sérstaklega til þeirra verka.</sen>
-      <sen>Matvælastofnun setur sóttvarnardýralækni erindisbréf með ákvæðum um skyldur hans varðandi smitgát vegna starfa við sóttvarnastöðina.</sen>
+      <paragraph nr="1">
+        <sen>Sóttvarnardýralæknir sóttvarnastöðvar getur verið viðkomandi héraðsdýralæknir eða dýralæknir sem Matvælastofnun ræður sérstaklega til þeirra verka.</sen>
+        <sen>Matvælastofnun setur sóttvarnardýralækni erindisbréf með ákvæðum um skyldur hans varðandi smitgát vegna starfa við sóttvarnastöðina.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ráðherra setur, að fengnum tillögum Matvælastofnunar, reglugerð um allt er veit að rekstri sóttvarna- og einangrunarstöðva og öryggi gagnvart hugsanlegri sýkingarhættu frá þeim, þar á meðal ströng ákvæði um mannaferðir, meðferð áburðar, hvers konar úrgangs og afurða frá stöðvunum.</sen>
-      <sen>Starfsmenn við slíkar stöðvar skulu fá sérstök erindisbréf og skal sóttvarnardýralæknir ábyrgur fyrir því að öryggisreglum sé fylgt.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra setur, að fengnum tillögum Matvælastofnunar, reglugerð um allt er veit að rekstri sóttvarna- og einangrunarstöðva og öryggi gagnvart hugsanlegri sýkingarhættu frá þeim, þar á meðal ströng ákvæði um mannaferðir, meðferð áburðar, hvers konar úrgangs og afurða frá stöðvunum.</sen>
+        <sen>Starfsmenn við slíkar stöðvar skulu fá sérstök erindisbréf og skal sóttvarnardýralæknir ábyrgur fyrir því að öryggisreglum sé fylgt.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="70" nr="1">
@@ -525,21 +634,25 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
         <location type="range">
           <art>9</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
         <location type="range">
           <art>9</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">2</sen>
         </location>
         <location type="range">
           <art>9</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">1</sen>
         </location>
       </footnote>
@@ -548,6 +661,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -557,11 +671,13 @@
           <start>
             <art>9</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>9</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -571,6 +687,7 @@
         <location type="range">
           <art>9</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -579,6 +696,7 @@
         <location type="pointer">
           <art>9</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur, að fengnum tillögum (\[? ?)?Matvælastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?reglugerð" after-mark="um allt er veit að rekstri sóttvarna- og einangrunarstöðva og öryggi gagnvart hugsanlegri sýkingarhættu frá þeim, þar á meðal ströng ákvæði um mannaferðir, meðferð áburðar, hvers konar úrgangs og afurða frá stöðvunum.$">1</sen>
         </location>
       </footnote>
@@ -587,10 +705,14 @@
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen>Innflutt dýr eða dýr, sem hafa vaxið af innfluttu erfðaefni, má aldrei flytja út af sóttvarnastöð.</sen>
+      <paragraph nr="1">
+        <sen>Innflutt dýr eða dýr, sem hafa vaxið af innfluttu erfðaefni, má aldrei flytja út af sóttvarnastöð.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Þegar tryggt þykir að við innflutning hafi ekki borist neinir erfðagallar eða smitsjúkdómar hættulegir íslenskum dýrum og liðinn er ákveðinn tími, sem nánar skal kveðið á um í reglugerð, frá síðasta innflutningi dýra eða erfðaefnis getur Matvælastofnun heimilað að dýr eða erfðaefni, annað en getið er í 1. mgr., séu flutt úr sóttvarnastöð.</sen>
+      <paragraph nr="1">
+        <sen>Þegar tryggt þykir að við innflutning hafi ekki borist neinir erfðagallar eða smitsjúkdómar hættulegir íslenskum dýrum og liðinn er ákveðinn tími, sem nánar skal kveðið á um í reglugerð, frá síðasta innflutningi dýra eða erfðaefnis getur Matvælastofnun heimilað að dýr eða erfðaefni, annað en getið er í 1. mgr., séu flutt úr sóttvarnastöð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="70" nr="1">
@@ -598,6 +720,7 @@
         <location type="range">
           <art>10</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
       </footnote>
@@ -606,7 +729,9 @@
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <subart nr="1">
-      <sen>Hreinræktun innfluttra kynja og blöndun þeirra við innlent búfé skal vera undir stjórn viðkomandi fagráðs sem starfar samkvæmt búnaðarlögum, nr. 70/1998.</sen>
+      <paragraph nr="1">
+        <sen>Hreinræktun innfluttra kynja og blöndun þeirra við innlent búfé skal vera undir stjórn viðkomandi fagráðs sem starfar samkvæmt búnaðarlögum, nr. 70/1998.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.175.html" law-nr="175" law-year="2000" law-art="7" nr="1">
@@ -614,6 +739,7 @@
         <location type="range">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráðs sem starfar samkvæmt búnaðarlögum, nr. 70/1998">1</sen>
         </location>
       </footnote>
@@ -622,12 +748,16 @@
   <art nr="12">
     <nr-title>12. gr.</nr-title>
     <subart nr="1">
-      <sen>Íslensk dýr, sem tekin eru til blöndunar við innflutt búfjárkyn eða til að vera fósturmæður við innflutning á fósturvísum, skulu valin af ráðunautum Bændasamtaka Íslands í viðkomandi búgrein og skal Matvælastofnun eða fulltrúi hennar ganga úr skugga um að þau séu eigi grunuð um eða haldin smitsjúkdómum.</sen>
-      <sen>Ekki má hefja ræktun á íslensku búfjárkyni með innfluttu kyni fyrr en gengið hefur verið úr skugga um hvernig kynin blandast og að einblendingsrækt með íslenska kyninu fylgi ekki alvarlegir burðarerfiðleikar eða skapgerðargallar.</sen>
+      <paragraph nr="1">
+        <sen>Íslensk dýr, sem tekin eru til blöndunar við innflutt búfjárkyn eða til að vera fósturmæður við innflutning á fósturvísum, skulu valin af ráðunautum Bændasamtaka Íslands í viðkomandi búgrein og skal Matvælastofnun eða fulltrúi hennar ganga úr skugga um að þau séu eigi grunuð um eða haldin smitsjúkdómum.</sen>
+        <sen>Ekki má hefja ræktun á íslensku búfjárkyni með innfluttu kyni fyrr en gengið hefur verið úr skugga um hvernig kynin blandast og að einblendingsrækt með íslenska kyninu fylgi ekki alvarlegir burðarerfiðleikar eða skapgerðargallar.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Gæta skal þess að verðmætir eiginleikar í íslenskum búfjárkynjum tapist ekki við blöndun við innflutt kyn.</sen>
-      <sen>Heimilt er að setja í reglugerð ákvæði sem kveða svo á um að aðeins megi nota hið innflutta kyn til einblendingsræktar telji ráðunautur Bændasamtaka Íslands og/eða viðkomandi fagráð ástæðu til.</sen>
+      <paragraph nr="1">
+        <sen>Gæta skal þess að verðmætir eiginleikar í íslenskum búfjárkynjum tapist ekki við blöndun við innflutt kyn.</sen>
+        <sen>Heimilt er að setja í reglugerð ákvæði sem kveða svo á um að aðeins megi nota hið innflutta kyn til einblendingsræktar telji ráðunautur Bændasamtaka Íslands og/eða viðkomandi fagráð ástæðu til.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1996.040.html" law-nr="40" law-year="1996" law-art="2" nr="1">
@@ -635,11 +765,13 @@
         <location type="range">
           <art>12</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Bændasamtaka Íslands">1</sen>
         </location>
         <location type="range">
           <art>12</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Bændasamtaka Íslands">2</sen>
         </location>
       </footnote>
@@ -648,6 +780,7 @@
         <location type="range">
           <art>12</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun eða fulltrúi hennar">1</sen>
         </location>
       </footnote>
@@ -656,6 +789,7 @@
         <location type="range">
           <art>12</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráð">2</sen>
         </location>
       </footnote>
@@ -664,18 +798,24 @@
   <art nr="13">
     <nr-title>13. gr.</nr-title>
     <subart nr="1">
-      <sen>Þrátt fyrir ákvæði 9. gr. þessara laga er Matvælastofnun heimilt að leyfa innflutning loðdýra, sem haldin eru í búrum, frjóvgaðra alifuglaeggja frá viðurkenndum kynbótabúum, fiska og erfðaefnis þeirra, svo og svína og erfðaefnis þeirra og erfðaefnis holdanautgripa frá viðurkenndum kynbótabúum eða sæðingarstöðvum á einangrunarstöð undir eftirliti umsjónardýralæknis.</sen>
-      <sen>Slíkt leyfi skal þó aðeins veita ef fyrir liggja meðmæli yfirdýralæknis.</sen>
-      <sen>Dýr má ekki flytja úr einangrunarstöð fyrr en þau hafa dvalið svo lengi í einangrun að tryggt þyki að mati yfirdýralæknis að þau séu ekki haldin neinum smitsjúkdómi.</sen>
+      <paragraph nr="1">
+        <sen>Þrátt fyrir ákvæði 9. gr. þessara laga er Matvælastofnun heimilt að leyfa innflutning loðdýra, sem haldin eru í búrum, frjóvgaðra alifuglaeggja frá viðurkenndum kynbótabúum, fiska og erfðaefnis þeirra, svo og svína og erfðaefnis þeirra og erfðaefnis holdanautgripa frá viðurkenndum kynbótabúum eða sæðingarstöðvum á einangrunarstöð undir eftirliti umsjónardýralæknis.</sen>
+        <sen>Slíkt leyfi skal þó aðeins veita ef fyrir liggja meðmæli yfirdýralæknis.</sen>
+        <sen>Dýr má ekki flytja úr einangrunarstöð fyrr en þau hafa dvalið svo lengi í einangrun að tryggt þyki að mati yfirdýralæknis að þau séu ekki haldin neinum smitsjúkdómi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Innflutt erfðaefni svína og holdanautgripa má ekki flytja úr einangrunarstöð, sbr. þó 3. mgr.</sen>
-      <sen>Svín og holdanautgripi sem vaxið hafa af innfluttu erfðaefni í einangrunarstöð má hins vegar flytja þaðan að fengnu leyfi yfirdýralæknis og uppfylltum skilyrðum 1. mgr.</sen>
+      <paragraph nr="1">
+        <sen>Innflutt erfðaefni svína og holdanautgripa má ekki flytja úr einangrunarstöð, sbr. þó 3. mgr.</sen>
+        <sen>Svín og holdanautgripi sem vaxið hafa af innfluttu erfðaefni í einangrunarstöð má hins vegar flytja þaðan að fengnu leyfi yfirdýralæknis og uppfylltum skilyrðum 1. mgr.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Matvælastofnun (yfirdýralækni) er heimilt að veita leyfi til innflutnings á djúpfrystu svínasæði og erfðaefni holdanautgripa að uppfylltum skilyrðum sem greinir í 8. gr.</sen>
-      <sen>Einnig má setja skilyrði sem lúta að rannsókn erfðaefnis og dýra sem vaxið hafa af innflutta erfðaefninu á einangrunartíma og heilbrigðisástandi og aðbúnaði á því búi þar sem óskað er eftir að nýta erfðaefnið.</sen>
-      <sen>Komi í ljós að skilyrðum þessum er ekki fullnægt eða Matvælastofnun (yfirdýralæknir) telur smitsjúkdómahættu af erfðaefninu eða dýrum sem vaxið hafa af því af öðrum ástæðum skal afturkalla leyfið, eyða erfðaefninu og lóga dýrunum.</sen>
+      <paragraph nr="1">
+        <sen>Matvælastofnun (yfirdýralækni) er heimilt að veita leyfi til innflutnings á djúpfrystu svínasæði og erfðaefni holdanautgripa að uppfylltum skilyrðum sem greinir í 8. gr.</sen>
+        <sen>Einnig má setja skilyrði sem lúta að rannsókn erfðaefnis og dýra sem vaxið hafa af innflutta erfðaefninu á einangrunartíma og heilbrigðisástandi og aðbúnaði á því búi þar sem óskað er eftir að nýta erfðaefnið.</sen>
+        <sen>Komi í ljós að skilyrðum þessum er ekki fullnægt eða Matvælastofnun (yfirdýralæknir) telur smitsjúkdómahættu af erfðaefninu eða dýrum sem vaxið hafa af því af öðrum ástæðum skal afturkalla leyfið, eyða erfðaefninu og lóga dýrunum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.101.html" law-nr="101" law-year="2020" law-art="10" nr="1">
@@ -683,6 +823,7 @@
         <location type="range">
           <art>13</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun">1</sen>
         </location>
       </footnote>
@@ -691,32 +832,38 @@
         <location type="range">
           <art>13</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="og erfðaefnis holdanautgripa">1</sen>
         </location>
         <location type="deletion">
           <art>13</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="Dýr má ekki flytja úr einangrunarstöð fyrr en þau hafa dvalið svo lengi í einangrun að tryggt þyki að mati yfirdýralæknis að þau séu ekki haldin neinum smitsjúkdómi.$">3</sen>
         </location>
         <location type="range">
           <art>13</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="svína og holdanautgripa">1</sen>
         </location>
         <location type="range">
           <art>13</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Svín og holdanautgripi">2</sen>
         </location>
         <location type="range">
           <start>
             <art>13</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>13</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -726,6 +873,7 @@
         <location type="range">
           <art>13</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fiska og erfðaefnis þeirra, svo og svína og erfðaefnis þeirra og erfðaefnis holdanautgripa frá viðurkenndum kynbótabúum eða sæðingarstöðvum">1</sen>
         </location>
       </footnote>
@@ -734,6 +882,7 @@
         <location type="range">
           <art>13</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="sbr. þó 3. mgr.">1</sen>
         </location>
       </footnote>
@@ -743,11 +892,13 @@
           <start>
             <art>13</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>13</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -757,9 +908,11 @@
   <art nr="14">
     <nr-title>14. gr.</nr-title>
     <subart nr="1">
-      <sen>Matvælastofnun er heimilt að víkja frá ákvæðum 10. gr. þessara laga og veita leyfi til þess að heimilisdýr, sem ekki eru af ætt hóf- og klaufdýra, séu flutt úr sóttvarnastöð.</sen>
-      <sen>Slíkur flutningur skal ekki fara fram fyrr en dýrin hafa verið svo lengi í einangrun að tryggt þyki að mati yfirdýralæknis að dýrin séu ekki haldin neinum smitsjúkdómum.</sen>
-      <sen>Slíku leyfi mega fylgja ákvæði um að dýralæknir fylgist reglulega með heilsufari dýranna á kostnað eigenda svo lengi sem yfirdýralæknir telur slíkt nauðsynlegt.</sen>
+      <paragraph nr="1">
+        <sen>Matvælastofnun er heimilt að víkja frá ákvæðum 10. gr. þessara laga og veita leyfi til þess að heimilisdýr, sem ekki eru af ætt hóf- og klaufdýra, séu flutt úr sóttvarnastöð.</sen>
+        <sen>Slíkur flutningur skal ekki fara fram fyrr en dýrin hafa verið svo lengi í einangrun að tryggt þyki að mati yfirdýralæknis að dýrin séu ekki haldin neinum smitsjúkdómum.</sen>
+        <sen>Slíku leyfi mega fylgja ákvæði um að dýralæknir fylgist reglulega með heilsufari dýranna á kostnað eigenda svo lengi sem yfirdýralæknir telur slíkt nauðsynlegt.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.071.html" law-nr="71" law-year="2021" law-art="18" nr="1">
@@ -767,6 +920,7 @@
         <location type="range">
           <art>14</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnun er heimilt">1</sen>
         </location>
       </footnote>
@@ -775,18 +929,24 @@
   <art nr="15">
     <nr-title>15. gr.</nr-title>
     <subart nr="1">
-      <sen>Komi upp alvarlegur smitsjúkdómur, óeðlileg eða óútskýrð afföll eða ef rökstuddur grunur er um smitsjúkdóm í sóttvarna- eða einangrunarstöð er Matvælastofnun heimilt að gera hverjar þær ráðstafanir sem þurfa þykir til að útrýma sjúkdómi eða hindra útbreiðslu hans og til að afstýra hættu og tjóni, m.a. lóga dýrum ef nauðsyn krefur og gera ráðstafanir til að stöðva dreifingu erfðaefnis.</sen>
-      <sen>Sama á við um heimasóttkví.</sen>
-      <sen>Rekstraraðili sóttvarna- eða einangrunarstöðvar ber allan kostnað af slíkum aðgerðum og er skylt að hlíta fyrirmælum Matvælastofnunar.</sen>
+      <paragraph nr="1">
+        <sen>Komi upp alvarlegur smitsjúkdómur, óeðlileg eða óútskýrð afföll eða ef rökstuddur grunur er um smitsjúkdóm í sóttvarna- eða einangrunarstöð er Matvælastofnun heimilt að gera hverjar þær ráðstafanir sem þurfa þykir til að útrýma sjúkdómi eða hindra útbreiðslu hans og til að afstýra hættu og tjóni, m.a. lóga dýrum ef nauðsyn krefur og gera ráðstafanir til að stöðva dreifingu erfðaefnis.</sen>
+        <sen>Sama á við um heimasóttkví.</sen>
+        <sen>Rekstraraðili sóttvarna- eða einangrunarstöðvar ber allan kostnað af slíkum aðgerðum og er skylt að hlíta fyrirmælum Matvælastofnunar.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Innflytjendur eiga ekki rétt á bótum úr ríkissjóði fyrir dýr sem þarf að lóga eða erfðaefni sem eyða þarf vegna slíkra aðgerða.</sen>
-      <sen>Sama á við um eigendur dýra sem eru í heimasóttkví.</sen>
+      <paragraph nr="1">
+        <sen>Innflytjendur eiga ekki rétt á bótum úr ríkissjóði fyrir dýr sem þarf að lóga eða erfðaefni sem eyða þarf vegna slíkra aðgerða.</sen>
+        <sen>Sama á við um eigendur dýra sem eru í heimasóttkví.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Hlíti rekstraraðili eða eigandi ekki fyrirmælum Matvælastofnunar skulu aðgerðir skv. 1. og 2. mgr. framkvæmdar með aðstoð lögreglu.</sen>
-      <sen>Sé um heimasóttkví að ræða er þó ekki heimilt að fara í þessum tilgangi í íbúðarhús, útihús eða aðra viðlíka staði án samþykkis eiganda eða umráðamanns húsnæðisins nema að fengnum dómsúrskurði.</sen>
-      <sen>Fylgja skal ákvæðum laga um meðferð sakamála um leit og hald á munum.</sen>
+      <paragraph nr="1">
+        <sen>Hlíti rekstraraðili eða eigandi ekki fyrirmælum Matvælastofnunar skulu aðgerðir skv. 1. og 2. mgr. framkvæmdar með aðstoð lögreglu.</sen>
+        <sen>Sé um heimasóttkví að ræða er þó ekki heimilt að fara í þessum tilgangi í íbúðarhús, útihús eða aðra viðlíka staði án samþykkis eiganda eða umráðamanns húsnæðisins nema að fengnum dómsúrskurði.</sen>
+        <sen>Fylgja skal ákvæðum laga um meðferð sakamála um leit og hald á munum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.053.html" law-nr="53" law-year="2020" law-art="3" nr="1">
@@ -795,11 +955,13 @@
           <start>
             <art>15</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>15</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -809,9 +971,11 @@
   <art nr="16">
     <nr-title>16. gr.</nr-title>
     <subart nr="1">
-      <sen>Heimilt er að geyma djúpfryst sæði eða fósturvísa utan sóttvarnastöðvar að fengnu leyfi og eftir fyrirsögn Matvælastofnunar.</sen>
-      <sen>Sóttvarnardýralæknir skal halda nákvæma skrá um alla gripi sem koma í stöðina eða fæðast þar, svo og um sæði og fósturvísa sem þar eru tekin eða þaðan flutt og notkun þeirra.</sen>
-      <sen>Við mælingar á gripum og skýrsluhald skal sóttvarnardýralæknir fara eftir fyrirmælum viðkomandi fagráðs.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að geyma djúpfryst sæði eða fósturvísa utan sóttvarnastöðvar að fengnu leyfi og eftir fyrirsögn Matvælastofnunar.</sen>
+        <sen>Sóttvarnardýralæknir skal halda nákvæma skrá um alla gripi sem koma í stöðina eða fæðast þar, svo og um sæði og fósturvísa sem þar eru tekin eða þaðan flutt og notkun þeirra.</sen>
+        <sen>Við mælingar á gripum og skýrsluhald skal sóttvarnardýralæknir fara eftir fyrirmælum viðkomandi fagráðs.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="70" nr="1">
@@ -819,6 +983,7 @@
         <location type="range">
           <art>16</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">1</sen>
         </location>
       </footnote>
@@ -827,6 +992,7 @@
         <location type="range">
           <art>16</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráðs">3</sen>
         </location>
       </footnote>
@@ -835,8 +1001,10 @@
   <art nr="17">
     <nr-title>17. gr.</nr-title>
     <subart nr="1">
-      <sen>Nú er ákveðið að leggja niður sóttvarnastöð sem starfrækt hefur verið og ekki þykir rétt að mati viðkomandi fagráðs að nota frekar það erfðaefni sem þar er geymt og skal þá eyða því svo að ekki stafi hætta af eða gera aðrar ráðstafanir sem tryggja að frá því stafi ekki sýkingarhætta.</sen>
-      <sen>Gripi slíkrar stöðvar skal fella hafi ekki verið heimilað samkvæmt lögum þessum að flytja þá úr einangrun.</sen>
+      <paragraph nr="1">
+        <sen>Nú er ákveðið að leggja niður sóttvarnastöð sem starfrækt hefur verið og ekki þykir rétt að mati viðkomandi fagráðs að nota frekar það erfðaefni sem þar er geymt og skal þá eyða því svo að ekki stafi hætta af eða gera aðrar ráðstafanir sem tryggja að frá því stafi ekki sýkingarhætta.</sen>
+        <sen>Gripi slíkrar stöðvar skal fella hafi ekki verið heimilað samkvæmt lögum þessum að flytja þá úr einangrun.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.175.html" law-nr="175" law-year="2000" law-art="10" nr="1">
@@ -851,6 +1019,7 @@
         <location type="range">
           <art>17</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fagráðs">1</sen>
         </location>
       </footnote>
@@ -859,11 +1028,15 @@
   <art nr="18">
     <nr-title>18. gr.</nr-title>
     <subart nr="1">
-      <sen>Brot gegn lögum þessum og reglugerðum, sem settar verða samkvæmt þeim, varða sektum til ríkissjóðs.</sen>
-      <sen>Berist sjúkdómur í stöðina vegna vanrækslu varðar það þann sem vanrækslu hefur sýnt starfs- og stöðumissi eða fangelsi allt að 2 árum ef miklar sakir eru.</sen>
+      <paragraph nr="1">
+        <sen>Brot gegn lögum þessum og reglugerðum, sem settar verða samkvæmt þeim, varða sektum til ríkissjóðs.</sen>
+        <sen>Berist sjúkdómur í stöðina vegna vanrækslu varðar það þann sem vanrækslu hefur sýnt starfs- og stöðumissi eða fangelsi allt að 2 árum ef miklar sakir eru.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Ef lifandi dýr, fósturvísar, egg eða annað erfðaefni dýra er flutt til landsins án heimildar, sbr. 2. gr., varðar það sektum fyrir eiganda, svo og fyrir skipstjóra eða flugstjóra á farartæki því sem dýrin eða erfðaefnið flutti ef ætla má að það sé flutt með hans vitund.</sen>
+      <paragraph nr="1">
+        <sen>Ef lifandi dýr, fósturvísar, egg eða annað erfðaefni dýra er flutt til landsins án heimildar, sbr. 2. gr., varðar það sektum fyrir eiganda, svo og fyrir skipstjóra eða flugstjóra á farartæki því sem dýrin eða erfðaefnið flutti ef ætla má að það sé flutt með hans vitund.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.175.html" law-nr="175" law-year="2000" law-art="10" nr="1">
@@ -878,6 +1051,7 @@
         <location type="range">
           <art>18</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fangelsi allt að 2 árum">2</sen>
         </location>
       </footnote>
@@ -886,34 +1060,48 @@
   <art nr="18a">
     <nr-title>18. gr. a.</nr-title>
     <subart nr="1">
-      <sen>Fyrir eftirlit, umsýslu og skjalaskoðun Matvælastofnunar samkvæmt lögum þessum skal greiða gjald sem ekki er hærra en raunkostnaður til að standa straum af eftirtöldum kostnaðarþáttum:</sen>
+      <paragraph nr="1">
+        <sen>Fyrir eftirlit, umsýslu og skjalaskoðun Matvælastofnunar samkvæmt lögum þessum skal greiða gjald sem ekki er hærra en raunkostnaður til að standa straum af eftirtöldum kostnaðarþáttum:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>launum starfsfólks sem sinnir störfum vegna eftirlits, umsýslu og skjalaskoðunar,</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>launum starfsfólks sem sinnir störfum vegna eftirlits, umsýslu og skjalaskoðunar,</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>öðrum kostnaði vegna starfsfólks, þ.m.t. kostnaði af aðstöðu, áhöldum, búnaði, þjálfun og ferðalögum, svo og tengdum kostnaði,</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>öðrum kostnaði vegna starfsfólks, þ.m.t. kostnaði af aðstöðu, áhöldum, búnaði, þjálfun og ferðalögum, svo og tengdum kostnaði,</sen>
+        </paragraph>
       </numart>
       <numart nr="c" type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen>kostnaði við sýnatöku og greiningu á rannsóknastofu.</sen>
+        <paragraph nr="1">
+          <nr-title>c.</nr-title>
+          <sen>kostnaði við sýnatöku og greiningu á rannsóknastofu.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Matvælastofnun framkvæmir viðbótareftirlit.</sen>
-      <sen>Raunkostnað af viðbótareftirliti ber innflytjandi.</sen>
-      <sen>Framkvæma má viðbótareftirlit þrátt fyrir að vottorð frá viðurkenndum kynbótabúum eða sæðingarstöðvum liggi fyrir.</sen>
+      <paragraph nr="1">
+        <sen>Matvælastofnun framkvæmir viðbótareftirlit.</sen>
+        <sen>Raunkostnað af viðbótareftirliti ber innflytjandi.</sen>
+        <sen>Framkvæma má viðbótareftirlit þrátt fyrir að vottorð frá viðurkenndum kynbótabúum eða sæðingarstöðvum liggi fyrir.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ráðherra er heimilt að setja reglugerð um framkvæmd og inntak eftirlits, umsýslu og skjalaskoðunar Matvælastofnunar og skal hann gefa út gjaldskrá að fengnum tillögum stofnunarinnar.</sen>
-      <sen>Ráðherra skal afla umsagnar hlutaðeigandi hagsmunasamtaka og kynna þeim efni og forsendur reglugerðar og/eða gjaldskrár með a.m.k. eins mánaðar fyrirvara.</sen>
-      <sen>Hafi umsagnir þeirra ekki borist ráðherra að mánuði liðnum er honum þó heimilt að setja reglugerð og gjaldskrá án umsagna þeirra.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt að setja reglugerð um framkvæmd og inntak eftirlits, umsýslu og skjalaskoðunar Matvælastofnunar og skal hann gefa út gjaldskrá að fengnum tillögum stofnunarinnar.</sen>
+        <sen>Ráðherra skal afla umsagnar hlutaðeigandi hagsmunasamtaka og kynna þeim efni og forsendur reglugerðar og/eða gjaldskrár með a.m.k. eins mánaðar fyrirvara.</sen>
+        <sen>Hafi umsagnir þeirra ekki borist ráðherra að mánuði liðnum er honum þó heimilt að setja reglugerð og gjaldskrá án umsagna þeirra.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Gjald skv. 1. mgr. skal greiða samkvæmt framlögðum reikningi.</sen>
-      <sen>Innheimta má gjaldið með fjárnámi án undangengins dóms eða sáttar.</sen>
-      <sen>Matvælastofnun er heimilt að krefjast dráttarvaxta af ógreiddri fjárkröfu vegna eftirlits frá og með gjalddaga fram að greiðsludegi.</sen>
+      <paragraph nr="1">
+        <sen>Gjald skv. 1. mgr. skal greiða samkvæmt framlögðum reikningi.</sen>
+        <sen>Innheimta má gjaldið með fjárnámi án undangengins dóms eða sáttar.</sen>
+        <sen>Matvælastofnun er heimilt að krefjast dráttarvaxta af ógreiddri fjárkröfu vegna eftirlits frá og með gjalddaga fram að greiðsludegi.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2015.048.html" law-nr="48" law-year="2015" law-art="3" nr="1">
@@ -926,6 +1114,7 @@
           <end>
             <art>18a</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -935,10 +1124,14 @@
   <art nr="19">
     <nr-title>19. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra setur reglugerð um nánari framkvæmd laga þessara, að fengnum tillögum Matvælastofnunar og Bændasamtaka Íslands.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra setur reglugerð um nánari framkvæmd laga þessara, að fengnum tillögum Matvælastofnunar og Bændasamtaka Íslands.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen/>
+      <paragraph nr="1">
+        <sen/>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.175.html" law-nr="175" law-year="2000" law-art="10" nr="1">
@@ -953,6 +1146,7 @@
         <location type="range">
           <art>19</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -961,6 +1155,7 @@
         <location type="pointer">
           <art>19</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglugerð" after-mark="um nánari framkvæmd laga þessara, að fengnum tillögum (\[? ?)?Matvælastofnunar(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og (\[? ?)?Bændasamtaka Íslands].&lt;sup style=&quot;font-size:60%&quot;&gt; 5\) &lt;/sup&gt;$">1</sen>
         </location>
       </footnote>
@@ -969,6 +1164,7 @@
         <location type="range">
           <art>19</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Matvælastofnunar">1</sen>
         </location>
       </footnote>
@@ -977,6 +1173,7 @@
         <location type="range">
           <art>19</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Bændasamtaka Íslands">1</sen>
         </location>
       </footnote>
@@ -985,6 +1182,7 @@
         <location type="deletion">
           <art>19</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">1</sen>
         </location>
       </footnote>
@@ -993,10 +1191,12 @@
   <art nr="20">
     <nr-title>20. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast þegar gildi.</sen>
-      <sen>
-        <a href="http://www.althingi.is/altext/stjt/1990.054.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
-      </sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast þegar gildi.</sen>
+        <sen>
+          <a href="http://www.althingi.is/altext/stjt/1990.054.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
+        </sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.175.html" law-nr="175" law-year="2000" law-art="10" nr="1">

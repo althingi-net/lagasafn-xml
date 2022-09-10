@@ -30,13 +30,19 @@
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
-        <sen>Ráðherra fer með yfirstjórn mála samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra fer með yfirstjórn mála samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen/>
+        <paragraph nr="1">
+          <sen/>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Kostnaður af framkvæmd þessara laga greiðist úr ríkissjóði og af sértekjum sem aðila sem sinnir verkefnum með heimild í 3. gr. a er heimilt að afla sér, m.a. með því að taka að sér að vinna sérstök verkefni fyrir stofnanir, félagasamtök og einstaklinga.</sen>
+        <paragraph nr="1">
+          <sen>Kostnaður af framkvæmd þessara laga greiðist úr ríkissjóði og af sértekjum sem aðila sem sinnir verkefnum með heimild í 3. gr. a er heimilt að afla sér, m.a. með því að taka að sér að vinna sérstök verkefni fyrir stofnanir, félagasamtök og einstaklinga.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="546" nr="1">
@@ -45,6 +51,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -54,24 +61,28 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
             <art>1</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>1</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="framkvæmd þessara laga">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>1</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="aðila sem sinnir verkefnum með heimild í 3. gr. a er heimilt að afla sér">1</sen>
           </location>
         </footnote>
@@ -80,36 +91,52 @@
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
-        <sen>Ráðherra skal hlutast til um hagþjónustu í landbúnaði sem hefur svofellt hlutverk:</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra skal hlutast til um hagþjónustu í landbúnaði sem hefur svofellt hlutverk:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Að annast hagrannsóknir í landbúnaði, eftir atvikum í samstarfi við stofnanir sem sinna sambærilegri starfsemi.</sen>
-          <sen>Áhersla skal lögð á rannsóknir og úrvinnslu gagna sem nýtast við hagrænar leiðbeiningar til bænda og rannsóknir sem gagnast við stefnumótun og ákvarðanatöku stjórnvalda.</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Að annast hagrannsóknir í landbúnaði, eftir atvikum í samstarfi við stofnanir sem sinna sambærilegri starfsemi.</sen>
+            <sen>Áhersla skal lögð á rannsóknir og úrvinnslu gagna sem nýtast við hagrænar leiðbeiningar til bænda og rannsóknir sem gagnast við stefnumótun og ákvarðanatöku stjórnvalda.</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen/>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen/>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen/>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen/>
+          </paragraph>
         </numart>
         <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>Að safna og vinna úr búreikningum frá bókhaldsstofum bænda, svo og öðrum upplýsingum og gögnum sem nauðsynleg þykja og tiltæk eru.</sen>
-          <sen>Gagnasöfnunin og úrvinnslan skulu miðast við að nýtast sem best til opinberrar hagskýrslugerðar um framleiðslu, rekstur og efnahag einstakra búgreina.</sen>
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Að safna og vinna úr búreikningum frá bókhaldsstofum bænda, svo og öðrum upplýsingum og gögnum sem nauðsynleg þykja og tiltæk eru.</sen>
+            <sen>Gagnasöfnunin og úrvinnslan skulu miðast við að nýtast sem best til opinberrar hagskýrslugerðar um framleiðslu, rekstur og efnahag einstakra búgreina.</sen>
+          </paragraph>
         </numart>
         <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <sen/>
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen/>
+          </paragraph>
         </numart>
         <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <sen/>
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen/>
+          </paragraph>
         </numart>
         <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <sen>Að vinna að öðrum skyldum verkefnum eftir því sem um semst og við verður komið.</sen>
+          <paragraph nr="1">
+            <nr-title>7.</nr-title>
+            <sen>Að vinna að öðrum skyldum verkefnum eftir því sem um semst og við verður komið.</sen>
+          </paragraph>
         </numart>
       </subart>
       <footnotes>
@@ -119,6 +146,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra skal hlutast til um hagþjónustu í landbúnaði sem hefur svofellt hlutverk">1</sen>
           </location>
           <location type="range">
@@ -127,6 +155,7 @@
               <art>2</art>
               <subart>1</subart>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -134,6 +163,7 @@
               <art>2</art>
               <subart>1</subart>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -142,6 +172,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>2</numart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="deletion">
@@ -149,6 +180,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>3</numart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="deletion">
@@ -156,6 +188,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>5</numart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="deletion">
@@ -163,6 +196,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>6</numart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
@@ -203,7 +237,9 @@
     <art nr="3a">
       <nr-title>3. gr. a.</nr-title>
       <subart nr="1">
-        <sen>Ráðherra er heimilt að gera samning um framkvæmd verkefna samkvæmt lögum þessum við Landbúnaðarháskóla Íslands eða aðra háskóla og Hagstofu Íslands eða aðra hæfa aðila.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra er heimilt að gera samning um framkvæmd verkefna samkvæmt lögum þessum við Landbúnaðarháskóla Íslands eða aðra háskóla og Hagstofu Íslands eða aðra hæfa aðila.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.074.html" law-nr="74" law-year="2011" law-art="5" nr="1">
@@ -218,6 +254,7 @@
               <chapter>2a</chapter>
               <art>3a</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -231,17 +268,25 @@
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <subart nr="1">
-        <sen>Búnaðarsamböndin í landinu skulu hvert fyrir sig, eða í samstarfi sem nær yfir nánar tiltekið svæði, koma á fót bókhaldsstofum sem annast gagnaskráningu og uppgjör búreikninga fyrir bændur.</sen>
-        <sen>Einnig skulu þær vera færar um að veita bændum leiðbeiningar og aðstoð við skattskil.</sen>
+        <paragraph nr="1">
+          <sen>Búnaðarsamböndin í landinu skulu hvert fyrir sig, eða í samstarfi sem nær yfir nánar tiltekið svæði, koma á fót bókhaldsstofum sem annast gagnaskráningu og uppgjör búreikninga fyrir bændur.</sen>
+          <sen>Einnig skulu þær vera færar um að veita bændum leiðbeiningar og aðstoð við skattskil.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Bókhaldsstofum er heimilt að taka gjald fyrir veitta þjónustu</sen>
+        <paragraph nr="1">
+          <sen>Bókhaldsstofum er heimilt að taka gjald fyrir veitta þjónustu</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Aðili sem sinnir verkefnum með heimild í 3. gr. a skal hafa umsjón með að form eyðublaða, skráning gagna og uppgjör reikninga fari fram á samræmdan hátt þannig að samanburður á niðurstöðum sé marktækur.</sen>
+        <paragraph nr="1">
+          <sen>Aðili sem sinnir verkefnum með heimild í 3. gr. a skal hafa umsjón með að form eyðublaða, skráning gagna og uppgjör reikninga fari fram á samræmdan hátt þannig að samanburður á niðurstöðum sé marktækur.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Bókhaldsform, sem bókhaldsstofur bænda bjóða upp á, skal við það miðað að bændum sé kleift að halda einkafjárhag sínum utan við bókhald búa sinna.</sen>
+        <paragraph nr="1">
+          <sen>Bókhaldsform, sem bókhaldsstofur bænda bjóða upp á, skal við það miðað að bændum sé kleift að halda einkafjárhag sínum utan við bókhald búa sinna.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.074.html" law-nr="74" law-year="2011" law-art="6" nr="1">
@@ -250,12 +295,14 @@
             <chapter>3</chapter>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Bókhaldsstofum er heimilt að taka gjald fyrir veitta þjónustu" after-mark="$">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
             <art>6</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Aðili sem sinnir verkefnum með heimild í 3. gr. a">1</sen>
           </location>
         </footnote>
@@ -264,7 +311,9 @@
     <art nr="7">
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
-        <sen>Heimilt er að greiða fyrir öflun sérstakra upplýsinga sem nauðsynlegar eru vegna verkefna samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen>Heimilt er að greiða fyrir öflun sérstakra upplýsinga sem nauðsynlegar eru vegna verkefna samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.074.html" law-nr="74" law-year="2011" law-art="7" nr="1">
@@ -273,6 +322,7 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="samkvæmt lögum þessum">1</sen>
           </location>
         </footnote>
@@ -298,8 +348,10 @@
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
-        <sen>Þeim sem sinna verkefnum samkvæmt þessum lögum með heimild í samningi skv. 3. gr. a, svo og starfsmönnum þeirra bókhaldsstofa sem sjá um uppgjör búreikninga, er bannað að viðlagðri ábyrgð eftir ákvæðum almennra hegningarlaga um embættis- og sýslunarmenn að skýra óviðkomandi aðilum frá því er þeir komast að sökum starfa síns um efnahag, tekjur eða gjöld einstakra manna eða stofnana.</sen>
-        <sen>Skulu þeir ætíð gæta þess að fara með upplýsingar og gögn frá bændum sem trúnaðarmál.</sen>
+        <paragraph nr="1">
+          <sen>Þeim sem sinna verkefnum samkvæmt þessum lögum með heimild í samningi skv. 3. gr. a, svo og starfsmönnum þeirra bókhaldsstofa sem sjá um uppgjör búreikninga, er bannað að viðlagðri ábyrgð eftir ákvæðum almennra hegningarlaga um embættis- og sýslunarmenn að skýra óviðkomandi aðilum frá því er þeir komast að sökum starfa síns um efnahag, tekjur eða gjöld einstakra manna eða stofnana.</sen>
+          <sen>Skulu þeir ætíð gæta þess að fara með upplýsingar og gögn frá bændum sem trúnaðarmál.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.074.html" law-nr="74" law-year="2011" law-art="9" nr="1">
@@ -308,6 +360,7 @@
             <chapter>4</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Þeim sem sinna verkefnum samkvæmt þessum lögum með heimild í samningi skv. 3. gr. a">1</sen>
           </location>
         </footnote>
@@ -329,7 +382,9 @@
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
-        <sen>Ráðherra setur með reglugerð nánari ákvæði um rekstur og tilhögun hagþjónustu landbúnaðarins.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra setur með reglugerð nánari ákvæði um rekstur og tilhögun hagþjónustu landbúnaðarins.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.074.html" law-nr="74" law-year="2011" law-art="11" nr="1">
@@ -338,6 +393,7 @@
             <chapter>4</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -346,13 +402,17 @@
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
-        <sen>Brot á ákvæðum laga þessara varða sektum, nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
+        <paragraph nr="1">
+          <sen>Brot á ákvæðum laga þessara varða sektum, nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Lög þessi öðlast þegar gildi.</sen>
-        <sen>
-          <a href="http://www.althingi.is/altext/stjt/1989.063.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
-        </sen>
+        <paragraph nr="1">
+          <sen>Lög þessi öðlast þegar gildi.</sen>
+          <sen>
+            <a href="http://www.althingi.is/altext/stjt/1989.063.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
+          </sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-nr="88" law-year="2008" law-art="233" nr="1">
@@ -361,6 +421,7 @@
             <chapter>4</chapter>
             <art>12</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">2</sen>
           </location>
         </footnote>
@@ -369,7 +430,9 @@
     <art nr="Ákvæði til bráðabirgða">
       <nr-title>Ákvæði til bráðabirgða.</nr-title>
       <subart nr="1">
-        <sen>Þar til bókhaldsstofur bænda og Hagþjónusta landbúnaðarins geta sinnt því hlutverki sem þeim er ætlað samkvæmt lögunum skulu Búreikningastofa landbúnaðarins og Bændasamtök Íslands gegna þeim verkefnum þeirra sem tök eru á með þeim réttindum og skyldum sem lög þessi ákveða.</sen>
+        <paragraph nr="1">
+          <sen>Þar til bókhaldsstofur bænda og Hagþjónusta landbúnaðarins geta sinnt því hlutverki sem þeim er ætlað samkvæmt lögunum skulu Búreikningastofa landbúnaðarins og Bændasamtök Íslands gegna þeim verkefnum þeirra sem tök eru á með þeim réttindum og skyldum sem lög þessi ákveða.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1996.073.html" law-nr="73" law-year="1996" law-art="21" nr="1">
@@ -378,6 +441,7 @@
             <chapter>4</chapter>
             <art>Ákvæði til bráðabirgða</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Bændasamtök Íslands">1</sen>
           </location>
         </footnote>

@@ -19,10 +19,14 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Hlutverk Náttúruhamfaratryggingar Íslands er að vátryggja gegn tjóni af völdum náttúruhamfara sem nefndar eru í 4. gr. laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Hlutverk Náttúruhamfaratryggingar Íslands er að vátryggja gegn tjóni af völdum náttúruhamfara sem nefndar eru í 4. gr. laga þessara.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen/>
+      <paragraph nr="1">
+        <sen/>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="1" nr="1">
@@ -30,11 +34,13 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratryggingar Íslands">1</sen>
         </location>
         <location type="deletion">
           <art>1</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">1</sen>
         </location>
       </footnote>
@@ -43,10 +49,12 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Stjórn stofnunarinnar skipa fimm menn.</sen>
-      <sen>Skulu þrír kosnir af Alþingi, einn valinn af þeim vátryggingafélögum sem innheimta iðgjöld, sbr. 3. mgr. 10. gr., en ráðherra skipar einn og skal hann vera formaður.</sen>
-      <sen>Varamenn skulu valdir á sama hátt.</sen>
-      <sen>Stjórnarmenn skulu skipaðir til fjögurra ára í senn.</sen>
+      <paragraph nr="1">
+        <sen>Stjórn stofnunarinnar skipa fimm menn.</sen>
+        <sen>Skulu þrír kosnir af Alþingi, einn valinn af þeim vátryggingafélögum sem innheimta iðgjöld, sbr. 3. mgr. 10. gr., en ráðherra skipar einn og skal hann vera formaður.</sen>
+        <sen>Varamenn skulu valdir á sama hátt.</sen>
+        <sen>Stjórnarmenn skulu skipaðir til fjögurra ára í senn.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1995.035.html" law-nr="35" law-year="1995" law-art="1" nr="1">
@@ -54,6 +62,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="10. gr.">2</sen>
         </location>
       </footnote>
@@ -62,6 +71,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="ráðherra">2</sen>
         </location>
       </footnote>
@@ -71,15 +81,21 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Stjórn stofnunarinnar skal annast vörslu og ávöxtun fjár eða bókhald hennar eða gera samkomulag við aðila á vátryggingarsviði um vörslu og ávöxtun fjár og/eða bókhald stofnunarinnar.</sen>
-      <sen>Við ávöxtun skal stjórnin leitast við að tryggja verðgildi fjárins og áhættudreifingu svo sem unnt er á hverjum tíma.</sen>
+      <paragraph nr="1">
+        <sen>Stjórn stofnunarinnar skal annast vörslu og ávöxtun fjár eða bókhald hennar eða gera samkomulag við aðila á vátryggingarsviði um vörslu og ávöxtun fjár og/eða bókhald stofnunarinnar.</sen>
+        <sen>Við ávöxtun skal stjórnin leitast við að tryggja verðgildi fjárins og áhættudreifingu svo sem unnt er á hverjum tíma.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Reikningsár Náttúruhamfaratryggingar Íslands er almanaksárið.</sen>
-      <sen>Endurskoðaðir ársreikningar skulu birtir á vefsíðu stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Reikningsár Náttúruhamfaratryggingar Íslands er almanaksárið.</sen>
+        <sen>Endurskoðaðir ársreikningar skulu birtir á vefsíðu stofnunarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ríkisendurskoðandi endurskoðar reikningsskil Náttúruhamfaratryggingar Íslands.</sen>
+      <paragraph nr="1">
+        <sen>Ríkisendurskoðandi endurskoðar reikningsskil Náttúruhamfaratryggingar Íslands.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="2" nr="1">
@@ -88,11 +104,13 @@
           <start>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>3</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -103,8 +121,10 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Náttúruhamfaratrygging Íslands skal vátryggja gegn beinu tjóni af völdum eftirtalinna náttúruhamfara: eldgosa, jarðskjálfta, skriðufalla, snjóflóða og vatnsflóða.</sen>
-      <sen>Í reglugerð skal skilgreint nánar hvað felist í 1. málsl.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratrygging Íslands skal vátryggja gegn beinu tjóni af völdum eftirtalinna náttúruhamfara: eldgosa, jarðskjálfta, skriðufalla, snjóflóða og vatnsflóða.</sen>
+        <sen>Í reglugerð skal skilgreint nánar hvað felist í 1. málsl.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="3" nr="1">
@@ -112,6 +132,7 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratrygging Íslands">1</sen>
         </location>
       </footnote>
@@ -120,6 +141,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Í reglugerð" after-mark="skal skilgreint nánar hvað felist í 1. málsl.$">2</sen>
         </location>
       </footnote>
@@ -129,42 +151,62 @@
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen>Skylt er að vátryggja allar húseignir og lausafé sem er brunatryggt hjá vátryggingafélagi sem starfsleyfi hefur hér á landi.</sen>
-      <sen>Vátryggingarskyldan nær einnig til lausafjár sem vátryggt er almennri samsettri vátryggingu er innifelur brunatryggingu, enda flokkist slík vátrygging undir eignatryggingar samkvæmt 20. gr. laga nr. 100/2016, um vátryggingastarfsemi.</sen>
-      <sen>Sé brunatrygging á lausafé innifalin í aláhættutryggingu (all risks vátryggingu) eða sértryggingu, t.d. fiskeldistryggingu, skal lausaféð ekki náttúruhamfaratryggt, nema með sérstöku samþykki stjórnar stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Skylt er að vátryggja allar húseignir og lausafé sem er brunatryggt hjá vátryggingafélagi sem starfsleyfi hefur hér á landi.</sen>
+        <sen>Vátryggingarskyldan nær einnig til lausafjár sem vátryggt er almennri samsettri vátryggingu er innifelur brunatryggingu, enda flokkist slík vátrygging undir eignatryggingar samkvæmt 20. gr. laga nr. 100/2016, um vátryggingastarfsemi.</sen>
+        <sen>Sé brunatrygging á lausafé innifalin í aláhættutryggingu (all risks vátryggingu) eða sértryggingu, t.d. fiskeldistryggingu, skal lausaféð ekki náttúruhamfaratryggt, nema með sérstöku samþykki stjórnar stofnunarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Einnig er skylt að vátryggja neðangreind mannvirki þótt þau séu ekki brunatryggð:</sen>
+      <paragraph nr="1">
+        <sen>Einnig er skylt að vátryggja neðangreind mannvirki þótt þau séu ekki brunatryggð:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Hitaveitur, vatnsveitur og skolpveitur í eigu sveitarfélaga eða ríkissjóðs.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Hitaveitur, vatnsveitur og skolpveitur í eigu sveitarfélaga eða ríkissjóðs.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Hafnarmannvirki í eigu sveitarfélaga eða ríkissjóðs.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Hafnarmannvirki í eigu sveitarfélaga eða ríkissjóðs.</sen>
+        </paragraph>
       </numart>
       <numart nr="3" type="numeric">
-        <nr-title>3.</nr-title>
-        <sen>Brýr sem eru 50 m eða lengri.</sen>
+        <paragraph nr="1">
+          <nr-title>3.</nr-title>
+          <sen>Brýr sem eru 50 m eða lengri.</sen>
+        </paragraph>
       </numart>
       <numart nr="4" type="numeric">
-        <nr-title>4.</nr-title>
-        <sen>Raforkuvirki, þar á meðal dreifikerfi, stíflur og veitumannvirki, í eigu hins opinbera.</sen>
+        <paragraph nr="1">
+          <nr-title>4.</nr-title>
+          <sen>Raforkuvirki, þar á meðal dreifikerfi, stíflur og veitumannvirki, í eigu hins opinbera.</sen>
+        </paragraph>
       </numart>
       <numart nr="5" type="numeric">
-        <nr-title>5.</nr-title>
-        <sen>Síma- og fjarskiptamannvirki í eigu hins opinbera.</sen>
+        <paragraph nr="1">
+          <nr-title>5.</nr-title>
+          <sen>Síma- og fjarskiptamannvirki í eigu hins opinbera.</sen>
+        </paragraph>
       </numart>
       <numart nr="6" type="numeric">
-        <nr-title>6.</nr-title>
-        <sen>Skíðalyftur.</sen>
+        <paragraph nr="1">
+          <nr-title>6.</nr-title>
+          <sen>Skíðalyftur.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="3">
-      <sen>Vátryggja má eignir, sem nefndar eru í 2. mgr., annars staðar en hjá Náttúruhamfaratryggingu Íslands.</sen>
+      <paragraph nr="1">
+        <sen>Vátryggja má eignir, sem nefndar eru í 2. mgr., annars staðar en hjá Náttúruhamfaratryggingu Íslands.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Ráðherra skal með reglugerð kveða nánar á um vátryggingarskyldu eftir 2. mgr., þar á meðal skal tilgreina hvaða flokkar muna teljist til greindra mannvirkja.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skal með reglugerð kveða nánar á um vátryggingarskyldu eftir 2. mgr., þar á meðal skal tilgreina hvaða flokkar muna teljist til greindra mannvirkja.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="4" nr="1">
@@ -172,16 +214,19 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="20. gr. laga nr. 100/2016, um vátryggingastarfsemi">2</sen>
         </location>
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggt">3</sen>
         </location>
         <location type="range">
           <art>5</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratryggingu Íslands">1</sen>
         </location>
       </footnote>
@@ -192,12 +237,14 @@
             <art>5</art>
             <subart>2</subart>
             <numart>6</numart>
+            <paragraph>1</paragraph>
             <nr-title>1</nr-title>
           </start>
           <end>
             <art>5</art>
             <subart>2</subart>
             <numart>6</numart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -207,6 +254,7 @@
         <location type="pointer">
           <art>5</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra skal með reglugerð" after-mark="kveða nánar á um vátryggingarskyldu eftir 2. mgr., þar á meðal skal tilgreina hvaða flokkar muna teljist til greindra mannvirkja.$">1</sen>
         </location>
       </footnote>
@@ -228,8 +276,10 @@
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen>Nú berst vátryggingafélagi beiðni um brunatryggingu á fasteign eða lausafé sem almennt er ekki venja að brunatryggja eða hætta á brunatjóni er mjög óveruleg og skal félagið þá leita samþykkis stofnunarinnar áður en náttúruhamfaratryggingariðgjald er reiknað af vátryggingunni.</sen>
-      <sen>Sé ákvæðis þessa ekki gætt telst hinn brunatryggði hlutur ekki náttúruhamfaratryggður.</sen>
+      <paragraph nr="1">
+        <sen>Nú berst vátryggingafélagi beiðni um brunatryggingu á fasteign eða lausafé sem almennt er ekki venja að brunatryggja eða hætta á brunatjóni er mjög óveruleg og skal félagið þá leita samþykkis stofnunarinnar áður en náttúruhamfaratryggingariðgjald er reiknað af vátryggingunni.</sen>
+        <sen>Sé ákvæðis þessa ekki gætt telst hinn brunatryggði hlutur ekki náttúruhamfaratryggður.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="5" nr="1">
@@ -237,11 +287,13 @@
         <location type="range">
           <art>7</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggingariðgjald">1</sen>
         </location>
         <location type="range">
           <art>7</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggður">2</sen>
         </location>
       </footnote>
@@ -250,7 +302,9 @@
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen>Mannvirki, sem reist er gegn banni yfirvalda eða andstætt ákvæðum í settum rétti þannig að ætla má að mannvirkinu sé af þeirri ástæðu hættara við skemmdum af náttúruhamförum en ella, er óheimilt að náttúruhamfaratryggja hvort sem það er brunatryggt eða ekki.</sen>
+      <paragraph nr="1">
+        <sen>Mannvirki, sem reist er gegn banni yfirvalda eða andstætt ákvæðum í settum rétti þannig að ætla má að mannvirkinu sé af þeirri ástæðu hættara við skemmdum af náttúruhamförum en ella, er óheimilt að náttúruhamfaratryggja hvort sem það er brunatryggt eða ekki.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="6" nr="1">
@@ -258,6 +312,7 @@
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggja">1</sen>
         </location>
       </footnote>
@@ -267,15 +322,21 @@
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen>Vátryggingarfjárhæðir skulu ákveðnar þannig:</sen>
+      <paragraph nr="1">
+        <sen>Vátryggingarfjárhæðir skulu ákveðnar þannig:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Allir munir, sem brunatryggðir eru, skulu náttúruhamfaratryggðir fyrir sömu fjárhæð og brunatryggingin nemur á hverjum tíma.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Allir munir, sem brunatryggðir eru, skulu náttúruhamfaratryggðir fyrir sömu fjárhæð og brunatryggingin nemur á hverjum tíma.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Ráðherra setur að fengnum tillögum stjórnar stofnunarinnar reglur um ákvörðun vátryggingarfjárhæðar fyrir aðra muni, sbr. 2. mgr. 5. gr.</sen>
-        <sen/>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Ráðherra setur að fengnum tillögum stjórnar stofnunarinnar reglur um ákvörðun vátryggingarfjárhæðar fyrir aðra muni, sbr. 2. mgr. 5. gr.</sen>
+          <sen/>
+        </paragraph>
       </numart>
     </subart>
     <footnotes>
@@ -285,6 +346,7 @@
           <art>9</art>
           <subart>1</subart>
           <numart>1</numart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggðir">1</sen>
         </location>
       </footnote>
@@ -294,6 +356,7 @@
           <art>9</art>
           <subart>1</subart>
           <numart>2</numart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">2</sen>
         </location>
       </footnote>
@@ -310,18 +373,26 @@
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen>Eigin áhætta vátryggðs skal vera 2% af hverju tjóni, þó eigi lægri fjárhæð en hér segir:</sen>
+      <paragraph nr="1">
+        <sen>Eigin áhætta vátryggðs skal vera 2% af hverju tjóni, þó eigi lægri fjárhæð en hér segir:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Vegna lausafjár, sem vátryggt er skv. 1. mgr. 5. gr., 200.000 kr.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Vegna lausafjár, sem vátryggt er skv. 1. mgr. 5. gr., 200.000 kr.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Vegna húseigna, sem vátryggðar eru skv. 1. mgr. 5. gr., 400.000 kr.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Vegna húseigna, sem vátryggðar eru skv. 1. mgr. 5. gr., 400.000 kr.</sen>
+        </paragraph>
       </numart>
       <numart nr="3" type="numeric">
-        <nr-title>3.</nr-title>
-        <sen>Vegna mannvirkja, sem vátryggð eru skv. 2. mgr. 5. gr., 1.000.000 kr.</sen>
+        <paragraph nr="1">
+          <nr-title>3.</nr-title>
+          <sen>Vegna mannvirkja, sem vátryggð eru skv. 2. mgr. 5. gr., 1.000.000 kr.</sen>
+        </paragraph>
       </numart>
     </subart>
     <footnotes>
@@ -330,24 +401,28 @@
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="2%">1</sen>
         </location>
         <location type="range">
           <art>10</art>
           <subart>1</subart>
           <numart>1</numart>
+          <paragraph>1</paragraph>
           <sen words="200.000 kr.">1</sen>
         </location>
         <location type="range">
           <art>10</art>
           <subart>1</subart>
           <numart>2</numart>
+          <paragraph>1</paragraph>
           <sen words="400.000 kr.">1</sen>
         </location>
         <location type="range">
           <art>10</art>
           <subart>1</subart>
           <numart>3</numart>
+          <paragraph>1</paragraph>
           <sen words="1.000.000 kr.">1</sen>
         </location>
       </footnote>
@@ -357,12 +432,14 @@
           <start>
             <art>10</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>10</art>
             <subart>1</subart>
             <numart>3</numart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -373,35 +450,51 @@
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <subart nr="1">
-      <sen>Árleg iðgjöld skal reikna sem hér segir:</sen>
+      <paragraph nr="1">
+        <sen>Árleg iðgjöld skal reikna sem hér segir:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Af munum, sem vátryggðir eru skv. 1. mgr. 5. gr., 0,25‰.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Af munum, sem vátryggðir eru skv. 1. mgr. 5. gr., 0,25‰.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Af munum sem vátryggðir eru skv. 1.–5. tölul. 2. mgr. 5. gr., 0,20‰.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Af munum sem vátryggðir eru skv. 1.–5. tölul. 2. mgr. 5. gr., 0,20‰.</sen>
+        </paragraph>
       </numart>
       <numart nr="3" type="numeric">
-        <nr-title>3.</nr-title>
-        <sen>Af munum, sem vátryggðir eru skv. 6. tölul. 2. mgr. 5. gr., reiknast iðgjald eftir reglum sem stjórn stofnunarinnar setur.</sen>
+        <paragraph nr="1">
+          <nr-title>3.</nr-title>
+          <sen>Af munum, sem vátryggðir eru skv. 6. tölul. 2. mgr. 5. gr., reiknast iðgjald eftir reglum sem stjórn stofnunarinnar setur.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Fari hrein eign niður fyrir 1‰ af áætluðum vátryggingarfjárhæðum í lok almanaksárs er stjórn stofnunarinnar heimilt að innheimta iðgjöld skv. 1. og 2. mgr. 5. gr. með 50% álagi þar til 2‰-markinu er náð.</sen>
+      <paragraph nr="1">
+        <sen>Fari hrein eign niður fyrir 1‰ af áætluðum vátryggingarfjárhæðum í lok almanaksárs er stjórn stofnunarinnar heimilt að innheimta iðgjöld skv. 1. og 2. mgr. 5. gr. með 50% álagi þar til 2‰-markinu er náð.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Vátryggingafélög þau, er brunatryggja muni sem vátryggðir eru hjá stofnuninni, sbr. 1. mgr. 5. gr., skulu innheimta iðgjöld til hennar ásamt brunatryggingariðgjöldum, enda skulu þau hafa sama gjalddaga.</sen>
-      <sen>Í reglugerð skal kveðið á um bókhald og skil á iðgjöldum frá félögunum.</sen>
-      <sen>Um aðgang stofnunarinnar að gögnum vátryggingafélaga fer eftir ákvæðum 24. gr.</sen>
+      <paragraph nr="1">
+        <sen>Vátryggingafélög þau, er brunatryggja muni sem vátryggðir eru hjá stofnuninni, sbr. 1. mgr. 5. gr., skulu innheimta iðgjöld til hennar ásamt brunatryggingariðgjöldum, enda skulu þau hafa sama gjalddaga.</sen>
+        <sen>Í reglugerð skal kveðið á um bókhald og skil á iðgjöldum frá félögunum.</sen>
+        <sen>Um aðgang stofnunarinnar að gögnum vátryggingafélaga fer eftir ákvæðum 24. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Iðgjöld af náttúruhamfaratryggingu annarra muna, sbr. 2. mgr. 5. gr., skulu reiknuð út og innheimt á vegum stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Iðgjöld af náttúruhamfaratryggingu annarra muna, sbr. 2. mgr. 5. gr., skulu reiknuð út og innheimt á vegum stofnunarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Iðgjöld af náttúruhamfaratryggingu njóta lögtaksréttar.</sen>
-      <sen>Þau njóta einnig lögveðréttar í vátryggðri eign.</sen>
-      <sen>Heimilt er að krefjast nauðungarsölu eignarinnar án undangengins dóms, sáttar eða fjárnáms til fullnustu iðgjalds sem er í vanskilum.</sen>
+      <paragraph nr="1">
+        <sen>Iðgjöld af náttúruhamfaratryggingu njóta lögtaksréttar.</sen>
+        <sen>Þau njóta einnig lögveðréttar í vátryggðri eign.</sen>
+        <sen>Heimilt er að krefjast nauðungarsölu eignarinnar án undangengins dóms, sáttar eða fjárnáms til fullnustu iðgjalds sem er í vanskilum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1995.035.html" law-nr="35" law-year="1995" law-art="6" nr="1">
@@ -410,17 +503,20 @@
           <art>11</art>
           <subart>1</subart>
           <numart>2</numart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="range">
           <art>11</art>
           <subart>1</subart>
           <numart>3</numart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="deletion">
           <art>11</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Iðgjöld af (\[? ?)?náttúruhamfaratryggingu(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?annarra muna, sbr. 2. mgr. 5. gr." after-mark="skulu reiknuð út og innheimt á vegum stofnunarinnar.$">1</sen>
         </location>
       </footnote>
@@ -429,6 +525,7 @@
         <location type="pointer">
           <art>11</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Í reglugerð" after-mark="skal kveðið á um bókhald og skil á iðgjöldum frá félögunum.$">2</sen>
         </location>
       </footnote>
@@ -437,11 +534,13 @@
         <location type="range">
           <art>11</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggingu">1</sen>
         </location>
         <location type="range">
           <art>11</art>
           <subart>5</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggingu">1</sen>
         </location>
       </footnote>
@@ -451,11 +550,15 @@
   <art nr="12">
     <nr-title>12. gr.</nr-title>
     <subart nr="1">
-      <sen>Þegar vátryggingaratburður hefur gerst skal vátryggður þegar í stað tilkynna það stofnuninni eða vátryggingafélagi því sem selt hefur honum vátrygginguna.</sen>
+      <paragraph nr="1">
+        <sen>Þegar vátryggingaratburður hefur gerst skal vátryggður þegar í stað tilkynna það stofnuninni eða vátryggingafélagi því sem selt hefur honum vátrygginguna.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Vátryggingafélag, sem fær slíka tilkynningu, skal tafarlaust tilkynna stofnuninni um vátryggingaratburðinn.</sen>
-      <sen>Þegar stofnunin fær vitneskju um tjón sem ætla má að náttúruhamfaratrygging taki til skal svo fljótt sem unnt er gera ráðstafanir til að fá úr því skorið hvort bæta skuli tjónið og eftir atvikum láta meta það.</sen>
+      <paragraph nr="1">
+        <sen>Vátryggingafélag, sem fær slíka tilkynningu, skal tafarlaust tilkynna stofnuninni um vátryggingaratburðinn.</sen>
+        <sen>Þegar stofnunin fær vitneskju um tjón sem ætla má að náttúruhamfaratrygging taki til skal svo fljótt sem unnt er gera ráðstafanir til að fá úr því skorið hvort bæta skuli tjónið og eftir atvikum láta meta það.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="10" nr="1">
@@ -463,6 +566,7 @@
         <location type="range">
           <art>12</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratrygging">2</sen>
         </location>
       </footnote>
@@ -472,11 +576,15 @@
   <art nr="13">
     <nr-title>13. gr.</nr-title>
     <subart nr="1">
-      <sen>Hafi vátryggingaratburð borið að höndum tekur stofnunin afstöðu til þess hvort gera þurfi sérstakar ráðstafanir til björgunar vátryggðra muna eða til að hindra frekara tjón.</sen>
-      <sen>Slíkar ráðstafanir skulu, svo sem kostur er, gerðar í samvinnu við almannavarnir.</sen>
+      <paragraph nr="1">
+        <sen>Hafi vátryggingaratburð borið að höndum tekur stofnunin afstöðu til þess hvort gera þurfi sérstakar ráðstafanir til björgunar vátryggðra muna eða til að hindra frekara tjón.</sen>
+        <sen>Slíkar ráðstafanir skulu, svo sem kostur er, gerðar í samvinnu við almannavarnir.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Ákvæði 1. mgr. leysa vátryggðan ekki undan skyldum til að gera ráðstafanir til að varna tjóni eftir lögum um vátryggingarsamninga.</sen>
+      <paragraph nr="1">
+        <sen>Ákvæði 1. mgr. leysa vátryggðan ekki undan skyldum til að gera ráðstafanir til að varna tjóni eftir lögum um vátryggingarsamninga.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>
@@ -510,24 +618,34 @@
   <art nr="15">
     <nr-title>15. gr.</nr-title>
     <subart nr="1">
-      <sen>Tjónþoli skal nota vátryggingarbætur til að gera við húseign sem hefur orðið fyrir tjóni vegna náttúruhamfara eða til að endurbyggja hana.</sen>
-      <sen>Ef vátryggingarbætur eru hærri en 15% af vátryggingarfjárhæð húseignarinnar eða ef tjónið hefur áhrif á öryggi húseignarinnar eða hollustuhætti skal Náttúruhamfaratrygging Íslands tryggja að vátryggingarbótum sé réttilega varið áður en þær eru greiddar tjónþola.</sen>
+      <paragraph nr="1">
+        <sen>Tjónþoli skal nota vátryggingarbætur til að gera við húseign sem hefur orðið fyrir tjóni vegna náttúruhamfara eða til að endurbyggja hana.</sen>
+        <sen>Ef vátryggingarbætur eru hærri en 15% af vátryggingarfjárhæð húseignarinnar eða ef tjónið hefur áhrif á öryggi húseignarinnar eða hollustuhætti skal Náttúruhamfaratrygging Íslands tryggja að vátryggingarbótum sé réttilega varið áður en þær eru greiddar tjónþola.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Náttúruhamfaratryggingu Íslands er heimilt að veita undanþágu frá viðgerðar- og byggingarskyldu skv. 1. mgr. að höfðu samráði við sveitarstjórn að uppfylltu því skilyrði að 15% dragist frá bótafjárhæðinni.</sen>
-      <sen>Frádrættinum skal ekki beitt ef endurbygging er ekki heimil af skipulagsástæðum eða öðrum ástæðum sem tjónþoli ræður ekki.</sen>
-      <sen>Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji Náttúruhamfaratrygging Íslands vátryggingarfjárhæð greinilega hærri en markaðsverð húseignar er stofnuninni heimilt að miða við markaðsverð viðkomandi húseignar.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratryggingu Íslands er heimilt að veita undanþágu frá viðgerðar- og byggingarskyldu skv. 1. mgr. að höfðu samráði við sveitarstjórn að uppfylltu því skilyrði að 15% dragist frá bótafjárhæðinni.</sen>
+        <sen>Frádrættinum skal ekki beitt ef endurbygging er ekki heimil af skipulagsástæðum eða öðrum ástæðum sem tjónþoli ræður ekki.</sen>
+        <sen>Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji Náttúruhamfaratrygging Íslands vátryggingarfjárhæð greinilega hærri en markaðsverð húseignar er stofnuninni heimilt að miða við markaðsverð viðkomandi húseignar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Verði tjón á húseign og áætlaður viðgerðarkostnaður, að teknu tilliti til aldurs og ástands eignar við tjónsatburð, nemur hærri fjárhæð en helmingi vátryggingarfjárhæðar og sveitarstjórn telur nauðsynlegt vegna hættu á endurteknum vátryggingaratburði að fjarlægja húseignina getur viðkomandi sveitarfélag leyst eignina til sín.</sen>
-      <sen>Það greiðir þá mismun á áætluðum vátryggingarbótum frá Náttúruhamfaratryggingu Íslands og vátryggingarfjárhæð eignarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Verði tjón á húseign og áætlaður viðgerðarkostnaður, að teknu tilliti til aldurs og ástands eignar við tjónsatburð, nemur hærri fjárhæð en helmingi vátryggingarfjárhæðar og sveitarstjórn telur nauðsynlegt vegna hættu á endurteknum vátryggingaratburði að fjarlægja húseignina getur viðkomandi sveitarfélag leyst eignina til sín.</sen>
+        <sen>Það greiðir þá mismun á áætluðum vátryggingarbótum frá Náttúruhamfaratryggingu Íslands og vátryggingarfjárhæð eignarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Stjórn Náttúruhamfaratryggingar Íslands setur reglur um meðferð og afgreiðslu bótamála.</sen>
-      <sen>Stjórninni er heimilt að fela vátryggingafélögum uppgjör bótakrafna.</sen>
+      <paragraph nr="1">
+        <sen>Stjórn Náttúruhamfaratryggingar Íslands setur reglur um meðferð og afgreiðslu bótamála.</sen>
+        <sen>Stjórninni er heimilt að fela vátryggingafélögum uppgjör bótakrafna.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Ráðherra skal setja reglugerð um matsmenn og meginreglur um ákvörðun vátryggingarbóta.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skal setja reglugerð um matsmenn og meginreglur um ákvörðun vátryggingarbóta.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -535,6 +653,7 @@
         <location type="pointer">
           <art>15</art>
           <subart>5</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra skal setja reglugerð" after-mark="um matsmenn og meginreglur um ákvörðun vátryggingarbóta.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -544,11 +663,13 @@
           <start>
             <art>15</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>15</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -558,22 +679,30 @@
   <art nr="16">
     <nr-title>16. gr.</nr-title>
     <subart nr="1">
-      <sen>Heimilt er að lækka bætur eða synja alveg bótakröfu:</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að lækka bætur eða synja alveg bótakröfu:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Þegar hús eða annað mannvirki, sem skemmist, er reist á stað sem almennt var vitað fyrir fram að var hættulegur með tilliti til náttúruhamfara, t.d. ef mannvirki á sama stað hefur oftar en einu sinni orðið fyrir sams konar tjóni.</sen>
-        <sen>Sama á við um lausafé sem geymt er í húsi eða öðru mannvirki við þær aðstæður sem hér greinir.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Þegar hús eða annað mannvirki, sem skemmist, er reist á stað sem almennt var vitað fyrir fram að var hættulegur með tilliti til náttúruhamfara, t.d. ef mannvirki á sama stað hefur oftar en einu sinni orðið fyrir sams konar tjóni.</sen>
+          <sen>Sama á við um lausafé sem geymt er í húsi eða öðru mannvirki við þær aðstæður sem hér greinir.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Þegar gerð eða viðhald húss eða annars vátryggðs hlutar er óforsvaranlegt eða andstætt fyrirmælum í settum rétti og ljóst er að tjón hefur hlotist af eða orðið víðtækara af þessum sökum.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Þegar gerð eða viðhald húss eða annars vátryggðs hlutar er óforsvaranlegt eða andstætt fyrirmælum í settum rétti og ljóst er að tjón hefur hlotist af eða orðið víðtækara af þessum sökum.</sen>
+        </paragraph>
       </numart>
     </subart>
   </art>
   <art nr="17">
     <nr-title>17. gr.</nr-title>
     <subart nr="1">
-      <sen>Vátryggingabætur skulu inntar af hendi svo fljótt sem unnt er, sbr. 48. gr. laga nr. 30/2004, um vátryggingarsamninga.</sen>
+      <paragraph nr="1">
+        <sen>Vátryggingabætur skulu inntar af hendi svo fljótt sem unnt er, sbr. 48. gr. laga nr. 30/2004, um vátryggingarsamninga.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="13" nr="1">
@@ -581,6 +710,7 @@
         <location type="range">
           <art>17</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="sbr. 48. gr. laga nr. 30/2004, um vátryggingarsamninga">1</sen>
         </location>
       </footnote>
@@ -589,11 +719,15 @@
   <art nr="18">
     <nr-title>18. gr.</nr-title>
     <subart nr="1">
-      <sen>Heildargreiðsluskylda Náttúruhamfaratryggingar Íslands vegna hvers vátryggingaratburðar takmarkast við 7,5‰ af samanlögðum vátryggingarfjárhæðum sem í gildi eru við upphaf vátryggingaratburðarins.</sen>
-      <sen>Frá 1. janúar 1994 takmarkast greiðsluskylda við 10‰ af samanlögðum vátryggingarfjárhæðum.</sen>
+      <paragraph nr="1">
+        <sen>Heildargreiðsluskylda Náttúruhamfaratryggingar Íslands vegna hvers vátryggingaratburðar takmarkast við 7,5‰ af samanlögðum vátryggingarfjárhæðum sem í gildi eru við upphaf vátryggingaratburðarins.</sen>
+        <sen>Frá 1. janúar 1994 takmarkast greiðsluskylda við 10‰ af samanlögðum vátryggingarfjárhæðum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Nemi bætur vegna sama vátryggingaratburðar hærri fjárhæð en í 1. mgr. segir skal hlutur allra vátryggðra, sem tjón bíða, skerðast í sama hlutfalli.</sen>
+      <paragraph nr="1">
+        <sen>Nemi bætur vegna sama vátryggingaratburðar hærri fjárhæð en í 1. mgr. segir skal hlutur allra vátryggðra, sem tjón bíða, skerðast í sama hlutfalli.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="14" nr="1">
@@ -601,6 +735,7 @@
         <location type="range">
           <art>18</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratryggingar Íslands">1</sen>
         </location>
       </footnote>
@@ -609,18 +744,22 @@
   <art nr="19">
     <nr-title>19. gr.</nr-title>
     <subart nr="1">
-      <sen>Náttúruhamfaratrygging Íslands tekur ákvörðun um greiðsluskyldu og fjárhæð vátryggingarbóta í samræmi við ákvæði stjórnsýslulaga um meðferð mála.</sen>
-      <sen>Tjónþoli getur kært ákvörðun stofnunarinnar til úrskurðarnefndar náttúruhamfaratryggingar innan 30 daga frá því að honum barst ákvörðunin.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratrygging Íslands tekur ákvörðun um greiðsluskyldu og fjárhæð vátryggingarbóta í samræmi við ákvæði stjórnsýslulaga um meðferð mála.</sen>
+        <sen>Tjónþoli getur kært ákvörðun stofnunarinnar til úrskurðarnefndar náttúruhamfaratryggingar innan 30 daga frá því að honum barst ákvörðunin.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Úrskurðarnefnd náttúruhamfaratryggingar skal skipuð af ráðherra.</sen>
-      <sen>Fjórir menn skulu eiga sæti í nefndinni.</sen>
-      <sen>Einn skal skipaður samkvæmt tilnefningu Hæstaréttar og skal hann vera formaður og hafa sérþekkingu á sviði vátryggingaréttar.</sen>
-      <sen>Annar skal skipaður eftir tilnefningu verkfræði- og náttúruvísindasviðs Háskóla Íslands og skal hann hafa sérþekkingu á sviði mannvirkja.</sen>
-      <sen>Hinir tveir skulu skipaðir án tilnefningar og hafa sérþekkingu á sviði vátryggingaréttar, mannvirkja eða tjónamats.</sen>
-      <sen>Varamenn skulu skipaðir á sama hátt.</sen>
-      <sen>Skipunartími er til þriggja ára.</sen>
-      <sen>Nefndinni er heimilt að leita aðstoðar sérfræðinga ef ástæða þykir til.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurðarnefnd náttúruhamfaratryggingar skal skipuð af ráðherra.</sen>
+        <sen>Fjórir menn skulu eiga sæti í nefndinni.</sen>
+        <sen>Einn skal skipaður samkvæmt tilnefningu Hæstaréttar og skal hann vera formaður og hafa sérþekkingu á sviði vátryggingaréttar.</sen>
+        <sen>Annar skal skipaður eftir tilnefningu verkfræði- og náttúruvísindasviðs Háskóla Íslands og skal hann hafa sérþekkingu á sviði mannvirkja.</sen>
+        <sen>Hinir tveir skulu skipaðir án tilnefningar og hafa sérþekkingu á sviði vátryggingaréttar, mannvirkja eða tjónamats.</sen>
+        <sen>Varamenn skulu skipaðir á sama hátt.</sen>
+        <sen>Skipunartími er til þriggja ára.</sen>
+        <sen>Nefndinni er heimilt að leita aðstoðar sérfræðinga ef ástæða þykir til.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="15" nr="1">
@@ -629,11 +768,13 @@
           <start>
             <art>19</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>19</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>8</sen>
           </end>
         </location>
@@ -651,8 +792,10 @@
   <art nr="19a">
     <nr-title>19. gr. a.</nr-title>
     <subart nr="1">
-      <sen>Náttúruhamfaratrygging Íslands skal hafa skilvirkt kerfi áhættustýringar.</sen>
-      <sen>Ráðherra er heimilt að setja í reglugerð nánari ákvæði um kröfur til áhættustýringar.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratrygging Íslands skal hafa skilvirkt kerfi áhættustýringar.</sen>
+        <sen>Ráðherra er heimilt að setja í reglugerð nánari ákvæði um kröfur til áhættustýringar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="16" nr="1">
@@ -665,6 +808,7 @@
           <end>
             <art>19a</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -674,20 +818,26 @@
   <art nr="20">
     <nr-title>20. gr.</nr-title>
     <subart nr="1">
-      <sen>Heimilt er stofnuninni að endurtryggja áhættu sína innan lands eða erlendis.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er stofnuninni að endurtryggja áhættu sína innan lands eða erlendis.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Nú hrökkva eignir stofnunarinnar að viðbættu fé frá endurtryggjendum ekki til þess að greiða bætur samkvæmt lögum þessum og er stjórn stofnunarinnar þá heimilt með samþykki ráðherra að taka lán til þess að geta fullnægt skuldbindingum stofnunarinnar.</sen>
-      <sen>Ríkissjóður ber sjálfskuldarábyrgð á slíkum lánum.</sen>
+      <paragraph nr="1">
+        <sen>Nú hrökkva eignir stofnunarinnar að viðbættu fé frá endurtryggjendum ekki til þess að greiða bætur samkvæmt lögum þessum og er stjórn stofnunarinnar þá heimilt með samþykki ráðherra að taka lán til þess að geta fullnægt skuldbindingum stofnunarinnar.</sen>
+        <sen>Ríkissjóður ber sjálfskuldarábyrgð á slíkum lánum.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Ýmis ákvæði.</ambiguous-section>
   <art nr="21">
     <nr-title>21. gr.</nr-title>
     <subart nr="1">
-      <sen>Stjórn stofnunarinnar er heimilt að veita fé til rannsókna og til að styrkja framkvæmdir sem ætlað er að varna eða draga úr tjóni af völdum náttúruhamfara.</sen>
-      <sen>Enn fremur er stjórninni heimilt að veita styrki til fræðslu- og þjálfunarmála þeirra landssamtaka sem hafa samstarfssamning við ríkislögreglustjóra um skipun hjálparliðs.</sen>
-      <sen>Árleg heildarfjárveiting í þessu skyni má þó ekki vera meiri en 5% af bókfærðum iðgjöldum síðasta árs.</sen>
+      <paragraph nr="1">
+        <sen>Stjórn stofnunarinnar er heimilt að veita fé til rannsókna og til að styrkja framkvæmdir sem ætlað er að varna eða draga úr tjóni af völdum náttúruhamfara.</sen>
+        <sen>Enn fremur er stjórninni heimilt að veita styrki til fræðslu- og þjálfunarmála þeirra landssamtaka sem hafa samstarfssamning við ríkislögreglustjóra um skipun hjálparliðs.</sen>
+        <sen>Árleg heildarfjárveiting í þessu skyni má þó ekki vera meiri en 5% af bókfærðum iðgjöldum síðasta árs.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2003.044.html" law-nr="44" law-year="2003" law-art="11" nr="1">
@@ -695,6 +845,7 @@
         <location type="range">
           <art>21</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="ríkislögreglustjóra">2</sen>
         </location>
       </footnote>
@@ -703,6 +854,7 @@
         <location type="range">
           <art>21</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>2</sen>
         </location>
       </footnote>
@@ -711,8 +863,10 @@
   <art nr="22">
     <nr-title>22. gr.</nr-title>
     <subart nr="1">
-      <sen>Náttúruhamfaratrygging Íslands er undanþegin greiðslu tekjuskatts, svo og útsvars og aðstöðugjalds.</sen>
-      <sen>Eigi skal greiða stimpilgjald af skjölum stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratrygging Íslands er undanþegin greiðslu tekjuskatts, svo og útsvars og aðstöðugjalds.</sen>
+        <sen>Eigi skal greiða stimpilgjald af skjölum stofnunarinnar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="3" nr="1">
@@ -720,6 +874,7 @@
         <location type="range">
           <art>22</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratrygging Íslands">1</sen>
         </location>
       </footnote>
@@ -728,6 +883,7 @@
         <location type="deletion">
           <art>22</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Náttúruhamfaratrygging Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er undanþegin greiðslu tekjuskatts" after-mark="svo og útsvars og aðstöðugjalds.$">1</sen>
         </location>
       </footnote>
@@ -736,22 +892,28 @@
   <art nr="23">
     <nr-title>23. gr.</nr-title>
     <subart nr="1">
-      <sen>Stjórnin semur við vátryggingafélög og aðra sem annast störf fyrir stofnunina samkvæmt lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen>Stjórnin semur við vátryggingafélög og aðra sem annast störf fyrir stofnunina samkvæmt lögum þessum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Verði ágreiningur um þóknun vátryggingafélags skal leyst úr honum með gerðardómi þriggja manna.</sen>
-      <sen>Hvor aðili tilnefnir einn mann í dóminn.</sen>
-      <sen>Þessir gerðarmenn velja síðan oddamann sem verður formaður dómsins.</sen>
-      <sen>Formaður skal fullnægja sérstökum hæfisskilyrðum héraðsdómara til meðferðar einstaks máls.</sen>
-      <sen>Nú er gerðarmaður ekki tilnefndur innan 15 daga frá því að þess var krafist eða gerðarmenn koma sér ekki saman um oddamann og skal þá fara eftir lögum um samningsbundna gerðardóma.</sen>
-      <sen>Ákvæðum þeirra laga skal og beita um önnur atriði eftir því sem við getur átt.</sen>
+      <paragraph nr="1">
+        <sen>Verði ágreiningur um þóknun vátryggingafélags skal leyst úr honum með gerðardómi þriggja manna.</sen>
+        <sen>Hvor aðili tilnefnir einn mann í dóminn.</sen>
+        <sen>Þessir gerðarmenn velja síðan oddamann sem verður formaður dómsins.</sen>
+        <sen>Formaður skal fullnægja sérstökum hæfisskilyrðum héraðsdómara til meðferðar einstaks máls.</sen>
+        <sen>Nú er gerðarmaður ekki tilnefndur innan 15 daga frá því að þess var krafist eða gerðarmenn koma sér ekki saman um oddamann og skal þá fara eftir lögum um samningsbundna gerðardóma.</sen>
+        <sen>Ákvæðum þeirra laga skal og beita um önnur atriði eftir því sem við getur átt.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="24">
     <nr-title>24. gr.</nr-title>
     <subart nr="1">
-      <sen>Náttúruhamfaratrygging Íslands getur krafið vátryggingafélög um hvers konar gögn og upplýsingar er varða störf þeirra fyrir stofnunina.</sen>
-      <sen>Stofnunin á einnig rétt á að fá á venjulegum skrifstofutíma óhindraðan og tafarlausan aðgang að bókhaldi félaganna og öðrum gögnum varðandi iðgjöld af náttúruhamfaratryggingu.</sen>
+      <paragraph nr="1">
+        <sen>Náttúruhamfaratrygging Íslands getur krafið vátryggingafélög um hvers konar gögn og upplýsingar er varða störf þeirra fyrir stofnunina.</sen>
+        <sen>Stofnunin á einnig rétt á að fá á venjulegum skrifstofutíma óhindraðan og tafarlausan aðgang að bókhaldi félaganna og öðrum gögnum varðandi iðgjöld af náttúruhamfaratryggingu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="3" nr="1">
@@ -759,6 +921,7 @@
         <location type="range">
           <art>24</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratrygging Íslands">1</sen>
         </location>
       </footnote>
@@ -767,6 +930,7 @@
         <location type="range">
           <art>24</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggingu">2</sen>
         </location>
       </footnote>
@@ -775,13 +939,17 @@
   <art nr="25">
     <nr-title>25. gr.</nr-title>
     <subart nr="1">
-      <sen>Ef eigi leiðir annað af lögum þessum skal beita reglum laga um vátryggingarsamninga eftir því sem við getur átt.</sen>
+      <paragraph nr="1">
+        <sen>Ef eigi leiðir annað af lögum þessum skal beita reglum laga um vátryggingarsamninga eftir því sem við getur átt.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="26">
     <nr-title>26. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra skal að fengnum tillögum stjórnar Náttúruhamfaratryggingar Íslands setja reglugerð með nánari ákvæðum um framkvæmd laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skal að fengnum tillögum stjórnar Náttúruhamfaratryggingar Íslands setja reglugerð með nánari ákvæðum um framkvæmd laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1995.010.html" law-nr="10" law-year="1995" law-art="2" nr="1">
@@ -789,6 +957,7 @@
         <location type="range">
           <art>26</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -797,6 +966,7 @@
         <location type="range">
           <art>26</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Náttúruhamfaratryggingar Íslands">1</sen>
         </location>
       </footnote>
@@ -805,6 +975,7 @@
         <location type="pointer">
           <art>26</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal að fengnum tillögum stjórnar (\[? ?)?Náttúruhamfaratryggingar Íslands(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setja reglugerð" after-mark="með nánari ákvæðum um framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
@@ -813,10 +984,12 @@
   <art nr="27">
     <nr-title>27. gr.</nr-title>
     <subart nr="1">
-      <sen>
-        Lög þessi öðlast gildi 1. janúar 1993
-        <a href="http://www.althingi.is/altext/stjt/1992.055.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
-      </sen>
+      <paragraph nr="1">
+        <sen>
+          Lög þessi öðlast gildi 1. janúar 1993
+          <a href="http://www.althingi.is/altext/stjt/1992.055.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
+        </sen>
+      </paragraph>
     </subart>
   </art>
   <chapter nr-type="name" nr="t" type="temporary-clauses">
@@ -832,9 +1005,11 @@
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <sen>Á árunum 1995–99 skal innheimta 10% álag á iðgjöld skv. 10. gr.</sen>
-        <sen>Tekjur af þessu álagi á iðgjöld skulu renna í ofanflóðasjóð, sbr. 10. gr. laga um varnir gegn snjóflóðum og skriðuföllum, nr. 28/1985.</sen>
-        <sen>Um innheimtu þessa gjalds fer skv. 10. gr.</sen>
+        <paragraph nr="1">
+          <sen>Á árunum 1995–99 skal innheimta 10% álag á iðgjöld skv. 10. gr.</sen>
+          <sen>Tekjur af þessu álagi á iðgjöld skulu renna í ofanflóðasjóð, sbr. 10. gr. laga um varnir gegn snjóflóðum og skriðuföllum, nr. 28/1985.</sen>
+          <sen>Um innheimtu þessa gjalds fer skv. 10. gr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1995.036.html" law-nr="36" law-year="1995" law-art="1" nr="1">
@@ -849,6 +1024,7 @@
               <chapter>t</chapter>
               <art>II</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>3</sen>
             </end>
           </location>

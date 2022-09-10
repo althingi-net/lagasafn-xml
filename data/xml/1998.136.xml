@@ -10,13 +10,19 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Íslenskur ríkisborgari á samkvæmt umsókn rétt á að fá gefið út vegabréf eftir lögum þessum og reglum settum samkvæmt þeim.</sen>
+      <paragraph nr="1">
+        <sen>Íslenskur ríkisborgari á samkvæmt umsókn rétt á að fá gefið út vegabréf eftir lögum þessum og reglum settum samkvæmt þeim.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Hlutaðeigandi ráðherra gefur út diplómatísk vegabréf og þjónustuvegabréf samkvæmt reglum sem sami ráðherra setur.</sen>
+      <paragraph nr="1">
+        <sen>Hlutaðeigandi ráðherra gefur út diplómatísk vegabréf og þjónustuvegabréf samkvæmt reglum sem sami ráðherra setur.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Útlendingastofnun gefur út vegabréf fyrir útlendinga og ferðaskilríki fyrir flóttamenn.</sen>
+      <paragraph nr="1">
+        <sen>Útlendingastofnun gefur út vegabréf fyrir útlendinga og ferðaskilríki fyrir flóttamenn.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -24,6 +30,7 @@
         <location type="pointer">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Íslenskur ríkisborgari á samkvæmt umsókn rétt á að fá gefið út vegabréf eftir lögum þessum og reglum settum samkvæmt þeim." after-mark="$">1</sen>
         </location>
       </footnote>
@@ -32,6 +39,7 @@
         <location type="pointer">
           <art>1</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Hlutaðeigandi ráðherra gefur út diplómatísk vegabréf og þjónustuvegabréf samkvæmt reglum" after-mark="sem sami ráðherra setur.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
         </location>
       </footnote>
@@ -40,6 +48,7 @@
         <location type="range">
           <art>1</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -48,6 +57,7 @@
         <location type="range">
           <art>1</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -56,22 +66,34 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Vegabréf skal gefið út af Þjóðskrá Íslands.</sen>
+      <paragraph nr="1">
+        <sen>Vegabréf skal gefið út af Þjóðskrá Íslands.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Heimilt er að fela öðrum stjórnvöldum að gefa út vegabréf til bráðabirgða þegar sérstaklega stendur á.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að fela öðrum stjórnvöldum að gefa út vegabréf til bráðabirgða þegar sérstaklega stendur á.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Sýslumenn, lögregla og önnur stjórnvöld taka við umsóknum um vegabréf eftir því sem ráðherra ákveður.</sen>
+      <paragraph nr="1">
+        <sen>Sýslumenn, lögregla og önnur stjórnvöld taka við umsóknum um vegabréf eftir því sem ráðherra ákveður.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Þjóðskrá Íslands getur falið öðrum að annast einstök verkefni við framleiðslu og skráningu upplýsinga í vegabréfabók.</sen>
+      <paragraph nr="1">
+        <sen>Þjóðskrá Íslands getur falið öðrum að annast einstök verkefni við framleiðslu og skráningu upplýsinga í vegabréfabók.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Vegabréf telst eign íslenska ríkisins.</sen>
+      <paragraph nr="1">
+        <sen>Vegabréf telst eign íslenska ríkisins.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen>Þjóðskrá Íslands er heimilt að gera samninga um vegabréf og framleiðslukerfi fyrir vegabréf til allt að tíu ára.</sen>
+      <paragraph nr="1">
+        <sen>Þjóðskrá Íslands er heimilt að gera samninga um vegabréf og framleiðslukerfi fyrir vegabréf til allt að tíu ára.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
@@ -79,11 +101,13 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands">1</sen>
         </location>
         <location type="range">
           <art>2</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands">1</sen>
         </location>
       </footnote>
@@ -93,11 +117,13 @@
           <start>
             <art>2</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>2</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -107,6 +133,7 @@
         <location type="range">
           <art>2</art>
           <subart>6</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -115,15 +142,21 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Þegar sótt er um vegabréf skal umsækjandi sanna á sér deili og gengið skal úr skugga um ríkisfang hans.</sen>
+      <paragraph nr="1">
+        <sen>Þegar sótt er um vegabréf skal umsækjandi sanna á sér deili og gengið skal úr skugga um ríkisfang hans.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Tekin skal stafræn mynd af umsækjanda sem varðveitt skal í vegabréfinu.</sen>
-      <sen>Heimilt er að nota mynd sem umsækjandi leggur fram sjálfur á rafrænu formi, enda uppfylli hún kröfur sem gerðar eru til stafrænna mynda í vegabréfum.</sen>
-      <sen>Umsækjandi skal jafnframt leggja fram önnur nauðsynleg gögn.</sen>
+      <paragraph nr="1">
+        <sen>Tekin skal stafræn mynd af umsækjanda sem varðveitt skal í vegabréfinu.</sen>
+        <sen>Heimilt er að nota mynd sem umsækjandi leggur fram sjálfur á rafrænu formi, enda uppfylli hún kröfur sem gerðar eru til stafrænna mynda í vegabréfum.</sen>
+        <sen>Umsækjandi skal jafnframt leggja fram önnur nauðsynleg gögn.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ráðherra getur ákveðið að fingraför umsækjanda skuli skönnuð og varðveitt í vegabréfinu.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra getur ákveðið að fingraför umsækjanda skuli skönnuð og varðveitt í vegabréfinu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2006.072.html" law-nr="72" law-year="2006" law-art="3" nr="1">
@@ -132,17 +165,20 @@
           <start>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
         <location type="range">
           <art>3</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -151,6 +187,7 @@
         <location type="range">
           <art>3</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -159,14 +196,20 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Við útgáfu vegabréfs til barns undir 18 ára aldri skal liggja fyrir samþykki þess eða þeirra sem fara með forsjá barnsins.</sen>
-      <sen>Heimilt er að gefa út vegabréf samkvæmt umsókn annars forsjárforeldris þegar hitt forsjárforeldrið er ófært um að veita samþykki sitt vegna sjúkdóms, fjarvistar eða annarra sérstakra aðstæðna að undangenginni athugun á umræddum aðstæðum og mati á því hvort hætta sé á að barn verði fært úr landi með ólögmætum hætti.</sen>
+      <paragraph nr="1">
+        <sen>Við útgáfu vegabréfs til barns undir 18 ára aldri skal liggja fyrir samþykki þess eða þeirra sem fara með forsjá barnsins.</sen>
+        <sen>Heimilt er að gefa út vegabréf samkvæmt umsókn annars forsjárforeldris þegar hitt forsjárforeldrið er ófært um að veita samþykki sitt vegna sjúkdóms, fjarvistar eða annarra sérstakra aðstæðna að undangenginni athugun á umræddum aðstæðum og mati á því hvort hætta sé á að barn verði fært úr landi með ólögmætum hætti.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Samþykki lögráðamanns þarf til að gefið verði út vegabréf til þess sem sviptur hefur verið sjálfræði.</sen>
+      <paragraph nr="1">
+        <sen>Samþykki lögráðamanns þarf til að gefið verði út vegabréf til þess sem sviptur hefur verið sjálfræði.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Heimilt er að víkja frá framangreindum skilyrðum ef sérstaklega stendur á.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að víkja frá framangreindum skilyrðum ef sérstaklega stendur á.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2006.072.html" law-nr="72" law-year="2006" law-art="4" nr="1">
@@ -174,6 +217,7 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>2</sen>
         </location>
       </footnote>
@@ -182,17 +226,25 @@
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen>Nú er umsækjandi um vegabréf eftirlýstur af lögreglu, gefin hefur verið út handtökuskipun á hendur honum eða lagt á hann farbann samkvæmt ákvæðum laga um meðferð sakamála og skal þá synja um útgáfu vegabréfs.</sen>
+      <paragraph nr="1">
+        <sen>Nú er umsækjandi um vegabréf eftirlýstur af lögreglu, gefin hefur verið út handtökuskipun á hendur honum eða lagt á hann farbann samkvæmt ákvæðum laga um meðferð sakamála og skal þá synja um útgáfu vegabréfs.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Heimilt er að synja um útgáfu vegabréfs þegar svo stendur á:</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að synja um útgáfu vegabréfs þegar svo stendur á:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>fram er komin kæra á hendur umsækjanda fyrir refsivert brot sem ætla má að varði fangelsisrefsingu og hætta er talin á að hann muni reyna að komast undan refsiábyrgð með því að fara úr landi eða dveljast áfram erlendis eða</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>fram er komin kæra á hendur umsækjanda fyrir refsivert brot sem ætla má að varði fangelsisrefsingu og hætta er talin á að hann muni reyna að komast undan refsiábyrgð með því að fara úr landi eða dveljast áfram erlendis eða</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>umsækjandi hefur verið dæmdur til fangelsisrefsingar sem ekki hefur verið afplánuð eða sætt sektarrefsingu fyrir dómi eða hjá stjórnvaldi sem hvorki hefur verið greidd né sett trygging fyrir og hætta er á að hann muni reyna að komast hjá fullnustu refsingarinnar með því að fara úr landi eða dveljast áfram erlendis.</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>umsækjandi hefur verið dæmdur til fangelsisrefsingar sem ekki hefur verið afplánuð eða sætt sektarrefsingu fyrir dómi eða hjá stjórnvaldi sem hvorki hefur verið greidd né sett trygging fyrir og hætta er á að hann muni reyna að komast hjá fullnustu refsingarinnar með því að fara úr landi eða dveljast áfram erlendis.</sen>
+        </paragraph>
       </numart>
     </subart>
     <footnotes>
@@ -201,6 +253,7 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="sakamála">1</sen>
         </location>
       </footnote>
@@ -209,15 +262,21 @@
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen>Vegabréf gildir aðeins fyrir einn einstakling.</sen>
+      <paragraph nr="1">
+        <sen>Vegabréf gildir aðeins fyrir einn einstakling.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Gildistími almenns vegabréfs er tíu ár frá útgáfudegi en fimm ár fyrir börn yngri en 18 ára.</sen>
-      <sen>Heimilt er að lengja þann tíma eftir því sem ákveðið er í reglugerð.</sen>
-      <sen>Gildistími annarra vegabréfa skal ákveðinn í reglugerð.</sen>
+      <paragraph nr="1">
+        <sen>Gildistími almenns vegabréfs er tíu ár frá útgáfudegi en fimm ár fyrir börn yngri en 18 ára.</sen>
+        <sen>Heimilt er að lengja þann tíma eftir því sem ákveðið er í reglugerð.</sen>
+        <sen>Gildistími annarra vegabréfa skal ákveðinn í reglugerð.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Nú glatast vegabréf og skal þá nýtt vegabréf gefið út til sama tíma og fyrra vegabréf.</sen>
+      <paragraph nr="1">
+        <sen>Nú glatast vegabréf og skal þá nýtt vegabréf gefið út til sama tíma og fyrra vegabréf.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2012.153.html" law-nr="153" law-year="2012" law-art="1" nr="1">
@@ -226,11 +285,13 @@
           <start>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Gildistími almenns vegabréfs er tíu ár frá útgáfudegi en fimm ár fyrir börn yngri en 18 ára.">1</sen>
           </start>
           <end>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Heimilt er að lengja þann tíma eftir því sem ákveðið er í reglugerð.">2</sen>
           </end>
         </location>
@@ -241,11 +302,13 @@
           <start>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>3</sen>
           </end>
         </location>
@@ -255,34 +318,50 @@
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen>Þjóðskrá Íslands er heimilt að afturkalla vegabréf þegar:</sen>
+      <paragraph nr="1">
+        <sen>Þjóðskrá Íslands er heimilt að afturkalla vegabréf þegar:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>skilyrði til útgáfu vegabréfs eru ekki lengur fyrir hendi,</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>skilyrði til útgáfu vegabréfs eru ekki lengur fyrir hendi,</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>fyrir liggja aðstæður þær sem greinir í 5. gr.,</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>fyrir liggja aðstæður þær sem greinir í 5. gr.,</sen>
+        </paragraph>
       </numart>
       <numart nr="c" type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen>útliti vegabréfs eða efni hefur verið breytt,</sen>
+        <paragraph nr="1">
+          <nr-title>c.</nr-title>
+          <sen>útliti vegabréfs eða efni hefur verið breytt,</sen>
+        </paragraph>
       </numart>
       <numart nr="d" type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen>vegabréf er skemmt eða slitið eða upplýsingar í því svara ekki lengur til auðkenna handhafa,</sen>
+        <paragraph nr="1">
+          <nr-title>d.</nr-title>
+          <sen>vegabréf er skemmt eða slitið eða upplýsingar í því svara ekki lengur til auðkenna handhafa,</sen>
+        </paragraph>
       </numart>
       <numart nr="e" type="alphabet">
-        <nr-title>e.</nr-title>
-        <sen>vegabréf finnst í vörslu óviðkomandi eða</sen>
+        <paragraph nr="1">
+          <nr-title>e.</nr-title>
+          <sen>vegabréf finnst í vörslu óviðkomandi eða</sen>
+        </paragraph>
       </numart>
       <numart nr="f" type="alphabet">
-        <nr-title>f.</nr-title>
-        <sen>aðstæður eða atvik að öðru leyti gera það að verkum að óhjákvæmilegt er að afturkalla vegabréf.</sen>
+        <paragraph nr="1">
+          <nr-title>f.</nr-title>
+          <sen>aðstæður eða atvik að öðru leyti gera það að verkum að óhjákvæmilegt er að afturkalla vegabréf.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Handhafa vegabréfs er skylt að verða við kröfu um afhendingu vegabréfs sem er afturkallað skv. 1. mgr.</sen>
+      <paragraph nr="1">
+        <sen>Handhafa vegabréfs er skylt að verða við kröfu um afhendingu vegabréfs sem er afturkallað skv. 1. mgr.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
@@ -290,6 +369,7 @@
         <location type="range">
           <art>7</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands">1</sen>
         </location>
       </footnote>
@@ -298,16 +378,22 @@
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen>Þjóðskrá Íslands heldur skrá, skilríkjaskrá, um öll útgefin vegabréf og önnur skilríki sem Þjóðskrá Íslands er falið að annast útgáfu eða framleiðslu á.</sen>
-      <sen>Í skilríkjaskrá eru skráðar og varðveittar þær upplýsingar sem safnað er til útgáfu á skilríkjum, þ.m.t. upplýsingar um lífkenni skv. 2. og 3. mgr. 3. gr.</sen>
-      <sen>Í skilríkjaskrá eru einnig skráðar upplýsingar um útgefin, glötuð og stolin skilríki og heimilt er að skrá þar einfaldar tilvísanir til annarra gagna vegna þeirra aðstæðna sem fjallað er um í 7. gr.</sen>
+      <paragraph nr="1">
+        <sen>Þjóðskrá Íslands heldur skrá, skilríkjaskrá, um öll útgefin vegabréf og önnur skilríki sem Þjóðskrá Íslands er falið að annast útgáfu eða framleiðslu á.</sen>
+        <sen>Í skilríkjaskrá eru skráðar og varðveittar þær upplýsingar sem safnað er til útgáfu á skilríkjum, þ.m.t. upplýsingar um lífkenni skv. 2. og 3. mgr. 3. gr.</sen>
+        <sen>Í skilríkjaskrá eru einnig skráðar upplýsingar um útgefin, glötuð og stolin skilríki og heimilt er að skrá þar einfaldar tilvísanir til annarra gagna vegna þeirra aðstæðna sem fjallað er um í 7. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Opinberum stofnunum er heimilt að nota skilríkjaskrá við skilríkjaútgáfu.</sen>
-      <sen>Þjóðskrá Íslands og lögreglu er heimilt að nota skilríkjaskrá til að bera kennsl á mann eða staðreyna að hann sé sá sem hann kveðst vera.</sen>
+      <paragraph nr="1">
+        <sen>Opinberum stofnunum er heimilt að nota skilríkjaskrá við skilríkjaútgáfu.</sen>
+        <sen>Þjóðskrá Íslands og lögreglu er heimilt að nota skilríkjaskrá til að bera kennsl á mann eða staðreyna að hann sé sá sem hann kveðst vera.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Stjórnvöldum er heimilt að birta erlendum stjórnvöldum upplýsingar úr skránni sem varða glötuð og stolin skilríki.</sen>
+      <paragraph nr="1">
+        <sen>Stjórnvöldum er heimilt að birta erlendum stjórnvöldum upplýsingar úr skránni sem varða glötuð og stolin skilríki.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
@@ -315,11 +401,13 @@
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands" repeat="true">1</sen>
         </location>
         <location type="range">
           <art>8</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands">2</sen>
         </location>
       </footnote>
@@ -329,11 +417,13 @@
           <start>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>8</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -343,8 +433,10 @@
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen>Handhafi vegabréfs skal varðveita vegabréf sitt þannig að ekki sé hætta á að það glatist.</sen>
-      <sen>Tilkynna skal lögreglu, Þjóðskrá Íslands eða sendimönnum Íslands erlendis þegar í stað ef vegabréf glatast og skal þá gera sérstaka grein fyrir afdrifum þess.</sen>
+      <paragraph nr="1">
+        <sen>Handhafi vegabréfs skal varðveita vegabréf sitt þannig að ekki sé hætta á að það glatist.</sen>
+        <sen>Tilkynna skal lögreglu, Þjóðskrá Íslands eða sendimönnum Íslands erlendis þegar í stað ef vegabréf glatast og skal þá gera sérstaka grein fyrir afdrifum þess.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
@@ -352,6 +444,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Þjóðskrá Íslands">2</sen>
         </location>
       </footnote>
@@ -360,61 +453,89 @@
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen>Það varðar sektum eða fangelsi allt að sex mánuðum ef maður:</sen>
+      <paragraph nr="1">
+        <sen>Það varðar sektum eða fangelsi allt að sex mánuðum ef maður:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>með vísvitandi röngum upplýsingum eða sviksamlegu undanskoti upplýsinga gagnvart útgefanda vegabréfs eða viðtakanda umsóknar aflar sér ranglega vegabréfs eða annars ferðaskilríkis eða verður þess valdandi að vegabréf eða annað ferðaskilríki sem gefið er út fyrir hann hljóðar ekki á rétt nafn hans og kennitölu,</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>með vísvitandi röngum upplýsingum eða sviksamlegu undanskoti upplýsinga gagnvart útgefanda vegabréfs eða viðtakanda umsóknar aflar sér ranglega vegabréfs eða annars ferðaskilríkis eða verður þess valdandi að vegabréf eða annað ferðaskilríki sem gefið er út fyrir hann hljóðar ekki á rétt nafn hans og kennitölu,</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>gefur rangar upplýsingar um forsjá barns í þeim tilgangi að gefið verði út vegabréf til þess án samþykkis forsjárforeldris,</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>gefur rangar upplýsingar um forsjá barns í þeim tilgangi að gefið verði út vegabréf til þess án samþykkis forsjárforeldris,</sen>
+        </paragraph>
       </numart>
       <numart nr="c" type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen>aflar sér án sérstakrar heimildar fleiri en eins vegabréfs eða ferðaskilríkis sem hljóðar á nafn hans, breytir eða nemur á brott hluta af vegabréfi eða öðru ferðaskilríki eða áritanir á því eða</sen>
+        <paragraph nr="1">
+          <nr-title>c.</nr-title>
+          <sen>aflar sér án sérstakrar heimildar fleiri en eins vegabréfs eða ferðaskilríkis sem hljóðar á nafn hans, breytir eða nemur á brott hluta af vegabréfi eða öðru ferðaskilríki eða áritanir á því eða</sen>
+        </paragraph>
       </numart>
       <numart nr="d" type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen>selur vegabréf eða gerir sér á annan hátt að féþúfu.</sen>
+        <paragraph nr="1">
+          <nr-title>d.</nr-title>
+          <sen>selur vegabréf eða gerir sér á annan hátt að féþúfu.</sen>
+        </paragraph>
       </numart>
     </subart>
   </art>
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra skal í reglugerð setja nánari ákvæði um framkvæmd laga þessara.</sen>
-      <sen>Þar skal meðal annars kveðið á um:</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skal í reglugerð setja nánari ákvæði um framkvæmd laga þessara.</sen>
+        <sen>Þar skal meðal annars kveðið á um:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>gerð, form og efni vegabréfa og þau gögn sem umsækjandi skal leggja fram með umsókn,</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>gerð, form og efni vegabréfa og þau gögn sem umsækjandi skal leggja fram með umsókn,</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>kröfur sem gerðar eru til varðveislu, aldurs og forms stafrænna mynda af umsækjanda vegabréfs og skannaðra fingrafara hans, þar á meðal þau skilyrði sem uppfylla þarf samkvæmt alþjóðlegum stöðlum,</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>kröfur sem gerðar eru til varðveislu, aldurs og forms stafrænna mynda af umsækjanda vegabréfs og skannaðra fingrafara hans, þar á meðal þau skilyrði sem uppfylla þarf samkvæmt alþjóðlegum stöðlum,</sen>
+        </paragraph>
       </numart>
       <numart nr="c" type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen>heimild til að einstaklingur megi í sérstökum tilvikum hafa fleiri en eitt gilt vegabréf,</sen>
+        <paragraph nr="1">
+          <nr-title>c.</nr-title>
+          <sen>heimild til að einstaklingur megi í sérstökum tilvikum hafa fleiri en eitt gilt vegabréf,</sen>
+        </paragraph>
       </numart>
       <numart nr="d" type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen>heimild annarra stjórnvalda til útgáfu vegabréfs til bráðabirgða í sérstökum tilvikum,</sen>
+        <paragraph nr="1">
+          <nr-title>d.</nr-title>
+          <sen>heimild annarra stjórnvalda til útgáfu vegabréfs til bráðabirgða í sérstökum tilvikum,</sen>
+        </paragraph>
       </numart>
       <numart nr="e" type="alphabet">
-        <nr-title>e.</nr-title>
-        <sen>heimild til að binda vegabréf við tiltekið svæði, svo og til að takmarka gildistíma þess þegar 5. gr. á við eða ef ætla má að umsækjandi hafi misfarið með vegabréf,</sen>
+        <paragraph nr="1">
+          <nr-title>e.</nr-title>
+          <sen>heimild til að binda vegabréf við tiltekið svæði, svo og til að takmarka gildistíma þess þegar 5. gr. á við eða ef ætla má að umsækjandi hafi misfarið með vegabréf,</sen>
+        </paragraph>
       </numart>
       <numart nr="f" type="alphabet">
-        <nr-title>f.</nr-title>
-        <sen>heimild til að gefa út vegabréf til útlendinga og ferðaskilríki fyrir flóttamenn,</sen>
+        <paragraph nr="1">
+          <nr-title>f.</nr-title>
+          <sen>heimild til að gefa út vegabréf til útlendinga og ferðaskilríki fyrir flóttamenn,</sen>
+        </paragraph>
       </numart>
       <numart nr="g" type="alphabet">
-        <nr-title>g.</nr-title>
-        <sen>vegabréfaskrá, færslu hennar og aðgang að upplýsingum úr skránni,</sen>
+        <paragraph nr="1">
+          <nr-title>g.</nr-title>
+          <sen>vegabréfaskrá, færslu hennar og aðgang að upplýsingum úr skránni,</sen>
+        </paragraph>
       </numart>
       <numart nr="h" type="alphabet">
-        <nr-title>h.</nr-title>
-        <sen>hvar og hvenær íslenskir ríkisborgarar skuli bera og sýna vegabréf.</sen>
+        <paragraph nr="1">
+          <nr-title>h.</nr-title>
+          <sen>hvar og hvenær íslenskir ríkisborgarar skuli bera og sýna vegabréf.</sen>
+        </paragraph>
       </numart>
     </subart>
     <footnotes>
@@ -423,6 +544,7 @@
         <location type="range">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -431,6 +553,7 @@
         <location type="pointer">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal í reglugerð" after-mark="setja nánari ákvæði um framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
@@ -441,12 +564,14 @@
             <art>11</art>
             <subart>1</subart>
             <numart>b</numart>
+            <paragraph>1</paragraph>
             <nr-title>1</nr-title>
           </start>
           <end>
             <art>11</art>
             <subart>1</subart>
             <numart>b</numart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -454,18 +579,21 @@
           <art>11</art>
           <subart>1</subart>
           <numart>c</numart>
+          <paragraph>1</paragraph>
           <nr-title>1</nr-title>
         </location>
         <location type="range">
           <art>11</art>
           <subart>1</subart>
           <numart>d</numart>
+          <paragraph>1</paragraph>
           <nr-title>1</nr-title>
         </location>
         <location type="range">
           <art>11</art>
           <subart>1</subart>
           <numart>e</numart>
+          <paragraph>1</paragraph>
           <nr-title>1</nr-title>
         </location>
       </footnote>
@@ -475,6 +603,7 @@
           <art>11</art>
           <subart>1</subart>
           <numart>f</numart>
+          <paragraph>1</paragraph>
           <sen before-mark="^heimild til að gefa út vegabréf til útlendinga og ferðaskilríki fyrir flóttamenn" after-mark="$">1</sen>
         </location>
         <location type="range">
@@ -482,12 +611,14 @@
             <art>11</art>
             <subart>1</subart>
             <numart>h</numart>
+            <paragraph>1</paragraph>
             <nr-title>1</nr-title>
           </start>
           <end>
             <art>11</art>
             <subart>1</subart>
             <numart>h</numart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </end>
         </location>
@@ -497,12 +628,16 @@
   <art nr="12">
     <nr-title>12. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast gildi 1. júní 1999.</sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast gildi 1. júní 1999.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>
-        <a href="http://www.althingi.is/altext/stjt/1998.136.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
-      </sen>
+      <paragraph nr="1">
+        <sen>
+          <a href="http://www.althingi.is/altext/stjt/1998.136.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
+        </sen>
+      </paragraph>
     </subart>
   </art>
 </law>

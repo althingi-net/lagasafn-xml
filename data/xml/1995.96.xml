@@ -36,15 +36,21 @@
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
-        <sen>Greiða skal til ríkissjóðs sérstakt gjald, áfengisgjald, af áfengi samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen>Greiða skal til ríkissjóðs sérstakt gjald, áfengisgjald, af áfengi samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Áfengi samkvæmt lögum þessum telst hver sá vökvi sem í er meira en 2,25% af vínanda að rúmmáli.</sen>
-        <sen>Áfengismagn og áfengisinnihald skal ákveða við 20°C.</sen>
+        <paragraph nr="1">
+          <sen>Áfengi samkvæmt lögum þessum telst hver sá vökvi sem í er meira en 2,25% af vínanda að rúmmáli.</sen>
+          <sen>Áfengismagn og áfengisinnihald skal ákveða við 20°C.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Þrátt fyrir ákvæði 1. og 2. mgr. skulu vörur sem innihalda meira en 2,25% af vínanda, en eru óhæfar til neyslu og ekki er hægt að gera neysluhæfar, undanþegnar áfengisgjaldi.</sen>
-        <sen>Ráðherra getur með reglugerð ákveðið nánar hvaða vörur falla hér undir.</sen>
+        <paragraph nr="1">
+          <sen>Þrátt fyrir ákvæði 1. og 2. mgr. skulu vörur sem innihalda meira en 2,25% af vínanda, en eru óhæfar til neyslu og ekki er hægt að gera neysluhæfar, undanþegnar áfengisgjaldi.</sen>
+          <sen>Ráðherra getur með reglugerð ákveðið nánar hvaða vörur falla hér undir.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1998.093.html" law-nr="93" law-year="1998" law-art="1" nr="1">
@@ -54,12 +60,14 @@
               <chapter>1</chapter>
               <art>1</art>
               <subart>3</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>1</art>
               <subart>3</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -69,14 +77,20 @@
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
-        <sen>Gjaldskyldir samkvæmt lögum þessum eru allir þeir sem flytja inn eða framleiða áfengi hér á landi til sölu eða vinnslu.</sen>
+        <paragraph nr="1">
+          <sen>Gjaldskyldir samkvæmt lögum þessum eru allir þeir sem flytja inn eða framleiða áfengi hér á landi til sölu eða vinnslu.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Gjaldskyldir eru enn fremur þeir sem flytja með sér til landsins áfengi til eigin nota, svo og þeir sem fá sent áfengi erlendis frá án þess að það sé til sölu eða vinnslu.</sen>
-        <sen>Heimilt er með reglugerð að takmarka innflutning samkvæmt þessari málsgrein við ákveðnar vörutegundir, hámarksmagn eða hámarksverðmæti og að setja skilyrði fyrir því hverjir megi flytja inn samkvæmt henni.</sen>
+        <paragraph nr="1">
+          <sen>Gjaldskyldir eru enn fremur þeir sem flytja með sér til landsins áfengi til eigin nota, svo og þeir sem fá sent áfengi erlendis frá án þess að það sé til sölu eða vinnslu.</sen>
+          <sen>Heimilt er með reglugerð að takmarka innflutning samkvæmt þessari málsgrein við ákveðnar vörutegundir, hámarksmagn eða hámarksverðmæti og að setja skilyrði fyrir því hverjir megi flytja inn samkvæmt henni.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Aðilar sem eiga rétt á endurgreiðslu virðisaukaskatts skv. 10. mgr. 42. gr. laga um virðisaukaskatt, nr. 50/1988, eru undanþegnir gjaldskyldu í samræmi við sérlög eða ákvæði alþjóðasamninga eða tvíhliða samninga.</sen>
+        <paragraph nr="1">
+          <sen>Aðilar sem eiga rétt á endurgreiðslu virðisaukaskatts skv. 10. mgr. 42. gr. laga um virðisaukaskatt, nr. 50/1988, eru undanþegnir gjaldskyldu í samræmi við sérlög eða ákvæði alþjóðasamninga eða tvíhliða samninga.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2017.059.html" law-nr="59" law-year="2017" law-art="18" nr="1">
@@ -85,6 +99,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -93,39 +108,59 @@
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <subart nr="1">
-        <sen>Áfengisgjald skal vera sem hér segir á hvern sentilítra af vínanda í hverjum lítra hins áfenga drykkjar samkvæmt flokkun hans í tollskrá:</sen>
+        <paragraph nr="1">
+          <sen>Áfengisgjald skal vera sem hér segir á hvern sentilítra af vínanda í hverjum lítra hins áfenga drykkjar samkvæmt flokkun hans í tollskrá:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Af öli sem flokkast í vörulið 2203, svo og af vörum sem innihalda blöndur af öli og óáfengum drykk og flokkast í vörulið 2206: 128,80 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Af öli sem flokkast í vörulið 2203, svo og af vörum sem innihalda blöndur af öli og óáfengum drykk og flokkast í vörulið 2206: 128,80 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>Af víni sem flokkast undir vöruliði 2204 og 2205, svo og af gerjuðum drykkjarvörum í vörulið 2206 sem ekki hafa verið blandaðar annarri gerjaðri drykkjarvöru eða óáfengri drykkjarvöru, enda sé varan að hámarki 15% að styrkleika og innihaldi eingöngu vínanda sem myndast við gerjun, án hvers kyns eimingar: 117,30 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Af víni sem flokkast undir vöruliði 2204 og 2205, svo og af gerjuðum drykkjarvörum í vörulið 2206 sem ekki hafa verið blandaðar annarri gerjaðri drykkjarvöru eða óáfengri drykkjarvöru, enda sé varan að hámarki 15% að styrkleika og innihaldi eingöngu vínanda sem myndast við gerjun, án hvers kyns eimingar: 117,30 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>Af öðru áfengi: 158,75 kr.</sen>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Af öðru áfengi: 158,75 kr.</sen>
+          </paragraph>
         </numart>
         <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>Af áfengi sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 10% af áfengisgjaldi skv. 1.–3. tölul.</sen>
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Af áfengi sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 10% af áfengisgjaldi skv. 1.–3. tölul.</sen>
+          </paragraph>
         </numart>
       </subart>
       <subart nr="2">
-        <sen>Gjald skv. 1. mgr. skal reiknast hlutfallslega á brot af sentilítra af vínanda og brot af lítra hins áfenga drykkjar.</sen>
+        <paragraph nr="1">
+          <sen>Gjald skv. 1. mgr. skal reiknast hlutfallslega á brot af sentilítra af vínanda og brot af lítra hins áfenga drykkjar.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Áfengisgjald skal lagt á í samræmi við upplýsingar um vínandamagn sem tilgreindar eru á umbúðum vöru.</sen>
+        <paragraph nr="1">
+          <sen>Áfengisgjald skal lagt á í samræmi við upplýsingar um vínandamagn sem tilgreindar eru á umbúðum vöru.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Telji tollyfirvöld að upplýsingar á umbúðum séu rangar er þeim heimilt að mæla vínandamagn eða fela það öðrum viðurkenndum aðila og miðast álagning áfengisgjalds þá við niðurstöðu þeirra mælinga.</sen>
-        <sen>Kostnaður við mælingar skal greiddur af framleiðanda eða innflytjanda vörunnar hafi vínandamagn verið ranglega tilgreint.</sen>
+        <paragraph nr="1">
+          <sen>Telji tollyfirvöld að upplýsingar á umbúðum séu rangar er þeim heimilt að mæla vínandamagn eða fela það öðrum viðurkenndum aðila og miðast álagning áfengisgjalds þá við niðurstöðu þeirra mælinga.</sen>
+          <sen>Kostnaður við mælingar skal greiddur af framleiðanda eða innflytjanda vörunnar hafi vínandamagn verið ranglega tilgreint.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen>Ef umbúðir vöru greina ekki magn eða styrkleika áfengis sem aðilar sem tilgreindir eru í 2. mgr. 2. gr. flytja til landsins eða fá sent erlendis frá er tollyfirvöldum heimilt að meta magn eða styrkleika áfengis og ákvarða gjald samkvæmt því.</sen>
+        <paragraph nr="1">
+          <sen>Ef umbúðir vöru greina ekki magn eða styrkleika áfengis sem aðilar sem tilgreindir eru í 2. mgr. 2. gr. flytja til landsins eða fá sent erlendis frá er tollyfirvöldum heimilt að meta magn eða styrkleika áfengis og ákvarða gjald samkvæmt því.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen>Geri ferðamaður, skipverji eða flugverji grein fyrir áfengi á tollafgreiðsluhliði sem er umfram tollfrjálsar heimildir skv. 5.–7. tölul. 6. gr. ber honum einungis að greiða mismun áfengisgjalds skv. 1.–3. tölul. og skv. 4. tölul. 1. mgr., enda framvísi hann greiðslukvittun sem sýni fram á að áfengið hafi verið keypt í tollfrjálsri verslun hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Geri ferðamaður, skipverji eða flugverji grein fyrir áfengi á tollafgreiðsluhliði sem er umfram tollfrjálsar heimildir skv. 5.–7. tölul. 6. gr. ber honum einungis að greiða mismun áfengisgjalds skv. 1.–3. tölul. og skv. 4. tölul. 1. mgr., enda framvísi hann greiðslukvittun sem sýni fram á að áfengið hafi verið keypt í tollfrjálsri verslun hér á landi.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2020.133.html" law-nr="133" law-year="2020" law-art="2" nr="1">
@@ -135,6 +170,7 @@
             <art>3</art>
             <subart>1</subart>
             <numart>1</numart>
+            <paragraph>1</paragraph>
             <sen words="128,80 kr.">1</sen>
           </location>
           <location type="range">
@@ -142,6 +178,7 @@
             <art>3</art>
             <subart>1</subart>
             <numart>2</numart>
+            <paragraph>1</paragraph>
             <sen words="117,30 kr.">1</sen>
           </location>
           <location type="range">
@@ -149,6 +186,7 @@
             <art>3</art>
             <subart>1</subart>
             <numart>3</numart>
+            <paragraph>1</paragraph>
             <sen words="158,75 kr.">1</sen>
           </location>
         </footnote>
@@ -160,6 +198,7 @@
               <art>3</art>
               <subart>1</subart>
               <numart>4</numart>
+              <paragraph>1</paragraph>
               <nr-title>1</nr-title>
             </start>
             <end>
@@ -167,6 +206,7 @@
               <art>3</art>
               <subart>1</subart>
               <numart>4</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -174,6 +214,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>6</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -183,6 +224,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="tollyfirvöld">1</sen>
           </location>
         </footnote>
@@ -193,12 +235,14 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>3</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>3</art>
               <subart>4</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -210,12 +254,14 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>3</art>
               <subart>5</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -225,17 +271,25 @@
     <art nr="4">
       <nr-title>4. gr.</nr-title>
       <subart nr="1">
-        <sen>Þeir sem eru gjaldskyldir skv. 1. mgr. 2. gr. skulu ótilkvaddir senda tilkynningu um starfsemi sína til ríkisskattstjóra.</sen>
-        <sen>Þeir sem hefja gjaldskylda starfsemi skulu senda tilkynningu áður en starfsemin hefst.</sen>
+        <paragraph nr="1">
+          <sen>Þeir sem eru gjaldskyldir skv. 1. mgr. 2. gr. skulu ótilkvaddir senda tilkynningu um starfsemi sína til ríkisskattstjóra.</sen>
+          <sen>Þeir sem hefja gjaldskylda starfsemi skulu senda tilkynningu áður en starfsemin hefst.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Í tilkynningu skal tilgreina nafn, firmanafn, heimili og kennitölu rekstraraðila og hvers konar framleiðslu eða innflutning sé um að ræða.</sen>
+        <paragraph nr="1">
+          <sen>Í tilkynningu skal tilgreina nafn, firmanafn, heimili og kennitölu rekstraraðila og hvers konar framleiðslu eða innflutning sé um að ræða.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Ríkisskattstjóri skal halda skrár yfir alla þá sem eru gjaldskyldir skv. 1. mgr. 2. gr. laga þessara.</sen>
+        <paragraph nr="1">
+          <sen>Ríkisskattstjóri skal halda skrár yfir alla þá sem eru gjaldskyldir skv. 1. mgr. 2. gr. laga þessara.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Ráðherra setur í reglugerð nánari ákvæði um upplýsingaskyldu þeirra sem eru gjaldskyldir skv. 1. mgr. 2. gr., svo og skyldu þeirra til að halda framleiðslu- og birgðabókhald.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra setur í reglugerð nánari ákvæði um upplýsingaskyldu þeirra sem eru gjaldskyldir skv. 1. mgr. 2. gr., svo og skyldu þeirra til að halda framleiðslu- og birgðabókhald.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1998.093.html" law-nr="93" law-year="1998" law-art="3" nr="1">
@@ -252,12 +306,14 @@
             <chapter>1</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="ríkisskattstjóra">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>4</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Ríkisskattstjóri skal">1</sen>
           </location>
         </footnote>
@@ -267,6 +323,7 @@
             <chapter>1</chapter>
             <art>4</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -275,18 +332,26 @@
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <subart nr="1">
-        <sen>Gjald af innfluttu áfengi skal greitt við tollafgreiðslu þess.</sen>
+        <paragraph nr="1">
+          <sen>Gjald af innfluttu áfengi skal greitt við tollafgreiðslu þess.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Af áfengi, sem framleitt er innan lands til sölu þar, reiknast gjald við sölu eða afhendingu vörunnar frá verksmiðju eða framleiðanda til kaupanda og skiptir ekki máli hvenær eða með hvaða hætti greiðsla fer fram.</sen>
+        <paragraph nr="1">
+          <sen>Af áfengi, sem framleitt er innan lands til sölu þar, reiknast gjald við sölu eða afhendingu vörunnar frá verksmiðju eða framleiðanda til kaupanda og skiptir ekki máli hvenær eða með hvaða hætti greiðsla fer fram.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Þeir sem skyldir eru til að innheimta gjald skv. 2. mgr. skulu ótilkvaddir greiða innheimtumanni ríkissjóðs í umdæmi því þar sem þeir eru heimilisfastir áfengisgjald sem þeim ber að standa skil á.</sen>
-        <sen>Greiðslu skal fylgja skýrsla á þar til gerðu eyðublaði um hina gjaldskyldu sölu.</sen>
+        <paragraph nr="1">
+          <sen>Þeir sem skyldir eru til að innheimta gjald skv. 2. mgr. skulu ótilkvaddir greiða innheimtumanni ríkissjóðs í umdæmi því þar sem þeir eru heimilisfastir áfengisgjald sem þeim ber að standa skil á.</sen>
+          <sen>Greiðslu skal fylgja skýrsla á þar til gerðu eyðublaði um hina gjaldskyldu sölu.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Ráðherra er heimilt að setja í reglugerð nánari ákvæði um innheimtu gjalds, þar á meðal að veita allt að eins mánaðar greiðslufrest og er þá hvert uppgjörstímabil einn mánuður, frá 1. hvers mánaðar til loka hans.</sen>
-        <sen>Gjalddagi er annar virkur dagur eftir lok uppgjörstímabils.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra er heimilt að setja í reglugerð nánari ákvæði um innheimtu gjalds, þar á meðal að veita allt að eins mánaðar greiðslufrest og er þá hvert uppgjörstímabil einn mánuður, frá 1. hvers mánaðar til loka hans.</sen>
+          <sen>Gjalddagi er annar virkur dagur eftir lok uppgjörstímabils.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1998.093.html" law-nr="93" law-year="1998" law-art="3" nr="1">
@@ -303,6 +368,7 @@
             <chapter>1</chapter>
             <art>5</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -312,6 +378,7 @@
             <chapter>1</chapter>
             <art>5</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja í reglugerð" after-mark="nánari ákvæði um innheimtu gjalds, þar á meðal að veita allt að (\[? ?)?eins mánaðar greiðslufrest og er þá hvert uppgjörstímabil einn mánuður, frá 1. hvers mánaðar til loka hans].&lt;sup style=&quot;font-size:60%&quot;&gt; 4\) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
@@ -321,6 +388,7 @@
             <chapter>1</chapter>
             <art>5</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="eins mánaðar greiðslufrest og er þá hvert uppgjörstímabil einn mánuður, frá 1. hvers mánaðar til loka hans">1</sen>
           </location>
         </footnote>
@@ -331,12 +399,14 @@
               <chapter>1</chapter>
               <art>5</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>5</art>
               <subart>4</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -346,21 +416,31 @@
     <art nr="5a">
       <nr-title>5. gr. a.</nr-title>
       <subart nr="1">
-        <sen>Sé áfengisgjald ekki greitt á gjalddaga, sbr. 5. gr., skal aðili sæta álagi til viðbótar því gjaldi sem honum ber að standa skil á.</sen>
-        <sen>Sama gildir ef framleiðandi áfengis hefur ekki skilað áfengisgjaldsskýrslu eða henni verið ábótavant og áfengisgjald því áætlað, nema hann hafi greitt fyrir gjalddaga upphæð er til áætlunar svarar eða gefið fyrir lok kærufrests fullnægjandi skýringu á vafaatriðum.</sen>
+        <paragraph nr="1">
+          <sen>Sé áfengisgjald ekki greitt á gjalddaga, sbr. 5. gr., skal aðili sæta álagi til viðbótar því gjaldi sem honum ber að standa skil á.</sen>
+          <sen>Sama gildir ef framleiðandi áfengis hefur ekki skilað áfengisgjaldsskýrslu eða henni verið ábótavant og áfengisgjald því áætlað, nema hann hafi greitt fyrir gjalddaga upphæð er til áætlunar svarar eða gefið fyrir lok kærufrests fullnægjandi skýringu á vafaatriðum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Álag skv. 1. mgr. skal vera 1% af þeirri upphæð sem vangreidd er fyrir hvern byrjaðan dag eftir gjalddaga, þó ekki hærra en 10%.</sen>
+        <paragraph nr="1">
+          <sen>Álag skv. 1. mgr. skal vera 1% af þeirri upphæð sem vangreidd er fyrir hvern byrjaðan dag eftir gjalddaga, þó ekki hærra en 10%.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Sé áfengisgjald ekki greitt innan mánaðar frá gjalddaga skal greiða ríkissjóði dráttarvexti af því sem gjaldfallið er.</sen>
-        <sen>Dráttarvextir skulu reiknaðir frá og með gjalddaga.</sen>
+        <paragraph nr="1">
+          <sen>Sé áfengisgjald ekki greitt innan mánaðar frá gjalddaga skal greiða ríkissjóði dráttarvexti af því sem gjaldfallið er.</sen>
+          <sen>Dráttarvextir skulu reiknaðir frá og með gjalddaga.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Verði vanskil á greiðslu áfengisgjalds skal ríkisskattstjóri synja innflytjanda eða framleiðanda áfengis um frekari greiðslufrest meðan vanskil vara.</sen>
+        <paragraph nr="1">
+          <sen>Verði vanskil á greiðslu áfengisgjalds skal ríkisskattstjóri synja innflytjanda eða framleiðanda áfengis um frekari greiðslufrest meðan vanskil vara.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen>Ef um er að ræða ítrekuð eða stórfelld vanskil á greiðslu áfengisgjalds, álags skv. 2. mgr. eða dráttarvaxta skv. 3. mgr. geta tollyfirvöld án fyrirvara stöðvað tollafgreiðslu á öðrum vörum til skuldara eða látið lögreglu stöðva atvinnurekstur skuldarans, m.a. með því að setja starfsstöðvar, skrifstofur, útsölur, tæki og vörur undir innsigli þar til full skil eru gerð, enda telji tollyfirvöld hagsmuni ríkissjóðs ekki verða tryggða með öðrum hætti.</sen>
+        <paragraph nr="1">
+          <sen>Ef um er að ræða ítrekuð eða stórfelld vanskil á greiðslu áfengisgjalds, álags skv. 2. mgr. eða dráttarvaxta skv. 3. mgr. geta tollyfirvöld án fyrirvara stöðvað tollafgreiðslu á öðrum vörum til skuldara eða látið lögreglu stöðva atvinnurekstur skuldarans, m.a. með því að setja starfsstöðvar, skrifstofur, útsölur, tæki og vörur undir innsigli þar til full skil eru gerð, enda telji tollyfirvöld hagsmuni ríkissjóðs ekki verða tryggða með öðrum hætti.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2018.142.html" law-nr="142" law-year="2018" law-art="37" nr="1">
@@ -369,6 +449,7 @@
             <chapter>1</chapter>
             <art>5a</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="ríkisskattstjóri">1</sen>
           </location>
         </footnote>
@@ -378,12 +459,14 @@
             <chapter>1</chapter>
             <art>5a</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen words="geta tollyfirvöld">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>5a</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen words="tollyfirvöld">1</sen>
           </location>
         </footnote>
@@ -399,6 +482,7 @@
               <chapter>1</chapter>
               <art>5a</art>
               <subart>5</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -408,69 +492,101 @@
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <subart nr="1">
-        <sen>Áfengisgjald skal fellt niður eða endurgreitt í eftirtöldum tilvikum:</sen>
+        <paragraph nr="1">
+          <sen>Áfengisgjald skal fellt niður eða endurgreitt í eftirtöldum tilvikum:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Við sölu áfengis úr landi.</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Við sölu áfengis úr landi.</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>Við innflutning og sölu á áfengi til tollfrjálsra verslana og tollfrjálsra forðageymslna, sbr. þó 4. tölul. 1. mgr. 3. gr.</sen>
-          <sen>Jafnframt af áfengi sem áfengisgjald hefur verið reiknað eða greitt af en er síðar sent til útlanda, í tollfrjálsa verslun, í tollvörugeymslu, í tollfrjálsa forðageymslu eða á frísvæði eða er fargað undir eftirliti tollyfirvalda.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Við innflutning og sölu á áfengi til tollfrjálsra verslana og tollfrjálsra forðageymslna, sbr. þó 4. tölul. 1. mgr. 3. gr.</sen>
+            <sen>Jafnframt af áfengi sem áfengisgjald hefur verið reiknað eða greitt af en er síðar sent til útlanda, í tollfrjálsa verslun, í tollvörugeymslu, í tollfrjálsa forðageymslu eða á frísvæði eða er fargað undir eftirliti tollyfirvalda.</sen>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að</sen>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að</sen>
+          </paragraph>
         </numart>
         <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>Við innflutning og sölu á áfengi til framleiðslu á vörum sem eru gjaldskyldar samkvæmt lögum þessum til framleiðenda sem hafa leyfi til að selja áfengi skv. 3. tölul. 1. mgr. 11. gr. áfengislaga.</sen>
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Við innflutning og sölu á áfengi til framleiðslu á vörum sem eru gjaldskyldar samkvæmt lögum þessum til framleiðenda sem hafa leyfi til að selja áfengi skv. 3. tölul. 1. mgr. 11. gr. áfengislaga.</sen>
+          </paragraph>
         </numart>
         <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.</sen>
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.</sen>
+          </paragraph>
         </numart>
         <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <sen>Af samtals 11 einingum af sterku áfengi, léttvíni og/eða öli sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila hafa meðferðis eftir að hafa verið 15 daga eða lengur í ferð.</sen>
-          <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
-          <sen>Skipstjóra, yfirstýrimanni, yfirvélstjóra og bryta, svo og matsveinum á farþega- og vöruflutningaskipum, er jafnframt heimilt að taka gjaldfrjálst aukalega til risnu um borð jafnstóran skammt og þeir mega hafa gjaldfrjálst samkvæmt þessum lið.</sen>
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen>Af samtals 11 einingum af sterku áfengi, léttvíni og/eða öli sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila hafa meðferðis eftir að hafa verið 15 daga eða lengur í ferð.</sen>
+            <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
+            <sen>Skipstjóra, yfirstýrimanni, yfirvélstjóra og bryta, svo og matsveinum á farþega- og vöruflutningaskipum, er jafnframt heimilt að taka gjaldfrjálst aukalega til risnu um borð jafnstóran skammt og þeir mega hafa gjaldfrjálst samkvæmt þessum lið.</sen>
+          </paragraph>
         </numart>
         <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <sen>Af samtals 5 einingum af sterku áfengi, léttvíni og/eða öli sem flugverjar, þ.m.t. flugverjar í aukaáhöfn, hafa meðferðis, eftir að hafa verið 15 daga eða lengur í ferð.</sen>
-          <sen>Af samtals 3 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
+          <paragraph nr="1">
+            <nr-title>7.</nr-title>
+            <sen>Af samtals 5 einingum af sterku áfengi, léttvíni og/eða öli sem flugverjar, þ.m.t. flugverjar í aukaáhöfn, hafa meðferðis, eftir að hafa verið 15 daga eða lengur í ferð.</sen>
+            <sen>Af samtals 3 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
+          </paragraph>
         </numart>
         <numart nr="8" type="numeric">
-          <nr-title>8.</nr-title>
-          <sen>Af áfengi, sem talið er upp í lyfjaskrá, til lækna og lyfsala til sölu sem lyf.</sen>
+          <paragraph nr="1">
+            <nr-title>8.</nr-title>
+            <sen>Af áfengi, sem talið er upp í lyfjaskrá, til lækna og lyfsala til sölu sem lyf.</sen>
+          </paragraph>
         </numart>
         <numart nr="9" type="numeric">
-          <nr-title>9.</nr-title>
-          <sen>Af áfengi til iðnþarfa samkvæmt nánari skilgreiningu ráðherra.</sen>
+          <paragraph nr="1">
+            <nr-title>9.</nr-title>
+            <sen>Af áfengi til iðnþarfa samkvæmt nánari skilgreiningu ráðherra.</sen>
+          </paragraph>
         </numart>
       </subart>
       <subart nr="2">
-        <sen>Með einingu skv. 5.–7. tölul. 1. mgr. er átt við:</sen>
+        <paragraph nr="1">
+          <sen>Með einingu skv. 5.–7. tölul. 1. mgr. er átt við:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Hverja 0,25 lítra af sterku áfengi, þ.e. áfengi sem í er meira en 21% af vínanda að rúmmáli.</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Hverja 0,25 lítra af sterku áfengi, þ.e. áfengi sem í er meira en 21% af vínanda að rúmmáli.</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>Hverja 0,75 lítra af léttvíni, þ.e. áfengi annað en öl sem í er 21% eða minna af vínanda að rúmmáli.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Hverja 0,75 lítra af léttvíni, þ.e. áfengi annað en öl sem í er 21% eða minna af vínanda að rúmmáli.</sen>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>Hverja 3 lítra af öli, sbr. 1. tölul. 1. mgr. 3. gr.</sen>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Hverja 3 lítra af öli, sbr. 1. tölul. 1. mgr. 3. gr.</sen>
+          </paragraph>
         </numart>
         <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>Hverja 3 lítra af gosvíni, gerjaðri drykkjarvöru eða blöndu gerjaðra drykkjarvara og óáfengra drykkja sem flokkast undir vöruliði 2206 og 2208 enda sé varan að hámarki 6% að styrkleika.</sen>
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Hverja 3 lítra af gosvíni, gerjaðri drykkjarvöru eða blöndu gerjaðra drykkjarvara og óáfengra drykkja sem flokkast undir vöruliði 2206 og 2208 enda sé varan að hámarki 6% að styrkleika.</sen>
+          </paragraph>
         </numart>
       </subart>
       <subart nr="3">
-        <sen>Ráðherra setur með reglugerð nánari ákvæði um framkvæmd þessarar greinar, m.a. um skilyrði niðurfellingar eða endurgreiðslu.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra setur með reglugerð nánari ákvæði um framkvæmd þessarar greinar, m.a. um skilyrði niðurfellingar eða endurgreiðslu.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1998.093.html" law-nr="93" law-year="1998" law-art="3" nr="1">
@@ -487,6 +603,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
           <location type="range">
@@ -495,6 +612,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>8</numart>
+              <paragraph>1</paragraph>
               <nr-title>1</nr-title>
             </start>
             <end>
@@ -502,6 +620,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>9</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -509,6 +628,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -519,6 +639,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>2</numart>
+            <paragraph>1</paragraph>
             <sen words="sbr. þó 4. tölul. 1. mgr. 3. gr.">1</sen>
           </location>
         </footnote>
@@ -530,6 +651,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>2</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -537,6 +659,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>2</numart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -548,6 +671,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>3</numart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að" after-mark="$">1</sen>
           </location>
         </footnote>
@@ -558,6 +682,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>5</numart>
+            <paragraph>1</paragraph>
             <sen words="Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.">1</sen>
           </location>
           <location type="range">
@@ -566,6 +691,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>6</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -573,6 +699,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>6</numart>
+              <paragraph>1</paragraph>
               <sen>3</sen>
             </end>
           </location>
@@ -582,6 +709,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>7</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -589,6 +717,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>7</numart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -597,6 +726,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -604,6 +734,7 @@
               <art>6</art>
               <subart>2</subart>
               <numart>4</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -616,6 +747,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>5</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -623,6 +755,7 @@
               <art>6</art>
               <subart>1</subart>
               <numart>7</numart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -631,6 +764,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>8</numart>
+            <paragraph>1</paragraph>
             <nr-title words="8.">1</nr-title>
           </location>
           <location type="range">
@@ -638,6 +772,7 @@
             <art>6</art>
             <subart>1</subart>
             <numart>9</numart>
+            <paragraph>1</paragraph>
             <nr-title>1</nr-title>
           </location>
         </footnote>
@@ -648,12 +783,14 @@
             <art>6</art>
             <subart>1</subart>
             <numart>9</numart>
+            <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>6</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -663,6 +800,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur með reglugerð" after-mark="nánari ákvæði um framkvæmd þessarar greinar, m.a. um skilyrði niðurfellingar eða endurgreiðslu.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
@@ -711,10 +849,14 @@
     <art nr="8">
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
-        <sen>Greiða skal til ríkissjóðs sérstakt gjald, tóbaksgjald, af tóbaki sem flutt er hingað til lands eða er framleitt hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Greiða skal til ríkissjóðs sérstakt gjald, tóbaksgjald, af tóbaki sem flutt er hingað til lands eða er framleitt hér á landi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Tóbak telst samkvæmt lögum þessum vera sérhver vara sem inniheldur tóbak (nicotiana) og flokkast í 24. kafla í viðauka I við tollalög, nr. 88/2005, með síðari breytingum.</sen>
+        <paragraph nr="1">
+          <sen>Tóbak telst samkvæmt lögum þessum vera sérhver vara sem inniheldur tóbak (nicotiana) og flokkast í 24. kafla í viðauka I við tollalög, nr. 88/2005, með síðari breytingum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2012.145.html" law-nr="145" law-year="2012" law-art="9" nr="1">
@@ -723,6 +865,7 @@
             <chapter>2</chapter>
             <art>8</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Tóbak telst samkvæmt lögum þessum vera sérhver vara sem inniheldur tóbak (nicotiana) og flokkast í 24. kafla í viðauka I við tollalög, nr. 88/2005, með síðari breytingum.">1</sen>
           </location>
         </footnote>
@@ -738,6 +881,7 @@
               <chapter>2</chapter>
               <art>8</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -747,35 +891,51 @@
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
-        <sen>Áfengis- og tóbaksverslun ríkisins leggur á og innheimtir tóbaksgjald af tóbaksvörum sem hafa verið fluttar hingað til lands eða framleiddar hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Áfengis- og tóbaksverslun ríkisins leggur á og innheimtir tóbaksgjald af tóbaksvörum sem hafa verið fluttar hingað til lands eða framleiddar hér á landi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Fjárhæð tóbaksgjalds skv. 1. mgr. skal vera sem hér segir:</sen>
+        <paragraph nr="1">
+          <sen>Fjárhæð tóbaksgjalds skv. 1. mgr. skal vera sem hér segir:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Vindlingar: 528,85 kr. á hvern pakka (20 stk.</sen>
-          <sen>).</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Vindlingar: 528,85 kr. á hvern pakka (20 stk.</sen>
+            <sen>).</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>Neftóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Neftóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>Annað tóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Annað tóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          </paragraph>
         </numart>
         <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <sen>Af tóbaki sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 40% af tóbaksgjaldi skv. 1.–3. tölul.</sen>
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Af tóbaki sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 40% af tóbaksgjaldi skv. 1.–3. tölul.</sen>
+          </paragraph>
         </numart>
       </subart>
       <subart nr="3">
-        <sen>Uppgjörstímabil tóbaksgjalds samkvæmt þessari grein er einn mánuður.</sen>
-        <sen>Gjalddagi hvers uppgjörstímabils er fimmti dagur næsta mánaðar eftir lok þess.</sen>
-        <sen>Áfengis- og tóbaksverslun ríkisins skal greiða ríkisskattstjóra innheimt gjald eigi síðar en á gjalddaga hvers uppgjörstímabils.</sen>
+        <paragraph nr="1">
+          <sen>Uppgjörstímabil tóbaksgjalds samkvæmt þessari grein er einn mánuður.</sen>
+          <sen>Gjalddagi hvers uppgjörstímabils er fimmti dagur næsta mánaðar eftir lok þess.</sen>
+          <sen>Áfengis- og tóbaksverslun ríkisins skal greiða ríkisskattstjóra innheimt gjald eigi síðar en á gjalddaga hvers uppgjörstímabils.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Geri ferðamaður, farmaður eða aðrir grein fyrir tóbaki á tollafgreiðsluhliði sem er umfram tollfrjálsar heimildir skv. 2. mgr. 10. gr. ber honum einungis að greiða mismun tóbaksgjalds skv. 1.–3. tölul. og skv. 4. tölul. 2. mgr., enda framvísi hann greiðslukvittun sem sýni fram á að tóbakið hafi verið keypt í tollfrjálsri verslun hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Geri ferðamaður, farmaður eða aðrir grein fyrir tóbaki á tollafgreiðsluhliði sem er umfram tollfrjálsar heimildir skv. 2. mgr. 10. gr. ber honum einungis að greiða mismun tóbaksgjalds skv. 1.–3. tölul. og skv. 4. tölul. 2. mgr., enda framvísi hann greiðslukvittun sem sýni fram á að tóbakið hafi verið keypt í tollfrjálsri verslun hér á landi.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2004.025.html" law-nr="25" law-year="2004" law-art="3" nr="1">
@@ -784,6 +944,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -794,6 +955,7 @@
             <art>9</art>
             <subart>2</subart>
             <numart>1</numart>
+            <paragraph>1</paragraph>
             <sen words="528,85 kr.">1</sen>
           </location>
           <location type="range">
@@ -801,6 +963,7 @@
             <art>9</art>
             <subart>2</subart>
             <numart>2</numart>
+            <paragraph>1</paragraph>
             <sen words="29,40 kr.">1</sen>
           </location>
           <location type="range">
@@ -808,6 +971,7 @@
             <art>9</art>
             <subart>2</subart>
             <numart>3</numart>
+            <paragraph>1</paragraph>
             <sen words="29,40 kr.">1</sen>
           </location>
         </footnote>
@@ -819,6 +983,7 @@
               <art>9</art>
               <subart>2</subart>
               <numart>4</numart>
+              <paragraph>1</paragraph>
               <nr-title>1</nr-title>
             </start>
             <end>
@@ -826,6 +991,7 @@
               <art>9</art>
               <subart>2</subart>
               <numart>4</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -833,6 +999,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="Geri ferðamaður, farmaður eða aðrir grein fyrir tóbaki á tollafgreiðsluhliði sem er umfram tollfrjálsar heimildir skv. 2. mgr. 10. gr. ber honum einungis að greiða mismun tóbaksgjalds skv. 1.–3. tölul. og skv. 4. tölul. 2. mgr., enda framvísi hann greiðslukvittun sem sýni fram á að tóbakið hafi verið keypt í tollfrjálsri verslun hér á landi.">1</sen>
           </location>
         </footnote>
@@ -842,6 +1009,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="ríkisskattstjóra">3</sen>
           </location>
         </footnote>
@@ -857,6 +1025,7 @@
               <chapter>2</chapter>
               <art>9</art>
               <subart>4</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -866,30 +1035,44 @@
     <art nr="10">
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
-        <sen>Af tóbaki sem ferðamenn, farmenn og aðrir hafa með sér til landsins til einkanota eða er sent hingað til lands án þess að um innflutning í atvinnuskyni sé að ræða skal við tollafgreiðslu greiða tóbaksgjald sem hér segir:</sen>
+        <paragraph nr="1">
+          <sen>Af tóbaki sem ferðamenn, farmenn og aðrir hafa með sér til landsins til einkanota eða er sent hingað til lands án þess að um innflutning í atvinnuskyni sé að ræða skal við tollafgreiðslu greiða tóbaksgjald sem hér segir:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>Vindlingar: 664,25 kr. á hvern pakka (20 stk.</sen>
-          <sen>).</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Vindlingar: 664,25 kr. á hvern pakka (20 stk.</sen>
+            <sen>).</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>Annað tóbak: 36,90 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Annað tóbak: 36,90 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+          </paragraph>
         </numart>
       </subart>
       <subart nr="2">
-        <sen>Tóbak sem ferðamenn eða farmenn hafa meðferðis, sbr. þó 4. tölul. 2. mgr. 9. gr., til landsins skal undanþegið gjaldi skv. 1. mgr. að því hámarki sem hér segir:</sen>
+        <paragraph nr="1">
+          <sen>Tóbak sem ferðamenn eða farmenn hafa meðferðis, sbr. þó 4. tölul. 2. mgr. 9. gr., til landsins skal undanþegið gjaldi skv. 1. mgr. að því hámarki sem hér segir:</sen>
+        </paragraph>
         <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <sen>100 vindlingar eða 125 g af öðru tóbaki sem flugverjar er hafa verið skemur en 15 daga í ferð hafa meðferðis.</sen>
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>100 vindlingar eða 125 g af öðru tóbaki sem flugverjar er hafa verið skemur en 15 daga í ferð hafa meðferðis.</sen>
+          </paragraph>
         </numart>
         <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <sen>200 vindlingar eða 250 g af öðru tóbaki sem ferðamenn, skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið skemur en 15 daga í ferð hafa meðferðis og flugverjar, þ.m.t. flugverjar í aukaáhöfn, er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>200 vindlingar eða 250 g af öðru tóbaki sem ferðamenn, skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið skemur en 15 daga í ferð hafa meðferðis og flugverjar, þ.m.t. flugverjar í aukaáhöfn, er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+          </paragraph>
         </numart>
         <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <sen>400 vindlingar eða 500 g af öðru tóbaki sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>400 vindlingar eða 500 g af öðru tóbaki sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+          </paragraph>
         </numart>
       </subart>
       <footnotes>
@@ -900,6 +1083,7 @@
             <art>10</art>
             <subart>1</subart>
             <numart>1</numart>
+            <paragraph>1</paragraph>
             <sen words="664,25 kr.">1</sen>
           </location>
           <location type="range">
@@ -907,6 +1091,7 @@
             <art>10</art>
             <subart>1</subart>
             <numart>2</numart>
+            <paragraph>1</paragraph>
             <sen words="36,90 kr.">1</sen>
           </location>
         </footnote>
@@ -916,6 +1101,7 @@
             <chapter>2</chapter>
             <art>10</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="sbr. þó 4. tölul. 2. mgr. 9. gr.">1</sen>
           </location>
         </footnote>
@@ -926,6 +1112,7 @@
               <chapter>2</chapter>
               <art>10</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
@@ -933,6 +1120,7 @@
               <art>10</art>
               <subart>2</subart>
               <numart>3</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -950,6 +1138,7 @@
               <art>10</art>
               <subart>2</subart>
               <numart>3</numart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -959,8 +1148,10 @@
     <art nr="10a">
       <nr-title>10. gr. a.</nr-title>
       <subart nr="1">
-        <sen>Endurgreiða skal tóbaksgjald á grundvelli alþjóðasamninga og tvíhliða samninga sem Ísland er aðili að, frá þeim tíma er viðkomandi samningur hefur öðlast gildi að því er Ísland varðar.</sen>
-        <sen>Með sama hætti skal endurgreiða tóbaksgjald til erlends liðsafla og borgaralegra deilda hans, þ.m.t. Atlantshafsbandalagsins, Samstarfs í þágu friðar, herliðs Bandaríkjanna og annarra aðila sem undanþegnir skulu tóbaksgjaldi samkvæmt alþjóðasamningum, tvíhliða samningum eða sérstökum lögum þar um.</sen>
+        <paragraph nr="1">
+          <sen>Endurgreiða skal tóbaksgjald á grundvelli alþjóðasamninga og tvíhliða samninga sem Ísland er aðili að, frá þeim tíma er viðkomandi samningur hefur öðlast gildi að því er Ísland varðar.</sen>
+          <sen>Með sama hætti skal endurgreiða tóbaksgjald til erlends liðsafla og borgaralegra deilda hans, þ.m.t. Atlantshafsbandalagsins, Samstarfs í þágu friðar, herliðs Bandaríkjanna og annarra aðila sem undanþegnir skulu tóbaksgjaldi samkvæmt alþjóðasamningum, tvíhliða samningum eða sérstökum lögum þar um.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2017.059.html" law-nr="59" law-year="2017" law-art="19" nr="1">
@@ -975,6 +1166,7 @@
               <chapter>2</chapter>
               <art>10a</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -1003,11 +1195,15 @@
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
-        <sen>Úrskurður tollyfirvalda um niðurfellingu eða endurgreiðslu áfengis- og tóbaksgjalds skv. 6. gr. og 2. mgr. 10. gr. sætir kæru til ráðherra í samræmi við 102. gr. tollalaga, nr. 55/1987.</sen>
-        <sen>Þá skulu ákvæði tollalaga gilda að því leyti sem lög þessi kveða ekki á um gjaldskyldu, gjaldfrelsi, úrskurð um flokkun til gjaldskyldu, álagningu, innheimtu, lögvernd, viðurlög, refsingar og aðra framkvæmd varðandi gjald af innfluttu áfengi og tóbaki.</sen>
+        <paragraph nr="1">
+          <sen>Úrskurður tollyfirvalda um niðurfellingu eða endurgreiðslu áfengis- og tóbaksgjalds skv. 6. gr. og 2. mgr. 10. gr. sætir kæru til ráðherra í samræmi við 102. gr. tollalaga, nr. 55/1987.</sen>
+          <sen>Þá skulu ákvæði tollalaga gilda að því leyti sem lög þessi kveða ekki á um gjaldskyldu, gjaldfrelsi, úrskurð um flokkun til gjaldskyldu, álagningu, innheimtu, lögvernd, viðurlög, refsingar og aðra framkvæmd varðandi gjald af innfluttu áfengi og tóbaki.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Að því leyti sem ekki eru ákvæði í lögum þessum um álagningu, innheimtu, tilhögun bókhalds, framtöl, eftirlit, stöðvun atvinnurekstrar, viðurlög, sektir, refsingar og aðra framkvæmd varðandi gjald samkvæmt lögum þessum af áfengi og tóbaki, sem er framleitt eða unnið að einhverju leyti hér á landi, skulu gilda eftir því sem við getur átt ákvæði laga um virðisaukaskatt og ákvæði reglugerða og annarra fyrirmæla settra samkvæmt þeim lögum</sen>
+        <paragraph nr="1">
+          <sen>Að því leyti sem ekki eru ákvæði í lögum þessum um álagningu, innheimtu, tilhögun bókhalds, framtöl, eftirlit, stöðvun atvinnurekstrar, viðurlög, sektir, refsingar og aðra framkvæmd varðandi gjald samkvæmt lögum þessum af áfengi og tóbaki, sem er framleitt eða unnið að einhverju leyti hér á landi, skulu gilda eftir því sem við getur átt ákvæði laga um virðisaukaskatt og ákvæði reglugerða og annarra fyrirmæla settra samkvæmt þeim lögum</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.141.html" law-nr="141" law-year="2019" law-art="43" nr="1">
@@ -1016,6 +1212,7 @@
             <chapter>3</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="tollyfirvalda">1</sen>
           </location>
         </footnote>
@@ -1025,6 +1222,7 @@
             <chapter>3</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
           </location>
         </footnote>
@@ -1034,6 +1232,7 @@
             <chapter>3</chapter>
             <art>11</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Að því leyti sem ekki eru ákvæði í lögum þessum um álagningu, innheimtu, tilhögun bókhalds, framtöl, eftirlit, stöðvun atvinnurekstrar, viðurlög, sektir, refsingar og aðra framkvæmd varðandi gjald samkvæmt lögum þessum af áfengi og tóbaki, sem er framleitt eða unnið að einhverju leyti hér á landi, skulu gilda eftir því sem við getur átt ákvæði laga um virðisaukaskatt og ákvæði reglugerða og annarra fyrirmæla settra samkvæmt þeim lögum" after-mark="(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
@@ -1049,6 +1248,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -1058,7 +1258,9 @@
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
-        <sen>Ráðherra er heimilt að setja með reglugerð nánari fyrirmæli um framkvæmd ákvæða laga þessara um áfengisgjald og tóbaksgjald.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra er heimilt að setja með reglugerð nánari fyrirmæli um framkvæmd ákvæða laga þessara um áfengisgjald og tóbaksgjald.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
@@ -1067,6 +1269,7 @@
             <chapter>3</chapter>
             <art>12</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Ráðherra er heimilt að setja með reglugerð" after-mark="nánari fyrirmæli um framkvæmd ákvæða laga þessara um áfengisgjald og tóbaksgjald.(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
         </footnote>
@@ -1082,6 +1285,7 @@
               <chapter>3</chapter>
               <art>12</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -1091,7 +1295,9 @@
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <subart nr="1">
-        <sen>Lög þessi öðlast gildi 1. september 1995.</sen>
+        <paragraph nr="1">
+          <sen>Lög þessi öðlast gildi 1. september 1995.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2001.149.html" law-nr="149" law-year="2001" law-art="2" nr="1">

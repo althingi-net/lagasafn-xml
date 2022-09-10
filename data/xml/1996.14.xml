@@ -10,13 +10,17 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Markmið laga þessara er að tryggja gagnkvæman frjálsan aðgang skipa, sem skráð eru í aðildarríkjum samningsins um Evrópska efnahagssvæðið, að skipgengum vatnaleiðum innan EES.</sen>
+      <paragraph nr="1">
+        <sen>Markmið laga þessara er að tryggja gagnkvæman frjálsan aðgang skipa, sem skráð eru í aðildarríkjum samningsins um Evrópska efnahagssvæðið, að skipgengum vatnaleiðum innan EES.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra er heimilt að setja reglugerðir að því leyti sem það er nauðsynlegt vegna skuldbindinga á grundvelli 1. gr. laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt að setja reglugerðir að því leyti sem það er nauðsynlegt vegna skuldbindinga á grundvelli 1. gr. laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="217" nr="1">
@@ -24,6 +28,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -32,6 +37,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglugerðir að því leyti sem það er nauðsynlegt vegna skuldbindinga á grundvelli 1. gr. laga þessara." after-mark="$">1</sen>
         </location>
       </footnote>
@@ -40,7 +46,9 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast þegar gildi.</sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast þegar gildi.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

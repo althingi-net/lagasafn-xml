@@ -19,11 +19,15 @@
     <nr-title>1. gr.</nr-title>
     <name>Gildissvið og yfirstjórn.</name>
     <subart nr="1">
-      <sen>Lög þessi mæla fyrir um greiðslu sanngirnisbóta úr ríkissjóði til þeirra sem urðu fyrir varanlegum skaða af illri meðferð eða ofbeldi á stofnunum fyrir fötluð börn sem starfræktar voru á vegum hins opinbera og þar sem börn voru vistuð sólarhringsvistun.</sen>
-      <sen>Lög þessi taka til starfsemi þessara stofnana fram til 1. febrúar 1993.</sen>
+      <paragraph nr="1">
+        <sen>Lög þessi mæla fyrir um greiðslu sanngirnisbóta úr ríkissjóði til þeirra sem urðu fyrir varanlegum skaða af illri meðferð eða ofbeldi á stofnunum fyrir fötluð börn sem starfræktar voru á vegum hins opinbera og þar sem börn voru vistuð sólarhringsvistun.</sen>
+        <sen>Lög þessi taka til starfsemi þessara stofnana fram til 1. febrúar 1993.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Ráðherra fer með yfirstjórn og framkvæmd laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra fer með yfirstjórn og framkvæmd laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="1" nr="1">
@@ -31,11 +35,13 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="fyrir fötluð börn sem starfræktar voru á vegum hins opinbera og þar sem börn voru vistuð sólarhringsvistun">1</sen>
         </location>
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Lög þessi taka til starfsemi þessara stofnana fram til 1. febrúar 1993.">2</sen>
         </location>
       </footnote>
@@ -44,6 +50,7 @@
         <location type="range">
           <art>1</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -53,8 +60,10 @@
     <nr-title>2. gr.</nr-title>
     <name>Skilyrði þess að krafa sé tekin til meðferðar.</name>
     <subart nr="1">
-      <sen>Sá sem vistaður var á stofnun sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir innköllun sýslumanns.</sen>
-      <sen>Sýslumaður tekur afstöðu til krafna en sá sem krefst bóta getur leitað til úrskurðarnefndar skv. 7. gr. uni hann ekki niðurstöðu sýslumanns.</sen>
+      <paragraph nr="1">
+        <sen>Sá sem vistaður var á stofnun sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir innköllun sýslumanns.</sen>
+        <sen>Sýslumaður tekur afstöðu til krafna en sá sem krefst bóta getur leitað til úrskurðarnefndar skv. 7. gr. uni hann ekki niðurstöðu sýslumanns.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="2" nr="1">
@@ -62,11 +71,13 @@
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Sá sem vistaður var á stofnun" after-mark="sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?innköllun sýslumanns.$">1</sen>
         </location>
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Sá sem vistaður var á stofnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sem lög þessi taka til getur krafist sanngirnisbóta samkvæmt lögum þessum, enda liggi fyrir" after-mark="innköllun sýslumanns.$">1</sen>
         </location>
       </footnote>
@@ -76,52 +87,76 @@
     <nr-title>3. gr.</nr-title>
     <name>Skilyrði sanngirnisbóta.</name>
     <subart nr="1">
-      <sen>Greiða skal sanngirnisbætur úr ríkissjóði á grundvelli laga þessara hafi vistmaður orðið fyrir illri meðferð eða ofbeldi meðan á vistun hans stóð, sem olli honum varanlegum skaða.</sen>
+      <paragraph nr="1">
+        <sen>Greiða skal sanngirnisbætur úr ríkissjóði á grundvelli laga þessara hafi vistmaður orðið fyrir illri meðferð eða ofbeldi meðan á vistun hans stóð, sem olli honum varanlegum skaða.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Með illri meðferð eða ofbeldi er átt við:</sen>
+      <paragraph nr="1">
+        <sen>Með illri meðferð eða ofbeldi er átt við:</sen>
+      </paragraph>
       <numart nr="a" type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen>hvers kyns refsiverða líkamlega valdbeitingu gagnvart barni og aðra líkamlega valdbeitingu þar sem valdið er óþarfa sársauka,</sen>
+        <paragraph nr="1">
+          <nr-title>a.</nr-title>
+          <sen>hvers kyns refsiverða líkamlega valdbeitingu gagnvart barni og aðra líkamlega valdbeitingu þar sem valdið er óþarfa sársauka,</sen>
+        </paragraph>
       </numart>
       <numart nr="b" type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen>ógnandi, vanvirðandi eða niðurlægjandi athafnir gagnvart barni,</sen>
+        <paragraph nr="1">
+          <nr-title>b.</nr-title>
+          <sen>ógnandi, vanvirðandi eða niðurlægjandi athafnir gagnvart barni,</sen>
+        </paragraph>
       </numart>
       <numart nr="c" type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen>athafnir til þess fallnar að misbjóða barni eða vanrækja á annan hátt uppeldi þess svo mjög að líkamlegri eða andlegri heilsu þess eða þroska sé mikil hætta búin.</sen>
+        <paragraph nr="1">
+          <nr-title>c.</nr-title>
+          <sen>athafnir til þess fallnar að misbjóða barni eða vanrækja á annan hátt uppeldi þess svo mjög að líkamlegri eða andlegri heilsu þess eða þroska sé mikil hætta búin.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="3">
-      <sen>Með varanlegum skaða er átt við varanlegar neikvæðar líkamlegar, sálrænar eða félagslegar afleiðingar.</sen>
+      <paragraph nr="1">
+        <sen>Með varanlegum skaða er átt við varanlegar neikvæðar líkamlegar, sálrænar eða félagslegar afleiðingar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <name>Fjárhæð sanngirnisbóta.</name>
     <subart nr="1">
-      <sen>Við ákvörðun fjárhæðar sanngirnisbóta skal litið til:</sen>
+      <paragraph nr="1">
+        <sen>Við ákvörðun fjárhæðar sanngirnisbóta skal litið til:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>alvarleika ofbeldis eða illrar meðferðar, þ.m.t. með tilliti til tímalengdar vistunar og annarra aðstæðna sem kunna að hafa gert reynsluna sérlega þungbæra,</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>alvarleika ofbeldis eða illrar meðferðar, þ.m.t. með tilliti til tímalengdar vistunar og annarra aðstæðna sem kunna að hafa gert reynsluna sérlega þungbæra,</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>alvarleika afleiðinga ofbeldis eða illrar meðferðar, bæði afleiðinga sem unnt er að leggja læknisfræðilegt mat á og annarra erfiðleika og missis tækifæra sem rekja má til hinna bótaskyldu atvika.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>alvarleika afleiðinga ofbeldis eða illrar meðferðar, bæði afleiðinga sem unnt er að leggja læknisfræðilegt mat á og annarra erfiðleika og missis tækifæra sem rekja má til hinna bótaskyldu atvika.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Við ákvörðun fjárhæðar sanngirnisbóta skal einnig, eftir því sem unnt er, tekið mið af dómaframkvæmd á sambærilegum sviðum.</sen>
-      <sen>Bætur til einstaklings skulu aldrei vera hærri en 6 millj. kr.</sen>
-      <sen>Hámark þetta breytist 1. janúar ár hvert í samræmi við vísitölu neysluverðs.</sen>
+      <paragraph nr="1">
+        <sen>Við ákvörðun fjárhæðar sanngirnisbóta skal einnig, eftir því sem unnt er, tekið mið af dómaframkvæmd á sambærilegum sviðum.</sen>
+        <sen>Bætur til einstaklings skulu aldrei vera hærri en 6 millj. kr.</sen>
+        <sen>Hámark þetta breytist 1. janúar ár hvert í samræmi við vísitölu neysluverðs.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Nú hefur vistmaður verið vistaður á fleiri en einni stofnun sem falla undir lög þessi og skal þá við endanlegt mat líta heildstætt til þeirra þátta sem tilgreindir eru í 1. og 2. mgr., þó þannig að heildarbætur rúmist innan marka þess sem getur í 2. mgr.</sen>
+      <paragraph nr="1">
+        <sen>Nú hefur vistmaður verið vistaður á fleiri en einni stofnun sem falla undir lög þessi og skal þá við endanlegt mat líta heildstætt til þeirra þátta sem tilgreindir eru í 1. og 2. mgr., þó þannig að heildarbætur rúmist innan marka þess sem getur í 2. mgr.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Bætur skal greiða út í einu lagi.</sen>
-      <sen>Bótafjárhæð skal bundin vísitölu neysluverðs frá því að hún er ákveðin í sáttaboði skv. 6. gr. eða úrskurði skv. 9. gr.</sen>
+      <paragraph nr="1">
+        <sen>Bætur skal greiða út í einu lagi.</sen>
+        <sen>Bótafjárhæð skal bundin vísitölu neysluverðs frá því að hún er ákveðin í sáttaboði skv. 6. gr. eða úrskurði skv. 9. gr.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="3" nr="1">
@@ -129,16 +164,19 @@
         <location type="range">
           <art>4</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="deletion">
           <art>4</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Bætur" after-mark="skal greiða út í einu lagi.$">1</sen>
         </location>
         <location type="deletion">
           <art>4</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="Bótafjárhæð skal bundin vísitölu neysluverðs frá því að hún er ákveðin í sáttaboði skv. 6. gr. eða úrskurði skv. 9. gr.$">2</sen>
         </location>
       </footnote>
@@ -148,18 +186,24 @@
     <nr-title>5. gr.</nr-title>
     <name>Innköllun.</name>
     <subart nr="1">
-      <sen>Eigi síðar en 1. febrúar 2021 skal ráðherra fela tilteknum sýslumanni að gefa út innköllun vegna stofnana sem falla undir lög þessi.</sen>
-      <sen>Innköllun skal birt tvívegis í Lögbirtingablaði, svo og tvívegis í útbreiddu dagblaði.</sen>
-      <sen>Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun á tilgreindu tímabili og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.</sen>
+      <paragraph nr="1">
+        <sen>Eigi síðar en 1. febrúar 2021 skal ráðherra fela tilteknum sýslumanni að gefa út innköllun vegna stofnana sem falla undir lög þessi.</sen>
+        <sen>Innköllun skal birt tvívegis í Lögbirtingablaði, svo og tvívegis í útbreiddu dagblaði.</sen>
+        <sen>Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun á tilgreindu tímabili og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Sýslumaður ákveður form innköllunar og gefur út eyðublað fyrir þá sem hyggjast lýsa kröfum sínum.</sen>
-      <sen>Á eyðublaðinu skal sá er lýsir kröfu tilgreina svo sem kostur er dvalartíma á stofnun og helstu ástæður þess að hann telur sig eiga rétt til bóta samkvæmt lögum þessum.</sen>
-      <sen>Þar skal einnig gefinn kostur á að veita sýslumanni heimild til aðgangs að gögnum um viðkomandi sem varða málið hjá öðrum stjórnvöldum.</sen>
+      <paragraph nr="1">
+        <sen>Sýslumaður ákveður form innköllunar og gefur út eyðublað fyrir þá sem hyggjast lýsa kröfum sínum.</sen>
+        <sen>Á eyðublaðinu skal sá er lýsir kröfu tilgreina svo sem kostur er dvalartíma á stofnun og helstu ástæður þess að hann telur sig eiga rétt til bóta samkvæmt lögum þessum.</sen>
+        <sen>Þar skal einnig gefinn kostur á að veita sýslumanni heimild til aðgangs að gögnum um viðkomandi sem varða málið hjá öðrum stjórnvöldum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Nú er kröfu ekki lýst innan þess frests sem greinir í 1. mgr. og fellur hún þá niður.</sen>
-      <sen>Víkja má frá þessu í allt að tvö ár frá því að kröfulýsingarfresti lýkur ef sýnt þykir að þeim sem lýsir kröfu var það ekki unnt fyrr eða önnur veigamikil rök mæla með því.</sen>
+      <paragraph nr="1">
+        <sen>Nú er kröfu ekki lýst innan þess frests sem greinir í 1. mgr. og fellur hún þá niður.</sen>
+        <sen>Víkja má frá þessu í allt að tvö ár frá því að kröfulýsingarfresti lýkur ef sýnt þykir að þeim sem lýsir kröfu var það ekki unnt fyrr eða önnur veigamikil rök mæla með því.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="4" nr="1">
@@ -167,26 +211,31 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun" after-mark="á tilgreindu tímabili (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
         </location>
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Þar skal skorað á þá sem dvalið hafa á tiltekinni stofnun (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?á tilgreindu tímabili" after-mark="og telja sig eiga rétt til bóta samkvæmt lögum þessum að lýsa kröfum sínum innan þriggja mánaða frá síðari birtingu innköllunar í Lögbirtingablaði.$">3</sen>
         </location>
         <location type="deletion">
           <art>5</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Á eyðublaðinu skal sá er lýsir kröfu tilgreina svo sem kostur er dvalartíma á stofnun" after-mark="og helstu ástæður þess að hann telur sig eiga rétt til bóta samkvæmt lögum þessum.$">2</sen>
         </location>
         <location type="range">
           <art>5</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen>3</sen>
         </location>
       </footnote>
@@ -196,24 +245,32 @@
     <nr-title>6. gr.</nr-title>
     <name>Sáttaboð.</name>
     <subart nr="1">
-      <sen>Að loknum kröfulýsingarfresti skal sýslumaður fara yfir þær kröfur sem lýst hefur verið og önnur tiltæk gögn.</sen>
-      <sen>Hann skal afla staðfestingar á því að viðkomandi hafi verið vistaður á þeirri stofnun sem um ræðir.</sen>
-      <sen>Telji sýslumaður að líkur standi til að bótaskilyrði laga þessara séu uppfyllt skal hann að höfðu samráði við ráðherra gera viðkomandi einstaklingi skriflegt og bindandi sáttaboð.</sen>
-      <sen>Að öðrum kosti skal hann synja kröfu með rökstuddu bréfi.</sen>
-      <sen>Málsmeðferð af hálfu sýslumanns skal vera einföld og henni skal hraðað eins og kostur er.</sen>
-      <sen>Honum er óskylt að taka munnlegar skýrslur af þeim sem gera kröfur.</sen>
-      <sen>Skal hann eftir því sem kostur er fjalla samtímis um allar kröfur er lúta að einni og sömu stofnuninni.</sen>
+      <paragraph nr="1">
+        <sen>Að loknum kröfulýsingarfresti skal sýslumaður fara yfir þær kröfur sem lýst hefur verið og önnur tiltæk gögn.</sen>
+        <sen>Hann skal afla staðfestingar á því að viðkomandi hafi verið vistaður á þeirri stofnun sem um ræðir.</sen>
+        <sen>Telji sýslumaður að líkur standi til að bótaskilyrði laga þessara séu uppfyllt skal hann að höfðu samráði við ráðherra gera viðkomandi einstaklingi skriflegt og bindandi sáttaboð.</sen>
+        <sen>Að öðrum kosti skal hann synja kröfu með rökstuddu bréfi.</sen>
+        <sen>Málsmeðferð af hálfu sýslumanns skal vera einföld og henni skal hraðað eins og kostur er.</sen>
+        <sen>Honum er óskylt að taka munnlegar skýrslur af þeim sem gera kröfur.</sen>
+        <sen>Skal hann eftir því sem kostur er fjalla samtímis um allar kröfur er lúta að einni og sömu stofnuninni.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Sá sem hefur lýst kröfu skal taka afstöðu til sáttaboðs innan 30 daga frá móttöku þess.</sen>
-      <sen>Verði sáttaboði ekki tekið innan þess frests telst því hafa verið hafnað.</sen>
+      <paragraph nr="1">
+        <sen>Sá sem hefur lýst kröfu skal taka afstöðu til sáttaboðs innan 30 daga frá móttöku þess.</sen>
+        <sen>Verði sáttaboði ekki tekið innan þess frests telst því hafa verið hafnað.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Hafni sá sem kröfu hefur lýst sáttaboði eða hafi kröfu hans verið synjað getur hann innan þriggja mánaða frá dagsetningu bréfs sýslumanns leitað til úrskurðarnefndar skv. 7. gr.</sen>
+      <paragraph nr="1">
+        <sen>Hafni sá sem kröfu hefur lýst sáttaboði eða hafi kröfu hans verið synjað getur hann innan þriggja mánaða frá dagsetningu bréfs sýslumanns leitað til úrskurðarnefndar skv. 7. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Fallist sá sem kröfu hefur lýst á sátt samkvæmt þessari grein með skriflegum hætti felur það í sér afsal allra frekari krafna á hendur ríki og eftir atvikum sveitarfélögum, sbr. 13. gr., vegna vistunar á viðkomandi stofnun.</sen>
-      <sen>Gjalddagi er 30 dögum eftir að sýslumanni berst skriflegt samþykki viðtakanda bótanna.</sen>
+      <paragraph nr="1">
+        <sen>Fallist sá sem kröfu hefur lýst á sátt samkvæmt þessari grein með skriflegum hætti felur það í sér afsal allra frekari krafna á hendur ríki og eftir atvikum sveitarfélögum, sbr. 13. gr., vegna vistunar á viðkomandi stofnun.</sen>
+        <sen>Gjalddagi er 30 dögum eftir að sýslumanni berst skriflegt samþykki viðtakanda bótanna.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="5" nr="1">
@@ -221,33 +278,39 @@
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>2</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="einni og sömu">7</sen>
         </location>
         <location type="range">
           <start>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
         <location type="deletion">
           <art>6</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Fallist sá sem kröfu hefur lýst á sátt samkvæmt þessari grein með skriflegum hætti felur það í sér afsal allra frekari krafna á hendur ríki og eftir atvikum sveitarfélögum, sbr. 13. gr., vegna vistunar á viðkomandi stofnun" after-mark=".$">1</sen>
         </location>
         <location type="range">
           <art>6</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="30 dögum">2</sen>
         </location>
       </footnote>
@@ -257,39 +320,53 @@
     <nr-title>7. gr.</nr-title>
     <name>Úrskurðarnefnd um sanngirnisbætur.</name>
     <subart nr="1">
-      <sen>Ráðherra skipar, án tilnefningar, nefnd þriggja manna og þriggja til vara til þess að taka afstöðu til krafna um sanngirnisbætur samkvæmt lögum þessum ljúki málum ekki á grundvelli 6. gr.</sen>
-      <sen>Nefndarmenn og varamenn þeirra skulu skipaðir til allt að þriggja ára í senn.</sen>
-      <sen>Einn nefndarmaður skal fullnægja skilyrðum til að vera hæstaréttardómari, en hann skal jafnframt vera formaður nefndarinnar.</sen>
-      <sen>Einn skal vera læknir og einn sálfræðingur.</sen>
-      <sen>Um sérstök hæfisskilyrði gilda reglur stjórnsýslulaga.</sen>
-      <sen>Varamenn skulu fullnægja sömu hæfisskilyrðum og aðalmenn.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skipar, án tilnefningar, nefnd þriggja manna og þriggja til vara til þess að taka afstöðu til krafna um sanngirnisbætur samkvæmt lögum þessum ljúki málum ekki á grundvelli 6. gr.</sen>
+        <sen>Nefndarmenn og varamenn þeirra skulu skipaðir til allt að þriggja ára í senn.</sen>
+        <sen>Einn nefndarmaður skal fullnægja skilyrðum til að vera hæstaréttardómari, en hann skal jafnframt vera formaður nefndarinnar.</sen>
+        <sen>Einn skal vera læknir og einn sálfræðingur.</sen>
+        <sen>Um sérstök hæfisskilyrði gilda reglur stjórnsýslulaga.</sen>
+        <sen>Varamenn skulu fullnægja sömu hæfisskilyrðum og aðalmenn.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Kostnaður við störf úrskurðarnefndarinnar greiðist úr ríkissjóði, sbr. þó 13. gr.</sen>
-      <sen>Nefndinni er heimilt að ráða sér starfslið í samráði við ráðherra.</sen>
+      <paragraph nr="1">
+        <sen>Kostnaður við störf úrskurðarnefndarinnar greiðist úr ríkissjóði, sbr. þó 13. gr.</sen>
+        <sen>Nefndinni er heimilt að ráða sér starfslið í samráði við ráðherra.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <name>Meðferð bótakrafna af hálfu úrskurðarnefndar.</name>
     <subart nr="1">
-      <sen>Í erindi til úrskurðarnefndar á grundvelli 3. mgr. 6. gr. skal greina helstu rök fyrir því að viðkomandi eigi ríkari rétt en niðurstaða sýslumanns ber vott um.</sen>
-      <sen>Úrskurðarnefndin getur kvatt þann sem leitað hefur til nefndarinnar til viðtals þar sem aflað verður nánari upplýsinga um grundvöll kröfunnar.</sen>
-      <sen>Þá getur hún sömuleiðis leitað eftir afstöðu sýslumanns til kröfunnar eða kvatt aðra einstaklinga til viðtals, t.d. fyrrverandi starfsfólk á stofnun</sen>
+      <paragraph nr="1">
+        <sen>Í erindi til úrskurðarnefndar á grundvelli 3. mgr. 6. gr. skal greina helstu rök fyrir því að viðkomandi eigi ríkari rétt en niðurstaða sýslumanns ber vott um.</sen>
+        <sen>Úrskurðarnefndin getur kvatt þann sem leitað hefur til nefndarinnar til viðtals þar sem aflað verður nánari upplýsinga um grundvöll kröfunnar.</sen>
+        <sen>Þá getur hún sömuleiðis leitað eftir afstöðu sýslumanns til kröfunnar eða kvatt aðra einstaklinga til viðtals, t.d. fyrrverandi starfsfólk á stofnun</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Úrskurðarnefndinni er heimilt að óska eftir umboði þess sem kröfu gerir til að afla læknisfræðilegra gagna um heilsufar hans, ef slík gögn skipta sérstöku máli að áliti nefndarinnar.</sen>
-      <sen>Slík gagnaöflun skal vera á kostnað nefndarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurðarnefndinni er heimilt að óska eftir umboði þess sem kröfu gerir til að afla læknisfræðilegra gagna um heilsufar hans, ef slík gögn skipta sérstöku máli að áliti nefndarinnar.</sen>
+        <sen>Slík gagnaöflun skal vera á kostnað nefndarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Úrskurðarnefndin skal hafa aðgang að gögnum sem sýslumaður hefur aflað skv. 2. mgr. 5. gr.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurðarnefndin skal hafa aðgang að gögnum sem sýslumaður hefur aflað skv. 2. mgr. 5. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Nú telur sá sem kröfu gerir að gögn skv. 3. mgr. séu ófullnægjandi við mat á rétti hans til sanngirnisbóta samkvæmt lögum þessum, eða hann óskar af öðrum ástæðum eftir því að tjá sig nánar um atriði sem gögnin taka til, og skal þá úrskurðarnefndin heimila honum að leggja fram skriflega greinargerð.</sen>
-      <sen>Úrskurðarnefndin skal meta framkomnar upplýsingar heildstætt.</sen>
+      <paragraph nr="1">
+        <sen>Nú telur sá sem kröfu gerir að gögn skv. 3. mgr. séu ófullnægjandi við mat á rétti hans til sanngirnisbóta samkvæmt lögum þessum, eða hann óskar af öðrum ástæðum eftir því að tjá sig nánar um atriði sem gögnin taka til, og skal þá úrskurðarnefndin heimila honum að leggja fram skriflega greinargerð.</sen>
+        <sen>Úrskurðarnefndin skal meta framkomnar upplýsingar heildstætt.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Úrskurðarnefndin skal ljúka meðferð hverrar kröfu eins fljótt og auðið er.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurðarnefndin skal ljúka meðferð hverrar kröfu eins fljótt og auðið er.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="6" nr="1">
@@ -297,26 +374,31 @@
         <location type="range">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="3. mgr.">1</sen>
         </location>
         <location type="deletion">
           <art>8</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Þá getur hún sömuleiðis leitað eftir afstöðu sýslumanns til kröfunnar eða kvatt aðra einstaklinga til viðtals, t.d. fyrrverandi starfsfólk á stofnun" after-mark="$">3</sen>
         </location>
         <location type="range">
           <art>8</art>
           <subart>3</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="range">
           <art>8</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
         <location type="range">
           <art>8</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="framkomnar upplýsingar">2</sen>
         </location>
       </footnote>
@@ -326,23 +408,33 @@
     <nr-title>9. gr.</nr-title>
     <name>Ákvörðun um bætur.</name>
     <subart nr="1">
-      <sen>Úrskurðarnefndin skal kveða upp skriflegan úrskurð þar sem tekin er afstaða til kröfu þess sem leitar til nefndarinnar um bætur.</sen>
-      <sen>Tilgreina skal helstu röksemdir sem niðurstaðan er reist á.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurðarnefndin skal kveða upp skriflegan úrskurð þar sem tekin er afstaða til kröfu þess sem leitar til nefndarinnar um bætur.</sen>
+        <sen>Tilgreina skal helstu röksemdir sem niðurstaðan er reist á.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Við mat á því hvort nægilega sé í ljós leitt að bótaskilyrði 3. gr. séu uppfyllt, og við mat á þeim atriðum sem greinir í 4. gr., skal úrskurðarnefndin líta til fyrirliggjandi gagna og þess hvernig frásögn viðkomandi samræmist því sem vitað er um aðstæður á viðkomandi stofnun</sen>
+      <paragraph nr="1">
+        <sen>Við mat á því hvort nægilega sé í ljós leitt að bótaskilyrði 3. gr. séu uppfyllt, og við mat á þeim atriðum sem greinir í 4. gr., skal úrskurðarnefndin líta til fyrirliggjandi gagna og þess hvernig frásögn viðkomandi samræmist því sem vitað er um aðstæður á viðkomandi stofnun</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Nú hefur sá er kröfu gerir notið aðstoðar lögmanns við gerð kröfu og aðra ráðgjöf og skal þá úrskurðarnefndin jafnframt hugsanlegum sanngirnisbótum úrskurða hæfilegan kostnað samkvæmt réttmætri, sundurliðaðri og tímasettri skýrslu lögmannsins.</sen>
-      <sen>Að jafnaði skal ekki úrskurða hærri þóknun en svarar til 10 klst. vinnu.</sen>
+      <paragraph nr="1">
+        <sen>Nú hefur sá er kröfu gerir notið aðstoðar lögmanns við gerð kröfu og aðra ráðgjöf og skal þá úrskurðarnefndin jafnframt hugsanlegum sanngirnisbótum úrskurða hæfilegan kostnað samkvæmt réttmætri, sundurliðaðri og tímasettri skýrslu lögmannsins.</sen>
+        <sen>Að jafnaði skal ekki úrskurða hærri þóknun en svarar til 10 klst. vinnu.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Úrskurður nefndarinnar er endanlegur á stjórnsýslustigi.</sen>
-      <sen>Ekki er hægt að bera niðurstöðu um bótarétt skv. 3. og 4. gr. undir dómstóla fyrr en úrskurður úrskurðarnefndar um sanngirnisbætur liggur fyrir.</sen>
-      <sen>Mál skal höfðað innan sex mánaða frá því að úrskurðurinn var kynntur aðila máls og málsókninni skal beint að úrskurðarnefndinni.</sen>
+      <paragraph nr="1">
+        <sen>Úrskurður nefndarinnar er endanlegur á stjórnsýslustigi.</sen>
+        <sen>Ekki er hægt að bera niðurstöðu um bótarétt skv. 3. og 4. gr. undir dómstóla fyrr en úrskurður úrskurðarnefndar um sanngirnisbætur liggur fyrir.</sen>
+        <sen>Mál skal höfðað innan sex mánaða frá því að úrskurðurinn var kynntur aðila máls og málsókninni skal beint að úrskurðarnefndinni.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Gjalddagi bóta er 30 dögum eftir að úrskurður er kveðinn upp.</sen>
+      <paragraph nr="1">
+        <sen>Gjalddagi bóta er 30 dögum eftir að úrskurður er kveðinn upp.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="7" nr="1">
@@ -350,11 +442,13 @@
         <location type="deletion">
           <art>9</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Við mat á því hvort nægilega sé í ljós leitt að bótaskilyrði 3. gr. séu uppfyllt, og við mat á þeim atriðum sem greinir í 4. gr., skal úrskurðarnefndin líta til fyrirliggjandi gagna og þess hvernig frásögn viðkomandi samræmist því sem vitað er um aðstæður á viðkomandi stofnun" after-mark="$">1</sen>
         </location>
         <location type="range">
           <art>9</art>
           <subart>5</subart>
+          <paragraph>1</paragraph>
           <sen words="30 dögum">1</sen>
         </location>
       </footnote>
@@ -364,10 +458,12 @@
     <nr-title>10. gr.</nr-title>
     <name>Tengiliður vegna stofnana fyrir fötluð börn.</name>
     <subart nr="1">
-      <sen>Tengiliður stofnana fyrir fötluð börn skal koma með virkum hætti á framfæri upplýsingum til þeirra sem kunna að eiga bótarétt samkvæmt lögunum.</sen>
-      <sen>Hann skal m.a. leiðbeina þeim sem til hans leita um framsetningu bótakrafna í kjölfar innköllunar sýslumanns.</sen>
-      <sen>Þá skal hann leiðbeina fyrrverandi vistmönnum sem eiga um sárt að binda í kjölfar vistunar um úrræði sem ríki og sveitarfélög bjóða upp á, svo sem varðandi endurhæfingu og menntun.</sen>
-      <sen>Eftir að kröfulýsingarfresti skv. 1. mgr. 5. gr. lýkur getur ráðherra lagt niður starf tengiliðs að fenginni tillögu úrskurðarnefndar.</sen>
+      <paragraph nr="1">
+        <sen>Tengiliður stofnana fyrir fötluð börn skal koma með virkum hætti á framfæri upplýsingum til þeirra sem kunna að eiga bótarétt samkvæmt lögunum.</sen>
+        <sen>Hann skal m.a. leiðbeina þeim sem til hans leita um framsetningu bótakrafna í kjölfar innköllunar sýslumanns.</sen>
+        <sen>Þá skal hann leiðbeina fyrrverandi vistmönnum sem eiga um sárt að binda í kjölfar vistunar um úrræði sem ríki og sveitarfélög bjóða upp á, svo sem varðandi endurhæfingu og menntun.</sen>
+        <sen>Eftir að kröfulýsingarfresti skv. 1. mgr. 5. gr. lýkur getur ráðherra lagt niður starf tengiliðs að fenginni tillögu úrskurðarnefndar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="8" nr="1">
@@ -379,16 +475,19 @@
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Tengiliður stofnana fyrir fötluð börn skal koma">1</sen>
         </location>
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>3</sen>
         </location>
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="að kröfulýsingarfresti skv. 1. mgr. 5. gr. lýkur">4</sen>
         </location>
       </footnote>
@@ -398,13 +497,17 @@
     <nr-title>11. gr.</nr-title>
     <name>Framsal krafna og aðilaskipti fyrir erfðir.</name>
     <subart nr="1">
-      <sen>Ekki er heimilt að framselja kröfu samkvæmt lögum þessum, nema hún sé viðurkennd og fjárhæð hennar ákvörðuð af úrskurðarnefnd.</sen>
-      <sen>Bætur eru undanþegnar aðför skv. 46. gr. laga um aðför, nr. 90/1989.</sen>
+      <paragraph nr="1">
+        <sen>Ekki er heimilt að framselja kröfu samkvæmt lögum þessum, nema hún sé viðurkennd og fjárhæð hennar ákvörðuð af úrskurðarnefnd.</sen>
+        <sen>Bætur eru undanþegnar aðför skv. 46. gr. laga um aðför, nr. 90/1989.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Krafa um bætur samkvæmt lögum þessum erfist í samræmi við erfðalög, nr. 8/1962, hafi tjónþoli lýst kröfu skv. 5. gr.</sen>
-      <sen>Hafi tjónþoli fallið frá áður en honum var unnt að lýsa slíkri kröfu erfist krafan til eftirlifandi barna sem geta hvert um sig eða sameiginlega fylgt henni eftir.</sen>
-      <sen>Um aðgang að gögnum í vörslu stjórnvalda varðandi kröfu á þessum grundvelli fer samkvæmt ákvæðum 5. og 8. gr.</sen>
+      <paragraph nr="1">
+        <sen>Krafa um bætur samkvæmt lögum þessum erfist í samræmi við erfðalög, nr. 8/1962, hafi tjónþoli lýst kröfu skv. 5. gr.</sen>
+        <sen>Hafi tjónþoli fallið frá áður en honum var unnt að lýsa slíkri kröfu erfist krafan til eftirlifandi barna sem geta hvert um sig eða sameiginlega fylgt henni eftir.</sen>
+        <sen>Um aðgang að gögnum í vörslu stjórnvalda varðandi kröfu á þessum grundvelli fer samkvæmt ákvæðum 5. og 8. gr.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="9" nr="1">
@@ -412,6 +515,7 @@
         <location type="deletion">
           <art>11</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Um aðgang að gögnum í vörslu" after-mark="stjórnvalda varðandi kröfu á þessum grundvelli fer samkvæmt ákvæðum 5. og 8. gr.$">3</sen>
         </location>
       </footnote>
@@ -421,19 +525,27 @@
     <nr-title>12. gr.</nr-title>
     <name>Ýmis ákvæði.</name>
     <subart nr="1">
-      <sen>Um sanngirnisbætur samkvæmt lögum þessum fer skv. 2. tölul. 28. gr. laga um tekjuskatt, nr. 90/2003.</sen>
-      <sen>Óheimilt er að skuldajafna kröfum ríkisins, sveitarfélaga eða stofnana þeirra á móti greiðslum samkvæmt lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen>Um sanngirnisbætur samkvæmt lögum þessum fer skv. 2. tölul. 28. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+        <sen>Óheimilt er að skuldajafna kröfum ríkisins, sveitarfélaga eða stofnana þeirra á móti greiðslum samkvæmt lögum þessum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Aðrar greiðslur sem einstaklingur kann að njóta, t.d. á grundvelli laga um almannatryggingar, nr. 100/2007, eða úr lífeyrissjóðum, hafa ekki áhrif á ákvörðun sanngirnisbóta samkvæmt lögum þessum.</sen>
-      <sen>Greiddar sanngirnisbætur mynda ekki heldur stofn til frádráttar vegna slíkra annarra greiðslna, né hafa áhrif á réttindi einstaklinga í almannatryggingakerfinu að öðru leyti.</sen>
+      <paragraph nr="1">
+        <sen>Aðrar greiðslur sem einstaklingur kann að njóta, t.d. á grundvelli laga um almannatryggingar, nr. 100/2007, eða úr lífeyrissjóðum, hafa ekki áhrif á ákvörðun sanngirnisbóta samkvæmt lögum þessum.</sen>
+        <sen>Greiddar sanngirnisbætur mynda ekki heldur stofn til frádráttar vegna slíkra annarra greiðslna, né hafa áhrif á réttindi einstaklinga í almannatryggingakerfinu að öðru leyti.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Upplýsingalög gilda ekki um gögn úrskurðarnefndar um sanngirnisbætur.</sen>
-      <sen>Gögnin skulu gerð aðgengileg að þeim tíma liðnum sem getur í lögum um opinber skjalasöfn.</sen>
+      <paragraph nr="1">
+        <sen>Upplýsingalög gilda ekki um gögn úrskurðarnefndar um sanngirnisbætur.</sen>
+        <sen>Gögnin skulu gerð aðgengileg að þeim tíma liðnum sem getur í lögum um opinber skjalasöfn.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Ráðherra er heimilt að gefa út og birta í B-deild Stjórnartíðinda, að fenginni tillögu sýslumanns eða úrskurðarnefndar, nánari reglur um viðmið við ákvörðun fjárhæða, meðferð bótakrafna, aðgang sýslumanns eða úrskurðarnefndar að gögnum hjá sveitarfélögum, stofnunum þeirra og ríkisstofnunum, fyrirkomulag greiðslu bóta, viðmiðunarfjárhæð vegna lögmannskostnaðar og önnur atriði sem varða framkvæmd laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt að gefa út og birta í B-deild Stjórnartíðinda, að fenginni tillögu sýslumanns eða úrskurðarnefndar, nánari reglur um viðmið við ákvörðun fjárhæða, meðferð bótakrafna, aðgang sýslumanns eða úrskurðarnefndar að gögnum hjá sveitarfélögum, stofnunum þeirra og ríkisstofnunum, fyrirkomulag greiðslu bóta, viðmiðunarfjárhæð vegna lögmannskostnaðar og önnur atriði sem varða framkvæmd laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2019.072.html" law-nr="72" law-year="2019" law-art="21" nr="1">
@@ -442,11 +554,13 @@
           <start>
             <art>12</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>12</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -456,6 +570,7 @@
         <location type="pointer">
           <art>12</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra er heimilt að gefa út og birta í B-deild Stjórnartíðinda, að fenginni tillögu sýslumanns eða úrskurðarnefndar, nánari reglur" after-mark="um viðmið við ákvörðun fjárhæða, meðferð bótakrafna, aðgang sýslumanns eða úrskurðarnefndar að gögnum hjá sveitarfélögum, stofnunum þeirra og ríkisstofnunum, fyrirkomulag greiðslu bóta, viðmiðunarfjárhæð vegna lögmannskostnaðar og önnur atriði sem varða framkvæmd laga þessara.$">1</sen>
         </location>
       </footnote>
@@ -465,7 +580,9 @@
     <nr-title>13. gr.</nr-title>
     <name>Ábyrgðarskipting.</name>
     <subart nr="1">
-      <sen>Hafi sveitarfélag rekið stofnun skal ráðherra efna til viðræðna við viðkomandi um skiptingu kostnaðar af bótagreiðslum og starfi sýslumanns og úrskurðarnefndar.</sen>
+      <paragraph nr="1">
+        <sen>Hafi sveitarfélag rekið stofnun skal ráðherra efna til viðræðna við viðkomandi um skiptingu kostnaðar af bótagreiðslum og starfi sýslumanns og úrskurðarnefndar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="10" nr="1">
@@ -473,6 +590,7 @@
         <location type="deletion">
           <art>13</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Hafi sveitarfélag rekið" after-mark="stofnun skal ráðherra efna til viðræðna við viðkomandi um skiptingu kostnaðar af bótagreiðslum og starfi sýslumanns og úrskurðarnefndar.$">1</sen>
         </location>
       </footnote>
@@ -482,8 +600,10 @@
     <nr-title>14. gr.</nr-title>
     <name>Gildistaka.</name>
     <subart nr="1">
-      <sen>Lög þessi öðlast þegar gildi.</sen>
-      <sen>Lögin falla brott 31. desember 2023.</sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast þegar gildi.</sen>
+        <sen>Lögin falla brott 31. desember 2023.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.148.html" law-nr="148" law-year="2020" law-art="11" nr="1">
@@ -491,6 +611,7 @@
         <location type="range">
           <art>14</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>2</sen>
         </location>
       </footnote>

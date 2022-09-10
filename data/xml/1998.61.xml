@@ -11,24 +11,34 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Læknir skal rita dánarvottorð fyrir hvern mann er deyr hér á landi.</sen>
-      <sen>Vottorðið skal ritað á eyðublað sem landlæknir lætur útbúa.</sen>
+      <paragraph nr="1">
+        <sen>Læknir skal rita dánarvottorð fyrir hvern mann er deyr hér á landi.</sen>
+        <sen>Vottorðið skal ritað á eyðublað sem landlæknir lætur útbúa.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Líkskoðun.</ambiguous-section>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Læknir skoðar lík og athugar hvernig andlát hefur borið að, dauðaskilmerki og líklega dánarorsök.</sen>
+      <paragraph nr="1">
+        <sen>Læknir skoðar lík og athugar hvernig andlát hefur borið að, dauðaskilmerki og líklega dánarorsök.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Andist maður á heilbrigðisstofnun ber læknir sá sem annaðist hinn látna á stofnuninni eða yfirlæknir viðkomandi deildar ábyrgð á að líkið verði skoðað.</sen>
+      <paragraph nr="1">
+        <sen>Andist maður á heilbrigðisstofnun ber læknir sá sem annaðist hinn látna á stofnuninni eða yfirlæknir viðkomandi deildar ábyrgð á að líkið verði skoðað.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Andist maður utan heilbrigðisstofnunar skal læknir sá sem stundaði hinn látna í banalegunni skoða líkið.</sen>
+      <paragraph nr="1">
+        <sen>Andist maður utan heilbrigðisstofnunar skal læknir sá sem stundaði hinn látna í banalegunni skoða líkið.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Við óvænt dauðsföll eða ef ekki tekst að ná til læknis sem stundaði hinn látna í banalegunni skal tilkynna andlátið til yfirlæknis heilsugæslu sem ber þá ábyrgð á að líkið verði skoðað.</sen>
+      <paragraph nr="1">
+        <sen>Við óvænt dauðsföll eða ef ekki tekst að ná til læknis sem stundaði hinn látna í banalegunni skal tilkynna andlátið til yfirlæknis heilsugæslu sem ber þá ábyrgð á að líkið verði skoðað.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2002.093.html" law-nr="93" law-year="2002" law-art="22" nr="1">
@@ -36,6 +46,7 @@
         <location type="range">
           <art>2</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -45,26 +56,38 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Læknir sem kvaddur er til vegna líkskoðunar skal gera lögreglu viðvart ef:</sen>
+      <paragraph nr="1">
+        <sen>Læknir sem kvaddur er til vegna líkskoðunar skal gera lögreglu viðvart ef:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>ætla má að andlát tengist refsiverðu athæfi, sjálfsvígi eða andláti af völdum slyss,</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>ætla má að andlát tengist refsiverðu athæfi, sjálfsvígi eða andláti af völdum slyss,</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>maður hefur fundist látinn,</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>maður hefur fundist látinn,</sen>
+        </paragraph>
       </numart>
       <numart nr="3" type="numeric">
-        <nr-title>3.</nr-title>
-        <sen>dauðsfall er óvænt,</sen>
+        <paragraph nr="1">
+          <nr-title>3.</nr-title>
+          <sen>dauðsfall er óvænt,</sen>
+        </paragraph>
       </numart>
       <numart nr="4" type="numeric">
-        <nr-title>4.</nr-title>
-        <sen>maður andast í fangelsi eða á öðrum áþekkum stað eða</sen>
+        <paragraph nr="1">
+          <nr-title>4.</nr-title>
+          <sen>maður andast í fangelsi eða á öðrum áþekkum stað eða</sen>
+        </paragraph>
       </numart>
       <numart nr="5" type="numeric">
-        <nr-title>5.</nr-title>
-        <sen>ætla má að dauðsfall megi rekja til mistaka, vanrækslu eða óhappatilviks við læknismeðferð.</sen>
+        <paragraph nr="1">
+          <nr-title>5.</nr-title>
+          <sen>ætla má að dauðsfall megi rekja til mistaka, vanrækslu eða óhappatilviks við læknismeðferð.</sen>
+        </paragraph>
       </numart>
     </subart>
   </art>
@@ -72,121 +95,175 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Þegar lögreglu er gert viðvart um andlát ákveður hún hvort lík skuli skoða réttarlæknisfræðilega.</sen>
-      <sen>Slík skoðun skal að jafnaði gerð nema:</sen>
+      <paragraph nr="1">
+        <sen>Þegar lögreglu er gert viðvart um andlát ákveður hún hvort lík skuli skoða réttarlæknisfræðilega.</sen>
+        <sen>Slík skoðun skal að jafnaði gerð nema:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>andlát beri að svo löngu eftir slys að lögregla telji slíka skoðun óþarfa í ljósi fyrirliggjandi upplýsinga eða</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>andlát beri að svo löngu eftir slys að lögregla telji slíka skoðun óþarfa í ljósi fyrirliggjandi upplýsinga eða</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>lögregla og læknir eru sammála um að dauðdaginn hafi verið eðlilegur.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>lögregla og læknir eru sammála um að dauðdaginn hafi verið eðlilegur.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Réttarlæknisfræðileg líkskoðun er gerð af lögreglu og lækni í sameiningu.</sen>
+      <paragraph nr="1">
+        <sen>Réttarlæknisfræðileg líkskoðun er gerð af lögreglu og lækni í sameiningu.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Krufning.</ambiguous-section>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen>Að lokinni líkskoðun má kryfja lík í læknisfræðilegum tilgangi og fjarlægja líkamsvef og annað líffræðilegt efni, sbr. þó lög um brottnám líffæra:</sen>
+      <paragraph nr="1">
+        <sen>Að lokinni líkskoðun má kryfja lík í læknisfræðilegum tilgangi og fjarlægja líkamsvef og annað líffræðilegt efni, sbr. þó lög um brottnám líffæra:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>hafi hinn látni eftir að hann varð sjálfráða samþykkt krufningu skriflega eða</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>hafi hinn látni eftir að hann varð sjálfráða samþykkt krufningu skriflega eða</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>nánasti venslamaður hins látna hafi samþykkt krufningu, enda þyki sannað að hún sé ekki í andstöðu við vilja hins látna.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>nánasti venslamaður hins látna hafi samþykkt krufningu, enda þyki sannað að hún sé ekki í andstöðu við vilja hins látna.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Þurfi að afla samþykkis nánasta venslamanns fyrir krufningu skal læknir veita upplýsingar um tilgang og markmið krufningarinnar.</sen>
+      <paragraph nr="1">
+        <sen>Þurfi að afla samþykkis nánasta venslamanns fyrir krufningu skal læknir veita upplýsingar um tilgang og markmið krufningarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Maka, börnum, ef hinn látni átti ekki maka, foreldrum, ef hinn látni var barnlaus, eða systkinum, ef foreldrar hins látna eru einnig látnir, er heimilt að krefjast krufningar ef í ljós kemur að ekki er af hálfu læknis hins látna fyrirhugað að óska eftir krufningu.</sen>
+      <paragraph nr="1">
+        <sen>Maka, börnum, ef hinn látni átti ekki maka, foreldrum, ef hinn látni var barnlaus, eða systkinum, ef foreldrar hins látna eru einnig látnir, er heimilt að krefjast krufningar ef í ljós kemur að ekki er af hálfu læknis hins látna fyrirhugað að óska eftir krufningu.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Ef gera á réttarlæknisfræðilega líkskoðun eða réttarkrufningu er óheimilt að kryfja lík í læknisfræðilegum tilgangi eingöngu.</sen>
+      <paragraph nr="1">
+        <sen>Ef gera á réttarlæknisfræðilega líkskoðun eða réttarkrufningu er óheimilt að kryfja lík í læknisfræðilegum tilgangi eingöngu.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Réttarkrufning.</ambiguous-section>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen>Réttarkrufning skal gerð:</sen>
+      <paragraph nr="1">
+        <sen>Réttarkrufning skal gerð:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>þegar dauðsfall verður rakið til refsiverðrar háttsemi eða ef ekki reynist unnt að útiloka slíkt með fullnægjandi hætti, eða þegar slík krufning er talin nauðsynleg til að koma í veg fyrir að síðar vakni grunsemdir um að dauðsfallið megi rekja til refsiverðs verknaðar eða</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>þegar dauðsfall verður rakið til refsiverðrar háttsemi eða ef ekki reynist unnt að útiloka slíkt með fullnægjandi hætti, eða þegar slík krufning er talin nauðsynleg til að koma í veg fyrir að síðar vakni grunsemdir um að dauðsfallið megi rekja til refsiverðs verknaðar eða</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>þegar dánarorsök verður ekki með viðunandi hætti ákvörðuð með réttarlæknisfræðilegri líkskoðun.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>þegar dánarorsök verður ekki með viðunandi hætti ákvörðuð með réttarlæknisfræðilegri líkskoðun.</sen>
+        </paragraph>
       </numart>
     </subart>
     <subart nr="2">
-      <sen>Í öðrum tilvikum tekur lögregla ákvörðun um nauðsyn réttarkrufningar.</sen>
+      <paragraph nr="1">
+        <sen>Í öðrum tilvikum tekur lögregla ákvörðun um nauðsyn réttarkrufningar.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Dómsúrskurður um réttarkrufningu.</ambiguous-section>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen>Lögregla skal kynna nánasta venslamanni nauðsyn réttarkrufningar og leita samþykkis hans.</sen>
+      <paragraph nr="1">
+        <sen>Lögregla skal kynna nánasta venslamanni nauðsyn réttarkrufningar og leita samþykkis hans.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Samþykki nánasti venslamaður ekki réttarkrufningu skal lögregla leita úrskurðar dómara um hana.</sen>
+      <paragraph nr="1">
+        <sen>Samþykki nánasti venslamaður ekki réttarkrufningu skal lögregla leita úrskurðar dómara um hana.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Útgáfa dánarvottorðs.</ambiguous-section>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen>Dánarvottorð ritar sá læknir sem skoðar líkið eða sá sem ber ábyrgð á að það sé gert.</sen>
+      <paragraph nr="1">
+        <sen>Dánarvottorð ritar sá læknir sem skoðar líkið eða sá sem ber ábyrgð á að það sé gert.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Hafi andlát verið tilkynnt lögreglu má ekki rita dánarvottorð fyrr en hún hefur ákveðið að ekki sé ástæða til réttarlæknisfræðilegrar líkskoðunar eða réttarkrufningar.</sen>
+      <paragraph nr="1">
+        <sen>Hafi andlát verið tilkynnt lögreglu má ekki rita dánarvottorð fyrr en hún hefur ákveðið að ekki sé ástæða til réttarlæknisfræðilegrar líkskoðunar eða réttarkrufningar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Ef réttarlæknisfræðileg líkskoðun er gerð skal dánarvottorð ritað af lækninum sem tók þátt í skoðuninni.</sen>
-      <sen>Læknir sem framkvæmir réttarkrufningu ritar dánarvottorð.</sen>
+      <paragraph nr="1">
+        <sen>Ef réttarlæknisfræðileg líkskoðun er gerð skal dánarvottorð ritað af lækninum sem tók þátt í skoðuninni.</sen>
+        <sen>Læknir sem framkvæmir réttarkrufningu ritar dánarvottorð.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Umönnun líks.</ambiguous-section>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen>Lík skal geyma á stað við hæfi.</sen>
-      <sen>Ef ekki er unnt að staðfesta andlát skal fylgjast með viðkomandi og ekki flytja í líkhús fyrr en læknir hefur staðfest dauðaskilmerki.</sen>
+      <paragraph nr="1">
+        <sen>Lík skal geyma á stað við hæfi.</sen>
+        <sen>Ef ekki er unnt að staðfesta andlát skal fylgjast með viðkomandi og ekki flytja í líkhús fyrr en læknir hefur staðfest dauðaskilmerki.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Meðferð dánarvottorðs og heimild til útfarar.</ambiguous-section>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen>Dánarvottorð skal afhent venslamanni hins látna.</sen>
+      <paragraph nr="1">
+        <sen>Dánarvottorð skal afhent venslamanni hins látna.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Venslamaður afhendir dánarvottorðið sýslumanni í því umdæmi þar sem hinn látni átti lögheimili á dánardægri eða ætla má að dánarbúi verði skipt samkvæmt ákvæðum laga um skipti á dánarbúum o.fl.</sen>
+      <paragraph nr="1">
+        <sen>Venslamaður afhendir dánarvottorðið sýslumanni í því umdæmi þar sem hinn látni átti lögheimili á dánardægri eða ætla má að dánarbúi verði skipt samkvæmt ákvæðum laga um skipti á dánarbúum o.fl.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Nú á ákvæði 2. mgr. ekki við, t.d. vegna búsetu hins látna erlendis, og skal þá afhenda dánarvottorðið sýslumanni í því umdæmi þar sem útför hins látna verður gerð.</sen>
+      <paragraph nr="1">
+        <sen>Nú á ákvæði 2. mgr. ekki við, t.d. vegna búsetu hins látna erlendis, og skal þá afhenda dánarvottorðið sýslumanni í því umdæmi þar sem útför hins látna verður gerð.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Sýslumaður afhendir venslamanni staðfestingu þess að andlát hafi verið tilkynnt og má ekki gera útför nema sá sem hana annast hafi fengið slíka staðfestingu.</sen>
+      <paragraph nr="1">
+        <sen>Sýslumaður afhendir venslamanni staðfestingu þess að andlát hafi verið tilkynnt og má ekki gera útför nema sá sem hana annast hafi fengið slíka staðfestingu.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Sýslumaður sendir dánarvottorð svo fljótt sem kostur er til Þjóðskrár Íslands.</sen>
-      <sen>Jafnskjótt og andlát hefur verið skráð í þjóðskrá, ásamt nauðsynlegum upplýsingum, sendir Þjóðskrá Íslands dánarvottorðið til landlæknis.</sen>
+      <paragraph nr="1">
+        <sen>Sýslumaður sendir dánarvottorð svo fljótt sem kostur er til Þjóðskrár Íslands.</sen>
+        <sen>Jafnskjótt og andlát hefur verið skráð í þjóðskrá, ásamt nauðsynlegum upplýsingum, sendir Þjóðskrá Íslands dánarvottorðið til landlæknis.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen>Hagstofa Íslands semur skýrslur um dánarorsakir og andvana fædd börn hér á landi.</sen>
-      <sen>Landlæknir skal afhenda Hagstofunni þau gögn sem hún óskar eftir og nauðsynleg eru í þeim tilgangi.</sen>
+      <paragraph nr="1">
+        <sen>Hagstofa Íslands semur skýrslur um dánarorsakir og andvana fædd börn hér á landi.</sen>
+        <sen>Landlæknir skal afhenda Hagstofunni þau gögn sem hún óskar eftir og nauðsynleg eru í þeim tilgangi.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen>Heimilt er að miðla upplýsingum sem fram koma í dánarvottorði rafrænt í samræmi við reglugerð sem ráðherra setur.</sen>
-      <sen>Í reglugerð skal mælt fyrir um almenn skilyrði varðandi vinnslu og tegund gagna og upplýsinga, til hvaða stofnana sé heimilt að miðla persónuupplýsingum og í hvaða tilgangi, auk fyrirmæla um öryggi og verklag við vinnslu.</sen>
+      <paragraph nr="1">
+        <sen>Heimilt er að miðla upplýsingum sem fram koma í dánarvottorði rafrænt í samræmi við reglugerð sem ráðherra setur.</sen>
+        <sen>Í reglugerð skal mælt fyrir um almenn skilyrði varðandi vinnslu og tegund gagna og upplýsinga, til hvaða stofnana sé heimilt að miðla persónuupplýsingum og í hvaða tilgangi, auk fyrirmæla um öryggi og verklag við vinnslu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.028.html" law-nr="28" law-year="2011" law-art="16" nr="1">
@@ -195,11 +272,13 @@
           <start>
             <art>10</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>10</art>
             <subart>6</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -210,11 +289,13 @@
           <start>
             <art>10</art>
             <subart>7</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </start>
           <end>
             <art>10</art>
             <subart>7</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </end>
         </location>
@@ -225,7 +306,9 @@
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <subart nr="1">
-      <sen>Fæðist barn andvana skal ekki ritað dánarvottorð, en um það skal tilkynnt til Þjóðskrár Íslands og landlæknis.</sen>
+      <paragraph nr="1">
+        <sen>Fæðist barn andvana skal ekki ritað dánarvottorð, en um það skal tilkynnt til Þjóðskrár Íslands og landlæknis.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.028.html" law-nr="28" law-year="2011" law-art="16" nr="1">
@@ -233,6 +316,7 @@
         <location type="range">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -242,41 +326,57 @@
   <art nr="12">
     <nr-title>12. gr.</nr-title>
     <subart nr="1">
-      <sen>Nú er lík flutt úr landi og ber sá sem það flytur ábyrgð á að dánarvottorð sé afhent sýslumanni í því umdæmi þar sem maðurinn lést.</sen>
-      <sen>Sýslumaður afhendir flutningsaðila staðfest afrit dánarvottorðs og skal það fylgja líkinu til viðtakanda erlendis.</sen>
-      <sen>Ekki má flytja lík úr landi nema ákvæðum þessum sé fylgt.</sen>
+      <paragraph nr="1">
+        <sen>Nú er lík flutt úr landi og ber sá sem það flytur ábyrgð á að dánarvottorð sé afhent sýslumanni í því umdæmi þar sem maðurinn lést.</sen>
+        <sen>Sýslumaður afhendir flutningsaðila staðfest afrit dánarvottorðs og skal það fylgja líkinu til viðtakanda erlendis.</sen>
+        <sen>Ekki má flytja lík úr landi nema ákvæðum þessum sé fylgt.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Refsingar.</ambiguous-section>
   <art nr="13">
     <nr-title>13. gr.</nr-title>
     <subart nr="1">
-      <sen>Brot gegn lögum þessum eða reglum sem settar eru eftir þeim varða sektum nema þyngri hegning sé við lögð í öðrum lögum.</sen>
+      <paragraph nr="1">
+        <sen>Brot gegn lögum þessum eða reglum sem settar eru eftir þeim varða sektum nema þyngri hegning sé við lögð í öðrum lögum.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Reglugerðarheimild.</ambiguous-section>
   <art nr="14">
     <nr-title>14. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra er heimilt með reglugerð að setja nánari ákvæði um framkvæmd laga þessara.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt með reglugerð að setja nánari ákvæði um framkvæmd laga þessara.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Ráðherra skal setja í reglugerð ákvæði um:</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra skal setja í reglugerð ákvæði um:</sen>
+      </paragraph>
       <numart nr="1" type="numeric">
-        <nr-title>1.</nr-title>
-        <sen>Ritun dánarvottorða, að fengnum tillögum landlæknis.</sen>
+        <paragraph nr="1">
+          <nr-title>1.</nr-title>
+          <sen>Ritun dánarvottorða, að fengnum tillögum landlæknis.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" type="numeric">
-        <nr-title>2.</nr-title>
-        <sen>Framkvæmd réttarlæknisfræðilegrar líkskoðunar, þar á meðal um lágmarkskunnáttu lækna sem gera réttarlæknisfræðilega líkskoðun.</sen>
+        <paragraph nr="1">
+          <nr-title>2.</nr-title>
+          <sen>Framkvæmd réttarlæknisfræðilegrar líkskoðunar, þar á meðal um lágmarkskunnáttu lækna sem gera réttarlæknisfræðilega líkskoðun.</sen>
+        </paragraph>
       </numart>
       <numart nr="3" type="numeric">
-        <nr-title>3.</nr-title>
-        <sen>Réttarkrufningu.</sen>
+        <paragraph nr="1">
+          <nr-title>3.</nr-title>
+          <sen>Réttarkrufningu.</sen>
+        </paragraph>
       </numart>
       <numart nr="4" type="numeric">
-        <nr-title>4.</nr-title>
-        <sen>Hvernig Þjóðskrá Íslands og landlækni verði tilkynnt um andvana fædd börn.</sen>
+        <paragraph nr="1">
+          <nr-title>4.</nr-title>
+          <sen>Hvernig Þjóðskrá Íslands og landlækni verði tilkynnt um andvana fædd börn.</sen>
+        </paragraph>
       </numart>
     </subart>
     <footnotes>
@@ -285,6 +385,7 @@
         <location type="pointer">
           <art>14</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra skal setja í reglugerð" after-mark="ákvæði um:$">1</sen>
         </location>
       </footnote>
@@ -294,6 +395,7 @@
           <art>14</art>
           <subart>2</subart>
           <numart>4</numart>
+          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -303,7 +405,9 @@
   <art nr="15">
     <nr-title>15. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast gildi 1. janúar 1999.</sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast gildi 1. janúar 1999.</sen>
+      </paragraph>
     </subart>
   </art>
   <ambiguous-section>Brottfall laga.</ambiguous-section>

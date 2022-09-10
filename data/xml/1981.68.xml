@@ -10,14 +10,18 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen>Ríkisstjórninni er heimilt að fullgilda fyrir Íslands hönd samning frá 18. nóvember 1980 um framtíðarsamvinnu ríkja varðandi fiskveiðar á Norðaustur-Atlantshafi.</sen>
-      <sen>Samningurinn er prentaður sem fylgiskjal með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen>Ríkisstjórninni er heimilt að fullgilda fyrir Íslands hönd samning frá 18. nóvember 1980 um framtíðarsamvinnu ríkja varðandi fiskveiðar á Norðaustur-Atlantshafi.</sen>
+        <sen>Samningurinn er prentaður sem fylgiskjal með lögum þessum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen>Ráðherra er heimilt að setja reglur um framkvæmd samningsins.</sen>
+      <paragraph nr="1">
+        <sen>Ráðherra er heimilt að setja reglur um framkvæmd samningsins.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="93" nr="1">
@@ -25,6 +29,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen words="Ráðherra">1</sen>
         </location>
       </footnote>
@@ -33,6 +38,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur" after-mark="um framkvæmd samningsins.$">1</sen>
         </location>
       </footnote>
@@ -41,23 +47,35 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen>Brot á reglum sem settar verða samkvæmt 2. gr. laga þessara skulu varða sektum 2000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      <paragraph nr="1">
+        <sen>Brot á reglum sem settar verða samkvæmt 2. gr. laga þessara skulu varða sektum 2000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen>Ennfremur er heimilt að gera afla og veiðarfæri upptæk.</sen>
+      <paragraph nr="1">
+        <sen>Ennfremur er heimilt að gera afla og veiðarfæri upptæk.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen>Auk þess má láta brot varða skipstjóra fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      <paragraph nr="1">
+        <sen>Auk þess má láta brot varða skipstjóra fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen>Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar er það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður greiddur að fullu.</sen>
-      <sen>Þó er heimilt að láta skip laust fyrr ef sett er bankatrygging, eða önnur trygging jafngild að mati dómara, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      <paragraph nr="1">
+        <sen>Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar er það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður greiddur að fullu.</sen>
+        <sen>Þó er heimilt að láta skip laust fyrr ef sett er bankatrygging, eða önnur trygging jafngild að mati dómara, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen>Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      <paragraph nr="1">
+        <sen>Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen/>
+      <paragraph nr="1">
+        <sen/>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-nr="19" law-year="1991" law-art="195" nr="1">
@@ -65,6 +83,7 @@
         <location type="range">
           <art>3</art>
           <subart>4</subart>
+          <paragraph>1</paragraph>
           <sen words="Kyrrsetja skal">1</sen>
         </location>
       </footnote>
@@ -73,6 +92,7 @@
         <location type="deletion">
           <art>3</art>
           <subart>6</subart>
+          <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">1</sen>
         </location>
       </footnote>
@@ -81,10 +101,12 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen>Lög þessi öðlast þegar gildi.</sen>
-      <sen>
-        <a href="http://www.althingi.is/lagasafn/leidbeiningar" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða. Sjá 7. lið í leiðbeiningum um notkun lagasafns.">…</a>
-      </sen>
+      <paragraph nr="1">
+        <sen>Lög þessi öðlast þegar gildi.</sen>
+        <sen>
+          <a href="http://www.althingi.is/lagasafn/leidbeiningar" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða. Sjá 7. lið í leiðbeiningum um notkun lagasafns.">…</a>
+        </sen>
+      </paragraph>
     </subart>
   </art>
 </law>

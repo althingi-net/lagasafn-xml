@@ -22,8 +22,10 @@
       <nr-title>1. gr.</nr-title>
       <name>Leyfi til ættleiðingar.</name>
       <subart nr="1">
-        <sen>Sýslumaður veitir leyfi til ættleiðingar.</sen>
-        <sen>Ráðherra er heimilt að ákveða að leyfisveitingar skv. II.–VI. kafla laga þessara verði á hendi eins sýslumanns.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumaður veitir leyfi til ættleiðingar.</sen>
+          <sen>Ráðherra er heimilt að ákveða að leyfisveitingar skv. II.–VI. kafla laga þessara verði á hendi eins sýslumanns.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="294" nr="1">
@@ -32,6 +34,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">2</sen>
           </location>
         </footnote>
@@ -42,12 +45,14 @@
               <chapter>1</chapter>
               <art>1</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>1</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -58,19 +63,29 @@
       <nr-title>2. gr.</nr-title>
       <name>Hverjir geta verið ættleiðendur.</name>
       <subart nr="1">
-        <sen>Hjón eða einstaklingar sem hafa verið í óvígðri sambúð í a.m.k. fimm ár skulu standa saman að ættleiðingu, enda þeim einum heimilt að ættleiða saman með þeim frávikum sem í grein þessari getur.</sen>
+        <paragraph nr="1">
+          <sen>Hjón eða einstaklingar sem hafa verið í óvígðri sambúð í a.m.k. fimm ár skulu standa saman að ættleiðingu, enda þeim einum heimilt að ættleiða saman með þeim frávikum sem í grein þessari getur.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Öðru hjóna eða einstaklingi í óvígðri sambúð má þó með samþykki hins veita leyfi til að ættleiða barn þess eða kjörbarn.</sen>
+        <paragraph nr="1">
+          <sen>Öðru hjóna eða einstaklingi í óvígðri sambúð má þó með samþykki hins veita leyfi til að ættleiða barn þess eða kjörbarn.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Öðru hjóna eða einstaklingi í óvígðri sambúð má og veita leyfi til ættleiðingar ef hitt er horfið eða geðrænum högum þess svo háttað að það beri ekki skyn á gildi ættleiðingar.</sen>
+        <paragraph nr="1">
+          <sen>Öðru hjóna eða einstaklingi í óvígðri sambúð má og veita leyfi til ættleiðingar ef hitt er horfið eða geðrænum högum þess svo háttað að það beri ekki skyn á gildi ættleiðingar.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Heimilt er að leyfa einhleypum manni að ættleiða barn ef sérstaklega stendur á og ættleiðing er ótvírætt talin barninu til hagsbóta.</sen>
+        <paragraph nr="1">
+          <sen>Heimilt er að leyfa einhleypum manni að ættleiða barn ef sérstaklega stendur á og ættleiðing er ótvírætt talin barninu til hagsbóta.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen>Með óvígðri sambúð í lögum þessum er átt við sambúð tveggja einstaklinga sem skráð er í þjóðskrá eða sem ráða má af öðrum ótvíræðum gögnum.</sen>
+        <paragraph nr="1">
+          <sen>Með óvígðri sambúð í lögum þessum er átt við sambúð tveggja einstaklinga sem skráð er í þjóðskrá eða sem ráða má af öðrum ótvíræðum gögnum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.065.html" law-nr="65" law-year="2010" law-art="14" nr="1">
@@ -79,18 +94,21 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Hjón" after-mark="eða einstaklingar sem hafa verið í óvígðri sambúð í a.m.k. fimm ár skulu standa saman(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?að ættleiðingu, enda þeim einum heimilt að ættleiða saman með þeim frávikum sem í grein þessari getur.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Öðru hjóna eða einstaklingi í" after-mark="óvígðri sambúð(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?má þó með samþykki hins veita leyfi til að ættleiða barn þess eða kjörbarn.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
             <art>2</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Öðru hjóna eða einstaklingi í" after-mark="óvígðri sambúð(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?má og veita leyfi til ættleiðingar ef hitt er horfið eða geðrænum högum þess svo háttað að það beri ekki skyn á gildi ættleiðingar.$">1</sen>
           </location>
         </footnote>
@@ -100,24 +118,28 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Hjón eða einstaklingar sem hafa verið í óvígðri sambúð í a.m.k. fimm ár skulu standa saman">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Öðru hjóna eða einstaklingi í óvígðri sambúð">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>2</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Öðru hjóna eða einstaklingi í óvígðri sambúð">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
             <art>2</art>
             <subart>5</subart>
+            <paragraph>1</paragraph>
             <sen words="sambúð tveggja einstaklinga">1</sen>
           </location>
         </footnote>
@@ -127,74 +149,104 @@
       <nr-title>3. gr.</nr-title>
       <name>Hverja má ættleiða.</name>
       <subart nr="1">
-        <sen>Lög þessi taka til ættleiðinga barna innan 18 ára aldurs.</sen>
-        <sen>Sama er um ættleiðingar þeirra sem eldri eru, nema annars sé getið og eftir því sem við á.</sen>
-        <sen>Með orðinu barn samkvæmt lögum þessum er átt við barn eða ungmenni allt til 18 ára aldurs.</sen>
+        <paragraph nr="1">
+          <sen>Lög þessi taka til ættleiðinga barna innan 18 ára aldurs.</sen>
+          <sen>Sama er um ættleiðingar þeirra sem eldri eru, nema annars sé getið og eftir því sem við á.</sen>
+          <sen>Með orðinu barn samkvæmt lögum þessum er átt við barn eða ungmenni allt til 18 ára aldurs.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Eigi er manni heimilt að ættleiða kynbarn sitt, nema það hafi verið ættleitt áður og ættleiðing af hálfu kynforeldris þyki bæta hag barnsins.</sen>
+        <paragraph nr="1">
+          <sen>Eigi er manni heimilt að ættleiða kynbarn sitt, nema það hafi verið ættleitt áður og ættleiðing af hálfu kynforeldris þyki bæta hag barnsins.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="4">
       <nr-title>4. gr.</nr-title>
       <name>Almenn skilyrði ættleiðingar.</name>
       <subart nr="1">
-        <sen>Eigi má veita leyfi til ættleiðingar, nema sýnt þyki eftir könnun viðkomandi barnaverndarnefndar á málefnum væntanlegs kjörbarns og þeirra sem óska ættleiðingar að ættleiðing sé barninu fyrir bestu, enda sé ætlun ættleiðenda að annast og ala barnið upp eða sá sem ættleiða á hafi verið alinn upp hjá þeim eða aðrar alveg sérstakar ástæður mæli með ættleiðingu.</sen>
+        <paragraph nr="1">
+          <sen>Eigi má veita leyfi til ættleiðingar, nema sýnt þyki eftir könnun viðkomandi barnaverndarnefndar á málefnum væntanlegs kjörbarns og þeirra sem óska ættleiðingar að ættleiðing sé barninu fyrir bestu, enda sé ætlun ættleiðenda að annast og ala barnið upp eða sá sem ættleiða á hafi verið alinn upp hjá þeim eða aðrar alveg sérstakar ástæður mæli með ættleiðingu.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <name>Aldur ættleiðanda.</name>
       <subart nr="1">
-        <sen>Leyfi til ættleiðingar verður veitt þeim einum sem náð hefur 25 ára aldri, en þó má, ef sérstaklega stendur á, veita þeim sem orðinn er 20 ára leyfi til ættleiðingar.</sen>
+        <paragraph nr="1">
+          <sen>Leyfi til ættleiðingar verður veitt þeim einum sem náð hefur 25 ára aldri, en þó má, ef sérstaklega stendur á, veita þeim sem orðinn er 20 ára leyfi til ættleiðingar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <name>Samþykki þess sem ættleiða á.</name>
       <subart nr="1">
-        <sen>Eigi má ættleiða þann sem orðinn er 12 ára án samþykkis hans, nema andlegum högum hans sé svo farið að hann geti ekki gefið marktækt samþykki eða ef varhugavert þykir vegna hagsmuna hans að leita eftir því.</sen>
+        <paragraph nr="1">
+          <sen>Eigi má ættleiða þann sem orðinn er 12 ára án samþykkis hans, nema andlegum högum hans sé svo farið að hann geti ekki gefið marktækt samþykki eða ef varhugavert þykir vegna hagsmuna hans að leita eftir því.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Áður en barn samþykkir ættleiðingu skv. 1. mgr. skal ræða við það á vegum barnaverndarnefndar sem í hlut á og veita því leiðsögn um ættleiðingu og réttaráhrif hennar.</sen>
+        <paragraph nr="1">
+          <sen>Áður en barn samþykkir ættleiðingu skv. 1. mgr. skal ræða við það á vegum barnaverndarnefndar sem í hlut á og veita því leiðsögn um ættleiðingu og réttaráhrif hennar.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Ef barn sem ættleiða á er yngra en 12 ára skal með sama hætti og greinir í 2. mgr. leita eftir afstöðu þess til fyrirhugaðrar ættleiðingar ef slíkt þykir gerlegt miðað við aldur þess og þroska.</sen>
+        <paragraph nr="1">
+          <sen>Ef barn sem ættleiða á er yngra en 12 ára skal með sama hætti og greinir í 2. mgr. leita eftir afstöðu þess til fyrirhugaðrar ættleiðingar ef slíkt þykir gerlegt miðað við aldur þess og þroska.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="7">
       <nr-title>7. gr.</nr-title>
       <name>Samþykki þess sem fer með forsjá barns eða sérstaks lögráðamanns.</name>
       <subart nr="1">
-        <sen>Samþykki foreldra sem fara með forsjá barns þarf til ættleiðingar þess.</sen>
+        <paragraph nr="1">
+          <sen>Samþykki foreldra sem fara með forsjá barns þarf til ættleiðingar þess.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Ef högum annars foreldris sem fer með forsjá barns er svo farið að það getur ekki látið uppi marktækt samþykki eða það er horfið nægir samþykki hins.</sen>
-        <sen>Ef þannig er ástatt um báða foreldra þarf samþykki sérstaklega skipaðs lögráðamanns barns.</sen>
+        <paragraph nr="1">
+          <sen>Ef högum annars foreldris sem fer með forsjá barns er svo farið að það getur ekki látið uppi marktækt samþykki eða það er horfið nægir samþykki hins.</sen>
+          <sen>Ef þannig er ástatt um báða foreldra þarf samþykki sérstaklega skipaðs lögráðamanns barns.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Nú fer barnaverndarnefnd með forsjá barns og þarf þá samþykki nefndarinnar til ættleiðingar þess.</sen>
+        <paragraph nr="1">
+          <sen>Nú fer barnaverndarnefnd með forsjá barns og þarf þá samþykki nefndarinnar til ættleiðingar þess.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Veita má leyfi til ættleiðingar, þrátt fyrir að samþykki skv. 1. eða 2. mgr. skorti, ef barn hefur verið í fóstri hjá umsækjendum og hagir þess mæla að öðru leyti eindregið með því að það verði ættleitt.</sen>
+        <paragraph nr="1">
+          <sen>Veita má leyfi til ættleiðingar, þrátt fyrir að samþykki skv. 1. eða 2. mgr. skorti, ef barn hefur verið í fóstri hjá umsækjendum og hagir þess mæla að öðru leyti eindregið með því að það verði ættleitt.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="8">
       <nr-title>8. gr.</nr-title>
       <name>Form og efni samþykkis.</name>
       <subart nr="1">
-        <sen>Samþykki til ættleiðingar skal vera skriflegt og skal viðkomandi staðfesta það fyrir starfsmanni sýslumanns sem vottar að viðkomanda hafi verið leiðbeint um réttaráhrif samþykkis og ættleiðingar.</sen>
-        <sen>Sýslumanni er í undantekningartilvikum heimilt að afla samþykkis viðkomandi rafrænt og veita leiðbeiningar í síma eða á fjarfundi.</sen>
+        <paragraph nr="1">
+          <sen>Samþykki til ættleiðingar skal vera skriflegt og skal viðkomandi staðfesta það fyrir starfsmanni sýslumanns sem vottar að viðkomanda hafi verið leiðbeint um réttaráhrif samþykkis og ættleiðingar.</sen>
+          <sen>Sýslumanni er í undantekningartilvikum heimilt að afla samþykkis viðkomandi rafrænt og veita leiðbeiningar í síma eða á fjarfundi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Samþykki er eigi gilt nema það hafi verið staðfest a.m.k. þremur mánuðum eftir fæðingu barns, nema alveg sérstaklega hagi til.</sen>
+        <paragraph nr="1">
+          <sen>Samþykki er eigi gilt nema það hafi verið staðfest a.m.k. þremur mánuðum eftir fæðingu barns, nema alveg sérstaklega hagi til.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Samþykki foreldra eða sérstaklega skipaðs lögráðamanns er gilt, þótt væntanlegir kjörforeldrar séu eigi nafngreindir, ef samþykki lýtur að því að ráðstafa barni til ættleiðingar til þeirra sem barnaverndarnefnd ákveður.</sen>
-        <sen>Endranær er samþykki eigi gilt, nema væntanlegir kjörforeldrar séu nafngreindir.</sen>
+        <paragraph nr="1">
+          <sen>Samþykki foreldra eða sérstaklega skipaðs lögráðamanns er gilt, þótt væntanlegir kjörforeldrar séu eigi nafngreindir, ef samþykki lýtur að því að ráðstafa barni til ættleiðingar til þeirra sem barnaverndarnefnd ákveður.</sen>
+          <sen>Endranær er samþykki eigi gilt, nema væntanlegir kjörforeldrar séu nafngreindir.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Nú er samþykki til ættleiðingar meira en 12 mánaða gamalt og skal það þá staðfest að nýju áður en afstaða er tekin til umsóknar um ættleiðingu, nema sérstaklega standi á.</sen>
+        <paragraph nr="1">
+          <sen>Nú er samþykki til ættleiðingar meira en 12 mánaða gamalt og skal það þá staðfest að nýju áður en afstaða er tekin til umsóknar um ættleiðingu, nema sérstaklega standi á.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="11" nr="1">
@@ -203,6 +255,7 @@
             <chapter>1</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumanns">1</sen>
           </location>
         </footnote>
@@ -212,6 +265,7 @@
             <chapter>1</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </location>
         </footnote>
@@ -221,7 +275,9 @@
       <nr-title>9. gr.</nr-title>
       <name>Samþykki veitt erlendis.</name>
       <subart nr="1">
-        <sen>Ráðherra getur ákveðið að samþykki sem gefið er fyrir þar til bæru stjórnvaldi, dómstóli eða stofnun erlendis jafngildi samþykki sem staðfest er fyrir starfsmanni sýslumanns, sbr. 1. mgr. 8. gr., og má þá heimila frávik frá meginreglum 2.–4. mgr. 8. gr.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur ákveðið að samþykki sem gefið er fyrir þar til bæru stjórnvaldi, dómstóli eða stofnun erlendis jafngildi samþykki sem staðfest er fyrir starfsmanni sýslumanns, sbr. 1. mgr. 8. gr., og má þá heimila frávik frá meginreglum 2.–4. mgr. 8. gr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -230,6 +286,7 @@
             <chapter>1</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -239,6 +296,7 @@
             <chapter>1</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumanns">1</sen>
           </location>
         </footnote>
@@ -248,22 +306,30 @@
       <nr-title>10. gr.</nr-title>
       <name>Afturköllun samþykkis.</name>
       <subart nr="1">
-        <sen>Nú tekur aðili, sem veita skal samþykki skv. 6. og 7. gr., aftur samþykki sitt áður en ættleiðingarleyfi er veitt og er þá eigi heimilt að gefa út leyfi.</sen>
+        <paragraph nr="1">
+          <sen>Nú tekur aðili, sem veita skal samþykki skv. 6. og 7. gr., aftur samþykki sitt áður en ættleiðingarleyfi er veitt og er þá eigi heimilt að gefa út leyfi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Veita má leyfi til ættleiðingar þrátt fyrir að foreldri eða sérstaklega skipaður lögráðamaður taki aftur samþykki sitt ef barn hefur verið í fóstri hjá umsækjendum og hagir þess mæla að öðru leyti eindregið með því að það verði ættleitt og afturköllun á samþykki styðst eigi við gild rök.</sen>
+        <paragraph nr="1">
+          <sen>Veita má leyfi til ættleiðingar þrátt fyrir að foreldri eða sérstaklega skipaður lögráðamaður taki aftur samþykki sitt ef barn hefur verið í fóstri hjá umsækjendum og hagir þess mæla að öðru leyti eindregið með því að það verði ættleitt og afturköllun á samþykki styðst eigi við gild rök.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <name>Umsögn foreldris eða nákominna.</name>
       <subart nr="1">
-        <sen>Leita skal umsagnar þess foreldris sem ekki fer með forsjá barns, ef unnt er, áður en afstaða er tekin til ættleiðingarumsóknar.</sen>
-        <sen>Ef högum þess foreldris sem fer ekki með forsjá barns er svo farið að það getur ekki látið uppi marktækt samþykki eða það er horfið skal, ef unnt er, leita umsagnar nákominna skv. 2. mgr.</sen>
+        <paragraph nr="1">
+          <sen>Leita skal umsagnar þess foreldris sem ekki fer með forsjá barns, ef unnt er, áður en afstaða er tekin til ættleiðingarumsóknar.</sen>
+          <sen>Ef högum þess foreldris sem fer ekki með forsjá barns er svo farið að það getur ekki látið uppi marktækt samþykki eða það er horfið skal, ef unnt er, leita umsagnar nákominna skv. 2. mgr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Nú er annað foreldri látið eða bæði og skal þá, ef unnt er, leita umsagnar foreldra þess foreldris sem látið er, systkina þess foreldris sem látið er og systkina þess sem ættleiða á áður en afstaða er tekin til ættleiðingarumsóknar, enda sé sá sem ættleiða á yngri en 18 ára.</sen>
-        <sen>Heimilt er jafnframt að leita umsagnar annarra sem eru nákomnir barni, ef talin er þörf á, enda sé sá sem ættleiða á yngri en 18 ára.</sen>
+        <paragraph nr="1">
+          <sen>Nú er annað foreldri látið eða bæði og skal þá, ef unnt er, leita umsagnar foreldra þess foreldris sem látið er, systkina þess foreldris sem látið er og systkina þess sem ættleiða á áður en afstaða er tekin til ættleiðingarumsóknar, enda sé sá sem ættleiða á yngri en 18 ára.</sen>
+          <sen>Heimilt er jafnframt að leita umsagnar annarra sem eru nákomnir barni, ef talin er þörf á, enda sé sá sem ættleiða á yngri en 18 ára.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2018.035.html" law-nr="35" law-year="2018" law-art="1" nr="1">
@@ -277,6 +343,7 @@
             <chapter>1</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>2</sen>
           </location>
           <location type="range">
@@ -284,12 +351,14 @@
               <chapter>1</chapter>
               <art>11</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>11</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -300,22 +369,28 @@
       <nr-title>12. gr.</nr-title>
       <name>Umsögn lögráðamanns.</name>
       <subart nr="1">
-        <sen>Nú er sá lögræðissviptur sem ættleiða á og skal þá afla umsagnar lögráðamanns áður en afstaða er tekin til ættleiðingarumsóknar.</sen>
+        <paragraph nr="1">
+          <sen>Nú er sá lögræðissviptur sem ættleiða á og skal þá afla umsagnar lögráðamanns áður en afstaða er tekin til ættleiðingarumsóknar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <name>Umsögn maka eða sambúðarmaka.</name>
       <subart nr="1">
-        <sen>Ef sá sem ættleiða á er í hjúskap eða í óvígðri sambúð skal leita umsagnar maka hans eða sambúðarmaka.</sen>
+        <paragraph nr="1">
+          <sen>Ef sá sem ættleiða á er í hjúskap eða í óvígðri sambúð skal leita umsagnar maka hans eða sambúðarmaka.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="14">
       <nr-title>14. gr.</nr-title>
       <name>Gjald.</name>
       <subart nr="1">
-        <sen>Ættleiðingarleyfi verður ekki veitt ef einhver sá sem samþykkja á ættleiðingu innir af hendi eða veitir viðtöku gjaldi eða fríðindum í tengslum við samþykkið, þar á meðal vegna missis atvinnutekna.</sen>
-        <sen>Má ganga eftir skriflegum yfirlýsingum þeirra sem málið varðar um þetta.</sen>
+        <paragraph nr="1">
+          <sen>Ættleiðingarleyfi verður ekki veitt ef einhver sá sem samþykkja á ættleiðingu innir af hendi eða veitir viðtöku gjaldi eða fríðindum í tengslum við samþykkið, þar á meðal vegna missis atvinnutekna.</sen>
+          <sen>Má ganga eftir skriflegum yfirlýsingum þeirra sem málið varðar um þetta.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
@@ -326,7 +401,9 @@
       <nr-title>15. gr.</nr-title>
       <name>Umsókn um ættleiðingarleyfi.</name>
       <subart nr="1">
-        <sen>Umsókn um leyfi til ættleiðingar og yfirlýsing um samþykki til ættleiðingar skulu rituð á eyðublöð sem sýslumaður lætur í té.</sen>
+        <paragraph nr="1">
+          <sen>Umsókn um leyfi til ættleiðingar og yfirlýsing um samþykki til ættleiðingar skulu rituð á eyðublöð sem sýslumaður lætur í té.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -335,6 +412,7 @@
             <chapter>2</chapter>
             <art>15</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
         </footnote>
@@ -344,16 +422,24 @@
       <nr-title>16. gr.</nr-title>
       <name>Umsögn varðandi umsókn um leyfi til ættleiðingar.</name>
       <subart nr="1">
-        <sen>Leita skal umsagnar barnaverndarnefndar um umsókn um leyfi til að ættleiða barn nema augljóst sé að skilyrði fyrir útgáfu ættleiðingarleyfis séu ekki uppfyllt.</sen>
+        <paragraph nr="1">
+          <sen>Leita skal umsagnar barnaverndarnefndar um umsókn um leyfi til að ættleiða barn nema augljóst sé að skilyrði fyrir útgáfu ættleiðingarleyfis séu ekki uppfyllt.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Leita skal umsagnar barnaverndarnefnda varðandi umsókn um leyfi til ættleiðingar í umdæmi þar sem barn býr og þar sem umsækjendur búa, svo og þeirrar barnaverndarnefndar sem ráðstafað hefur barni í fóstur ef því er að skipta.</sen>
+        <paragraph nr="1">
+          <sen>Leita skal umsagnar barnaverndarnefnda varðandi umsókn um leyfi til ættleiðingar í umdæmi þar sem barn býr og þar sem umsækjendur búa, svo og þeirrar barnaverndarnefndar sem ráðstafað hefur barni í fóstur ef því er að skipta.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Enn fremur má leita umsagnar ættleiðingarnefndar til viðbótar umsögn barnaverndarnefndar ef ástæða þykir til, sbr. 17. gr.</sen>
+        <paragraph nr="1">
+          <sen>Enn fremur má leita umsagnar ættleiðingarnefndar til viðbótar umsögn barnaverndarnefndar ef ástæða þykir til, sbr. 17. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Ráðuneytið skal setja reglugerð um gerð umsagna barnaverndarnefnda.</sen>
+        <paragraph nr="1">
+          <sen>Ráðuneytið skal setja reglugerð um gerð umsagna barnaverndarnefnda.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.069.html" law-nr="69" law-year="2006" law-art="5" nr="1">
@@ -362,6 +448,7 @@
             <chapter>2</chapter>
             <art>16</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -371,6 +458,7 @@
             <chapter>2</chapter>
             <art>16</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðuneytið">1</sen>
           </location>
         </footnote>
@@ -380,6 +468,7 @@
             <chapter>2</chapter>
             <art>16</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ráðuneytið(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglugerð" after-mark="um gerð umsagna barnaverndarnefnda.$">1</sen>
           </location>
         </footnote>
@@ -389,16 +478,22 @@
       <nr-title>17. gr.</nr-title>
       <name>Ættleiðingarnefnd.</name>
       <subart nr="1">
-        <sen>Ráðherra skal skipa nefnd sem veitir umsagnir í ættleiðingarmálum sem sýslumaður eða ráðuneytið leggur fyrir hana.</sen>
-        <sen>Ráðherra getur falið nefndinni fleiri verkefni og sett nánari reglur um störf hennar.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra skal skipa nefnd sem veitir umsagnir í ættleiðingarmálum sem sýslumaður eða ráðuneytið leggur fyrir hana.</sen>
+          <sen>Ráðherra getur falið nefndinni fleiri verkefni og sett nánari reglur um störf hennar.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Nefndarmenn skulu vera þrír og jafnmargir til vara.</sen>
-        <sen>Þeir skulu skipaðir til fjögurra ára í senn.</sen>
-        <sen>Skal einn nefndarmanna vera lögfræðingur og skal hann vera formaður nefndarinnar, annar læknir og þriðji sálfræðingur eða félagsráðgjafi.</sen>
+        <paragraph nr="1">
+          <sen>Nefndarmenn skulu vera þrír og jafnmargir til vara.</sen>
+          <sen>Þeir skulu skipaðir til fjögurra ára í senn.</sen>
+          <sen>Skal einn nefndarmanna vera lögfræðingur og skal hann vera formaður nefndarinnar, annar læknir og þriðji sálfræðingur eða félagsráðgjafi.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Kostnaður af störfum nefndarinnar greiðist úr ríkissjóði samkvæmt ákvörðun ráðherra.</sen>
+        <paragraph nr="1">
+          <sen>Kostnaður af störfum nefndarinnar greiðist úr ríkissjóði samkvæmt ákvörðun ráðherra.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -407,12 +502,14 @@
             <chapter>2</chapter>
             <art>17</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>
             <art>17</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
           </location>
         </footnote>
@@ -423,12 +520,14 @@
               <chapter>2</chapter>
               <art>17</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>2</chapter>
               <art>17</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>2</sen>
             </end>
           </location>
@@ -439,10 +538,14 @@
       <nr-title>18. gr.</nr-title>
       <name>Útgáfa ættleiðingarleyfis.</name>
       <subart nr="1">
-        <sen>Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að fullnægðum lögmæltum skilyrðum leysir sýslumaður svo fljótt sem auðið er úr því hvort ættleiðingarleyfi verður veitt.</sen>
+        <paragraph nr="1">
+          <sen>Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að fullnægðum lögmæltum skilyrðum leysir sýslumaður svo fljótt sem auðið er úr því hvort ættleiðingarleyfi verður veitt.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Ef sýslumaður ákveður að veita leyfi til ættleiðingar gefur hann út leyfisbréf til umsækjenda um ættleiðinguna.</sen>
+        <paragraph nr="1">
+          <sen>Ef sýslumaður ákveður að veita leyfi til ættleiðingar gefur hann út leyfisbréf til umsækjenda um ættleiðinguna.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.069.html" law-nr="69" law-year="2006" law-art="6" nr="1">
@@ -451,6 +554,7 @@
             <chapter>2</chapter>
             <art>18</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að fullnægðum" after-mark="lögmæltum skilyrðum leysir (\[? ?)?sýslumaður(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?svo fljótt sem auðið er úr því hvort ættleiðingarleyfi verður veitt.$">1</sen>
           </location>
         </footnote>
@@ -460,12 +564,14 @@
             <chapter>2</chapter>
             <art>18</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
           <location type="range">
             <chapter>2</chapter>
             <art>18</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
         </footnote>
@@ -475,9 +581,11 @@
       <nr-title>19. gr.</nr-title>
       <name>Ákvörðun um fyrirhugaða veitingu ættleiðingarleyfis.</name>
       <subart nr="1">
-        <sen>Ef sýslumaður ákveður að veita leyfi til ættleiðingar þótt samþykki skv. 7. gr. liggi ekki fyrir eða samþykki hafi verið afturkallað, sbr. 10. gr., skal með sannanlegum hætti tilkynna þeim sem fer með forsjá barns eða sérstökum lögráðamanni það með rökstuddri ákvörðun.</sen>
-        <sen>Þar skal greina úrlausnarefni, helstu gögn málsins, niðurstöðu og rökstuðning fyrir henni, þar á meðal lagaatriði er niðurstaðan byggist á, og önnur atriði er máli skipta.</sen>
-        <sen>Enn fremur skal þar greina heimild til að bera ákvörðunina undir dómstóla og málshöfðunarfrest.</sen>
+        <paragraph nr="1">
+          <sen>Ef sýslumaður ákveður að veita leyfi til ættleiðingar þótt samþykki skv. 7. gr. liggi ekki fyrir eða samþykki hafi verið afturkallað, sbr. 10. gr., skal með sannanlegum hætti tilkynna þeim sem fer með forsjá barns eða sérstökum lögráðamanni það með rökstuddri ákvörðun.</sen>
+          <sen>Þar skal greina úrlausnarefni, helstu gögn málsins, niðurstöðu og rökstuðning fyrir henni, þar á meðal lagaatriði er niðurstaðan byggist á, og önnur atriði er máli skipta.</sen>
+          <sen>Enn fremur skal þar greina heimild til að bera ákvörðunina undir dómstóla og málshöfðunarfrest.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -486,6 +594,7 @@
             <chapter>2</chapter>
             <art>19</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
         </footnote>
@@ -495,11 +604,15 @@
       <nr-title>20. gr.</nr-title>
       <name>Synjun umsóknar um ættleiðingu.</name>
       <subart nr="1">
-        <sen>Ef synjað er um ættleiðingu skal það gert með úrskurði.</sen>
-        <sen>Í úrskurði skal greina úrlausnarefni, helstu gögn málsins, niðurstöðu og rökstuðning fyrir henni, þar á meðal lagaatriði er niðurstaða byggist á, og önnur atriði er máli skipta.</sen>
+        <paragraph nr="1">
+          <sen>Ef synjað er um ættleiðingu skal það gert með úrskurði.</sen>
+          <sen>Í úrskurði skal greina úrlausnarefni, helstu gögn málsins, niðurstöðu og rökstuðning fyrir henni, þar á meðal lagaatriði er niðurstaða byggist á, og önnur atriði er máli skipta.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Aðilum máls er heimilt að kæra synjun sýslumanns um ættleiðingu til ráðherra innan tveggja mánaða frá dagsetningu úrskurðar.</sen>
+        <paragraph nr="1">
+          <sen>Aðilum máls er heimilt að kæra synjun sýslumanns um ættleiðingu til ráðherra innan tveggja mánaða frá dagsetningu úrskurðar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -508,6 +621,7 @@
             <chapter>2</chapter>
             <art>20</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
           </location>
         </footnote>
@@ -517,6 +631,7 @@
             <chapter>2</chapter>
             <art>20</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -526,8 +641,10 @@
       <nr-title>21. gr.</nr-title>
       <name>Staðfesting ættleiðingarleyfis þrátt fyrir ágalla.</name>
       <subart nr="1">
-        <sen>Sýslumaður getur að ósk þeirra sem málið varðar staðfest með afturvirkum réttaráhrifum ættleiðingarleyfi sem veitt hefur verið án þess að lögmæltra skilyrða hafi verið gætt.</sen>
-        <sen>Þegar sérstaklega stendur á getur staðfesting átt sér stað eftir andlát kjörbarns eða kjörforeldris.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumaður getur að ósk þeirra sem málið varðar staðfest með afturvirkum réttaráhrifum ættleiðingarleyfi sem veitt hefur verið án þess að lögmæltra skilyrða hafi verið gætt.</sen>
+          <sen>Þegar sérstaklega stendur á getur staðfesting átt sér stað eftir andlát kjörbarns eða kjörforeldris.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -536,6 +653,7 @@
             <chapter>2</chapter>
             <art>21</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Sýslumaður">1</sen>
           </location>
         </footnote>
@@ -545,7 +663,9 @@
       <nr-title>21. gr. a.</nr-title>
       <name>Tilkynning um málalok.</name>
       <subart nr="1">
-        <sen>Sýslumaður skal senda umsagnaraðilum skv. 11.–13. gr. tilkynningu um málalok.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumaður skal senda umsagnaraðilum skv. 11.–13. gr. tilkynningu um málalok.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2018.035.html" law-nr="35" law-year="2018" law-art="2" nr="1">
@@ -560,6 +680,7 @@
               <chapter>2</chapter>
               <art>21a</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -574,19 +695,29 @@
       <nr-title>22. gr.</nr-title>
       <name>Dómsmál vegna ákvörðunar um veitingu ættleiðingarleyfis.</name>
       <subart nr="1">
-        <sen>Þeim sem fer með forsjá barns eða sérstaklega skipuðum lögráðamanni er heimilt að bera ákvörðun sýslumanns um veitingu ættleiðingarleyfis skv. 19. gr. undir héraðsdóm innan 30 daga frá því að þeim barst ákvörðunin.</sen>
+        <paragraph nr="1">
+          <sen>Þeim sem fer með forsjá barns eða sérstaklega skipuðum lögráðamanni er heimilt að bera ákvörðun sýslumanns um veitingu ættleiðingarleyfis skv. 19. gr. undir héraðsdóm innan 30 daga frá því að þeim barst ákvörðunin.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Nú er ákvörðun skv. 19. gr. staðfest með úrskurði héraðsdóms og verður þá leyfi til ættleiðingar ekki veitt fyrr en að liðnum fresti til kæru úrskurðar til Landsréttar.</sen>
+        <paragraph nr="1">
+          <sen>Nú er ákvörðun skv. 19. gr. staðfest með úrskurði héraðsdóms og verður þá leyfi til ættleiðingar ekki veitt fyrr en að liðnum fresti til kæru úrskurðar til Landsréttar.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Dómsúrskurður um ógildingu ákvörðunar sýslumanns skv. 19. gr. er ekki því til fyrirstöðu að hann taki málið upp að nýju að ósk aðila ef aðstæður hafa breyst til muna eða nýjar upplýsingar er skipta verulegu máli hafa komið fram.</sen>
+        <paragraph nr="1">
+          <sen>Dómsúrskurður um ógildingu ákvörðunar sýslumanns skv. 19. gr. er ekki því til fyrirstöðu að hann taki málið upp að nýju að ósk aðila ef aðstæður hafa breyst til muna eða nýjar upplýsingar er skipta verulegu máli hafa komið fram.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Úrskurðir héraðsdómara samkvæmt lögum þessum sæta kæru til Landsréttar og fer um kæranleika og kæru og meðferð kærumála fyrir Landsrétti samkvæmt lögum um meðferð einkamála.</sen>
+        <paragraph nr="1">
+          <sen>Úrskurðir héraðsdómara samkvæmt lögum þessum sæta kæru til Landsréttar og fer um kæranleika og kæru og meðferð kærumála fyrir Landsrétti samkvæmt lögum um meðferð einkamála.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen>Aðrir úrskurðir Landsréttar en mælt er fyrir um í 1. mgr. 167. gr. laga um meðferð einkamála verða ekki kærðir til Hæstaréttar.</sen>
+        <paragraph nr="1">
+          <sen>Aðrir úrskurðir Landsréttar en mælt er fyrir um í 1. mgr. 167. gr. laga um meðferð einkamála verða ekki kærðir til Hæstaréttar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -595,12 +726,14 @@
             <chapter>3</chapter>
             <art>22</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumanns">1</sen>
           </location>
           <location type="range">
             <chapter>3</chapter>
             <art>22</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumanns">1</sen>
           </location>
         </footnote>
@@ -610,6 +743,7 @@
             <chapter>3</chapter>
             <art>22</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Landsréttar">1</sen>
           </location>
           <location type="range">
@@ -617,12 +751,14 @@
               <chapter>3</chapter>
               <art>22</art>
               <subart>4</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </start>
             <end>
               <chapter>3</chapter>
               <art>22</art>
               <subart>5</subart>
+              <paragraph>1</paragraph>
               <sen>1</sen>
             </end>
           </location>
@@ -633,7 +769,9 @@
       <nr-title>23. gr.</nr-title>
       <name>Málskostnaður.</name>
       <subart nr="1">
-        <sen>Stefnandi skal hafa gjafsókn í héraði og fyrir Landsrétti og Hæstarétti í dómsmáli vegna ættleiðingar skv. 22. gr.</sen>
+        <paragraph nr="1">
+          <sen>Stefnandi skal hafa gjafsókn í héraði og fyrir Landsrétti og Hæstarétti í dómsmáli vegna ættleiðingar skv. 22. gr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2016.117.html" law-nr="117" law-year="2016" law-art="64" nr="1">
@@ -642,6 +780,7 @@
             <chapter>3</chapter>
             <art>23</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="fyrir Landsrétti og">1</sen>
           </location>
         </footnote>
@@ -651,14 +790,20 @@
       <nr-title>24. gr.</nr-title>
       <name>Málsmeðferð o.fl.</name>
       <subart nr="1">
-        <sen>Dómsmál skv. 22. gr. sæta almennri meðferð einkamála með þeim frávikum sem greinir í lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen>Dómsmál skv. 22. gr. sæta almennri meðferð einkamála með þeim frávikum sem greinir í lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Eigi má án leyfis dómara birta almenningi á nokkurn hátt annað af því sem gerst hefur í slíkum málum en úrskurðinn eða dóminn.</sen>
-        <sen>Brot gegn ákvæði þessu varðar sektum.</sen>
+        <paragraph nr="1">
+          <sen>Eigi má án leyfis dómara birta almenningi á nokkurn hátt annað af því sem gerst hefur í slíkum málum en úrskurðinn eða dóminn.</sen>
+          <sen>Brot gegn ákvæði þessu varðar sektum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Nú er úrskurður eða dómur í slíku máli birtur, þar á meðal að tilstuðlan dómsins, og skal þá gæta leyndar á nöfnum og upplýsingum sem bent geti til þess hverjir séu aðilar máls eða hvaða barn úrskurðurinn eða dómurinn varði.</sen>
+        <paragraph nr="1">
+          <sen>Nú er úrskurður eða dómur í slíku máli birtur, þar á meðal að tilstuðlan dómsins, og skal þá gæta leyndar á nöfnum og upplýsingum sem bent geti til þess hverjir séu aðilar máls eða hvaða barn úrskurðurinn eða dómurinn varði.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
@@ -669,12 +814,16 @@
       <nr-title>25. gr.</nr-title>
       <name>Réttaráhrif.</name>
       <subart nr="1">
-        <sen>Við ættleiðingu öðlast kjörbarn sömu réttarstöðu gagnvart kjörforeldrum, ættmennum þeirra og þeim sem eru í kjörsifjum við þá eins og væri það eigið barn kjörforeldra, nema lög mæli annan veg.</sen>
-        <sen>Frá sama tíma falla niður lagatengsl barnsins við kynforeldra þess, önnur ættmenni og þá sem eru í kjörsifjum við þá, nema lög kveði öðruvísi á.</sen>
+        <paragraph nr="1">
+          <sen>Við ættleiðingu öðlast kjörbarn sömu réttarstöðu gagnvart kjörforeldrum, ættmennum þeirra og þeim sem eru í kjörsifjum við þá eins og væri það eigið barn kjörforeldra, nema lög mæli annan veg.</sen>
+          <sen>Frá sama tíma falla niður lagatengsl barnsins við kynforeldra þess, önnur ættmenni og þá sem eru í kjörsifjum við þá, nema lög kveði öðruvísi á.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Nú ættleiðir annað hjóna barn hins eða kjörbarn og fær barnið þá réttarstöðu sem væri það eigið barn þeirra hjóna.</sen>
-        <sen>Sama er ef sá sem er í óvígðri sambúð ættleiðir barn hins.</sen>
+        <paragraph nr="1">
+          <sen>Nú ættleiðir annað hjóna barn hins eða kjörbarn og fær barnið þá réttarstöðu sem væri það eigið barn þeirra hjóna.</sen>
+          <sen>Sama er ef sá sem er í óvígðri sambúð ættleiðir barn hins.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
@@ -685,18 +834,24 @@
       <nr-title>26. gr.</nr-title>
       <name>Upplýsingaskylda kjörforeldra.</name>
       <subart nr="1">
-        <sen>Kjörforeldrar skulu skýra kjörbarni sínu frá því jafnskjótt og það hefur þroska til að það sé ættleitt.</sen>
-        <sen>Skal það að jafnaði gert eigi síðar en er barn nær sex ára aldri.</sen>
+        <paragraph nr="1">
+          <sen>Kjörforeldrar skulu skýra kjörbarni sínu frá því jafnskjótt og það hefur þroska til að það sé ættleitt.</sen>
+          <sen>Skal það að jafnaði gert eigi síðar en er barn nær sex ára aldri.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Kjörforeldrar eiga rétt á ráðgjöf viðkomandi barnaverndarnefndar við upplýsingagjöf skv. 1. mgr.</sen>
+        <paragraph nr="1">
+          <sen>Kjörforeldrar eiga rétt á ráðgjöf viðkomandi barnaverndarnefndar við upplýsingagjöf skv. 1. mgr.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="27">
       <nr-title>27. gr.</nr-title>
       <name>Aðgangur kjörbarns að upplýsingum.</name>
       <subart nr="1">
-        <sen>Þegar kjörbarn hefur náð 18 ára aldri á það rétt á að fá tiltækar upplýsingar um það frá ráðuneytinu hverjir séu kynforeldrar þess eða fyrri kjörforeldrar.</sen>
+        <paragraph nr="1">
+          <sen>Þegar kjörbarn hefur náð 18 ára aldri á það rétt á að fá tiltækar upplýsingar um það frá ráðuneytinu hverjir séu kynforeldrar þess eða fyrri kjörforeldrar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -705,6 +860,7 @@
             <chapter>5</chapter>
             <art>27</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðuneytinu">1</sen>
           </location>
         </footnote>
@@ -718,11 +874,15 @@
       <nr-title>28. gr.</nr-title>
       <name>Framkvæmd Haag-samnings frá 29. maí 1993 um ættleiðingar.</name>
       <subart nr="1">
-        <sen>Ráðherra hefur yfirumsjón með framkvæmd Haag-samnings frá 29. maí 1993 um vernd barna og samvinnu varðandi ættleiðingu milli landa.</sen>
-        <sen>Tekst ráðherra á hendur vegna íslenska ríkisins þau verkefni og skuldbindingar sem hvíla á svonefndu miðstjórnvaldi samkvæmt samningnum.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra hefur yfirumsjón með framkvæmd Haag-samnings frá 29. maí 1993 um vernd barna og samvinnu varðandi ættleiðingu milli landa.</sen>
+          <sen>Tekst ráðherra á hendur vegna íslenska ríkisins þau verkefni og skuldbindingar sem hvíla á svonefndu miðstjórnvaldi samkvæmt samningnum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Ráðherra getur sett reglugerð sem kveður á um framkvæmd samningsins hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur sett reglugerð sem kveður á um framkvæmd samningsins hér á landi.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -731,12 +891,14 @@
             <chapter>6</chapter>
             <art>28</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
             <art>28</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -746,7 +908,9 @@
       <nr-title>29. gr.</nr-title>
       <name>Ættleiðingar erlendis.</name>
       <subart nr="1">
-        <sen>Þeim sem búsettir eru hér á landi er óheimilt að ættleiða barn erlendis, nema sýslumaður samþykki það með útgáfu forsamþykkis til ættleiðingarinnar.</sen>
+        <paragraph nr="1">
+          <sen>Þeim sem búsettir eru hér á landi er óheimilt að ættleiða barn erlendis, nema sýslumaður samþykki það með útgáfu forsamþykkis til ættleiðingarinnar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -755,6 +919,7 @@
             <chapter>6</chapter>
             <art>29</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
         </footnote>
@@ -764,12 +929,16 @@
       <nr-title>30. gr.</nr-title>
       <name>Umsókn um forsamþykki.</name>
       <subart nr="1">
-        <sen>Umsókn um forsamþykki til ættleiðingar barns erlendis skal beint til sýslumanns.</sen>
-        <sen>Umsókn skal rituð á eyðublað sem sýslumaður lætur í té.</sen>
+        <paragraph nr="1">
+          <sen>Umsókn um forsamþykki til ættleiðingar barns erlendis skal beint til sýslumanns.</sen>
+          <sen>Umsókn skal rituð á eyðublað sem sýslumaður lætur í té.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Ráðherra getur mælt fyrir um að með umsókn skv. 1. mgr., eða áður en forsamþykki er gefið út, skuli umsækjendur leggja fram staðfestingu á að þeir hafi sótt námskeið um ættleiðingar erlendra barna.</sen>
-        <sen>Ráðherra getur sett nánari reglur um inntak þess, skipulagningu og gjaldtöku.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur mælt fyrir um að með umsókn skv. 1. mgr., eða áður en forsamþykki er gefið út, skuli umsækjendur leggja fram staðfestingu á að þeir hafi sótt námskeið um ættleiðingar erlendra barna.</sen>
+          <sen>Ráðherra getur sett nánari reglur um inntak þess, skipulagningu og gjaldtöku.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -778,12 +947,14 @@
             <chapter>6</chapter>
             <art>30</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumanns">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
             <art>30</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">2</sen>
           </location>
         </footnote>
@@ -793,6 +964,7 @@
             <chapter>6</chapter>
             <art>30</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -802,6 +974,7 @@
             <chapter>6</chapter>
             <art>30</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Ráðherra getur sett nánari reglur" after-mark="um inntak þess, skipulagningu og gjaldtöku.$">2</sen>
           </location>
         </footnote>
@@ -811,14 +984,20 @@
       <nr-title>31. gr.</nr-title>
       <name>Umsögn varðandi umsókn um forsamþykki.</name>
       <subart nr="1">
-        <sen>Leita skal umsagnar barnaverndarnefndar um umsókn um forsamþykki til að ættleiða erlent barn nema augljóst sé að skilyrði fyrir útgáfu forsamþykkis séu ekki uppfyllt.</sen>
-        <sen>Þó er ekki skylt að leita umsagnar barnaverndarnefndar ef umsækjendur hafa fengið útgefið forsamþykki á síðustu fjórum árum og umsókn þeirra um ættleiðingu er til umfjöllunar hjá erlendu ættleiðingaryfirvaldi nema hagir umsækjenda hafi breyst verulega að mati sýslumanns.</sen>
+        <paragraph nr="1">
+          <sen>Leita skal umsagnar barnaverndarnefndar um umsókn um forsamþykki til að ættleiða erlent barn nema augljóst sé að skilyrði fyrir útgáfu forsamþykkis séu ekki uppfyllt.</sen>
+          <sen>Þó er ekki skylt að leita umsagnar barnaverndarnefndar ef umsækjendur hafa fengið útgefið forsamþykki á síðustu fjórum árum og umsókn þeirra um ættleiðingu er til umfjöllunar hjá erlendu ættleiðingaryfirvaldi nema hagir umsækjenda hafi breyst verulega að mati sýslumanns.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Leita skal umsagnar barnaverndarnefndar varðandi umsókn um forsamþykki í umdæmi þar sem umsækjendur búa.</sen>
+        <paragraph nr="1">
+          <sen>Leita skal umsagnar barnaverndarnefndar varðandi umsókn um forsamþykki í umdæmi þar sem umsækjendur búa.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Enn fremur má leita umsagnar ættleiðingarnefndar til viðbótar umsögn barnaverndarnefndar ef ástæða þykir til, sbr. 17. gr.</sen>
+        <paragraph nr="1">
+          <sen>Enn fremur má leita umsagnar ættleiðingarnefndar til viðbótar umsögn barnaverndarnefndar ef ástæða þykir til, sbr. 17. gr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.069.html" law-nr="69" law-year="2006" law-art="7" nr="1">
@@ -827,6 +1006,7 @@
             <chapter>6</chapter>
             <art>31</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -836,6 +1016,7 @@
             <chapter>6</chapter>
             <art>31</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Þó er ekki skylt að leita umsagnar barnaverndarnefndar ef umsækjendur hafa fengið útgefið forsamþykki á síðustu fjórum árum og umsókn þeirra um ættleiðingu er til umfjöllunar hjá erlendu ættleiðingaryfirvaldi nema hagir umsækjenda hafi breyst verulega að mati sýslumanns.">2</sen>
           </location>
         </footnote>
@@ -845,17 +1026,25 @@
       <nr-title>32. gr.</nr-title>
       <name>Útgáfa forsamþykkis.</name>
       <subart nr="1">
-        <sen>Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að uppfylltum lögmæltum skilyrðum tekur sýslumaður afstöðu til umsóknar um forsamþykki svo fljótt sem föng eru á.</sen>
+        <paragraph nr="1">
+          <sen>Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að uppfylltum lögmæltum skilyrðum tekur sýslumaður afstöðu til umsóknar um forsamþykki svo fljótt sem föng eru á.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Í forsamþykki skal m.a. koma fram að væntanlegir kjörforeldrar teljist hæfir til að ættleiða barn frá tilteknu erlendu ríki, að væntanlegt kjörbarn fái landvist hér á landi til frambúðar og að íslensk stjórnvöld taki ábyrgð á barninu frá þeim tíma sem það yfirgefur heimaland sitt eins og væri það íslenskur ríkisborgari.</sen>
+        <paragraph nr="1">
+          <sen>Í forsamþykki skal m.a. koma fram að væntanlegir kjörforeldrar teljist hæfir til að ættleiða barn frá tilteknu erlendu ríki, að væntanlegt kjörbarn fái landvist hér á landi til frambúðar og að íslensk stjórnvöld taki ábyrgð á barninu frá þeim tíma sem það yfirgefur heimaland sitt eins og væri það íslenskur ríkisborgari.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Forsamþykki skal ekki gilda lengur en í þrjú ár frá útgáfudegi.</sen>
-        <sen>Heimilt er þó að framlengja gildistíma forsamþykkis einu sinni í allt að 12 mánuði ef sérstaklega stendur á.</sen>
+        <paragraph nr="1">
+          <sen>Forsamþykki skal ekki gilda lengur en í þrjú ár frá útgáfudegi.</sen>
+          <sen>Heimilt er þó að framlengja gildistíma forsamþykkis einu sinni í allt að 12 mánuði ef sérstaklega stendur á.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Sýslumanni er heimilt að afturkalla forsamþykki, enda telji hann að aðstæður umsækjenda hafi breyst verulega frá útgáfu þess eða upplýsingar er máli skipta hafi reynst rangar.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumanni er heimilt að afturkalla forsamþykki, enda telji hann að aðstæður umsækjenda hafi breyst verulega frá útgáfu þess eða upplýsingar er máli skipta hafi reynst rangar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.069.html" law-nr="69" law-year="2006" law-art="8" nr="1">
@@ -864,12 +1053,14 @@
             <chapter>6</chapter>
             <art>32</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^Að fenginni umsögn barnaverndarnefndar og ættleiðingarnefndar, ef því er að skipta, og að uppfylltum" after-mark="lögmæltum skilyrðum tekur (\[? ?)?sýslumaður(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?afstöðu til umsóknar um forsamþykki svo fljótt sem föng eru á.$">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
             <art>32</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Heimilt er þó að framlengja gildistíma forsamþykkis einu sinni í allt að 12 mánuði ef sérstaklega stendur á.">2</sen>
           </location>
         </footnote>
@@ -879,12 +1070,14 @@
             <chapter>6</chapter>
             <art>32</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="sýslumaður">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
             <art>32</art>
             <subart>4</subart>
+            <paragraph>1</paragraph>
             <sen words="Sýslumanni">1</sen>
           </location>
         </footnote>
@@ -894,6 +1087,7 @@
             <chapter>6</chapter>
             <art>32</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -903,10 +1097,14 @@
       <nr-title>33. gr.</nr-title>
       <name>Synjun um forsamþykki.</name>
       <subart nr="1">
-        <sen>Ef synjað er um forsamþykki skal það gert með úrskurði á sama hátt og greinir í 20. gr.</sen>
+        <paragraph nr="1">
+          <sen>Ef synjað er um forsamþykki skal það gert með úrskurði á sama hátt og greinir í 20. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Aðilum máls er heimilt að kæra synjun sýslumanns um forsamþykki til ráðherra innan tveggja mánaða frá dagsetningu úrskurðar.</sen>
+        <paragraph nr="1">
+          <sen>Aðilum máls er heimilt að kæra synjun sýslumanns um forsamþykki til ráðherra innan tveggja mánaða frá dagsetningu úrskurðar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -915,6 +1113,7 @@
             <chapter>6</chapter>
             <art>33</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
           </location>
         </footnote>
@@ -924,6 +1123,7 @@
             <chapter>6</chapter>
             <art>33</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen>1</sen>
           </location>
         </footnote>
@@ -933,14 +1133,20 @@
       <nr-title>34. gr.</nr-title>
       <name>Ættleiðingarfélög.</name>
       <subart nr="1">
-        <sen>Ráðherra löggildir félög til að hafa milligöngu um ættleiðingar barna erlendis.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra löggildir félög til að hafa milligöngu um ættleiðingar barna erlendis.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Löggilding skal vera tímabundin og skal í löggildingarskjali greint til hvaða erlendra ríkja hún taki.</sen>
+        <paragraph nr="1">
+          <sen>Löggilding skal vera tímabundin og skal í löggildingarskjali greint til hvaða erlendra ríkja hún taki.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Ráðherra setur reglur um skilyrði fyrir löggildingu ættleiðingarfélaga og hefur eftirlit með starfsemi þeirra.</sen>
-        <sen>Ráðherra getur afturkallað löggildingu ef félag fullnægir ekki lengur skilyrðum fyrir henni.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra setur reglur um skilyrði fyrir löggildingu ættleiðingarfélaga og hefur eftirlit með starfsemi þeirra.</sen>
+          <sen>Ráðherra getur afturkallað löggildingu ef félag fullnægir ekki lengur skilyrðum fyrir henni.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -949,12 +1155,14 @@
             <chapter>6</chapter>
             <art>34</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
           <location type="range">
             <chapter>6</chapter>
             <art>34</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -964,6 +1172,7 @@
             <chapter>6</chapter>
             <art>34</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur" after-mark="um skilyrði fyrir löggildingu ættleiðingarfélaga og hefur eftirlit með starfsemi þeirra.$">1</sen>
           </location>
         </footnote>
@@ -973,17 +1182,25 @@
       <nr-title>35. gr.</nr-title>
       <name>Milliganga um ættleiðingar.</name>
       <subart nr="1">
-        <sen>Löggilt ættleiðingarfélög ein mega hafa milligöngu um ættleiðingar.</sen>
-        <sen>Með milligöngu um ættleiðingar er átt við starfsemi sem hefur þann megintilgang að koma á sambandi milli þeirra sem óska eftir að ættleiða erlent barn og stjórnvalda og annarra opinberra aðila og löggiltra ættleiðingarfélaga í heimalandi barns og að öðru leyti að láta í té það liðsinni sem nauðsynlegt er til þess að af lögmætri ættleiðingu geti orðið.</sen>
+        <paragraph nr="1">
+          <sen>Löggilt ættleiðingarfélög ein mega hafa milligöngu um ættleiðingar.</sen>
+          <sen>Með milligöngu um ættleiðingar er átt við starfsemi sem hefur þann megintilgang að koma á sambandi milli þeirra sem óska eftir að ættleiða erlent barn og stjórnvalda og annarra opinberra aðila og löggiltra ættleiðingarfélaga í heimalandi barns og að öðru leyti að láta í té það liðsinni sem nauðsynlegt er til þess að af lögmætri ættleiðingu geti orðið.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Ráðherra getur sett reglur um að þeim sem óska eftir að ættleiða erlent barn sé skylt að leita milligöngu um ættleiðinguna hjá félagi sem hefur löggildingu skv. 34. gr.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur sett reglur um að þeim sem óska eftir að ættleiða erlent barn sé skylt að leita milligöngu um ættleiðinguna hjá félagi sem hefur löggildingu skv. 34. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Starfsemi er varðar ættleiðingar erlendra barna skal ávallt hafa að leiðarljósi það sem telja verður að sé barni til gagns og má ekki verða neinum fjárhagslega eða á annan hátt til óhæfilegs ávinnings.</sen>
+        <paragraph nr="1">
+          <sen>Starfsemi er varðar ættleiðingar erlendra barna skal ávallt hafa að leiðarljósi það sem telja verður að sé barni til gagns og má ekki verða neinum fjárhagslega eða á annan hátt til óhæfilegs ávinnings.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen>Brot gegn ákvæðum þessarar greinar varðar sektum.</sen>
+        <paragraph nr="1">
+          <sen>Brot gegn ákvæðum þessarar greinar varðar sektum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -992,6 +1209,7 @@
             <chapter>6</chapter>
             <art>35</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -1001,6 +1219,7 @@
             <chapter>6</chapter>
             <art>35</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett reglur" after-mark="um að þeim sem óska eftir að ættleiða erlent barn sé skylt að leita milligöngu um ættleiðinguna hjá félagi sem hefur löggildingu skv. 34. gr.$">1</sen>
           </location>
         </footnote>
@@ -1014,20 +1233,28 @@
       <nr-title>36. gr.</nr-title>
       <name>Lögsaga í ættleiðingarmálum.</name>
       <subart nr="1">
-        <sen>Manni sem búsettur er hér á landi er einungis heimilt að ættleiða barn samkvæmt ákvæðum þessara laga.</sen>
+        <paragraph nr="1">
+          <sen>Manni sem búsettur er hér á landi er einungis heimilt að ættleiða barn samkvæmt ákvæðum þessara laga.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="37">
       <nr-title>37. gr.</nr-title>
       <name>Umsókn manns er býr erlendis um leyfi til ættleiðingar.</name>
       <subart nr="1">
-        <sen>Manni sem búsettur er erlendis er einungis heimilt að ættleiða barn samkvæmt ákvæðum laga þessara ef hann eða maki hans eru íslenskir ríkisborgarar og geta sökum þess ekki fengið leyfi til ættleiðingar í landi þar sem hann býr, enda megi ætla að íslenskt ættleiðingarleyfi verði metið gilt þar sem hann er búsettur.</sen>
+        <paragraph nr="1">
+          <sen>Manni sem búsettur er erlendis er einungis heimilt að ættleiða barn samkvæmt ákvæðum laga þessara ef hann eða maki hans eru íslenskir ríkisborgarar og geta sökum þess ekki fengið leyfi til ættleiðingar í landi þar sem hann býr, enda megi ætla að íslenskt ættleiðingarleyfi verði metið gilt þar sem hann er búsettur.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Sýslumaður getur einnig heimilað að umsókn um ættleiðingarleyfi verði tekin til meðferðar hér á landi vegna sérstakra tengsla umsækjenda við landið.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumaður getur einnig heimilað að umsókn um ættleiðingarleyfi verði tekin til meðferðar hér á landi vegna sérstakra tengsla umsækjenda við landið.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen>Ákvæði 1. og 2. mgr. gilda þó ekki um ættleiðingar sem fram fara samkvæmt Haag-samningi frá 29. maí 1993 um vernd barna og samvinnu varðandi ættleiðingu milli landa.</sen>
+        <paragraph nr="1">
+          <sen>Ákvæði 1. og 2. mgr. gilda þó ekki um ættleiðingar sem fram fara samkvæmt Haag-samningi frá 29. maí 1993 um vernd barna og samvinnu varðandi ættleiðingu milli landa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -1036,6 +1263,7 @@
             <chapter>7</chapter>
             <art>37</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Sýslumaður">1</sen>
           </location>
         </footnote>
@@ -1045,10 +1273,14 @@
       <nr-title>38. gr.</nr-title>
       <name>Réttaráhrif ættleiðinga barna erlendis.</name>
       <subart nr="1">
-        <sen>Ef forsamþykki hefur verið gefið út samkvæmt ákvæðum þessara laga gildir ættleiðing sem veitt hefur verið erlendis á grundvelli þess hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Ef forsamþykki hefur verið gefið út samkvæmt ákvæðum þessara laga gildir ættleiðing sem veitt hefur verið erlendis á grundvelli þess hér á landi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>Sýslumaður getur ákveðið að réttaráhrif ættleiðingar barns sem veitt hefur verið erlendis verði þau sömu og ættleiðingar sem heimiluð hefur verið hér á landi.</sen>
+        <paragraph nr="1">
+          <sen>Sýslumaður getur ákveðið að réttaráhrif ættleiðingar barns sem veitt hefur verið erlendis verði þau sömu og ættleiðingar sem heimiluð hefur verið hér á landi.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="12" nr="1">
@@ -1057,6 +1289,7 @@
             <chapter>7</chapter>
             <art>38</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <sen words="Sýslumaður">1</sen>
           </location>
         </footnote>
@@ -1066,14 +1299,18 @@
       <nr-title>39. gr.</nr-title>
       <name>Erlend ættleiðing sem andstæð er grunnreglum íslenskra laga.</name>
       <subart nr="1">
-        <sen>Ættleiðing sem fram fer erlendis er ekki gild hér á landi ef hún gengur í berhögg við grunnreglur íslensks réttar (allsherjarreglu).</sen>
+        <paragraph nr="1">
+          <sen>Ættleiðing sem fram fer erlendis er ekki gild hér á landi ef hún gengur í berhögg við grunnreglur íslensks réttar (allsherjarreglu).</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="40">
       <nr-title>40. gr.</nr-title>
       <name>Frávik vegna þjóðréttarsamninga.</name>
       <subart nr="1">
-        <sen>Ráðherra getur ákveðið að víkja megi frá einstökum ákvæðum laga þessara ef það er talið nauðsynlegt til að fullnægja skyldum sem Ísland hefur bundist eða kann að bindast með þjóðréttarsamningum.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur ákveðið að víkja megi frá einstökum ákvæðum laga þessara ef það er talið nauðsynlegt til að fullnægja skyldum sem Ísland hefur bundist eða kann að bindast með þjóðréttarsamningum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -1082,6 +1319,7 @@
             <chapter>7</chapter>
             <art>40</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -1095,7 +1333,9 @@
       <nr-title>41. gr.</nr-title>
       <name>Stjórnvaldsreglur.</name>
       <subart nr="1">
-        <sen>Ráðherra getur sett nánari ákvæði um framkvæmd laga þessara í reglugerð, þar á meðal um þau skilyrði sem umsækjendur þurfa að uppfylla.</sen>
+        <paragraph nr="1">
+          <sen>Ráðherra getur sett nánari ákvæði um framkvæmd laga þessara í reglugerð, þar á meðal um þau skilyrði sem umsækjendur þurfa að uppfylla.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -1104,6 +1344,7 @@
             <chapter>8</chapter>
             <art>41</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="Ráðherra">1</sen>
           </location>
         </footnote>
@@ -1113,6 +1354,7 @@
             <chapter>8</chapter>
             <art>41</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?getur sett nánari ákvæði um framkvæmd laga þessara í reglugerð," after-mark="(\[? ?)?þar á meðal um þau skilyrði sem umsækjendur þurfa að uppfylla].&lt;sup style=&quot;font-size:60%&quot;&gt; 3\) &lt;/sup&gt;$">1</sen>
           </location>
         </footnote>
@@ -1122,6 +1364,7 @@
             <chapter>8</chapter>
             <art>41</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="þar á meðal um þau skilyrði sem umsækjendur þurfa að uppfylla">1</sen>
           </location>
         </footnote>
@@ -1131,20 +1374,26 @@
       <nr-title>42. gr.</nr-title>
       <name>Gildistaka og brottfallin lög.</name>
       <subart nr="1">
-        <sen>Lög þessi taka gildi þegar sex mánuðir eru liðnir frá birtingu þeirra.</sen>
+        <paragraph nr="1">
+          <sen>Lög þessi taka gildi þegar sex mánuðir eru liðnir frá birtingu þeirra.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen>
-          <a href="http://www.althingi.is/altext/stjt/1999.130.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
-        </sen>
+        <paragraph nr="1">
+          <sen>
+            <a href="http://www.althingi.is/altext/stjt/1999.130.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."/>
+          </sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="43">
       <nr-title>43. gr.</nr-title>
       <name>Lagaskil.</name>
       <subart nr="1">
-        <sen>Úr ættleiðingarumsóknum og umsóknum um forsamþykki sem borist hafa ráðuneytinu fyrir gildistöku laga þessara skal leysa samkvæmt lögum nr. 15/1978.</sen>
-        <sen>Ef umsækjendur óska þess er þó heimilt að beita reglum þessara laga.</sen>
+        <paragraph nr="1">
+          <sen>Úr ættleiðingarumsóknum og umsóknum um forsamþykki sem borist hafa ráðuneytinu fyrir gildistöku laga þessara skal leysa samkvæmt lögum nr. 15/1978.</sen>
+          <sen>Ef umsækjendur óska þess er þó heimilt að beita reglum þessara laga.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="159" nr="1">
@@ -1153,6 +1402,7 @@
             <chapter>8</chapter>
             <art>43</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <sen words="ráðuneytinu">1</sen>
           </location>
         </footnote>
