@@ -52,10 +52,10 @@ def regexify_markers(text):
     # Closing markers.
     # NOTE: The three backslashes before the closing parentheses is because
     # we must seek the string after it has been modified by the
-    # parentheses-escaping code above. We're looking for "/)" instead of ")".
+    # parentheses-escaping code above. We're looking for "\)" instead of ")".
     text = re.sub(
-        r'\],? <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'(\],? <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
+        r'\],?\.? ?<sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
+        r'\.?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text
     )
 
