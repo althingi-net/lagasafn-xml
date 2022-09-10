@@ -402,7 +402,7 @@
           <subart>1</subart>
           <numart>f</numart>
           <paragraph>1</paragraph>
-          <nr-title before-mark="^(\[? ?)?f." after-mark="(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
+          <nr-title before-mark="^(\[? ?)?f." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
         </location>
         <location type="range">
           <start>
@@ -714,7 +714,7 @@
           <art>9</art>
           <subart>1</subart>
           <paragraph>1</paragraph>
-          <sen before-mark="^(\[? ?)?Ráðherra(\],? &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að kveða nánar á um framkvæmd laga þessara í reglugerð." after-mark="$">1</sen>
+          <sen before-mark="^(\[? ?)?Ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að kveða nánar á um framkvæmd laga þessara í reglugerð." after-mark="$">1</sen>
         </location>
       </footnote>
     </footnotes>
