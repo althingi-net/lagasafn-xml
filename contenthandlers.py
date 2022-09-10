@@ -575,3 +575,27 @@ def separate_sentences(content):
     sens = new_sens
 
     return sens
+
+
+def add_sentences(target_node, sens):
+    '''
+    Gracefully adds a bunch of sentences to a target node, enclosing them in
+    a paragraph.
+
+    Returns the created paragraph for further use by caller.
+    '''
+
+    # Determine the paragraph's number by examining how many already exist in the target node.
+    paragraph_nr = str(len(target_node.findall('paragraph')) + 1)
+
+    # Construct paragraph.
+    paragraph = E('paragraph', {'nr': paragraph_nr})
+
+    # Append sentences to paragraph.
+    for sen in sens:
+        paragraph.append(E('sen', sen))
+
+    # Append paragraph to given node.
+    target_node.append(paragraph)
+
+    return paragraph

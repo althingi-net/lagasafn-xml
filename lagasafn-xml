@@ -20,6 +20,7 @@ from lxml import etree
 from lxml.builder import E
 from sys import stderr
 
+from contenthandlers import add_sentences
 from contenthandlers import begins_with_regular_content
 from contenthandlers import check_chapter
 from contenthandlers import generate_ancestors
@@ -696,11 +697,13 @@ def make_xml(law_num, law_year):
                 back_peek = back_peek[0:-1]
 
             sen_title += collect_until(lines, '</i>')
-            sens = collect_until(lines, '<br/>')
+            content = collect_until(lines, '<br/>')
             if subart is not None:
-                subart.append(E('sen-title', sen_title))
-                for sen in separate_sentences(sens):
-                    subart.append(E('sen', sen))
+                paragraph = add_sentences(subart, separate_sentences(content))
+
+                # The sentence title belongs inside the paragraph that
+                # `add_sentences` creates, so it is inserted afterwards.
+                paragraph.insert(0, E('sen-title', sen_title))
 
                 trail.append('sen-with-title')
 
@@ -903,8 +906,7 @@ def make_xml(law_num, law_year):
 
             subart = E('subart', {'nr': subart_nr})
             sens = separate_sentences(strip_links(content))
-            for sen in sens:
-                subart.append(E('sen', sen))
+            add_sentences(subart, sens)
 
             # An occasional text, mostly advertisements, declarations, edicts
             # and at least one really ancient law, contain only subarticles.
@@ -933,11 +935,11 @@ def make_xml(law_num, law_year):
             # - m01d27/1847
             # - 97/1993
 
-            premature_deletion = collect_until(lines, '<br/>')
-
-            sen = E('sen', premature_deletion)
-            subart = E('subart', sen)
+            subart = E('subart')
             subart.attrib['nr'] = '1'
+
+            premature_deletion = collect_until(lines, '<br/>')
+            add_sentences(subart, [premature_deletion])
 
             law.append(subart)
 
@@ -949,12 +951,12 @@ def make_xml(law_num, law_year):
             # table width is only for consistency with the typical input.
 
             content = '<table width="100%">' + collect_until(lines, '</table>') + '</table>'
-            sen = E('sen', separate_sentences(content).pop())
+            sen = separate_sentences(content).pop()
 
             if subart is not None:
-                subart.append(sen)
+                add_sentences(subart, [sen])
             elif art is not None:
-                art.append(sen)
+                add_sentences(art, [sen])
 
         elif (
             matcher.check(line, r'<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or
@@ -1001,14 +1003,15 @@ def make_xml(law_num, law_year):
             # node is also added for the deletion marker to be addable.
             if numart_nr == '':
                 content = collect_until(lines, '</span>')
-                prev_numart.getparent().append(E(
+                dummy_numart = E(
                     'numart',
                     {
                         'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
                         'type': 'removed'
-                    },
-                    E('sen', content)
-                ))
+                    }
+                )
+                add_sentences(dummy_numart, [content])
+                prev_numart.getparent().append(dummy_numart)
                 scroll_until(lines, '<br/>')
                 continue
 
@@ -1027,14 +1030,15 @@ def make_xml(law_num, law_year):
             elif numart_nr == '</span>' and lines.peek(2).strip() == '…':
                 scroll_until(lines, '</span>')
                 content = collect_until(lines, '<br/>')
-                prev_numart.getparent().append(E(
+                dummy_numart = E(
                     'numart',
                     {
                         'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
                         'type': 'removed'
-                    },
-                    E('sen', content)
-                ))
+                    }
+                )
+                add_sentences(dummy_numart, [content])
+                prev_numart.getparent().append(dummy_numart)
                 continue
 
             # Dictates where we will place this numart.
@@ -1197,15 +1201,18 @@ def make_xml(law_num, law_year):
             # Add the numerical article to its parent.
             parent.append(numart)
 
+            # NOTE: Gets added after we add the sentences with `add_sentences`.
             numart_nr_title = collect_until(lines, '</span>')
-            numart.append(E('nr-title', numart_nr_title))
 
             if lines.peek().strip() == '<i>':
                 # Looks like this numerical article has a name.
                 scroll_until(lines, '<i>')
-                numart_name = collect_until(lines, '</i>')
 
-                numart.append(E('name', numart_name))
+                # Note that this gets inserted **after** we add the sentences
+                # with `add_sentences` below.
+                numart_name = collect_until(lines, '</i>')
+            else:
+                numart_name = None
 
             # Read in the remainder of the content.
             content = collect_until(lines, '<br/>')
@@ -1235,26 +1242,27 @@ def make_xml(law_num, law_year):
                         # mechanism's responsibility to react to this
                         # information, if needed.
                         'style-note': 'inline-with-parent'
-                    },
-                    # Note that we go back for the 'sens' list because we'll
-                    # want to include markers that might be there, but have
-                    # been removed from `possible_nr_title` for comparison
-                    # purposes.
-                    E('nr-title', sens[0])
+                    }
                 )
 
                 # Mark the new numart as alphabetic, if appropriate.
                 if not new_numart_nr.isdigit():
                     new_numart.attrib['type'] = 'alphabet'
 
-                # The first entity in the list will be the nr-title, which
-                # we've already used and we don't want in the content, so
-                # popped out here.
-                sens.pop(0)
+                # Get the `nr-title` from the first `sen`. Note that we go
+                # back for the 'sens' list because we'll want to include
+                # markers that might be there, but have been removed from
+                # `possible_nr_title` for comparison purposes.
+                #
+                # We then remove it from the rest of the sentences precisely
+                # because it is the `nr-title`.
+                nr_title = sens.pop(0)
 
-                # Add the sentences to the new numart.
-                for sen in sens:
-                    new_numart.append(E('sen', sen))
+                # Add the sentences to the new numart, creating paragraph.
+                paragraph = add_sentences(new_numart, sens)
+
+                # Insert the `nr-title` in the newly created paragraph.
+                paragraph.insert(0, E('nr-title', nr_title))
 
                 # Add the new numart to the current numart.
                 numart.append(new_numart)
@@ -1265,38 +1273,15 @@ def make_xml(law_num, law_year):
 
             else:
                 # Add the sentences to the numart.
-                for sen in sens:
-                    numart.append(E('sen', sen))
+                paragraph = add_sentences(numart, sens)
 
-                # In e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002, a
-                # sentence follows the numart that belongs to the same
-                # subart. Except, for some reason, there are actually two of
-                # them, in separate paragraphs. This is most unusual and
-                # breaks the typical format, creating some kind of
-                # "sub-paragraphs", i.e. paragraphs of sentences that are
-                # still not subarts, and wouldn't make any sense if referred
-                # to in that way.
-                #
-                # So they are a sort of "half-sentence", "half-paragraph",
-                # but in reality, they should (probably and hopefully) be
-                # treated as sentences and not paragraphs, since that
-                # wouldn't make sense when being referred to formally.
-                #
-                # However, a renderer needs to know that they should be
-                # displayed in this strange paragraphy way. To make that
-                # possible, we use this variable, `force_paragraph_in`. When
-                # stray text is found, and its target location determined,
-                # this variable records the target location.
-                #
-                # When we run into two consecutive instances of stray text,
-                # that both have the same target destination, we will add an
-                # attribute to the first sentence in the "paragraph", called
-                # `force-paragraph`, indicating to a renderer that even
-                # though it's a regular sentence, following another sentence,
-                # it should actually be displayed as a paragraph.
-                force_paragraph_in = None
+                # Add the title info to the created paragraph.
+                paragraph.insert(0, E('nr-title', numart_nr_title))
+                if numart_name is not None:
+                    # Inserted immediately after the `nr-title`, so 1.
+                    paragraph.insert(1, E('name', numart_name))
 
-                # Handle following sentences that we don't know where to place.
+                # Handle extra paragraphs that we don't know where to place.
                 while begins_with_regular_content(lines.peek()) and '--enable-straytextmap' in settings.options:
 
                     # When regular (text) content immediately follows a
@@ -1350,33 +1335,9 @@ def make_xml(law_num, law_year):
                     if extra_sens_target is None:
                         break
 
-                    # Add these extra sentences in their proper place. We add
-                    # an attribute, `force-paragraph` to show a parser that
-                    # this sentences starts a new paragraph.
-                    #
-                    # This is probably only important in the case that two
-                    # such paragraphs appear one after another. This is
-                    # currently (2022-07-06) only known to happen immediately
-                    # after e-stafl. 9. tölul. 1. gr. a laga nr. 161/2002.
-                    for i, extra_sen in enumerate(extra_sens):
-                        # Add `force-paragraph` attribute to tag if:
-                        #
-                        # It's the **first sentence** in a cluster of
-                        # sentences and either:
-                        #
-                        # a) a **second cluster of sentences** in the same
-                        #    target destination tag or
-                        # b) belongs to the **same numart** currently being
-                        #    processed.
-                        #
-                        # # See comment to `force_paragraph_in` above loop.
-                        if i == 0 and (force_paragraph_in == extra_sens_target or numart == extra_sens_target):
-                            extra_sens_target.append(E('sen', extra_sen, {'force-paragraph': 'true'}))
-                        else:
-                            extra_sens_target.append(E('sen', extra_sen))
-
-                    # See comment for `force_paragraph_in` above loop.
-                    force_paragraph_in = extra_sens_target
+                    # Add the stray paragraphs in the location decided by the
+                    # user.
+                    add_sentences(extra_sens_target, extra_sens)
 
             trail.append('numart')
 
