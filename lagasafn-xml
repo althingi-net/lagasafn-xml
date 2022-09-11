@@ -1339,6 +1339,12 @@ def make_xml(law_num, law_year):
                     # user.
                     add_sentences(extra_sens_target, extra_sens)
 
+                    # We'll need to change the remembered numart to the
+                    # target of the extra sentences, if it happens to be a
+                    # numart, so that the next numart gets the right parent.
+                    if extra_sens_target.tag == 'numart':
+                        numart = extra_sens_target
+
             trail.append('numart')
 
         elif line == '<small>':
