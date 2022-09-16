@@ -128,7 +128,7 @@ def numart_next_nrs(prev_numart):
             ]
 
     elif prev_numart.attrib['type'] == 'en-dash':
-        expected_numart_nrs.append('—')
+        expected_numart_nrs += ['—', '–']
     elif prev_numart.attrib['type'] == 'roman':
         new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
         if prev_numart_nr.islower():
@@ -368,6 +368,8 @@ def generate_legal_reference(input_node, skip_law=False):
                 result += '%s-stafl. ' % node.attrib['nr']
             elif node.attrib['type'] in ['numeric', 'roman']:
                 result += '%s. tölul. ' % node.attrib['nr']
+            elif node.attrib['type'] == 'en-dash':
+                result += '%s. pkt. ' % node.attrib['nr']
             else:
                 raise Exception('Parsing of node not implemented')
         elif node.tag == 'subart':

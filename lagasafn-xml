@@ -1090,7 +1090,7 @@ def make_xml(law_num, law_year):
 
                 if numart_nr not in expected_numart_nrs:
                     if (
-                        numart_nr.lower() in ['a', 'i', '—'] or
+                        numart_nr.lower() in ['a', 'i', '—', '–'] or
                         (numart_nr.isdigit() and int(numart_nr) == 1)
                     ):
                         # A new list has started within the one we were
@@ -1149,7 +1149,7 @@ def make_xml(law_num, law_year):
             # Figure out the numart's type.
             if numart_nr[0].isdigit():
                 numart_type = 'numeric'
-            elif numart_nr == '—':
+            elif numart_nr in ['—', '–']:
                 numart_type = 'en-dash'
             else:
                 # At this point, we're dealing with a numart that is
@@ -1194,6 +1194,16 @@ def make_xml(law_num, law_year):
 
                 else:
                     numart_type = 'alphabet'
+
+            # Dash-numarts need special treatment because they don't contain
+            # information about their numeric position, since they are all
+            # simply a dash. We must figure out their number and assign a new
+            # `numart_nr`. The `nr-title` will still contain just a dash.
+            if numart_type == 'en-dash':
+                if prev_numart is not None and prev_numart.attrib['type'] == 'en-dash':
+                    numart_nr = str(int(prev_numart.attrib['nr']) + 1)
+                else:
+                    numart_nr = '1'
 
             # Create numerical article.
             numart = E('numart', {'nr': numart_nr, 'type': numart_type})
