@@ -2453,20 +2453,15 @@ def main(argv):
 
     if '--try-broken' in argv:
         law_ids = get_broken_law_ids()
-        if len(law_ids) == 0:
-            print('Hooray! Nothing seems broken!')
-            quit()
-    else:
-        # Add things in command line that match the pattern for a law_id.
-        # FIXME: This should preferably also be checked when using the
-        # --try-broken option.
-        for arg in argv[1:]:
-            if re.match(r'^\d{1,4}\/\d{4}$', arg):
-                law_ids.append(arg)
-            elif arg in valid_options:
-                settings.options[arg] = True
-            elif arg not in valid_options:
-                usage(argv[0], 'Unknown option "%s"' % arg)
+
+    # Add things in command line that match the pattern for a law_id.
+    for arg in argv[1:]:
+        if re.match(r'^\d{1,4}\/\d{4}$', arg):
+            law_ids.append(arg)
+        elif arg in valid_options:
+            settings.options[arg] = True
+        elif arg not in valid_options:
+            usage(argv[0], 'Unknown option "%s"' % arg)
 
     # If nothing is selected, we'll process everything.
     if len(law_ids) == 0:
