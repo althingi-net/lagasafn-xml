@@ -886,6 +886,8 @@ def make_xml(law_num, law_year):
             subart = None
 
         elif matcher.check(line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'):
+            # Parse a subart.
+
             art_nr, subart_nr = matcher.result()
 
             # Check how far we are from the typical subart end.
@@ -962,6 +964,8 @@ def make_xml(law_num, law_year):
             matcher.check(line, r'<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or
             (matcher.check(line, '<span>') and lines.peek().strip() != '</span>')
         ):
+            # Parse a numart, or numerical article.
+
             # The removal of ". " is to turn a human readable numerical
             # article that contains both a numerical component and an
             # alphabetic one, into something easier to work with
