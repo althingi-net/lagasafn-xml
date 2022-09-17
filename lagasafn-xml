@@ -971,7 +971,7 @@ def make_xml(law_num, law_year):
             # alphabetic one, into something easier to work with
             # programmatically. Example: "9. a" becomes "9a" in law nr.
             # 20/2003.
-            numart_nr = strip_markers(lines.peek().strip().strip('.')).replace('. ', '')
+            numart_nr = strip_markers(lines.peek().strip().strip('(').strip(')').strip('.')).replace('. ', '')
 
             # Support for numart ranges, which are only known to occur when
             # many numarts have been removed. This occurs for example in 145.
@@ -1048,7 +1048,7 @@ def make_xml(law_num, law_year):
             # Dictates where we will place this numart.
             parent = None
 
-            # The variable `special_roman` is true under the unique
+            # The variable `special_roman` is true under the almost unique
             # circumstances that an alphabetic numart turns from "h" to a new
             # sub-numart with Roman numeral "i", resulting in a sequence of
             # "...f,g,h,i,ii,iii".
@@ -1067,7 +1067,7 @@ def make_xml(law_num, law_year):
             # happens in 1. mgr. 21. gr. laga nr. 19/1996, although the
             # symbols are displayed in parentheses.
             try:
-                special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() == 'ii.'
+                special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() in ['ii.', '(ii)']
             except (AttributeError, IndexError):
                 # Definitely not the special scenario if this goes wrong.
                 special_roman = False
