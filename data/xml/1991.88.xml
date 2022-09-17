@@ -5153,6 +5153,12 @@
               <sen>1</sen>
             </end>
           </location>
+          <location type="deletion">
+            <chapter>8</chapter>
+            <numart>10-13</numart>
+            <paragraph>1</paragraph>
+            <sen before-mark="^" after-mark="$">1</sen>
+          </location>
           <location type="range">
             <chapter>8</chapter>
             <numart>27</numart>
@@ -5377,6 +5383,11 @@
         </footnote>
       </footnotes>
     </art>
+    <numart nr="10-13" type="numeric">
+      <paragraph nr="1">
+        <nr-title>10.–13.</nr-title>
+      </paragraph>
+    </numart>
     <numart nr="14" type="numeric">
       <paragraph nr="1">
         <nr-title>14.</nr-title>
