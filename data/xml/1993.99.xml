@@ -628,8 +628,7 @@
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
         <paragraph nr="1">
-          <sen>Verðlagsnefnd ákveður lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi nema annað sé tekið fram í samningi milli ráðherra f.</sen>
-          <sen>h. ríkisstjórnar Íslands og Bændasamtaka Íslands.</sen>
+          <sen>Verðlagsnefnd ákveður lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi nema annað sé tekið fram í samningi milli ráðherra f.h. ríkisstjórnar Íslands og Bændasamtaka Íslands.</sen>
           <sen>Hverri afurðastöð er heimilt að greiða framleiðendum hærra verð en lágmarksverð.</sen>
           <sen>Verðlagsnefnd ákveður leyfileg afföll af verði mjólkur sem ekki stenst kröfur sem 1. flokks mjólk.</sen>
           <sen>Ákvörðun um lágmarksverð mjólkur skal byggjast á gerð verðlagsgrundvallar fyrir bú af hagkvæmri stærð, með framleiðsluaðstöðu þar sem tekið er mið af opinberum heilbrigðis- og aðbúnaðarkröfum og hagkvæmum framleiðsluháttum.</sen>
@@ -672,7 +671,7 @@
             <art>8</art>
             <subart>1</subart>
             <paragraph>1</paragraph>
-            <sen before-mark="^(\[? ?)?Verðlagsnefnd ákveður" after-mark="lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi (\[? ?)?nema annað sé tekið fram í samningi milli (\[? ?)?ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?f.$">1</sen>
+            <sen before-mark="^(\[? ?)?Verðlagsnefnd ákveður" after-mark="lágmarksverð fyrir mjólk til framleiðenda sem miðast við 1. flokks mjólk með skilgreindu efnainnihaldi (\[? ?)?nema annað sé tekið fram í samningi milli (\[? ?)?ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?f.h. ríkisstjórnar Íslands og Bændasamtaka Íslands\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
           </location>
           <location type="range">
             <chapter>4</chapter>
@@ -695,20 +694,11 @@
         <footnote href="https://www.althingi.is/altext/stjt/2004.061.html" law-nr="61" law-year="2004" law-art="1" nr="3">
           <footnote-sen>L. 61/2004, 1. gr.</footnote-sen>
           <location type="range">
-            <start>
-              <chapter>4</chapter>
-              <art>8</art>
-              <subart>1</subart>
-              <paragraph>1</paragraph>
-              <sen words="nema annað sé tekið fram í samningi milli ráðherra f.">1</sen>
-            </start>
-            <end>
-              <chapter>4</chapter>
-              <art>8</art>
-              <subart>1</subart>
-              <paragraph>1</paragraph>
-              <sen words="h. ríkisstjórnar Íslands og Bændasamtaka Íslands">2</sen>
-            </end>
+            <chapter>4</chapter>
+            <art>8</art>
+            <subart>1</subart>
+            <paragraph>1</paragraph>
+            <sen words="nema annað sé tekið fram í samningi milli ráðherra f.h. ríkisstjórnar Íslands og Bændasamtaka Íslands">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1998.069.html" law-nr="69" law-year="1998" law-art="2" nr="4">
