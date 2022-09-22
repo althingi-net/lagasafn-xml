@@ -293,6 +293,8 @@ def separate_sentences(content):
         'þ.e.',
         'o.fl',
         'þ.m',
+        'f.h.',
+        'o.þ.h.',
     ]
     for r in recognized_shorts:
         content = content.replace(r, r.replace('.', '[DOT]'))
