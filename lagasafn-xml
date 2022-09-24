@@ -53,6 +53,7 @@ CLEAN_FILENAME = os.path.join(DATA_DIR, 'cleaned', '%d-%d.html')  # % (law_year,
 PATCHED_FILENAME = os.path.join(DATA_DIR, 'patched', '%d-%d.html')  # % (law_year, law_num)
 PATCH_FILENAME = os.path.join(DATA_DIR, 'patches', settings.CURRENT_PARLIAMENT_VERSION, '%d-%d.html.patch')  # % (law_year, law_num)
 XML_FILENAME = os.path.join(DATA_DIR, 'xml', '%d.%s.xml')  # % (law_year, law_num)
+XML_INDEX_FILENAME = os.path.join(DATA_DIR, 'xml', 'index.xml')
 
 ERRORMAP_FILENAME = os.path.join('data', 'json-maps', 'errormap.json')
 
@@ -2238,7 +2239,14 @@ def make_xml(law_num, law_year):
             sen.append(table)
 
     # Write the XML object to output file.
-    with open(XML_FILENAME % (law_year, law_num), 'w') as f:
+    write_xml(
+        law,
+        XML_FILENAME % (law_year, law_num)
+    )
+
+
+def write_xml(xml_doc, filename):
+    with open(filename, 'w') as f:
         # Importing a completely different XML library than the one we're
         # using elsewhere in the code is a bit weird, but this is the only one
         # we could find that does pretty printing with proper indenting. That
@@ -2253,7 +2261,7 @@ def make_xml(law_num, law_year):
             import xml.dom.minidom
             xml = xml.dom.minidom.parseString(
                 etree.tostring(
-                    law,
+                    xml_doc,
                     pretty_print=True,
                     xml_declaration=True,
                     encoding='utf-8'
@@ -2267,7 +2275,7 @@ def make_xml(law_num, law_year):
         else:
             f.write(
                 etree.tostring(
-                    law,
+                    xml_doc,
                     pretty_print=True,
                     xml_declaration=True,
                     encoding='utf-8'
@@ -2429,6 +2437,56 @@ def display_errors(law_ids):
         ))
 
 
+def update_index():
+
+    print('Updating index...', end='', flush=True)
+
+    # Index root element.
+    index = E('index')
+
+    # Iterate through all the XML files we have.
+    for law_xml_filename in os.listdir(os.path.dirname(XML_FILENAME)):
+
+        # Only interested in XML files.
+        if law_xml_filename[-4:] != '.xml':
+            continue
+
+        # Determine the law's year and number from the XML file's name.
+        try:
+            law_year = int(law_xml_filename[0:4])
+            law_nr = law_xml_filename[5:law_xml_filename.find('.', 5)]
+        except ValueError:
+            # This is not a file in the correct name format. Probably the
+            # index itself. We'll ignore it.
+            continue
+
+        # Read the XML file's content, from which we'll get a bunch of information for the index.
+        law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+
+        # Find some basic information for the index.
+        name = law.find('name').text
+        date = law.find('num-and-date/date').text
+
+        # Append the gathered data to the index.
+        law = E('law', {
+            'nr': law_nr,
+            'year': str(law_year),
+            'name': name,
+            'date': date,
+        })
+        index.append(law)
+
+    # Sort the index by year and number.
+    index[:] = reversed(sorted(
+        index,
+        key=lambda law: (law.attrib['year'], law.attrib['nr'])
+    ))
+
+    write_xml(index, XML_INDEX_FILENAME)
+
+    print(' done')
+
+
 def usage(exec_name, message=None):
     print('Usage: %s [law_number>/<year>] [law_number>/<year>]...' % exec_name, file=stderr)
     print(file=stderr)
@@ -2552,6 +2610,9 @@ def main(argv):
             # Write the errormap.
             with open(ERRORMAP_FILENAME, 'w') as f:
                 json.dump(errormap, f)
+
+    # Update the index.
+    update_index()
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)
