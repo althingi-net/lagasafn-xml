@@ -562,3 +562,53 @@ class Matcher():
 
     def result(self):
         return self.match.groups()
+
+
+class Trail():
+    '''
+    A helper class for keeping track of what has been added lately to the XML
+    being processed at any given point in time. Used to determine the context
+    of what is currently being processed.
+
+    Currently, we only ever need the last node added, so strictly speaking
+    this could just remember one node at a time, but it's quite conceivable
+    that we'll need to be able to look them up further back for additional
+    context. For this reason, we keep the history of nodes added.
+
+    Usage:
+
+        if Trail.last().tag == 'art':
+            Trail.last().append(some_thing)
+    '''
+
+    def __init__(self):
+        self.milestones = []
+        self.nodes = []
+
+    def set_milestone(self, milestone):
+        '''
+        May be used to set a milestone that can then be checked to see later
+        if it has been reached. For example, 'intro-finished' is a milestone
+        that tells us whether we have finished the intro or not.
+        '''
+        self.milestones.append(milestone)
+
+    def milestone_reached(self, milestone):
+        '''
+        Check to see if the provided milestone has been reached.
+        '''
+        return milestone in self.milestones
+
+    def append(self, appended_node):
+        '''
+        Appends a given node to the trail.
+        '''
+
+        self.nodes.append(appended_node)
+
+    def last(self):
+        '''
+        Gets the last node appended.
+        '''
+
+        return self.nodes[-1]
