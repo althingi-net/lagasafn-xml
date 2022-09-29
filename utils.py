@@ -372,6 +372,12 @@ def generate_legal_reference(input_node, skip_law=False):
                 result += '%s. pkt. ' % node.attrib['nr']
             else:
                 raise Exception('Parsing of node not implemented')
+        elif node.tag == 'art-chapter':
+            # Nominative case if first in line, otherwise genitive.
+            if not result:
+                result += '%s-liður ' % node.attrib['nr']
+            else:
+                result += '%s-liðar ' % node.attrib['nr']
         elif node.tag == 'subart':
             result += '%s. málsgr. ' % node.attrib['nr']
         elif node.tag == 'art':

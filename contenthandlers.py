@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import string
 
 from lxml.builder import E
 
@@ -211,6 +212,16 @@ def check_chapter(lines, law):
     # a subchapter. This has not been researched.
     elif peek_stripped.lower().find('bráðabirgð') > -1:
         line_type = 'chapter'
+
+    # Check if this is an "article chapter". Those are not exactly numerical
+    # articles, but chapter-like phenomena that resides inside articles, or
+    # even their subarticles.
+    #
+    # FIXME: This should actually be implemented alongside the Roman-parsing
+    # elow. For now, we avoid mixing up Roman numerals with Latin letters by
+    # only considering the letters A-H here as potential article chapters.
+    elif len(peek_stripped) > 1 and peek_stripped[1] == '.' and peek_stripped[0] in string.ascii_uppercase[0:8]:
+        line_type = 'art-chapter'
 
     else:
 
