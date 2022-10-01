@@ -143,17 +143,22 @@ def clean_content(content):
         ))
         [empty_tag.extract() for empty_tag in empty_tags]
 
-    # Keep consecutive <br />s only at 2 at most
-    brs_in_a_row = 0
-    all_tags = soup.find_all()
-    for t in all_tags:
-        if t.name == 'br':
-            if brs_in_a_row >= 2:
-                t.extract()
-            else:
-                brs_in_a_row = brs_in_a_row + 1
-        else:
-            brs_in_a_row = 0
+    # Keep consecutive <br />s only at 2 at most.
+    # Commented because it got in the way of parsing stray text after numarts
+    # (indicating a new paragraph). It does not seem to damage the XML and
+    # there is no record of why this was done in the first place. Remove
+    # entirely if 2022-10-01 was a long time ago.
+    #brs_in_a_row = 0
+    #all_tags = soup.find_all()
+    #for t in all_tags:
+    #    if t.name == 'br':
+    #        if brs_in_a_row >= 2:
+    #            t.extract()
+    #            brs_in_a_row -= 1
+    #        else:
+    #            brs_in_a_row = brs_in_a_row + 1
+    #    else:
+    #        brs_in_a_row = 0
 
     # Replace <html> and <body> tags' with <div>s.
     '''
@@ -1385,11 +1390,8 @@ def make_xml(law_num, law_year):
                     # When regular (text) content immediately follows a
                     # numart, and not a new location like an article,
                     # subarticle or another numart, we must determine its
-                    # nature. We'll start by finding the content and stepping
-                    # over linebreaks.
-                    extra_content = next(lines).strip()
-                    if lines.peek().strip() == '<br/>':
-                        next(lines)
+                    # nature. We'll start by finding the content.
+                    extra_content = collect_until(lines, '<br/>')
 
                     # Process the extra content into extra sentences.
                     extra_sens = separate_sentences(strip_links(extra_content))
