@@ -15,37 +15,37 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Með tónlistarskóla er í lögum þessum átt við skóla sem fullnægir eftirtöldum skilyrðum:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>hefur a.m.k. einn fastan kennara auk stundakennara;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>starfar minnst sjö mánuði á ári og lýkur með prófum og opinberum nemendatónleikum;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>kennir samkvæmt námskrá útgefinni af ráðuneytinu eða námslýsingu sem hlotið hefur staðfestingu ráðuneytisins; ráðherra er heimilt að fela Menntamálastofnun að staðfesta námslýsingu; ef námskrá skortir skal hverjum nemanda veitt kennsla í aðalnámsgrein eina stund á viku; auk þess séu a.m.k. tvær aukanámsgreinar kenndar í hóptímum (tónfræði, tónheyrn, tónlistarsaga og samleikur);</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>hefur a.m.k. 30 nemendur sem stunda nám til viðurkenndrar prófraunar;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>hefur hlotið sérstakt samþykki ráðuneytisins og jafnframt samþykki viðkomandi sveitarstjórnar ef skóli er rekinn af þriðja aðila.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>hefur a.m.k. einn fastan kennara auk stundakennara;</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>starfar minnst sjö mánuði á ári og lýkur með prófum og opinberum nemendatónleikum;</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>kennir samkvæmt námskrá útgefinni af ráðuneytinu eða námslýsingu sem hlotið hefur staðfestingu ráðuneytisins; ráðherra er heimilt að fela Menntamálastofnun að staðfesta námslýsingu; ef námskrá skortir skal hverjum nemanda veitt kennsla í aðalnámsgrein eina stund á viku; auk þess séu a.m.k. tvær aukanámsgreinar kenndar í hóptímum (tónfræði, tónheyrn, tónlistarsaga og samleikur);</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>hefur a.m.k. 30 nemendur sem stunda nám til viðurkenndrar prófraunar;</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>hefur hlotið sérstakt samþykki ráðuneytisins og jafnframt samþykki viðkomandi sveitarstjórnar ef skóli er rekinn af þriðja aðila.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote nr="1">
@@ -54,6 +54,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?kennir samkvæmt námskrá" after-mark="útgefinni af ráðuneytinu eða námslýsingu sem hlotið hefur staðfestingu ráðuneytisins; ráðherra er heimilt að fela Menntamálastofnun að staðfesta námslýsingu; ef námskrá skortir skal hverjum nemanda veitt kennsla í aðalnámsgrein eina stund á viku; auk þess séu a.m.k. tvær aukanámsgreinar kenndar í hóptímum \\)tónfræði, tónheyrn, tónlistarsaga og samleikur\)]; &lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt;$">1</sen>
@@ -65,6 +66,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="kennir samkvæmt námskrá útgefinni af ráðuneytinu eða námslýsingu sem hlotið hefur staðfestingu ráðuneytisins; ráðherra er heimilt að fela Menntamálastofnun að staðfesta námslýsingu; ef námskrá skortir skal hverjum nemanda veitt kennsla í aðalnámsgrein eina stund á viku; auk þess séu a.m.k. tvær aukanámsgreinar kenndar í hóptímum (tónfræði, tónheyrn, tónlistarsaga og samleikur)">1</sen>
@@ -76,6 +78,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <sen words="ráðuneytisins">1</sen>

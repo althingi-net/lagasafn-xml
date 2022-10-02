@@ -194,43 +194,43 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Tekjum af almennu tryggingagjaldi skal ráðstafað sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen/>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen/>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen/>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>0,325% af gjaldstofni skv. III. kafla renni til jöfnunar og lækkunar örorkubyrði lífeyrissjóða, sbr. VI. kafla.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Fæðingarorlofssjóður fái í sinn hlut sem nemi allt að 1,1% af gjaldstofni skv. III. kafla.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Tekjur af almennu tryggingagjaldi umfram það sem ákveðið er í 1.–5. tölul. renni til Tryggingastofnunar ríkisins til að fjármagna lífeyris- og slysatryggingar almannatrygginga eftir reglum sem ráðherra setur með reglugerð.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen/>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen/>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen/>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>0,325% af gjaldstofni skv. III. kafla renni til jöfnunar og lækkunar örorkubyrði lífeyrissjóða, sbr. VI. kafla.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Fæðingarorlofssjóður fái í sinn hlut sem nemi allt að 1,1% af gjaldstofni skv. III. kafla.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Tekjur af almennu tryggingagjaldi umfram það sem ákveðið er í 1.–5. tölul. renni til Tryggingastofnunar ríkisins til að fjármagna lífeyris- og slysatryggingar almannatrygginga eftir reglum sem ráðherra setur með reglugerð.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -254,6 +254,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -265,6 +266,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -276,6 +278,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -287,6 +290,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="0,325%">1</sen>
@@ -299,6 +303,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -307,6 +312,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -316,6 +322,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -324,6 +331,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -335,6 +343,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <sen words="1,1%">1</sen>
@@ -346,6 +355,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen words="1.–5. tölul.">1</sen>
@@ -357,6 +367,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
@@ -376,6 +387,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -481,25 +493,25 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Eftirtaldir aðilar eru undanþegnir tryggingagjaldi:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen/>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Erlendir þjóðhöfðingjar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Sendiráð og sendiherrar erlendra ríkja, sendiræðismenn og erlendir starfsmenn við sendiráð.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen/>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Erlendir þjóðhöfðingjar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Sendiráð og sendiherrar erlendra ríkja, sendiræðismenn og erlendir starfsmenn við sendiráð.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -513,6 +525,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -635,38 +648,38 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Til gjaldstofns skv. 6. gr. teljast meðal annars:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Hvers konar laun og þóknanir, þar með talið ákvæðislaun, biðlaun, nefndarlaun, stjórnarlaun, launauppbætur, staðaruppbætur, orlofsfé og greiðslur fyrir ónotað orlof og framlag vinnuveitanda í lífeyrissjóð</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Verkfærapeningar, flutningspeningar, fæðispeningar og þess háttar greiðslur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Ökutækjastyrkir og dagpeningar.</sen>
+              <sen>Þó skal ekki telja til gjaldstofns greiðslur dagpeninga sem heimilt er að halda utan staðgreiðslu samkvæmt lögum nr. 45/1987, um staðgreiðslu opinberra gjalda, með síðari breytingum, og reglugerðum og starfsreglum sem settar eru með stoð í þeim lögum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Gjafir og risnufé sem teljast kaupuppbót og eftirgjöf lána sem telja má að komi í launa stað.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Laun eða þóknanir fyrir störf unnin erlendis, greidd af íslenskum aðilum til manna sem eru heimilisfastir hér á landi.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Hvers konar laun og þóknanir, þar með talið ákvæðislaun, biðlaun, nefndarlaun, stjórnarlaun, launauppbætur, staðaruppbætur, orlofsfé og greiðslur fyrir ónotað orlof og framlag vinnuveitanda í lífeyrissjóð</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Verkfærapeningar, flutningspeningar, fæðispeningar og þess háttar greiðslur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Ökutækjastyrkir og dagpeningar.</sen>
-            <sen>Þó skal ekki telja til gjaldstofns greiðslur dagpeninga sem heimilt er að halda utan staðgreiðslu samkvæmt lögum nr. 45/1987, um staðgreiðslu opinberra gjalda, með síðari breytingum, og reglugerðum og starfsreglum sem settar eru með stoð í þeim lögum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Gjafir og risnufé sem teljast kaupuppbót og eftirgjöf lána sem telja má að komi í launa stað.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Laun eða þóknanir fyrir störf unnin erlendis, greidd af íslenskum aðilum til manna sem eru heimilisfastir hér á landi.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1996.156.html" law-nr="156" law-year="1996" law-art="3" nr="1">
@@ -675,6 +688,7 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Hvers konar laun og þóknanir, þar með talið ákvæðislaun, biðlaun, nefndarlaun, stjórnarlaun, launauppbætur, staðaruppbætur, orlofsfé og greiðslur fyrir ónotað orlof og framlag vinnuveitanda í lífeyrissjóð" after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -686,6 +700,7 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -694,6 +709,7 @@
             <chapter>3</chapter>
             <art>7</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen>2</sen>
@@ -717,43 +733,43 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Undanþegnar tryggingagjaldi eru eftirtaldar greiðslur:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Eftirlaun og lífeyrir sem Tryggingastofnun ríkisins eða lífeyrissjóður greiðir, enda starfi lífeyrissjóðurinn eftir reglum sem ráðherra samþykkir og sjóðurinn sé háður eftirliti ráðuneytisins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Aðrar bætur greiddar af Tryggingastofnun ríkisins, svo og sjúkradagpeningar samkvæmt lögum um sjúkratryggingar, slysabætur samkvæmt lögum um slysatryggingar almannatrygginga og slysa- og sjúkradagpeningar úr sjúkrasjóðum stéttarfélaga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Bætur tryggingafélaga vegna atvinnutjóns af völdum slysa.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Atvinnuleysisbætur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Greiðslur úr ríkissjóði vegna ríkisábyrgðar á launum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Greiðslur úr Fæðingarorlofssjóði vegna fæðingarorlofs.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Eftirlaun og lífeyrir sem Tryggingastofnun ríkisins eða lífeyrissjóður greiðir, enda starfi lífeyrissjóðurinn eftir reglum sem ráðherra samþykkir og sjóðurinn sé háður eftirliti ráðuneytisins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Aðrar bætur greiddar af Tryggingastofnun ríkisins, svo og sjúkradagpeningar samkvæmt lögum um sjúkratryggingar, slysabætur samkvæmt lögum um slysatryggingar almannatrygginga og slysa- og sjúkradagpeningar úr sjúkrasjóðum stéttarfélaga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Bætur tryggingafélaga vegna atvinnutjóns af völdum slysa.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Atvinnuleysisbætur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Greiðslur úr ríkissjóði vegna ríkisábyrgðar á launum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Greiðslur úr Fæðingarorlofssjóði vegna fæðingarorlofs.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="148" nr="1">
@@ -762,6 +778,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
@@ -770,6 +787,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="ráðuneytisins">1</sen>
@@ -781,6 +799,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="slysabætur samkvæmt lögum um slysatryggingar almannatrygginga">1</sen>
@@ -789,6 +808,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^Aðrar bætur greiddar af Tryggingastofnun ríkisins," after-mark="svo og (\[? ?)?sjúkradagpeningar samkvæmt lögum um sjúkratryggingar, (\[? ?)?slysabætur samkvæmt lögum um slysatryggingar almannatrygginga\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?og\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?slysa- og sjúkradagpeningar úr sjúkrasjóðum stéttarfélaga.$">1</sen>
@@ -800,6 +820,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="sjúkradagpeningar samkvæmt lögum um sjúkratryggingar, slysabætur samkvæmt lögum um slysatryggingar almannatrygginga og">1</sen>
@@ -811,6 +832,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen words="Greiðslur úr Fæðingarorlofssjóði vegna fæðingarorlofs.">1</sen>
@@ -823,6 +845,7 @@
               <chapter>3</chapter>
               <art>9</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -831,6 +854,7 @@
               <chapter>3</chapter>
               <art>9</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -1476,26 +1500,26 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Framlagi til jöfnunar örorkubyrði lífeyrissjóða skal skipt milli lífeyrissjóða með eftirfarandi hætti:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Fundin er hlutdeild hvers lífeyrissjóðs í heildarörorkulífeyrisgreiðslum allra lífeyrissjóða á næstliðnu ári.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Fundin er hlutdeild hvers lífeyrissjóðs í skuldbindingum lífeyrissjóða til greiðslu örorkulífeyris umfram 10% af heildarskuldbindingum sjóðanna í framtíðinni miðað við tryggingafræðilega stöðu lífeyrissjóða við lok næstliðins árs.</sen>
+              <sen>Nú hefur lífeyrissjóður nýtt heimild samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997, til þess að ákveða lágmark tryggingaverndar þannig að iðgjaldi sé varið að hluta til öflunar lífeyrisréttinda í séreign og skal þá verðmæti iðgjaldsgreiðslna vegna réttinda sem aflað er í séreign talið til skuldbindinga sjóðsins í framtíðinni þegar fundin er hlutdeild sjóðsins skv. 1. málsl.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Meðaltalshlutfall skv. 1. og 2. tölul. myndar hlutdeild hvers lífeyrissjóðs í framlagi til jöfnunar örorkubyrði lífeyrissjóða.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Fundin er hlutdeild hvers lífeyrissjóðs í heildarörorkulífeyrisgreiðslum allra lífeyrissjóða á næstliðnu ári.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Fundin er hlutdeild hvers lífeyrissjóðs í skuldbindingum lífeyrissjóða til greiðslu örorkulífeyris umfram 10% af heildarskuldbindingum sjóðanna í framtíðinni miðað við tryggingafræðilega stöðu lífeyrissjóða við lok næstliðins árs.</sen>
-            <sen>Nú hefur lífeyrissjóður nýtt heimild samkvæmt lögum um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997, til þess að ákveða lágmark tryggingaverndar þannig að iðgjaldi sé varið að hluta til öflunar lífeyrisréttinda í séreign og skal þá verðmæti iðgjaldsgreiðslna vegna réttinda sem aflað er í séreign talið til skuldbindinga sjóðsins í framtíðinni þegar fundin er hlutdeild sjóðsins skv. 1. málsl.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Meðaltalshlutfall skv. 1. og 2. tölul. myndar hlutdeild hvers lífeyrissjóðs í framlagi til jöfnunar örorkubyrði lífeyrissjóða.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.177.html" law-nr="177" law-year="2006" law-art="3" nr="1">
@@ -1510,6 +1534,7 @@
               <chapter>6</chapter>
               <art>21</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

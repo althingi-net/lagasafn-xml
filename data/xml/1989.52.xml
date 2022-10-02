@@ -328,25 +328,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Skylda til að greiða skilagjald samkvæmt lögum þessum hvílir á þessum aðilum:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Öllum þeim sem flytja til landsins skilagjaldsskyldar vörur hvort sem er til eigin nota eða endursölu.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Öllum þeim sem framleiða, vinna að eða pakka skilagjaldsskyldum vörum innan lands.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Öllum þeim sem hafa fengið leyfi tollyfirvalda til að selja farþegum og áhöfnum millilandafara vörur úr tollfrjálsri verslun, sbr. 4. og 5. mgr. 1. gr.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Öllum þeim sem flytja til landsins skilagjaldsskyldar vörur hvort sem er til eigin nota eða endursölu.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Öllum þeim sem framleiða, vinna að eða pakka skilagjaldsskyldum vörum innan lands.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Öllum þeim sem hafa fengið leyfi tollyfirvalda til að selja farþegum og áhöfnum millilandafara vörur úr tollfrjálsri verslun, sbr. 4. og 5. mgr. 1. gr.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -360,6 +360,7 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen words="tollyfirvalda">1</sen>
@@ -376,6 +377,7 @@
         <location type="range">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen words="4. og 5. mgr.">1</sen>
@@ -383,6 +385,7 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^Öllum þeim sem hafa fengið leyfi (\[? ?)?tollyfirvalda\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?til að selja farþegum og áhöfnum millilandafara" after-mark="vörur úr tollfrjálsri verslun, sbr. (\[? ?)?4. og 5. mgr.\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?1. gr.$">1</sen>

@@ -16,25 +16,25 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Lög þessi mæla fyrir um niðurgreiðslur kostnaðar, styrkveitingar og úthlutun fjár sem ákveðið er í fjárlögum til:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Niðurgreiðslu kostnaðar við hitun íbúðarhúsnæðis hjá þeim sem ekki eiga kost á fullri hitun með jarðvarma.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Greiðslu styrkja vegna stofnunar nýrra hitaveitna og yfirtöku starfandi einkaleyfisveitna á einkahitaveitum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Greiðslu styrkja vegna umhverfisvænnar orkuöflunar og/eða aðgerða sem leiða til bættrar orkunýtingar við húshitun.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Niðurgreiðslu kostnaðar við hitun íbúðarhúsnæðis hjá þeim sem ekki eiga kost á fullri hitun með jarðvarma.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Greiðslu styrkja vegna stofnunar nýrra hitaveitna og yfirtöku starfandi einkaleyfisveitna á einkahitaveitum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Greiðslu styrkja vegna umhverfisvænnar orkuöflunar og/eða aðgerða sem leiða til bættrar orkunýtingar við húshitun.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2015.066.html" law-nr="66" law-year="2015" law-art="1" nr="1">
@@ -53,6 +53,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="og yfirtöku starfandi einkaleyfisveitna á einkahitaveitum">1</sen>
@@ -62,6 +63,7 @@
               <chapter>1</chapter>
               <art>1</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -70,6 +72,7 @@
               <chapter>1</chapter>
               <art>1</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -183,38 +186,38 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Niðurgreiða skal orku til hitunar íbúðarhúsnæðis í eftirfarandi tilvikum:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Þegar íbúð sem ekki er á veitusvæði hitaveitu er hituð með raforku.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Þegar íbúð á veitusvæði hitaveitu er hituð með raforku enda sé kostnaður við tengingu við hitaveituna og áætluð orkukaup meiri en við niðurgreidda rafhitun samanlagt fyrstu tíu árin eftir tengingu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Þegar íbúð sem hvorki er á veitusvæði hitaveitu né tengist raforkukerfi er hituð með eldsneyti.</sen>
+              <sen>Einnig íbúðir hitaðar með eldsneyti sem tengjast einangruðu raforkukerfi þar sem meiri hluti raforkuvinnslunnar er með eldsneyti.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Þegar íbúð er hituð með vatni frá kyntri hitaveitu og raforkunotkun veitunnar til hitunar vatns er meira en 10% af heildarorkuöflun veitunnar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Þegar íbúð er hituð með vatni frá kyntri hitaveitu sem notar grisjunarvið eða annað umhverfisvænt eldsneyti.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Þegar íbúð sem ekki er á veitusvæði hitaveitu er hituð með raforku.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Þegar íbúð á veitusvæði hitaveitu er hituð með raforku enda sé kostnaður við tengingu við hitaveituna og áætluð orkukaup meiri en við niðurgreidda rafhitun samanlagt fyrstu tíu árin eftir tengingu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Þegar íbúð sem hvorki er á veitusvæði hitaveitu né tengist raforkukerfi er hituð með eldsneyti.</sen>
-            <sen>Einnig íbúðir hitaðar með eldsneyti sem tengjast einangruðu raforkukerfi þar sem meiri hluti raforkuvinnslunnar er með eldsneyti.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Þegar íbúð er hituð með vatni frá kyntri hitaveitu og raforkunotkun veitunnar til hitunar vatns er meira en 10% af heildarorkuöflun veitunnar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Þegar íbúð er hituð með vatni frá kyntri hitaveitu sem notar grisjunarvið eða annað umhverfisvænt eldsneyti.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -249,6 +252,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="eldsneyti">1</sen>
@@ -257,6 +261,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="eldsneyti">2</sen>
@@ -266,6 +271,7 @@
               <chapter>2</chapter>
               <art>4</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -274,6 +280,7 @@
               <chapter>2</chapter>
               <art>4</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -430,24 +437,24 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Orkunotkun við rafhitun íbúðarhúsnæðis skal ákvörðuð á eftirfarandi hátt:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Ef rafhitun íbúðar er sérmæld skal sú mæling gilda við ákvörðun niðurgreiðslu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Ef rafhitun er ekki sérmæld skal orkumagn sem greitt er niður ákveðið sem hlutfall af heildarnotkun.</sen>
+              <sen>Orkustofnun skal skilgreina íbúðarflokka út frá því til hvers raforka er notuð og hlutfall húshitunar af heildarraforkunotkun heimilis fyrir hvern flokk fyrir sig.</sen>
+              <sen>Stofnunin ákveður hvaða flokki hver íbúð tilheyrir.</sen>
+              <sen>Ef ástæða er til að ætla að lægra eða hærra hlutfall fari til húshitunar hjá einstökum notanda en skilgreining á viðkomandi flokki segir til um getur Orkustofnun áætlað sérstakt hlutfall fyrir þann notanda og skal miðað við þá áætlun við útreikning á niðurgreiðslu.</sen>
+              <sen>Ef notandi sættir sig ekki við þessa áætlun getur hann farið fram á að notkunin sé sérmæld og skal miða við þá mælingu við ákvörðun niðurgreiðslu.</sen>
+              <sen>Notandinn greiðir allan kostnað við sérmælinguna.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Ef rafhitun íbúðar er sérmæld skal sú mæling gilda við ákvörðun niðurgreiðslu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Ef rafhitun er ekki sérmæld skal orkumagn sem greitt er niður ákveðið sem hlutfall af heildarnotkun.</sen>
-            <sen>Orkustofnun skal skilgreina íbúðarflokka út frá því til hvers raforka er notuð og hlutfall húshitunar af heildarraforkunotkun heimilis fyrir hvern flokk fyrir sig.</sen>
-            <sen>Stofnunin ákveður hvaða flokki hver íbúð tilheyrir.</sen>
-            <sen>Ef ástæða er til að ætla að lægra eða hærra hlutfall fari til húshitunar hjá einstökum notanda en skilgreining á viðkomandi flokki segir til um getur Orkustofnun áætlað sérstakt hlutfall fyrir þann notanda og skal miðað við þá áætlun við útreikning á niðurgreiðslu.</sen>
-            <sen>Ef notandi sættir sig ekki við þessa áætlun getur hann farið fram á að notkunin sé sérmæld og skal miða við þá mælingu við ákvörðun niðurgreiðslu.</sen>
-            <sen>Notandinn greiðir allan kostnað við sérmælinguna.</sen>
-          </paragraph>
-        </numart>
       </subart>
     </art>
     <art nr="8">
@@ -551,38 +558,38 @@
         <paragraph nr="1">
           <sen>Veita skal styrki til stofnunar nýrra hitaveitna eða til stækkunar eldri veitna.</sen>
           <sen>Styrkjunum skal varið til eftirfarandi þátta:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Til nýrra hitaveitna sem hófu rekstur árið 1998 eða síðar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Til hitaveitna sem hafa aukið við dreifikerfi sitt á árinu 1998 eða síðar til að geta tengt íbúðarhúsnæði sem notið hefur niðurgreiðslna á rafhitun.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Til starfandi hitaveitna sem hafa einkaleyfi til dreifingar á heitu vatni og stækka veitusvæði sitt með yfirtöku á hitaveitum sem ekki hafa slíkt einkaleyfi, dreifa heitu vatni um dreifikerfi sitt til a.m.k. 5 aðgreindra húsveitna og standa frammi fyrir kostnaðarsömum aðgerðum vegna endurnýjunar dreifikerfis.</sen>
+              <sen>Ráðherra er heimilt að setja nánari skilyrði í reglugerð.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Til kyntra hitaveitna sem tengjast íbúðarhúsnæði sem notið hefur niðurgreiðslna á rafhitun eða eldsneyti.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Til íbúðareigenda sem vilja taka upp umhverfisvæna orkuöflun og/eða ráðast í aðgerðir sem leiða til bættrar orkunýtingar við húshitun.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Til nýrra hitaveitna sem hófu rekstur árið 1998 eða síðar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Til hitaveitna sem hafa aukið við dreifikerfi sitt á árinu 1998 eða síðar til að geta tengt íbúðarhúsnæði sem notið hefur niðurgreiðslna á rafhitun.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Til starfandi hitaveitna sem hafa einkaleyfi til dreifingar á heitu vatni og stækka veitusvæði sitt með yfirtöku á hitaveitum sem ekki hafa slíkt einkaleyfi, dreifa heitu vatni um dreifikerfi sitt til a.m.k. 5 aðgreindra húsveitna og standa frammi fyrir kostnaðarsömum aðgerðum vegna endurnýjunar dreifikerfis.</sen>
-            <sen>Ráðherra er heimilt að setja nánari skilyrði í reglugerð.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Til kyntra hitaveitna sem tengjast íbúðarhúsnæði sem notið hefur niðurgreiðslna á rafhitun eða eldsneyti.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Til íbúðareigenda sem vilja taka upp umhverfisvæna orkuöflun og/eða ráðast í aðgerðir sem leiða til bættrar orkunýtingar við húshitun.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2009.041.html" law-nr="41" law-year="2009" law-art="4" nr="1">
@@ -597,6 +604,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -605,6 +613,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -633,6 +642,7 @@
             <chapter>3</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="eldsneyti">1</sen>
@@ -645,6 +655,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -653,6 +664,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -666,6 +678,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -674,6 +687,7 @@
               <chapter>3</chapter>
               <art>11</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -683,6 +697,7 @@
             <chapter>3</chapter>
             <art>11</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <nr-title words="5.">1</nr-title>
@@ -708,31 +723,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Þrátt fyrir 1. mgr. getur styrkur til hitaveitu numið allt að 16 ára áætluðum niðurgreiðslum skv. 1. mgr. ef eftirfarandi skilyrði eru uppfyllt:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Viðkomandi hitaveita er í meirihlutaeigu ríkis, sveitarfélaga og/eða fyrirtækja sem eru alfarið í eigu þessara aðila.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Viðkomandi hitaveita hefur ábyrgð hlutaðeigandi sveitarfélags og skal sýna fram á getu til að standa undir skuldbindingum sínum með rekstraráætlun til 16 ára.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Viðkomandi hitaveita hefur fengið einkaleyfi til þess að starfrækja hitaveitu samkvæmt orkulögum, nr. 58/1967, og uppfyllir því skilyrði 2. mgr. 32. gr. þeirra lagaum að uppdrættir og áætlanir séu tæknilega réttar, hitaveitan verði þjóðhagslega hagkvæmt fyrirtæki, fullnægi hitaþörf svæðisins og að tryggður sé eðlilegur og truflanalaus rekstur, eftir því sem aðstæður leyfa.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Tryggt er að styrkurinn sé einungis til þess fallinn að eigandi (eigendur) hitaveitunnar fái lágmarksarð af fjárfestingunni.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Viðkomandi hitaveita er í meirihlutaeigu ríkis, sveitarfélaga og/eða fyrirtækja sem eru alfarið í eigu þessara aðila.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Viðkomandi hitaveita hefur ábyrgð hlutaðeigandi sveitarfélags og skal sýna fram á getu til að standa undir skuldbindingum sínum með rekstraráætlun til 16 ára.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Viðkomandi hitaveita hefur fengið einkaleyfi til þess að starfrækja hitaveitu samkvæmt orkulögum, nr. 58/1967, og uppfyllir því skilyrði 2. mgr. 32. gr. þeirra lagaum að uppdrættir og áætlanir séu tæknilega réttar, hitaveitan verði þjóðhagslega hagkvæmt fyrirtæki, fullnægi hitaþörf svæðisins og að tryggður sé eðlilegur og truflanalaus rekstur, eftir því sem aðstæður leyfa.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Tryggt er að styrkurinn sé einungis til þess fallinn að eigandi (eigendur) hitaveitunnar fái lágmarksarð af fjárfestingunni.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -871,6 +886,7 @@
               <chapter>3</chapter>
               <art>12</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

@@ -148,37 +148,37 @@
           <sen>Öllum höfnum sem falla undir lög þessi skv. 1. gr. skal sett reglugerð er tilgreinir mörk hafnar auk annarra nauðsynlegra ákvæða er varða öryggi og stjórnun hennar.</sen>
           <sen>Ráðherra setur samkvæmt lögum þessum, að fengnum tillögum eigenda hafna og umsögn Samgöngustofu og Vegagerðarinnar, reglugerð fyrir hverja höfn.</sen>
           <sen>Í reglugerðinni skulu m.a. vera ákvæði um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Stærð og takmörk hafnarsvæðis á sjó og landi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Starfsheimildir, starfsemi og umferð á hafnarsvæði.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Öryggi við flutninga og varnir gegn mengun.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Viðurlög við brotum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Kosningu og starfs- og valdsvið hafnarstjórnar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Stærð og takmörk hafnarsvæðis á sjó og landi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Starfsheimildir, starfsemi og umferð á hafnarsvæði.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Öryggi við flutninga og varnir gegn mengun.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Viðurlög við brotum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Kosningu og starfs- og valdsvið hafnarstjórnar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -386,32 +386,32 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Höfn má reka sem:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Höfn án sérstakrar hafnarstjórnar í eigu sveitarfélags.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Höfn með hafnarstjórn í eigu sveitarfélags.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Hlutafélag, hvort sem það er í eigu opinberra aðila eða ekki, einkahlutafélag, sameignarfélag eða sem einkaaðila í sjálfstæðum rekstri.</sen>
+              <sen>Hafnir sem reknar eru samkvæmt þessum tölulið teljast ekki til opinbers rekstrar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Höfn í eigu íslenska ríkisins.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Höfn án sérstakrar hafnarstjórnar í eigu sveitarfélags.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Höfn með hafnarstjórn í eigu sveitarfélags.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Hlutafélag, hvort sem það er í eigu opinberra aðila eða ekki, einkahlutafélag, sameignarfélag eða sem einkaaðila í sjálfstæðum rekstri.</sen>
-            <sen>Hafnir sem reknar eru samkvæmt þessum tölulið teljast ekki til opinbers rekstrar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Höfn í eigu íslenska ríkisins.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -434,6 +434,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -442,6 +443,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -697,43 +699,56 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Í gjaldskrá er heimilt að ákveða eftirtalin gjöld:</sen>
-        </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Hafnargjald sem nánar sundurliðast á eftirfarandi hátt:</sen>
-          </paragraph>
-          <numart nr="a" type="alphabet">
+          <numart nr="1" type="numeric">
             <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Skipagjöld sem skiptast í bryggjugjöld og lestargjöld og eru lögð á skip og báta er nota viðkomandi höfn og miðast við stærð skipa, dvalartíma á hafnarsvæðinu og veitta aðstöðu.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Vörugjöld af vörum sem umskipað er, lestaðar eru eða losaðar í höfnum.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="c" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>c.</nr-title>
-              <sen>Hafnsögugjöld og gjöld fyrir þjónustu hafnarbáta.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="d" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>d.</nr-title>
-              <sen>Leigugjald fyrir svæði til lestunar og losunar á vöru.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="e" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>e.</nr-title>
-              <sen>Aflagjald af sjávarafurðum sem umskipað er, lestaðar eru eða losaðar í höfnum.</sen>
-              <sen>Sé gjaldið innheimt skal það vera minnst 1,25% og mest 3% af heildaraflaverðmæti.</sen>
-              <sen>Þó skal gjaldið vera minnst 0,70% af heildaraflaverðmæti frystra sjávarafurða.</sen>
-              <sen>Sjávarafurðir eru sjávarafli, þ.e. sjávardýr önnur en spendýr, þ.m.t. skrápdýr, liðdýr og lindýr, sem og matvæli sem eru unnin að öllu leyti eða að hluta úr sjávarafla.</sen>
+              <nr-title>1.</nr-title>
+              <sen>Hafnargjald sem nánar sundurliðast á eftirfarandi hátt:</sen>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Skipagjöld sem skiptast í bryggjugjöld og lestargjöld og eru lögð á skip og báta er nota viðkomandi höfn og miðast við stærð skipa, dvalartíma á hafnarsvæðinu og veitta aðstöðu.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Vörugjöld af vörum sem umskipað er, lestaðar eru eða losaðar í höfnum.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>c.</nr-title>
+                  <sen>Hafnsögugjöld og gjöld fyrir þjónustu hafnarbáta.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>d.</nr-title>
+                  <sen>Leigugjald fyrir svæði til lestunar og losunar á vöru.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>e.</nr-title>
+                  <sen>Aflagjald af sjávarafurðum sem umskipað er, lestaðar eru eða losaðar í höfnum.</sen>
+                  <sen>Sé gjaldið innheimt skal það vera minnst 1,25% og mest 3% af heildaraflaverðmæti.</sen>
+                  <sen>Þó skal gjaldið vera minnst 0,70% af heildaraflaverðmæti frystra sjávarafurða.</sen>
+                  <sen>Sjávarafurðir eru sjávarafli, þ.e. sjávardýr önnur en spendýr, þ.m.t. skrápdýr, liðdýr og lindýr, sem og matvæli sem eru unnin að öllu leyti eða að hluta úr sjávarafla.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>f.</nr-title>
+                  <sen>Gjald fyrir móttöku, meðhöndlun og förgun úrgangs og farmleifa frá skipum.</sen>
+                  <sen>Gjaldtakan tekur til allra skipa sem koma til hafnar, að undanskildum fiskiskipum, skemmtibátum sem ekki mega flytja fleiri en 12 farþega, herskipum, hjálparskipum í flota, skipum sem þjónusta fiskeldi og skipum í ríkisrekstri sem nýtt eru í þágu hins opinbera, sbr. 11. gr. og 11. gr. a – 11. gr. d laga um varnir gegn mengun hafs og stranda, nr. 33/2004.</sen>
+                  <sen>Skylt er að innheimta gjald samkvæmt þessum tölulið.</sen>
+                  <sen>Gjald fyrir móttöku, meðhöndlun og förgun úrgangs skal standa undir kostnaði við aðstöðu fyrir móttöku úrgangs frá skipum, kostnaði við meðhöndlun og förgun úrgangs frá skipum sem og kostnaði við eftirlit Umhverfisstofnunar.</sen>
+                  <sen>Við ákvörðun fjárhæðar gjalds skal tekið mið, eftir því sem við á, af fjölda skipverja og farþega um borð, lengd sjóferðar og stærð skips.</sen>
+                </paragraph>
+                <paragraph nr="2">
+                  <sen>Þrátt fyrir ákvæði 1. málsl. 2. mgr. er höfnum skylt að innheimta gjöld sem skulu standa undir kostnaði við móttöku, meðhöndlun og förgun úrgangs og farmleifa frá skipum sem og eftirliti Umhverfisstofnunar með aðstöðunni, sbr. 11. gr. og 11. gr. a – 11. gr. d laga um varnir gegn mengun hafs og stranda, nr. 33/2004.</sen>
+                </paragraph>
+              </numart>
             </paragraph>
             <paragraph nr="2">
               <sen>Hafnargjald samkvæmt þessum tölulið skal standa undir kostnaði við að byggja, reka, viðhalda og endurnýja viðlegumannvirki, dýpkanir og legu í höfn, aðstöðu við bryggjur og á hafnarbakka, hafnarbáta og hafnsögu þar sem það á við.</sen>
@@ -741,83 +756,70 @@
               <sen>Ef margir eiga vörur sem fluttar eru með sama skipi skal farmflytjandi sjá um innheimtu á gjöldum skv. b-lið hjá sendanda og móttakanda, eftir því sem við á, og standa höfn skil á þeim.</sen>
             </paragraph>
           </numart>
-          <numart nr="f" type="alphabet">
+          <numart nr="2" type="numeric">
             <paragraph nr="1">
-              <nr-title>f.</nr-title>
-              <sen>Gjald fyrir móttöku, meðhöndlun og förgun úrgangs og farmleifa frá skipum.</sen>
-              <sen>Gjaldtakan tekur til allra skipa sem koma til hafnar, að undanskildum fiskiskipum, skemmtibátum sem ekki mega flytja fleiri en 12 farþega, herskipum, hjálparskipum í flota, skipum sem þjónusta fiskeldi og skipum í ríkisrekstri sem nýtt eru í þágu hins opinbera, sbr. 11. gr. og 11. gr. a – 11. gr. d laga um varnir gegn mengun hafs og stranda, nr. 33/2004.</sen>
-              <sen>Skylt er að innheimta gjald samkvæmt þessum tölulið.</sen>
-              <sen>Gjald fyrir móttöku, meðhöndlun og förgun úrgangs skal standa undir kostnaði við aðstöðu fyrir móttöku úrgangs frá skipum, kostnaði við meðhöndlun og förgun úrgangs frá skipum sem og kostnaði við eftirlit Umhverfisstofnunar.</sen>
-              <sen>Við ákvörðun fjárhæðar gjalds skal tekið mið, eftir því sem við á, af fjölda skipverja og farþega um borð, lengd sjóferðar og stærð skips.</sen>
-            </paragraph>
-            <paragraph nr="2">
-              <sen>Þrátt fyrir ákvæði 1. málsl. 2. mgr. er höfnum skylt að innheimta gjöld sem skulu standa undir kostnaði við móttöku, meðhöndlun og förgun úrgangs og farmleifa frá skipum sem og eftirliti Umhverfisstofnunar með aðstöðunni, sbr. 11. gr. og 11. gr. a – 11. gr. d laga um varnir gegn mengun hafs og stranda, nr. 33/2004.</sen>
+              <nr-title>2.</nr-title>
+              <sen>Farþegagjald og gjald fyrir bifreiðar sem ekið er um borð eða frá borði í ferju og skal gjald þetta standa straum af kostnaði við uppbyggingu á aðstöðu og búnaði fyrir farþega og bifreiðar, sem og kostnaði við rekstur og viðhald.</sen>
             </paragraph>
           </numart>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Farþegagjald og gjald fyrir bifreiðar sem ekið er um borð eða frá borði í ferju og skal gjald þetta standa straum af kostnaði við uppbyggingu á aðstöðu og búnaði fyrir farþega og bifreiðar, sem og kostnaði við rekstur og viðhald.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Geymslugjald fyrir geymslu vöru og gáma á hafnarsvæði, hvort sem er innan húss eða utan, og skal gjald þetta standa straum af kostnaði við uppbyggingu, viðhald, endurnýjun og rekstur á geymsluaðstöðunni.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Leigugjald fyrir afnot af mannvirkjum eða tækjum hafnarinnar, þ.m.t. upptökumannvirkjum og löndunarkrönum.</sen>
-            <sen>Gjaldið skal standa undir kostnaði við uppbyggingu, rekstur, viðhald og endurnýjun mannvirkjanna.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Leyfisgjald fyrir bryggjur og önnur mannvirki sem gerð hafa verið skv. 5. gr.</sen>
-            <sen>Gjaldið skal standa straum af undirbúningskostnaði veittra leyfa.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Lóðargjald og lóðarleigu fyrir leigu á svæðum innan hafnarinnar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Festargjald sem nota skal til að greiða kostnað við festarþjónustu sem höfnin veitir.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>Gjöld fyrir endursölu á vatni og rafmagni og kostnaði er því fylgir.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>Sorpgjöld sem skulu standa straum af kostnaði við sorphirðu frá skipum og fyrirtækjum á hafnarsvæði, sem og eyðingu sorpsins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="10" type="numeric">
-          <paragraph nr="1">
-            <nr-title>10.</nr-title>
-            <sen>Vigtar- og skráningargjald sem skal standa straum af kostnaði við rekstur, viðhald og endurnýjun hafnarvogar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="11" type="numeric">
-          <paragraph nr="1">
-            <nr-title>11.</nr-title>
-            <sen>Umsýslugjald til þess að standa straum af kostnaði við umsýslu og yfirstjórn, t.d. laun og skrifstofuhald.</sen>
-            <sen>Heimilt er að láta umsýslugjaldið samkvæmt þessum tölulið vera innifalið í gjaldtöku skv. 1.–10. tölul. með sérstöku álagi á viðkomandi gjald.</sen>
-          </paragraph>
-        </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Geymslugjald fyrir geymslu vöru og gáma á hafnarsvæði, hvort sem er innan húss eða utan, og skal gjald þetta standa straum af kostnaði við uppbyggingu, viðhald, endurnýjun og rekstur á geymsluaðstöðunni.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Leigugjald fyrir afnot af mannvirkjum eða tækjum hafnarinnar, þ.m.t. upptökumannvirkjum og löndunarkrönum.</sen>
+              <sen>Gjaldið skal standa undir kostnaði við uppbyggingu, rekstur, viðhald og endurnýjun mannvirkjanna.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Leyfisgjald fyrir bryggjur og önnur mannvirki sem gerð hafa verið skv. 5. gr.</sen>
+              <sen>Gjaldið skal standa straum af undirbúningskostnaði veittra leyfa.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Lóðargjald og lóðarleigu fyrir leigu á svæðum innan hafnarinnar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Festargjald sem nota skal til að greiða kostnað við festarþjónustu sem höfnin veitir.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>Gjöld fyrir endursölu á vatni og rafmagni og kostnaði er því fylgir.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>Sorpgjöld sem skulu standa straum af kostnaði við sorphirðu frá skipum og fyrirtækjum á hafnarsvæði, sem og eyðingu sorpsins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="10" type="numeric">
+            <paragraph nr="1">
+              <nr-title>10.</nr-title>
+              <sen>Vigtar- og skráningargjald sem skal standa straum af kostnaði við rekstur, viðhald og endurnýjun hafnarvogar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="11" type="numeric">
+            <paragraph nr="1">
+              <nr-title>11.</nr-title>
+              <sen>Umsýslugjald til þess að standa straum af kostnaði við umsýslu og yfirstjórn, t.d. laun og skrifstofuhald.</sen>
+              <sen>Heimilt er að láta umsýslugjaldið samkvæmt þessum tölulið vera innifalið í gjaldtöku skv. 1.–10. tölul. með sérstöku álagi á viðkomandi gjald.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -869,7 +871,9 @@
             <chapter>5</chapter>
             <art>17</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
+            <paragraph>1</paragraph>
             <numart>b</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -879,7 +883,9 @@
               <chapter>5</chapter>
               <art>17</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -888,7 +894,9 @@
               <chapter>5</chapter>
               <art>17</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <sen>4</sen>
@@ -898,8 +906,8 @@
             <chapter>5</chapter>
             <art>17</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
-            <numart>e</numart>
             <paragraph>2</paragraph>
             <sen words="skv. a-, c-, d- og e-lið">2</sen>
           </location>
@@ -932,7 +940,9 @@
               <chapter>5</chapter>
               <art>17</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <numart>f</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -941,7 +951,9 @@
               <chapter>5</chapter>
               <art>17</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
+              <paragraph>1</paragraph>
               <numart>f</numart>
               <paragraph>2</paragraph>
               <sen>1</sen>
@@ -954,6 +966,7 @@
             <chapter>5</chapter>
             <art>17</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -973,6 +986,7 @@
               <chapter>5</chapter>
               <art>17</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>11</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -1335,43 +1349,43 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Ríkissjóði er heimilt að styrkja:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Endurbyggingu og endurbætur á skjólgörðum og dýpkun þar sem reglulegrar viðhaldsdýpkunar er þörf.</sen>
+              <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 85%.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Endurbyggingu og endurbætur á bryggjum og niðurrif hafnarmannvirkja sem þarf að fjarlægja vegna slysahættu sem af þeim stafar.</sen>
+              <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 75%.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Nýframkvæmd við bryggjugerð, skjólgarð, aðrar brimvarnir og dýpkun í innsiglingu og innan hafnar, enn fremur stofnkostnað við hafnsögubáta á stöðum þar sem aðstæður í höfn og nágrenni hennar kalla á slíkt öryggistæki og innsiglingarmerki, svo og löndunarkrana og hafnarvogir.</sen>
+              <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 60%.</sen>
+              <sen>Heimild þessi tekur ekki til framkvæmda í þágu einstakra fyrirtækja þar sem gerður er sérstakur afnotasamningur til lengri tíma.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>Aðgerðir eiganda hafnar sem miða að því að hætta eða draga úr hefðbundnum hafnarrekstri.</sen>
+              <sen>Greiðsluþátttaka ríkissjóðs getur samkvæmt sérstöku samkomulagi numið allt að 60% af neikvæðu eigin fé hafnar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>Aðgerðir hafnarsjóða vegna fyrirhugaðrar sameiningar.</sen>
+              <sen>Greiðsluþátttaka ríkissjóðs skal ákveðin samkvæmt samkomulagi milli viðkomandi hafnarsjóða annars vegar og ríkisins hins vegar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Endurbyggingu og endurbætur á skjólgörðum og dýpkun þar sem reglulegrar viðhaldsdýpkunar er þörf.</sen>
-            <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 85%.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Endurbyggingu og endurbætur á bryggjum og niðurrif hafnarmannvirkja sem þarf að fjarlægja vegna slysahættu sem af þeim stafar.</sen>
-            <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 75%.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Nýframkvæmd við bryggjugerð, skjólgarð, aðrar brimvarnir og dýpkun í innsiglingu og innan hafnar, enn fremur stofnkostnað við hafnsögubáta á stöðum þar sem aðstæður í höfn og nágrenni hennar kalla á slíkt öryggistæki og innsiglingarmerki, svo og löndunarkrana og hafnarvogir.</sen>
-            <sen>Greiðsluþátttaka ríkissjóðs skal vera allt að 60%.</sen>
-            <sen>Heimild þessi tekur ekki til framkvæmda í þágu einstakra fyrirtækja þar sem gerður er sérstakur afnotasamningur til lengri tíma.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>Aðgerðir eiganda hafnar sem miða að því að hætta eða draga úr hefðbundnum hafnarrekstri.</sen>
-            <sen>Greiðsluþátttaka ríkissjóðs getur samkvæmt sérstöku samkomulagi numið allt að 60% af neikvæðu eigin fé hafnar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>Aðgerðir hafnarsjóða vegna fyrirhugaðrar sameiningar.</sen>
-            <sen>Greiðsluþátttaka ríkissjóðs skal ákveðin samkvæmt samkomulagi milli viðkomandi hafnarsjóða annars vegar og ríkisins hins vegar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -1483,26 +1497,26 @@
         <paragraph nr="1">
           <sen>Hafnabótasjóði er heimilt að taka lán vegna starfsemi sinnar samkvæmt ákvörðun Alþingis hverju sinni.</sen>
           <sen>Vegagerðin ráðstafar fé Hafnabótasjóðs með samþykki ráðherra á eftirgreindan hátt:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Fjármagnar framkvæmdir ríkisins samkvæmt samgönguáætlun sem samþykkt hefur verið á Alþingi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Hafnabótasjóði er heimilt að starfrækja þróunardeild hafna samkvæmt reglugerð sem ráðherra setur að fengnu sérstöku fjárframlagi samkvæmt samþykkt Alþingis.</sen>
+              <sen>Markmið þróunardeildarinnar er að styðja minni hafnir á landsbyggðinni sem eru mikilvægar fyrir byggðarlagið og atvinnuuppbyggingu þess.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Hafnabótasjóði er heimilt að bæta tjón á hafnarmannvirkjum sem eru styrkhæf skv. a-lið og c-lið 2. mgr. 24. gr., þ.m.t. tjón sem ekki fæst að fullu bætt úr Viðlagasjóði eða vegna ákvæða IX. kafla siglingalaga um takmarkaða ábyrgð útgerðarmanna.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Fjármagnar framkvæmdir ríkisins samkvæmt samgönguáætlun sem samþykkt hefur verið á Alþingi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Hafnabótasjóði er heimilt að starfrækja þróunardeild hafna samkvæmt reglugerð sem ráðherra setur að fengnu sérstöku fjárframlagi samkvæmt samþykkt Alþingis.</sen>
-            <sen>Markmið þróunardeildarinnar er að styðja minni hafnir á landsbyggðinni sem eru mikilvægar fyrir byggðarlagið og atvinnuuppbyggingu þess.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Hafnabótasjóði er heimilt að bæta tjón á hafnarmannvirkjum sem eru styrkhæf skv. a-lið og c-lið 2. mgr. 24. gr., þ.m.t. tjón sem ekki fæst að fullu bætt úr Viðlagasjóði eða vegna ákvæða IX. kafla siglingalaga um takmarkaða ábyrgð útgerðarmanna.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="4">
         <paragraph nr="1">
@@ -1563,6 +1577,7 @@
             <chapter>8</chapter>
             <art>26</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="c-lið 2. mgr. 24. gr.">1</sen>

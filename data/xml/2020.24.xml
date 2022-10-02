@@ -59,28 +59,28 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <name>Launamaður:</name>
+            <sen>Einstaklingur sem starfar fyrir og á ábyrgð atvinnurekanda gegn endurgjaldi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <name>Sjálfstætt starfandi einstaklingur:</name>
+            <sen>Hver sá sem starfar við eigin atvinnurekstur eða sjálfstæða starfsemi í því umfangi að honum sjálfum er gert að standa mánaðarlega eða með öðrum reglulegum hætti skil á staðgreiðslu af reiknuðu endurgjaldi og tryggingagjaldi vegna starfs síns samkvæmt reglum ríkisskattstjóra um reiknað endurgjald.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <name>Sóttkví:</name>
+            <sen>Þegar einstaklingi er gert að einangra sig eins og kostur er, einkum í heimahúsi, samkvæmt beinum fyrirmælum heilbrigðisyfirvalda þegar hann hefur mögulega smitast af sjúkdómi.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <name>Launamaður:</name>
-          <sen>Einstaklingur sem starfar fyrir og á ábyrgð atvinnurekanda gegn endurgjaldi.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <name>Sjálfstætt starfandi einstaklingur:</name>
-          <sen>Hver sá sem starfar við eigin atvinnurekstur eða sjálfstæða starfsemi í því umfangi að honum sjálfum er gert að standa mánaðarlega eða með öðrum reglulegum hætti skil á staðgreiðslu af reiknuðu endurgjaldi og tryggingagjaldi vegna starfs síns samkvæmt reglum ríkisskattstjóra um reiknað endurgjald.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <name>Sóttkví:</name>
-          <sen>Þegar einstaklingi er gert að einangra sig eins og kostur er, einkum í heimahúsi, samkvæmt beinum fyrirmælum heilbrigðisyfirvalda þegar hann hefur mögulega smitast af sjúkdómi.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="4">
@@ -100,31 +100,31 @@
       <paragraph nr="1">
         <sen>Heimilt er að greiða atvinnurekanda launakostnað, eftir því sem nánar er mælt fyrir um í lögum þessum.</sen>
         <sen>Skilyrði fyrir greiðslum eru að:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>launamaður, eða barn í hans forsjá undir 13 ára aldri eða barn undir 18 ára aldri sem þiggur þjónustu á grundvelli laga um þjónustu við fatlað fólk með langvarandi stuðningsþarfir, hafi sætt sóttkví,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>launamaður hafi ekki getað sinnt vinnu að öllu leyti eða að hluta þaðan sem hann sætti sóttkví,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>önnur atvik hafi ekki staðið í vegi fyrir því að launamaður hafi getað mætt til vinnu á vinnustað og</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>d.</nr-title>
+            <sen>atvinnurekandi hafi sannanlega greitt launamanni laun á meðan hann eða barn í hans forsjá sætti sóttkví.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>launamaður, eða barn í hans forsjá undir 13 ára aldri eða barn undir 18 ára aldri sem þiggur þjónustu á grundvelli laga um þjónustu við fatlað fólk með langvarandi stuðningsþarfir, hafi sætt sóttkví,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>launamaður hafi ekki getað sinnt vinnu að öllu leyti eða að hluta þaðan sem hann sætti sóttkví,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>önnur atvik hafi ekki staðið í vegi fyrir því að launamaður hafi getað mætt til vinnu á vinnustað og</sen>
-        </paragraph>
-      </numart>
-      <numart nr="d" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>d.</nr-title>
-          <sen>atvinnurekandi hafi sannanlega greitt launamanni laun á meðan hann eða barn í hans forsjá sætti sóttkví.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -165,31 +165,31 @@
       <paragraph nr="1">
         <sen>Heimilt er að greiða sjálfstætt starfandi einstaklingi launatap, eftir því sem nánar er mælt fyrir um í lögum þessum.</sen>
         <sen>Skilyrði fyrir greiðslum eru að:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>sjálfstætt starfandi einstaklingur, eða barn í hans forsjá undir 13 ára aldri eða barn undir 18 ára aldri sem þiggur þjónustu á grundvelli laga um þjónustu við fatlað fólk með langvarandi stuðningsþarfir, hafi sætt sóttkví,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>sjálfstætt starfandi einstaklingur hafi ekki getað sinnt vinnu að öllu leyti eða hluta þaðan sem hann sætti sóttkví,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>önnur atvik hafi ekki staðið í vegi fyrir því að sjálfstætt starfandi einstaklingur hafi getað unnið störf sín,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>d.</nr-title>
+            <sen>sjálfstætt starfandi einstaklingur sé með opinn rekstur auk þess að hafa staðið skil á greiðslu tryggingagjalds og staðgreiðslu skatts af reiknuðu endurgjaldi samkvæmt ákvörðun skattyfirvalda a.m.k. þrjá mánuði á undanfarandi fjórum mánuðum fyrir umsóknardag eða með öðrum reglulegum hætti samkvæmt reglum ríkisskattstjóra.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>sjálfstætt starfandi einstaklingur, eða barn í hans forsjá undir 13 ára aldri eða barn undir 18 ára aldri sem þiggur þjónustu á grundvelli laga um þjónustu við fatlað fólk með langvarandi stuðningsþarfir, hafi sætt sóttkví,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>sjálfstætt starfandi einstaklingur hafi ekki getað sinnt vinnu að öllu leyti eða hluta þaðan sem hann sætti sóttkví,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>önnur atvik hafi ekki staðið í vegi fyrir því að sjálfstætt starfandi einstaklingur hafi getað unnið störf sín,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="d" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>d.</nr-title>
-          <sen>sjálfstætt starfandi einstaklingur sé með opinn rekstur auk þess að hafa staðið skil á greiðslu tryggingagjalds og staðgreiðslu skatts af reiknuðu endurgjaldi samkvæmt ákvörðun skattyfirvalda a.m.k. þrjá mánuði á undanfarandi fjórum mánuðum fyrir umsóknardag eða með öðrum reglulegum hætti samkvæmt reglum ríkisskattstjóra.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="8">

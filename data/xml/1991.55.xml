@@ -560,30 +560,30 @@
         <paragraph nr="1">
           <sen>Forsætisnefnd skipuleggur þinghaldið og gerir starfsáætlun fyrir hvert þing.</sen>
           <sen>Í starfsáætlun skal að jafnaði skipta starfstíma þingsins í þrjár annir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Haustþing, frá þingsetningu fram að jólahléi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Vetrarþing, að loknu jólahléi fram að dymbilviku.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Vorþing, að lokinni páskaviku til loka maímánaðar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Haustþing, frá þingsetningu fram að jólahléi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Vetrarþing, að loknu jólahléi fram að dymbilviku.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Vorþing, að lokinni páskaviku til loka maímánaðar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -654,6 +654,7 @@
             <chapter>1</chapter>
             <art>10</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^Haustþing, frá þingsetningu" after-mark="fram að jólahléi.$">1</sen>
@@ -662,6 +663,7 @@
             <chapter>1</chapter>
             <art>10</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -835,94 +837,94 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Á Alþingi starfa þessar fastanefndir, að jafnaði skipaðar níu mönnum hver:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Allsherjar- og menntamálanefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um dóms- og löggæslumál, mannréttindamál, ríkisborgararétt, neytendamál, málefni þjóðkirkjunnar og annarra trúfélaga og jafnréttismál, svo og um mennta- og menningarmál og vísinda- og tæknimál.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Efnahags- og viðskiptanefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um efnahagsmál almennt, viðskiptamál, þ.m.t. bankamál, fjármálastarfsemi og lífeyrismál, svo og skatta- og tollamál.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <name>Atvinnuveganefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um sjávarútvegsmál, landbúnaðarmál, iðnaðar- og orkumál, nýsköpun og tækniþróun, atvinnumál almennt og einnig nýtingu auðlinda á grundvelli rannsókna og ráðgjafar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <name>Umhverfis- og samgöngunefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um umhverfismál, skipulags- og byggingarmál og rannsóknir, ráðgjöf, verndun og sjálfbærni á sviði auðlindamála almennt.</sen>
+              <sen>Enn fremur fjallar nefndin um samgöngumál, þ.m.t. framkvæmdaáætlanir, byggðamál svo og málefni sveitarstjórnarstigsins og verkaskiptingu þess og ríkisins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <name>Fjárlaganefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um fjármál ríkisins, fjárveitingar, eignir ríkisins, lánsheimildir og ríkisábyrgðir og lífeyrisskuldbindingar ríkissjóðs.</sen>
+              <sen>Enn fremur skal nefndin annast eftirlit með framkvæmd fjárlaga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <name>Utanríkismálanefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um samskipti við erlend ríki og alþjóðastofnanir, varnar- og öryggismál, útflutningsverslun, málefni Evrópska efnahagssvæðisins og þróunarmál, svo og utanríkis- og alþjóðamál almennt.</sen>
+              <sen>Enn fremur fjallar nefndin um skýrslur alþjóðanefnda sem og skýrslur ráðherra um utanríkis- og alþjóðamál og um EES-mál.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <name>Velferðarnefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um sjúkra- og lífeyristryggingar, félagsþjónustu, málefni barna, málefni aldraðra og málefni fatlaðra, húsnæðismál, vinnumarkaðsmál og heilbrigðisþjónustu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <name>Stjórnskipunar- og eftirlitsnefnd.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Nefndin fjallar um stjórnarskrármál, málefni forseta Íslands, Alþingis og stofnana þess, kosningamál, málefni Stjórnarráðsins í heild og önnur mál sem varða æðstu stjórn ríkisins.</sen>
+              <sen>Enn fremur fjallar nefndin um ársskýrslu og tilkynningar umboðsmanns Alþingis, svo og um skýrslur Ríkisendurskoðunar.</sen>
+              <sen>Meti nefndin það svo að einstakar skýrslur Ríkisendurskoðunar eigi eftir efni sínu fremur að fá athugun í annarri nefnd vísar hún þeim skýrslum þangað.</sen>
+              <sen>Nefnd sem tekur þannig við skýrslu Ríkisendurskoðunar skilar þá áliti til þingsins eftir athugun sína á skýrslunni en um aðrar skýrslur fjallar stjórnskipunar- og eftirlitsnefnd og skilar áliti um þær.</sen>
+            </paragraph>
+            <paragraph nr="3">
+              <sen>Nefndin skal einnig hafa frumkvæði að því að kanna ákvarðanir einstakra ráðherra eða verklag þeirra sem ástæða þykir til að athuga á grundvelli þess eftirlitshlutverks sem Alþingi hefur gagnvart framkvæmdarvaldinu.</sen>
+              <sen>Komi beiðni um slíka athugun frá a.m.k. fjórðungi nefndarmanna skal hún fara fram.</sen>
+              <sen>Um athugun sína getur nefndin gefið þinginu skýrslu.</sen>
+            </paragraph>
+            <paragraph nr="4">
+              <sen>Nefndin skal jafnframt leggja mat á og gera tillögu til Alþingis um hvenær rétt er að skipa rannsóknarnefnd, sbr. lög um rannsóknarnefndir.</sen>
+              <sen>Nefndin tekur skýrslur slíkrar nefndar til umfjöllunar og gefur þinginu álit sitt um þær og gerir tillögur um frekari aðgerðir þingsins.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Allsherjar- og menntamálanefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um dóms- og löggæslumál, mannréttindamál, ríkisborgararétt, neytendamál, málefni þjóðkirkjunnar og annarra trúfélaga og jafnréttismál, svo og um mennta- og menningarmál og vísinda- og tæknimál.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Efnahags- og viðskiptanefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um efnahagsmál almennt, viðskiptamál, þ.m.t. bankamál, fjármálastarfsemi og lífeyrismál, svo og skatta- og tollamál.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <name>Atvinnuveganefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um sjávarútvegsmál, landbúnaðarmál, iðnaðar- og orkumál, nýsköpun og tækniþróun, atvinnumál almennt og einnig nýtingu auðlinda á grundvelli rannsókna og ráðgjafar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <name>Umhverfis- og samgöngunefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um umhverfismál, skipulags- og byggingarmál og rannsóknir, ráðgjöf, verndun og sjálfbærni á sviði auðlindamála almennt.</sen>
-            <sen>Enn fremur fjallar nefndin um samgöngumál, þ.m.t. framkvæmdaáætlanir, byggðamál svo og málefni sveitarstjórnarstigsins og verkaskiptingu þess og ríkisins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <name>Fjárlaganefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um fjármál ríkisins, fjárveitingar, eignir ríkisins, lánsheimildir og ríkisábyrgðir og lífeyrisskuldbindingar ríkissjóðs.</sen>
-            <sen>Enn fremur skal nefndin annast eftirlit með framkvæmd fjárlaga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <name>Utanríkismálanefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um samskipti við erlend ríki og alþjóðastofnanir, varnar- og öryggismál, útflutningsverslun, málefni Evrópska efnahagssvæðisins og þróunarmál, svo og utanríkis- og alþjóðamál almennt.</sen>
-            <sen>Enn fremur fjallar nefndin um skýrslur alþjóðanefnda sem og skýrslur ráðherra um utanríkis- og alþjóðamál og um EES-mál.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <name>Velferðarnefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um sjúkra- og lífeyristryggingar, félagsþjónustu, málefni barna, málefni aldraðra og málefni fatlaðra, húsnæðismál, vinnumarkaðsmál og heilbrigðisþjónustu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <name>Stjórnskipunar- og eftirlitsnefnd.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Nefndin fjallar um stjórnarskrármál, málefni forseta Íslands, Alþingis og stofnana þess, kosningamál, málefni Stjórnarráðsins í heild og önnur mál sem varða æðstu stjórn ríkisins.</sen>
-            <sen>Enn fremur fjallar nefndin um ársskýrslu og tilkynningar umboðsmanns Alþingis, svo og um skýrslur Ríkisendurskoðunar.</sen>
-            <sen>Meti nefndin það svo að einstakar skýrslur Ríkisendurskoðunar eigi eftir efni sínu fremur að fá athugun í annarri nefnd vísar hún þeim skýrslum þangað.</sen>
-            <sen>Nefnd sem tekur þannig við skýrslu Ríkisendurskoðunar skilar þá áliti til þingsins eftir athugun sína á skýrslunni en um aðrar skýrslur fjallar stjórnskipunar- og eftirlitsnefnd og skilar áliti um þær.</sen>
-          </paragraph>
-          <paragraph nr="3">
-            <sen>Nefndin skal einnig hafa frumkvæði að því að kanna ákvarðanir einstakra ráðherra eða verklag þeirra sem ástæða þykir til að athuga á grundvelli þess eftirlitshlutverks sem Alþingi hefur gagnvart framkvæmdarvaldinu.</sen>
-            <sen>Komi beiðni um slíka athugun frá a.m.k. fjórðungi nefndarmanna skal hún fara fram.</sen>
-            <sen>Um athugun sína getur nefndin gefið þinginu skýrslu.</sen>
-          </paragraph>
-          <paragraph nr="4">
-            <sen>Nefndin skal jafnframt leggja mat á og gera tillögu til Alþingis um hvenær rétt er að skipa rannsóknarnefnd, sbr. lög um rannsóknarnefndir.</sen>
-            <sen>Nefndin tekur skýrslur slíkrar nefndar til umfjöllunar og gefur þinginu álit sitt um þær og gerir tillögur um frekari aðgerðir þingsins.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -936,6 +938,7 @@
             <chapter>2</chapter>
             <art>13</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>2</paragraph>
             <sen words="fjármálastarfsemi og lífeyrismál">1</sen>
@@ -944,6 +947,7 @@
             <chapter>2</chapter>
             <art>13</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>2</paragraph>
             <sen words="lífeyrisskuldbindingar ríkissjóðs">1</sen>
@@ -952,6 +956,7 @@
             <chapter>2</chapter>
             <art>13</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>2</paragraph>
             <sen before-mark="^" after-mark="Enn fremur skal nefndin annast eftirlit með framkvæmd fjárlaga.$">2</sen>
@@ -961,6 +966,7 @@
               <chapter>2</chapter>
               <art>13</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>8</numart>
               <paragraph>2</paragraph>
               <sen>2</sen>
@@ -969,6 +975,7 @@
               <chapter>2</chapter>
               <art>13</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>8</numart>
               <paragraph>2</paragraph>
               <sen>4</sen>
@@ -981,6 +988,7 @@
             <chapter>2</chapter>
             <art>13</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>2</paragraph>
             <sen words="skýrslur ráðherra um utanríkis- og alþjóðamál og um EES-mál">2</sen>
@@ -2202,55 +2210,55 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Á Alþingi starfa þessar alþjóðanefndir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Íslandsdeild Alþjóðaþingmannasambandsins, IPU.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Íslandsdeild Evrópuráðsþingsins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Íslandsdeild þingmannanefnda EFTA og EES.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Íslandsdeild NATO-þingsins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Íslandsdeild Norðurlandaráðs.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Íslandsdeild Vestnorræna ráðsins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Íslandsdeild þings Öryggis- og samvinnustofnunar Evrópu, ÖSE.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>Íslandsdeild þingmannaráðstefnunnar um norðurskautsmál.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Íslandsdeild Alþjóðaþingmannasambandsins, IPU.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Íslandsdeild Evrópuráðsþingsins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Íslandsdeild þingmannanefnda EFTA og EES.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Íslandsdeild NATO-þingsins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Íslandsdeild Norðurlandaráðs.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Íslandsdeild Vestnorræna ráðsins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Íslandsdeild þings Öryggis- og samvinnustofnunar Evrópu, ÖSE.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>Íslandsdeild þingmannaráðstefnunnar um norðurskautsmál.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -2286,6 +2294,7 @@
             <chapter>2</chapter>
             <art>35</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -2294,6 +2303,7 @@
             <chapter>2</chapter>
             <art>35</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>7</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -2302,6 +2312,7 @@
             <chapter>2</chapter>
             <art>35</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>8</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -5561,31 +5572,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Verkefni skrifstofu Alþingis eru m.a.:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>að vera forseta til aðstoðar og framfylgja ákvörðunum forseta og forsætisnefndar auk ákvarðana á fundi forseta með þingflokksformönnum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>að veita alþingismönnum, nefndum og þingflokkum faglega aðstoð og þjónustu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>að hafa á hendi almennan rekstur þingsins og stjórnsýslu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>að varðveita og miðla upplýsingum um hlutverk og starfsemi Alþingis.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>að vera forseta til aðstoðar og framfylgja ákvörðunum forseta og forsætisnefndar auk ákvarðana á fundi forseta með þingflokksformönnum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>að veita alþingismönnum, nefndum og þingflokkum faglega aðstoð og þjónustu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>að hafa á hendi almennan rekstur þingsins og stjórnsýslu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>að varðveita og miðla upplýsingum um hlutverk og starfsemi Alþingis.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.080.html" law-nr="80" law-year="2021" law-art="33" nr="1">
@@ -5600,6 +5611,7 @@
               <chapter>7</chapter>
               <art>90</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>d</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

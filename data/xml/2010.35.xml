@@ -32,43 +32,43 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <name>Lögskráningarkerfi</name>
+            <sen>er rafrænn gagnagrunnur sem vistar upplýsingar um lögskráningar.</sen>
+            <sen>Samgöngustofa rekur gagnagrunninn og veitir aðgang að honum til lögskráningar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <name>Lögskráning</name>
+            <sen>er lögformleg skráning skipverja um borð í skipum í gegnum lögskráningarkerfið að uppfylltum skilyrðum 5. gr.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <name>Skipverji</name>
+            <sen>er sá sem er ráðinn til starfa á skipi samkvæmt ákvæðum sjómannalaga.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <name>Skírteini</name>
+            <sen>er skjal sem er í gildi og er staðfesting á atvinnuréttindum samkvæmt ákvæðum laga þessara.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <name>Útgerðarmaður</name>
+            <sen>er sá sem mannar skip, ræður ferðum þess, ber kostnaðinn af þeim og nýtur arðsins af þeim.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <name>Lögskráningarkerfi</name>
-          <sen>er rafrænn gagnagrunnur sem vistar upplýsingar um lögskráningar.</sen>
-          <sen>Samgöngustofa rekur gagnagrunninn og veitir aðgang að honum til lögskráningar.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <name>Lögskráning</name>
-          <sen>er lögformleg skráning skipverja um borð í skipum í gegnum lögskráningarkerfið að uppfylltum skilyrðum 5. gr.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <name>Skipverji</name>
-          <sen>er sá sem er ráðinn til starfa á skipi samkvæmt ákvæðum sjómannalaga.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <name>Skírteini</name>
-          <sen>er skjal sem er í gildi og er staðfesting á atvinnuréttindum samkvæmt ákvæðum laga þessara.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <name>Útgerðarmaður</name>
-          <sen>er sá sem mannar skip, ræður ferðum þess, ber kostnaðinn af þeim og nýtur arðsins af þeim.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="37" nr="1">
@@ -76,6 +76,7 @@
         <location type="range">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>1</numart>
           <paragraph>1</paragraph>
           <sen words="Samgöngustofa">2</sen>
@@ -120,33 +121,33 @@
     <subart nr="3">
       <paragraph nr="1">
         <sen>Einungis er heimilt að lögskrá í skiprúm ef eftirtalin gögn eða upplýsingar liggja fyrir:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Skírteini skipverja eða undanþágur, þ.m.t. skipstjóra.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Mælibréf skips og haffærisskírteini.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Staðfesting á að skipverji hafi hlotið öryggisfræðslu í Slysavarnaskóla sjómanna eða á annan hátt.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Yfirlýsing frá viðkomandi tryggingafélagi um líf- og slysatryggingu skipverja og skal skráningaraðili ganga úr skugga um að tryggingarnar séu í samræmi við gildandi lög og kjarasamninga.</sen>
+            <sen>Nú vanrækir útgerðarmaður að hafa líf- og slysatryggingu í gildi og er hann þá ábyrgur fyrir viðkomandi bótagreiðslum.</sen>
+            <sen>Reynist útgerðarmaður eigi fær um greiðslu slíkra bóta ber ríkissjóður fulla ábyrgð á greiðslu þeirra.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Skírteini skipverja eða undanþágur, þ.m.t. skipstjóra.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Mælibréf skips og haffærisskírteini.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Staðfesting á að skipverji hafi hlotið öryggisfræðslu í Slysavarnaskóla sjómanna eða á annan hátt.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Yfirlýsing frá viðkomandi tryggingafélagi um líf- og slysatryggingu skipverja og skal skráningaraðili ganga úr skugga um að tryggingarnar séu í samræmi við gildandi lög og kjarasamninga.</sen>
-          <sen>Nú vanrækir útgerðarmaður að hafa líf- og slysatryggingu í gildi og er hann þá ábyrgur fyrir viðkomandi bótagreiðslum.</sen>
-          <sen>Reynist útgerðarmaður eigi fær um greiðslu slíkra bóta ber ríkissjóður fulla ábyrgð á greiðslu þeirra.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="6">
@@ -182,55 +183,55 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Ráðherra er heimilt að setja í reglugerð nánari fyrirmæli um framkvæmd laga þessara, þ.m.t. um:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>nánari framkvæmd lögskráningar og skilyrði hennar,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>hvernig standa skuli að rafrænu lögskráningunni í gegnum lögskráningarkerfið og notkun rafrænna skilríkja í þeim efnum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>öryggisfræðslu sjómanna og hvernig að henni skuli staðið,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>d.</nr-title>
+            <sen>hversu langt þurfi að líða á milli grunnöryggisfræðslunámskeiðs og endurmenntunarnámskeiðs,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="e" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>e.</nr-title>
+            <sen>frest til þess að ljúka öryggisfræðslunámskeiði sjómanna,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="f" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>f.</nr-title>
+            <sen>hvaða embætti eða stofnun skuli annast framkvæmd lögskráningar í samræmi við 2. mgr. 5. gr.,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="g" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>g.</nr-title>
+            <sen>hvernig standa skuli að aðgangi að gögnum og upplýsingum úr lögskráningarkerfinu til stéttarsamtaka, eða aðila í þeirra umboði,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="h" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>h.</nr-title>
+            <sen>eftirlit með framkvæmd lögskráningar.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>nánari framkvæmd lögskráningar og skilyrði hennar,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>hvernig standa skuli að rafrænu lögskráningunni í gegnum lögskráningarkerfið og notkun rafrænna skilríkja í þeim efnum,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>öryggisfræðslu sjómanna og hvernig að henni skuli staðið,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="d" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>d.</nr-title>
-          <sen>hversu langt þurfi að líða á milli grunnöryggisfræðslunámskeiðs og endurmenntunarnámskeiðs,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="e" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>e.</nr-title>
-          <sen>frest til þess að ljúka öryggisfræðslunámskeiði sjómanna,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="f" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>f.</nr-title>
-          <sen>hvaða embætti eða stofnun skuli annast framkvæmd lögskráningar í samræmi við 2. mgr. 5. gr.,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="g" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>g.</nr-title>
-          <sen>hvernig standa skuli að aðgangi að gögnum og upplýsingum úr lögskráningarkerfinu til stéttarsamtaka, eða aðila í þeirra umboði,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="h" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>h.</nr-title>
-          <sen>eftirlit með framkvæmd lögskráningar.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">

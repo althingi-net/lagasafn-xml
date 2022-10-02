@@ -340,54 +340,54 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Nú er afhent skjal til þinglýsingar og skal þá vísa því frá ef eitthvert af eftirtöldum atriðum á við:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>skjal er afhent í röngu umdæmi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>fasteign er ekki skráð í þinglýsingabók</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>skjal varðar bein eða óbein eignarréttindi að fasteign og ekki er getið fasteignanúmers hennar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>afmörkun lands eða lóðar er ekki í samræmi við fasteignaskrá,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>f.</nr-title>
+              <sen>ekki er ótvírætt við hvaða eign skjal á, hvaða aðila skjal varðar eða hvert efni þess er að öðru leyti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>g.</nr-title>
+              <sen>skjalið skortir undirritun útgefanda og vitundarvotta eða annarra þeirra er skjal geta staðfest, sbr. 22. gr., sé þessa þörf,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>h.</nr-title>
+              <sen>skjal er aðeins afhent í einu eintaki eða samrit eða endurrit er ekki ritað á löggiltan þinglýsingapappír.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>skjal er afhent í röngu umdæmi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>fasteign er ekki skráð í þinglýsingabók</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>skjal varðar bein eða óbein eignarréttindi að fasteign og ekki er getið fasteignanúmers hennar,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>afmörkun lands eða lóðar er ekki í samræmi við fasteignaskrá,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="f" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>f.</nr-title>
-            <sen>ekki er ótvírætt við hvaða eign skjal á, hvaða aðila skjal varðar eða hvert efni þess er að öðru leyti,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="g" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>g.</nr-title>
-            <sen>skjalið skortir undirritun útgefanda og vitundarvotta eða annarra þeirra er skjal geta staðfest, sbr. 22. gr., sé þessa þörf,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="h" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>h.</nr-title>
-            <sen>skjal er aðeins afhent í einu eintaki eða samrit eða endurrit er ekki ritað á löggiltan þinglýsingapappír.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -427,6 +427,7 @@
               <chapter>2</chapter>
               <art>6</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>h</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -439,6 +440,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>b</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^fasteign er ekki skráð í þinglýsingabók" after-mark="$">1</sen>
@@ -447,6 +449,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>c</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -455,6 +458,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>d</numart>
             <paragraph>1</paragraph>
             <sen words="fasteignanúmers">1</sen>
@@ -463,6 +467,7 @@
             <chapter>2</chapter>
             <art>6</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>e</numart>
             <paragraph>1</paragraph>
             <sen words="fasteignaskrá">1</sen>
@@ -564,31 +569,31 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Þinglýsingarstjórar færa þessar bækur:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Fasteignabók um skjöl, er varða fasteignir.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Skipabók um skjöl, er varða öll skip, sem skrásetningarskyld eru.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Bifreiðabók um skjöl, er bifreiðar varða.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Lausafjárbók um öll skjöl, er varða lausafé almennt, þ. á m. skip, sem eru ekki skrásetningarskyld, en skjöl um slík skip má þó einnig færa í skipabók samkvæmt 2. tölul., ef þinglýsingarstjóra þykir það hentara.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Fasteignabók um skjöl, er varða fasteignir.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Skipabók um skjöl, er varða öll skip, sem skrásetningarskyld eru.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Bifreiðabók um skjöl, er bifreiðar varða.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Lausafjárbók um öll skjöl, er varða lausafé almennt, þ. á m. skip, sem eru ekki skrásetningarskyld, en skjöl um slík skip má þó einnig færa í skipabók samkvæmt 2. tölul., ef þinglýsingarstjóra þykir það hentara.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -630,6 +635,7 @@
             <chapter>2</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="þinglýsingarstjóra">1</sen>
@@ -1232,19 +1238,19 @@
           <sen>Nú er efni skjals fært ranglega í þinglýsingabók, láðst hefur að færa skjalið í þinglýsingabók innan frests þess, er greinir í 7. gr. 5. mgr., eða skjal, sem samrýmist ekki öðru skjali, er fyrr barst til þinglýsingar, er fært í þinglýsingabók á undan því.</sen>
           <sen>Er þá kostur að kveða svo á með dómi, að réttur sá, er skjal þetta veitir, skuli víkja fyrir rétti, sem síðar er þinglýst og styðst við samning, enda sé rétthafi grandlaus um þessi atvik.</sen>
           <sen>Skilyrði þessa eru:</sen>
+          <numart nr="A" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>A.</nr-title>
+              <sen>að yngra rétthafanum væri bakað óverðskuldað tjón, ef hann hlyti að þoka og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="B" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>B.</nr-title>
+              <sen>að tjónið yrði þeim rétthafa, ef hann þyrfti að vægja, miklum mun bagalegra en hinum eldra eða leiða myndi til verulegra raskana á síðar þinglýstum réttindum, ef réttur sá, er mistök urðu um, gengi fyrir.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="A" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>A.</nr-title>
-            <sen>að yngra rétthafanum væri bakað óverðskuldað tjón, ef hann hlyti að þoka og</sen>
-          </paragraph>
-        </numart>
-        <numart nr="B" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>B.</nr-title>
-            <sen>að tjónið yrði þeim rétthafa, ef hann þyrfti að vægja, miklum mun bagalegra en hinum eldra eða leiða myndi til verulegra raskana á síðar þinglýstum réttindum, ef réttur sá, er mistök urðu um, gengi fyrir.</sen>
-          </paragraph>
-        </numart>
       </subart>
     </art>
     <art nr="19">
@@ -1684,20 +1690,20 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Stofnun afnotaréttar og framsal á afnotarétti er ekki háð þinglýsingu:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Ef afnotatími er 12 mánuðir hið lengsta eða fært er að segja upp samningi með fyrirvara, sem eigi sé lengri en 3 mánuðir, miðað við almennan fardag, enda varði samningur íbúðarhúsnæði.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Ef afnotatími er eigi lengri en 2 ár eða heimilt er að segja upp samningi með fyrirvara, er eigi sé lengri en 6 mánuðir, enda varði samningur atvinnuhúsnæði.</sen>
+              <sen>Afnotasamningar, er lúta ákvæðum lagasetningarinnar um ábúð jarða, eru ekki háðir þinglýsingu.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Ef afnotatími er 12 mánuðir hið lengsta eða fært er að segja upp samningi með fyrirvara, sem eigi sé lengri en 3 mánuðir, miðað við almennan fardag, enda varði samningur íbúðarhúsnæði.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Ef afnotatími er eigi lengri en 2 ár eða heimilt er að segja upp samningi með fyrirvara, er eigi sé lengri en 6 mánuðir, enda varði samningur atvinnuhúsnæði.</sen>
-            <sen>Afnotasamningar, er lúta ákvæðum lagasetningarinnar um ábúð jarða, eru ekki háðir þinglýsingu.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -2408,37 +2414,37 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Nú hlýtur maður tjón, sem telja verður sennilega afleiðingu af mistökum þinglýsingarstjóra eða af atvikum, sem greinir í d- og e-liðum þessarar greinar, en bótakrefjandi á sjálfur ekki sök á því, og á hann þá rétt á bótum úr ríkissjóði, ef tjónið stafar af því:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Að hann hefur treyst þinglýsingarvottorði þinglýsingarstjóra, sbr. 9. gr., eða vottorði þinglýsingarstjóra um efni þinglýsingabóka (veðbókarvottorði), enda sé aðili grandlaus.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Að skjali, sem borist hefur til þinglýsingar, hefur ekki verið þinglýst, eða þinglýst of seint.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Að skjal verður að þoka fyrir síðar þinglýstu skjali samkvæmt 18. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>Að heimildarskjali, sem greint er í 2. mgr. 33. gr., er þinglýst og aðili hefur gert samning um fasteign eða skrásett skip, 5 rúmlestir eða stærra, í trausti þess, að skjalið væri gilt.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>Að ákvæði 38. eða 50. gr. hafa leitt til þess að réttindi hans féllu niður.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Að hann hefur treyst þinglýsingarvottorði þinglýsingarstjóra, sbr. 9. gr., eða vottorði þinglýsingarstjóra um efni þinglýsingabóka (veðbókarvottorði), enda sé aðili grandlaus.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Að skjali, sem borist hefur til þinglýsingar, hefur ekki verið þinglýst, eða þinglýst of seint.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Að skjal verður að þoka fyrir síðar þinglýstu skjali samkvæmt 18. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>Að heimildarskjali, sem greint er í 2. mgr. 33. gr., er þinglýst og aðili hefur gert samning um fasteign eða skrásett skip, 5 rúmlestir eða stærra, í trausti þess, að skjalið væri gilt.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>Að ákvæði 38. eða 50. gr. hafa leitt til þess að réttindi hans féllu niður.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1989.085.html" law-nr="85" law-year="1989" law-art="23" nr="1">
@@ -2454,6 +2460,7 @@
             <chapter>8</chapter>
             <art>49</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="þinglýsingarstjóra" repeat="true">1</sen>
@@ -2472,19 +2479,19 @@
           <sen>Nú fer maður með eignarumráð að tiltekinni eign við gildistöku laga þessara, en þinglýstri eignarheimild hans er nokkuð áfátt.</sen>
           <sen>Er honum þá rétt að snúa sér til þinglýsingarstjóra á varnarþingi eignar með yfirlýsingu um, að hann sé eigandi eignarinnar.</sen>
           <sen>Skilyrði þess, að hann fái óskoraða eignarheimild á grundvelli yfirlýsingarinnar eru þessi:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>að hann hafi í höndum heimildarskjal, sem áfátt er og þinglýst hefur verið a.m.k. 5 árum áður en heimildar þessarar er neytt, eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>hafi í höndum heimildarskjal frá manni, sem fengið hefur slíku skjali þinglýst fyrir 5 árum hið skemmsta.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>að hann hafi í höndum heimildarskjal, sem áfátt er og þinglýst hefur verið a.m.k. 5 árum áður en heimildar þessarar er neytt, eða</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>hafi í höndum heimildarskjal frá manni, sem fengið hefur slíku skjali þinglýst fyrir 5 árum hið skemmsta.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">

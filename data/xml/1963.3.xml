@@ -20,22 +20,22 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Í landsdómi eiga sæti 15 dómendur, og eru þeir þessir:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>þeir fimm dómarar við Hæstarétt sem hafa átt þar lengst sæti, dómstjórinn í Reykjavík og prófessorinn í stjórnskipunarrétti við Háskóla Íslands.</sen>
+            <sen>Hæstiréttur kveður til varadómendur hæstaréttardómara úr hópi annarra hæstaréttardómara og síðan lagakennara háskólans, hæstaréttarlögmanna eða héraðsdómara, sem fullnægja skilyrðum til þess að vera skipaðir dómarar í hæstarétti.</sen>
+            <sen>Varamaður dómstjórans í Reykjavík er sá héraðsdómari í Reykjavík sem hefur lengst gegnt því embætti.</sen>
+            <sen>Lagadeild háskólans kýs varamann prófessorsins í stjórnskipunarrétti;</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>átta menn kosnir af Alþingi með hlutfallskosningu til 6 ára í senn.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>þeir fimm dómarar við Hæstarétt sem hafa átt þar lengst sæti, dómstjórinn í Reykjavík og prófessorinn í stjórnskipunarrétti við Háskóla Íslands.</sen>
-          <sen>Hæstiréttur kveður til varadómendur hæstaréttardómara úr hópi annarra hæstaréttardómara og síðan lagakennara háskólans, hæstaréttarlögmanna eða héraðsdómara, sem fullnægja skilyrðum til þess að vera skipaðir dómarar í hæstarétti.</sen>
-          <sen>Varamaður dómstjórans í Reykjavík er sá héraðsdómari í Reykjavík sem hefur lengst gegnt því embætti.</sen>
-          <sen>Lagadeild háskólans kýs varamann prófessorsins í stjórnskipunarrétti;</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>átta menn kosnir af Alþingi með hlutfallskosningu til 6 ára í senn.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -53,6 +53,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen words="þeir fimm dómarar við Hæstarétt sem hafa átt þar lengst sæti, dómstjórinn">1</sen>
@@ -60,6 +61,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen words="annarra hæstaréttardómara og síðan">2</sen>
@@ -67,6 +69,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen>3</sen>
@@ -77,6 +80,7 @@
         <location type="pointer">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^Hæstiréttur kveður til varadómendur hæstaréttardómara úr hópi (\[? ?)?annarra" after-mark="hæstaréttardómara og síðan\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?lagakennara háskólans, hæstaréttarlögmanna eða héraðsdómara, sem fullnægja skilyrðum til þess að vera skipaðir dómarar í hæstarétti.$">2</sen>
@@ -87,6 +91,7 @@
         <location type="deletion">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>b</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^átta menn kosnir af" after-mark="Alþingi með hlutfallskosningu til 6 ára í senn.$">1</sen>
@@ -108,43 +113,43 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Enginn er kjörgengur í landsdóm samkvæmt b-lið 2. gr., nema hann fullnægi eftirgreindum skilyrðum:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Sé eigi yngri en 30 ára og eigi eldri en sjötugur.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Sé lögráða og hafi forræði fjár síns.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Hafi hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að hann varð fullra 18 ára né sýnt af sér háttsemi sem getur rýrt það traust sem dómarar verða almennt að njóta.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Hafi íslenskan ríkisborgararétt.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>Eigi heimili á Íslandi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" type="numeric">
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen>Sé eigi alþingismaður eða starfsmaður í stjórnarráðinu.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Sé eigi yngri en 30 ára og eigi eldri en sjötugur.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Sé lögráða og hafi forræði fjár síns.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Hafi hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að hann varð fullra 18 ára né sýnt af sér háttsemi sem getur rýrt það traust sem dómarar verða almennt að njóta.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Hafi íslenskan ríkisborgararétt.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <sen>Eigi heimili á Íslandi.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="6" type="numeric">
-        <paragraph nr="1">
-          <nr-title>6.</nr-title>
-          <sen>Sé eigi alþingismaður eða starfsmaður í stjórnarráðinu.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -167,6 +172,7 @@
         <location type="range">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen>1</sen>

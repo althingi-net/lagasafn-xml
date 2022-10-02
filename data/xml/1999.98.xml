@@ -259,31 +259,31 @@
       <subart nr="5">
         <paragraph nr="1">
           <sen>Gjalddagar almenns og áhættuvegins iðgjalds eru sem hér segir:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Gjalddagi vegna 1. ársfjórðungs er 1. júní.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Gjalddagi vegna 2. ársfjórðungs er 1. september.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Gjalddagi vegna 3. ársfjórðungs er 1. desember.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>Gjalddagi vegna 4. ársfjórðungs er 1. mars næsta árs.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Gjalddagi vegna 1. ársfjórðungs er 1. júní.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Gjalddagi vegna 2. ársfjórðungs er 1. september.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Gjalddagi vegna 3. ársfjórðungs er 1. desember.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>Gjalddagi vegna 4. ársfjórðungs er 1. mars næsta árs.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="6">
         <paragraph nr="1">
@@ -455,22 +455,22 @@
           <sen>Nái heildareign sjóðsins ekki lágmarki skv. 1. mgr. skulu aðildarfyrirtæki greiða eigi síðar en 1. mars ár hvert gjald til sjóðsins sem nemur samtals 20 millj. kr., þar til sjóðurinn hefur náð tilskilinni lágmarksstærð.</sen>
           <sen>Hvert aðildarfyrirtæki skal greiða lágmarksgjald að fjárhæð 50.000 kr.</sen>
           <sen>Árleg greiðsla að frádregnu lágmarksgjaldi skiptist í tvo jafna hluta eftir eftirfarandi gjaldstofnum:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Hlut aðildarfyrirtækis í samanlagðri fjárhæð viðskipta aðildarfyrirtækja með fjármálagerninga á næstliðnu ári við þá viðskiptavini sem tryggðir eru skv. 9. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Hlut aðildarfyrirtækis í samanlögðum fjölda viðskiptareikninga hjá aðildarfyrirtækjum í tengslum við viðskipti með verðbréf.</sen>
+              <sen>Leggja skal saman fjölda viðskiptareikninga skv. d-lið 15. tölul. og a-lið 66. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga.</sen>
+              <sen>Viðskiptareikningar skv. c-lið 1. tölul. og a-lið 2. tölul. hafa tvöfalt vægi í samtölu.</sen>
+              <sen>Viðskiptareikningar með hærri inneign en 1,7 millj. kr. miðað við gengi evru (EUR) 5. janúar 1999 hafa einnig tvöfalt vægi í samtölu.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Hlut aðildarfyrirtækis í samanlagðri fjárhæð viðskipta aðildarfyrirtækja með fjármálagerninga á næstliðnu ári við þá viðskiptavini sem tryggðir eru skv. 9. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Hlut aðildarfyrirtækis í samanlögðum fjölda viðskiptareikninga hjá aðildarfyrirtækjum í tengslum við viðskipti með verðbréf.</sen>
-            <sen>Leggja skal saman fjölda viðskiptareikninga skv. d-lið 15. tölul. og a-lið 66. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga.</sen>
-            <sen>Viðskiptareikningar skv. c-lið 1. tölul. og a-lið 2. tölul. hafa tvöfalt vægi í samtölu.</sen>
-            <sen>Viðskiptareikningar með hærri inneign en 1,7 millj. kr. miðað við gengi evru (EUR) 5. janúar 1999 hafa einnig tvöfalt vægi í samtölu.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -512,6 +512,7 @@
             <chapter>2</chapter>
             <art>7</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="viðskipta aðildarfyrirtækja með fjármálagerninga">1</sen>
@@ -520,6 +521,7 @@
             <chapter>2</chapter>
             <art>7</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="d-lið 15. tölul. og a-lið 66. tölul. 1. mgr. 4. gr. laga um markaði fyrir fjármálagerninga">2</sen>
@@ -687,93 +689,93 @@
         <paragraph nr="1">
           <sen>Eftirfarandi er undanskilið tryggingu skv. 1. mgr.</sen>
           <sen>:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>innstæður sem tengjast málum þar sem sakfellt hefur verið fyrir peningaþvætti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>innstæður ríkis, sveitarfélaga, stofnana þeirra og fyrirtækja að meiri hluta í eigu opinberra aðila,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>innstæður sem eru ekki skráðar á nafn,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>innstæður lífeyrissjóða aðrar en hlutdeild viðskiptamanns í reikningi innlánsleiðar vörsluaðila lífeyrissparnaðar hjá innlánsstofnun,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>innstæður annarra lánastofnana í eigin þágu og fyrir eigin reikning,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="10" type="numeric">
+            <paragraph nr="1">
+              <nr-title>10.</nr-title>
+              <sen>eiginfjárgrunnur lánastofnana og verðbréfafyrirtækja eins og hann er samsettur samkvæmt lögum um fjármálafyrirtæki,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="11" type="numeric">
+            <paragraph nr="1">
+              <nr-title>11.</nr-title>
+              <sen>innstæður fjármálastofnana eins og þær eru skilgreindar í lögum um fjármálafyrirtæki,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="12" type="numeric">
+            <paragraph nr="1">
+              <nr-title>12.</nr-title>
+              <sen>innstæður verðbréfafyrirtækja í skilningi laga um fjármálafyrirtæki,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="13" type="numeric">
+            <paragraph nr="1">
+              <nr-title>13.</nr-title>
+              <sen>innstæður vátryggingafélaga og endurtryggingafélaga eins og þau eru skilgreind í lögum um vátryggingastarfsemi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="14" type="numeric">
+            <paragraph nr="1">
+              <nr-title>14.</nr-title>
+              <sen>innstæður sjóða um sameiginlega fjárfestingu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="15" type="numeric">
+            <paragraph nr="1">
+              <nr-title>15.</nr-title>
+              <sen>skuldabréf útgefin af lánastofnun og skuldbindingar vegna eigin víxla, svo og skuldaviðurkenningar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>innstæður sem tengjast málum þar sem sakfellt hefur verið fyrir peningaþvætti,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>innstæður ríkis, sveitarfélaga, stofnana þeirra og fyrirtækja að meiri hluta í eigu opinberra aðila,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>innstæður sem eru ekki skráðar á nafn,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>innstæður lífeyrissjóða aðrar en hlutdeild viðskiptamanns í reikningi innlánsleiðar vörsluaðila lífeyrissparnaðar hjá innlánsstofnun,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>innstæður annarra lánastofnana í eigin þágu og fyrir eigin reikning,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="10" type="numeric">
-          <paragraph nr="1">
-            <nr-title>10.</nr-title>
-            <sen>eiginfjárgrunnur lánastofnana og verðbréfafyrirtækja eins og hann er samsettur samkvæmt lögum um fjármálafyrirtæki,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="11" type="numeric">
-          <paragraph nr="1">
-            <nr-title>11.</nr-title>
-            <sen>innstæður fjármálastofnana eins og þær eru skilgreindar í lögum um fjármálafyrirtæki,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="12" type="numeric">
-          <paragraph nr="1">
-            <nr-title>12.</nr-title>
-            <sen>innstæður verðbréfafyrirtækja í skilningi laga um fjármálafyrirtæki,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="13" type="numeric">
-          <paragraph nr="1">
-            <nr-title>13.</nr-title>
-            <sen>innstæður vátryggingafélaga og endurtryggingafélaga eins og þau eru skilgreind í lögum um vátryggingastarfsemi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="14" type="numeric">
-          <paragraph nr="1">
-            <nr-title>14.</nr-title>
-            <sen>innstæður sjóða um sameiginlega fjárfestingu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="15" type="numeric">
-          <paragraph nr="1">
-            <nr-title>15.</nr-title>
-            <sen>skuldabréf útgefin af lánastofnun og skuldbindingar vegna eigin víxla, svo og skuldaviðurkenningar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="10">
         <paragraph nr="1">
@@ -859,6 +861,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>9</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -867,6 +870,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>9</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -875,6 +879,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>9</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -883,6 +888,7 @@
             <chapter>3</chapter>
             <art>9</art>
             <subart>9</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -892,6 +898,7 @@
               <chapter>3</chapter>
               <art>9</art>
               <subart>9</subart>
+              <paragraph>1</paragraph>
               <numart>9</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -900,6 +907,7 @@
               <chapter>3</chapter>
               <art>9</art>
               <subart>9</subart>
+              <paragraph>1</paragraph>
               <numart>15</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -950,6 +958,7 @@
               <chapter>3</chapter>
               <art>9</art>
               <subart>9</subart>
+              <paragraph>1</paragraph>
               <numart>15</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

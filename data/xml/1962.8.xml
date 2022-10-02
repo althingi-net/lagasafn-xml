@@ -15,33 +15,33 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Lögerfingjar eru þessir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Börn arfleifanda og aðrir niðjar.</sen>
+              <sen>Óskilgetið barn erfir föður og föðurfrændur og þeir það, ef það er feðrað með þeim hætti, sem segir í löggjöf um óskilgetin börn.</sen>
+              <sen>Um erfðarétt kjörbarns og arf eftir það fer samkvæmt 5. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Foreldrar arfleifanda og niðjar þeirra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Foreldrar hvors foreldris arfleifanda um sig og börn þeirra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Maki arfleifanda.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Börn arfleifanda og aðrir niðjar.</sen>
-            <sen>Óskilgetið barn erfir föður og föðurfrændur og þeir það, ef það er feðrað með þeim hætti, sem segir í löggjöf um óskilgetin börn.</sen>
-            <sen>Um erfðarétt kjörbarns og arf eftir það fer samkvæmt 5. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Foreldrar arfleifanda og niðjar þeirra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Foreldrar hvors foreldris arfleifanda um sig og börn þeirra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Maki arfleifanda.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2006.065.html" law-nr="65" law-year="2006" law-art="30" nr="1">
@@ -50,6 +50,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -661,20 +662,20 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Nú voru þeir meinbugir á hjúskap, er annað hjóna andaðist, að hjúskapurinn var ógildanlegur, og tekur þá það hjóna, sem eftir lifir, ekki arf:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Ef það sannast í sakamáli, að stofnun hjúskaparins var refsiverð athöfn af þess hendi.</sen>
+              <sen>Þó tekur síðari maki tvíkvænings ekki arf, ef fyrri maki er á lífi og er arfgengur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Ef það krefst skipta eftir 27. gr. laga um stofnun og slit hjúskapar, nr. 60/1972.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Ef það sannast í sakamáli, að stofnun hjúskaparins var refsiverð athöfn af þess hendi.</sen>
-            <sen>Þó tekur síðari maki tvíkvænings ekki arf, ef fyrri maki er á lífi og er arfgengur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Ef það krefst skipta eftir 27. gr. laga um stofnun og slit hjúskapar, nr. 60/1972.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="1">
@@ -683,6 +684,7 @@
             <chapter>4</chapter>
             <art>26</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="sakamáli">1</sen>
@@ -694,6 +696,7 @@
             <chapter>4</chapter>
             <art>26</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?Ef það krefst skipta eftir 27. gr. laga um stofnun og slit hjúskapar, nr. 60/1972." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -705,6 +708,7 @@
             <chapter>4</chapter>
             <art>26</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>

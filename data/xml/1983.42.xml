@@ -391,49 +391,49 @@
       <paragraph nr="1">
         <sen>Halda skal í aprílmánuði ár hvert aðalfund Landsvirkjunar.</sen>
         <sen>Á aðalfundi skulu tekin fyrir þessi mál:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Skýrsla stjórnar um starfsemi Landsvirkjunar síðastliðið starfsár.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Ársreikningur Landsvirkjunar fyrir liðið reikningsár ásamt skýrslu endurskoðanda fyrirtækisins lagður fram til staðfestingar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Ákvörðun um arðgreiðslur og um aðra meðferð hagnaðar eða taps Landsvirkjunar á reikningsárinu.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Ákvörðun um þóknun til stjórnarmanna fyrir liðið kjörtímabil.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>Lýst kjöri stjórnar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" type="numeric">
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen>Kosning löggilts endurskoðanda eða endurskoðunarfélags.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="7" type="numeric">
+          <paragraph nr="1">
+            <nr-title>7.</nr-title>
+            <sen>Umræður um önnur mál.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Skýrsla stjórnar um starfsemi Landsvirkjunar síðastliðið starfsár.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Ársreikningur Landsvirkjunar fyrir liðið reikningsár ásamt skýrslu endurskoðanda fyrirtækisins lagður fram til staðfestingar.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Ákvörðun um arðgreiðslur og um aðra meðferð hagnaðar eða taps Landsvirkjunar á reikningsárinu.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Ákvörðun um þóknun til stjórnarmanna fyrir liðið kjörtímabil.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <sen>Lýst kjöri stjórnar.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="6" type="numeric">
-        <paragraph nr="1">
-          <nr-title>6.</nr-title>
-          <sen>Kosning löggilts endurskoðanda eða endurskoðunarfélags.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="7" type="numeric">
-        <paragraph nr="1">
-          <nr-title>7.</nr-title>
-          <sen>Umræður um önnur mál.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -470,6 +470,7 @@
         <location type="deletion">
           <art>7</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^Ákvörðun um arðgreiðslur" after-mark="og um aðra meðferð hagnaðar eða taps Landsvirkjunar á reikningsárinu.$">1</sen>

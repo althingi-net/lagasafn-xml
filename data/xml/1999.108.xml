@@ -263,43 +263,43 @@
         <paragraph nr="1">
           <sen>Trúfélag eða lífsskoðunarfélag sem óskar skráningar skal senda sýslumanni umsókn um skráningu.</sen>
           <sen>Með umsókn skulu fylgja upplýsingar um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>heiti félags og heimilisfang,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>nákvæmt félagatal, þar sem fram koma nöfn, kennitölur og heimili félagsmanna,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>stefnuskrá og/eða trúarkenningar félagsins og tengsl þeirra við önnur trúarbrögð, trúarhreyfingar eða aðrar lífsskoðanir eða lífsskoðunarfélög,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>lög félagsins og allar aðrar reglur sem kunna að gilda um ráðstöfun fjármuna félagsins,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>nöfn stjórnarmanna og forstöðumanns,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>starfsemi félagsins, svo sem reglulegt samkomuhald eða annað sem gefur til kynna að starfsemi þess sé stöðug og virk.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>heiti félags og heimilisfang,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>nákvæmt félagatal, þar sem fram koma nöfn, kennitölur og heimili félagsmanna,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>stefnuskrá og/eða trúarkenningar félagsins og tengsl þeirra við önnur trúarbrögð, trúarhreyfingar eða aðrar lífsskoðanir eða lífsskoðunarfélög,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>lög félagsins og allar aðrar reglur sem kunna að gilda um ráðstöfun fjármuna félagsins,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>nöfn stjórnarmanna og forstöðumanns,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>starfsemi félagsins, svo sem reglulegt samkomuhald eða annað sem gefur til kynna að starfsemi þess sé stöðug og virk.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -333,6 +333,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="heiti félags og heimilisfang">1</sen>
@@ -341,6 +342,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="stefnuskrá og/eða trúarkenningar félagsins og tengsl þeirra við önnur trúarbrögð, trúarhreyfingar eða aðrar lífsskoðanir eða lífsskoðunarfélög">1</sen>
@@ -691,26 +693,26 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Barn getur frá fæðingu heyrt til trúfélagi eða lífsskoðunarfélagi eða verið utan trúfélaga og lífsskoðunarfélaga með eftirfarandi hætti:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Séu foreldrar barns í hjúskap eða skráðri sambúð við fæðingu þess skal það heyra til sama skráða trúfélagi eða lífsskoðunarfélagi og foreldrar þess en ella vera utan trúfélaga og lífsskoðunarfélaga ef það gildir um foreldrana.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Ef foreldrar barns sem eru í hjúskap eða skráðri sambúð við fæðingu þess heyra ekki til sama skráða trúfélagi eða lífsskoðunarfélagi eða annað foreldrið er utan trúfélaga og lífsskoðunarfélaga skulu þeir taka sameiginlega ákvörðun um hvort og þá hvaða skráða trúfélagi eða lífsskoðunarfélagi barnið eigi að heyra til.</sen>
+              <sen>Fram til þess tíma verður þessi staða barnsins ótilgreind.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Ef foreldrar barns eru ekki í hjúskap eða skráðri sambúð þegar barn fæðist skal það heyra til sama skráða trúfélagi eða lífsskoðunarfélagi og það foreldri sem fer með forsjá þess en ella vera utan trúfélaga og lífsskoðunarfélaga ef það gildir um foreldrið.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Séu foreldrar barns í hjúskap eða skráðri sambúð við fæðingu þess skal það heyra til sama skráða trúfélagi eða lífsskoðunarfélagi og foreldrar þess en ella vera utan trúfélaga og lífsskoðunarfélaga ef það gildir um foreldrana.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Ef foreldrar barns sem eru í hjúskap eða skráðri sambúð við fæðingu þess heyra ekki til sama skráða trúfélagi eða lífsskoðunarfélagi eða annað foreldrið er utan trúfélaga og lífsskoðunarfélaga skulu þeir taka sameiginlega ákvörðun um hvort og þá hvaða skráða trúfélagi eða lífsskoðunarfélagi barnið eigi að heyra til.</sen>
-            <sen>Fram til þess tíma verður þessi staða barnsins ótilgreind.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Ef foreldrar barns eru ekki í hjúskap eða skráðri sambúð þegar barn fæðist skal það heyra til sama skráða trúfélagi eða lífsskoðunarfélagi og það foreldri sem fer með forsjá þess en ella vera utan trúfélaga og lífsskoðunarfélaga ef það gildir um foreldrið.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -763,6 +765,7 @@
               <chapter>2</chapter>
               <art>8</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

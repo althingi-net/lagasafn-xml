@@ -160,43 +160,43 @@
     <subart nr="2">
       <paragraph nr="1">
         <sen>Einnig er skylt að vátryggja neðangreind mannvirki þótt þau séu ekki brunatryggð:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Hitaveitur, vatnsveitur og skolpveitur í eigu sveitarfélaga eða ríkissjóðs.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Hafnarmannvirki í eigu sveitarfélaga eða ríkissjóðs.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Brýr sem eru 50 m eða lengri.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Raforkuvirki, þar á meðal dreifikerfi, stíflur og veitumannvirki, í eigu hins opinbera.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>Síma- og fjarskiptamannvirki í eigu hins opinbera.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" type="numeric">
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen>Skíðalyftur.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Hitaveitur, vatnsveitur og skolpveitur í eigu sveitarfélaga eða ríkissjóðs.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Hafnarmannvirki í eigu sveitarfélaga eða ríkissjóðs.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Brýr sem eru 50 m eða lengri.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Raforkuvirki, þar á meðal dreifikerfi, stíflur og veitumannvirki, í eigu hins opinbera.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <sen>Síma- og fjarskiptamannvirki í eigu hins opinbera.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="6" type="numeric">
-        <paragraph nr="1">
-          <nr-title>6.</nr-title>
-          <sen>Skíðalyftur.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="3">
       <paragraph nr="1">
@@ -236,6 +236,7 @@
           <start>
             <art>5</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -243,6 +244,7 @@
           <end>
             <art>5</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -324,20 +326,20 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Vátryggingarfjárhæðir skulu ákveðnar þannig:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Allir munir, sem brunatryggðir eru, skulu náttúruhamfaratryggðir fyrir sömu fjárhæð og brunatryggingin nemur á hverjum tíma.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Ráðherra setur að fengnum tillögum stjórnar stofnunarinnar reglur um ákvörðun vátryggingarfjárhæðar fyrir aðra muni, sbr. 2. mgr. 5. gr.</sen>
+            <sen/>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Allir munir, sem brunatryggðir eru, skulu náttúruhamfaratryggðir fyrir sömu fjárhæð og brunatryggingin nemur á hverjum tíma.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Ráðherra setur að fengnum tillögum stjórnar stofnunarinnar reglur um ákvörðun vátryggingarfjárhæðar fyrir aðra muni, sbr. 2. mgr. 5. gr.</sen>
-          <sen/>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="7" nr="1">
@@ -345,6 +347,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>1</numart>
           <paragraph>1</paragraph>
           <sen words="náttúruhamfaratryggðir">1</sen>
@@ -355,6 +358,7 @@
         <location type="deletion">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>2</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">2</sen>
@@ -375,25 +379,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Eigin áhætta vátryggðs skal vera 2% af hverju tjóni, þó eigi lægri fjárhæð en hér segir:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Vegna lausafjár, sem vátryggt er skv. 1. mgr. 5. gr., 200.000 kr.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Vegna húseigna, sem vátryggðar eru skv. 1. mgr. 5. gr., 400.000 kr.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Vegna mannvirkja, sem vátryggð eru skv. 2. mgr. 5. gr., 1.000.000 kr.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Vegna lausafjár, sem vátryggt er skv. 1. mgr. 5. gr., 200.000 kr.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Vegna húseigna, sem vátryggðar eru skv. 1. mgr. 5. gr., 400.000 kr.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Vegna mannvirkja, sem vátryggð eru skv. 2. mgr. 5. gr., 1.000.000 kr.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="8" nr="1">
@@ -407,6 +411,7 @@
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>1</numart>
           <paragraph>1</paragraph>
           <sen words="200.000 kr.">1</sen>
@@ -414,6 +419,7 @@
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>2</numart>
           <paragraph>1</paragraph>
           <sen words="400.000 kr.">1</sen>
@@ -421,6 +427,7 @@
         <location type="range">
           <art>10</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen words="1.000.000 kr.">1</sen>
@@ -438,6 +445,7 @@
           <end>
             <art>10</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -452,25 +460,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Árleg iðgjöld skal reikna sem hér segir:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Af munum, sem vátryggðir eru skv. 1. mgr. 5. gr., 0,25‰.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Af munum sem vátryggðir eru skv. 1.–5. tölul. 2. mgr. 5. gr., 0,20‰.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Af munum, sem vátryggðir eru skv. 6. tölul. 2. mgr. 5. gr., reiknast iðgjald eftir reglum sem stjórn stofnunarinnar setur.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Af munum, sem vátryggðir eru skv. 1. mgr. 5. gr., 0,25‰.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Af munum sem vátryggðir eru skv. 1.–5. tölul. 2. mgr. 5. gr., 0,20‰.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Af munum, sem vátryggðir eru skv. 6. tölul. 2. mgr. 5. gr., reiknast iðgjald eftir reglum sem stjórn stofnunarinnar setur.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -502,6 +510,7 @@
         <location type="range">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>2</numart>
           <paragraph>1</paragraph>
           <sen>1</sen>
@@ -509,6 +518,7 @@
         <location type="range">
           <art>11</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>3</numart>
           <paragraph>1</paragraph>
           <sen>1</sen>
@@ -681,20 +691,20 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Heimilt er að lækka bætur eða synja alveg bótakröfu:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Þegar hús eða annað mannvirki, sem skemmist, er reist á stað sem almennt var vitað fyrir fram að var hættulegur með tilliti til náttúruhamfara, t.d. ef mannvirki á sama stað hefur oftar en einu sinni orðið fyrir sams konar tjóni.</sen>
+            <sen>Sama á við um lausafé sem geymt er í húsi eða öðru mannvirki við þær aðstæður sem hér greinir.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Þegar gerð eða viðhald húss eða annars vátryggðs hlutar er óforsvaranlegt eða andstætt fyrirmælum í settum rétti og ljóst er að tjón hefur hlotist af eða orðið víðtækara af þessum sökum.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Þegar hús eða annað mannvirki, sem skemmist, er reist á stað sem almennt var vitað fyrir fram að var hættulegur með tilliti til náttúruhamfara, t.d. ef mannvirki á sama stað hefur oftar en einu sinni orðið fyrir sams konar tjóni.</sen>
-          <sen>Sama á við um lausafé sem geymt er í húsi eða öðru mannvirki við þær aðstæður sem hér greinir.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Þegar gerð eða viðhald húss eða annars vátryggðs hlutar er óforsvaranlegt eða andstætt fyrirmælum í settum rétti og ljóst er að tjón hefur hlotist af eða orðið víðtækara af þessum sökum.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="17">

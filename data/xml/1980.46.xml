@@ -23,19 +23,19 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Með lögum þessum er leitast við, að</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>tryggja öruggt og heilsusamlegt starfsumhverfi, sem jafnan sé í samræmi við félagslega og tæknilega þróun í þjóðfélaginu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>tryggja skilyrði fyrir því, að innan vinnustaðanna sjálfra sé hægt að leysa öryggis- og heilbrigðisvandamál, í samræmi við gildandi lög og reglur, í samræmi við ráðleggingar aðila vinnumarkaðarins og í samræmi við ráðleggingar og fyrirmæli Vinnueftirlits ríkisins.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>tryggja öruggt og heilsusamlegt starfsumhverfi, sem jafnan sé í samræmi við félagslega og tæknilega þróun í þjóðfélaginu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>tryggja skilyrði fyrir því, að innan vinnustaðanna sjálfra sé hægt að leysa öryggis- og heilbrigðisvandamál, í samræmi við gildandi lög og reglur, í samræmi við ráðleggingar aðila vinnumarkaðarins og í samræmi við ráðleggingar og fyrirmæli Vinnueftirlits ríkisins.</sen>
-          </paragraph>
-        </numart>
       </subart>
     </art>
     <art nr="2">
@@ -48,26 +48,26 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Undanþegin lögum þessum eru:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>siglingamál og önnur verkefni, sem sérstaklega eru falin Samgöngustofu, sbr. lög nr. 51/1970.</sen>
+              <sen>Einnig alþjóðasamþykktir, sem Ísland er og verður aðili að og falla undir verksvið Samgöngustofu, þar með talið um gáma, um flutning á hættulegum efnum, um mengun sjávar og fleira,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>loftferðir, sbr. lög nr. 34/1964 og lög nr. 71/1974um breyting á lögum nr. 34/1964 um loftferðir.</sen>
+              <sen>Einnig alþjóðasamþykktir, sem Ísland er og verður aðili að og falla undir verksvið Samgöngustofu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>siglingamál og önnur verkefni, sem sérstaklega eru falin Samgöngustofu, sbr. lög nr. 51/1970.</sen>
-            <sen>Einnig alþjóðasamþykktir, sem Ísland er og verður aðili að og falla undir verksvið Samgöngustofu, þar með talið um gáma, um flutning á hættulegum efnum, um mengun sjávar og fleira,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>loftferðir, sbr. lög nr. 34/1964 og lög nr. 71/1974um breyting á lögum nr. 34/1964 um loftferðir.</sen>
-            <sen>Einnig alþjóðasamþykktir, sem Ísland er og verður aðili að og falla undir verksvið Samgöngustofu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2013.059.html" law-nr="59" law-year="2013" law-art="1" nr="1">
@@ -76,6 +76,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="Samgöngustofu">1</sen>
@@ -84,6 +85,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="Samgöngustofu">2</sen>
@@ -92,6 +94,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>b</numart>
             <paragraph>1</paragraph>
             <sen words="Samgöngustofu">2</sen>
@@ -103,6 +106,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^siglingamál og önnur verkefni, sem sérstaklega eru falin (\[? ?)?Samgöngustofu\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sbr. lög nr. 51/1970" after-mark="(… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?.$">1</sen>
@@ -114,6 +118,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^siglingamál og önnur verkefni, sem sérstaklega eru falin (\[? ?)?Samgöngustofu\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?sbr. lög nr. 51/1970&lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt;" after-mark=".$">1</sen>
@@ -125,6 +130,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>b</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^loftferðir, sbr. lög nr. 34/1964 og lög nr. 71/1974um breyting á lögum nr. 34/1964 um loftferðir." after-mark="$">1</sen>
@@ -136,6 +142,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>c</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -362,37 +369,37 @@
         <paragraph nr="1">
           <sen>Atvinnurekandi skal tryggja, að gætt sé fyllsta öryggis og góðs aðbúnaðar og hollustuhátta á vinnustað.</sen>
           <sen>Sérstaklega er vísað til:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>V. kafla um framkvæmd vinnu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>VI. kafla um vinnustaði,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>VII. kafla um vélar, tækjabúnað og fleira,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>VIII. kafla um hættuleg efni og vörur,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>XI. kafla um áhættumat, heilsuvernd og heilsufarsskoðanir.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>V. kafla um framkvæmd vinnu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>VI. kafla um vinnustaði,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>VII. kafla um vélar, tækjabúnað og fleira,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>VIII. kafla um hættuleg efni og vörur,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>XI. kafla um áhættumat, heilsuvernd og heilsufarsskoðanir.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2003.068.html" law-nr="68" law-year="2003" law-art="5" nr="1">
@@ -402,6 +409,7 @@
               <chapter>4</chapter>
               <art>13</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -410,6 +418,7 @@
               <chapter>4</chapter>
               <art>13</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -543,31 +552,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Forstjóri Vinnueftirlits ríkisins getur vegna skýrslugerðar og úrvinnslu úr þeim skýrslum krafist upplýsinga frá atvinnurekanda um:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>fjölda starfsmanna, kyn þeirra og aldur,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>vélar, vélahluta, geyma, ílát, áhöld, tæki og annan tæknibúnað,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>sprengi- og eldfim efni, eiturefni og hættuleg efni,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>aðrar upplýsingar, sem þýðingu kunna að hafa varðandi aðbúnað, hollustuhætti og öryggi á vinnustöðum.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>fjölda starfsmanna, kyn þeirra og aldur,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>vélar, vélahluta, geyma, ílát, áhöld, tæki og annan tæknibúnað,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>sprengi- og eldfim efni, eiturefni og hættuleg efni,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>aðrar upplýsingar, sem þýðingu kunna að hafa varðandi aðbúnað, hollustuhætti og öryggi á vinnustöðum.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -951,38 +960,38 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ráðherra setur reglugerð, að fenginni umsögn stjórnar Vinnueftirlits ríkisins, um, hvaða kröfur skuli uppfylltar varðandi skipulag, tilhögun og framkvæmd vinnu, svo sem:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>um öryggis- og heilbrigðisráðstafanir, er varða störf, starfsaðferðir, vinnslu- og framleiðsluaðferðir, t.d. til þess að koma í veg fyrir hrun, fall, skrið, titring, hávaða, sprengi- og brunahættu eða heilsuvá vegna geislunar, eitraðra eða hættulegra efna, gastegunda, gufu, reyks eða annarrar loftmengunar, hita, kulda, ódauns, sýkingar af smitnæmum sjúkdómum eða heilsutjón vegna rangrar stöðu við vinnu, rangra hreyfinga eða of mikils álags eða hvernig dregið verði úr áhrifum andlega eða líkamlega einhæfra starfa og starfa sem unnin eru með fyrir fram ákveðnum hraða og um aðrar þær ráðstafanir, sem þýðingu kynnu að hafa í þessu sambandi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>um bann gegn sérlega hættulegum störfum, framleiðslu-, starfs- og vinnsluaðferðum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>um að settar skuli upp á vinnustað greinilegar aðvaranir og/eða vinnusvæði girt eða afmörkuð með öðrum hætti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>um gerð og notkun hlífðarbúnaðar, svo sem um hentugan fatnað, öryggishjálma, hlífðarbúnað gegn hávaða og geislun, hlífðargleraugu, vinnuskó, rykgrímur, gasgrímur, annan búnað til þess að verjast loftmengun og annan búnað ótalinn.</sen>
+              <sen>Starfsmenn eru skyldir til þess að nota slíkan öryggisbúnað, þegar þeir, að mati Vinnueftirlits ríkisins, þarfnast hans við vinnu sína,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>um aðgerðir gegn einelti, kynferðislegri áreitni, kynbundinni áreitni og ofbeldi á vinnustöðum.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>um öryggis- og heilbrigðisráðstafanir, er varða störf, starfsaðferðir, vinnslu- og framleiðsluaðferðir, t.d. til þess að koma í veg fyrir hrun, fall, skrið, titring, hávaða, sprengi- og brunahættu eða heilsuvá vegna geislunar, eitraðra eða hættulegra efna, gastegunda, gufu, reyks eða annarrar loftmengunar, hita, kulda, ódauns, sýkingar af smitnæmum sjúkdómum eða heilsutjón vegna rangrar stöðu við vinnu, rangra hreyfinga eða of mikils álags eða hvernig dregið verði úr áhrifum andlega eða líkamlega einhæfra starfa og starfa sem unnin eru með fyrir fram ákveðnum hraða og um aðrar þær ráðstafanir, sem þýðingu kynnu að hafa í þessu sambandi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>um bann gegn sérlega hættulegum störfum, framleiðslu-, starfs- og vinnsluaðferðum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>um að settar skuli upp á vinnustað greinilegar aðvaranir og/eða vinnusvæði girt eða afmörkuð með öðrum hætti,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>um gerð og notkun hlífðarbúnaðar, svo sem um hentugan fatnað, öryggishjálma, hlífðarbúnað gegn hávaða og geislun, hlífðargleraugu, vinnuskó, rykgrímur, gasgrímur, annan búnað til þess að verjast loftmengun og annan búnað ótalinn.</sen>
-            <sen>Starfsmenn eru skyldir til þess að nota slíkan öryggisbúnað, þegar þeir, að mati Vinnueftirlits ríkisins, þarfnast hans við vinnu sína,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>um aðgerðir gegn einelti, kynferðislegri áreitni, kynbundinni áreitni og ofbeldi á vinnustöðum.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="3" nr="1">
@@ -1018,6 +1027,7 @@
             <chapter>5</chapter>
             <art>38</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>e</numart>
             <paragraph>1</paragraph>
             <sen words="um aðgerðir gegn einelti, kynferðislegri áreitni, kynbundinni áreitni og ofbeldi á vinnustöðum">1</sen>
@@ -1039,6 +1049,7 @@
             <chapter>5</chapter>
             <art>38</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="eða hvernig dregið verði úr áhrifum andlega eða líkamlega einhæfra starfa og starfa sem unnin eru með fyrir fram ákveðnum hraða">1</sen>
@@ -1048,6 +1059,7 @@
               <chapter>5</chapter>
               <art>38</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -1056,6 +1068,7 @@
               <chapter>5</chapter>
               <art>38</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -1068,6 +1081,7 @@
             <chapter>5</chapter>
             <art>38</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>e</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?um aðgerðir gegn einelti, kynferðislegri áreitni, kynbundinni áreitni og ofbeldi á vinnustöðum" after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -1105,37 +1119,37 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ráðherra setur reglur, að fenginni umsögn stjórnar Vinnueftirlits ríkisins, um:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>að störf, sem í kann að vera falin veruleg hætta á slysum, eitrunum eða sjúkdómum, verði aðeins framkvæmd af einstaklingum, sem fengið hafa tiltekna fræðslu, þjálfun, lokið hafa sérstöku prófi og/eða náð hafa ákveðnum aldri,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>ráðningu manna, sem er líkamlega eða andlega áfátt, til ákveðinna starfa, þegar bæklun þeirra, sjúkdómur eða aldur getur leitt til aukinnar slysa- eða sjúkdómshættu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>takmarkanir á eða bann við, að starfsmenn vinni einir að tilteknum verkefnum eða störfum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>vinnu- og hvíldartíma bifreiðastjóra, sem að staðaldri flytja fólk, og stjórnenda þeirra véla og tækja, sem mönnum getur stafað sérstök hætta af, sbr. 58. gr. laga þessara,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>önnur hliðstæð tilvik ótalin.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>að störf, sem í kann að vera falin veruleg hætta á slysum, eitrunum eða sjúkdómum, verði aðeins framkvæmd af einstaklingum, sem fengið hafa tiltekna fræðslu, þjálfun, lokið hafa sérstöku prófi og/eða náð hafa ákveðnum aldri,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>ráðningu manna, sem er líkamlega eða andlega áfátt, til ákveðinna starfa, þegar bæklun þeirra, sjúkdómur eða aldur getur leitt til aukinnar slysa- eða sjúkdómshættu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>takmarkanir á eða bann við, að starfsmenn vinni einir að tilteknum verkefnum eða störfum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>vinnu- og hvíldartíma bifreiðastjóra, sem að staðaldri flytja fólk, og stjórnenda þeirra véla og tækja, sem mönnum getur stafað sérstök hætta af, sbr. 58. gr. laga þessara,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>önnur hliðstæð tilvik ótalin.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="3" nr="1">
@@ -1200,31 +1214,31 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ráðherra setur reglur, að fenginni umsögn stjórnar Vinnueftirlits ríkisins, um fyrirkomulag fastra og bráðabirgðavinnustaða, innan húss og utan, sem m.a. fjalla um:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>húsnæði, svo sem vinnurými, lofthæð, loftrými, gólf, veggi, loft, lýsingu, hita, loftræstingu og loftskipti, varnir gegn hávaða, titringi, geislun og fleira,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>aðbúnað starfsmanna og fleira, svo sem setu- og matsali, kaffistofur, búningsherbergi, fatageymslur og fatahengi, salerni og þvagstæði, þvotta- og baðherbergi, svo og um gæðakröfur og staðla slíks húsnæðis,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>neyðarútgang frá vinnustað, svo og umferðarleiðir innan vinnusvæða, svo sem göngubrautir, stiga og útgönguleiðir,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>annað ótalið, sem stuðlað getur að bættum aðbúnaði, hollustuháttum og öryggi.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>húsnæði, svo sem vinnurými, lofthæð, loftrými, gólf, veggi, loft, lýsingu, hita, loftræstingu og loftskipti, varnir gegn hávaða, titringi, geislun og fleira,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>aðbúnað starfsmanna og fleira, svo sem setu- og matsali, kaffistofur, búningsherbergi, fatageymslur og fatahengi, salerni og þvagstæði, þvotta- og baðherbergi, svo og um gæðakröfur og staðla slíks húsnæðis,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>neyðarútgang frá vinnustað, svo og umferðarleiðir innan vinnusvæða, svo sem göngubrautir, stiga og útgönguleiðir,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>annað ótalið, sem stuðlað getur að bættum aðbúnaði, hollustuháttum og öryggi.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="3" nr="1">
@@ -1366,25 +1380,25 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ráðherra setur nánari reglur, að fenginni umsögn stjórnar Vinnueftirlits ríkisins, um gerð og notkun véla, tækja og annars búnaðar, sem nota á við atvinnurekstur, svo sem um:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>gerð, útfærslu, uppsetningu, tilkynningarskyldu og prófanir,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>á hvern hátt eða hvort leggja skuli fyrir Vinnueftirlitið til umsagnar eða samþykktar áætlanir eða önnur gögn um gerð, framleiðslu eða uppsetningu slíks búnaðar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>notkun, viðhald og gæslu slíks búnaðar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>gerð, útfærslu, uppsetningu, tilkynningarskyldu og prófanir,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>á hvern hátt eða hvort leggja skuli fyrir Vinnueftirlitið til umsagnar eða samþykktar áætlanir eða önnur gögn um gerð, framleiðslu eða uppsetningu slíks búnaðar,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>notkun, viðhald og gæslu slíks búnaðar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="3" nr="1">
@@ -1843,62 +1857,62 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í kafla þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Vinnutími:</name>
+              <sen>Sá tími sem starfsmaður er við störf, til taks fyrir atvinnurekandann og innir af hendi störf sín eða skyldur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Hvíldartími:</name>
+              <sen>Sá tími sem ekki telst til vinnutíma.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <name>Næturvinnutími:</name>
+              <sen>Tímabil sem ekki er skemmra en sjö klukkustundir og skal ná yfir tímabilið frá miðnætti til klukkan fimm að morgni.</sen>
+              <sen>Um nánari afmörkun tímabilsins fer samkvæmt samkomulagi samtaka aðila vinnumarkaðarins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <name>Næturvinnustarfsmaður</name>
+              <sen>er:</sen>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>starfsmaður sem venjulega vinnur að minnsta kosti þrjár klukkustundir af daglegum vinnutíma sínum á næturvinnutíma og/eða</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>starfsmaður sem ætlast er til að inni af hendi tiltekinn hluta af ársvinnuframlagi sínu á næturvinnutíma samkvæmt samkomulagi samtaka aðila vinnumarkaðarins.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <name>Vaktavinna:</name>
+              <sen>Vinna sem skipt er niður samkvæmt fyrir fram ákveðnu fyrirkomulagi þar sem starfsmaður vinnur á mismunandi vöktum á tilteknu tímabili sem mælt er í dögum eða vikum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <name>Vaktavinnustarfsmaður:</name>
+              <sen>Starfsmaður sem vinnur vaktavinnu.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Vinnutími:</name>
-            <sen>Sá tími sem starfsmaður er við störf, til taks fyrir atvinnurekandann og innir af hendi störf sín eða skyldur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Hvíldartími:</name>
-            <sen>Sá tími sem ekki telst til vinnutíma.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <name>Næturvinnutími:</name>
-            <sen>Tímabil sem ekki er skemmra en sjö klukkustundir og skal ná yfir tímabilið frá miðnætti til klukkan fimm að morgni.</sen>
-            <sen>Um nánari afmörkun tímabilsins fer samkvæmt samkomulagi samtaka aðila vinnumarkaðarins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <name>Næturvinnustarfsmaður</name>
-            <sen>er:</sen>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>starfsmaður sem venjulega vinnur að minnsta kosti þrjár klukkustundir af daglegum vinnutíma sínum á næturvinnutíma og/eða</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>starfsmaður sem ætlast er til að inni af hendi tiltekinn hluta af ársvinnuframlagi sínu á næturvinnutíma samkvæmt samkomulagi samtaka aðila vinnumarkaðarins.</sen>
-            </paragraph>
-          </numart>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <name>Vaktavinna:</name>
-            <sen>Vinna sem skipt er niður samkvæmt fyrir fram ákveðnu fyrirkomulagi þar sem starfsmaður vinnur á mismunandi vöktum á tilteknu tímabili sem mælt er í dögum eða vikum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <name>Vaktavinnustarfsmaður:</name>
-            <sen>Starfsmaður sem vinnur vaktavinnu.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2003.068.html" law-nr="68" law-year="2003" law-art="19" nr="1">
@@ -1913,6 +1927,7 @@
               <chapter>9</chapter>
               <art>52</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -1926,30 +1941,30 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ákvæði þessa kafla gilda ekki um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>þá sem starfa við flutning á vegum og falla undir lög og reglugerðir sem fjalla um aksturs- og hvíldartíma ökumanna o.fl. í innanlandsflutningum og við flutning innan Evrópska efnahagssvæðisins,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>æðstu stjórnendur eða aðra þá sem ráða vinnutíma sínum sjálfir,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>sérstakar aðstæður sem tengjast starfsemi hins opinbera, svo sem nauðsynlegri öryggisstarfsemi og brýnum rannsóknarhagsmunum á sviði löggæslu, vinnu sem tengist starfsemi almannavarna og eftirlitsstörfum vegna snjóflóðavarna.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>þá sem starfa við flutning á vegum og falla undir lög og reglugerðir sem fjalla um aksturs- og hvíldartíma ökumanna o.fl. í innanlandsflutningum og við flutning innan Evrópska efnahagssvæðisins,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>æðstu stjórnendur eða aðra þá sem ráða vinnutíma sínum sjálfir,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>sérstakar aðstæður sem tengjast starfsemi hins opinbera, svo sem nauðsynlegri öryggisstarfsemi og brýnum rannsóknarhagsmunum á sviði löggæslu, vinnu sem tengist starfsemi almannavarna og eftirlitsstörfum vegna snjóflóðavarna.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2005.138.html" law-nr="138" law-year="2005" law-art="1" nr="1">
@@ -1958,6 +1973,7 @@
             <chapter>9</chapter>
             <art>52a</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="lög og reglugerðir sem fjalla">1</sen>
@@ -1966,6 +1982,7 @@
             <chapter>9</chapter>
             <art>52a</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -1983,6 +2000,7 @@
               <chapter>9</chapter>
               <art>52a</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -2305,27 +2323,27 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Heimilt er að víkja frá meginreglu 1. mgr. í eftirfarandi tilvikum:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Börn er heimilt að ráða til að taka þátt í menningar- eða listviðburðum og íþrótta- eða auglýsingastarfsemi.</sen>
+              <sen>Sá sem ræður börn sem ekki hafa náð 13 ára aldri skal afla leyfis frá Vinnueftirliti ríkisins áður en til ráðningar kemur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Heimilt er að ráða börn 14 ára og eldri til vinnu sem er hluti af fræðilegu eða verklegu námsfyrirkomulagi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Heimilt er að ráða börn sem náð hafa 14 ára aldri til starfa af léttara tagi.</sen>
+              <sen>Börn, sem náð hafa 13 ára aldri, má ráða til starfa af léttara tagi í takmarkaðan stundafjölda á viku, svo sem léttra garðyrkju- og þjónustustarfa og annarra hliðstæðra starfa.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Börn er heimilt að ráða til að taka þátt í menningar- eða listviðburðum og íþrótta- eða auglýsingastarfsemi.</sen>
-            <sen>Sá sem ræður börn sem ekki hafa náð 13 ára aldri skal afla leyfis frá Vinnueftirliti ríkisins áður en til ráðningar kemur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Heimilt er að ráða börn 14 ára og eldri til vinnu sem er hluti af fræðilegu eða verklegu námsfyrirkomulagi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Heimilt er að ráða börn sem náð hafa 14 ára aldri til starfa af léttara tagi.</sen>
-            <sen>Börn, sem náð hafa 13 ára aldri, má ráða til starfa af léttara tagi í takmarkaðan stundafjölda á viku, svo sem léttra garðyrkju- og þjónustustarfa og annarra hliðstæðra starfa.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1997.052.html" law-nr="52" law-year="1997" law-art="3" nr="1">
@@ -2342,6 +2360,7 @@
               <chapter>10</chapter>
               <art>60</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>c</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -2375,43 +2394,43 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Óheimilt er að ráða ungmenni til vinnu sem unnin er við eftirfarandi aðstæður:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Vinnu sem líklega er ofvaxin líkamlegu eða andlegu atgervi þeirra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Vinnu sem líklega veldur varanlegu heilsutjóni.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Vinnu þar sem hætta er á skaðlegri geislun.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>Vinnu þar sem fyrir hendi er slysahætta sem gera má ráð fyrir að börn og unglingar geti átt í erfiðleikum með að átta sig á eða forðast vegna andvaraleysis eða skorts á reynslu eða þjálfun.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>Vinnu sem felur í sér hættu fyrir heilsu þeirra vegna óvenjumikils kulda, hita, hávaða eða titrings.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>f.</nr-title>
+              <sen>Vinnu þar sem hætta er á ofbeldi eða annarri sérstakri hættu að því undanskildu að ungmennin starfi með fullorðnum.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Vinnu sem líklega er ofvaxin líkamlegu eða andlegu atgervi þeirra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Vinnu sem líklega veldur varanlegu heilsutjóni.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Vinnu þar sem hætta er á skaðlegri geislun.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>Vinnu þar sem fyrir hendi er slysahætta sem gera má ráð fyrir að börn og unglingar geti átt í erfiðleikum með að átta sig á eða forðast vegna andvaraleysis eða skorts á reynslu eða þjálfun.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>Vinnu sem felur í sér hættu fyrir heilsu þeirra vegna óvenjumikils kulda, hita, hávaða eða titrings.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="f" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>f.</nr-title>
-            <sen>Vinnu þar sem hætta er á ofbeldi eða annarri sérstakri hættu að því undanskildu að ungmennin starfi með fullorðnum.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -2426,6 +2445,7 @@
               <chapter>10</chapter>
               <art>62</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>f</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -2434,6 +2454,7 @@
               <chapter>10</chapter>
               <art>62</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>f</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -2466,34 +2487,34 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Virkur vinnutími barna, sem falla undir b- og c-lið 2. mgr. 60. gr., er takmarkaður með eftirfarandi hætti:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Átta klukkustundir á dag og 40 klukkustundir á viku ef vinnan er hluti af fræðilegu eða verklegu námsfyrirkomulagi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Tvær klukkustundir á skóladegi og 12 klukkustundir á viku þegar um er að ræða vinnu sem fram fer á starfstíma skóla en utan skipulegs skólatíma.</sen>
+              <sen>Daglegur vinnutími má þó aldrei vera lengri en sjö klukkustundir.</sen>
+              <sen>Þó má daglegur vinnutími barns sem náð hefur 15 ára aldri vera átta klukkustundir.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Sjö klukkustundir á dag og 35 klukkustundir á viku þegar um er að ræða vinnu sem fram fer á tíma sem skólinn starfar ekki.</sen>
+              <sen>Daglegur vinnutími barns sem náð hefur 15 ára aldri má þó vera átta klukkustundir á dag og 40 klukkustundir á viku.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>Sjö klukkustundir á dag og 35 klukkustundir á viku þegar um er að ræða vinnu af léttara tagi sem unnin er af börnum sem eru ekki lengur í skyldunámi.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Átta klukkustundir á dag og 40 klukkustundir á viku ef vinnan er hluti af fræðilegu eða verklegu námsfyrirkomulagi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Tvær klukkustundir á skóladegi og 12 klukkustundir á viku þegar um er að ræða vinnu sem fram fer á starfstíma skóla en utan skipulegs skólatíma.</sen>
-            <sen>Daglegur vinnutími má þó aldrei vera lengri en sjö klukkustundir.</sen>
-            <sen>Þó má daglegur vinnutími barns sem náð hefur 15 ára aldri vera átta klukkustundir.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Sjö klukkustundir á dag og 35 klukkustundir á viku þegar um er að ræða vinnu sem fram fer á tíma sem skólinn starfar ekki.</sen>
-            <sen>Daglegur vinnutími barns sem náð hefur 15 ára aldri má þó vera átta klukkustundir á dag og 40 klukkustundir á viku.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>Sjö klukkustundir á dag og 35 klukkustundir á viku þegar um er að ræða vinnu af léttara tagi sem unnin er af börnum sem eru ekki lengur í skyldunámi.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -2915,31 +2936,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Markmið heilsuverndar er að:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>stuðla að því að starfsmenn séu verndaðir gegn hvers konar heilsuvá eða heilsutjóni sem stafa kann af vinnu þeirra eða vinnuskilyrðum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>stuðla að því að vinnu sé hagað þannig að starfsmenn fái verkefni við hæfi og stuðla að andlegri og líkamlegri aðlögun þeirra að starfsumhverfi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>draga úr fjarvistum frá vinnu vegna veikinda og slysa með því að auka öryggi og viðhalda heilsu starfsmanna á vinnustað,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>stuðla að andlegri og líkamlegri vellíðan starfsmanna.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>stuðla að því að starfsmenn séu verndaðir gegn hvers konar heilsuvá eða heilsutjóni sem stafa kann af vinnu þeirra eða vinnuskilyrðum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>stuðla að því að vinnu sé hagað þannig að starfsmenn fái verkefni við hæfi og stuðla að andlegri og líkamlegri aðlögun þeirra að starfsumhverfi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>draga úr fjarvistum frá vinnu vegna veikinda og slysa með því að auka öryggi og viðhalda heilsu starfsmanna á vinnustað,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>stuðla að andlegri og líkamlegri vellíðan starfsmanna.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -3140,31 +3161,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Verkefni hans er:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>að vera tengiliður Vinnueftirlits ríkisins við heilbrigðisyfirvöld,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>að veita forstöðu atvinnusjúkdóma- og heilsugæsludeild, sbr. 73. gr. laga þessara,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>að sjá um, að haldin sé skrá yfir atvinnusjúkdóma, vinnuslys og eitranir, sbr. 78. gr., staflið f og 81. gr. laga þessara,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>að vinna að þeim málum öðrum, er snerta heilbrigði og heilsuvernd starfsmanna, eftir nánari ákvörðun forstjóra Vinnueftirlits ríkisins.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>að vera tengiliður Vinnueftirlits ríkisins við heilbrigðisyfirvöld,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>að veita forstöðu atvinnusjúkdóma- og heilsugæsludeild, sbr. 73. gr. laga þessara,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>að sjá um, að haldin sé skrá yfir atvinnusjúkdóma, vinnuslys og eitranir, sbr. 78. gr., staflið f og 81. gr. laga þessara,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>að vinna að þeim málum öðrum, er snerta heilbrigði og heilsuvernd starfsmanna, eftir nánari ákvörðun forstjóra Vinnueftirlits ríkisins.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2003.068.html" law-nr="68" law-year="2003" law-art="27" nr="1">
@@ -3180,6 +3201,7 @@
             <chapter>11</chapter>
             <art>68</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>d</numart>
             <paragraph>1</paragraph>
             <sen words="forstjóra">1</sen>
@@ -3378,79 +3400,79 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Verkefni sem Vinnueftirliti ríkisins er ætlað að annast eru meðal annars að:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>hafa eftirlit með framkvæmd laga þessara,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>veita stofnunum, fyrirtækjum, félögum og starfsmönnum ráðgjöf,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>veita þeim starfsmönnum er starfa að vinnuvernd innan fyrirtækja, sbr. 4.–6. gr., leiðbeiningar í störfum þeirra,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>afla og viðhalda þekkingu á tæknilegri og félagslegri þróun í þeim tilgangi að stuðla að því að efla öryggi og bæta hollustuhætti í starfsumhverfi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>fjalla um öryggisþætti í áætlunum um vinnslu- og framleiðsluaðferðir, vinnustaði og tækni- og tækjabúnað,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>f.</nr-title>
+              <sen>veita fræðslu og upplýsingar varðandi hættur á vinnustöðum, svo sem um nýja tækni og þekkingu sem stuðlað getur að umbótum á aðbúnaði, hollustuháttum og öryggi á vinnustöðum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>g.</nr-title>
+              <sen>stuðla að forvörnum og heilsuvernd á vinnustöðum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>h.</nr-title>
+              <sen>vinna að rannsóknum á sviði vinnuverndar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>i.</nr-title>
+              <sen>sjá um að haldin sé skrá yfir hvers konar sjúkdóma, andlega sem líkamlega, sem ætla má að eigi orsakir í starfsumhverfi, tíðni þeirra og útbreiðslu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="j" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>j.</nr-title>
+              <sen>sjá um að haldin sé skrá yfir tíðni vinnuslysa eftir starfsgreinum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="k" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>k.</nr-title>
+              <sen>annast markaðsgæslu og markaðseftirlit með vélum, tækjum og búnaði sem falla undir lög þessi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="l" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>l.</nr-title>
+              <sen>vinna önnur verkefni í samræmi við markmið og gildissvið laganna samkvæmt nánari ákvörðun ráðherra.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>hafa eftirlit með framkvæmd laga þessara,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>veita stofnunum, fyrirtækjum, félögum og starfsmönnum ráðgjöf,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>veita þeim starfsmönnum er starfa að vinnuvernd innan fyrirtækja, sbr. 4.–6. gr., leiðbeiningar í störfum þeirra,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>afla og viðhalda þekkingu á tæknilegri og félagslegri þróun í þeim tilgangi að stuðla að því að efla öryggi og bæta hollustuhætti í starfsumhverfi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>fjalla um öryggisþætti í áætlunum um vinnslu- og framleiðsluaðferðir, vinnustaði og tækni- og tækjabúnað,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="f" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>f.</nr-title>
-            <sen>veita fræðslu og upplýsingar varðandi hættur á vinnustöðum, svo sem um nýja tækni og þekkingu sem stuðlað getur að umbótum á aðbúnaði, hollustuháttum og öryggi á vinnustöðum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="g" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>g.</nr-title>
-            <sen>stuðla að forvörnum og heilsuvernd á vinnustöðum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="h" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>h.</nr-title>
-            <sen>vinna að rannsóknum á sviði vinnuverndar,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="i" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>i.</nr-title>
-            <sen>sjá um að haldin sé skrá yfir hvers konar sjúkdóma, andlega sem líkamlega, sem ætla má að eigi orsakir í starfsumhverfi, tíðni þeirra og útbreiðslu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="j" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>j.</nr-title>
-            <sen>sjá um að haldin sé skrá yfir tíðni vinnuslysa eftir starfsgreinum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="k" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>k.</nr-title>
-            <sen>annast markaðsgæslu og markaðseftirlit með vélum, tækjum og búnaði sem falla undir lög þessi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="l" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>l.</nr-title>
-            <sen>vinna önnur verkefni í samræmi við markmið og gildissvið laganna samkvæmt nánari ákvörðun ráðherra.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2003.068.html" law-nr="68" law-year="2003" law-art="33" nr="1">
@@ -3467,6 +3489,7 @@
               <chapter>12</chapter>
               <art>75</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>l</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

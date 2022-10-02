@@ -45,24 +45,24 @@
         <paragraph nr="1">
           <sen>Ríkissjóður skal skila 15. hvers mánaðar, af óskiptum tekjuskatti, fjárhæð er rennur til þjóðkirkjusafnaða og skráðra trúfélaga og lífsskoðunarfélaga.</sen>
           <sen>Fjárhæð þessi reiknast þannig að fyrir hvern einstakling, sem er 16 ára og eldri í lok næstliðins árs á undan gjaldári, greiðist ákveðin upphæð sem ákvarðast þannig:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Á árinu 1997 skal gjaldið vera 400,24 kr. á einstakling á mánuði.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Á árinu 1998 og síðar ákvarðast gjaldið af endanlegri ákvörðun gjaldsins frá fyrra ári, að viðbættri hækkun er samsvarar þeirri hækkun er kann að verða á meðaltekjuskattsstofni einstaklinga á öllu landinu milli næstliðinna tekjuára á undan gjaldári.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Á árinu 1997 skal gjaldið vera 400,24 kr. á einstakling á mánuði.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Á árinu 1998 og síðar ákvarðast gjaldið af endanlegri ákvörðun gjaldsins frá fyrra ári, að viðbættri hækkun er samsvarar þeirri hækkun er kann að verða á meðaltekjuskattsstofni einstaklinga á öllu landinu milli næstliðinna tekjuára á undan gjaldári.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -102,6 +102,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -110,6 +111,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -118,6 +120,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="1998">1</sen>
@@ -150,25 +153,25 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Gjald skv. 2. gr. skiptist þannig:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Vegna einstaklings, sem skráður er í þjóðkirkjuna, greiðist til þess safnaðar sem hann tilheyrir og miðast við 1. desember næst á undan gjaldári.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Vegna einstaklings, sem tilheyrir skráðu trúfélagi eða lífsskoðunarfélagi, samkvæmt lögum nr. 108/1999, greiðist gjaldið til hlutaðeigandi trúfélags eða lífsskoðunarfélags.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Vegna einstaklinga, sem eru í þjóðkirkjunni og eru óstaðsettir á landinu samkvæmt þjóðskrá, greiðist gjaldið til þjóðkirkjunnar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Vegna einstaklings, sem skráður er í þjóðkirkjuna, greiðist til þess safnaðar sem hann tilheyrir og miðast við 1. desember næst á undan gjaldári.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Vegna einstaklings, sem tilheyrir skráðu trúfélagi eða lífsskoðunarfélagi, samkvæmt lögum nr. 108/1999, greiðist gjaldið til hlutaðeigandi trúfélags eða lífsskoðunarfélags.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Vegna einstaklinga, sem eru í þjóðkirkjunni og eru óstaðsettir á landinu samkvæmt þjóðskrá, greiðist gjaldið til þjóðkirkjunnar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -182,6 +185,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="þjóðkirkjunnar">1</sen>

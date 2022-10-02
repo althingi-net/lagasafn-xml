@@ -12,73 +12,73 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Lög þessi taka til eftirtalinna starfsheita:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>verkfræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>tæknifræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>arkitekta (húsameistara),</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>byggingafræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>húsgagna- og innanhússarkitekta (húsgagna- og innanhússhönnuða) eða hluta þessa starfsheitis,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" type="numeric">
+          <paragraph nr="1">
+            <nr-title>6.</nr-title>
+            <sen>iðnfræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="7" type="numeric">
+          <paragraph nr="1">
+            <nr-title>7.</nr-title>
+            <sen>landslagsarkitekta (landslagshönnuða),</sen>
+          </paragraph>
+        </numart>
+        <numart nr="8" type="numeric">
+          <paragraph nr="1">
+            <nr-title>8.</nr-title>
+            <sen>skipulagsfræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="9" type="numeric">
+          <paragraph nr="1">
+            <nr-title>9.</nr-title>
+            <sen>raffræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="10" type="numeric">
+          <paragraph nr="1">
+            <nr-title>10.</nr-title>
+            <sen>tölvunarfræðinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="11" type="numeric">
+          <paragraph nr="1">
+            <nr-title>11.</nr-title>
+            <sen>grafískra hönnuða.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>verkfræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>tæknifræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>arkitekta (húsameistara),</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>byggingafræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <sen>húsgagna- og innanhússarkitekta (húsgagna- og innanhússhönnuða) eða hluta þessa starfsheitis,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="6" type="numeric">
-        <paragraph nr="1">
-          <nr-title>6.</nr-title>
-          <sen>iðnfræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="7" type="numeric">
-        <paragraph nr="1">
-          <nr-title>7.</nr-title>
-          <sen>landslagsarkitekta (landslagshönnuða),</sen>
-        </paragraph>
-      </numart>
-      <numart nr="8" type="numeric">
-        <paragraph nr="1">
-          <nr-title>8.</nr-title>
-          <sen>skipulagsfræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="9" type="numeric">
-        <paragraph nr="1">
-          <nr-title>9.</nr-title>
-          <sen>raffræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="10" type="numeric">
-        <paragraph nr="1">
-          <nr-title>10.</nr-title>
-          <sen>tölvunarfræðinga,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="11" type="numeric">
-        <paragraph nr="1">
-          <nr-title>11.</nr-title>
-          <sen>grafískra hönnuða.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2002.147.html" law-nr="147" law-year="2002" law-art="1" nr="1">
@@ -86,6 +86,7 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>5</numart>
           <paragraph>1</paragraph>
           <sen words="húsgagna- og innanhússarkitekta (húsgagna- og innanhússhönnuða) eða hluta þessa starfsheitis">1</sen>
@@ -93,6 +94,7 @@
         <location type="deletion">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>7</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^(\[? ?)?landslagsarkitekta \\)landslagshönnuða\)" after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -101,6 +103,7 @@
           <start>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>10</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -108,6 +111,7 @@
           <end>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>10</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -119,6 +123,7 @@
         <location type="range">
           <art>1</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>7</numart>
           <paragraph>1</paragraph>
           <sen words="landslagsarkitekta (landslagshönnuða)">1</sen>
@@ -130,6 +135,7 @@
           <start>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -137,6 +143,7 @@
           <end>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -149,6 +156,7 @@
           <start>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>11</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -156,6 +164,7 @@
           <end>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>11</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>

@@ -55,33 +55,33 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Bætur skal greiða án tillits til þess hvort einhver ber skaðabótaábyrgð samkvæmt reglum skaðabótaréttarins, enda megi að öllum líkindum rekja tjónið til einhvers eftirtalinna atvika:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Ætla má að komast hefði mátt hjá tjóni ef rannsókn eða meðferð við þær aðstæður sem um ræðir hefði verið hagað eins vel og unnt hefði verið og í samræmi við þekkingu og reynslu á viðkomandi sviði.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Tjón hlýst af bilun eða galla í tæki, áhöldum eða öðrum búnaði sem notaður er við rannsókn eða sjúkdómsmeðferð.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Mat sem síðar er gert leiðir í ljós að komast hefði mátt hjá tjóni með því að beita annarri meðferðaraðferð eða -tækni sem völ var á og hefði frá læknisfræðilegu sjónarmiði gert sama gagn við meðferð sjúklings.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Tjón hlýst af meðferð eða rannsókn, þ.m.t. aðgerð, sem ætlað er að greina sjúkdóm og tjónið er af sýkingu eða öðrum fylgikvilla sem er meiri en svo að sanngjarnt sé að sjúklingur þoli það bótalaust.</sen>
+            <sen>Annars vegar skal líta til þess hve tjón er mikið og hins vegar til sjúkdóms og heilsufars sjúklings að öðru leyti.</sen>
+            <sen>Þá skal taka mið af því hvort algengt er að tjón verði af meðferð eins og þeirri sem sjúklingur gekkst undir og hvort eða að hve miklu leyti gera mátti ráð fyrir að hætta væri á slíku tjóni.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Ætla má að komast hefði mátt hjá tjóni ef rannsókn eða meðferð við þær aðstæður sem um ræðir hefði verið hagað eins vel og unnt hefði verið og í samræmi við þekkingu og reynslu á viðkomandi sviði.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Tjón hlýst af bilun eða galla í tæki, áhöldum eða öðrum búnaði sem notaður er við rannsókn eða sjúkdómsmeðferð.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Mat sem síðar er gert leiðir í ljós að komast hefði mátt hjá tjóni með því að beita annarri meðferðaraðferð eða -tækni sem völ var á og hefði frá læknisfræðilegu sjónarmiði gert sama gagn við meðferð sjúklings.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Tjón hlýst af meðferð eða rannsókn, þ.m.t. aðgerð, sem ætlað er að greina sjúkdóm og tjónið er af sýkingu eða öðrum fylgikvilla sem er meiri en svo að sanngjarnt sé að sjúklingur þoli það bótalaust.</sen>
-          <sen>Annars vegar skal líta til þess hve tjón er mikið og hins vegar til sjúkdóms og heilsufars sjúklings að öðru leyti.</sen>
-          <sen>Þá skal taka mið af því hvort algengt er að tjón verði af meðferð eins og þeirri sem sjúklingur gekkst undir og hvort eða að hve miklu leyti gera mátti ráð fyrir að hætta væri á slíku tjóni.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="3">
@@ -209,43 +209,43 @@
       <paragraph nr="1">
         <sen>Allir sem veita heilbrigðisþjónustu, innan stofnana sem utan, bera bótaábyrgð samkvæmt lögunum.</sen>
         <sen>Þeir eru:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>heilsugæslustöðvar, hvort sem þær eru reknar af ríki, sveitarfélagi eða öðrum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>sjúkrahús, hvort sem þau eru rekin af ríki, sveitarfélagi eða öðrum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>aðrar heilbrigðisstofnanir, án tillits til þess hver ber ábyrgð á rekstri,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>d.</nr-title>
+            <sen>heilbrigðisstarfsmenn sem starfa sjálfstætt og hafa hlotið löggildingu landlæknis til starfans, án tillits til þess hvort þeir veita heilbrigðisþjónustu sem sjúklingur greiðir að fullu sjálfur eða sem greidd er af sjúkratryggingum samkvæmt samningi á grundvelli laga um sjúkratryggingar,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="e" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>e.</nr-title>
+            <sen>sjúkratryggingastofnunin vegna sjúklinga sem brýn nauðsyn er að vista á erlendu sjúkrahúsi eða annarri heilbrigðisstofnun erlendis, sbr. 2. mgr. 1. gr., og</sen>
+          </paragraph>
+        </numart>
+        <numart nr="f" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>f.</nr-title>
+            <sen>þeir sem annast sjúkraflutninga.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>heilsugæslustöðvar, hvort sem þær eru reknar af ríki, sveitarfélagi eða öðrum,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>sjúkrahús, hvort sem þau eru rekin af ríki, sveitarfélagi eða öðrum,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>aðrar heilbrigðisstofnanir, án tillits til þess hver ber ábyrgð á rekstri,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="d" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>d.</nr-title>
-          <sen>heilbrigðisstarfsmenn sem starfa sjálfstætt og hafa hlotið löggildingu landlæknis til starfans, án tillits til þess hvort þeir veita heilbrigðisþjónustu sem sjúklingur greiðir að fullu sjálfur eða sem greidd er af sjúkratryggingum samkvæmt samningi á grundvelli laga um sjúkratryggingar,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="e" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>e.</nr-title>
-          <sen>sjúkratryggingastofnunin vegna sjúklinga sem brýn nauðsyn er að vista á erlendu sjúkrahúsi eða annarri heilbrigðisstofnun erlendis, sbr. 2. mgr. 1. gr., og</sen>
-        </paragraph>
-      </numart>
-      <numart nr="f" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>f.</nr-title>
-          <sen>þeir sem annast sjúkraflutninga.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2008.112.html" law-nr="112" law-year="2008" law-art="61" nr="1">
@@ -253,6 +253,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>d</numart>
           <paragraph>1</paragraph>
           <sen words="landlæknis">1</sen>
@@ -260,6 +261,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>d</numart>
           <paragraph>1</paragraph>
           <sen words="laga um sjúkratryggingar">1</sen>
@@ -267,6 +269,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>e</numart>
           <paragraph>1</paragraph>
           <sen words="sjúkratryggingastofnunin">1</sen>
@@ -277,6 +280,7 @@
         <location type="range">
           <art>9</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>d</numart>
           <paragraph>1</paragraph>
           <sen words="á grundvelli laga um sjúkratryggingar">1</sen>

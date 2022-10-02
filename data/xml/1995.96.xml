@@ -110,31 +110,31 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Áfengisgjald skal vera sem hér segir á hvern sentilítra af vínanda í hverjum lítra hins áfenga drykkjar samkvæmt flokkun hans í tollskrá:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Af öli sem flokkast í vörulið 2203, svo og af vörum sem innihalda blöndur af öli og óáfengum drykk og flokkast í vörulið 2206: 128,80 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Af víni sem flokkast undir vöruliði 2204 og 2205, svo og af gerjuðum drykkjarvörum í vörulið 2206 sem ekki hafa verið blandaðar annarri gerjaðri drykkjarvöru eða óáfengri drykkjarvöru, enda sé varan að hámarki 15% að styrkleika og innihaldi eingöngu vínanda sem myndast við gerjun, án hvers kyns eimingar: 117,30 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Af öðru áfengi: 158,75 kr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Af áfengi sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 10% af áfengisgjaldi skv. 1.–3. tölul.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Af öli sem flokkast í vörulið 2203, svo og af vörum sem innihalda blöndur af öli og óáfengum drykk og flokkast í vörulið 2206: 128,80 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Af víni sem flokkast undir vöruliði 2204 og 2205, svo og af gerjuðum drykkjarvörum í vörulið 2206 sem ekki hafa verið blandaðar annarri gerjaðri drykkjarvöru eða óáfengri drykkjarvöru, enda sé varan að hámarki 15% að styrkleika og innihaldi eingöngu vínanda sem myndast við gerjun, án hvers kyns eimingar: 117,30 kr. á hvern sentilítra umfram 2,25 sentilítra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Af öðru áfengi: 158,75 kr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Af áfengi sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 10% af áfengisgjaldi skv. 1.–3. tölul.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -169,6 +169,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="128,80 kr.">1</sen>
@@ -177,6 +178,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="117,30 kr.">1</sen>
@@ -185,6 +187,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="158,75 kr.">1</sen>
@@ -197,6 +200,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -205,6 +209,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -494,94 +499,94 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Áfengisgjald skal fellt niður eða endurgreitt í eftirtöldum tilvikum:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Við sölu áfengis úr landi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Við innflutning og sölu á áfengi til tollfrjálsra verslana og tollfrjálsra forðageymslna, sbr. þó 4. tölul. 1. mgr. 3. gr.</sen>
+              <sen>Jafnframt af áfengi sem áfengisgjald hefur verið reiknað eða greitt af en er síðar sent til útlanda, í tollfrjálsa verslun, í tollvörugeymslu, í tollfrjálsa forðageymslu eða á frísvæði eða er fargað undir eftirliti tollyfirvalda.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Við innflutning og sölu á áfengi til framleiðslu á vörum sem eru gjaldskyldar samkvæmt lögum þessum til framleiðenda sem hafa leyfi til að selja áfengi skv. 3. tölul. 1. mgr. 11. gr. áfengislaga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Af samtals 11 einingum af sterku áfengi, léttvíni og/eða öli sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila hafa meðferðis eftir að hafa verið 15 daga eða lengur í ferð.</sen>
+              <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
+              <sen>Skipstjóra, yfirstýrimanni, yfirvélstjóra og bryta, svo og matsveinum á farþega- og vöruflutningaskipum, er jafnframt heimilt að taka gjaldfrjálst aukalega til risnu um borð jafnstóran skammt og þeir mega hafa gjaldfrjálst samkvæmt þessum lið.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Af samtals 5 einingum af sterku áfengi, léttvíni og/eða öli sem flugverjar, þ.m.t. flugverjar í aukaáhöfn, hafa meðferðis, eftir að hafa verið 15 daga eða lengur í ferð.</sen>
+              <sen>Af samtals 3 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>Af áfengi, sem talið er upp í lyfjaskrá, til lækna og lyfsala til sölu sem lyf.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>Af áfengi til iðnþarfa samkvæmt nánari skilgreiningu ráðherra.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Við sölu áfengis úr landi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Við innflutning og sölu á áfengi til tollfrjálsra verslana og tollfrjálsra forðageymslna, sbr. þó 4. tölul. 1. mgr. 3. gr.</sen>
-            <sen>Jafnframt af áfengi sem áfengisgjald hefur verið reiknað eða greitt af en er síðar sent til útlanda, í tollfrjálsa verslun, í tollvörugeymslu, í tollfrjálsa forðageymslu eða á frísvæði eða er fargað undir eftirliti tollyfirvalda.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Við innflutning og sölu á áfengi til framleiðslu á vörum sem eru gjaldskyldar samkvæmt lögum þessum til framleiðenda sem hafa leyfi til að selja áfengi skv. 3. tölul. 1. mgr. 11. gr. áfengislaga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Af samtals 11 einingum af sterku áfengi, léttvíni og/eða öli sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila hafa meðferðis eftir að hafa verið 15 daga eða lengur í ferð.</sen>
-            <sen>Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
-            <sen>Skipstjóra, yfirstýrimanni, yfirvélstjóra og bryta, svo og matsveinum á farþega- og vöruflutningaskipum, er jafnframt heimilt að taka gjaldfrjálst aukalega til risnu um borð jafnstóran skammt og þeir mega hafa gjaldfrjálst samkvæmt þessum lið.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Af samtals 5 einingum af sterku áfengi, léttvíni og/eða öli sem flugverjar, þ.m.t. flugverjar í aukaáhöfn, hafa meðferðis, eftir að hafa verið 15 daga eða lengur í ferð.</sen>
-            <sen>Af samtals 3 einingum af sterku áfengi, léttvíni og/eða öli hafi ferð varað skemur en 15 daga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>Af áfengi, sem talið er upp í lyfjaskrá, til lækna og lyfsala til sölu sem lyf.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>Af áfengi til iðnþarfa samkvæmt nánari skilgreiningu ráðherra.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
           <sen>Með einingu skv. 5.–7. tölul. 1. mgr. er átt við:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Hverja 0,25 lítra af sterku áfengi, þ.e. áfengi sem í er meira en 21% af vínanda að rúmmáli.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Hverja 0,75 lítra af léttvíni, þ.e. áfengi annað en öl sem í er 21% eða minna af vínanda að rúmmáli.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Hverja 3 lítra af öli, sbr. 1. tölul. 1. mgr. 3. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Hverja 3 lítra af gosvíni, gerjaðri drykkjarvöru eða blöndu gerjaðra drykkjarvara og óáfengra drykkja sem flokkast undir vöruliði 2206 og 2208 enda sé varan að hámarki 6% að styrkleika.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Hverja 0,25 lítra af sterku áfengi, þ.e. áfengi sem í er meira en 21% af vínanda að rúmmáli.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Hverja 0,75 lítra af léttvíni, þ.e. áfengi annað en öl sem í er 21% eða minna af vínanda að rúmmáli.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Hverja 3 lítra af öli, sbr. 1. tölul. 1. mgr. 3. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Hverja 3 lítra af gosvíni, gerjaðri drykkjarvöru eða blöndu gerjaðra drykkjarvara og óáfengra drykkja sem flokkast undir vöruliði 2206 og 2208 enda sé varan að hámarki 6% að styrkleika.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -611,6 +616,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>8</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -619,6 +625,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>9</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -638,6 +645,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="sbr. þó 4. tölul. 1. mgr. 3. gr.">1</sen>
@@ -650,6 +658,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -658,6 +667,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -670,6 +680,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^Við innflutning og sölu á áfengi til aðila sem njóta skattfrelsis hér á landi samkvæmt alþjóðasamningum sem Ísland er aðili að" after-mark="$">1</sen>
@@ -681,6 +692,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <sen words="Af samtals 6 einingum af sterku áfengi, léttvíni og/eða öli sem ferðamenn hafa meðferðis til landsins.">1</sen>
@@ -690,6 +702,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -698,6 +711,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>3</sen>
@@ -708,6 +722,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -716,6 +731,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -733,6 +749,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -746,6 +763,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -754,6 +772,7 @@
               <chapter>1</chapter>
               <art>6</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -763,6 +782,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>8</numart>
             <paragraph>1</paragraph>
             <nr-title words="8.">1</nr-title>
@@ -771,6 +791,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -782,6 +803,7 @@
             <chapter>1</chapter>
             <art>6</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <sen words="ráðherra">1</sen>
@@ -898,32 +920,32 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Fjárhæð tóbaksgjalds skv. 1. mgr. skal vera sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Vindlingar: 528,85 kr. á hvern pakka (20 stk.</sen>
+              <sen>).</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Neftóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Annað tóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Af tóbaki sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 40% af tóbaksgjaldi skv. 1.–3. tölul.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Vindlingar: 528,85 kr. á hvern pakka (20 stk.</sen>
-            <sen>).</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Neftóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Annað tóbak: 29,40 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Af tóbaki sem selt er í tollfrjálsum verslunum sem falla undir ákvæði 2. mgr. 104. gr. tollalaga, nr. 88/2005: 40% af tóbaksgjaldi skv. 1.–3. tölul.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -954,6 +976,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="528,85 kr.">1</sen>
@@ -962,6 +985,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="29,40 kr.">1</sen>
@@ -970,6 +994,7 @@
             <chapter>2</chapter>
             <art>9</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen words="29,40 kr.">1</sen>
@@ -982,6 +1007,7 @@
               <chapter>2</chapter>
               <art>9</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -990,6 +1016,7 @@
               <chapter>2</chapter>
               <art>9</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>4</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -1037,43 +1064,43 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Af tóbaki sem ferðamenn, farmenn og aðrir hafa með sér til landsins til einkanota eða er sent hingað til lands án þess að um innflutning í atvinnuskyni sé að ræða skal við tollafgreiðslu greiða tóbaksgjald sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Vindlingar: 664,25 kr. á hvern pakka (20 stk.</sen>
+              <sen>).</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Annað tóbak: 36,90 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Vindlingar: 664,25 kr. á hvern pakka (20 stk.</sen>
-            <sen>).</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Annað tóbak: 36,90 kr. á hvert gramm eða hluta úr grammi vöru.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
           <sen>Tóbak sem ferðamenn eða farmenn hafa meðferðis, sbr. þó 4. tölul. 2. mgr. 9. gr., til landsins skal undanþegið gjaldi skv. 1. mgr. að því hámarki sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>100 vindlingar eða 125 g af öðru tóbaki sem flugverjar er hafa verið skemur en 15 daga í ferð hafa meðferðis.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>200 vindlingar eða 250 g af öðru tóbaki sem ferðamenn, skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið skemur en 15 daga í ferð hafa meðferðis og flugverjar, þ.m.t. flugverjar í aukaáhöfn, er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>400 vindlingar eða 500 g af öðru tóbaki sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>100 vindlingar eða 125 g af öðru tóbaki sem flugverjar er hafa verið skemur en 15 daga í ferð hafa meðferðis.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>200 vindlingar eða 250 g af öðru tóbaki sem ferðamenn, skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið skemur en 15 daga í ferð hafa meðferðis og flugverjar, þ.m.t. flugverjar í aukaáhöfn, er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>400 vindlingar eða 500 g af öðru tóbaki sem skipverjar á íslenskum skipum eða skipum í leigu íslenskra aðila er hafa verið 15 daga eða lengur í ferð hafa meðferðis.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2020.133.html" law-nr="133" law-year="2020" law-art="4" nr="1">
@@ -1082,6 +1109,7 @@
             <chapter>2</chapter>
             <art>10</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="664,25 kr.">1</sen>
@@ -1090,6 +1118,7 @@
             <chapter>2</chapter>
             <art>10</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="36,90 kr.">1</sen>
@@ -1119,6 +1148,7 @@
               <chapter>2</chapter>
               <art>10</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -1137,6 +1167,7 @@
               <chapter>2</chapter>
               <art>10</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>

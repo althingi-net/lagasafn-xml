@@ -23,25 +23,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Eftirtaldir aðilar eru skattskyldir samkvæmt lögum þessum:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Hlutafélög, vátryggingafélög og Evrópufélög samkvæmt lögum nr. 56/2010, um vátryggingastarfsemi, svo og aðrir aðilar sem í atvinnuskyni eða með sjálfstæðri starfsemi sinni inna af hendi vinnu eða þjónustu sem er undanþegin virðisaukaskatti skv. 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988, um virðisaukaskatt.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Viðskiptabankar, sparisjóðir, lánafyrirtæki, verðbréfafyrirtæki, verðbréfamiðlanir, rekstrarfélög verðbréfasjóða, svo og önnur fjármálafyrirtæki samkvæmt lögum nr. 161/2002, um fjármálafyrirtæki, rafeyrisfyrirtæki samkvæmt lögum nr. 17/2013, um útgáfu og meðferð rafeyris, og aðrir þeir aðilar sem í atvinnuskyni eða með sjálfstæðri starfsemi sinni inna af hendi vinnu eða þjónustu sem er undanþegin virðisaukaskatti skv. 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988, um virðisaukaskatt.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Útibú, umboðsmenn og aðrir sem eru í fyrirsvari fyrir erlenda aðila sem reka hér á landi starfsemi skv. 1.–2. tölul.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Hlutafélög, vátryggingafélög og Evrópufélög samkvæmt lögum nr. 56/2010, um vátryggingastarfsemi, svo og aðrir aðilar sem í atvinnuskyni eða með sjálfstæðri starfsemi sinni inna af hendi vinnu eða þjónustu sem er undanþegin virðisaukaskatti skv. 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988, um virðisaukaskatt.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Viðskiptabankar, sparisjóðir, lánafyrirtæki, verðbréfafyrirtæki, verðbréfamiðlanir, rekstrarfélög verðbréfasjóða, svo og önnur fjármálafyrirtæki samkvæmt lögum nr. 161/2002, um fjármálafyrirtæki, rafeyrisfyrirtæki samkvæmt lögum nr. 17/2013, um útgáfu og meðferð rafeyris, og aðrir þeir aðilar sem í atvinnuskyni eða með sjálfstæðri starfsemi sinni inna af hendi vinnu eða þjónustu sem er undanþegin virðisaukaskatti skv. 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988, um virðisaukaskatt.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Útibú, umboðsmenn og aðrir sem eru í fyrirsvari fyrir erlenda aðila sem reka hér á landi starfsemi skv. 1.–2. tölul.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.141.html" law-nr="141" law-year="2020" law-art="8" nr="1">
@@ -49,6 +49,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>1</numart>
           <paragraph>1</paragraph>
           <sen words="10. tölul.">1</sen>
@@ -59,6 +60,7 @@
         <location type="range">
           <art>2</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>2</numart>
           <paragraph>1</paragraph>
           <sen words="rafeyrisfyrirtæki samkvæmt lögum nr. 17/2013, um útgáfu og meðferð rafeyris, og aðrir þeir aðilar">1</sen>
@@ -104,42 +106,42 @@
     <subart nr="2">
       <paragraph nr="1">
         <sen>Til skattstofns skv. 1. mgr. telst meðal annars:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Hvers konar laun og þóknanir, þ.m.t. ákvæðislaun, biðlaun, nefndarlaun, stjórnarlaun, launauppbætur, staðaruppbætur, orlofsfé og greiðslur fyrir ónotað orlof og framlag vinnuveitanda í lífeyrissjóð.</sen>
+            <sen>Einnig lán til starfsmanna sem eru óheimil samkvæmt lögum um hlutafélög og lögum um einkahlutafélög.</sen>
+            <sen>Sömuleiðis flutningspeningar, fæðispeningar og þess háttar greiðslur.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Ökutækjastyrkir og dagpeningar.</sen>
+            <sen>Þó skal ekki telja til skattstofns greiðslur dagpeninga sem er heimilt að halda utan staðgreiðslu samkvæmt lögum nr. 45/1987, um staðgreiðslu opinberra gjalda, og reglugerðum og starfsreglum sem eru settar með stoð í þeim lögum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Gjafir og risnufé sem teljast kaupuppbót og eftirgjöf lána sem telja má að komi í stað launa.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" type="numeric">
+          <paragraph nr="1">
+            <nr-title>4.</nr-title>
+            <sen>Laun eða þóknanir fyrir störf unnin erlendis, greidd af íslenskum aðilum til manna sem eru heimilisfastir hér á landi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" type="numeric">
+          <paragraph nr="1">
+            <nr-title>5.</nr-title>
+            <sen>Skattskyld hlunnindi, m.a. fæði, húsnæði, fatnaður, bifreiðaafnot og þess háttar.</sen>
+            <sen>Hlunnindi þessi skal reikna til skattstofns á sama verði og þau eru metin til tekna samkvæmt skattmati ríkisskattstjóra.</sen>
+            <sen>Önnur hlunnindi skulu metin til verðs eftir gangverði á hverjum stað og tíma.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Hvers konar laun og þóknanir, þ.m.t. ákvæðislaun, biðlaun, nefndarlaun, stjórnarlaun, launauppbætur, staðaruppbætur, orlofsfé og greiðslur fyrir ónotað orlof og framlag vinnuveitanda í lífeyrissjóð.</sen>
-          <sen>Einnig lán til starfsmanna sem eru óheimil samkvæmt lögum um hlutafélög og lögum um einkahlutafélög.</sen>
-          <sen>Sömuleiðis flutningspeningar, fæðispeningar og þess háttar greiðslur.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Ökutækjastyrkir og dagpeningar.</sen>
-          <sen>Þó skal ekki telja til skattstofns greiðslur dagpeninga sem er heimilt að halda utan staðgreiðslu samkvæmt lögum nr. 45/1987, um staðgreiðslu opinberra gjalda, og reglugerðum og starfsreglum sem eru settar með stoð í þeim lögum.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Gjafir og risnufé sem teljast kaupuppbót og eftirgjöf lána sem telja má að komi í stað launa.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="4" type="numeric">
-        <paragraph nr="1">
-          <nr-title>4.</nr-title>
-          <sen>Laun eða þóknanir fyrir störf unnin erlendis, greidd af íslenskum aðilum til manna sem eru heimilisfastir hér á landi.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="5" type="numeric">
-        <paragraph nr="1">
-          <nr-title>5.</nr-title>
-          <sen>Skattskyld hlunnindi, m.a. fæði, húsnæði, fatnaður, bifreiðaafnot og þess háttar.</sen>
-          <sen>Hlunnindi þessi skal reikna til skattstofns á sama verði og þau eru metin til tekna samkvæmt skattmati ríkisskattstjóra.</sen>
-          <sen>Önnur hlunnindi skulu metin til verðs eftir gangverði á hverjum stað og tíma.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="5">
@@ -148,25 +150,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Eftirtaldar greiðslur eru undanþegnar fjársýsluskatti:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Eftirlaun og lífeyrir sem skattskyldir aðilar skv. 2. gr. greiða.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Greiðslur skv. 4. gr. sem skattskyldir aðilar skv. 2. gr. greiða vegna þess hluta starfsemi sinnar sem er virðisaukaskattsskyld og fellur utan 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Greiðslur skattskylds aðila skv. 2. gr. vegna fæðingarorlofs að því marki sem þær eru ekki umfram hluta slíkra greiðslna sem fást endurgreiddar úr Fæðingarorlofssjóði.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Eftirlaun og lífeyrir sem skattskyldir aðilar skv. 2. gr. greiða.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Greiðslur skv. 4. gr. sem skattskyldir aðilar skv. 2. gr. greiða vegna þess hluta starfsemi sinnar sem er virðisaukaskattsskyld og fellur utan 10. tölul. 3. mgr. 2. gr. laga nr. 50/1988.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Greiðslur skattskylds aðila skv. 2. gr. vegna fæðingarorlofs að því marki sem þær eru ekki umfram hluta slíkra greiðslna sem fást endurgreiddar úr Fæðingarorlofssjóði.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.141.html" law-nr="141" law-year="2020" law-art="9" nr="1">
@@ -174,6 +176,7 @@
         <location type="deletion">
           <art>5</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>2</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^Greiðslur skv. 4. gr. sem skattskyldir aðilar skv. 2. gr. greiða vegna þess hluta starfsemi sinnar sem er virðisaukaskattsskyld og fellur utan" after-mark="10. tölul. 3. mgr. 2. gr. laga nr. 50/1988.$">1</sen>

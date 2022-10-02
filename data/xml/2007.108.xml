@@ -45,59 +45,59 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í lögum þessum merkir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Fjármálafyrirtæki:</name>
+              <sen>Fyrirtæki samkvæmt skilgreiningu laga um fjármálafyrirtæki.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Fjármálagerningur:</name>
+              <sen>Fjármálagerningur samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <name>Taka fjármálagerninga til viðskipta:</name>
+              <sen>Samþykki skipulegs markaðar á að viðskipti með fjármálagerninga hefjist á honum skv. 92. gr. laga um markaði fyrir fjármálagerninga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <name>Markaðstorg fjármálagerninga (MTF):</name>
+              <sen>Markaðstorg fjármálagerninga samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <name>Skipulegur markaður:</name>
+              <sen>Skipulegur markaður samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <name>Rekstraraðili markaðar:</name>
+              <sen>Rekstraraðili markaðar í skilningi laga um markaði fyrir fjármálagerninga.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Fjármálafyrirtæki:</name>
-            <sen>Fyrirtæki samkvæmt skilgreiningu laga um fjármálafyrirtæki.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Fjármálagerningur:</name>
-            <sen>Fjármálagerningur samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <name>Taka fjármálagerninga til viðskipta:</name>
-            <sen>Samþykki skipulegs markaðar á að viðskipti með fjármálagerninga hefjist á honum skv. 92. gr. laga um markaði fyrir fjármálagerninga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <name>Markaðstorg fjármálagerninga (MTF):</name>
-            <sen>Markaðstorg fjármálagerninga samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <name>Skipulegur markaður:</name>
-            <sen>Skipulegur markaður samkvæmt skilgreiningu laga um markaði fyrir fjármálagerninga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <name>Rekstraraðili markaðar:</name>
-            <sen>Rekstraraðili markaðar í skilningi laga um markaði fyrir fjármálagerninga.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <numart nr="9-12" type="numeric">
         <paragraph nr="1">
@@ -127,6 +127,7 @@
               <chapter>1</chapter>
               <art>2</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -135,6 +136,7 @@
               <chapter>1</chapter>
               <art>2</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -144,6 +146,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>3</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -152,6 +155,7 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -161,6 +165,7 @@
               <chapter>1</chapter>
               <art>2</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -169,6 +174,7 @@
               <chapter>1</chapter>
               <art>2</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>8</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -341,25 +347,25 @@
         <paragraph nr="1">
           <sen>Hafi aðili beint eða óbeint náð yfirráðum í félagi þar sem flokkur verðbréfa hefur verið tekinn til viðskipta á skipulegum verðbréfamarkaði skal sá aðili eigi síðar en fjórum vikum eftir að hann vissi eða mátti vita um tilboðsskyldu eða niðurstaða um hana lá fyrir gera öðrum hluthöfum félagsins yfirtökutilboð, þ.e. tilboð um að kaupa hluti þeirra í félaginu.</sen>
           <sen>Með yfirráðum er átt við að aðili og þeir sem hann er í samstarfi við:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>hafi samanlagt eignast a.m.k. 30% atkvæðisréttar í félaginu,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>hafi á grundvelli samnings við aðra hluthafa rétt til að ráða yfir sem nemur a.m.k. 30% atkvæða í félaginu, eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>hafi öðlast rétt til þess að tilnefna eða setja af meiri hluta stjórnar í félaginu.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>hafi samanlagt eignast a.m.k. 30% atkvæðisréttar í félaginu,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>hafi á grundvelli samnings við aðra hluthafa rétt til að ráða yfir sem nemur a.m.k. 30% atkvæða í félaginu, eða</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>hafi öðlast rétt til þess að tilnefna eða setja af meiri hluta stjórnar í félaginu.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -369,39 +375,39 @@
       <subart nr="3">
         <paragraph nr="1">
           <sen>Samstarf skal þó alltaf talið vera fyrir hendi þegar um eftirfarandi tengsl er að ræða, nema sýnt sé fram á hið gagnstæða:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Hjón, aðilar í skráðri sambúð og börn hjóna eða aðila í skráðri sambúð.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Tengsl milli aðila sem fela í sér bein eða óbein yfirráð annars aðilans yfir hinum eða ef tvö eða fleiri félög eru beint eða óbeint undir yfirráðum sama aðila.</sen>
+              <sen>Taka skal tillit til tengsla aðila skv. 1., 3. og 4. tölul.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Félög sem aðili á með beinum eða óbeinum hætti verulegan eignarhlut í, þ.e. að aðili eigi með beinum eða óbeinum hætti a.m.k. 1/3 hluta atkvæðisréttar í viðkomandi félagi.</sen>
+              <sen>Taka skal tillit til tengsla aðila skv. 1., 2. og 4. tölul.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Tengsl á milli félags og stjórnarmanna þess og félags og framkvæmdastjóra þess.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Bein eða óbein tengsl á milli aðila innan eða utan þess félags sem í hlut á, hvort sem um er að ræða rík hagsmunatengsl eða persónuleg tengsl, reist á skyldleika, tengdum eða vináttu, eða tengsl reist á fjárhagslegum hagsmunum eða samningum, sem líkleg eru til að leiða til samstöðu aðila um að stýra málefnum félagsins í samráði hvor eða hver við annan þannig að þeir ráði yfir því.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Hjón, aðilar í skráðri sambúð og börn hjóna eða aðila í skráðri sambúð.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Tengsl milli aðila sem fela í sér bein eða óbein yfirráð annars aðilans yfir hinum eða ef tvö eða fleiri félög eru beint eða óbeint undir yfirráðum sama aðila.</sen>
-            <sen>Taka skal tillit til tengsla aðila skv. 1., 3. og 4. tölul.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Félög sem aðili á með beinum eða óbeinum hætti verulegan eignarhlut í, þ.e. að aðili eigi með beinum eða óbeinum hætti a.m.k. 1/3 hluta atkvæðisréttar í viðkomandi félagi.</sen>
-            <sen>Taka skal tillit til tengsla aðila skv. 1., 2. og 4. tölul.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Tengsl á milli félags og stjórnarmanna þess og félags og framkvæmdastjóra þess.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Bein eða óbein tengsl á milli aðila innan eða utan þess félags sem í hlut á, hvort sem um er að ræða rík hagsmunatengsl eða persónuleg tengsl, reist á skyldleika, tengdum eða vináttu, eða tengsl reist á fjárhagslegum hagsmunum eða samningum, sem líkleg eru til að leiða til samstöðu aðila um að stýra málefnum félagsins í samráði hvor eða hver við annan þannig að þeir ráði yfir því.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="4">
         <paragraph nr="1">
@@ -451,6 +457,7 @@
               <chapter>10</chapter>
               <art>100</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -461,6 +468,7 @@
               <chapter>10</chapter>
               <art>100</art>
               <subart>3</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -469,6 +477,7 @@
               <chapter>10</chapter>
               <art>100</art>
               <subart>3</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -513,6 +522,7 @@
             <chapter>10</chapter>
             <art>100</art>
             <subart>3</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -826,19 +836,19 @@
         <paragraph nr="1">
           <sen>Frá þeim tíma er ákvörðun um tilboð í hluti í félagi hefur verið gerð opinber eða stjórn félags er ljóst að tilboð sé væntanlegt og þar til niðurstöður tilboðs hafa verið gerðar opinberar er stjórn viðkomandi félags óheimilt að taka ákvarðanir sem haft geta áhrif á tilboðið nema að fengnu fyrirframsamþykki hluthafafundar.</sen>
           <sen>Hér er m.a. átt við ákvarðanir um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>útgáfu nýrra hluta eða fjármálagerninga í félaginu eða dótturfélögum þess,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>kaup eða sölu eigin verðbréfa eða verðbréfa í dótturfélögum,</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>útgáfu nýrra hluta eða fjármálagerninga í félaginu eða dótturfélögum þess,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>kaup eða sölu eigin verðbréfa eða verðbréfa í dótturfélögum,</sen>
-          </paragraph>
-        </numart>
       </subart>
       <numart nr="4" type="numeric">
         <paragraph nr="1">
@@ -912,6 +922,7 @@
             <chapter>10</chapter>
             <art>104</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>2</numart>
             <paragraph>1</paragraph>
             <sen words="kaup eða sölu eigin verðbréfa eða verðbréfa í dótturfélögum">1</sen>
@@ -944,31 +955,31 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Valfrjáls tilboð er þó unnt að afturkalla að fullnægðu einhverju eftirfarandi skilyrða:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>fram kemur tilboð sem er sambærilegt við eða hagstæðara en yfirtökutilboð,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>skilyrði sem tilboðið er háð og tekið er fram í tilboðsyfirliti er ekki uppfyllt,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>hlutafélagið sem yfirtakan beinist að eykur hlutafé sitt, eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>aðrar sérstakar ástæður mæla með því.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>fram kemur tilboð sem er sambærilegt við eða hagstæðara en yfirtökutilboð,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>skilyrði sem tilboðið er háð og tekið er fram í tilboðsyfirliti er ekki uppfyllt,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>hlutafélagið sem yfirtakan beinist að eykur hlutafé sitt, eða</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>aðrar sérstakar ástæður mæla með því.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -1250,103 +1261,103 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í tilboðsyfirliti skulu að lágmarki koma fram eftirfarandi upplýsingar:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>nafn, heimilisfang og kennitala félagsins sem tilboðið tekur til,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>nafn, heimilisfang og rekstrarform ef tilboðsgjafi er félag, svo og yfirlit um þá einstaklinga eða lögaðila sem væntanlega munu taka þátt í viðskiptunum ásamt tilboðsgjafa eða eru í samstarfi við tilboðsgjafa skv. 100. gr.,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>upplýsingar um hve mikinn atkvæðisrétt, áhrif eða hve marga hluti tilboðsgjafi og aðilar sem hann er í samstarfi við skv. 100. gr. hafa þegar öðlast beint eða óbeint eða tryggt sér með öðrum hætti, sem og upplýsingar um áætlaðan atkvæðisrétt, áhrif eða hluti tilboðsgjafa eftir sölu, ef við á,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>hámarks- og lágmarkshlutfall eða magn hluta sem tilboðsgjafi ætlar að eignast ef um valfrjálst tilboð er að ræða,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>verð sem miðað er við í tilboðinu, hvernig það var ákvarðað og hvenær greiðsla fer fram; einnig skal upplýsa um það hvort einhver kostnaður fellur á þá hluthafa sem samþykkja tilboðið,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>fjármögnun tilboðs,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>upplýsingar um hvernig greiðsla skuli fara fram og, ef boðin eru fram verðbréf, upplýsingar um þau verðbréf og hvernig skiptin verða ákveðin,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>upplýsingar um á hvaða degi hlutir skulu afhentir og hvenær unnt er að beita atkvæðisrétti sem þeim fylgir,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>önnur skilyrði sem tilboðið kann að vera háð, þ.m.t. undir hvaða kringumstæðum er unnt að afturkalla það,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="10" type="numeric">
+            <paragraph nr="1">
+              <nr-title>10.</nr-title>
+              <sen>gildistími tilboðs,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="11" type="numeric">
+            <paragraph nr="1">
+              <nr-title>11.</nr-title>
+              <sen>hvað tilboðsmóttakanda ber að gera til að samþykkja tilboðið,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="12" type="numeric">
+            <paragraph nr="1">
+              <nr-title>12.</nr-title>
+              <sen>samantekt tilboðsgjafa um framtíðaráætlanir fyrir félagið, þ.m.t. áform um starfsemi, og hvernig skuli nota fjármuni félagsins, upplýsingar um áframhaldandi viðskipti verðbréfa félagsins á skipulögðum verðbréfamarkaði, breytingar á samþykktum og væntanlega endurskipulagningu, ef það á við; einnig skal fjallað um hugsanleg áhrif yfirtöku á störf stjórnenda og starfsmanna félaganna og starfsskilyrði þeirra, sem og á staðsetningu starfsstöðva félaganna; ef tilboðsgjafi er félag og tilboðið hefur áhrif á það skal einnig birta sambærilega samantekt fyrir það félag,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="13" type="numeric">
+            <paragraph nr="1">
+              <nr-title>13.</nr-title>
+              <sen>upplýsingar um væntanlega samninga við aðra um að nýta atkvæðisrétt í félaginu, svo framarlega sem tilboðsgjafi á aðild að slíkum samningi eða honum er kunnugt um hann,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="14" type="numeric">
+            <paragraph nr="1">
+              <nr-title>14.</nr-title>
+              <sen>upplýsingar um hvers konar hlunnindi og greiðslur frá tilboðsgjafa og samstarfsaðilum hans til stjórnarmanna og stjórnenda þess félags sem tilboð tekur til,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="15" type="numeric">
+            <paragraph nr="1">
+              <nr-title>15.</nr-title>
+              <sen>upplýsingar um þau lög sem gilda um samninga milli tilboðsgjafa og hluthafa vegna tilboðs og um lögbæra dómstóla,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="16" type="numeric">
+            <paragraph nr="1">
+              <nr-title>16.</nr-title>
+              <sen>aðrar upplýsingar sem máli kunna að skipta.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>nafn, heimilisfang og kennitala félagsins sem tilboðið tekur til,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>nafn, heimilisfang og rekstrarform ef tilboðsgjafi er félag, svo og yfirlit um þá einstaklinga eða lögaðila sem væntanlega munu taka þátt í viðskiptunum ásamt tilboðsgjafa eða eru í samstarfi við tilboðsgjafa skv. 100. gr.,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>upplýsingar um hve mikinn atkvæðisrétt, áhrif eða hve marga hluti tilboðsgjafi og aðilar sem hann er í samstarfi við skv. 100. gr. hafa þegar öðlast beint eða óbeint eða tryggt sér með öðrum hætti, sem og upplýsingar um áætlaðan atkvæðisrétt, áhrif eða hluti tilboðsgjafa eftir sölu, ef við á,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>hámarks- og lágmarkshlutfall eða magn hluta sem tilboðsgjafi ætlar að eignast ef um valfrjálst tilboð er að ræða,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>verð sem miðað er við í tilboðinu, hvernig það var ákvarðað og hvenær greiðsla fer fram; einnig skal upplýsa um það hvort einhver kostnaður fellur á þá hluthafa sem samþykkja tilboðið,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>fjármögnun tilboðs,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>upplýsingar um hvernig greiðsla skuli fara fram og, ef boðin eru fram verðbréf, upplýsingar um þau verðbréf og hvernig skiptin verða ákveðin,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>upplýsingar um á hvaða degi hlutir skulu afhentir og hvenær unnt er að beita atkvæðisrétti sem þeim fylgir,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>önnur skilyrði sem tilboðið kann að vera háð, þ.m.t. undir hvaða kringumstæðum er unnt að afturkalla það,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="10" type="numeric">
-          <paragraph nr="1">
-            <nr-title>10.</nr-title>
-            <sen>gildistími tilboðs,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="11" type="numeric">
-          <paragraph nr="1">
-            <nr-title>11.</nr-title>
-            <sen>hvað tilboðsmóttakanda ber að gera til að samþykkja tilboðið,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="12" type="numeric">
-          <paragraph nr="1">
-            <nr-title>12.</nr-title>
-            <sen>samantekt tilboðsgjafa um framtíðaráætlanir fyrir félagið, þ.m.t. áform um starfsemi, og hvernig skuli nota fjármuni félagsins, upplýsingar um áframhaldandi viðskipti verðbréfa félagsins á skipulögðum verðbréfamarkaði, breytingar á samþykktum og væntanlega endurskipulagningu, ef það á við; einnig skal fjallað um hugsanleg áhrif yfirtöku á störf stjórnenda og starfsmanna félaganna og starfsskilyrði þeirra, sem og á staðsetningu starfsstöðva félaganna; ef tilboðsgjafi er félag og tilboðið hefur áhrif á það skal einnig birta sambærilega samantekt fyrir það félag,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="13" type="numeric">
-          <paragraph nr="1">
-            <nr-title>13.</nr-title>
-            <sen>upplýsingar um væntanlega samninga við aðra um að nýta atkvæðisrétt í félaginu, svo framarlega sem tilboðsgjafi á aðild að slíkum samningi eða honum er kunnugt um hann,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="14" type="numeric">
-          <paragraph nr="1">
-            <nr-title>14.</nr-title>
-            <sen>upplýsingar um hvers konar hlunnindi og greiðslur frá tilboðsgjafa og samstarfsaðilum hans til stjórnarmanna og stjórnenda þess félags sem tilboð tekur til,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="15" type="numeric">
-          <paragraph nr="1">
-            <nr-title>15.</nr-title>
-            <sen>upplýsingar um þau lög sem gilda um samninga milli tilboðsgjafa og hluthafa vegna tilboðs og um lögbæra dómstóla,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="16" type="numeric">
-          <paragraph nr="1">
-            <nr-title>16.</nr-title>
-            <sen>aðrar upplýsingar sem máli kunna að skipta.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -1380,6 +1391,7 @@
             <chapter>11</chapter>
             <art>113</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="félagsins">1</sen>
@@ -1388,6 +1400,7 @@
             <chapter>11</chapter>
             <art>113</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>7</numart>
             <paragraph>1</paragraph>
             <sen words="verðbréf" repeat="true">1</sen>
@@ -1396,6 +1409,7 @@
             <chapter>11</chapter>
             <art>113</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>12</numart>
             <paragraph>1</paragraph>
             <sen words="verðbréfa">1</sen>
@@ -1847,12 +1861,12 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Fjármálaeftirlitið getur lagt stjórnvaldssektir á hvern þann sem brýtur gegn:</sen>
+          <numart nr="1-4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.–4.</nr-title>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1-4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.–4.</nr-title>
-          </paragraph>
-        </numart>
       </subart>
       <numart nr="5-25" type="numeric">
         <paragraph nr="1">
@@ -1921,61 +1935,61 @@
       <subart nr="4">
         <paragraph nr="1">
           <sen>Við ákvörðun sekta samkvæmt ákvæði þessu skal m.a. tekið tillit til allra atvika sem máli skipta, þ.m.t. eftirfarandi:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>alvarleika brots,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>hvað brotið hefur staðið lengi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>ábyrgðar hins brotlega hjá lögaðilanum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>fjárhagsstöðu hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>ávinnings af broti eða taps sem forðað er með broti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>f.</nr-title>
+              <sen>hvort brot hafi leitt til taps þriðja aðila,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>g.</nr-title>
+              <sen>hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>h.</nr-title>
+              <sen>samstarfsvilja hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>i.</nr-title>
+              <sen>fyrri brota og hvort um ítrekað brot er að ræða.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>alvarleika brots,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>hvað brotið hefur staðið lengi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>ábyrgðar hins brotlega hjá lögaðilanum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>fjárhagsstöðu hins brotlega,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>ávinnings af broti eða taps sem forðað er með broti,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="f" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>f.</nr-title>
-            <sen>hvort brot hafi leitt til taps þriðja aðila,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="g" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>g.</nr-title>
-            <sen>hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="h" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>h.</nr-title>
-            <sen>samstarfsvilja hins brotlega,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="i" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>i.</nr-title>
-            <sen>fyrri brota og hvort um ítrekað brot er að ræða.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="5">
         <paragraph nr="1">
@@ -2002,6 +2016,7 @@
             <chapter>15</chapter>
             <art>141</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1-4</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -2039,12 +2054,6 @@
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.060.html#G21" law-nr="60" law-year="2021" law-art="21" nr="5">
           <footnote-sen>L. 60/2021, 21. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>15</chapter>
-            <numart>34-44</numart>
-            <paragraph>1</paragraph>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.115.html#G148" law-nr="115" law-year="2021" law-art="148" nr="6">
           <footnote-sen>L. 115/2021, 148. gr.</footnote-sen>
@@ -2054,26 +2063,6 @@
             <subart>2</subart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="range">
-            <start>
-              <chapter>15</chapter>
-              <numart>45</numart>
-              <paragraph>1</paragraph>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>15</chapter>
-              <numart>45</numart>
-              <paragraph>1</paragraph>
-              <sen>1</sen>
-            </end>
-          </location>
-          <location type="range">
-            <chapter>15</chapter>
-            <numart>46</numart>
-            <paragraph>1</paragraph>
-            <nr-title>1</nr-title>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="130" nr="7">
@@ -2107,23 +2096,6 @@
         </footnote>
       </footnotes>
     </art>
-    <numart nr="34-44" type="numeric">
-      <paragraph nr="1">
-        <nr-title>34.–44.</nr-title>
-      </paragraph>
-    </numart>
-    <numart nr="45" type="numeric">
-      <paragraph nr="1">
-        <nr-title>45.</nr-title>
-        <sen>130. gr. b um opinbera fjárfestingarráðgjöf og birtingu tölfræðiupplýsinga,</sen>
-      </paragraph>
-    </numart>
-    <numart nr="46" type="numeric">
-      <paragraph nr="1">
-        <nr-title>46.</nr-title>
-        <sen>sátt milli Fjármálaeftirlitsins og aðila, sbr. 142. gr.</sen>
-      </paragraph>
-    </numart>
     <art nr="142">
       <nr-title>142. gr.</nr-title>
       <subart nr="1">
@@ -2185,12 +2157,12 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Það varðar sektum eða fangelsi allt að tveimur árum, liggi þyngri refsing ekki við broti samkvæmt öðrum lögum, að brjóta gegn ákvæðum:</sen>
+          <numart nr="1-4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.–4.</nr-title>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1-4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.–4.</nr-title>
-          </paragraph>
-        </numart>
       </subart>
       <numart nr="5-7" type="numeric">
         <paragraph nr="1">
@@ -2246,6 +2218,7 @@
             <chapter>15</chapter>
             <art>145</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1-4</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^" after-mark="$">1</sen>
@@ -2283,20 +2256,9 @@
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.060.html#G21" law-nr="60" law-year="2021" law-art="21" nr="5">
           <footnote-sen>L. 60/2021, 21. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>15</chapter>
-            <numart>15-21</numart>
-            <paragraph>1</paragraph>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
         </footnote>
       </footnotes>
     </art>
-    <numart nr="15-21" type="numeric">
-      <paragraph nr="1">
-        <nr-title>15.–21.</nr-title>
-      </paragraph>
-    </numart>
     <art nr="146">
       <nr-title>146. gr.</nr-title>
       <footnotes>
@@ -2415,6 +2377,30 @@
       </footnotes>
     </art>
   </chapter>
+  <numart nr="34-44" type="numeric">
+    <paragraph nr="1">
+      <nr-title>34.–44.</nr-title>
+      <sen>… &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;</sen>
+    </paragraph>
+  </numart>
+  <numart nr="45" type="numeric">
+    <paragraph nr="1">
+      <nr-title>[45.</nr-title>
+      <sen>130. gr. b um opinbera fjárfestingarráðgjöf og birtingu tölfræðiupplýsinga], &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt;</sen>
+    </paragraph>
+  </numart>
+  <numart nr="46" type="numeric">
+    <paragraph nr="1">
+      <nr-title>[46.</nr-title>
+      <sen>] &lt;sup style=&quot;font-size:60%&quot;&gt; 6) &lt;/sup&gt; sátt milli Fjármálaeftirlitsins og aðila, sbr. 142. gr.</sen>
+    </paragraph>
+  </numart>
+  <numart nr="15-21" type="numeric">
+    <paragraph nr="1">
+      <nr-title>15.–21.</nr-title>
+      <sen>… &lt;sup style=&quot;font-size:60%&quot;&gt; 5) &lt;/sup&gt;</sen>
+    </paragraph>
+  </numart>
   <chapter nr="16" nr-type="roman" roman-nr="XVI">
     <nr-title>XVI. kafli.</nr-title>
     <name>Gildistaka o.fl.</name>

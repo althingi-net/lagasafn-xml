@@ -39,25 +39,25 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Lög þessi gilda um fyrirtæki sem sendir starfsmann tímabundið hingað til lands í tengslum við veitingu þjónustu:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>á vegum fyrirtækisins og starfsmaðurinn starfar undir stjórn þess</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>á vegum fyrirtækisins til starfsstöðvar eða fyrirtækis í eigu sömu fyrirtækjasamstæðu hér á landi eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>á vegum fyrirtækisins og starfsmaðurinn er leigður gegn gjaldi til að sinna störfum á vinnustað notendafyrirtækis undir verkstjórn þess síðarnefnda í tengslum við þjónustusamning þess efnis milli fyrirtækisins og notendafyrirtækisins samkvæmt lögum um starfsmannaleigur.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>á vegum fyrirtækisins og starfsmaðurinn starfar undir stjórn þess</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>á vegum fyrirtækisins til starfsstöðvar eða fyrirtækis í eigu sömu fyrirtækjasamstæðu hér á landi eða</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>á vegum fyrirtækisins og starfsmaðurinn er leigður gegn gjaldi til að sinna störfum á vinnustað notendafyrirtækis undir verkstjórn þess síðarnefnda í tengslum við þjónustusamning þess efnis milli fyrirtækisins og notendafyrirtækisins samkvæmt lögum um starfsmannaleigur.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -97,6 +97,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^á vegum fyrirtækisins og starfsmaðurinn starfar undir stjórn þess" after-mark="$">1</sen>
@@ -105,6 +106,7 @@
             <chapter>1</chapter>
             <art>1</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>c</numart>
             <paragraph>1</paragraph>
             <sen words="síðarnefnda í tengslum við þjónustusamning þess efnis milli fyrirtækisins og notendafyrirtækisins samkvæmt lögum um starfsmannaleigur">1</sen>
@@ -264,59 +266,59 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Fyrirtæki:</name>
+              <sen>Fyrirtæki er einstaklingur, félag eða annar sá sem hefur starfsmann eða starfsmenn í vinnu og stundar atvinnurekstur með staðfestu í öðru ríki á Evrópska efnahagssvæðinu, öðru EFTA-ríki eða Færeyjum og sendir starfsmann eða starfsmenn tímabundið hingað til lands í því skyni að veita þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar auk þess sem þjónustan er innan þeirrar starfsgreinar sem viðkomandi aðili starfar við í heimaríki.</sen>
+              <sen>Fyrirtæki er einnig starfsmannaleiga í skilningi laga um starfsmannaleigur, sbr. c-lið 1. mgr. 1. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Fyrirtækjasamstæða:</name>
+              <sen>Fyrirtækjasamstæða er samband fyrirtækja með þannig eignauppbyggingu að eitt fyrirtæki á svo stóran hlut í öðru fyrirtæki eða fleiri fyrirtækjum að það fer með meiri hluta atkvæða.</sen>
+              <sen>Það fyrirtæki skoðast því sem móðurfyrirtæki en hitt eða hin fyrirtækin sem dótturfyrirtæki.</sen>
+              <sen>Til fyrirtækjasamstæðu telst einnig fyrirtæki þar sem móðurfyrirtæki og dótturfyrirtæki eða eitt eða fleiri dótturfyrirtæki eiga saman svo mörg hlutabréf eða hluti að þau fara með meiri hluta atkvæða í þeim.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <name>Þar til bært stjórnvald:</name>
+              <sen>Þar til bært stjórnvald er stjórnvald sem heimaríki fyrirtækis eða sjálfstætt starfandi einstaklings hefur skilgreint sem það stjórnvald heimaríkisins sem skal eiga í samskiptum við stjórnvöld í öðrum ríkjum innan Evrópska efnahagssvæðisins, öðrum EFTA-ríkjum eða Færeyjum vegna þjónustuviðskipta.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>&lt;i&gt; Notendafyrirtæki: &lt;/i&gt; Notendafyrirtæki er einstaklingur, félag, opinber aðili eða annar sá sem stundar atvinnurekstur og kaupir þjónustu af fyrirtæki eða sjálfstætt starfandi einstaklingi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <name>Sjálfstætt starfandi einstaklingur:</name>
+              <sen>Sjálfstætt starfandi einstaklingur er einstaklingur sem er ríkisborgari og hefur staðfestu og þar með efnahagslega starfsemi í öðru ríki innan Evrópska efnahagssvæðisins, öðru EFTA-ríki eða Færeyjum og starfar við eigin atvinnurekstur eða sjálfstæða starfsemi og kemur sjálfur tímabundið hingað til lands í því skyni að veita þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar auk þess sem þjónustan er innan þeirrar starfsgreinar sem hann starfar við í heimaríki.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <name>Starfsmaður:</name>
+              <sen>Starfsmaður er hver sá sem vinnur launað starf í þjónustu fyrirtækis og starfar að jafnaði utan Íslands en er sendur tímabundið á vegum fyrirtækisins hingað til lands í tengslum við veitingu þjónustu fyrirtækisins hér á landi.</sen>
+              <sen>Starfsmaður er einnig hver sá sem er ráðinn til starfa hjá fyrirtæki og er leigður gegn gjaldi til notendafyrirtækis á grundvelli þjónustusamnings þess efnis milli fyrirtækisins og notendafyrirtækisins samkvæmt lögum um starfsmannaleigur, sbr. c-lið 1. mgr. 1. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <name>Þjónustusamningur:</name>
+              <sen>Þjónustusamningur er samningur milli fyrirtækis eða sjálfstætt starfandi einstaklings og kaupanda þjónustu um að fyrirtækið eða sjálfstætt starfandi einstaklingurinn veiti kaupanda þjónustunnar tiltekna þjónustu hér á landi innan ákveðins tíma gegn greiðslu kaupandans.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Fyrirtæki:</name>
-            <sen>Fyrirtæki er einstaklingur, félag eða annar sá sem hefur starfsmann eða starfsmenn í vinnu og stundar atvinnurekstur með staðfestu í öðru ríki á Evrópska efnahagssvæðinu, öðru EFTA-ríki eða Færeyjum og sendir starfsmann eða starfsmenn tímabundið hingað til lands í því skyni að veita þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar auk þess sem þjónustan er innan þeirrar starfsgreinar sem viðkomandi aðili starfar við í heimaríki.</sen>
-            <sen>Fyrirtæki er einnig starfsmannaleiga í skilningi laga um starfsmannaleigur, sbr. c-lið 1. mgr. 1. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Fyrirtækjasamstæða:</name>
-            <sen>Fyrirtækjasamstæða er samband fyrirtækja með þannig eignauppbyggingu að eitt fyrirtæki á svo stóran hlut í öðru fyrirtæki eða fleiri fyrirtækjum að það fer með meiri hluta atkvæða.</sen>
-            <sen>Það fyrirtæki skoðast því sem móðurfyrirtæki en hitt eða hin fyrirtækin sem dótturfyrirtæki.</sen>
-            <sen>Til fyrirtækjasamstæðu telst einnig fyrirtæki þar sem móðurfyrirtæki og dótturfyrirtæki eða eitt eða fleiri dótturfyrirtæki eiga saman svo mörg hlutabréf eða hluti að þau fara með meiri hluta atkvæða í þeim.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <name>Þar til bært stjórnvald:</name>
-            <sen>Þar til bært stjórnvald er stjórnvald sem heimaríki fyrirtækis eða sjálfstætt starfandi einstaklings hefur skilgreint sem það stjórnvald heimaríkisins sem skal eiga í samskiptum við stjórnvöld í öðrum ríkjum innan Evrópska efnahagssvæðisins, öðrum EFTA-ríkjum eða Færeyjum vegna þjónustuviðskipta.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>&lt;i&gt; Notendafyrirtæki: &lt;/i&gt; Notendafyrirtæki er einstaklingur, félag, opinber aðili eða annar sá sem stundar atvinnurekstur og kaupir þjónustu af fyrirtæki eða sjálfstætt starfandi einstaklingi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <name>Sjálfstætt starfandi einstaklingur:</name>
-            <sen>Sjálfstætt starfandi einstaklingur er einstaklingur sem er ríkisborgari og hefur staðfestu og þar með efnahagslega starfsemi í öðru ríki innan Evrópska efnahagssvæðisins, öðru EFTA-ríki eða Færeyjum og starfar við eigin atvinnurekstur eða sjálfstæða starfsemi og kemur sjálfur tímabundið hingað til lands í því skyni að veita þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar auk þess sem þjónustan er innan þeirrar starfsgreinar sem hann starfar við í heimaríki.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <name>Starfsmaður:</name>
-            <sen>Starfsmaður er hver sá sem vinnur launað starf í þjónustu fyrirtækis og starfar að jafnaði utan Íslands en er sendur tímabundið á vegum fyrirtækisins hingað til lands í tengslum við veitingu þjónustu fyrirtækisins hér á landi.</sen>
-            <sen>Starfsmaður er einnig hver sá sem er ráðinn til starfa hjá fyrirtæki og er leigður gegn gjaldi til notendafyrirtækis á grundvelli þjónustusamnings þess efnis milli fyrirtækisins og notendafyrirtækisins samkvæmt lögum um starfsmannaleigur, sbr. c-lið 1. mgr. 1. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <name>Þjónustusamningur:</name>
-            <sen>Þjónustusamningur er samningur milli fyrirtækis eða sjálfstætt starfandi einstaklings og kaupanda þjónustu um að fyrirtækið eða sjálfstætt starfandi einstaklingurinn veiti kaupanda þjónustunnar tiltekna þjónustu hér á landi innan ákveðins tíma gegn greiðslu kaupandans.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2018.075.html" law-nr="75" law-year="2018" law-art="5" nr="1">
@@ -325,6 +327,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="hefur starfsmann eða starfsmenn í vinnu og">1</sen>
@@ -333,6 +336,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="sendir starfsmann eða starfsmenn tímabundið hingað til lands í því skyni að veita">1</sen>
@@ -342,6 +346,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
               <paragraph>1</paragraph>
               <sen words="auk þess sem þjónustan er innan þeirrar starfsgreinar sem viðkomandi aðili starfar við í heimaríki.">1</sen>
@@ -350,6 +355,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>1</numart>
               <paragraph>1</paragraph>
               <sen words="Fyrirtæki er einnig starfsmannaleiga í skilningi laga um starfsmannaleigur, sbr. c-lið 1. mgr. 1. gr.">2</sen>
@@ -360,6 +366,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -368,6 +375,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -377,6 +385,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -385,6 +394,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="og">1</sen>
@@ -393,6 +403,7 @@
             <chapter>1</chapter>
             <art>3</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="eða sjálfstætt starfandi einstaklingi">1</sen>
@@ -402,6 +413,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>5</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -410,6 +422,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -443,49 +456,49 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Þegar fyrirtæki sendir starfsmann hingað til lands í skilningi laga þessara gildir eftirfarandi löggjöf um starfskjör hans og reglur settar á grundvelli hennar, án tillits til erlendrar löggjafar sem að öðru leyti gildir um ráðningarsamband hans og hlutaðeigandi fyrirtækis:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Lög nr. 55/1980, um starfskjör launafólks og skyldutryggingu lífeyrisréttinda, 1. gr., með síðari breytingum, að því er varðar lágmarkslaun og aðra launaþætti, yfirvinnugreiðslur, réttindi til orlofs, hámarksvinnutíma og lágmarkshvíldartíma.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Lög nr. 46/1980, um aðbúnað, hollustuhætti og öryggi á vinnustöðum, með síðari breytingum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Lög nr. 30/1987, um orlof, með síðari breytingum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Lög nr. 47/2003, um eftirlit með skipum, 4. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Lög nr. 60/1998, um loftferðir, VI. kafli.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Lög um fæðingar- og foreldraorlof, 16., 49. og 50. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Lög nr. 96/2000, um jafna stöðu og jafnan rétt kvenna og karla, auk annarra ákvæða um bann við mismunun.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Lög nr. 55/1980, um starfskjör launafólks og skyldutryggingu lífeyrisréttinda, 1. gr., með síðari breytingum, að því er varðar lágmarkslaun og aðra launaþætti, yfirvinnugreiðslur, réttindi til orlofs, hámarksvinnutíma og lágmarkshvíldartíma.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Lög nr. 46/1980, um aðbúnað, hollustuhætti og öryggi á vinnustöðum, með síðari breytingum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Lög nr. 30/1987, um orlof, með síðari breytingum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Lög nr. 47/2003, um eftirlit með skipum, 4. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Lög nr. 60/1998, um loftferðir, VI. kafli.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Lög um fæðingar- og foreldraorlof, 16., 49. og 50. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Lög nr. 96/2000, um jafna stöðu og jafnan rétt kvenna og karla, auk annarra ákvæða um bann við mismunun.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -505,6 +518,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>6</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -641,31 +655,31 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Sjálfstætt starfandi einstaklingur sem hyggst veita þjónustu hér á landi lengur en tíu virka daga á hverjum tólf mánuðum skal veita Vinnumálastofnun eftirfarandi upplýsingar og/eða aðgang að gögnum eigi síðar en sama dag og hann hefur störf hér á landi í hvert skipti, m.a. um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Nafn viðkomandi einstaklings, fæðingardag, heimilisfang í heimaríki, ríkisfang, hvort hann nýtur almannatryggingaverndar í heimaríki, netfang, dvalarstað, áætlaðan starfstíma hans hér á landi og starfsréttindi eftir því sem við á.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Hvers konar þjónustu viðkomandi einstaklingur veitir hér á landi, nafn notendafyrirtækis og kennitölu eða annað sambærilegt auðkenni þess, ef við á, og hvar þjónustan er veitt.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Sannanlega staðfestu viðkomandi einstaklings í heimaríki í þeirri starfsgrein sem þjónusta hans hér á landi fellur innan og að hann starfi löglega í heimaríki í viðkomandi starfsgrein samkvæmt lögum þess ríkis, svo sem gögn sem sýna fram á efnahagslega starfsemi, þ.m.t. gögn frá skattyfirvöldum eða sambærilegum stjórnvöldum í heimaríki, þar á meðal virðisaukaskattsnúmer eða önnur sambærileg heimild, upplýsingar um starfsleyfi, eftir því sem við á, og umfang veltu í heimaríki.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Aðrar þær upplýsingar, svo sem afrit af reikningum fyrir vinnuna, sem Vinnumálastofnun kann að óska eftir í þágu eftirlits skv. 1. mgr. 12. gr., m.a. í því skyni að ganga úr skugga um að viðkomandi einstaklingur veiti sannanlega þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Nafn viðkomandi einstaklings, fæðingardag, heimilisfang í heimaríki, ríkisfang, hvort hann nýtur almannatryggingaverndar í heimaríki, netfang, dvalarstað, áætlaðan starfstíma hans hér á landi og starfsréttindi eftir því sem við á.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Hvers konar þjónustu viðkomandi einstaklingur veitir hér á landi, nafn notendafyrirtækis og kennitölu eða annað sambærilegt auðkenni þess, ef við á, og hvar þjónustan er veitt.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Sannanlega staðfestu viðkomandi einstaklings í heimaríki í þeirri starfsgrein sem þjónusta hans hér á landi fellur innan og að hann starfi löglega í heimaríki í viðkomandi starfsgrein samkvæmt lögum þess ríkis, svo sem gögn sem sýna fram á efnahagslega starfsemi, þ.m.t. gögn frá skattyfirvöldum eða sambærilegum stjórnvöldum í heimaríki, þar á meðal virðisaukaskattsnúmer eða önnur sambærileg heimild, upplýsingar um starfsleyfi, eftir því sem við á, og umfang veltu í heimaríki.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Aðrar þær upplýsingar, svo sem afrit af reikningum fyrir vinnuna, sem Vinnumálastofnun kann að óska eftir í þágu eftirlits skv. 1. mgr. 12. gr., m.a. í því skyni að ganga úr skugga um að viðkomandi einstaklingur veiti sannanlega þjónustu hér á landi á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -714,61 +728,61 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Fyrirtæki sem hyggst veita þjónustu hér á landi samtals lengur en tíu virka daga á hverjum tólf mánuðum, sbr. þó 9. gr., skal veita Vinnumálastofnun eftirfarandi upplýsingar og/eða aðgang að gögnum eigi síðar en sama dag og starfsemin hefst hér á landi í hvert skipti, m.a. um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Nafn fyrirtækis, heimilisfang þess í heimaríki og netfang sem og nafn fyrirsvarsmanns fyrirtækisins og netfang hans.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Sannanlega staðfestu fyrirtækis í heimaríki í þeirri starfsgrein sem þjónusta þess hér á landi fellur innan og að það starfi löglega í heimaríki í viðkomandi starfsgrein samkvæmt lögum þess ríkis, svo sem gögn sem sýna fram á efnahagslega starfsemi, þ.m.t. gögn frá skattyfirvöldum eða sambærilegum stjórnvöldum í heimaríki, þar á meðal virðisaukaskattsnúmer eða önnur sambærileg heimild, upplýsingar um starfsleyfi, eftir því sem við á, og umfang veltu í heimaríki.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Nafn notendafyrirtækis sem og kennitölu þess eða annað sambærilegt auðkenni þess, ef við á.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Yfirlit yfir starfsmenn sem starfa munu á vegum fyrirtækisins hér á landi þar sem fram kemur nafn, fæðingardagur, heimilisfang í heimaríki, ríkisfang, upplýsingar um hvort viðkomandi starfsmenn njóta almannatryggingaverndar í heimaríki, dvalarstaður og áætlaður starfstími hér á landi og starfsréttindi eftir því sem við á,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Gildi atvinnuleyfa starfsmanna í heimaríki þegar um er að ræða starfsmenn sem ekki eru ríkisborgarar ríkja á Evrópska efnahagssvæðinu eða EFTA-ríkja eða Færeyingar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Hvers konar þjónustu fyrirtækið veitir hér á landi, hvar þjónustan er veitt og hversu lengi áætlað er að starfsemi fyrirtækisins hér á landi standi yfir.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Afrit af þjónustusamningi, eftir því sem við á.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>Afrit af ráðningarsamningum þeirra starfsmanna fyrirtækisins sem starfa á vegum þess hér á landi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>Aðrar þær upplýsingar sem Vinnumálastofnun kann að óska eftir í þágu eftirlits skv. 1. mgr. 12. gr., m.a. í því skyni að ganga úr skugga um að fyrirtækið veiti sannanlega þjónustu hér á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar og að um sé að ræða starfsmenn fyrirtækisins.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Nafn fyrirtækis, heimilisfang þess í heimaríki og netfang sem og nafn fyrirsvarsmanns fyrirtækisins og netfang hans.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Sannanlega staðfestu fyrirtækis í heimaríki í þeirri starfsgrein sem þjónusta þess hér á landi fellur innan og að það starfi löglega í heimaríki í viðkomandi starfsgrein samkvæmt lögum þess ríkis, svo sem gögn sem sýna fram á efnahagslega starfsemi, þ.m.t. gögn frá skattyfirvöldum eða sambærilegum stjórnvöldum í heimaríki, þar á meðal virðisaukaskattsnúmer eða önnur sambærileg heimild, upplýsingar um starfsleyfi, eftir því sem við á, og umfang veltu í heimaríki.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Nafn notendafyrirtækis sem og kennitölu þess eða annað sambærilegt auðkenni þess, ef við á.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Yfirlit yfir starfsmenn sem starfa munu á vegum fyrirtækisins hér á landi þar sem fram kemur nafn, fæðingardagur, heimilisfang í heimaríki, ríkisfang, upplýsingar um hvort viðkomandi starfsmenn njóta almannatryggingaverndar í heimaríki, dvalarstaður og áætlaður starfstími hér á landi og starfsréttindi eftir því sem við á,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Gildi atvinnuleyfa starfsmanna í heimaríki þegar um er að ræða starfsmenn sem ekki eru ríkisborgarar ríkja á Evrópska efnahagssvæðinu eða EFTA-ríkja eða Færeyingar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Hvers konar þjónustu fyrirtækið veitir hér á landi, hvar þjónustan er veitt og hversu lengi áætlað er að starfsemi fyrirtækisins hér á landi standi yfir.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Afrit af þjónustusamningi, eftir því sem við á.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>Afrit af ráðningarsamningum þeirra starfsmanna fyrirtækisins sem starfa á vegum þess hér á landi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>Aðrar þær upplýsingar sem Vinnumálastofnun kann að óska eftir í þágu eftirlits skv. 1. mgr. 12. gr., m.a. í því skyni að ganga úr skugga um að fyrirtækið veiti sannanlega þjónustu hér á grundvelli samningsins um Evrópska efnahagssvæðið, stofnsamnings Fríverslunarsamtaka Evrópu eða samnings milli ríkisstjórnar Íslands annars vegar og ríkisstjórnar Danmerkur og heimastjórnar Færeyja hins vegar og að um sé að ræða starfsmenn fyrirtækisins.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -824,6 +838,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen>1</sen>
@@ -833,6 +848,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>2</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -841,6 +857,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -850,6 +867,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -858,6 +876,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="starfstími">1</sen>
@@ -866,6 +885,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>5</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -875,6 +895,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -883,6 +904,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>6</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -893,6 +915,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -901,6 +924,7 @@
               <chapter>3</chapter>
               <art>8</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>8</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -910,6 +934,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -918,6 +943,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>9</numart>
             <paragraph>1</paragraph>
             <sen words="í þágu eftirlits skv. 1. mgr. 12. gr., m.a. í því skyni">1</sen>
@@ -1003,6 +1029,7 @@
             <chapter>3</chapter>
             <art>8</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="upplýsingar um hvort viðkomandi starfsmenn njóta almannatryggingaverndar í heimaríki">1</sen>
@@ -1367,55 +1394,55 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Þrátt fyrir ábyrgð notendafyrirtækis skv. 11. gr. a er því heimilt að synja um greiðslu kröfu vegna vangoldinna lágmarkslauna og/eða annarra vangreiðslna skv. 3. mgr. 11. gr. a í eftirfarandi tilvikum:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>Þegar fyrirtæki veitir notendafyrirtæki þjónustu skemur en samtals tíu virka daga á tólf mánaða tímabili.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>Þegar um er að ræða kröfu framkvæmdastjóra, stjórnarmanna eða eiganda þess fyrirtækis sem um ræðir sem og kröfu maka eða annarra skyldmenna framangreindra aðila eða annarra sem eru þeim það nákomnir að unnt er að sýna fram á að kröfur þeirra séu óréttmætar með tilliti til tengsla þeirra.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>Þegar notendafyrirtæki hefur með sannanlegum hætti reynt að tryggja eins og því er unnt að fyrirtæki greiði starfsmönnum sínum laun í samræmi við ákvæði gildandi kjarasamninga í viðkomandi starfsgreinum á því svæði þar sem vinnan fer fram, svo sem með því að afla eftirfarandi upplýsinga hjá því fyrirtæki sem um ræðir hverju sinni um þá starfsmenn fyrirtækisins sem veita notendafyrirtækinu þjónustu hér á landi:</sen>
+              <numart nr="1" type="numeric">
+                <paragraph nr="1">
+                  <nr-title>1.</nr-title>
+                  <sen>nafn hvers starfsmanns,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" type="numeric">
+                <paragraph nr="1">
+                  <nr-title>2.</nr-title>
+                  <sen>afrit af ráðningarsamningi hvers starfsmanns,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" type="numeric">
+                <paragraph nr="1">
+                  <nr-title>3.</nr-title>
+                  <sen>afrit af vinnutímaskýrslum hvers starfsmanns,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="4" type="numeric">
+                <paragraph nr="1">
+                  <nr-title>4.</nr-title>
+                  <sen>afrit af launaseðlum hvers starfsmanns og</sen>
+                </paragraph>
+              </numart>
+              <numart nr="5" type="numeric">
+                <paragraph nr="1">
+                  <nr-title>5.</nr-title>
+                  <sen>staðfestingu á að laun hvers starfsmanns hafi verið greidd í samræmi við það sem fram kemur á launaseðli, m.a. hvað varðar launafjárhæð.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>Þegar fyrirtæki veitir notendafyrirtæki þjónustu skemur en samtals tíu virka daga á tólf mánaða tímabili.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>Þegar um er að ræða kröfu framkvæmdastjóra, stjórnarmanna eða eiganda þess fyrirtækis sem um ræðir sem og kröfu maka eða annarra skyldmenna framangreindra aðila eða annarra sem eru þeim það nákomnir að unnt er að sýna fram á að kröfur þeirra séu óréttmætar með tilliti til tengsla þeirra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>Þegar notendafyrirtæki hefur með sannanlegum hætti reynt að tryggja eins og því er unnt að fyrirtæki greiði starfsmönnum sínum laun í samræmi við ákvæði gildandi kjarasamninga í viðkomandi starfsgreinum á því svæði þar sem vinnan fer fram, svo sem með því að afla eftirfarandi upplýsinga hjá því fyrirtæki sem um ræðir hverju sinni um þá starfsmenn fyrirtækisins sem veita notendafyrirtækinu þjónustu hér á landi:</sen>
-          </paragraph>
-          <numart nr="1" type="numeric">
-            <paragraph nr="1">
-              <nr-title>1.</nr-title>
-              <sen>nafn hvers starfsmanns,</sen>
-            </paragraph>
-          </numart>
-          <numart nr="2" type="numeric">
-            <paragraph nr="1">
-              <nr-title>2.</nr-title>
-              <sen>afrit af ráðningarsamningi hvers starfsmanns,</sen>
-            </paragraph>
-          </numart>
-          <numart nr="3" type="numeric">
-            <paragraph nr="1">
-              <nr-title>3.</nr-title>
-              <sen>afrit af vinnutímaskýrslum hvers starfsmanns,</sen>
-            </paragraph>
-          </numart>
-          <numart nr="4" type="numeric">
-            <paragraph nr="1">
-              <nr-title>4.</nr-title>
-              <sen>afrit af launaseðlum hvers starfsmanns og</sen>
-            </paragraph>
-          </numart>
-          <numart nr="5" type="numeric">
-            <paragraph nr="1">
-              <nr-title>5.</nr-title>
-              <sen>staðfestingu á að laun hvers starfsmanns hafi verið greidd í samræmi við það sem fram kemur á launaseðli, m.a. hvað varðar launafjárhæð.</sen>
-            </paragraph>
-          </numart>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">

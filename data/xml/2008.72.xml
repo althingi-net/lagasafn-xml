@@ -73,25 +73,25 @@
       <paragraph nr="1">
         <sen>Stjórn Fiskræktarsjóðs hefur yfirumsjón með starfsemi hans í samræmi við lög þessi og reglugerð.</sen>
         <sen>Verkefni stjórnar eru m.a. að:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>skila ársreikningum og reglulegu yfirliti um starfsemi sjóðsins til ráðherra,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>taka ákvarðanir um ávöxtun eigin fjár,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>taka ákvarðanir um úthlutanir og útgjöld.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>skila ársreikningum og reglulegu yfirliti um starfsemi sjóðsins til ráðherra,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>taka ákvarðanir um ávöxtun eigin fjár,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>taka ákvarðanir um úthlutanir og útgjöld.</sen>
-        </paragraph>
-      </numart>
     </subart>
   </art>
   <art nr="4">
@@ -100,31 +100,31 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Ráðstöfunarfé Fiskræktarsjóðs er:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>fjárveiting á grundvelli fjárheimildar í fjárlögum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen>arður af eigin fé,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen/>
+          </paragraph>
+        </numart>
+        <numart nr="d" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>d.</nr-title>
+            <sen>annað.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>fjárveiting á grundvelli fjárheimildar í fjárlögum,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen>arður af eigin fé,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen/>
-        </paragraph>
-      </numart>
-      <numart nr="d" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>d.</nr-title>
-          <sen>annað.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.047.html" law-nr="47" law-year="2018" law-art="2" nr="1">
@@ -132,6 +132,7 @@
         <location type="range">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen words="fjárveiting á grundvelli fjárheimildar í fjárlögum">1</sen>
@@ -139,6 +140,7 @@
         <location type="deletion">
           <art>4</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>c</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">1</sen>

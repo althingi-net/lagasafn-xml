@@ -118,25 +118,25 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Árlegar tekjur Framkvæmdasjóðs ferðamannastaða eru:</sen>
+        <numart nr="1" type="numeric">
+          <paragraph nr="1">
+            <nr-title>1.</nr-title>
+            <sen>Framlag ríkissjóðs sem ákveðið er í fjárlögum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" type="numeric">
+          <paragraph nr="1">
+            <nr-title>2.</nr-title>
+            <sen>Vextir af fé sjóðsins.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" type="numeric">
+          <paragraph nr="1">
+            <nr-title>3.</nr-title>
+            <sen>Aðrar tekjur.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="1" type="numeric">
-        <paragraph nr="1">
-          <nr-title>1.</nr-title>
-          <sen>Framlag ríkissjóðs sem ákveðið er í fjárlögum.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="2" type="numeric">
-        <paragraph nr="1">
-          <nr-title>2.</nr-title>
-          <sen>Vextir af fé sjóðsins.</sen>
-        </paragraph>
-      </numart>
-      <numart nr="3" type="numeric">
-        <paragraph nr="1">
-          <nr-title>3.</nr-title>
-          <sen>Aðrar tekjur.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="2">
       <paragraph nr="1">
@@ -153,6 +153,7 @@
         <location type="range">
           <art>3</art>
           <subart>1</subart>
+          <paragraph>1</paragraph>
           <numart>1</numart>
           <paragraph>1</paragraph>
           <sen>1</sen>

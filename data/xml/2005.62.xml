@@ -155,25 +155,25 @@
     <subart nr="2">
       <paragraph nr="1">
         <sen>Til áfrýjunarnefndar neytendamála má skjóta stjórnvaldsákvörðunum sem teknar eru samkvæmt eftirtöldum lögum:</sen>
+        <numart nr="a" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>a.</nr-title>
+            <sen>lögum um eftirlit með viðskiptaháttum og markaðssetningu,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>b.</nr-title>
+            <sen/>
+          </paragraph>
+        </numart>
+        <numart nr="c" type="alphabet">
+          <paragraph nr="1">
+            <nr-title>c.</nr-title>
+            <sen>öðrum lögum á málefnasviði Neytendastofu sé heimild til slíks að finna í þeim lögum.</sen>
+          </paragraph>
+        </numart>
       </paragraph>
-      <numart nr="a" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>a.</nr-title>
-          <sen>lögum um eftirlit með viðskiptaháttum og markaðssetningu,</sen>
-        </paragraph>
-      </numart>
-      <numart nr="b" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>b.</nr-title>
-          <sen/>
-        </paragraph>
-      </numart>
-      <numart nr="c" type="alphabet">
-        <paragraph nr="1">
-          <nr-title>c.</nr-title>
-          <sen>öðrum lögum á málefnasviði Neytendastofu sé heimild til slíks að finna í þeim lögum.</sen>
-        </paragraph>
-      </numart>
     </subart>
     <subart nr="3">
       <paragraph nr="1">
@@ -192,6 +192,7 @@
         <location type="range">
           <art>4</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <numart>a</numart>
           <paragraph>1</paragraph>
           <sen words="viðskiptaháttum og markaðssetningu">1</sen>
@@ -199,6 +200,7 @@
         <location type="deletion">
           <art>4</art>
           <subart>2</subart>
+          <paragraph>1</paragraph>
           <numart>b</numart>
           <paragraph>1</paragraph>
           <sen before-mark="^" after-mark="$">1</sen>

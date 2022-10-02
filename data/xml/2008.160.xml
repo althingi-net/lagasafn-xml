@@ -159,28 +159,28 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í lögum þessum hafa eftirfarandi orð svofellda merkingu:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Sjónskertur:</name>
+              <sen>Einstaklingur telst sjónskertur ef læknisfræðileg greining sýnir að sjón hans er minni en 30% á betra auga, með venjulegum sjónglerjum, og innan við 20 gráðu sjónsvið, eða ef starfrænt mat sýnir erfiðleika vegna sjónskerðingar með lestur 10 punkta leturs með venjulegum sjónglerjum, með athafnir daglegs lífs og umferli.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Blindur:</name>
+              <sen>Einstaklingur telst blindur ef læknisfræðileg greining sýnir að sjón hans er minni en 5%, með venjulegum sjónglerjum, og innan við 10 gráðu sjónsvið.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>&lt;i&gt; Einstaklingur með samþætta sjón- og heyrnarskerðingu: &lt;/i&gt; Einstaklingur telst með samþætta sjón- og heyrnarskerðingu ef saman fer sjón- og heyrnarskerðing sem takmarkar athafnasemi hans og hamlar þátttöku í samfélaginu í slíkum mæli að hann þarfnast sértækrar þjónustu, laga þarf umhverfi að þörfum viðkomandi eða nýta sérstakan tæknibúnað til að mæta þörfum hans.</sen>
+              <sen>Samþætting sjón- og heyrnarskerðingar er sérstök fötlun, en ekki samsetning tveggja fatlana.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Sjónskertur:</name>
-            <sen>Einstaklingur telst sjónskertur ef læknisfræðileg greining sýnir að sjón hans er minni en 30% á betra auga, með venjulegum sjónglerjum, og innan við 20 gráðu sjónsvið, eða ef starfrænt mat sýnir erfiðleika vegna sjónskerðingar með lestur 10 punkta leturs með venjulegum sjónglerjum, með athafnir daglegs lífs og umferli.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Blindur:</name>
-            <sen>Einstaklingur telst blindur ef læknisfræðileg greining sýnir að sjón hans er minni en 5%, með venjulegum sjónglerjum, og innan við 10 gráðu sjónsvið.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>&lt;i&gt; Einstaklingur með samþætta sjón- og heyrnarskerðingu: &lt;/i&gt; Einstaklingur telst með samþætta sjón- og heyrnarskerðingu ef saman fer sjón- og heyrnarskerðing sem takmarkar athafnasemi hans og hamlar þátttöku í samfélaginu í slíkum mæli að hann þarfnast sértækrar þjónustu, laga þarf umhverfi að þörfum viðkomandi eða nýta sérstakan tæknibúnað til að mæta þörfum hans.</sen>
-            <sen>Samþætting sjón- og heyrnarskerðingar er sérstök fötlun, en ekki samsetning tveggja fatlana.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2015.115.html" law-nr="115" law-year="2015" law-art="15" nr="1">
@@ -190,6 +190,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -198,6 +199,7 @@
               <chapter>1</chapter>
               <art>3</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>3</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -221,157 +223,157 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Verkefni stofnunarinnar eru m.a.:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <name>Greining, mat, ráðgjöf, kennsla og úthlutun hjálpartækja.</name>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Greining á þörf fyrir hæfingu og endurhæfingu.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Starfrænt mat og sjónmat.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>c.</nr-title>
+                  <sen>Mat á þörf og úthlutun sérhæfðra hjálpartækja sem ekki er úthlutað á vegum Tryggingastofnunar eða Heyrnar- og talmeinastöðvar.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>d.</nr-title>
+                  <sen>Ráðgjöf um umhverfi, lýsingu og aðgengi.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>e.</nr-title>
+                  <sen>Sálfræðiráðgjöf og félagsráðgjöf vegna aðstæðna sem tengjast fötluninni.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>f.</nr-title>
+                  <sen>Skynfæraörvun, kennsla blindraleturs, umferliskennsla, kennsla í sjónbeitingu og kennsla í notkun hjálpartækja.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="g" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>g.</nr-title>
+                  <sen>Útgáfa vottorða til staðfestingar á fötlun.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <name>Yfirfærsla efnis.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Yfirfærsla efnis vegna náms, tómstunda eða starfa af svartletri yfir á blindraletur, stækkað letur, þreifiefni eða stafrænt form annað en hljóðbækur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <name>Stuðningur við nám á öllum skólastigum.</name>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Ráðgjöf og námskeiðahald fyrir foreldra og starfsfólk menntastofnana um námsumhverfi og kennsluhætti.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Námsráðgjöf.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>c.</nr-title>
+                  <sen>Sérhæfð kennsla.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>d.</nr-title>
+                  <sen>Mat á þörf fyrir sérútbúið námsefni, svo sem þreifiefni, námsefni með stækkuðu letri, blindraletri eða á stafrænu formi.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <name>Stuðningur við sjálfstæði í búsetu.</name>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Þjálfun í athöfnum daglegs lífs.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Þjálfun í lífsleikni.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <name>Stuðningur við atvinnuþátttöku.</name>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Starfsráðgjöf.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Aðstoð og ráðgjöf vegna aðlögunar á nýjum vinnustað, t.d. varðandi umhverfi, umferlismál, hjálpartæki og fræðslu til samstarfsfólks.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <name>Stuðningur til virkra tómstunda.</name>
+            </paragraph>
+            <paragraph nr="2">
+              <sen>Þjálfun í félagsfærni og sjálfsstyrking.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <name>Öflun og miðlun þekkingar og fræðslu.</name>
+              <numart nr="a" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>a.</nr-title>
+                  <sen>Þátttaka í rannsóknum og þróunarverkefnum sem hafa það að markmiði að meta aðstæður blindra, sjónskertra og einstaklinga með samþætta sjón- og heyrnarskerðingu og bæta stöðu þeirra.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" type="alphabet">
+                <paragraph nr="1">
+                  <nr-title>b.</nr-title>
+                  <sen>Þróun og viðhald þekkingarbrunns á sviði fötlunar vegna blindu og sjónskerðingar, og miðlun upplýsinga og fróðleiks á þessu sviði út í samfélagið.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <name>Greining, mat, ráðgjöf, kennsla og úthlutun hjálpartækja.</name>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Greining á þörf fyrir hæfingu og endurhæfingu.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Starfrænt mat og sjónmat.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="c" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>c.</nr-title>
-              <sen>Mat á þörf og úthlutun sérhæfðra hjálpartækja sem ekki er úthlutað á vegum Tryggingastofnunar eða Heyrnar- og talmeinastöðvar.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="d" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>d.</nr-title>
-              <sen>Ráðgjöf um umhverfi, lýsingu og aðgengi.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="e" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>e.</nr-title>
-              <sen>Sálfræðiráðgjöf og félagsráðgjöf vegna aðstæðna sem tengjast fötluninni.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="f" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>f.</nr-title>
-              <sen>Skynfæraörvun, kennsla blindraleturs, umferliskennsla, kennsla í sjónbeitingu og kennsla í notkun hjálpartækja.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="g" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>g.</nr-title>
-              <sen>Útgáfa vottorða til staðfestingar á fötlun.</sen>
-            </paragraph>
-          </numart>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <name>Yfirfærsla efnis.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Yfirfærsla efnis vegna náms, tómstunda eða starfa af svartletri yfir á blindraletur, stækkað letur, þreifiefni eða stafrænt form annað en hljóðbækur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <name>Stuðningur við nám á öllum skólastigum.</name>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Ráðgjöf og námskeiðahald fyrir foreldra og starfsfólk menntastofnana um námsumhverfi og kennsluhætti.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Námsráðgjöf.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="c" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>c.</nr-title>
-              <sen>Sérhæfð kennsla.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="d" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>d.</nr-title>
-              <sen>Mat á þörf fyrir sérútbúið námsefni, svo sem þreifiefni, námsefni með stækkuðu letri, blindraletri eða á stafrænu formi.</sen>
-            </paragraph>
-          </numart>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <name>Stuðningur við sjálfstæði í búsetu.</name>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Þjálfun í athöfnum daglegs lífs.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Þjálfun í lífsleikni.</sen>
-            </paragraph>
-          </numart>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <name>Stuðningur við atvinnuþátttöku.</name>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Starfsráðgjöf.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Aðstoð og ráðgjöf vegna aðlögunar á nýjum vinnustað, t.d. varðandi umhverfi, umferlismál, hjálpartæki og fræðslu til samstarfsfólks.</sen>
-            </paragraph>
-          </numart>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <name>Stuðningur til virkra tómstunda.</name>
-          </paragraph>
-          <paragraph nr="2">
-            <sen>Þjálfun í félagsfærni og sjálfsstyrking.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <name>Öflun og miðlun þekkingar og fræðslu.</name>
-          </paragraph>
-          <numart nr="a" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>a.</nr-title>
-              <sen>Þátttaka í rannsóknum og þróunarverkefnum sem hafa það að markmiði að meta aðstæður blindra, sjónskertra og einstaklinga með samþætta sjón- og heyrnarskerðingu og bæta stöðu þeirra.</sen>
-            </paragraph>
-          </numart>
-          <numart nr="b" type="alphabet">
-            <paragraph nr="1">
-              <nr-title>b.</nr-title>
-              <sen>Þróun og viðhald þekkingarbrunns á sviði fötlunar vegna blindu og sjónskerðingar, og miðlun upplýsinga og fróðleiks á þessu sviði út í samfélagið.</sen>
-            </paragraph>
-          </numart>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -400,7 +402,9 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>7</numart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="einstaklinga með samþætta sjón- og heyrnarskerðingu">1</sen>

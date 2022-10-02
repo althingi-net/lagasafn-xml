@@ -57,37 +57,37 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Fyrirtækjaskrá skal geyma upplýsingar um:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Einstaklinga, félög og aðra aðila sem stunda atvinnurekstur eða sjálfstæða starfsemi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Stofnanir og fyrirtæki í eigu ríkisins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Stofnanir og fyrirtæki í eigu sveitarfélaga.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Félög, félög til almannaheilla með starfsemi yfir landamæri, samtök og aðila, aðra en einstaklinga, sem hafa með höndum eignaumsýslu, eru skattskyldir eða bera aðrar skattalegar skyldur, erlenda fjárvörslusjóði eða sambærilega aðila.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Aðra starfsemi sem ríkisskattstjóri sér ástæðu til að skrá í fyrirtækjaskrá.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Einstaklinga, félög og aðra aðila sem stunda atvinnurekstur eða sjálfstæða starfsemi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Stofnanir og fyrirtæki í eigu ríkisins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Stofnanir og fyrirtæki í eigu sveitarfélaga.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Félög, félög til almannaheilla með starfsemi yfir landamæri, samtök og aðila, aðra en einstaklinga, sem hafa með höndum eignaumsýslu, eru skattskyldir eða bera aðrar skattalegar skyldur, erlenda fjárvörslusjóði eða sambærilega aðila.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Aðra starfsemi sem ríkisskattstjóri sér ástæðu til að skrá í fyrirtækjaskrá.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.119.html#G24" law-nr="119" law-year="2019" law-art="24" nr="1">
@@ -96,6 +96,7 @@
             <chapter>2</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="félög til almannaheilla með starfsemi yfir landamæri">1</sen>
@@ -107,6 +108,7 @@
             <chapter>2</chapter>
             <art>2</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>4</numart>
             <paragraph>1</paragraph>
             <sen words="erlenda fjárvörslusjóði eða sambærilega aðila">1</sen>
@@ -149,79 +151,79 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Í fyrirtækjaskrá skal skrá eftirfarandi upplýsingar eftir því sem við á:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Heiti.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Kennitölu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Heimilisfang.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Rekstrar- eða félagsform.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Stofndag.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Nafn, lögheimili og kennitölu forráðamanna.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Atvinnugreinarnúmer samkvæmt atvinnugreinaflokkun Hagstofu Íslands.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="8" type="numeric">
+            <paragraph nr="1">
+              <nr-title>8.</nr-title>
+              <sen>Slit félags.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" type="numeric">
+            <paragraph nr="1">
+              <nr-title>9.</nr-title>
+              <sen>Raunverulega eigendur samkvæmt lögum um skráningu raunverulegra eigenda.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="10" type="numeric">
+            <paragraph nr="1">
+              <nr-title>10.</nr-title>
+              <sen>Í tilviki erlendra fjárvörslusjóða og sambærilegra aðila, upplýsingar um fjárvörsluaðila, stofnaðila, ábyrgðaraðila, raunverulegan eiganda eða hóp þeirra og aðra einstaklinga sem hafa yfirráð yfir sjóðnum, samkvæmt lögum um skráningu raunverulegra eigenda, eftir því sem við á.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="11" type="numeric">
+            <paragraph nr="1">
+              <nr-title>11.</nr-title>
+              <sen>Netfang félags og forsvarsmanna.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="12" type="numeric">
+            <paragraph nr="1">
+              <nr-title>12.</nr-title>
+              <sen>Önnur þau atriði sem skylt er að skrá um starfsemi félaga og fyrirtækja samkvæmt lögum eða nauðsynlegt eða hagkvæmt þykir að skrá vegna hagsmuna opinberra aðila eða miðlunar upplýsinga til opinberra aðila, fyrirtækja og almennings.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Heiti.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Kennitölu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Heimilisfang.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Rekstrar- eða félagsform.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Stofndag.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Nafn, lögheimili og kennitölu forráðamanna.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Atvinnugreinarnúmer samkvæmt atvinnugreinaflokkun Hagstofu Íslands.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <paragraph nr="1">
-            <nr-title>8.</nr-title>
-            <sen>Slit félags.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <paragraph nr="1">
-            <nr-title>9.</nr-title>
-            <sen>Raunverulega eigendur samkvæmt lögum um skráningu raunverulegra eigenda.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="10" type="numeric">
-          <paragraph nr="1">
-            <nr-title>10.</nr-title>
-            <sen>Í tilviki erlendra fjárvörslusjóða og sambærilegra aðila, upplýsingar um fjárvörsluaðila, stofnaðila, ábyrgðaraðila, raunverulegan eiganda eða hóp þeirra og aðra einstaklinga sem hafa yfirráð yfir sjóðnum, samkvæmt lögum um skráningu raunverulegra eigenda, eftir því sem við á.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="11" type="numeric">
-          <paragraph nr="1">
-            <nr-title>11.</nr-title>
-            <sen>Netfang félags og forsvarsmanna.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="12" type="numeric">
-          <paragraph nr="1">
-            <nr-title>12.</nr-title>
-            <sen>Önnur þau atriði sem skylt er að skrá um starfsemi félaga og fyrirtækja samkvæmt lögum eða nauðsynlegt eða hagkvæmt þykir að skrá vegna hagsmuna opinberra aðila eða miðlunar upplýsinga til opinberra aðila, fyrirtækja og almennings.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -250,6 +252,7 @@
               <chapter>2</chapter>
               <art>4</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>9</numart>
               <paragraph>1</paragraph>
               <nr-title>1</nr-title>
@@ -258,6 +261,7 @@
               <chapter>2</chapter>
               <art>4</art>
               <subart>1</subart>
+              <paragraph>1</paragraph>
               <numart>11</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -267,6 +271,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>1</subart>
+            <paragraph>1</paragraph>
             <numart>12</numart>
             <paragraph>1</paragraph>
             <nr-title>1</nr-title>
@@ -585,19 +590,19 @@
       <subart nr="1">
         <paragraph nr="1">
           <sen>Ríkisskattstjóri getur lagt stjórnvaldssektir á hvern þann sem brýtur gegn eftirtöldum ákvæðum laga þessara og reglum settum á grundvelli þeirra:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>4. gr. um að veita ríkisskattstjóra upplýsingar eða ef aðili veitir rangar eða villandi upplýsingar og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>7. gr. um að tilkynna ríkisskattstjóra ekki um breytingar er varða skráningu skv. 4. gr.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>4. gr. um að veita ríkisskattstjóra upplýsingar eða ef aðili veitir rangar eða villandi upplýsingar og</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>7. gr. um að tilkynna ríkisskattstjóra ekki um breytingar er varða skráningu skv. 4. gr.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">
@@ -608,67 +613,67 @@
       <subart nr="3">
         <paragraph nr="1">
           <sen>Við ákvörðun sekta samkvæmt ákvæði þessu skal m.a. tekið tillit til allra atvika sem máli skipta, þ.m.t. eftirfarandi:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>alvarleika brots,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>hvað brotið hefur staðið lengi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>ábyrgðar hins brotlega hjá lögaðilanum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>fjárhagsstöðu hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>ávinnings af broti eða taps sem forðað er með broti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>f.</nr-title>
+              <sen>hvort brot hafi leitt til taps þriðja aðila,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>g.</nr-title>
+              <sen>hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>h.</nr-title>
+              <sen>samstarfsvilja hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>i.</nr-title>
+              <sen>fyrri brota og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="j" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>j.</nr-title>
+              <sen>hvort um ítrekað brot er að ræða.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>alvarleika brots,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>hvað brotið hefur staðið lengi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>ábyrgðar hins brotlega hjá lögaðilanum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>fjárhagsstöðu hins brotlega,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>ávinnings af broti eða taps sem forðað er með broti,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="f" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>f.</nr-title>
-            <sen>hvort brot hafi leitt til taps þriðja aðila,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="g" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>g.</nr-title>
-            <sen>hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="h" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>h.</nr-title>
-            <sen>samstarfsvilja hins brotlega,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="i" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>i.</nr-title>
-            <sen>fyrri brota og</sen>
-          </paragraph>
-        </numart>
-        <numart nr="j" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>j.</nr-title>
-            <sen>hvort um ítrekað brot er að ræða.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="4">
         <paragraph nr="1">

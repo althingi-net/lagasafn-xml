@@ -78,49 +78,49 @@
         <paragraph nr="1">
           <sen>Einnig eiga ráðuneytisstjórar þeirra ráðuneyta sem fara með málaflokka skv. 1. mgr. sæti í almannavarna- og öryggismálaráði.</sen>
           <sen>Þá eiga einnig sæti í ráðinu:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Ríkislögreglustjóri, forstjóri Landhelgisgæslu Íslands, forstjóri Fjarskiptastofu, forstjóri Samgöngustofu og forstjóri Vegagerðarinnar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Veðurstofustjóri, brunamálastjóri og forstjóri Umhverfisstofnunar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Landlæknir, sóttvarnalæknir og forstjóri Geislavarna ríkisins.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Orkumálastjóri og forstjóri Landsnets.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Fulltrúi Slysavarnafélagsins Landsbjargar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Fulltrúi Rauða kross Íslands.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Fulltrúi samræmdrar neyðarsvörunar.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Ríkislögreglustjóri, forstjóri Landhelgisgæslu Íslands, forstjóri Fjarskiptastofu, forstjóri Samgöngustofu og forstjóri Vegagerðarinnar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Veðurstofustjóri, brunamálastjóri og forstjóri Umhverfisstofnunar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Landlæknir, sóttvarnalæknir og forstjóri Geislavarna ríkisins.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Orkumálastjóri og forstjóri Landsnets.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Fulltrúi Slysavarnafélagsins Landsbjargar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Fulltrúi Rauða kross Íslands.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Fulltrúi samræmdrar neyðarsvörunar.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="3">
         <paragraph nr="1">
@@ -156,6 +156,7 @@
               <chapter>2</chapter>
               <art>4</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>7</numart>
               <paragraph>1</paragraph>
               <sen>1</sen>
@@ -175,6 +176,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="forstjóri Samgöngustofu og forstjóri Vegagerðarinnar">1</sen>
@@ -183,6 +185,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^Ríkislögreglustjóri, forstjóri Landhelgisgæslu Íslands," after-mark="forstjóri (\[? ?)?Fjarskiptastofu\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?(\[? ?)?forstjóri Samgöngustofu og forstjóri Vegagerðarinnar\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -194,6 +197,7 @@
             <chapter>2</chapter>
             <art>4</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>1</numart>
             <paragraph>1</paragraph>
             <sen words="Fjarskiptastofu">1</sen>
@@ -573,49 +577,49 @@
         <paragraph nr="1">
           <sen>Einstök ráðuneyti og undirstofnanir þeirra skulu, í samvinnu við ríkislögreglustjóra, kanna áfallaþol þess hluta íslensks samfélags sem fellur undir starfssvið þeirra.</sen>
           <sen>Þá skulu einstök ráðuneyti og stofnanir á þeirra vegum, í samvinnu við ríkislögreglustjóra og í samræmi við lög sem um starfssviðið gilda, skipuleggja fyrirhuguð viðbrögð og aðgerðir samkvæmt viðbragðsáætlun þar sem m.a. er fjallað um eftirfarandi þætti:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>Skipulagningu aðgerða.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>Viðbúnað viðbragðsaðila, m.a. liðsafla, þjálfun liðsafla og útbúnað og stjórnsýsluviðbúnað.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>Samgöngur og fjarskipti.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" type="numeric">
+            <paragraph nr="1">
+              <nr-title>4.</nr-title>
+              <sen>Framkvæmd ráðstafana á hættustundu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" type="numeric">
+            <paragraph nr="1">
+              <nr-title>5.</nr-title>
+              <sen>Samhæfingu og stjórn aðgerða viðbragðsaðila og annarra aðila.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" type="numeric">
+            <paragraph nr="1">
+              <nr-title>6.</nr-title>
+              <sen>Áfallahjálp og aðstoð við þolendur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" type="numeric">
+            <paragraph nr="1">
+              <nr-title>7.</nr-title>
+              <sen>Hagvarnir, birgðir og neyðarflutninga til og frá landi.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>Skipulagningu aðgerða.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>Viðbúnað viðbragðsaðila, m.a. liðsafla, þjálfun liðsafla og útbúnað og stjórnsýsluviðbúnað.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>Samgöngur og fjarskipti.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <paragraph nr="1">
-            <nr-title>4.</nr-title>
-            <sen>Framkvæmd ráðstafana á hættustundu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <paragraph nr="1">
-            <nr-title>5.</nr-title>
-            <sen>Samhæfingu og stjórn aðgerða viðbragðsaðila og annarra aðila.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <paragraph nr="1">
-            <nr-title>6.</nr-title>
-            <sen>Áfallahjálp og aðstoð við þolendur.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <paragraph nr="1">
-            <nr-title>7.</nr-title>
-            <sen>Hagvarnir, birgðir og neyðarflutninga til og frá landi.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="2">
         <paragraph nr="1">

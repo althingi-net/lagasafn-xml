@@ -152,38 +152,38 @@
       <subart nr="2">
         <paragraph nr="1">
           <sen>Matvælastofnun skal m.a. annast:</sen>
+          <numart nr="a" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>a.</nr-title>
+              <sen>yfirstjórn og eftirlit með störfum dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>b.</nr-title>
+              <sen>yfirumsjón með öllu er varðar heilbrigðismál dýra, hollustu dýrafóðurs og eftirlit þar að lútandi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>c.</nr-title>
+              <sen>yfirumsjón með heilbrigði sláturdýra, heilbrigðiseftirliti í sláturhúsum og framleiðslu mjólkur auk yfirumsjónar með heilbrigði búfjár og afurða þess,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>d.</nr-title>
+              <sen>yfirumsjón með sjúkdómavörnum dýra, forvörnum, fræðslustarfi varðandi búfjársjúkdóma, innflutningi og útflutningi lifandi dýra, erfðaefnis og búfjárafurða og útgáfu opinberra heilbrigðisvottorða þar að lútandi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" type="alphabet">
+            <paragraph nr="1">
+              <nr-title>e.</nr-title>
+              <sen>skipulagningu, gagnaöflun, sýnatökur, rannsóknir, skýrslugerð og aðrar aðgerðir varðandi dýrasjúkdóma, heilbrigðisskoðun sláturafurða og heilbrigðiseftirlit með framleiðslu mjólkur.</sen>
+              <sen>Stofnunin skal einnig afla upplýsinga um heilbrigðisástand dýra og hollustu dýraafurða í öðrum löndum eftir því sem nauðsyn krefur og sjá um árlega útgáfu heilbrigðisskýrslna.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="a" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>yfirstjórn og eftirlit með störfum dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>yfirumsjón með öllu er varðar heilbrigðismál dýra, hollustu dýrafóðurs og eftirlit þar að lútandi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>yfirumsjón með heilbrigði sláturdýra, heilbrigðiseftirliti í sláturhúsum og framleiðslu mjólkur auk yfirumsjónar með heilbrigði búfjár og afurða þess,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>yfirumsjón með sjúkdómavörnum dýra, forvörnum, fræðslustarfi varðandi búfjársjúkdóma, innflutningi og útflutningi lifandi dýra, erfðaefnis og búfjárafurða og útgáfu opinberra heilbrigðisvottorða þar að lútandi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="e" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>e.</nr-title>
-            <sen>skipulagningu, gagnaöflun, sýnatökur, rannsóknir, skýrslugerð og aðrar aðgerðir varðandi dýrasjúkdóma, heilbrigðisskoðun sláturafurða og heilbrigðiseftirlit með framleiðslu mjólkur.</sen>
-            <sen>Stofnunin skal einnig afla upplýsinga um heilbrigðisástand dýra og hollustu dýraafurða í öðrum löndum eftir því sem nauðsyn krefur og sjá um árlega útgáfu heilbrigðisskýrslna.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="63" nr="1">
@@ -209,6 +209,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen before-mark="^(\[? ?)?yfirstjórn og eftirlit með störfum" after-mark="dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
@@ -217,6 +218,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>e</numart>
             <paragraph>1</paragraph>
             <sen words="skipulagningu, gagnaöflun, sýnatökur, rannsóknir, skýrslugerð og aðrar aðgerðir varðandi dýrasjúkdóma, heilbrigðisskoðun sláturafurða og heilbrigðiseftirlit með framleiðslu mjólkur">1</sen>
@@ -228,6 +230,7 @@
             <chapter>2</chapter>
             <art>5</art>
             <subart>2</subart>
+            <paragraph>1</paragraph>
             <numart>a</numart>
             <paragraph>1</paragraph>
             <sen words="yfirstjórn og eftirlit með störfum dýralækna og annarra heilbrigðisstarfsmanna dýra sem leyfi hafa samkvæmt lögum þessum">1</sen>
@@ -247,6 +250,7 @@
               <chapter>2</chapter>
               <art>5</art>
               <subart>2</subart>
+              <paragraph>1</paragraph>
               <numart>e</numart>
               <paragraph>1</paragraph>
               <sen>2</sen>
@@ -283,25 +287,25 @@
       <subart nr="4">
         <paragraph nr="1">
           <sen>Dýralækni er skylt að tilkynna Matvælastofnun:</sen>
+          <numart nr="1" type="numeric">
+            <paragraph nr="1">
+              <nr-title>1.</nr-title>
+              <sen>þegar hann hyggst hefja dýralæknisstörf og aðsetur starfsemi sinnar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" type="numeric">
+            <paragraph nr="1">
+              <nr-title>2.</nr-title>
+              <sen>flutning aðseturs,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" type="numeric">
+            <paragraph nr="1">
+              <nr-title>3.</nr-title>
+              <sen>starfslok sem dýralæknir.</sen>
+            </paragraph>
+          </numart>
         </paragraph>
-        <numart nr="1" type="numeric">
-          <paragraph nr="1">
-            <nr-title>1.</nr-title>
-            <sen>þegar hann hyggst hefja dýralæknisstörf og aðsetur starfsemi sinnar,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <paragraph nr="1">
-            <nr-title>2.</nr-title>
-            <sen>flutning aðseturs,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <paragraph nr="1">
-            <nr-title>3.</nr-title>
-            <sen>starfslok sem dýralæknir.</sen>
-          </paragraph>
-        </numart>
       </subart>
       <subart nr="5">
         <paragraph nr="1">
