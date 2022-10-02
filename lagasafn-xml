@@ -1184,8 +1184,9 @@ def make_xml(law_num, law_year):
                         # says it's at the beginning, being either 'a' or 1.
                         # In this case, we'll choose the previous `numart` as
                         # the parent, so that this new list will be inside the
-                        # previous one.
-                        parent = prev_numart
+                        # previous one. We append to the last paragraph of
+                        # that parent.
+                        parent = prev_numart.findall('paragraph')[-1]
                     else:
                         # A different list is being handled now, but it's not
                         # starting at the beginning (is neither 'a' nor 1).
@@ -1195,21 +1196,14 @@ def make_xml(law_num, law_year):
                         # of the list we've been working on recently, which is
                         # the same parent as the nodes that came before we
                         # started the sub-list.
-                        parent = prev_numart.getparent().getparent()
-
-                        # When a sub-sub-numart finishes and goes straight up
-                        # two levels immediately, (1, 2, a, b, i, ii, 3, 4...)
-                        # we'll need the parent to actually be the current
-                        # node's grandparent. We'll check this by examining
-                        # whether the current numart number is expected to be
-                        # the next after the parent's number, since that would
-                        # indicate that the parent is really a sibling.
-                        if (
-                            parent is not None and parent.tag == 'numart' and
-                            numart_nr in numart_next_nrs(parent)
-                        ):
-                            parent = parent.getparent()
-
+                        #
+                        # Parent is a `paragraph`, grandparent is another
+                        # `numart`, great-grandparent is the last `paragraph`
+                        # of the "grandparent numart", which is the one we
+                        # want to append to.
+                        #
+                        # Hey, it's simpler than the British monarchy.
+                        parent = prev_numart.getparent().getparent().getparent()
                 else:
                     # This `numart` is simply the next one, so we'll want to
                     # append it to whatever node that the previous `numart`
@@ -1231,12 +1225,20 @@ def make_xml(law_num, law_year):
                 if art_chapter is not None and art_chapter.getparent().tag == 'subart':
                     parent = art_chapter
                 elif subart is not None:
-                    parent = subart
+                    # A numart should belong to the same paragraph as a
+                    # potential sentence explaining what's being listed.
+                    parent = subart.findall('paragraph')[-1]
                 elif art is not None:
+                    # FIXME: Investigate if this ever actually happens and
+                    # explain when it does, or remove this clause.
                     parent = art
                 elif chapter is not None:
+                    # FIXME: Investigate if this ever actually happens and
+                    # explain when it does, or remove this clause.
                     parent = chapter
                 else:
+                    # FIXME: Investigate if this ever actually happens and
+                    # explain when it does, or remove this clause.
                     parent = law
 
             # Figure out the numart's type.
@@ -1435,7 +1437,7 @@ def make_xml(law_num, law_year):
                     if extra_sens_target is None:
                         break
 
-                    # Add the stray paragraphs in the location decided by the
+                    # Add the stray sentences in the location decided by the
                     # user.
                     add_sentences(extra_sens_target, extra_sens)
 

@@ -397,6 +397,18 @@ def generate_legal_reference(input_node, skip_law=False):
                     result += '%s. gr. %s ' % (matches[0], matches[1])
                 else:
                     raise Exception('Parsing of node not implemented')
+        elif node.tag == 'paragraph':
+            # This is a bit out of the ordinary. These paragraphs are
+            # typically not denoted in references, which is why we enclose
+            # them in brackets. However, on occasion we need them to properly
+            # place content coming after `numart`s, and of course they are
+            # needed under-the-hood to pinpoint locations in the XML.
+            #
+            # Also note that when they are referenced in text, they are just
+            # called "málsgr." for Icelandic "málsgreinar". We make the
+            # technical distinction between a `subart` and `paragraph`, but
+            # in human speech, they are called the same thing ("málsgrein").
+            result += '[%s. undirmálsgr.] ' % node.attrib['nr']
         elif node.tag == 'chapter':
             pass
         else:
@@ -464,41 +476,98 @@ def ask_user_about_location(extra_sens, numart):
     # (https://www.althingi.is/lagas/151c/2020105.html).
     possible_locations.append(law)
 
-    # Try to explain the situation to the user.
-    width, height = terminal_width_and_height()
-    print()
-    print('-' * width)
-    print('We have discovered the following text that we are unable to programmatically locate in the XML in:')
-    print()
-    print('Law: %s/%s' % (law.attrib['nr'], law.attrib['year']))
-    print()
-    print('It can be found in: %s' % legal_reference)
-    print('Link: %s' % url)
-    print()
-    print('The text in question is:')
-    print()
-    print('"%s"' % joined_extra_sens)
-    print()
-    print('Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text.');
-    print()
-    print('The options are:')
-    for i, possible_location in enumerate(possible_locations):
-        print(' - %d: %s' % (i+1, generate_legal_reference(possible_location)))
-    print()
-    print(' - 0: Skip (use only when answer cannot be provided)')
+    # This is a hack to avoid having to re-configure the straytextmap every
+    # time we change the XML structure. This is pretty advanced stuff and
+    # requires understanding how the straytextmap is built.
+    #
+    # First, we must create an `old_straytextmap_key`, which is identical to
+    # how the key would have been generated before the XML structure change.
+    #
+    # Then, if that key is found, we record the legal reference, as displayed
+    # to a human. This is important, because it's the only thing that remains
+    # the same before and after an XML structure change. Even then, it's not
+    # even guaranteed, so there may be a bunch of locations that need asking
+    # the user about again.
+    #
+    # The legal reference is then matched against the current options, and
+    # the "response" from the user auto-selected
+    #
+    # IMPORTANT: The section filling out `hack_response` is left with a
+    # False-condition, making it never run, because this is only left here
+    # for reference in case such hacking is required again. Once the XML
+    # structure is finalized, this should (in theory) not be required again.
+    #
+    # For all practical purposes, consider this whole `hack_response` thing
+    # unused, irrelevant code. May it remain so forever.
+    hack_response = None
+    if False and 'paragraph' in numart_xpath:
+        # Try to see if the old version of the key exists, which we may use
+        # to auto-select the new key.
 
-    # Get the user to decide.
-    response = None
-    while response not in range(0, len(possible_locations)+1):
-        try:
-            response = int(input('Select appropriate option: '))
-        except ValueError:
-            # Ignore nonsensical answer and keep asking.
-            pass
+        # Create old version of `numart_xpath`.
+        str_loc = numart_xpath.find('/paragraph')
+        next_slash_loc = numart_xpath.find('/', str_loc+1)
+        old_numart_xpath = numart_xpath[0:str_loc] + numart_xpath[next_slash_loc:]
 
-    # User opted to skip this one.
-    if response == 0:
-        return None
+        # Create the version of the key that would exist before.
+        old_straytextmap_key = '%s/%s:%s:%s' % (
+            law.attrib['nr'],
+            law.attrib['year'],
+            old_numart_xpath,
+            joined_extra_sens
+        )
+
+        # Grab the old legal reference if it exists.
+        if old_straytextmap_key in straytextmap:
+            old_legal_reference = straytextmap[old_straytextmap_key]['legal_reference']
+
+            for i, possible_location in enumerate(possible_locations):
+                legal_reference = generate_legal_reference(possible_location, skip_law=True)
+                if legal_reference == old_legal_reference:
+                    # This is what the user pressed when generating the
+                    # straytextmap, before the XML structure change occurred.
+                    hack_response = i + 1
+
+    if hack_response is not None:
+        # Only if the `hack_response` clause above is used, which is
+        # hopefully never.
+        response = hack_response
+    else:
+        # Try to explain the situation to the user.
+        width, height = terminal_width_and_height()
+        print()
+        print('-' * width)
+        print('We have discovered the following text that we are unable to programmatically locate in the XML in:')
+        print()
+        print('Law: %s/%s' % (law.attrib['nr'], law.attrib['year']))
+        print()
+        print('It can be found in: %s' % legal_reference)
+        print('Link: %s' % url)
+        print()
+        print('The text in question is:')
+        print()
+        print('"%s"' % joined_extra_sens)
+        print()
+        print('Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text.');
+        print()
+        print('The options are:')
+        for i, possible_location in enumerate(possible_locations):
+            print(' - %d: %s' % (i+1, generate_legal_reference(possible_location)))
+        print()
+        print(' - 0: Skip (use only when answer cannot be provided)')
+
+        # Get the user to decide.
+        response = None
+        while response not in range(0, len(possible_locations)+1):
+            try:
+                response = int(input('Select appropriate option: '))
+            except ValueError:
+                # Ignore nonsensical answer and keep asking.
+                pass
+
+        # User opted to skip this one.
+        if response == 0:
+            return None
 
     # Determine the selected node and get its reference.
     selected_node = possible_locations[response-1]

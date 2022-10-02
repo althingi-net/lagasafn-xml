@@ -593,22 +593,29 @@ def separate_sentences(content):
 def add_sentences(target_node, sens):
     '''
     Gracefully adds a bunch of sentences to a target node, enclosing them in
-    a paragraph.
+    a paragraph. If the target node is itself a paragraph, the sentences get
+    added to it, and the already existing paragraph returned instead.
 
     Returns the created paragraph for further use by caller.
     '''
 
-    # Determine the paragraph's number by examining how many already exist in the target node.
-    paragraph_nr = str(len(target_node.findall('paragraph')) + 1)
+    if target_node.tag == 'paragraph':
+        # If target node is a paragraph, then the target and paragraph are
+        # the same thing.
+        paragraph = target_node
+    else:
+        # Construct paragraph, determining its number by examining how many
+        # already exist in the target node.
+        paragraph_nr = str(len(target_node.findall('paragraph')) + 1)
+        paragraph = E('paragraph', {'nr': paragraph_nr})
 
-    # Construct paragraph.
-    paragraph = E('paragraph', {'nr': paragraph_nr})
+        # Append paragraph to given node.
+        target_node.append(paragraph)
 
     # Append sentences to paragraph.
     for sen in sens:
+        # FIXME: We **might** want to add styling information to the first sentence here, indicating that a newline should always come before it. In 2. tölul. 2. mgr. 4. gr. laga nr. 160/2008 (151c), what seems to actually be numeric content and will not be newlined by a parser unless it's in a new paragraph.
         paragraph.append(E('sen', sen))
 
-    # Append paragraph to given node.
-    target_node.append(paragraph)
-
+    # Return paragraph, whether contructed or already existing.
     return paragraph
