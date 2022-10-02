@@ -1387,7 +1387,7 @@ def make_xml(law_num, law_year):
                     paragraph.insert(1, E('name', numart_name))
 
                 # Handle extra paragraphs that we don't know where to place.
-                while begins_with_regular_content(lines.peek()) and '--enable-straytextmap' in settings.options:
+                while begins_with_regular_content(lines.peek()):
 
                     # When regular (text) content immediately follows a
                     # numart, and not a new location like an article,
@@ -2583,7 +2583,6 @@ def usage(exec_name, message=None):
     print(file=stderr)
     print('    --try-broken              Try processing laws known to have failed.', file=stderr)
     print('    --single-thread           Skip multi-processing (mostly for debugging).', file=stderr)
-    print('    --enable-straytextmap     Enable straytextmap feature (still in development)', file=stderr)
     print('    --rebuild-straytextmap    Force the asking of user about stray text following numarts', file=stderr)
     print(file=stderr)
     if message:
@@ -2599,7 +2598,6 @@ def main(argv):
         '--help',
         '--try-broken',
         '--single-thread',
-        '--enable-straytextmap',
         '--rebuild-straytextmap'
     ]
 
