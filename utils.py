@@ -144,6 +144,14 @@ def numart_next_nrs(prev_numart):
             next_numart_nr = '(%s)' % chr(int(ord(numart_to_increment)) + 1)
             expected_numart_nrs.append(next_numart_nr)
 
+        elif prev_numart_nr == 'þ':
+
+            expected_numart_nrs = 'æ'
+
+        elif prev_numart_nr == 'æ':
+
+            expected_numart_nrs = 'ö'
+
         elif prev_numart_nr == 'ö':
 
             # After the last character of the Icelandic alphabet, "ö", the
