@@ -190,6 +190,19 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs = ['ef', 'ff']
 
         else:
+            # If the numart is a range like "a-d", typical for places where
+            # multiple numarts have been deleted, the latter part is what we
+            # go by, since we'll want to expect the next character afterward.
+            #
+            # NOTE: This won't work if the range includes any of the crazy
+            # situations above, like "bb" or "þ". In order to support those
+            # in a range like this, some refactoring is warranted. This check
+            # will have to be placed further above, but we're not doing that
+            # immediately because it's more complicated than what's needed
+            # for now.
+            if '–' in prev_numart_nr:
+                prev_numart_nr = prev_numart_nr[prev_numart_nr.find('–')+1:]
+
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
     return expected_numart_nrs
