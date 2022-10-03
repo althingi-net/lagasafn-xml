@@ -6,7 +6,7 @@
     <num>70</num>
     <original>2018 nr. 70 20. júní</original>
   </num-and-date>
-  <minister-clause>&lt;a href=&quot;http://www.althingi.is//dba-bin/ferill.pl?ltg=148&amp;amp;mnr=339&quot;&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href=&quot;http://www.althingi.is/altext/148/s/0450.html&quot;&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 1. september 2018. &lt;/b&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; samgöngu- og sveitarstjórnarráðherra &lt;/b&gt; eða &lt;b&gt; samgöngu- og sveitarstjórnarráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
+  <minister-clause>&lt;a href=&quot;http://www.althingi.is//dba-bin/ferill.pl?ltg=148&amp;amp;mnr=339&quot;&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href=&quot;http://www.althingi.is/altext/148/s/0450.html&quot;&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 1. september 2018. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href=&quot;/altext/stjt/2022.036.html&quot;&gt; L. 36/2022 &lt;/a&gt; (tóku gildi 1. júlí 2022). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; innviðaráðherra &lt;/b&gt; eða &lt;b&gt; innviðaráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <name>Yfirstjórn.</name>
@@ -35,7 +35,7 @@
     <name>Hlutverk.</name>
     <subart nr="1">
       <paragraph nr="1">
-        <sen>Þjóðskrá Íslands skal með starfsemi sinni gæta upplýsinga um einstaklinga, lögaðila og fasteignir með því að safna, varðveita, uppfæra og miðla þeim upplýsingum á öruggan hátt.</sen>
+        <sen>Þjóðskrá Íslands skal með starfsemi sinni gæta upplýsinga um einstaklinga og lögaðila með því að safna, varðveita, uppfæra og miðla þeim upplýsingum á öruggan hátt.</sen>
         <sen>Þá skal stofnunin stuðla að því að starfsemi hennar þróist í samræmi við þarfir samfélagsins og tækninýjungar.</sen>
       </paragraph>
     </subart>
@@ -51,7 +51,7 @@
         <numart nr="b" type="alphabet">
           <paragraph nr="1">
             <nr-title>b.</nr-title>
-            <sen>Stofnunin sér um fasteignaskrá og tengdar skrár og annast rekstur gagna- og upplýsingakerfa fasteignaskrár og útreikning fasteignamats og brunabótamats samkvæmt lögum sem um þau málefni gilda hverju sinni.</sen>
+            <sen/>
           </paragraph>
         </numart>
         <numart nr="c" type="alphabet">
@@ -117,6 +117,25 @@
         <sen>Ráðherra skal setja á stofn fagráð með fulltrúum stofnunarinnar, hagsmunaaðila og annarra aðila í þeim tilgangi að vera vettvangur samráðs og upplýsingaskipta á fagsviðum stofnunarinnar.</sen>
       </paragraph>
     </subart>
+    <footnotes>
+      <footnote href="https://www.althingi.is/altext/stjt/2022.036.html" law-nr="36" law-year="2022" law-art="10" nr="1">
+        <footnote-sen>L. 36/2022, 10. gr.</footnote-sen>
+        <location type="range">
+          <art>3</art>
+          <subart>1</subart>
+          <paragraph>1</paragraph>
+          <sen words="og lögaðila">1</sen>
+        </location>
+        <location type="deletion">
+          <art>3</art>
+          <subart>2</subart>
+          <paragraph>1</paragraph>
+          <numart>b</numart>
+          <paragraph>1</paragraph>
+          <sen before-mark="^" after-mark="$">1</sen>
+        </location>
+      </footnote>
+    </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
@@ -134,28 +153,10 @@
     <subart nr="1">
       <paragraph nr="1">
         <sen>Þjóðskrá Íslands er heimilt að innheimta þjónustugjöld fyrir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a–d" type="alphabet">
           <paragraph nr="1">
-            <nr-title>a.</nr-title>
-            <sen>aðgang að fasteignamati og kerfi til álagningar fasteignaskatts,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="b" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>b.</nr-title>
-            <sen>aðgang að brunabótamati og kerfi því viðkomandi,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="c" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>c.</nr-title>
-            <sen>skráningu nýrrar fasteignar í fasteignaskrá,</sen>
-          </paragraph>
-        </numart>
-        <numart nr="d" type="alphabet">
-          <paragraph nr="1">
-            <nr-title>d.</nr-title>
-            <sen>aðgang að upplýsingum úr fasteignaskrá og tengdum skrám,</sen>
+            <nr-title>a–d.</nr-title>
+            <sen/>
           </paragraph>
         </numart>
         <numart nr="e" type="alphabet">
@@ -185,7 +186,7 @@
         <numart nr="i" type="alphabet">
           <paragraph nr="1">
             <nr-title>i.</nr-title>
-            <sen>rafrænar fyrirspurnir úr þinglýsingahluta fasteignaskrár,</sen>
+            <sen/>
           </paragraph>
         </numart>
         <numart nr="j" type="alphabet">
@@ -216,6 +217,27 @@
         <sen>Gjaldskráin skal staðfest af ráðherra og birt í B-deild Stjórnartíðinda.</sen>
       </paragraph>
     </subart>
+    <footnotes>
+      <footnote href="https://www.althingi.is/altext/stjt/2022.036.html" law-nr="36" law-year="2022" law-art="11" nr="1">
+        <footnote-sen>L. 36/2022, 11. gr.</footnote-sen>
+        <location type="deletion">
+          <art>5</art>
+          <subart>1</subart>
+          <paragraph>1</paragraph>
+          <numart>a–d</numart>
+          <paragraph>1</paragraph>
+          <sen before-mark="^" after-mark="$">1</sen>
+        </location>
+        <location type="deletion">
+          <art>5</art>
+          <subart>1</subart>
+          <paragraph>1</paragraph>
+          <numart>i</numart>
+          <paragraph>1</paragraph>
+          <sen before-mark="^" after-mark="$">1</sen>
+        </location>
+      </footnote>
+    </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
