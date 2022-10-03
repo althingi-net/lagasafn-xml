@@ -1173,7 +1173,23 @@ def make_xml(law_num, law_year):
                 if special_roman:
                     expected_numart_nrs.remove('i')
 
-                if numart_nr not in expected_numart_nrs:
+                # If the numart number contains a range, something like
+                # "10-13", we'll need to isolate the first bit and match that
+                # with what's expected.
+                if '-' in numart_nr:
+                    first_bit_of_numart = numart_nr[0:numart_nr.find('-')]
+                else:
+                    # Otherwise, we can treat the entire number as the first
+                    # bit, to be matched against.
+                    first_bit_of_numart = numart_nr
+
+                # See if this is the next numart in a predictable succession.
+                if first_bit_of_numart in expected_numart_nrs:
+                    # This `numart` is simply the next one, so we'll want to
+                    # append it to whatever node that the previous `numart`
+                    # was appended to.
+                    parent = prev_numart.getparent()
+                else:
                     if (
                         numart_nr.lower() in ['a', 'i', '—', '–'] or
                         (numart_nr.isdigit() and int(numart_nr) == 1)
@@ -1204,11 +1220,6 @@ def make_xml(law_num, law_year):
                         #
                         # Hey, it's simpler than the British monarchy.
                         parent = prev_numart.getparent().getparent().getparent()
-                else:
-                    # This `numart` is simply the next one, so we'll want to
-                    # append it to whatever node that the previous `numart`
-                    # was appended to.
-                    parent = prev_numart.getparent()
 
             # A parent may already be set above if `numart` currently being
             # handled is not the first one in its parent article/subarticle.
