@@ -294,6 +294,7 @@ def separate_sentences(content):
     # of a sentence, while "o.fl." is extremely unlikely to be followed by a
     # name, but may very well end a sentence.
     recognized_shorts = [
+        'A.m.k.',
         't.d.',
         'þ.m.t.',
         'sbr.',
