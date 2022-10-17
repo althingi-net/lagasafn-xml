@@ -2541,6 +2541,17 @@ def update_index():
     # Index root element.
     index = E('index')
 
+    # A place for statistics and such. These will be turned into XML nodes
+    # later on but are consolidated here for clarity.
+    stats = {
+        'total-count': 0,
+        'empty-count': 0,
+    }
+
+    # Add a place to place the law entries.
+    law_entries = E('law-entries')
+    index.append(law_entries)
+
     # Iterate through all the XML files we have.
     for law_xml_filename in os.listdir(os.path.dirname(XML_FILENAME)):
 
@@ -2563,21 +2574,35 @@ def update_index():
         # Find some basic information for the index.
         name = law.find('name').text
         date = law.find('num-and-date/date').text
+        is_empty = law.getchildren()[-1].tag == 'minister-clause'
 
         # Append the gathered data to the index.
-        law = E('law', {
+        law_entry = E('law-entry', {
+            'identifier': f'{law_nr}/{law_year}',
             'nr': law_nr,
             'year': str(law_year),
             'name': name,
             'date': date,
+            'is-empty': '0' if is_empty else '1'
         })
-        index.append(law)
+        law_entries.append(law_entry)
 
-    # Sort the index by year and number.
-    index[:] = reversed(sorted(
-        index,
+        # Add to stats.
+        stats['total-count'] += 1
+        if is_empty:
+            stats['empty-count'] += 1
+
+    # Sort the law entries by year and number.
+    law_entries[:] = reversed(sorted(
+        law_entries,
         key=lambda law: (law.attrib['year'], law.attrib['nr'])
     ))
+
+    # Insert statistics into XML.
+    node_stats = E('stats')
+    index.insert(0, node_stats)
+    for stat_key in stats.keys():
+        node_stats.append(E(stat_key, str(stats[stat_key])))
 
     write_xml(index, XML_INDEX_FILENAME)
 
