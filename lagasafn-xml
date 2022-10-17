@@ -2342,7 +2342,14 @@ def make_xml(law_num, law_year):
     )
 
 
-def write_xml(xml_doc, filename):
+# FIXME: `skip_prettyprint_hack` is there because we get a bunch of unwelcome
+# newlines into the index that we don't get into the legal XML files
+# themselves. The index is generated just fine when not in DEBUG mode, but
+# then the legal XML files get messed up and vice versa. Until this is
+# resolved, we'll keep the optional parameter `skip_prettyprint_hack` so that
+# we can use it when generating legal XML files, but skip it when generating
+# the index, regardless of what the DEBUG flag says.
+def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
     with open(filename, 'w') as f:
         # Importing a completely different XML library than the one we're
         # using elsewhere in the code is a bit weird, but this is the only one
@@ -2354,7 +2361,7 @@ def write_xml(xml_doc, filename):
         #
         # When not in DEBUG mode, we'll skip those shenanigans and write it
         # out with the same library as the one we use elsewhere.
-        if settings.DEBUG:
+        if settings.DEBUG and not skip_prettyprint_hack:
             import xml.dom.minidom
             xml = xml.dom.minidom.parseString(
                 etree.tostring(
@@ -2604,7 +2611,7 @@ def update_index():
     for stat_key in stats.keys():
         node_stats.append(E(stat_key, str(stats[stat_key])))
 
-    write_xml(index, XML_INDEX_FILENAME)
+    write_xml(index, XML_INDEX_FILENAME, skip_prettyprint_hack=True)
 
     print(' done')
 
