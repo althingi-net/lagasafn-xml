@@ -2578,20 +2578,23 @@ def update_index():
         # Read the XML file's content, from which we'll get a bunch of information for the index.
         law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
 
-        # Find some basic information for the index.
+        # Law-specific info for the index.
         name = law.find('name').text
         date = law.find('num-and-date/date').text
         is_empty = law.getchildren()[-1].tag == 'minister-clause'
 
         # Append the gathered data to the index.
-        law_entry = E('law-entry', {
-            'identifier': f'{law_nr}/{law_year}',
-            'nr': law_nr,
-            'year': str(law_year),
-            'name': name,
-            'date': date,
-            'is-empty': '0' if is_empty else '1'
-        })
+        law_entry = E(
+            'law-entry',
+            {
+                'nr': law_nr,
+                'year': str(law_year),
+                'date': date,
+                'is-empty': '1' if is_empty else '0',
+            },
+            E('identifier', f'{law_nr}/{law_year}'),
+            E('name', name),
+        )
         law_entries.append(law_entry)
 
         # Add to stats.
