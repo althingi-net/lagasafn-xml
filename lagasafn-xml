@@ -2575,7 +2575,8 @@ def update_index():
             # index itself. We'll ignore it.
             continue
 
-        # Read the XML file's content, from which we'll get a bunch of information for the index.
+        # Read the XML file's content, from which we'll get a bunch of
+        # information for the index.
         law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
 
         # Law-specific info for the index.
