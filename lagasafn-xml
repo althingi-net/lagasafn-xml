@@ -2586,13 +2586,11 @@ def update_index():
         is_empty = law.getchildren()[-1].tag == 'minister-clause'
         art_count = len(law.findall('art'))
 
-        # Determine some structural statistics, gathering hints about the
-        # document's overall structure as we go.
+        # Determine some structural statistics.
         chapter_count = len(law.xpath('/law/chapter'))
+        art_count = len(law.xpath('/law/art'))
         if chapter_count > 0:
-            art_count = len(law.xpath('/law/chapter/art'))
-        else:
-            art_count = len(law.xpath('/law/art'))
+            art_count += len(law.xpath('/law/chapter/art'))
 
         # Determine the document's structure from the stats we've found.
         # NOTE: This method of consecutively appending path elements to the
@@ -2601,6 +2599,9 @@ def update_index():
         # chapters, since we will almost certainly run into much more
         # complicated scenarios than those that can be described in such a
         # hierarchical fashion.
+        #
+        # For example, lög nr. 42/1983 (152c) has a chapter for temporary
+        # clauses, but is otherwise without chapters.
         structure = '' # Undetermined
         if chapter_count > 0:
             structure += '/chapter'
