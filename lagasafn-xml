@@ -2580,9 +2580,32 @@ def update_index():
         law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
 
         # Law-specific info for the index.
+        identifier = f'{law_nr}/{law_year}'
         name = law.find('name').text
         date = law.find('num-and-date/date').text
         is_empty = law.getchildren()[-1].tag == 'minister-clause'
+        art_count = len(law.findall('art'))
+
+        # Determine some structural statistics, gathering hints about the
+        # document's overall structure as we go.
+        chapter_count = len(law.xpath('/law/chapter'))
+        if chapter_count > 0:
+            art_count = len(law.xpath('/law/chapter/art'))
+        else:
+            art_count = len(law.xpath('/law/art'))
+
+        # Determine the document's structure from the stats we've found.
+        # NOTE: This method of consecutively appending path elements to the
+        # `chapter_structure` may very well need to be revised when we begin
+        # to support sub-chapters, super-chapters, different kinds of
+        # chapters, since we will almost certainly run into much more
+        # complicated scenarios than those that can be described in such a
+        # hierarchical fashion.
+        structure = '' # Undetermined
+        if chapter_count > 0:
+            structure += '/chapter'
+        if art_count > 0:
+            structure += '/art'
 
         # Append the gathered data to the index.
         law_entry = E(
@@ -2591,10 +2614,16 @@ def update_index():
                 'nr': law_nr,
                 'year': str(law_year),
                 'date': date,
-                'is-empty': '1' if is_empty else '0',
             },
-            E('identifier', f'{law_nr}/{law_year}'),
+            E('identifier', identifier),
             E('name', name),
+            E(
+                'meta',
+                E('is-empty', 'true' if is_empty else 'false'),
+                E('structure', structure),
+                E('chapter-count', str(chapter_count)),
+                E('art-count', str(art_count))
+            )
         )
         law_entries.append(law_entry)
 
