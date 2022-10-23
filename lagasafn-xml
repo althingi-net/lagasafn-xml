@@ -2553,6 +2553,7 @@ def update_index():
     stats = {
         'total-count': 0,
         'empty-count': 0,
+        'non-empty-count': 0,
     }
 
     # Add a place to place the law entries.
@@ -2628,10 +2629,15 @@ def update_index():
         )
         law_entries.append(law_entry)
 
-        # Add to stats.
+        # Add to stats. We are not sure what the rendering client is
+        # interested in, so we'll leave a few variables for convenience, even
+        # if they are easily calculable. The client should not need to
+        # calculate basic things.
         stats['total-count'] += 1
         if is_empty:
             stats['empty-count'] += 1
+        else:
+            stats['non-empty-count'] += 1
 
     # Sort the law entries by year and number.
     law_entries[:] = reversed(sorted(
