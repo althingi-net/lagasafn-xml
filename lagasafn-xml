@@ -728,7 +728,10 @@ def make_xml(law_num, law_year):
             # needs to deal with them when using the XML.
             ambiguous_content = collect_until(lines, '</em>')
 
-            ambiguous_section = E('ambiguous-section', ambiguous_content)
+            # FIXME: Separating the sentences like this incorrectly parses
+            # what should be a `nr-title` as a `sen.`
+            ambiguous_section = E('ambiguous-section')
+            add_sentences(ambiguous_section, separate_sentences(ambiguous_content))
 
             if chapter is not None:
                 chapter.append(ambiguous_section)

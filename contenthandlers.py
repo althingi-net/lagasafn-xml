@@ -164,7 +164,12 @@ def generate_ancestors(elem, parent):
         if ancestor.tag == 'law':
             break
 
-        ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+        # Figure out what the 'nr' attribute would be, if it were defined.
+        if 'nr' in ancestor.attrib:
+            ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+        else:
+            ancestors.insert(0, E(ancestor.tag, str(order_among_siblings(ancestor))))
+
         if ancestor == parent:
             # We're not interested in anything
             # beyond the parent node.
