@@ -100,8 +100,9 @@ ENV/
 # mypy
 .mypy_cache/
 
-# vim swap files
+# Vim files.
 *.swp
+/Session.vim
 
 # VSCode settings.
 /.vscode
