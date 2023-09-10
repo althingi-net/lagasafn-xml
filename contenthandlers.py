@@ -177,7 +177,7 @@ def generate_ancestors(elem, parent):
 
     # If we cannot find a 'nr' attribute, we'll figure it out and still put it in.
     if 'nr' in elem.attrib:
-        ancestors.append(E(elem.tag))
+        ancestors.append(E(elem.tag, str(elem.attrib['nr'])))
     else:
         ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
 
@@ -618,9 +618,11 @@ def add_sentences(target_node, sens):
         # Append paragraph to given node.
         target_node.append(paragraph)
 
-    # Append sentences to paragraph.
+    # Append sentences to paragraph, giving them numbers.
+    sen_nr = 0
     for sen in sens:
-        paragraph.append(E('sen', sen))
+        sen_nr += 1
+        paragraph.append(E.sen(sen, nr=str(sen_nr)))
 
     # Return paragraph, whether contructed or already existing.
     return paragraph
