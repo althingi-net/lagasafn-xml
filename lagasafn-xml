@@ -1378,10 +1378,10 @@ def make_xml(law_num, law_year):
                 nr_title = sens.pop(0)
 
                 # Add the sentences to the new numart, creating paragraph.
-                paragraph = add_sentences(new_numart, sens)
+                add_sentences(new_numart, sens)
 
-                # Insert the `nr-title` in the newly created paragraph.
-                paragraph.insert(0, E('nr-title', nr_title))
+                # Insert the `nr-title` in the newly created `numart`.
+                new_numart.insert(0, E('nr-title', nr_title))
 
                 # Add the new numart to the current numart.
                 numart.append(new_numart)
@@ -1392,13 +1392,13 @@ def make_xml(law_num, law_year):
 
             else:
                 # Add the sentences to the numart.
-                paragraph = add_sentences(numart, sens)
+                add_sentences(numart, sens)
 
-                # Add the title info to the created paragraph.
-                paragraph.insert(0, E('nr-title', numart_nr_title))
+                # Add the title info to the `numart`.
+                numart.insert(0, E('nr-title', numart_nr_title))
                 if numart_name is not None:
                     # Inserted immediately after the `nr-title`, so 1.
-                    paragraph.insert(1, E('name', numart_name))
+                    numart.insert(1, E('name', numart_name))
 
                 # Handle extra paragraphs that we don't know where to place.
                 while begins_with_regular_content(lines.peek()):
@@ -1634,7 +1634,32 @@ def make_xml(law_num, law_year):
                 )
                 nodes_to_kill = []
                 for desc in parent.iterdescendants():
+
                     peek = desc.getnext()
+
+                    # When a closing marker (see the comment for the
+                    # `for`-loop above) appears at the beginning of the node
+                    # following the one with the opening marker, it will
+                    # usually be the next `sen` following a `sen`. It can also
+                    # happen that the closing marker appears in the
+                    # grand-child, so we also need to check for it there.
+                    #
+                    # Consider:
+                    #     <sen>[Some text</sen>
+                    #     <sen>] 2) Some other text</sen>
+                    #
+                    # But this code allows for:
+                    #
+                    #     <nr-title>[a.</nr-title>
+                    #     <paragraph>
+                    #         <sen>] 2) Some other text</sen>
+                    #
+                    # ...by also checking the immediate grand-child of the
+                    # current node.
+                    if peek is not None and peek.tag == "paragraph":
+                        peek_children = peek.getchildren()
+                        if len(peek_children) > 0:
+                            peek = peek_children[0]
 
                     # We have nothing to do here if the following node doesn't
                     # exist or contain anything.
