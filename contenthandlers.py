@@ -607,7 +607,10 @@ def add_sentences(target_node, sens):
 
     if target_node.tag == 'paragraph':
         # If target node is a paragraph, then the target and paragraph are
-        # the same thing.
+        # the same thing. This is to prevent paragraphs inside paragraphs when
+        # a numart is contained within a paragraph, but also has text
+        # following the numart. This happens in 18/2013, 132/2020 and 80/2022
+        # in version 152c.
         paragraph = target_node
     else:
         # Construct paragraph, determining its number by examining how many
