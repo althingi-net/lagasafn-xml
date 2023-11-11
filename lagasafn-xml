@@ -324,8 +324,50 @@ def make_xml(law_num, law_year):
 
         if line == "<h2>":
             # Parse law name.
-            name = E.name(strip_links(collect_until(lines, "</h2>")))
+            law_name = strip_links(collect_until(lines, "</h2>"))
 
+            # Some "laws" are not really laws, per say, but presidential
+            # verdicts or contracts with external entities voted on by
+            # Parliament. The type of law seems only determinable by the name,
+            # so that's what we'll try here.
+            #
+            # For performance reasons, this should be organized so that the
+            # most likely test comes first. For this reason, a few things that
+            # are laws get tested at the bottom instead of with the most
+            # common result at the top.
+            law_type = "undetermined"
+            name_strip = strip_markers(law_name).strip()
+            if name_strip.find("Lög ") == 0 or name_strip[-3:] == "lög":
+                law_type = "law"
+            elif name_strip.find("Forsetaúrskurður ") == 0:
+                law_type = "speaker-verdict"
+            elif name_strip.find("Forsetabréf ") == 0:
+                law_type = "speaker-letter"
+            elif name_strip.find("Auglýsing ") == 0:
+                law_type = "advertisement"
+            elif name_strip.find("Konungsbréf ") == 0:
+                law_type = "royal-letter"
+            elif name_strip.find("Tilskipun") == 0:
+                law_type = "directive"
+            elif name_strip.find("Reglugerð ") == 0:
+                law_type = "regulation"
+            elif name_strip.find("Samningur ") == 0:
+                law_type = "contract"
+            elif name_strip.find("Stjórnarskrá ") == 0:
+                # Glory, glory!
+                law_type = "law"
+            elif name_strip.find("Eldri lög ") == 0:
+                # For 76/1970: Eldri lög um lax- og silungsveiði
+                law_type = "law"
+            elif name_strip.find("Hafnarlög ") == 0:
+                # For 10/1944: Hafnarlög fyrir Siglufjarðarkaupstað
+                law_type = "law"
+            elif name_strip.find("Norsku lög ") == 0:
+                law_type = "law"
+
+            law.attrib["law-type"] = law_type
+
+            name = E.name(law_name)
             law.append(name)
 
             trail.append(name)
