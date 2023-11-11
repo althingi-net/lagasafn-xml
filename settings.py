@@ -1,10 +1,10 @@
-CURRENT_PARLIAMENT_VERSION = '152c'
+CURRENT_PARLIAMENT_VERSION = "152c"
 
 DEBUG = True
 
 # Feature knobs are only intended for incomplete functionality.
 FEATURES = {
-    'PARSE_MARKERS': True,
+    "PARSE_MARKERS": True,
 }
 
 # Contains user-selected options by command line, so that they are available

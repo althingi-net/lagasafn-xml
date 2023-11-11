@@ -5,12 +5,11 @@ import roman
 import settings
 import subprocess
 
-STRAYTEXTMAP_FILENAME = os.path.join('data', 'json-maps', 'straytextmap.json')
+STRAYTEXTMAP_FILENAME = os.path.join("data", "json-maps", "straytextmap.json")
 
 
 class UnexpectedClosingBracketException(Exception):
     def __str__(self):
-
         # We'll try to figure out enough information for the user to be able
         # to locate it in the legal text, so that the problem can be examined,
         # the law manually patched and Parliament notified about the error.
@@ -18,29 +17,28 @@ class UnexpectedClosingBracketException(Exception):
         try:
             node = self.args[0]
         except IndexError:
-            return Exception('LegalFormatException expects an argument')
+            return Exception("LegalFormatException expects an argument")
 
         # Work our way up the node hierarchy to construct a list describing
         # the problem node's lineage.
         trail = [node]
         parent = node.getparent()
-        while parent.tag != 'law':
+        while parent.tag != "law":
             trail.insert(0, parent)
             parent = parent.getparent()
 
         # Construct the error message shown when the Exception is thrown.
-        msg = 'Unexpected closing bracket. Location: '
+        msg = "Unexpected closing bracket. Location: "
         for i, node in enumerate(trail):
-
             # Show arrow between parent/child relationships.
             if i > 0:
-                msg += ' -> '
+                msg += " -> "
 
             # Construct tag description.
-            msg += '[%s' % node.tag
-            if 'nr' in node.attrib:
-                msg += ':%s' % node.attrib['nr']
-            msg += ']'
+            msg += "[%s" % node.tag
+            if "nr" in node.attrib:
+                msg += ":%s" % node.attrib["nr"]
+            msg += "]"
 
         # Append the actual text containing the problem.
         msg += ', in input text "%s"' % node.text
@@ -52,56 +50,58 @@ class UnexpectedClosingBracketException(Exception):
 # the first key, and the legal number as the second key ("123" in "123/2020").
 # Law number typecasted to integer to get canonical order.
 def sorted_law(law_ids):
-    return list(reversed(
-        sorted(
-            law_ids,
-            key=lambda law_id: (
-                law_id[law_id.find('/')+1:],
-                int(law_id[:law_id.find('/')])
+    return list(
+        reversed(
+            sorted(
+                law_ids,
+                key=lambda law_id: (
+                    law_id[law_id.find("/") + 1 :],
+                    int(law_id[: law_id.find("/")]),
+                ),
             )
         )
-    ))
+    )
 
 
 def create_url(law_num, law_year):
-    '''
+    """
     Creates a URL to Alþingi's website from a law_num and law_year. Used for
     development, so don't remove it, even if it's nowhere used in the code.
-    '''
+    """
     fixed_width_law_num = str(law_num)
     while len(fixed_width_law_num) < 3:
-        fixed_width_law_num = '0%s' % fixed_width_law_num
+        fixed_width_law_num = "0%s" % fixed_width_law_num
 
-    base_url = 'https://www.althingi.is/lagas/%s/%s%s.html'
+    base_url = "https://www.althingi.is/lagas/%s/%s%s.html"
     return base_url % (
         settings.CURRENT_PARLIAMENT_VERSION,
         law_year,
-        fixed_width_law_num
+        fixed_width_law_num,
     )
 
 
 def numart_next_nrs(prev_numart):
-    '''
+    """
     Returns a list of expected next numbers from the given prev_numart. For
     example, if the prev_numart's number is "1", then "2" and "1a" are
     expected. If it's "b", then "c" is expected.
-    '''
+    """
 
     matcher = Matcher()
 
-    prev_numart_nr = prev_numart.attrib['nr']
+    prev_numart_nr = prev_numart.attrib["nr"]
     expected_numart_nrs = []
-    if prev_numart.attrib['type'] == 'numeric':
+    if prev_numart.attrib["type"] == "numeric":
         if prev_numart_nr.isdigit():
             # If the whole thing is numerical, we may expect either the next
             # numerical number (i.e. a 10 after a 9), or a numart with a
             # numerical and alphabetic component (i.e. 9a following a 9).
             expected_numart_nrs = [
                 str(int(prev_numart_nr) + 1),
-                str(int(prev_numart_nr)) + 'a',
+                str(int(prev_numart_nr)) + "a",
             ]
 
-        elif matcher.check(prev_numart_nr, r'(\d+)-(\d+)'):
+        elif matcher.check(prev_numart_nr, r"(\d+)-(\d+)"):
             # Numarts may be ranges, (see 145. gr. laga nr. 108/2007), in
             # which case we only need to concern ourselves with the latter
             # number to determine the expected values.
@@ -110,7 +110,7 @@ def numart_next_nrs(prev_numart):
 
             expected_numart_nrs = [
                 str(int(to_numart_nr) + 1),
-                str(int(to_numart_nr)) + 'a',
+                str(int(to_numart_nr)) + "a",
             ]
 
         else:
@@ -119,17 +119,17 @@ def numart_next_nrs(prev_numart):
             # (f.e. 9a). In these cases we'll expect either the next number
             # (10 following 9a) or the same number with the next alphabetic
             # character (9b following 9a).
-            alpha_component = prev_numart_nr.strip('0123456789')
-            num_component = int(prev_numart_nr.replace(alpha_component, ''))
+            alpha_component = prev_numart_nr.strip("0123456789")
+            num_component = int(prev_numart_nr.replace(alpha_component, ""))
 
             expected_numart_nrs = [
                 str(num_component + 1),
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
 
-    elif prev_numart.attrib['type'] == 'en-dash':
-        expected_numart_nrs += ['—', '–']
-    elif prev_numart.attrib['type'] == 'roman':
+    elif prev_numart.attrib["type"] == "en-dash":
+        expected_numart_nrs += ["—", "–"]
+    elif prev_numart.attrib["type"] == "roman":
         new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
         if prev_numart_nr.islower():
             new_roman = new_roman.lower()
@@ -139,25 +139,21 @@ def numart_next_nrs(prev_numart):
         # Check if an alphabetic numart is surrounded by "(" and ")". Only
         # known to happen in 19/1996, which seems to be, in fact, an
         # international agreement and not a law.
-        if prev_numart_nr[0] == '(' and prev_numart_nr[-1] == ')':
+        if prev_numart_nr[0] == "(" and prev_numart_nr[-1] == ")":
             numart_to_increment = prev_numart_nr[1:-1]
-            next_numart_nr = '(%s)' % chr(int(ord(numart_to_increment)) + 1)
+            next_numart_nr = "(%s)" % chr(int(ord(numart_to_increment)) + 1)
             expected_numart_nrs.append(next_numart_nr)
 
-        elif prev_numart_nr == 'z':
+        elif prev_numart_nr == "z":
+            expected_numart_nrs = "þ"
 
-            expected_numart_nrs = 'þ'
+        elif prev_numart_nr == "þ":
+            expected_numart_nrs = "æ"
 
-        elif prev_numart_nr == 'þ':
+        elif prev_numart_nr == "æ":
+            expected_numart_nrs = "ö"
 
-            expected_numart_nrs = 'æ'
-
-        elif prev_numart_nr == 'æ':
-
-            expected_numart_nrs = 'ö'
-
-        elif prev_numart_nr == 'ö':
-
+        elif prev_numart_nr == "ö":
             # After the last character of the Icelandic alphabet, "ö", the
             # numart can be continued by using two letters, "aa", "ab", "ac"
             # and so forth. This is hard-coded for now but should be
@@ -165,10 +161,9 @@ def numart_next_nrs(prev_numart):
             #
             # TODO: Implement this logic logically instead of hard-coding.
 
-            expected_numart_nrs = ['aa']
+            expected_numart_nrs = ["aa"]
 
-        elif prev_numart_nr == 'aa':
-
+        elif prev_numart_nr == "aa":
             # Presumably by mistake, in 43. gr. laga nr. 55/2009, the numart
             # "aa" is followed by "bb" instead of "ab".
             #
@@ -183,15 +178,15 @@ def numart_next_nrs(prev_numart):
             # wrong and the proper method is just to double the length of the
             # same string with the same letter.
 
-            expected_numart_nrs = ['ab', 'bb']
-        elif prev_numart_nr == 'bb':
-            expected_numart_nrs = ['bc', 'cc']
-        elif prev_numart_nr == 'cc':
-            expected_numart_nrs = ['cd', 'dd']
-        elif prev_numart_nr == 'dd':
-            expected_numart_nrs = ['de', 'ee']
-        elif prev_numart_nr == 'ee':
-            expected_numart_nrs = ['ef', 'ff']
+            expected_numart_nrs = ["ab", "bb"]
+        elif prev_numart_nr == "bb":
+            expected_numart_nrs = ["bc", "cc"]
+        elif prev_numart_nr == "cc":
+            expected_numart_nrs = ["cd", "dd"]
+        elif prev_numart_nr == "dd":
+            expected_numart_nrs = ["de", "ee"]
+        elif prev_numart_nr == "ee":
+            expected_numart_nrs = ["ef", "ff"]
 
         else:
             # If the numart is a range like "a-d", typical for places where
@@ -204,8 +199,8 @@ def numart_next_nrs(prev_numart):
             # will have to be placed further above, but we're not doing that
             # immediately because it's more complicated than what's needed
             # for now.
-            if '–' in prev_numart_nr:
-                prev_numart_nr = prev_numart_nr[prev_numart_nr.find('–')+1:]
+            if "–" in prev_numart_nr:
+                prev_numart_nr = prev_numart_nr[prev_numart_nr.find("–") + 1 :]
 
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -213,7 +208,7 @@ def numart_next_nrs(prev_numart):
 
 
 def determine_month(month_string):
-    '''
+    """
     Takes a human-readable, Icelandic month name and returns its corresponding
     number in the year. January ("janúar") is 1 and December ("desember") is
     12. The reason for hand-rolling this function instead of using something
@@ -230,7 +225,7 @@ def determine_month(month_string):
 
     Last but not least, this is simply much simpler than doing this through
     locale libraries, both in terms of readability and performance.
-    '''
+    """
 
     # We know of one instance where the year gets re-added at the end, in
     # version 148c. We'll deal with this by replacing that known string with
@@ -238,21 +233,21 @@ def determine_month(month_string):
     # removed, but will still be harmless. -2019-01-02
     # String: 2003 nr. 7 11. febrúar 2003
     # UR: https://www.althingi.is/lagas/nuna/2003007.html
-    month_string = month_string.replace('febrúar 2003', 'febrúar')
+    month_string = month_string.replace("febrúar 2003", "febrúar")
 
     months = [
-        'janúar',
-        'febrúar',
-        'mars',
-        'apríl',
-        'maí',
-        'júní',
-        'júlí',
-        'ágúst',
-        'september',
-        'október',
-        'nóvember',
-        'desember',
+        "janúar",
+        "febrúar",
+        "mars",
+        "apríl",
+        "maí",
+        "júní",
+        "júlí",
+        "ágúst",
+        "september",
+        "október",
+        "nóvember",
+        "desember",
     ]
 
     return months.index(month_string) + 1
@@ -269,15 +264,15 @@ def is_roman(goo):
 
 
 def terminal_width_and_height():
-    height, width = [int(v) for v in subprocess.check_output(['stty', 'size']).split()]
+    height, width = [int(v) for v in subprocess.check_output(["stty", "size"]).split()]
     return width, height
 
 
 def strip_links(text):
-    '''
+    """
     Strips links from text. Also strips trailing whitespace after the link,
     because there is always a newline and a tab after the links in our input.
-    '''
+    """
 
     # There is an occasional link that we would like to preserve. So far, they
     # can identified by their content containing the special character "…",
@@ -287,18 +282,18 @@ def strip_links(text):
     # being, they are left as HTML-encoded text and not actual XML (until the
     # aforementioned XML post-processing takes place).
 
-    regex = r'<a [^>]*?>\s*([^…]*?)\s*</a>\s*'
-    text = re.sub(regex, r'\1', text)
+    regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>\s*"
+    text = re.sub(regex, r"\1", text)
 
     return text
 
 
 def order_among_siblings(elem):
-    '''
+    """
     Returns the order of the given element among its siblings. For example, if
     there are three <doodoo> elements in a row, and you call this function
     with the second one, it will return 2.
-    '''
+    """
 
     result = None
 
@@ -311,19 +306,18 @@ def order_among_siblings(elem):
 
 
 def xml_lists_identical(one, two):
-    '''
+    """
     Takes two lists of XML nodes and checks whether they have the same
     tagnames, texts (values) and attributes. Does not check subnodes.
-    '''
+    """
 
     if type(one) is not list or type(two) is not list:
-        raise TypeError('xml_lists_identical takes exactly two lists')
+        raise TypeError("xml_lists_identical takes exactly two lists")
 
     if len(one) != len(two):
         return False
 
     for i, node in enumerate(one):
-
         if two[i].tag != node.tag:
             return False
         if two[i].text != node.text:
@@ -335,20 +329,20 @@ def xml_lists_identical(one, two):
 
 
 def generate_url(input_node):
-    '''
+    """
     Takes an XML node and returns its URL, or the closest thing we have.
     There is a certain limit to how precise we want to make the URL, both
     because it's not necessarily useful for the user to go deeper than into
     the relevant article, but also because with numarts and such, the anchors
     in the HTML tend to become both unreliable and unpredictable.
-    '''
+    """
     article_nr = None
 
     node = input_node
-    while node.tag != 'law':
-        if node.tag == 'art':
+    while node.tag != "law":
+        if node.tag == "art":
             # If the article is denoted in Roman numerals, it will be upper-case in the URL.
-            article_nr = node.attrib['nr'].upper()
+            article_nr = node.attrib["nr"].upper()
 
         node = node.getparent()
 
@@ -357,26 +351,26 @@ def generate_url(input_node):
     #########################################################
 
     # Make sure that the law number is always exactly three digits.
-    law_nr = str(node.attrib['nr'])
+    law_nr = str(node.attrib["nr"])
     while len(law_nr) < 3:
-        law_nr = '0%s' % law_nr
+        law_nr = "0%s" % law_nr
 
-    url = 'https://www.althingi.is/lagas/%s/%s%s.html#G%s' % (
+    url = "https://www.althingi.is/lagas/%s/%s%s.html#G%s" % (
         settings.CURRENT_PARLIAMENT_VERSION,
-        node.attrib['year'],
+        node.attrib["year"],
         law_nr,
-        article_nr
+        article_nr,
     )
 
     return url
 
 
 def generate_legal_reference(input_node, skip_law=False):
-    '''
+    """
     Takes an XML node and returns a string representing the formal way of
     referring to the same location in the legal codex.
-    '''
-    result = ''
+    """
+    result = ""
     node = input_node
     matcher = Matcher()
 
@@ -384,37 +378,37 @@ def generate_legal_reference(input_node, skip_law=False):
     # we'll return the legal reference to the law itself (in the nominative
     # case), regardless of whether `skip_law` was true or not, since
     # otherwise we return nothing and that's not useful.
-    if node.tag == 'law':
-        return 'lög nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
+    if node.tag == "law":
+        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
 
-    while node.tag != 'law':
-        if node.tag == 'numart':
-            if node.attrib['type'] == 'alphabet':
-                result += '%s-stafl. ' % node.attrib['nr']
-            elif node.attrib['type'] in ['numeric', 'roman']:
-                result += '%s. tölul. ' % node.attrib['nr']
-            elif node.attrib['type'] == 'en-dash':
-                result += '%s. pkt. ' % node.attrib['nr']
+    while node.tag != "law":
+        if node.tag == "numart":
+            if node.attrib["type"] == "alphabet":
+                result += "%s-stafl. " % node.attrib["nr"]
+            elif node.attrib["type"] in ["numeric", "roman"]:
+                result += "%s. tölul. " % node.attrib["nr"]
+            elif node.attrib["type"] == "en-dash":
+                result += "%s. pkt. " % node.attrib["nr"]
             else:
-                raise Exception('Parsing of node not implemented')
-        elif node.tag == 'art-chapter':
+                raise Exception("Parsing of node not implemented")
+        elif node.tag == "art-chapter":
             # Nominative case if first in line, otherwise genitive.
             if not result:
-                result += '%s-liður ' % node.attrib['nr']
+                result += "%s-liður " % node.attrib["nr"]
             else:
-                result += '%s-liðar ' % node.attrib['nr']
-        elif node.tag == 'subart':
-            result += '%s. málsgr. ' % node.attrib['nr']
-        elif node.tag == 'art':
-            if node.attrib['nr'].isdigit():
-                result += '%s. gr. ' % node.attrib['nr']
+                result += "%s-liðar " % node.attrib["nr"]
+        elif node.tag == "subart":
+            result += "%s. málsgr. " % node.attrib["nr"]
+        elif node.tag == "art":
+            if node.attrib["nr"].isdigit():
+                result += "%s. gr. " % node.attrib["nr"]
             else:
-                if matcher.check(node.attrib['nr'], r'(\d+)(.+)'):
+                if matcher.check(node.attrib["nr"], r"(\d+)(.+)"):
                     matches = matcher.result()
-                    result += '%s. gr. %s ' % (matches[0], matches[1])
+                    result += "%s. gr. %s " % (matches[0], matches[1])
                 else:
-                    raise Exception('Parsing of node not implemented')
-        elif node.tag == 'paragraph':
+                    raise Exception("Parsing of node not implemented")
+        elif node.tag == "paragraph":
             # This is a bit out of the ordinary. These paragraphs are
             # typically not denoted in references, which is why we enclose
             # them in brackets. However, on occasion we need them to properly
@@ -425,11 +419,11 @@ def generate_legal_reference(input_node, skip_law=False):
             # called "málsgr." for Icelandic "málsgreinar". We make the
             # technical distinction between a `subart` and `paragraph`, but
             # in human speech, they are called the same thing ("málsgrein").
-            result += '[%s. undirmálsgr.] ' % node.attrib['nr']
-        elif node.tag == 'chapter':
+            result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+        elif node.tag == "chapter":
             pass
         else:
-            raise Exception('Parsing of node not implemented')
+            raise Exception("Parsing of node not implemented")
 
         node = node.getparent()
 
@@ -439,7 +433,7 @@ def generate_legal_reference(input_node, skip_law=False):
 
     # Add the reference to the law if requested.
     if not skip_law:
-        result += 'laga nr. %s/%s' % (node.attrib['nr'], node.attrib['year'])
+        result += "laga nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
 
     return result
 
@@ -451,25 +445,28 @@ def ask_user_about_location(extra_sens, numart):
     url = generate_url(numart)
 
     # Calculated values that we'll have to use more than once.
-    joined_extra_sens = ' '.join(extra_sens)
+    joined_extra_sens = " ".join(extra_sens)
     numart_xpath = numart.getroottree().getpath(numart)
     law = numart.getroottree().getroot()
 
     # Open the straytext map.
-    with open(STRAYTEXTMAP_FILENAME, 'r') as f:
+    with open(STRAYTEXTMAP_FILENAME, "r") as f:
         straytextmap = json.load(f)
 
     # Construct the straytext map key. It must be quite detailed because we
     # may have multiple instances of the same text, even in the same document.
-    straytextmap_key = '%s/%s:%s:%s' % (
-        law.attrib['nr'],
-        law.attrib['year'],
+    straytextmap_key = "%s/%s:%s:%s" % (
+        law.attrib["nr"],
+        law.attrib["year"],
         numart_xpath,
-        joined_extra_sens
+        joined_extra_sens,
     )
 
     # Check if the straytext map already has our answer.
-    if '--rebuild-straytextmap' not in settings.options and straytextmap_key in straytextmap:
+    if (
+        "--rebuild-straytextmap" not in settings.options
+        and straytextmap_key in straytextmap
+    ):
         # Okay, we have an entry for this text.
         entry = straytextmap[straytextmap_key]
 
@@ -477,14 +474,17 @@ def ask_user_about_location(extra_sens, numart):
         # reference. If so, we can be confident that the location is correct,
         # even if the law has changed somewhat. This will break if the text
         # gets moved about, but then the user will simply be asked again.
-        destination_node = law.xpath(entry['xpath'])[0]
-        if generate_legal_reference(destination_node, skip_law=True) == entry['legal_reference']:
+        destination_node = law.xpath(entry["xpath"])[0]
+        if (
+            generate_legal_reference(destination_node, skip_law=True)
+            == entry["legal_reference"]
+        ):
             return destination_node
 
     # Figure out the possible locations to which the text might belong.
     possible_locations = []
     node = numart
-    while node.getparent().tag != 'law':
+    while node.getparent().tag != "law":
         possible_locations.append(node)
         node = node.getparent()
 
@@ -517,29 +517,31 @@ def ask_user_about_location(extra_sens, numart):
     # For all practical purposes, consider this whole `hack_response` thing
     # unused, irrelevant code. May it remain so forever.
     hack_response = None
-    if False and 'paragraph' in numart_xpath:
+    if False and "paragraph" in numart_xpath:
         # Try to see if the old version of the key exists, which we may use
         # to auto-select the new key.
 
         # Create old version of `numart_xpath`.
-        str_loc = numart_xpath.find('/paragraph')
-        next_slash_loc = numart_xpath.find('/', str_loc+1)
+        str_loc = numart_xpath.find("/paragraph")
+        next_slash_loc = numart_xpath.find("/", str_loc + 1)
         old_numart_xpath = numart_xpath[0:str_loc] + numart_xpath[next_slash_loc:]
 
         # Create the version of the key that would exist before.
-        old_straytextmap_key = '%s/%s:%s:%s' % (
-            law.attrib['nr'],
-            law.attrib['year'],
+        old_straytextmap_key = "%s/%s:%s:%s" % (
+            law.attrib["nr"],
+            law.attrib["year"],
             old_numart_xpath,
-            joined_extra_sens
+            joined_extra_sens,
         )
 
         # Grab the old legal reference if it exists.
         if old_straytextmap_key in straytextmap:
-            old_legal_reference = straytextmap[old_straytextmap_key]['legal_reference']
+            old_legal_reference = straytextmap[old_straytextmap_key]["legal_reference"]
 
             for i, possible_location in enumerate(possible_locations):
-                legal_reference = generate_legal_reference(possible_location, skip_law=True)
+                legal_reference = generate_legal_reference(
+                    possible_location, skip_law=True
+                )
                 if legal_reference == old_legal_reference:
                     # This is what the user pressed when generating the
                     # straytextmap, before the XML structure change occurred.
@@ -553,31 +555,35 @@ def ask_user_about_location(extra_sens, numart):
         # Try to explain the situation to the user.
         width, height = terminal_width_and_height()
         print()
-        print('-' * width)
-        print('We have discovered the following text that we are unable to programmatically locate in the XML in:')
+        print("-" * width)
+        print(
+            "We have discovered the following text that we are unable to programmatically locate in the XML in:"
+        )
         print()
-        print('Law: %s/%s' % (law.attrib['nr'], law.attrib['year']))
+        print("Law: %s/%s" % (law.attrib["nr"], law.attrib["year"]))
         print()
-        print('It can be found in: %s' % legal_reference)
-        print('Link: %s' % url)
+        print("It can be found in: %s" % legal_reference)
+        print("Link: %s" % url)
         print()
-        print('The text in question is:')
+        print("The text in question is:")
         print()
         print('"%s"' % joined_extra_sens)
         print()
-        print('Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text.');
+        print(
+            "Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text."
+        )
         print()
-        print('The options are:')
+        print("The options are:")
         for i, possible_location in enumerate(possible_locations):
-            print(' - %d: %s' % (i+1, generate_legal_reference(possible_location)))
+            print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location)))
         print()
-        print(' - 0: Skip (use only when answer cannot be provided)')
+        print(" - 0: Skip (use only when answer cannot be provided)")
 
         # Get the user to decide.
         response = None
-        while response not in range(0, len(possible_locations)+1):
+        while response not in range(0, len(possible_locations) + 1):
             try:
-                response = int(input('Select appropriate option: '))
+                response = int(input("Select appropriate option: "))
             except ValueError:
                 # Ignore nonsensical answer and keep asking.
                 pass
@@ -587,19 +593,21 @@ def ask_user_about_location(extra_sens, numart):
             return None
 
     # Determine the selected node and get its reference.
-    selected_node = possible_locations[response-1]
-    selected_node_legal_reference = generate_legal_reference(selected_node, skip_law=True)
+    selected_node = possible_locations[response - 1]
+    selected_node_legal_reference = generate_legal_reference(
+        selected_node, skip_law=True
+    )
 
     # Tell the user what they selected.
-    print('Selected location: %s' % selected_node_legal_reference)
+    print("Selected location: %s" % selected_node_legal_reference)
 
     # Write this down in our straytextmap for later consultation, using the
     # sentences as a key to location information.
     straytextmap[straytextmap_key] = {
-        'xpath': selected_node.getroottree().getpath(selected_node),
-        'legal_reference': selected_node_legal_reference,
+        "xpath": selected_node.getroottree().getpath(selected_node),
+        "legal_reference": selected_node_legal_reference,
     }
-    with open(STRAYTEXTMAP_FILENAME, 'w') as f:
+    with open(STRAYTEXTMAP_FILENAME, "w") as f:
         json.dump(straytextmap, f)
 
     return selected_node
@@ -609,7 +617,7 @@ def ask_user_about_location(extra_sens, numart):
 # don't get with a regular Python iterator. Note that this thing is
 # incompatible with yields and is NOT a subclass of `iter` (since that's not
 # possible), but rather a class trying its best to masquerade as one.
-class super_iter():
+class super_iter:
     def __init__(self, collection):
         self.collection = collection
         self.index = 0
@@ -640,8 +648,8 @@ class super_iter():
         return self.collection[peek_index]
 
 
-class Matcher():
-    '''
+class Matcher:
+    """
     A helper class to be able to check if a regex matches in an if-statement,
     but then process the results in its body, if there's a match. This is
     essentially to make up for Python's (consciously decided) inability to
@@ -652,7 +660,7 @@ class Matcher():
 
     if matcher.check(line, r'<tag goo="(\d+)" splah="(\d+)">'):  # noqa
         goo, splah = matcher.result()
-    '''
+    """
 
     match = None
 
@@ -664,8 +672,8 @@ class Matcher():
         return self.match.groups()
 
 
-class Trail():
-    '''
+class Trail:
+    """
     A helper class for keeping track of what has been added lately to the XML
     being processed at any given point in time. Used to determine the context
     of what is currently being processed.
@@ -679,36 +687,36 @@ class Trail():
 
         if Trail.last().tag == 'art':
             Trail.last().append(some_thing)
-    '''
+    """
 
     def __init__(self):
         self.milestones = []
         self.nodes = []
 
     def set_milestone(self, milestone):
-        '''
+        """
         May be used to set a milestone that can then be checked to see later
         if it has been reached. For example, 'intro-finished' is a milestone
         that tells us whether we have finished the intro or not.
-        '''
+        """
         self.milestones.append(milestone)
 
     def milestone_reached(self, milestone):
-        '''
+        """
         Check to see if the provided milestone has been reached.
-        '''
+        """
         return milestone in self.milestones
 
     def append(self, appended_node):
-        '''
+        """
         Appends a given node to the trail.
-        '''
+        """
 
         self.nodes.append(appended_node)
 
     def last(self):
-        '''
+        """
         Gets the last node appended.
-        '''
+        """
 
         return self.nodes[-1]

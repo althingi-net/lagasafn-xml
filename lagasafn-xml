@@ -47,16 +47,24 @@ from utils import super_iter
 from utils import terminal_width_and_height
 from utils import xml_lists_identical
 
-DATA_DIR = 'data'
+DATA_DIR = "data"
 
-LAW_FILENAME = os.path.join(DATA_DIR, 'original', settings.CURRENT_PARLIAMENT_VERSION, '%d%s.html')  # % (law_year, law_num)
-CLEAN_FILENAME = os.path.join(DATA_DIR, 'cleaned', '%d-%d.html')  # % (law_year, law_num)
-PATCHED_FILENAME = os.path.join(DATA_DIR, 'patched', '%d-%d.html')  # % (law_year, law_num)
-PATCH_FILENAME = os.path.join(DATA_DIR, 'patches', settings.CURRENT_PARLIAMENT_VERSION, '%d-%d.html.patch')  # % (law_year, law_num)
-XML_FILENAME = os.path.join(DATA_DIR, 'xml', '%d.%s.xml')  # % (law_year, law_num)
-XML_INDEX_FILENAME = os.path.join(DATA_DIR, 'xml', 'index.xml')
+LAW_FILENAME = os.path.join(
+    DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
+)  # % (law_year, law_num)
+CLEAN_FILENAME = os.path.join(
+    DATA_DIR, "cleaned", "%d-%d.html"
+)  # % (law_year, law_num)
+PATCHED_FILENAME = os.path.join(
+    DATA_DIR, "patched", "%d-%d.html"
+)  # % (law_year, law_num)
+PATCH_FILENAME = os.path.join(
+    DATA_DIR, "patches", settings.CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
+)  # % (law_year, law_num)
+XML_FILENAME = os.path.join(DATA_DIR, "xml", "%d.%s.xml")  # % (law_year, law_num)
+XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", "index.xml")
 
-ERRORMAP_FILENAME = os.path.join('data', 'json-maps', 'errormap.json')
+ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
 
 
 def clean_content(content):
@@ -65,15 +73,15 @@ def clean_content(content):
     # content = content.decode('ISO-8859-1')
 
     # Make sure that horizontal bar tags are closed properly.
-    #content = content.replace('<hr>', '<hr />')
+    # content = content.replace('<hr>', '<hr />')
 
     # Make sure that linebreak tags are closed properly.
-    #content = content.replace('<br>', '<br />')
+    # content = content.replace('<br>', '<br />')
 
-    if not settings.FEATURES['PARSE_MARKERS']:
+    if not settings.FEATURES["PARSE_MARKERS"]:
         # Remove markers for previous changes and removed content.
-        content = content.replace('[', '').replace(']', '')
-        content = content.replace('…', '').replace('&hellip;', '')
+        content = content.replace("[", "").replace("]", "")
+        content = content.replace("…", "").replace("&hellip;", "")
 
     # Remove links to website
     # strings_to_remove = (
@@ -84,8 +92,8 @@ def clean_content(content):
     #     content = content.replace(s, '')
 
     # Make sure that image tags are closed properly.
-    #e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
-    #content = e.sub(r'<img \1 />', content)
+    # e = re.compile(r'<img ([^>]*)>', re.IGNORECASE)
+    # content = e.sub(r'<img \1 />', content)
 
     # Remove superscript/subscript when ratios are presented in the form of
     # divisions. For example, "3/4" tends to be stylized with a superscripted
@@ -95,11 +103,11 @@ def clean_content(content):
     e = re.compile(
         r'<sup style="font-size:60%">(\d+)</sup>/<span style="font-size:60%">(\d+)</span>'
     )
-    content = e.sub(r'\1/\2', content)
+    content = e.sub(r"\1/\2", content)
 
     # Remove <a id=""> tags which are unclosed and seem without purpose.
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
-    #content = content.replace('<a id="">', '')
+    # content = content.replace('<a id="">', '')
 
     # Remove links to other laws. These are not useful in their current state.
     # Rather, references to other laws, such as "laga nr. XX/XXXX" or "lög nr.
@@ -107,27 +115,27 @@ def clean_content(content):
     # has not been implemented at the time of this writing. Remove this
     # comment when it has been. 2021-06-25)
     e = re.compile(r'<a href="\d{7}.html">(.*?)</a>')
-    content = e.sub(r'\1', content)
+    content = e.sub(r"\1", content)
 
     # Fix inconsistent deletion markers.
     # TODO: This only occurs in 160/2010 and should be removed once it has
     # been fixed in the data.
-    e = re.compile(r'&hellip;<sup>(\d+)\)</sup>')
+    e = re.compile(r"&hellip;<sup>(\d+)\)</sup>")
     content = e.sub(r'&hellip;<sup style="font-size:60%">\1)</sup>', content)
 
     # Find the law content and exit if it does not exist
-    soup_law = BeautifulSoup(content, 'html5lib').find('html')
+    soup_law = BeautifulSoup(content, "html5lib").find("html")
     if soup_law is None:
         return None
 
-    soup = BeautifulSoup(soup_law.__str__(), 'html5lib')  # Parse the law content
+    soup = BeautifulSoup(soup_law.__str__(), "html5lib")  # Parse the law content
 
-    if not settings.FEATURES['PARSE_MARKERS']:
+    if not settings.FEATURES["PARSE_MARKERS"]:
         # Remove superscripts indicating previous change. Only removes them when
         # they are found outside of footnotes.
-        superscripts = soup.find_all('sup')
+        superscripts = soup.find_all("sup")
         for s in superscripts:
-            if s.parent.name != 'small' and re.match(r'^\d{1,3}\)$', s.text):
+            if s.parent.name != "small" and re.match(r"^\d{1,3}\)$", s.text):
                 s.extract()
 
     # Remove tags entirely irrelevant to content
@@ -136,11 +144,13 @@ def clean_content(content):
     #     [s.extract() for s in soup(target_tag)]
 
     # Remove empty tags, but only if they're empty
-    empty_tags_to_remove = ['p', 'h2', 'i']
+    empty_tags_to_remove = ["p", "h2", "i"]
     for target_tag in empty_tags_to_remove:
-        empty_tags = soup.find_all(lambda tag: tag.name == target_tag and not tag.contents and (
-            tag.string is None or not tag.string.strip()
-        ))
+        empty_tags = soup.find_all(
+            lambda tag: tag.name == target_tag
+            and not tag.contents
+            and (tag.string is None or not tag.string.strip())
+        )
         [empty_tag.extract() for empty_tag in empty_tags]
 
     # Keep consecutive <br />s only at 2 at most.
@@ -148,9 +158,9 @@ def clean_content(content):
     # (indicating a new paragraph). It does not seem to damage the XML and
     # there is no record of why this was done in the first place. Remove
     # entirely if 2022-10-01 was a long time ago.
-    #brs_in_a_row = 0
-    #all_tags = soup.find_all()
-    #for t in all_tags:
+    # brs_in_a_row = 0
+    # all_tags = soup.find_all()
+    # for t in all_tags:
     #    if t.name == 'br':
     #        if brs_in_a_row >= 2:
     #            t.extract()
@@ -161,7 +171,7 @@ def clean_content(content):
     #        brs_in_a_row = 0
 
     # Replace <html> and <body> tags' with <div>s.
-    '''
+    """
     body_tag = soup.find('body')
     if body_tag is not None:
         body_tag.attrs['id'] = 'body_tag'
@@ -169,36 +179,38 @@ def clean_content(content):
     html_tag = soup.find('html')
     html_tag.attrs['id'] = 'html_tag'
     html_tag.name = 'div'
-    '''
+    """
 
     # Add charset tag
-    charset_tag = soup.new_tag('meta', charset='utf-8')
+    charset_tag = soup.new_tag("meta", charset="utf-8")
     soup.insert(0, charset_tag)
 
     xhtml = soup.prettify()
 
     # Final cleanup at text-stage.
-    xhtml = xhtml.replace(' <!-- Tab -->\n  ', '&nbsp;&nbsp;&nbsp;&nbsp;')
+    xhtml = xhtml.replace(" <!-- Tab -->\n  ", "&nbsp;&nbsp;&nbsp;&nbsp;")
 
     return xhtml
 
 
 def clean_law(law_num, law_year):
-    with codecs.open(LAW_FILENAME % (law_year, str(law_num).zfill(3)), 'r', 'ISO-8859-1') as infile:
+    with codecs.open(
+        LAW_FILENAME % (law_year, str(law_num).zfill(3)), "r", "ISO-8859-1"
+    ) as infile:
         raw_content = infile.read()
         infile.close()
 
     content = clean_content(raw_content)
 
     if content is None:
-        print(' failed.')
-        print('Error: Law %d/%d does not seem to exist' % (law_year, law_num))
+        print(" failed.")
+        print("Error: Law %d/%d does not seem to exist" % (law_year, law_num))
         quit(1)
 
     if not os.path.isdir(os.path.dirname(CLEAN_FILENAME)):
         os.mkdir(os.path.dirname(CLEAN_FILENAME))
 
-    with open(CLEAN_FILENAME % (law_year, law_num), 'w') as clean_file:
+    with open(CLEAN_FILENAME % (law_year, law_num), "w") as clean_file:
         clean_file.write(content)
         clean_file.close()
 
@@ -210,12 +222,11 @@ def patch_law(law_num, law_year):
     filename = CLEAN_FILENAME % (law_year, law_num)
     patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
     patched_content = diff_patch_utils.do_patch(filename, patch_path)
-    with open(PATCHED_FILENAME % (law_year, law_num), 'w') as patched_file:
+    with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
         patched_file.write(patched_content)
 
 
 def make_xml(law_num, law_year):
-
     # Make sure that the XML output directory exists.
     if not os.path.isdir(os.path.dirname(XML_FILENAME)):
         os.mkdir(os.path.dirname(XML_FILENAME))
@@ -232,7 +243,7 @@ def make_xml(law_num, law_year):
             clean_file.close()
 
     # Construct the output XML object.
-    law = E.law('', {'nr': str(law_num), 'year': str(law_year)})
+    law = E.law("", {"nr": str(law_num), "year": str(law_year)})
 
     # Keeps track of the turn of events. We can query this trail to check for
     # example whether the name of the document has been processed, or what the
@@ -248,12 +259,12 @@ def make_xml(law_num, law_year):
     # and resetting the collection for the next time we need to collect a bunch of text.
 
     def collect(string):
-        if not hasattr(collect, 'collection'):
+        if not hasattr(collect, "collection"):
             collect.collection = []
         collect.collection.append(string.strip())
 
     def uncollect():
-        result = ' '.join(collect.collection).strip()
+        result = " ".join(collect.collection).strip()
         collect.collection = []
         return result
 
@@ -311,27 +322,27 @@ def make_xml(law_num, law_year):
     for line in lines:
         line = line.strip()
 
-        if line == '<h2>':
+        if line == "<h2>":
             # Parse law name.
-            name = E.name(strip_links(collect_until(lines, '</h2>')))
+            name = E.name(strip_links(collect_until(lines, "</h2>")))
 
             law.append(name)
 
             trail.append(name)
 
-        elif line == '<strong>':
-            if trail.last().tag == 'name':
+        elif line == "<strong>":
+            if trail.last().tag == "name":
                 # Parse the num and date, which appears directly below the law name.
-                num_and_date = collect_until(lines, '</strong>')
+                num_and_date = collect_until(lines, "</strong>")
 
                 # The num-and-date tends to contain excess whitespace.
-                num_and_date = num_and_date.replace('  ', ' ')
+                num_and_date = num_and_date.replace("  ", " ")
 
                 # Find the law's number, if it is specified, as well as the
                 # location of the date section within the string.
-                if 'nr.' in num_and_date:
+                if "nr." in num_and_date:
                     # Note: len('1980 nr. ') == 9
-                    number = num_and_date[9:num_and_date.find(' ', 9)]
+                    number = num_and_date[9 : num_and_date.find(" ", 9)]
 
                     # Note: len(' ') == 1
                     date_start = 9 + len(number) + 1
@@ -346,9 +357,9 @@ def make_xml(law_num, law_year):
 
                 # Parse the date in its entirety.
                 year = int(num_and_date[0:4])
-                if human_date.find('.') > -1:
-                    day = int(human_date[0:human_date.find('.')])
-                    month = int(determine_month(human_date[len(str(day)) + 2:]))
+                if human_date.find(".") > -1:
+                    day = int(human_date[0 : human_date.find(".")])
+                    month = int(determine_month(human_date[len(str(day)) + 2 :]))
                 else:
                     # There is at least one case of a the timing of the
                     # enacted law only being designated by year and month, but
@@ -359,10 +370,10 @@ def make_xml(law_num, law_year):
                     month = int(determine_month(human_date)) if human_date else 0
 
                 # Produce an ISO-formatted date.
-                iso_date = '%04d-%02d-%02d' % (year, month, day)
+                iso_date = "%04d-%02d-%02d" % (year, month, day)
 
                 # Construct the XML node and add it to the main doc.
-                xml_num_and_date = E('num-and-date', E('date', iso_date))
+                xml_num_and_date = E("num-and-date", E("date", iso_date))
                 if number is None:
                     # If no law number is specified, then the one defined in
                     # the main XML document is actually not a law number, but
@@ -378,14 +389,14 @@ def make_xml(law_num, law_year):
                     #
                     # We will still retain the wrong legal number as
                     # "primitive-nr" for traceability.
-                    law.attrib['primitive-nr'] = str(law_num)
-                    law_num = 'm%02dd%02d' % (month, day)
-                    law.attrib['nr'] = law_num
+                    law.attrib["primitive-nr"] = str(law_num)
+                    law_num = "m%02dd%02d" % (month, day)
+                    law.attrib["nr"] = law_num
                 else:
                     # Otherwise, of course, we'll just record the number.
-                    xml_num_and_date.append(E('num', number))
+                    xml_num_and_date.append(E("num", number))
 
-                xml_num_and_date.append(E('original', num_and_date))
+                xml_num_and_date.append(E("original", num_and_date))
 
                 law.append(xml_num_and_date)
 
@@ -431,10 +442,14 @@ def make_xml(law_num, law_year):
         # TODO: Consider creating a specified function for this check. It is
         # ridiculously messy as is.
         elif (
-            line == '<hr/>' and trail.last().tag == 'num-and-date' and lines.peek(2).strip() != '<small>'
+            line == "<hr/>"
+            and trail.last().tag == "num-and-date"
+            and lines.peek(2).strip() != "<small>"
         ) or (
-            line == '<br/>' and lines.peek(-1).strip() == '</i>' and
-            lines.peek(-2).strip() == '</small>' and not trail.milestone_reached('intro-finished')
+            line == "<br/>"
+            and lines.peek(-1).strip() == "</i>"
+            and lines.peek(-2).strip() == "</small>"
+            and not trail.milestone_reached("intro-finished")
         ):
             # Parse the whole clause about which minister the law refers to.
             # It contains HTML goo, but we'll just let it float along. It's
@@ -443,19 +458,21 @@ def make_xml(law_num, law_year):
 
             # If there is no <hr/> clause in the future, it means that there
             # is no minister clause.
-            hr_distance = occurrence_distance(lines, '<hr/>')
+            hr_distance = occurrence_distance(lines, "<hr/>")
             if hr_distance is not None and hr_distance > 0:
-                minister_clause = collect_until(lines, '<hr/>')
+                minister_clause = collect_until(lines, "<hr/>")
                 if len(minister_clause):
-                    law.append(E('minister-clause', minister_clause))
+                    law.append(E("minister-clause", minister_clause))
 
-            trail.set_milestone('intro-finished')
+            trail.set_milestone("intro-finished")
 
         # Chapters are found by finding a <b> tag that comes right after a
         # <br/> tag that occurs after the ministerial clause is done. We use a
         # special function for this because we also need to examine a bit of
         # the content which makes the check more than a one-liner.
-        elif check_chapter(lines, law) == 'chapter' and trail.milestone_reached('intro-finished'):
+        elif check_chapter(lines, law) == "chapter" and trail.milestone_reached(
+            "intro-finished"
+        ):
             # Parse what we will believe to be a chapter.
 
             # Chapter names are a bit tricky. They may be divided into two <b>
@@ -474,9 +491,9 @@ def make_xml(law_num, law_year):
             # is the chapter nr-title and that the content in the next <b>
             # clause will be the chapter name.
 
-            name_or_nr_title = collect_until(lines, '</b>')
+            name_or_nr_title = collect_until(lines, "</b>")
 
-            if lines.peek().strip() == '<b>':
+            if lines.peek().strip() == "<b>":
                 chapter_nr_title = name_or_nr_title
 
                 # Let's see if we can figure out the number of this chapter.
@@ -484,15 +501,15 @@ def make_xml(law_num, law_year):
                 # chapter, and "II. kafli B." for the second chapter B, and in
                 # those examples, nr-titles will be "2" and "2b" respectively.
                 t = strip_markers(chapter_nr_title).strip()
-                maybe_nr = t[0:t.index('.')]
+                maybe_nr = t[0 : t.index(".")]
                 try:
                     nr = str(roman.fromRoman(maybe_nr))
                     roman_nr = maybe_nr
-                    nr_type = 'roman'
+                    nr_type = "roman"
                 except roman.InvalidRomanNumeralError:
                     nr = int(maybe_nr)
                     roman_nr = None
-                    nr_type = 'arabic'
+                    nr_type = "arabic"
 
                 # We assume that a chapter nr-title with an alphabetical
                 # character (like "II. kafli B" or "2b") can only occur in
@@ -507,25 +524,25 @@ def make_xml(law_num, law_year):
                 # designate some kind of chapter, because those are logically
                 # equivalent, but should never appear both in the same chapter
                 # line.
-                for chapter_word_check in ['kafli', 'hluti', 'bók']:
+                for chapter_word_check in ["kafli", "hluti", "bók"]:
                     if chapter_word_check in t:
-                        alpha = t[t.index(chapter_word_check) + 6:].strip('.')
+                        alpha = t[t.index(chapter_word_check) + 6 :].strip(".")
                         if alpha:
                             nr += alpha.lower()
                 del t
 
-                scroll_until(lines, '<b>')
-                chapter_name = collect_until(lines, '</b>')
+                scroll_until(lines, "<b>")
+                chapter_name = collect_until(lines, "</b>")
 
                 chapter = E.chapter(
-                    {'nr': str(nr), 'nr-type': nr_type},
-                    E('nr-title', chapter_nr_title),
-                    E('name', chapter_name)
+                    {"nr": str(nr), "nr-type": nr_type},
+                    E("nr-title", chapter_nr_title),
+                    E("name", chapter_name),
                 )
 
                 # Record the original Roman numeral if applicable.
                 if roman_nr is not None:
-                    chapter.attrib['roman-nr'] = roman_nr
+                    chapter.attrib["roman-nr"] = roman_nr
 
             else:
                 chapter_name = name_or_nr_title
@@ -544,46 +561,48 @@ def make_xml(law_num, law_year):
                 # always just dealing with the Roman numeral itself when
                 # looking for a nr-title.
                 try:
-                    maybe_roman_nr = strip_markers(chapter_name).replace(
-                        '. kafli',
-                        ''
-                    ).replace(
-                        '. hluti',
-                        ''
-                    ).replace(
-                        '. bók',
-                        ''
-                    ).strip().strip('.')
+                    maybe_roman_nr = (
+                        strip_markers(chapter_name)
+                        .replace(". kafli", "")
+                        .replace(". hluti", "")
+                        .replace(". bók", "")
+                        .strip()
+                        .strip(".")
+                    )
 
                     # check for possible roman number range numbering which are seen when multiple
                     # articles have been removed and are thus collectively empty
                     has_ranged_roman = False
-                    if '–' in maybe_roman_nr:
-                        maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split('–')
-                        maybe_roman_nr_a = maybe_roman_nr_a.strip('.')
+                    if "–" in maybe_roman_nr:
+                        maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split("–")
+                        maybe_roman_nr_a = maybe_roman_nr_a.strip(".")
                         if is_roman(maybe_roman_nr_a) and is_roman(maybe_roman_nr_b):
                             nr_a = roman.fromRoman(maybe_roman_nr_a)
                             nr_b = roman.fromRoman(maybe_roman_nr_b)
-                            nr = '%s-%s' % (nr_a, nr_b)
-                            roman_nr = '%s-%s' % (roman.toRoman(nr_a), roman.toRoman(nr_b))
+                            nr = "%s-%s" % (nr_a, nr_b)
+                            roman_nr = "%s-%s" % (
+                                roman.toRoman(nr_a),
+                                roman.toRoman(nr_b),
+                            )
                             chapter = E.chapter(
-                                {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
-                                E('nr-title', chapter_name)
+                                {
+                                    "nr": nr,
+                                    "nr-type": "roman",
+                                    "roman-nr": maybe_roman_nr,
+                                },
+                                E("nr-title", chapter_name),
                             )
                             has_ranged_roman = True
                     if has_ranged_roman is False:
                         nr = str(roman.fromRoman(maybe_roman_nr))
                         chapter = E.chapter(
-                            {'nr': nr, 'nr-type': 'roman', 'roman-nr': maybe_roman_nr},
-                            E('nr-title', chapter_name)
+                            {"nr": nr, "nr-type": "roman", "roman-nr": maybe_roman_nr},
+                            E("nr-title", chapter_name),
                         )
                 except roman.InvalidRomanNumeralError:
                     # Nope! It's a name.
                     nr = None
-                    chapter = E.chapter(
-                        {'nr-type': 'name'},
-                        E('name', chapter_name)
-                    )
+                    chapter = E.chapter({"nr-type": "name"}, E("name", chapter_name))
 
             # Some laws have a chapter for temporary clauses, which may be
             # named something like "Bráðabirgðaákvæði", "Ákvæði til
@@ -594,27 +613,35 @@ def make_xml(law_num, law_year):
             # as pointed out in comments below.
             cn = chapter_name.lower()
             if (
-                'bráðabirgð' in cn and 'úrræði' not in cn and (
+                "bráðabirgð" in cn
+                and "úrræði" not in cn
+                and (
                     # Various places where something has been removed and
                     # commented in content with an a-node.
-                    'úrelt ákvæði til bráðabirgða' not in cn or
+                    "úrelt ákvæði til bráðabirgða" not in cn
+                    or
                     # Special case in 87/1992 where text is before a-node
-                    cn.find('ákvæði til bráðabirgða.') == 0
-                ) and
+                    cn.find("ákvæði til bráðabirgða.") == 0
+                )
+                and
                 # Special case in law 90/1989
-                'brottfallin lög' not in cn and
+                "brottfallin lög" not in cn
+                and
                 # Special case in law 80/2007
-                'bráðabirgðaafnot' not in cn
+                "bráðabirgðaafnot" not in cn
             ):
                 if nr is None:
-                    chapter.attrib['nr'] = 't'
-                chapter.attrib['type'] = 'temporary-clauses'
+                    chapter.attrib["nr"] = "t"
+                chapter.attrib["type"] = "temporary-clauses"
 
             law.append(chapter)
 
             trail.append(chapter)
 
-        elif check_chapter(lines, law) in ['extra-docs', 'appendix'] and trail.milestone_reached('intro-finished'):
+        elif check_chapter(lines, law) in [
+            "extra-docs",
+            "appendix",
+        ] and trail.milestone_reached("intro-finished"):
             # Accompanying documents vary in origin and format, and are not a
             # part of the formal legal text itself, even though legal text may
             # reference them. Parsing them is beyond the scope of this tool.
@@ -622,31 +649,31 @@ def make_xml(law_num, law_year):
             # done. We'll escape the loop and go for post-processing.
             break
 
-        elif check_chapter(lines, law) == 'art-chapter' and trail.milestone_reached('intro-finished'):
+        elif check_chapter(lines, law) == "art-chapter" and trail.milestone_reached(
+            "intro-finished"
+        ):
             # Parse an article chapter.
-            art_chapter_goo = collect_until(lines, '</b>')
+            art_chapter_goo = collect_until(lines, "</b>")
 
             # Check if there's a name to the article chapter.
             try:
-                art_chapter_nr, art_chapter_name = art_chapter_goo.strip('.').split('.')
+                art_chapter_nr, art_chapter_name = art_chapter_goo.strip(".").split(".")
                 art_chapter_name = art_chapter_name.strip()
             except:
-                art_chapter_nr = art_chapter_goo.strip('.')
-                art_chapter_name = ''
+                art_chapter_nr = art_chapter_goo.strip(".")
+                art_chapter_name = ""
 
             art_chapter = E(
-                'art-chapter',
+                "art-chapter",
                 {
-                    'nr': art_chapter_nr,
-                    'type': 'alphabet',
+                    "nr": art_chapter_nr,
+                    "type": "alphabet",
                 },
-                E('nr-title', '%s.' % art_chapter_nr)
+                E("nr-title", "%s." % art_chapter_nr),
             )
 
             if len(art_chapter_name):
-                art_chapter.append(
-                    E('name', art_chapter_name)
-                )
+                art_chapter.append(E("name", art_chapter_name))
 
             # Article chapters may appear in an article, containing
             # sub-articles, or they may in fact appear inside sub-articles.
@@ -662,8 +689,8 @@ def make_xml(law_num, law_year):
 
             # Check if we should append the article chapter to the last
             # sub-article, or the last article.
-            if art.find('art-chapter') is not None:
-                art.find('art-chapter').getparent().append(art_chapter)
+            if art.find("art-chapter") is not None:
+                art.find("art-chapter").getparent().append(art_chapter)
             elif subart is not None:
                 subart.append(art_chapter)
             elif art is not None:
@@ -671,7 +698,9 @@ def make_xml(law_num, law_year):
 
             trail.append(art_chapter)
 
-        elif check_chapter(lines, law) == 'ambiguous' and trail.milestone_reached('intro-finished'):
+        elif check_chapter(lines, law) == "ambiguous" and trail.milestone_reached(
+            "intro-finished"
+        ):
             # Parse a mysterious text that might be a chapter but we're unable
             # to determine it as such. They are bold, they are bad, but they
             # don't really make an awful lot of sense. We'll just splash them
@@ -684,7 +713,7 @@ def make_xml(law_num, law_year):
             # theoretically be replaced by something more formal at some
             # point, should the format of published law ever allow.
 
-            ambiguous_bold_text = E('ambiguous-bold-text', collect_until(lines, '</b>'))
+            ambiguous_bold_text = E("ambiguous-bold-text", collect_until(lines, "</b>"))
 
             if subart is not None:
                 subart.append(ambiguous_bold_text)
@@ -697,7 +726,7 @@ def make_xml(law_num, law_year):
 
             trail.append(ambiguous_bold_text)
 
-        elif line == '<em>' and trail.milestone_reached('intro-finished'):
+        elif line == "<em>" and trail.milestone_reached("intro-finished"):
             # Parse a mysterious thing which we will call an "ambiguous
             # section" and is composed of a single italic line. Such a line is
             # sometimes used as a sort of name for an article (45/1987,
@@ -726,11 +755,11 @@ def make_xml(law_num, law_year):
             # when parsing the XML, it is possible to check what the last
             # <ambiguous-section> contained, if at some point a programmer
             # needs to deal with them when using the XML.
-            ambiguous_content = collect_until(lines, '</em>')
+            ambiguous_content = collect_until(lines, "</em>")
 
             # FIXME: Separating the sentences like this incorrectly parses
             # what should be a `nr-title` as a `sen.`
-            ambiguous_section = E('ambiguous-section')
+            ambiguous_section = E("ambiguous-section")
             add_sentences(ambiguous_section, separate_sentences(ambiguous_content))
 
             if chapter is not None:
@@ -740,7 +769,11 @@ def make_xml(law_num, law_year):
 
             trail.append(ambiguous_section)
 
-        elif line == '<i>' and lines.peek(2).strip() == '</i>' and trail.milestone_reached('intro-finished'):
+        elif (
+            line == "<i>"
+            and lines.peek(2).strip() == "</i>"
+            and trail.milestone_reached("intro-finished")
+        ):
             # Parse a sentence with a title. These are rare, but occur in 3.
             # gr. laga nr. 55/2009. Usually they are numbered, parsed as
             # numarts instead, but not here.
@@ -751,18 +784,18 @@ def make_xml(law_num, law_year):
             # beginning of the sen-title instead. There can be more than one,
             # so we'll append continuously until we run out of opening marks.
 
-            sen_title_text = ''
+            sen_title_text = ""
             back_peek = lines.peek(-1).strip()
-            while len(back_peek) > 0 and back_peek[-1] == '[':
-                sen_title_text += '['
+            while len(back_peek) > 0 and back_peek[-1] == "[":
+                sen_title_text += "["
                 back_peek = back_peek[0:-1]
 
-            sen_title_text += collect_until(lines, '</i>')
-            content = collect_until(lines, '<br/>')
+            sen_title_text += collect_until(lines, "</i>")
+            content = collect_until(lines, "<br/>")
             if subart is not None:
                 paragraph = add_sentences(subart, separate_sentences(content))
 
-                sen_title = E('sen-title', sen_title_text)
+                sen_title = E("sen-title", sen_title_text)
 
                 # The sentence title belongs inside the paragraph that
                 # `add_sentences` creates, so it is inserted afterwards.
@@ -772,8 +805,8 @@ def make_xml(law_num, law_year):
 
         elif matcher.check(line, r'<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
-            scroll_until(lines, '<b>')
-            art_nr_title = collect_until(lines, '</b>')
+            scroll_until(lines, "<b>")
+            art_nr_title = collect_until(lines, "</b>")
 
             clean_art_nr_title = strip_markers(art_nr_title)
 
@@ -797,7 +830,7 @@ def make_xml(law_num, law_year):
                 # Find index of common string. If the string does not exist,
                 # it's some sort of a special article. A ValueError will be
                 # raised and we'll deal with it below.
-                gr_index = clean_art_nr_title.index('. gr.')
+                gr_index = clean_art_nr_title.index(". gr.")
 
                 # Determine the numeric part of the article's name.
                 art_nr = clean_art_nr_title[0:gr_index]
@@ -806,24 +839,24 @@ def make_xml(law_num, law_year):
                 # far only seen when multiple articles have been removed and
                 # are thus collectively empty. We check for the pattern here
                 # and reconstruct it if needed.
-                if matcher.check(clean_art_nr_title, r'(\d+)\.–(\d+)'):
+                if matcher.check(clean_art_nr_title, r"(\d+)\.–(\d+)"):
                     from_art_nr, to_art_nr = matcher.result()
-                    art_nr = '%s-%s' % (from_art_nr, to_art_nr)
+                    art_nr = "%s-%s" % (from_art_nr, to_art_nr)
 
                 # Check if there is an extra part to the name which we'll want
                 # appended to the `art_nr`.
                 #
                 # Note: len('.gr.') + 1 = 6
-                art_nr_extra = clean_art_nr_title[gr_index + 6:].strip().strip('.')
+                art_nr_extra = clean_art_nr_title[gr_index + 6 :].strip().strip(".")
                 if len(art_nr_extra):
-                    art_nr = '%s%s' % (art_nr, art_nr_extra)
+                    art_nr = "%s%s" % (art_nr, art_nr_extra)
 
             except ValueError:
                 # This means that the article's name is formatted in an
                 # unconventional way. Typically this occurs only in temporary
                 # clauses that tend to be numbered with some stupid fucking
                 # Roman bullshit.
-                art_nr = clean_art_nr_title.strip('.')
+                art_nr = clean_art_nr_title.strip(".")
                 try:
                     art_roman_nr = str(roman.fromRoman(art_nr))
                 except roman.InvalidRomanNumeralError:
@@ -832,8 +865,8 @@ def make_xml(law_num, law_year):
                     # Another possibility is that it's a really old-school way
                     # of denoting articles (early 19th century and before),
                     # which looks like "5)" instead of "5. gr.".
-                    if matcher.check(art_nr, r'^\d+\)$'):
-                        art_nr = art_nr.strip(')')
+                    if matcher.check(art_nr, r"^\d+\)$"):
+                        art_nr = art_nr.strip(")")
                     else:
                         # At this point we've run into some kind of article
                         # that we don't know how to deal with yet. We'll just
@@ -849,11 +882,11 @@ def make_xml(law_num, law_year):
                         pass
 
             # Create the tags, configure them and append to the chapter.
-            art = E('art', E('nr-title', art_nr_title))
-            art.attrib['nr'] = art_nr
+            art = E("art", E("nr-title", art_nr_title))
+            art.attrib["nr"] = art_nr
             if art_roman_nr is not None:
-                art.attrib['roman-nr'] = art_roman_nr
-                art.attrib['number-type'] = 'roman'
+                art.attrib["roman-nr"] = art_roman_nr
+                art.attrib["number-type"] = "roman"
 
             # Some laws don't have chapters, but some do.
             if chapter is not None:
@@ -864,17 +897,17 @@ def make_xml(law_num, law_year):
             # Check if the next line is an <em>, because if so, then the
             # article has a name title and we need to grab it. Note that not
             # all articles have names.
-            if lines.peek().strip() == '<em>':
-                scroll_until(lines, '<em>')
-                art_name = collect_until(lines, '</em>')
+            if lines.peek().strip() == "<em>":
+                scroll_until(lines, "<em>")
+                art_name = collect_until(lines, "</em>")
 
-                art.append(E('name', strip_links(art_name)))
+                art.append(E("name", strip_links(art_name)))
 
             # Another way to denote an article's name is by immediately
             # following it with bold text. This is very rare but does occur.
             elif (
-                lines.peek().strip() == '<b>' and
-                lines.peek(2).strip() != 'Ákvæði til bráðabirgða.'
+                lines.peek().strip() == "<b>"
+                and lines.peek(2).strip() != "Ákvæði til bráðabirgða."
             ):
                 # Exceptional case: 94/1996 contains a very strange temporary
                 # clause chapter. It was originally a temporary article (24.
@@ -930,17 +963,19 @@ def make_xml(law_num, law_year):
                 # latter part only returns true in the very specific case
                 # outlined here.
 
-                scroll_until(lines, '<b>')
-                art_name = collect_until(lines, '</b>')
+                scroll_until(lines, "<b>")
+                art_name = collect_until(lines, "</b>")
 
-                art.append(E('name', strip_links(art_name), {'original-ui-style': 'bold'}))
+                art.append(
+                    E("name", strip_links(art_name), {"original-ui-style": "bold"})
+                )
 
             # Check if the article is empty aside from markers that need to be
             # included in the article <nr-title> or <name> (depending on
             # whether <name> exists at all).
-            while lines.peek().strip() in ['…', ']']:
-                marker = collect_until(lines, '</sup>')
-                art.getchildren()[-1].text += ' ' + marker + ' </sup>'
+            while lines.peek().strip() in ["…", "]"]:
+                marker = collect_until(lines, "</sup>")
+                art.getchildren()[-1].text += " " + marker + " </sup>"
 
             trail.append(art)
 
@@ -949,32 +984,36 @@ def make_xml(law_num, law_year):
             subart = None
             art_chapter = None
 
-        elif matcher.check(line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'):
+        elif matcher.check(
+            line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'
+        ):
             # Parse a subart.
 
             art_nr, subart_nr = matcher.result()
 
             # Check how far we are from the typical subart end.
-            linecount_to_br = occurrence_distance(lines, r'<br/>')
+            linecount_to_br = occurrence_distance(lines, r"<br/>")
 
             # Check if there's a table inside the subarticle.
-            linecount_to_table = occurrence_distance(lines, r'<\/table>', linecount_to_br)
+            linecount_to_table = occurrence_distance(
+                lines, r"<\/table>", linecount_to_br
+            )
 
             # If a table is found inside the subarticle, we'll want to end the
             # subarticle when the table ends.
             if linecount_to_table is not None:
                 # We must append the string '</table>' because it gets left
                 # behind by the collet_until function.
-                content = collect_until(lines, '</table>') + '</table>'
+                content = collect_until(lines, "</table>") + "</table>"
             else:
                 # Everything is normal.
-                content = collect_until(lines, '<br/>')
+                content = collect_until(lines, "<br/>")
 
-            subart = E('subart', {'nr': subart_nr})
+            subart = E("subart", {"nr": subart_nr})
             sens = separate_sentences(strip_links(content))
             add_sentences(subart, sens)
 
-            if art_chapter is not None and art_chapter.getparent().tag != 'subart':
+            if art_chapter is not None and art_chapter.getparent().tag != "subart":
                 # When a `subart` is appended directly to an `art-chapter`,
                 # its number is reset. Legal content reflects this reality
                 # (f.e. 11. mgr. B-liðar 68. gr. laga nr. 90/2003), but the
@@ -989,13 +1028,13 @@ def make_xml(law_num, law_year):
                 # To fix this, we need to figure out the `subart`'s true
                 # number here by checking the number of the last numart in
                 # the `art-chapter` being appended to.
-                previous_subarts = art_chapter.findall('subart')
+                previous_subarts = art_chapter.findall("subart")
                 if len(previous_subarts) > 0:
-                    previous_subart_nr = previous_subarts[-1].attrib['nr']
+                    previous_subart_nr = previous_subarts[-1].attrib["nr"]
                     new_subart_nr = str(int(previous_subart_nr) + 1)
                 else:
-                    new_subart_nr = '1'
-                subart.attrib['nr'] = new_subart_nr
+                    new_subart_nr = "1"
+                subart.attrib["nr"] = new_subart_nr
                 art_chapter.append(subart)
             elif art is not None:
                 art.append(subart)
@@ -1009,7 +1048,7 @@ def make_xml(law_num, law_year):
 
             trail.append(subart)
 
-        elif line.strip() == '…' and trail.last().tag == 'num-and-date':
+        elif line.strip() == "…" and trail.last().tag == "num-and-date":
             # Support for a deletion marker before any other content such as
             # an article, subarticle, numart, chapter or anything of the sort.
             # We'll place it in a sentence inside a subart so that the
@@ -1021,22 +1060,24 @@ def make_xml(law_num, law_year):
             # - m01d27/1847
             # - 97/1993
 
-            subart = E('subart')
-            subart.attrib['nr'] = '1'
+            subart = E("subart")
+            subart.attrib["nr"] = "1"
 
-            premature_deletion = collect_until(lines, '<br/>')
+            premature_deletion = collect_until(lines, "<br/>")
             add_sentences(subart, [premature_deletion])
 
             law.append(subart)
 
             trail.append(subart)
 
-        elif matcher.check(line, '<table'):
+        elif matcher.check(line, "<table"):
             # Parse a stray table, that we haven't run across inside a
             # subarticle. We'll append it to previously parsed thing. The
             # table width is only for consistency with the typical input.
 
-            content = '<table width="100%">' + collect_until(lines, '</table>') + '</table>'
+            content = (
+                '<table width="100%">' + collect_until(lines, "</table>") + "</table>"
+            )
             sen = separate_sentences(content).pop()
 
             if subart is not None:
@@ -1044,9 +1085,8 @@ def make_xml(law_num, law_year):
             elif art is not None:
                 add_sentences(art, [sen])
 
-        elif (
-            matcher.check(line, r'<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or
-            (matcher.check(line, '<span>') and lines.peek().strip() != '</span>')
+        elif matcher.check(line, r'<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or (
+            matcher.check(line, "<span>") and lines.peek().strip() != "</span>"
         ):
             # Parse a numart, or numerical article.
 
@@ -1055,14 +1095,16 @@ def make_xml(law_num, law_year):
             # alphabetic one, into something easier to work with
             # programmatically. Example: "9. a" becomes "9a" in law nr.
             # 20/2003.
-            numart_nr = strip_markers(lines.peek().strip().strip('(').strip(')').strip('.')).replace('. ', '')
+            numart_nr = strip_markers(
+                lines.peek().strip().strip("(").strip(")").strip(".")
+            ).replace(". ", "")
 
             # Support for numart ranges, which are only known to occur when
             # many numarts have been removed. This occurs for example in 145.
             # gr. laga nr. 108/2007.
-            if matcher.check(numart_nr, r'(\d+)\.–(\d+)'):
+            if matcher.check(numart_nr, r"(\d+)\.–(\d+)"):
                 from_numart_nr, to_numart_nr = matcher.result()
-                numart_nr = '%s-%s' % (from_numart_nr, to_numart_nr)
+                numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
 
             # The previous numart gives us context for decision-making for
             # this numart. It is only filled if the last thing we processed
@@ -1070,7 +1112,7 @@ def make_xml(law_num, law_year):
             # actually a sub-numart or a super-numart. Otherwise it will
             # remain None, indicating that this is the first numart being
             # processed this time around.
-            if trail.last().tag == 'numart':
+            if trail.last().tag == "numart":
                 # Set the previous numart before current numart gets created.
                 prev_numart = numart
             else:
@@ -1089,18 +1131,18 @@ def make_xml(law_num, law_year):
             # the number of the last numart. This is to make them identifiable
             # when rendering software wants to add deletion markers. A "sen"
             # node is also added for the deletion marker to be addable.
-            if numart_nr == '':
-                content = collect_until(lines, '</span>')
+            if numart_nr == "":
+                content = collect_until(lines, "</span>")
                 dummy_numart = E(
-                    'numart',
+                    "numart",
                     {
-                        'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
-                        'type': 'removed'
-                    }
+                        "nr": "removed-after-%s" % prev_numart.attrib["nr"],
+                        "type": "removed",
+                    },
                 )
                 add_sentences(dummy_numart, [content])
                 prev_numart.getparent().append(dummy_numart)
-                scroll_until(lines, '<br/>')
+                scroll_until(lines, "<br/>")
                 continue
 
             # In 6. tölul. 1. gr. laga nr. 119/2018, the removal of previous
@@ -1115,15 +1157,15 @@ def make_xml(law_num, law_year):
             # deletion marker, and if it's there, we'll respond similarly to
             # how we respond to 3. gr. laga nr. 160/2010 (which was
             # immediately above this comment on 2022-01-23).
-            elif numart_nr == '</span>' and lines.peek(2).strip() == '…':
-                scroll_until(lines, '</span>')
-                content = collect_until(lines, '<br/>')
+            elif numart_nr == "</span>" and lines.peek(2).strip() == "…":
+                scroll_until(lines, "</span>")
+                content = collect_until(lines, "<br/>")
                 dummy_numart = E(
-                    'numart',
+                    "numart",
                     {
-                        'nr': 'removed-after-%s' % prev_numart.attrib['nr'],
-                        'type': 'removed'
-                    }
+                        "nr": "removed-after-%s" % prev_numart.attrib["nr"],
+                        "type": "removed",
+                    },
                 )
                 add_sentences(dummy_numart, [content])
                 prev_numart.getparent().append(dummy_numart)
@@ -1151,7 +1193,9 @@ def make_xml(law_num, law_year):
             # happens in 1. mgr. 21. gr. laga nr. 19/1996, although the
             # symbols are displayed in parentheses.
             try:
-                special_roman = prev_numart.attrib['nr'] == 'h' and lines.peek(6).strip() in ['ii.', '(ii)']
+                special_roman = prev_numart.attrib["nr"] == "h" and lines.peek(
+                    6
+                ).strip() in ["ii.", "(ii)"]
             except (AttributeError, IndexError):
                 # Definitely not the special scenario if this goes wrong.
                 special_roman = False
@@ -1160,7 +1204,6 @@ def make_xml(law_num, law_year):
             # whether this numart is the first among sub-numarts, or if a list
             # of sub-numarts has ended or what.
             if prev_numart is not None:
-
                 # Create a list of expected numart_nrs, considering the type
                 # of the previous numart. If the current numart_nr is
                 # unexpected, it means that either a sub-numart listing has
@@ -1174,13 +1217,13 @@ def make_xml(law_num, law_year):
                 # sub-list from the "i" after the "h" instead of just adding
                 # another item.
                 if special_roman:
-                    expected_numart_nrs.remove('i')
+                    expected_numart_nrs.remove("i")
 
                 # If the numart number contains a range, something like
                 # "10-13", we'll need to isolate the first bit and match that
                 # with what's expected.
-                if '-' in numart_nr:
-                    first_bit_of_numart = numart_nr[0:numart_nr.find('-')]
+                if "-" in numart_nr:
+                    first_bit_of_numart = numart_nr[0 : numart_nr.find("-")]
                 else:
                     # Otherwise, we can treat the entire number as the first
                     # bit, to be matched against.
@@ -1193,9 +1236,8 @@ def make_xml(law_num, law_year):
                     # was appended to.
                     parent = prev_numart.getparent()
                 else:
-                    if (
-                        numart_nr.lower() in ['a', 'i', '—', '–'] or
-                        (numart_nr.isdigit() and int(numart_nr) == 1)
+                    if numart_nr.lower() in ["a", "i", "—", "–"] or (
+                        numart_nr.isdigit() and int(numart_nr) == 1
                     ):
                         # A new list has started within the one we were
                         # already processing, which we can tell because there
@@ -1205,7 +1247,7 @@ def make_xml(law_num, law_year):
                         # the parent, so that this new list will be inside the
                         # previous one. We append to the last paragraph of
                         # that parent.
-                        parent = prev_numart.findall('paragraph')[-1]
+                        parent = prev_numart.findall("paragraph")[-1]
                     else:
                         # A different list is being handled now, but it's not
                         # starting at the beginning (is neither 'a' nor 1).
@@ -1236,12 +1278,12 @@ def make_xml(law_num, law_year):
                 # `art-chapter` (or `art`). An `art-chapter` can be a child
                 # of `art` and parent of many `subart`s, or a child of a
                 # `subart` (see lög nr. 90/2003).
-                if art_chapter is not None and art_chapter.getparent().tag == 'subart':
+                if art_chapter is not None and art_chapter.getparent().tag == "subart":
                     parent = art_chapter
                 elif subart is not None:
                     # A numart should belong to the same paragraph as a
                     # potential sentence explaining what's being listed.
-                    parent = subart.findall('paragraph')[-1]
+                    parent = subart.findall("paragraph")[-1]
                 elif art is not None:
                     # FIXME: Investigate if this ever actually happens and
                     # explain when it does, or remove this clause.
@@ -1257,9 +1299,9 @@ def make_xml(law_num, law_year):
 
             # Figure out the numart's type.
             if numart_nr[0].isdigit():
-                numart_type = 'numeric'
-            elif numart_nr in ['—', '–']:
-                numart_type = 'en-dash'
+                numart_type = "numeric"
+            elif numart_nr in ["—", "–"]:
+                numart_type = "en-dash"
             else:
                 # At this point, we're dealing with a numart that is
                 # represented with a Latin character, OR a Roman numeral.
@@ -1272,12 +1314,16 @@ def make_xml(law_num, law_year):
                 # distinguish between Roman numerals and Latin characters by
                 # checking the type of the previous numart.
 
-                if numart_nr.lower() == 'i':
+                if numart_nr.lower() == "i":
                     # See comment for `special_roman` above.
-                    if prev_numart is None or prev_numart.attrib['nr'] != 'h' or special_roman:
-                        numart_type = 'roman'
+                    if (
+                        prev_numart is None
+                        or prev_numart.attrib["nr"] != "h"
+                        or special_roman
+                    ):
+                        numart_type = "roman"
                     else:
-                        numart_type = 'alphabet'
+                        numart_type = "alphabet"
 
                 elif is_roman(numart_nr.upper()):
                     # If we run into something that *can* be a Roman numeral,
@@ -1299,42 +1345,42 @@ def make_xml(law_num, law_year):
                     # last child of this numart's parent to find the one
                     # immediately before it at the same stage in the tree.
 
-                    numart_type = parent.getchildren()[-1].attrib['type']
+                    numart_type = parent.getchildren()[-1].attrib["type"]
 
                 else:
-                    numart_type = 'alphabet'
+                    numart_type = "alphabet"
 
             # Dash-numarts need special treatment because they don't contain
             # information about their numeric position, since they are all
             # simply a dash. We must figure out their number and assign a new
             # `numart_nr`. The `nr-title` will still contain just a dash.
-            if numart_type == 'en-dash':
-                if prev_numart is not None and prev_numart.attrib['type'] == 'en-dash':
-                    numart_nr = str(int(prev_numart.attrib['nr']) + 1)
+            if numart_type == "en-dash":
+                if prev_numart is not None and prev_numart.attrib["type"] == "en-dash":
+                    numart_nr = str(int(prev_numart.attrib["nr"]) + 1)
                 else:
-                    numart_nr = '1'
+                    numart_nr = "1"
 
             # Create numerical article.
-            numart = E('numart', {'nr': numart_nr, 'type': numart_type})
+            numart = E("numart", {"nr": numart_nr, "type": numart_type})
 
             # Add the numerical article to its parent.
             parent.append(numart)
 
             # NOTE: Gets added after we add the sentences with `add_sentences`.
-            numart_nr_title = collect_until(lines, '</span>')
+            numart_nr_title = collect_until(lines, "</span>")
 
-            if lines.peek().strip() == '<i>':
+            if lines.peek().strip() == "<i>":
                 # Looks like this numerical article has a name.
-                scroll_until(lines, '<i>')
+                scroll_until(lines, "<i>")
 
                 # Note that this gets inserted **after** we add the sentences
                 # with `add_sentences` below.
-                numart_name = collect_until(lines, '</i>')
+                numart_name = collect_until(lines, "</i>")
             else:
                 numart_name = None
 
             # Read in the remainder of the content.
-            content = collect_until(lines, '<br/>')
+            content = collect_until(lines, "<br/>")
 
             # Split the content into sentences.
             sens = separate_sentences(strip_links(content))
@@ -1342,17 +1388,17 @@ def make_xml(law_num, law_year):
             # Check if this numart is actually just a content-less container
             # for a sub-numart, by checking if the beginning of the content is
             # in fact the starting of a new list, numeric or alphabetic.
-            possible_nr_title = strip_markers(sens[0]) if len(sens) else ''
-            if possible_nr_title in ['a.', '1.']:
-                new_numart_nr = possible_nr_title.strip('.')
+            possible_nr_title = strip_markers(sens[0]) if len(sens) else ""
+            if possible_nr_title in ["a.", "1."]:
+                new_numart_nr = possible_nr_title.strip(".")
 
                 # Instead of adding the found sentences to the numart that
                 # we've just made above, we'll create an entirely new numart,
                 # called new_numart, and add that to the current numart.
                 new_numart = E(
-                    'numart',
+                    "numart",
                     {
-                        'nr': new_numart_nr,
+                        "nr": new_numart_nr,
                         # The style-note is to communicate information to a
                         # possible layouting mechanism. In the official
                         # documents, a sub-numart that appears this way is not
@@ -1360,13 +1406,13 @@ def make_xml(law_num, law_year):
                         # its parent as if it were content. It's the layouting
                         # mechanism's responsibility to react to this
                         # information, if needed.
-                        'style-note': 'inline-with-parent'
-                    }
+                        "style-note": "inline-with-parent",
+                    },
                 )
 
                 # Mark the new numart as alphabetic, if appropriate.
                 if not new_numart_nr.isdigit():
-                    new_numart.attrib['type'] = 'alphabet'
+                    new_numart.attrib["type"] = "alphabet"
 
                 # Get the `nr-title` from the first `sen`. Note that we go
                 # back for the 'sens' list because we'll want to include
@@ -1381,7 +1427,7 @@ def make_xml(law_num, law_year):
                 add_sentences(new_numart, sens)
 
                 # Insert the `nr-title` in the newly created `numart`.
-                new_numart.insert(0, E('nr-title', nr_title))
+                new_numart.insert(0, E("nr-title", nr_title))
 
                 # Add the new numart to the current numart.
                 numart.append(new_numart)
@@ -1395,19 +1441,18 @@ def make_xml(law_num, law_year):
                 add_sentences(numart, sens)
 
                 # Add the title info to the `numart`.
-                numart.insert(0, E('nr-title', numart_nr_title))
+                numart.insert(0, E("nr-title", numart_nr_title))
                 if numart_name is not None:
                     # Inserted immediately after the `nr-title`, so 1.
-                    numart.insert(1, E('name', numart_name))
+                    numart.insert(1, E("name", numart_name))
 
                 # Handle extra paragraphs that we don't know where to place.
                 while begins_with_regular_content(lines.peek()):
-
                     # When regular (text) content immediately follows a
                     # numart, and not a new location like an article,
                     # subarticle or another numart, we must determine its
                     # nature. We'll start by finding the content.
-                    extra_content = collect_until(lines, '<br/>')
+                    extra_content = collect_until(lines, "<br/>")
 
                     # Process the extra content into extra sentences.
                     extra_sens = separate_sentences(strip_links(extra_content))
@@ -1458,23 +1503,23 @@ def make_xml(law_num, law_year):
                     # We'll need to change the remembered numart to the
                     # target of the extra sentences, if it happens to be a
                     # numart, so that the next numart gets the right parent.
-                    if extra_sens_target.tag == 'numart':
+                    if extra_sens_target.tag == "numart":
                         numart = extra_sens_target
 
             trail.append(numart)
 
-        elif line == '<small>':
+        elif line == "<small>":
             # Footnote section. Contains footnotes.
 
-            footnotes = E('footnotes')
+            footnotes = E("footnotes")
 
             # Try an append the footnotes to whatever's appropriate given the
             # content we've run into.
-            if trail.last().tag == 'num-and-date':
+            if trail.last().tag == "num-and-date":
                 law.append(footnotes)
-            elif trail.last().tag == 'chapter':
+            elif trail.last().tag == "chapter":
                 chapter.append(footnotes)
-            elif trail.last().tag == 'ambiguous-section':
+            elif trail.last().tag == "ambiguous-section":
                 ambiguous_section.append(footnotes)
             elif art is not None:
                 # Most commonly, footnotes will be appended to articles.
@@ -1488,12 +1533,15 @@ def make_xml(law_num, law_year):
 
             trail.append(footnotes)
 
-        elif line == '<sup style="font-size:60%">' and trail.last().tag in ['footnotes', 'footnote']:
+        elif line == '<sup style="font-size:60%">' and trail.last().tag in [
+            "footnotes",
+            "footnote",
+        ]:
             # We've found a footnote inside the footnote section!
 
             # Scroll past the closing tag, since we're not going to use its
             # content (see comment below).
-            scroll_until(lines, '</sup>')
+            scroll_until(lines, "</sup>")
 
             # Determine the footnote number.
             # In a perfect world, we should be able to get the footnote number
@@ -1512,33 +1560,33 @@ def make_xml(law_num, law_year):
             # The footnote number, and in fact other numbers, are always used
             # as strings because they really function more like names rather
             # than numbers. So we make it a string right away.
-            footnote_nr = str(len(footnotes.findall('footnote')) + 1)
+            footnote_nr = str(len(footnotes.findall("footnote")) + 1)
 
             # Create the footnote XML node.
-            footnote = E('footnote')
+            footnote = E("footnote")
 
             peek = lines.peek().strip()
             if matcher.check(peek, r'<a href="(\/altext\/.*)">'):
                 # This is a footnote regarding a legal change.
-                href = 'https://www.althingi.is%s' % matcher.result()[0]
+                href = "https://www.althingi.is%s" % matcher.result()[0]
 
                 # Retrieve the the content of the link to the external law
                 # that we found.
                 scroll_until(lines, r'<a href="(\/altext\/.*)">')
-                footnote_sen = collect_until(lines, '</a>')
+                footnote_sen = collect_until(lines, "</a>")
 
                 # Update the footnote with the content discovered so far.
-                footnote.attrib['href'] = href
-                footnote.append(E('footnote-sen', footnote_sen))
+                footnote.attrib["href"] = href
+                footnote.append(E("footnote-sen", footnote_sen))
 
                 # If the content found so far adheres to the recognized
                 # pattern of external law, we'll put that information in
                 # attributes as well. (It should.)
-                if matcher.check(footnote_sen, r'L\. (\d+)\/(\d{4}), (\d+)\. gr\.'):
+                if matcher.check(footnote_sen, r"L\. (\d+)\/(\d{4}), (\d+)\. gr\."):
                     fn_law_nr, fn_law_year, fn_art_nr = matcher.result()
-                    footnote.attrib['law-nr'] = fn_law_nr
-                    footnote.attrib['law-year'] = fn_law_year
-                    footnote.attrib['law-art'] = fn_art_nr
+                    footnote.attrib["law-nr"] = fn_law_nr
+                    footnote.attrib["law-year"] = fn_law_year
+                    footnote.attrib["law-art"] = fn_art_nr
 
             # Some footnotes don't contain a link to an external law like
             # above but rather some arbitrary information. In these cases
@@ -1553,9 +1601,9 @@ def make_xml(law_num, law_year):
             # appear, but even if they don't, this will still error out
             # instead of looping forever, despite the "while True" condition,
             # because "next(lines)" will eventually run out of lines.
-            gathered = ''
+            gathered = ""
             while True:
-                if lines.peek().strip() in ['</small>', '<sup style="font-size:60%">']:
+                if lines.peek().strip() in ["</small>", '<sup style="font-size:60%">']:
                     break
                 else:
                     # The text we want is separated into lines with arbitrary
@@ -1567,13 +1615,15 @@ def make_xml(law_num, law_year):
                     # whitespace between tags and content. Those will be fixed
                     # later, resulting in a neat string without any unwanted
                     # whitespace.
-                    gathered += next(lines).strip() + ' '
+                    gathered += next(lines).strip() + " "
 
                 # Get rid of HTML comments.
-                gathered = re.sub(r'<!--.*?"-->', '', gathered)
+                gathered = re.sub(r'<!--.*?"-->', "", gathered)
 
                 # Get rid of remaining unwanted whitespace (see above).
-                gathered = gathered.replace('  ', ' ').replace('> ', '>').replace(' </', '</')
+                gathered = (
+                    gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
+                )
 
             # If extra content was found, we'll put that in a separate
             # sentence inside the footnote. If there already was a
@@ -1582,18 +1632,18 @@ def make_xml(law_num, law_year):
             # content found and there is no link to an external law, then
             # there will only be this one.
             if len(gathered):
-                footnote.append(E('footnote-sen', gathered.strip()))
+                footnote.append(E("footnote-sen", gathered.strip()))
 
             # Explicitly state the footnote number as an attribute in the
             # footnote, so that a parser doesn't have to infer it from the
             # order of footnotes.
-            footnote.attrib['nr'] = footnote_nr
+            footnote.attrib["nr"] = footnote_nr
 
             # Append the footnote to the `footnotes` node which is expected to
             # exist from an earlier iteration.
             footnotes.append(footnote)
 
-            if lines.peek().strip() == '</small>':
+            if lines.peek().strip() == "</small>":
                 # At this point, the basic footnote XML has been produced,
                 # enough to show the footnotes themselves below each article.
                 # We will now see if we can parse the markers in the content
@@ -1634,7 +1684,6 @@ def make_xml(law_num, law_year):
                 )
                 nodes_to_kill = []
                 for desc in parent.iterdescendants():
-
                     peek = desc.getnext()
 
                     # When a closing marker (see the comment for the
@@ -1678,7 +1727,7 @@ def make_xml(law_num, law_year):
                         desc.text += stuff_to_move
 
                         # Remove the closing marker from the next node.
-                        peek.text = re.sub(close_mark_re, '', peek.text, 1)
+                        peek.text = re.sub(close_mark_re, "", peek.text, 1)
 
                     # If there's no content left in the next node, aside from
                     # the closing markers that we just moved, then we'll put
@@ -1697,7 +1746,7 @@ def make_xml(law_num, law_year):
                 for desc in parent.iterdescendants():
                     # Leave the footnotes out of this, since we're only
                     # looking for markers in text.
-                    if 'footnotes' in [a.tag for a in desc.iterancestors()]:
+                    if "footnotes" in [a.tag for a in desc.iterancestors()]:
                         continue
 
                     # Not interested if the node contains no text.
@@ -1714,12 +1763,11 @@ def make_xml(law_num, law_year):
                     # markers within the entity being checked.
                     cursor = 0
 
-                    opening_found = desc.text.find('[', cursor)
-                    closing_found = desc.text.find(']', cursor)
+                    opening_found = desc.text.find("[", cursor)
+                    closing_found = desc.text.find("]", cursor)
                     while opening_found > -1 or closing_found > -1:
-                        if (
-                            opening_found > -1 and
-                            (opening_found < closing_found or closing_found == -1)
+                        if opening_found > -1 and (
+                            opening_found < closing_found or closing_found == -1
                         ):
                             # We have found an opening marker: [
 
@@ -1752,12 +1800,14 @@ def make_xml(law_num, law_year):
 
                             # Find the opening marker after the current one,
                             # if it exists.
-                            next_opening = desc.text.find('[', opening_found + 1)
+                            next_opening = desc.text.find("[", opening_found + 1)
 
                             # Check whether the next opening marker, if it
                             # exists, is between the current opening marker
                             # and the next closing marker.
-                            no_opening_between = next_opening == -1 or next_opening > closing_found
+                            no_opening_between = (
+                                next_opening == -1 or next_opening > closing_found
+                            )
 
                             # Use "words" if 1) the opening marker is at the
                             # start of the sentence and 2) there is also a
@@ -1765,27 +1815,31 @@ def make_xml(law_num, law_year):
                             # marker between the current marker and its
                             # corresponding closing marker.
                             partial_at_start = (
-                                opening_found == 0 and closing_found > -1 and no_opening_between
+                                opening_found == 0
+                                and closing_found > -1
+                                and no_opening_between
                             )
 
                             # Check if the opening and closing markers
                             # encompass the entire entity. In these cases, it
                             # makes no sense to use "words".
-                            all_encompassing = all([
-                                opening_found == 0,
-                                no_opening_between,
-                                desc.text[0] == '[',
-                                matcher.check(
-                                    desc.text[closing_found:],
-                                    r'\] <sup style="font-size:60%"> \d+\) </sup>$'
-                                )
-                            ])
+                            all_encompassing = all(
+                                [
+                                    opening_found == 0,
+                                    no_opening_between,
+                                    desc.text[0] == "[",
+                                    matcher.check(
+                                        desc.text[closing_found:],
+                                        r'\] <sup style="font-size:60%"> \d+\) </sup>$',
+                                    ),
+                                ]
+                            )
 
                             # Boil this logic down into the question: to use
                             # words or not to use words?
                             use_words = (
-                                (opening_found > 0 or partial_at_start) and not all_encompassing
-                            )
+                                opening_found > 0 or partial_at_start
+                            ) and not all_encompassing
 
                             if use_words:
                                 # We'll start with everything from the opening
@@ -1795,7 +1849,7 @@ def make_xml(law_num, law_year):
                                 # figure out where exactly the appropriate
                                 # closing marker is located. Quite possibly,
                                 # it's not simply the first one.
-                                words = desc.text[opening_found + 1:]
+                                words = desc.text[opening_found + 1 :]
 
                                 # Eliminate **pairs** of opening and closing
                                 # markers beyond the opening marker we're
@@ -1821,12 +1875,12 @@ def make_xml(law_num, law_year):
                                 #
                                 words = re.sub(
                                     r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                                    r'\1',
-                                    words
+                                    r"\1",
+                                    words,
                                 )
 
                                 # Find the first non-paired closing marker.
-                                closing_index = words.find(']')
+                                closing_index = words.find("]")
 
                                 # Cut the "words" variable appropriately. If
                                 # closing_index wasn't found, it means that
@@ -1848,15 +1902,14 @@ def make_xml(law_num, law_year):
                                 words = strip_markers(words).strip()
 
                                 # Add the "words" attribute to the last element.
-                                ancestors[-1].attrib['words'] = words
+                                ancestors[-1].attrib["words"] = words
 
                             # We'll "pop" this list when we find the closing
                             # marker, as per below.
                             opening_locations.append(ancestors)
 
-                        elif (
-                            closing_found > -1 and
-                            (closing_found < opening_found or opening_found == -1)
+                        elif closing_found > -1 and (
+                            closing_found < opening_found or opening_found == -1
                         ):
                             # We have found a closing marker: ]
 
@@ -1898,7 +1951,7 @@ def make_xml(law_num, law_year):
                             # to the end location, so that the <start> and
                             # <end> tags will get truncated into a unified
                             # <location> tag...
-                            if 'words' in started_at[-1].attrib:
+                            if "words" in started_at[-1].attrib:
                                 # ...except, if it turns out that we're
                                 # actually dealing with a different sentence
                                 # than was specified in the start location,
@@ -1914,7 +1967,7 @@ def make_xml(law_num, law_year):
                                 # each attribute containing the set of words
                                 # contained in their respective sentences.
                                 sen_nr = str(order_among_siblings(desc))
-                                if desc.tag == 'sen' and sen_nr != started_at[-1].text:
+                                if desc.tag == "sen" and sen_nr != started_at[-1].text:
                                     # Remove pairs of opening/closing markers
                                     # from the "words", so that we find the
                                     # correct closing marker. (See comment on
@@ -1922,37 +1975,37 @@ def make_xml(law_num, law_year):
                                     # markers above.)
                                     words = re.sub(
                                         r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                                        r'\1',
-                                        words
+                                        r"\1",
+                                        words,
                                     )
-                                    words = desc.text[:desc.text.find(']')]
+                                    words = desc.text[: desc.text.find("]")]
                                 else:
-                                    words = started_at[-1].attrib['words']
+                                    words = started_at[-1].attrib["words"]
 
-                                ancestors[-1].attrib['words'] = words
+                                ancestors[-1].attrib["words"] = words
 
                             # Stuff our findings into a list of marker
                             # locations that can be appended to the footnote
                             # XML.
-                            marker_locations.append({
-                                'num': int(num) if num is not None else None,
-                                'type': 'range',
-
-                                # 'started_at' is determined from previous
-                                # processing of the corresponding opening
-                                # marker.
-                                'started_at': started_at,
-
-                                # 'ended_at' is determined from the processing
-                                # of the closing marker, which is what we just
-                                # performed.
-                                'ended_at': ancestors
-                            })
+                            marker_locations.append(
+                                {
+                                    "num": int(num) if num is not None else None,
+                                    "type": "range",
+                                    # 'started_at' is determined from previous
+                                    # processing of the corresponding opening
+                                    # marker.
+                                    "started_at": started_at,
+                                    # 'ended_at' is determined from the processing
+                                    # of the closing marker, which is what we just
+                                    # performed.
+                                    "ended_at": ancestors,
+                                }
+                            )
 
                         # Check again for the next opening and closing
                         # markers, except from our cursor, this time.
-                        closing_found = desc.text.find(']', cursor)
-                        opening_found = desc.text.find('[', cursor)
+                        closing_found = desc.text.find("]", cursor)
+                        opening_found = desc.text.find("[", cursor)
 
                     ##########################################################
                     # Detection of deletion markers, indicated by the "…"
@@ -1964,7 +2017,7 @@ def make_xml(law_num, law_year):
                     # markers within the entity being checked, like above.
                     cursor = 0
 
-                    deletion_found = desc.text.find('…', cursor)
+                    deletion_found = desc.text.find("…", cursor)
                     while deletion_found > -1:
                         # Keep track of how far we've already searched.
                         cursor = deletion_found + 1
@@ -1975,8 +2028,8 @@ def make_xml(law_num, law_year):
                         # processed here, so we'll update the deletion_found
                         # variable (in the same way as is done at the end of
                         # this loop) and continue.
-                        if desc.text[cursor:cursor + 5] == ' </a>':
-                            deletion_found = desc.text.find('…', cursor)
+                        if desc.text[cursor : cursor + 5] == " </a>":
+                            deletion_found = desc.text.find("…", cursor)
                             continue
 
                         # Find the footnote number next to the deletion marker
@@ -1987,15 +2040,15 @@ def make_xml(law_num, law_year):
                         # actually dealing with a footnote, but rather the "…"
                         # symbol being used for something else. For what,
                         # exactly, is undetermined as of yet.
-                        if num is None or num == '':
-                            deletion_found = desc.text.find('…', cursor)
+                        if num is None or num == "":
+                            deletion_found = desc.text.find("…", cursor)
                             continue
 
                         # See function's comments for details.
                         ancestors = generate_ancestors(desc, parent)
 
                         # len('</sup>') == 6
-                        sup_end = desc.text.find('</sup>', deletion_found + 1) + 6
+                        sup_end = desc.text.find("</sup>", deletion_found + 1) + 6
 
                         # We'll take the text that comes before and after the
                         # deletion mark, and replace their markers with
@@ -2004,8 +2057,8 @@ def make_xml(law_num, law_year):
                         # intended to put the deletion markers back in works
                         # on the text regardless of whether the other deletion
                         # or replacement markers are already there or not.
-                        before_mark = '^' + regexify_markers(desc.text[:deletion_found])
-                        after_mark = regexify_markers(desc.text[sup_end:]) + '$'
+                        before_mark = "^" + regexify_markers(desc.text[:deletion_found])
+                        after_mark = regexify_markers(desc.text[sup_end:]) + "$"
 
                         # Deletion markers are styled like this when they
                         # indicate deleted content immediately before a comma:
@@ -2026,26 +2079,28 @@ def make_xml(law_num, law_year):
                         # comma as the value and expect the marker renderer to
                         # use that directly instead of assuming a comma.
                         if (
-                            desc.text[deletion_found + 1:deletion_found + 2] == ',' and
-                            before_mark[-1] == ' '
+                            desc.text[deletion_found + 1 : deletion_found + 2] == ","
+                            and before_mark[-1] == " "
                         ):
-                            ancestors[-1].attrib['middle-punctuation'] = ','
+                            ancestors[-1].attrib["middle-punctuation"] = ","
 
                         # Assign the regular expressions for the texts before
                         # and after the deletion mark, to the last node in the
                         # location XML.
                         if before_mark:
-                            ancestors[-1].attrib['before-mark'] = before_mark
+                            ancestors[-1].attrib["before-mark"] = before_mark
                         if after_mark:
-                            ancestors[-1].attrib['after-mark'] = after_mark
+                            ancestors[-1].attrib["after-mark"] = after_mark
 
-                        marker_locations.append({
-                            'num': int(num),
-                            'type': 'deletion',
-                            'started_at': ancestors
-                        })
+                        marker_locations.append(
+                            {
+                                "num": int(num),
+                                "type": "deletion",
+                                "started_at": ancestors,
+                            }
+                        )
 
-                        deletion_found = desc.text.find('…', cursor)
+                        deletion_found = desc.text.find("…", cursor)
 
                     ##########################################################
                     # Detect single superscripted numbers, which indicate
@@ -2058,7 +2113,9 @@ def make_xml(law_num, law_year):
                     # pointers within the entity being checked, like above.
                     cursor = 0
 
-                    pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                    pointer_found = desc.text.find(
+                        '<sup style="font-size:60%">', cursor
+                    )
                     while pointer_found > -1:
                         # Keep track of how far we've already searched.
                         cursor = pointer_found + 1
@@ -2075,12 +2132,18 @@ def make_xml(law_num, law_year):
                         # closing and deletion markers, and punctuation can
                         # appear between the symbol and superscript (i.e.
                         # "bla]. 2)".
-                        chars_before_start = pointer_found - 3 if pointer_found >= 3 else 0
-                        chars_before = desc.text[chars_before_start:pointer_found].strip()
-                        if '…' in chars_before or ']' in chars_before:
+                        chars_before_start = (
+                            pointer_found - 3 if pointer_found >= 3 else 0
+                        )
+                        chars_before = desc.text[
+                            chars_before_start:pointer_found
+                        ].strip()
+                        if "…" in chars_before or "]" in chars_before:
                             # This is a closing or deletion marker, which
                             # we're not interested in at this point.
-                            pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                            pointer_found = desc.text.find(
+                                '<sup style="font-size:60%">', cursor
+                            )
                             continue
 
                         # Catch all the superscript content, so that we may
@@ -2088,7 +2151,7 @@ def make_xml(law_num, law_year):
                         # number as well.
                         matcher.check(
                             desc.text[pointer_found:],
-                            r'(<sup style="font-size:60%"> (\d+)\) </sup>)'
+                            r'(<sup style="font-size:60%"> (\d+)\) </sup>)',
                         )
                         sup, num = matcher.result()
 
@@ -2102,24 +2165,28 @@ def make_xml(law_num, law_year):
                         # to put the deletion markers back in works on the
                         # text regardless of whether the other deletion or
                         # replacement markers are already there or not.
-                        before_mark = '^' + regexify_markers(desc.text[:pointer_found])
-                        after_mark = regexify_markers(desc.text[sup_end:]) + '$'
+                        before_mark = "^" + regexify_markers(desc.text[:pointer_found])
+                        after_mark = regexify_markers(desc.text[sup_end:]) + "$"
 
                         # Assign the regular expressions for the texts before
                         # and after the pointer, to the last node in the
                         # location XML.
                         if before_mark:
-                            ancestors[-1].attrib['before-mark'] = before_mark
+                            ancestors[-1].attrib["before-mark"] = before_mark
                         if after_mark:
-                            ancestors[-1].attrib['after-mark'] = after_mark
+                            ancestors[-1].attrib["after-mark"] = after_mark
 
-                        marker_locations.append({
-                            'num': int(num),
-                            'type': 'pointer',
-                            'started_at': ancestors
-                        })
+                        marker_locations.append(
+                            {
+                                "num": int(num),
+                                "type": "pointer",
+                                "started_at": ancestors,
+                            }
+                        )
 
-                        pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                        pointer_found = desc.text.find(
+                            '<sup style="font-size:60%">', cursor
+                        )
 
                     ##########################################################
                     # At this point, we're done processing the following:
@@ -2165,36 +2232,36 @@ def make_xml(law_num, law_year):
                     # simply stuff the <location> element in there instead of
                     # the footnote that we should find in cases when `num` is
                     # an integer (i.e. referring to a numbered footnote).
-                    if ml['num'] is None:
+                    if ml["num"] is None:
                         # Find the index where we'll want to add the new
                         # <unspecified-ranges> element.
                         new_index = footnotes.getparent().index(footnotes) + 1
 
                         # Create the new <unspecified-ranges> element.
-                        location_target = E('unspecified-ranges')
+                        location_target = E("unspecified-ranges")
 
                         # Add the new element immediately after the
                         # <footnotes> element.
                         footnotes.getparent().insert(new_index, location_target)
                     else:
                         # Get the marker's appropriate footnote XML.
-                        location_target = footnotes.getchildren()[ml['num'] - 1]
+                        location_target = footnotes.getchildren()[ml["num"] - 1]
 
                     # Create the location XML node itself.
-                    location = E('location', {'type': ml['type']})
+                    location = E("location", {"type": ml["type"]})
 
-                    if ml['type'] in ['pointer', 'deletion']:
-                        for node in ml['started_at']:
+                    if ml["type"] in ["pointer", "deletion"]:
+                        for node in ml["started_at"]:
                             location.append(node)
 
                         location_target.append(location)
 
-                    elif ml['type'] == 'range':
+                    elif ml["type"] == "range":
                         # If the starting and ending locations are identical,
                         # we will only want a <location> element to denote the
                         # marker's locations.
-                        started_at = ml['started_at']
-                        ended_at = ml['ended_at']
+                        started_at = ml["started_at"]
+                        ended_at = ml["ended_at"]
                         if xml_lists_identical(started_at, ended_at):
                             for node in started_at:
                                 location.append(node)
@@ -2206,8 +2273,8 @@ def make_xml(law_num, law_year):
                             # the <location> element, so that the opening and
                             # closing markers can be placed in completely
                             # different places.
-                            start = E('start')
-                            end = E('end')
+                            start = E("start")
+                            end = E("end")
                             for node in started_at:
                                 start.append(node)
                             for node in ended_at:
@@ -2228,9 +2295,9 @@ def make_xml(law_num, law_year):
                         # the same set of words should be marked repeatedly in
                         # the same sentence.
                         twin_found = False
-                        for maybe_twin in location_target.findall('location'):
+                        for maybe_twin in location_target.findall("location"):
                             if xml_compare(maybe_twin, location):
-                                maybe_twin.getchildren()[-1].attrib['repeat'] = 'true'
+                                maybe_twin.getchildren()[-1].attrib["repeat"] = "true"
                                 twin_found = True
                                 break
 
@@ -2252,11 +2319,11 @@ def make_xml(law_num, law_year):
     # such as those intended as comments. We'll want those to be parsable XML
     # as opposed to text content, so that they can be manipulated by a
     # displaying mechanism, or easily stripped out if needed.
-    for node in law.xpath('//sen') + law.xpath('//name'):
+    for node in law.xpath("//sen") + law.xpath("//name"):
         cursor = 0
-        html_loc = node.text.find('<a ', cursor)
+        html_loc = node.text.find("<a ", cursor)
         while html_loc > -1:
-            html_end_loc = node.text.find('</a>', cursor) + len('</a>')
+            html_end_loc = node.text.find("</a>", cursor) + len("</a>")
 
             comment_content = node.text[html_loc:html_end_loc]
 
@@ -2271,7 +2338,7 @@ def make_xml(law_num, law_year):
             subnode.tail = tail
 
             cursor = html_loc + 1
-            html_loc = node.text.find('<a ', cursor)
+            html_loc = node.text.find("<a ", cursor)
 
             del html_end_loc
             del comment_content
@@ -2290,14 +2357,13 @@ def make_xml(law_num, law_year):
     # that there is no useless information, by recreating the table in XML.
     # This way, it'll be quite easy for a layout engine in a browser to render
     # it correctly.
-    for sen in law.xpath('//sen'):
-        if sen.text.find('<table ') == 0:
-
+    for sen in law.xpath("//sen"):
+        if sen.text.find("<table ") == 0:
             # The XML table that we are going to produce.
-            table = E('table')
+            table = E("table")
 
             # The HTML table from which we're fetching information.
-            html_table = etree.HTML(sen.text).find('body/table/tbody')
+            html_table = etree.HTML(sen.text).find("body/table/tbody")
 
             # Find the rows and headers inside the HTML.
             rows = super_iter(html_table)
@@ -2322,52 +2388,51 @@ def make_xml(law_num, law_year):
             # be skipped altogether. This must be the code's fault, somehow.
 
             toprow = next(rows)
-            if toprow[0].find('b') is not None:
-                header_style = 'b'
-            elif toprow[0].find('i') is not None:
-                header_style = 'i'
+            if toprow[0].find("b") is not None:
+                header_style = "b"
+            elif toprow[0].find("i") is not None:
+                header_style = "i"
             else:
-                header_style = ''
+                header_style = ""
 
             # If we've determined that the table has a header at all...
             if header_style:
-                thead = E('thead', E('tr'))
+                thead = E("thead", E("tr"))
                 table.append(thead)
 
                 # Add headers to the XML table.
                 for col in toprow:
                     header = col.find(header_style).text.strip()
-                    if header_style != 'b':
+                    if header_style != "b":
                         # Headers are normally bold, but there are exceptions.
                         # We'll only designate a header style when we run into
                         # an exception to the rule.
-                        thead.find('tr').append(E('th', header, {'header-style': header_style}))
+                        thead.find("tr").append(
+                            E("th", header, {"header-style": header_style})
+                        )
                     else:
-                        thead.find('tr').append(E('th', header))
+                        thead.find("tr").append(E("th", header))
             else:
                 # Roll one back because we've decided that the first row is
                 # not a header after all.
                 rows.prev()
 
-            tbody = E('tbody')
+            tbody = E("tbody")
             table.append(tbody)
 
             # Add rows.
             for row in rows:
-                tr = E('tr')
+                tr = E("tr")
                 tbody.append(tr)
                 for col in row:
-                    tr.append(E('td', col.text.strip()))
+                    tr.append(E("td", col.text.strip()))
 
             # Replace HTML-encoded text with XML table.
             sen.text = None
             sen.append(table)
 
     # Write the XML object to output file.
-    write_xml(
-        law,
-        XML_FILENAME % (law_year, law_num)
-    )
+    write_xml(law, XML_FILENAME % (law_year, law_num))
 
 
 # FIXME: `skip_prettyprint_hack` is there because we get a bunch of unwelcome
@@ -2378,7 +2443,7 @@ def make_xml(law_num, law_year):
 # we can use it when generating legal XML files, but skip it when generating
 # the index, regardless of what the DEBUG flag says.
 def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
-    with open(filename, 'w') as f:
+    with open(filename, "w") as f:
         # Importing a completely different XML library than the one we're
         # using elsewhere in the code is a bit weird, but this is the only one
         # we could find that does pretty printing with proper indenting. That
@@ -2391,35 +2456,27 @@ def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
         # out with the same library as the one we use elsewhere.
         if settings.DEBUG and not skip_prettyprint_hack:
             import xml.dom.minidom
+
             xml = xml.dom.minidom.parseString(
                 etree.tostring(
-                    xml_doc,
-                    pretty_print=True,
-                    xml_declaration=True,
-                    encoding='utf-8'
-                ).decode('utf-8')
+                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+                ).decode("utf-8")
             )
             pretty_xml_as_string = xml.toprettyxml(
-                indent='  ',
-                encoding='utf-8'
-            ).decode('utf-8')
+                indent="  ", encoding="utf-8"
+            ).decode("utf-8")
             f.write(pretty_xml_as_string)
         else:
             f.write(
                 etree.tostring(
-                    xml_doc,
-                    pretty_print=True,
-                    xml_declaration=True,
-                    encoding='utf-8'
-                ).decode('utf-8')
+                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+                ).decode("utf-8")
             )
 
 
 def process_law(law_id):
-
     try:
-
-        (law_num, law_year) = law_id.split('/')
+        (law_num, law_year) = law_id.split("/")
         law_num = int(law_num)
         law_year = int(law_year)
 
@@ -2460,7 +2517,8 @@ def process_law(law_id):
         # Something went wrong in processing the law, so we'll record the
         # traceback to the errormap.
         import traceback
-        lines = ''.join(traceback.format_exception(*sys.exc_info()))
+
+        lines = "".join(traceback.format_exception(*sys.exc_info()))
 
         # Report back which law was attempted to process, and error.
         return [law_id, lines]
@@ -2469,10 +2527,10 @@ def process_law(law_id):
 def get_available_law_ids():
     law_ids = []
     for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
-        if re.match(r'^\d{7}\.html$', filename):
+        if re.match(r"^\d{7}\.html$", filename):
             law_year = int(filename[0:4])
             law_num = int(filename[4:7])
-            law_id = '%d/%d' % (law_num, law_year)
+            law_id = "%d/%d" % (law_num, law_year)
             law_ids.append(law_id)
     return law_ids
 
@@ -2481,7 +2539,7 @@ def get_broken_law_ids():
     law_ids = []
 
     if os.path.isfile(ERRORMAP_FILENAME):
-        with open(ERRORMAP_FILENAME, 'r') as f:
+        with open(ERRORMAP_FILENAME, "r") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
             for law_id in errormap.keys():
                 if errormap[law_id] is not None:
@@ -2492,28 +2550,29 @@ def get_broken_law_ids():
 
 # Displays what's going on to the terminal.
 def report(law_id, i, law_count, msg):
-
     nr = str(i + 1)
     while len(nr) < 4:
-        nr = ' %s' % nr
+        nr = " %s" % nr
 
     law_id_str = str(law_id)
     while len(law_id_str) < 8:
-        law_id_str = ' %s' % law_id_str
+        law_id_str = " %s" % law_id_str
 
-    if msg == 'done':
+    if msg == "done":
         color = Fore.GREEN
-    elif msg == 'failed':
+    elif msg == "failed":
         color = Fore.RED
     else:
         raise Exception('Unknown message "%s"' % msg)
 
-    print('[%s/%d] %s %s%s%s' % (nr, law_count, law_id_str, color, msg, Style.RESET_ALL))
+    print(
+        "[%s/%d] %s %s%s%s" % (nr, law_count, law_id_str, color, msg, Style.RESET_ALL)
+    )
 
 
 # Displays errors known according to errormap.
 def display_errors(law_ids):
-    with open(ERRORMAP_FILENAME, 'r') as f:
+    with open(ERRORMAP_FILENAME, "r") as f:
         errormap = json.load(f, object_pairs_hook=OrderedDict)
 
         # Counters.
@@ -2544,61 +2603,61 @@ def display_errors(law_ids):
             inverted_errormap[error_msg].append(law_id)
 
         # Sort errors so that the most common ones are shown last.
-        inverted_errormap = OrderedDict(sorted(
-            inverted_errormap.items(),
-            key=lambda x: len(x[1])
-        ))
+        inverted_errormap = OrderedDict(
+            sorted(inverted_errormap.items(), key=lambda x: len(x[1]))
+        )
 
         width, height = terminal_width_and_height()
         for error_msg in inverted_errormap.keys():
             print()
-            print('%s' % ('-' * width))
+            print("%s" % ("-" * width))
             print(error_msg)
-            print('Errors: %d' % len(inverted_errormap[error_msg]))
+            print("Errors: %d" % len(inverted_errormap[error_msg]))
             print()
             for law_id in inverted_errormap[error_msg]:
-                print(' - %s' % law_id, end='')
+                print(" - %s" % law_id, end="")
 
         print()
-        print('%s' % ('-' * width))
-        print('Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%.' % (
-            successes + failures,
-            successes,
-            failures,
-            100 * (successes / (successes + failures))
-        ))
+        print("%s" % ("-" * width))
+        print(
+            "Total: %d. Successes: %d. Failures: %d. Success ratio: %.2f%%."
+            % (
+                successes + failures,
+                successes,
+                failures,
+                100 * (successes / (successes + failures)),
+            )
+        )
 
 
 def update_index():
-
-    print('Updating index...', end='', flush=True)
+    print("Updating index...", end="", flush=True)
 
     # Index root element.
-    index = E('index')
+    index = E("index")
 
     # A place for statistics and such. These will be turned into XML nodes
     # later on but are consolidated here for clarity.
     stats = {
-        'total-count': 0,
-        'empty-count': 0,
-        'non-empty-count': 0,
+        "total-count": 0,
+        "empty-count": 0,
+        "non-empty-count": 0,
     }
 
     # Add a place to place the law entries.
-    law_entries = E('law-entries')
+    law_entries = E("law-entries")
     index.append(law_entries)
 
     # Iterate through all the XML files we have.
     for law_xml_filename in os.listdir(os.path.dirname(XML_FILENAME)):
-
         # Only interested in XML files.
-        if law_xml_filename[-4:] != '.xml':
+        if law_xml_filename[-4:] != ".xml":
             continue
 
         # Determine the law's year and number from the XML file's name.
         try:
             law_year = int(law_xml_filename[0:4])
-            law_nr = law_xml_filename[5:law_xml_filename.find('.', 5)]
+            law_nr = law_xml_filename[5 : law_xml_filename.find(".", 5)]
         except ValueError:
             # This is not a file in the correct name format. Probably the
             # index itself. We'll ignore it.
@@ -2609,17 +2668,17 @@ def update_index():
         law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
 
         # Law-specific info for the index.
-        identifier = f'{law_nr}/{law_year}'
-        name = law.find('name').text
-        date = law.find('num-and-date/date').text
-        is_empty = law.getchildren()[-1].tag == 'minister-clause'
-        art_count = len(law.findall('art'))
+        identifier = f"{law_nr}/{law_year}"
+        name = law.find("name").text
+        date = law.find("num-and-date/date").text
+        is_empty = law.getchildren()[-1].tag == "minister-clause"
+        art_count = len(law.findall("art"))
 
         # Determine some structural statistics.
-        chapter_count = len(law.xpath('/law/chapter'))
-        art_count = len(law.xpath('/law/art'))
+        chapter_count = len(law.xpath("/law/chapter"))
+        art_count = len(law.xpath("/law/art"))
         if chapter_count > 0:
-            art_count += len(law.xpath('/law/chapter/art'))
+            art_count += len(law.xpath("/law/chapter/art"))
 
         # Determine the document's structure from the stats we've found.
         # NOTE: This method of consecutively appending path elements to the
@@ -2631,29 +2690,29 @@ def update_index():
         #
         # For example, lög nr. 42/1983 (152c) has a chapter for temporary
         # clauses, but is otherwise without chapters.
-        structure = '' # Undetermined
+        structure = ""  # Undetermined
         if chapter_count > 0:
-            structure += '/chapter'
+            structure += "/chapter"
         if art_count > 0:
-            structure += '/art'
+            structure += "/art"
 
         # Append the gathered data to the index.
         law_entry = E(
-            'law-entry',
+            "law-entry",
             {
-                'nr': law_nr,
-                'year': str(law_year),
-                'date': date,
+                "nr": law_nr,
+                "year": str(law_year),
+                "date": date,
             },
-            E('identifier', identifier),
-            E('name', name),
+            E("identifier", identifier),
+            E("name", name),
             E(
-                'meta',
-                E('is-empty', 'true' if is_empty else 'false'),
-                E('structure', structure),
-                E('chapter-count', str(chapter_count)),
-                E('art-count', str(art_count))
-            )
+                "meta",
+                E("is-empty", "true" if is_empty else "false"),
+                E("structure", structure),
+                E("chapter-count", str(chapter_count)),
+                E("art-count", str(art_count)),
+            ),
         )
         law_entries.append(law_entry)
 
@@ -2661,76 +2720,92 @@ def update_index():
         # interested in, so we'll leave a few variables for convenience, even
         # if they are easily calculable. The client should not need to
         # calculate basic things.
-        stats['total-count'] += 1
+        stats["total-count"] += 1
         if is_empty:
-            stats['empty-count'] += 1
+            stats["empty-count"] += 1
         else:
-            stats['non-empty-count'] += 1
+            stats["non-empty-count"] += 1
 
     # Sort the law entries by year and number.
-    law_entries[:] = reversed(sorted(
-        law_entries,
-        key=lambda law: (law.attrib['year'], law.attrib['nr'])
-    ))
+    law_entries[:] = reversed(
+        sorted(law_entries, key=lambda law: (law.attrib["year"], law.attrib["nr"]))
+    )
 
     # Insert statistics into XML.
-    node_stats = E('stats')
+    node_stats = E("stats")
     index.insert(0, node_stats)
     for stat_key in stats.keys():
         node_stats.append(E(stat_key, str(stats[stat_key])))
 
     write_xml(index, XML_INDEX_FILENAME, skip_prettyprint_hack=True)
 
-    print(' done')
+    print(" done")
 
 
 def usage(exec_name, message=None):
-    print('Usage: %s [law_number>/<year>] [law_number>/<year>]...' % exec_name, file=stderr)
+    print(
+        "Usage: %s [law_number>/<year>] [law_number>/<year>]..." % exec_name,
+        file=stderr,
+    )
     print(file=stderr)
-    print('Running without options or specific laws will process all available laws.', file=stderr)
+    print(
+        "Running without options or specific laws will process all available laws.",
+        file=stderr,
+    )
     print(file=stderr)
-    print('Options:', file=stderr)
-    print('    --help                    Display this help message.', file=stderr)
+    print("Options:", file=stderr)
+    print("    --help                    Display this help message.", file=stderr)
     print(file=stderr)
-    print('    --try-broken              Try processing laws known to have failed.', file=stderr)
-    print('    --single-thread           Skip multi-processing (mostly for debugging).', file=stderr)
-    print('    --rebuild-straytextmap    Force the asking of user about stray text following numarts', file=stderr)
-    print('    --index-only              Don\'t process laws, just update the index.', file=stderr)
+    print(
+        "    --try-broken              Try processing laws known to have failed.",
+        file=stderr,
+    )
+    print(
+        "    --single-thread           Skip multi-processing (mostly for debugging).",
+        file=stderr,
+    )
+    print(
+        "    --rebuild-straytextmap    Force the asking of user about stray text following numarts",
+        file=stderr,
+    )
+    print(
+        "    --index-only              Don't process laws, just update the index.",
+        file=stderr,
+    )
     print(file=stderr)
     if message:
-        print('Error: %s' % message, file=stderr)
+        print("Error: %s" % message, file=stderr)
     quit(1)
 
 
 def main(argv):
-
     # A list of valid options so that we'll know when something is thrown in
     # that we don't know what to do with.
     valid_options = [
-        '--help',
-        '--try-broken',
-        '--single-thread',
-        '--rebuild-straytextmap',
-        '--index-only',
+        "--help",
+        "--try-broken",
+        "--single-thread",
+        "--rebuild-straytextmap",
+        "--index-only",
     ]
 
-    if '--help' in argv:
+    if "--help" in argv:
         usage(argv[0])
 
     # Only update the index and immediately quit if so requested.
-    if '--index-only' in argv:
+    if "--index-only" in argv:
         update_index()
         quit()
 
     # Container for laws that are about to be processed.
     law_ids = []
 
-    if '--try-broken' in argv:
+    if "--try-broken" in argv:
         law_ids = get_broken_law_ids()
 
     # Add things in command line that match the pattern for a law_id.
     for arg in argv[1:]:
-        if re.match(r'^\d{1,4}\/\d{4}$', arg):
+        if re.match(r"^\d{1,4}\/\d{4}$", arg):
             law_ids.append(arg)
         elif arg in valid_options:
             settings.options[arg] = True
@@ -2758,7 +2833,7 @@ def main(argv):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     with Pool(cpu_count, init_pool) as pool:
-        if '--single-thread' in argv:
+        if "--single-thread" in argv:
             # Multiprocessing has some wide-reaching implications for various
             # under-the-hood mechanics like debugging. We need the ability to
             # have those work, so we offer this option to sidestep threading.
@@ -2777,13 +2852,12 @@ def main(argv):
             results = pool.imap_unordered(process_law, law_ids)
 
         # Open the errormap for recording successes and errors.
-        with open(ERRORMAP_FILENAME, 'r') as f:
+        with open(ERRORMAP_FILENAME, "r") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
 
         # Monitor and record return successes and errors. We'll want to record
         # the errormap, no matter what.
         try:
-
             # Initial state of iterator.
             i = 0
 
@@ -2800,7 +2874,7 @@ def main(argv):
                     errormap[law_id] = error_trace
 
                     # Tell the user about it.
-                    msg = 'done' if error_trace is None else 'failed'
+                    msg = "done" if error_trace is None else "failed"
                     report(law_id, i, law_count, msg)
 
                     # Increase iterator.
@@ -2810,7 +2884,7 @@ def main(argv):
                     break
         finally:
             # Write the errormap.
-            with open(ERRORMAP_FILENAME, 'w') as f:
+            with open(ERRORMAP_FILENAME, "w") as f:
                 json.dump(errormap, f)
 
     # Update the index.
@@ -2828,4 +2902,4 @@ except Exception as e:
     if settings.DEBUG:
         raise
     else:
-        print('Error: %s' % e, file=stderr)
+        print("Error: %s" % e, file=stderr)

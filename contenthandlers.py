@@ -12,7 +12,7 @@ from utils import strip_links
 from utils import super_iter
 from utils import terminal_width_and_height
 
-SPLITMAP_FILENAME = os.path.join('data', 'json-maps', 'splitmap.json')
+SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 
 
 def begins_with_regular_content(argument):
@@ -25,30 +25,26 @@ def begins_with_regular_content(argument):
     # which was a surprise. It may require more sophisticated means
     # of determining regular content in all cases.
     question = strip_markers(strip_links(argument)).strip()
-    if len(question) and question[0] != '<':
+    if len(question) and question[0] != "<":
         return True
     else:
         return False
 
 
 def regexify_markers(text):
-    '''
+    """
     Replaces markers in given text with regex that will match those same
     markers. The point is to have a regex that will match the string both with
     and without markers.
-    '''
+    """
 
     # These must be escaped so that they are not interpreted as regex from
     # renderer's point of view.
-    text = text.replace('(', '\)')
-    text = text.replace(')', '\)')
+    text = text.replace("(", "\)")
+    text = text.replace(")", "\)")
 
     # Opening markers.
-    text = re.sub(
-        r'\[ ?',
-        r'(\[? ?)?',
-        text
-    )
+    text = re.sub(r"\[ ?", r"(\[? ?)?", text)
 
     # Closing markers.
     # NOTE: The three backslashes before the closing parentheses is because
@@ -57,7 +53,7 @@ def regexify_markers(text):
     text = re.sub(
         r'\],?\.? ?<sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
         r'\.?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
-        text
+        text,
     )
 
     # Deletion markers.
@@ -65,11 +61,11 @@ def regexify_markers(text):
     text = re.sub(
         r'… <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
         r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
-        text
+        text,
     )
 
     # FIXME: This is unexplained.
-    text = text.replace(' ,', r' ?,')
+    text = text.replace(" ,", r" ?,")
 
     # Remove stray spaces.
     text = text.strip()
@@ -78,26 +74,26 @@ def regexify_markers(text):
 
 
 def strip_markers(text):
-    '''
+    """
     Strips markers from text and cleans up resulting weirdness.
-    '''
+    """
 
-    text = text.replace('…', '')
-    text = text.replace('[', '')
-    text = text.replace(']', '')
-    text = re.sub(r'<sup style="font-size:60%"> \d+\) </sup>', '', text)
+    text = text.replace("…", "")
+    text = text.replace("[", "")
+    text = text.replace("]", "")
+    text = re.sub(r'<sup style="font-size:60%"> \d+\) </sup>', "", text)
 
-    while text.find('  ') > -1:
-        text = text.replace('  ', ' ')
+    while text.find("  ") > -1:
+        text = text.replace("  ", " ")
 
-    text = text.replace(' ,', ',')
-    text = text.replace(' .', '.')
+    text = text.replace(" ,", ",")
+    text = text.replace(" .", ".")
 
     return text
 
 
 def next_footnote_sup(elem, cursor):
-    '''
+    """
     Returns the next footnote number in the given element. Sometimes the
     number is located in the next element, for example: "or not the
     [minister]. <sup ...> 2) </sup>". In these cases we'll need to peek into
@@ -107,19 +103,19 @@ def next_footnote_sup(elem, cursor):
 
     By the way:
         len('<sup style="font-size:60%">') == 27
-    '''
+    """
     if elem.text.find('<sup style="font-size:60%">', cursor) > -1:
         haystack = elem.text
         num_start = haystack.find('<sup style="font-size:60%">', cursor) + 27
-        num_end = haystack.find('</sup>', cursor)
+        num_end = haystack.find("</sup>", cursor)
         num_text = haystack[num_start:num_end]
-        num = num_text.strip().strip(')')
+        num = num_text.strip().strip(")")
     elif elem.getnext() is not None:
         haystack = elem.getnext().text
         num_start = haystack.find('<sup style="font-size:60%">') + 27
-        num_end = haystack.find('</sup>')
+        num_end = haystack.find("</sup>")
         num_text = haystack[num_start:num_end]
-        num = num_text.strip().strip(')')
+        num = num_text.strip().strip(")")
     else:
         # This means that the number was not found and typically happens when
         # a single "…" character is found. The reason that it's found without
@@ -158,15 +154,14 @@ def generate_ancestors(elem, parent):
     # XML.
     ancestors = []
     for ancestor in elem.iterancestors():
-
         # We don't need the root node in a list of ancestors. It's obvious
         # that any tag mentioned here is contained in the root node.
-        if ancestor.tag == 'law':
+        if ancestor.tag == "law":
             break
 
         # Figure out what the 'nr' attribute would be, if it were defined.
-        if 'nr' in ancestor.attrib:
-            ancestors.insert(0, E(ancestor.tag, ancestor.attrib['nr']))
+        if "nr" in ancestor.attrib:
+            ancestors.insert(0, E(ancestor.tag, ancestor.attrib["nr"]))
         else:
             ancestors.insert(0, E(ancestor.tag, str(order_among_siblings(ancestor))))
 
@@ -176,8 +171,8 @@ def generate_ancestors(elem, parent):
             break
 
     # If we cannot find a 'nr' attribute, we'll figure it out and still put it in.
-    if 'nr' in elem.attrib:
-        ancestors.append(E(elem.tag, str(elem.attrib['nr'])))
+    if "nr" in elem.attrib:
+        ancestors.append(E(elem.tag, str(elem.attrib["nr"])))
     else:
         ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
 
@@ -189,34 +184,33 @@ def generate_ancestors(elem, parent):
 # needs to be dealt with in more than a one-liner, both for flow and code
 # clarity.
 def check_chapter(lines, law):
-
     # We assume that chapters always start in bold.
-    if lines.peek(0).strip() != '<b>':
-        return ''
+    if lines.peek(0).strip() != "<b>":
+        return ""
 
     matcher = Matcher()
 
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
 
-    line_type = ''
+    line_type = ""
 
     # If the line matches "fylgiskj[aö]l", it indicates that we've run into
     # accompanying documents that are not a part of the legal text itself. We
     # are unable to predict their format and parsing them will always remain
     # error-prone when possible to begin with. Possibly we'll include them as
     # raw HTML goo later.
-    if matcher.check(peek_stripped.lower(), 'fylgiskj[aö]l'):
-        line_type = 'extra-docs'
+    if matcher.check(peek_stripped.lower(), "fylgiskj[aö]l"):
+        line_type = "extra-docs"
 
     # Same goes for appendices as extra-docs.
-    elif matcher.check(peek_stripped.lower(), '.* viðauki'):
-        line_type = 'appendix'
+    elif matcher.check(peek_stripped.lower(), ".* viðauki"):
+        line_type = "appendix"
 
     # We'll assume that temporary clauses are always in a chapter and never in
     # a subchapter. This has not been researched.
-    elif peek_stripped.lower().find('bráðabirgð') > -1:
-        line_type = 'chapter'
+    elif peek_stripped.lower().find("bráðabirgð") > -1:
+        line_type = "chapter"
 
     # Check if this is an "article chapter". Those are not exactly numerical
     # articles, but chapter-like phenomena that resides inside articles, or
@@ -225,32 +219,37 @@ def check_chapter(lines, law):
     # FIXME: This should actually be implemented alongside the Roman-parsing
     # elow. For now, we avoid mixing up Roman numerals with Latin letters by
     # only considering the letters A-H here as potential article chapters.
-    elif len(peek_stripped) > 1 and peek_stripped[1] == '.' and peek_stripped[0] in string.ascii_uppercase[0:8]:
-        line_type = 'art-chapter'
+    elif (
+        len(peek_stripped) > 1
+        and peek_stripped[1] == "."
+        and peek_stripped[0] in string.ascii_uppercase[0:8]
+    ):
+        line_type = "art-chapter"
 
     else:
-
         # We must examine the first "sentence" to see if it constitute a Roman
         # numeral. Possibly we'll analyze it better later to determine things
         # like subchapters.
-        first = peek_stripped[0:peek_stripped.find('.')]
+        first = peek_stripped[0 : peek_stripped.find(".")]
 
         # If f.e. ". kafli" or ". hluti" can be found...
-        if any([peek_stripped.find('. %s' % w) > -1 for w in ['kafli', 'hluti', 'bók']]):
-            line_type = 'chapter'
+        if any(
+            [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók"]]
+        ):
+            line_type = "chapter"
         # We exclude "C" and "D" because as Roman numerals, they are much too
         # high to ever be used for a chapter. Later we may need to revise this
         # when we implement for support chapters/subchapters organized by
         # Latin letters. But since we don't support it yet, we'll just ignore
         # them like we do "A" and "B".
-        elif is_roman(first) and first not in ['C', 'D']:
-            line_type = 'chapter'
+        elif is_roman(first) and first not in ["C", "D"]:
+            line_type = "chapter"
 
     # If we've reached this point without conclusion, this is an ambiguous
     # bold section that are (as of yet) unable to determine the nature of.
     # This occurs in 96. gr. laga nr. 55/1991, for example.
-    if line_type == '':
-        line_type = 'ambiguous'
+    if line_type == "":
+        line_type = "ambiguous"
 
     return line_type
 
@@ -258,7 +257,6 @@ def check_chapter(lines, law):
 # A function for intelligently splitting textual content into separate
 # sentences based on linguistic rules and patterns.
 def separate_sentences(content):
-
     # Contains the resulting list of sentences.
     sens = []
 
@@ -278,7 +276,7 @@ def separate_sentences(content):
     # subarticle 2 of article 5. Their use results in various combinations of
     # numbers and dots that need to be taken into account to avoid wrongly
     # starting a new sentence when they are encountered.
-    reference_shorthands = ['gr', 'mgr', 'málsl', 'tölul', 'staf']
+    reference_shorthands = ["gr", "mgr", "málsl", "tölul", "staf"]
 
     # Encode recognized short-hands in text so that the dots in them don't get
     # confused for an end of a sentence. They will be decoded when appended to
@@ -299,49 +297,49 @@ def separate_sentences(content):
     # of a sentence, while "o.fl." is extremely unlikely to be followed by a
     # name, but may very well end a sentence.
     recognized_shorts = [
-        'A.m.k.',
-        't.d.',
-        'þ.m.t.',
-        'sbr.',
-        'nr.',
-        'skv.',
-        'm.a.',
-        'a.m.k.',
-        'þ.e.',
-        'o.fl',
-        'þ.m',
-        'f.h.',
-        'o.þ.h.',
+        "A.m.k.",
+        "t.d.",
+        "þ.m.t.",
+        "sbr.",
+        "nr.",
+        "skv.",
+        "m.a.",
+        "a.m.k.",
+        "þ.e.",
+        "o.fl",
+        "þ.m",
+        "f.h.",
+        "o.þ.h.",
     ]
     for r in recognized_shorts:
-        content = content.replace(r, r.replace('.', '[DOT]'))
+        content = content.replace(r, r.replace(".", "[DOT]"))
 
     # Certain things, like HTML tables (<table>) and links (<a>) should never
     # be split into separate sentence. We'll run through those tags and encode
     # every dot within them.
-    non_splittable_tags = ['table', 'a']
+    non_splittable_tags = ["table", "a"]
     for nst in non_splittable_tags:
         cursor = 0
 
         # Location of the start tag.
-        html_loc = content.find('<%s' % nst, cursor)
+        html_loc = content.find("<%s" % nst, cursor)
 
         while html_loc > -1:
             # Location of the end tag.
-            html_end_loc = content.find('</%s>' % nst, cursor) + len('</%s>' % nst)
+            html_end_loc = content.find("</%s>" % nst, cursor) + len("</%s>" % nst)
 
             # Fish out the tag contnet.
             tag_content = content[html_loc:html_end_loc]
 
             # Encode the dots in the tag content.
-            tag_content = tag_content.replace('.', '[DOT]')
+            tag_content = tag_content.replace(".", "[DOT]")
 
             # Stitch the encoded tag content back into the content.
             content = content[:html_loc] + tag_content + content[html_end_loc:]
 
             # Continue to see if we find more non-splittable tags.
             cursor = html_loc + 1
-            html_loc = content.find('<%s' % nst, cursor)
+            html_loc = content.find("<%s" % nst, cursor)
 
             del html_end_loc
             del tag_content
@@ -352,17 +350,17 @@ def separate_sentences(content):
     # The collected sentence so far. Chunks are appended to this string until
     # a new sentence is determined to be appropriate. Starts empty and and is
     # reset for every new sentence.
-    collected = ''
+    collected = ""
 
     # We'll default to splitting chunks by dots. As we iterate through the
     # chunks, we will determine the cases where we actually don't want to
     # start a new sentence.
-    chunks = super_iter(content.split('.'))
+    chunks = super_iter(content.split("."))
 
     for chunk in chunks:
         # There is usually a period at the end and therefore a trailing, empty
         # chunk that we're not interested in.
-        if chunk == '':
+        if chunk == "":
             continue
 
         # Start a new sentence by default. We'll only continue to gather the
@@ -387,13 +385,21 @@ def separate_sentences(content):
 
             # Don't start a new sentence if the first character in the next
             # chunk is lowercase.
-            if len(next_chunk) > 1 and next_chunk[0] == ' ' and next_chunk[1].islower():
+            if len(next_chunk) > 1 and next_chunk[0] == " " and next_chunk[1].islower():
                 split = False
 
             # Don't start a new sentence if the character immediately
             # following the dot is a symbol indicating that the sentence's end
             # has not yet been reached (comma, semicomma etc.).
-            if len(next_chunk) > 0 and next_chunk[0] in [',', ';', '–', '-', '[', ']', '…']:
+            if len(next_chunk) > 0 and next_chunk[0] in [
+                ",",
+                ";",
+                "–",
+                "-",
+                "[",
+                "]",
+                "…",
+            ]:
                 split = False
 
             # Don't start a new sentence if the dot is a part of a number.
@@ -404,29 +410,32 @@ def separate_sentences(content):
             # sub-article, numerical article or whatever.
             # Example:
             #    3. mgr. 4. tölul. 1. gr.
-            last_word = chunk[chunk.rfind(' ') + 1:]
+            last_word = chunk[chunk.rfind(" ") + 1 :]
             if last_word in reference_shorthands:
                 next_chunk2 = chunks.peek(2)
-                if next_chunk.strip().isdigit() and next_chunk2.strip() in reference_shorthands:
+                if (
+                    next_chunk.strip().isdigit()
+                    and next_chunk2.strip() in reference_shorthands
+                ):
                     split = False
 
                 # Support for referencing things like:
                 #     3. tölul. C-liðar 7. gr.
-                if re.match('^ [A-Z]-lið', next_chunk) is not None:
+                if re.match("^ [A-Z]-lið", next_chunk) is not None:
                     split = False
 
         # Add the dot that we dropped when splitting.
-        collected += '.'
+        collected += "."
 
         if split:
             # Decode the "[DOT]"s back into normal dots.
-            collected = collected.replace('[DOT]', '.')
+            collected = collected.replace("[DOT]", ".")
 
             # Append the collected sentence.
             sens.append(collected.strip())
 
             # Reset the collected sentence.
-            collected = ''
+            collected = ""
 
     # Since we needed to drop the dot when splitting, we needed to add it
     # again to every chunk. Sometimes the content in its entirety doesn't end
@@ -434,8 +443,8 @@ def separate_sentences(content):
     # these cases we have wrongly added it to the final chunk after the split,
     # and so we'll just remove it here. This could probably be done somewhere
     # inside the loop, but it would probably just be less readable.
-    if content and content[-1] != '.' and sens[-1][-1] == '.':
-        sens[-1] = sens[-1].strip('.')
+    if content and content[-1] != "." and sens[-1][-1] == ".":
+        sens[-1] = sens[-1].strip(".")
 
     # Make sure that tables always live in their own sentence.
     new_sens = []
@@ -443,7 +452,7 @@ def separate_sentences(content):
         # Note: We don't check if the table is in the beginning, because if it
         # is, it already lives in its own sentence. We're only interested in
         # it if it's inside the sentence but not at the beginning.
-        table_loc = sen.find('<table ')
+        table_loc = sen.find("<table ")
         if table_loc > 0:
             # Quite likely, there's a space between the table and the
             # preceding text, which we strip away.
@@ -498,7 +507,7 @@ def separate_sentences(content):
         post_text = strip_markers(post_text).strip()
 
         # Find the first word, if one exists.
-        next_post_word = post_text[0:post_text.find(' ')]
+        next_post_word = post_text[0 : post_text.find(" ")]
 
         # Empty string does not count as a sentence.
         if not next_post_word:
@@ -511,7 +520,7 @@ def separate_sentences(content):
         # The "splitmap" keeps a record of which combinations of pre_text and
         # post_text classify as split (two sentences) or unsplit (two
         # sentences). Here we read the splitmap to check the current text.
-        with open(SPLITMAP_FILENAME, 'r') as f:
+        with open(SPLITMAP_FILENAME, "r") as f:
             splitmap = json.load(f)
 
         # This is the variable that will be stored in "splitmap.json". It's
@@ -520,7 +529,7 @@ def separate_sentences(content):
         # searchable by a human in case the wrong selection is made at some
         # point. The "[MAYBE-SPLIT]" string is used instead of a period or
         # some other symbol for readability reasons as well.
-        combined_text = pre_text + '[MAYBE-SPLIT]' + post_text
+        combined_text = pre_text + "[MAYBE-SPLIT]" + post_text
 
         if combined_text in splitmap:
             return splitmap[combined_text]
@@ -529,24 +538,24 @@ def separate_sentences(content):
         # user. We'll then record that decision for future reference.
         width, height = terminal_width_and_height()
         print()
-        print('-' * width)
-        print('Ambiguity found in determining the possible end of a sentence.')
+        print("-" * width)
+        print("Ambiguity found in determining the possible end of a sentence.")
         print()
-        print('Former chunk: %s' % pre_text)
+        print("Former chunk: %s" % pre_text)
         print()
-        print('Latter chunk: %s' % post_text)
+        print("Latter chunk: %s" % post_text)
         print()
-        answer = input('Do these two chunks of text constitute 1 sentence or 2? [1/2] ')
-        while answer not in ['1', '2']:
-            answer = input('Please select either 1 or 2: ')
+        answer = input("Do these two chunks of text constitute 1 sentence or 2? [1/2] ")
+        while answer not in ["1", "2"]:
+            answer = input("Please select either 1 or 2: ")
 
         # If the user determines that the text is composed of two sentences,
         # it means that the text should be split (True).
-        split = True if answer == '2' else False
+        split = True if answer == "2" else False
 
         # Write the answer.
         splitmap[combined_text] = split
-        with open(SPLITMAP_FILENAME, 'w') as f:
+        with open(SPLITMAP_FILENAME, "w") as f:
             json.dump(splitmap, f)
 
         return split
@@ -555,16 +564,17 @@ def separate_sentences(content):
     new_sens = []
     for sen in sens:
         cursor = 0
-        deletion_found = sen.find('…', cursor)
+        deletion_found = sen.find("…", cursor)
         while deletion_found > -1:
-
             # Check if there's content before the marker. If not, then we
             # don't want to split, because then it belongs at the beginning of
             # the next sentence instead of having an entire sentence just for
             # the marker.
             before = len(strip_markers(sen[0:deletion_found]).strip()) > 0
 
-            if before and check_sentence_start(sen[0:deletion_found], sen[deletion_found:]):
+            if before and check_sentence_start(
+                sen[0:deletion_found], sen[deletion_found:]
+            ):
                 # At this point, we've determined that the deletion marker
                 # starts a new sentence.
 
@@ -574,38 +584,38 @@ def separate_sentences(content):
                 # superscript, but this is in fact where commas are placed
                 # when deletions occur immediately before them. In other
                 # words, we'll want periods to act like commas.
-                sen = sen[0:deletion_found + 1] + '.' + sen[deletion_found + 2:]
+                sen = sen[0 : deletion_found + 1] + "." + sen[deletion_found + 2 :]
 
                 # Find the location where we want to split, which is
                 # immediately following the deletion marker's next closing
                 # superscript tag. BTW: len('</sup>') == 6
-                split_loc = sen.find('</sup>', deletion_found + 1) + 6
+                split_loc = sen.find("</sup>", deletion_found + 1) + 6
 
                 # Mark the place in the sentence where we intend to split.
                 # We'll also add a period to denote the end of the sentence in
                 # the text; the lack of which is responsible for us having to
                 # perform this peculiar operation.
-                sen = sen[0:split_loc] + '[SPLIT]' + sen[split_loc + 1:]
+                sen = sen[0:split_loc] + "[SPLIT]" + sen[split_loc + 1 :]
 
             cursor = deletion_found + 1
-            deletion_found = sen.find('…', cursor)
+            deletion_found = sen.find("…", cursor)
 
-        new_sens.extend(sen.split('[SPLIT]'))
+        new_sens.extend(sen.split("[SPLIT]"))
     sens = new_sens
 
     return sens
 
 
 def add_sentences(target_node, sens):
-    '''
+    """
     Gracefully adds a bunch of sentences to a target node, enclosing them in
     a paragraph. If the target node is itself a paragraph, the sentences get
     added to it, and the already existing paragraph returned instead.
 
     Returns the created/found paragraph for further use by caller.
-    '''
+    """
 
-    if target_node.tag == 'paragraph':
+    if target_node.tag == "paragraph":
         # If target node is a paragraph, then the target and paragraph are
         # the same thing. This is to prevent paragraphs inside paragraphs when
         # a numart is contained within a paragraph, but also has text
@@ -615,8 +625,8 @@ def add_sentences(target_node, sens):
     else:
         # Construct paragraph, determining its number by examining how many
         # already exist in the target node.
-        paragraph_nr = str(len(target_node.findall('paragraph')) + 1)
-        paragraph = E('paragraph', {'nr': paragraph_nr})
+        paragraph_nr = str(len(target_node.findall("paragraph")) + 1)
+        paragraph = E("paragraph", {"nr": paragraph_nr})
 
         # Append paragraph to given node.
         target_node.append(paragraph)
