@@ -835,13 +835,10 @@ def make_xml(law_num, law_year):
             sen_title_text += collect_until(lines, "</i>")
             content = collect_until(lines, "<br/>")
             if subart is not None:
-                paragraph = add_sentences(subart, separate_sentences(content))
-
                 sen_title = E("sen-title", sen_title_text)
+                subart.append(sen_title)
 
-                # The sentence title belongs inside the paragraph that
-                # `add_sentences` creates, so it is inserted afterwards.
-                paragraph.insert(0, sen_title)
+                add_sentences(subart, separate_sentences(content))
 
                 trail.append(sen_title)
 
