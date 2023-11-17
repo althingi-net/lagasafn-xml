@@ -11,20 +11,14 @@
     <nr-title>1. gr.</nr-title>
     <name>Gildissvið.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Lög þessi gilda um leigu á skráningarskyldum ökutækjum í atvinnuskyni án ökumanns.</sen>
-        <sen nr="2">Lög þessi gilda einnig um einkaleigur.</sen>
-      </paragraph>
+      <sen nr="1">Lög þessi gilda um leigu á skráningarskyldum ökutækjum í atvinnuskyni án ökumanns.</sen>
+      <sen nr="2">Lög þessi gilda einnig um einkaleigur.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Lög þessi taka ekki til kaup- eða fjármögnunarleigu eða leigu í eigin þágu eða til tengdra aðila.</sen>
-      </paragraph>
+      <sen nr="1">Lög þessi taka ekki til kaup- eða fjármögnunarleigu eða leigu í eigin þágu eða til tengdra aðila.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Ráðherra er heimilt með reglugerð að ákveða að eigi þurfi leyfi til leigu á tilteknum flokkum ökutækja eða fyrir tiltekinni leigustarfsemi þyki slíkt nauðsynlegt út frá eðli ökutækisins eða starfseminnar.</sen>
-      </paragraph>
+      <sen nr="1">Ráðherra er heimilt með reglugerð að ákveða að eigi þurfi leyfi til leigu á tilteknum flokkum ökutækja eða fyrir tiltekinni leigustarfsemi þyki slíkt nauðsynlegt út frá eðli ökutækisins eða starfseminnar.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="162" nr="1">
@@ -32,7 +26,6 @@
         <location type="range">
           <art>1</art>
           <subart>2</subart>
-          <paragraph>1</paragraph>
           <sen words="kaup- eða fjármögnunarleigu">1</sen>
         </location>
       </footnote>
@@ -42,104 +35,74 @@
     <nr-title>2. gr.</nr-title>
     <name>Orðskýringar.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
-        <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <name>Einkaleiga</name>
-          <paragraph nr="1">
-            <sen nr="1">er starfsemi sem rekin er í atvinnuskyni þar sem einstaklingum er gert kleift að bjóða til leigu, að jafnaði um skemmri tíma, skráningarskylt ökutæki í persónulegri eigu með milligöngu leigumiðlunar.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <name>Föst starfsstöð</name>
-          <paragraph nr="1">
-            <sen nr="1">er húsnæði eða annað rými þar sem ökutækjaleiga er rekin, staðbundið og reglulega, í atvinnuskyni.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <name>Leigusamningur</name>
-          <paragraph nr="1">
-            <sen nr="1">er samningur milli leigusala og leigutaka um leigu á skráningarskyldu ökutæki án ökumanns og til afnota gegn gjaldi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <name>Notkunarflokkur</name>
-          <paragraph nr="1">
-            <sen nr="1">vísar til flokkunar Samgöngustofu á ökutækjum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <name>Skráningarskyld ökutæki</name>
-          <paragraph nr="1">
-            <sen nr="1">eru þau ökutæki sem vísað er til í umferðarlögum og reglugerðum settum á grundvelli þeirra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <name>Starfsleyfi</name>
-          <paragraph nr="1">
-            <sen nr="1">er leyfi til reksturs ökutækjaleigu og einkaleigu í samræmi við skilyrði laga þessara.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <name>Ökutækjaleiga</name>
-          <paragraph nr="1">
-            <sen nr="1">er starfsemi sem rekin er í atvinnuskyni þar sem almenningi eða fyrirtækjum er boðið til leigu skráningarskylt ökutæki án ökumanns, að jafnaði til skemmri tíma.</sen>
-          </paragraph>
-        </numart>
-      </paragraph>
+      <sen nr="1">Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <name>Einkaleiga</name>
+        <sen nr="1">er starfsemi sem rekin er í atvinnuskyni þar sem einstaklingum er gert kleift að bjóða til leigu, að jafnaði um skemmri tíma, skráningarskylt ökutæki í persónulegri eigu með milligöngu leigumiðlunar.</sen>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <name>Föst starfsstöð</name>
+        <sen nr="1">er húsnæði eða annað rými þar sem ökutækjaleiga er rekin, staðbundið og reglulega, í atvinnuskyni.</sen>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <name>Leigusamningur</name>
+        <sen nr="1">er samningur milli leigusala og leigutaka um leigu á skráningarskyldu ökutæki án ökumanns og til afnota gegn gjaldi.</sen>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <name>Notkunarflokkur</name>
+        <sen nr="1">vísar til flokkunar Samgöngustofu á ökutækjum.</sen>
+      </numart>
+      <numart nr="5" type="numeric">
+        <nr-title>5.</nr-title>
+        <name>Skráningarskyld ökutæki</name>
+        <sen nr="1">eru þau ökutæki sem vísað er til í umferðarlögum og reglugerðum settum á grundvelli þeirra.</sen>
+      </numart>
+      <numart nr="6" type="numeric">
+        <nr-title>6.</nr-title>
+        <name>Starfsleyfi</name>
+        <sen nr="1">er leyfi til reksturs ökutækjaleigu og einkaleigu í samræmi við skilyrði laga þessara.</sen>
+      </numart>
+      <numart nr="7" type="numeric">
+        <nr-title>7.</nr-title>
+        <name>Ökutækjaleiga</name>
+        <sen nr="1">er starfsemi sem rekin er í atvinnuskyni þar sem almenningi eða fyrirtækjum er boðið til leigu skráningarskylt ökutæki án ökumanns, að jafnaði til skemmri tíma.</sen>
+      </numart>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <name>Starfsleyfi.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Hver sá sem hyggst reka ökutækjaleigu skal hafa til þess starfsleyfi frá Samgöngustofu.</sen>
-      </paragraph>
+      <sen nr="1">Hver sá sem hyggst reka ökutækjaleigu skal hafa til þess starfsleyfi frá Samgöngustofu.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Starfsleyfi er ótímabundið og skal veitt að fenginni jákvæðri umsögn sveitarstjórnar í því umdæmi þar sem ökutækjaleiga mun hafa fasta starfsstöð.</sen>
-        <sen nr="2">Í umsögn skal sveitarstjórn m.a. taka afstöðu til staðsetningar ökutækjaleigu og þess hvort aðkoma henti fyrir væntanlega starfsemi hennar.</sen>
-        <sen nr="3">Umsagnir skulu vera skýrar og rökstuddar.</sen>
-        <sen nr="4">Starfsleyfi getur verið bundið skilyrðum sem koma fram í umsögn.</sen>
-      </paragraph>
+      <sen nr="1">Starfsleyfi er ótímabundið og skal veitt að fenginni jákvæðri umsögn sveitarstjórnar í því umdæmi þar sem ökutækjaleiga mun hafa fasta starfsstöð.</sen>
+      <sen nr="2">Í umsögn skal sveitarstjórn m.a. taka afstöðu til staðsetningar ökutækjaleigu og þess hvort aðkoma henti fyrir væntanlega starfsemi hennar.</sen>
+      <sen nr="3">Umsagnir skulu vera skýrar og rökstuddar.</sen>
+      <sen nr="4">Starfsleyfi getur verið bundið skilyrðum sem koma fram í umsögn.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Gjald fyrir útgáfu starfsleyfis skal vera samkvæmt gjaldskrá Samgöngustofu sem ráðherra staðfestir.</sen>
-        <sen nr="2">Starfsleyfisgjald skal standa undir kostnaði við meðferð og umsýslu umsókna auk þess að standa undir eftirliti með leyfishöfum.</sen>
-      </paragraph>
+      <sen nr="1">Gjald fyrir útgáfu starfsleyfis skal vera samkvæmt gjaldskrá Samgöngustofu sem ráðherra staðfestir.</sen>
+      <sen nr="2">Starfsleyfisgjald skal standa undir kostnaði við meðferð og umsýslu umsókna auk þess að standa undir eftirliti með leyfishöfum.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa skal halda skrá yfir þá sem hafa leyfi samkvæmt lögum þessum og birta hana með aðgengilegum hætti.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa skal halda skrá yfir þá sem hafa leyfi samkvæmt lögum þessum og birta hana með aðgengilegum hætti.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Ökutækjaleiga skal rekin á fastri starfsstöð.</sen>
-        <sen nr="2">Á fastri starfsstöð skal framkvæmdastjóri eða yfirmaður fullnægja skilyrðum 4. gr.</sen>
-        <sen nr="3">Ökutækjaleiga getur á grundvelli starfsleyfis sett á fót útibú, og skal hún þá tilkynna Samgöngustofu um útibúið auk þess sem jákvæð umsögn sveitarstjórnar skal liggja fyrir.</sen>
-      </paragraph>
+      <sen nr="1">Ökutækjaleiga skal rekin á fastri starfsstöð.</sen>
+      <sen nr="2">Á fastri starfsstöð skal framkvæmdastjóri eða yfirmaður fullnægja skilyrðum 4. gr.</sen>
+      <sen nr="3">Ökutækjaleiga getur á grundvelli starfsleyfis sett á fót útibú, og skal hún þá tilkynna Samgöngustofu um útibúið auk þess sem jákvæð umsögn sveitarstjórnar skal liggja fyrir.</sen>
     </subart>
     <subart nr="6">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafa er heimilt að reka starfsemi sína á rafrænan hátt en leyfishafi skal þó alltaf hafa fasta starfsstöð.</sen>
-        <sen nr="2">Um rafræna þjónustu leyfishafa gilda lög um rafræn viðskipti og aðra rafræna þjónustu, þar á meðal um hvað koma skal fram á vefsíðu leyfishafa.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafa er heimilt að reka starfsemi sína á rafrænan hátt en leyfishafi skal þó alltaf hafa fasta starfsstöð.</sen>
+      <sen nr="2">Um rafræna þjónustu leyfishafa gilda lög um rafræn viðskipti og aðra rafræna þjónustu, þar á meðal um hvað koma skal fram á vefsíðu leyfishafa.</sen>
     </subart>
     <subart nr="7">
-      <paragraph nr="1">
-        <sen nr="1">Heimilt er í reglugerð að kveða nánar á um umsóknarferli vegna starfsleyfis, þar á meðal útgáfu leiðbeininga fyrir umsagnaraðila um þau atriði sem umsögn skal lúta að og tímafresti.</sen>
-      </paragraph>
+      <sen nr="1">Heimilt er í reglugerð að kveða nánar á um umsóknarferli vegna starfsleyfis, þar á meðal útgáfu leiðbeininga fyrir umsagnaraðila um þau atriði sem umsögn skal lúta að og tímafresti.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.090.html" law-nr="90" law-year="2021" law-art="4" nr="1">
@@ -147,13 +110,11 @@
         <location type="deletion">
           <art>3</art>
           <subart>5</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Ökutækjaleiga skal rekin á fastri starfsstöð" after-mark=".$">1</sen>
         </location>
         <location type="deletion">
           <art>3</art>
           <subart>6</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Leyfishafa er heimilt að reka starfsemi sína á rafrænan hátt en leyfishafi skal þó alltaf hafa fasta starfsstöð" after-mark=".$">1</sen>
         </location>
       </footnote>
@@ -162,7 +123,6 @@
         <location type="pointer">
           <art>3</art>
           <subart>7</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Heimilt er í reglugerð" after-mark="að kveða nánar á um umsóknarferli vegna starfsleyfis, þar á meðal útgáfu leiðbeininga fyrir umsagnaraðila um þau atriði sem umsögn skal lúta að og tímafresti.$">1</sen>
         </location>
       </footnote>
@@ -172,76 +132,52 @@
     <nr-title>4. gr.</nr-title>
     <name>Skilyrði starfsleyfis.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Umsækjandi um starfsleyfi getur verið hvort sem er einstaklingur eða lögaðili.</sen>
-        <sen nr="2">Ef umsækjandi er lögaðili skal starfa hjá honum forsvarsmaður sem ber ábyrgð á rekstrinum.</sen>
-      </paragraph>
+      <sen nr="1">Umsækjandi um starfsleyfi getur verið hvort sem er einstaklingur eða lögaðili.</sen>
+      <sen nr="2">Ef umsækjandi er lögaðili skal starfa hjá honum forsvarsmaður sem ber ábyrgð á rekstrinum.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Til að öðlast starfsleyfi þarf umsækjandi eða forsvarsmaður umsækjanda ef hann er lögaðili að uppfylla eftirfarandi skilyrði:</sen>
-        <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa búsetu innan aðildarríkja Evrópska efnahagssvæðisins eða aðildarríkja stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa náð átján ára aldri.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Vera lögráða og hafa ekki á síðustu þremur árum í tengslum við atvinnurekstur hlotið dóm fyrir refsiverðan verknað samkvæmt almennum hegningarlögum eða lögum um hlutafélög, einkahlutafélög, bókhald, ársreikninga, gjaldþrotaskipti o.fl., staðgreiðslu opinberra gjalda eða lögum þessum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa ekki misst starfsleyfi á grundvelli laga þessara á síðustu þremur árum.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa forræði á búi sínu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa tilkynnt atvinnurekstur til skráningar hjá ríkisskattstjóra.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Skulda ekki skatta, opinber gjöld eða iðgjöld í lífeyrissjóð sem nema samanlagt hærri fjárhæð en 500.000 kr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <nr-title>8.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">Hafa gilda starfsábyrgðartryggingu hjá vátryggingafélagi sem hefur heimild til að veita þjónustu á Evrópska efnahagssvæðinu, hafa aflað sér bankatryggingar eða lagt fram aðra tryggingu sem Samgöngustofa metur gilda til að bæta leigutökum tjón er hann kann að baka þeim.</sen>
-            <sen nr="2">Nánari ákvæði um starfsábyrgðartryggingu, m.a. um lágmarksfjárhæð og vátryggingarskilmála, skulu sett með reglugerð.</sen>
-          </paragraph>
-        </numart>
-      </paragraph>
+      <sen nr="1">Til að öðlast starfsleyfi þarf umsækjandi eða forsvarsmaður umsækjanda ef hann er lögaðili að uppfylla eftirfarandi skilyrði:</sen>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <sen nr="1">Hafa búsetu innan aðildarríkja Evrópska efnahagssvæðisins eða aðildarríkja stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum.</sen>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <sen nr="1">Hafa náð átján ára aldri.</sen>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <sen nr="1">Vera lögráða og hafa ekki á síðustu þremur árum í tengslum við atvinnurekstur hlotið dóm fyrir refsiverðan verknað samkvæmt almennum hegningarlögum eða lögum um hlutafélög, einkahlutafélög, bókhald, ársreikninga, gjaldþrotaskipti o.fl., staðgreiðslu opinberra gjalda eða lögum þessum.</sen>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <sen nr="1">Hafa ekki misst starfsleyfi á grundvelli laga þessara á síðustu þremur árum.</sen>
+      </numart>
+      <numart nr="5" type="numeric">
+        <nr-title>5.</nr-title>
+        <sen nr="1">Hafa forræði á búi sínu.</sen>
+      </numart>
+      <numart nr="6" type="numeric">
+        <nr-title>6.</nr-title>
+        <sen nr="1">Hafa tilkynnt atvinnurekstur til skráningar hjá ríkisskattstjóra.</sen>
+      </numart>
+      <numart nr="7" type="numeric">
+        <nr-title>7.</nr-title>
+        <sen nr="1">Skulda ekki skatta, opinber gjöld eða iðgjöld í lífeyrissjóð sem nema samanlagt hærri fjárhæð en 500.000 kr.</sen>
+      </numart>
+      <numart nr="8" type="numeric">
+        <nr-title>8.</nr-title>
+        <sen nr="1">Hafa gilda starfsábyrgðartryggingu hjá vátryggingafélagi sem hefur heimild til að veita þjónustu á Evrópska efnahagssvæðinu, hafa aflað sér bankatryggingar eða lagt fram aðra tryggingu sem Samgöngustofa metur gilda til að bæta leigutökum tjón er hann kann að baka þeim.</sen>
+        <sen nr="2">Nánari ákvæði um starfsábyrgðartryggingu, m.a. um lágmarksfjárhæð og vátryggingarskilmála, skulu sett með reglugerð.</sen>
+      </numart>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Í umsókn um starfsleyfi skal koma fram heiti leigu og skal geta um öll hjáheiti sem aðili hyggst nota í starfsemi sinni.</sen>
-        <sen nr="2">Óheimilt er að reka starfsemina undir öðrum heitum en þeim sem leyfi hljóðar um.</sen>
-        <sen nr="3">Heimilt er að bæta við hjáheitum í þegar útgefið starfsleyfi með sérstakri umsókn til Samgöngustofu sem gefur þá út nýtt starfsleyfi án endurgjalds.</sen>
-      </paragraph>
+      <sen nr="1">Í umsókn um starfsleyfi skal koma fram heiti leigu og skal geta um öll hjáheiti sem aðili hyggst nota í starfsemi sinni.</sen>
+      <sen nr="2">Óheimilt er að reka starfsemina undir öðrum heitum en þeim sem leyfi hljóðar um.</sen>
+      <sen nr="3">Heimilt er að bæta við hjáheitum í þegar útgefið starfsleyfi með sérstakri umsókn til Samgöngustofu sem gefur þá út nýtt starfsleyfi án endurgjalds.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Meiri hluti stjórnarmanna lögaðila skal fullnægja skilyrðum 2. mgr.</sen>
-      </paragraph>
+      <sen nr="1">Meiri hluti stjórnarmanna lögaðila skal fullnægja skilyrðum 2. mgr.</sen>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -249,9 +185,7 @@
         <location type="pointer">
           <art>4</art>
           <subart>2</subart>
-          <paragraph>1</paragraph>
           <numart>8</numart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Nánari ákvæði um starfsábyrgðartryggingu, m.a. um lágmarksfjárhæð og vátryggingarskilmála, skulu sett með reglugerð." after-mark="$">2</sen>
         </location>
       </footnote>
@@ -261,71 +195,49 @@
     <nr-title>5. gr.</nr-title>
     <name>Breytingar varðandi ökutækjaleigu, einkaleigu og leyfishafa.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafi skal tilkynna Samgöngustofu þegar í stað um fyrirhugaðar breytingar sem varða hina leyfisskyldu starfsemi.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafi skal tilkynna Samgöngustofu þegar í stað um fyrirhugaðar breytingar sem varða hina leyfisskyldu starfsemi.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Starfsleyfi er bundið við kennitölu.</sen>
-        <sen nr="2">Verði breyting á kennitölu leyfishafa skal sækja um nýtt leyfi.</sen>
-        <sen nr="3">Verði einungis nafnabreyting skal gefa út nýtt leyfi án endurgjalds.</sen>
-      </paragraph>
+      <sen nr="1">Starfsleyfi er bundið við kennitölu.</sen>
+      <sen nr="2">Verði breyting á kennitölu leyfishafa skal sækja um nýtt leyfi.</sen>
+      <sen nr="3">Verði einungis nafnabreyting skal gefa út nýtt leyfi án endurgjalds.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Taki nýr aðili við rekstri sem leyfi er fyrir samkvæmt lögum þessum eða hyggist leyfishafi hætta hinni leyfisskyldu starfsemi skal það tilkynnt Samgöngustofu án tafar.</sen>
-        <sen nr="2">Leyfishafi ber ábyrgð á rekstrinum þar til slík tilkynning hefur borist Samgöngustofu en nýr aðili tekur við rekstrinum frá þeim tíma.</sen>
-        <sen nr="3">Hinn nýi aðili skal leggja fram viðeigandi gögn skv. 4. gr.</sen>
-      </paragraph>
+      <sen nr="1">Taki nýr aðili við rekstri sem leyfi er fyrir samkvæmt lögum þessum eða hyggist leyfishafi hætta hinni leyfisskyldu starfsemi skal það tilkynnt Samgöngustofu án tafar.</sen>
+      <sen nr="2">Leyfishafi ber ábyrgð á rekstrinum þar til slík tilkynning hefur borist Samgöngustofu en nýr aðili tekur við rekstrinum frá þeim tíma.</sen>
+      <sen nr="3">Hinn nýi aðili skal leggja fram viðeigandi gögn skv. 4. gr.</sen>
     </subart>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <name>Skyldur ökutækjaleigu.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Ökutækjaleigu er óheimilt að leigja út ökutæki nema það sé skráð hjá Samgöngustofu sem ökutæki í notkunarflokki ökutækjaleigu.</sen>
-      </paragraph>
+      <sen nr="1">Ökutækjaleigu er óheimilt að leigja út ökutæki nema það sé skráð hjá Samgöngustofu sem ökutæki í notkunarflokki ökutækjaleigu.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Ökutækjaleiga verður að vera skráður eigandi skráningarskylds ökutækis eða skráður fyrsti umráðamaður samkvæmt samningi við löggilta kaup- eða fjármögnunarleigu.</sen>
-        <sen nr="2">Þó er ökutækjaleigu heimilt að leigja út ökutæki sem er í eigu annarrar ökutækjaleigu með gilt starfsleyfi sé það gert á grundvelli samnings.</sen>
-      </paragraph>
+      <sen nr="1">Ökutækjaleiga verður að vera skráður eigandi skráningarskylds ökutækis eða skráður fyrsti umráðamaður samkvæmt samningi við löggilta kaup- eða fjármögnunarleigu.</sen>
+      <sen nr="2">Þó er ökutækjaleigu heimilt að leigja út ökutæki sem er í eigu annarrar ökutækjaleigu með gilt starfsleyfi sé það gert á grundvelli samnings.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Óheimilt er að leigja út skoðunarskyld ökutæki sem hafa ekki lögbundna aðalskoðun samkvæmt umferðarlögum.</sen>
-      </paragraph>
+      <sen nr="1">Óheimilt er að leigja út skoðunarskyld ökutæki sem hafa ekki lögbundna aðalskoðun samkvæmt umferðarlögum.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Óheimilt er að leigja út ökutæki án lögbundinnar ábyrgðartryggingar samkvæmt umferðarlögum.</sen>
-      </paragraph>
+      <sen nr="1">Óheimilt er að leigja út ökutæki án lögbundinnar ábyrgðartryggingar samkvæmt umferðarlögum.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Óheimilt er að breyta kílómetrastöðu akstursmælis skráningarskylds ökutækis.</sen>
-      </paragraph>
+      <sen nr="1">Óheimilt er að breyta kílómetrastöðu akstursmælis skráningarskylds ökutækis.</sen>
     </subart>
     <subart nr="6">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafi skal í hvívetna leysa störf sín af hendi svo sem góðar viðskiptavenjur bjóða.</sen>
-        <sen nr="2">Hann skal gæta þess að skráningarskyld ökutæki til útleigu, hvort sem er skoðunarskyld ökutæki eða ekki, séu ætíð í góðu ásigkomulagi, hljóti gott viðhald og eftirlit og fullnægi kröfum sem gerðar eru um þau í lögum eða reglugerðum.</sen>
-        <sen nr="3">Einnig skal leyfishafi gæta að því að ökutæki séu í ásigkomulagi sem tekur mið af árstíma og færð.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafi skal í hvívetna leysa störf sín af hendi svo sem góðar viðskiptavenjur bjóða.</sen>
+      <sen nr="2">Hann skal gæta þess að skráningarskyld ökutæki til útleigu, hvort sem er skoðunarskyld ökutæki eða ekki, séu ætíð í góðu ásigkomulagi, hljóti gott viðhald og eftirlit og fullnægi kröfum sem gerðar eru um þau í lögum eða reglugerðum.</sen>
+      <sen nr="3">Einnig skal leyfishafi gæta að því að ökutæki séu í ásigkomulagi sem tekur mið af árstíma og færð.</sen>
     </subart>
     <subart nr="7">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafi skal tryggja að leigutaka séu eigi settir ólögmætir, ósanngjarnir eða óeðlilegir skilmálar í samningum.</sen>
-        <sen nr="2">Leyfishafi ber ábyrgð á verkum starfsmanna sinna við leigu ökutækja sem væru þau verk hans sjálfs.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafi skal tryggja að leigutaka séu eigi settir ólögmætir, ósanngjarnir eða óeðlilegir skilmálar í samningum.</sen>
+      <sen nr="2">Leyfishafi ber ábyrgð á verkum starfsmanna sinna við leigu ökutækja sem væru þau verk hans sjálfs.</sen>
     </subart>
     <subart nr="8">
-      <paragraph nr="1">
-        <sen nr="1">Skylt er að leyfisbréf til starfseminnar liggi frammi á starfsstöð og afrit þess í útibúum.</sen>
-      </paragraph>
+      <sen nr="1">Skylt er að leyfisbréf til starfseminnar liggi frammi á starfsstöð og afrit þess í útibúum.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="163" nr="1">
@@ -333,7 +245,6 @@
         <location type="range">
           <art>6</art>
           <subart>2</subart>
-          <paragraph>1</paragraph>
           <sen words="löggilta kaup- eða fjármögnunarleigu">1</sen>
         </location>
       </footnote>
@@ -342,7 +253,6 @@
         <location type="range">
           <art>6</art>
           <subart>5</subart>
-          <paragraph>1</paragraph>
           <sen>1</sen>
         </location>
       </footnote>
@@ -352,26 +262,18 @@
     <nr-title>7. gr.</nr-title>
     <name>Leigusamningur.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafi skal sjá um að gerður sé leigusamningur.</sen>
-        <sen nr="2">Í samningnum skal greina helstu atriði varðandi leigu ökutækisins eftir því sem nánar skal ákveðið í reglugerð.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafi skal sjá um að gerður sé leigusamningur.</sen>
+      <sen nr="2">Í samningnum skal greina helstu atriði varðandi leigu ökutækisins eftir því sem nánar skal ákveðið í reglugerð.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Taki leigusamningur milli ökutækjaleigu og leigutaka til ökutækis sem hefur notið lægri vörugjalda samkvæmt ákvæðum laga um vörugjald af ökutækjum, eldsneyti o.fl. fer um lengd leigusamnings eftir ákvæðum þeirra laga og reglugerða sem settar eru á grundvelli þeirra.</sen>
-      </paragraph>
+      <sen nr="1">Taki leigusamningur milli ökutækjaleigu og leigutaka til ökutækis sem hefur notið lægri vörugjalda samkvæmt ákvæðum laga um vörugjald af ökutækjum, eldsneyti o.fl. fer um lengd leigusamnings eftir ákvæðum þeirra laga og reglugerða sem settar eru á grundvelli þeirra.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Leyfishafi skal upplýsa erlenda leigutaka um íslenskar umferðarreglur, umferðarmerki og reglur um bann við umferð utan vega.</sen>
-        <sen nr="2">Jafnframt skal leyfishafi vekja sérstaka athygli á hættu sem stafar af dýrum á vegum.</sen>
-      </paragraph>
+      <sen nr="1">Leyfishafi skal upplýsa erlenda leigutaka um íslenskar umferðarreglur, umferðarmerki og reglur um bann við umferð utan vega.</sen>
+      <sen nr="2">Jafnframt skal leyfishafi vekja sérstaka athygli á hættu sem stafar af dýrum á vegum.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Varðveita skal leigusamning í a.m.k. þrjú ár frá undirritun hans.</sen>
-      </paragraph>
+      <sen nr="1">Varðveita skal leigusamning í a.m.k. þrjú ár frá undirritun hans.</sen>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -379,7 +281,6 @@
         <location type="pointer">
           <art>7</art>
           <subart>1</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Í samningnum skal greina helstu atriði varðandi leigu ökutækisins eftir því sem nánar skal ákveðið í reglugerð." after-mark="$">2</sen>
         </location>
       </footnote>
@@ -389,63 +290,43 @@
     <nr-title>8. gr.</nr-title>
     <name>Leigutaki.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Óheimilt er að leigja ökutæki öðrum en þeim sem hafa réttindi til að stjórna ökutækinu sem leigja á.</sen>
-        <sen nr="2">Leyfishafa er þó heimilt að gera leigusamning við aðila sem ekki hefur tilskilin ökuréttindi, enda tilnefni hann ökumann skriflega og má sá aka ökutækinu.</sen>
-        <sen nr="3">Skal ökumaður uppfylla framangreind skilyrði.</sen>
-      </paragraph>
+      <sen nr="1">Óheimilt er að leigja ökutæki öðrum en þeim sem hafa réttindi til að stjórna ökutækinu sem leigja á.</sen>
+      <sen nr="2">Leyfishafa er þó heimilt að gera leigusamning við aðila sem ekki hefur tilskilin ökuréttindi, enda tilnefni hann ökumann skriflega og má sá aka ökutækinu.</sen>
+      <sen nr="3">Skal ökumaður uppfylla framangreind skilyrði.</sen>
     </subart>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <name>Einkaleigur.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Heimilt er einstaklingum að leigja skráningarskyld ökutæki með milligöngu sérstakra einkaleiga.</sen>
-        <sen nr="2">Hverjum einstaklingi er heimilt að leigja út tvö skráningarskyld ökutæki sem skráð eru á kennitölu viðkomandi.</sen>
-      </paragraph>
+      <sen nr="1">Heimilt er einstaklingum að leigja skráningarskyld ökutæki með milligöngu sérstakra einkaleiga.</sen>
+      <sen nr="2">Hverjum einstaklingi er heimilt að leigja út tvö skráningarskyld ökutæki sem skráð eru á kennitölu viðkomandi.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Einkaleigu er skylt að uppfylla skilyrði 3. gr. um starfsleyfi að frátöldu skilyrðinu um umsögn sveitarstjórnar í 2. mgr.</sen>
-      </paragraph>
+      <sen nr="1">Einkaleigu er skylt að uppfylla skilyrði 3. gr. um starfsleyfi að frátöldu skilyrðinu um umsögn sveitarstjórnar í 2. mgr.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Umsækjandi um starfsleyfi einkaleigu skal uppfylla skilyrði 4. gr., þar á meðal skilyrði um starfsábyrgðartryggingu sem Samgöngustofa metur gilda.</sen>
-      </paragraph>
+      <sen nr="1">Umsækjandi um starfsleyfi einkaleigu skal uppfylla skilyrði 4. gr., þar á meðal skilyrði um starfsábyrgðartryggingu sem Samgöngustofa metur gilda.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Einkaleiga skal tryggja að skráningarskylt ökutæki sem það hefur á skrá sé skráð sem ökutæki í notkunarflokki ökutækjaleigu hjá Samgöngustofu.</sen>
-        <sen nr="2">Einnig skal tryggja að ökutæki hafi lögbundna aðalskoðun samkvæmt umferðarlögum og að ökutækið sé tryggt lögbundinni ábyrgðartryggingu.</sen>
-      </paragraph>
+      <sen nr="1">Einkaleiga skal tryggja að skráningarskylt ökutæki sem það hefur á skrá sé skráð sem ökutæki í notkunarflokki ökutækjaleigu hjá Samgöngustofu.</sen>
+      <sen nr="2">Einnig skal tryggja að ökutæki hafi lögbundna aðalskoðun samkvæmt umferðarlögum og að ökutækið sé tryggt lögbundinni ábyrgðartryggingu.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Einkaleiga skal í hvívetna leysa störf sín af hendi svo sem góðar viðskiptavenjur bjóða og gæta þess að skráningarskyld ökutæki í útleigu, hvort sem er skoðunarskyld ökutæki eða ekki, séu ætíð í góðu ásigkomulagi, hljóti gott viðhald og eftirlit og fullnægi kröfum sem gerðar eru um þau í lögum eða reglugerðum.</sen>
-        <sen nr="2">Einnig skal einkaleiga gæta að því að ökutæki séu í ásigkomulagi sem tekur mið af árstíma og færð.</sen>
-      </paragraph>
+      <sen nr="1">Einkaleiga skal í hvívetna leysa störf sín af hendi svo sem góðar viðskiptavenjur bjóða og gæta þess að skráningarskyld ökutæki í útleigu, hvort sem er skoðunarskyld ökutæki eða ekki, séu ætíð í góðu ásigkomulagi, hljóti gott viðhald og eftirlit og fullnægi kröfum sem gerðar eru um þau í lögum eða reglugerðum.</sen>
+      <sen nr="2">Einnig skal einkaleiga gæta að því að ökutæki séu í ásigkomulagi sem tekur mið af árstíma og færð.</sen>
     </subart>
     <subart nr="6">
-      <paragraph nr="1">
-        <sen nr="1">Skylt er að leyfisbréf til starfseminnar liggi frammi á starfsstöð.</sen>
-      </paragraph>
+      <sen nr="1">Skylt er að leyfisbréf til starfseminnar liggi frammi á starfsstöð.</sen>
     </subart>
     <subart nr="7">
-      <paragraph nr="1">
-        <sen nr="1">Um innheimtu og skil á virðisaukaskatti fer samkvæmt lögum um virðisaukaskatt, nr. 50/1988, með síðari breytingum.</sen>
-      </paragraph>
+      <sen nr="1">Um innheimtu og skil á virðisaukaskatti fer samkvæmt lögum um virðisaukaskatt, nr. 50/1988, með síðari breytingum.</sen>
     </subart>
     <subart nr="8">
-      <paragraph nr="1">
-        <sen nr="1">Ákvæði 5. gr. og 10.–14. gr. eiga við um einkaleigur.</sen>
-      </paragraph>
+      <sen nr="1">Ákvæði 5. gr. og 10.–14. gr. eiga við um einkaleigur.</sen>
     </subart>
     <subart nr="9">
-      <paragraph nr="1">
-        <sen nr="1">Ráðherra er heimilt að setja reglugerð um einkaleigur þar sem m.a. er kveðið á um fyrirkomulag trygginga ökutækja og nánari skilyrði starfseminnar.</sen>
-      </paragraph>
+      <sen nr="1">Ráðherra er heimilt að setja reglugerð um einkaleigur þar sem m.a. er kveðið á um fyrirkomulag trygginga ökutækja og nánari skilyrði starfseminnar.</sen>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -453,7 +334,6 @@
         <location type="pointer">
           <art>9</art>
           <subart>4</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Einkaleiga skal tryggja að skráningarskylt ökutæki sem það" after-mark="hefur á skrá sé skráð sem ökutæki í notkunarflokki ökutækjaleigu hjá Samgöngustofu.$">1</sen>
         </location>
       </footnote>
@@ -462,7 +342,6 @@
         <location type="pointer">
           <art>9</art>
           <subart>9</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra er heimilt að setja reglugerð" after-mark="um einkaleigur þar sem m.a. er kveðið á um fyrirkomulag trygginga ökutækja og nánari skilyrði starfseminnar.$">1</sen>
         </location>
       </footnote>
@@ -472,29 +351,19 @@
     <nr-title>10. gr.</nr-title>
     <name>Eftirlit.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa skal hafa eftirlit með því að ákvæðum laganna sé fylgt.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa skal hafa eftirlit með því að ákvæðum laganna sé fylgt.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa getur athugað svo oft sem þurfa þykir hvort starfsemi leyfishafa er í samræmi við ákvæði laga þessara og reglur sem settar eru á grundvelli þeirra.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa getur athugað svo oft sem þurfa þykir hvort starfsemi leyfishafa er í samræmi við ákvæði laga þessara og reglur sem settar eru á grundvelli þeirra.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Í tengslum við eftirlit sitt samkvæmt lögum þessum getur Samgöngustofa gert vettvangskannanir.</sen>
-      </paragraph>
+      <sen nr="1">Í tengslum við eftirlit sitt samkvæmt lögum þessum getur Samgöngustofa gert vettvangskannanir.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofu er heimilt að fela faggiltum skoðunarstofum að sinna eftirlitshlutverki sínu, í heild eða að hluta, samkvæmt lögum þessum og eftir því sem við á hverju sinni.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofu er heimilt að fela faggiltum skoðunarstofum að sinna eftirlitshlutverki sínu, í heild eða að hluta, samkvæmt lögum þessum og eftir því sem við á hverju sinni.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Ráðherra er heimilt í reglugerð að kveða nánar á um eftirlit Samgöngustofu.</sen>
-      </paragraph>
+      <sen nr="1">Ráðherra er heimilt í reglugerð að kveða nánar á um eftirlit Samgöngustofu.</sen>
     </subart>
     <footnotes>
       <footnote nr="1">
@@ -502,7 +371,6 @@
         <location type="pointer">
           <art>10</art>
           <subart>5</subart>
-          <paragraph>1</paragraph>
           <sen before-mark="^Ráðherra er heimilt í reglugerð" after-mark="að kveða nánar á um eftirlit Samgöngustofu.$">1</sen>
         </location>
       </footnote>
@@ -512,133 +380,91 @@
     <nr-title>11. gr.</nr-title>
     <name>Niðurfelling leyfis og önnur úrræði.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofu er heimilt að fella niður leyfi til reksturs ökutækjaleigu ef leyfishafi eða forsvarsmaður hans fullnægir ekki lengur skilyrðum 4. gr. og jafnframt ef leyfishafi eða forsvarsmaður hans verður uppvís að misnotkun á leyfi eða brýtur á annan hátt gegn ákvæðum laga þessara.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofu er heimilt að fella niður leyfi til reksturs ökutækjaleigu ef leyfishafi eða forsvarsmaður hans fullnægir ekki lengur skilyrðum 4. gr. og jafnframt ef leyfishafi eða forsvarsmaður hans verður uppvís að misnotkun á leyfi eða brýtur á annan hátt gegn ákvæðum laga þessara.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofu er enn fremur heimilt að fella niður leyfi til reksturs ökutækjaleigu hafi ekki verið nein starfsemi af hálfu leigunnar í samfellt þrjú ár.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofu er enn fremur heimilt að fella niður leyfi til reksturs ökutækjaleigu hafi ekki verið nein starfsemi af hálfu leigunnar í samfellt þrjú ár.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Áður en leyfi er fellt niður skv. 1. eða 2. mgr. skal Samgöngustofa senda leyfishafa skriflega viðvörun um fyrirhugaða niðurfellingu leyfis þar sem koma skal fram tilefni niðurfellingar.</sen>
-        <sen nr="2">Veita skal leyfishafa hæfilegan frest til að bæta úr annmörkum.</sen>
-      </paragraph>
+      <sen nr="1">Áður en leyfi er fellt niður skv. 1. eða 2. mgr. skal Samgöngustofa senda leyfishafa skriflega viðvörun um fyrirhugaða niðurfellingu leyfis þar sem koma skal fram tilefni niðurfellingar.</sen>
+      <sen nr="2">Veita skal leyfishafa hæfilegan frest til að bæta úr annmörkum.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Komi til endanlegrar niðurfellingar leyfis skal Samgöngustofa senda leyfishafa skriflega tilkynningu þess efnis og um frá hvaða tíma leyfi telst niður fallið.</sen>
-      </paragraph>
+      <sen nr="1">Komi til endanlegrar niðurfellingar leyfis skal Samgöngustofa senda leyfishafa skriflega tilkynningu þess efnis og um frá hvaða tíma leyfi telst niður fallið.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Ökutækjaleiga sem svipt er leyfi skal skila leyfisbréfi til Samgöngustofu án tafar eftir að tilkynning skv. 4. mgr. berst.</sen>
-      </paragraph>
+      <sen nr="1">Ökutækjaleiga sem svipt er leyfi skal skila leyfisbréfi til Samgöngustofu án tafar eftir að tilkynning skv. 4. mgr. berst.</sen>
     </subart>
     <subart nr="6">
-      <paragraph nr="1">
-        <sen nr="1">Ökutækjaleigu er skylt að veita Samgöngustofu allar upplýsingar er varða starfsemina og rekstur leigunnar, svo sem um starfsleyfi, leigusamninga og ökutæki í eigu eða undir yfirráðum ökutækjaleigu.</sen>
-        <sen nr="2">Samgöngustofa getur fellt niður starfsleyfi ökutækjaleigu veiti hún Samgöngustofu ekki umbeðnar upplýsingar eða hefur veitt rangar eða villandi upplýsingar til að fá starfsleyfi.</sen>
-      </paragraph>
+      <sen nr="1">Ökutækjaleigu er skylt að veita Samgöngustofu allar upplýsingar er varða starfsemina og rekstur leigunnar, svo sem um starfsleyfi, leigusamninga og ökutæki í eigu eða undir yfirráðum ökutækjaleigu.</sen>
+      <sen nr="2">Samgöngustofa getur fellt niður starfsleyfi ökutækjaleigu veiti hún Samgöngustofu ekki umbeðnar upplýsingar eða hefur veitt rangar eða villandi upplýsingar til að fá starfsleyfi.</sen>
     </subart>
     <subart nr="7">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa skal auglýsa með tryggilegum hætti þegar um niðurfellingu leyfis er að ræða í Lögbirtingablaði og á vefsíðu sinni.</sen>
-        <sen nr="2">Jafnframt getur Samgöngustofa auglýst niðurfellingu leyfis á annan hátt eins og heppilegt þykir hverju sinni.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa skal auglýsa með tryggilegum hætti þegar um niðurfellingu leyfis er að ræða í Lögbirtingablaði og á vefsíðu sinni.</sen>
+      <sen nr="2">Jafnframt getur Samgöngustofa auglýst niðurfellingu leyfis á annan hátt eins og heppilegt þykir hverju sinni.</sen>
     </subart>
   </art>
   <art nr="12">
     <nr-title>12. gr.</nr-title>
     <name>Dagsektir.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa getur lagt dagsektir, allt að 500.000 kr. á dag, á ökutækjaleigu eða einkaleigu sem brýtur gegn:</sen>
-        <numart nr="1" type="numeric">
-          <nr-title>1.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">2. málsl. 5. mgr. 3. gr. um skyldu til að framkvæmdastjóri eða yfirmaður uppfylli skilyrði 4. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="2" type="numeric">
-          <nr-title>2.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">3. mgr. 4. gr. um skyldu til að reka starfsstöð eða útibú undir heiti sem leyfi hljóðar um.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="3" type="numeric">
-          <nr-title>3.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">1. mgr. 5. gr. um skyldu til að tilkynna Samgöngustofu um fyrirhugaðar breytingar sem varða hina leyfisskyldu starfsemi.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="4" type="numeric">
-          <nr-title>4.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">2. mgr. 5. gr. um skyldu til að sækja um nýtt leyfi verði breyting á kennitölu leyfishafa.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="5" type="numeric">
-          <nr-title>5.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">1. mgr. 6. gr. um skyldu leyfishafa til að hafa ökutæki skráð sem ökutæki í notkunarflokki ökutækjaleigu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="6" type="numeric">
-          <nr-title>6.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">2. mgr. 6. gr. um skyldu leyfishafa til að vera skráður eigandi ökutækis eða fyrsti umráðamaður samkvæmt samningi við löggilta kaup- eða fjármögnunarleigu.</sen>
-            <sen nr="2">Þetta gildir hvorki um undanþágu í 2. málsl. 2. mgr. 6. gr. né um einkaleigur skv. 9. gr.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="7" type="numeric">
-          <nr-title>7.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">3. mgr. 6. gr. um skyldu til að leigja aðeins út ökutæki sem hafa lögbundna aðalskoðun.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="8" type="numeric">
-          <nr-title>8.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">4. mgr. 6. gr. um skyldu til að leigja aðeins út ökutæki sem hafa lögbundna ábyrgðartryggingu.</sen>
-          </paragraph>
-        </numart>
-        <numart nr="9" type="numeric">
-          <nr-title>9.</nr-title>
-          <paragraph nr="1">
-            <sen nr="1">8. mgr. 6. gr. um skyldu til að leyfisbréf liggi frammi á starfsstöð og afrit þess í útibúum.</sen>
-          </paragraph>
-        </numart>
-      </paragraph>
+      <sen nr="1">Samgöngustofa getur lagt dagsektir, allt að 500.000 kr. á dag, á ökutækjaleigu eða einkaleigu sem brýtur gegn:</sen>
+      <numart nr="1" type="numeric">
+        <nr-title>1.</nr-title>
+        <sen nr="1">2. málsl. 5. mgr. 3. gr. um skyldu til að framkvæmdastjóri eða yfirmaður uppfylli skilyrði 4. gr.</sen>
+      </numart>
+      <numart nr="2" type="numeric">
+        <nr-title>2.</nr-title>
+        <sen nr="1">3. mgr. 4. gr. um skyldu til að reka starfsstöð eða útibú undir heiti sem leyfi hljóðar um.</sen>
+      </numart>
+      <numart nr="3" type="numeric">
+        <nr-title>3.</nr-title>
+        <sen nr="1">1. mgr. 5. gr. um skyldu til að tilkynna Samgöngustofu um fyrirhugaðar breytingar sem varða hina leyfisskyldu starfsemi.</sen>
+      </numart>
+      <numart nr="4" type="numeric">
+        <nr-title>4.</nr-title>
+        <sen nr="1">2. mgr. 5. gr. um skyldu til að sækja um nýtt leyfi verði breyting á kennitölu leyfishafa.</sen>
+      </numart>
+      <numart nr="5" type="numeric">
+        <nr-title>5.</nr-title>
+        <sen nr="1">1. mgr. 6. gr. um skyldu leyfishafa til að hafa ökutæki skráð sem ökutæki í notkunarflokki ökutækjaleigu.</sen>
+      </numart>
+      <numart nr="6" type="numeric">
+        <nr-title>6.</nr-title>
+        <sen nr="1">2. mgr. 6. gr. um skyldu leyfishafa til að vera skráður eigandi ökutækis eða fyrsti umráðamaður samkvæmt samningi við löggilta kaup- eða fjármögnunarleigu.</sen>
+        <sen nr="2">Þetta gildir hvorki um undanþágu í 2. málsl. 2. mgr. 6. gr. né um einkaleigur skv. 9. gr.</sen>
+      </numart>
+      <numart nr="7" type="numeric">
+        <nr-title>7.</nr-title>
+        <sen nr="1">3. mgr. 6. gr. um skyldu til að leigja aðeins út ökutæki sem hafa lögbundna aðalskoðun.</sen>
+      </numart>
+      <numart nr="8" type="numeric">
+        <nr-title>8.</nr-title>
+        <sen nr="1">4. mgr. 6. gr. um skyldu til að leigja aðeins út ökutæki sem hafa lögbundna ábyrgðartryggingu.</sen>
+      </numart>
+      <numart nr="9" type="numeric">
+        <nr-title>9.</nr-title>
+        <sen nr="1">8. mgr. 6. gr. um skyldu til að leyfisbréf liggi frammi á starfsstöð og afrit þess í útibúum.</sen>
+      </numart>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa skal því aðeins leggja á dagsektir skv. 1. mgr. að aðila hafi verið veittur hæfilegur frestur til að bæta úr vanefndum og uppfylla skyldur sínar.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa skal því aðeins leggja á dagsektir skv. 1. mgr. að aðila hafi verið veittur hæfilegur frestur til að bæta úr vanefndum og uppfylla skyldur sínar.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Ráðherra getur í reglugerð breytt hámarksupphæð dagsekta í samræmi við verðlagsþróun launa.</sen>
-        <sen nr="2">Við ákvörðun sektar skal höfð hliðsjón af alvarleika brotsins, hvað það hefur staðið lengi og hvort um ítrekað brot er að ræða.</sen>
-      </paragraph>
+      <sen nr="1">Ráðherra getur í reglugerð breytt hámarksupphæð dagsekta í samræmi við verðlagsþróun launa.</sen>
+      <sen nr="2">Við ákvörðun sektar skal höfð hliðsjón af alvarleika brotsins, hvað það hefur staðið lengi og hvort um ítrekað brot er að ræða.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Ákvarðanir Samgöngustofu um dagsektir eru aðfararhæfar.</sen>
-        <sen nr="2">Sé sekt samkvæmt þessari grein ekki greidd innan mánaðar frá ákvörðun Samgöngustofu skal greiða dráttarvexti af fjárhæð sektarinnar.</sen>
-        <sen nr="3">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
-        <sen nr="4">Óinnheimtar dagsektir, sem lagðar eru á fram að efndadegi, falla ekki niður þótt aðili efni síðar viðkomandi kröfu nema Samgöngustofa ákveði það sérstaklega.</sen>
-        <sen nr="5">Sektir samkvæmt þessari grein renna í ríkissjóð að frádregnum kostnaði við innheimtu.</sen>
-      </paragraph>
+      <sen nr="1">Ákvarðanir Samgöngustofu um dagsektir eru aðfararhæfar.</sen>
+      <sen nr="2">Sé sekt samkvæmt þessari grein ekki greidd innan mánaðar frá ákvörðun Samgöngustofu skal greiða dráttarvexti af fjárhæð sektarinnar.</sen>
+      <sen nr="3">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
+      <sen nr="4">Óinnheimtar dagsektir, sem lagðar eru á fram að efndadegi, falla ekki niður þótt aðili efni síðar viðkomandi kröfu nema Samgöngustofa ákveði það sérstaklega.</sen>
+      <sen nr="5">Sektir samkvæmt þessari grein renna í ríkissjóð að frádregnum kostnaði við innheimtu.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Ákvörðun Samgöngustofu um dagsektir samkvæmt þessari grein má skjóta til ráðherra innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
-        <sen nr="2">Málskot til ráðherra frestar aðför.</sen>
-        <sen nr="3">Úrskurðir ráðherra um dagsektir eru aðfararhæfir.</sen>
-      </paragraph>
+      <sen nr="1">Ákvörðun Samgöngustofu um dagsektir samkvæmt þessari grein má skjóta til ráðherra innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
+      <sen nr="2">Málskot til ráðherra frestar aðför.</sen>
+      <sen nr="3">Úrskurðir ráðherra um dagsektir eru aðfararhæfir.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="163" nr="1">
@@ -646,9 +472,7 @@
         <location type="range">
           <art>12</art>
           <subart>1</subart>
-          <paragraph>1</paragraph>
           <numart>6</numart>
-          <paragraph>1</paragraph>
           <sen words="löggilta kaup- eða fjármögnunarleigu">1</sen>
         </location>
       </footnote>
@@ -657,9 +481,7 @@
         <location type="range">
           <art>12</art>
           <subart>1</subart>
-          <paragraph>1</paragraph>
           <numart>9</numart>
-          <paragraph>1</paragraph>
           <sen words="8. mgr.">1</sen>
         </location>
       </footnote>
@@ -669,50 +491,34 @@
     <nr-title>13. gr.</nr-title>
     <name>Stjórnvaldssektir o.fl.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Samgöngustofa getur lagt stjórnvaldssektir á einstakling eða lögaðila sem brýtur gegn 1. mgr. 3. gr. eða 5. mgr. 6. gr.</sen>
-      </paragraph>
+      <sen nr="1">Samgöngustofa getur lagt stjórnvaldssektir á einstakling eða lögaðila sem brýtur gegn 1. mgr. 3. gr. eða 5. mgr. 6. gr.</sen>
     </subart>
     <subart nr="2">
-      <paragraph nr="1">
-        <sen nr="1">Stjórnvaldssektir sem lagðar eru á einstaklinga geta numið frá 100.000 kr. til 500.000 kr.</sen>
-        <sen nr="2">Sektir sem eru lagðar á lögaðila geta numið frá 500.000 kr. til 2.000.000 kr.</sen>
-      </paragraph>
+      <sen nr="1">Stjórnvaldssektir sem lagðar eru á einstaklinga geta numið frá 100.000 kr. til 500.000 kr.</sen>
+      <sen nr="2">Sektir sem eru lagðar á lögaðila geta numið frá 500.000 kr. til 2.000.000 kr.</sen>
     </subart>
     <subart nr="3">
-      <paragraph nr="1">
-        <sen nr="1">Við ákvörðun sekta skal m.a. taka tillit til þess hvað brot hefur staðið lengi, samstarfsvilja hins brotlega aðila og hvort um ítrekað brot er að ræða.</sen>
-        <sen nr="2">Samgöngustofu er heimilt að ákveða hærri sektir hafi aðili hagnast á broti.</sen>
-        <sen nr="3">Skal upphæð stjórnvaldssektar þá ákveðin sem allt að tvöfalt margfeldi af þeim hagnaði sem aðili hefur aflað sér með broti gegn lögunum, þó innan ramma 2. mgr.</sen>
-      </paragraph>
+      <sen nr="1">Við ákvörðun sekta skal m.a. taka tillit til þess hvað brot hefur staðið lengi, samstarfsvilja hins brotlega aðila og hvort um ítrekað brot er að ræða.</sen>
+      <sen nr="2">Samgöngustofu er heimilt að ákveða hærri sektir hafi aðili hagnast á broti.</sen>
+      <sen nr="3">Skal upphæð stjórnvaldssektar þá ákveðin sem allt að tvöfalt margfeldi af þeim hagnaði sem aðili hefur aflað sér með broti gegn lögunum, þó innan ramma 2. mgr.</sen>
     </subart>
     <subart nr="4">
-      <paragraph nr="1">
-        <sen nr="1">Gjalddagi stjórnvaldssektar er 30 dögum eftir að ákvörðun um sektina var tekin.</sen>
-        <sen nr="2">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
-      </paragraph>
+      <sen nr="1">Gjalddagi stjórnvaldssektar er 30 dögum eftir að ákvörðun um sektina var tekin.</sen>
+      <sen nr="2">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
     </subart>
     <subart nr="5">
-      <paragraph nr="1">
-        <sen nr="1">Ákvörðun Samgöngustofu um stjórnvaldssekt er aðfararhæf og renna sektir í ríkissjóð.</sen>
-      </paragraph>
+      <sen nr="1">Ákvörðun Samgöngustofu um stjórnvaldssekt er aðfararhæf og renna sektir í ríkissjóð.</sen>
     </subart>
     <subart nr="6">
-      <paragraph nr="1">
-        <sen nr="1">Stjórnvaldssektum skal beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
-      </paragraph>
+      <sen nr="1">Stjórnvaldssektum skal beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
     </subart>
     <subart nr="7">
-      <paragraph nr="1">
-        <sen nr="1">Aðili máls getur skotið ákvörðun Samgöngustofu um stjórnvaldssektir til ráðherra innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
-        <sen nr="2">Málskot til ráðherra frestar aðför.</sen>
-        <sen nr="3">Úrskurðir ráðherra um stjórnvaldssektir eru aðfararhæfir.</sen>
-      </paragraph>
+      <sen nr="1">Aðili máls getur skotið ákvörðun Samgöngustofu um stjórnvaldssektir til ráðherra innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
+      <sen nr="2">Málskot til ráðherra frestar aðför.</sen>
+      <sen nr="3">Úrskurðir ráðherra um stjórnvaldssektir eru aðfararhæfir.</sen>
     </subart>
     <subart nr="8">
-      <paragraph nr="1">
-        <sen nr="1">Sé ökutækjaleiga eða einkaleiga rekin án tilskilins leyfis ber lögreglustjóra, að beiðni Samgöngustofu, þegar í stað að stöðva starfsemina, þar á meðal með lokun starfsstöðvar eða lokun rafrænnar þjónustu, svo sem vefsíðu.</sen>
-      </paragraph>
+      <sen nr="1">Sé ökutækjaleiga eða einkaleiga rekin án tilskilins leyfis ber lögreglustjóra, að beiðni Samgöngustofu, þegar í stað að stöðva starfsemina, þar á meðal með lokun starfsstöðvar eða lokun rafrænnar þjónustu, svo sem vefsíðu.</sen>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.010.html" law-nr="10" law-year="2020" law-art="3" nr="1">
@@ -720,7 +526,6 @@
         <location type="range">
           <art>13</art>
           <subart>1</subart>
-          <paragraph>1</paragraph>
           <sen words="eða 5. mgr. 6. gr.">1</sen>
         </location>
       </footnote>
@@ -730,22 +535,18 @@
     <nr-title>14. gr.</nr-title>
     <name>Stjórnsýslukæra.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Ákvörðunum Samgöngustofu samkvæmt lögum þessum verður skotið til ráðherra.</sen>
-        <sen nr="2">Um málsmeðferð fer eftir ákvæðum stjórnsýslulaga, nr. 37/1993.</sen>
-      </paragraph>
+      <sen nr="1">Ákvörðunum Samgöngustofu samkvæmt lögum þessum verður skotið til ráðherra.</sen>
+      <sen nr="2">Um málsmeðferð fer eftir ákvæðum stjórnsýslulaga, nr. 37/1993.</sen>
     </subart>
   </art>
   <art nr="15">
     <nr-title>15. gr.</nr-title>
     <name>Gildistaka.</name>
     <subart nr="1">
-      <paragraph nr="1">
-        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-        <sen nr="2">
-          <a href="http://www.althingi.is/altext/stjt/2015.065.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
-        </sen>
-      </paragraph>
+      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+      <sen nr="2">
+        <a href="http://www.althingi.is/altext/stjt/2015.065.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.">…</a>
+      </sen>
     </subart>
   </art>
   <chapter nr-type="name" nr="t" type="temporary-clauses">
@@ -753,26 +554,20 @@
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
-        <paragraph nr="1">
-          <sen nr="1">Leyfi til reksturs bílaleigu sem gefin hafa verið út samkvæmt eldri lögum halda gildi sínu þar til gildistími þeirra er útrunninn eða leyfið fellur niður skv. 11. gr.</sen>
-        </paragraph>
+        <sen nr="1">Leyfi til reksturs bílaleigu sem gefin hafa verið út samkvæmt eldri lögum halda gildi sínu þar til gildistími þeirra er útrunninn eða leyfið fellur niður skv. 11. gr.</sen>
       </subart>
     </art>
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <paragraph nr="1">
-          <sen nr="1">Leyfishafar skulu tilkynna Samgöngustofu fyrir 1. ágúst 2015 að þeir hyggist halda áfram starfsemi.</sen>
-          <sen nr="2">Samgöngustofu er þá heimilt að óska eftir gögnum skv. 4. gr.</sen>
-        </paragraph>
+        <sen nr="1">Leyfishafar skulu tilkynna Samgöngustofu fyrir 1. ágúst 2015 að þeir hyggist halda áfram starfsemi.</sen>
+        <sen nr="2">Samgöngustofu er þá heimilt að óska eftir gögnum skv. 4. gr.</sen>
       </subart>
     </art>
     <art nr="III" roman-nr="3" number-type="roman">
       <nr-title>III.</nr-title>
       <subart nr="1">
-        <paragraph nr="1">
-          <sen nr="1">Leyfishöfum ber að uppfylla ákvæði laga þessara og er Samgöngustofu heimilt frá 1. ágúst 2015 að beita ákvæðum um eftirlit, sektir og niðurfellingu gagnvart þeim aðilum sem hafa starfsleyfi útgefin í tíð laga um bílaleigur, nr. 64/2000.</sen>
-        </paragraph>
+        <sen nr="1">Leyfishöfum ber að uppfylla ákvæði laga þessara og er Samgöngustofu heimilt frá 1. ágúst 2015 að beita ákvæðum um eftirlit, sektir og niðurfellingu gagnvart þeim aðilum sem hafa starfsleyfi útgefin í tíð laga um bílaleigur, nr. 64/2000.</sen>
       </subart>
     </art>
   </chapter>
