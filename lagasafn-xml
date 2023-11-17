@@ -1284,9 +1284,8 @@ def make_xml(law_num, law_year):
                         # says it's at the beginning, being either 'a' or 1.
                         # In this case, we'll choose the previous `numart` as
                         # the parent, so that this new list will be inside the
-                        # previous one. We append to the last paragraph of
-                        # that parent.
-                        parent = prev_numart.findall("paragraph")[-1]
+                        # previous one.
+                        parent = prev_numart
                     else:
                         # A different list is being handled now, but it's not
                         # starting at the beginning (is neither 'a' nor 1).
@@ -1296,14 +1295,7 @@ def make_xml(law_num, law_year):
                         # of the list we've been working on recently, which is
                         # the same parent as the nodes that came before we
                         # started the sub-list.
-                        #
-                        # Parent is a `paragraph`, grandparent is another
-                        # `numart`, great-grandparent is the last `paragraph`
-                        # of the "grandparent numart", which is the one we
-                        # want to append to.
-                        #
-                        # Hey, it's simpler than the British monarchy.
-                        parent = prev_numart.getparent().getparent().getparent()
+                        parent = prev_numart.getparent().getparent()
 
             # A parent may already be set above if `numart` currently being
             # handled is not the first one in its parent article/subarticle.
@@ -1320,9 +1312,7 @@ def make_xml(law_num, law_year):
                 if art_chapter is not None and art_chapter.getparent().tag == "subart":
                     parent = art_chapter
                 elif subart is not None:
-                    # A numart should belong to the same paragraph as a
-                    # potential sentence explaining what's being listed.
-                    parent = subart.findall("paragraph")[-1]
+                    parent = subart
                 elif art is not None:
                     # FIXME: Investigate if this ever actually happens and
                     # explain when it does, or remove this clause.
