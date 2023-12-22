@@ -41,14 +41,14 @@
       <subart nr="1">
         <sen nr="1">Ríkissjóður skal skila 15. hvers mánaðar, af óskiptum tekjuskatti, fjárhæð er rennur til þjóðkirkjusafnaða og skráðra trúfélaga og lífsskoðunarfélaga.</sen>
         <sen nr="2">Fjárhæð þessi reiknast þannig að fyrir hvern einstakling, sem er 16 ára og eldri í lok næstliðins árs á undan gjaldári, greiðist ákveðin upphæð sem ákvarðast þannig:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Á árinu 1997 skal gjaldið vera 400,24 kr. á einstakling á mánuði.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Á árinu 1998 og síðar ákvarðast gjaldið af endanlegri ákvörðun gjaldsins frá fyrra ári, að viðbættri hækkun er samsvarar þeirri hækkun er kann að verða á meðaltekjuskattsstofni einstaklinga á öllu landinu milli næstliðinna tekjuára á undan gjaldári.</sen>
         </numart>
@@ -127,15 +127,15 @@
       <nr-title>3. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Gjald skv. 2. gr. skiptist þannig:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Vegna einstaklings, sem skráður er í þjóðkirkjuna, greiðist til þess safnaðar sem hann tilheyrir og miðast við 1. desember næst á undan gjaldári.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Vegna einstaklings, sem tilheyrir skráðu trúfélagi eða lífsskoðunarfélagi, samkvæmt lögum nr. 108/1999, greiðist gjaldið til hlutaðeigandi trúfélags eða lífsskoðunarfélags.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Vegna einstaklinga, sem eru í þjóðkirkjunni og eru óstaðsettir á landinu samkvæmt þjóðskrá, greiðist gjaldið til þjóðkirkjunnar.</sen>
         </numart>
@@ -265,7 +265,7 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

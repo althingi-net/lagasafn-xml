@@ -31,40 +31,40 @@
       <name>Orðskýringar.</name>
       <subart nr="1">
         <sen nr="1">Í lögum þessum er merking eftirfarandi hugtaka sem hér segir:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <name>Barn:</name>
           <sen nr="1">Einstaklingur sem er yngri en 18 ára.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <name>Barnsmissir:</name>
           <sen nr="1">Þegar foreldri verður fyrir því að barn þess andast.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <name>Foreldri:</name>
           <sen nr="1">Foreldri og/eða forsjáraðili barns samkvæmt ákvæðum barnalaga, sem og aðrir sem hafa gegnt foreldraskyldum gagnvart viðkomandi barni í lengri tíma en síðustu 12 mánuði fyrir barnsmissi.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <name>Fullt nám:</name>
           <sen nr="1">75–100% samfellt nám, verklegt eða bóklegt, við viðurkennda menntastofnun innan hins almenna menntakerfis á Íslandi sem varir í a.m.k. sex mánuði og getur því verið um að ræða tímabil sem afmarkast ekki af heilum almanaksmánuðum.</sen>
           <sen nr="2">Enn fremur er átt við 75–100% nám á háskólastigi og annað nám sem gerir sambærilegar kröfur til undirbúningsmenntunar og nám á háskólastigi.</sen>
           <sen nr="3">Einstök námskeið teljast ekki til náms.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <name>Samfellt starf:</name>
           <sen nr="1">A.m.k. 25% starfshlutfall í hverjum mánuði á innlendum vinnumarkaði yfir tiltekið tímabil og getur því verið um að ræða tímabil sem afmarkast ekki af heilum almanaksmánuðum.</sen>
           <sen nr="2">Enn fremur teljast til samfellds starfs þau tilvik sem talin eru upp í a–f-lið 2. mgr. 14. gr.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <name>Sorgarleyfi:</name>
           <sen nr="1">Leyfi foreldris frá launuðum störfum á innlendum vinnumarkaði í kjölfar barnsmissis, sem og við fósturlát eftir 18 vikna meðgöngu eða andvanafæðingu eftir 22 vikna meðgöngu.</sen>
         </numart>
-        <numart nr="7" type="numeric">
+        <numart nr="7" nr-type="numeric">
           <nr-title>7.</nr-title>
           <name>Sorgarstyrkur:</name>
           <sen nr="1">Styrkur til foreldris utan vinnumarkaðar eða í minna en 25% starfshlutfalli og foreldris í fullu námi í kjölfar barnsmissis, sem og við fósturlát eftir 18 vikna meðgöngu eða andvanafæðingu eftir 22 vikna meðgöngu.</sen>
@@ -211,27 +211,27 @@
       </subart>
       <subart nr="2">
         <sen nr="1">Til þátttöku á innlendum vinnumarkaði telst enn fremur:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">orlof eða leyfi foreldris sem vinnur launað starf í annarra þjónustu samkvæmt lögum, kjarasamningi eða ráðningarsamningi, þótt ólaunað sé að hluta eða öllu leyti, og foreldri hafi á því tímabili sem um ræðir verið í a.m.k. 25% starfshlutfalli,</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">sá tími sem foreldri fær greiddar atvinnuleysisbætur, sætir biðtíma eftir slíkum bótum, hefði átt rétt á slíkum bótum hefði foreldrið skráð sig án atvinnu eða foreldrið hefur hætt atvinnuleit tímabundið vegna orlofs erlendis og ekki hafa liðið meira en tíu virkir dagar þar til atvinnuleit hefur hafist að nýju samkvæmt gildandi lögum um atvinnuleysistryggingar, hafi starfshlutfall foreldris á viðmiðunartíma fyrir framangreindar greiðslur verið a.m.k. 25%,</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">sá tími sem foreldri fær greiðslur úr Fæðingarorlofssjóði á grundvelli laga um fæðingar- og foreldraorlof eða hefði átt rétt á slíkum greiðslum hefði foreldrið sótt um þær, hafi starfshlutfall foreldris á viðmiðunartíma fyrir framangreindar greiðslur verið a.m.k. 25%,</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">sá tími sem foreldri fær greidda sjúkra- eða slysadagpeninga, sætir biðtíma eftir dagpeningum eða hefði átt rétt á þeim hefði foreldrið sótt um þá á grundvelli laga um sjúkratryggingar og laga um slysatryggingar almannatrygginga, eða fær greiðslur sjúkradagpeninga úr sjúkrasjóði stéttarfélags enda hafi foreldri látið af launuðum störfum af heilsufarsástæðum, hafi starfshlutfall foreldris á viðmiðunartíma fyrir framangreindar greiðslur verið a.m.k. 25%,</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
           <sen nr="1">sá tími sem foreldri nýtur bóta frá tryggingafélagi sem koma í stað launa vegna tímabundins atvinnutjóns af völdum slyss, hafi starfshlutfall foreldris á viðmiðunartíma fyrir framangreindar greiðslur verið a.m.k. 25%,</sen>
         </numart>
-        <numart nr="f" type="alphabet">
+        <numart nr="f" nr-type="alphabet">
           <nr-title>f.</nr-title>
           <sen nr="1">sá tími sem foreldri fær tekjutengdar greiðslur á grundvelli laga um greiðslur til foreldra langveikra eða alvarlega fatlaðra barna eða hefði átt rétt á slíkum greiðslum hefði foreldri sótt um þær til Tryggingastofnunar ríkisins, hafi starfshlutfall foreldris á viðmiðunartíma fyrir framangreindar greiðslur verið a.m.k. 25%.</sen>
         </numart>

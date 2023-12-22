@@ -85,11 +85,11 @@
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Gjaldskyldir aðilar samkvæmt lögum þessum eru:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Allir þeir sem flytja til landsins vöru sem gjaldskyld er samkvæmt lögum þessum, hvort sem er til endursölu eða eigin nota.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Allir þeir sem framleiða hér á landi vöru sem gjaldskyld er samkvæmt lögum þessum, vinna að framleiðslu hennar eða setja saman, hvort sem er til endursölu eða eigin nota.</sen>
         </numart>
@@ -245,11 +245,11 @@
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Til skattskyldrar sölu eða afhendingar telst ekki:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Raforka eða heitt vatn sem afhent er öðrum skattskyldum aðila.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Raforka eða heitt vatn sem afhent er eða notað eingöngu til framleiðslu á raforku eða heitu vatni til endursölu.</sen>
         </numart>
@@ -262,27 +262,27 @@
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Skattskyldir aðilar skulu við sölu eða afhendingu á raforku eða heitu vatni gefa út sölureikning þar sem eftirfarandi upplýsingar koma fram:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Útgáfudagur.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Útgáfustaður.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Afhendingarstaður ef annar en útgáfustaður.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">Nafn og kennitala seljanda.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">Nafn og kennitala kaupanda.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <sen nr="1">Magn, einingarverð og heildarverð á raforku eða heitu vatni.</sen>
         </numart>
@@ -621,16 +621,16 @@
       </subart>
       <subart nr="3">
         <sen nr="1">Sé um að ræða innflutning á flúoruðum gróðurhúsalofttegundum öðrum en þeim sem tilteknar eru í 2. mgr. skal greiða skatt miðað við eftirfarandi forsendur:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Fyrir flúoraðar gróðurhúsalofttegundir sem ekki eru tilteknar í 2. mgr. skal greiða skatt að fjárhæð 10.000 kr.</sen>
           <sen nr="2">/kg.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Fyrir blöndur sem ekki eru tilteknar í 2. mgr. skal reikna fjárhæð skatts út frá hlutföllum þeirra efna sem blandan samanstendur af.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Fyrir aðrar blöndur sem ekki eru tilteknar í 2. mgr. og ekki er hægt að beita ákvæði 2. tölul. um skal greiða skatt að fjárhæð 10.000 kr.</sen>
           <sen nr="2">/kg.</sen>
@@ -851,7 +851,7 @@
       </footnotes>
     </art>
   </chapter>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

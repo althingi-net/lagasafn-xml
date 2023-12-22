@@ -14,15 +14,15 @@
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Tekjustofnar sveitarfélaga eru þessir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Fasteignaskattur.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Úthlutuð framlög til sveitarfélaga skv. III. kafla.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Útsvör.</sen>
         </numart>
@@ -96,17 +96,17 @@
       <subart nr="3">
         <sen nr="1">Sveitarstjórn ákveður fyrir lok árs skatthlutfall næsta árs innan þeirra marka sem greinir í a- og c-lið.</sen>
         <sen nr="2">Skatthlutfall skal vera sem hér segir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Allt að 0,5% af fasteignamati:</sen>
           <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Íbúðir og íbúðarhús ásamt lóðarréttindum, erfðafestulönd í dreifbýli og jarðeignir, útihús og mannvirki á bújörðum sem tengd eru landbúnaði, hesthús, öll hlunnindi og sumarbústaðir ásamt lóðarréttindum.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">1,32% af fasteignamati ásamt lóðarréttindum:</sen>
           <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Sjúkrastofnanir samkvæmt lögum um heilbrigðisþjónustu, skólar, heimavistir, leikskólar, íþróttahús og bókasöfn.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Allt að 1,32% af fasteignamati, ásamt lóðarréttindum:</sen>
           <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Allar aðrar fasteignir, svo sem iðnaðar-, skrifstofu- og verslunarhúsnæði, fiskeldismannvirki, veiðihús og mannvirki sem nýtt eru fyrir ferðaþjónustu.</sen>
@@ -264,15 +264,15 @@
       <nr-title>5. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Undanþegnar fasteignaskatti eru eftirtaldar fasteignir ásamt lóðarréttindum:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">kirkjur og bænahús íslensku þjóðkirkjunnar og annarra trúfélaga og samkomuhús skráðra lífsskoðunarfélaga sem hlotið hafa skráningu þess ráðuneytis er fer með málefni þjóðkirkjunnar;</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">safnahús, að því leyti sem þau eru ekki rekin í ágóðaskyni;</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">hús erlendra ríkja, að svo miklu leyti sem þau eru notuð af sendimönnum þeirra í milliríkjaerindum, og hús alþjóðastofnana, eftir því sem kveðið er á um í alþjóðasamningum sem Ísland er aðili að og öðlast hafa stjórnskipulegt gildi hér á landi.</sen>
         </numart>
@@ -401,30 +401,30 @@
       <nr-title>8. gr. a.</nr-title>
       <subart nr="1">
         <sen nr="1">Tekjur Jöfnunarsjóðs eru þessar:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Framlag úr ríkissjóði er nemi 2,111% af innheimtum skatttekjum ríkissjóðs og tryggingagjöldum.</sen>
           <sen nr="2">Þar af skal fjárhæð er nemur 0,235% af innheimtum skatttekjum og tryggingagjöldum renna til málefna fatlaðs fólks.</sen>
           <sen nr="3">Skal framlagið greiðast Jöfnunarsjóði mánaðarlega.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Árlegt framlag úr ríkissjóði er nemi 0,264% af álagningarstofni útsvars næstliðins tekjuárs og skal greiðast Jöfnunarsjóði með jöfnum mánaðarlegum greiðslum.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Hlutdeild í útsvarstekjum sveitarfélaga af álagningarstofni útsvars ár hvert:</sen>
-          <numart nr="1" type="numeric">
+          <numart nr="1" nr-type="numeric">
             <nr-title>1.</nr-title>
             <sen nr="1">er nemi 0,77% til jöfnunar vegna reksturs grunnskóla,</sen>
           </numart>
-          <numart nr="2" type="numeric">
+          <numart nr="2" nr-type="numeric">
             <nr-title>2.</nr-title>
             <sen nr="1">er nemi 0,99% til jöfnunar vegna málefna fatlaðs fólks.</sen>
           </numart>
           <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Við skil á staðgreiðslu útsvars til sveitarfélaga samkvæmt lögum um staðgreiðslu opinberra gjalda, nr. 45/1987, skal jafnframt gera Jöfnunarsjóði sveitarfélaga skil á hlutdeild sjóðsins í staðgreiðslu útsvars, sundurliðað skv. 1. og 2. tölul. 1. mgr. þessa stafliðar.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Vaxtatekjur.</sen>
         </numart>
@@ -528,23 +528,23 @@
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Tekjum Jöfnunarsjóðs skal ráðstafað sem hér segir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Til greiðslu bundinna framlaga skv. 10. gr.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Til greiðslu sérstakra framlaga skv. 11. gr.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Til greiðslu jöfnunarframlaga skv. 12. gr.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Til greiðslu jöfnunarframlaga vegna reksturs grunnskóla skv. 13. gr.</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
           <sen nr="1">Til greiðslu jöfnunarframlaga vegna þjónustu við fatlað fólk, sbr. 13. gr. a.</sen>
         </numart>
@@ -603,26 +603,26 @@
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Bundnum framlögum skal úthlutað sem hér segir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Til Sambands íslenskra sveitarfélaga, 1,7% af tekjum sjóðsins skv. a- og b-lið og 1. tölul. 1. mgr. c-liðar 8. gr. a, að frádregnum framlögum skv. d-lið 11. gr.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Til landshlutasamtaka sveitarfélaga, 1,76% af tekjum sjóðsins skv. a- og b-lið 8. gr. a, að frádregnum framlögum skv. d-lið 11. gr., sem skiptist jafnt á milli þeirra allra.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Til greiðslu útgjalda skv. 4. gr. laga um Innheimtustofnun sveitarfélaga, nr. 54/1971.</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
           <sen nr="1">Til Tryggingastofnunar ríkisins vegna eftirlaunasjóðs aldraðra samkvæmt lögum um eftirlaun til aldraðra.</sen>
         </numart>
-        <numart nr="f" type="alphabet">
+        <numart nr="f" nr-type="alphabet">
           <nr-title>f.</nr-title>
           <sen nr="1">Til greiðslu framlaga sveitarfélaga í húsafriðunarsjóð skv. 43. gr. laga um menningarminjar.</sen>
         </numart>
@@ -736,7 +736,7 @@
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Sérstökum framlögum skal úthlutað sem hér segir:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Til að greiða fyrir sameiningu sveitarfélaga, svo sem með þátttöku í eðlilegum kostnaði við undirbúning sameiningar, kynningu á sameiningartillögu og framkvæmd atkvæðagreiðslu.</sen>
           <sen nr="2">Ráðgjafarnefnd Jöfnunarsjóðs sveitarfélaga setur vinnureglur sem staðfestar skulu af ráðherra þar sem fram komi viðmiðunarfjárhæðir þessara framlaga.</sen>
@@ -744,26 +744,26 @@
           <sen nr="4">Þá er heimilt að veita sérstök framlög í allt að sjö ár til að jafna skuldastöðu sveitarfélaga vegna kostnaðar við framkvæmd sameiningar, til að stuðla að endurskipulagningu þjónustu og stjórnsýslu og til að rétta stöðu sveitarfélaga þar sem fjölgun íbúa hefur verið undir árlegri meðalfjölgun íbúa í sveitarfélögum á landsvísu.</sen>
           <sen nr="5">Ráðherra setur nánari ákvæði í reglugerð, sbr. 18. gr., m.a. um forsendur og útreikning framlaga.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Til að greiða úr sérstökum fjárhagserfiðleikum sveitarfélaga með styrk eða láni, sbr. 1. tölul. 1. mgr. 84. gr. sveitarstjórnarlaga, nr. 138/2011.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Til greiðslu stofnkostnaðar við vatnsveitur á lögbýlum þar sem hagkvæmara er að mati sveitarstjórnar að leggja vatnsveitu að einstökum bæjum, sbr. 2. mgr. 1. gr. laga um vatnsveitur sveitarfélaga, nr. 32/2004.</sen>
           <sen nr="2">Hámarksfjárhæð vegna einstakra framkvæmda má nema allt að 44% stofnkostnaðar við vatnsveitu til heimilis- og búsþarfa.</sen>
           <sen nr="3">Ráðherra setur nánari ákvæði í reglugerð, sbr. 18. gr., um skilyrði fyrir úthlutun samkvæmt ákvæði þessu.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Til jöfnunar tekjutaps einstakra sveitarfélaga vegna lækkunar fasteignaskattstekna í kjölfar breytingar á álagningarstofni mannvirkja, allt að 30,1% af tekjum sjóðsins skv. a-lið 8. gr. a.</sen>
           <sen nr="2">Framlag samkvæmt þessum lið skal greiða þegar afskrifað endurstofnverð fasteigna í sveitarfélagi, annarra en sumarbústaða, margfaldað með markaðsstuðli fasteigna sveitarfélaga sem eru í viðmiðunarflokki a skv. 12. gr., er hærra en fasteignamat sömu fasteigna.</sen>
           <sen nr="3">Skal framlagið nema mismuninum, margfölduðum með álagningarprósentu fasteignaskatts viðkomandi sveitarfélags, á því ári þegar framlagið er ákveðið.</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
         </numart>
-        <numart nr="f" type="alphabet">
+        <numart nr="f" nr-type="alphabet">
           <nr-title>f.</nr-title>
           <sen nr="1">Til greiðslu framlaga til sérstakra verkefna sem geta haft mikla þýðingu fyrir sveitarfélög og/eða leiða til hagræðingar í rekstri og þjónustu þeirra.</sen>
         </numart>
@@ -896,19 +896,19 @@
       </subart>
       <subart nr="3">
         <sen nr="1">Á grundvelli skrár um fullnýtingu tekjustofna sveitarfélaga skal reikna út meðaltekjur sveitarfélaga á hvern íbúa í eftirtöldum viðmiðunarflokkum sem ráðast af íbúafjölda sveitarfélaga:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">í sveitarfélögum með 70.000 íbúa eða fleiri,</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">í sveitarfélögum með 12.000–69.999 íbúa,</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">í sveitarfélögum með 300–11.999 íbúa,</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">í sveitarfélögum með 299 íbúa eða færri.</sen>
         </numart>
@@ -999,23 +999,23 @@
       <nr-title>13. gr.</nr-title>
       <subart nr="1">
         <sen nr="1">Tekjum Jöfnunarsjóðs vegna reksturs grunnskóla skv. 1. tölul. 1. mgr. c-liðar 8. gr. a að frádregnu framlagi til Sambands íslenskra sveitarfélaga skv. a-lið 10. gr. skal varið til að jafna útgjaldaþarfir sveitarfélaga vegna kostnaðar af rekstri grunnskóla og skiptast framlögin í eftirfarandi flokka:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Almenn jöfnunarframlög.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Framlög vegna sérþarfa fatlaðra nemenda.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Framlög vegna nemenda með íslensku sem annað mál.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Framlög til Barna- og fjölskyldustofu vegna kennslu barna á grunnskólaaldri sem eru að beiðni barnaverndarþjónustu lögheimilissveitarfélags vistuð utan þess á meðferðarheimili á vegum Barna- og fjölskyldustofu.</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
           <sen nr="1">Önnur framlög til sveitarfélaga og stofnana sem tengd eru rekstri grunnskóla.</sen>
         </numart>
@@ -1246,19 +1246,19 @@
       </subart>
       <subart nr="2">
         <sen nr="1">Tekjur fasteignasjóðs eru:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Tekjur af sölu og leigu fasteigna.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Tekjur af skuldabréfum í eigu sjóðsins vegna sölu á fasteignum.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Vaxtatekjur.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Framlag af tekjum Jöfnunarsjóðs vegna málefna fatlaðs fólks, sbr. 13. gr. a.</sen>
         </numart>
@@ -2051,7 +2051,7 @@
       </footnotes>
     </art>
   </chapter>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

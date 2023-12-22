@@ -12,19 +12,19 @@
     <name>Sala eignarhluta.</name>
     <subart nr="1">
       <sen nr="1">Ráðherra er heimilt að selja að öllu leyti eða að hluta eftirtalda eignarhluti ríkisins í fjármálafyrirtækjum, að fenginni heimild í fjárlögum og fengnum tillögum frá Bankasýslu ríkisins skv. i- og j-lið 4. gr. laga um Bankasýslu ríkisins:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Eignarhlut ríkisins í Arion banka hf.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Eignarhlut ríkisins í Íslandsbanka hf.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Eignarhlut ríkisins í Landsbankanum hf. umfram 70% hlut ríkisins af heildarhlutafé bankans.</sen>
       </numart>
-      <numart nr="4" type="numeric">
+      <numart nr="4" nr-type="numeric">
         <nr-title>4.</nr-title>
         <sen nr="1">Eignarhluti ríkisins í sparisjóðum.</sen>
       </numart>
@@ -84,7 +84,7 @@
       <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
     </subart>
   </art>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

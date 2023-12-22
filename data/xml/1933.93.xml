@@ -15,35 +15,35 @@
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
       <sen nr="1">Í víxli skal greina:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Orðið víxil í meginmáli skjalsins og á því máli, sem skjalið er ritað á.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Skilyrðislaus tilmæli um að greiða ákveðna upphæð peninga (víxilfjárhæð).</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Nafn þess, er greiða skal (greiðandi, trassat).</sen>
       </numart>
-      <numart nr="4" type="numeric">
+      <numart nr="4" nr-type="numeric">
         <nr-title>4.</nr-title>
         <sen nr="1">Gjalddaga.</sen>
       </numart>
-      <numart nr="5" type="numeric">
+      <numart nr="5" nr-type="numeric">
         <nr-title>5.</nr-title>
         <sen nr="1">Greiðslustað.</sen>
       </numart>
-      <numart nr="6" type="numeric">
+      <numart nr="6" nr-type="numeric">
         <nr-title>6.</nr-title>
         <sen nr="1">Nafn þess, er við greiðslu á að taka, eða ávísa má víxilfjárhæðinni til greiðslu (viðtakandi, remittent).</sen>
       </numart>
-      <numart nr="7" type="numeric">
+      <numart nr="7" nr-type="numeric">
         <nr-title>7.</nr-title>
         <sen nr="1">Útgáfudag og útgáfustað víxilsins; og</sen>
       </numart>
-      <numart nr="8" type="numeric">
+      <numart nr="8" nr-type="numeric">
         <nr-title>8.</nr-title>
         <sen nr="1">undirskrift þess, er víxilinn gefur út (útgefandi, trassent).</sen>
       </numart>
@@ -175,15 +175,15 @@
     <subart nr="1">
       <sen nr="1">Við framsalið hverfa öll þau réttindi, er víxillinn veitir, til framsalshafa.</sen>
       <sen nr="2">Sé framsalið eyðuframsal, getur víxilhafi:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Fyllt það með nafni sjálfs sín eða annars manns,</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">framselt víxilinn að nýju með eyðuframsali eða til ákveðins manns, eða</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">afhent víxilinn þriðja manni, án þess að fylla eyðuframsalið eða rita framsal á víxilinn.</sen>
       </numart>
@@ -527,16 +527,16 @@
     </subart>
     <subart nr="2">
       <sen nr="1">Sama rétt á víxilhafi, þó gjalddagi enn eigi sé kominn:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Ef neitað hefir verið um samþykki að nokkru eða að öllu.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Ef bú greiðanda hefir verið tekið til gjaldþrotaskipta, eða honum hefur verið veitt heimild til að leita nauðasamnings, eða hafi það komið í ljós við aðfarargerð, að hann geti eigi greitt skuldir sínar, eða sé hann kaupmaður og hafi stöðvað greiðslur sínar.</sen>
         <sen nr="2">Gildir þetta jafnt, hvort sem greiðandi hefir samþykkt víxilinn eða eigi.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Ef bú útgefanda, er lagt hefir bann við því í víxli, að hann sé sýndur til samþykkis, hefir verið tekið til gjaldþrotaskipta, eða honum hefur verið veitt heimild til að leita nauðasamnings.</sen>
       </numart>
@@ -677,15 +677,15 @@
     <nr-title>48. gr.</nr-title>
     <subart nr="1">
       <sen nr="1">Víxilhafi getur krafist af þeim, er hann leitar fullnustu hjá:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Þess hluta víxilfjárhæðarinnar, sem eigi var samþykktur eða eigi greiddur, ásamt vöxtum, ef vextir voru áskildir.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Dráttarvaxta frá gjalddaga samkvæmt lögum um vexti.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Kostnaðar við afsagnargerð og við tilkynningar þær, er mælt er fyrir um í 45. gr., svo og annars kostnaðar</sen>
       </numart>
@@ -718,15 +718,15 @@
     <nr-title>49. gr.</nr-title>
     <subart nr="1">
       <sen nr="1">Sá, sem víxilinn leysir til sín, getur krafist af þeim víxilskuldurum, er ábyrgð bera gagnvart honum:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Allrar þeirrar fjárhæðar, sem hann hefir greitt.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Dráttarvaxta samkvæmt lögum um vexti af fjárhæð þeirri, er 1. tölul. greinir, frá þeim degi er hann greiddi hana.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Kostnaðar þess, er hann hefir haft</sen>
       </numart>
@@ -964,11 +964,11 @@
     </subart>
     <subart nr="2">
       <sen nr="1">Nú neitar hann að skila eintaki þessu, og getur víxilhafi þá eigi leitað fullnustu fyrr en hann hefir sannað með afsagnargerð:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">að sér hafi eigi verið skilað eintaki því, er til samþykkis var sent, þótt hann hafi krafist þess, og</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">að hann hafi eigi getað fengið samþykki eða greiðslu samkvæmt öðru eintaki.</sen>
       </numart>
@@ -1129,31 +1129,31 @@
     <nr-title>75. gr.</nr-title>
     <subart nr="1">
       <sen nr="1">Í eiginvíxli skal greina:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Orðið víxil í meginmáli skjalsins og á því máli, sem skjalið er ritað á.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Skilyrðislaust loforð um að greiða tiltekna upphæð peninga.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1">Gjalddaga.</sen>
       </numart>
-      <numart nr="4" type="numeric">
+      <numart nr="4" nr-type="numeric">
         <nr-title>4.</nr-title>
         <sen nr="1">Greiðslustað.</sen>
       </numart>
-      <numart nr="5" type="numeric">
+      <numart nr="5" nr-type="numeric">
         <nr-title>5.</nr-title>
         <sen nr="1">Nafn þess, er við greiðslu á að taka, eða ávísa má víxilfjárhæðinni til greiðslu.</sen>
       </numart>
-      <numart nr="6" type="numeric">
+      <numart nr="6" nr-type="numeric">
         <nr-title>6.</nr-title>
         <sen nr="1">Útgáfustað og útgáfudag.</sen>
       </numart>
-      <numart nr="7" type="numeric">
+      <numart nr="7" nr-type="numeric">
         <nr-title>7.</nr-title>
         <sen nr="1">Undirskrift þess, er gefur skjalið út (útgefandi).</sen>
       </numart>

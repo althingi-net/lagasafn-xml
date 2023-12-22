@@ -86,26 +86,26 @@
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
       <sen nr="1">Fjárfesting erlendra aðila í atvinnurekstri hér á landi er háð eftirfarandi takmörkunum:</sen>
-      <numart nr="1" type="numeric">
+      <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <sen nr="1">Eftirtaldir aðilar mega einir stunda fiskveiðar í efnahagslögsögu Íslands samkvæmt lögum um rétt til veiða í efnahagslögsögu Íslands eða eiga og reka fyrirtæki til vinnslu sjávarafurða hér á landi:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Íslenskir ríkisborgarar og aðrir íslenskir aðilar.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Íslenskir lögaðilar sem að öllu leyti eru í eigu íslenskra aðila eða íslenskra lögaðila sem uppfylla eftirfarandi skilyrði:</sen>
-          <numart nr="i" type="roman">
+          <numart nr="i" nr-type="roman">
             <nr-title>i.</nr-title>
             <sen nr="1">Eru undir yfirráðum íslenskra aðila.</sen>
           </numart>
-          <numart nr="ii" type="roman">
+          <numart nr="ii" nr-type="roman">
             <nr-title>ii.</nr-title>
             <sen nr="1">Eru ekki í eigu erlendra aðila að meira leyti en 25% sé miðað við hlutafé eða stofnfé.</sen>
             <sen nr="2">Fari eignarhlutur íslensks lögaðila í lögaðila, sem stundar veiðar í efnahagslögsögu Íslands eða vinnslu sjávarafurða hér á landi, ekki yfir 5% má eignarhlutur erlendra aðila þó vera allt að 33%.</sen>
           </numart>
-          <numart nr="iii" type="roman">
+          <numart nr="iii" nr-type="roman">
             <nr-title>iii.</nr-title>
             <sen nr="1">Eru að öðru leyti í eigu íslenskra ríkisborgara eða íslenskra lögaðila sem eru undir yfirráðum íslenskra aðila.</sen>
           </numart>
@@ -113,7 +113,7 @@
         <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Með vinnslu sjávarafurða í 1. mgr. þessa töluliðar er átt við frystingu, söltun, herslu og hverja aðra þá verkun sem ver fisk og aðrar sjávarafurðir skemmdum, þar með taldar bræðsla og mjölvinnsla.</sen>
         <sen nr="2">Til vinnslu í þessu sambandi telst hins vegar ekki reyking, súrsun, niðursuða, niðurlagning og umpökkun afurða í neytendaumbúðir eða frekari vinnsla afurða til að gera þær hæfari til dreifingar, neyslu eða matreiðslu.</sen>
       </numart>
-      <numart nr="2" type="numeric">
+      <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <sen nr="1">Íslenskir ríkisborgarar og aðrir íslenskir aðilar mega einir eiga virkjunarréttindi vatnsfalla og jarðhita önnur en til heimilisnota.</sen>
         <sen nr="2">Sama á við um fyrirtæki sem stunda orkuvinnslu og orkudreifingu.</sen>
@@ -121,15 +121,15 @@
         <sen nr="4">Heimilt skal að kveða svo á í fjárfestingarsamningum milli Íslands og ríkja utan Evrópska efnahagssvæðisins að einstaklingar sem þar eru búsettir eða lögaðilar sem þar eru heimilisfastir hafi einnig sama rétt, enda verði slíkir samningar lagðir fyrir Alþingi til staðfestingar með þingsályktun.</sen>
         <sen nr="1" ultimate-nr="5" sub-paragraph-nr="2" new-sub-paragraph="true">Erlendum aðila, sem öðlast eignarrétt og afnotarétt yfir fasteign samkvæmt ákvæðum laga um eignarrétt og afnotarétt fasteigna, er heimilt að nýta jarðhita til beinnar notkunar í atvinnustarfsemi sinni innan þeirra takmarkana sem fram koma í orkulögum.</sen>
       </numart>
-      <numart nr="3" type="numeric">
+      <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <sen nr="1"/>
       </numart>
-      <numart nr="4" type="numeric">
+      <numart nr="4" nr-type="numeric">
         <nr-title>4.</nr-title>
         <sen nr="1">Fjárfesting erlends ríkis, sveitarfélags eða annars erlends stjórnvalds í atvinnurekstri hér á landi er óheimil nema með sérstöku leyfi ráðherra.</sen>
       </numart>
-      <numart nr="5" type="numeric">
+      <numart nr="5" nr-type="numeric">
         <nr-title>5.</nr-title>
         <sen nr="1">Erlendum aðila er heimilt að öðlast eignarrétt og afnotarétt yfir fasteign til beinnar notkunar í atvinnustarfsemi sinni samkvæmt ákvæðum laga um eignarrétt og afnotarétt fasteigna.</sen>
       </numart>
@@ -699,7 +699,7 @@
       </footnote>
     </footnotes>
   </art>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

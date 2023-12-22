@@ -46,32 +46,32 @@
       <name>Skilgreiningar.</name>
       <subart nr="1">
         <sen nr="1">Í lögum þessum hafa eftirfarandi orð svofellda merkingu:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <name>Sjúkratryggður:</name>
           <sen nr="1">Sá sem á rétt á aðstoð og greiðslum samkvæmt lögum þessum.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <name>Bætur:</name>
           <sen nr="1">Bætur greiddar í peningum, svo sem dagpeningar, endurgreiðslur á útlögðum kostnaði, styrkir og aðrar greiðslur, og aðstoð til sjúkra og slasaðra sem veitt er á annan hátt samkvæmt lögum þessum.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <name>Heilbrigðisþjónusta:</name>
           <sen nr="1">Hvers kyns heilsugæsla, lækningar, hjúkrun, almenn og sérhæfð sjúkrahúsþjónusta, sjúkraflutningar, hjálpartækjaþjónusta og þjónusta heilbrigðisstarfsmanna innan og utan heilbrigðisstofnana sem veitt er í því skyni að efla heilbrigði, fyrirbyggja, greina eða meðhöndla sjúkdóma og endurhæfa sjúklinga.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <name>Heilbrigðisstarfsmaður:</name>
           <sen nr="1">Sá sem starfar við heilbrigðisþjónustu og hefur hlotið leyfi landlæknis til að nota starfsheiti löggiltrar heilbrigðisstéttar.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <name>Endurgjald:</name>
           <sen nr="1">Greiðslur til veitenda heilbrigðisþjónustu samkvæmt samningi.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <name>Alþjóðlega viðurkennd læknismeðferð:</name>
           <sen nr="1">Læknismeðferð sem telst nægilega gagnreynd, sbr. 44. gr., í ljósi aðstæðna hverju sinni og byggist á læknisfræðilegum rannsóknum, viðurkenndum aðferðum og reynslu.</sen>
@@ -137,27 +137,27 @@
       </subart>
       <subart nr="3">
         <sen nr="1">Hlutverk sjúkratryggingastofnunarinnar er eftirfarandi:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Að annast framkvæmd sjúkratrygginga skv. III. kafla.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Að semja um heilbrigðisþjónustu skv. IV. kafla.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Að annast kaup á vörum og þjónustu sem henni ber að veita skv. III. kafla.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">Að greiða endurgjald fyrir heilbrigðisþjónustu sem veita ber samkvæmt lögum um heilbrigðisþjónustu eða samið hefur verið um, sbr. IV. kafla.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">Að hafa eftirlit með gæðum og árangri starfsemi þeirra sem veita heilbrigðisþjónustu samkvæmt samningum, sbr. IV. kafla.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <sen nr="1">Að sinna öðrum verkefnum sem henni eru falin samkvæmt lögum, stjórnvaldsfyrirmælum eða ákvörðun ráðherra.</sen>
         </numart>
@@ -217,7 +217,7 @@
       <name>Starfshópar og sérfræðingar.</name>
       <subart nr="1">
         <sen nr="1">Sjúkratryggingastofnuninni er heimilt að skipa starfshópa og kalla til sérfræðinga til að aðstoða stofnunina, m.a. við gerð samninga, notkun gagnreyndrar þekkingar á sviði heilbrigðisþjónustu, árangursmat, gæðamat og eftirlit og við mat á því hvort unnt sé að veita læknismeðferð hér á landi, sbr. 23. gr.</sen>
-        <art-chapter nr="A" type="alphabet">
+        <art-chapter nr="A" nr-type="alphabet">
           <nr-title>A.</nr-title>
           <name>Almenn ákvæði</name>
         </art-chapter>
@@ -394,7 +394,7 @@
       </subart>
       <subart nr="2">
         <sen nr="1">Ráðherra er heimilt að setja reglugerð um nánari framkvæmd greinarinnar.</sen>
-        <art-chapter nr="B" type="alphabet">
+        <art-chapter nr="B" nr-type="alphabet">
           <nr-title>B.</nr-title>
           <name>Aðstoð</name>
         </art-chapter>
@@ -670,15 +670,15 @@
       </subart>
       <subart nr="2">
         <sen nr="1">Heimilt er að synja um endurgreiðslu kostnaðar skv. 1. mgr. ef:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Hægt er að veita heilbrigðisþjónustuna hér á landi innan tímamarka sem má réttlæta læknisfræðilega þegar tekið er mið af heilsufarsástandi sjúklings og líklegri framvindu sjúkdóms.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Öryggi sjúklings eða almennings er stefnt í hættu með heilbrigðisþjónustu sem veitt er á grundvelli 1. mgr.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Tilefni er til að efast um að veitandi heilbrigðisþjónustu fylgi gæða- og öryggiskröfum.</sen>
         </numart>
@@ -866,7 +866,7 @@
       <name>Gjaldtaka.</name>
       <subart nr="1">
         <sen nr="1">Fyrir eftirtalda heilbrigðisþjónustu og aðstoð sem sjúkratryggðir einstaklingar eiga rétt á á grundvelli laga eða samninga er heimilt að taka gjald samkvæmt reglugerð sem ráðherra setur:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Heilsugæslu sem sinnt er á heilsugæslustöðvum og vitjanir heilsugæslulækna, sbr. 1. mgr. 17. gr.</sen>
           <sen nr="2">Gjaldið nær m.a. til kostnaðar við innritun og aðstöðu og kostnaðar vegna læknisþjónustu og þjónustu annarra heilbrigðisstarfsmanna.</sen>
@@ -875,7 +875,7 @@
           <sen nr="5">Gjald fyrir þjónustu skal vera lægra hjá öldruðum, öryrkjum og börnum og gjald fyrir þjónustu utan dagvinnutíma má vera hærra en fyrir þjónustu á dagvinnutíma.</sen>
           <sen nr="6">Heimilt er að ákveða að gjald fyrir þjónustuna skuli vera hærra sæki sjúkratryggður þjónustuna á aðra heilsugæslustöð eða til annars heimilislæknis en hann er skráður hjá.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Almenna og sérhæfða heilbrigðisþjónustu á göngudeild, dagdeild, slysadeild og bráðamóttöku sjúkrahúsa sem veitt er án þess að um innlögn á sjúkrahús sé að ræða, sbr. 2. mgr. 18. gr.</sen>
           <sen nr="2">Gjaldið nær m.a. til kostnaðar við innritun og aðstöðu og kostnaðar vegna læknisþjónustu og þjónustu annarra heilbrigðisstarfsmanna.</sen>
@@ -884,7 +884,7 @@
           <sen nr="5">Gjald fyrir þjónustu sérfræðilækna getur verið hlutfallsgjald og má tiltaka hámark þess í reglugerð.</sen>
           <sen nr="6">Heimilt er að ákveða að gjald fyrir þjónustu sérfræðilækna skuli vera lægra ef sjúkratryggður sækir þjónustuna með tilvísun frá heilsugæslustöð eða heimilislækni.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Þjónustu sjálfstætt starfandi heilbrigðisstarfsmanna og fyrirtækja þeirra, sbr. 2. mgr. 17. gr. og 19.–22. gr., sem samið hefur verið um samkvæmt ákvæðum IV. kafla.</sen>
           <sen nr="2">Ekki er þó heimilt að taka gjald fyrir hjúkrun í heimahúsum, mæðra- og ungbarnavernd og aðstoð ljósmóður við fæðingu í heimahúsum.</sen>
@@ -893,17 +893,17 @@
           <sen nr="5">Heimilt er að ákveða að gjald fyrir þjónustuna skuli vera lægra ef sjúkratryggður sækir þjónustuna með tilvísun frá heilsugæslustöð eða heimilislækni.</sen>
           <sen nr="6">Þá er heimilt að ákveða að gjald vegna þjónustu fyrir börn verði lægra eða falli niður ef þjónustan er sótt með tilvísun frá heilsugæslustöð eða heimilislækni.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">Rannsóknir, geisla- og myndgreiningar sem framkvæmdar eru á sjúkrahúsum eða hjá sjálfstætt starfandi heilbrigðisstarfsmönnum eða fyrirtækjum þeirra og samið hefur verið um samkvæmt ákvæðum IV. kafla, sbr. 2. mgr. 18. gr. og 19. gr.</sen>
           <sen nr="2">Gjaldið getur verið hlutfallsgjald og má tiltaka hámark þess í reglugerð.</sen>
           <sen nr="3">Gjald fyrir þjónustuna skal vera lægra hjá öldruðum, öryrkjum og börnum.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">Útgáfu læknisvottorða í heilsugæslu og á sjúkrahúsum.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <sen nr="1">Lyf, sbr. 25. gr.</sen>
           <sen nr="2">Gjald fyrir lyf verður hlutfallsgjald og þrepaskipt eftir uppsöfnuðum lyfjakostnaði sjúkratryggðs á tilteknu tímabili og skal tiltaka hlutfall, tímabil og þrep í reglugerð.</sen>
@@ -919,11 +919,11 @@
           <sen nr="12">Þá er heimilt að takmarka greiðsluþátttöku sjúkratrygginga í ákveðnum lyfjaflokkum við hagkvæmustu pakkningar samkvæmt nánari skilgreiningu í reglugerð.</sen>
           <sen nr="13">Heimilt er í reglugerð að binda útgáfu lyfjaskírteina við tiltekinn fjölda lyfja.</sen>
         </numart>
-        <numart nr="7" type="numeric">
+        <numart nr="7" nr-type="numeric">
           <nr-title>7.</nr-title>
           <sen nr="1">Sjúkraflutninga, sbr. 28. gr.</sen>
         </numart>
-        <numart nr="8" type="numeric">
+        <numart nr="8" nr-type="numeric">
           <nr-title>8.</nr-title>
           <sen nr="1">Dvöl á sjúkrahóteli.</sen>
           <sen nr="2">Fyrir dvöl á sjúkrahóteli skulu sjúkratryggðir greiða gjald sem nemur að hámarki 20% af kostnaði við gistingu og fæði og skal gjaldið ákveðið með reglugerð sem ráðherra setur.</sen>
@@ -1139,23 +1139,23 @@
       <subart nr="4">
         <sen nr="1">Ráðherra setur reglugerð um rekstur gagnagrunnsins.</sen>
         <sen nr="2">Þar skal m.a. kveðið á um:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">hvaða upplýsingar skuli skrá í gagnagrunninn,</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">eyðingu skráðra upplýsinga,</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">aðgang lyfjabúða, lækna og annarra að upplýsingum í gagnagrunninum,</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">skyldu lyfjabúða til að tengjast gagnagrunninum og til að nýta upplýsingar gagnagrunnsins við útreikninga á greiðsluþátttöku og</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">skyldu lyfjabúða til að veita upplýsingar í gagnagrunninn.</sen>
         </numart>
@@ -1210,27 +1210,27 @@
       <subart nr="3">
         <sen nr="1">Ráðherra setur reglugerð um rekstur gagnagrunnsins.</sen>
         <sen nr="2">Þar skal m.a. kveðið á um:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">hvaða upplýsingar skuli skrá í gagnagrunninn,</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">eyðingu skráðra upplýsinga,</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">aðgang heilbrigðisstofnana og heilbrigðisstarfsmanna að upplýsingum í gagnagrunninum,</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">skyldu heilbrigðisstofnana og heilbrigðisstarfsmanna til að tengjast gagnagrunninum og til að nýta upplýsingar gagnagrunnsins við útreikning á greiðsluþátttöku, og</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">skyldu heilbrigðisstofnana og heilbrigðisstarfsmanna til að veita upplýsingar í gagnagrunninn.</sen>
         </numart>
-        <art-chapter nr="C" type="alphabet">
+        <art-chapter nr="C" nr-type="alphabet">
           <nr-title>C.</nr-title>
           <name>Greiðslur í peningum</name>
         </art-chapter>
@@ -1368,7 +1368,7 @@
       </subart>
       <subart nr="4">
         <sen nr="1">Ráðherra setur reglugerð um framkvæmd greinarinnar, m.a. um að hvaða marki sjúkratryggingum er heimilt að endurgreiða sjúkratryggðum kostnað vegna veikinda eða slyss erlendis sem hann fengi ella ekki endurgreiddan frá sjúkratryggingum.</sen>
-        <art-chapter nr="D. Umsóknir um bætur, málsmeðferð o.fl" type="alphabet">
+        <art-chapter nr="D. Umsóknir um bætur, málsmeðferð o.fl" nr-type="alphabet">
           <nr-title>D. Umsóknir um bætur, málsmeðferð o.fl.</nr-title>
         </art-chapter>
       </subart>
@@ -1790,31 +1790,31 @@
         <sen nr="1">Í samningum skulu vera ákvæði um hvað teljist vanefndir og um vanefndaúrræði.</sen>
         <sen nr="2">Auk þess gilda almennar reglur um vanefndir og vanefndaúrræði.</sen>
         <sen nr="3">Sannist vanefndir skulu aðgerðir sjúkratryggingastofnunarinnar vegna þeirra byggjast á málefnalegum sjónarmiðum og geta m.a. falið í sér:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Fyrirmæli um breytta framkvæmd, t.d. þjónustu, skráningu eða gjaldtöku.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Viðvörun.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Takmarkanir á magni og tegundum þjónustu sem greitt er endurgjald fyrir.</sen>
         </numart>
-        <numart nr="4" type="numeric">
+        <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
           <sen nr="1">Uppsögn samnings með eða án fyrirvara.</sen>
         </numart>
-        <numart nr="5" type="numeric">
+        <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
           <sen nr="1">Kröfu um endurgreiðslu eða skaðabætur.</sen>
         </numart>
-        <numart nr="6" type="numeric">
+        <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
           <sen nr="1">Tilkynningu til landlæknis eða Lyfjastofnunar, sbr. eftirlitshlutverk þeirra.</sen>
         </numart>
-        <numart nr="7" type="numeric">
+        <numart nr="7" nr-type="numeric">
           <nr-title>7.</nr-title>
           <sen nr="1">Kæru til lögreglu vegna meintra lögbrota.</sen>
         </numart>
@@ -2055,7 +2055,7 @@
       <nr-title>57.–73. gr.</nr-title>
     </art>
   </chapter>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>

@@ -182,12 +182,12 @@
       <name>Vernd landbúnaðarlands.</name>
       <subart nr="1">
         <sen nr="1">Við skipulagsgerð samkvæmt skipulagslögum þar sem ráðgerðar eru breytingar sem fela í sér að land sé leyst úr landbúnaðarnotum, þ.e. að landnotkun breytist úr landbúnaði yfir í aðra landnotkun, skal gera grein fyrir og taka afstöðu til eftirfarandi:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Hvort landið er stærra en þörf krefur að teknu tilliti til þeirra nýtingaráforma sem skipulagstillagan felur í sér.</sen>
           <sen nr="2">Jafnframt, eftir því sem við á, hvort aðrir valkostir um staðsetningu komi til greina fyrir fyrirhugaða nýtingu á landi sem hentar síður til landbúnaðar og þá sérstaklega jarðræktar.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Hver áhrif breyttrar landnotkunar eru á aðlæg landbúnaðarsvæði, m.a. hvort hæfileg fjarlægð er milli lands með breyttri landnotkun og landbúnaðar sem fyrir er og hvort girt verði með nýtingaráformum fyrir möguleg búrekstrarnot af landinu í framtíðinni.</sen>
         </numart>
@@ -510,11 +510,11 @@
       <name>Skylda til að afla samþykkis ráðherra fyrir ráðstöfun fasteignar.</name>
       <subart nr="1">
         <sen nr="1">Skylt er að afla samþykkis ráðherra fyrir ráðstöfun beins eignarréttar yfir fasteign, eða afnotaréttar til lengri tíma en sjö ára, ef:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">fasteign er lögbýli og viðtakandi réttar og tengdir aðilar eiga fyrir fimm eða fleiri fasteignir sem eru skráðar í lögbýlaskrá enda nemi samanlögð stærð þeirra 50 hekturum eða meira, eða</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">viðtakandi réttar og tengdir aðilar eiga fyrir fasteign eða fasteignir sem eru samanlagt 1.500 hektarar eða meira að stærð.</sen>
         </numart>
@@ -529,11 +529,11 @@
       </subart>
       <subart nr="4">
         <sen nr="1">Óskylt er að afla samþykkis ráðherra skv. 1. tölul. 1. mgr. ef:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">viðtakandi réttar er nákominn þeim sem ráðstafar rétti, þ.e. maki, barn, barnabarn, kjörbarn, fósturbarn, annar niðji, systkini eða foreldri, eða</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">ríkissjóður eða sveitarfélag ráðstafar fasteign eða er viðtakandi réttar yfir henni.</sen>
         </numart>
@@ -620,15 +620,15 @@
       <name>Upplýsingar um eignarhald lögaðila undir erlendum yfirráðum o.fl.</name>
       <subart nr="1">
         <sen nr="1">Ákvæði þetta gildir um lögaðila sem eiga bein eignarréttindi yfir fasteign eða fasteignaréttindum sem falla undir gildissvið þessara laga skv. 3. gr., enda uppfylli lögaðili a.m.k. eitt af eftirtöldum skilyrðum:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Lögaðili hefur annaðhvort aðalstöðvar eða aðalstarfsemi í öðru ríki eða hefur þar heimili samkvæmt samþykktum sínum eða um er að ræða útibú erlends lögaðila.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Lögaðili fellur undir gildissvið laga um skráningu raunverulegra eigenda og er samanlagt að 1/3 hluta eða meira í beinni eða óbeinni eigu erlends eða erlendra lögaðila eða er undir yfirráðum erlends eða erlendra lögaðila.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Lögaðili fellur undir gildissvið laga um skráningu raunverulegra eigenda og er samanlagt að 1/3 hluta eða meira í beinni eða óbeinni eigu erlends eða erlendra fjárvörslusjóða eða sambærilegra aðila eða er undir yfirráðum slíks eða slíkra aðila.</sen>
         </numart>
@@ -648,27 +648,27 @@
       </subart>
       <subart nr="5">
         <sen nr="1">Tilkynning til ríkisskattstjóra skv. 3. mgr. skal jafnframt geyma eftirtaldar upplýsingar um beina, óbeina og raunverulega eigendur upplýsingaskylds aðila og stjórnendur hans ef við á:</sen>
-        <numart nr="a" type="alphabet">
+        <numart nr="a" nr-type="alphabet">
           <nr-title>a.</nr-title>
           <sen nr="1">Nafn einstaklings eða heiti lögaðila, fjárvörslusjóðs eða sambærilegs aðila.</sen>
         </numart>
-        <numart nr="b" type="alphabet">
+        <numart nr="b" nr-type="alphabet">
           <nr-title>b.</nr-title>
           <sen nr="1">Kennitölu eða annað auðkennisnúmer eða fæðingardag ef kennitölu er ekki til að dreifa.</sen>
         </numart>
-        <numart nr="c" type="alphabet">
+        <numart nr="c" nr-type="alphabet">
           <nr-title>c.</nr-title>
           <sen nr="1">Ríkisfang og lögheimili hér á landi eða heimilisfang í öðru landi.</sen>
         </numart>
-        <numart nr="d" type="alphabet">
+        <numart nr="d" nr-type="alphabet">
           <nr-title>d.</nr-title>
           <sen nr="1">Stærð eignarhlutar, í prósentum, sem er í beinni eigu sérhvers beins og óbeins eiganda upplýsingaskylds aðila og hlutfall atkvæðisréttar sem fylgir hverjum og einum eignarhlut.</sen>
         </numart>
-        <numart nr="e" type="alphabet">
+        <numart nr="e" nr-type="alphabet">
           <nr-title>e.</nr-title>
           <sen nr="1">Tegund eignarhalds raunverulegs eiganda upplýsingaskylds aðila í skilningi 4. tölul. 3. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019.</sen>
         </numart>
-        <numart nr="f" type="alphabet">
+        <numart nr="f" nr-type="alphabet">
           <nr-title>f.</nr-title>
           <sen nr="1">Ef fjárvörslusjóður eða sambærilegur aðili á í hlut skal hvað hann varðar gera grein fyrir aðilum sem falla undir a–e-lið 1. mgr. 5. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019.</sen>
         </numart>
@@ -1242,12 +1242,12 @@
       <name>Undanþágur frá forkaupsrétti.</name>
       <subart nr="1">
         <sen nr="1">Ákvæði þessa kafla um forkaupsrétt gilda ekki þegar:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Eigandi jarðar, annars lands, fasteignar eða fasteignaréttinda sem lög þessi gilda um selur eða afhendir jörð eða aðra fasteign maka sínum, barni sínu, barnabarni, kjörbarni, fósturbarni, öðrum niðjum, systkini eða foreldri.</sen>
           <sen nr="2">Sama gildir ef jörð fellur í erfðir til sömu aðila.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Ríkissjóður ráðstafar jörðum, öðru landi, fasteignum eða fasteignaréttindum í eigu ríkisins sem lög þessi gilda um.</sen>
         </numart>
@@ -1322,16 +1322,16 @@
       <name>Sala til ábúenda.</name>
       <subart nr="1">
         <sen nr="1">Ábúendur ríkisjarða og jarða í eigu opinberra stofnana og sjóða eiga rétt á að fá ábúðarjarðir sínar keyptar, nema ákvæði gjafabréfa og skipulagsskráa mæli gegn því, ef þeir fullnægja eftirtöldum skilyrðum:</sen>
-        <numart nr="1" type="numeric">
+        <numart nr="1" nr-type="numeric">
           <nr-title>1.</nr-title>
           <sen nr="1">Að ábúandi hafi haft ábúð á jörðinni í a.m.k. sjö ár.</sen>
         </numart>
-        <numart nr="2" type="numeric">
+        <numart nr="2" nr-type="numeric">
           <nr-title>2.</nr-title>
           <sen nr="1">Að ábúandi nýti sjálfur land jarðarinnar til ræktunar og beitar og hafi rekið þar búvöruframleiðslu síðastliðin sjö ár sem að umfangi nemi a.m.k. 1/3 af meðalbúi í viðkomandi búgrein og er líkleg til að framfæra ábúanda til sambærilegs lífsviðurværis.</sen>
           <sen nr="2">Við athugun á skilyrðum kaupréttar er ráðuneytinu heimilt að óska þess að ábúandi leggi fram upplýsingar sem tengjast búrekstri hans, t.d. úr forðagæsluskýrslum og skattframtölum.</sen>
         </numart>
-        <numart nr="3" type="numeric">
+        <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
           <sen nr="1">Að ábúandi leggi fram yfirlýsingu hlutaðeigandi sveitarstjórnar um að hann hafi setið jörðina vel og að sveitarstjórn mæli með því að hann fái jörðina keypta.</sen>
           <sen nr="2">Í yfirlýsingu sveitarstjórnar skulu koma fram upplýsingar um hvort ábúandi eigi þar lögheimili og búi á jörðinni, hvaða starfsemi sé á jörðinni, hvert sé ástand mannvirkja, hvernig jörðin hefur verið setin og önnur atriði sem sveitarfélög óska eftir að taka fram.</sen>
@@ -1816,7 +1816,7 @@
       </subart>
     </art>
   </chapter>
-  <chapter nr-type="name" nr="t" type="temporary-clauses">
+  <chapter nr-type="temporary-clauses" nr="t">
     <name>Ákvæði til bráðabirgða.</name>
     <art nr="I.–V">
       <nr-title>I.–V.</nr-title>
