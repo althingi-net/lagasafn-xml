@@ -674,7 +674,7 @@ def make_xml(law_num, law_year):
             ):
                 if nr is None:
                     chapter.attrib["nr"] = "t"
-                chapter.attrib["type"] = "temporary-clauses"
+                chapter.attrib["nr-type"] = "temporary-clauses"
 
             law.append(chapter)
 
@@ -709,7 +709,7 @@ def make_xml(law_num, law_year):
                 "art-chapter",
                 {
                     "nr": art_chapter_nr,
-                    "type": "alphabet",
+                    "nr-type": "alphabet",
                 },
                 E("nr-title", "%s." % art_chapter_nr),
             )
@@ -1176,7 +1176,7 @@ def make_xml(law_num, law_year):
                     "numart",
                     {
                         "nr": "removed-after-%s" % prev_numart.attrib["nr"],
-                        "type": "removed",
+                        "nr-type": "removed",
                     },
                 )
                 add_sentences(dummy_numart, [content])
@@ -1203,7 +1203,7 @@ def make_xml(law_num, law_year):
                     "numart",
                     {
                         "nr": "removed-after-%s" % prev_numart.attrib["nr"],
-                        "type": "removed",
+                        "nr-type": "removed",
                     },
                 )
                 add_sentences(dummy_numart, [content])
@@ -1374,7 +1374,7 @@ def make_xml(law_num, law_year):
                     # last child of this numart's parent to find the one
                     # immediately before it at the same stage in the tree.
 
-                    numart_type = parent.getchildren()[-1].attrib["type"]
+                    numart_type = parent.getchildren()[-1].attrib["nr-type"]
 
                 else:
                     numart_type = "alphabet"
@@ -1384,13 +1384,13 @@ def make_xml(law_num, law_year):
             # simply a dash. We must figure out their number and assign a new
             # `numart_nr`. The `nr-title` will still contain just a dash.
             if numart_type == "en-dash":
-                if prev_numart is not None and prev_numart.attrib["type"] == "en-dash":
+                if prev_numart is not None and prev_numart.attrib["nr-type"] == "en-dash":
                     numart_nr = str(int(prev_numart.attrib["nr"]) + 1)
                 else:
                     numart_nr = "1"
 
             # Create numerical article.
-            numart = E("numart", {"nr": numart_nr, "type": numart_type})
+            numart = E("numart", {"nr": numart_nr, "nr-type": numart_type})
 
             # Add the numerical article to its parent.
             parent.append(numart)
@@ -1441,7 +1441,7 @@ def make_xml(law_num, law_year):
 
                 # Mark the new numart as alphabetic, if appropriate.
                 if not new_numart_nr.isdigit():
-                    new_numart.attrib["type"] = "alphabet"
+                    new_numart.attrib["nr-type"] = "alphabet"
 
                 # Get the `nr-title` from the first `sen`. Note that we go
                 # back for the 'sens' list because we'll want to include

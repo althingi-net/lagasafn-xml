@@ -91,7 +91,7 @@ def numart_next_nrs(prev_numart):
 
     prev_numart_nr = prev_numart.attrib["nr"]
     expected_numart_nrs = []
-    if prev_numart.attrib["type"] == "numeric":
+    if prev_numart.attrib["nr-type"] == "numeric":
         if prev_numart_nr.isdigit():
             # If the whole thing is numerical, we may expect either the next
             # numerical number (i.e. a 10 after a 9), or a numart with a
@@ -127,9 +127,9 @@ def numart_next_nrs(prev_numart):
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
 
-    elif prev_numart.attrib["type"] == "en-dash":
+    elif prev_numart.attrib["nr-type"] == "en-dash":
         expected_numart_nrs += ["—", "–"]
-    elif prev_numart.attrib["type"] == "roman":
+    elif prev_numart.attrib["nr-type"] == "roman":
         new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
         if prev_numart_nr.islower():
             new_roman = new_roman.lower()
@@ -383,11 +383,11 @@ def generate_legal_reference(input_node, skip_law=False):
 
     while node.tag != "law":
         if node.tag == "numart":
-            if node.attrib["type"] == "alphabet":
+            if node.attrib["nr-type"] == "alphabet":
                 result += "%s-stafl. " % node.attrib["nr"]
-            elif node.attrib["type"] in ["numeric", "roman"]:
+            elif node.attrib["nr-type"] in ["numeric", "roman"]:
                 result += "%s. tölul. " % node.attrib["nr"]
-            elif node.attrib["type"] == "en-dash":
+            elif node.attrib["nr-type"] == "en-dash":
                 result += "%s. pkt. " % node.attrib["nr"]
             else:
                 raise Exception("Parsing of node not implemented")
