@@ -33,6 +33,8 @@ import diff_patch_utils
 
 from multiprocessing import Pool
 
+from reynir import NounPhrase
+
 from utils import UnexpectedClosingBracketException
 from utils import Matcher
 from utils import Trail
@@ -1384,7 +1386,10 @@ def make_xml(law_num, law_year):
             # simply a dash. We must figure out their number and assign a new
             # `numart_nr`. The `nr-title` will still contain just a dash.
             if numart_type == "en-dash":
-                if prev_numart is not None and prev_numart.attrib["nr-type"] == "en-dash":
+                if (
+                    prev_numart is not None
+                    and prev_numart.attrib["nr-type"] == "en-dash"
+                ):
                     numart_nr = str(int(prev_numart.attrib["nr"]) + 1)
                 else:
                     numart_nr = "1"
@@ -2725,6 +2730,11 @@ def update_index():
         if art_count > 0:
             structure += "/art"
 
+        # Generate conjugated names of law.
+        # FIXME: This is fantastically slow, perhaps because it needs to be.
+        # No investigation has been made into whether it can be optimized.
+        name_phrase = NounPhrase(name)
+
         # Append the gathered data to the index.
         law_entry = E(
             "law-entry",
@@ -2736,6 +2746,22 @@ def update_index():
             E("identifier", identifier),
             E("name", name),
             E(
+                "name-conjugated",
+                {
+                    "success": "true",
+                },
+                E("accusative", name_phrase.accusative),
+                E("dative", name_phrase.dative),
+                E("genitive", name_phrase.genitive),
+            )
+            if name_phrase.parsed
+            else E(
+                "name-conjugated",
+                {
+                    "success": "false",
+                },
+            ),
+            E(
                 "meta",
                 E("is-empty", "true" if is_empty else "false"),
                 E("structure", structure),
@@ -2743,7 +2769,9 @@ def update_index():
                 E("art-count", str(art_count)),
             ),
         )
+
         law_entries.append(law_entry)
+        print(".", end="", flush=True)
 
         # Add to stats. We are not sure what the rendering client is
         # interested in, so we'll leave a few variables for convenience, even
