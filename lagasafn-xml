@@ -2832,6 +2832,10 @@ def usage(exec_name, message=None):
         "    --index-only              Don't process laws, just update the index.",
         file=stderr,
     )
+    print(
+        "    --skip-index              Skip updating index.",
+        file=stderr,
+    )
     print(file=stderr)
     if message:
         print("Error: %s" % message, file=stderr)
@@ -2847,6 +2851,7 @@ def main(argv):
         "--single-thread",
         "--rebuild-straytextmap",
         "--index-only",
+        "--skip-index",
     ]
 
     if "--help" in argv:
@@ -2947,8 +2952,9 @@ def main(argv):
             with open(ERRORMAP_FILENAME, "w") as f:
                 json.dump(errormap, f)
 
-    # Update the index.
-    update_index()
+    # Update the index (unless skipped).
+    if "--skip-index" not in argv:
+        update_index()
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)
