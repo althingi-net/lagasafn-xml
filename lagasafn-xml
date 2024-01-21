@@ -2750,6 +2750,7 @@ def update_index():
                 {
                     "success": "true",
                 },
+                E("nomenative", name),
                 E("accusative", name_phrase.accusative),
                 E("dative", name_phrase.dative),
                 E("genitive", name_phrase.genitive),
@@ -2758,6 +2759,8 @@ def update_index():
             else E(
                 "name-conjugated",
                 {
+                    # The failure to conjugate properly may be useful to
+                    # software utilizing the info.
                     "success": "false",
                 },
             ),
