@@ -729,7 +729,7 @@ def make_xml(law_num, law_year):
             # Instead, we have to check if the `art` already has an
             # `art-chapter`, and if so, append the new `art-chapter` to the
             # parent of the previous one. Otherwise, we can go by the
-            # existence of `subart` and `art like normally.
+            # existence of `subart` and `art` like normally.
 
             # Check if we should append the article chapter to the last
             # sub-article, or the last article.
