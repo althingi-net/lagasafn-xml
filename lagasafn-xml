@@ -740,6 +740,23 @@ def make_xml(law_num, law_year):
             elif art is not None:
                 art.append(art_chapter)
 
+            # Check if the `art-chapter` contains text content which is not
+            # contained in a `subart` or `numart` below the `art-chapter`.
+            # This is only known to occur in 7. gr. laga nr. 90/2003.
+            #
+            # NOTE: We only check for one "paragraph", since we are currently
+            # not aware of there being a case where there are more. The
+            # children of `art-chapter`s are almost always `numart`s and when
+            # we find text like this, it is presumably just one paragraph or a
+            # short preface to a list of `numart` that follow.
+            if begins_with_regular_content(lines.peek(2)):
+                # Scroll over the break the belongs to the `art-chapter`.
+                scroll_until(lines, "<br/>")
+                content = collect_until(lines, "<br/>")
+
+                sens = separate_sentences(strip_links(content))
+                add_sentences(art_chapter, sens)
+
             trail.append(art_chapter)
 
         elif check_chapter(lines, law) == "ambiguous" and trail.milestone_reached(
