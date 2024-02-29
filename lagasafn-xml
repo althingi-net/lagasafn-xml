@@ -2798,6 +2798,14 @@ def update_index():
             # this problem are extremely unlikely to ever come into effect.
             conjugation_success = name_phrase.parsed
 
+        # We also make the first letter of the conjugated form lowercase to
+        # make comparison easier, since conjugated forms are never in the
+        # beginning of a sentence.
+        if conjugation_success:
+            name_accusative = name_accusative[0].lower() + name_accusative[1:]
+            name_dative = name_dative[0].lower() + name_dative[1:]
+            name_genitive = name_genitive[0].lower() + name_genitive[1:]
+
         # Append the gathered data to the index.
         law_entry = E(
             "law-entry",
