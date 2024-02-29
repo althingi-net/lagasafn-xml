@@ -2748,9 +2748,52 @@ def update_index():
             structure += "/art"
 
         # Generate conjugated names of law.
-        # FIXME: This is fantastically slow, perhaps because it needs to be.
-        # No investigation has been made into whether it can be optimized.
-        name_phrase = NounPhrase(name)
+        #
+        # Most laws start with the string "Lög um" with everything following
+        # already being in the accusative, so we really only need to conjugate
+        # the "Lög um", which we can hard-code here since it's so predictable
+        # within our linguistic context. External libraries are actually more
+        # likely to make mistakes because they are unaware of the context, so
+        # they may not even recognize the gender of "lög", for example, and may
+        # conjugate parts of the law that we already know from context should
+        # be in the accusative. Also, this is **way** faster than invoking all
+        # the complications and corner-cases of Icelandic grammar.
+        #
+        # In other cases, the name ends with "lög" which we will conjugate
+        # using an external library because those conjugations may include
+        # complicated grammatical rules that we don't want to write ourselves.
+        conjugation_success = False
+        if name.find("Lög um") == 0:
+            # The most common and predictable form.
+
+            rest_of_name = name[7:]
+            name_accusative = "Lög um %s" % rest_of_name
+            name_dative = "Lögum um %s" % rest_of_name
+            name_genitive = "Laga um %s" % rest_of_name
+
+            conjugation_success = True
+        else:
+            # Things are a bit complicated now. Invoking external library.
+            name_phrase = NounPhrase(name)
+            name_accusative = name_phrase.accusative
+            name_dative = name_phrase.dative
+            name_genitive = name_phrase.genitive
+
+            # At the time of this writing (2024-02-29, version 153c) only 3
+            # examples of failed conjugations exist:
+            #
+            # - Tilskipun um fardaga presta á Íslandi og um réttindi þau, er
+            #   prestur sá, sem frá brauði fer, eður erfingjar hans og einkum
+            #   ekkjan eiga heimting á
+            #
+            # - Lög viðvíkjandi nafnbreyting Vinnuveitendafélags Íslands
+            #
+            # - Konungsbréf (til stiftamtm. og amtm.) um fiskiútveg á Íslandi
+            #
+            # All of them are empty or irrelevant so we won't deal with them
+            # further. If necessary, they can be hard-coded since new laws with
+            # this problem are extremely unlikely to ever come into effect.
+            conjugation_success = name_phrase.parsed
 
         # Append the gathered data to the index.
         law_entry = E(
@@ -2765,21 +2808,12 @@ def update_index():
             E(
                 "name-conjugated",
                 {
-                    "success": "true",
+                    "success": "true" if conjugation_success else "false",
                 },
                 E("nomenative", name),
-                E("accusative", name_phrase.accusative),
-                E("dative", name_phrase.dative),
-                E("genitive", name_phrase.genitive),
-            )
-            if name_phrase.parsed
-            else E(
-                "name-conjugated",
-                {
-                    # The failure to conjugate properly may be useful to
-                    # software utilizing the info.
-                    "success": "false",
-                },
+                E("accusative", name_accusative or ""),
+                E("dative", name_dative or ""),
+                E("genitive", name_genitive or ""),
             ),
             E(
                 "meta",
