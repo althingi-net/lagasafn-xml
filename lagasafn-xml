@@ -328,6 +328,9 @@ def make_xml(law_num, law_year):
             # Parse law name.
             law_name = strip_links(collect_until(lines, "</h2>"))
 
+            # Remove double spaces.
+            law_name = law_name.replace("  ", " ")
+
             # Some "laws" are not really laws, per say, but presidential
             # verdicts or contracts with external entities voted on by
             # Parliament. The type of law seems only determinable by the name,
