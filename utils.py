@@ -274,6 +274,13 @@ def strip_links(text):
     because there is always a newline and a tab after the links in our input.
     """
 
+    # Start by eliminating space from between the end of a link and symbols
+    # that should never have a space before them after a link. These occur
+    # because during the cleaning process, HTML code gets placed in its own
+    # line and the following symbols in a new line, producing white-space.
+    regex = r"(>)\s*([,\.])"
+    text = re.sub(regex, r"\1\2", text)
+
     # There is an occasional link that we would like to preserve. So far, they
     # can identified by their content containing the special character "…",
     # which means that the link is in fact a comment. Instead of stripping
@@ -282,7 +289,7 @@ def strip_links(text):
     # being, they are left as HTML-encoded text and not actual XML (until the
     # aforementioned XML post-processing takes place).
 
-    regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>\s*"
+    regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>"
     text = re.sub(regex, r"\1", text)
 
     return text
