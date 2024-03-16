@@ -24,7 +24,7 @@ from contenthandlers import add_sentences
 from contenthandlers import begins_with_regular_content
 from contenthandlers import check_chapter
 from contenthandlers import generate_ancestors
-from contenthandlers import generate_xpath
+from contenthandlers import make_xpath_from_node
 from contenthandlers import next_footnote_sup
 from contenthandlers import regexify_markers
 from contenthandlers import separate_sentences
@@ -3145,7 +3145,7 @@ def parse_references():
 
                     # Generate an XPath to the current node containing the
                     # reference.
-                    location = generate_xpath(sen)
+                    location = make_xpath_from_node(sen)
 
                     ref_entry.append(
                         E(

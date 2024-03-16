@@ -123,22 +123,40 @@ def next_footnote_sup(elem, cursor):
     return num
 
 
-def generate_xpath(node):
+def make_xpath_from_node(node):
     """
-    Generates a distinct XPath location of the given node without regard for
-    the schema.
+    Generates a distinct XPath location for a given node, including the node's
+    names and attributes.
     """
-    xpath = []
+
+    # Initialize a list to store parts of the XPath as we build it.
+    xpath_parts = []
+
     while node is not None and node.getparent() is not None:
-        siblings = node.getparent().xpath(node.tag)
-        sibling_count = len(siblings)
-        if sibling_count == 1:
-            xpath.insert(0, node.tag)
+        # Extract and format the current node's attributes into XPath syntax.
+        attrib_parts = []
+        for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr"]:
+            if wanted_attrib in node.attrib:
+                attrib_parts.append(
+                    "@%s='%s'" % (wanted_attrib, node.attrib[wanted_attrib])
+                )
+
+        attributes_xpath = " and ".join(attrib_parts)
+
+        # Construct XPath part for current node, with attributes if any.
+        if attributes_xpath:
+            xpath_part = f"{node.tag}[{attributes_xpath}]"
         else:
-            index = siblings.index(node) + 1
-            xpath.insert(0, f"{node.tag}[{index}]")
+            xpath_part = node.tag
+
+        # Insert the constructed XPath part at the beginning of the list.
+        xpath_parts.insert(0, xpath_part)
+
+        # Move to the parent node for the next iteration.
         node = node.getparent()
-    return "/".join(xpath)
+
+    # Join all parts of the XPath with slashes to form the final XPath string.
+    return "/".join(xpath_parts)
 
 
 def generate_ancestors(elem, parent):
