@@ -127,6 +127,10 @@ def make_xpath_from_node(node):
     """
     Generates a distinct XPath location for a given node, including the node's
     names and attributes.
+
+    IMPORTANT: This function must never return a string with double quotes,
+    because it will be stored in XML attributes which will themselves be using
+    double quotes as value delimiters.
     """
 
     # Initialize a list to store parts of the XPath as we build it.
@@ -137,6 +141,7 @@ def make_xpath_from_node(node):
         attrib_parts = []
         for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr"]:
             if wanted_attrib in node.attrib:
+                # IMPORTANT: Single quotes for values, not double quotes.
                 attrib_parts.append(
                     "@%s='%s'" % (wanted_attrib, node.attrib[wanted_attrib])
                 )

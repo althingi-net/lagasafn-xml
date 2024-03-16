@@ -2872,9 +2872,7 @@ def parse_references():
     # These will record statistics as we run through the data, applied to the
     # XML afterwards.
     stat_loop_count = stat_conclusive_count = stat_inconclusive_count = 0
-    references = E("references")
-    ref_entries = E("ref-entries")
-    references.append(ref_entries)
+    xml_ref_doc = E("references")
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
 
@@ -2962,7 +2960,9 @@ def parse_references():
         law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
         sens = law.xpath("//sen[not(ancestor::footnotes)]")
 
-        ref_entry = E("ref-entry", {"nr": str(law_nr), "year": str(law_year)})
+        law_ref_entry = E(
+            "law-ref-entry", {"law-nr": str(law_nr), "law-year": str(law_year)}
+        )
 
         for sen in sens:
             # We'll be butchering this so better make a copy.
@@ -3148,7 +3148,19 @@ def parse_references():
                     # reference.
                     location = make_xpath_from_node(sen)
 
-                    ref_entry.append(
+                    # Either find or construct the node for the given entry.
+                    ref_node = law_ref_entry.find('node[@location="%s"]' % location)
+                    if ref_node is None:
+                        ref_node = E(
+                            "node",
+                            {
+                                "location": location,
+                                "text": chunk,
+                            },
+                        )
+                        law_ref_entry.append(ref_node)
+
+                    ref_node.append(
                         E(
                             "reference",
                             {
@@ -3156,12 +3168,10 @@ def parse_references():
                                 "inner-reference": reference,
                                 "law-nr": target_law_nr,
                                 "law-year": target_law_year,
-                                "text": chunk,
-                                "location": location,
                             },
                         )
                     )
-                    ref_entries.append(ref_entry)
+                    xml_ref_doc.append(law_ref_entry)
 
                     del link_label
 
@@ -3190,10 +3200,10 @@ def parse_references():
         print(".", end="", flush=True)
 
     # Apply statistics to XML.
-    ref_entries.attrib["stat-loop-count"] = str(stat_loop_count)
-    ref_entries.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
-    ref_entries.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
-    write_xml(references, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
+    xml_ref_doc.attrib["stat-loop-count"] = str(stat_loop_count)
+    xml_ref_doc.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
+    xml_ref_doc.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
+    write_xml(xml_ref_doc, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
 
     print(" done")
 
