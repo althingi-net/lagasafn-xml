@@ -2939,10 +2939,11 @@ def parse_references():
         # r"((og)$)",  # Not sure about this.
     ]
 
-    # Patterns describing parts that may appear before "og" but don't conform to the `inner_reference_patterns` above.
+    # Patterns describing parts that may appear before "og" but don't conform
+    # to the `inner_reference_patterns` above.
+    #
     # Examples:
-    #     a- og c–i-lið 9. tölul.
-    #     14. og 15. gr.
+    #     a- og c–i-lið 9. tölul. 14. og 15. gr.
     #
     # IMPORTANT: The entire things must be in a group because the length of the
     # entire match is needed in code below.
@@ -3071,11 +3072,11 @@ def parse_references():
                                 break
 
                         if len(separator):
+                            # If we run into a separator with no inner
+                            # reference, then this is a reference to the entire
+                            # law and not to an article within it. We may
+                            # safely assume that we're done parsing.
                             if len(reference) == 0:
-                                # If we run into a separator with no inner
-                                # reference, then this is a reference to the
-                                # entire law and not to an article within it.
-                                # We may safely assume that we're done parsing.
                                 certain_about_inner = True
                                 break
 
