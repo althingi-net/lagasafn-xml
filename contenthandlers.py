@@ -123,6 +123,24 @@ def next_footnote_sup(elem, cursor):
     return num
 
 
+def generate_xpath(node):
+    """
+    Generates a distinct XPath location of the given node without regard for
+    the schema.
+    """
+    xpath = []
+    while node is not None and node.getparent() is not None:
+        siblings = node.getparent().xpath(node.tag)
+        sibling_count = len(siblings)
+        if sibling_count == 1:
+            xpath.insert(0, node.tag)
+        else:
+            index = siblings.index(node) + 1
+            xpath.insert(0, f"{node.tag}[{index}]")
+        node = node.getparent()
+    return "/".join(xpath)
+
+
 def generate_ancestors(elem, parent):
     # Locations of markers in footnote XML are denoted as a list of tags,
     # whose name correspond to the tag name where the marker is to be located,

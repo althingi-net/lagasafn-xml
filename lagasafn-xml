@@ -24,6 +24,7 @@ from contenthandlers import add_sentences
 from contenthandlers import begins_with_regular_content
 from contenthandlers import check_chapter
 from contenthandlers import generate_ancestors
+from contenthandlers import generate_xpath
 from contenthandlers import next_footnote_sup
 from contenthandlers import regexify_markers
 from contenthandlers import separate_sentences
@@ -65,6 +66,7 @@ PATCH_FILENAME = os.path.join(
 )  # % (law_year, law_num)
 XML_FILENAME = os.path.join(DATA_DIR, "xml", "%d.%s.xml")  # % (law_year, law_num)
 XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", "index.xml")
+XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", "references.xml")
 
 ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
 
@@ -2864,6 +2866,325 @@ def update_index():
     print(" done")
 
 
+def parse_references():
+    print("Parsing references...", end="", flush=True)
+
+    # These will record statistics as we run through the data, applied to the
+    # XML afterwards.
+    stat_loop_count = stat_conclusive_count = stat_inconclusive_count = 0
+    references = E("references")
+    ref_entries = E("ref-entries")
+    references.append(ref_entries)
+
+    index = etree.parse(XML_INDEX_FILENAME).getroot()
+
+    xpath_entry_selector = "/index/law-entries/law-entry[meta/is-empty = 'false']"
+
+    # This keeps track of sentences that we haven't figured out how to deal
+    # with yet. We can use them to incrementally improve the reference
+    # detection mechanism. Note however that just because it's empty,
+    # doesn't mean that every possible reference has been detected.
+    problems = {
+        "conjugation-not-found": [],
+    }
+
+    # First iterate all the law entries to find all dative forms, which we will
+    # need in its entirety later, when parsing the law.
+    conjugated = {}
+    for law_entry in index.xpath(xpath_entry_selector):
+        name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
+        name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
+        nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
+        conjugated[nr_and_year] = {
+            "accusative": name_accusative,
+            "genitive": name_genitive,
+        }
+        del nr_and_year
+        del name_genitive
+        del name_accusative
+
+    # Words that we can use to conclusively show that we are at the end of
+    # parsing the inner part of a reference.
+    conclusives = [
+        "skv.",
+        "sbr.",
+        "undir",
+        "í",
+        "með",
+        "ákvæði",
+        "ákvæðum",
+        "skilningi",
+        "við",
+        "auglýsingaskyldu",
+        "grundvelli",
+        "eftir",
+        "fyrir",
+        "gilda",
+        "skilyrði",
+        "skilyrðum",
+        "samræmast",
+        "meðal annars",
+    ]
+
+    # Patterns describing node-delimited parts of inner references.
+    # IMPORTANT: The entire things must be in a group because the length of the
+    # entire match is needed in code below.
+    inner_reference_patterns = [
+        r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafla( [A-Z])?)$",  # `chapter`
+        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
+        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
+        r"((\d{1,3})\. tölul\.)$",  # `numart`
+        r"(([a-zA-Z][-–])?[a-zA-Z]-lið)$",  # `numart` (alphabetic)
+        r"((\d{1,3})\. málsl\.)$",  # `sen`
+        # r"((og)$)",  # Not sure about this.
+    ]
+
+    # Patterns describing parts that may appear before "og" but don't conform to the `inner_reference_patterns` above.
+    # Examples:
+    #     a- og c–i-lið 9. tölul.
+    #     14. og 15. gr.
+    #
+    # IMPORTANT: The entire things must be in a group because the length of the
+    # entire match is needed in code below.
+    and_inner_reference_patterns = [
+        r"(([A-Za-z])[-–])$",
+        r"((\d{1,3})\.)$",
+        r"(([A-Z]{1,9})\.)$",
+    ]
+
+    # Now iterate through all the laws and parse their contents.
+    for law_entry in index.xpath(xpath_entry_selector):
+        law_nr = law_entry.attrib["nr"]
+        law_year = int(law_entry.attrib["year"])
+
+        law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+        sens = law.xpath("//sen[not(ancestor::footnotes)]")
+
+        ref_entry = E("ref-entry", {"nr": str(law_nr), "year": str(law_year)})
+
+        for sen in sens:
+            # We'll be butchering this so better make a copy.
+            chunk = sen.text or ""
+
+            pattern = r"(?<!EES-nefndarinnar )(?<!auglýsingu )nr\. (\d{1,3}\/\d{4})"
+            matches = re.findall(pattern, chunk)
+
+            for nr_and_year in matches:
+
+                # NOTE: Every law has a name, so if this doesn't exist,
+                # `nr_and_year` cannot refer to a law unless there's a mistake
+                # in the legal codex itself.
+                #
+                # TODO: We might want to collect these and figure out if there
+                # are any such mistakes, or if we can further utilize these
+                # references even if they don't refer to laws.
+                if nr_and_year not in conjugated:
+                    problems["conjugation-not-found"].append(sen)
+                    continue
+
+                accusative = conjugated[nr_and_year]["accusative"]
+                genitive = conjugated[nr_and_year]["genitive"]
+
+                # The outer and inner references we will build.
+                reference = ""
+
+                # Becomes True if the underlying mechanism is able to
+                # conclusively determine that the inner reference has been
+                # parsed completely and correctly. This typically happens when
+                # we run into key words like "skv." or "sbr.".
+                certain_about_inner = False
+
+                # Possible permutations of how the outer part of reference
+                # might be construed.
+                potential_start_guesses = [
+                    "%s, nr. %s" % (accusative, nr_and_year),
+                    "%s, nr. %s" % (genitive, nr_and_year),
+                    "laga nr. %s" % nr_and_year,
+                    # ", nr. %s" % nr_and_year,  # May require regex.
+                ]
+
+                # NOTE: We call this a starting location, but we're parsing
+                # backwards into the string from the starting location.
+                potentials = ""
+                potentials_outer_start = -1
+                potentials_outer_end = -1
+                for potential_start_guess in potential_start_guesses:
+                    potentials_outer_start = chunk.find(potential_start_guess)
+                    if potentials_outer_start > -1:
+                        # Record the outer end location so that we can decide
+                        # where to end the label constructed later.
+                        potentials_outer_end = potentials_outer_start + len(
+                            potential_start_guess
+                        )
+                        break
+
+                if potentials_outer_start > -1:
+
+                    # Potentials are the string that potentially contains the
+                    # inner parts of a reference, i.e. without the law's number
+                    # and name.
+                    potentials = chunk[:potentials_outer_start].strip()
+
+                    # Check for inner parts of reference for as long as we can.
+                    # FIXME: This `beendone` loop-checking thing is ridiculous.
+                    # We should remove things from `potentials` until it's
+                    # empty and break there.
+                    beendone = 0
+                    while True:
+
+                        # Check for inner reference components by iterating
+                        # through known patterns.
+                        for inner_pattern in inner_reference_patterns:
+                            matches = re.findall(inner_pattern, potentials)
+                            if len(matches) > 0:
+                                match = matches[0][0]
+                                reference = "%s %s" % (match, reference.strip())
+                                potentials = potentials[: -len(match)].strip()
+
+                                del match
+                                continue
+
+                        # Check if we can prove that we're done.
+                        for conclusion_part in conclusives:
+                            p_len = len(potentials)
+                            cp_len = len(conclusion_part)
+                            if (
+                                p_len >= cp_len
+                                and potentials[-cp_len:].lower() in conclusives
+                            ):
+                                certain_about_inner = True
+                                break
+                        if certain_about_inner:
+                            # Break outer loop as well.
+                            break
+
+                        # Check for separators "og" and "eða".
+                        # This could be done in a loop but that would just add
+                        # code indenting.
+                        separator = ""
+                        for sep_try in ["og", "eða"]:
+                            if len(potentials) < len(sep_try):
+                                continue
+
+                            if potentials[-len(sep_try) :] == sep_try:
+                                separator = sep_try
+                                break
+
+                        if len(separator):
+                            if len(reference) == 0:
+                                # If we run into a separator with no inner reference, then this is a reference to the entire law and not to an article within it. We may safely assume that we're done parsing.
+                                certain_about_inner = True
+                                break
+
+                            # Otherwise, add the matched separator and continue.
+                            reference = "%s %s" % (separator, reference.strip())
+                            potentials = potentials[: -len(separator)].strip()
+
+                            # Parts before separators (such "og" or "eða")
+                            # follow a different format, because their context
+                            # is determined by what comes after them.
+                            #
+                            # Consider:
+                            #     a- og c–i-lið 9. tölul.
+                            #
+                            # The "a-" part doesn't make any sense except in
+                            # the context of "c-i-lið" that comes afterward. We
+                            # don't normally parse "a-" individually, we only
+                            # parse it specifically after we run into an "og".
+                            for and_inner_pattern in and_inner_reference_patterns:
+                                matches = re.findall(and_inner_pattern, potentials)
+                                if len(matches) > 0:
+                                    match = matches[0][0]
+                                    reference = "%s %s" % (match, reference.strip())
+                                    potentials = potentials[: -len(match)].strip()
+                                    del match
+                                del matches
+
+                            # A separator word, ["og", "eða"], intrinsically means that there is more to do.
+                            continue
+
+                        # If we can't find any matches anymore, it means that
+                        # we're out of the inner part of the reference or into
+                        # something that we don't support yet.
+                        if beendone > 100:
+                            print("\n[ LOOP DETECTED ]: %s" % potentials)
+                            stat_loop_count += 1
+                            break
+                        beendone += 1
+
+                    # Indentation of inner reference being finished.
+                    pass
+
+                # May contains stray whitespace due to concatenation.
+                reference = reference.strip()
+
+                # The visible part of the text that would normally be
+                # expected to be a link on a web page.
+                if len(reference) > 0:
+                    link_label = chunk[chunk.find(reference) : potentials_outer_end]
+                else:
+                    link_label = chunk[potentials_outer_start:potentials_outer_end]
+
+                if certain_about_inner:
+
+                    # To adhere to our established norm of separating law
+                    # number and law year.
+                    target_law_nr, target_law_year = nr_and_year.split("/")
+
+                    # Generate an XPath to the current node containing the
+                    # reference.
+                    location = generate_xpath(sen)
+
+                    ref_entry.append(
+                        E(
+                            "reference",
+                            {
+                                "link-label": link_label,
+                                "inner-reference": reference,
+                                "law-nr": target_law_nr,
+                                "law-year": target_law_year,
+                                "text": chunk,
+                                "location": location,
+                            },
+                        )
+                    )
+                    ref_entries.append(ref_entry)
+
+                    del link_label
+
+                    stat_conclusive_count += 1
+
+                else:
+                    print("-------------")
+                    print("- Processing: %s/%s" % (law_nr, law_year))
+                    print("- Chunk:      %s" % chunk)
+                    print("- Potentials: %s" % potentials)
+                    print("- Law:        %s" % nr_and_year)
+                    print("- Accusative: %s" % accusative)
+                    # print("Dative: %s" % dative)  # Unimplemented, but we need it.
+                    print("- Genitive:   %s" % genitive)
+                    print("- Reference:  %s" % reference)
+                    print(
+                        "- Conclusive: %s"
+                        % ("true" if certain_about_inner else "false")
+                    )
+
+                    stat_inconclusive_count += 1
+
+            # Indent for: `for nr_and_year in matches`
+            pass
+
+        print(".", end="", flush=True)
+
+    # Apply statistics to XML.
+    ref_entries.attrib["stat-loop-count"] = str(stat_loop_count)
+    ref_entries.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
+    ref_entries.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
+    write_xml(references, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
+
+    print(" done")
+
+
 def usage(exec_name, message=None):
     print(
         "Usage: %s [law_number>/<year>] [law_number>/<year>]..." % exec_name,
@@ -2890,14 +3211,23 @@ def usage(exec_name, message=None):
         "    --rebuild-straytextmap    Force the asking of user about stray text following numarts",
         file=stderr,
     )
+    print(file=stderr)
+    print("Index options:", file=stderr)
     print(
-        "    --index-only              Don't process laws, just update the index.",
+        "    --index-only              Don't process laws or parse references, only update the index.",
         file=stderr,
     )
     print(
         "    --skip-index              Skip updating index.",
         file=stderr,
     )
+    print(file=stderr)
+    print("Reference parsing options:", file=stderr)
+    print(
+        "    --references-only         Don't process laws or update index, only parse references.",
+        file=stderr,
+    )
+    print("    --skip-references         Skip the parsing of references.", file=stderr),
     print(file=stderr)
     if message:
         print("Error: %s" % message, file=stderr)
@@ -2914,6 +3244,8 @@ def main(argv):
         "--rebuild-straytextmap",
         "--index-only",
         "--skip-index",
+        "--references-only",
+        "--skip-references",
     ]
 
     if "--help" in argv:
@@ -2922,6 +3254,9 @@ def main(argv):
     # Only update the index and immediately quit if so requested.
     if "--index-only" in argv:
         update_index()
+        quit()
+    elif "--references-only" in argv:
+        parse_references()
         quit()
 
     # Container for laws that are about to be processed.
@@ -3017,6 +3352,10 @@ def main(argv):
     # Update the index (unless skipped).
     if "--skip-index" not in argv:
         update_index()
+
+    # Parse references (unless skipped).
+    if "--skip-references" not in argv:
+        parse_references()
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)
