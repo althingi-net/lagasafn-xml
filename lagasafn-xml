@@ -2968,6 +2968,19 @@ def parse_references():
             # We'll be butchering this so better make a copy.
             chunk = sen.text or ""
 
+            # The outer references we'll be looking for (i.e.
+            # `nr\. (\d{1,3}\/\d{4})`), may appear multiple times in the same
+            # sentence. This will confuse the relevant searching mechanism by
+            # it finding again an outer reference that it has already found.
+            #
+            # To remedy this, we will keep an offset which will always be
+            # either 0 as defined here, or equal to the last
+            # `potentials_outer_end`, so that we continue the search for the
+            # outer reference from where we left off in the previous iteration,
+            # rather than from the start of the chunk every time.
+            potentials_outer_start_offset = 0
+
+            # FIXME: Rename `pattern` and `matches`, they are too generic.
             pattern = r"(?<!EES-nefndarinnar )(?<!auglýsingu )nr\. (\d{1,3}\/\d{4})"
             matches = re.findall(pattern, chunk)
 
@@ -3005,19 +3018,28 @@ def parse_references():
                     # ", nr. %s" % nr_and_year,  # May require regex.
                 ]
 
+                # A string holding potential parts of an inner reference. Gets
+                # continuously analyzed and chipped away at, as we try to
+                # include as much as we can.
+                potentials = ""
+
                 # NOTE: We call this a starting location, but we're parsing
                 # backwards into the string from the starting location.
-                potentials = ""
                 potentials_outer_start = -1
                 potentials_outer_end = -1
                 for potential_start_guess in potential_start_guesses:
-                    potentials_outer_start = chunk.find(potential_start_guess)
+                    potentials_outer_start = chunk.find(
+                        potential_start_guess,
+                        potentials_outer_start_offset
+                    )
                     if potentials_outer_start > -1:
                         # Record the outer end location so that we can decide
                         # where to end the label constructed later.
                         potentials_outer_end = potentials_outer_start + len(
                             potential_start_guess
                         )
+                        # Remember where to pick up later.
+                        potentials_outer_start_offset = potentials_outer_end
                         break
 
                 if potentials_outer_start > -1:
@@ -3046,7 +3068,8 @@ def parse_references():
                                 del match
                                 continue
 
-                        # Check if we can prove that we're done.
+                        # Check if we can prove that we're done by using
+                        # conclusive words.
                         for conclusion_part in conclusives:
                             p_len = len(potentials)
                             cp_len = len(conclusion_part)
@@ -3058,6 +3081,15 @@ def parse_references():
                                 break
                         if certain_about_inner:
                             # Break outer loop as well.
+                            break
+
+                        # Check if we can prove that we're done by seeing if
+                        # another outer reference can be found right before.
+                        preceeding_law_match = re.findall(r"(nr\. (\d{1,3}/\d{4}),)$", potentials)
+                        if len(preceeding_law_match):
+                            pl_len = len(preceeding_law_match[0][0])
+                            potentials = potentials[-pl_len:]
+                            certain_about_inner = True
                             break
 
                         # Check for separators "og" and "eða".
@@ -3113,7 +3145,8 @@ def parse_references():
                                     del match
                                 del matches
 
-                            # A separator word, ["og", "eða"], intrinsically means that there is more to do.
+                            # We don't need to concern ourselves more with this
+                            # iteration. Moving on.
                             continue
 
                         # If we can't find any matches anymore, it means that
@@ -3134,19 +3167,19 @@ def parse_references():
                 # The visible part of the text that would normally be
                 # expected to be a link on a web page.
                 if len(reference) > 0:
-                    link_label = chunk[chunk.find(reference) : potentials_outer_end]
+                    link_label = chunk[chunk.rfind(reference, 0, potentials_outer_end) : potentials_outer_end]
                 else:
                     link_label = chunk[potentials_outer_start:potentials_outer_end]
+
+                # Generate an XPath to the current node containing the
+                # reference.
+                location = make_xpath_from_node(sen)
 
                 if certain_about_inner:
 
                     # To adhere to our established norm of separating law
                     # number and law year.
                     target_law_nr, target_law_year = nr_and_year.split("/")
-
-                    # Generate an XPath to the current node containing the
-                    # reference.
-                    location = make_xpath_from_node(sen)
 
                     # Either find or construct the node for the given entry.
                     ref_node = law_ref_entry.find('node[@location="%s"]' % location)
@@ -3172,8 +3205,6 @@ def parse_references():
                         )
                     )
                     xml_ref_doc.append(law_ref_entry)
-
-                    del link_label
 
                     stat_conclusive_count += 1
 
