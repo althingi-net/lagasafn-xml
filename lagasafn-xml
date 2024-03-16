@@ -3038,7 +3038,7 @@ def parse_references():
                             matches = re.findall(inner_pattern, potentials)
                             if len(matches) > 0:
                                 match = matches[0][0]
-                                reference = "%s %s" % (match, reference.strip())
+                                reference = "%s %s" % (match, reference)
                                 potentials = potentials[: -len(match)].strip()
 
                                 del match
@@ -3072,12 +3072,15 @@ def parse_references():
 
                         if len(separator):
                             if len(reference) == 0:
-                                # If we run into a separator with no inner reference, then this is a reference to the entire law and not to an article within it. We may safely assume that we're done parsing.
+                                # If we run into a separator with no inner
+                                # reference, then this is a reference to the
+                                # entire law and not to an article within it.
+                                # We may safely assume that we're done parsing.
                                 certain_about_inner = True
                                 break
 
-                            # Otherwise, add the matched separator and continue.
-                            reference = "%s %s" % (separator, reference.strip())
+                            # Otherwise, add matched separator and continue.
+                            reference = "%s %s" % (separator, reference)
                             potentials = potentials[: -len(separator)].strip()
 
                             # Parts before separators (such "og" or "eða")
@@ -3095,7 +3098,7 @@ def parse_references():
                                 matches = re.findall(and_inner_pattern, potentials)
                                 if len(matches) > 0:
                                     match = matches[0][0]
-                                    reference = "%s %s" % (match, reference.strip())
+                                    reference = "%s %s" % (match, reference)
                                     potentials = potentials[: -len(match)].strip()
                                     del match
                                 del matches
@@ -3115,7 +3118,7 @@ def parse_references():
                     # Indentation of inner reference being finished.
                     pass
 
-                # May contains stray whitespace due to concatenation.
+                # May contain stray whitespace due to concatenation.
                 reference = reference.strip()
 
                 # The visible part of the text that would normally be
