@@ -3015,7 +3015,7 @@ def parse_references():
                     "%s, nr. %s" % (accusative, nr_and_year),
                     "%s, nr. %s" % (genitive, nr_and_year),
                     "laga nr. %s" % nr_and_year,
-                    # ", nr. %s" % nr_and_year,  # May require regex.
+                    "lögum nr. %s" % nr_and_year,
                 ]
 
                 # A string holding potential parts of an inner reference. Gets
