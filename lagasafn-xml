@@ -3079,6 +3079,14 @@ def parse_references():
                                 certain_about_inner = True
                                 break
 
+                            # The string ", " preceeding the separator
+                            # indicates that what comes before is not a part of
+                            # the same reference. We determine that the
+                            # reference is complete.
+                            if potentials.rstrip(separator)[-2:] == ", ":
+                                certain_about_inner = True
+                                break
+
                             # Otherwise, add matched separator and continue.
                             reference = "%s %s" % (separator, reference)
                             potentials = potentials[: -len(separator)].strip()
