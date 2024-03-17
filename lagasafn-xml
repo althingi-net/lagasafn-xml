@@ -2937,7 +2937,7 @@ def parse_references():
         r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
         r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
         r"((\d{1,3})\. tölul\.)$",  # `numart`
-        r"(([a-zA-Z][-–])?[a-zA-Z]-lið)$",  # `numart` (alphabetic)
+        r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
         r"((\d{1,3})\. málsl\.)$",  # `sen`
         # r"((og)$)",  # Not sure about this.
     ]
