@@ -2876,7 +2876,7 @@ def parse_references():
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
 
-    xpath_entry_selector = "/index/law-entries/law-entry[meta/is-empty = 'false']"
+    xpath_entry_selector = "/index/law-entries/law-entry"
 
     # This keeps track of sentences that we haven't figured out how to deal
     # with yet. We can use them to incrementally improve the reference
@@ -2891,20 +2891,24 @@ def parse_references():
     conjugated = {}
     for law_entry in index.xpath(xpath_entry_selector):
         name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
+        name_dative = law_entry.xpath("./name-conjugated/dative")[0].text
         name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
         nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
         conjugated[nr_and_year] = {
             "accusative": name_accusative,
+            "dative": name_dative,
             "genitive": name_genitive,
         }
         del nr_and_year
         del name_genitive
+        del name_dative
         del name_accusative
 
     # Words that we can use to conclusively show that we are at the end of
     # parsing the inner part of a reference.
     conclusives = [
         "skv.",
+        "samkvæmt",
         "sbr.",
         "undir",
         "í",
@@ -2998,6 +3002,7 @@ def parse_references():
                     continue
 
                 accusative = conjugated[nr_and_year]["accusative"]
+                dative = conjugated[nr_and_year]["dative"]
                 genitive = conjugated[nr_and_year]["genitive"]
 
                 # The outer and inner references we will build.
@@ -3013,6 +3018,7 @@ def parse_references():
                 # might be construed.
                 potential_start_guesses = [
                     "%s, nr. %s" % (accusative, nr_and_year),
+                    "%s, nr. %s" % (dative, nr_and_year),
                     "%s, nr. %s" % (genitive, nr_and_year),
                     "laga nr. %s" % nr_and_year,
                     "lögum nr. %s" % nr_and_year,
