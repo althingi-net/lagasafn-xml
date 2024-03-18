@@ -917,19 +917,26 @@ def make_xml(law_num, law_year):
             except ValueError:
                 # This means that the article's name is formatted in an
                 # unconventional way. Typically this occurs only in temporary
-                # clauses that tend to be numbered with some stupid fucking
-                # Roman bullshit.
+                # clauses that may be denoted by Roman numerals or with the
+                # string "Ákvæði til bráðabirgða.".
                 art_nr = clean_art_nr_title.strip(".")
                 try:
                     art_roman_nr = str(roman.fromRoman(art_nr))
                 except roman.InvalidRomanNumeralError:
-                    # Good. Fuck Roman numerals.
+                    # So it's not a Roman numeral. Starting to get special.
 
-                    # Another possibility is that it's a really old-school way
-                    # of denoting articles (early 19th century and before),
-                    # which looks like "5)" instead of "5. gr.".
                     if matcher.check(art_nr, r"^\d+\)$"):
+                        # Another possibility is that it's a really old-school
+                        # way of denoting articles (early 19th century and
+                        # before), which looks like "5)" instead of "5. gr.".
                         art_nr = art_nr.strip(")")
+                    elif art_nr == "Ákvæði til bráðabirgða":
+                        # Yet another possibility is that it is indeed a
+                        # temporary clause, but instead of being numbered with
+                        # Roman numerals inside a chapter called "Ákvæði til
+                        # bráðabirgða" or similar, it is an article by that
+                        # name instead.
+                        art_nr = "t"
                     else:
                         # At this point we've run into some kind of article
                         # that we don't know how to deal with yet. We'll just
