@@ -3037,23 +3037,34 @@ def parse_references():
                 potentials = ""
 
                 # NOTE: We call this a starting location, but we're parsing
-                # backwards into the string from the starting location.
+                # backwards into the string from the starting location, even
+                # though we're looking for the starting location forward.
                 potentials_outer_start = -1
                 potentials_outer_end = -1
+
+                # Begin by finding out where the next outer reference starts.
+                # The `found_guess` variable is used after the loop to figure
+                # out where it ends and to decide the search offset in the next
+                # round of scanning the chunk.
+                found_guess = ""
                 for potential_start_guess in potential_start_guesses:
-                    potentials_outer_start = chunk.find(
-                        potential_start_guess,
-                        potentials_outer_start_offset
+                    attempt = chunk.find(
+                        potential_start_guess, potentials_outer_start_offset
                     )
-                    if potentials_outer_start > -1:
-                        # Record the outer end location so that we can decide
-                        # where to end the label constructed later.
-                        potentials_outer_end = potentials_outer_start + len(
-                            potential_start_guess
-                        )
-                        # Remember where to pick up later.
-                        potentials_outer_start_offset = potentials_outer_end
-                        break
+                    if potentials_outer_start == -1 or (
+                        attempt > -1 and attempt < potentials_outer_start
+                    ):
+                        potentials_outer_start = attempt
+                        found_guess = potential_start_guess
+
+                # Record the outer end location so that we can decide
+                # where to end the label constructed later.
+                potentials_outer_end = potentials_outer_start + len(found_guess)
+
+                # Remember where to pick up the search for different
+                # permutations of outer references, in the next outer reference
+                # to be processed.
+                potentials_outer_start_offset = potentials_outer_end
 
                 if potentials_outer_start > -1:
 
