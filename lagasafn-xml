@@ -3109,7 +3109,9 @@ def parse_references():
 
                         # Check if we can prove that we're done by seeing if
                         # another outer reference can be found right before.
-                        preceeding_law_match = re.findall(r"(nr\. (\d{1,3}/\d{4}),)$", potentials)
+                        preceeding_law_match = re.findall(
+                            r"(nr\. (\d{1,3}/\d{4}),)$", potentials
+                        )
                         if len(preceeding_law_match):
                             pl_len = len(preceeding_law_match[0][0])
                             potentials = potentials[-pl_len:]
@@ -3191,7 +3193,11 @@ def parse_references():
                 # The visible part of the text that would normally be
                 # expected to be a link on a web page.
                 if len(reference) > 0:
-                    link_label = chunk[chunk.rfind(reference, 0, potentials_outer_end) : potentials_outer_end]
+                    link_label = chunk[
+                        chunk.rfind(
+                            reference, 0, potentials_outer_end
+                        ) : potentials_outer_end
+                    ]
                 else:
                     link_label = chunk[potentials_outer_start:potentials_outer_end]
 
