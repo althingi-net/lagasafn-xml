@@ -2,8 +2,9 @@ import json
 import os
 import re
 import roman
-import settings
 import subprocess
+
+from lagasafn import settings
 
 STRAYTEXTMAP_FILENAME = os.path.join("data", "json-maps", "straytextmap.json")
 

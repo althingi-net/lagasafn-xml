@@ -3,14 +3,13 @@ import os
 import re
 import string
 
+from lagasafn.utils import Matcher
+from lagasafn.utils import is_roman
+from lagasafn.utils import order_among_siblings
+from lagasafn.utils import strip_links
+from lagasafn.utils import super_iter
+from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
-
-from utils import Matcher
-from utils import is_roman
-from utils import order_among_siblings
-from utils import strip_links
-from utils import super_iter
-from utils import terminal_width_and_height
 
 SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 
