@@ -2914,26 +2914,31 @@ def parse_references():
     # Words that we can use to conclusively show that we are at the end of
     # parsing the inner part of a reference.
     conclusives = [
-        "skv.",
-        "samkvæmt",
-        "sbr.",
-        "undir",
-        "í",
-        "með",
+        "auglýsingaskyldu",
+        "á",
         "ákvæði",
         "ákvæðum",
-        "skilningi",
-        "við",
-        "auglýsingaskyldu",
-        "grundvelli",
+        "einnig",
         "eftir",
         "fyrir",
+        "gegn",
         "gilda",
+        "grundvelli",
+        "í",
+        "með",
+        "meðal annars",
+        "né",
+        "reglum",
+        "samkvæmt",
+        "samræmast",
+        "sbr.",
+        "skilningi",
         "skilyrði",
         "skilyrðum",
-        "samræmast",
-        "meðal annars",
-        "einnig",
+        "skv.",
+        "undanþegnar",
+        "undir",
+        "við",
     ]
 
     # Patterns describing node-delimited parts of inner references.
@@ -2941,6 +2946,7 @@ def parse_references():
     # entire match is needed in code below.
     inner_reference_patterns = [
         r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafla( [A-Z])?)$",  # `chapter`
+        r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
         r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
         r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
         r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
@@ -2953,12 +2959,13 @@ def parse_references():
     #
     # Examples:
     #     a- og c–i-lið 9. tölul. 14. og 15. gr.
+    #     1., 2. eða 5. mgr. 109. gr.
     #
     # IMPORTANT: The entire things must be in a group because the length of the
     # entire match is needed in code below.
     and_inner_reference_patterns = [
         r"(([A-Za-z])[-–])$",
-        r"((\d{1,3})\.)$",
+        r"(((\d{1,3})\., )*(\d{1,3})\.)$",
         r"(([A-Z]{1,9})\.)$",
     ]
 
@@ -3022,10 +3029,14 @@ def parse_references():
 
                 # Possible permutations of how the outer part of reference
                 # might be construed.
+                # FIXME: This might be better turned into a regex.
                 potential_start_guesses = [
                     "%s, nr. %s" % (accusative, nr_and_year),
                     "%s, nr. %s" % (dative, nr_and_year),
                     "%s, nr. %s" % (genitive, nr_and_year),
+                    "%s nr. %s" % (accusative, nr_and_year),
+                    "%s nr. %s" % (dative, nr_and_year),
+                    "%s nr. %s" % (genitive, nr_and_year),
                     "lög nr. %s" % nr_and_year,
                     "lögum nr. %s" % nr_and_year,
                     "laga nr. %s" % nr_and_year,
@@ -3169,6 +3180,7 @@ def parse_references():
                                     reference = "%s %s" % (match, reference)
                                     potentials = potentials[: -len(match)].strip()
                                     del match
+
                                 del matches
 
                             # We don't need to concern ourselves more with this
@@ -3192,6 +3204,7 @@ def parse_references():
 
                 # The visible part of the text that would normally be
                 # expected to be a link on a web page.
+                link_label = ""
                 if len(reference) > 0:
                     link_label = chunk[
                         chunk.rfind(
