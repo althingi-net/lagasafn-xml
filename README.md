@@ -1,8 +1,9 @@
 This repo is composed of 4 separate parts.
 
-1. **Lagasafn-XML**: A tool for turning the HTML in which Icelandic law is published into machine-readable XML.
-2. **MechLaw**: A web application displaying the codex with features made available with the new XML format.
-3. **RefBuilder**: An experimental project, inactive for now, for using AI to analyze references in legal text.
+1. **Lagasafn-XML** (`lagasafn`): A tool for turning the HTML in which Icelandic law is published into machine-readable XML.
+2. **MechLaw** (`mechlaw`): A web application displaying the codex with features made available with the new XML format.
+3. **RefBuilder** (`refbuilder`): An experimental project, inactive for now, for using AI to analyze references in legal text.
+4. **Data** (`data`): The static XML data produced by Lagasafn-XML and utilized by MechLaw.
 
 # Lagasafn-XML
 
