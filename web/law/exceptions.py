@@ -1,0 +1,2 @@
+class LawException(Exception):
+    pass

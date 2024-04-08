@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<script language="javascript" type="text/javascript">
+    // Constants available to JavaScript.
+    const LAW_IDENTIFIER = "{{ law.identifier }}";
+
+    // Activate menu items.
+    var elements = document.querySelectorAll(".menu-item");
+    elements.forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            let tag = this.getAttribute("data-tag");
+            let nr = this.getAttribute("data-nr");
+            let selector = tag + "[nr='" + nr + "']";
+            let elem = document.querySelector(selector)
+            elem.scrollIntoView();
+            window.scrollBy(0, -70);  // 70 is estimated header height.
+        });
+    });
+</script>
+{% endblock %}
+
+{% block title %}{{ law.identifier }}: {{ law.name }}{% endblock %}
+
+{% block controls %}
+    <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
+    |
+    <button type="button" class="btn btn-default" id="btn-hide-subart-nrs">{% trans 'Hide subart numbers' %}</button>
+    <button type="button" class="btn btn-default" id="btn-show-subart-nrs">{% trans 'Show subart numbers' %}</button>
+    |
+    <button type="button" class="btn btn-default" id="btn-close-all">{% trans 'Close all' %}</button>
+    <button type="button" class="btn btn-default" id="btn-open-all">{% trans 'Open all' %}</button>
+{% endblock %}
+
+{% block left %}
+
+<div class="legal-document menu">
+    <ul>
+    {% for chapter in law.chapters %}
+        <li>
+            <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
+                {% if chapter.name %}
+                    {{ chapter.name }}
+                {% else %}
+                    {{ chapter.nr_title }}
+                {% endif %}
+            </a>
+            <ul>
+            {% for art in chapter.articles %}
+                <li>
+                    <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
+                        {% if art.name %}
+                            {{ art.name }}
+                        {% else %}
+                            {{ art.nr_title }}
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'law/dialog/quick_dialog.html' %}
+
+<div class="legal-document content">
+    {{ law.html_text|safe }}
+</div>
+
+{% endblock %}
