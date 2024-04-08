@@ -29,15 +29,6 @@ DEBUG = True
 # Options are: ['is']
 LEGAL_FRAMEWORK = 'is'
 
-# I was here.
-# Just merged `mechlaw` into `lagasafn-xml`, subfolder `web`.
-# This is in the local branch `merge-mechlaw`, which has neither been merged to `master`
-# nor pushed to remote.
-# Next up:
-# 1. Make changes to settings like these so that everything works (maybe clean things up).
-# 2. Set interdependencies (https://chat.openai.com/c/ca973614-f934-4618-96dd-40a4bbf686c7).
-# 3. Merge with `master`.
-# 4. Push!
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'xml')
 
 LANGUAGE_CODE = 'is'
