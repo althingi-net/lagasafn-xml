@@ -1,6 +1,10 @@
-# Lagasafn XML
+This repo is composed of 4 separate parts.
 
-A tool for turning the HTML in which Icelandic law is published into machine-readable XML.
+1. **Lagasafn-XML**: A tool for turning the HTML in which Icelandic law is published into machine-readable XML.
+2. **MechLaw**: A web application displaying the codex with features made available with the new XML format.
+3. **RefBuilder**: An experimental project, inactive for now, for using AI to analyze references in legal text.
+
+# Lagasafn-XML
 
 ## About
 
@@ -92,6 +96,6 @@ Now if we want to document what the error was about we can open the `patches/151
 
 and you're done. You can push the new patch file to the repo, or create a pull request.
 
-## License
+# License
 
 See the document `LICENSE.md`. (It's MIT.)
