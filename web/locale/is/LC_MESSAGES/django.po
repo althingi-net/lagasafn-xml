@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-05 13:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+
+#: law/templates/law/list.html:9
+msgid "Total law count"
+msgstr "Heildarfjöldi laga"
+
+#: law/templates/law/list.html:11
+msgid "Empty law count"
+msgstr "Fjöldi tómra laga"
+
+#: law/templates/law/list.html:13
+msgid "Non-empty law count"
+msgstr "Fjöldi laga með efni"
+
+#: law/templates/law/list.html:20
+msgid "Nr."
+msgstr "Nr."
+
+#: law/templates/law/list.html:21
+msgid "Name"
+msgstr "Nafn"
+
+#: law/templates/law/list.html:22
+msgid "Ch."
+msgstr "Ka."
+
+#: law/templates/law/list.html:23
+msgid "Art."
+msgstr "Gr."
+
+#: law/templates/law/show.html:27
+msgid "Open in editor"
+msgstr "Opna í ritli"
+
+#: law/templates/law/show.html:29
+msgid "Hide subart numbers"
+msgstr "Fela númer málsgreina"
+
+#: law/templates/law/show.html:30
+msgid "Show subart numbers"
+msgstr "Sýna númer málsgreina"
+
+#: law/templates/law/show.html:32
+msgid "Close all"
+msgstr "Loka öllu"
+
+#: law/templates/law/show.html:33
+msgid "Open all"
+msgstr "Opna allt"
+
+#: mechlaw/constants.py:3
+msgid "MechLaw"
+msgstr "MechLaw"
+
+#: templates/base.html:27
+msgid "Error"
+msgstr "Villa"
+
+#: templates/base.html:28
+msgid "Clause not found"
+msgstr "Klausa fannst ekki"
+
+#: templates/base.html:29
+msgid "Not implemented yet"
+msgstr "Virkni ekki enn tilbúin"
+
+#: templates/base.html:44
+msgid "Legal Codex"
+msgstr "Lagasafn"
+
+#: templates/base.html:49
+msgid "Home"
+msgstr "Heim"
+
+#~ msgid "Law %(nr)s/%(year)s, parliament version %(parliament)s"
+#~ msgstr "Lög nr. %(nr)s/%(year)s, þingútgáfa %(parliament)s"

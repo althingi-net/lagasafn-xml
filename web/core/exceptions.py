@@ -1,0 +1,2 @@
+class ReferenceParsingException(Exception):
+    pass

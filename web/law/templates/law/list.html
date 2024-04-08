@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container">
+<table class="law-stats">
+    <tr>
+        <th>{% trans 'Total law count' %}:</th>
+        <td>{{ stats.total_count }}</td>
+        <th>{% trans 'Empty law count' %}:</th>
+        <td>{{ stats.empty_count }}</td>
+        <th>{% trans 'Non-empty law count' %}:</th>
+        <td>{{ stats.non_empty_count }}</td>
+    </tr>
+</table>
+
+<table>
+    <tr class="law-list-row">
+        <th class="law-list-nr">{% trans 'Nr.' %}</th>
+        <th class="law-list-name">{% trans 'Name' %}</th>
+        <th class="law-list-ch">{% trans 'Ch.' %}</th>
+        <th class="law-list-art">{% trans 'Art.' %}</th>
+    </tr>
+    {% for law in laws %}
+        <tr class="law-list-row">
+            <td class="law-list-nr">
+                <a href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>
+            </td>
+            <td class="law-list-name">
+                {{ law.name }}
+            </td>
+            <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
+            <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+Extract references to Icelandic laws from freeform text of Icelandic law in XML format. 
+IMPORTANT: Reply with valid JSON only. 
+Provide list of references as demonstrated below. 
+It is possible that there are no references in a given input.
+References can be to the law we're reading, in which case the law is "self". 
+If law is unknown, state it as "unknown". 
+If the references are vague, mark them as vague but include all possible details. 
+Put any result comments inside the JSON. 
+Example: 
+[ 
+  {law: "90/2012", art: "4", subart: "2", numart: "a", ref: "Skv a-lið 2.mgr. 4. gr. laga nr 90/2012." },
+  {law: "33/1944", art: "27", subart: "6", ref: "Skv 6.mgr. 27. gr. laga nr 33/1944." },
+  {law: "self", art: "1", ref: "Skv. 1. gr." },
+  {law: "unknown", art: "5", ref: "samkvæmt 5. gr. laga um tekjuskatt"}
+]

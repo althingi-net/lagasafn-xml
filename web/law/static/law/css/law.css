@@ -1,0 +1,92 @@
+@import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic&.css);
+/* @import url(/static/core/css/fonts/Droid+Serif:400,700,700italic,400italic.css); */
+
+/*** Basics ***/
+.legal-document { font-family: "Droid Serif", serif; color: #242424; line-height: 1.5em; font-size: 16px; margin: 0px 20px 0px 20px; }
+
+.legal-document.menu { position: fixed; border-right: 1px solid #dddddd; margin: 0px; margin-top: -70px; padding: 60px 10px 0px 0px; width: 500px; height: 100vh; font-size: 13px; overflow: scroll; }
+.legal-document.menu a { cursor: pointer; }
+
+/*** Basics ***/
+.legal-document.content { padding-left: 560px; max-width: 1730px; }
+
+/* For scrolling consistency with Althingi.is */
+/*.legal-document { margin-top: 354px; }*/
+
+.box { padding: 0px; margin: 0px 1px 0px 1px; height: 9px; width: 9px; }
+
+content-setup { display: none; }
+
+/*** Common classes ***/
+
+/* refer */
+refer { color: #1c79c2; }
+refer[type="missing"] { color: #606060; }
+
+/*** Section classes ***/
+
+/* law name */
+law > name { display: block; font-size: 1.875em; line-height: 1.25em; color: #2d5382; border-top: 1px solid #dddddd; padding-top: 30px; padding-bottom: 9px; }
+
+/* law num-and-date */
+law num-and-date * { display: none; }
+law num-and-date original { display: block; font-weight: bold; font-size: 16px; line-height: 1.6; text-align: center; border-bottom: 1px solid #dddddd; padding-bottom: 20px; margin-bottom: 20px; }
+
+/* ministerial clause */
+minister-clause { display: none; border-bottom: 1px solid #dddddd; padding-bottom: 20px; margin-bottom: 44px; }
+minister-clause > a { margin-right: 0.7777em; }
+minister-clause > small { font-size: 80%; line-height: 1.88em; }
+
+/* chapter */
+chapter { display: block; margin-top: 1.5em; }
+chapter > nr-title { font-weight: bold; }
+chapter > name { font-weight: bold; }
+name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+
+ambiguous-section { font-style: italic; }
+
+/* article */
+art { display: block; margin-top: 0px; }
+art > nr-title { display: inline; font-weight: bold; }
+art > nr-title .art-deletion { font-weight: normal; }
+art > name { font-style: italic; }
+
+/* art-chapter */
+art-chapter > nr-title { display: block; font-weight: bold; }
+art-chapter > sen:first-of-type { margin-left: 1.04em; } /* Only in 7. gr. laga nr. 90/2003 */
+
+/* subarticle */
+subart { display: block; }
+subart .mgr { font-weight: bold; }
+
+/* numerical article */
+numart { display: block; text-indent: 1.04em; }
+numart > name { font-style: italic; }
+numart > paragraph > name { font-style: italic; }
+numart[style-note="inline-with-parent"] { display: inline; }
+
+/* paragraph */
+paragraph { display: block; text-indent: 1.04em; }
+paragraph:first-of-type { display: inline; text-indent: 0; }
+
+/* sentence title */
+sen-title { font-style: italic; }
+
+/* sentence */
+sen sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+sen span.fraction-denominator { font-size: 60%; line-height: 23px; }
+
+/* table */
+sen table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
+sen table tr:hover { background: #f3f2ed; }
+sen table th, sen table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
+sen table td:last-child, sen table th:last-child { border-right-width: 0px; }
+
+/* footnotes */
+footnotes { display: none; text-indent: 1.04em;  }
+footnote { margin-right: -1px; line-height: 1.5em; }
+footnote a { color: #1c79c2; }
+footnote sup { display: inline; font-size: 7.69px !important; font-style: italic; vertical-align: top; top: 1.20em; }
+footnote-sen { display: inline; font-style: italic; font-size: 12.8px; }
+footnote-sen:nth-child(3) { margin-left: -1px; }
+location { display: none; }

@@ -1,0 +1,51 @@
+body { padding-top: 70px; }
+.quick-dialog { display: none; position: absolute; max-width: 700px; z-index: 100; }
+.quick-dialog .quick-dialog-content { font-size: small; }
+
+/* Utility classes for chapter/article toggling. */
+.toggle-button[data-state="open"] { /*color: #2d5382;*/ cursor: pointer; }
+.toggle-button[data-state="closed"] { color: #808080; cursor: pointer; }
+.toggle-hidden { display: none; }
+
+.navbar-buttons {
+    margin-top: 8px;
+}
+
+/* FIXME: This would be more appropriate handled by a framework's design
+decisions. Done so now due to lack of access to documentation (internet). */
+
+.law-stats {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.law-stats th {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.law-stats td {
+    padding-left: 8px;
+}
+
+.law-list-row {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.law-list-row td,
+.law-list-row th {
+    padding: 2px 6px 2px 6px;
+}
+
+.law-list-nr {
+    text-align: right;
+    vertical-align: top;
+}
+
+.law-list-ch {
+    text-align: right;
+}
+
+.law-list-art {
+    text-align: right;
+}
