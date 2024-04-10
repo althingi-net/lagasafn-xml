@@ -64,23 +64,6 @@ def sorted_law(law_ids):
     )
 
 
-def create_url(law_num, law_year):
-    """
-    Creates a URL to Alþingi's website from a law_num and law_year. Used for
-    development, so don't remove it, even if it's nowhere used in the code.
-    """
-    fixed_width_law_num = str(law_num)
-    while len(fixed_width_law_num) < 3:
-        fixed_width_law_num = "0%s" % fixed_width_law_num
-
-    base_url = "https://www.althingi.is/lagas/%s/%s%s.html"
-    return base_url % (
-        settings.CURRENT_PARLIAMENT_VERSION,
-        law_year,
-        fixed_width_law_num,
-    )
-
-
 def numart_next_nrs(prev_numart):
     """
     Returns a list of expected next numbers from the given prev_numart. For
