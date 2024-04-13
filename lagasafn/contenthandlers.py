@@ -39,8 +39,8 @@ def regexify_markers(text):
 
     # These must be escaped so that they are not interpreted as regex from
     # renderer's point of view.
-    text = text.replace("(", "\)")
-    text = text.replace(")", "\)")
+    text = text.replace("(", r"\)")
+    text = text.replace(")", r"\)")
 
     # Opening markers.
     text = re.sub(r"\[ ?", r"(\[? ?)?", text)
