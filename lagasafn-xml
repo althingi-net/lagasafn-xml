@@ -18,11 +18,11 @@ from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import generate_ancestors
-from lagasafn.contenthandlers import make_xpath_from_node
 from lagasafn.contenthandlers import next_footnote_sup
 from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import strip_markers
+from lagasafn.pathing import make_xpath_from_node
 from lagasafn.utils import UnexpectedClosingBracketException
 from lagasafn.utils import Matcher
 from lagasafn.utils import Trail

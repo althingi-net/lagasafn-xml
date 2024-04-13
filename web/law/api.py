@@ -1,6 +1,6 @@
-from core.exceptions import ReferenceParsingException
-from core.utils import make_xpath
 from django.http import HttpResponse
+from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.pathing import make_xpath_from_reference
 from law.exceptions import LawException
 from law.models import Law
 from lxml import etree
@@ -81,7 +81,7 @@ def parse_reference(request, reference):
 
     # Create selector.
     try:
-        xpath = make_xpath(words)
+        xpath = make_xpath_from_reference(words)
     except ReferenceParsingException as ex:
         raise HttpError(500, "Confused by: %s" % ex.args[0])
 
