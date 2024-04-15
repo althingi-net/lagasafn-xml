@@ -67,6 +67,7 @@ class LawEntry:
 
 
 class Law:
+
     def __init__(self, identifier):
         self.identifier = identifier
 
@@ -76,11 +77,30 @@ class Law:
         self._xml_text = ""
         self._html_text = ""
         self._chapters = []
+        self._articles = []
 
         self.nr, self.year = self.identifier.split("/")
 
         if not os.path.isfile(self.path()):
             raise LawException("Could not find law '%s'" % self.identifier)
+
+    @staticmethod
+    def _make_art(art):
+        """
+        Centralized function for making an `art` in the specific context of
+        this model, from XML data.
+        """
+        _art = {
+            "nr": art.attrib["nr"],
+            "nr_title": art.find("nr-title").text,
+        }
+
+        # Add name if it exists.
+        art_name = art.find("name")
+        if art_name is not None:
+            _art["name"] = art_name.text
+
+        return _art
 
     def name(self):
         if len(self._name):
@@ -117,21 +137,24 @@ class Law:
 
             # Add articles.name
             for art in chapter.findall("art"):
-                _art = {
-                    "nr": art.attrib["nr"],
-                    "nr_title": art.find("nr-title").text,
-                }
-
-                # Add name if it exists.
-                art_name = art.find("name")
-                if art_name is not None:
-                    _art["name"] = art_name.text
-
+                _art = Law._make_art(art)
                 _chapter["articles"].append(_art)
 
             self._chapters.append(_chapter)
 
         return self._chapters
+
+    def articles(self):
+        if len(self._articles):
+            return self._articles
+
+        xml = self.xml()
+
+        for art in xml.findall("art"):
+            _art = Law._make_art(art)
+            self._articles.append(_art)
+
+        return self._articles
 
     def path(self):
         return os.path.join(settings.DATA_DIR, f"{self.year}.{self.nr}.xml")
