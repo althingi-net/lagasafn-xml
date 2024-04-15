@@ -51,7 +51,7 @@ def make_xpath_from_reference(input_words: str):
         """
         Utility function so that we can do this inline.
         """
-        return some_list[0] if len(some_list) else ''
+        return some_list[0] if len(some_list) else ""
 
     xpath = ""
 
@@ -64,7 +64,7 @@ def make_xpath_from_reference(input_words: str):
     while len(words):
 
         # Initialize.
-        ent_type = ''
+        ent_type = ""
         ent_numbers = []
 
         word = words.pop(0)
@@ -74,7 +74,7 @@ def make_xpath_from_reference(input_words: str):
 
         if word[-4:] == "-lið":
             ent_type = "*[self::numart or self::art-chapter]"
-            ent_numbers.append(word[:word.find('-lið')])
+            ent_numbers.append(word[: word.find("-lið")])
         elif word in translations.keys():
             ent_type = translations[word]
             ent_numbers.append(words.pop(0))
@@ -91,7 +91,7 @@ def make_xpath_from_reference(input_words: str):
             # ... construct the XPath bit and add it to the result!
             xpath += "//%s[%s]" % (
                 ent_type,
-                " or ".join(["@nr='%s'" % n for n in ent_numbers])
+                " or ".join(["@nr='%s'" % n for n in ent_numbers]),
             )
 
     return xpath
