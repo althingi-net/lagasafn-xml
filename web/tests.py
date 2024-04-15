@@ -1,4 +1,5 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from lagasafn.problems import ProblemHandler
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.webdriver import WebDriver
@@ -10,12 +11,18 @@ class WebTests(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+
+        cls.problems = ProblemHandler()
+
         cls.selenium = WebDriver()
-        cls.selenium.implicitly_wait(1)
+        cls.selenium.implicitly_wait(0.5)
 
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
+
+        cls.problems.close()
+
         super().tearDownClass()
 
     def test_javascript(self):
@@ -24,31 +31,32 @@ class WebTests(StaticLiveServerTestCase):
         initial JavaScript managed to complete without errors.
         """
 
-        failed_hrefs = []
-
         self.selenium.get(f"{self.live_server_url}/law/list/")
 
-        law_links = self.selenium.find_elements(By.CSS_SELECTOR, "a.law-link")
-        self.assertTrue(len(law_links) > 0, "Found no laws.")
+        xml_links = self.selenium.find_elements(By.CSS_SELECTOR, "a.law-link")
+        self.assertTrue(len(xml_links) > 0, "Found no laws.")
 
-        hrefs = []
+        law_links = []
+        for xml_link in xml_links:
+            law_links.append(
+                {
+                    "href": xml_link.get_attribute("href"),
+                    "identifier": xml_link.get_attribute("data-identifier"),
+                }
+            )
+
+        has_errors = False
         for law_link in law_links:
-            hrefs.append(law_link.get_attribute("href"))
+            self.selenium.get(law_link["href"])
 
-        for href in hrefs:
-            self.selenium.get(href)
-
-            print("Finding success element %s..." % href, end="", flush=False)
+            print("Testing %s..." % law_link["identifier"], end="", flush=False)
             try:
                 self.selenium.find_element(By.ID, "law-javascript-success")
+                self.problems.success(law_link["identifier"], "javascript")
                 print(" success")
             except NoSuchElementException:
-                failed_hrefs.append(href)
-                print(" failed")
+                self.problems.failure(law_link["identifier"], "javascript")
+                print(" failure")
+                has_errors = True
 
-        if len(failed_hrefs) > 0:
-            print("The following fails (%d) failed:", len(failed_hrefs))
-            for failed_href in failed_hrefs:
-                print(" - %s" % failed_href)
-
-        self.assertTrue(len(failed_hrefs) == 0)
+        self.assertFalse(has_errors, "JavaScript errors detected.")

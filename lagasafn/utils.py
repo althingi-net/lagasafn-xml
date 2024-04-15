@@ -5,6 +5,7 @@ import roman
 import subprocess
 
 from lagasafn import settings
+from lxml import etree
 
 STRAYTEXTMAP_FILENAME = os.path.join("data", "json-maps", "straytextmap.json")
 
@@ -711,3 +712,62 @@ class Trail:
         """
 
         return self.nodes[-1]
+
+
+# FIXME: `skip_prettyprint_hack` is there because we get a bunch of unwelcome
+# newlines into the index that we don't get into the legal XML files
+# themselves. The index is generated just fine when not in DEBUG mode, but
+# then the legal XML files get messed up and vice versa. Until this is
+# resolved, we'll keep the optional parameter `skip_prettyprint_hack` so that
+# we can use it when generating legal XML files, but skip it when generating
+# the index, regardless of what the DEBUG flag says.
+#
+# TODO: Re-visit this function in light of `node_strip`.
+def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
+    with open(filename, "w") as f:
+        # Importing a completely different XML library than the one we're
+        # using elsewhere in the code is a bit weird, but this is the only one
+        # we could find that does pretty printing with proper indenting. That
+        # happens to be very important for seeing whether the end result
+        # works. Since it's only used when DEBUG=True and is very much an
+        # anomaly in the code, it is imported here instead of at the top of
+        # the file.
+        #
+        # When not in DEBUG mode, we'll skip those shenanigans and write it
+        # out with the same library as the one we use elsewhere.
+        if settings.DEBUG and not skip_prettyprint_hack:
+            import xml.dom.minidom
+
+            xml = xml.dom.minidom.parseString(
+                etree.tostring(
+                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+                ).decode("utf-8")
+            )
+            pretty_xml_as_string = xml.toprettyxml(
+                indent="  ", encoding="utf-8"
+            ).decode("utf-8")
+            f.write(pretty_xml_as_string)
+        else:
+            f.write(
+                etree.tostring(
+                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+                ).decode("utf-8")
+            )
+
+
+def node_strip(node):
+    """
+    Strip whitespace from the text and tail of a node.
+
+    When reading and re-writing a XML file that is formatted for human
+    readability, whitespace tends to accumulate in the text and tail of a node,
+    by the pretty-printing indentation being applied to already prettified XML.
+    This function can be applied to nodes that should only contain other XML
+    nodes anyway to remove such whitespace.
+    """
+    if node.text:
+        node.text = node.text.strip()
+    if node.tail:
+        node.tail = node.tail.strip()
+
+    return node
