@@ -39,6 +39,10 @@ class ProblemHandler:
         status_entry = self.get_status_entry(identifier, problem_type)
         status_entry.attrib["success"] = "true"
 
-    def failure(self, identifier: str, problem_type: str):
+    def failure(self, identifier: str, problem_type: str, message: str = ""):
         status_entry = self.get_status_entry(identifier, problem_type)
+
+        if len(message):
+            status_entry.attrib["message"] = message
+
         status_entry.attrib["success"] = "false"

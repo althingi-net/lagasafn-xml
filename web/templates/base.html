@@ -38,6 +38,15 @@
 
     <body>
 
+        <script type="text/javascript">
+            // Catch errors so that browser testing can provide details on
+            // JavaScript errors.
+            window.onerror = function(message, url, lineNo, columnNo, details) {
+                document.body.setAttribute("js-error-message", message);
+                document.body.setAttribute("js-error-details", details);
+            }
+        </script>
+
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
