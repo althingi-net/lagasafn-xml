@@ -808,7 +808,9 @@ $(document).ready(function() {
         $("subart").each(function() {
             let $this = $(this);
             let $target = $this.find("sen").first();
-            $target.prepend('<span class="mgr">' + $this.attr("nr") + ' mgr.</span> ');
+            if ($target.find("span.mgr").length == 0) {
+                $target.prepend('<span class="mgr">' + $this.attr("nr") + '. mgr.</span> ');
+            }
         });
     });
     $("#btn-hide-subart-nrs").click(function() {
