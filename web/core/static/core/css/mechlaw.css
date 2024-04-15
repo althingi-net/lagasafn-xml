@@ -1,4 +1,7 @@
 body { padding-top: 70px; }
+
+.hidden { display: none; }
+
 .quick-dialog { display: none; position: absolute; max-width: 700px; z-index: 100; }
 .quick-dialog .quick-dialog-content { font-size: small; }
 

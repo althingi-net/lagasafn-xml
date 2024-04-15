@@ -855,4 +855,7 @@ $(document).ready(function() {
             process_refer_legal_clause_from_text(selectedText, $anchor);
         }
     });
+
+    // Browser-tests can check for this to see if something failed in this process.
+    $('body').prepend($('<span class="hidden" id="law-javascript-success" />'));
 });
