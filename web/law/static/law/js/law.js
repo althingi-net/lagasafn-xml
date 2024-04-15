@@ -818,7 +818,7 @@ $(document).ready(function() {
     $('law').on('mouseup', function(event) {
         let selectedText = window.getSelection().toString();
 
-        // We should see at leats one of these in the string to bother looking it up.
+        // We should see at least one of these in the string to bother looking it up.
         known_parts = [
             " gr.",
             " mgr.",
