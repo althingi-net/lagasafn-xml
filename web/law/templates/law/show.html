@@ -24,8 +24,10 @@
 {% block title %}{{ law.identifier }}: {{ law.name }}{% endblock %}
 
 {% block controls %}
-    <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
-    |
+    {% if FEATURES.link_to_editor %}
+        <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
+        |
+    {% endif %}
     <button type="button" class="btn btn-default" id="btn-hide-subart-nrs">{% trans 'Hide subart numbers' %}</button>
     <button type="button" class="btn btn-default" id="btn-show-subart-nrs">{% trans 'Show subart numbers' %}</button>
     |
