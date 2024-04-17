@@ -4,8 +4,14 @@
 /*** Basics ***/
 .legal-document { font-family: "Droid Serif", serif; color: #242424; line-height: 1.5em; font-size: 16px; margin: 0px 20px 0px 20px; }
 
-.legal-document.menu { position: fixed; border-right: 1px solid #dddddd; margin: 0px; margin-top: -70px; padding: 60px 10px 0px 0px; width: 500px; height: 100vh; font-size: 13px; overflow: scroll; }
+.legal-document.menu { position: fixed; border-right: 1px solid #dddddd; margin: 0px; margin-top: -70px; padding: 60px 10px 0px 0px; width: 500px; height: 100vh; font-size: 16px; overflow: scroll; }
 .legal-document.menu a { cursor: pointer; }
+.legal-document.menu a.chapter { font-weight: bold; }
+.legal-document.menu li { margin: 8px 8px 8px 0px; list-style: square; }
+.legal-document.menu li::marker { color: black; }
+.legal-document.menu li.chapter { margin-top: 24px; font-weight: bold; list-style: none; }
+.legal-document.menu li.chapter:first-child { margin-top: 12px; }
+.legal-document.menu li.art { font-weight: normal; }
 
 /*** Basics ***/
 .legal-document.content { padding-left: 560px; max-width: 1730px; }
