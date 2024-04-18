@@ -56,9 +56,7 @@ class WebTests(StaticLiveServerTestCase):
         for law_link in law_links:
             self.selenium.get(law_link["href"])
 
-            print(
-                "Testing %s..." % law_link["identifier"], end="", flush=False
-            )
+            print("Testing %s..." % law_link["identifier"], end="", flush=False)
 
             try:
                 self.selenium.find_element(By.ID, "law-javascript-success")
@@ -70,11 +68,7 @@ class WebTests(StaticLiveServerTestCase):
                 body = self.selenium.find_element(By.CSS_SELECTOR, "body")
                 message = body.get_attribute("js-error-message")
 
-                self.problems.failure(
-                    law_link["identifier"],
-                    "javascript",
-                    message
-                )
+                self.problems.failure(law_link["identifier"], "javascript", message)
 
                 print(" failure")
                 has_errors = True

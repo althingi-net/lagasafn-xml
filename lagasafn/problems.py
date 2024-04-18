@@ -17,7 +17,9 @@ class ProblemHandler:
         write_xml(self.xml, PROBLEMS_FILENAME)
 
     def get_law_entry(self, identifier: str):
-        law_entries = self.xml.xpath("./problem-law-entry[@identifier='%s']" % identifier)
+        law_entries = self.xml.xpath(
+            "./problem-law-entry[@identifier='%s']" % identifier
+        )
         if len(law_entries) == 0:
             law_entry = E("problem-law-entry", {"identifier": identifier})
             self.xml.append(law_entry)
