@@ -771,3 +771,47 @@ def node_strip(node):
         node.tail = node.tail.strip()
 
     return node
+
+
+def traditionalize_law_nr(law_nr: str) -> str:
+    """
+    Takes a law number as input and returns a string that represents Althingi's
+    traditional way of expressing it in a filename or for sorting.
+
+    Example: 77/2021 becomes: 2021077.html
+
+    Laws from before 1885 are sequenced by date instead of an incrementing
+    number, so they are dealt with differently.
+    """
+    result = str(law_nr)
+
+    if result[0] == "m":
+        # Deal with pre-1885 law numbers, which were dates instead of
+        # sequential numbers.
+        #
+        # The logic here is not obvious. The 3-digit number is created from the
+        # date, but in quite an unusual way.
+        #
+        # The first two digits are the day of month. Reasonable enough.
+        # The last digit is the latter digit of the month, excluding the first
+        # digit of the month. So if the month is "12", the last digit is "2".
+        #
+        # This is bizarre but doesn't really matter because it only applies to
+        # historical data and there aren't any clashes in it, and laws have
+        # been sequenced by an incrementing integer since at least 1885.
+        #
+        # Examples:
+        #       3 12    123
+        #       | ||    |||
+        #     m07d02 -> 027
+        #     m04d15 -> 154
+        #     m10d28 -> 280
+        first_two = result[-2:]
+        third = result[2]
+
+        result = "%s%s" % (first_two, third)
+    else:
+        while len(result) < 3:
+            result = "0%s" % result
+
+    return result

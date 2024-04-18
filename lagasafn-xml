@@ -35,6 +35,7 @@ from lagasafn.utils import sorted_law
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
 from lagasafn.utils import terminal_width_and_height
+from lagasafn.utils import traditionalize_law_nr
 from lagasafn.utils import xml_lists_identical
 from lagasafn.utils import write_xml
 from lagasafn.settings import DATA_DIR
@@ -2810,23 +2811,14 @@ def update_index():
         else:
             stats["non-empty-count"] += 1
 
-    # Function for allowing us to sort sensibly.
-    def ensure_sortability(number: str) -> str:
-        """
-        Ensures that a number is prepended by enough zeroes to be properly
-        sortable as a string.
-        """
-        result = number
-        while len(result) < 3:
-            result = "0%s" % result
-
-        return result
-
     # Sort the law entries by year and number.
     law_entries[:] = reversed(
         sorted(
             law_entries,
-            key=lambda law: (law.attrib["year"], ensure_sortability(law.attrib["nr"])),
+            key=lambda law: (
+                law.attrib["year"],
+                traditionalize_law_nr(law.attrib["nr"]),
+            ),
         )
     )
 
