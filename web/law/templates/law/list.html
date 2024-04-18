@@ -25,7 +25,7 @@
     {% for law in laws %}
         <tr class="law-list-row">
             <td class="law-list-nr">
-                <a class="law-link" data-identifier="{{ law.identifier }}" href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>
+                <a class="law-link" data-identifier="{{ law.identifier }}" data-original-url="{{ law.original_url }}" href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>
             </td>
             <td class="law-list-name">
                 {{ law.name }}

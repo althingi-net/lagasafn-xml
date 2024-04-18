@@ -8,6 +8,8 @@ with this one.
 import os
 import re
 from django.conf import settings
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
 from lxml import etree
 
@@ -62,10 +64,28 @@ class LawEntry:
         self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
         self.art_count = node_law_entry.find("meta/art-count").text
 
+        self.nr, self.year = self.identifier.split("/")
+
+    def original_url(self):
+        """
+        Reconstructs the URL to the original HTML on Althingi's website.
+        """
+        original_law_filename = "%s%s.html" % (
+            str(self.year),
+            traditionalize_law_nr(self.nr),
+        )
+
+        return "https://www.althingi.is/lagas/%s/%s" % (
+            CURRENT_PARLIAMENT_VERSION,
+            original_law_filename,
+        )
+
     def __str__(self):
         return self.identifier
 
 
+# FIXME: This class shares a lot in common with `LawEntry` above and might
+# benefit from inheriting from it.
 class Law:
 
     def __init__(self, identifier):
