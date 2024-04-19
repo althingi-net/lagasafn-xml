@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 13:23+0000\n"
+"POT-Creation-Date: 2024-04-19 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,29 +46,41 @@ msgstr "Ka."
 msgid "Art."
 msgstr "Gr."
 
-#: law/templates/law/show.html:27
+#: law/templates/law/list.html:24
+msgid "Status"
+msgstr "Staða"
+
+#: law/templates/law/list.html:38
+msgid "OK"
+msgstr "Í lagi"
+
+#: law/templates/law/list.html:40
+msgid "Errors"
+msgstr "Villur"
+
+#: law/templates/law/show.html:28
 msgid "Open in editor"
 msgstr "Opna í ritli"
 
-#: law/templates/law/show.html:29
+#: law/templates/law/show.html:32
 msgid "Hide subart numbers"
 msgstr "Fela númer málsgreina"
 
-#: law/templates/law/show.html:30
+#: law/templates/law/show.html:33
 msgid "Show subart numbers"
 msgstr "Sýna númer málsgreina"
 
-#: law/templates/law/show.html:32
+#: law/templates/law/show.html:37
 msgid "Close all"
 msgstr "Loka öllu"
 
-#: law/templates/law/show.html:33
+#: law/templates/law/show.html:38
 msgid "Open all"
 msgstr "Opna allt"
 
 #: mechlaw/constants.py:3
-msgid "MechLaw"
-msgstr "MechLaw"
+msgid "Lagasafn-XML"
+msgstr ""
 
 #: templates/base.html:27
 msgid "Error"
@@ -82,13 +94,16 @@ msgstr "Klausa fannst ekki"
 msgid "Not implemented yet"
 msgstr "Virkni ekki enn tilbúin"
 
-#: templates/base.html:44
+#: templates/base.html:53
 msgid "Legal Codex"
 msgstr "Lagasafn"
 
-#: templates/base.html:49
+#: templates/base.html:58
 msgid "Home"
 msgstr "Heim"
+
+#~ msgid "MechLaw"
+#~ msgstr "MechLaw"
 
 #~ msgid "Law %(nr)s/%(year)s, parliament version %(parliament)s"
 #~ msgstr "Lög nr. %(nr)s/%(year)s, þingútgáfa %(parliament)s"
