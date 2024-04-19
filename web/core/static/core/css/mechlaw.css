@@ -14,6 +14,14 @@ body { padding-top: 70px; }
     margin-top: 8px;
 }
 
+/* FIXME: These are here because we're using an ancient version of Bootstrap (3.3.7) at the time of this writing. When we update to the newest version of Bootstrap, these should not be configured here but by Bootstrap. */
+.bg-success {
+    background-color: #198754 !important; /* Bootstrap 5's success green */
+}
+.bg-danger {
+    background-color: #dc3545 !important; /* Bootstrap 5's danger red */
+}
+
 /* FIXME: This would be more appropriate handled by a framework's design
 decisions. Done so now due to lack of access to documentation (internet). */
 
@@ -51,4 +59,8 @@ decisions. Done so now due to lack of access to documentation (internet). */
 
 .law-list-art {
     text-align: right;
+}
+
+.law-list-status {
+    text-align: center;
 }

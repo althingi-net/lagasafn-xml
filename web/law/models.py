@@ -25,7 +25,30 @@ class LawManager:
         stats = {}
         laws = []
 
-        # Read and parse the index file.
+        # Collect known problems to mix with the index.
+        # A dictionary (map) will be generated with the law's identifier as a
+        # key, which can then be quickly looked up when we iterate through the
+        # index below.
+        problem_map = {}
+        problems = etree.parse(
+            os.path.join(settings.DATA_DIR, "problems.xml")
+        ).getroot()
+        for problem_law_entry in problems.findall("problem-law-entry"):
+            statuses = {}
+            for status_node in problem_law_entry.findall("status"):
+                success = status_node.attrib["success"]
+                message = (
+                    status_node.attrib["message"]
+                    if "message" in status_node.attrib
+                    else None
+                )
+                statuses[status_node.attrib["type"]] = {
+                    "success": success,
+                    "message": message,
+                }
+            problem_map[problem_law_entry.attrib["identifier"]] = statuses
+
+        # Read and parse the index
         index = etree.parse(os.path.join(settings.DATA_DIR, "index.xml")).getroot()
 
         # Gather statistics.
@@ -48,7 +71,11 @@ class LawManager:
             if node_law_entry.find("meta/is-empty").text == "true":
                 continue
 
-            laws.append(LawEntry(node_law_entry))
+            laws.append(
+                LawEntry(
+                    node_law_entry, problem_map[node_law_entry.attrib["identifier"]]
+                )
+            )
 
         return stats, laws
 
@@ -58,13 +85,15 @@ class LawEntry:
     Intermediary model for a legal entry in the index.
     """
 
-    def __init__(self, node_law_entry):
+    def __init__(self, node_law_entry, problems):
         self.identifier = node_law_entry.attrib["identifier"]
         self.name = node_law_entry.find("name").text
         self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
         self.art_count = node_law_entry.find("meta/art-count").text
 
         self.nr, self.year = self.identifier.split("/")
+
+        self.problems = problems
 
     def original_url(self):
         """
@@ -79,6 +108,16 @@ class LawEntry:
             CURRENT_PARLIAMENT_VERSION,
             original_law_filename,
         )
+
+    def status(self):
+        """
+        Determines the status of the law, judging by known problem types.
+        """
+        all_ok = all(
+            self.problems[p]["success"] == "true" for p in self.problems
+        )
+        #import ipdb; ipdb.set_trace()
+        return all_ok
 
     def __str__(self):
         return self.identifier

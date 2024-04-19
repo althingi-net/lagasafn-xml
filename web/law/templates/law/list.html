@@ -21,6 +21,7 @@
         <th class="law-list-name">{% trans 'Name' %}</th>
         <th class="law-list-ch">{% trans 'Ch.' %}</th>
         <th class="law-list-art">{% trans 'Art.' %}</th>
+        <th class="law-list-status">{% trans 'Status' %}</th>
     </tr>
     {% for law in laws %}
         <tr class="law-list-row">
@@ -32,6 +33,13 @@
             </td>
             <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
             <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
+            <td class="law-list-status">
+                {% if law.status %}
+                    <span class="badge bg-success">{% trans 'OK' %}</span>
+                {% else %}
+                    <span class="badge bg-danger">{% trans 'Errors' %}</span>
+                {% endif %}
+            </td>
         </tr>
     {% endfor %}
 </table>
