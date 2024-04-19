@@ -59,7 +59,7 @@ class LawEntry:
     """
 
     def __init__(self, node_law_entry):
-        self.identifier = node_law_entry.find("identifier").text
+        self.identifier = node_law_entry.attrib["identifier"]
         self.name = node_law_entry.find("name").text
         self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
         self.art_count = node_law_entry.find("meta/art-count").text

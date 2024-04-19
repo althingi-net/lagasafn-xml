@@ -2773,11 +2773,11 @@ def update_index():
         law_entry = E(
             "law-entry",
             {
+                "identifier": identifier,
                 "nr": law_nr,
                 "year": str(law_year),
                 "date": date,
             },
-            E("identifier", identifier),
             E("name", name),
             E(
                 "name-conjugated",
