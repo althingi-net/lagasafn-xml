@@ -1,3 +1,4 @@
+import Levenshtein
 import re
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from lagasafn.problems import ProblemHandler
@@ -99,9 +100,10 @@ class WebTests(StaticLiveServerTestCase):
             )
 
             # Get the official text.
-            self.selenium.get(law_link["original_url"])
+            self.selenium.get(f"{law_link['href']}cleaned/")
+
             remote_text = remove_whitespace(
-                self.selenium.find_element(By.CSS_SELECTOR, ".article.login").text
+                self.selenium.find_element(By.CSS_SELECTOR, "body").text
             )
 
             # Remove known garbage from remote text.
@@ -114,7 +116,10 @@ class WebTests(StaticLiveServerTestCase):
                 self.problems.success(law_link["identifier"], "content")
                 print(" same")
             else:
-                self.problems.failure(law_link["identifier"], "content")
+                ratio = Levenshtein.ratio(local_text, remote_text)
+                self.problems.failure(
+                    law_link["identifier"], "content", f"Levenshtein ratio: {ratio:.8f}"
+                )
                 print(" different")
                 has_errors = True
 
