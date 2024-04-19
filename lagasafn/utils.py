@@ -721,8 +721,6 @@ class Trail:
 # resolved, we'll keep the optional parameter `skip_prettyprint_hack` so that
 # we can use it when generating legal XML files, but skip it when generating
 # the index, regardless of what the DEBUG flag says.
-#
-# TODO: Re-visit this function in light of `node_strip`.
 def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
     with open(filename, "w") as f:
         # Importing a completely different XML library than the one we're
@@ -735,7 +733,10 @@ def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
         #
         # When not in DEBUG mode, we'll skip those shenanigans and write it
         # out with the same library as the one we use elsewhere.
-        if settings.DEBUG and not skip_prettyprint_hack:
+        #
+        # FIXME: This has been permanently disabled and may be deleted once
+        # we're sure that the changes to the documents don't cause trouble.
+        if False and (settings.DEBUG and not skip_prettyprint_hack):
             import xml.dom.minidom
 
             xml = xml.dom.minidom.parseString(
@@ -748,29 +749,12 @@ def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
             ).decode("utf-8")
             f.write(pretty_xml_as_string)
         else:
+            etree.indent(xml_doc, level=0)
             f.write(
                 etree.tostring(
                     xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
                 ).decode("utf-8")
             )
-
-
-def node_strip(node):
-    """
-    Strip whitespace from the text and tail of a node.
-
-    When reading and re-writing a XML file that is formatted for human
-    readability, whitespace tends to accumulate in the text and tail of a node,
-    by the pretty-printing indentation being applied to already prettified XML.
-    This function can be applied to nodes that should only contain other XML
-    nodes anyway to remove such whitespace.
-    """
-    if node.text:
-        node.text = node.text.strip()
-    if node.tail:
-        node.tail = node.tail.strip()
-
-    return node
 
 
 def traditionalize_law_nr(law_nr: str) -> str:

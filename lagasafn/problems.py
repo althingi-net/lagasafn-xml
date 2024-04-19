@@ -1,6 +1,5 @@
 import os
 from lagasafn.settings import DATA_DIR
-from lagasafn.utils import node_strip
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
@@ -10,7 +9,7 @@ PROBLEMS_FILENAME = os.path.join(DATA_DIR, "xml", "problems.xml")
 
 class ProblemHandler:
     def __init__(self):
-        self.xml = node_strip(etree.parse(PROBLEMS_FILENAME).getroot())
+        self.xml = etree.parse(PROBLEMS_FILENAME).getroot()
         self.problems = {}
 
     def close(self):
@@ -25,7 +24,7 @@ class ProblemHandler:
             self.xml.append(law_entry)
             return law_entry
         else:
-            return node_strip(law_entries[0])
+            return law_entries[0]
 
     def get_status_entry(self, identifier: str, problem_type: str):
         law_entry = self.get_law_entry(identifier)
@@ -35,7 +34,7 @@ class ProblemHandler:
             law_entry.append(status_entry)
             return status_entry
         else:
-            return node_strip(status_entries[0])
+            return status_entries[0]
 
     def success(self, identifier: str, problem_type: str):
         status_entry = self.get_status_entry(identifier, problem_type)
