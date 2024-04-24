@@ -671,6 +671,10 @@ var process_law = function() {
         var img = ' <a target="_blank" href="' + href + '"><img src="/static/core/img/parliament-tiny.png" /></a>';
         $name.append(img);
     }
+
+    // Turn encoded links into HTML. We only de-encode links because other
+    // tags, such as "<i>" indicates a problem that warrants fixing.
+    $law.html($law.html().replace(/&lt;a(.*?)&gt;(.*?)&lt;\/a&gt;/g, '<a$1>$2</a>'));
 }
 
 
