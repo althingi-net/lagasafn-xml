@@ -331,8 +331,8 @@ def separate_sentences(content):
             content = content[:html_loc] + tag_content + content[html_end_loc:]
 
             # Continue to see if we find more non-splittable tags.
+            html_loc = content.find("<%s" % nst, html_loc + 1)
             cursor = html_loc + 1
-            html_loc = content.find("<%s" % nst, cursor)
 
             del html_end_loc
             del tag_content
