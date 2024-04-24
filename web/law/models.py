@@ -130,9 +130,7 @@ class LawEntry:
         return self.identifier
 
 
-# FIXME: This class shares a lot in common with `LawEntry` above and might
-# benefit from inheriting from it.
-class Law:
+class Law(LawEntry):
 
     def __init__(self, identifier):
         self.identifier = identifier

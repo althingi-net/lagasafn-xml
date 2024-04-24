@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-19 19:35+0000\n"
+"POT-Creation-Date: 2024-04-24 20:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,30 +51,46 @@ msgid "Status"
 msgstr "Staða"
 
 #: law/templates/law/list.html:38
+msgid "Unknown"
+msgstr "Óþekkt"
+
+#: law/templates/law/list.html:40
 msgid "OK"
 msgstr "Í lagi"
 
-#: law/templates/law/list.html:40
+#: law/templates/law/list.html:42
 msgid "Errors"
 msgstr "Villur"
 
-#: law/templates/law/show.html:28
+#: law/templates/law/show.html:29
+msgid "Up 1 pixel"
+msgstr "Upp 1 punkt"
+
+#: law/templates/law/show.html:30
+msgid "Down 1 pixel"
+msgstr "Niður 1 punkt"
+
+#: law/templates/law/show.html:37
+msgid "Open original"
+msgstr "Upprunaskjal"
+
+#: law/templates/law/show.html:38
 msgid "Open in editor"
 msgstr "Opna í ritli"
 
-#: law/templates/law/show.html:32
+#: law/templates/law/show.html:43
 msgid "Hide subart numbers"
 msgstr "Fela númer málsgreina"
 
-#: law/templates/law/show.html:33
+#: law/templates/law/show.html:44
 msgid "Show subart numbers"
 msgstr "Sýna númer málsgreina"
 
-#: law/templates/law/show.html:37
+#: law/templates/law/show.html:48
 msgid "Close all"
 msgstr "Loka öllu"
 
-#: law/templates/law/show.html:38
+#: law/templates/law/show.html:49
 msgid "Open all"
 msgstr "Opna allt"
 

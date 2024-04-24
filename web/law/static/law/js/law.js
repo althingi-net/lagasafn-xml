@@ -663,15 +663,6 @@ var process_footnote = function() {
 var process_law = function() {
     var $law = $(this);
 
-    // Check if a URL to the official location of the law has been provided.
-    // If so, we'll display a little Althingi icon with a link to it.
-    var href = $law.attr('href');
-    if (href) {
-        var $name = $law.find('> name');
-        var img = ' <a target="_blank" href="' + href + '"><img src="/static/core/img/parliament-tiny.png" /></a>';
-        $name.append(img);
-    }
-
     // Turn encoded links into HTML. We only de-encode links because other
     // tags, such as "<i>" indicates a problem that warrants fixing.
     $law.html($law.html().replace(/&lt;a(.*?)&gt;(.*?)&lt;\/a&gt;/g, '<a$1>$2</a>'));

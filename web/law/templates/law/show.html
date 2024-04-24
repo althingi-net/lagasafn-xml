@@ -25,19 +25,25 @@
 
 {% block controls %}
     {% if view_type == "comparison" %}
-        <button type="button" class="btn btn-default" id="scroll-up" onClick="window.scrollBy(0, -1);">{% trans 'Up 1 pixel' %}</button>
-        <button type="button" class="btn btn-default" id="scroll-down" onClick="window.scrollBy(0, 1);">{% trans 'Down 1 pixel' %}</button>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="scroll-up" onClick="window.scrollBy(0, -1);">{% trans 'Up 1 pixel' %}</button>
+            <button type="button" class="btn btn-default" id="scroll-down" onClick="window.scrollBy(0, 1);">{% trans 'Down 1 pixel' %}</button>
+        </div>
         &nbsp;
     {% endif %}
+
+    <div class="btn-group" role="group">
     {% if FEATURES.link_to_editor %}
+        <a href="{{ law.original_url }}" class="btn btn-default" target="_blank">{% trans 'Open original' %}</a>
         <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
-        &nbsp;
     {% endif %}
+    </div>
+
     <div class="btn-group" role="group">
         <button type="button" class="btn btn-default" id="btn-hide-subart-nrs">{% trans 'Hide subart numbers' %}</button>
         <button type="button" class="btn btn-default" id="btn-show-subart-nrs">{% trans 'Show subart numbers' %}</button>
     </div>
-    &nbsp;
+
     <div class="btn-group" role="group">
         <button type="button" class="btn btn-default" id="btn-close-all">{% trans 'Close all' %}</button>
         <button type="button" class="btn btn-default" id="btn-open-all">{% trans 'Open all' %}</button>
