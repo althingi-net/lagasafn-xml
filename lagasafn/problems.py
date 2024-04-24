@@ -3,6 +3,7 @@ from lagasafn.settings import DATA_DIR
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
+from collections import OrderedDict
 
 PROBLEMS_FILENAME = os.path.join(DATA_DIR, "xml", "problems.xml")
 
@@ -13,7 +14,30 @@ class ProblemHandler:
         self.problems = {}
 
     def close(self):
+        self.update_stats()
         write_xml(self.xml, PROBLEMS_FILENAME)
+
+    def update_stats(self):
+        # Ordered because we'll be using `git diff problems.xml` to monitor
+        # bugfixing efforts.
+        statistics = OrderedDict()
+        for status in self.xml.findall("problem-law-entry/status"):
+            status_type = status.attrib["type"]
+            success = status.attrib["success"] == "true"
+
+            if status_type not in statistics:
+                statistics[status_type] = {
+                    "success": 0,
+                    "failure": 0,
+                }
+
+            statistics[status_type]["success" if success else "failure"] += 1
+
+        for status_type in statistics:
+            successes = str(statistics[status_type]["success"])
+            failures = str(statistics[status_type]["failure"])
+            self.xml.attrib["stat-%s-success" % status_type] = successes
+            self.xml.attrib["stat-%s-failure" % status_type] = failures
 
     def get_law_entry(self, identifier: str):
         law_entries = self.xml.xpath(
