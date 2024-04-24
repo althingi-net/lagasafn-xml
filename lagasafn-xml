@@ -1424,6 +1424,16 @@ def make_xml(law_num, law_year):
             # NOTE: Gets added after we add the sentences with `add_sentences`.
             numart_nr_title = collect_until(lines, "</span>")
 
+            # Check for a closing bracket.
+            # Example:
+            #     13-19. tölul. 1. mgr. 3. gr. laga nr. 116/2021 (153c).
+            if all([
+                lines.peek(1).strip() == "]",
+                lines.peek(2).strip() == '<sup style="font-size:60%">',
+                lines.peek(4).strip() == "</sup>",
+            ]):
+                numart_nr_title += collect_until(lines, "</sup>") + " </sup>"
+
             if lines.peek().strip() == "<i>":
                 # Looks like this numerical article has a name.
                 scroll_until(lines, "<i>")
