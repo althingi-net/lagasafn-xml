@@ -169,11 +169,13 @@
         </numart>
         <numart nr="11" nr-type="numeric">
           <nr-title>11.</nr-title>
-          <sen nr="1">&lt;i&gt; Fulltrúar starfsmanna: &lt;/i&gt; Fulltrúar starfsmanna samkvæmt lögum um upplýsingar og samráð í fyrirtækjum.</sen>
+          <name>Fulltrúar starfsmanna:</name>
+          <sen nr="1">Fulltrúar starfsmanna samkvæmt lögum um upplýsingar og samráð í fyrirtækjum.</sen>
         </numart>
         <numart nr="12" nr-type="numeric">
           <nr-title>12.</nr-title>
-          <sen nr="1">&lt;i&gt; Fylgisjóður: &lt;/i&gt; Sérhæfður sjóður sem:</sen>
+          <name>Fylgisjóður:</name>
+          <sen nr="1">Sérhæfður sjóður sem:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
             <sen nr="1">fjárfestir a.m.k. 85% eigna sjóðsins í hlutdeildarskírteinum eða hlutum annars sérhæfðs sjóðs (höfuðsjóðs),</sen>
@@ -189,15 +191,18 @@
         </numart>
         <numart nr="13" nr-type="numeric">
           <nr-title>13.</nr-title>
-          <sen nr="1">&lt;i&gt; Gistiríki rekstraraðila: &lt;/i&gt; Ríki innan EES, annað en heimaríki rekstraraðila, þar sem rekstraraðili með staðfestu innan EES rekur sérhæfðan EES-sjóð þar sem hann markaðssetur hlutdeildarskírteini eða hluti sérhæfðs EES-sjóðs eða sérhæfðs sjóðs með staðfestu utan EES eða veitir þjónustu skv. 3. mgr. 9. gr.</sen>
+          <name>Gistiríki rekstraraðila:</name>
+          <sen nr="1">Ríki innan EES, annað en heimaríki rekstraraðila, þar sem rekstraraðili með staðfestu innan EES rekur sérhæfðan EES-sjóð þar sem hann markaðssetur hlutdeildarskírteini eða hluti sérhæfðs EES-sjóðs eða sérhæfðs sjóðs með staðfestu utan EES eða veitir þjónustu skv. 3. mgr. 9. gr.</sen>
         </numart>
         <numart nr="14" nr-type="numeric">
           <nr-title>14.</nr-title>
-          <sen nr="1">&lt;i&gt; Heimaríki rekstraraðila: &lt;/i&gt; Ríki innan EES þar sem rekstraraðili er með skráða starfsstöð.</sen>
+          <name>Heimaríki rekstraraðila:</name>
+          <sen nr="1">Ríki innan EES þar sem rekstraraðili er með skráða starfsstöð.</sen>
         </numart>
         <numart nr="15" nr-type="numeric">
           <nr-title>15.</nr-title>
-          <sen nr="1">&lt;i&gt; Heimaríki sérhæfðs sjóðs: &lt;/i&gt; Ríki innan EES þar sem sérhæfður sjóður er með:</sen>
+          <name>Heimaríki sérhæfðs sjóðs:</name>
+          <sen nr="1">Ríki innan EES þar sem sérhæfður sjóður er með:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
             <sen nr="1">starfsleyfi eða er skráður samkvæmt landslögum.</sen>
@@ -210,55 +215,68 @@
         </numart>
         <numart nr="16" nr-type="numeric">
           <nr-title>16.</nr-title>
-          <sen nr="1">&lt;i&gt; Hlutdeild í hagnaði: &lt;/i&gt; Hlutdeild í hagnaði sérhæfðs sjóðs sem rennur til rekstraraðila sem þóknun fyrir rekstur sjóðsins, að undanskilinni hlutdeild í hagnaði sjóðsins sem er ávöxtun rekstraraðila af eigin fjárfestingu í sérhæfða sjóðnum.</sen>
+          <name>Hlutdeild í hagnaði:</name>
+          <sen nr="1">Hlutdeild í hagnaði sérhæfðs sjóðs sem rennur til rekstraraðila sem þóknun fyrir rekstur sjóðsins, að undanskilinni hlutdeild í hagnaði sjóðsins sem er ávöxtun rekstraraðila af eigin fjárfestingu í sérhæfða sjóðnum.</sen>
         </numart>
         <numart nr="17" nr-type="numeric">
           <nr-title>17.</nr-title>
-          <sen nr="1">&lt;i&gt; Hlutdeildarsjóður: &lt;/i&gt; Sjóður um sameiginlega fjárfestingu sem stofnað er til af rekstraraðila með starfsleyfi og í reglum sjóðsins kemur fram að hann sé hlutdeildarsjóður.</sen>
+          <name>Hlutdeildarsjóður:</name>
+          <sen nr="1">Sjóður um sameiginlega fjárfestingu sem stofnað er til af rekstraraðila með starfsleyfi og í reglum sjóðsins kemur fram að hann sé hlutdeildarsjóður.</sen>
         </numart>
         <numart nr="18" nr-type="numeric">
           <nr-title>18.</nr-title>
-          <sen nr="1">&lt;i&gt; Hlutdeildarskírteini: &lt;/i&gt; Fjármálagerningur sem er staðfesting á tilkalli allra þeirra sem eiga hlutdeild í hlutdeildarsjóði eða einstakri deild hans til eigna sjóðsins.</sen>
+          <name>Hlutdeildarskírteini:</name>
+          <sen nr="1">Fjármálagerningur sem er staðfesting á tilkalli allra þeirra sem eiga hlutdeild í hlutdeildarsjóði eða einstakri deild hans til eigna sjóðsins.</sen>
         </numart>
         <numart nr="19" nr-type="numeric">
           <nr-title>19.</nr-title>
-          <sen nr="1">&lt;i&gt; Höfuðsjóður: &lt;/i&gt; Sérhæfður sjóður sem annar sérhæfður sjóður fjárfestir í eða hefur áhættuskuldbindingu gagnvart skv. 12. tölul.</sen>
+          <name>Höfuðsjóður:</name>
+          <sen nr="1">Sérhæfður sjóður sem annar sérhæfður sjóður fjárfestir í eða hefur áhættuskuldbindingu gagnvart skv. 12. tölul.</sen>
         </numart>
         <numart nr="20" nr-type="numeric">
           <nr-title>20.</nr-title>
-          <sen nr="1">&lt;i&gt; Kaupauki: &lt;/i&gt; Kaupauki samkvæmt lögum um fjármálafyrirtæki.</sen>
+          <name>Kaupauki:</name>
+          <sen nr="1">Kaupauki samkvæmt lögum um fjármálafyrirtæki.</sen>
         </numart>
         <numart nr="21" nr-type="numeric">
           <nr-title>21.</nr-title>
-          <sen nr="1">&lt;i&gt; Markaðssetning: &lt;/i&gt; Tilboð eða hvatning til fjárfesta með auglýsingum eða annarri kynningu að frumkvæði rekstraraðila eða fyrir hans hönd um kaup á hlutdeildarskírteinum eða hlutum í sérhæfðum sjóði sem hann rekur.</sen>
+          <name>Markaðssetning:</name>
+          <sen nr="1">Tilboð eða hvatning til fjárfesta með auglýsingum eða annarri kynningu að frumkvæði rekstraraðila eða fyrir hans hönd um kaup á hlutdeildarskírteinum eða hlutum í sérhæfðum sjóði sem hann rekur.</sen>
         </numart>
         <numart nr="22" nr-type="numeric">
           <nr-title>22.</nr-title>
-          <sen nr="1">&lt;i&gt; Miðlari: &lt;/i&gt; Lánastofnun, verðbréfafyrirtæki eða annar eftirlitsskyldur aðili sem býður fagfjárfestum þjónustu, einkum að fjármagna eða framkvæma viðskipti með fjármálagerninga sem mótaðili og kann einnig að veita aðra þjónustu, svo sem stöðustofnun og uppgjör viðskipta með fjármálagerning, öryggisvörslu lausafjármuna og veitingu verðbréfalána.</sen>
+          <name>Miðlari:</name>
+          <sen nr="1">Lánastofnun, verðbréfafyrirtæki eða annar eftirlitsskyldur aðili sem býður fagfjárfestum þjónustu, einkum að fjármagna eða framkvæma viðskipti með fjármálagerninga sem mótaðili og kann einnig að veita aðra þjónustu, svo sem stöðustofnun og uppgjör viðskipta með fjármálagerning, öryggisvörslu lausafjármuna og veitingu verðbréfalána.</sen>
         </numart>
         <numart nr="23" nr-type="numeric">
           <nr-title>23.</nr-title>
-          <sen nr="1">&lt;i&gt; Móðurfélag: &lt;/i&gt; Móðurfélag samkvæmt lögum um ársreikninga.</sen>
+          <name>Móðurfélag:</name>
+          <sen nr="1">Móðurfélag samkvæmt lögum um ársreikninga.</sen>
         </numart>
         <numart nr="24" nr-type="numeric">
           <nr-title>24.</nr-title>
-          <sen nr="1">&lt;i&gt; Náin tengsl: &lt;/i&gt; Náin tengsl samkvæmt lögum um fjármálafyrirtæki.</sen>
+          <name>Náin tengsl:</name>
+          <sen nr="1">Náin tengsl samkvæmt lögum um fjármálafyrirtæki.</sen>
         </numart>
         <numart nr="25" nr-type="numeric">
           <nr-title>25.</nr-title>
-          <sen nr="1">&lt;i&gt; Óskráð félag: &lt;/i&gt; Félag með skráða starfsstöð í ríki innan EES og hlutir þess hafa ekki verið teknir til viðskipta á skipulegum markaði, sbr. lög um markaði fyrir fjármálagerninga.</sen>
+          <name>Óskráð félag:</name>
+          <sen nr="1">Félag með skráða starfsstöð í ríki innan EES og hlutir þess hafa ekki verið teknir til viðskipta á skipulegum markaði, sbr. lög um markaði fyrir fjármálagerninga.</sen>
         </numart>
         <numart nr="26" nr-type="numeric">
           <nr-title>26.</nr-title>
-          <sen nr="1">&lt;i&gt; Rekstraraðili: &lt;/i&gt; Lögaðili sem rekur einn eða fleiri sérhæfða sjóði með reglubundnum hætti.</sen>
+          <name>Rekstraraðili:</name>
+          <sen nr="1">Lögaðili sem rekur einn eða fleiri sérhæfða sjóði með reglubundnum hætti.</sen>
         </numart>
         <numart nr="27" nr-type="numeric">
           <nr-title>27.</nr-title>
-          <sen nr="1">&lt;i&gt; Rekstur sérhæfðs sjóðs: &lt;/i&gt; Rekstur sérhæfðs sjóðs felur að lágmarki í sér eignastýringu eða áhættustýringu sérhæfðs sjóðs en getur einnig falið í sér almenna starfsemi, svo sem hvers konar umsýslu vegna reksturs sjóðsins.</sen>
+          <name>Rekstur sérhæfðs sjóðs:</name>
+          <sen nr="1">Rekstur sérhæfðs sjóðs felur að lágmarki í sér eignastýringu eða áhættustýringu sérhæfðs sjóðs en getur einnig falið í sér almenna starfsemi, svo sem hvers konar umsýslu vegna reksturs sjóðsins.</sen>
         </numart>
         <numart nr="28" nr-type="numeric">
           <nr-title>28.</nr-title>
-          <sen nr="1">&lt;i&gt; Sérhæfður EES-sjóður: &lt;/i&gt; Sérhæfður sjóður sem:</sen>
+          <name>Sérhæfður EES-sjóður:</name>
+          <sen nr="1">Sérhæfður sjóður sem:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
             <sen nr="1">hefur starfsleyfi eða er skráður í ríkjum innan EES, eða</sen>
@@ -270,15 +288,18 @@
         </numart>
         <numart nr="29" nr-type="numeric">
           <nr-title>29.</nr-title>
-          <sen nr="1">&lt;i&gt; Sérhæfður sjóður: &lt;/i&gt; Sjóður, þ.m.t. sjóðsdeildir, sem veitir viðtöku fé frá fjárfestum til sameiginlegrar fjárfestingar samkvæmt fyrir fram kunngerðri fjárfestingarstefnu með ávinning fjárfesta að markmiði og hefur ekki starfsleyfi sem verðbréfasjóður samkvæmt lögum um verðbréfasjóði.</sen>
+          <name>Sérhæfður sjóður:</name>
+          <sen nr="1">Sjóður, þ.m.t. sjóðsdeildir, sem veitir viðtöku fé frá fjárfestum til sameiginlegrar fjárfestingar samkvæmt fyrir fram kunngerðri fjárfestingarstefnu með ávinning fjárfesta að markmiði og hefur ekki starfsleyfi sem verðbréfasjóður samkvæmt lögum um verðbréfasjóði.</sen>
         </numart>
         <numart nr="30" nr-type="numeric">
           <nr-title>30.</nr-title>
-          <sen nr="1">&lt;i&gt; Sérstakur verðbréfunaraðili: &lt;/i&gt; Aðili sem hefur þann eina tilgang að framkvæma verðbréfun og aðra starfsemi sem á við til að ná þeim tilgangi.</sen>
+          <name>Sérstakur verðbréfunaraðili:</name>
+          <sen nr="1">Aðili sem hefur þann eina tilgang að framkvæma verðbréfun og aðra starfsemi sem á við til að ná þeim tilgangi.</sen>
         </numart>
         <numart nr="31" nr-type="numeric">
           <nr-title>31.</nr-title>
-          <sen nr="1">&lt;i&gt; Staðfesta: &lt;/i&gt; Eftirfarandi gildir um staðfestu:</sen>
+          <name>Staðfesta:</name>
+          <sen nr="1">Eftirfarandi gildir um staðfestu:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
             <sen nr="1">Rekstraraðili hefur staðfestu þar sem hann er með skráða starfsstöð.</sen>
@@ -294,11 +315,13 @@
         </numart>
         <numart nr="32" nr-type="numeric">
           <nr-title>32.</nr-title>
-          <sen nr="1">&lt;i&gt; Staðfesting: &lt;/i&gt; Með staðfestingu sérhæfðs sjóðs fyrir almenna fjárfesta er átt við heimild Fjármálaeftirlitsins til rekstraraðila með starfsleyfi til að starfrækja sérhæfðan sjóð fyrir almenna fjárfesta.</sen>
+          <name>Staðfesting:</name>
+          <sen nr="1">Með staðfestingu sérhæfðs sjóðs fyrir almenna fjárfesta er átt við heimild Fjármálaeftirlitsins til rekstraraðila með starfsleyfi til að starfrækja sérhæfðan sjóð fyrir almenna fjárfesta.</sen>
         </numart>
         <numart nr="33" nr-type="numeric">
           <nr-title>33.</nr-title>
-          <sen nr="1">&lt;i&gt; Stofnframlag: &lt;/i&gt; Stofnframlag samkvæmt lögum um fjármálafyrirtæki.</sen>
+          <name>Stofnframlag:</name>
+          <sen nr="1">Stofnframlag samkvæmt lögum um fjármálafyrirtæki.</sen>
         </numart>
         <numart nr="34" nr-type="numeric">
           <nr-title>34.</nr-title>
@@ -306,12 +329,14 @@
         </numart>
         <numart nr="35" nr-type="numeric">
           <nr-title>35.</nr-title>
-          <sen nr="1">&lt;i&gt; Útibú rekstraraðila: &lt;/i&gt; Starfsstöð sem er hluti rekstraraðila, er ekki sérstakur lögaðili og veitir þá þjónustu sem rekstraraðila er heimilt að inna af hendi.</sen>
+          <name>Útibú rekstraraðila:</name>
+          <sen nr="1">Starfsstöð sem er hluti rekstraraðila, er ekki sérstakur lögaðili og veitir þá þjónustu sem rekstraraðila er heimilt að inna af hendi.</sen>
           <sen nr="2">Litið skal á allar starfsstöðvar rekstraraðila í ríki innan EES sem eitt útibú hafi rekstraraðili skráða starfsstöð í öðru ríki innan EES.</sen>
         </numart>
         <numart nr="36" nr-type="numeric">
           <nr-title>36.</nr-title>
-          <sen nr="1">&lt;i&gt; Verðbréfun: &lt;/i&gt; Viðskipti eða kerfi þar sem eining, sem er aðskilin frá útgefanda, vátryggingafélagi eða endurtryggingafélagi og er stofnuð vegna eða þjónar tilgangi viðskiptanna eða kerfisins, gefur út fjármögnunargerninga til fjárfesta og þar sem eitt eða fleira eftirfarandi á við:</sen>
+          <name>Verðbréfun:</name>
+          <sen nr="1">Viðskipti eða kerfi þar sem eining, sem er aðskilin frá útgefanda, vátryggingafélagi eða endurtryggingafélagi og er stofnuð vegna eða þjónar tilgangi viðskiptanna eða kerfisins, gefur út fjármögnunargerninga til fjárfesta og þar sem eitt eða fleira eftirfarandi á við:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
             <sen nr="1">eign eða eignasafn, eða hluti þess, er flutt til einingar sem er aðskilin frá útgefanda og er stofnuð vegna eða þjónar tilgangi viðskiptanna eða kerfisins, annaðhvort með flutningi löglegs eignarhalds eða raunverulegra hagsmuna þessara eigna frá útgefanda eða með undirþátttöku,</sen>
@@ -328,15 +353,18 @@
         </numart>
         <numart nr="37" nr-type="numeric">
           <nr-title>37.</nr-title>
-          <sen nr="1">&lt;i&gt; Virkur eignarhlutur: &lt;/i&gt; Virkur eignarhlutur samkvæmt lögum um fjármálafyrirtæki.</sen>
+          <name>Virkur eignarhlutur:</name>
+          <sen nr="1">Virkur eignarhlutur samkvæmt lögum um fjármálafyrirtæki.</sen>
         </numart>
         <numart nr="38" nr-type="numeric">
           <nr-title>38.</nr-title>
-          <sen nr="1">&lt;i&gt; Vogun: &lt;/i&gt; Sérhver aðferð rekstraraðila sem eykur áhættuskuldbindingu sérhæfðs sjóðs sem hann rekur, hvort sem það er með lántöku reiðufjár eða verðbréfa, skuldbindingu vegna afleiðna eða með öðrum hætti.</sen>
+          <name>Vogun:</name>
+          <sen nr="1">Sérhver aðferð rekstraraðila sem eykur áhættuskuldbindingu sérhæfðs sjóðs sem hann rekur, hvort sem það er með lántöku reiðufjár eða verðbréfa, skuldbindingu vegna afleiðna eða með öðrum hætti.</sen>
         </numart>
         <numart nr="39" nr-type="numeric">
           <nr-title>39.</nr-title>
-          <sen nr="1">&lt;i&gt; Yfirráð: &lt;/i&gt; Yfirráð samkvæmt lögum um fjármálafyrirtæki.</sen>
+          <name>Yfirráð:</name>
+          <sen nr="1">Yfirráð samkvæmt lögum um fjármálafyrirtæki.</sen>
         </numart>
       </subart>
       <subart nr="2">
@@ -682,7 +710,7 @@
             <art>3</art>
             <subart>1</subart>
             <numart>34</numart>
-            <sen words="&lt;i&gt; Útgefandi: &lt;/i&gt; Útgefandi samkvæmt lögum um upplýsingaskyldu útgefenda verðbréfa og flöggunarskyldu.">1</sen>
+            <sen>1</sen>
           </location>
         </footnote>
         <footnote nr="6">

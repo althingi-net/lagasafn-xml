@@ -101,16 +101,19 @@
         </numart>
         <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
-          <sen nr="1">&lt;i&gt; Forblöndur &lt;/i&gt; eru blöndur aukefna í fóðri eða blöndur eins eða fleiri aukefna í fóðri við fóðurefni eða vatn, sem notuð eru sem burðarefni, ekki ætluð til nota beint sem fóður.</sen>
+          <name>Forblöndur</name>
+          <sen nr="1">eru blöndur aukefna í fóðri eða blöndur eins eða fleiri aukefna í fóðri við fóðurefni eða vatn, sem notuð eru sem burðarefni, ekki ætluð til nota beint sem fóður.</sen>
         </numart>
         <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
-          <sen nr="1">&lt;i&gt; Fóður &lt;/i&gt; er hvers konar efni eða vörur, einnig aukefni, hvort sem þau eru fullunnin, unnin að hluta eða óunnin, sem ætluð eru til fóðrunar dýra.</sen>
+          <name>Fóður</name>
+          <sen nr="1">er hvers konar efni eða vörur, einnig aukefni, hvort sem þau eru fullunnin, unnin að hluta eða óunnin, sem ætluð eru til fóðrunar dýra.</sen>
           <sen nr="2">Til fóðurs teljast einnig vörur unnar úr fiski eða fiskúrgangi.</sen>
         </numart>
         <numart nr="7" nr-type="numeric">
           <nr-title>7.</nr-title>
-          <sen nr="1">&lt;i&gt; Fóður-, áburðar- eða sáðvörufyrirtæki &lt;/i&gt; er fyrirtæki eða einstaklingur sem starfar við framleiðslu, vinnslu, geymslu, flutning eða dreifingu fóðurs, áburðar og sáðvöru, þ.m.t. framleiðsla, vinnsla eða geymsla framleiðanda á slíkum vörum til notkunar á eigin bújörð, hvort sem fyrirtækið er rekið í ágóðaskyni eður ei og hvort sem það er einkarekið eða opinbert fyrirtæki.</sen>
+          <name>Fóður-, áburðar- eða sáðvörufyrirtæki</name>
+          <sen nr="1">er fyrirtæki eða einstaklingur sem starfar við framleiðslu, vinnslu, geymslu, flutning eða dreifingu fóðurs, áburðar og sáðvöru, þ.m.t. framleiðsla, vinnsla eða geymsla framleiðanda á slíkum vörum til notkunar á eigin bújörð, hvort sem fyrirtækið er rekið í ágóðaskyni eður ei og hvort sem það er einkarekið eða opinbert fyrirtæki.</sen>
         </numart>
         <numart nr="8" nr-type="numeric">
           <nr-title>8.</nr-title>
@@ -123,15 +126,18 @@
         </numart>
         <numart nr="10" nr-type="numeric">
           <nr-title>10.</nr-title>
-          <sen nr="1">&lt;i&gt; Opinber eftirlitsaðili &lt;/i&gt; er Matvælastofnun.</sen>
+          <name>Opinber eftirlitsaðili</name>
+          <sen nr="1">er Matvælastofnun.</sen>
         </numart>
         <numart nr="11" nr-type="numeric">
           <nr-title>11.</nr-title>
-          <sen nr="1">&lt;i&gt; Opinbert eftirlit &lt;/i&gt; er eftirlit á vegum stjórnvalda í þeim tilgangi að tryggja að ákvæðum laga og reglna um fóður, áburð og sáðvöru sé framfylgt og stuðla að fræðslu og upplýsingamiðlun.</sen>
+          <name>Opinbert eftirlit</name>
+          <sen nr="1">er eftirlit á vegum stjórnvalda í þeim tilgangi að tryggja að ákvæðum laga og reglna um fóður, áburð og sáðvöru sé framfylgt og stuðla að fræðslu og upplýsingamiðlun.</sen>
         </numart>
         <numart nr="12" nr-type="numeric">
           <nr-title>12.</nr-title>
-          <sen nr="1">&lt;i&gt; Rekjanleiki fóðurs &lt;/i&gt; er sá möguleiki að rekja feril fóðurs, dýra sem gefa af sér afurðir til manneldis og efna sem nota á eða vænst er að verði notuð í fóður og matvæli í gegnum öll stig framleiðslu, vinnslu og dreifingar.</sen>
+          <name>Rekjanleiki fóðurs</name>
+          <sen nr="1">er sá möguleiki að rekja feril fóðurs, dýra sem gefa af sér afurðir til manneldis og efna sem nota á eða vænst er að verði notuð í fóður og matvæli í gegnum öll stig framleiðslu, vinnslu og dreifingar.</sen>
         </numart>
         <numart nr="13" nr-type="numeric">
           <nr-title>13.</nr-title>
@@ -140,7 +146,8 @@
         </numart>
         <numart nr="14" nr-type="numeric">
           <nr-title>14.</nr-title>
-          <sen nr="1">&lt;i&gt; Önnur opinber starfsemi &lt;/i&gt; er starfsemi önnur en opinbert eftirlit sem opinberir eftirlitsaðilar, einstaklingar eða aðilar, sem hefur verið úthlutað tilteknum öðrum opinberum verkefnum, inna af hendi, svo sem veiting leyfa eða samþykkis og útgáfa opinberra vottorða eða opinberra staðfestinga.</sen>
+          <name>Önnur opinber starfsemi</name>
+          <sen nr="1">er starfsemi önnur en opinbert eftirlit sem opinberir eftirlitsaðilar, einstaklingar eða aðilar, sem hefur verið úthlutað tilteknum öðrum opinberum verkefnum, inna af hendi, svo sem veiting leyfa eða samþykkis og útgáfa opinberra vottorða eða opinberra staðfestinga.</sen>
         </numart>
       </subart>
       <footnotes>
@@ -188,7 +195,7 @@
             <art>2a</art>
             <subart>1</subart>
             <numart>9</numart>
-            <sen words="&lt;i&gt; Markaðssetning fóðurs, áburðar eða sáðvöru &lt;/i&gt; er að hafa umráð yfir fóðri, áburði eða sáðvöru með sölu fyrir augum, þ.m.t. að bjóða vöruna til sölu eða afhendingar í öðru formi, gegn gjaldi eða endurgjaldslaust, og sjálf salan, dreifingin eða önnur form afhendingar.">1</sen>
+            <sen>1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2022.051.html" law-nr="51" law-year="2022" law-art="8" nr="2">
@@ -276,14 +283,14 @@
               <art>2a</art>
               <subart>1</subart>
               <numart>13</numart>
-              <sen words="&lt;i&gt; Rekstraraðili &lt;/i&gt; er einstaklingur eða lögaðili sem er ábyrgur fyrir því að farið sé að kröfum samkvæmt lögum og stjórnvaldsfyrirmælum um fóður, áburð eða sáðvöru í fyrirtækjum undir hans stjórn.">1</sen>
+              <sen>1</sen>
             </start>
             <end>
               <chapter>1</chapter>
               <art>2a</art>
               <subart>1</subart>
               <numart>13</numart>
-              <sen words="Stjórnandi fóður-, áburðar- eða sáðvörufyrirtækis telst rekstraraðili þess.">2</sen>
+              <sen>2</sen>
             </end>
           </location>
           <location type="range">

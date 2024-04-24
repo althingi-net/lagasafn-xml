@@ -80,7 +80,8 @@
         </numart>
         <numart nr="7" nr-type="numeric">
           <nr-title>7.</nr-title>
-          <sen nr="1">&lt;i&gt; Móttökustöð: &lt;/i&gt; staður og aðstaða þar sem tekið er við úrgangi til geymslu til lengri eða skemmri tíma, til umhleðslu, flokkunar eða annarrar meðhöndlunar.</sen>
+          <name>Móttökustöð:</name>
+          <sen nr="1">staður og aðstaða þar sem tekið er við úrgangi til geymslu til lengri eða skemmri tíma, til umhleðslu, flokkunar eða annarrar meðhöndlunar.</sen>
           <sen nr="2">Þaðan fer úrgangurinn til förgunar, endurnýtingar, endurnotkunar eða honum er fargað á staðnum.</sen>
           <sen nr="3">Undir móttökustöð falla förgunarstaðir.</sen>
         </numart>
@@ -96,12 +97,14 @@
         </numart>
         <numart nr="10" nr-type="numeric">
           <nr-title>10.</nr-title>
-          <sen nr="1">&lt;i&gt; Söfnunarstöð (gámastöð): &lt;/i&gt; staður og aðstaða þar sem tekið er við úrgangi frá almenningi og/eða smærri fyrirtækjum.</sen>
+          <name>Söfnunarstöð (gámastöð):</name>
+          <sen nr="1">staður og aðstaða þar sem tekið er við úrgangi frá almenningi og/eða smærri fyrirtækjum.</sen>
           <sen nr="2">Þaðan fer hann til endurnotkunar og endurnýtingar eða er fluttur til móttökustöðva.</sen>
         </numart>
         <numart nr="11" nr-type="numeric">
           <nr-title>11.</nr-title>
-          <sen nr="1">&lt;i&gt; Umbúðir: &lt;/i&gt; allar vörur, af hvaða tegund sem er og úr hvaða efni sem er, sem eru notaðar við pökkun, verndun, meðhöndlun og afhendingu framleiðsluvöru, hvort sem þar er um að ræða hráefni eða fullunna vöru, til notanda eða neytanda.</sen>
+          <name>Umbúðir:</name>
+          <sen nr="1">allar vörur, af hvaða tegund sem er og úr hvaða efni sem er, sem eru notaðar við pökkun, verndun, meðhöndlun og afhendingu framleiðsluvöru, hvort sem þar er um að ræða hráefni eða fullunna vöru, til notanda eða neytanda.</sen>
           <sen nr="2">Nánar tiltekið eru umbúðir:</sen>
           <numart nr="a" nr-type="alphabet">
             <nr-title>a.</nr-title>
@@ -125,7 +128,8 @@
         </numart>
         <numart nr="13" nr-type="numeric">
           <nr-title>13.</nr-title>
-          <sen nr="1">&lt;i&gt; Úrvinnsla úrgangs: &lt;/i&gt; söfnun, geymsla, böggun, flokkun, flutningur, endurnýting, pökkun og förgun úrgangs.</sen>
+          <name>Úrvinnsla úrgangs:</name>
+          <sen nr="1">söfnun, geymsla, böggun, flokkun, flutningur, endurnýting, pökkun og förgun úrgangs.</sen>
         </numart>
       </subart>
       <footnotes>
@@ -190,7 +194,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>6</numart>
-            <sen words="&lt;i&gt; Förgun: &lt;/i&gt; hvers kyns aðgerð sem er ekki endurnýting, jafnvel þótt aðgerðin hafi að auki í för með sér endurheimt efna eða orku.">1</sen>
+            <sen>1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -264,7 +268,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>12</numart>
-            <sen words="&lt;i&gt; Úrgangur: &lt;/i&gt; hvers kyns efni eða hlutir sem handhafi úrgangs ákveður að losa sig við, ætlar að losa sig við eða er gert að losa sig við.">1</sen>
+            <sen>1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -278,7 +282,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>13</numart>
-            <sen before-mark="^&lt;i&gt; Úrvinnsla úrgangs: &lt;/i&gt; söfnun, geymsla, böggun, flokkun, flutningur," after-mark="endurnýting, pökkun og förgun úrgangs.$">1</sen>
+            <sen before-mark="^söfnun, geymsla, böggun, flokkun, flutningur," after-mark="endurnýting, pökkun og förgun úrgangs.$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2004.128.html" law-nr="128" law-year="2004" law-art="1" nr="2">

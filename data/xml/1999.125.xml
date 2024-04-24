@@ -44,20 +44,24 @@
         </numart>
         <numart nr="3" nr-type="numeric">
           <nr-title>3.</nr-title>
-          <sen nr="1">&lt;i&gt; Öldrunarmál: &lt;/i&gt; Þau mál sem varða aldraða og eru undir yfirstjórn ráðherra.</sen>
+          <name>Öldrunarmál:</name>
+          <sen nr="1">Þau mál sem varða aldraða og eru undir yfirstjórn ráðherra.</sen>
           <sen nr="2">Til þeirra teljast þeir þjónustuþættir, aðrir en heilbrigðisþjónusta, sem aldraðir eiga rétt á samkvæmt lögum þessum og Framkvæmdasjóður aldraðra.</sen>
         </numart>
         <numart nr="4" nr-type="numeric">
           <nr-title>4.</nr-title>
-          <sen nr="1">&lt;i&gt; Færni- og heilsumat aldraðra: &lt;/i&gt; Faglegt, einstaklingsbundið mat á þörf fyrir dvöl á stofnun.</sen>
+          <name>Færni- og heilsumat aldraðra:</name>
+          <sen nr="1">Faglegt, einstaklingsbundið mat á þörf fyrir dvöl á stofnun.</sen>
         </numart>
         <numart nr="5" nr-type="numeric">
           <nr-title>5.</nr-title>
-          <sen nr="1">&lt;i&gt; Starfssvæði öldungaráðs: &lt;/i&gt; Umdæmi heilsugæslustöðva samkvæmt lögum um heilbrigðisþjónustu.</sen>
+          <name>Starfssvæði öldungaráðs:</name>
+          <sen nr="1">Umdæmi heilsugæslustöðva samkvæmt lögum um heilbrigðisþjónustu.</sen>
         </numart>
         <numart nr="6" nr-type="numeric">
           <nr-title>6.</nr-title>
-          <sen nr="1">&lt;i&gt; Ráð heimilismanna: &lt;/i&gt; Kjörnir fulltrúar íbúa stofnunar mynda ráð heimilismanna.</sen>
+          <name>Ráð heimilismanna:</name>
+          <sen nr="1">Kjörnir fulltrúar íbúa stofnunar mynda ráð heimilismanna.</sen>
         </numart>
       </subart>
       <footnotes>
@@ -75,7 +79,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>4</numart>
-            <sen words="Færni- og heilsumat">1</sen>
+            <name words="Færni- og heilsumat">1</name>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -89,7 +93,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>6</numart>
-            <sen words="Ráð heimilismanna:">1</sen>
+            <name>1</name>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -173,7 +177,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>5</numart>
-            <sen words="öldungaráðs">1</sen>
+            <name words="öldungaráðs">1</name>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.093.html" law-nr="93" law-year="2002" law-art="23" nr="6">
@@ -183,7 +187,7 @@
             <art>2</art>
             <subart>1</subart>
             <numart>5</numart>
-            <sen before-mark="^&lt;i&gt; Starfssvæði (\[? ?)?öldungaráðs]: &lt;sup style=&quot;font-size:60%&quot;&gt; 5\) &lt;/sup&gt; &lt;/i&gt; Umdæmi heilsugæslustöðva" after-mark="samkvæmt lögum um heilbrigðisþjónustu.$">1</sen>
+            <sen before-mark="^Umdæmi heilsugæslustöðva" after-mark="samkvæmt lögum um heilbrigðisþjónustu.$">1</sen>
           </location>
         </footnote>
       </footnotes>
