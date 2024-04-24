@@ -8,6 +8,7 @@ with this one.
 import os
 import re
 from django.conf import settings
+from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
@@ -71,11 +72,11 @@ class LawManager:
             if node_law_entry.find("meta/is-empty").text == "true":
                 continue
 
-            laws.append(
-                LawEntry(
-                    node_law_entry, problem_map[node_law_entry.attrib["identifier"]]
-                )
-            )
+            problems = {}
+            if node_law_entry.attrib["identifier"] in problem_map:
+                problems = problem_map[node_law_entry.attrib["identifier"]]
+
+            laws.append(LawEntry(node_law_entry, problems))
 
         return stats, laws
 
@@ -113,7 +114,15 @@ class LawEntry:
         """
         Determines the status of the law, judging by known problem types.
         """
-        all_ok = all(self.problems[p]["success"] for p in self.problems)
+        problems_accounted_for = True
+        for problem_type in PROBLEM_TYPES:
+            if problem_type not in self.problems:
+                problems_accounted_for = False
+
+        if problems_accounted_for:
+            all_ok = all(self.problems[p]["success"] for p in self.problems)
+        else:
+            all_ok = None
 
         return all_ok
 

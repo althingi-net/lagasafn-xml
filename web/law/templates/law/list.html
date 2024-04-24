@@ -34,7 +34,9 @@
             <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
             <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
             <td class="law-list-status">
-                {% if law.status %}
+                {% if law.status is None %}
+                    <span class="badge bg-warning">{% trans 'Unknown' %}</span>
+                {% elif law.status %}
                     <span class="badge bg-success">{% trans 'OK' %}</span>
                 {% else %}
                     <span class="badge bg-danger">{% trans 'Errors' %}</span>

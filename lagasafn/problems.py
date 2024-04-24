@@ -5,6 +5,7 @@ from lxml import etree
 from lxml.builder import E
 from collections import OrderedDict
 
+PROBLEM_TYPES = ["content", "javascript"]
 PROBLEMS_FILENAME = os.path.join(DATA_DIR, "xml", "problems.xml")
 
 
@@ -63,11 +64,10 @@ class ProblemHandler:
     def success(self, identifier: str, problem_type: str):
         status_entry = self.get_status_entry(identifier, problem_type)
         status_entry.attrib["success"] = "true"
+        status_entry.attrib["message"] = ""
 
     def failure(self, identifier: str, problem_type: str, message: str = ""):
         status_entry = self.get_status_entry(identifier, problem_type)
-
+        status_entry.attrib["success"] = "false"
         if len(message):
             status_entry.attrib["message"] = message
-
-        status_entry.attrib["success"] = "false"
