@@ -24,6 +24,11 @@
 {% block title %}{{ law.identifier }}: {{ law.name }}{% endblock %}
 
 {% block controls %}
+    {% if view_type == "comparison" %}
+        <button type="button" class="btn btn-default" id="scroll-up" onClick="window.scrollBy(0, -1);">{% trans 'Up 1 pixel' %}</button>
+        <button type="button" class="btn btn-default" id="scroll-down" onClick="window.scrollBy(0, 1);">{% trans 'Down 1 pixel' %}</button>
+        &nbsp;
+    {% endif %}
     {% if FEATURES.link_to_editor %}
         <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
         &nbsp;
@@ -41,19 +46,34 @@
 
 {% block left %}
 
-<div class="legal-document menu">
-    <ul>
-    {% for chapter in law.chapters %}
-        <li class="chapter">
-            <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
-                {% if chapter.name %}
-                    {{ chapter.name }}
-                {% else %}
-                    {{ chapter.nr_title }}
-                {% endif %}
-            </a>
-            <ul>
-            {% for art in chapter.articles %}
+{% if view_type == "normal" %}
+    <div class="legal-document menu">
+        <ul>
+        {% for chapter in law.chapters %}
+            <li class="chapter">
+                <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
+                    {% if chapter.name %}
+                        {{ chapter.name }}
+                    {% else %}
+                        {{ chapter.nr_title }}
+                    {% endif %}
+                </a>
+                <ul>
+                {% for art in chapter.articles %}
+                    <li class="art">
+                        <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
+                            {% if art.name %}
+                                {{ art.name }}
+                            {% else %}
+                                {{ art.nr_title }}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            {% for art in law.articles %}
                 <li class="art">
                     <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
                         {% if art.name %}
@@ -64,23 +84,10 @@
                     </a>
                 </li>
             {% endfor %}
-            </ul>
-        </li>
-    {% empty %}
-        {% for art in law.articles %}
-            <li class="art">
-                <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
-                    {% if art.name %}
-                        {{ art.name }}
-                    {% else %}
-                        {{ art.nr_title }}
-                    {% endif %}
-                </a>
-            </li>
         {% endfor %}
-    {% endfor %}
-    </ul>
-</div>
+        </ul>
+    </div>
+{% endif %}
 
 {% endblock %}
 
@@ -88,7 +95,7 @@
 
 {% include 'law/dialog/quick_dialog.html' %}
 
-<div class="legal-document content">
+<div class="legal-document {{ view_type }}-view">
     {{ law.html_text|safe }}
 </div>
 

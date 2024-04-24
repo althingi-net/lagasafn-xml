@@ -9,5 +9,11 @@ urlpatterns = [
         views.law_show_cleaned,
         name="law_show_cleaned",
     ),
+    path(
+        "show/<path:identifier>/comparison/",
+        views.law_show,
+        {"view_type": "comparison"},
+        name="law_show_comparison",
+    ),
     path("show/<path:identifier>/", views.law_show, name="law_show"),
 ]

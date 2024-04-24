@@ -113,9 +113,7 @@ class LawEntry:
         """
         Determines the status of the law, judging by known problem types.
         """
-        all_ok = all(
-            self.problems[p]["success"] for p in self.problems
-        )
+        all_ok = all(self.problems[p]["success"] for p in self.problems)
 
         return all_ok
 

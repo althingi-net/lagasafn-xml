@@ -17,11 +17,12 @@ def law_list(request):
     return render(request, "law/list.html", ctx)
 
 
-def law_show(request, identifier):
+def law_show(request, identifier, view_type: str = "normal"):
     law = Law(identifier)
 
     ctx = {
         "law": law,
+        "view_type": view_type,
     }
 
     return render(request, "law/show.html", ctx)

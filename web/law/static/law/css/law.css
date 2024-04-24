@@ -14,7 +14,8 @@
 .legal-document.menu li.art { font-weight: normal; }
 
 /*** Basics ***/
-.legal-document.content { padding-left: 560px; max-width: 1730px; }
+.legal-document.normal-view { padding-left: 560px; max-width: 1730px; }
+.legal-document.comparison-view { max-width: 1140px; padding: 0px 20px 0px 20px; margin-top: 368px; margin-left: auto; margin-right: auto; }
 
 /* For scrolling consistency with Althingi.is */
 /*.legal-document { margin-top: 354px; }*/
