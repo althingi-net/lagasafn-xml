@@ -33,10 +33,10 @@
     {% endif %}
 
     <div class="btn-group" role="group">
-    {% if FEATURES.link_to_editor %}
         <a href="{{ law.original_url }}" class="btn btn-default" target="_blank">{% trans 'Open original' %}</a>
-        <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
-    {% endif %}
+        {% if FEATURES.link_to_editor %}
+            <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
+        {% endif %}
     </div>
 
     <div class="btn-group" role="group">
