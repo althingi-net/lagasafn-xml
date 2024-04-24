@@ -43,7 +43,7 @@ class LawManager:
                     else None
                 )
                 statuses[status_node.attrib["type"]] = {
-                    "success": success,
+                    "success": success == "true",
                     "message": message,
                 }
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
@@ -114,9 +114,9 @@ class LawEntry:
         Determines the status of the law, judging by known problem types.
         """
         all_ok = all(
-            self.problems[p]["success"] == "true" for p in self.problems
+            self.problems[p]["success"] for p in self.problems
         )
-        #import ipdb; ipdb.set_trace()
+
         return all_ok
 
     def __str__(self):
