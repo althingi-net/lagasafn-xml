@@ -122,7 +122,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="112/2021">
     <status type="content" success="false" message="Levenshtein ratio: 0.98606455"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.location_node is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'attr')"/>
   </problem-law-entry>
   <problem-law-entry identifier="111/2021">
     <status type="content" success="false" message="Levenshtein ratio: 0.76514834"/>
@@ -166,7 +166,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="66/2021">
     <status type="content" success="false" message="Levenshtein ratio: 0.96530469"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="60/2021">
     <status type="content" success="false" message="Levenshtein ratio: 0.99989878"/>
@@ -178,7 +178,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="54/2021">
     <status type="content" success="false" message="Levenshtein ratio: 0.97857399"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="51/2021">
     <status type="content" success="true" message=""/>
@@ -222,7 +222,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="144/2020">
     <status type="content" success="false" message="Levenshtein ratio: 0.99352085"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="132/2020">
     <status type="content" success="false" message="Levenshtein ratio: 0.99992113"/>
@@ -250,7 +250,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="100/2020">
     <status type="content" success="false" message="Levenshtein ratio: 0.99228245"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="81/2020">
     <status type="content" success="true" message=""/>
@@ -298,7 +298,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="45/2020">
     <status type="content" success="false" message="Levenshtein ratio: 0.99411617"/>
-    <status type="javascript" success="false" message="Error: Syntax error, unrecognized expression: art-chapter[nr=&quot;[C. Höfuðsjóðir og fylgisjóðir.] &lt;sup style=&quot;font&quot;]"/>
+    <status type="javascript" success="false" message="Uncaught Error: Syntax error, unrecognized expression: art-chapter[nr=&quot;[C. Höfuðsjóðir og fylgisjóðir.] &lt;sup style=&quot;font&quot;]"/>
   </problem-law-entry>
   <problem-law-entry identifier="40/2020">
     <status type="content" success="true" message=""/>
@@ -326,7 +326,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="7/2020">
     <status type="content" success="false" message="Levenshtein ratio: 0.97848064"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="165/2019">
     <status type="content" success="true" message=""/>
@@ -406,7 +406,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="77/2019">
     <status type="content" success="false" message="Levenshtein ratio: 0.99436631"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="75/2019">
     <status type="content" success="true" message=""/>
@@ -430,7 +430,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="62/2019">
     <status type="content" success="false" message="Levenshtein ratio: 0.98723832"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="55/2019">
     <status type="content" success="true" message=""/>
@@ -562,7 +562,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="50/2017">
     <status type="content" success="false" message="Levenshtein ratio: 0.94022084"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="35/2017">
     <status type="content" success="true" message=""/>
@@ -574,7 +574,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="24/2017">
     <status type="content" success="false" message="Levenshtein ratio: 0.93102810"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="120/2016">
     <status type="content" success="true" message=""/>
@@ -646,7 +646,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="15/2016">
     <status type="content" success="false" message="Levenshtein ratio: 0.99076525"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="123/2015">
     <status type="content" success="false" message="Levenshtein ratio: 0.99975167"/>
@@ -670,11 +670,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="70/2015">
     <status type="content" success="false" message="Levenshtein ratio: 0.96205008"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="65/2015">
     <status type="content" success="false" message="Levenshtein ratio: 0.95472650"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="60/2015">
     <status type="content" success="false" message="Levenshtein ratio: 0.99901436"/>
@@ -726,7 +726,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="78/2014">
     <status type="content" success="false" message="Levenshtein ratio: 0.10226030"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="77/2014">
     <status type="content" success="true" message=""/>
@@ -734,7 +734,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="66/2014">
     <status type="content" success="false" message="Levenshtein ratio: 0.95633097"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="58/2014">
     <status type="content" success="true" message=""/>
@@ -774,15 +774,15 @@
   </problem-law-entry>
   <problem-law-entry identifier="61/2013">
     <status type="content" success="false" message="Levenshtein ratio: 0.97157679"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="60/2013">
     <status type="content" success="false" message="Levenshtein ratio: 0.96741588"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="55/2013">
     <status type="content" success="false" message="Levenshtein ratio: 0.96689054"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="52/2013">
     <status type="content" success="false" message="Levenshtein ratio: 0.99545375"/>
@@ -818,7 +818,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="17/2013">
     <status type="content" success="false" message="Levenshtein ratio: 0.98776713"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="155/2012">
     <status type="content" success="true" message=""/>
@@ -1002,7 +1002,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="155/2010">
     <status type="content" success="false" message="Levenshtein ratio: 0.88104449"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="145/2010">
     <status type="content" success="true" message=""/>
@@ -1106,7 +1106,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="42/2009">
     <status type="content" success="false" message="Levenshtein ratio: 0.96802119"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="40/2009">
     <status type="content" success="true" message=""/>
@@ -1158,11 +1158,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="92/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.98043981"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="91/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.97632533"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="90/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.99985830"/>
@@ -1170,11 +1170,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="88/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.98577443"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="85/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.97667419"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="82/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.99974847"/>
@@ -1210,7 +1210,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="34/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.90886740"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="30/2008">
     <status type="content" success="false" message="Levenshtein ratio: 0.99981850"/>
@@ -1238,7 +1238,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="108/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.96491155"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="100/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.96436179"/>
@@ -1254,7 +1254,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="85/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.96803603"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="80/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.99987067"/>
@@ -1282,7 +1282,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="60/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.94972482"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="50/2007">
     <status type="content" success="true" message=""/>
@@ -1306,7 +1306,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="40/2007">
     <status type="content" success="false" message="Levenshtein ratio: 0.93447923"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="38/2007">
     <status type="content" success="true" message=""/>
@@ -1382,7 +1382,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="61/2006">
     <status type="content" success="false" message="Levenshtein ratio: 0.98076431"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="60/2006">
     <status type="content" success="false" message="Levenshtein ratio: 0.99797892"/>
@@ -1450,7 +1450,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="88/2005">
     <status type="content" success="false" message="Levenshtein ratio: 0.95106967"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="85/2005">
     <status type="content" success="false" message="Levenshtein ratio: 0.99559956"/>
@@ -1518,11 +1518,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="87/2004">
     <status type="content" success="false" message="Levenshtein ratio: 0.94765032"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.location_node is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'attr')"/>
   </problem-law-entry>
   <problem-law-entry identifier="81/2004">
     <status type="content" success="false" message="Levenshtein ratio: 0.97778245"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="80/2004">
     <status type="content" success="false" message="Levenshtein ratio: 0.97617382"/>
@@ -1550,7 +1550,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="33/2004">
     <status type="content" success="false" message="Levenshtein ratio: 0.93461051"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="32/2004">
     <status type="content" success="true" message=""/>
@@ -1558,7 +1558,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="30/2004">
     <status type="content" success="false" message="Levenshtein ratio: 0.99101110"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="27/2004">
     <status type="content" success="true" message=""/>
@@ -1586,7 +1586,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="90/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.92007578"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="88/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.99994872"/>
@@ -1602,7 +1602,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="83/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.95314120"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="79/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.99975143"/>
@@ -1614,11 +1614,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="66/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.99055646"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="65/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.98497412"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="61/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.99991244"/>
@@ -1626,7 +1626,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="55/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.96956160"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="48/2003">
     <status type="content" success="false" message="Levenshtein ratio: 0.99993864"/>
@@ -1658,11 +1658,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="162/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.90026320"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.location_node is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'attr')"/>
   </problem-law-entry>
   <problem-law-entry identifier="161/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.97773237"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="97/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.99962732"/>
@@ -1674,7 +1674,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="80/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.97408600"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="78/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.99990703"/>
@@ -1718,7 +1718,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="6/2002">
     <status type="content" success="false" message="Levenshtein ratio: 0.95236391"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="141/2001">
     <status type="content" success="false" message="Levenshtein ratio: 0.99939099"/>
@@ -1758,7 +1758,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="13/2001">
     <status type="content" success="false" message="Levenshtein ratio: 0.97894178"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="6/2001">
     <status type="content" success="false" message="Levenshtein ratio: 0.99156330"/>
@@ -1782,7 +1782,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="75/2000">
     <status type="content" success="false" message="Levenshtein ratio: 0.98101921"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="63/2000">
     <status type="content" success="false" message="Levenshtein ratio: 0.99991026"/>
@@ -1842,7 +1842,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="98/1999">
     <status type="content" success="false" message="Levenshtein ratio: 0.93778396"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="90/1999">
     <status type="content" success="false" message="Levenshtein ratio: 0.99957514"/>
@@ -1922,7 +1922,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="44/1998">
     <status type="content" success="false" message="Levenshtein ratio: 0.92192704"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="39/1998">
     <status type="content" success="true" message=""/>
@@ -1938,7 +1938,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="16/1998">
     <status type="content" success="false" message="Levenshtein ratio: 0.98499952"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="13/1998">
     <status type="content" success="true" message=""/>
@@ -1950,7 +1950,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="7/1998">
     <status type="content" success="false" message="Levenshtein ratio: 0.84049714"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="129/1997">
     <status type="content" success="false" message="Levenshtein ratio: 0.99835026"/>
@@ -1970,7 +1970,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="79/1997">
     <status type="content" success="false" message="Levenshtein ratio: 0.74219182"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="75/1997">
     <status type="content" success="false" message="Levenshtein ratio: 0.99796471"/>
@@ -1986,7 +1986,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="62/1997">
     <status type="content" success="false" message="Levenshtein ratio: 0.96505154"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="61/1997">
     <status type="content" success="false" message="Levenshtein ratio: 0.99964320"/>
@@ -2046,7 +2046,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="90/1996">
     <status type="content" success="false" message="Levenshtein ratio: 0.95428909"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="74/1996">
     <status type="content" success="false" message="Levenshtein ratio: 0.99930796"/>
@@ -2066,7 +2066,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="57/1996">
     <status type="content" success="false" message="Levenshtein ratio: 0.89218413"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="55/1996">
     <status type="content" success="false" message="Levenshtein ratio: 0.99718830"/>
@@ -2102,7 +2102,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="134/1995">
     <status type="content" success="false" message="Levenshtein ratio: 0.91106309"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="96/1995">
     <status type="content" success="false" message="Levenshtein ratio: 0.99971147"/>
@@ -2110,7 +2110,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="93/1995">
     <status type="content" success="false" message="Levenshtein ratio: 0.66804174"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="88/1995">
     <status type="content" success="false" message="Levenshtein ratio: 0.99995325"/>
@@ -2142,7 +2142,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="2/1995">
     <status type="content" success="false" message="Levenshtein ratio: 0.98178090"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.prop(...) is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')"/>
   </problem-law-entry>
   <problem-law-entry identifier="159/1994">
     <status type="content" success="false" message="Levenshtein ratio: 0.14605642"/>
@@ -2154,7 +2154,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="138/1994">
     <status type="content" success="false" message="Levenshtein ratio: 0.98168872"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.prop(...) is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')"/>
   </problem-law-entry>
   <problem-law-entry identifier="125/1994">
     <status type="content" success="true" message=""/>
@@ -2198,7 +2198,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="36/1994">
     <status type="content" success="false" message="Levenshtein ratio: 0.98441628"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="26/1994">
     <status type="content" success="false" message="Levenshtein ratio: 0.99998709"/>
@@ -2214,7 +2214,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="99/1993">
     <status type="content" success="false" message="Levenshtein ratio: 0.91959466"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="97/1993">
     <status type="content" success="false" message="Levenshtein ratio: 0.98168976"/>
@@ -2274,7 +2274,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="60/1992">
     <status type="content" success="false" message="Levenshtein ratio: 0.93448940"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="55/1992">
     <status type="content" success="false" message="Levenshtein ratio: 0.99971880"/>
@@ -2286,7 +2286,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="37/1992">
     <status type="content" success="false" message="Levenshtein ratio: 0.93159481"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="36/1992">
     <status type="content" success="false" message="Levenshtein ratio: 0.99924496"/>
@@ -2298,7 +2298,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="30/1992">
     <status type="content" success="false" message="Levenshtein ratio: 0.92527184"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="91/1991">
     <status type="content" success="false" message="Levenshtein ratio: 0.99939019"/>
@@ -2309,12 +2309,12 @@
     <status type="javascript" success="true" message=""/>
   </problem-law-entry>
   <problem-law-entry identifier="88/1991">
-    <status type="content" success="false" message="Levenshtein ratio: 0.99682981"/>
+    <status type="content" success="false" message="Levenshtein ratio: 0.99684594"/>
     <status type="javascript" success="true" message=""/>
   </problem-law-entry>
   <problem-law-entry identifier="55/1991">
     <status type="content" success="false" message="Levenshtein ratio: 0.98030758"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.prop(...) is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')"/>
   </problem-law-entry>
   <problem-law-entry identifier="40/1991">
     <status type="content" success="false" message="Levenshtein ratio: 0.99953374"/>
@@ -2390,7 +2390,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="58/1990">
     <status type="content" success="false" message="Levenshtein ratio: 0.88536379"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="54/1990">
     <status type="content" success="false" message="Levenshtein ratio: 0.96991306"/>
@@ -2406,7 +2406,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="43/1990">
     <status type="content" success="false" message="Levenshtein ratio: 0.87226165"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="31/1990">
     <status type="content" success="false" message="Levenshtein ratio: 0.99995098"/>
@@ -2446,7 +2446,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="55/1989">
     <status type="content" success="false" message="Levenshtein ratio: 0.12861513"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="53/1989">
     <status type="content" success="false" message="Levenshtein ratio: 0.99992836"/>
@@ -2522,7 +2522,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="75/1985">
     <status type="content" success="false" message="Levenshtein ratio: 0.94211802"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="63/1985">
     <status type="content" success="true" message=""/>
@@ -2562,7 +2562,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="42/1983">
     <status type="content" success="false" message="Levenshtein ratio: 0.92529792"/>
-    <status type="javascript" success="false" message="TypeError: $end_mark.prop(...) is undefined"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')"/>
   </problem-law-entry>
   <problem-law-entry identifier="7/1983">
     <status type="content" success="true" message=""/>
@@ -2602,7 +2602,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="46/1980">
     <status type="content" success="false" message="Levenshtein ratio: 0.88974091"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="48/1979">
     <status type="content" success="false" message="Levenshtein ratio: 0.96551724"/>
@@ -2678,7 +2678,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="16/1973">
     <status type="content" success="false" message="Levenshtein ratio: 0.65599247"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="13/1973">
     <status type="content" success="true" message=""/>
@@ -2694,7 +2694,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="73/1972">
     <status type="content" success="false" message="Levenshtein ratio: 0.97726448"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="59/1972">
     <status type="content" success="false" message="Levenshtein ratio: 0.98948805"/>
@@ -2766,7 +2766,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="58/1967">
     <status type="content" success="false" message="Levenshtein ratio: 0.82614546"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="74/1966">
     <status type="content" success="true" message=""/>
@@ -2854,7 +2854,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="100/1952">
     <status type="content" success="false" message="Levenshtein ratio: 0.96047623"/>
-    <status type="javascript" success="false" message="TypeError: before_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="110/1951">
     <status type="content" success="false" message="Levenshtein ratio: 0.05041787"/>
@@ -2870,11 +2870,11 @@
   </problem-law-entry>
   <problem-law-entry identifier="26/1949">
     <status type="content" success="false" message="Levenshtein ratio: 0.80080036"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="44/1948">
     <status type="content" success="false" message="Levenshtein ratio: 0.86791399"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="13/1948">
     <status type="content" success="false" message="Levenshtein ratio: 0.09132497"/>
@@ -2962,7 +2962,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="74/1938">
     <status type="content" success="false" message="Levenshtein ratio: 0.82459956"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="39/1937">
     <status type="content" success="true" message=""/>
@@ -3038,7 +3038,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="4/1924">
     <status type="content" success="false" message="Levenshtein ratio: 0.90620491"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="15/1923">
     <status type="content" success="false" message="Levenshtein ratio: 0.99948494"/>
@@ -3110,7 +3110,7 @@
   </problem-law-entry>
   <problem-law-entry identifier="m06d20/1849">
     <status type="content" success="false" message="Levenshtein ratio: 0.00000000"/>
-    <status type="javascript" success="false" message="TypeError: after_mark_re.exec(...) is null"/>
+    <status type="javascript" success="false" message="Uncaught TypeError: Cannot read properties of null (reading '0')"/>
   </problem-law-entry>
   <problem-law-entry identifier="m03d03/1814">
     <status type="content" success="false" message="Levenshtein ratio: 0.00000000"/>

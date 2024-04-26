@@ -4,7 +4,8 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from lagasafn.problems import ProblemHandler
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium import webdriver
+from selenium.webdriver import ChromeOptions
 
 
 def remove_whitespace(s):
@@ -19,9 +20,6 @@ class WebTests(StaticLiveServerTestCase):
 
     def _get_law_links(self):
         self.get_if_needed(f"{self.live_server_url}/law/list/")
-
-        xml_links = self.selenium.find_elements(By.CSS_SELECTOR, "a.law-link")
-        self.assertTrue(len(xml_links) > 0, "Found no laws.")
 
         script = """
             const links = Array.from(document.querySelectorAll("a.law-link"));
@@ -40,7 +38,10 @@ class WebTests(StaticLiveServerTestCase):
 
         cls.problems = ProblemHandler()
 
-        cls.selenium = WebDriver()
+        chrome_options = ChromeOptions()
+        chrome_options.add_argument("--headless")
+        cls.selenium = webdriver.Chrome(options=chrome_options)
+
         cls.selenium.implicitly_wait(0.5)
 
     @classmethod
