@@ -1,11 +1,20 @@
 import Levenshtein
 import re
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from dotenv import load_dotenv
 from lagasafn.problems import ProblemHandler
+from os import environ
+from os.path import exists
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
+
+# Load settings from environment variable file.
+if exists(".env.tests"):
+    load_dotenv(".env.tests")
+else:
+    load_dotenv(".env.tests.example")
 
 
 def remove_whitespace(s):
@@ -19,8 +28,13 @@ class WebTests(StaticLiveServerTestCase):
     # fixtures = ["user-data.json"]  # No database yet.
 
     def _get_law_links(self):
+
+        result = []
+
         self.get_if_needed(f"{self.live_server_url}/law/list/")
 
+        # JavaScript is **way, way, way** faster then looking attributes up
+        # using the Selenium API.
         script = """
             const links = Array.from(document.querySelectorAll("a.law-link"));
             return links.map(link => ({
@@ -30,7 +44,25 @@ class WebTests(StaticLiveServerTestCase):
             }));
         """
         law_links = self.selenium.execute_script(script)
-        return law_links
+
+        requested = []
+        env_test_laws = environ.get("TEST_LAWS")
+        if env_test_laws:
+            requested = env_test_laws.split(",")
+
+        if len(requested) > 0:
+            for law_link in law_links:
+                if law_link["identifier"] in requested:
+                    result.append(law_link)
+                    requested.remove(law_link["identifier"])
+        else:
+            for law_link in law_links:
+                result.append(law_link)
+
+        if len(requested) > 0:
+            raise Exception("Unknown laws: %s" % ", ".join(requested))
+
+        return result
 
     @classmethod
     def setUpClass(cls):
