@@ -99,7 +99,7 @@ class WebTests(StaticLiveServerTestCase):
 
         try:
             self.selenium.find_element(By.ID, "law-javascript-success")
-            self.problems.success(law_link["identifier"], "javascript")
+            self.problems.report(law_link["identifier"], "javascript", 1)
             success = True
 
         except NoSuchElementException:
@@ -108,7 +108,7 @@ class WebTests(StaticLiveServerTestCase):
             body = self.selenium.find_element(By.CSS_SELECTOR, "body")
             message = body.get_attribute("js-error-message")
 
-            self.problems.failure(law_link["identifier"], "javascript", message)
+            self.problems.report(law_link["identifier"], "javascript", 0, message)
 
         return success
 
@@ -140,13 +140,11 @@ class WebTests(StaticLiveServerTestCase):
         ]
 
         if local_text == remote_text:
-            self.problems.success(law_link["identifier"], "content")
+            self.problems.report(law_link["identifier"], "content", 1)
             success = True
         else:
             ratio = Levenshtein.ratio(local_text, remote_text)
-            self.problems.failure(
-                law_link["identifier"], "content", f"Levenshtein ratio: {ratio:.8f}"
-            )
+            self.problems.report(law_link["identifier"], "content", ratio)
 
         return success
 

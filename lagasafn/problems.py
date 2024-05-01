@@ -24,7 +24,7 @@ class ProblemHandler:
         statistics = OrderedDict()
         for status in self.xml.findall("problem-law-entry/status"):
             status_type = status.attrib["type"]
-            success = status.attrib["success"] == "true"
+            success = float(status.attrib["success"]) == 1.0
 
             if status_type not in statistics:
                 statistics[status_type] = {
@@ -61,13 +61,13 @@ class ProblemHandler:
         else:
             return status_entries[0]
 
-    def success(self, identifier: str, problem_type: str):
+    def report(self, identifier: str, problem_type: str, success: float, message: str = ""):
         status_entry = self.get_status_entry(identifier, problem_type)
-        status_entry.attrib["success"] = "true"
-        status_entry.attrib["message"] = ""
 
-    def failure(self, identifier: str, problem_type: str, message: str = ""):
-        status_entry = self.get_status_entry(identifier, problem_type)
-        status_entry.attrib["success"] = "false"
+        # From 0.0.. to 1.0.., indicating level of success from 0% to 100%.
+        status_entry.attrib["success"] = f"{success:.8f}"
+
         if len(message):
             status_entry.attrib["message"] = message
+        elif "message" in status_entry.attrib:
+            status_entry.attrib.pop("message")

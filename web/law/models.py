@@ -44,7 +44,7 @@ class LawManager:
                     else None
                 )
                 statuses[status_node.attrib["type"]] = {
-                    "success": success == "true",
+                    "success": float(success),
                     "message": message,
                 }
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
@@ -120,7 +120,7 @@ class LawEntry:
                 problems_accounted_for = False
 
         if problems_accounted_for:
-            all_ok = all(self.problems[p]["success"] for p in self.problems)
+            all_ok = all(self.problems[p]["success"] == 1.0 for p in self.problems)
         else:
             all_ok = None
 
