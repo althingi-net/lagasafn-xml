@@ -2,9 +2,11 @@ import Levenshtein
 import re
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from dotenv import load_dotenv
+from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.problems import ProblemHandler
 from os import environ
 from os.path import exists
+from rich import print
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -93,24 +95,22 @@ class WebTests(StaticLiveServerTestCase):
         Checks to see if the currently open page ran JavaScript without errors.
         """
 
-        success = False
-
         self.get_if_needed(law_link["href"])
 
         try:
             self.selenium.find_element(By.ID, "law-javascript-success")
-            self.problems.report(law_link["identifier"], "javascript", 1)
-            success = True
+            message = ""
+            success = 1.0
 
         except NoSuchElementException:
-
             # Retrieve the error message.
             body = self.selenium.find_element(By.CSS_SELECTOR, "body")
             message = body.get_attribute("js-error-message")
+            success = 0.0
 
-            self.problems.report(law_link["identifier"], "javascript", 0, message)
+        progression = self.problems.report(law_link["identifier"], "javascript", success, message)
 
-        return success
+        return success, progression
 
     def check_content(self, law_link):
         """
@@ -139,14 +139,11 @@ class WebTests(StaticLiveServerTestCase):
             remote_text.find(garbage_denomenator) + len(garbage_denomenator) :
         ]
 
-        if local_text == remote_text:
-            self.problems.report(law_link["identifier"], "content", 1)
-            success = True
-        else:
-            ratio = Levenshtein.ratio(local_text, remote_text)
-            self.problems.report(law_link["identifier"], "content", ratio)
+        success = round(Levenshtein.ratio(local_text, remote_text), 8)
 
-        return success
+        progression = self.problems.report(law_link["identifier"], "content", success)
+
+        return success, progression
 
     def test_rendering(self):
 
@@ -157,21 +154,48 @@ class WebTests(StaticLiveServerTestCase):
 
         for law_link in law_links:
 
-            print("Testing %s..." % law_link["identifier"], end="", flush=False)
+            out_identifier = law_link["identifier"]
+            while len(out_identifier) < 8:
+                out_identifier = " %s" % out_identifier
+            print("%s:" % out_identifier, end="", flush=True)
 
-            # List of failures to be displayed in the log.
-            failures = []
+            for i, problem_type in enumerate(PROBLEM_TYPES):
 
-            if not self.check_javascript(law_link):
-                failures.append("javascript")
+                if i == 0:
+                    print(" ", end="", flush=True)
+                else:
+                    print(", ", end="", flush=True)
 
-            if not self.check_content(law_link):
-                failures.append("content")
+                print("%s: " % problem_type, end="", flush=True)
 
-            if len(failures) == 0:
-                print(" success")
-            else:
-                has_errors = True
-                print(" failure: %s" % ", ".join(failures))
+                # Get the checking function for the problem type and make sure
+                # that it is indeed a function.
+                check_function = getattr(self, f"check_{problem_type}")
+                if not callable(check_function):
+                    raise Exception(
+                        f"Check for '{problem_type}' problems unimplemented."
+                    )
 
-        self.assertFalse(has_errors, "Content mismatch detected.")
+                # Actual checking.
+                success, progression = check_function(law_link)
+
+                out_success = format(success, ".8f")
+                if success == 1.0:
+                    out_success = "[green]%s[/green]" % out_success
+                else:
+                    out_success = "[red]%s[/red]" % out_success
+
+                out_progression = format(progression, ".8f")
+                if progression > 0.0:
+                    out_progression = "[green]%s[/green]" % out_progression
+                elif progression < 0.0:
+                    out_progression = "[red]%s[/red]" % out_progression
+
+                print("%s (%s)" % (out_success, out_progression), end="", flush=True)
+
+                if not success:
+                    has_errors = True
+
+            print()
+
+        self.assertFalse(has_errors, "Rendering errors detected.")

@@ -64,6 +64,9 @@ class ProblemHandler:
     def report(self, identifier: str, problem_type: str, success: float, message: str = ""):
         status_entry = self.get_status_entry(identifier, problem_type)
 
+        # Remember prior success for measuring progression.
+        prior_success = float(status_entry.attrib["success"])
+
         # From 0.0.. to 1.0.., indicating level of success from 0% to 100%.
         status_entry.attrib["success"] = f"{success:.8f}"
 
@@ -71,3 +74,7 @@ class ProblemHandler:
             status_entry.attrib["message"] = message
         elif "message" in status_entry.attrib:
             status_entry.attrib.pop("message")
+
+        # Return the success progression.
+        progression = success - prior_success
+        return round(progression, 8)
