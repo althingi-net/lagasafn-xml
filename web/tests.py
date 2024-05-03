@@ -187,9 +187,13 @@ class WebTests(StaticLiveServerTestCase):
 
                 out_progression = format(progression, ".8f")
                 if progression > 0.0:
-                    out_progression = "[green]%s[/green]" % out_progression
+                    out_progression = "[green]+%s[/green]" % out_progression
                 elif progression < 0.0:
+                    # NOTE: The "-" sign will be automatically included.
                     out_progression = "[red]%s[/red]" % out_progression
+                else:
+                    # Space added to pad for the +/- signs added elsewhere.
+                    out_progression = " %s" % out_progression
 
                 print("%s (%s)" % (out_success, out_progression), end="", flush=True)
 
