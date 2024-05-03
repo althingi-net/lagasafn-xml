@@ -1,11 +1,13 @@
 import Levenshtein
 import re
+from django.conf import settings
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from dotenv import load_dotenv
+from git import Repo
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.problems import ProblemHandler
 from os import environ
-from os.path import exists
+from os import path
 from rich import print
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -13,7 +15,7 @@ from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 
 # Load settings from environment variable file.
-if exists(".env.tests"):
+if path.exists(".env.tests"):
     load_dotenv(".env.tests")
 else:
     load_dotenv(".env.tests.example")
@@ -47,21 +49,56 @@ class WebTests(StaticLiveServerTestCase):
         """
         law_links = self.selenium.execute_script(script)
 
-        requested = []
+        requested = None
         env_test_laws = environ.get("TEST_LAWS")
-        if env_test_laws:
+        if env_test_laws == "modified":
+            # Modified laws (according to `git`) are requested.
+            requested = []
+
+            git_repo_path = path.join(settings.BASE_DIR, "..")
+            repo = Repo(git_repo_path)
+
+            for item in repo.index.diff(None):
+
+                # Only interested in stuff in `data/xml`.
+                if not item.a_path.startswith("data/xml"):
+                    continue
+
+                filename = path.basename(item.a_path)
+                if filename == "problems.xml":
+                    # If the problem record is modified, the output is very
+                    # misleading, so it's treated as an error.
+                    raise Exception(
+                        "Problem record (problems.xml) is modified."
+                    )
+                elif filename.count(".") == 2:
+                    # Looking for filenames like "1944.33.xml", i.e. laws.
+                    law_year, law_nr, suffix = filename.split(".")
+                    requested.append("%s/%s" % (law_nr, law_year))
+
+        elif env_test_laws:
+            # Specific laws are requested.
             requested = env_test_laws.split(",")
 
-        if len(requested) > 0:
+        # At this point, `requested` is None if all laws are to be processed,
+        # but if some filtering has been requested, it will be a `list` with
+        # the identifiers of those laws.
+
+        if type(requested) is list:
+            # The variable `requested` will be a `list` only when something
+            # specific has been requested.
             for law_link in law_links:
                 if law_link["identifier"] in requested:
                     result.append(law_link)
                     requested.remove(law_link["identifier"])
         else:
+            # Otherwise, nothing specific has been requested, so we'll test
+            # all of the laws.
             for law_link in law_links:
                 result.append(law_link)
 
-        if len(requested) > 0:
+        if type(requested) is list and len(requested) > 0:
+            # Laws that don't exist were requested.
             raise Exception("Unknown laws: %s" % ", ".join(requested))
 
         return result
