@@ -75,6 +75,5 @@ class ProblemHandler:
         elif "message" in status_entry.attrib:
             status_entry.attrib.pop("message")
 
-        # Return the success progression.
-        progression = success - prior_success
-        return round(progression, 8)
+        # Return the prior success for comparison with new success.
+        return round(prior_success, 8)

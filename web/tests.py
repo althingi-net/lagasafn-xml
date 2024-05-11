@@ -145,9 +145,14 @@ class WebTests(StaticLiveServerTestCase):
             message = body.get_attribute("js-error-message")
             success = 0.0
 
-        progression = self.problems.report(law_link["identifier"], "javascript", success, message)
+        prior_success = self.problems.report(
+            law_link["identifier"],
+            "javascript",
+            success,
+            message
+        )
 
-        return success, progression
+        return success, prior_success
 
     def check_content(self, law_link):
         """
@@ -178,16 +183,22 @@ class WebTests(StaticLiveServerTestCase):
 
         success = round(Levenshtein.ratio(local_text, remote_text), 8)
 
-        progression = self.problems.report(law_link["identifier"], "content", success)
+        prior_success = self.problems.report(
+            law_link["identifier"],
+            "content",
+            success
+        )
 
-        return success, progression
+        return success, prior_success
 
     def test_rendering(self):
 
         law_links = self._get_law_links()
 
-        # Tells if there are any errors in any law.
+        # Aggregated results for this run.
         has_errors = False
+        new_fixes = 0
+        new_errors = 0
 
         for law_link in law_links:
 
@@ -214,7 +225,12 @@ class WebTests(StaticLiveServerTestCase):
                     )
 
                 # Actual checking.
-                success, progression = check_function(law_link)
+                success, prior_success = check_function(law_link)
+
+                if success == 1.0 and prior_success < 1.0:
+                    new_fixes += 1
+                elif success < 1.0 and prior_success == 1.0:
+                    new_errors += 1
 
                 out_success = format(success, ".8f")
                 if success == 1.0:
@@ -222,6 +238,13 @@ class WebTests(StaticLiveServerTestCase):
                 else:
                     out_success = "[red]%s[/red]" % out_success
 
+                out_prior_success = format(prior_success, ".8f")
+                if prior_success == 1.0:
+                    out_prior_success = "[green]%s[/green]" % out_prior_success
+                else:
+                    out_prior_success = "[red]%s[/red]" % out_prior_success
+
+                progression = success - prior_success
                 out_progression = format(progression, ".8f")
                 if progression > 0.0:
                     out_progression = "[green]+%s[/green]" % out_progression
@@ -232,11 +255,20 @@ class WebTests(StaticLiveServerTestCase):
                     # Space added to pad for the +/- signs added elsewhere.
                     out_progression = " %s" % out_progression
 
-                print("%s (%s)" % (out_success, out_progression), end="", flush=True)
+                print("%s, %s (%s)" % (
+                    out_success,
+                    out_prior_success,
+                    out_progression
+                ), end="", flush=True)
 
                 if not success:
                     has_errors = True
 
             print()
+
+        # Print aggregates results from run.
+        print()
+        print("New fixes  : %d" % new_fixes)
+        print("New errors : %d" % new_errors)
 
         self.assertFalse(has_errors, "Rendering errors detected.")
