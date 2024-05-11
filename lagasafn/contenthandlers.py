@@ -77,16 +77,25 @@ def strip_markers(text):
     Strips markers from text and cleans up resulting weirdness.
     """
 
+    # We want to keep "…" when it's a part of a link and not a deletion marker.
+    # Temporarily replacing it with a text we'll replace back later.
+    text = text.replace("> … </a>", "> HELLIP <")
+
+    # Remove change/deletion markers.
     text = text.replace("…", "")
     text = text.replace("[", "")
     text = text.replace("]", "")
     text = re.sub(r'<sup style="font-size:60%"> \d+\) </sup>', "", text)
 
+    # Eliminate excessive whitespace.
     while text.find("  ") > -1:
         text = text.replace("  ", " ")
 
     text = text.replace(" ,", ",")
     text = text.replace(" .", ".")
+
+    # Re-insert the "…" that we saved from before.
+    text = text.replace("> HELLIP <", "> … <")
 
     return text
 

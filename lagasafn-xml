@@ -866,7 +866,7 @@ def make_xml(law_num, law_year):
             clean_art_nr_title = strip_markers(art_nr_title)
 
             # Hopefully this stays None. Not because anything will break
-            # otherwise, but because Roman numerals suck ass.
+            # otherwise, but because Roman numerals are bad.
             art_roman_nr = None
 
             # Analyze the displayed article name.
@@ -899,7 +899,7 @@ def make_xml(law_num, law_year):
                     art_nr = "%s-%s" % (from_art_nr, to_art_nr)
 
                 # Check if there is an extra part to the name which we'll want
-                # appended to the `art_nr`.
+                # appended to the `art_nr`., such as in "5. gr. a".
                 #
                 # Note: len('.gr.') + 1 = 6
                 art_nr_extra = clean_art_nr_title[gr_index + 6 :].strip().strip(".")
@@ -942,6 +942,26 @@ def make_xml(law_num, law_year):
                         #         "Can't figure out: %s" % clean_art_nr_title
                         #     )
                         pass
+
+            # Check if there some HTML that we want included in the `nr-title`.
+            # This is typically to denote that something has been removed by
+            # circumstance, such as a temporary clause that is no longer in
+            # effect, or an article that changes other laws (only relevant
+            # during the legislative process).
+            #
+            # Example: (154b) 11. gr. laga nr. 25/2023:
+            #     11. gr. …
+            #
+            # Note that the inclusion of this stuff is automatic when the
+            # article has a `name`, which is processed below, so this should
+            # practically only run for articles that only have a `nr-title`.
+            #
+            # Note that in this specific case, we actually want to include the
+            # HTML, which we are appending "</a>" at the end. Normally we don't
+            # want that, so `collect_until` doesn't include it.
+            if lines.peek().strip().find("<a ") == 0 and lines.peek(3).strip() == "</a>":
+                art_title_link = collect_until(lines, "</a>")
+                art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
 
             # Create the tags, configure them and append to the chapter.
             art = E("art", E("nr-title", art_nr_title))
