@@ -190,28 +190,18 @@ def check_chapter(lines, law):
     if lines.peek(0).strip() != "<b>":
         return ""
 
-    matcher = Matcher()
-
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
 
-    line_type = ""
-
-    # If the line matches "fylgiskj[aö]l", it indicates that we've run into
-    # accompanying documents that are not a part of the legal text itself. We
-    # are unable to predict their format and parsing them will always remain
-    # error-prone when possible to begin with. Possibly we'll include them as
-    # raw HTML goo later.
-    if matcher.check(peek_stripped.lower(), "fylgiskj[aö]l"):
-        line_type = "extra-docs"
-
-    # Same goes for appendices as extra-docs.
-    elif matcher.check(peek_stripped.lower(), ".* viðauki"):
-        line_type = "appendix"
+    # First see if this is ignorable, because in that case we don't need to do
+    # anything else.
+    line_type = is_ignorable_chapter(peek_stripped)
+    if len(line_type) > 0:
+        return line_type
 
     # We'll assume that temporary clauses are always in a chapter and never in
     # a subchapter. This has not been researched.
-    elif peek_stripped.lower().find("bráðabirgð") > -1:
+    if peek_stripped.lower().find("bráðabirgð") > -1:
         line_type = "chapter"
 
     # Check if this is an "article chapter". Those are not exactly numerical
@@ -658,3 +648,46 @@ def add_sentences(target_node, sens):
             sen_elem.attrib["new-sub-paragraph"] = "true"
 
         target_node.append(sen_elem)
+
+
+def is_ignorable_chapter(line: str) -> str:
+    """
+    Appendices and accompanying documents are sometimes appended to the law. We
+    can't parse those, so we must ignore them. This function checks if the
+    given line fulfills the criteria for such "ignorable" content.
+
+    Returns the type of ignorable if ignorable, otherwise an empty string.
+    """
+    line_type = ""
+    matcher = Matcher()
+
+    # If the line matches "fylgiskj[aö]l", it indicates that we've run into
+    # accompanying documents that are not a part of the legal text itself. We
+    # are unable to predict their format and parsing them will always remain
+    # error-prone when possible to begin with. Possibly we'll include them as
+    # raw HTML goo later.
+    if matcher.check(line.lower(), "fylgiskj[aö]l"):
+        line_type = "extra-docs"
+
+    # Same goes for appendices as extra-docs.
+    elif matcher.check(line.lower(), ".* viðauki"):
+        line_type = "appendix"
+
+    return line_type
+
+
+def remove_ignorables(soup):
+    """
+    Removes ignorables as defined by `is_ignorable_chapter`.
+    """
+    for b_tag in soup.find_all('b'):
+        if is_ignorable_chapter(b_tag.text):
+            to_be_extracted = b_tag
+
+            while to_be_extracted:
+                next_sibling = to_be_extracted.next_sibling
+                to_be_extracted.extract()
+                to_be_extracted = next_sibling
+            break
+
+    return soup

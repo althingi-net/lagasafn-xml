@@ -20,6 +20,7 @@ from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import generate_ancestors
 from lagasafn.contenthandlers import next_footnote_sup
 from lagasafn.contenthandlers import regexify_markers
+from lagasafn.contenthandlers import remove_ignorables
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.pathing import make_xpath_from_node
@@ -180,6 +181,11 @@ def clean_content(content):
     # Add charset tag
     charset_tag = soup.new_tag("meta", charset="utf-8")
     soup.insert(0, charset_tag)
+
+    # Remove ignorables such as appendices and external documents that don't
+    # belong to the law itself. The nature and format of these things are not
+    # feasibly parsable.
+    soup = remove_ignorables(soup)
 
     xhtml = soup.prettify()
 
