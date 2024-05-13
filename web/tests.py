@@ -197,8 +197,10 @@ class WebTests(StaticLiveServerTestCase):
 
         # Aggregated results for this run.
         has_errors = False
-        new_fixes = 0
-        new_errors = 0
+        new_successes = 0
+        new_failures = 0
+        improvements = 0
+        worsenings = 0
 
         for law_link in law_links:
 
@@ -227,23 +229,33 @@ class WebTests(StaticLiveServerTestCase):
                 # Actual checking.
                 success, prior_success = check_function(law_link)
 
+                # Record new successes and new failures.
                 if success == 1.0 and prior_success < 1.0:
-                    new_fixes += 1
+                    new_successes += 1
                 elif success < 1.0 and prior_success == 1.0:
-                    new_errors += 1
+                    new_failures += 1
 
+                # Record improvements and worsenings.
+                if success > prior_success:
+                    improvements += 1
+                elif success < prior_success:
+                    worsenings += 1
+
+                # Format success output.
                 out_success = format(success, ".8f")
                 if success == 1.0:
                     out_success = "[green]%s[/green]" % out_success
                 else:
                     out_success = "[red]%s[/red]" % out_success
 
+                # Format prior success output.
                 out_prior_success = format(prior_success, ".8f")
                 if prior_success == 1.0:
                     out_prior_success = "[green]%s[/green]" % out_prior_success
                 else:
                     out_prior_success = "[red]%s[/red]" % out_prior_success
 
+                # Calculate and format progression.
                 progression = success - prior_success
                 out_progression = format(progression, ".8f")
                 if progression > 0.0:
@@ -267,8 +279,12 @@ class WebTests(StaticLiveServerTestCase):
             print()
 
         # Print aggregates results from run.
-        print()
-        print("New fixes  : %d" % new_fixes)
-        print("New errors : %d" % new_errors)
+        print("------------------")
+        print("New successes : %d" % new_successes)
+        print("New failures  : %d" % new_failures)
+        print("------------------")
+        print("Improvements  : %d" % improvements)
+        print("Worsenings    : %d" % worsenings)
+        print("------------------")
 
         self.assertFalse(has_errors, "Rendering errors detected.")
