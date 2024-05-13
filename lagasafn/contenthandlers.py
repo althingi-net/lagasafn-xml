@@ -79,7 +79,7 @@ def strip_markers(text):
 
     # We want to keep "…" when it's a part of a link and not a deletion marker.
     # Temporarily replacing it with a text we'll replace back later.
-    text = text.replace("> … </a>", "> HELLIP <")
+    text = text.replace("> … </a>", "> HELLIP </a>")
 
     # Remove change/deletion markers.
     text = text.replace("…", "")
@@ -95,7 +95,7 @@ def strip_markers(text):
     text = text.replace(" .", ".")
 
     # Re-insert the "…" that we saved from before.
-    text = text.replace("> HELLIP <", "> … <")
+    text = text.replace("> HELLIP </a>", "> … </a>")
 
     return text
 
