@@ -1467,6 +1467,13 @@ def make_xml(law_num, law_year):
                 # Note that this gets inserted **after** we add the sentences
                 # with `add_sentences` below.
                 numart_name = collect_until(lines, "</i>")
+
+                # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
+                # The name of a numerical article is contained in two "<i>"
+                # tags separated with an "og".
+                if lines.peek().strip() == "og" and lines.peek(2).strip() == "<i>":
+                    addendum = collect_until(lines, "</i>").replace("<i> ", "")
+                    numart_name += " " + addendum
             else:
                 numart_name = None
 
