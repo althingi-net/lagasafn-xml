@@ -670,7 +670,7 @@ def is_ignorable_chapter(line: str) -> str:
         line_type = "extra-docs"
 
     # Same goes for appendices as extra-docs.
-    elif matcher.check(line.lower(), ".* viðauki"):
+    elif matcher.check(line.lower(), ".* viðauki") or matcher.check(line.lower(), "viðauki.*"):
         line_type = "appendix"
 
     return line_type
