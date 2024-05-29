@@ -1173,7 +1173,7 @@ def make_xml(law_num, law_year):
             elif art is not None:
                 add_sentences(art, [sen])
 
-        elif matcher.check(line, r'<span id="G(\d+)([0-9A-Z]*)L(\d+)">') or (
+        elif matcher.check(line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">') or (
             matcher.check(line, "<span>") and lines.peek().strip() != "</span>"
         ):
             # Parse a numart, or numerical article.

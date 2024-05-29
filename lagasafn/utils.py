@@ -162,7 +162,6 @@ def numart_next_nrs(prev_numart):
             # I **guess** this is the right way to deal with it. Maybe I'm
             # wrong and the proper method is just to double the length of the
             # same string with the same letter.
-
             expected_numart_nrs = ["ab", "bb"]
         elif prev_numart_nr == "bb":
             expected_numart_nrs = ["bc", "cc"]
@@ -172,6 +171,18 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs = ["de", "ee"]
         elif prev_numart_nr == "ee":
             expected_numart_nrs = ["ef", "ff"]
+
+        # Same thing as with "aa" above, only uppercase.
+        elif prev_numart_nr == "AA":
+            expected_numart_nrs = ["AB", "BB"]
+        elif prev_numart_nr == "BB":
+            expected_numart_nrs = ["BC", "CC"]
+        elif prev_numart_nr == "CC":
+            expected_numart_nrs = ["CD", "DD"]
+        elif prev_numart_nr == "DD":
+            expected_numart_nrs = ["DE", "EE"]
+        elif prev_numart_nr == "EE":
+            expected_numart_nrs = ["EF", "FF"]
 
         else:
             # If the numart is a range like "a-d", typical for places where
@@ -398,6 +409,18 @@ def generate_legal_reference(input_node, skip_law=False):
                 if matcher.check(node.attrib["nr"], r"(\d+)(.+)"):
                     matches = matcher.result()
                     result += "%s. gr. %s " % (matches[0], matches[1])
+                elif node.attrib["nr"] == "t":
+                    result += "ákvæði til bráðabirgða"
+                elif "number-type" in node.attrib and node.attrib["number-type"] == "roman":
+                    # Roman numerals for article numbers usually indicates that
+                    # it's in a chapter of temporary clauses.
+                    if node.getparent().attrib["nr"] == "t":
+                        # TODO/FIXME: This is not entirely according to norms
+                        # and needs to be examined more closely.
+                        result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]
+                    else:
+                        # But maybe not always.
+                        result += "%s. gr. " % node.attrib["nr"]
                 else:
                     raise Exception("Parsing of node not implemented")
         elif node.tag == "paragraph":
