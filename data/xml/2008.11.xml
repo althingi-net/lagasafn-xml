@@ -1634,10 +1634,40 @@
       <subart nr="1">
         <sen nr="1">Nota má heitið „sértryggð skuldabréf“ um sértryggð skuldabréf sem voru gefin út fyrir 1. mars 2023 og uppfylltu þágildandi skilyrði.</sen>
         <sen nr="2">Sama gildir um sértryggð skuldabréf sem eru gefin út frá og með 1. mars 2023 en fyrir 1. janúar 2025 á grundvelli opinnar útgáfu sem fékk alþjóðlegt auðkennisnúmer (ISIN) fyrir 1. mars 2023, að eftirtöldum skilyrðum uppfylltum:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <sen nr="1">Síðasti mögulegi gjalddagi skuldabréfanna er fyrir 8. júlí 2027.</sen>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <sen nr="1">Heildarfjárhæð útgáfunnar frá og með 1. mars 2023 er ekki umfram tvöfalda heildarfjárhæð útgáfunnar sem var útistandandi 28. febrúar 2023.</sen>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <sen nr="1">Heildarfjárhæð útgáfunnar á gjalddaga er ekki umfram jafnvirði sex milljarða evra.</sen>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <sen nr="1">Veð sem tryggja eignir í tryggingasafni eru á Íslandi.</sen>
+        </numart>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2023.007.html" law-nr="7" law-year="2023" law-art="23" nr="1">
           <footnote-sen>L. 7/2023, 23. gr.</footnote-sen>
+          <location type="range">
+            <start>
+              <chapter>t</chapter>
+              <art>I</art>
+              <nr-title>1</nr-title>
+            </start>
+            <end>
+              <chapter>t</chapter>
+              <art>I</art>
+              <subart>1</subart>
+              <numart>4</numart>
+              <sen>1</sen>
+            </end>
+          </location>
         </footnote>
       </footnotes>
     </art>
