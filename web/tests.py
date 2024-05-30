@@ -1,4 +1,5 @@
 import Levenshtein
+import json
 import re
 from django.conf import settings
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
@@ -183,10 +184,33 @@ class WebTests(StaticLiveServerTestCase):
 
         success = round(Levenshtein.ratio(local_text, remote_text), 8)
 
+        # Record where to start looking for the problem if there is one.
+        message = ""
+        if success < 1.0:
+
+            # No need to search beyond the shorter text.
+            min_length = min(len(local_text), len(remote_text))
+
+            # Scroll until we find a difference.
+            difference_at = 0
+            for i in range(min_length):
+                if local_text[i] != remote_text[i]:
+                    difference_at = i
+                    break
+
+            # We'll encode this as JSON.
+            # NOTE: These texts are void of whitespace, because when evaluating
+            # correctness, we have hitherto not cared about that.
+            message_before = remote_text[difference_at-50:difference_at]
+            message_after = remote_text[difference_at:difference_at+50]
+            if len(message_before) or len(message_after):
+                message = "%s | %s" % (message_before, message_after)
+
         prior_success = self.problems.report(
             law_link["identifier"],
             "content",
-            success
+            success,
+            message=message
         )
 
         return success, prior_success
