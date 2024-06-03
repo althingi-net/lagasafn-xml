@@ -499,6 +499,13 @@ var process_footnote = function() {
             }
         });
 
+        // If the mark is not a valid tag any more, we'll just skip it.
+        if (!$mark || !$mark.prop('tagName')) {
+            console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
+            return;
+        }
+
+
         // Get the regular expressions for how the text should look before and
         // after the deletion mark. These regular expressions match the text
         // with and without other deletion or replacement markers.
@@ -506,11 +513,17 @@ var process_footnote = function() {
         var after_mark_content = '';
         if ($step.attr('before-mark')) {
             var before_mark_re = new RegExp($step.attr('before-mark').trim());
-            before_mark_content = before_mark_re.exec($mark.html())[0];
+            var items = before_mark_re.exec($mark.html());
+            if (items && items.length > 0) {
+                before_mark_content = items[0];
+            }
         }
         if ($step.attr('after-mark')) {
             var after_mark_re = new RegExp($step.attr('after-mark').trim());
-            after_mark_content = after_mark_re.exec($mark.html())[0];
+            var items = after_mark_re.exec($mark.html());
+            if (items && items.length > 0) {
+                after_mark_content = items[0];
+            }
         }
 
         // Get the tag names of the mark and its parent, so that we can figure

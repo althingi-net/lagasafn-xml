@@ -112,6 +112,7 @@ class WebTests(StaticLiveServerTestCase):
 
         chrome_options = ChromeOptions()
         chrome_options.add_argument("--headless")
+        chrome_options.add_argument('--remote-debugging-pipe')
         cls.selenium = webdriver.Chrome(options=chrome_options)
 
         cls.selenium.implicitly_wait(0.5)
