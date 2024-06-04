@@ -4,6 +4,23 @@
 var IMG_BOX_WHITE = '/static/law/img/box-white.png';
 var IMG_BOX_BLACK = '/static/law/img/box-black.png';
 
+function lowercase_tagname(element) {
+    if (element.prop('tagName') == undefined) {
+        return '';
+    }
+    return element.prop('tagName').toLowerCase();
+}
+
+function attr_or_emptystring(element, attribute) {
+    if (!element) {
+        return '';
+    }
+    if (element.attr(attribute) == undefined) {
+        return '';
+    }
+    return element.attr(attribute);
+}
+
 // Entry function for references, merely for code organizational reasons.
 var follow_refer = function() {
     var $refer = $(this);
@@ -233,14 +250,14 @@ var process_footnote = function() {
             // want to apply $current_start_mark to $start_mark, and if we're
             // in an <end> clause, we'll only want to apply $current_end_mark
             // to $end_mark.
-            var location_clause = $location_step.parent().prop('tagName').toLowerCase();
+            var location_clause = lowercase_tagname($location_step.parent());
 
             // Temporary variables to be applied later according to which
             // location clause we're in.
             var $current_start_mark = $start_mark;
             var $current_end_mark = $end_mark;
 
-            var tag_name = $location_step.prop('tagName').toLowerCase();
+            var tag_name = lowercase_tagname($location_step);
             var nr = $location_step.text().trim();
 
             if (nr.length) {
@@ -324,8 +341,8 @@ var process_footnote = function() {
         /***********************************************/
 
         // Short-hands.
-        var end_tag_name = $end_mark.prop('tagName').toLowerCase();
-        var end_tag_parent_name = $end_mark.parent().prop('tagName').toLowerCase();
+        var end_tag_name = lowercase_tagname($end_mark);
+        var end_tag_parent_name = lowercase_tagname($end_mark.parent());
         var location_type = $location.attr('type');
 
         // If the end mark ontains a table, we'll actually want to append the
@@ -353,7 +370,7 @@ var process_footnote = function() {
         if (
             end_tag_name == 'name'
             || (end_tag_name == 'nr-title' && end_tag_parent_name == 'art')
-            || $end_mark.prop('tagName').toLowerCase() == 'td'
+            || lowercase_tagname($end_mark) == 'td'
         ) {
             post_deletion_space = '';
         }
@@ -373,8 +390,8 @@ var process_footnote = function() {
             // attribute in the start location, and after the value of the
             // "words" attribute in the end location.
 
-            var seek_text_start = $start_mark.location_node.attr('words');
-            var seek_text_end = $end_mark.location_node.attr('words');
+            var seek_text_start = attr_or_emptystring($start_mark.location_node, 'words');
+            var seek_text_end = attr_or_emptystring($end_mark.location_node, 'words');
             var replace_text_start = null;
             var replace_text_end = null;
 
@@ -399,14 +416,18 @@ var process_footnote = function() {
                 ));
             }
             else {
-                $start_mark.html($start_mark.html().replace(
-                    seek_text_start,
-                    replace_text_start
-                ));
-                $end_mark.html($end_mark.html().replace(
-                    seek_text_end,
-                    replace_text_end
-                ));
+                if ($start_mark.html() !== undefined) {
+                    $start_mark.html($start_mark.html().replace(
+                        seek_text_start,
+                        replace_text_start
+                    ));
+                }
+                if ($end_mark.html() !== undefined) {
+                    $end_mark.html($end_mark.html().replace(
+                        seek_text_end,
+                        replace_text_end
+                    ));
+                }
             }
 
             // When a change is marked immediately before certain symbols such
@@ -416,10 +437,12 @@ var process_footnote = function() {
             end_symbols = [',', '.', ':'];
             for (i in end_symbols) {
                 end_symbol = end_symbols[i];
-                $end_mark.html($end_mark.html().replace(
-                    ' <sup>' + footnote_nr + ')</sup>' + end_symbol,
-                    end_symbol + ' <sup>' + footnote_nr + ')</sup>'
-                ));
+                if ($end_mark.html() !== undefined) {
+                    $end_mark.html($end_mark.html().replace(
+                        ' <sup>' + footnote_nr + ')</sup>' + end_symbol,
+                        end_symbol + ' <sup>' + footnote_nr + ')</sup>'
+                    ));
+                }
             }
         }
         else {
@@ -461,7 +484,7 @@ var process_footnote = function() {
         $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,name,sen-title,sen').each(function() {
             $step = $(this);
 
-            var tag_name = $step.prop('tagName').toLowerCase();
+            var tag_name = lowercase_tagname($step);
             var nr = $step.text().trim();
 
             // If no number is defined, we assume that it's the first (and
@@ -529,8 +552,8 @@ var process_footnote = function() {
         // Get the tag names of the mark and its parent, so that we can figure
         // out the context that we're dealing with when determining how to
         // present the deletion symbol.
-        var tag_name = $mark.prop('tagName').toLowerCase();
-        var tag_parent_name = $mark.parent().prop('tagName').toLowerCase();
+        var tag_name = lowercase_tagname($mark);
+        var tag_parent_name = lowercase_tagname($mark.parent());
 
         // Whether there is a space before or after the deletion symbol is
         // determined by various factors according to the design choices of
@@ -603,7 +626,7 @@ var process_footnote = function() {
         $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,name,sen-title,sen').each(function() {
             $step = $(this);
 
-            var tag_name = $step.prop('tagName').toLowerCase();
+            var tag_name = lowercase_tagname($step);
             var nr = $step.text().trim();
 
             // If no number is defined, we assume that it's the first (and
@@ -626,6 +649,12 @@ var process_footnote = function() {
             }
         });
 
+        // If the mark is not a valid tag any more, we'll just skip it.
+        if (!$mark || !$mark.prop('tagName')) {
+            console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
+            return;
+        }
+
         // Get the regular expressions for how the text should look before and
         // after the pointer. These regular expressions match the text with
         // and without other deletion or replacement markers.
@@ -633,11 +662,17 @@ var process_footnote = function() {
         var after_mark_content = '';
         if ($step.attr('before-mark')) {
             var before_mark_re = new RegExp($step.attr('before-mark').trim());
-            before_mark_content = before_mark_re.exec($mark.html())[0];
+            var contents = before_mark_re.exec($mark.html());
+            if (contents && contents.length > 0) {
+                before_mark_content = contents[0];
+            }
         }
         if ($step.attr('after-mark')) {
             var after_mark_re = new RegExp($step.attr('after-mark').trim());
-            after_mark_content = after_mark_re.exec($mark.html())[0];
+            var contents = after_mark_re.exec($mark.html());
+            if (contents && contents.length > 0) {
+                after_mark_content = contents[0];
+            }
         }
 
         pointer_symbol = ' <sup>' + footnote_nr + ')</sup> ';
