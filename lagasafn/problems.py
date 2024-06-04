@@ -61,7 +61,15 @@ class ProblemHandler:
         else:
             return status_entries[0]
 
-    def report(self, identifier: str, problem_type: str, success: float, message: str = ""):
+    def get_distance(self, identifier: str, problem_type: str):
+        status_entry = self.get_status_entry(identifier, problem_type)
+        print("Status entry fetch: %s" % status_entry)
+        if "distance" in status_entry.attrib:
+            return int(status_entry.attrib["distance"])
+        else:
+            return 0
+
+    def report(self, identifier: str, problem_type: str, success: float, message: str = "", distance=0):
         status_entry = self.get_status_entry(identifier, problem_type)
 
         # Remember prior success for measuring progression.
@@ -69,6 +77,8 @@ class ProblemHandler:
 
         # From 0.0.. to 1.0.., indicating level of success from 0% to 100%.
         status_entry.attrib["success"] = f"{success:.8f}"
+        if distance > 0:
+            status_entry.attrib["distance"] = f"{distance}"
 
         if len(message):
             status_entry.attrib["message"] = message

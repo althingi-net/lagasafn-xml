@@ -184,6 +184,7 @@ class WebTests(StaticLiveServerTestCase):
         ]
 
         success = round(Levenshtein.ratio(local_text, remote_text), 8)
+        distance = Levenshtein.distance(local_text, remote_text)
 
         # Record where to start looking for the problem if there is one.
         message = ""
@@ -211,7 +212,8 @@ class WebTests(StaticLiveServerTestCase):
             law_link["identifier"],
             "content",
             success,
-            message=message
+            message=message,
+            distance=distance
         )
 
         return success, prior_success
