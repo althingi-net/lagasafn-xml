@@ -5,6 +5,7 @@ import string
 
 from lagasafn.utils import Matcher
 from lagasafn.utils import is_roman
+from lagasafn.utils import last_container_added
 from lagasafn.utils import order_among_siblings
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
@@ -12,6 +13,17 @@ from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
 
 SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
+
+
+def get_nr_and_name(goo: str) -> (str, str):
+    dot_loc = goo.find(".")
+    if dot_loc > -1:
+        nr = goo[:dot_loc]
+        name = goo[dot_loc+1:].strip()
+    else:
+        nr = goo.strip()
+        name = ""
+    return nr, name
 
 
 def begins_with_regular_content(argument):
@@ -209,14 +221,32 @@ def check_chapter(lines, law):
     # even their subarticles.
     #
     # FIXME: This should actually be implemented alongside the Roman-parsing
-    # elow. For now, we avoid mixing up Roman numerals with Latin letters by
+    # below. For now, we avoid mixing up Roman numerals with Latin letters by
     # only considering the letters A-H here as potential article chapters.
     elif (
         len(peek_stripped) > 1
         and peek_stripped[1] == "."
         and peek_stripped[0] in string.ascii_uppercase[0:8]
     ):
-        line_type = "art-chapter"
+        if last_container_added(law).tag == "chapter":
+            # We now know that this is a document with the format where
+            # subchapters may be denoted as bold strings containing an A-H as
+            # the `nr-title`. We'll mark the document as such for future
+            # reference, because then these subchapters will keep popping
+            # somewhere in the rest of the document.
+            #
+            # When this condition is never met, the same thing is considered
+            # something else, for example an `art-chapter`.
+            law.attrib["subchapter-bold-alphabet"] = "true"
+
+        if "subchapter-bold-alphabet" in law.attrib and law.attrib["subchapter-bold-alphabet"] == "true":
+            # In codex version 153c, this is known to happen in:
+            # - 75/1997
+            # - 112/2008
+            # - 45/2020
+            line_type = "subchapter"
+        else:
+            line_type = "art-chapter"
 
     else:
         # We must examine the first "sentence" to see if it constitute a Roman

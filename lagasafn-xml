@@ -18,6 +18,7 @@ from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import generate_ancestors
+from lagasafn.contenthandlers import get_nr_and_name
 from lagasafn.contenthandlers import next_footnote_sup
 from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import remove_ignorables
@@ -313,6 +314,7 @@ def make_xml(law_num, law_year):
     # particular line or clause. Never put nonsense into them because it will
     # completely confuse the processing elsewhere.
     chapter = None
+    subchapter = None
     art = None
     art_chapter = None
     subart = None
@@ -685,6 +687,8 @@ def make_xml(law_num, law_year):
 
             trail.append(chapter)
 
+            subchapter = None
+
         elif check_chapter(lines, law) in [
             "extra-docs",
             "appendix",
@@ -695,6 +699,33 @@ def make_xml(law_num, law_year):
             # They always show up at the end, so at this point, our work is
             # done. We'll escape the loop and go for post-processing.
             break
+
+        elif check_chapter(lines, law) == "subchapter" and trail.milestone_reached("intro-finished"):
+            # Parse a subchapter.
+
+            subchapter_goo = collect_until(lines, "</b>")
+
+            subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
+
+            subchapter = E(
+                "subchapter",
+                {
+                    "nr": strip_markers(subchapter_nr),
+                    "nr-type": "alphabet",
+                },
+                E("nr-title", "%s." % subchapter_nr),
+            )
+
+            if len(subchapter_name):
+                subchapter.append(E("name", subchapter_name))
+
+            chapter.append(subchapter)
+
+            trail.append(subchapter)
+
+            del subchapter_goo
+            del subchapter_nr
+            del subchapter_name
 
         elif check_chapter(lines, law) == "art-chapter" and trail.milestone_reached(
             "intro-finished"
@@ -977,7 +1008,9 @@ def make_xml(law_num, law_year):
                 art.attrib["number-type"] = "roman"
 
             # Some laws don't have chapters, but some do.
-            if chapter is not None:
+            if subchapter is not None:
+                subchapter.append(art)
+            elif chapter is not None:
                 chapter.append(art)
             else:
                 law.append(art)
@@ -2700,9 +2733,12 @@ def update_index():
 
         # Determine some structural statistics.
         chapter_count = len(law.xpath("/law/chapter"))
+        subchapter_count = len(law.xpath("/law/chapter/subchapter"))
         art_count = len(law.xpath("/law/art"))
         if chapter_count > 0:
             art_count += len(law.xpath("/law/chapter/art"))
+        if subchapter_count > 0:
+            art_count += len(law.xpath("/law/chapter/subchapter/art"))
 
         # Determine the document's structure from the stats we've found.
         # NOTE: This method of consecutively appending path elements to the
@@ -2717,6 +2753,8 @@ def update_index():
         structure = ""  # Undetermined
         if chapter_count > 0:
             structure += "/chapter"
+        if subchapter_count > 0:
+            structure += "/subchapter"
         if art_count > 0:
             structure += "/art"
 

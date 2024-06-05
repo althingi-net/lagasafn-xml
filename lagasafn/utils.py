@@ -437,6 +437,8 @@ def generate_legal_reference(input_node, skip_law=False):
             result += "[%s. undirmálsgr.] " % node.attrib["nr"]
         elif node.tag == "chapter":
             pass
+        elif node.tag == "subchapter":
+            pass
         else:
             raise Exception("Parsing of node not implemented")
 
@@ -822,3 +824,17 @@ def traditionalize_law_nr(law_nr: str) -> str:
             result = "0%s" % result
 
     return result
+
+
+def last_container_added(input_node):
+    """
+    Finds the last container node added to the `input_node`.
+
+    These are found by finding the last node in the document, excluding
+    `nr-title` and `name`.
+    """
+    children = input_node.xpath('*[not(self::nr-title or self::name)]')
+    if len(children) == 0:
+        return input_node
+    else:
+        return last_container_added(children[-1])
