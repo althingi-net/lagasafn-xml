@@ -27,7 +27,6 @@ from lagasafn.contenthandlers import strip_markers
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.utils import UnexpectedClosingBracketException
 from lagasafn.utils import Matcher
-from lagasafn.utils import Trail
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import numart_next_nrs
 from lagasafn.utils import determine_month
@@ -45,6 +44,7 @@ from lxml.builder import E
 from multiprocessing import Pool
 from reynir import NounPhrase
 from sys import stderr
+from lagasafn.parser import LawParser
 
 LAW_FILENAME = os.path.join(
     DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -230,30 +230,9 @@ def patch_law(law_num, law_year):
 
 
 def make_xml(law_num, law_year):
-    # Make sure that the XML output directory exists.
-    if not os.path.isdir(os.path.dirname(XML_FILENAME)):
-        os.mkdir(os.path.dirname(XML_FILENAME))
-
-    # Check if we have a patched cleaned HTML version of the law.
-    if os.path.isfile(PATCHED_FILENAME % (law_year, law_num)):
-        with open(PATCHED_FILENAME % (law_year, law_num)) as patched_file:
-            lines = super_iter(patched_file.readlines())
-            patched_file.close()
-    else:
-        # Open and read the cleaned HTML version of the law.
-        with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
-            lines = super_iter(clean_file.readlines())
-            clean_file.close()
-
-    # Construct the output XML object.
-    law = E.law("", {"nr": str(law_num), "year": str(law_year)})
-
-    # Keeps track of the turn of events. We can query this trail to check for
-    # example whether the name of the document has been processed, or what the
-    # last thing to be processed was. This gives us context when determining
-    # what to do next.
-    trail = Trail()
-    trail.append(law)
+    parser = LawParser(law_num, law_year)
+    law = parser.law
+    lines = parser.lines
 
     # See utils.py.
     matcher = Matcher()
@@ -377,10 +356,10 @@ def make_xml(law_num, law_year):
             name = E.name(law_name)
             law.append(name)
 
-            trail.append(name)
+            parser.trail_push(name)
 
         elif line == "<strong>":
-            if trail.last().tag == "name":
+            if parser.trail_last().tag == "name":
                 # Parse the num and date, which appears directly below the law name.
                 num_and_date = collect_until(lines, "</strong>")
 
@@ -449,7 +428,7 @@ def make_xml(law_num, law_year):
 
                 law.append(xml_num_and_date)
 
-                trail.append(xml_num_and_date)
+                parser.trail_push(xml_num_and_date)
 
         # This condition is a bit of a mess because on occasion, the name of
         # the law has been changed, but the footnotes describing them reside
@@ -492,13 +471,13 @@ def make_xml(law_num, law_year):
         # ridiculously messy as is.
         elif (
             line == "<hr/>"
-            and trail.last().tag == "num-and-date"
-            and lines.peek(2).strip() != "<small>"
+            and parser.trail_last().tag == "num-and-date"
+            and lines.peeks(2) != "<small>"
         ) or (
             line == "<br/>"
-            and lines.peek(-1).strip() == "</i>"
-            and lines.peek(-2).strip() == "</small>"
-            and not trail.milestone_reached("intro-finished")
+            and lines.peeks(-1) == "</i>"
+            and lines.peeks(-2) == "</small>"
+            and not parser.trail_reached("intro-finished")
         ):
             # Parse the whole clause about which minister the law refers to.
             # It contains HTML goo, but we'll just let it float along. It's
@@ -513,13 +492,30 @@ def make_xml(law_num, law_year):
                 if len(minister_clause):
                     law.append(E("minister-clause", minister_clause))
 
-            trail.set_milestone("intro-finished")
+            parser.trail_milestone("intro-finished")
+
+        # TODO: HERE
+        elif (line == "<br/>" 
+            and lines.peek(-1).strip() == "<hr/>" 
+            and lines.peek(-2).strip() == "</small>"
+            and parser.trail_reached("intro-finished")
+            and law.attrib["law-type"] == "speaker-verdict"
+            and lines.peek(1).find("<img") == -1
+        ):
+            # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
+            # the minister clause is followed by a preamble, which we will parse
+            # into a "sen". 
+            # The only example of this that this guard currently catches is 7/2022.
+            distance = occurrence_distance(lines, "<br/>")
+            if distance != None:
+                preamble = collect_until(lines, "<br/>")
+                law.append(E("sen", preamble))
 
         # Chapters are found by finding a <b> tag that comes right after a
         # <br/> tag that occurs after the ministerial clause is done. We use a
         # special function for this because we also need to examine a bit of
         # the content which makes the check more than a one-liner.
-        elif check_chapter(lines, law) == "chapter" and trail.milestone_reached(
+        elif check_chapter(lines, law) == "chapter" and parser.trail_reached(
             "intro-finished"
         ):
             # Parse what we will believe to be a chapter.
@@ -542,7 +538,7 @@ def make_xml(law_num, law_year):
 
             name_or_nr_title = collect_until(lines, "</b>")
 
-            if lines.peek().strip() == "<b>":
+            if lines.peeks() == "<b>":
                 chapter_nr_title = name_or_nr_title
 
                 # Let's see if we can figure out the number of this chapter.
@@ -685,14 +681,14 @@ def make_xml(law_num, law_year):
 
             law.append(chapter)
 
-            trail.append(chapter)
+            parser.trail_push(chapter)
 
             subchapter = None
 
         elif check_chapter(lines, law) in [
             "extra-docs",
             "appendix",
-        ] and trail.milestone_reached("intro-finished"):
+        ] and parser.trail_reached("intro-finished"):
             # Accompanying documents vary in origin and format, and are not a
             # part of the formal legal text itself, even though legal text may
             # reference them. Parsing them is beyond the scope of this tool.
@@ -700,7 +696,7 @@ def make_xml(law_num, law_year):
             # done. We'll escape the loop and go for post-processing.
             break
 
-        elif check_chapter(lines, law) == "subchapter" and trail.milestone_reached("intro-finished"):
+        elif check_chapter(lines, law) == "subchapter" and parser.trail_reached("intro-finished"):
             # Parse a subchapter.
 
             subchapter_goo = collect_until(lines, "</b>")
@@ -721,13 +717,13 @@ def make_xml(law_num, law_year):
 
             chapter.append(subchapter)
 
-            trail.append(subchapter)
+            parser.trail_push(subchapter)
 
             del subchapter_goo
             del subchapter_nr
             del subchapter_name
 
-        elif check_chapter(lines, law) == "art-chapter" and trail.milestone_reached(
+        elif check_chapter(lines, law) == "art-chapter" and parser.trail_reached(
             "intro-finished"
         ):
             # Parse an article chapter.
@@ -791,9 +787,9 @@ def make_xml(law_num, law_year):
                 sens = separate_sentences(strip_links(content))
                 add_sentences(art_chapter, sens)
 
-            trail.append(art_chapter)
+            parser.trail_push(art_chapter)
 
-        elif check_chapter(lines, law) == "ambiguous" and trail.milestone_reached(
+        elif check_chapter(lines, law) == "ambiguous" and parser.trail_reached(
             "intro-finished"
         ):
             # Parse a mysterious text that might be a chapter but we're unable
@@ -819,9 +815,9 @@ def make_xml(law_num, law_year):
             else:
                 law.append(ambiguous_bold_text)
 
-            trail.append(ambiguous_bold_text)
+            parser.trail_push(ambiguous_bold_text)
 
-        elif line == "<em>" and trail.milestone_reached("intro-finished"):
+        elif line == "<em>" and parser.trail_reached("intro-finished"):
             # Parse a mysterious thing which we will call an "ambiguous
             # section" and is composed of a single italic line. Such a line is
             # sometimes used as a sort of name for an article (45/1987,
@@ -862,12 +858,12 @@ def make_xml(law_num, law_year):
             else:
                 law.append(ambiguous_section)
 
-            trail.append(ambiguous_section)
+            parser.trail_push(ambiguous_section)
 
         elif (
             line == "<i>"
-            and lines.peek(2).strip() == "</i>"
-            and trail.milestone_reached("intro-finished")
+            and lines.peeks(2) == "</i>"
+            and parser.trail_reached("intro-finished")
         ):
             # Parse a sentence with a title. These are rare, but occur in 3.
             # gr. laga nr. 55/2009. Usually they are numbered, parsed as
@@ -893,7 +889,7 @@ def make_xml(law_num, law_year):
 
                 add_sentences(subart, separate_sentences(content))
 
-                trail.append(sen_title)
+                parser.trail_push(sen_title)
 
         elif matcher.check(line, r'<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
@@ -996,7 +992,7 @@ def make_xml(law_num, law_year):
             # Note that in this specific case, we actually want to include the
             # HTML, which we are appending "</a>" at the end. Normally we don't
             # want that, so `collect_until` doesn't include it.
-            if lines.peek().strip().find("<a ") == 0 and lines.peek(3).strip() == "</a>":
+            if lines.peeks().find("<a ") == 0 and lines.peeks(3) == "</a>":
                 art_title_link = collect_until(lines, "</a>")
                 art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
 
@@ -1018,7 +1014,7 @@ def make_xml(law_num, law_year):
             # Check if the next line is an <em>, because if so, then the
             # article has a name title and we need to grab it. Note that not
             # all articles have names.
-            if lines.peek().strip() == "<em>":
+            if lines.peeks() == "<em>":
                 scroll_until(lines, "<em>")
                 art_name = collect_until(lines, "</em>")
 
@@ -1027,8 +1023,8 @@ def make_xml(law_num, law_year):
             # Another way to denote an article's name is by immediately
             # following it with bold text. This is very rare but does occur.
             elif (
-                lines.peek().strip() == "<b>"
-                and lines.peek(2).strip() != "Ákvæði til bráðabirgða."
+                lines.peeks() == "<b>"
+                and lines.peeks(2) != "Ákvæði til bráðabirgða."
             ):
                 # Exceptional case: 94/1996 contains a very strange temporary
                 # clause chapter. It was originally a temporary article (24.
@@ -1094,11 +1090,11 @@ def make_xml(law_num, law_year):
             # Check if the article is empty aside from markers that need to be
             # included in the article <nr-title> or <name> (depending on
             # whether <name> exists at all).
-            while lines.peek().strip() in ["…", "]"]:
+            while lines.peeks() in ["…", "]"]:
                 marker = collect_until(lines, "</sup>")
                 art.getchildren()[-1].text += " " + marker + " </sup>"
 
-            trail.append(art)
+            parser.trail_push(art)
 
             # There can be no current subarticle or article chapter if we've
             # just discovered a new article.
@@ -1120,6 +1116,7 @@ def make_xml(law_num, law_year):
                 lines, r"<\/table>", linecount_to_br
             )
 
+            subart_name = ""
             # If a table is found inside the subarticle, we'll want to end the
             # subarticle when the table ends.
             if linecount_to_table is not None:
@@ -1131,8 +1128,31 @@ def make_xml(law_num, law_year):
                 content = collect_until(lines, "<br/>")
 
             subart = E("subart", {"nr": subart_nr})
-            sens = separate_sentences(strip_links(content))
-            add_sentences(subart, sens)
+
+            # Now let's check if the subarticle content contains bold AND italic text, 
+            # which may indicate a person (bold) is being given a role (italic).
+            if matcher.check(content, "<b>(.*)</b>(.*)<i>(.*)</i>"):
+                subart_name, text, role = matcher.result()
+                content = content.replace("<b>%s</b>" % subart_name, "")
+                # content = content.replace("<i>%s</i>" % role, )
+                subart.append(E("name", subart_name))
+                # subart.append(E("name", role))
+                stripped = strip_links(content)
+
+                # Now, we want to swap out the <i> text for a <name> tag.
+                # We'll do this by finding the <i> text in the content and
+                # replacing it with a <name> tag.
+                before, after = content.split("<i>")
+                name, after = after.split("</i>")
+                
+                sens = separate_sentences(before)
+                add_sentences(subart, sens)
+                subart.append(E("name", name))
+                sens = separate_sentences(after)
+                add_sentences(subart, sens)
+            else:
+                sens = separate_sentences(strip_links(content))
+                add_sentences(subart, sens)
 
             if art_chapter is not None and art_chapter.getparent().tag != "subart":
                 # When a `subart` is appended directly to an `art-chapter`,
@@ -1167,9 +1187,9 @@ def make_xml(law_num, law_year):
                 # subarticles. Possibly in a chapter, and possibly not.
                 law.append(subart)
 
-            trail.append(subart)
+            parser.trail_push(subart)
 
-        elif line.strip() == "…" and trail.last().tag == "num-and-date":
+        elif line.strip() == "…" and parser.trail_last().tag == "num-and-date":
             # Support for a deletion marker before any other content such as
             # an article, subarticle, numart, chapter or anything of the sort.
             # We'll place it in a sentence inside a subart so that the
@@ -1189,7 +1209,7 @@ def make_xml(law_num, law_year):
 
             law.append(subart)
 
-            trail.append(subart)
+            parser.trail_push(subart)
 
         elif matcher.check(line, "<table"):
             # Parse a stray table, that we haven't run across inside a
@@ -1207,7 +1227,7 @@ def make_xml(law_num, law_year):
                 add_sentences(art, [sen])
 
         elif matcher.check(line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">') or (
-            matcher.check(line, "<span>") and lines.peek().strip() != "</span>"
+            matcher.check(line, "<span>") and lines.peeks() != "</span>"
         ):
             # Parse a numart, or numerical article.
 
@@ -1217,7 +1237,7 @@ def make_xml(law_num, law_year):
             # programmatically. Example: "9. a" becomes "9a" in law nr.
             # 20/2003.
             numart_nr = strip_markers(
-                lines.peek().strip().strip("(").strip(")").strip(".")
+                lines.peeks().strip("(").strip(")").strip(".")
             ).replace(". ", "")
 
             # Support for numart ranges, which are only known to occur when
@@ -1233,7 +1253,7 @@ def make_xml(law_num, law_year):
             # actually a sub-numart or a super-numart. Otherwise it will
             # remain None, indicating that this is the first numart being
             # processed this time around.
-            if trail.last().tag == "numart":
+            if parser.trail_last().tag == "numart":
                 # Set the previous numart before current numart gets created.
                 prev_numart = numart
             else:
@@ -1278,7 +1298,7 @@ def make_xml(law_num, law_year):
             # deletion marker, and if it's there, we'll respond similarly to
             # how we respond to 3. gr. laga nr. 160/2010 (which was
             # immediately above this comment on 2022-01-23).
-            elif numart_nr == "</span>" and lines.peek(2).strip() == "…":
+            elif numart_nr == "</span>" and lines.peeks(2) == "…":
                 scroll_until(lines, "</span>")
                 content = collect_until(lines, "<br/>")
                 dummy_numart = E(
@@ -1487,13 +1507,13 @@ def make_xml(law_num, law_year):
             # Example:
             #     13-19. tölul. 1. mgr. 3. gr. laga nr. 116/2021 (153c).
             if all([
-                lines.peek(1).strip() == "]",
-                lines.peek(2).strip() == '<sup style="font-size:60%">',
-                lines.peek(4).strip() == "</sup>",
+                lines.peeks(1) == "]",
+                lines.peeks(2) == '<sup style="font-size:60%">',
+                lines.peeks(4) == "</sup>",
             ]):
                 numart_nr_title += collect_until(lines, "</sup>") + " </sup>"
 
-            if lines.peek().strip() == "<i>":
+            if lines.peeks() == "<i>":
                 # Looks like this numerical article has a name.
                 scroll_until(lines, "<i>")
 
@@ -1504,7 +1524,7 @@ def make_xml(law_num, law_year):
                 # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
                 # The name of a numerical article is contained in two "<i>"
                 # tags separated with an "og".
-                if lines.peek().strip() == "og" and lines.peek(2).strip() == "<i>":
+                if lines.peeks() == "og" and lines.peeks(2) == "<i>":
                     addendum = collect_until(lines, "</i>").replace("<i> ", "")
                     numart_name += " " + addendum
             else:
@@ -1637,7 +1657,7 @@ def make_xml(law_num, law_year):
                     if extra_sens_target.tag == "numart":
                         numart = extra_sens_target
 
-            trail.append(numart)
+            parser.trail_push(numart)
 
         elif line == "<small>":
             # Footnote section. Contains footnotes.
@@ -1646,11 +1666,11 @@ def make_xml(law_num, law_year):
 
             # Try an append the footnotes to whatever's appropriate given the
             # content we've run into.
-            if trail.last().tag == "num-and-date":
+            if parser.trail_last().tag == "num-and-date":
                 law.append(footnotes)
-            elif trail.last().tag == "chapter":
+            elif parser.trail_last().tag == "chapter":
                 chapter.append(footnotes)
-            elif trail.last().tag == "ambiguous-section":
+            elif parser.trail_last().tag == "ambiguous-section":
                 ambiguous_section.append(footnotes)
             elif art is not None:
                 # Most commonly, footnotes will be appended to articles.
@@ -1662,9 +1682,9 @@ def make_xml(law_num, law_year):
                 # article.
                 subart.append(footnotes)
 
-            trail.append(footnotes)
+            parser.trail_push(footnotes)
 
-        elif line == '<sup style="font-size:60%">' and trail.last().tag in [
+        elif line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
             "footnotes",
             "footnote",
         ]:
@@ -1696,7 +1716,7 @@ def make_xml(law_num, law_year):
             # Create the footnote XML node.
             footnote = E("footnote")
 
-            peek = lines.peek().strip()
+            peek = lines.peeks()
             if matcher.check(peek, r'<a href="(\/altext\/.*)">'):
                 # This is a footnote regarding a legal change.
                 href = "https://www.althingi.is%s" % matcher.result()[0]
@@ -1734,7 +1754,7 @@ def make_xml(law_num, law_year):
             # because "next(lines)" will eventually run out of lines.
             gathered = ""
             while True:
-                if lines.peek().strip() in ["</small>", '<sup style="font-size:60%">']:
+                if lines.peeks() in ["</small>", '<sup style="font-size:60%">']:
                     break
                 else:
                     # The text we want is separated into lines with arbitrary
@@ -1774,7 +1794,7 @@ def make_xml(law_num, law_year):
             # exist from an earlier iteration.
             footnotes.append(footnote)
 
-            if lines.peek().strip() == "</small>":
+            if lines.peeks() == "</small>":
                 # At this point, the basic footnote XML has been produced,
                 # enough to show the footnotes themselves below each article.
                 # We will now see if we can parse the markers in the content
@@ -2437,7 +2457,7 @@ def make_xml(law_num, law_year):
                             # node (or unspecified-ranges node).
                             location_target.append(location)
 
-            trail.append(footnote)
+            parser.trail_push(footnote)
 
     ##########################################################################
     # At this point, the XML object `law` contains the entire document with
@@ -2576,7 +2596,7 @@ def process_law(law_id):
         import traceback
 
         lines = "".join(traceback.format_exception(*sys.exc_info()))
-
+        print("Error processing law %s: %s" % (law_id, lines))
         # Report back which law was attempted to process, and error.
         return [law_id, lines]
 

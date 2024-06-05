@@ -663,6 +663,9 @@ class super_iter:
         if peek_index >= len(self.collection) or peek_index < 0:
             return None
         return self.collection[peek_index]
+    
+    def peeks(self, number_of_lines=1):
+        return self.peek(number_of_lines).strip()
 
 
 class Matcher:
