@@ -26,7 +26,6 @@ XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", "references.xml")
 ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
 
 
-
 class LawParser:
     """
     The goal of this class is to internalize all the commonly used parsing state
@@ -71,7 +70,7 @@ class LawParser:
         return self.trail.last()
     
     def trail_milestone(self, name):
-        self.trail.milestone_reached(name)
+        return self.trail.set_milestone(name)
 
     def trail_reached(self, name):
         return self.trail.milestone_reached(name)
