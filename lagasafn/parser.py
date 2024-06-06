@@ -3,9 +3,11 @@ from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
 from lxml.builder import E
+from lagasafn.contenthandlers import strip_markers
 from lagasafn.utils import super_iter
 from lagasafn.utils import Trail
 from lagasafn.utils import Matcher
+from lagasafn.utils import strip_links
 
 LAW_FILENAME = os.path.join(
     DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -57,6 +59,12 @@ class LawParser:
         self.trail = Trail()
         self.trail.append(self.law)
 
+        # A matcher:
+        self.matcher = Matcher()
+
+        # Set up the collection:
+        self.collection = []
+
     def peek(self, n=1):
         return self.lines.peek(n)
     
@@ -74,4 +82,87 @@ class LawParser:
 
     def trail_reached(self, name):
         return self.trail.milestone_reached(name)
-    
+
+
+    # collect/uncollect functions for collecting heaps of text, then returning it all in one go
+    # and resetting the collection for the next time we need to collect a bunch of text.
+
+    def collect(self, string):
+        self.collection.append(string.strip())
+
+    def uncollect(self):
+        result = " ".join(self.collection).strip()
+        self.collection = []
+        return result
+
+    # Will collect lines until the given string is found, and then return the
+    # collected lines.
+    def collect_until(self, lines, end_string):
+        done = False
+        while not done:
+            line = next(lines).strip()
+            if self.matcher.check(line, end_string):
+                done = True
+                continue
+            self.collect(line)
+
+        total = self.uncollect().strip()
+
+        return total
+
+
+####### Individual section parser functions below:
+
+def parse_law_title(parser):
+    # Parse law name.
+    law_name = strip_links(parser.collect_until(parser.lines, "</h2>"))
+
+    # Remove double spaces.
+    law_name = law_name.replace("  ", " ")
+
+    # Some "laws" are not really laws, per say, but presidential
+    # verdicts or contracts with external entities voted on by
+    # Parliament. The type of law seems only determinable by the name,
+    # so that's what we'll try here.
+    #
+    # For performance reasons, this should be organized so that the
+    # most likely test comes first. For this reason, a few things that
+    # are laws get tested at the bottom instead of with the most
+    # common result at the top.
+    law_type = "undetermined"
+    name_strip = strip_markers(law_name).strip()
+    if name_strip.find("Lög ") == 0 or name_strip[-3:] == "lög":
+        law_type = "law"
+    elif name_strip.find("Forsetaúrskurður ") == 0:
+        law_type = "speaker-verdict"
+    elif name_strip.find("Forsetabréf ") == 0:
+        law_type = "speaker-letter"
+    elif name_strip.find("Auglýsing ") == 0:
+        law_type = "advertisement"
+    elif name_strip.find("Konungsbréf ") == 0:
+        law_type = "royal-letter"
+    elif name_strip.find("Tilskipun") == 0:
+        law_type = "directive"
+    elif name_strip.find("Reglugerð ") == 0:
+        law_type = "regulation"
+    elif name_strip.find("Samningur ") == 0:
+        law_type = "contract"
+    elif name_strip.find("Stjórnarskrá ") == 0:
+        # Glory, glory!
+        law_type = "law"
+    elif name_strip.find("Eldri lög ") == 0:
+        # For 76/1970: Eldri lög um lax- og silungsveiði
+        law_type = "law"
+    elif name_strip.find("Hafnarlög ") == 0:
+        # For 10/1944: Hafnarlög fyrir Siglufjarðarkaupstað
+        law_type = "law"
+    elif name_strip.find("Norsku lög ") == 0:
+        law_type = "law"
+
+    parser.law.attrib["law-type"] = law_type
+
+    name = E.name(law_name)
+    parser.law.append(name)
+
+    parser.trail_push(name)
+
