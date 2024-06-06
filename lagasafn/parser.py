@@ -163,6 +163,5 @@ def parse_law_title(parser):
 
     name = E.name(law_name)
     parser.law.append(name)
-
     parser.trail_push(name)
 

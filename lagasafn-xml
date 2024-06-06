@@ -234,34 +234,6 @@ def make_xml(law_num, law_year):
     lines = parser.lines
     matcher = parser.matcher
 
-    # collect/uncollect functions for collecting heaps of text, then returning it all in one go
-    # and resetting the collection for the next time we need to collect a bunch of text.
-
-    def collect(string):
-        if not hasattr(collect, "collection"):
-            collect.collection = []
-        collect.collection.append(string.strip())
-
-    def uncollect():
-        result = " ".join(collect.collection).strip()
-        collect.collection = []
-        return result
-
-    # Will collect lines until the given string is found, and then return the
-    # collected lines.
-    def collect_until(lines, end_string):
-        done = False
-        while not done:
-            line = next(lines).strip()
-            if matcher.check(line, end_string):
-                done = True
-                continue
-            collect(line)
-
-        total = uncollect().strip()
-
-        return total
-
     # Checks how much iteration is required to hit a line that matches the
     # given regex. Optional limit parameter allows limiting search to a specific
     # number of lines into the future.
@@ -282,7 +254,7 @@ def make_xml(law_num, law_year):
     # Scrolls the lines until the given string is found. It works internally
     # the same as the collect_until-function, but is provided here with a
     # different name to provide a semantic distinction in the code below.
-    scroll_until = collect_until
+    scroll_until = parser.collect_until
 
     # Objects that help us figure out the current state of affairs. These
     # variables are used between iterations, meaning that whenever possible,
@@ -308,7 +280,7 @@ def make_xml(law_num, law_year):
         elif line == "<strong>":
             if parser.trail_last().tag == "name":
                 # Parse the num and date, which appears directly below the law name.
-                num_and_date = collect_until(lines, "</strong>")
+                num_and_date = parser.collect_until(lines, "</strong>")
 
                 # The num-and-date tends to contain excess whitespace.
                 num_and_date = num_and_date.replace("  ", " ")
@@ -435,7 +407,7 @@ def make_xml(law_num, law_year):
             # is no minister clause.
             hr_distance = occurrence_distance(lines, "<hr/>")
             if hr_distance is not None and hr_distance > 0:
-                minister_clause = collect_until(lines, "<hr/>")
+                minister_clause = parser.collect_until(lines, "<hr/>")
                 if len(minister_clause):
                     law.append(E("minister-clause", minister_clause))
 
@@ -455,7 +427,7 @@ def make_xml(law_num, law_year):
             # The only example of this that this guard currently catches is 7/2022.
             distance = occurrence_distance(lines, "<br/>")
             if distance != None:
-                preamble = collect_until(lines, "<br/>")
+                preamble = parser.collect_until(lines, "<br/>")
                 law.append(E("sen", preamble))
 
         # Chapters are found by finding a <b> tag that comes right after a
@@ -483,7 +455,7 @@ def make_xml(law_num, law_year):
             # is the chapter nr-title and that the content in the next <b>
             # clause will be the chapter name.
 
-            name_or_nr_title = collect_until(lines, "</b>")
+            name_or_nr_title = parser.collect_until(lines, "</b>")
 
             if lines.peeks() == "<b>":
                 chapter_nr_title = name_or_nr_title
@@ -524,7 +496,7 @@ def make_xml(law_num, law_year):
                 del t
 
                 scroll_until(lines, "<b>")
-                chapter_name = collect_until(lines, "</b>")
+                chapter_name = parser.collect_until(lines, "</b>")
 
                 chapter = E.chapter(
                     {"nr": str(nr), "nr-type": nr_type},
@@ -646,7 +618,7 @@ def make_xml(law_num, law_year):
         elif check_chapter(lines, law) == "subchapter" and parser.trail_reached("intro-finished"):
             # Parse a subchapter.
 
-            subchapter_goo = collect_until(lines, "</b>")
+            subchapter_goo = parser.collect_until(lines, "</b>")
 
             subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
 
@@ -674,7 +646,7 @@ def make_xml(law_num, law_year):
             "intro-finished"
         ):
             # Parse an article chapter.
-            art_chapter_goo = collect_until(lines, "</b>")
+            art_chapter_goo = parser.collect_until(lines, "</b>")
 
             # Check if there's a name to the article chapter.
             try:
@@ -729,7 +701,7 @@ def make_xml(law_num, law_year):
             if begins_with_regular_content(lines.peek(2)):
                 # Scroll over the break the belongs to the `art-chapter`.
                 scroll_until(lines, "<br/>")
-                content = collect_until(lines, "<br/>")
+                content = parser.collect_until(lines, "<br/>")
 
                 sens = separate_sentences(strip_links(content))
                 add_sentences(art_chapter, sens)
@@ -751,7 +723,7 @@ def make_xml(law_num, law_year):
             # theoretically be replaced by something more formal at some
             # point, should the format of published law ever allow.
 
-            ambiguous_bold_text = E("ambiguous-bold-text", collect_until(lines, "</b>"))
+            ambiguous_bold_text = E("ambiguous-bold-text", parser.collect_until(lines, "</b>"))
 
             if subart is not None:
                 subart.append(ambiguous_bold_text)
@@ -793,7 +765,7 @@ def make_xml(law_num, law_year):
             # when parsing the XML, it is possible to check what the last
             # <ambiguous-section> contained, if at some point a programmer
             # needs to deal with them when using the XML.
-            ambiguous_content = collect_until(lines, "</em>")
+            ambiguous_content = parser.collect_until(lines, "</em>")
 
             # FIXME: Separating the sentences like this incorrectly parses
             # what should be a `nr-title` as a `sen.`
@@ -828,8 +800,8 @@ def make_xml(law_num, law_year):
                 sen_title_text += "["
                 back_peek = back_peek[0:-1]
 
-            sen_title_text += collect_until(lines, "</i>")
-            content = collect_until(lines, "<br/>")
+            sen_title_text += parser.collect_until(lines, "</i>")
+            content = parser.collect_until(lines, "<br/>")
             if subart is not None:
                 sen_title = E("sen-title", sen_title_text)
                 subart.append(sen_title)
@@ -841,7 +813,7 @@ def make_xml(law_num, law_year):
         elif matcher.check(line, r'<img .+ src=".*sk.jpg" .+\/>'):
             # Parse an article.
             scroll_until(lines, "<b>")
-            art_nr_title = collect_until(lines, "</b>")
+            art_nr_title = parser.collect_until(lines, "</b>")
 
             clean_art_nr_title = strip_markers(art_nr_title)
 
@@ -938,9 +910,9 @@ def make_xml(law_num, law_year):
             #
             # Note that in this specific case, we actually want to include the
             # HTML, which we are appending "</a>" at the end. Normally we don't
-            # want that, so `collect_until` doesn't include it.
+            # want that, so `parser.collect_until` doesn't include it.
             if lines.peeks().find("<a ") == 0 and lines.peeks(3) == "</a>":
-                art_title_link = collect_until(lines, "</a>")
+                art_title_link = parser.collect_until(lines, "</a>")
                 art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
 
             # Create the tags, configure them and append to the chapter.
@@ -963,7 +935,7 @@ def make_xml(law_num, law_year):
             # all articles have names.
             if lines.peeks() == "<em>":
                 scroll_until(lines, "<em>")
-                art_name = collect_until(lines, "</em>")
+                art_name = parser.collect_until(lines, "</em>")
 
                 art.append(E("name", strip_links(art_name)))
 
@@ -1028,7 +1000,7 @@ def make_xml(law_num, law_year):
                 # outlined here.
 
                 scroll_until(lines, "<b>")
-                art_name = collect_until(lines, "</b>")
+                art_name = parser.collect_until(lines, "</b>")
 
                 art.append(
                     E("name", strip_links(art_name), {"original-ui-style": "bold"})
@@ -1038,7 +1010,7 @@ def make_xml(law_num, law_year):
             # included in the article <nr-title> or <name> (depending on
             # whether <name> exists at all).
             while lines.peeks() in ["…", "]"]:
-                marker = collect_until(lines, "</sup>")
+                marker = parser.collect_until(lines, "</sup>")
                 art.getchildren()[-1].text += " " + marker + " </sup>"
 
             parser.trail_push(art)
@@ -1069,10 +1041,10 @@ def make_xml(law_num, law_year):
             if linecount_to_table is not None:
                 # We must append the string '</table>' because it gets left
                 # behind by the collet_until function.
-                content = collect_until(lines, "</table>") + "</table>"
+                content = parser.collect_until(lines, "</table>") + "</table>"
             else:
                 # Everything is normal.
-                content = collect_until(lines, "<br/>")
+                content = parser.collect_until(lines, "<br/>")
 
             subart = E("subart", {"nr": subart_nr})
 
@@ -1151,7 +1123,7 @@ def make_xml(law_num, law_year):
             subart = E("subart")
             subart.attrib["nr"] = "1"
 
-            premature_deletion = collect_until(lines, "<br/>")
+            premature_deletion = parser.collect_until(lines, "<br/>")
             add_sentences(subart, [premature_deletion])
 
             law.append(subart)
@@ -1164,7 +1136,7 @@ def make_xml(law_num, law_year):
             # table width is only for consistency with the typical input.
 
             content = (
-                '<table width="100%">' + collect_until(lines, "</table>") + "</table>"
+                '<table width="100%">' + parser.collect_until(lines, "</table>") + "</table>"
             )
             sen = separate_sentences(content).pop()
 
@@ -1220,7 +1192,7 @@ def make_xml(law_num, law_year):
             # when rendering software wants to add deletion markers. A "sen"
             # node is also added for the deletion marker to be addable.
             if numart_nr == "":
-                content = collect_until(lines, "</span>")
+                content = parser.collect_until(lines, "</span>")
                 dummy_numart = E(
                     "numart",
                     {
@@ -1247,7 +1219,7 @@ def make_xml(law_num, law_year):
             # immediately above this comment on 2022-01-23).
             elif numart_nr == "</span>" and lines.peeks(2) == "…":
                 scroll_until(lines, "</span>")
-                content = collect_until(lines, "<br/>")
+                content = parser.collect_until(lines, "<br/>")
                 dummy_numart = E(
                     "numart",
                     {
@@ -1448,7 +1420,7 @@ def make_xml(law_num, law_year):
             parent.append(numart)
 
             # NOTE: Gets added after we add the sentences with `add_sentences`.
-            numart_nr_title = collect_until(lines, "</span>")
+            numart_nr_title = parser.collect_until(lines, "</span>")
 
             # Check for a closing bracket.
             # Example:
@@ -1458,7 +1430,7 @@ def make_xml(law_num, law_year):
                 lines.peeks(2) == '<sup style="font-size:60%">',
                 lines.peeks(4) == "</sup>",
             ]):
-                numart_nr_title += collect_until(lines, "</sup>") + " </sup>"
+                numart_nr_title += parser.collect_until(lines, "</sup>") + " </sup>"
 
             if lines.peeks() == "<i>":
                 # Looks like this numerical article has a name.
@@ -1466,19 +1438,19 @@ def make_xml(law_num, law_year):
 
                 # Note that this gets inserted **after** we add the sentences
                 # with `add_sentences` below.
-                numart_name = collect_until(lines, "</i>")
+                numart_name = parser.collect_until(lines, "</i>")
 
                 # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
                 # The name of a numerical article is contained in two "<i>"
                 # tags separated with an "og".
                 if lines.peeks() == "og" and lines.peeks(2) == "<i>":
-                    addendum = collect_until(lines, "</i>").replace("<i> ", "")
+                    addendum = parser.collect_until(lines, "</i>").replace("<i> ", "")
                     numart_name += " " + addendum
             else:
                 numart_name = None
 
             # Read in the remainder of the content.
-            content = collect_until(lines, "<br/>")
+            content = parser.collect_until(lines, "<br/>")
 
             # Split the content into sentences.
             sens = separate_sentences(strip_links(content))
@@ -1550,7 +1522,7 @@ def make_xml(law_num, law_year):
                     # numart, and not a new location like an article,
                     # subarticle or another numart, we must determine its
                     # nature. We'll start by finding the content.
-                    extra_content = collect_until(lines, "<br/>")
+                    extra_content = parser.collect_until(lines, "<br/>")
 
                     # Process the extra content into extra sentences.
                     extra_sens = separate_sentences(strip_links(extra_content))
@@ -1645,7 +1617,7 @@ def make_xml(law_num, law_year):
             # In a perfect world, we should be able to get the footnote number
             # with a line like this:
             #
-            #     footnote_nr = collect_until(lines, '</sup>').strip(')')
+            #     footnote_nr = parser.collect_until(lines, '</sup>').strip(')')
             #
             # But it may in fact be wrong, like in 149. gr. laga nr. 19/1940,
             # where two consecutive footnotes are numbered as 1 below the
@@ -1671,7 +1643,7 @@ def make_xml(law_num, law_year):
                 # Retrieve the the content of the link to the external law
                 # that we found.
                 scroll_until(lines, r'<a href="(\/altext\/.*)">')
-                footnote_sen = collect_until(lines, "</a>")
+                footnote_sen = parser.collect_until(lines, "</a>")
 
                 # Update the footnote with the content discovered so far.
                 footnote.attrib["href"] = href
