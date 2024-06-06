@@ -233,23 +233,7 @@ def make_xml(law_num, law_year):
     law = parser.law
     lines = parser.lines
     matcher = parser.matcher
-
-    # Checks how much iteration is required to hit a line that matches the
-    # given regex. Optional limit parameter allows limiting search to a specific
-    # number of lines into the future.
-    def occurrence_distance(lines, regex, limit=None):
-        # We start at +1 to avoid matching the current line.
-        i = 1
-        line = lines.peek(i)
-        while line is not None and (limit is None or i <= limit):
-            line = line.strip()
-            if matcher.check(line, regex):
-                return i
-
-            i += 1
-            line = lines.peek(i)
-
-        return None
+    occurrence_distance = parser.occurrence_distance
 
     # Scrolls the lines until the given string is found. It works internally
     # the same as the collect_until-function, but is provided here with a

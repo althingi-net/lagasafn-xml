@@ -109,6 +109,25 @@ class LawParser:
         total = self.uncollect().strip()
 
         return total
+    
+
+    # Checks how much iteration is required to hit a line that matches the
+    # given regex. Optional limit parameter allows limiting search to a specific
+    # number of lines into the future.
+    def occurrence_distance(self, lines, regex, limit=None):
+        # We start at +1 to avoid matching the current line.
+        i = 1
+        line = lines.peek(i)
+        while line is not None and (limit is None or i <= limit):
+            line = line.strip()
+            if self.matcher.check(line, regex):
+                return i
+
+            i += 1
+            line = lines.peek(i)
+
+        return None
+
 
 
 ####### Individual section parser functions below:
