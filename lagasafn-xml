@@ -42,7 +42,16 @@ from lxml.builder import E
 from multiprocessing import Pool
 from reynir import NounPhrase
 from sys import stderr
-from lagasafn.parser import LawParser, parse_ambiguous_section, parse_chapter, parse_law_number_and_date, parse_law_title, parse_minister_clause_footnotes, parse_presidential_decree_preamble, postprocess_law
+from lagasafn.parser import (
+    LawParser,
+    parse_ambiguous_section,
+    parse_chapter,
+    parse_law_number_and_date,
+    parse_law_title,
+    parse_minister_clause_footnotes,
+    parse_presidential_decree_preamble,
+    postprocess_law,
+)
 
 LAW_FILENAME = os.path.join(
     DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -256,9 +265,9 @@ def make_xml(law_num, law_year):
         line = line.strip()
         parser.line = line
 
-        # Beware: The order of these function calls is sometimes important. 
+        # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
-        #         the guard clauses *should* make this order irrelevant, 
+        #         the guard clauses *should* make this order irrelevant,
         #         but let's not take any chances until we're certain.
 
         parse_law_title(parser)
@@ -280,7 +289,9 @@ def make_xml(law_num, law_year):
             # done. We'll escape the loop and go for post-processing.
             break
 
-        if check_chapter(lines, law) == "subchapter" and parser.trail_reached("intro-finished"):
+        if check_chapter(lines, law) == "subchapter" and parser.trail_reached(
+            "intro-finished"
+        ):
             # Parse a subchapter.
 
             subchapter_goo = parser.collect_until(lines, "</b>")
@@ -388,7 +399,9 @@ def make_xml(law_num, law_year):
             # theoretically be replaced by something more formal at some
             # point, should the format of published law ever allow.
 
-            ambiguous_bold_text = E("ambiguous-bold-text", parser.collect_until(lines, "</b>"))
+            ambiguous_bold_text = E(
+                "ambiguous-bold-text", parser.collect_until(lines, "</b>")
+            )
 
             if subart is not None:
                 subart.append(ambiguous_bold_text)
@@ -403,7 +416,6 @@ def make_xml(law_num, law_year):
 
         elif line == "<em>" and parser.trail_reached("intro-finished"):
             parse_ambiguous_section(parser)
-
 
         elif (
             line == "<i>"
@@ -567,10 +579,7 @@ def make_xml(law_num, law_year):
 
             # Another way to denote an article's name is by immediately
             # following it with bold text. This is very rare but does occur.
-            elif (
-                lines.peeks() == "<b>"
-                and lines.peeks(2) != "Ákvæði til bráðabirgða."
-            ):
+            elif lines.peeks() == "<b>" and lines.peeks(2) != "Ákvæði til bráðabirgða.":
                 # Exceptional case: 94/1996 contains a very strange temporary
                 # clause chapter. It was originally a temporary article (24.
                 # gr.) with a name denoted differently than other articles in
@@ -674,7 +683,7 @@ def make_xml(law_num, law_year):
 
             subart = E("subart", {"nr": subart_nr})
 
-            # Now let's check if the subarticle content contains bold AND italic text, 
+            # Now let's check if the subarticle content contains bold AND italic text,
             # which may indicate a person (bold) is being given a role (italic).
             if matcher.check(content, "<b>(.*)</b>(.*)<i>(.*)</i>"):
                 subart_name, text, role = matcher.result()
@@ -689,7 +698,7 @@ def make_xml(law_num, law_year):
                 # replacing it with a <name> tag.
                 before, after = content.split("<i>")
                 name, after = after.split("</i>")
-                
+
                 sens = separate_sentences(before)
                 add_sentences(subart, sens)
                 subart.append(E("name", name))
@@ -762,7 +771,9 @@ def make_xml(law_num, law_year):
             # table width is only for consistency with the typical input.
 
             content = (
-                '<table width="100%">' + parser.collect_until(lines, "</table>") + "</table>"
+                '<table width="100%">'
+                + parser.collect_until(lines, "</table>")
+                + "</table>"
             )
             sen = separate_sentences(content).pop()
 
@@ -1051,11 +1062,13 @@ def make_xml(law_num, law_year):
             # Check for a closing bracket.
             # Example:
             #     13-19. tölul. 1. mgr. 3. gr. laga nr. 116/2021 (153c).
-            if all([
-                lines.peeks(1) == "]",
-                lines.peeks(2) == '<sup style="font-size:60%">',
-                lines.peeks(4) == "</sup>",
-            ]):
+            if all(
+                [
+                    lines.peeks(1) == "]",
+                    lines.peeks(2) == '<sup style="font-size:60%">',
+                    lines.peeks(4) == "</sup>",
+                ]
+            ):
                 numart_nr_title += parser.collect_until(lines, "</sup>") + " </sup>"
 
             if lines.peeks() == "<i>":
@@ -1964,7 +1977,7 @@ def make_xml(law_num, law_year):
                         else:
                             # If, however, the the starting and ending
                             # locations differ and we are not denoting a
-                            # region of text with "words", we'll need 
+                            # region of text with "words", we'll need
                             # sub-location nodes, <start> and <end>, within
                             # the <location> element, so that the opening and
                             # closing markers can be placed in completely
