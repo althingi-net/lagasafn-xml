@@ -1,4 +1,5 @@
 import os
+import roman
 from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
@@ -6,6 +7,8 @@ from lxml.builder import E
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import separate_sentences
+from lagasafn.contenthandlers import check_chapter
+from lagasafn.utils import is_roman
 from lagasafn.utils import determine_month
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
@@ -129,7 +132,11 @@ class LawParser:
         total = self.uncollect().strip()
 
         return total
-    
+
+    # Scrolls the lines until the given string is found. It works internally
+    # the same as the collect_until-function, but is provided here with a
+    # different name to provide a semantic distinction in the code below.    
+    scroll_until = collect_until
 
     # Checks how much iteration is required to hit a line that matches the
     # given regex. Optional limit parameter allows limiting search to a specific
@@ -325,6 +332,268 @@ def parse_ambiguous_section(parser):
         parser.law.append(parser.ambiguous_section)
 
     parser.trail_push(parser.ambiguous_section)
+
+
+def parse_minister_clause_footnotes(parser):
+    # This condition is a bit of a mess because on occasion, the name of
+    # the law has been changed, but the footnotes describing them reside
+    # inside what we normally call minister-clause. In other words, we
+    # need to parse the contents of the minister-clause for footnotes.
+    # Luckily, the footnotes to the name change always come first inside
+    # the minister-clause, so what we need to do is to exclude the
+    # footnotes-part of the minister-clause. We do this by checking for
+    # the conditions of a minister-clause in two separate way, one for the
+    # normal circumstance where there are no footnotes inside it, and also
+    # in another way which corresponds with how the HTML looks when
+    # footnotes are present.
+    #
+    # First, it checks the normal way, which is for the first <hr/> tag
+    # after the law number and date, but **not** starting to read it as
+    # the minister-clause **if** the second next tag is a <small>, because
+    # that indicates that before the regular minister-clause content comes
+    # up, there will be some footnotes that we'll want processed
+    # elsewhere. When that happens, we will not process the content as a
+    # minister-clause, but will rather pass this time, and let the
+    # footnote-processing mechanism pick it up.
+    #
+    # Second, it checks if we have hit an indication that the previously
+    # mentioned footnotes-inside-minister-clause part has indeed been
+    # picked up elsewhere is over, and that we should conclude that we've
+    # started processing the traditional minister-clause content after
+    # such footnote-processing. This is done in a way that is not
+    # abundantly clear by just reading the code. It just so happens that
+    # under the circumstance that a law's name has changed and a footnote
+    # appears inside the minister-clause to describe it, that we'll run
+    # into "</small></i><br/>" and this seems consistent. However, that
+    # pattern of tags can appear in many other circumstances as well. So
+    # what we do, is that we check for that pattern, but only match it if
+    # we haven't already processed the minister-clause. The way that this
+    # is indicated is if "intro-finished" is in the processing trail. As a
+    # result, we check for that pattern, but only match if we haven't yet
+    # finished "intro-finished".
+    #
+    # TODO: Consider creating a specified function for this check. It is
+    # ridiculously messy as is.
+    if (
+        parser.line == "<hr/>"
+        and parser.trail_last().tag == "num-and-date"
+        and parser.peeks(2) != "<small>"
+    ) or (
+        parser.line == "<br/>"
+        and parser.peeks(-1) == "</i>"
+        and parser.peeks(-2) == "</small>"
+        and not parser.trail_reached("intro-finished")
+    ):
+        # Parse the whole clause about which minister the law refers to.
+        # It contains HTML goo, but we'll just let it float along. It's
+        # not even certain that we'll be using it, but there's no harm in
+        # keeping it around.
+
+        # If there is no <hr/> clause in the future, it means that there
+        # is no minister clause.
+        hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
+        if hr_distance is not None and hr_distance > 0:
+            minister_clause = parser.collect_until(parser.lines, "<hr/>")
+            if len(minister_clause):
+                parser.law.append(E("minister-clause", minister_clause))
+
+        parser.trail_milestone("intro-finished")
+
+
+def parse_presidential_decree_preamble(parser):
+    if (parser.line == "<br/>" 
+        and parser.peek(-1).strip() == "<hr/>" 
+        and parser.peek(-2).strip() == "</small>"
+        and parser.trail_reached("intro-finished")
+        and parser.law.attrib["law-type"] == "speaker-verdict"
+        and parser.peek(1).find("<img") == -1
+    ):
+        # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
+        # the minister clause is followed by a preamble, which we will parse
+        # into a "sen". 
+        # The only example of this that this guard currently catches is 7/2022.
+        distance = parser.occurrence_distance(parser.lines, "<br/>")
+        if distance != None:
+            preamble = parser.collect_until(parser.lines, "<br/>")
+            parser.law.append(E("sen", preamble))
+
+
+def parse_chapter(parser):
+    # Chapters are found by finding a <b> tag that comes right after a
+    # <br/> tag that occurs after the ministerial clause is done. We use a
+    # special function for this because we also need to examine a bit of
+    # the content which makes the check more than a one-liner.
+    if not (check_chapter(parser.lines, parser.law) == "chapter" and parser.trail_reached(
+        "intro-finished"
+    )):
+        return
+        
+    # Parse what we will believe to be a chapter.
+
+    # Chapter names are a bit tricky. They may be divided into two <b>
+    # clauses, in which case the former one is what we call a nr-title
+    # (I. kafli, II. kafli etc.), and then a name describing its
+    # content (Almenn ákvæði, Tilgangur og markmið etc.).
+    #
+    # Sometimes however, there is only one <b> and not two. In these
+    # cases, there is no nr-title and only a name.
+    #
+    # To solve this, we first collect the content between the first
+    # <b> and </b> and store that in a variable called
+    # `name_or_nr_title` because we still don't know whether it's a
+    # chapter name or a chapter nr-title. If however, a <b> is found
+    # immediately following it, we conclude that what we've gathered
+    # is the chapter nr-title and that the content in the next <b>
+    # clause will be the chapter name.
+
+    name_or_nr_title = parser.collect_until(parser.lines, "</b>")
+
+    if parser.lines.peeks() == "<b>":
+        chapter_nr_title = name_or_nr_title
+
+        # Let's see if we can figure out the number of this chapter.
+        # We're going to assume the format "II. kafli" for the second
+        # chapter, and "II. kafli B." for the second chapter B, and in
+        # those examples, nr-titles will be "2" and "2b" respectively.
+        t = strip_markers(chapter_nr_title).strip()
+        maybe_nr = t[0 : t.index(".")]
+        try:
+            nr = str(roman.fromRoman(maybe_nr))
+            roman_nr = maybe_nr
+            nr_type = "roman"
+        except roman.InvalidRomanNumeralError:
+            nr = int(maybe_nr)
+            roman_nr = None
+            nr_type = "arabic"
+
+        # We assume that a chapter nr-title with an alphabetical
+        # character (like "II. kafli B" or "2b") can only occur in
+        # chapters that contain the word "kafli". This is by
+        # necessity, because we need to be able to parse chapter names
+        # like "II. Nefndir." which contain a Roman numeral and name.
+        # A chapter name like "II B. Nefndir" looks pretty outlandish
+        # though, so this should be safe. Instead, the legislature
+        # would surely name the chapter to "II. kafli B. Nefndir".
+        #
+        # We check for both "kafli" and other words known to also
+        # designate some kind of chapter, because those are logically
+        # equivalent, but should never appear both in the same chapter
+        # line.
+        for chapter_word_check in ["kafli", "hluti", "bók"]:
+            if chapter_word_check in t:
+                alpha = t[t.index(chapter_word_check) + 6 :].strip(".")
+                if alpha:
+                    nr += alpha.lower()
+        del t
+
+        parser.scroll_until(parser.lines, "<b>")
+        chapter_name = parser.collect_until(parser.lines, "</b>")
+
+        parser.chapter = E.chapter(
+            {"nr": str(nr), "nr-type": nr_type},
+            E("nr-title", chapter_nr_title),
+            E("name", chapter_name),
+        )
+
+        # Record the original Roman numeral if applicable.
+        if roman_nr is not None:
+            parser.chapter.attrib["roman-nr"] = roman_nr
+
+    else:
+        chapter_name = name_or_nr_title
+
+        # When the chapter doesn't have both a nr-title and a name,
+        # what we see may be either a name or a Roman numeral. If it's
+        # a Roman numeral, we'll want to do two things; 1) Include the
+        # number in the "nr" attribute (in Arabic) and 2) Use the
+        # "nr-title" tag instead of the "name" tag. If it's not a
+        # Roman numeral, we'll just set a name.
+        #
+        # Chapters with no name but a Roman numeral may be marked
+        # either with the Roman numeral alone, like "IX.", or they may
+        # include the word "kafli", looking like "IX. kafli.". We
+        # remove the string ". kafli" in the nr-title so that we're
+        # always just dealing with the Roman numeral itself when
+        # looking for a nr-title.
+        try:
+            maybe_roman_nr = (
+                strip_markers(chapter_name)
+                .replace(". kafli", "")
+                .replace(". hluti", "")
+                .replace(". bók", "")
+                .strip()
+                .strip(".")
+            )
+
+            # check for possible roman number range numbering which are seen when multiple
+            # articles have been removed and are thus collectively empty
+            has_ranged_roman = False
+            if "–" in maybe_roman_nr:
+                maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split("–")
+                maybe_roman_nr_a = maybe_roman_nr_a.strip(".")
+                if is_roman(maybe_roman_nr_a) and is_roman(maybe_roman_nr_b):
+                    nr_a = roman.fromRoman(maybe_roman_nr_a)
+                    nr_b = roman.fromRoman(maybe_roman_nr_b)
+                    nr = "%s-%s" % (nr_a, nr_b)
+                    roman_nr = "%s-%s" % (
+                        roman.toRoman(nr_a),
+                        roman.toRoman(nr_b),
+                    )
+                    parser.chapter = E.chapter(
+                        {
+                            "nr": nr,
+                            "nr-type": "roman",
+                            "roman-nr": maybe_roman_nr,
+                        },
+                        E("nr-title", chapter_name),
+                    )
+                    has_ranged_roman = True
+            if has_ranged_roman is False:
+                nr = str(roman.fromRoman(maybe_roman_nr))
+                parser.chapter = E.chapter(
+                    {"nr": nr, "nr-type": "roman", "roman-nr": maybe_roman_nr},
+                    E("nr-title", chapter_name),
+                )
+        except roman.InvalidRomanNumeralError:
+            # Nope! It's a name.
+            nr = None
+            parser.chapter = E.chapter({"nr-type": "name"}, E("name", chapter_name))
+
+    # Some laws have a chapter for temporary clauses, which may be
+    # named something like "Bráðabirgðaákvæði", "Ákvæði til
+    # bráðabirgða" and probably something else as well. We will assume
+    # that a chapter name that includes that string "bráðabirgð" is a
+    # chapter for temporary clauses. We also make a number of other
+    # tests on the chapter name to account for various special cases
+    # as pointed out in comments below.
+    cn = chapter_name.lower()
+    if (
+        "bráðabirgð" in cn
+        and "úrræði" not in cn
+        and (
+            # Various places where something has been removed and
+            # commented in content with an a-node.
+            "úrelt ákvæði til bráðabirgða" not in cn
+            or
+            # Special case in 87/1992 where text is before a-node
+            cn.find("ákvæði til bráðabirgða.") == 0
+        )
+        and
+        # Special case in law 90/1989
+        "brottfallin lög" not in cn
+        and
+        # Special case in law 80/2007
+        "bráðabirgðaafnot" not in cn
+    ):
+        if nr is None:
+            parser.chapter.attrib["nr"] = "t"
+        parser.chapter.attrib["nr-type"] = "temporary-clauses"
+
+    parser.law.append(parser.chapter)
+
+    parser.trail_push(parser.chapter)
+
+    parser.subchapter = None
 
 
 def postprocess_law(parser):
