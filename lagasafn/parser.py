@@ -46,6 +46,7 @@ class LawParser:
         # their values should make sense at the end of the processing of a
         # particular line or clause. Never put nonsense into them because it will
         # completely confuse the processing elsewhere.
+        self.line = None
         self.chapter = None
         self.subchapter = None
         self.art = None
@@ -152,6 +153,9 @@ class LawParser:
 ####### Individual section parser functions below:
 
 def parse_law_title(parser):
+    if parser.line != "<h2>":
+        return
+
     # Parse law name.
     law_name = strip_links(parser.collect_until(parser.lines, "</h2>"))
 
@@ -205,6 +209,9 @@ def parse_law_title(parser):
 
 
 def parse_law_number_and_date(parser):
+    if parser.line != "<strong>" or parser.trail_last().tag != "name":
+        return
+
     # Parse the num and date, which appears directly below the law name.
     num_and_date = parser.collect_until(parser.lines, "</strong>")
 

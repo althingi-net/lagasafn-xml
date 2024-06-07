@@ -255,12 +255,10 @@ def make_xml(law_num, law_year):
     # browse the HTML contents on a per-line basis.
     for line in lines:
         line = line.strip()
+        parser.line = line
 
-        if line == "<h2>":
-            parse_law_title(parser)
-
-        if line == "<strong>" and parser.trail_last().tag == "name":
-            parse_law_number_and_date(parser)
+        parse_law_title(parser)
+        parse_law_number_and_date(parser)
 
         # This condition is a bit of a mess because on occasion, the name of
         # the law has been changed, but the footnotes describing them reside
@@ -301,7 +299,7 @@ def make_xml(law_num, law_year):
         #
         # TODO: Consider creating a specified function for this check. It is
         # ridiculously messy as is.
-        elif (
+        if (
             line == "<hr/>"
             and parser.trail_last().tag == "num-and-date"
             and lines.peeks(2) != "<small>"
@@ -327,7 +325,7 @@ def make_xml(law_num, law_year):
             parser.trail_milestone("intro-finished")
 
 
-        elif (line == "<br/>" 
+        if (line == "<br/>" 
             and lines.peek(-1).strip() == "<hr/>" 
             and lines.peek(-2).strip() == "</small>"
             and parser.trail_reached("intro-finished")
@@ -347,7 +345,7 @@ def make_xml(law_num, law_year):
         # <br/> tag that occurs after the ministerial clause is done. We use a
         # special function for this because we also need to examine a bit of
         # the content which makes the check more than a one-liner.
-        elif check_chapter(lines, law) == "chapter" and parser.trail_reached(
+        if check_chapter(lines, law) == "chapter" and parser.trail_reached(
             "intro-finished"
         ):
             # Parse what we will believe to be a chapter.
