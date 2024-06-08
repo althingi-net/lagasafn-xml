@@ -6,6 +6,7 @@ from lxml import etree
 from lxml.builder import E
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
+from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.utils import is_roman
@@ -138,10 +139,13 @@ class LawParser:
     # different name to provide a semantic distinction in the code below.
     scroll_until = collect_until
 
-    # Checks how much iteration is required to hit a line that matches the
-    # given regex. Optional limit parameter allows limiting search to a specific
-    # number of lines into the future.
     def occurrence_distance(self, lines, regex, limit=None):
+        """
+        Checks how much iteration is required to hit a line that matches the
+        given regex. Optional limit parameter allows limiting search to a
+        specific number of lines into the future.
+        """
+
         # We start at +1 to avoid matching the current line.
         i = 1
         line = lines.peek(i)
@@ -414,7 +418,7 @@ def parse_presidential_decree_preamble(parser):
         # into a "sen".
         # The only example of this that this guard currently catches is 7/2022.
         distance = parser.occurrence_distance(parser.lines, "<br/>")
-        if distance != None:
+        if distance is not None and begins_with_regular_content(parser.lines.peek()):
             preamble = parser.collect_until(parser.lines, "<br/>")
             parser.law.append(E("sen", preamble))
 
