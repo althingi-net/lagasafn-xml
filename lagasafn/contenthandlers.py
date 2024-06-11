@@ -19,7 +19,7 @@ def get_nr_and_name(goo: str) -> (str, str):
     dot_loc = goo.find(".")
     if dot_loc > -1:
         nr = goo[:dot_loc]
-        name = goo[dot_loc+1:].strip()
+        name = goo[dot_loc + 1 :].strip()
     else:
         nr = goo.strip()
         name = ""
@@ -239,7 +239,10 @@ def check_chapter(lines, law):
             # something else, for example an `art-chapter`.
             law.attrib["subchapter-bold-alphabet"] = "true"
 
-        if "subchapter-bold-alphabet" in law.attrib and law.attrib["subchapter-bold-alphabet"] == "true":
+        if (
+            "subchapter-bold-alphabet" in law.attrib
+            and law.attrib["subchapter-bold-alphabet"] == "true"
+        ):
             # In codex version 153c, this is known to happen in:
             # - 75/1997
             # - 112/2008
@@ -700,7 +703,9 @@ def is_ignorable_chapter(line: str) -> str:
         line_type = "extra-docs"
 
     # Same goes for appendices as extra-docs.
-    elif matcher.check(line.lower(), ".* viðauki") or matcher.check(line.lower(), "viðauki.*"):
+    elif matcher.check(line.lower(), ".* viðauki") or matcher.check(
+        line.lower(), "viðauki.*"
+    ):
         line_type = "appendix"
 
     return line_type
@@ -710,7 +715,7 @@ def remove_ignorables(soup):
     """
     Removes ignorables as defined by `is_ignorable_chapter`.
     """
-    for b_tag in soup.find_all('b'):
+    for b_tag in soup.find_all("b"):
         if is_ignorable_chapter(b_tag.text):
             to_be_extracted = b_tag
 

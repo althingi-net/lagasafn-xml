@@ -69,9 +69,7 @@ class WebTests(StaticLiveServerTestCase):
                 if filename == "problems.xml":
                     # If the problem record is modified, the output is very
                     # misleading, so it's treated as an error.
-                    raise Exception(
-                        "Problem record (problems.xml) is modified."
-                    )
+                    raise Exception("Problem record (problems.xml) is modified.")
                 elif filename.count(".") == 2:
                     # Looking for filenames like "1944.33.xml", i.e. laws.
                     law_year, law_nr, suffix = filename.split(".")
@@ -112,7 +110,7 @@ class WebTests(StaticLiveServerTestCase):
 
         chrome_options = ChromeOptions()
         chrome_options.add_argument("--headless")
-        chrome_options.add_argument('--remote-debugging-pipe')
+        chrome_options.add_argument("--remote-debugging-pipe")
         cls.selenium = webdriver.Chrome(options=chrome_options)
 
         cls.selenium.implicitly_wait(0.5)
@@ -148,10 +146,7 @@ class WebTests(StaticLiveServerTestCase):
             success = 0.0
 
         prior_success = self.problems.report(
-            law_link["identifier"],
-            "javascript",
-            success,
-            message
+            law_link["identifier"], "javascript", success, message
         )
 
         return success, prior_success
@@ -203,8 +198,8 @@ class WebTests(StaticLiveServerTestCase):
             # We'll encode this as JSON.
             # NOTE: These texts are void of whitespace, because when evaluating
             # correctness, we have hitherto not cared about that.
-            message_before = remote_text[difference_at-50:difference_at]
-            message_after = remote_text[difference_at:difference_at+50]
+            message_before = remote_text[difference_at - 50 : difference_at]
+            message_after = remote_text[difference_at : difference_at + 50]
             if len(message_before) or len(message_after):
                 message = "%s | %s" % (message_before, message_after)
 
@@ -213,7 +208,7 @@ class WebTests(StaticLiveServerTestCase):
             "content",
             success,
             message=message,
-            distance=distance
+            distance=distance,
         )
 
         return success, prior_success
@@ -294,11 +289,11 @@ class WebTests(StaticLiveServerTestCase):
                     # Space added to pad for the +/- signs added elsewhere.
                     out_progression = " %s" % out_progression
 
-                print("%s, %s (%s)" % (
-                    out_success,
-                    out_prior_success,
-                    out_progression
-                ), end="", flush=True)
+                print(
+                    "%s, %s (%s)" % (out_success, out_prior_success, out_progression),
+                    end="",
+                    flush=True,
+                )
 
                 if not success:
                     has_errors = True

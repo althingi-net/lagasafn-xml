@@ -19,6 +19,7 @@ from xml.dom import minidom
 #  - Which elements are present inside which other elements
 #  - Which elements are parents of which other elements
 
+
 class XMLStructureInfo:
     def __init__(self):
         self.elements = {}
@@ -31,7 +32,7 @@ class XMLStructureInfo:
         # file = open(filename, "r").read()
         doc = minidom.parse(str(filename))
         self._parse_node(doc.documentElement)
-    
+
     def _parse_node(self, node):
         if node.nodeType == node.ELEMENT_NODE:
             self.elements[node.tagName] = self.elements.get(node.tagName, 0) + 1
@@ -39,16 +40,22 @@ class XMLStructureInfo:
             for child in node.childNodes:
                 self._parse_node(child)
                 if child.nodeType == node.ELEMENT_NODE:
-                    self.element_children.setdefault(node.tagName, {}).setdefault(child.tagName, 0)
+                    self.element_children.setdefault(node.tagName, {}).setdefault(
+                        child.tagName, 0
+                    )
                     self.element_children[node.tagName][child.tagName] += 1
-                    self.element_parents.setdefault(child.tagName, {}).setdefault(node.tagName, 0)
+                    self.element_parents.setdefault(child.tagName, {}).setdefault(
+                        node.tagName, 0
+                    )
                     self.element_parents[child.tagName][node.tagName] += 1
 
     def _parse_attributes(self, node):
         if node.hasAttributes():
             for attr in node.attributes.items():
                 self.attributes[attr[0]] = self.attributes.get(attr[0], 0) + 1
-                self.element_attributes.setdefault(node.tagName, {}).setdefault(attr[0], 0)
+                self.element_attributes.setdefault(node.tagName, {}).setdefault(
+                    attr[0], 0
+                )
                 self.element_attributes[node.tagName][attr[0]] += 1
 
     def report(self, format):
@@ -58,13 +65,19 @@ class XMLStructureInfo:
             self._report_yaml()
 
     def _report_json(self):
-        print(json.dumps({
-            "elements": self.elements,
-            "attributes": self.attributes,
-            "element_children": self.element_children,
-            "element_parents": self.element_parents,
-            "element_attributes": self.element_attributes
-        }, indent=2, sort_keys=True))
+        print(
+            json.dumps(
+                {
+                    "elements": self.elements,
+                    "attributes": self.attributes,
+                    "element_children": self.element_children,
+                    "element_parents": self.element_parents,
+                    "element_attributes": self.element_attributes,
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
 
     def _report_yaml(self):
         print("elements:")
@@ -88,6 +101,7 @@ class XMLStructureInfo:
             print(f"  {element}:")
             for attr, count in attrs.items():
                 print(f"    {attr}: {count}")
+
 
 @click.command()
 @click.argument("dir", type=click.Path(exists=True))

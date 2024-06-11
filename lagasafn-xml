@@ -223,9 +223,9 @@ def make_xml(law_num, law_year):
         line = line.strip()
         parser.line = line
 
-        # Beware: The order of these function calls is sometimes important. 
+        # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
-        #         the guard clauses *should* make this order irrelevant, 
+        #         the guard clauses *should* make this order irrelevant,
         #         but let's not take any chances until we're certain.
 
         # Parse elements in the intro.

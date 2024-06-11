@@ -44,6 +44,7 @@ class LawParser:
     and the methods commonly used to facilitate parsing of the HTML files.
     The idea here is to reduce the amount of complexity in the overall parser.
     """
+
     def __init__(self, law_num, law_year):
         self.law_num = law_num
         self.law_year = law_year
@@ -95,7 +96,7 @@ class LawParser:
 
     def peek(self, n=1):
         return self.lines.peek(n)
-    
+
     def peeks(self, n=1):
         return self.lines.peeks(n)
 
@@ -104,13 +105,12 @@ class LawParser:
 
     def trail_last(self):
         return self.trail.last()
-    
+
     def trail_milestone(self, name):
         return self.trail.set_milestone(name)
 
     def trail_reached(self, name):
         return self.trail.milestone_reached(name)
-
 
     # collect/uncollect functions for collecting heaps of text, then returning it all in one go
     # and resetting the collection for the next time we need to collect a bunch of text.
@@ -140,13 +140,16 @@ class LawParser:
 
     # Scrolls the lines until the given string is found. It works internally
     # the same as the collect_until-function, but is provided here with a
-    # different name to provide a semantic distinction in the code below.    
+    # different name to provide a semantic distinction in the code below.
     scroll_until = collect_until
 
-    # Checks how much iteration is required to hit a line that matches the
-    # given regex. Optional limit parameter allows limiting search to a specific
-    # number of lines into the future.
     def occurrence_distance(self, lines, regex, limit=None):
+        """
+        Checks how much iteration is required to hit a line that matches the
+        given regex. Optional limit parameter allows limiting search to a
+        specific number of lines into the future.
+        """
+
         # We start at +1 to avoid matching the current line.
         i = 1
         line = lines.peek(i)
@@ -172,8 +175,8 @@ class LawParser:
         print(" ambiguous_section: '%s'" % (self.ambiguous_section))
         print(" footnotes: '%s'" % (self.footnotes))
 
-
 ####### Individual section parser functions below:
+
 
 def parse_law_title(parser):
     if parser.line != "<h2>":
@@ -420,8 +423,9 @@ def parse_minister_clause_footnotes(parser):
 
 
 def parse_presidential_decree_preamble(parser):
-    if (parser.line == "<br/>" 
-        and parser.peek(-1).strip() == "<hr/>" 
+    if (
+        parser.line == "<br/>"
+        and parser.peek(-1).strip() == "<hr/>"
         and parser.peek(-2).strip() == "</small>"
         and parser.trail_reached("intro-finished")
         and parser.law.attrib["law-type"] == "speaker-verdict"
@@ -429,7 +433,7 @@ def parse_presidential_decree_preamble(parser):
     ):
         # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
         # the minister clause is followed by a preamble, which we will parse
-        # into a "sen". 
+        # into a "sen".
         # The only example of this that this guard currently catches is 7/2022.
         distance = parser.occurrence_distance(parser.lines, "<br/>")
         if distance is not None and begins_with_regular_content(parser.lines.peek()):
@@ -442,11 +446,12 @@ def parse_chapter(parser):
     # <br/> tag that occurs after the ministerial clause is done. We use a
     # special function for this because we also need to examine a bit of
     # the content which makes the check more than a one-liner.
-    if not (check_chapter(parser.lines, parser.law) == "chapter" and parser.trail_reached(
-        "intro-finished"
-    )):
+    if not (
+        check_chapter(parser.lines, parser.law) == "chapter"
+        and parser.trail_reached("intro-finished")
+    ):
         return
-        
+
     # Parse what we will believe to be a chapter.
 
     # Chapter names are a bit tricky. They may be divided into two <b>

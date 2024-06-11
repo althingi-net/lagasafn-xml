@@ -69,7 +69,14 @@ class ProblemHandler:
         else:
             return 0
 
-    def report(self, identifier: str, problem_type: str, success: float, message: str = "", distance=0):
+    def report(
+        self,
+        identifier: str,
+        problem_type: str,
+        success: float,
+        message: str = "",
+        distance=0,
+    ):
         status_entry = self.get_status_entry(identifier, problem_type)
 
         # Remember prior success for measuring progression.

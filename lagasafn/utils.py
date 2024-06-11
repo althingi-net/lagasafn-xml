@@ -411,7 +411,10 @@ def generate_legal_reference(input_node, skip_law=False):
                     result += "%s. gr. %s " % (matches[0], matches[1])
                 elif node.attrib["nr"] == "t":
                     result += "ákvæði til bráðabirgða"
-                elif "number-type" in node.attrib and node.attrib["number-type"] == "roman":
+                elif (
+                    "number-type" in node.attrib
+                    and node.attrib["number-type"] == "roman"
+                ):
                     # Roman numerals for article numbers usually indicates that
                     # it's in a chapter of temporary clauses.
                     if node.getparent().attrib["nr"] == "t":
@@ -663,7 +666,7 @@ class super_iter:
         if peek_index >= len(self.collection) or peek_index < 0:
             return None
         return self.collection[peek_index]
-    
+
     def peeks(self, number_of_lines=1):
         return self.peek(number_of_lines).strip()
 
@@ -836,7 +839,7 @@ def last_container_added(input_node):
     These are found by finding the last node in the document, excluding
     `nr-title` and `name`.
     """
-    children = input_node.xpath('*[not(self::nr-title or self::name)]')
+    children = input_node.xpath("*[not(self::nr-title or self::name)]")
     if len(children) == 0:
         return input_node
     else:
