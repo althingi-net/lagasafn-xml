@@ -8,6 +8,7 @@ from lxml import etree
 from lxml.builder import E
 from lagasafn.contenthandlers import generate_ancestors, get_nr_and_name, next_footnote_sup, regexify_markers, strip_markers
 from lagasafn.contenthandlers import add_sentences
+from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import begins_with_regular_content
@@ -431,7 +432,7 @@ def parse_presidential_decree_preamble(parser):
         # into a "sen". 
         # The only example of this that this guard currently catches is 7/2022.
         distance = parser.occurrence_distance(parser.lines, "<br/>")
-        if distance != None:
+        if distance is not None and begins_with_regular_content(parser.lines.peek()):
             preamble = parser.collect_until(parser.lines, "<br/>")
             parser.law.append(E("sen", preamble))
 
