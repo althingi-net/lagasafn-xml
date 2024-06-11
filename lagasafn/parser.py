@@ -6,13 +6,21 @@ from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
 from lxml.builder import E
-from lagasafn.contenthandlers import generate_ancestors, get_nr_and_name, next_footnote_sup, regexify_markers, strip_markers
+from lagasafn.contenthandlers import generate_ancestors
+from lagasafn.contenthandlers import get_nr_and_name
+from lagasafn.contenthandlers import next_footnote_sup
+from lagasafn.contenthandlers import regexify_markers
+from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
-from lagasafn.contenthandlers import begins_with_regular_content
-from lagasafn.utils import UnexpectedClosingBracketException, ask_user_about_location, is_roman, numart_next_nrs, order_among_siblings, xml_lists_identical
+from lagasafn.utils import UnexpectedClosingBracketException
+from lagasafn.utils import ask_user_about_location
+from lagasafn.utils import is_roman
+from lagasafn.utils import numart_next_nrs
+from lagasafn.utils import order_among_siblings
+from lagasafn.utils import xml_lists_identical
 from lagasafn.utils import determine_month
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
