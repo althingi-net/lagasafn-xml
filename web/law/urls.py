@@ -5,9 +5,9 @@ from law import views
 urlpatterns = [
     path("list/", views.law_list, name="law_list"),
     path(
-        "show/<path:identifier>/cleaned/",
-        views.law_show_cleaned,
-        name="law_show_cleaned",
+        "show/<path:identifier>/patched/",
+        views.law_show_patched,
+        name="law_show_patched",
     ),
     path(
         "show/<path:identifier>/comparison/",

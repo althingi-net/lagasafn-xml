@@ -166,7 +166,7 @@ class WebTests(StaticLiveServerTestCase):
         )
 
         # Get the official text.
-        self.get_if_needed(f"{law_link['href']}cleaned/")
+        self.get_if_needed(f"{law_link['href']}patched/")
 
         remote_text = remove_whitespace(
             self.selenium.find_element(By.CSS_SELECTOR, "body").text
