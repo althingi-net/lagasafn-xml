@@ -196,6 +196,14 @@ class LawParser:
 ####### Individual section parser functions below:
 
 
+def parse_intro(parser):
+    # Parse elements in the intro.
+    parse_law_title(parser)
+    parse_law_number_and_date(parser)
+    parse_minister_clause_footnotes(parser)
+    parse_presidential_decree_preamble(parser)
+
+
 def parse_law_title(parser):
     if parser.line != "<h2>":
         return

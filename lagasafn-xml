@@ -30,6 +30,7 @@ from multiprocessing import Pool
 from reynir import NounPhrase
 from sys import stderr
 from lagasafn.parser import LawParser
+from lagasafn.parser import parse_intro
 from lagasafn.parser import parse_ambiguous_chapter
 from lagasafn.parser import parse_ambiguous_section
 from lagasafn.parser import parse_appendix
@@ -39,11 +40,7 @@ from lagasafn.parser import parse_chapter
 from lagasafn.parser import parse_deletion_marker
 from lagasafn.parser import parse_extra_docs
 from lagasafn.parser import parse_footnotes
-from lagasafn.parser import parse_law_number_and_date
-from lagasafn.parser import parse_law_title
-from lagasafn.parser import parse_minister_clause_footnotes
 from lagasafn.parser import parse_numerical_article
-from lagasafn.parser import parse_presidential_decree_preamble
 from lagasafn.parser import parse_sentence_with_title
 from lagasafn.parser import parse_subarticle
 from lagasafn.parser import parse_subchapter
@@ -234,11 +231,7 @@ def make_xml(law_num, law_year):
         #         the guard clauses *should* make this order irrelevant,
         #         but let's not take any chances until we're certain.
 
-        # Parse elements in the intro.
-        parse_law_title(parser)
-        parse_law_number_and_date(parser)
-        parse_minister_clause_footnotes(parser)
-        parse_presidential_decree_preamble(parser)
+        parse_intro(parser)
 
         # Intro is finished after here.
         # We'll early-escape all the following parser steps if we're not done
