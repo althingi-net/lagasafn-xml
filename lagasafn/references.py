@@ -7,6 +7,81 @@ from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
 
+# Words that we can use to conclusively show that we are at the end of parsing
+# the inner part of a reference.
+conclusives = [
+    "auglýsingaskyldu",
+    "á",
+    "ákvæði",
+    "ákvæðum",
+    "einnig",
+    "eftir",
+    "fyrir",
+    "gegn",
+    "gilda",
+    "grundvelli",
+    "í",
+    "með",
+    "meðal annars",
+    "né",
+    "reglum",
+    "samkvæmt",
+    "samræmast",
+    "sbr.",
+    "skilningi",
+    "skilyrði",
+    "skilyrðum",
+    "skv.",
+    "undanþegnar",
+    "undir",
+    "við",
+]
+
+# Patterns describing node-delimited parts of inner references.
+# IMPORTANT: The entire things must be in a group because the length of the
+# entire match is needed in code below.
+inner_reference_patterns = [
+    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafla( [A-Z])?)$",  # `chapter`
+    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
+    r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
+    r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
+    r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
+    r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
+    r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. málsl\.)$",  # `sen`
+]
+
+# Patterns describing parts that may appear before "og" but don't conform to
+# the `inner_reference_patterns` above.
+#
+# Examples:
+#     a- og c–i-lið 9. tölul. 14. og 15. gr.
+#     1., 2. eða 5. mgr. 109. gr.
+#
+# IMPORTANT: The entire things must be in a group because the length of the
+# entire match is needed in code below.
+and_inner_reference_patterns = [
+    r"(([A-Za-z])[-–])$",
+    r"(((\d{1,3})\., )*(\d{1,3})\.)$",
+    r"(([A-Z]{1,9})\.)$",
+]
+
+
+def get_conjugated_law_names(index):
+    # First iterate all the law entries to find all dative forms, which we will
+    # need in its entirety later, when parsing the law.
+    conjugated = {}
+    for law_entry in index.xpath("/index/law-entries/law-entry"):
+        name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
+        name_dative = law_entry.xpath("./name-conjugated/dative")[0].text
+        name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
+        nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
+        conjugated[nr_and_year] = {
+            "accusative": name_accusative,
+            "dative": name_dative,
+            "genitive": name_genitive,
+        }
+    return conjugated
+
 
 def parse_references():
     print("Parsing references...", end="", flush=True)
@@ -18,8 +93,6 @@ def parse_references():
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
 
-    xpath_entry_selector = "/index/law-entries/law-entry"
-
     # This keeps track of sentences that we haven't figured out how to deal
     # with yet. We can use them to incrementally improve the reference
     # detection mechanism. Note however that just because it's empty,
@@ -28,94 +101,20 @@ def parse_references():
         "conjugation-not-found": [],
     }
 
-    # First iterate all the law entries to find all dative forms, which we will
-    # need in its entirety later, when parsing the law.
-    conjugated = {}
-    for law_entry in index.xpath(xpath_entry_selector):
-        name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
-        name_dative = law_entry.xpath("./name-conjugated/dative")[0].text
-        name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
-        nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
-        conjugated[nr_and_year] = {
-            "accusative": name_accusative,
-            "dative": name_dative,
-            "genitive": name_genitive,
-        }
-        del nr_and_year
-        del name_genitive
-        del name_dative
-        del name_accusative
-
-    # Words that we can use to conclusively show that we are at the end of
-    # parsing the inner part of a reference.
-    conclusives = [
-        "auglýsingaskyldu",
-        "á",
-        "ákvæði",
-        "ákvæðum",
-        "einnig",
-        "eftir",
-        "fyrir",
-        "gegn",
-        "gilda",
-        "grundvelli",
-        "í",
-        "með",
-        "meðal annars",
-        "né",
-        "reglum",
-        "samkvæmt",
-        "samræmast",
-        "sbr.",
-        "skilningi",
-        "skilyrði",
-        "skilyrðum",
-        "skv.",
-        "undanþegnar",
-        "undir",
-        "við",
-    ]
-
-    # Patterns describing node-delimited parts of inner references.
-    # IMPORTANT: The entire things must be in a group because the length of the
-    # entire match is needed in code below.
-    inner_reference_patterns = [
-        r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafla( [A-Z])?)$",  # `chapter`
-        r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
-        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
-        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
-        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
-        r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
-        r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. málsl\.)$",  # `sen`
-    ]
-
-    # Patterns describing parts that may appear before "og" but don't conform
-    # to the `inner_reference_patterns` above.
-    #
-    # Examples:
-    #     a- og c–i-lið 9. tölul. 14. og 15. gr.
-    #     1., 2. eða 5. mgr. 109. gr.
-    #
-    # IMPORTANT: The entire things must be in a group because the length of the
-    # entire match is needed in code below.
-    and_inner_reference_patterns = [
-        r"(([A-Za-z])[-–])$",
-        r"(((\d{1,3})\., )*(\d{1,3})\.)$",
-        r"(([A-Z]{1,9})\.)$",
-    ]
+    conjugated = get_conjugated_law_names(index)
 
     # Now iterate through all the laws and parse their contents.
-    for law_entry in index.xpath(xpath_entry_selector):
+    for law_entry in index.xpath("/index/law-entries/law-entry"):
         law_nr = law_entry.attrib["nr"]
         law_year = int(law_entry.attrib["year"])
-
-        law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
-        sens = law.xpath("//sen[not(ancestor::footnotes)]")
 
         law_ref_entry = E(
             "law-ref-entry", {"law-nr": str(law_nr), "law-year": str(law_year)}
         )
 
+        law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+
+        sens = law.xpath("//sen[not(ancestor::footnotes)]")
         for sen in sens:
             # We'll be butchering this so better make a copy.
             chunk = sen.text or ""
@@ -132,11 +131,10 @@ def parse_references():
             # rather than from the start of the chunk every time.
             potentials_outer_start_offset = 0
 
-            # FIXME: Rename `pattern` and `matches`, they are too generic.
-            pattern = r"(?<!EES-nefndarinnar )(?<!auglýsingu )nr\. (\d{1,3}\/\d{4})"
-            matches = re.findall(pattern, chunk)
-
-            for nr_and_year in matches:
+            nrs_and_years = re.findall(
+                r"(?<!EES-nefndarinnar )(?<!auglýsingu )nr\. (\d{1,3}\/\d{4})", chunk
+            )
+            for nr_and_year in nrs_and_years:
 
                 # NOTE: Every law has a name, so if this doesn't exist,
                 # `nr_and_year` cannot refer to a law unless there's a mistake
@@ -149,6 +147,7 @@ def parse_references():
                     problems["conjugation-not-found"].append(sen)
                     continue
 
+                # Short-hands.
                 accusative = conjugated[nr_and_year]["accusative"]
                 dative = conjugated[nr_and_year]["dative"]
                 genitive = conjugated[nr_and_year]["genitive"]
@@ -228,9 +227,9 @@ def parse_references():
                         # Check for inner reference components by iterating
                         # through known patterns.
                         for inner_pattern in inner_reference_patterns:
-                            matches = re.findall(inner_pattern, potentials)
-                            if len(matches) > 0:
-                                match = matches[0][0]
+                            nrs_and_years = re.findall(inner_pattern, potentials)
+                            if len(nrs_and_years) > 0:
+                                match = nrs_and_years[0][0]
                                 reference = "%s %s" % (match, reference)
                                 potentials = potentials[: -len(match)].strip()
 
@@ -308,14 +307,16 @@ def parse_references():
                             # don't normally parse "a-" individually, we only
                             # parse it specifically after we run into an "og".
                             for and_inner_pattern in and_inner_reference_patterns:
-                                matches = re.findall(and_inner_pattern, potentials)
-                                if len(matches) > 0:
-                                    match = matches[0][0]
+                                nrs_and_years = re.findall(
+                                    and_inner_pattern, potentials
+                                )
+                                if len(nrs_and_years) > 0:
+                                    match = nrs_and_years[0][0]
                                     reference = "%s %s" % (match, reference)
                                     potentials = potentials[: -len(match)].strip()
                                     del match
 
-                                del matches
+                                del nrs_and_years
 
                             # We don't need to concern ourselves more with this
                             # iteration. Moving on.
