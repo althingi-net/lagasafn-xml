@@ -72,6 +72,8 @@ class LawParser:
         self.ambiguous_section = None
         self.footnotes = None
 
+        self.parse_path = []
+
         if not os.path.isdir(os.path.dirname(XML_FILENAME)):
             os.mkdir(os.path.dirname(XML_FILENAME))
 
@@ -101,6 +103,12 @@ class LawParser:
 
         # Set up the collection:
         self.collection = []
+
+    def enter(self, path):
+        self.parse_path.append(path)
+
+    def leave(self):
+        self.parse_path.pop()
 
     def peek(self, n=1):
         return self.lines.peek(n)
@@ -173,6 +181,7 @@ class LawParser:
 
     def dump_state(self):
         print("Current parser state: ")
+        print(" parse_path: '%s'" % ("->".join(self.parse_path)))
         print(" line: '%s'" % (self.line))
         print(" chapter: '%s'" % (self.chapter))
         print(" subchapter: '%s'" % (self.subchapter))
@@ -190,6 +199,8 @@ class LawParser:
 def parse_law_title(parser):
     if parser.line != "<h2>":
         return
+
+    parser.enter("law-title")
 
     # Parse law name.
     law_name = strip_links(parser.collect_until(parser.lines, "</h2>"))
@@ -242,10 +253,14 @@ def parse_law_title(parser):
     parser.law.append(name)
     parser.trail_push(name)
 
+    parser.leave()
+
 
 def parse_law_number_and_date(parser):
     if parser.line != "<strong>" or parser.trail_last().tag != "name":
         return
+
+    parser.enter("law-number-and-date")
 
     # Parse the num and date, which appears directly below the law name.
     num_and_date = parser.collect_until(parser.lines, "</strong>")
@@ -317,10 +332,14 @@ def parse_law_number_and_date(parser):
 
     parser.trail_push(xml_num_and_date)
 
+    parser.leave()
+
 
 def parse_ambiguous_section(parser):
     if not (parser.peeks(0) == "<em>" and parser.trail_reached("intro-finished")):
         return
+
+    parser.enter("ambiguous-section")
 
     # Parse a mysterious thing which we will call an "ambiguous
     # section" and is composed of a single italic line. Such a line is
@@ -363,6 +382,8 @@ def parse_ambiguous_section(parser):
         parser.law.append(parser.ambiguous_section)
 
     parser.trail_push(parser.ambiguous_section)
+
+    parser.leave()
 
 
 def parse_minister_clause_footnotes(parser):
@@ -415,6 +436,7 @@ def parse_minister_clause_footnotes(parser):
         and parser.peeks(-2) == "</small>"
         and not parser.trail_reached("intro-finished")
     ):
+        parser.enter("minister-clause-footnotes")
         # Parse the whole clause about which minister the law refers to.
         # It contains HTML goo, but we'll just let it float along. It's
         # not even certain that we'll be using it, but there's no harm in
@@ -429,6 +451,7 @@ def parse_minister_clause_footnotes(parser):
                 parser.law.append(E("minister-clause", minister_clause))
 
         parser.trail_milestone("intro-finished")
+        parser.leave()
 
 
 def parse_presidential_decree_preamble(parser):
@@ -440,6 +463,7 @@ def parse_presidential_decree_preamble(parser):
         and parser.law.attrib["law-type"] == "speaker-verdict"
         and parser.peek(1).find("<img") == -1
     ):
+        parser.enter("presidential-decree-preamble")
         # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
         # the minister clause is followed by a preamble, which we will parse
         # into a "sen".
@@ -448,6 +472,8 @@ def parse_presidential_decree_preamble(parser):
         if distance is not None and begins_with_regular_content(parser.lines.peek()):
             preamble = parser.collect_until(parser.lines, "<br/>")
             parser.law.append(E("sen", preamble))
+
+        parser.leave()
 
 
 def parse_chapter(parser):
@@ -461,6 +487,7 @@ def parse_chapter(parser):
     ):
         return
 
+    parser.enter("chapter")
     # Parse what we will believe to be a chapter.
 
     # Chapter names are a bit tricky. They may be divided into two <b>
@@ -628,6 +655,7 @@ def parse_chapter(parser):
 
     parser.subchapter = None
 
+    parser.leave()
 
 # The following two functions are kind of identical but are separated for future reference
 # and semantic distinction.
@@ -664,6 +692,8 @@ def parse_subchapter(parser):
     if check_chapter(parser.lines, parser.law) == "subchapter" and parser.trail_reached(
         "intro-finished"
     ):
+        parser.enter("subchapter")
+
         subchapter_goo = parser.collect_until(parser.lines, "</b>")
 
         subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
@@ -687,11 +717,15 @@ def parse_subchapter(parser):
         del subchapter_nr
         del subchapter_name
 
+        parser.leave()
+
 
 def parse_article_chapter(parser):
-    if check_chapter(
-        parser.lines, parser.law
-    ) == "art-chapter" and parser.trail_reached("intro-finished"):
+    if check_chapter(parser.lines, parser.law) == "art-chapter" and parser.trail_reached(
+        "intro-finished"
+    ):
+        parser.enter("art-chapter")
+
         # Parse an article chapter.
         art_chapter_goo = parser.collect_until(parser.lines, "</b>")
 
@@ -755,6 +789,7 @@ def parse_article_chapter(parser):
 
         parser.trail_push(parser.art_chapter)
 
+        parser.leave()
 
 def parse_ambiguous_chapter(parser):
     if check_chapter(parser.lines, parser.law) == "ambiguous" and parser.trail_reached(
@@ -771,6 +806,7 @@ def parse_ambiguous_chapter(parser):
         # It happens quite a bit, and like `ambiguous-section`, should
         # theoretically be replaced by something more formal at some
         # point, should the format of published law ever allow.
+        parser.enter("ambiguous-chapter")
 
         ambiguous_bold_text = E(
             "ambiguous-bold-text", parser.collect_until(parser.lines, "</b>")
@@ -787,6 +823,8 @@ def parse_ambiguous_chapter(parser):
 
         parser.trail_push(ambiguous_bold_text)
 
+        parser.leave()
+
 
 def parse_sentence_with_title(parser):
     if (
@@ -794,6 +832,7 @@ def parse_sentence_with_title(parser):
         and parser.peeks(2) == "</i>"
         and parser.trail_reached("intro-finished")
     ):
+        parser.enter("sen-with-title")
         # Parse a sentence with a title. These are rare, but occur in 3.
         # gr. laga nr. 55/2009. Usually they are numbered, parsed as
         # numarts instead, but not here.
@@ -820,10 +859,14 @@ def parse_sentence_with_title(parser):
 
             parser.trail_push(sen_title)
 
+        parser.leave()
+
 
 def parse_article(parser):
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
         return
+
+    parser.enter("art")
 
     # Parse an article.
     parser.scroll_until(parser.lines, "<b>")
@@ -1031,6 +1074,8 @@ def parse_article(parser):
     parser.subart = None
     parser.art_chapter = None
 
+    parser.leave()
+
 
 def parse_subarticle(parser):
     if not parser.matcher.check(
@@ -1038,6 +1083,8 @@ def parse_subarticle(parser):
     ):
         return
     # Parse a subart.
+
+    parser.enter("subart")
 
     art_nr, subart_nr = parser.matcher.result()
 
@@ -1124,12 +1171,13 @@ def parse_subarticle(parser):
         parser.law.append(parser.subart)
 
     parser.trail_push(parser.subart)
-
+    parser.leave()
 
 def parse_deletion_marker(parser):
     if not (parser.line.strip() == "…" and parser.trail_last().tag == "num-and-date"):
         return
 
+    parser.enter("deletion-marker")
     # Support for a deletion marker before any other content such as
     # an article, subarticle, numart, chapter or anything of the sort.
     # We'll place it in a sentence inside a subart so that the
@@ -1151,6 +1199,8 @@ def parse_deletion_marker(parser):
 
     parser.trail_push(parser.subart)
 
+    parser.leave()
+
 
 def parse_numerical_article(parser):
     if not (
@@ -1159,6 +1209,7 @@ def parse_numerical_article(parser):
     ):
         return
 
+    parser.enter("numart")
     # Parse a numart, or numerical article.
 
     # The removal of ". " is to turn a human readable numerical
@@ -1586,12 +1637,13 @@ def parse_numerical_article(parser):
                 parser.numart = extra_sens_target
 
     parser.trail_push(parser.numart)
-
+    parser.leave()
 
 def parse_table(parser):
     if not parser.matcher.check(parser.line, "<table"):
         return
 
+    parser.enter("table")
     # Parse a stray table, that we haven't run across inside a
     # subarticle. We'll append it to previously parsed thing. The
     # table width is only for consistency with the typical input.
@@ -1608,10 +1660,13 @@ def parse_table(parser):
     elif parser.art is not None:
         add_sentences(parser.art, [sen])
 
+    parser.leave()
+
 
 def parse_footnotes(parser):
     if parser.line == "<small>":
         # Footnote section. Contains footnotes.
+        parser.enter("footnotes")
 
         parser.footnotes = E("footnotes")
 
@@ -1634,11 +1689,13 @@ def parse_footnotes(parser):
             parser.subart.append(parser.footnotes)
 
         parser.trail_push(parser.footnotes)
+        parser.leave()
 
     elif parser.line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
         "footnotes",
         "footnote",
     ]:
+        parser.enter("footnote")
         # We've found a footnote inside the footnote section!
 
         # Scroll past the closing tag, since we're not going to use its
@@ -2403,9 +2460,10 @@ def parse_footnotes(parser):
                         location_target.append(location)
 
         parser.trail_push(footnote)
-
+        parser.leave()
 
 def postprocess_law(parser):
+    parser.enter("postprocess")
     # Turn HTML tables, currently encoded into HTML characters, into properly
     # structured and clean XML tables with properly presented content.
     #
@@ -2487,3 +2545,5 @@ def postprocess_law(parser):
             # Replace HTML-encoded text with XML table.
             sen.text = None
             sen.append(table)
+
+    parser.leave()
