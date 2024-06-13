@@ -24,7 +24,26 @@ from lxml.builder import E
 from multiprocessing import Pool
 from reynir import NounPhrase
 from sys import stderr
-from lagasafn.parser import LawParser, parse_ambiguous_chapter, parse_ambiguous_section, parse_appendix, parse_article, parse_article_chapter, parse_chapter, parse_deletion_marker, parse_extra_docs, parse_footnotes, parse_law_number_and_date, parse_law_title, parse_minister_clause_footnotes, parse_numerical_article, parse_presidential_decree_preamble, parse_sentence_with_title, parse_subarticle, parse_subchapter, parse_table, postprocess_law
+from lagasafn.parser import LawParser
+from lagasafn.parser import parse_ambiguous_chapter
+from lagasafn.parser import parse_ambiguous_section
+from lagasafn.parser import parse_appendix
+from lagasafn.parser import parse_article
+from lagasafn.parser import parse_article_chapter
+from lagasafn.parser import parse_chapter
+from lagasafn.parser import parse_deletion_marker
+from lagasafn.parser import parse_extra_docs
+from lagasafn.parser import parse_footnotes
+from lagasafn.parser import parse_law_number_and_date
+from lagasafn.parser import parse_law_title
+from lagasafn.parser import parse_minister_clause_footnotes
+from lagasafn.parser import parse_numerical_article
+from lagasafn.parser import parse_presidential_decree_preamble
+from lagasafn.parser import parse_sentence_with_title
+from lagasafn.parser import parse_subarticle
+from lagasafn.parser import parse_subchapter
+from lagasafn.parser import parse_table
+from lagasafn.parser import postprocess_law
 
 LAW_FILENAME = os.path.join(
     DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -237,13 +256,13 @@ def make_xml(law_num, law_year):
         # Intro is finished after here.
         # We'll early-escape all the following parser steps if we're not done
         # with the intro.
-        #  
-        #if not parser.trail_reached("intro-finished"): 
+        #
+        # if not parser.trail_reached("intro-finished"):
         #    continue
 
         parse_chapter(parser)
 
-        # TODO: These two functions must happen here and must have the break condition, 
+        # TODO: These two functions must happen here and must have the break condition,
         # otherwise things break farther down the parse.
         # This means that these functions are predicated on a different style
         # of guard premise than the other functions. Worth reconsidering.
@@ -259,12 +278,11 @@ def make_xml(law_num, law_year):
         parse_subarticle(parser)
         parse_numerical_article(parser)
         parse_deletion_marker(parser)
-        
+
         # TODO: Check if we can reuse this logic within parse_subarticle
-        parse_table(parser) 
+        parse_table(parser)
 
         parse_footnotes(parser)
-
 
     ##########################################################################
     # At this point, the XML object `law` contains the entire document with

@@ -183,6 +183,7 @@ class LawParser:
         print(" ambiguous_section: '%s'" % (self.ambiguous_section))
         print(" footnotes: '%s'" % (self.footnotes))
 
+
 ####### Individual section parser functions below:
 
 
@@ -627,8 +628,10 @@ def parse_chapter(parser):
 
     parser.subchapter = None
 
+
 # The following two functions are kind of identical but are separated for future reference
 # and semantic distinction.
+
 
 def parse_extra_docs(parser):
     if check_chapter(parser.lines, parser.law) in [
@@ -642,8 +645,11 @@ def parse_extra_docs(parser):
         return True
     return False
 
+
 def parse_appendix(parser):
-    if check_chapter(parser.lines, parser.law) in ["appendix"] and parser.trail_reached("intro-finished"):
+    if check_chapter(parser.lines, parser.law) in ["appendix"] and parser.trail_reached(
+        "intro-finished"
+    ):
         # Accompanying documents vary in origin and format, and are not a
         # part of the formal legal text itself, even though legal text may
         # reference them. Parsing them is beyond the scope of this tool.
@@ -652,9 +658,12 @@ def parse_appendix(parser):
         return True
     return False
 
+
 def parse_subchapter(parser):
     # Parse a subchapter.
-    if check_chapter(parser.lines, parser.law) == "subchapter" and parser.trail_reached("intro-finished"):
+    if check_chapter(parser.lines, parser.law) == "subchapter" and parser.trail_reached(
+        "intro-finished"
+    ):
         subchapter_goo = parser.collect_until(parser.lines, "</b>")
 
         subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
@@ -680,9 +689,9 @@ def parse_subchapter(parser):
 
 
 def parse_article_chapter(parser):
-    if check_chapter(parser.lines, parser.law) == "art-chapter" and parser.trail_reached(
-        "intro-finished"
-    ):
+    if check_chapter(
+        parser.lines, parser.law
+    ) == "art-chapter" and parser.trail_reached("intro-finished"):
         # Parse an article chapter.
         art_chapter_goo = parser.collect_until(parser.lines, "</b>")
 
@@ -746,6 +755,7 @@ def parse_article_chapter(parser):
 
         parser.trail_push(parser.art_chapter)
 
+
 def parse_ambiguous_chapter(parser):
     if check_chapter(parser.lines, parser.law) == "ambiguous" and parser.trail_reached(
         "intro-finished"
@@ -762,7 +772,9 @@ def parse_ambiguous_chapter(parser):
         # theoretically be replaced by something more formal at some
         # point, should the format of published law ever allow.
 
-        ambiguous_bold_text = E("ambiguous-bold-text", parser.collect_until(parser.lines, "</b>"))
+        ambiguous_bold_text = E(
+            "ambiguous-bold-text", parser.collect_until(parser.lines, "</b>")
+        )
 
         if parser.subart is not None:
             parser.subart.append(ambiguous_bold_text)
@@ -812,7 +824,7 @@ def parse_sentence_with_title(parser):
 def parse_article(parser):
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
         return
-    
+
     # Parse an article.
     parser.scroll_until(parser.lines, "<b>")
     art_nr_title = parser.collect_until(parser.lines, "</b>")
@@ -943,10 +955,7 @@ def parse_article(parser):
 
     # Another way to denote an article's name is by immediately
     # following it with bold text. This is very rare but does occur.
-    elif (
-        parser.peeks() == "<b>"
-        and parser.peeks(2) != "Ákvæði til bráðabirgða."
-    ):
+    elif parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
         # Exceptional case: 94/1996 contains a very strange temporary
         # clause chapter. It was originally a temporary article (24.
         # gr.) with a name denoted differently than other articles in
@@ -1053,7 +1062,7 @@ def parse_subarticle(parser):
 
     parser.subart = E("subart", {"nr": subart_nr})
 
-    # Now let's check if the subarticle content contains bold AND italic text, 
+    # Now let's check if the subarticle content contains bold AND italic text,
     # which may indicate a person (bold) is being given a role (italic).
     if parser.matcher.check(content, "<b>(.*)</b>(.*)<i>(.*)</i>"):
         subart_name, text, role = parser.matcher.result()
@@ -1068,7 +1077,7 @@ def parse_subarticle(parser):
         # replacing it with a <name> tag.
         before, after = content.split("<i>")
         name, after = after.split("</i>")
-        
+
         sens = separate_sentences(before)
         add_sentences(parser.subart, sens)
         parser.subart.append(E("name", name))
@@ -1078,7 +1087,10 @@ def parse_subarticle(parser):
         sens = separate_sentences(strip_links(content))
         add_sentences(parser.subart, sens)
 
-    if parser.art_chapter is not None and parser.art_chapter.getparent().tag != "subart":
+    if (
+        parser.art_chapter is not None
+        and parser.art_chapter.getparent().tag != "subart"
+    ):
         # When a `subart` is appended directly to an `art-chapter`,
         # its number is reset. Legal content reflects this reality
         # (f.e. 11. mgr. B-liðar 68. gr. laga nr. 90/2003), but the
@@ -1141,11 +1153,12 @@ def parse_deletion_marker(parser):
 
 
 def parse_numerical_article(parser):
-    if not (parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">') or (
-        parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>"
-    )):
+    if not (
+        parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
+    ):
         return
-        
+
     # Parse a numart, or numerical article.
 
     # The removal of ". " is to turn a human readable numerical
@@ -1153,9 +1166,9 @@ def parse_numerical_article(parser):
     # alphabetic one, into something easier to work with
     # programmatically. Example: "9. a" becomes "9a" in law nr.
     # 20/2003.
-    numart_nr = strip_markers(
-        parser.peeks().strip("(").strip(")").strip(".")
-    ).replace(". ", "")
+    numart_nr = strip_markers(parser.peeks().strip("(").strip(")").strip(".")).replace(
+        ". ", ""
+    )
 
     # Support for numart ranges, which are only known to occur when
     # many numarts have been removed. This occurs for example in 145.
@@ -1328,7 +1341,10 @@ def parse_numerical_article(parser):
         # `art-chapter` (or `art`). An `art-chapter` can be a child
         # of `art` and parent of many `subart`s, or a child of a
         # `subart` (see lög nr. 90/2003).
-        if parser.art_chapter is not None and parser.art_chapter.getparent().tag == "subart":
+        if (
+            parser.art_chapter is not None
+            and parser.art_chapter.getparent().tag == "subart"
+        ):
             parent = parser.art_chapter
         elif parser.subart is not None:
             parent = parser.subart
@@ -1364,11 +1380,7 @@ def parse_numerical_article(parser):
 
         if numart_nr.lower() == "i":
             # See comment for `special_roman` above.
-            if (
-                prev_numart is None
-                or prev_numart.attrib["nr"] != "h"
-                or special_roman
-            ):
+            if prev_numart is None or prev_numart.attrib["nr"] != "h" or special_roman:
                 numart_type = "roman"
             else:
                 numart_type = "alphabet"
@@ -1403,10 +1415,7 @@ def parse_numerical_article(parser):
     # simply a dash. We must figure out their number and assign a new
     # `numart_nr`. The `nr-title` will still contain just a dash.
     if numart_type == "en-dash":
-        if (
-            prev_numart is not None
-            and prev_numart.attrib["nr-type"] == "en-dash"
-        ):
+        if prev_numart is not None and prev_numart.attrib["nr-type"] == "en-dash":
             numart_nr = str(int(prev_numart.attrib["nr"]) + 1)
         else:
             numart_nr = "1"
@@ -1423,11 +1432,13 @@ def parse_numerical_article(parser):
     # Check for a closing bracket.
     # Example:
     #     13-19. tölul. 1. mgr. 3. gr. laga nr. 116/2021 (153c).
-    if all([
-        parser.peeks(1) == "]",
-        parser.peeks(2) == '<sup style="font-size:60%">',
-        parser.peeks(4) == "</sup>",
-    ]):
+    if all(
+        [
+            parser.peeks(1) == "]",
+            parser.peeks(2) == '<sup style="font-size:60%">',
+            parser.peeks(4) == "</sup>",
+        ]
+    ):
         numart_nr_title += parser.collect_until(parser.lines, "</sup>") + " </sup>"
 
     if parser.peeks() == "<i>":
@@ -1577,7 +1588,6 @@ def parse_numerical_article(parser):
     parser.trail_push(parser.numart)
 
 
-
 def parse_table(parser):
     if not parser.matcher.check(parser.line, "<table"):
         return
@@ -1587,7 +1597,9 @@ def parse_table(parser):
     # table width is only for consistency with the typical input.
 
     content = (
-        '<table width="100%">' + parser.collect_until(parser.lines, "</table>") + "</table>"
+        '<table width="100%">'
+        + parser.collect_until(parser.lines, "</table>")
+        + "</table>"
     )
     sen = separate_sentences(content).pop()
 
@@ -2203,9 +2215,7 @@ def parse_footnotes(parser):
                 # pointers within the entity being checked, like above.
                 cursor = 0
 
-                pointer_found = desc.text.find(
-                    '<sup style="font-size:60%">', cursor
-                )
+                pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
                 while pointer_found > -1:
                     # Keep track of how far we've already searched.
                     cursor = pointer_found + 1
@@ -2222,12 +2232,8 @@ def parse_footnotes(parser):
                     # closing and deletion markers, and punctuation can
                     # appear between the symbol and superscript (i.e.
                     # "bla]. 2)".
-                    chars_before_start = (
-                        pointer_found - 3 if pointer_found >= 3 else 0
-                    )
-                    chars_before = desc.text[
-                        chars_before_start:pointer_found
-                    ].strip()
+                    chars_before_start = pointer_found - 3 if pointer_found >= 3 else 0
+                    chars_before = desc.text[chars_before_start:pointer_found].strip()
                     if "…" in chars_before or "]" in chars_before:
                         # This is a closing or deletion marker, which
                         # we're not interested in at this point.
@@ -2358,7 +2364,7 @@ def parse_footnotes(parser):
                     else:
                         # If, however, the the starting and ending
                         # locations differ and we are not denoting a
-                        # region of text with "words", we'll need 
+                        # region of text with "words", we'll need
                         # sub-location nodes, <start> and <end>, within
                         # the <location> element, so that the opening and
                         # closing markers can be placed in completely
@@ -2397,7 +2403,6 @@ def parse_footnotes(parser):
                         location_target.append(location)
 
         parser.trail_push(footnote)
-
 
 
 def postprocess_law(parser):
