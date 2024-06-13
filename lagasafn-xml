@@ -2,7 +2,6 @@
 import codecs
 import json
 import re
-import roman
 import signal
 import os
 import sys
@@ -13,12 +12,19 @@ from colorama import Fore
 from colorama import Style
 from lagasafn import diff_patch_utils
 from lagasafn import settings
+from lagasafn.constants import LAW_FILENAME
+from lagasafn.constants import ERRORMAP_FILENAME
+from lagasafn.constants import CLEAN_FILENAME
+from lagasafn.constants import PATCHED_FILENAME
+from lagasafn.constants import PATCH_FILENAME
+from lagasafn.constants import XML_INDEX_FILENAME
+from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.contenthandlers import remove_ignorables
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
 from lagasafn.utils import write_xml
-from lagasafn.settings import DATA_DIR
 from lxml import etree
 from lxml.builder import E
 from multiprocessing import Pool
@@ -44,24 +50,6 @@ from lagasafn.parser import parse_subarticle
 from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
 from lagasafn.parser import postprocess_law
-
-LAW_FILENAME = os.path.join(
-    DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
-)  # % (law_year, law_num)
-CLEAN_FILENAME = os.path.join(
-    DATA_DIR, "cleaned", "%d-%d.html"
-)  # % (law_year, law_num)
-PATCHED_FILENAME = os.path.join(
-    DATA_DIR, "patched", "%d-%d.html"
-)  # % (law_year, law_num)
-PATCH_FILENAME = os.path.join(
-    DATA_DIR, "patches", settings.CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
-)  # % (law_year, law_num)
-XML_FILENAME = os.path.join(DATA_DIR, "xml", "%d.%s.xml")  # % (law_year, law_num)
-XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", "index.xml")
-XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", "references.xml")
-
-ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
 
 
 def clean_content(content):
