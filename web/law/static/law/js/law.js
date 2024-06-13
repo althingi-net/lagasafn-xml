@@ -673,6 +673,9 @@ var process_footnote = function() {
             if (contents && contents.length > 0) {
                 after_mark_content = contents[0];
             }
+            if (after_mark_content == '.' && before_mark_content.match(/\.$/)) {
+                after_mark_content = '';
+            }
         }
 
         pointer_symbol = ' <sup>' + footnote_nr + ')</sup> ';
