@@ -456,6 +456,10 @@ var process_footnote = function() {
                 $start_mark.prepend('[');
             }
 
+            if ($start_mark.html().match(/<\/sup>\.$/)) {
+                $start_mark.html($start_mark.html().replace(/\.$/, ''));
+            }
+
             // Figure out what the closing marker should look like, depending
             // on things we've figured out before.
             append_closing_text = pre_close_space + ']' + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
