@@ -2243,7 +2243,6 @@ def parse_footnotes(parser):
                     # use that directly instead of assuming a comma.
                     if (
                         desc.text[deletion_found + 1 : deletion_found + 2] == ","
-                        and before_mark[-1] == " "
                     ):
                         ancestors[-1].attrib["middle-punctuation"] = ","
 
