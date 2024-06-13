@@ -1642,6 +1642,7 @@ def parse_numerical_article(parser):
     parser.trail_push(parser.numart)
     parser.leave()
 
+
 def parse_table(parser):
     if not parser.matcher.check(parser.line, "<table"):
         return
@@ -2464,6 +2465,7 @@ def parse_footnotes(parser):
 
         parser.trail_push(footnote)
         parser.leave()
+
 
 def postprocess_law(parser):
     parser.enter("postprocess")
