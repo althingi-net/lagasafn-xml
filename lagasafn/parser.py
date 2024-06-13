@@ -657,6 +657,7 @@ def parse_chapter(parser):
 
     parser.leave()
 
+
 # The following two functions are kind of identical but are separated for future reference
 # and semantic distinction.
 
@@ -721,9 +722,9 @@ def parse_subchapter(parser):
 
 
 def parse_article_chapter(parser):
-    if check_chapter(parser.lines, parser.law) == "art-chapter" and parser.trail_reached(
-        "intro-finished"
-    ):
+    if check_chapter(
+        parser.lines, parser.law
+    ) == "art-chapter" and parser.trail_reached("intro-finished"):
         parser.enter("art-chapter")
 
         # Parse an article chapter.
@@ -790,6 +791,7 @@ def parse_article_chapter(parser):
         parser.trail_push(parser.art_chapter)
 
         parser.leave()
+
 
 def parse_ambiguous_chapter(parser):
     if check_chapter(parser.lines, parser.law) == "ambiguous" and parser.trail_reached(
@@ -1172,6 +1174,7 @@ def parse_subarticle(parser):
 
     parser.trail_push(parser.subart)
     parser.leave()
+
 
 def parse_deletion_marker(parser):
     if not (parser.line.strip() == "…" and parser.trail_last().tag == "num-and-date"):
