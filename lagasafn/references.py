@@ -3,46 +3,70 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.pathing import make_xpath_from_node
+from lagasafn.utils import strip_links
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
 
 # Words that we can use to conclusively show that we are at the end of parsing
 # the inner part of a reference.
+# IMPORTANT: These should not be confusable with the end of a law's name.
 conclusives = [
     "auglýsingaskyldu",
     "á",
     "ákvæði",
     "ákvæðum",
+    "brott",
     "einnig",
+    "ef",
     "eftir",
+    "eldri",
+    "framar",
+    "framkvæmd",
     "fyrir",
+    "fyrirmælum",
     "gegn",
     "gilda",
+    "gildi",
+    "gildistíð",
     "grundvelli",
     "í",
+    "ívilnunarúrræðum",
+    "kröfur",
+    "málsmeðferðarreglna",
     "með",
     "meðal annars",
     "né",
+    "núgildandi",
     "reglum",
     "samkvæmt",
+    "samnefndum",
     "samræmast",
     "sbr.",
+    "skal",
     "skilningi",
     "skilyrði",
     "skilyrðum",
+    "skulu",
     "skv.",
+    "stað",
+    "tíð",
+    "undanþegin",
     "undanþegnar",
     "undir",
+    "utan",
     "við",
+    "vísan til",
+    "þó",
 ]
 
 # Patterns describing node-delimited parts of inner references.
 # IMPORTANT: The entire things must be in a group because the length of the
 # entire match is needed in code below.
 inner_reference_patterns = [
-    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafla( [A-Z])?)$",  # `chapter`
+    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafl[ia]( [A-Z])?)$",  # `chapter`
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
+    r"([A-Z][-–]hluta( [A-Z])?)$",  # `chapter`-ish (another version)
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
@@ -117,7 +141,7 @@ def parse_references():
         sens = law.xpath("//sen[not(ancestor::footnotes)]")
         for sen in sens:
             # We'll be butchering this so better make a copy.
-            chunk = sen.text or ""
+            chunk = strip_links(sen.text or "")
 
             # The outer references we'll be looking for (i.e.
             # `nr\. (\d{1,3}\/\d{4})`), may appear multiple times in the same
