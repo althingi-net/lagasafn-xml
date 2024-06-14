@@ -225,7 +225,7 @@ var process_footnote = function() {
 
         // Iterate through the <location> section to locate the text that we
         // want to show as changed.
-        $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,name,sen-title,sen').each(function() {
+        $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,definition,name,sen-title,sen').each(function() {
             var $location_step = $(this);
 
             // Sometimes unusual placements of markers are required. An
