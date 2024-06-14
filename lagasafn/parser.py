@@ -1119,19 +1119,17 @@ def parse_subarticle(parser):
 
     parser.subart = E("subart", {"nr": subart_nr})
 
-    # Now let's check if the subarticle content contains bold AND italic text,
-    # which may indicate a person (bold) is being given a role (italic).
-    if parser.matcher.check(content, "<b>(.*)</b>(.*)<i>(.*)</i>"):
+    if parser.matcher.check(content, "^<b>(.*)</b>(.*)<i>(.*)</i>"):
+        # Check if the subarticle content contains bold AND italic text, which
+        # may indicate a person (bold) is being given a role (italic).
+
         subart_name, text, role = parser.matcher.result()
         content = content.replace("<b>%s</b>" % subart_name, "")
         # content = content.replace("<i>%s</i>" % role, )
         parser.subart.append(E("name", subart_name))
         # subart.append(E("name", role))
-        stripped = strip_links(content)
 
-        # Now, we want to swap out the <i> text for a <name> tag.
-        # We'll do this by finding the <i> text in the content and
-        # replacing it with a <name> tag.
+        # Swap out the <i> text for a <name> tag.
         before, after = content.split("<i>")
         name, after = after.split("</i>")
 
@@ -1139,6 +1137,17 @@ def parse_subarticle(parser):
         add_sentences(parser.subart, sens)
         parser.subart.append(E("name", name))
         sens = separate_sentences(after)
+        add_sentences(parser.subart, sens)
+
+    elif parser.matcher.check(content, "^<i>(.*)</i>"):
+        # Check for definitions in subarts. (Example: 153c, 7/1998)
+
+        definition = parser.matcher.result()[0]
+        content = content.replace("<i>%s</i>" % definition, "")
+
+        parser.subart.append(E("definition", definition.strip()))
+
+        sens = separate_sentences(content)
         add_sentences(parser.subart, sens)
     else:
         sens = separate_sentences(strip_links(content))
