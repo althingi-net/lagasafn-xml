@@ -1139,13 +1139,14 @@ def parse_subarticle(parser):
         sens = separate_sentences(after)
         add_sentences(parser.subart, sens)
 
-    elif parser.matcher.check(content, "^<i>(.*)</i>"):
+    elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
         # Check for definitions in subarts. (Example: 153c, 7/1998)
 
-        definition = parser.matcher.result()[0]
-        content = content.replace("<i>%s</i>" % definition, "")
+        raw_definition, before, definition = parser.matcher.result()
 
-        parser.subart.append(E("definition", definition.strip()))
+        content = content.replace(raw_definition, "")
+
+        parser.subart.append(E("definition", (before or "") + definition.strip()))
 
         sens = separate_sentences(content)
         add_sentences(parser.subart, sens)
