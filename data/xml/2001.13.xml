@@ -38,21 +38,25 @@
         </numart>
       </subart>
       <subart nr="3">
-        <sen nr="1">&lt;i&gt; Leit &lt;/i&gt; merkir í lögum þessum könnun á almennum skilyrðum til myndunar og varðveislu kolvetnis, afmörkun svæða þar sem slík skilyrði eru hagstæð og leit að kolvetnisauðlindum með mælingum úr lofti, á láði, á legi eða hafsbotni eða með sýnatöku úr efstu jarðlögum hafsbotnsins, t.d. með grunnum borunum eða töku kjarna.</sen>
+        <definition>Leit</definition>
+        <sen nr="1">merkir í lögum þessum könnun á almennum skilyrðum til myndunar og varðveislu kolvetnis, afmörkun svæða þar sem slík skilyrði eru hagstæð og leit að kolvetnisauðlindum með mælingum úr lofti, á láði, á legi eða hafsbotni eða með sýnatöku úr efstu jarðlögum hafsbotnsins, t.d. með grunnum borunum eða töku kjarna.</sen>
       </subart>
       <subart nr="4">
-        <sen nr="1">&lt;i&gt; Rannsóknir &lt;/i&gt; merkja í lögum þessum mat á stærð, legu og vinnslueiginleikum kolvetnisgeymis með borun leitarholna og borholumælingum auk leitar að kolvetni með jarðeðlisfræðilegum aðferðum.</sen>
+        <definition>Rannsóknir</definition>
+        <sen nr="1">merkja í lögum þessum mat á stærð, legu og vinnslueiginleikum kolvetnisgeymis með borun leitarholna og borholumælingum auk leitar að kolvetni með jarðeðlisfræðilegum aðferðum.</sen>
       </subart>
       <subart nr="5">
         <definition>Vinnsla</definition>
         <sen nr="1">merkir í lögum þessum vinnsla kolvetnis úr kolvetnisgeymi, þ.m.t. borun vinnsluholna, dæling eða leiðsla kolvetnis til yfirborðs, niðurdæling kolvetnis og annarra efna, meðhöndlun og geymsla kolvetnis fyrir flutning, útskipun kolvetnis ásamt byggingu, uppsetningu, starfrækslu og lokun hafstöðvar ætlaðrar til slíkrar vinnslu.</sen>
       </subart>
       <subart nr="6">
-        <sen nr="1">&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til rannsóknar og/eða vinnslu kolvetnis skv. IV. kafla.</sen>
+        <definition>Leyfishafi</definition>
+        <sen nr="1">merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til rannsóknar og/eða vinnslu kolvetnis skv. IV. kafla.</sen>
         <sen nr="2">Íslenskt útibú eða umboðsskrifstofa félags sem skráð er í aðildarríki samningsins um Evrópska efnahagssvæðið, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum telst skráður aðili.</sen>
       </subart>
       <subart nr="7">
-        <sen nr="1">&lt;i&gt; Samstarfssamningur um framkvæmd leyfis &lt;/i&gt; merkir í lögum þessum samningur sem aðilar að einu leyfi, ef þeir eru fleiri en einn, gera sín á milli og kveður á um hlutverk og skyldur hvers samleyfishafa innan leyfisins og framkvæmd þess.</sen>
+        <definition>Samstarfssamningur um framkvæmd leyfis</definition>
+        <sen nr="1">merkir í lögum þessum samningur sem aðilar að einu leyfi, ef þeir eru fleiri en einn, gera sín á milli og kveður á um hlutverk og skyldur hvers samleyfishafa innan leyfisins og framkvæmd þess.</sen>
       </subart>
       <subart nr="8">
         <definition>Rekstraraðili</definition>
@@ -66,26 +70,42 @@
         <footnote href="https://www.althingi.is/altext/stjt/2007.049.html" law-nr="49" law-year="2007" law-art="1" nr="1">
           <footnote-sen>L. 49/2007, 1. gr.</footnote-sen>
           <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>3</subart>
-            <sen>1</sen>
+            <start>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>3</subart>
+              <definition>1</definition>
+            </start>
+            <end>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>3</subart>
+              <sen>1</sen>
+            </end>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2008.166.html" law-nr="166" law-year="2008" law-art="1" nr="2">
           <footnote-sen>L. 166/2008, 1. gr.</footnote-sen>
           <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>4</subart>
-            <sen>1</sen>
+            <start>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>4</subart>
+              <definition>1</definition>
+            </start>
+            <end>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>4</subart>
+              <sen>1</sen>
+            </end>
           </location>
           <location type="range">
             <start>
               <chapter>1</chapter>
               <art>2</art>
               <subart>6</subart>
-              <sen>1</sen>
+              <definition>1</definition>
             </start>
             <end>
               <chapter>1</chapter>
@@ -101,13 +121,13 @@
             <chapter>1</chapter>
             <art>2</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til" after-mark="rannsóknar og/eða vinnslu kolvetnis skv. (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?IV. kafla.$">1</sen>
+            <sen before-mark="^merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til" after-mark="rannsóknar og/eða vinnslu kolvetnis skv. (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?IV. kafla.$">1</sen>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
             <art>2</art>
             <subart>6</subart>
-            <sen before-mark="^(\[? ?)?&lt;i&gt; Leyfishafi &lt;/i&gt; merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?rannsóknar og/eða vinnslu kolvetnis skv." after-mark="IV. kafla.$">1</sen>
+            <sen before-mark="^merkir í lögum þessum skráður aðili hér á landi sem fengið hefur leyfi til (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?rannsóknar og/eða vinnslu kolvetnis skv." after-mark="IV. kafla.$">1</sen>
           </location>
           <location type="range">
             <chapter>1</chapter>
@@ -120,7 +140,7 @@
               <chapter>1</chapter>
               <art>2</art>
               <subart>7</subart>
-              <sen>1</sen>
+              <definition>1</definition>
             </start>
             <end>
               <chapter>1</chapter>

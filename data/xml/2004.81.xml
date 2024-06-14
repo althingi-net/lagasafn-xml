@@ -69,7 +69,8 @@
         <sen nr="2">Það gildir þó ekki um lóðir undir sumarbústaði án tillits til þess hvort þær eru í skipulögðu sumarbústaðahverfi og heldur ekki landspildur á svæðum sem skipulögð hafa verið fyrir aðra starfsemi en landbúnað.</sen>
       </subart>
       <subart nr="6">
-        <sen nr="1">&lt;i&gt; Landbúnaður &lt;/i&gt; merkir í lögum þessum hvers konar framleiðslu búvöru og þá einkum búrekstur með áherslu á búfénað, matvæla- og fóðurframleiðslu.</sen>
+        <definition>Landbúnaður</definition>
+        <sen nr="1">merkir í lögum þessum hvers konar framleiðslu búvöru og þá einkum búrekstur með áherslu á búfénað, matvæla- og fóðurframleiðslu.</sen>
       </subart>
       <subart nr="7">
         <definition>Lögbýli</definition>
@@ -102,10 +103,18 @@
             <sen before-mark="^" after-mark="$">1</sen>
           </location>
           <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>6</subart>
-            <sen>1</sen>
+            <start>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>6</subart>
+              <definition>1</definition>
+            </start>
+            <end>
+              <chapter>1</chapter>
+              <art>2</art>
+              <subart>6</subart>
+              <sen>1</sen>
+            </end>
           </location>
           <location type="deletion">
             <chapter>1</chapter>
