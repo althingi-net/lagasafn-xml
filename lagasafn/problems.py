@@ -15,8 +15,25 @@ class ProblemHandler:
         self.problems = {}
 
     def close(self):
+        self.sort_by_content_distance()
         self.update_stats()
         write_xml(self.xml, PROBLEMS_FILENAME)
+
+    def sort_by_content_distance(self):
+
+        # Sort by reversed distance for `content`.
+        sorted_entries = sorted(
+            self.xml.findall('problem-law-entry'),
+            key=lambda x: int(x.find("status[@type='content']").attrib["distance"]),
+            reverse=True
+        )
+
+        # Modify the XML accordingly, retaining the root element's attributes.
+        old_attrib = dict(self.xml.attrib)
+        self.xml.clear()
+        self.xml.attrib.update(old_attrib)
+        for sorted_entry in sorted_entries:
+            self.xml.append(sorted_entry)
 
     def update_stats(self):
         # Ordered because we'll be using `git diff problems.xml` to monitor
