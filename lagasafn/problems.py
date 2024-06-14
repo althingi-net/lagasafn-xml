@@ -23,9 +23,9 @@ class ProblemHandler:
 
         # Sort by reversed distance for `content`.
         sorted_entries = sorted(
-            self.xml.findall('problem-law-entry'),
+            self.xml.findall("problem-law-entry"),
             key=lambda x: int(x.find("status[@type='content']").attrib["distance"]),
-            reverse=True
+            reverse=True,
         )
 
         # Modify the XML accordingly, retaining the root element's attributes.

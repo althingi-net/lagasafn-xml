@@ -2249,9 +2249,7 @@ def parse_footnotes(parser):
                     # compatibility with other symbols, we'll put in a
                     # comma as the value and expect the marker renderer to
                     # use that directly instead of assuming a comma.
-                    if (
-                        desc.text[deletion_found + 1 : deletion_found + 2] == ","
-                    ):
+                    if desc.text[deletion_found + 1 : deletion_found + 2] == ",":
                         ancestors[-1].attrib["middle-punctuation"] = ","
 
                     # Assign the regular expressions for the texts before
