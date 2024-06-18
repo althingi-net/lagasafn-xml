@@ -587,10 +587,19 @@ var process_footnote = function() {
             middle_punctuation = $step.attr('middle-punctuation');
         }
 
+        var closing_marker = '';
+        // We need to find the condition in which there's a "]" that we want to keep.
+        // TODO: This condition is probaly too specific and should be generalized. It leads to
+        //       an improvement on law 8/1962, but not much else.
+        if ($mark.html().match(/\]/) && before_mark_content === "" && after_mark_content === "") {
+            closing_marker = ']';
+        }
+
         // Configure the deletion symbol that we'll drop into the content.
         var deletion_symbol = pre_deletion_space
                 + '…'
                 + middle_punctuation
+                + closing_marker
                 + post_deletion_space
                 + '<sup>'
                 + footnote_nr
