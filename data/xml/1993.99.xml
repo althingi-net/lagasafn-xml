@@ -3716,10 +3716,10 @@
       <nr-title>Ákvæði til bráðabirgða.</nr-title>
       <subart nr="1">
         <sen nr="1">A.</sen>
-        <sen nr="2">&lt;a href="https://www.althingi.is/altext/stjt/1995.121.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+        <sen nr="2" expiry-symbol-offset="2"></sen>
         <numart nr="B" nr-type="alphabet">
           <nr-title>B.</nr-title>
-          <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1993.099.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+          <sen nr="1" expiry-symbol-offset="0"></sen>
         </numart>
         <numart nr="C" nr-type="alphabet">
           <nr-title>C.</nr-title>
@@ -3728,7 +3728,7 @@
         <numart nr="D" nr-type="alphabet">
           <nr-title>D.</nr-title>
           <sen nr="1">–F.</sen>
-          <sen nr="2">&lt;a href="https://www.althingi.is/altext/stjt/1993.099.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+          <sen nr="2" expiry-symbol-offset="0"></sen>
         </numart>
         <numart nr="V" nr-type="alphabet">
           <nr-title>V.</nr-title>
@@ -3749,15 +3749,15 @@
       </subart>
       <numart nr="G" nr-type="alphabet">
         <nr-title>G.</nr-title>
-        <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1994.085.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+        <sen nr="1" expiry-symbol-offset="0"></sen>
       </numart>
       <numart nr="H" nr-type="alphabet">
         <nr-title>H.</nr-title>
-        <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1994.141.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+        <sen nr="1" expiry-symbol-offset="0"></sen>
       </numart>
       <numart nr="I" nr-type="roman">
         <nr-title>I.</nr-title>
-        <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1995.087.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+        <sen nr="1" expiry-symbol-offset="0"></sen>
       </numart>
       <numart nr="AA" nr-type="alphabet">
         <nr-title>AA.</nr-title>
@@ -3822,6 +3822,12 @@
             <subart>1</subart>
             <sen>2</sen>
           </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <art>t</art>
+            <subart>1</subart>
+            <sen before-mark="^(\[? ?)?" after-mark="$">2</sen>
+          </location>
         </footnote>
         <footnote nr="2">
           <footnote-sen>Ákvæðinu var breytt með &lt;a href="/altext/stjt/1995.147.html"&gt;l. 147/1995, 3. gr.&lt;/a&gt;</footnote-sen>
@@ -3849,6 +3855,12 @@
               <sen>1</sen>
             </end>
           </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <art>t</art>
+            <numart>G</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
+          </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1994.141.html" law-nr="141" law-year="1994" law-art="2" nr="4">
           <footnote-sen>L. 141/1994, 2. gr.</footnote-sen>
@@ -3865,6 +3877,12 @@
               <numart>H</numart>
               <sen>1</sen>
             </end>
+          </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <art>t</art>
+            <numart>H</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1995.087.html" nr="5">
@@ -3883,6 +3901,12 @@
               <sen>1</sen>
             </end>
           </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <art>t</art>
+            <numart>I</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
+          </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1995.087.html" nr="6">
           <footnote-sen>L. 87/1995, brbákv. II.</footnote-sen>
@@ -3897,6 +3921,11 @@
               <numart>J</numart>
               <sen>1</sen>
             </end>
+          </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <numart>J</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2016.102.html" law-nr="102" law-year="2016" law-art="41" nr="7">
@@ -3980,6 +4009,11 @@
               <sen>1</sen>
             </end>
           </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <numart>L</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
+          </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1995.124.html" nr="10">
           <footnote-sen>L. 124/1995, brbákv. II.</footnote-sen>
@@ -3994,6 +4028,11 @@
               <numart>M</numart>
               <sen>1</sen>
             </end>
+          </location>
+          <location type="deletion">
+            <chapter>13</chapter>
+            <numart>M</numart>
+            <sen before-mark="^" after-mark="$">1</sen>
           </location>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/1997.077.html" law-nr="77" law-year="1997" law-art="3" nr="11">
@@ -4226,18 +4265,18 @@
     </art>
     <numart nr="J" nr-type="alphabet">
       <nr-title>J.</nr-title>
-      <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1995.087.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+      <sen nr="1" expiry-symbol-offset="0"></sen>
     </numart>
     <numart nr="K" nr-type="alphabet">
       <nr-title>K.</nr-title>
     </numart>
     <numart nr="L" nr-type="alphabet">
       <nr-title>L.</nr-title>
-      <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1995.124.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+      <sen nr="1" expiry-symbol-offset="0"></sen>
     </numart>
     <numart nr="M" nr-type="alphabet">
       <nr-title>M.</nr-title>
-      <sen nr="1">&lt;a href="https://www.althingi.is/altext/stjt/1995.124.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+      <sen nr="1" expiry-symbol-offset="0"></sen>
     </numart>
     <numart nr="N" nr-type="alphabet">
       <nr-title>N.</nr-title>

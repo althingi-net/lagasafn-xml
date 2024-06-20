@@ -18713,7 +18713,7 @@
       <name>Gildistaka.</name>
       <subart nr="1">
         <sen nr="1">Lög þessi öðlast gildi 1. janúar 2003.</sen>
-        <sen nr="2">&lt;a href="https://www.althingi.is/altext/stjt/2002.161.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</sen>
+        <sen nr="2" expiry-symbol-offset="0"></sen>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2004.130.html" law-nr="130" law-year="2004" law-art="11" nr="1">
@@ -18730,7 +18730,13 @@
             <chapter>16</chapter>
             <art>118</art>
             <subart>1</subart>
-            <sen before-mark="^&lt;a href=&quot;https://www.althingi.is/altext/stjt/2002.161.html&quot; title=&quot;Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða.&quot;&gt; … &lt;/a&gt;" after-mark="$">2</sen>
+            <sen before-mark="^" after-mark="$">2</sen>
+          </location>
+          <location type="deletion">
+            <chapter>16</chapter>
+            <art>118</art>
+            <subart>1</subart>
+            <sen before-mark="^…" after-mark="$">2</sen>
           </location>
         </footnote>
       </footnotes>
