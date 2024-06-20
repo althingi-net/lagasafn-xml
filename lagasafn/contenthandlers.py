@@ -13,7 +13,7 @@ from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
 
 SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
-
+MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
 def get_nr_and_name(goo: str) -> (str, str):
     dot_loc = goo.find(".")
@@ -587,10 +587,18 @@ def separate_sentences(content):
 
     # Iterate the sentences, find deletion markers, and split by need.
     new_sens = []
+    deletion_offsets = []
     for sen in sens:
         cursor = 0
         deletion_found = sen.find("…", cursor)
         while deletion_found > -1:
+            if sen.find("Hér hefur annaðhvort verið fellt brott") > -1:
+                # Strip the <a href=...> but leave the text within.
+                regex = r"<a [^>]*?>\s*(…)\s*</a>"
+                sen = re.sub(regex, MAGIC_EXPIRY_TOKEN, sen)
+                deletion_offsets.append(deletion_found)
+                continue
+
             # Check if there's content before the marker. If not, then we
             # don't want to split, because then it belongs at the beginning of
             # the next sentence instead of having an entire sentence just for
@@ -671,6 +679,12 @@ def add_sentences(target_node, sens):
         sen_nr += 1
 
         sen_elem = E.sen(sen, nr=str(sen_nr))
+
+        expiry_loc = sen.find(MAGIC_EXPIRY_TOKEN)
+        if expiry_loc > -1:
+            sen = sen.replace(MAGIC_EXPIRY_TOKEN, "…")
+            sen_elem.text = sen
+            sen_elem.attrib["expiry-symbol-offset"] = str(expiry_loc)
 
         # Special flag to assist visual software, indicating that even though
         # this is a new sentence in the file, it visually represents a new

@@ -11,6 +11,15 @@ function lowercase_tagname(element) {
     return element.prop('tagName').toLowerCase();
 }
 
+function location_to_string($location) {
+    var location_string = '';
+    $location.children().each(function() {
+        var $child = $(this);
+        location_string += lowercase_tagname($child) + ' ' + $child.text() + ' ';
+    });
+    return location_string.trim();
+}
+
 function attr_or_emptystring(element, attribute) {
     if (!element) {
         return '';
@@ -668,6 +677,8 @@ var process_footnote = function() {
             return;
         }
 
+        console.log(location_to_string($location), "Mark: " + $mark.html());
+
         // Get the regular expressions for how the text should look before and
         // after the pointer. These regular expressions match the text with
         // and without other deletion or replacement markers.
@@ -692,6 +703,15 @@ var process_footnote = function() {
         }
 
         pointer_symbol = ' <sup>' + footnote_nr + ')</sup> ';
+
+        // If we're pointing to a delelted section, and there's no content,
+        // we want to add a deletion symbol instead of a pointer.
+        if (before_mark_content == '' && after_mark_content == '') {
+            // TODO: There are a lot of edge cases here:
+            // Law 37/1992 wants us to add a deletion symbol and the pointer symbol instead of returning.
+            
+            return;
+        }
 
         // Replace the content with what was found before the deletion mark,
         // then the deletion mark itself and finally whatever came after the
@@ -853,6 +873,20 @@ $(document).ready(function() {
     $('law chapter').each(make_togglable);
     $('law art').each(make_togglable);
     //$('.toggle-button').click();
+
+    $('sen').each(function() { 
+        if ($(this).attr("expiry-symbol-offset")) {
+            var offset = $(this).attr("expiry-symbol-offset");
+            var $expiry_symbol = $('<span class="expiry-symbol">…</span>');
+            if ($(this).text().indexOf("…") === -1) {
+                var left = $(this).text().substring(0, offset);
+                var right = $(this).text().substring(offset);
+                $(this).html(left + $expiry_symbol[0].outerHTML + right);
+            } else {
+                $(this).html($(this).text().replace("…", $expiry_symbol[0].outerHTML));
+            }
+        }
+    });
 
     // Hook up open-all and close-all buttons for togglables.
     $("#btn-close-all").click(function() {

@@ -1915,7 +1915,10 @@ def parse_footnotes(parser):
                 # the next node on a list of nodes that we'll delete
                 # later. We can't delete it here because it will break the
                 # iteration (parent.iterdescendants).
-                if len(peek.text) == 0:
+                #
+                # We still wish to retain empty nodes that contain
+                # attributes important for recreating the content visually.
+                if len(peek.text) == 0 and "expiry-symbol-offset" not in peek.attrib:
                     nodes_to_kill.append(peek)
 
             # Delete nodes marked for deletion.
