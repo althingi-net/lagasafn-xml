@@ -44,7 +44,7 @@ class WebTests(StaticLiveServerTestCase):
             const links = Array.from(document.querySelectorAll("a.law-link"));
             return links.map(link => ({
                 href: window.location.origin + link.getAttribute('href'),
-                identifier: link.getAttribute('data-identifier'),
+                identifier: link.parentNode.parentNode.getAttribute('data-identifier'),
                 original_url: link.getAttribute('data-original-url')
             }));
         """
