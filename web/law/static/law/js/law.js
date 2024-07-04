@@ -11,14 +11,15 @@ function lowercase_tagname(element) {
     return element.prop('tagName').toLowerCase();
 }
 
-function location_to_string($location) {
-    var location_string = '';
-    $location.children().each(function() {
-        var $child = $(this);
-        location_string += lowercase_tagname($child) + ' ' + $child.text() + ' ';
-    });
-    return location_string.trim();
-}
+// FIXME: Seems like a stale debug thing. Remove or utilize and comment.
+//function location_to_string($location) {
+//    var location_string = '';
+//    $location.children().each(function() {
+//        var $child = $(this);
+//        location_string += lowercase_tagname($child) + ' ' + $child.text() + ' ';
+//    });
+//    return location_string.trim();
+//}
 
 function attr_or_emptystring(element, attribute) {
     if (!element) {
@@ -677,7 +678,8 @@ var process_footnote = function() {
             return;
         }
 
-        console.log(location_to_string($location), "Mark: " + $mark.html());
+        // FIXME: This seems to be some stale debug.
+        //console.log(location_to_string($location), "Mark: " + $mark.html());
 
         // Get the regular expressions for how the text should look before and
         // after the pointer. These regular expressions match the text with
