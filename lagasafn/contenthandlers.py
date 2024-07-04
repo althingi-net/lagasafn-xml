@@ -15,6 +15,7 @@ from lxml.builder import E
 SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
+
 def get_nr_and_name(goo: str) -> (str, str):
     dot_loc = goo.find(".")
     if dot_loc > -1:

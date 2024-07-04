@@ -107,6 +107,134 @@ def get_conjugated_law_names(index):
     return conjugated
 
 
+def analyze_potentials(potentials):
+    # Check for inner parts of reference for as long as we can.
+    #
+    # FIXME: This `beendone` loop-checking thing is ridiculous. We should
+    # remove things from `potentials` until it's empty and break there.
+
+    reference = ""
+
+    # Becomes True if the underlying mechanism is able to conclusively
+    # determine that the inner reference has been parsed completely and
+    # correctly. This typically happens when we run into key words like "skv."
+    # or "sbr.".
+    certain_about_inner = False
+
+    loop_found = False
+
+    beendone = 0
+    while True:
+
+        # Check for inner reference parts by iterating through known patterns.
+        for inner_pattern in inner_reference_patterns:
+            nrs_and_years = re.findall(inner_pattern, potentials)
+            if len(nrs_and_years) > 0:
+                match = nrs_and_years[0][0]
+                reference = "%s %s" % (match, reference)
+                potentials = potentials[: -len(match)].strip()
+
+                del match
+                continue
+
+        # Check if we can prove that we're done by using conclusive words.
+        for conclusion_part in conclusives:
+            p_len = len(potentials)
+            cp_len = len(conclusion_part)
+            if p_len >= cp_len and potentials[-cp_len:].lower() in conclusives:
+                certain_about_inner = True
+                break
+        if certain_about_inner:
+            # Break outer loop as well.
+            break
+
+        # Check if we can prove that we're done by seeing if another outer
+        # reference can be found right before.
+        preceeding_law_match = re.findall(r"(nr\. (\d{1,3}/\d{4}),)$", potentials)
+        if len(preceeding_law_match):
+            pl_len = len(preceeding_law_match[0][0])
+            potentials = potentials[-pl_len:]
+            certain_about_inner = True
+            break
+
+        # Check for separators "og" and "eða". Could be done in a loop but that
+        # would just add code indenting.
+        separator = ""
+        for sep_try in ["og", "eða"]:
+            if len(potentials) < len(sep_try):
+                continue
+
+            if potentials[-len(sep_try) :] == sep_try:
+                separator = sep_try
+                break
+
+        if len(separator):
+            # If we run into a separator with no inner reference, then this is
+            # a reference to the entire law and not to an article within it. We
+            # may safely assume that we're done parsing.
+            if len(reference) == 0:
+                certain_about_inner = True
+                break
+
+            # The string ", " preceeding the separator indicates that what
+            # comes before is not a part of the same reference. We determine
+            # that the reference is complete.
+            if potentials.rstrip(separator)[-2:] == ", ":
+                certain_about_inner = True
+                break
+
+            # Otherwise, add matched separator and continue.
+            reference = "%s %s" % (separator, reference)
+            potentials = potentials[: -len(separator)].strip()
+
+            # Parts before separators (such "og" or "eða") follow a different
+            # format, as their context is determined by what comes after them.
+            #
+            # Consider:
+            #     a- og c–i-lið 9. tölul.
+            #
+            # The "a-" part doesn't make any sense except in the context of
+            # "c-i-lið" that comes afterward. We don't normally parse "a-"
+            # individually, we only parse it after we run into an "og".
+            for and_inner_pattern in and_inner_reference_patterns:
+                nrs_and_years = re.findall(and_inner_pattern, potentials)
+                if len(nrs_and_years) > 0:
+                    match = nrs_and_years[0][0]
+                    reference = "%s %s" % (match, reference)
+                    potentials = potentials[: -len(match)].strip()
+                    del match
+
+                del nrs_and_years
+
+            # We don't need to concern ourselves more with this iteration.
+            # Moving on.
+            continue
+
+        # If we can't find any more matches, we're out of the inner part of the
+        # reference or into something that we don't support yet.
+        if beendone > 100:
+            print("\n[ LOOP DETECTED ]: %s" % potentials)
+            loop_found = True
+
+            # This is a good debugging point.
+            #
+            # print("*****************************")
+            # print("Sentence:   %s" % sen.text)
+            # print("-----------------------------")
+            # print("Potentials: %s" % potentials)
+            # print("*****************************")
+            #
+            # import ipdb; ipdb.set_trace()
+
+            break
+        beendone += 1
+
+    # May contain stray whitespace due to concatenation.
+    reference = reference.strip()
+
+    return reference, certain_about_inner, loop_found
+
+
 def parse_references():
     print("Parsing references...", end="", flush=True)
 
@@ -176,15 +304,6 @@ def parse_references():
                 dative = conjugated[nr_and_year]["dative"]
                 genitive = conjugated[nr_and_year]["genitive"]
 
-                # The outer and inner references we will build.
-                reference = ""
-
-                # Becomes True if the underlying mechanism is able to
-                # conclusively determine that the inner reference has been
-                # parsed completely and correctly. This typically happens when
-                # we run into key words like "skv." or "sbr.".
-                certain_about_inner = False
-
                 # Possible permutations of how the outer part of reference
                 # might be construed.
                 # FIXME: This might be better turned into a regex.
@@ -234,6 +353,10 @@ def parse_references():
                 # to be processed.
                 potentials_outer_start_offset = potentials_outer_end
 
+                # The outer and inner references we will build.
+                reference = ""
+
+                certain_about_inner = False
                 if potentials_outer_start > -1:
 
                     # Potentials are the string that potentially contains the
@@ -241,125 +364,11 @@ def parse_references():
                     # and name.
                     potentials = chunk[:potentials_outer_start].strip()
 
-                    # Check for inner parts of reference for as long as we can.
-                    # FIXME: This `beendone` loop-checking thing is ridiculous.
-                    # We should remove things from `potentials` until it's
-                    # empty and break there.
-                    beendone = 0
-                    while True:
-
-                        # Check for inner reference components by iterating
-                        # through known patterns.
-                        for inner_pattern in inner_reference_patterns:
-                            nrs_and_years = re.findall(inner_pattern, potentials)
-                            if len(nrs_and_years) > 0:
-                                match = nrs_and_years[0][0]
-                                reference = "%s %s" % (match, reference)
-                                potentials = potentials[: -len(match)].strip()
-
-                                del match
-                                continue
-
-                        # Check if we can prove that we're done by using
-                        # conclusive words.
-                        for conclusion_part in conclusives:
-                            p_len = len(potentials)
-                            cp_len = len(conclusion_part)
-                            if (
-                                p_len >= cp_len
-                                and potentials[-cp_len:].lower() in conclusives
-                            ):
-                                certain_about_inner = True
-                                break
-                        if certain_about_inner:
-                            # Break outer loop as well.
-                            break
-
-                        # Check if we can prove that we're done by seeing if
-                        # another outer reference can be found right before.
-                        preceeding_law_match = re.findall(
-                            r"(nr\. (\d{1,3}/\d{4}),)$", potentials
-                        )
-                        if len(preceeding_law_match):
-                            pl_len = len(preceeding_law_match[0][0])
-                            potentials = potentials[-pl_len:]
-                            certain_about_inner = True
-                            break
-
-                        # Check for separators "og" and "eða".
-                        # This could be done in a loop but that would just add
-                        # code indenting.
-                        separator = ""
-                        for sep_try in ["og", "eða"]:
-                            if len(potentials) < len(sep_try):
-                                continue
-
-                            if potentials[-len(sep_try) :] == sep_try:
-                                separator = sep_try
-                                break
-
-                        if len(separator):
-                            # If we run into a separator with no inner
-                            # reference, then this is a reference to the entire
-                            # law and not to an article within it. We may
-                            # safely assume that we're done parsing.
-                            if len(reference) == 0:
-                                certain_about_inner = True
-                                break
-
-                            # The string ", " preceeding the separator
-                            # indicates that what comes before is not a part of
-                            # the same reference. We determine that the
-                            # reference is complete.
-                            if potentials.rstrip(separator)[-2:] == ", ":
-                                certain_about_inner = True
-                                break
-
-                            # Otherwise, add matched separator and continue.
-                            reference = "%s %s" % (separator, reference)
-                            potentials = potentials[: -len(separator)].strip()
-
-                            # Parts before separators (such "og" or "eða")
-                            # follow a different format, because their context
-                            # is determined by what comes after them.
-                            #
-                            # Consider:
-                            #     a- og c–i-lið 9. tölul.
-                            #
-                            # The "a-" part doesn't make any sense except in
-                            # the context of "c-i-lið" that comes afterward. We
-                            # don't normally parse "a-" individually, we only
-                            # parse it specifically after we run into an "og".
-                            for and_inner_pattern in and_inner_reference_patterns:
-                                nrs_and_years = re.findall(
-                                    and_inner_pattern, potentials
-                                )
-                                if len(nrs_and_years) > 0:
-                                    match = nrs_and_years[0][0]
-                                    reference = "%s %s" % (match, reference)
-                                    potentials = potentials[: -len(match)].strip()
-                                    del match
-
-                                del nrs_and_years
-
-                            # We don't need to concern ourselves more with this
-                            # iteration. Moving on.
-                            continue
-
-                        # If we can't find any matches anymore, it means that
-                        # we're out of the inner part of the reference or into
-                        # something that we don't support yet.
-                        if beendone > 100:
-                            print("\n[ LOOP DETECTED ]: %s" % potentials)
-                            stat_loop_count += 1
-                            break
-                        beendone += 1
-
-                    # Indentation of inner reference being finished.
-                    pass
-
-                # May contain stray whitespace due to concatenation.
-                reference = reference.strip()
+                    reference, certain_about_inner, loop_found = analyze_potentials(
+                        potentials
+                    )
+                    if loop_found:
+                        stat_loop_count += 1
 
                 # The visible part of the text that would normally be
                 # expected to be a link on a web page.
