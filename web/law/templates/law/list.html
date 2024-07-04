@@ -1,6 +1,44 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block javascript %}
+<script language="javascript" type="text/javascript">
+
+    $("#law-filter").on('input', function() {
+
+        var search_string = $(this).val().toLowerCase();
+
+        $("tbody > tr.law-list-row").each(function() {
+            var $row = $(this);
+
+            // First check if we find the law number and year.
+            var found = $row.attr("data-identifier").indexOf(search_string) > -1
+
+            // Only check content if we need to, for performance reasons.
+            if (!found) {
+                var name = $row.find("td.law-list-name").text().trim();
+                found = name.toLowerCase().indexOf(search_string) > -1;
+            }
+
+            if (found) {
+                $row.show();
+            }
+            else {
+                $row.hide();
+            }
+        });
+    });
+
+</script>
+{% endblock %}
+
+{% block controls %}
+    <div class="btn-group" role="group">
+        <input type="text" class="form-control" id="law-filter" autofocus="true" placeholder="{% trans 'Search' %}" />
+    </div>
+    &nbsp;
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -16,34 +54,38 @@
 </table>
 
 <table>
-    <tr class="law-list-row">
-        <th class="law-list-nr">{% trans 'Nr.' %}</th>
-        <th class="law-list-name">{% trans 'Name' %}</th>
-        <th class="law-list-ch">{% trans 'Ch.' %}</th>
-        <th class="law-list-art">{% trans 'Art.' %}</th>
-        <th class="law-list-status">{% trans 'Status' %}</th>
-    </tr>
-    {% for law in laws %}
+    <thead>
         <tr class="law-list-row">
-            <td class="law-list-nr">
-                <a class="law-link" data-identifier="{{ law.identifier }}" data-original-url="{{ law.original_url }}" href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>
-            </td>
-            <td class="law-list-name">
-                {{ law.name }}
-            </td>
-            <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
-            <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
-            <td class="law-list-status">
-                {% if law.status is None %}
-                    <span class="badge bg-warning">{% trans 'Unknown' %}</span>
-                {% elif law.status %}
-                    <span class="badge bg-success">{% trans 'OK' %}</span>
-                {% else %}
-                    <span class="badge bg-danger">{% trans 'Errors' %}</span>
-                {% endif %}
-            </td>
+            <th class="law-list-nr">{% trans 'Nr.' %}</th>
+            <th class="law-list-name">{% trans 'Name' %}</th>
+            <th class="law-list-ch">{% trans 'Ch.' %}</th>
+            <th class="law-list-art">{% trans 'Art.' %}</th>
+            <th class="law-list-status">{% trans 'Status' %}</th>
         </tr>
-    {% endfor %}
+    </thead>
+    <tbody>
+        {% for law in laws %}
+            <tr class="law-list-row" data-identifier="{{ law.identifier }}">
+                <td class="law-list-nr">
+                    <a class="law-link" data-original-url="{{ law.original_url }}" href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>
+                </td>
+                <td class="law-list-name">
+                    {{ law.name }}
+                </td>
+                <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
+                <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
+                <td class="law-list-status">
+                    {% if law.status is None %}
+                        <span class="badge bg-warning">{% trans 'Unknown' %}</span>
+                    {% elif law.status %}
+                        <span class="badge bg-success">{% trans 'OK' %}</span>
+                    {% else %}
+                        <span class="badge bg-danger">{% trans 'Errors' %}</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
 </div>
 
