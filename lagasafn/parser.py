@@ -1144,12 +1144,32 @@ def parse_subarticle(parser):
 
         raw_definition, before, definition = parser.matcher.result()
 
-        content = content.replace(raw_definition, "")
+        # Fix data so that we know how to treat it.
+        definition = definition.strip()
+        if before is None:
+            before = ""
 
-        parser.subart.append(E("definition", (before or "") + definition.strip()))
+        # Clear out the HTML content describing the definition.
+        content = content.replace(raw_definition, before + definition.strip())
 
-        sens = separate_sentences(content)
+        sens = separate_sentences(strip_links(content))
         add_sentences(parser.subart, sens)
+
+        added_sens = parser.subart.findall("sen")
+
+        # Something strange is going on if these are different, so we'll throw
+        # an error, just in case.
+        if len(sens) != len(added_sens):
+            raise Exception("Lists `sens` and `added_sens` should be same length.")
+
+        # It is also unexpected to see a definition being applied when there
+        # already is one.
+        if "definition" in parser.subart.attrib:
+            raise Exception("Unexpectedly existing definition in `subart`.")
+
+        # Add the definition to the subart.
+        parser.subart.attrib["definition"] = definition
+
     else:
         sens = separate_sentences(strip_links(content))
         add_sentences(parser.subart, sens)
