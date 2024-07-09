@@ -57,6 +57,8 @@ class LawParser:
         self.law_num = law_num
         self.law_year = law_year
 
+        self.verbosity = 0
+
         # Objects that help us figure out the current state of affairs. These
         # variables are used between iterations, meaning that whenever possible,
         # their values should make sense at the end of the processing of a
@@ -105,16 +107,51 @@ class LawParser:
         self.collection = []
 
     def enter(self, path):
+        if self.verbosity > 0:
+            print("%s>> Entering %s" % ("  " * len(self.parse_path), path))
         self.parse_path.append(path)
 
-    def leave(self):
+    def leave(self, guard=None):
+        if len(self.parse_path) < 1:
+            print("ERROR: Trying to leave a path that doesn't exist.")
+            return
+
+        if self.verbosity > 0:
+            print("%s<< Leaving %s" % ("  " * (len(self.parse_path)-1), self.parse_path[-1]))
+
+        if guard is not None:
+            if self.parse_path[-1] != guard:
+                print("ERROR: Trying to leave a path that doesn't match the guard.")
+                return
         self.parse_path.pop()
+
+    def leave_if_last(self, path):
+        if len(self.parse_path) > 0 and self.parse_path[-1] == path:
+            self.leave()
+
+    def note(self, note):
+        if self.verbosity > 0:
+            print("%s  - Note: %s" % ("  " * len(self.parse_path), note))
+
 
     def peek(self, n=1):
         return self.lines.peek(n)
 
     def peeks(self, n=1):
         return self.lines.peeks(n)
+
+    def next(self):
+        return self.lines.next()
+    
+    def nexts(self):
+        return self.lines.next().strip()
+
+    def next_until(self, end_string):
+        return self.lines.next_until(end_string)
+    
+    def next_untils(self, end_string):
+        return self.lines.next_until(end_string).strip()
+            
 
     def trail_push(self, item):
         self.trail.append(item)
@@ -139,12 +176,15 @@ class LawParser:
         self.collection = []
         return result
 
-    def collect_until(self, lines, end_string):
+    def collect_until(self, end_string):
         # Will collect lines until the given string is found, and then return the
         # collected lines.
         done = False
         while not done:
-            line = next(lines).strip()
+            try:
+                line = next(self.lines).strip()
+            except StopIteration:
+                print("ERROR: Unexpected end of file on line %d while collecting until '%s'." % (self.lines.current_line_number, end_string))
             if self.matcher.check(line, end_string):
                 done = True
                 continue
@@ -211,7 +251,7 @@ def parse_law_title(parser):
     parser.enter("law-title")
 
     # Parse law name.
-    law_name = strip_links(parser.collect_until(parser.lines, "</h2>"))
+    law_name = strip_links(parser.collect_until("</h2>"))
 
     # Remove double spaces.
     law_name = law_name.replace("  ", " ")
@@ -271,7 +311,7 @@ def parse_law_number_and_date(parser):
     parser.enter("law-number-and-date")
 
     # Parse the num and date, which appears directly below the law name.
-    num_and_date = parser.collect_until(parser.lines, "</strong>")
+    num_and_date = parser.collect_until("</strong>")
 
     # The num-and-date tends to contain excess whitespace.
     num_and_date = num_and_date.replace("  ", " ")
@@ -377,7 +417,7 @@ def parse_ambiguous_section(parser):
     # when parsing the XML, it is possible to check what the last
     # <ambiguous-section> contained, if at some point a programmer
     # needs to deal with them when using the XML.
-    ambiguous_content = parser.collect_until(parser.lines, "</em>")
+    ambiguous_content = parser.collect_until("</em>")
 
     # FIXME: Separating the sentences like this incorrectly parses
     # what should be a `nr-title` as a `sen.`
@@ -454,7 +494,7 @@ def parse_minister_clause_footnotes(parser):
         # is no minister clause.
         hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
         if hr_distance is not None and hr_distance > 0:
-            minister_clause = parser.collect_until(parser.lines, "<hr/>")
+            minister_clause = parser.collect_until("<hr/>")
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
@@ -478,7 +518,7 @@ def parse_presidential_decree_preamble(parser):
         # The only example of this that this guard currently catches is 7/2022.
         distance = parser.occurrence_distance(parser.lines, "<br/>")
         if distance is not None and begins_with_regular_content(parser.lines.peek()):
-            preamble = parser.collect_until(parser.lines, "<br/>")
+            preamble = parser.collect_until("<br/>")
             parser.law.append(E("sen", preamble))
 
         parser.leave()
@@ -514,7 +554,7 @@ def parse_chapter(parser):
     # is the chapter nr-title and that the content in the next <b>
     # clause will be the chapter name.
 
-    name_or_nr_title = parser.collect_until(parser.lines, "</b>")
+    name_or_nr_title = parser.collect_until("</b>")
 
     if parser.lines.peeks() == "<b>":
         chapter_nr_title = name_or_nr_title
@@ -554,8 +594,8 @@ def parse_chapter(parser):
                     nr += alpha.lower()
         del t
 
-        parser.scroll_until(parser.lines, "<b>")
-        chapter_name = parser.collect_until(parser.lines, "</b>")
+        parser.scroll_until("<b>")
+        chapter_name = parser.collect_until("</b>")
 
         parser.chapter = E.chapter(
             {"nr": str(nr), "nr-type": nr_type},
@@ -653,15 +693,18 @@ def parse_chapter(parser):
         # Special case in law 80/2007
         "bráðabirgðaafnot" not in cn
     ):
+        parser.enter("temporary-clauses")
         if nr is None:
             parser.chapter.attrib["nr"] = "t"
         parser.chapter.attrib["nr-type"] = "temporary-clauses"
+        parser.leave()
 
     parser.law.append(parser.chapter)
 
     parser.trail_push(parser.chapter)
 
     parser.subchapter = None
+    parser.leave()
 
     parser.leave()
 
@@ -703,7 +746,7 @@ def parse_subchapter(parser):
     ):
         parser.enter("subchapter")
 
-        subchapter_goo = parser.collect_until(parser.lines, "</b>")
+        subchapter_goo = parser.collect_until("</b>")
 
         subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
 
@@ -726,8 +769,6 @@ def parse_subchapter(parser):
         del subchapter_nr
         del subchapter_name
 
-        parser.leave()
-
 
 def parse_article_chapter(parser):
     if check_chapter(
@@ -736,7 +777,7 @@ def parse_article_chapter(parser):
         parser.enter("art-chapter")
 
         # Parse an article chapter.
-        art_chapter_goo = parser.collect_until(parser.lines, "</b>")
+        art_chapter_goo = parser.collect_until("</b>")
 
         # Check if there's a name to the article chapter.
         try:
@@ -790,8 +831,8 @@ def parse_article_chapter(parser):
         # short preface to a list of `numart` that follow.
         if begins_with_regular_content(parser.peek(2)):
             # Scroll over the break the belongs to the `art-chapter`.
-            parser.scroll_until(parser.lines, "<br/>")
-            content = parser.collect_until(parser.lines, "<br/>")
+            parser.scroll_until("<br/>")
+            content = parser.collect_until("<br/>")
 
             sens = separate_sentences(strip_links(content))
             add_sentences(parser.art_chapter, sens)
@@ -819,7 +860,7 @@ def parse_ambiguous_chapter(parser):
         parser.enter("ambiguous-chapter")
 
         ambiguous_bold_text = E(
-            "ambiguous-bold-text", parser.collect_until(parser.lines, "</b>")
+            "ambiguous-bold-text", parser.collect_until("</b>")
         )
 
         if parser.subart is not None:
@@ -859,8 +900,8 @@ def parse_sentence_with_title(parser):
             sen_title_text += "["
             back_peek = back_peek[0:-1]
 
-        sen_title_text += parser.collect_until(parser.lines, "</i>")
-        content = parser.collect_until(parser.lines, "<br/>")
+        sen_title_text += parser.collect_until("</i>")
+        content = parser.collect_until("<br/>")
         if parser.subart is not None:
             sen_title = E("sen-title", sen_title_text)
             parser.subart.append(sen_title)
@@ -879,8 +920,8 @@ def parse_article(parser):
     parser.enter("art")
 
     # Parse an article.
-    parser.scroll_until(parser.lines, "<b>")
-    art_nr_title = parser.collect_until(parser.lines, "</b>")
+    parser.scroll_until("<b>")
+    art_nr_title = parser.collect_until("</b>")
 
     clean_art_nr_title = strip_markers(art_nr_title)
 
@@ -979,7 +1020,7 @@ def parse_article(parser):
     # HTML, which we are appending "</a>" at the end. Normally we don't
     # want that, so `parser.collect_until` doesn't include it.
     if parser.peeks().find("<a ") == 0 and parser.peeks(3) == "</a>":
-        art_title_link = parser.collect_until(parser.lines, "</a>")
+        art_title_link = parser.collect_until("</a>")
         art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
 
     # Create the tags, configure them and append to the chapter.
@@ -1001,8 +1042,8 @@ def parse_article(parser):
     # article has a name title and we need to grab it. Note that not
     # all articles have names.
     if parser.peeks() == "<em>":
-        parser.scroll_until(parser.lines, "<em>")
-        art_name = parser.collect_until(parser.lines, "</em>")
+        parser.scroll_until("<em>")
+        art_name = parser.collect_until("</em>")
 
         parser.art.append(E("name", strip_links(art_name)))
 
@@ -1063,8 +1104,8 @@ def parse_article(parser):
         # latter part only returns true in the very specific case
         # outlined here.
 
-        parser.scroll_until(parser.lines, "<b>")
-        art_name = parser.collect_until(parser.lines, "</b>")
+        parser.scroll_until("<b>")
+        art_name = parser.collect_until("</b>")
 
         parser.art.append(
             E("name", strip_links(art_name), {"original-ui-style": "bold"})
@@ -1074,7 +1115,7 @@ def parse_article(parser):
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
     while parser.peeks() in ["…", "]"]:
-        marker = parser.collect_until(parser.lines, "</sup>")
+        marker = parser.collect_until("</sup>")
         parser.art.getchildren()[-1].text += " " + marker + " </sup>"
 
     parser.trail_push(parser.art)
@@ -1112,10 +1153,10 @@ def parse_subarticle(parser):
     if linecount_to_table is not None:
         # We must append the string '</table>' because it gets left
         # behind by the collet_until function.
-        content = parser.collect_until(parser.lines, "</table>") + "</table>"
+        content = parser.collect_until("</table>") + "</table>"
     else:
         # Everything is normal.
-        content = parser.collect_until(parser.lines, "<br/>")
+        content = parser.collect_until("<br/>")
 
     parser.subart = E("subart", {"nr": subart_nr})
 
@@ -1211,7 +1252,7 @@ def parse_subarticle(parser):
         parser.law.append(parser.subart)
 
     parser.trail_push(parser.subart)
-    parser.leave()
+    parser.leave("subart")
 
 
 def parse_deletion_marker(parser):
@@ -1233,14 +1274,14 @@ def parse_deletion_marker(parser):
     parser.subart = E("subart")
     parser.subart.attrib["nr"] = "1"
 
-    premature_deletion = parser.collect_until(parser.lines, "<br/>")
+    premature_deletion = parser.collect_until("<br/>")
     add_sentences(parser.subart, [premature_deletion])
 
     parser.law.append(parser.subart)
 
     parser.trail_push(parser.subart)
 
-    parser.leave()
+    parser.leave("deletion-marker")
 
 
 def parse_numerical_article(parser):
@@ -1295,7 +1336,7 @@ def parse_numerical_article(parser):
     # when rendering software wants to add deletion markers. A "sen"
     # node is also added for the deletion marker to be addable.
     if numart_nr == "":
-        content = parser.collect_until(parser.lines, "</span>")
+        content = parser.collect_until("</span>")
         dummy_numart = E(
             "numart",
             {
@@ -1305,7 +1346,7 @@ def parse_numerical_article(parser):
         )
         add_sentences(dummy_numart, [content])
         prev_numart.getparent().append(dummy_numart)
-        parser.scroll_until(parser.lines, "<br/>")
+        parser.scroll_until("<br/>")
         return
 
     # In 6. tölul. 1. gr. laga nr. 119/2018, the removal of previous
@@ -1321,8 +1362,8 @@ def parse_numerical_article(parser):
     # how we respond to 3. gr. laga nr. 160/2010 (which was
     # immediately above this comment on 2022-01-23).
     elif numart_nr == "</span>" and parser.peeks(2) == "…":
-        parser.scroll_until(parser.lines, "</span>")
-        content = parser.collect_until(parser.lines, "<br/>")
+        parser.scroll_until("</span>")
+        content = parser.collect_until("<br/>")
         dummy_numart = E(
             "numart",
             {
@@ -1519,7 +1560,7 @@ def parse_numerical_article(parser):
     parent.append(parser.numart)
 
     # NOTE: Gets added after we add the sentences with `add_sentences`.
-    numart_nr_title = parser.collect_until(parser.lines, "</span>")
+    numart_nr_title = parser.collect_until("</span>")
 
     # Check for a closing bracket.
     # Example:
@@ -1531,27 +1572,27 @@ def parse_numerical_article(parser):
             parser.peeks(4) == "</sup>",
         ]
     ):
-        numart_nr_title += parser.collect_until(parser.lines, "</sup>") + " </sup>"
+        numart_nr_title += parser.collect_until("</sup>") + " </sup>"
 
     if parser.peeks() == "<i>":
         # Looks like this numerical article has a name.
-        parser.scroll_until(parser.lines, "<i>")
+        parser.scroll_until("<i>")
 
         # Note that this gets inserted **after** we add the sentences
         # with `add_sentences` below.
-        numart_name = parser.collect_until(parser.lines, "</i>")
+        numart_name = parser.collect_until("</i>")
 
         # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
         # The name of a numerical article is contained in two "<i>"
         # tags separated with an "og".
         if parser.lines.peeks() == "og" and parser.lines.peeks(2) == "<i>":
-            addendum = parser.collect_until(parser.lines, "</i>").replace("<i> ", "")
+            addendum = parser.collect_until("</i>").replace("<i> ", "")
             numart_name += " " + addendum
     else:
         numart_name = None
 
     # Read in the remainder of the content.
-    content = parser.collect_until(parser.lines, "<br/>")
+    content = parser.collect_until("<br/>")
 
     # Split the content into sentences.
     sens = separate_sentences(strip_links(content))
@@ -1623,7 +1664,7 @@ def parse_numerical_article(parser):
             # numart, and not a new location like an article,
             # subarticle or another numart, we must determine its
             # nature. We'll start by finding the content.
-            extra_content = parser.collect_until(parser.lines, "<br/>")
+            extra_content = parser.collect_until("<br/>")
 
             # Process the extra content into extra sentences.
             extra_sens = separate_sentences(strip_links(extra_content))
@@ -1692,7 +1733,7 @@ def parse_table(parser):
 
     content = (
         '<table width="100%">'
-        + parser.collect_until(parser.lines, "</table>")
+        + parser.collect_until("</table>")
         + "</table>"
     )
     sen = separate_sentences(content).pop()
@@ -1742,7 +1783,7 @@ def parse_footnotes(parser):
 
         # Scroll past the closing tag, since we're not going to use its
         # content (see comment below).
-        parser.scroll_until(parser.lines, "</sup>")
+        parser.scroll_until("</sup>")
 
         # Determine the footnote number.
         # In a perfect world, we should be able to get the footnote number
@@ -1768,13 +1809,14 @@ def parse_footnotes(parser):
 
         peek = parser.peeks()
         if parser.matcher.check(peek, r'<a href="(\/altext\/.*)">'):
+            parser.enter("footnote-link")
             # This is a footnote regarding a legal change.
             href = "https://www.althingi.is%s" % parser.matcher.result()[0]
 
             # Retrieve the the content of the link to the external law
             # that we found.
-            parser.scroll_until(parser.lines, r'<a href="(\/altext\/.*)">')
-            footnote_sen = parser.collect_until(parser.lines, "</a>")
+            parser.scroll_until(r'<a href="(\/altext\/.*)">')
+            footnote_sen = parser.collect_until("</a>")
 
             # Update the footnote with the content discovered so far.
             footnote.attrib["href"] = href
@@ -1784,10 +1826,15 @@ def parse_footnotes(parser):
             # pattern of external law, we'll put that information in
             # attributes as well. (It should.)
             if parser.matcher.check(footnote_sen, r"L\. (\d+)\/(\d{4}), (\d+)\. gr\."):
+                parser.enter("footnote-law")
                 fn_law_nr, fn_law_year, fn_art_nr = parser.matcher.result()
                 footnote.attrib["law-nr"] = fn_law_nr
                 footnote.attrib["law-year"] = fn_law_year
                 footnote.attrib["law-art"] = fn_art_nr
+                parser.note("Footnote law: %s/%s, %s. gr." % (fn_law_nr, fn_law_year, fn_art_nr))
+                parser.leave()
+            
+            parser.leave()
 
         # Some footnotes don't contain a link to an external law like
         # above but rather some arbitrary information. In these cases
@@ -1805,6 +1852,8 @@ def parse_footnotes(parser):
         gathered = ""
         while True:
             if parser.peeks() in ["</small>", '<sup style="font-size:60%">']:
+                parser.note("Ran into end of footnote without a link.")
+                parser.leave()
                 break
             else:
                 # The text we want is separated into lines with arbitrary
@@ -1845,6 +1894,9 @@ def parse_footnotes(parser):
         parser.footnotes.append(footnote)
 
         if parser.peeks() == "</small>":
+            #parser.enter("footnotes-end")
+            parser.note("Found end of footnote?")
+
             # At this point, the basic footnote XML has been produced,
             # enough to show the footnotes themselves below each article.
             # We will now see if we can parse the markers in the content
@@ -1884,6 +1936,8 @@ def parse_footnotes(parser):
                 r'<sup style="font-size:60%"> \d+\) </sup>)'
             )
             nodes_to_kill = []
+
+            parser.enter("iter-descendants")
             for desc in parent.iterdescendants():
                 peek = desc.getnext()
 
@@ -1941,6 +1995,8 @@ def parse_footnotes(parser):
                 if len(peek.text) == 0 and "expiry-symbol-offset" not in peek.attrib:
                     nodes_to_kill.append(peek)
 
+            parser.leave()
+
             # Delete nodes marked for deletion.
             for node_to_kill in nodes_to_kill:
                 node_to_kill.getparent().remove(node_to_kill)
@@ -1963,6 +2019,7 @@ def parse_footnotes(parser):
                 # denoting their number.
                 ###########################################################
 
+                parser.enter("detect-opening-and-closing-marker")
                 # Keeps track of where we are currently looking for
                 # markers within the entity being checked.
                 cursor = 0
@@ -2211,6 +2268,8 @@ def parse_footnotes(parser):
                     closing_found = desc.text.find("]", cursor)
                     opening_found = desc.text.find("[", cursor)
 
+                parser.leave()
+
                 ##########################################################
                 # Detection of deletion markers, indicated by the "…"
                 # character, followed by superscripted text indicating its
@@ -2221,7 +2280,11 @@ def parse_footnotes(parser):
                 # markers within the entity being checked, like above.
                 cursor = 0
 
+
                 deletion_found = desc.text.find("…", cursor)
+                if deletion_found > -1:
+                    parser.enter("detect-deletion-marker")
+
                 while deletion_found > -1:
                     # Keep track of how far we've already searched.
                     cursor = deletion_found + 1
@@ -2303,6 +2366,8 @@ def parse_footnotes(parser):
 
                     deletion_found = desc.text.find("…", cursor)
 
+                parser.leave_if_last("detect-deletion-marker")
+
                 ##########################################################
                 # Detect single superscripted numbers, which indicate
                 # points that belong to a reference without indicating any
@@ -2315,6 +2380,9 @@ def parse_footnotes(parser):
                 cursor = 0
 
                 pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
+                if pointer_found > -1:
+                    parser.enter("detect-pointer")
+
                 while pointer_found > -1:
                     # Keep track of how far we've already searched.
                     cursor = pointer_found + 1
@@ -2383,6 +2451,8 @@ def parse_footnotes(parser):
                         '<sup style="font-size:60%">', cursor
                     )
 
+                parser.leave_if_last("detect-pointer")
+
                 ##########################################################
                 # At this point, we're done processing the following:
                 # 1. Opening/closing markers ("[" and "]")
@@ -2409,6 +2479,7 @@ def parse_footnotes(parser):
             # use the super_iterator. We could also use enumerate() but we
             # figure that using the peek function is more readable than
             # playing around with iterators.
+            parser.enter("marker-locations")
             marker_locations = super_iter(marker_locations)
 
             for ml in marker_locations:
@@ -2500,6 +2571,8 @@ def parse_footnotes(parser):
                         # Finally, we add the location node to the footnote
                         # node (or unspecified-ranges node).
                         location_target.append(location)
+
+            parser.leave()
 
         parser.trail_push(footnote)
         parser.leave()

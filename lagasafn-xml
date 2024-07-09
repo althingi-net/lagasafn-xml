@@ -47,6 +47,8 @@ from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
 from lagasafn.parser import postprocess_law
 
+VERBOSE_MODE = False
+
 
 def clean_content(content):
     # Decode ISO-8859-1 character encoding.
@@ -214,17 +216,30 @@ def patch_law(law_num, law_year):
 
 def make_xml(law_num, law_year):
     parser = LawParser(law_num, law_year)
+    global VERBOSE_MODE
+    if VERBOSE_MODE:
+        print("Parsing law %d/%d" % (law_year, law_num))
+        parser.verbosity = 1
+
     law = parser.law
     lines = parser.lines
     matcher = parser.matcher
     occurrence_distance = parser.occurrence_distance
 
+    # parser.line = next(parser.lines).strip()
+    # parse_intro(parser)
+
+
+    # print("Left intro after line %s" % parser.lines.current_line_number)
     # The cleaned document that we're processing is expected to put every tag,
     # both its opening and closing, on a separate line. This allows us to
     # browse the HTML contents on a per-line basis.
     for line in lines:
         line = line.strip()
+        print("Top level parsing line %s: %s" % (parser.lines.current_line_number, line))
         parser.line = line
+
+        parser.enter("preamble")
 
         # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
@@ -239,6 +254,8 @@ def make_xml(law_num, law_year):
         #
         # if not parser.trail_reached("intro-finished"):
         #    continue
+        parser.leave("preamble")
+        parser.enter("content")
 
         parse_chapter(parser)
 
@@ -261,6 +278,8 @@ def make_xml(law_num, law_year):
 
         # TODO: Check if we can reuse this logic within parse_subarticle
         parse_table(parser)
+
+        parser.leave("content")
 
         parse_footnotes(parser)
 
@@ -693,7 +712,12 @@ def main(argv):
         "--skip-index",
         "--references-only",
         "--skip-references",
+        "--verbose"
     ]
+
+    if "--verbose" in argv:
+        global VERBOSE_MODE
+        VERBOSE_MODE = True
 
     if "--help" in argv:
         usage(argv[0])

@@ -659,6 +659,10 @@ class super_iter:
     def __iter__(self):
         return self
 
+    @property
+    def current_line_number(self):
+        return self.index
+
     # Peek into the next item of the iterator without advancing it. Works with
     # negative numbers to take a peek at previous items.
     def peek(self, number_of_lines=1):
