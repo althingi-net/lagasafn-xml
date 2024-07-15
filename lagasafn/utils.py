@@ -660,6 +660,10 @@ class super_iter:
         return self
 
     @property
+    def current_line(self):
+        return self.collection[self.index - 1]
+
+    @property
     def current_line_number(self):
         return self.index
 

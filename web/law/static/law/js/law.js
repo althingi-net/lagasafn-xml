@@ -233,6 +233,9 @@ var process_footnote = function() {
         var $start_mark = $location.parent().parent().closest('law');
         var $end_mark = $location.parent().parent().closest('law');
 
+        // Debugging helper.
+        var locator = [];
+
         // Iterate through the <location> section to locate the text that we
         // want to show as changed.
         $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,definition,name,sen-title,sen').each(function() {
@@ -269,6 +272,8 @@ var process_footnote = function() {
 
             var tag_name = lowercase_tagname($location_step);
             var nr = $location_step.text().trim();
+
+            locator.push({"tag": tag_name, "nr": nr});
 
             if (nr.length) {
                 // Check if the number is a range, for example "1-4", which
@@ -346,6 +351,7 @@ var process_footnote = function() {
             return;
         }
 
+        console.log("Locator: ", locator.map((item)=>`${item.tag}[${item.nr}]`).join(":"));
         /***********************************************/
         /* Add markers to denote the highlighted area. */
         /***********************************************/

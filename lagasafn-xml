@@ -39,13 +39,14 @@ from lagasafn.parser import parse_article_chapter
 from lagasafn.parser import parse_chapter
 from lagasafn.parser import parse_deletion_marker
 from lagasafn.parser import parse_extra_docs
-from lagasafn.parser import parse_footnotes
 from lagasafn.parser import parse_numerical_article
 from lagasafn.parser import parse_sentence_with_title
 from lagasafn.parser import parse_subarticle
 from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
 from lagasafn.parser import postprocess_law
+from lagasafn.parse_footnotes import parse_footnotes
+from lagasafn.parse_footnotes import parse_footnote
 
 VERBOSE_MODE = False
 
@@ -226,38 +227,26 @@ def make_xml(law_num, law_year):
     matcher = parser.matcher
     occurrence_distance = parser.occurrence_distance
 
-    # parser.line = next(parser.lines).strip()
-    # parse_intro(parser)
-
+    parse_intro(parser)
 
     # print("Left intro after line %s" % parser.lines.current_line_number)
     # The cleaned document that we're processing is expected to put every tag,
     # both its opening and closing, on a separate line. This allows us to
     # browse the HTML contents on a per-line basis.
+    if not parser.trail_reached("intro-finished"):
+        print("Intro not finished after line %s. Aborting!" % parser.lines.current_line_number)
+        #return
+
+    parser.enter("content")
+
     for line in lines:
         line = line.strip()
         print("Top level parsing line %s: %s" % (parser.lines.current_line_number, line))
-        parser.line = line
-
-        parser.enter("preamble")
 
         # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
         #         the guard clauses *should* make this order irrelevant,
         #         but let's not take any chances until we're certain.
-
-        parse_intro(parser)
-
-        # Intro is finished after here.
-        # We'll early-escape all the following parser steps if we're not done
-        # with the intro.
-        #
-        # if not parser.trail_reached("intro-finished"):
-        #    continue
-        parser.leave("preamble")
-        parser.enter("content")
-
-        parse_chapter(parser)
 
         # TODO: These two functions must happen here and must have the break condition,
         # otherwise things break farther down the parse.
@@ -266,6 +255,7 @@ def make_xml(law_num, law_year):
         if parse_extra_docs(parser) or parse_appendix(parser):
             break
 
+        parse_chapter(parser)
         parse_subchapter(parser)
         parse_article_chapter(parser)
         parse_ambiguous_chapter(parser)
@@ -279,10 +269,10 @@ def make_xml(law_num, law_year):
         # TODO: Check if we can reuse this logic within parse_subarticle
         parse_table(parser)
 
-        parser.leave("content")
+        #parse_footnotes(parser)
+        #parse_footnote(parser)
 
-        parse_footnotes(parser)
-
+    parser.leave("content")
     ##########################################################################
     # At this point, the XML object `law` contains the entire document with
     # all its content. Now, we do some post-processing of the already existing
