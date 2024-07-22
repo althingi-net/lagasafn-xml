@@ -15,6 +15,7 @@ conclusives = [
     "auglýsingaskyldu",
     "á",
     "ákvæði",
+    "ákvæðis",
     "ákvæðum",
     "brott",
     "einnig",
@@ -126,6 +127,11 @@ def analyze_potentials(potentials):
     beendone = 0
     while True:
 
+        # Check if we're actually done.
+        if potentials == "":
+            certain_about_inner = True
+            break
+
         # Check for inner reference parts by iterating through known patterns.
         for inner_pattern in inner_reference_patterns:
             nrs_and_years = re.findall(inner_pattern, potentials)
@@ -213,19 +219,7 @@ def analyze_potentials(potentials):
         # If we can't find any more matches, we're out of the inner part of the
         # reference or into something that we don't support yet.
         if beendone > 100:
-            print("\n[ LOOP DETECTED ]: %s" % potentials)
             loop_found = True
-
-            # This is a good debugging point.
-            #
-            # print("*****************************")
-            # print("Sentence:   %s" % sen.text)
-            # print("-----------------------------")
-            # print("Potentials: %s" % potentials)
-            # print("*****************************")
-            #
-            # import ipdb; ipdb.set_trace()
-
             break
         beendone += 1
 
@@ -271,21 +265,21 @@ def parse_references():
             # We'll be butchering this so better make a copy.
             chunk = strip_links(sen.text or "")
 
-            # The outer references we'll be looking for (i.e.
-            # `nr\. (\d{1,3}\/\d{4})`), may appear multiple times in the same
-            # sentence. This will confuse the relevant searching mechanism by
-            # it finding again an outer reference that it has already found.
-            #
-            # To remedy this, we will keep an offset which will always be
-            # either 0 as defined here, or equal to the last
-            # `potentials_outer_end`, so that we continue the search for the
-            # outer reference from where we left off in the previous iteration,
-            # rather than from the start of the chunk every time.
-            potentials_outer_start_offset = 0
+            # Construct a regex pattern that will exclude what may otherwise
+            # appear to be references to laws.
+            # FIXME: There has to be a tidier way to do this.
+            law_pattern_regex = r"nr\. (\d{1,3}\/\d{4})"
+            law_pattern_disqualifiers = [
+                "Stjórnartíðindi Evrópusambandsins",
+                "EES-nefndarinnar",
+                "EES-nefndarinnar,",
+                "við EES-samninginn",
+                "auglýsingu",
+            ]
+            for disqualifier in law_pattern_disqualifiers:
+                law_pattern_regex = r"(?<!" + disqualifier + " )" + law_pattern_regex
 
-            nrs_and_years = re.findall(
-                r"(?<!EES-nefndarinnar )(?<!auglýsingu )nr\. (\d{1,3}\/\d{4})", chunk
-            )
+            nrs_and_years = re.findall(law_pattern_regex, chunk)
             for nr_and_year in nrs_and_years:
 
                 # NOTE: Every law has a name, so if this doesn't exist,
@@ -314,9 +308,13 @@ def parse_references():
                     "%s nr. %s" % (accusative, nr_and_year),
                     "%s nr. %s" % (dative, nr_and_year),
                     "%s nr. %s" % (genitive, nr_and_year),
+                    "l. nr. %s" % nr_and_year,
                     "lög nr. %s" % nr_and_year,
                     "lögum nr. %s" % nr_and_year,
                     "laga nr. %s" % nr_and_year,
+                    " lögum, nr. %s" % nr_and_year,
+                    " laga, nr. %s" % nr_and_year,
+                    "[law-marker] nr. %s" % nr_and_year,
                 ]
 
                 # A string holding potential parts of an inner reference. Gets
@@ -331,13 +329,13 @@ def parse_references():
                 potentials_outer_end = -1
 
                 # Begin by finding out where the next outer reference starts.
-                # The `found_guess` variable is used after the loop to figure
-                # out where it ends and to decide the search offset in the next
-                # round of scanning the chunk.
                 for potential_start_guess in potential_start_guesses:
-                    attempt = chunk.find(
-                        potential_start_guess, potentials_outer_start_offset
-                    )
+
+                    # We match by lowercase, in case the name of the law has an
+                    # uppercase letter, which happens for example when a
+                    # sentence begins with it. The location is be the same
+                    # regardless of case.
+                    attempt = chunk.lower().find(potential_start_guess.lower())
 
                     if potentials_outer_start == -1 or (
                         attempt > -1 and attempt < potentials_outer_start
@@ -348,15 +346,11 @@ def parse_references():
                         # where to end the label constructed later.
                         potentials_outer_end = attempt + len(potential_start_guess)
 
-                # Remember where to pick up the search for different
-                # permutations of outer references, in the next outer reference
-                # to be processed.
-                potentials_outer_start_offset = potentials_outer_end
-
                 # The outer and inner references we will build.
                 reference = ""
 
                 certain_about_inner = False
+                loop_found = False
                 if potentials_outer_start > -1:
 
                     # Potentials are the string that potentially contains the
@@ -382,6 +376,17 @@ def parse_references():
                 else:
                     link_label = chunk[potentials_outer_start:potentials_outer_end]
 
+                # Remove the `[law-marker]` from the `link_label`, if we used
+                # it to determine that this is a law.
+                #
+                # Look for `[law-marker]` in the code for details on it.
+                link_label = link_label.removeprefix("[law-marker] ")
+
+                # Finally, a link label may contain space because they may be
+                # used to indicate the start of a pattern in
+                # `potential_start_guesses`.
+                link_label = link_label.strip()
+
                 # Generate an XPath to the current node containing the
                 # reference.
                 location = make_xpath_from_node(sen)
@@ -399,7 +404,7 @@ def parse_references():
                             "node",
                             {
                                 "location": location,
-                                "text": chunk,
+                                "text": strip_links(sen.text or ""),
                             },
                         )
                         law_ref_entry.append(ref_node)
@@ -417,11 +422,61 @@ def parse_references():
                     )
                     xml_ref_doc.append(law_ref_entry)
 
+                    # Since we know that this is a reference, we can cut it out
+                    # of the chunk, so that it won't be confusing the parser
+                    # when it finds another reference immediately following it.
+                    chunk = chunk[potentials_outer_end:].strip()
+
+                    # Also remove things that are legitimate inside the
+                    # reference, so that we don't confuse the parser when it
+                    # shows up at the beginning of the string.
+                    chunk = chunk.removeprefix(", ")
+                    chunk = chunk.removeprefix("og ")
+                    chunk = chunk.removeprefix("eða ")
+
+                    # We were able to determine that this is a reference to a
+                    # law because the text contained one of the forms listed in
+                    # `potential_start_guesses`.
+                    #
+                    # Sometimes a referenced law is immediately followed by
+                    # references to other laws, which do not contain enough
+                    # information to independently determine that they are laws
+                    # (as opposed to regulations or whatever else).
+                    #
+                    # An example can be found in:
+                    # https://www.althingi.is/lagas/153c/2022006.html
+                    #
+                    # > Samninga við önnur ríki og gerð þeirra og framkvæmd
+                    # > tiltekinna samninga, sbr. meðal annars lög nr. 90/1994,
+                    # > nr. 57/2000, nr. 93/2008 og nr. 58/2010.
+                    #
+                    # To remedy this, we will add a custom law indicator,
+                    # "[law-marker] ", before them, so they can be picked up
+                    # by `potential_start_guesses` later. This indicator is
+                    # then removed from the `link_label` so that it doesn't
+                    # show up in the final product.
+                    #
+                    # Check if what follows is a law without enough information
+                    # to see it in the parent loop.
+                    if chunk.find("nr. ") == 0:
+                        chunk = "[law-marker] " + chunk
+
+                    # Record statistics.
                     stat_conclusive_count += 1
 
+                    # This is a good debugging point when you need to take a
+                    # look at something that works here before it fails in the
+                    # next iteration.
+                    #
+                    # if sen.text.find("Beginning of some `sen.text`...") == 0:
+                    #     import ipdb; ipdb.set_trace()
+
                 else:
-                    print("-------------")
+                    print()
+                    print()
+                    print("### Problem detected ###")
                     print("- Processing: %s/%s" % (law_nr, law_year))
+                    print("- Text:       %s" % sen.text)
                     print("- Chunk:      %s" % chunk)
                     print("- Potentials: %s" % potentials)
                     print("- Law:        %s" % nr_and_year)
@@ -429,10 +484,14 @@ def parse_references():
                     # print("Dative: %s" % dative)  # Unimplemented, but we need it.
                     print("- Genitive:   %s" % genitive)
                     print("- Reference:  %s" % reference)
-                    print(
-                        "- Conclusive: %s"
-                        % ("true" if certain_about_inner else "false")
-                    )
+                    print("- Loop: %s" % ("true" if loop_found else "false"))
+
+                    # This is a good debugging point.
+                    #
+                    # if loop_found:  # For debugging loops.
+                    #     import ipdb; ipdb.set_trace()
+                    #
+                    # import ipdb; ipdb.set_trace()
 
                     stat_inconclusive_count += 1
 
