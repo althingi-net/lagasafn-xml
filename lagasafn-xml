@@ -219,7 +219,7 @@ def make_xml(law_num, law_year):
     parser = LawParser(law_num, law_year)
     global VERBOSE_MODE
     if VERBOSE_MODE:
-        print("Parsing law %d/%d" % (law_year, law_num))
+        print("Parsing law %d/%d" % (law_num, law_year))
         parser.verbosity = 1
 
     law = parser.law
