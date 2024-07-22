@@ -234,14 +234,16 @@ def make_xml(law_num, law_year):
     # both its opening and closing, on a separate line. This allows us to
     # browse the HTML contents on a per-line basis.
     if not parser.trail_reached("intro-finished"):
-        print("Intro not finished after line %s. Aborting!" % parser.lines.current_line_number)
-        #return
+        parser.error("Intro not finished after line %s. Aborting!" % parser.lines.current_line_number)
+        return
 
     parser.enter("content")
 
     for line in lines:
         line = line.strip()
-        print("Top level parsing line %s: %s" % (parser.lines.current_line_number, line))
+        if line == "<br/>":
+            continue
+        parser.note("Top level enter [%s]: %s" % (parser.lines.current_line_number, line))
 
         # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
@@ -264,13 +266,19 @@ def make_xml(law_num, law_year):
         parse_article(parser)
         parse_subarticle(parser)
         parse_numerical_article(parser)
+        parse_footnotes(parser)
         parse_deletion_marker(parser)
 
         # TODO: Check if we can reuse this logic within parse_subarticle
         parse_table(parser)
 
-        #parse_footnotes(parser)
-        #parse_footnote(parser)
+        l = parser.lines.current_line
+        if l == None:
+            parser.note("Top level leave [%s] with NONE" % parser.lines.current_line_number)
+        else:
+            parser.note("Top level leave [%s]: %s" % (parser.lines.current_line_number, l.strip()))
+
+        # parse_footnote(parser)
 
     parser.leave("content")
     ##########################################################################

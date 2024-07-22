@@ -661,6 +661,10 @@ class super_iter:
 
     @property
     def current_line(self):
+        if self.index == 0:
+            return None
+        if self.index > len(self.collection):
+            return None
         return self.collection[self.index - 1]
 
     @property
@@ -676,7 +680,10 @@ class super_iter:
         return self.collection[peek_index]
 
     def peeks(self, number_of_lines=1):
-        return self.peek(number_of_lines).strip()
+        r = self.peek(number_of_lines)
+        if r:
+            return r.strip()
+        return None
 
 
 class Matcher:

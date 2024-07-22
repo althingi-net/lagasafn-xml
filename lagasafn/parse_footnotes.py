@@ -4,10 +4,12 @@
 #
 from lxml.builder import E
 import re
+from formencode.doctest_xml_compare import xml_compare
 from lagasafn.contenthandlers import generate_ancestors
 from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import strip_markers
-from lagasafn.utils import super_iter
+from lagasafn.contenthandlers import next_footnote_sup
+from lagasafn.utils import UnexpectedClosingBracketException, order_among_siblings, super_iter, xml_lists_identical
 
 
 def parse_footnotes(parser):
@@ -22,27 +24,27 @@ def parse_footnotes(parser):
     # Try an append the footnotes to whatever's appropriate given the
     # content we've run into.
     if parser.trail_last().tag == "num-and-date":
-        print("Appending footnotes to law after finding num-and-date.")
+        parser.note("Appending footnotes to law after finding num-and-date.")
         parser.law.append(parser.footnotes)
     elif parser.trail_last().tag == "chapter":
-        print("Appending footnotes to chapter after finding chapter.")
+        parser.note("Appending footnotes to chapter after finding chapter.")
         parser.chapter.append(parser.footnotes)
     elif parser.trail_last().tag == "ambiguous-section":
-        print("Appending footnotes to ambiguous section after finding ambiguous section.")
+        parser.note("Appending footnotes to ambiguous section after finding ambiguous section.")
         parser.ambiguous_section.append(parser.footnotes)
     elif parser.art is not None:
         # Most commonly, footnotes will be appended to articles.
-        print("Appending footnotes to article after finding article.")
+        parser.note("Appending footnotes to article after finding article.")
         parser.art.append(parser.footnotes)
     elif parser.subart is not None:
         # In law that don't actually have articles, but only
         # subarticles (which are rare, but do exist), we'll need to
         # append the footnotes to the subarticle instead of the
         # article.
-        print("Appending footnotes to subarticle after finding subarticle.")
+        parser.note("Appending footnotes to subarticle after finding subarticle.")
         parser.subart.append(parser.footnotes)
     else:
-        print("UNKNOWN LOCATION FOR FOOTNOTES")
+        parser.note("UNKNOWN LOCATION FOR FOOTNOTES")
 
     parser.next()
     parser.trail_push(parser.footnotes)
@@ -57,7 +59,8 @@ def parse_footnotes(parser):
 
 
 def parse_footnote(parser):
-    print("Parsing footnote? Line: '%s' - Trail last: '%s'" % (parser.line, parser.trail_last().tag))
+    print("Parser.line: ", parser.line)
+    parser.report_location()
     if not (parser.line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
         "footnotes",
         "footnote",
@@ -94,6 +97,7 @@ def parse_footnote(parser):
     footnote = E("footnote")
 
     peek = parser.peeks()
+
     if parser.matcher.check(peek, r'<a href="(\/altext\/.*)">'):
         parser.enter("footnote-link")
         # This is a footnote regarding a legal change.
@@ -123,6 +127,9 @@ def parse_footnote(parser):
         
         parser.leave()
 
+    if parser.line == "</sup>":
+        parser.next()
+
     # Some footnotes don't contain a link to an external law like
     # above but rather some arbitrary information. In these cases
     # we'll need to parse the content differently. But also, sometimes
@@ -137,20 +144,24 @@ def parse_footnote(parser):
     # instead of looping forever, despite the "while True" condition,
     # because "next(lines)" will eventually run out of lines.
     gathered = ""
+
     while True:
-        if parser.peeks() in ["</small>", '<sup style="font-size:60%">']:
+        if parser.line in ["</small>", '<sup style="font-size:60%">']:
+            parser.note("Footnote content ended.")
+            parser.report_location()
             break
-        else:
-            # The text we want is separated into lines with arbitrary
-            # indenting and HTML comments which will later be removed.
-            # As a result, meaningless whitespace is all over the
-            # place. To fix this, we'll remove whitespace from either
-            # side of the string, but add a space at the end, which
-            # will occasionally result in a double whitespace or a
-            # whitespace between tags and content. Those will be fixed
-            # later, resulting in a neat string without any unwanted
-            # whitespace.
-            gathered += next(parser.lines).strip() + " "
+
+        # The text we want is separated into lines with arbitrary
+        # indenting and HTML comments which will later be removed.
+        # As a result, meaningless whitespace is all over the
+        # place. To fix this, we'll remove whitespace from either
+        # side of the string, but add a space at the end, which
+        # will occasionally result in a double whitespace or a
+        # whitespace between tags and content. Those will be fixed
+        # later, resulting in a neat string without any unwanted
+        # whitespace.
+        # parser.line implicitly strips the line.
+        gathered += parser.line + " "
 
         # Get rid of HTML comments.
         gathered = re.sub(r'<!--.*?"-->', "", gathered)
@@ -159,6 +170,14 @@ def parse_footnote(parser):
         gathered = (
             gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
         )
+        parser.note("Gathered some stuff: %s" % gathered)
+
+        try:
+            line = next(parser.lines)
+        except:
+            parser.dump_remaining(10)
+            return
+
 
     # If extra content was found, we'll put that in a separate
     # sentence inside the footnote. If there already was a
@@ -178,7 +197,7 @@ def parse_footnote(parser):
     # exist from an earlier iteration.
     parser.footnotes.append(footnote)
 
-    if parser.peeks() == "</small>":
+    if parser.line == "</small>":
         parser.enter("footnote-end")
 
         # At this point, the basic footnote XML has been produced,

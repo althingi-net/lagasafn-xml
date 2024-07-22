@@ -6,21 +6,15 @@ from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
 from lxml.builder import E
-from lagasafn.contenthandlers import generate_ancestors
 from lagasafn.contenthandlers import get_nr_and_name
-from lagasafn.contenthandlers import next_footnote_sup
-from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
-from lagasafn.utils import UnexpectedClosingBracketException
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import is_roman
 from lagasafn.utils import numart_next_nrs
-from lagasafn.utils import order_among_siblings
-from lagasafn.utils import xml_lists_identical
 from lagasafn.utils import determine_month
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
@@ -109,6 +103,8 @@ class LawParser:
 
     @property
     def line(self):
+        if self.lines.current_line is None:
+            return None
         return self.lines.current_line.strip()
 
     def enter(self, path):
@@ -126,7 +122,7 @@ class LawParser:
 
         if guard is not None:
             if self.parse_path[-1] != guard:
-                print("ERROR: Trying to leave a path that doesn't match the guard (%s)." % guard)
+                self.error("Trying to leave a path that doesn't match the guard (%s)." % guard)
                 return
         self.parse_path.pop()
 
@@ -136,8 +132,10 @@ class LawParser:
 
     def note(self, note):
         if self.verbosity > 0:
-            print("%s  - Note: %s" % ("  " * len(self.parse_path), note))
+            print("%s[ NOTE ] %s" % ("  " * len(self.parse_path), note))
 
+    def error(self, error):
+        print("%s[ERROR ]: %s" % ("  " * len(self.parse_path), error))
 
     def peek(self, n=1):
         return self.lines.peek(n)
@@ -146,7 +144,6 @@ class LawParser:
         return self.lines.peeks(n)
 
     def next(self):
-        print("Current is: '%s'. Moving to '%s'" % (self.line, self.lines.peeks(1)))
         return next(self.lines)
     
     def nexts(self):
@@ -255,6 +252,9 @@ class LawParser:
         print(" numart: '%s'" % (self.numart))
         print(" ambiguous_section: '%s'" % (self.ambiguous_section))
         print(" footnotes: '%s'" % (self.footnotes))
+
+    def report_location(self):
+        print("[DEBUG] Line %d: %s" % (self.lines.current_line_number, self.line))
 
 
 ####### Individual section parser functions below:
@@ -518,8 +518,6 @@ def parse_minister_clause_footnotes(parser):
     # is indicated is if "intro-finished" is in the processing trail. As a
     # result, we check for that pattern, but only match if we haven't yet
     # finished "intro-finished".
-    print("MINISTER CLAUSE.")
-    print("Next line: %s. Trail tag: '%s'. Peek(2) = '%s'; Peek(-1) == '%s'" % (parser.line, parser.trail_last().tag, parser.peeks(2), parser.peeks(-1)))
     if (
         parser.line == "<hr/>"
         and parser.trail_last().tag == "num-and-date"
@@ -750,15 +748,11 @@ def parse_chapter(parser):
     parser.trail_push(parser.chapter)
 
     parser.subchapter = None
-    parser.leave()
-
-    parser.leave()
+    parser.leave("chapter")
 
 
 # The following two functions are kind of identical but are separated for future reference
 # and semantic distinction.
-
-
 def parse_extra_docs(parser):
     if check_chapter(parser.lines, parser.law) in [
         "extra-docs",
@@ -960,6 +954,13 @@ def parse_sentence_with_title(parser):
 
 
 def parse_article(parser):
+    # Articles have navigation spans on them with "G???" IDs with their number.
+    # We'll skip over them, as long as we are sure that after them we have the 
+    # begining of an article.
+    if parser.line.startswith("<span id=\"G") and parser.matcher.check(parser.peeks(2), r'<img .+ src=".*sk.jpg" .+\/>'):
+        parser.next()   # Consume <span id="G???">
+        parser.next()   # Consume </span>
+
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
         return
 
