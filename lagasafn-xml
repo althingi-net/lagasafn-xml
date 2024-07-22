@@ -546,6 +546,18 @@ def update_index():
             name_genitive = "Laga um %s" % rest_of_name
 
             conjugation_success = True
+
+            del rest_of_name
+
+        elif name == "Skipulags- og byggingarlög":
+            # The otherwise amazing `reynir` library gets this wrong at version
+            # 3.5.5, so we hard-code it instead.
+            name_accusative = "Skipulags- og byggingarlög"
+            name_dative = "Skipulags- og byggingarlögum"
+            name_genitive = "Skipulags- og byggingarlaga"
+
+            conjugation_success = True
+
         else:
             # Things are a bit complicated now. Invoking external library.
             name_phrase = NounPhrase(name)
