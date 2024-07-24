@@ -109,7 +109,7 @@ class LawParser:
 
     def enter(self, path):
         if self.verbosity > 0:
-            print("%s>> Entering %s" % ("  " * len(self.parse_path), path))
+            print("%s>> Entering %s at line %d" % ("  " * len(self.parse_path), path, self.lines.current_line_number))
         self.parse_path.append(path)
 
     def leave(self, guard=None):
@@ -118,7 +118,7 @@ class LawParser:
             return
 
         if self.verbosity > 0:
-            print("%s<< Leaving %s" % ("  " * (len(self.parse_path)-1), self.parse_path[-1]))
+            print("%s<< Leaving %s at line %d" % ("  " * (len(self.parse_path)-1), self.parse_path[-1], self.lines.current_line_number))
 
         if guard is not None:
             if self.parse_path[-1] != guard:
@@ -132,7 +132,7 @@ class LawParser:
 
     def note(self, note):
         if self.verbosity > 0:
-            print("%s[ NOTE ] %s" % ("  " * len(self.parse_path), note))
+            print("%s[ NOTE ][%d] %s" % ("  " * len(self.parse_path), self.lines.current_line_number, note))
 
     def error(self, error):
         print("%s[ERROR ]: %s" % ("  " * len(self.parse_path), error))
@@ -155,11 +155,23 @@ class LawParser:
     def next_untils(self, end_string):
         return self.lines.next_until(end_string).strip()
         
+    def consume(self, term):
+        if self.line != term:
+            if self.verbosity > 0:
+                self.dump_remaining(10)
+            raise Exception("ERROR: Expected '%s' but got '%s'." % (term, self.line))
+        self.next()
+
     def maybe_consume(self, term):
         if self.line == term:
             self.next()
             return True
         return False
+    
+    def maybe_consume_many(self, term):
+        while self.line == term:
+            self.next()
+        return True
 
     def trail_push(self, item):
         self.trail.append(item)
@@ -259,6 +271,11 @@ class LawParser:
 
 ####### Individual section parser functions below:
 
+def parse_law(parser):
+    parse_intro(parser)
+
+    parse_end_of_law(parser)
+
 
 def parse_intro(parser):
     parser.enter("intro")
@@ -269,25 +286,69 @@ def parse_intro(parser):
     parse_law_title(parser)
     parse_law_number_and_date(parser)
 
-    # If the following are commonplace, we should roll it into a function.
-    if parser.line == "</p>":
-        parser.next()
-    if parser.line == "<hr/>":
-        parser.next()
+    # We always get a <hr/> after the law number and date.    
+    parser.consume("<hr/>")
+
+    #parse_footnotes(parser)
+
+    parse_procedural_links(parser)
+
     if parser.line == "<i>":
-        parser.next()
+        # Footnotes to the law name should come inside <i> tags.
+        parser.consume("<i>")
+        parse_footnotes(parser)      # This will eat any footnotes associated with the title.
+        parser.consume("</i>")
 
-    parse_footnotes(parser)      # This will eat any footnotes associated with the title.
-
-    if parser.line == "</i>":
-        parser.next()
-    else:
-        print("Unexpected line: %s" % parser.line)
-
+    parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
-    parse_presidential_decree_preamble(parser)
+    parser.maybe_consume_many("<br/>")
 
+#    parse_footnotes(parser)
+
+#
+#    parser.maybe_consume("<br/>")
+#
+#    parse_presidential_decree_preamble(parser)
+#
+#    parser.note("Finished parsing intro.")
+    parser.trail_milestone("intro-finished")
     parser.leave("intro")
+
+
+def parse_end_of_law(parser):
+    if parser.line != "</body>":
+        parser.note("Trying to parse end of file without having reached the end of the file.")
+        return
+
+    parser.enter("end-of-file")
+    # Do we want to do anything here?
+    parser.scroll_until("</html>")
+    parser.next()
+    parser.leave("end-of-file")
+
+
+def parse_procedural_links(parser):
+    #  <a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=150&amp;mnr=666">
+    #   <i>
+    #    Ferill málsins á Alþingi.
+    #   </i>
+    #  </a>
+    #  <a href="https://www.althingi.is/altext/150/s/1130.html">
+    #   <i>
+    #    Frumvarp til laga.
+    #   </i>
+    #  </a>
+
+    if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
+        parser.scroll_until("</a>")
+        parser.next() # Consume </a>
+
+    if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
+        parser.scroll_until("</a>")
+        parser.next()
+
+    #while parser.line == "<br/>":
+    #    parser.next()
 
 
 def parse_law_title(parser):
@@ -427,6 +488,9 @@ def parse_law_number_and_date(parser):
     parser.law.append(xml_num_and_date)
 
     parser.trail_push(xml_num_and_date)
+
+    parser.consume("</p>")
+
     parser.leave("law-number-and-date")
 
 
@@ -519,13 +583,8 @@ def parse_minister_clause_footnotes(parser):
     # result, we check for that pattern, but only match if we haven't yet
     # finished "intro-finished".
     if (
-        parser.line == "<hr/>"
-        and parser.trail_last().tag == "num-and-date"
-        #and parser.peeks(2) != "<small>"      # Temporary test?
-    ) or (
-        parser.line == "<br/>"
-        and parser.peeks(-1) == "</i>"
-        and parser.peeks(-2) == "</small>"
+        parser.line == "<small>"
+        and (parser.peeks(1) in ["<b>", "<em>"] or parser.peeks(1).startswith("Felld"))
         and not parser.trail_reached("intro-finished")
     ):
         parser.enter("minister-clause-footnotes")
@@ -542,7 +601,7 @@ def parse_minister_clause_footnotes(parser):
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
-        parser.trail_milestone("intro-finished")
+        parser.consume("<hr/>")
         parser.leave("minister-clause-footnotes")
 
 

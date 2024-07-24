@@ -16,6 +16,8 @@ def parse_footnotes(parser):
     if parser.line != "<small>":
         return
 
+    parser.consume("<small>")
+
     # Footnotes section. Contains footnotes.
     parser.enter("footnotes")
 
@@ -46,21 +48,20 @@ def parse_footnotes(parser):
     else:
         parser.note("UNKNOWN LOCATION FOR FOOTNOTES")
 
-    parser.next()
     parser.trail_push(parser.footnotes)
 
     # This function is misnamed; it actually parses each footnote available for this footnotes block.
     parse_footnote(parser)
+    while parser.line == "<sup style=\"font-size:60%\">":
+        parse_footnote(parser)
 
-    if parser.line == "</small>":
-        parser.next()
+    # TODO: This should be mandatory. We should throw an error if it's not found.
+    parser.consume("</small>")
 
     parser.leave("footnotes")
 
 
 def parse_footnote(parser):
-    print("Parser.line: ", parser.line)
-    parser.report_location()
     if not (parser.line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
         "footnotes",
         "footnote",
@@ -147,8 +148,6 @@ def parse_footnote(parser):
 
     while True:
         if parser.line in ["</small>", '<sup style="font-size:60%">']:
-            parser.note("Footnote content ended.")
-            parser.report_location()
             break
 
         # The text we want is separated into lines with arbitrary
@@ -170,7 +169,6 @@ def parse_footnote(parser):
         gathered = (
             gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
         )
-        parser.note("Gathered some stuff: %s" % gathered)
 
         try:
             line = next(parser.lines)

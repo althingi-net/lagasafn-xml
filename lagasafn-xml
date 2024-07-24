@@ -20,6 +20,7 @@ from lagasafn.constants import PATCH_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.population import population_game
 from lagasafn.references import parse_references
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
@@ -260,8 +261,8 @@ def make_xml(law_num, law_year):
         parse_chapter(parser)
         parse_subchapter(parser)
         parse_article_chapter(parser)
-        parse_ambiguous_chapter(parser)
-        parse_ambiguous_section(parser)
+        #parse_ambiguous_chapter(parser)
+        #parse_ambiguous_section(parser)
         parse_sentence_with_title(parser)
         parse_article(parser)
         parse_subarticle(parser)
@@ -279,6 +280,8 @@ def make_xml(law_num, law_year):
             parser.note("Top level leave [%s]: %s" % (parser.lines.current_line_number, l.strip()))
 
         # parse_footnote(parser)
+
+    # parse_end_of_file(parser)
 
     parser.leave("content")
     ##########################################################################
@@ -710,7 +713,8 @@ def main(argv):
         "--skip-index",
         "--references-only",
         "--skip-references",
-        "--verbose"
+        "--verbose",
+        "--population-game"
     ]
 
     if "--verbose" in argv:
@@ -727,6 +731,10 @@ def main(argv):
     elif "--references-only" in argv:
         parse_references()
         quit()
+    elif "--population-game" in argv:
+        population_game()
+        quit()
+
 
     # Container for laws that are about to be processed.
     law_ids = []
@@ -830,12 +838,13 @@ def main(argv):
     display_errors(law_ids)
 
 
-try:
-    main(sys.argv)
-except KeyboardInterrupt:
-    quit()
-except Exception as e:
-    if settings.DEBUG:
-        raise
-    else:
-        print("Error: %s" % e, file=stderr)
+if __name__ == "__main__":
+    try:
+        main(sys.argv)
+    except KeyboardInterrupt:
+        quit()
+    except Exception as e:
+        if settings.DEBUG:
+            raise
+        else:
+            print("Error: %s" % e, file=stderr)
