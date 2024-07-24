@@ -103,7 +103,7 @@ def population_game():
         try:
             parse_law(law.parser)
         except Exception as e:
-            errors.add(str(e))
+            errors.add(f"{str(type(e))}:{str(e)}")
     
     next_tags.accumulate(laws, lambda law: law.parser.line[:30], lambda law: f"{law.year}-{law.number}.html:{law.parser.lines.current_line_number}")
     next_three.accumulate(laws, lambda law: law.parser.line[:30] + law.parser.peeks(1)[:30] + law.parser.peeks(2)[:30], lambda law: f"{law.number}/{law.year}")

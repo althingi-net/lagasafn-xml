@@ -274,6 +274,15 @@ class LawParser:
 def parse_law(parser):
     parse_intro(parser)
 
+    while True:
+        if parse_chapter(parser):
+            continue
+        if parse_article(parser):
+            continue
+
+        # If we didn't parse a chapter or an article, we're done.
+        break
+
     parse_end_of_law(parser)
 
 
@@ -289,8 +298,6 @@ def parse_intro(parser):
     # We always get a <hr/> after the law number and date.    
     parser.consume("<hr/>")
 
-    #parse_footnotes(parser)
-
     parse_procedural_links(parser)
 
     if parser.line == "<i>":
@@ -301,16 +308,9 @@ def parse_intro(parser):
 
     parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
-    parser.maybe_consume_many("<br/>")
+    parse_procedural_links(parser)
+    parse_minister_clause_footnotes(parser)
 
-#    parse_footnotes(parser)
-
-#
-#    parser.maybe_consume("<br/>")
-#
-#    parse_presidential_decree_preamble(parser)
-#
-#    parser.note("Finished parsing intro.")
     parser.trail_milestone("intro-finished")
     parser.leave("intro")
 
@@ -347,8 +347,7 @@ def parse_procedural_links(parser):
         parser.scroll_until("</a>")
         parser.next()
 
-    #while parser.line == "<br/>":
-    #    parser.next()
+    parser.maybe_consume_many("<br/>")
 
 
 def parse_law_title(parser):
@@ -602,6 +601,7 @@ def parse_minister_clause_footnotes(parser):
                 parser.law.append(E("minister-clause", minister_clause))
 
         parser.consume("<hr/>")
+        parser.maybe_consume_many("<br/>")
         parser.leave("minister-clause-footnotes")
 
 
@@ -636,7 +636,7 @@ def parse_chapter(parser):
         check_chapter(parser.lines, parser.law) == "chapter"
         and parser.trail_reached("intro-finished")
     ):
-        return
+        return False
 
     parser.enter("chapter")
     # Parse what we will believe to be a chapter.
@@ -807,7 +807,20 @@ def parse_chapter(parser):
     parser.trail_push(parser.chapter)
 
     parser.subchapter = None
+    parser.consume("</b>")
+    parser.maybe_consume_many("<br/>")
+
+    while True:
+        if parse_article(parser):
+            continue
+        #if parse_subchapter(parser):
+        #    continue
+        break
+
+    parser.maybe_consume_many("<br/>")
+
     parser.leave("chapter")
+    return True
 
 
 # The following two functions are kind of identical but are separated for future reference
@@ -1019,9 +1032,12 @@ def parse_article(parser):
     if parser.line.startswith("<span id=\"G") and parser.matcher.check(parser.peeks(2), r'<img .+ src=".*sk.jpg" .+\/>'):
         parser.next()   # Consume <span id="G???">
         parser.next()   # Consume </span>
+    else:
+        return False
 
+    # Is this redundant?
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
-        return
+        return False
 
     parser.enter("art")
 
@@ -1150,7 +1166,7 @@ def parse_article(parser):
     if parser.peeks() == "<em>":
         parser.scroll_until("<em>")
         art_name = parser.collect_until("</em>")
-
+        parser.consume("</em>")
         parser.art.append(E("name", strip_links(art_name)))
 
     # Another way to denote an article's name is by immediately
@@ -1231,14 +1247,25 @@ def parse_article(parser):
     parser.subart = None
     parser.art_chapter = None
 
+    parser.maybe_consume_many("<br/>")
+
+    while True:
+        if parse_numerical_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        break
+
     parser.leave()
+
+    return False
 
 
 def parse_subarticle(parser):
     if not parser.matcher.check(
         parser.line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'
     ):
-        return
+        return False
 
     # Parse a subart.
     parser.enter("subart")
@@ -1357,8 +1384,11 @@ def parse_subarticle(parser):
         # subarticles. Possibly in a chapter, and possibly not.
         parser.law.append(parser.subart)
 
+    parser.maybe_consume_many("<br/>")
+
     parser.trail_push(parser.subart)
     parser.leave("subart")
+    return True
 
 
 def parse_deletion_marker(parser):
