@@ -280,6 +280,7 @@ def parse_law(parser):
         if parse_article(parser):
             continue
 
+
         # If we didn't parse a chapter or an article, we're done.
         break
 
@@ -1044,6 +1045,7 @@ def parse_article(parser):
     # Parse an article.
     parser.scroll_until("<b>")
     art_nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
 
     clean_art_nr_title = strip_markers(art_nr_title)
 
@@ -1163,8 +1165,7 @@ def parse_article(parser):
     # Check if the next line is an <em>, because if so, then the
     # article has a name title and we need to grab it. Note that not
     # all articles have names.
-    if parser.peeks() == "<em>":
-        parser.scroll_until("<em>")
+    if parser.line == "<em>":
         art_name = parser.collect_until("</em>")
         parser.consume("</em>")
         parser.art.append(E("name", strip_links(art_name)))
@@ -1255,6 +1256,10 @@ def parse_article(parser):
         if parse_subarticle(parser):
             continue
         break
+
+    parser.maybe_consume_many("<br/>")
+
+    parse_footnotes(parser)
 
     parser.leave()
 
@@ -1385,6 +1390,7 @@ def parse_subarticle(parser):
         parser.law.append(parser.subart)
 
     parser.maybe_consume_many("<br/>")
+    parse_footnotes(parser)
 
     parser.trail_push(parser.subart)
     parser.leave("subart")

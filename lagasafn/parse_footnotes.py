@@ -13,8 +13,10 @@ from lagasafn.utils import UnexpectedClosingBracketException, order_among_siblin
 
 
 def parse_footnotes(parser):
-    if parser.line != "<small>":
+    if parser.line != "<small>" or not (parser.line == "<i>" and parser.peeks() == "<small>"):
         return
+    
+    parser.maybe_consume("<i>")
 
     parser.consume("<small>")
 
@@ -57,6 +59,8 @@ def parse_footnotes(parser):
 
     # TODO: This should be mandatory. We should throw an error if it's not found.
     parser.consume("</small>")
+
+    parser.maybe_consume("</i>")
 
     parser.leave("footnotes")
 
