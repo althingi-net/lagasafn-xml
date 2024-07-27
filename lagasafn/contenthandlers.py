@@ -11,6 +11,7 @@ from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
 from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
+from reynir import NounPhrase
 
 SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
@@ -741,3 +742,96 @@ def remove_ignorables(soup):
             break
 
     return soup
+
+
+def generate_conjugations(name: str) -> dict:
+    """
+    Generate conjugated names of law.
+
+    Most laws start with the string "Lög um" with everything following already
+    being in the accusative, so we really only need to conjugate the "Lög um",
+    which we can hard-code here since it's so predictable within our linguistic
+    context. External libraries are actually more likely to make mistakes
+    because they are unaware of the context, so they may not even recognize the
+    gender of "lög", for example, and may conjugate parts of the law that we
+    already know from context should be in the accusative. Also, this is
+    **way** faster than invoking all the complications and corner-cases of
+    Icelandic grammar.
+
+    In other cases, the name ends with "lög" which we will conjugate using an
+    external library because those conjugations may include complicated
+    grammatical rules that we don't want to write ourselves.
+
+    The external library sometimes fails or makes mistakes that we also take
+    care of by hard-coding here.
+
+    The external library making the aforementioned mistakes at the time of this
+    writing was `reynir`, version 3.5.5.
+    """
+
+    conjugation_success = False
+    if name.find("Lög um") == 0:
+        # The most common and predictable form.
+
+        rest_of_name = name[7:]
+        name_accusative = "Lög um %s" % rest_of_name
+        name_dative = "Lögum um %s" % rest_of_name
+        name_genitive = "Laga um %s" % rest_of_name
+
+        conjugation_success = True
+
+        del rest_of_name
+
+    elif name == "Skipulags- og byggingarlög":
+        # The otherwise amazing `reynir` library gets this wrong at version
+        # 3.5.5, so we hard-code it instead.
+        name_accusative = name
+        name_dative = name.replace("lög", "lögum")
+        name_genitive = name.replace("lög", "laga")
+
+        conjugation_success = True
+
+    elif name == "Tilskipun um fardaga presta á Íslandi og um réttindi þau, er prestur sá, sem frá brauði fer, eður erfingjar hans og einkum ekkjan eiga heimting á":
+        name_accusative = name
+        name_dative = name
+        name_genitive = name.replace("Tilskipun", "Tilskipunar")
+
+        conjugation_success = True
+
+    elif name == "Lög viðvíkjandi nafnbreyting Vinnuveitendafélags Íslands":
+        name_accusative = name
+        name_dative = name.replace("Lög", "Lögum")
+        name_genitive = name.replace("Lög", "Laga")
+
+        conjugation_success = True
+
+    elif name == "Konungsbréf (til stiftamtm. og amtm.) um fiskiútveg á Íslandi":
+        name_accusative = name
+        name_dative = name.replace("Konungsbréf", "Konungsbréfi")
+        name_genitive = name.replace("Konungsbréf", "Konungsbréfs")
+
+        conjugation_success = True
+    else:
+        # Things are a bit complicated now. Invoking external library.
+        name_phrase = NounPhrase(name)
+        name_accusative = name_phrase.accusative
+        name_dative = name_phrase.dative
+        name_genitive = name_phrase.genitive
+
+        conjugation_success = name_phrase.parsed
+
+    if not conjugation_success:
+        raise Exception("Conjugation failed for name: %s" % name)
+
+    # We also make the first letter of the conjugated form lowercase to
+    # make comparison easier, since conjugated forms are never in the
+    # beginning of a sentence.
+    name_accusative = name_accusative[0].lower() + name_accusative[1:]
+    name_dative = name_dative[0].lower() + name_dative[1:]
+    name_genitive = name_genitive[0].lower() + name_genitive[1:]
+
+    return {
+        "accusative": name_accusative,
+        "dative": name_dative,
+        "genitive": name_genitive,
+    }

@@ -19,6 +19,7 @@ from lagasafn.constants import PATCHED_FILENAME
 from lagasafn.constants import PATCH_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
+from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import remove_ignorables
 from lagasafn.references import parse_references
 from lagasafn.utils import sorted_law
@@ -27,7 +28,6 @@ from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
 from multiprocessing import Pool
-from reynir import NounPhrase
 from sys import stderr
 from lagasafn.parser import LawParser
 from lagasafn.parser import parse_intro
@@ -521,73 +521,7 @@ def update_index():
         if art_count > 0:
             structure += "/art"
 
-        # Generate conjugated names of law.
-        #
-        # Most laws start with the string "Lög um" with everything following
-        # already being in the accusative, so we really only need to conjugate
-        # the "Lög um", which we can hard-code here since it's so predictable
-        # within our linguistic context. External libraries are actually more
-        # likely to make mistakes because they are unaware of the context, so
-        # they may not even recognize the gender of "lög", for example, and may
-        # conjugate parts of the law that we already know from context should
-        # be in the accusative. Also, this is **way** faster than invoking all
-        # the complications and corner-cases of Icelandic grammar.
-        #
-        # In other cases, the name ends with "lög" which we will conjugate
-        # using an external library because those conjugations may include
-        # complicated grammatical rules that we don't want to write ourselves.
-        conjugation_success = False
-        if name.find("Lög um") == 0:
-            # The most common and predictable form.
-
-            rest_of_name = name[7:]
-            name_accusative = "Lög um %s" % rest_of_name
-            name_dative = "Lögum um %s" % rest_of_name
-            name_genitive = "Laga um %s" % rest_of_name
-
-            conjugation_success = True
-
-            del rest_of_name
-
-        elif name == "Skipulags- og byggingarlög":
-            # The otherwise amazing `reynir` library gets this wrong at version
-            # 3.5.5, so we hard-code it instead.
-            name_accusative = "Skipulags- og byggingarlög"
-            name_dative = "Skipulags- og byggingarlögum"
-            name_genitive = "Skipulags- og byggingarlaga"
-
-            conjugation_success = True
-
-        else:
-            # Things are a bit complicated now. Invoking external library.
-            name_phrase = NounPhrase(name)
-            name_accusative = name_phrase.accusative
-            name_dative = name_phrase.dative
-            name_genitive = name_phrase.genitive
-
-            # At the time of this writing (2024-02-29, version 153c) only 3
-            # examples of failed conjugations exist:
-            #
-            # - Tilskipun um fardaga presta á Íslandi og um réttindi þau, er
-            #   prestur sá, sem frá brauði fer, eður erfingjar hans og einkum
-            #   ekkjan eiga heimting á
-            #
-            # - Lög viðvíkjandi nafnbreyting Vinnuveitendafélags Íslands
-            #
-            # - Konungsbréf (til stiftamtm. og amtm.) um fiskiútveg á Íslandi
-            #
-            # All of them are empty or irrelevant so we won't deal with them
-            # further. If necessary, they can be hard-coded since new laws with
-            # this problem are extremely unlikely to ever come into effect.
-            conjugation_success = name_phrase.parsed
-
-        # We also make the first letter of the conjugated form lowercase to
-        # make comparison easier, since conjugated forms are never in the
-        # beginning of a sentence.
-        if conjugation_success:
-            name_accusative = name_accusative[0].lower() + name_accusative[1:]
-            name_dative = name_dative[0].lower() + name_dative[1:]
-            name_genitive = name_genitive[0].lower() + name_genitive[1:]
+        conjugations = generate_conjugations(name)
 
         # Append the gathered data to the index.
         law_entry = E(
@@ -601,13 +535,10 @@ def update_index():
             E("name", name),
             E(
                 "name-conjugated",
-                {
-                    "success": "true" if conjugation_success else "false",
-                },
                 E("nomenative", name),
-                E("accusative", name_accusative or ""),
-                E("dative", name_dative or ""),
-                E("genitive", name_genitive or ""),
+                E("accusative", conjugations["accusative"]),
+                E("dative", conjugations["dative"]),
+                E("genitive", conjugations["genitive"]),
             ),
             E(
                 "meta",
