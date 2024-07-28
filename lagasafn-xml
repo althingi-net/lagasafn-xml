@@ -20,6 +20,7 @@ from lagasafn.constants import PATCH_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
+from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
 from lagasafn.references import parse_references
 from lagasafn.utils import sorted_law
@@ -521,9 +522,8 @@ def update_index():
         if art_count > 0:
             structure += "/art"
 
-        conjugations = generate_conjugations(name)
-
         # Append the gathered data to the index.
+        conjugations = generate_conjugations(name)
         law_entry = E(
             "law-entry",
             {
@@ -548,6 +548,26 @@ def update_index():
                 E("art-count", str(art_count)),
             ),
         )
+
+        # Generate synonym elements, if appropriate.
+        elem_synonyms = None
+        synonyms = generate_synonyms(name)
+        if len(synonyms) > 0:
+
+            if elem_synonyms is None:
+                elem_synonyms = E("synonyms")
+
+            for synonym in synonyms:
+                elem_synonyms.append(E(
+                    "synonym",
+                    E("nomenative", synonym["nomenative"]),
+                    E("accusative", synonym["accusative"]),
+                    E("dative", synonym["dative"]),
+                    E("genitive", synonym["genitive"]),
+                ))
+        if elem_synonyms is not None:
+            # Insert it after the name.
+            law_entry.insert(2, elem_synonyms)
 
         law_entries.append(law_entry)
         print(".", end="", flush=True)

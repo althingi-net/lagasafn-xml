@@ -782,16 +782,29 @@ def generate_conjugations(name: str) -> dict:
 
         del rest_of_name
 
-    elif name == "Skipulags- og byggingarlög":
-        # The otherwise amazing `reynir` library gets this wrong at version
-        # 3.5.5, so we hard-code it instead.
+    elif name == "Almenn hegningarlög":
+        # At 153c and 2024-07-28, this is the only name ending with "lög" that
+        # requires more complicated logic than simply conjugating the end.
+        #
+        # It would be adequately dealt with by `reynir 3.5.5` but is dealt with
+        # here for performance reasons.
+        name_accusative = name
+        name_dative = "almennum hegningarlögum"
+        name_genitive = "almennra hegningarlaga"
+
+        conjugation_success = True
+
+    elif name[-3:] == "lög":
         name_accusative = name
         name_dative = name.replace("lög", "lögum")
         name_genitive = name.replace("lög", "laga")
 
         conjugation_success = True
 
-    elif name == "Tilskipun um fardaga presta á Íslandi og um réttindi þau, er prestur sá, sem frá brauði fer, eður erfingjar hans og einkum ekkjan eiga heimting á":
+    elif (
+        name
+        == "Tilskipun um fardaga presta á Íslandi og um réttindi þau, er prestur sá, sem frá brauði fer, eður erfingjar hans og einkum ekkjan eiga heimting á"
+    ):
         name_accusative = name
         name_dative = name
         name_genitive = name.replace("Tilskipun", "Tilskipunar")
@@ -835,3 +848,69 @@ def generate_conjugations(name: str) -> dict:
         "dative": name_dative,
         "genitive": name_genitive,
     }
+
+
+def generate_synonyms(name: str) -> dict:
+    """
+    Some laws have synonyms.
+
+    Typically, their names have either changed but are referenced by their old
+    name somewhere, or they are easier to refer to by a shorter name.
+
+    For example "Lög um tekjuskatt" are more easily referred to as
+    "Tekjuskattslög".
+
+    We need to know these synonyms because they are used in references.
+    """
+
+    synonym_map = {
+        "Stjórnarskrá lýðveldisins Íslands": [
+            "Stjórnarskráin",
+        ],
+        "Lög um verðbréfaviðskipti": [
+            "Lög um yfirtökur",
+        ],
+        "Lög um tekjuskatt": [
+            "Tekjuskattslög",
+        ],
+        "Lög um nauðungarsölu": [
+            "Lög um nauðungarsölu o.fl.",
+        ],
+        "Lög um landhelgi, efnahagslögsögu og landgrunn": [
+            "Lög um landhelgi, aðlægt belti, efnahagslögsögu og landgrunn",
+        ],
+        "Lög um aðför": [
+            "Aðfararlög",
+        ],
+        "Lög um handiðnað": [
+            "Handiðnaðarlög",
+        ],
+        "Lög um náttúruvernd": [
+            "Náttúruverndarlög",
+        ],
+        "Lög um greiðslu kostnaðar við opinbert eftirlit með fjármálastarfsemi og skilavald": [
+            "Lög um greiðslu kostnaðar við opinbert eftirlit með fjármálastarfsemi",
+        ],
+        "Lög um hlutafélög": [
+            "Hlutafélagalög",
+        ],
+        "Lög um skipti á dánarbúum o.fl.": [
+            "Skiptalög",
+        ],
+    }
+
+    # Nothing to do here if the provided law has no synonym.
+    if name not in synonym_map:
+        return {}
+
+    result = []
+    for synonym in synonym_map[name]:
+        conjugated = generate_conjugations(synonym)
+        result.append({
+            "nomenative": synonym,
+            "accusative": conjugated["accusative"],
+            "dative": conjugated["dative"],
+            "genitive": conjugated["genitive"],
+        })
+
+    return result
