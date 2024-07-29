@@ -14,8 +14,9 @@ import os
 @click.option('-f', '--show-filenames', is_flag=True, help='Show filenames before each line')
 @click.option('-n', '--show-line-numbers', is_flag=True, help='Show line numbers before each line')
 @click.option('-d', '--dir', default='.', help='Directory to search for files')
+@click.option('--highlight-main-line/--no-highlight-main-line', default=True, is_flag=True, help='Highlighting for the main/focus line')
 @click.argument('files', nargs=-1)
-def polycat(before, after, files, dir, show_filenames, show_line_numbers):
+def polycat(before, after, files, dir, show_filenames, show_line_numbers, highlight_main_line):
     """
     Print lines from files with context.
 
@@ -25,15 +26,26 @@ def polycat(before, after, files, dir, show_filenames, show_line_numbers):
     You can pass -d or --dir to specify a directory to search for the files, or set the POLYCAT_DIR environment variable.
 
     You can pass -b or --before to specify the number of lines to print before each line, and -a or --after to specify the number of lines to print after each line.
+    You can also set the POLYCAT_BEFORE and POLYCAT_AFTER environment variables to provide default values.
 
     You can pass -f or --show-filenames to show the filename before each line, and -n or --show-line-numbers to show the line number before each line.
     """
 
     if dir == '.' and os.getenv('POLYCAT_DIR'):
-            dir = os.getenv('POLYCAT_DIR')
+        dir = os.getenv('POLYCAT_DIR')
+    
+    if before == 0 and os.getenv('POLYCAT_BEFORE'):
+        before = int(os.getenv('POLYCAT_BEFORE'))
+
+    if after == 0 and os.getenv('POLYCAT_AFTER'):
+        after = int(os.getenv('POLYCAT_AFTER'))
 
     for file in files:
-        filename, line = file.split(':')
+        try:
+            filename, line = file.split(':')
+        except:
+            print(f"Invalid reference format: '{file}'. Expected 'filename:line' with optional trailing comma.")
+            continue
         line = line.rstrip(',')     # Strip trailing commas if present
         line = int(line)
         full_filename = os.path.join(dir, filename)
@@ -44,7 +56,10 @@ def polycat(before, after, files, dir, show_filenames, show_line_numbers):
                     print(f"{filename}:", end='')
                 if show_line_numbers:
                     print(f"{i + 1}:", end='')
-                print(lines[i], end='')
+                if highlight_main_line and i == line - 1:
+                        print(f"\033[1;33m{lines[i]}\033[0m", end='')
+                else:
+                    print(lines[i], end='')
 
         if before or after:
             print("--")
