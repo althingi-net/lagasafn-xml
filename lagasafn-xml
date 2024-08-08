@@ -558,13 +558,15 @@ def update_index():
                 elem_synonyms = E("synonyms")
 
             for synonym in synonyms:
-                elem_synonyms.append(E(
-                    "synonym",
-                    E("nomenative", synonym["nomenative"]),
-                    E("accusative", synonym["accusative"]),
-                    E("dative", synonym["dative"]),
-                    E("genitive", synonym["genitive"]),
-                ))
+                elem_synonyms.append(
+                    E(
+                        "synonym",
+                        E("nomenative", synonym["nomenative"]),
+                        E("accusative", synonym["accusative"]),
+                        E("dative", synonym["dative"]),
+                        E("genitive", synonym["genitive"]),
+                    )
+                )
         if elem_synonyms is not None:
             # Insert it after the name.
             law_entry.insert(2, elem_synonyms)

@@ -906,11 +906,13 @@ def generate_synonyms(name: str) -> dict:
     result = []
     for synonym in synonym_map[name]:
         conjugated = generate_conjugations(synonym)
-        result.append({
-            "nomenative": synonym,
-            "accusative": conjugated["accusative"],
-            "dative": conjugated["dative"],
-            "genitive": conjugated["genitive"],
-        })
+        result.append(
+            {
+                "nomenative": synonym,
+                "accusative": conjugated["accusative"],
+                "dative": conjugated["dative"],
+                "genitive": conjugated["genitive"],
+            }
+        )
 
     return result

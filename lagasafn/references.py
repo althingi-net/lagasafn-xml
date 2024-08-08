@@ -99,10 +99,10 @@ def get_law_name_permutations(index):
     """
     permutations = {}
     for law_entry in index.xpath("/index/law-entries/law-entry"):
-        name_nomenative = law_entry.xpath("./name-conjugated/accusative")[0].text
-        name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
-        name_dative = law_entry.xpath("./name-conjugated/dative")[0].text
-        name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
+        name_nomenative = law_entry.find("./name-conjugated/accusative").text
+        name_accusative = law_entry.find("./name-conjugated/accusative").text
+        name_dative = law_entry.find("./name-conjugated/dative").text
+        name_genitive = law_entry.find("./name-conjugated/genitive").text
         nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
 
         # Make sure the law exists before we start filling it with stuff.
@@ -111,6 +111,7 @@ def get_law_name_permutations(index):
 
         # These should always exist.
         permutations[nr_and_year]["main"] = {
+            "nomenative": name_nomenative,
             "accusative": name_accusative,
             "dative": name_dative,
             "genitive": name_genitive,
@@ -120,7 +121,7 @@ def get_law_name_permutations(index):
         synonyms = law_entry.xpath("./synonyms/synonym")
         if len(synonyms) > 0:
             for number, synonym in enumerate(synonyms):
-                permutations[nr_and_year]["synonym_%d" % (number+1)] = {
+                permutations[nr_and_year]["synonym_%d" % (number + 1)] = {
                     "nomenative": synonym.find("nomenative").text,
                     "accusative": synonym.find("accusative").text,
                     "dative": synonym.find("dative").text,
@@ -319,10 +320,12 @@ def parse_references():
                 # actually refers to a non-law denoted by the same pattern,
                 # such as a regulation or an international document.
                 if nr_and_year not in permutations:
-                    problems["does-not-exist"].append({
-                        "nr_and_year": nr_and_year,
-                        "sen": sen,
-                    })
+                    problems["does-not-exist"].append(
+                        {
+                            "nr_and_year": nr_and_year,
+                            "sen": sen,
+                        }
+                    )
                     continue
 
                 # Possible permutations of how the outer part of reference
@@ -341,14 +344,16 @@ def parse_references():
                     accusative = permutations[nr_and_year][category]["accusative"]
                     dative = permutations[nr_and_year][category]["dative"]
                     genitive = permutations[nr_and_year][category]["genitive"]
-                    potential_start_guesses.extend([
-                        "%s, nr. %s" % (accusative, nr_and_year),
-                        "%s, nr. %s" % (dative, nr_and_year),
-                        "%s, nr. %s" % (genitive, nr_and_year),
-                        "%s nr. %s" % (accusative, nr_and_year),
-                        "%s nr. %s" % (dative, nr_and_year),
-                        "%s nr. %s" % (genitive, nr_and_year),
-                    ])
+                    potential_start_guesses.extend(
+                        [
+                            "%s, nr. %s" % (accusative, nr_and_year),
+                            "%s, nr. %s" % (dative, nr_and_year),
+                            "%s, nr. %s" % (genitive, nr_and_year),
+                            "%s nr. %s" % (accusative, nr_and_year),
+                            "%s nr. %s" % (dative, nr_and_year),
+                            "%s nr. %s" % (genitive, nr_and_year),
+                        ]
+                    )
 
                 # A string holding potential parts of an inner reference. Gets
                 # continuously analyzed and chipped away at, as we try to
@@ -370,9 +375,7 @@ def parse_references():
                         # has an uppercase letter, which happens for example
                         # when a sentence begins with it. The location is be
                         # the same regardless of case.
-                        attempt = chunk.lower().find(
-                            potential_start_guess.lower()
-                        )
+                        attempt = chunk.lower().find(potential_start_guess.lower())
 
                         if potentials_outer_start == -1 or (
                             attempt > -1 and attempt < potentials_outer_start
