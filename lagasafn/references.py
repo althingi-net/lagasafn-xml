@@ -12,8 +12,10 @@ from lxml.builder import E
 # the inner part of a reference.
 # IMPORTANT: These should not be confusable with the end of a law's name.
 conclusives = [
+    "af",
     "auglýsingaskyldu",
     "á",
+    "ákvæða",
     "ákvæði",
     "ákvæðis",
     "ákvæðum",
@@ -58,6 +60,10 @@ conclusives = [
     "utan",
     "við",
     "vísan til",
+    # NOTE: "þessara" will be used to find legal references as well (for
+    # example "1. gr. laga þessara") but here they are used to determine the
+    # conclusive end of the parsing of an inner reference.
+    "þessara",
     "þó",
 ]
 

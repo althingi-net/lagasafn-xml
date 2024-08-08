@@ -884,6 +884,10 @@ def generate_synonyms(name: str) -> dict:
         ],
         "Lög um handiðnað": [
             "Handiðnaðarlög",
+            "Iðnaðarlög",
+        ],
+        "Lög um landgræðslu": [
+            "Landgræðslulög",
         ],
         "Lög um náttúruvernd": [
             "Náttúruverndarlög",
