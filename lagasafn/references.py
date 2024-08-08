@@ -91,21 +91,43 @@ and_inner_reference_patterns = [
 ]
 
 
-def get_conjugated_law_names(index):
-    # First iterate all the law entries to find all dative forms, which we will
-    # need in its entirety later, when parsing the law.
-    conjugated = {}
+def get_law_name_permutations(index):
+    """
+    Provides a dictionary with law names as key, containing every known
+    permutation of the law's name, such as declensions, as well as synonyms and
+    their declensions.
+    """
+    permutations = {}
     for law_entry in index.xpath("/index/law-entries/law-entry"):
+        name_nomenative = law_entry.xpath("./name-conjugated/accusative")[0].text
         name_accusative = law_entry.xpath("./name-conjugated/accusative")[0].text
         name_dative = law_entry.xpath("./name-conjugated/dative")[0].text
         name_genitive = law_entry.xpath("./name-conjugated/genitive")[0].text
         nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
-        conjugated[nr_and_year] = {
+
+        # Make sure the law exists before we start filling it with stuff.
+        if nr_and_year not in permutations:
+            permutations[nr_and_year] = {}
+
+        # These should always exist.
+        permutations[nr_and_year]["main"] = {
             "accusative": name_accusative,
             "dative": name_dative,
             "genitive": name_genitive,
         }
-    return conjugated
+
+        # Add synonyms and their declensions.
+        synonyms = law_entry.xpath("./synonyms/synonym")
+        if len(synonyms) > 0:
+            for number, synonym in enumerate(synonyms):
+                permutations[nr_and_year]["synonym_%d" % (number+1)] = {
+                    "nomenative": synonym.find("nomenative").text,
+                    "accusative": synonym.find("accusative").text,
+                    "dative": synonym.find("dative").text,
+                    "genitive": synonym.find("genitive").text,
+                }
+
+    return permutations
 
 
 def analyze_potentials(potentials):
@@ -244,10 +266,12 @@ def parse_references():
     # detection mechanism. Note however that just because it's empty,
     # doesn't mean that every possible reference has been detected.
     problems = {
-        "conjugation-not-found": [],
+        "does-not-exist": [],
     }
 
-    conjugated = get_conjugated_law_names(index)
+    # Every law will have some permutations. Those include declensions
+    # (accusative, dative, etc.) and synonyms and also their declensions.
+    permutations = get_law_name_permutations(index)
 
     # Now iterate through all the laws and parse their contents.
     for law_entry in index.xpath("/index/law-entries/law-entry"):
@@ -289,25 +313,21 @@ def parse_references():
                 # TODO: We might want to collect these and figure out if there
                 # are any such mistakes, or if we can further utilize these
                 # references even if they don't refer to laws.
-                if nr_and_year not in conjugated:
-                    problems["conjugation-not-found"].append(sen)
-                    continue
 
-                # Short-hands.
-                accusative = conjugated[nr_and_year]["accusative"]
-                dative = conjugated[nr_and_year]["dative"]
-                genitive = conjugated[nr_and_year]["genitive"]
+                # Check if the law being referenced actually exists.
+                # NOTE: It is conceivable that something being caught here
+                # actually refers to a non-law denoted by the same pattern,
+                # such as a regulation or an international document.
+                if nr_and_year not in permutations:
+                    problems["does-not-exist"].append({
+                        "nr_and_year": nr_and_year,
+                        "sen": sen,
+                    })
+                    continue
 
                 # Possible permutations of how the outer part of reference
                 # might be construed.
-                # FIXME: This might be better turned into a regex.
                 potential_start_guesses = [
-                    "%s, nr. %s" % (accusative, nr_and_year),
-                    "%s, nr. %s" % (dative, nr_and_year),
-                    "%s, nr. %s" % (genitive, nr_and_year),
-                    "%s nr. %s" % (accusative, nr_and_year),
-                    "%s nr. %s" % (dative, nr_and_year),
-                    "%s nr. %s" % (genitive, nr_and_year),
                     "l. nr. %s" % nr_and_year,
                     "lög nr. %s" % nr_and_year,
                     "lögum nr. %s" % nr_and_year,
@@ -316,6 +336,19 @@ def parse_references():
                     " laga, nr. %s" % nr_and_year,
                     "[law-marker] nr. %s" % nr_and_year,
                 ]
+
+                for category in permutations[nr_and_year]:
+                    accusative = permutations[nr_and_year][category]["accusative"]
+                    dative = permutations[nr_and_year][category]["dative"]
+                    genitive = permutations[nr_and_year][category]["genitive"]
+                    potential_start_guesses.extend([
+                        "%s, nr. %s" % (accusative, nr_and_year),
+                        "%s, nr. %s" % (dative, nr_and_year),
+                        "%s, nr. %s" % (genitive, nr_and_year),
+                        "%s nr. %s" % (accusative, nr_and_year),
+                        "%s nr. %s" % (dative, nr_and_year),
+                        "%s nr. %s" % (genitive, nr_and_year),
+                    ])
 
                 # A string holding potential parts of an inner reference. Gets
                 # continuously analyzed and chipped away at, as we try to
@@ -490,9 +523,6 @@ def parse_references():
                     print("- Chunk:      %s" % chunk)
                     print("- Potentials: %s" % potentials)
                     print("- Law:        %s" % nr_and_year)
-                    print("- Accusative: %s" % accusative)
-                    # print("Dative: %s" % dative)  # Unimplemented, but we need it.
-                    print("- Genitive:   %s" % genitive)
                     print("- Reference:  %s" % reference)
                     print("- Loop: %s" % ("true" if loop_found else "false"))
 
@@ -500,8 +530,16 @@ def parse_references():
                     #
                     # if loop_found:  # For debugging loops.
                     #     import ipdb; ipdb.set_trace()
-                    #
-                    # import ipdb; ipdb.set_trace()
+
+                    if len(potentials.strip()) == 0:
+
+                        # I was here. Discoveries:
+                        # We need the ability to add synonyms.
+                        # See:
+                        # https://trello.com/c/sTkeEUJM/38-support-for-law-names-synonyms
+
+                        pass
+                        # import ipdb; ipdb.set_trace()
 
                     stat_inconclusive_count += 1
 
