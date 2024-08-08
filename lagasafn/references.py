@@ -322,29 +322,39 @@ def parse_references():
                 # include as much as we can.
                 potentials = ""
 
-                # NOTE: We call this a starting location, but we're parsing
-                # backwards into the string from the starting location, even
-                # though we're looking for the starting location forward.
-                potentials_outer_start = -1
-                potentials_outer_end = -1
-
                 # Begin by finding out where the next outer reference starts.
-                for potential_start_guess in potential_start_guesses:
+                def next_outer_reference(potential_start_guesses):
+                    # NOTE: We call this a starting location, but we're parsing
+                    # backwards into the string from the starting location,
+                    # even though we're looking for the starting location
+                    # forward.
+                    potentials_outer_start = -1
+                    potentials_outer_end = -1
 
-                    # We match by lowercase, in case the name of the law has an
-                    # uppercase letter, which happens for example when a
-                    # sentence begins with it. The location is be the same
-                    # regardless of case.
-                    attempt = chunk.lower().find(potential_start_guess.lower())
+                    for potential_start_guess in potential_start_guesses:
 
-                    if potentials_outer_start == -1 or (
-                        attempt > -1 and attempt < potentials_outer_start
-                    ):
-                        potentials_outer_start = attempt
+                        # We match by lowercase, in case the name of the law
+                        # has an uppercase letter, which happens for example
+                        # when a sentence begins with it. The location is be
+                        # the same regardless of case.
+                        attempt = chunk.lower().find(
+                            potential_start_guess.lower()
+                        )
 
-                        # Record the outer end location so that we can decide
-                        # where to end the label constructed later.
-                        potentials_outer_end = attempt + len(potential_start_guess)
+                        if potentials_outer_start == -1 or (
+                            attempt > -1 and attempt < potentials_outer_start
+                        ):
+                            potentials_outer_start = attempt
+
+                            # Record the outer end location so that we can
+                            # decide where to end the label constructed later.
+                            potentials_outer_end = attempt + len(potential_start_guess)
+
+                    return potentials_outer_start, potentials_outer_end
+
+                potentials_outer_start, potentials_outer_end = next_outer_reference(
+                    potential_start_guesses
+                )
 
                 # The outer and inner references we will build.
                 reference = ""
