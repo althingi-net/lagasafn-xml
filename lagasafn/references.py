@@ -367,7 +367,7 @@ def parse_references():
                 potentials = ""
 
                 # Begin by finding out where the next outer reference starts.
-                def next_outer_reference(potential_start_guesses):
+                def next_outer_reference(chunk, potential_start_guesses):
                     # NOTE: We call this a starting location, but we're parsing
                     # backwards into the string from the starting location,
                     # even though we're looking for the starting location
@@ -395,6 +395,7 @@ def parse_references():
                     return potentials_outer_start, potentials_outer_end
 
                 potentials_outer_start, potentials_outer_end = next_outer_reference(
+                    chunk,
                     potential_start_guesses
                 )
 
