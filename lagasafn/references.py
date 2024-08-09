@@ -192,10 +192,9 @@ def analyze_potentials(potentials):
             certain_about_inner = True
             break
 
-        # Check for separators "og" and "eða". Could be done in a loop but that
-        # would just add code indenting.
+        # Check for separators "og/eða", "og" and "eða".
         separator = ""
-        for sep_try in ["og", "eða"]:
+        for sep_try in ["og/eða", "og", "eða"]:
             if len(potentials) < len(sep_try):
                 continue
 
