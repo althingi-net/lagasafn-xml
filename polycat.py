@@ -49,17 +49,20 @@ def polycat(before, after, files, dir, show_filenames, show_line_numbers, highli
         line = line.rstrip(',')     # Strip trailing commas if present
         line = int(line)
         full_filename = os.path.join(dir, filename)
-        with open(full_filename) as f:
-            lines = f.readlines()
-            for i in range(max(0, line - before - 1), min(len(lines), line + after)):
-                if show_filenames:
-                    print(f"{filename}:", end='')
-                if show_line_numbers:
-                    print(f"{i + 1}:", end='')
-                if highlight_main_line and i == line - 1:
-                        print(f"\033[1;33m{lines[i]}\033[0m", end='')
-                else:
-                    print(lines[i], end='')
+        try:
+            with open(full_filename) as f:
+                lines = f.readlines()
+                for i in range(max(0, line - before - 1), min(len(lines), line + after)):
+                    if show_filenames:
+                        print(f"{filename}:", end='')
+                    if show_line_numbers:
+                        print(f"{i + 1}:", end='')
+                    if highlight_main_line and i == line - 1:
+                            print(f"\033[1;33m{lines[i]}\033[0m", end='')
+                    else:
+                        print(lines[i], end='')
+        except FileNotFoundError:
+            print(f"File '{full_filename}' not found.")
 
         if before or after:
             print("--")
