@@ -113,6 +113,13 @@ class LawParser:
         self.parse_path.append(path)
 
     def leave(self, guard=None):
+        import inspect
+
+        frame = inspect.currentframe()
+        caller_frame = frame.f_back
+        filename = caller_frame.f_code.co_filename
+        line_number = caller_frame.f_lineno
+
         if len(self.parse_path) < 1:
             print("ERROR: Trying to leave a path that doesn't exist.")
             return
@@ -122,13 +129,13 @@ class LawParser:
 
         if guard is not None:
             if self.parse_path[-1] != guard:
-                self.error("Trying to leave a path that doesn't match the guard (%s)." % guard)
+                self.error("At %s:%s: trying to leave a path (%s) that doesn't match the guard (%s)." % (filename, line_number, "->".join(self.parse_path), guard))
                 return
         self.parse_path.pop()
 
     def leave_if_last(self, path):
         if len(self.parse_path) > 0 and self.parse_path[-1] == path:
-            self.leave()
+            self.leave(path)
 
     def note(self, note):
         if self.verbosity > 0:
@@ -275,16 +282,22 @@ def parse_law(parser):
     parse_intro(parser)
 
     while True:
+        # We continue while we pass any of the checks below, and break (at the end) if we don't.
         if parse_chapter(parser):
+            continue
+        if parse_ambiguous_section(parser):
             continue
         if parse_article(parser):
             continue
 
+        # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
 
         # If we didn't parse a chapter or an article, we're done.
         break
 
     parse_end_of_law(parser)
+    # Return whether we have reached the end of the file.
+    return parser.lines.current_line_number, parser.lines.total_lines
 
 
 def parse_intro(parser):
@@ -302,13 +315,11 @@ def parse_intro(parser):
     parse_procedural_links(parser)
 
     if parser.line == "<i>":
-        # Footnotes to the law name should come inside <i> tags.
-        parser.consume("<i>")
         parse_footnotes(parser)      # This will eat any footnotes associated with the title.
-        parser.consume("</i>")
 
     parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
+    parser.maybe_consume_many("<br/>")
     parse_procedural_links(parser)
     parse_minister_clause_footnotes(parser)
 
@@ -324,7 +335,6 @@ def parse_end_of_law(parser):
     parser.enter("end-of-file")
     # Do we want to do anything here?
     parser.scroll_until("</html>")
-    parser.next()
     parser.leave("end-of-file")
 
 
@@ -408,7 +418,7 @@ def parse_law_title(parser):
     parser.law.append(name)
     parser.trail_push(name)
 
-    parser.leave()
+    parser.leave("law-title")
 
 
 def parse_law_number_and_date(parser):
@@ -496,7 +506,7 @@ def parse_law_number_and_date(parser):
 
 def parse_ambiguous_section(parser):
     if not (parser.peeks(0) == "<em>" and parser.trail_reached("intro-finished")):
-        return
+        return False
 
     parser.enter("ambiguous-section")
 
@@ -529,6 +539,7 @@ def parse_ambiguous_section(parser):
     # <ambiguous-section> contained, if at some point a programmer
     # needs to deal with them when using the XML.
     ambiguous_content = parser.collect_until("</em>")
+    parser.consume("</em>")
 
     # FIXME: Separating the sentences like this incorrectly parses
     # what should be a `nr-title` as a `sen.`
@@ -540,9 +551,12 @@ def parse_ambiguous_section(parser):
     else:
         parser.law.append(parser.ambiguous_section)
 
-    parser.trail_push(parser.ambiguous_section)
+    parser.maybe_consume_many("<br/>")
 
-    parser.leave()
+    parser.trail_push(parser.ambiguous_section)
+    parser.leave("ambiguous-section")
+
+    return True
 
 
 def parse_minister_clause_footnotes(parser):
@@ -625,7 +639,7 @@ def parse_presidential_decree_preamble(parser):
             preamble = parser.collect_until("<br/>")
             parser.law.append(E("sen", preamble))
 
-        parser.leave()
+        parser.leave("presidential-decree-preamble")
 
 
 def parse_chapter(parser):
@@ -659,8 +673,10 @@ def parse_chapter(parser):
     # clause will be the chapter name.
 
     name_or_nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
 
-    if parser.lines.peeks() == "<b>":
+    if parser.line == "<b>":
+        parser.enter("chapter-nr-title")
         chapter_nr_title = name_or_nr_title
 
         # Let's see if we can figure out the number of this chapter.
@@ -698,9 +714,9 @@ def parse_chapter(parser):
                     nr += alpha.lower()
         del t
 
-        parser.scroll_until("<b>")
         chapter_name = parser.collect_until("</b>")
-
+        parser.consume("</b>")
+        
         parser.chapter = E.chapter(
             {"nr": str(nr), "nr-type": nr_type},
             E("nr-title", chapter_nr_title),
@@ -711,9 +727,11 @@ def parse_chapter(parser):
         if roman_nr is not None:
             parser.chapter.attrib["roman-nr"] = roman_nr
 
-    else:
-        chapter_name = name_or_nr_title
+        parser.leave("chapter-nr-title")
 
+    else:
+        parser.enter("chapter-name-only")
+        chapter_name = name_or_nr_title
         # When the chapter doesn't have both a nr-title and a name,
         # what we see may be either a name or a Roman numeral. If it's
         # a Roman numeral, we'll want to do two things; 1) Include the
@@ -771,6 +789,8 @@ def parse_chapter(parser):
             nr = None
             parser.chapter = E.chapter({"nr-type": "name"}, E("name", chapter_name))
 
+        parser.leave("chapter-name-only")
+
     # Some laws have a chapter for temporary clauses, which may be
     # named something like "Bráðabirgðaákvæði", "Ákvæði til
     # bráðabirgða" and probably something else as well. We will assume
@@ -801,22 +821,37 @@ def parse_chapter(parser):
         if nr is None:
             parser.chapter.attrib["nr"] = "t"
         parser.chapter.attrib["nr-type"] = "temporary-clauses"
-        parser.leave()
+        parser.next()
+        parser.maybe_consume_many("<br/>")
+
+        while True:
+            if parse_article(parser):
+                continue
+            if parse_footnotes(parser):
+                continue
+            break
+
+        parser.leave("temporary-clauses")
 
     parser.law.append(parser.chapter)
 
     parser.trail_push(parser.chapter)
 
     parser.subchapter = None
-    parser.consume("</b>")
-    parser.maybe_consume_many("<br/>")
 
+    parser.enter("chapter-content")
     while True:
+        parser.maybe_consume_many("<br/>")
         if parse_article(parser):
             continue
+        if parse_footnotes(parser):
+            continue
+
         #if parse_subchapter(parser):
         #    continue
         break
+
+    parser.leave("chapter-content")
 
     parser.maybe_consume_many("<br/>")
 
@@ -952,7 +987,7 @@ def parse_article_chapter(parser):
 
         parser.trail_push(parser.art_chapter)
 
-        parser.leave()
+        parser.leave("art-chapter")
 
 
 def parse_ambiguous_chapter(parser):
@@ -987,7 +1022,7 @@ def parse_ambiguous_chapter(parser):
 
         parser.trail_push(ambiguous_bold_text)
 
-        parser.leave()
+        parser.leave("ambiguous-chapter")
 
 
 def parse_sentence_with_title(parser):
@@ -1023,7 +1058,7 @@ def parse_sentence_with_title(parser):
 
             parser.trail_push(sen_title)
 
-        parser.leave()
+        parser.leave("sen-with-title")
 
 
 def parse_article(parser):
@@ -1034,9 +1069,9 @@ def parse_article(parser):
         parser.next()   # Consume <span id="G???">
         parser.next()   # Consume </span>
     else:
-        return False
+        pass
 
-    # Is this redundant?
+    # This is not redundant because of the format of the above guard, but they could be combined.
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
         return False
 
@@ -1143,9 +1178,10 @@ def parse_article(parser):
     # Note that in this specific case, we actually want to include the
     # HTML, which we are appending "</a>" at the end. Normally we don't
     # want that, so `parser.collect_until` doesn't include it.
-    if parser.peeks().find("<a ") == 0 and parser.peeks(3) == "</a>":
+    if parser.line.find("<a ") == 0 and parser.peeks(2) == "</a>":
         art_title_link = parser.collect_until("</a>")
         art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
+        parser.consume("</a>")
 
     # Create the tags, configure them and append to the chapter.
     parser.art = E("art", E("nr-title", art_nr_title))
@@ -1161,6 +1197,8 @@ def parse_article(parser):
         parser.chapter.append(parser.art)
     else:
         parser.law.append(parser.art)
+
+    parser.maybe_consume_many("<br/>")
 
     # Check if the next line is an <em>, because if so, then the
     # article has a name title and we need to grab it. Note that not
@@ -1237,9 +1275,10 @@ def parse_article(parser):
     # Check if the article is empty aside from markers that need to be
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
-    while parser.peeks() in ["…", "]"]:
+    while parser.line in ["…", "]"]:
         marker = parser.collect_until("</sup>")
         parser.art.getchildren()[-1].text += " " + marker + " </sup>"
+        parser.consume("</sup>")
 
     parser.trail_push(parser.art)
 
@@ -1248,23 +1287,23 @@ def parse_article(parser):
     parser.subart = None
     parser.art_chapter = None
 
-    parser.maybe_consume_many("<br/>")
-
     while True:
+        parser.maybe_consume_many("<br/>")
         if parse_numerical_article(parser):
             continue
         if parse_subarticle(parser):
             continue
+        if parse_footnotes(parser):
+            continue
         break
 
     parser.maybe_consume_many("<br/>")
-
     parse_footnotes(parser)
+    parser.leave("art")
+    return True
 
-    parser.leave()
 
-    return False
-
+VISITATIONS = 0
 
 def parse_subarticle(parser):
     if not parser.matcher.check(
@@ -1280,7 +1319,8 @@ def parse_subarticle(parser):
     # Check how far we are from the typical subart end.
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
 
-    # Check if there's a table inside the subarticle.
+    # Check if there's a table inside the subarticle. 
+    # (TODO: This finds the end of the table, not the beginning. Check that this makes sense.)
     linecount_to_table = parser.occurrence_distance(
         parser.lines, r"<\/table>", linecount_to_br
     )
@@ -1295,10 +1335,12 @@ def parse_subarticle(parser):
     else:
         # Everything is normal.
         content = parser.collect_until("<br/>")
+        parser.maybe_consume_many("<br/>")
 
     parser.subart = E("subart", {"nr": subart_nr})
 
     if parser.matcher.check(content, "^<b>(.*)</b>(.*)<i>(.*)</i>"):
+        # TODO: This is never used!
         # Check if the subarticle content contains bold AND italic text, which
         # may indicate a person (bold) is being given a role (italic).
 
@@ -1320,7 +1362,6 @@ def parse_subarticle(parser):
 
     elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
         # Check for definitions in subarts. (Example: 153c, 7/1998)
-
         raw_definition, before, definition = parser.matcher.result()
 
         # Fix data so that we know how to treat it.
@@ -1389,11 +1430,38 @@ def parse_subarticle(parser):
         # subarticles. Possibly in a chapter, and possibly not.
         parser.law.append(parser.subart)
 
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_footnotes(parser):
+            continue
+        if parse_definition(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+
+        break
+
     parser.maybe_consume_many("<br/>")
-    parse_footnotes(parser)
 
     parser.trail_push(parser.subart)
     parser.leave("subart")
+    return True
+
+
+def parse_definition(parser):
+    if parser.line != "<i>":
+        return False
+    
+    parser.enter("definition")
+    # Parse a definition.
+    definition = parser.collect_until("</i>")
+    parser.consume("</i>")
+    value = parser.collect_until("<br/>")
+    d = E("definition", definition)
+    d.attrib["key"] = definition
+    d.attrib["value"] = value
+    parser.subart.append(d)
+    parser.leave("definition")
     return True
 
 
@@ -1431,7 +1499,7 @@ def parse_numerical_article(parser):
         parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">')
         or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
     ):
-        return
+        return False
 
     parser.enter("numart")
     # Parse a numart, or numerical article.
@@ -1861,7 +1929,8 @@ def parse_numerical_article(parser):
                 parser.numart = extra_sens_target
 
     parser.trail_push(parser.numart)
-    parser.leave()
+    parser.leave("numart")
+    return True
 
 
 def parse_table(parser):
@@ -1885,7 +1954,7 @@ def parse_table(parser):
     elif parser.art is not None:
         add_sentences(parser.art, [sen])
 
-    parser.leave()
+    parser.leave("table")
 
 
 def postprocess_law(parser):
@@ -1972,4 +2041,4 @@ def postprocess_law(parser):
             sen.text = None
             sen.append(table)
 
-    parser.leave()
+    parser.leave("postprocess")

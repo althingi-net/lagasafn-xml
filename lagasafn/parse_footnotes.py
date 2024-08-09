@@ -13,8 +13,8 @@ from lagasafn.utils import UnexpectedClosingBracketException, order_among_siblin
 
 
 def parse_footnotes(parser):
-    if parser.line != "<small>" or not (parser.line == "<i>" and parser.peeks() == "<small>"):
-        return
+    if not parser.line == "<small>" and not (parser.line == "<i>" and parser.peeks() == "<small>"):
+        return False
     
     parser.maybe_consume("<i>")
 
@@ -63,6 +63,7 @@ def parse_footnotes(parser):
     parser.maybe_consume("</i>")
 
     parser.leave("footnotes")
+    return True
 
 
 def parse_footnote(parser):
@@ -128,9 +129,9 @@ def parse_footnote(parser):
             footnote.attrib["law-year"] = fn_law_year
             footnote.attrib["law-art"] = fn_art_nr
             parser.note("Footnote law: %s/%s, %s. gr." % (fn_law_nr, fn_law_year, fn_art_nr))
-            parser.leave()
+            parser.leave("footnote-law")
         
-        parser.leave()
+        parser.leave("footnote-link")
 
     if parser.line == "</sup>":
         parser.next()
@@ -243,7 +244,9 @@ def parse_footnote(parser):
         nodes_to_kill = []
 
         if parent == None:
-            parser.leave()
+            parser.note("We think this should never happen; if you see this note, please investigate.")
+            parser.leave("footnote-end")
+            parser.leave("footnote")
             return
 
         parser.enter("iter-descendants")
@@ -304,7 +307,7 @@ def parse_footnote(parser):
             if len(peek.text) == 0 and "expiry-symbol-offset" not in peek.attrib:
                 nodes_to_kill.append(peek)
 
-        parser.leave()
+        parser.leave("iter-descendants")
 
         # Delete nodes marked for deletion.
         for node_to_kill in nodes_to_kill:
@@ -577,7 +580,7 @@ def parse_footnote(parser):
                 closing_found = desc.text.find("]", cursor)
                 opening_found = desc.text.find("[", cursor)
 
-            parser.leave()
+            parser.leave("detect-opening-and-closing-marker")
 
             ##########################################################
             # Detection of deletion markers, indicated by the "…"
@@ -780,6 +783,7 @@ def parse_footnote(parser):
         # If no marker locations have been defined, we have nothing
         # more to do here.
         if len(marker_locations) == 0:
+            parser.leave("footnote")
             return
 
         # Finally, we'll start to build and add the location XML to
@@ -883,7 +887,7 @@ def parse_footnote(parser):
                     # node (or unspecified-ranges node).
                     location_target.append(location)
 
-        parser.leave()
+        parser.leave("marker-locations")
         parser.trail_push(footnote)
 
     # Eat a final </a> if we have one.

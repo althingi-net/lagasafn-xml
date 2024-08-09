@@ -658,6 +658,10 @@ class super_iter:
 
     def __iter__(self):
         return self
+    
+    @property
+    def total_lines(self):
+        return len(self.collection)
 
     @property
     def current_line(self):

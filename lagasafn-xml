@@ -30,7 +30,7 @@ from lxml.builder import E
 from multiprocessing import Pool
 from reynir import NounPhrase
 from sys import stderr
-from lagasafn.parser import LawParser
+from lagasafn.parser import LawParser, parse_law
 from lagasafn.parser import parse_intro
 from lagasafn.parser import parse_ambiguous_chapter
 from lagasafn.parser import parse_ambiguous_section
@@ -227,6 +227,9 @@ def make_xml(law_num, law_year):
     lines = parser.lines
     matcher = parser.matcher
     occurrence_distance = parser.occurrence_distance
+
+    parse_law(parser)
+    return
 
     parse_intro(parser)
 

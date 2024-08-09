@@ -46,15 +46,19 @@ class Statistics:
             self.item_locations[item] = []
         self.item_locations[item].append(location)
     
-    def print(self, headline=""):
+    def print(self, headline="", max=0):
         total = sum([count for count in self.items.values()])
         if headline and total > 0:
             print(headline)
         # Sort by count:
+        i = 0
         sorted_items = {k: v for k, v in sorted(self.items.items(), key=lambda item: item[1], reverse=True)}
         for item, count in sorted_items.items():
             if item in self.ignore_list:
                 continue
+            if max > 0 and i >= max:
+                break
+            i += 1
             print(f" - {item}: {count} ({count/total*100:.2f}%)")
 
     def print_locations(self, headline=""):
@@ -99,12 +103,21 @@ def population_game():
     next_three = Statistics()
     errors = Statistics()
     stopping_lines = Statistics()
+    success = 0
+    terminated_early = 0
     for law in laws:
         try:
-            parse_law(law.parser)
+            end_line, total_lines = parse_law(law.parser)
+            if end_line != total_lines:
+                terminated_early += 1
+            else:
+                success += 1
         except Exception as e:
             errors.add(f"{str(type(e))}:{str(e)}")
-    
+
+    print(f"Successfully parsed: {success}/{len(laws)} = {success/len(laws)*100:.2f}%.")
+    print(f"Terminated early:    {terminated_early}/{len(laws)} = {terminated_early/len(laws)*100:.2f}%.")
+
     next_tags.accumulate(laws, lambda law: law.parser.line[:30], lambda law: f"{law.year}-{law.number}.html:{law.parser.lines.current_line_number}")
     next_three.accumulate(laws, lambda law: law.parser.line[:30] + law.parser.peeks(1)[:30] + law.parser.peeks(2)[:30], lambda law: f"{law.number}/{law.year}")
     stopping_lines.accumulate(laws, lambda law: law.parser.lines.current_line_number)
@@ -112,6 +125,6 @@ def population_game():
     next_tags.print_locations("Next tags:")
     next_three.print("Next three tags:")
     errors.print("Errors:")
-    stopping_lines.print("Halting lines:")
+    stopping_lines.print("Halting lines:", max=5)   # Most stopping lines are useless, but the top 5 might be interesting.
     
     
