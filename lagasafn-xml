@@ -223,12 +223,16 @@ def make_xml(law_num, law_year):
         print("Parsing law %d/%d" % (law_num, law_year))
         parser.verbosity = 1
 
-    law = parser.law
-    lines = parser.lines
-    matcher = parser.matcher
-    occurrence_distance = parser.occurrence_distance
+    #law = parser.law
+    #lines = parser.lines
+    #matcher = parser.matcher
+    #occurrence_distance = parser.occurrence_distance
 
     parse_law(parser)
+
+    # Write the XML object to output file.
+    write_xml(parser.law, XML_FILENAME % (parser.law_year, parser.law_num))
+
     return
 
     parse_intro(parser)
@@ -294,8 +298,6 @@ def make_xml(law_num, law_year):
     ##########################################################################
     postprocess_law(parser)
 
-    # Write the XML object to output file.
-    write_xml(law, XML_FILENAME % (parser.law_year, parser.law_num))
 
 
 def process_law(law_id):

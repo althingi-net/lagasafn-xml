@@ -196,26 +196,40 @@ class LawParser:
     # and resetting the collection for the next time we need to collect a bunch of text.
 
     def collect(self, string):
-        self.collection.append(string.strip())
+        try:
+            self.collection.append(string.strip())
+        except AttributeError:
+            self.dump_state()
 
     def uncollect(self):
         result = " ".join(self.collection).strip()
         self.collection = []
         return result
 
-    def collect_until(self, end_string):
+    def collect_until(self, end_string, collect_first_line=False):
         # Will collect lines until the given string is found, and then return the
         # collected lines.
+
+        # TODO: The collect_first_line parameter is a bit of a hack. Ideally we should always include the first line,
+        #       but because of the way most of the parser is written, this causes a lot of problems. We should refactor
+        #       the entire parser to always use collect_first_line=True and then once all of the collect_until() calls
+        #       have been replaced, we can remove the parameter entirely.
+        #           - Smári, 2024-08-09
+
         done = False
+
+        if collect_first_line:
+            self.collect(self.line)
+
         while not done:
             try:
-                line = next(self.lines).strip()
+                self.next()
             except StopIteration:
                 raise Exception("ERROR: Unexpected end of file on line %d while collecting until '%s'. \nLine: '%s'" % (self.lines.current_line_number, end_string, self.line))
-            if self.matcher.check(line, end_string):
+            if self.matcher.check(self.line, end_string):
                 done = True
                 continue
-            self.collect(line)
+            self.collect(self.line)
 
         total = self.uncollect().strip()
 
@@ -263,6 +277,7 @@ class LawParser:
         print("Current parser state: ")
         print(" parse_path: '%s'" % ("->".join(self.parse_path)))
         print(" line: '%s'" % (self.line))
+        print(" line number: %d" % (self.lines.current_line_number))
         print(" chapter: '%s'" % (self.chapter))
         print(" subchapter: '%s'" % (self.subchapter))
         print(" art: '%s'" % (self.art))
@@ -611,7 +626,7 @@ def parse_minister_clause_footnotes(parser):
         # is no minister clause.
         hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
         if hr_distance is not None and hr_distance > 0:
-            minister_clause = parser.collect_until("<hr/>")
+            minister_clause = parser.collect_until("<hr/>", collect_first_line=True)
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
