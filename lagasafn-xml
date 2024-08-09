@@ -670,7 +670,15 @@ def usage(exec_name, message=None):
     print(file=stderr)
     print("Options:", file=stderr)
     print("    --help                    Display this help message.", file=stderr)
+    print(
+        "    --verbose                 Show a lot more information about what's going on.",
+        file=stderr
+    )
     print(file=stderr)
+    print(
+        "    --population-game         Run the population game, a fun developer tool.",
+        file=stderr
+    )
     print(
         "    --try-broken              Try processing laws known to have failed.",
         file=stderr,
@@ -700,6 +708,7 @@ def usage(exec_name, message=None):
         file=stderr,
     )
     print("    --skip-references         Skip the parsing of references.", file=stderr),
+
     print(file=stderr)
     if message:
         print("Error: %s" % message, file=stderr)
