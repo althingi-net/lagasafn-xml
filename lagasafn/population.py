@@ -15,6 +15,13 @@ class LawFile:
         self.parser = LawParser(self.number, self.year)
 
 class Statistics:
+    """
+    This class is used to accumulate statistics about a collection of things. It can be used to count how many times
+    a certain thing shows up in a list of things.
+
+    The most common type of thing is a list of laws.
+    """
+    
     def __init__(self):
         self.reset()
     
@@ -27,6 +34,14 @@ class Statistics:
         self.ignore_list.append(item)
 
     def accumulate(self, corpus, getter: callable, location_getter=None):
+        """
+        Accumulate statistics about a corpus of items. 
+        The getter function should return the item to be counted.
+        If a location_getter is provided, it should return a string that identifies the location of the item.
+
+        The location_getter is useful for debugging, but it can also be used to show which locations a certain item appears in.
+        """
+        
         for member in corpus:
             try:
                 self.add(getter(member))
