@@ -539,16 +539,8 @@ def parse_references():
                     #
                     # if loop_found:  # For debugging loops.
                     #     import ipdb; ipdb.set_trace()
-
-                    if len(potentials.strip()) == 0:
-
-                        # I was here. Discoveries:
-                        # We need the ability to add synonyms.
-                        # See:
-                        # https://trello.com/c/sTkeEUJM/38-support-for-law-names-synonyms
-
-                        pass
-                        # import ipdb; ipdb.set_trace()
+                    #
+                    # import ipdb; ipdb.set_race()
 
                     stat_inconclusive_count += 1
 
