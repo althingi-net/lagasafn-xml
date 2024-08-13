@@ -297,7 +297,10 @@ def parse_law(parser):
     parse_intro(parser)
 
     while True:
+        parser.maybe_consume_many("<br/>")
         # We continue while we pass any of the checks below, and break (at the end) if we don't.
+        if parse_ambiguous_chapter(parser):
+            continue
         if parse_chapter(parser):
             continue
         if parse_ambiguous_section(parser):
@@ -567,6 +570,8 @@ def parse_ambiguous_section(parser):
         parser.law.append(parser.ambiguous_section)
 
     parser.maybe_consume_many("<br/>")
+
+    parse_footnotes(parser)
 
     parser.trail_push(parser.ambiguous_section)
     parser.leave("ambiguous-section")
@@ -857,6 +862,8 @@ def parse_chapter(parser):
     parser.enter("chapter-content")
     while True:
         parser.maybe_consume_many("<br/>")
+        if parse_subchapter(parser):
+            continue
         if parse_article(parser):
             continue
         if parse_footnotes(parser):
@@ -904,140 +911,155 @@ def parse_appendix(parser):
 
 def parse_subchapter(parser):
     # Parse a subchapter.
-    if check_chapter(parser.lines, parser.law) == "subchapter" and parser.trail_reached(
+    if not check_chapter(parser.lines, parser.law) == "subchapter" or not parser.trail_reached(
         "intro-finished"
     ):
-        parser.enter("subchapter")
+        return False
 
-        subchapter_goo = parser.collect_until("</b>")
+    parser.enter("subchapter")
 
-        subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
+    subchapter_goo = parser.collect_until("</b>")
+    parser.consume("</b>")
 
-        parser.subchapter = E(
-            "subchapter",
-            {
-                "nr": strip_markers(subchapter_nr),
-                "nr-type": "alphabet",
-            },
-            E("nr-title", "%s." % subchapter_nr),
-        )
+    subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
 
-        if len(subchapter_name):
-            parser.subchapter.append(E("name", subchapter_name))
+    parser.subchapter = E(
+        "subchapter",
+        {
+            "nr": strip_markers(subchapter_nr),
+            "nr-type": "alphabet",
+        },
+        E("nr-title", "%s." % subchapter_nr),
+    )
 
-        parser.chapter.append(parser.subchapter)
-        parser.trail_push(parser.subchapter)
+    if len(subchapter_name):
+        parser.subchapter.append(E("name", subchapter_name))
 
-        del subchapter_goo
-        del subchapter_nr
-        del subchapter_name
+    parser.chapter.append(parser.subchapter)
+    parser.trail_push(parser.subchapter)
+
+    del subchapter_goo
+    del subchapter_nr
+    del subchapter_name
+
+    parser.leave("subchapter")
+
+    return True
 
 
 def parse_article_chapter(parser):
-    if check_chapter(
+    if not check_chapter(
         parser.lines, parser.law
-    ) == "art-chapter" and parser.trail_reached("intro-finished"):
-        parser.enter("art-chapter")
+    ) == "art-chapter" or not parser.trail_reached("intro-finished"):
+        return False
 
-        # Parse an article chapter.
-        art_chapter_goo = parser.collect_until("</b>")
+    parser.enter("art-chapter")
 
-        # Check if there's a name to the article chapter.
-        try:
-            art_chapter_nr, art_chapter_name = art_chapter_goo.strip(".").split(".")
-            art_chapter_name = art_chapter_name.strip()
-        except:
-            art_chapter_nr = art_chapter_goo.strip(".")
-            art_chapter_name = ""
+    # Parse an article chapter.
+    art_chapter_goo = parser.collect_until("</b>")
+    parser.consume("</b>")
 
-        parser.art_chapter = E(
-            "art-chapter",
-            {
-                "nr": art_chapter_nr,
-                "nr-type": "alphabet",
-            },
-            E("nr-title", "%s." % art_chapter_nr),
-        )
+    # Check if there's a name to the article chapter.
+    try:
+        art_chapter_nr, art_chapter_name = art_chapter_goo.strip(".").split(".")
+        art_chapter_name = art_chapter_name.strip()
+    except:
+        art_chapter_nr = art_chapter_goo.strip(".")
+        art_chapter_name = ""
 
-        if len(art_chapter_name):
-            parser.art_chapter.append(E("name", art_chapter_name))
+    parser.art_chapter = E(
+        "art-chapter",
+        {
+            "nr": art_chapter_nr,
+            "nr-type": "alphabet",
+        },
+        E("nr-title", "%s." % art_chapter_nr),
+    )
 
-        # Article chapters may appear in an article, containing
-        # sub-articles, or they may in fact appear inside sub-articles.
-        # The correct parent is obvious when we first run into an
-        # `art-chapter` in an `art`. But when we run into another one, we
-        # will have access to both a `subart` and an `art`, not knowing
-        # which one to append the `art-chapter` to, at least not by only
-        # seeing if a `subart` exists (because it always exists).
-        # Instead, we have to check if the `art` already has an
-        # `art-chapter`, and if so, append the new `art-chapter` to the
-        # parent of the previous one. Otherwise, we can go by the
-        # existence of `subart` and `art` like normally.
+    if len(art_chapter_name):
+        parser.art_chapter.append(E("name", art_chapter_name))
 
-        # Check if we should append the article chapter to the last
-        # sub-article, or the last article.
-        if parser.art.find("art-chapter") is not None:
-            parser.art.find("art-chapter").getparent().append(parser.art_chapter)
-        elif parser.subart is not None:
-            parser.subart.append(parser.art_chapter)
-        elif parser.art is not None:
-            parser.art.append(parser.art_chapter)
+    # Article chapters may appear in an article, containing
+    # sub-articles, or they may in fact appear inside sub-articles.
+    # The correct parent is obvious when we first run into an
+    # `art-chapter` in an `art`. But when we run into another one, we
+    # will have access to both a `subart` and an `art`, not knowing
+    # which one to append the `art-chapter` to, at least not by only
+    # seeing if a `subart` exists (because it always exists).
+    # Instead, we have to check if the `art` already has an
+    # `art-chapter`, and if so, append the new `art-chapter` to the
+    # parent of the previous one. Otherwise, we can go by the
+    # existence of `subart` and `art` like normally.
 
-        # Check if the `art-chapter` contains text content which is not
-        # contained in a `subart` or `numart` below the `art-chapter`.
-        # This is only known to occur in 7. gr. laga nr. 90/2003.
-        #
-        # NOTE: We only check for one "paragraph", since we are currently
-        # not aware of there being a case where there are more. The
-        # children of `art-chapter`s are almost always `numart`s and when
-        # we find text like this, it is presumably just one paragraph or a
-        # short preface to a list of `numart` that follow.
-        if begins_with_regular_content(parser.peek(2)):
-            # Scroll over the break the belongs to the `art-chapter`.
-            parser.scroll_until("<br/>")
-            content = parser.collect_until("<br/>")
+    # Check if we should append the article chapter to the last
+    # sub-article, or the last article.
+    if parser.art.find("art-chapter") is not None:
+        parser.art.find("art-chapter").getparent().append(parser.art_chapter)
+    elif parser.subart is not None:
+        parser.subart.append(parser.art_chapter)
+    elif parser.art is not None:
+        parser.art.append(parser.art_chapter)
 
-            sens = separate_sentences(strip_links(content))
-            add_sentences(parser.art_chapter, sens)
+    # Check if the `art-chapter` contains text content which is not
+    # contained in a `subart` or `numart` below the `art-chapter`.
+    # This is only known to occur in 7. gr. laga nr. 90/2003.
+    #
+    # NOTE: We only check for one "paragraph", since we are currently
+    # not aware of there being a case where there are more. The
+    # children of `art-chapter`s are almost always `numart`s and when
+    # we find text like this, it is presumably just one paragraph or a
+    # short preface to a list of `numart` that follow.
+    if begins_with_regular_content(parser.peek(2)):
+        # Scroll over the break the belongs to the `art-chapter`.
+        parser.scroll_until("<br/>")
+        content = parser.collect_until("<br/>")
 
-        parser.trail_push(parser.art_chapter)
+        sens = separate_sentences(strip_links(content))
+        add_sentences(parser.art_chapter, sens)
 
-        parser.leave("art-chapter")
+    parser.trail_push(parser.art_chapter)
+
+    parser.leave("art-chapter")
+
+    return True
 
 
 def parse_ambiguous_chapter(parser):
-    if check_chapter(parser.lines, parser.law) == "ambiguous" and parser.trail_reached(
-        "intro-finished"
-    ):
-        # Parse a mysterious text that might be a chapter but we're unable
-        # to determine it as such. They are bold, they are bad, but they
-        # don't really make an awful lot of sense. We'll just splash them
-        # in as ambiguous bold text and leave it at that.
-        #
-        # This occurs before the table in 96. gr. laga nr. 55/1991, in
-        # version 151b, although the table was removed in version 151c.
-        #
-        # It happens quite a bit, and like `ambiguous-section`, should
-        # theoretically be replaced by something more formal at some
-        # point, should the format of published law ever allow.
-        parser.enter("ambiguous-chapter")
+    if check_chapter(parser.lines, parser.law) != "ambiguous":
+        return False
 
-        ambiguous_bold_text = E(
-            "ambiguous-bold-text", parser.collect_until("</b>")
-        )
+    # Parse a mysterious text that might be a chapter but we're unable
+    # to determine it as such. They are bold, they are bad, but they
+    # don't really make an awful lot of sense. We'll just splash them
+    # in as ambiguous bold text and leave it at that.
+    #
+    # This occurs before the table in 96. gr. laga nr. 55/1991, in
+    # version 151b, although the table was removed in version 151c.
+    #
+    # It happens quite a bit, and like `ambiguous-section`, should
+    # theoretically be replaced by something more formal at some
+    # point, should the format of published law ever allow.
+    parser.enter("ambiguous-chapter")
 
-        if parser.subart is not None:
-            parser.subart.append(ambiguous_bold_text)
-        elif parser.art is not None:
-            parser.art.append(ambiguous_bold_text)
-        elif parser.chapter is not None:
-            parser.chapter.append(ambiguous_bold_text)
-        else:
-            parser.law.append(ambiguous_bold_text)
+    ambiguous_bold_text = E(
+        "ambiguous-bold-text", parser.collect_until("</b>")
+    )
+    parser.consume("</b>")
 
-        parser.trail_push(ambiguous_bold_text)
+    if parser.subart is not None:
+        parser.subart.append(ambiguous_bold_text)
+    elif parser.art is not None:
+        parser.art.append(ambiguous_bold_text)
+    elif parser.chapter is not None:
+        parser.chapter.append(ambiguous_bold_text)
+    else:
+        parser.law.append(ambiguous_bold_text)
 
-        parser.leave("ambiguous-chapter")
+    parser.trail_push(ambiguous_bold_text)
+
+    parser.leave("ambiguous-chapter")
+
+    return True
 
 
 def parse_sentence_with_title(parser):
@@ -1282,6 +1304,7 @@ def parse_article(parser):
 
         parser.scroll_until("<b>")
         art_name = parser.collect_until("</b>")
+        parser.consume("</b>")
 
         parser.art.append(
             E("name", strip_links(art_name), {"original-ui-style": "bold"})
@@ -1304,6 +1327,8 @@ def parse_article(parser):
 
     while True:
         parser.maybe_consume_many("<br/>")
+        if parse_article_chapter(parser):
+            continue
         if parse_numerical_article(parser):
             continue
         if parse_subarticle(parser):
@@ -1347,6 +1372,7 @@ def parse_subarticle(parser):
         # We must append the string '</table>' because it gets left
         # behind by the collet_until function.
         content = parser.collect_until("</table>") + "</table>"
+        parser.consume("</table>")
     else:
         # Everything is normal.
         content = parser.collect_until("<br/>")
