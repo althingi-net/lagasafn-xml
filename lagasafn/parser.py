@@ -918,12 +918,22 @@ def parse_stray_deletion(parser):
     FIXME/TODO: This needs proper handling.
     Currently ignores, resulting in bad content.
     """
-    if parser.line != "…":
+    removed_anchor = "<a href=\"https://www.althingi.is/altext/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða.\">"
+
+    if not (
+        parser.line == "…"
+        or re.match(removed_anchor, parser.line)
+    ):
         return False
 
     parser.enter("stray-deletion")
 
+    if re.match(removed_anchor, parser.line):
+        parser.next()
+
     parser.consume("…")
+
+    parser.maybe_consume("</a>")
 
     if parser.line == '<sup style="font-size:60%">':
         parser.collect_until("</sup>")
