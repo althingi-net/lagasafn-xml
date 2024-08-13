@@ -299,6 +299,8 @@ def parse_law(parser):
     while True:
         parser.maybe_consume_many("<br/>")
         # We continue while we pass any of the checks below, and break (at the end) if we don't.
+        if parse_stray_deletion(parser):
+            continue
         if parse_ambiguous_chapter(parser):
             continue
         if parse_chapter(parser):
@@ -306,6 +308,8 @@ def parse_law(parser):
         if parse_ambiguous_section(parser):
             continue
         if parse_article(parser):
+            continue
+        if parse_subarticle(parser):
             continue
 
         # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
@@ -909,6 +913,27 @@ def parse_appendix(parser):
     return False
 
 
+def parse_stray_deletion(parser):
+    """
+    FIXME/TODO: This needs proper handling.
+    Currently ignores, resulting in bad content.
+    """
+    if parser.line != "…":
+        return False
+
+    parser.enter("stray-deletion")
+
+    parser.consume("…")
+
+    if parser.line == '<sup style="font-size:60%">':
+        parser.collect_until("</sup>")
+        parser.consume("</sup>")
+
+    parser.leave("stray-deletion")
+
+    return True
+
+
 def parse_subchapter(parser):
     # Parse a subchapter.
     if not check_chapter(parser.lines, parser.law) == "subchapter" or not parser.trail_reached(
@@ -1063,39 +1088,56 @@ def parse_ambiguous_chapter(parser):
 
 
 def parse_sentence_with_title(parser):
-    if (
-        parser.peeks(0) == "<i>"
-        and parser.peeks(2) == "</i>"
-        and parser.trail_reached("intro-finished")
+    # FIXME: I will like to profusely apologize for the utter horror that this
+    # function has become. It should be fixed.
+    # Specifically, this should not be peeking backwards into the history using
+    # `parser.peeks(-1)`.
+    if not (
+        (
+            parser.peeks(0) == "["
+            and parser.peeks(1) == "<i>"
+            and parser.peeks(3) == "</i>"
+        ) or (
+            parser.peeks(0) == "<i>"
+            and parser.peeks(2) == "</i>"
+        )
     ):
-        parser.enter("sen-with-title")
-        # Parse a sentence with a title. These are rare, but occur in 3.
-        # gr. laga nr. 55/2009. Usually they are numbered, parsed as
-        # numarts instead, but not here.
+        return False
 
-        # In 3. gr. laga nr. 55/2009, sentences with titles have the
-        # opening marks located right before the <i> tag, meaning that we
-        # have no proper place to put it in. We'll place it in the
-        # beginning of the sen-title instead. There can be more than one,
-        # so we'll append continuously until we run out of opening marks.
+    # Parse a sentence with a title. These are rare, but occur in 3.
+    # gr. laga nr. 55/2009. Usually they are numbered, parsed as
+    # numarts instead, but not here.
 
-        sen_title_text = ""
-        back_peek = parser.peeks(-1)
-        while len(back_peek) > 0 and back_peek[-1] == "[":
-            sen_title_text += "["
-            back_peek = back_peek[0:-1]
+    # In 3. gr. laga nr. 55/2009, sentences with titles have the
+    # opening marks located right before the <i> tag, meaning that we
+    # have no proper place to put it in. We'll place it in the
+    # beginning of the sen-title instead. There can be more than one,
+    # so we'll append continuously until we run out of opening marks.
 
-        sen_title_text += parser.collect_until("</i>")
-        content = parser.collect_until("<br/>")
-        if parser.subart is not None:
-            sen_title = E("sen-title", sen_title_text)
-            parser.subart.append(sen_title)
+    parser.enter("sen-title")
 
-            add_sentences(parser.subart, separate_sentences(content))
+    if parser.line == "[":
+        parser.next()
 
-            parser.trail_push(sen_title)
+    sen_title_text = ""
+    back_peek = parser.peeks(-1)
+    while len(back_peek) > 0 and back_peek[-1] == "[":
+        sen_title_text += "["
+        back_peek = back_peek[0:-1]
 
-        parser.leave("sen-with-title")
+    sen_title_text += parser.collect_until("</i>")
+    content = parser.collect_until("<br/>")
+    if parser.subart is not None:
+        sen_title = E("sen-title", sen_title_text)
+        parser.subart.append(sen_title)
+
+        add_sentences(parser.subart, separate_sentences(content))
+
+        parser.trail_push(sen_title)
+
+    parser.leave("sen-title")
+
+    return True
 
 
 def parse_article(parser):
@@ -1473,6 +1515,10 @@ def parse_subarticle(parser):
 
     while True:
         parser.maybe_consume_many("<br/>")
+        if parse_sentence_with_title(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
         if parse_footnotes(parser):
             continue
         if parse_definition(parser):
