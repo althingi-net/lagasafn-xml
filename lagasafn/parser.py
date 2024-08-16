@@ -2066,6 +2066,11 @@ def parse_table(parser):
 
 
 def postprocess_law(parser):
+    # FIXME: This function only converts bare-HTML tables into slightly better
+    # XML. There is no good reason to do this in post-processing, now that we
+    # have recursive-descent. Much rather, we should move this to a new parser
+    # function called `parse_table` and handle it like everything else.
+
     parser.enter("postprocess")
     # Turn HTML tables, currently encoded into HTML characters, into properly
     # structured and clean XML tables with properly presented content.

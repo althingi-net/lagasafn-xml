@@ -230,6 +230,9 @@ def make_xml(law_num, law_year):
 
     parse_law(parser)
 
+    # TODO: Deprecate this function in favor of a `parse_table` function.
+    postprocess_law(parser)
+
     # Write the XML object to output file.
     write_xml(parser.law, XML_FILENAME % (parser.law_year, parser.law_num))
 
