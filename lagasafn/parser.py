@@ -334,7 +334,8 @@ def parse_intro(parser):
     # We always get a <hr/> after the law number and date.    
     parser.consume("<hr/>")
 
-    parse_procedural_links(parser)
+    # TODO: Parsing procedural links is unimplemented.
+    # parse_procedural_links(parser)
 
     if parser.line == "<i>":
         parse_footnotes(parser)      # This will eat any footnotes associated with the title.
@@ -342,8 +343,6 @@ def parse_intro(parser):
     parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
     parser.maybe_consume_many("<br/>")
-    parse_procedural_links(parser)
-    parse_minister_clause_footnotes(parser)
 
     parser.trail_milestone("intro-finished")
     parser.leave("intro")
@@ -361,26 +360,8 @@ def parse_end_of_law(parser):
 
 
 def parse_procedural_links(parser):
-    #  <a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=150&amp;mnr=666">
-    #   <i>
-    #    Ferill málsins á Alþingi.
-    #   </i>
-    #  </a>
-    #  <a href="https://www.althingi.is/altext/150/s/1130.html">
-    #   <i>
-    #    Frumvarp til laga.
-    #   </i>
-    #  </a>
-
-    if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
-        parser.scroll_until("</a>")
-        parser.next() # Consume </a>
-
-    if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
-        parser.scroll_until("</a>")
-        parser.next()
-
-    parser.maybe_consume_many("<br/>")
+    # TODO: Unimplemented.
+    return
 
 
 def parse_law_title(parser):
@@ -620,6 +601,36 @@ def parse_minister_clause_footnotes(parser):
     # is indicated is if "intro-finished" is in the processing trail. As a
     # result, we check for that pattern, but only match if we haven't yet
     # finished "intro-finished".
+
+    # TODO: Procedural links should be handled by `parse_procedural_links` and
+    # be outside of the `minister-clause`. We're cramming it in here so that
+    # the output file format doesn't change while the parser is being changed
+    # to recursive-descent. As a result, the procedural links are still just
+    # retained in their original HTML form inside the XML for now.
+    # Example:
+    #  <a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=150&amp;mnr=666">
+    #   <i>
+    #    Ferill málsins á Alþingi.
+    #   </i>
+    #  </a>
+    #  <a href="https://www.althingi.is/altext/150/s/1130.html">
+    #   <i>
+    #    Frumvarp til laga.
+    #   </i>
+    #  </a>
+    minister_clause = ""
+    if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
+        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        parser.consume("</a>")
+
+    if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
+        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        parser.consume("</a>")
+
+    while parser.line == "<br/>":
+        minister_clause += "<br/> "
+        parser.next()
+
     if (
         parser.line == "<small>"
         and (parser.peeks(1) in ["<b>", "<em>"] or parser.peeks(1).startswith("Felld"))
@@ -635,7 +646,7 @@ def parse_minister_clause_footnotes(parser):
         # is no minister clause.
         hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
         if hr_distance is not None and hr_distance > 0:
-            minister_clause = parser.collect_until("<hr/>", collect_first_line=True)
+            minister_clause += parser.collect_until("<hr/>", collect_first_line=True)
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
