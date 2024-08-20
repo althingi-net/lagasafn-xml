@@ -1279,7 +1279,7 @@ def parse_article(parser):
     # HTML, which we are appending "</a>" at the end. Normally we don't
     # want that, so `parser.collect_until` doesn't include it.
     if parser.line.find("<a ") == 0 and parser.peeks(2) == "</a>":
-        art_title_link = parser.collect_until("</a>")
+        art_title_link = parser.collect_until("</a>", collect_first_line=True)
         art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
         parser.consume("</a>")
 
