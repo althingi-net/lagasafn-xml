@@ -311,6 +311,8 @@ def parse_law(parser):
             continue
         if parse_subarticle(parser):
             continue
+        if parse_presidential_decree_preamble(parser):
+            continue
 
         # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
 
@@ -656,25 +658,33 @@ def parse_minister_clause_footnotes(parser):
 
 
 def parse_presidential_decree_preamble(parser):
-    if (
-        parser.line == "<br/>"
-        and parser.peek(-1).strip() == "<hr/>"
-        and parser.peek(-2).strip() == "</small>"
-        and parser.trail_reached("intro-finished")
-        and parser.law.attrib["law-type"] == "speaker-verdict"
-        and parser.peek(1).find("<img") == -1
-    ):
-        parser.enter("presidential-decree-preamble")
-        # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
-        # the minister clause is followed by a preamble, which we will parse
-        # into a "sen".
-        # The only example of this that this guard currently catches is 7/2022.
-        distance = parser.occurrence_distance(parser.lines, "<br/>")
-        if distance is not None and begins_with_regular_content(parser.lines.peek()):
-            preamble = parser.collect_until("<br/>")
-            parser.law.append(E("sen", preamble))
+    """
+    Parses stray text in presidential decrees.
+    """
+    # NOTE: This may possibly be either expanded or re-used to create a parsing
+    # function for general stray text that pops up in less consistently
+    # formatted documents, such as international agreements.
 
-        parser.leave("presidential-decree-preamble")
+    # FIXME: This currently does not properly handle paragraphs, i.e. when
+    # stray text is followed by other stray text in a new paragraph. See
+    # `contenthandlers.add_sentences`. It should be used here.
+
+    if not (
+        len(parser.parse_path) == 0
+        and begins_with_regular_content(parser.line)
+        and parser.law.attrib["law-type"] == "speaker-verdict"
+    ):
+        return False
+
+    parser.enter("presidential-decree-preamble")
+
+    stray_text = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+    parser.law.append(E("sen", stray_text))
+
+    parser.leave("presidential-decree-preamble")
+
+    return True
 
 
 def parse_chapter(parser):
