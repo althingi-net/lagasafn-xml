@@ -1377,7 +1377,7 @@ def parse_article(parser):
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
     while parser.line in ["…", "]"]:
-        marker = parser.collect_until("</sup>")
+        marker = parser.collect_until("</sup>", collect_first_line=True)
         parser.art.getchildren()[-1].text += " " + marker + " </sup>"
         parser.consume("</sup>")
 
