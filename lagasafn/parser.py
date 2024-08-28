@@ -313,6 +313,8 @@ def parse_law(parser):
             continue
         if parse_presidential_decree_preamble(parser):
             continue
+        if parse_numerical_article(parser):
+            continue
 
         # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
 
