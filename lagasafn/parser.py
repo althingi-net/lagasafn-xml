@@ -558,9 +558,10 @@ def parse_ambiguous_section(parser):
 
     parser.maybe_consume_many("<br/>")
 
+    parser.trail_push(parser.ambiguous_section)
+
     parse_footnotes(parser)
 
-    parser.trail_push(parser.ambiguous_section)
     parser.leave("ambiguous-section")
 
     return True
