@@ -271,7 +271,7 @@ class LawParser:
             if i > current_line + max_lines:
                 break
         # Reset the iterator to the original place.
-        self.lines.index = current_line + 1
+        self.lines.index = current_line
 
     def dump_state(self):
         print("Current parser state: ")
