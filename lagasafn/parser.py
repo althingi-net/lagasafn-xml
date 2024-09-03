@@ -10,6 +10,7 @@ from lagasafn.contenthandlers import get_nr_and_name
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
+from lagasafn.contenthandlers import is_numart_address
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.utils import ask_user_about_location
@@ -1311,8 +1312,6 @@ def parse_article(parser):
     else:
         parser.law.append(parser.art)
 
-    parser.maybe_consume_many("<br/>")
-
     # Check if the next line is an <em>, because if so, then the
     # article has a name title and we need to grab it. Note that not
     # all articles have names.
@@ -1323,7 +1322,13 @@ def parse_article(parser):
 
     # Another way to denote an article's name is by immediately
     # following it with bold text. This is very rare but does occur.
-    elif parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
+    #
+    # FIXME: This section was disabled because it caused damage and it doesn't
+    # seem to belong here. Somewhere we're doing this. It just looks like it's
+    # in the wrong place. Also, we should check if we can handle article names
+    # that are bold. It even kind of looks like two different things got mixed
+    # up here.
+    elif False and parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
         # Exceptional case: 94/1996 contains a very strange temporary
         # clause chapter. It was originally a temporary article (24.
         # gr.) with a name denoted differently than other articles in
@@ -1619,8 +1624,17 @@ def parse_numerical_article(parser):
     if not (
         parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">')
         or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
+        or is_numart_address(parser.line)
     ):
         return False
+
+    # Sometimes a numart isn't properly defined in the HTML with the `<span>`
+    # as described above. This impacts parsing in a few ways. We detect it here
+    # and react to it in the code that follows.
+    denoted_with_span = True
+    if not parser.line.startswith("<span"):
+        denoted_with_span = False
+        parser.lines.index -= 1
 
     parser.enter("numart")
     # Parse a numart, or numerical article.
@@ -1891,7 +1905,22 @@ def parse_numerical_article(parser):
     parent.append(parser.numart)
 
     # NOTE: Gets added after we add the sentences with `add_sentences`.
-    numart_nr_title = parser.collect_until("</span>")
+    if denoted_with_span:
+        numart_nr_title = parser.collect_until("</span>")
+    else:
+        numart_nr_title = parser.peeks()
+
+    # Sometimes the content of a `numart` is in its own separate line instead
+    # of immediately following the `name` inline. We must account for it by
+    # consuming the `<br/>` tag to continue parsing correctly.
+    # Occurs in:
+    # - in 1-6. tölul. 7. gr. laga nr. 112/2021.
+    #
+    # TODO: This styling choice should be communicated in the XML somehow. It
+    # has no bearing on the meaning or referencing, but it should in principle
+    # be possible to render the file identically to the official version.
+    if parser.line == "<br/>":
+        parser.consume("<br/>")
 
     # Check for a closing bracket.
     # Example:

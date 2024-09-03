@@ -16,6 +16,23 @@ SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
 
+def is_numart_address(input):
+    """
+    Checks if the given string input is a legit numart address.
+
+    It may be, for example:
+    - 1.
+    - 2.
+    - 3.-4.
+    - 5.–6.
+
+    Note that those "–" and "-" are not the same symbol. Sometimes one is used
+    and sometimes the other.
+    """
+    matcher = Matcher()
+    return matcher.check(input.strip(), r"^\d+\.([-–]\d+\.)?$")
+
+
 def get_nr_and_name(goo: str) -> (str, str):
     dot_loc = goo.find(".")
     if dot_loc > -1:
@@ -37,7 +54,7 @@ def begins_with_regular_content(argument):
     # which was a surprise. It may require more sophisticated means
     # of determining regular content in all cases.
     question = strip_markers(strip_links(argument)).strip()
-    if len(question) and question[0] != "<":
+    if len(question) and question[0] != "<" and not is_numart_address(question):
         return True
     else:
         return False
