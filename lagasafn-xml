@@ -217,6 +217,9 @@ def patch_law(law_num, law_year):
 
 
 def make_xml(law_num, law_year):
+    # TODO: This function needs cleaning up. There's a bunch of commented and
+    # inactive stuff here "following `return`" that should be removed if it's
+    # not useful anymore.
     parser = LawParser(law_num, law_year)
     global VERBOSE_MODE
     if VERBOSE_MODE:
