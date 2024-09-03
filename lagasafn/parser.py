@@ -298,6 +298,7 @@ def parse_law(parser):
     parse_intro(parser)
 
     while True:
+        parser.maybe_consume("<hr/>")
         parser.maybe_consume_many("<br/>")
         # We continue while we pass any of the checks below, and break (at the end) if we don't.
         if parse_stray_deletion(parser):
