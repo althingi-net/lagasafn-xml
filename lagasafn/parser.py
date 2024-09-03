@@ -841,6 +841,10 @@ def parse_chapter(parser):
 
         parser.leave("chapter-name-only")
 
+    # Must happen before the parsing of temporary clauses because iteration of
+    # parents to 'law' happens when parsing articles inside them.
+    parser.law.append(parser.chapter)
+
     # Some laws have a chapter for temporary clauses, which may be
     # named something like "Bráðabirgðaákvæði", "Ákvæði til
     # bráðabirgða" and probably something else as well. We will assume
@@ -882,8 +886,6 @@ def parse_chapter(parser):
             break
 
         parser.leave("temporary-clauses")
-
-    parser.law.append(parser.chapter)
 
     parser.trail_push(parser.chapter)
 
