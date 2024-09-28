@@ -30,7 +30,9 @@ def make_xpath_from_node(node):
         if attributes_xpath:
             xpath_part = f"{node.tag}[{attributes_xpath}]"
         else:
-            xpath_part = node.tag
+            siblings = [e for e in node.getparent() if e.tag == node.tag]
+            place_among_siblings = siblings.index(node) + 1
+            xpath_part = "%s[%d]" % (node.tag, place_among_siblings)
 
         # Insert the constructed XPath part at the beginning of the list.
         xpath_parts.insert(0, xpath_part)

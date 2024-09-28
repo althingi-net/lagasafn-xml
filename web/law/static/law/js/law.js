@@ -21,6 +21,11 @@ function lowercase_tagname(element) {
 //    return location_string.trim();
 //}
 
+// Encapsulating function for making XPath queries less messy.
+function getElementByXPath(xpath, contextNode = document) {
+    return document.evaluate(xpath, contextNode, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+
 function attr_or_emptystring(element, attribute) {
     if (!element) {
         return '';
@@ -233,116 +238,22 @@ var process_footnote = function() {
         var $start_mark = $location.parent().parent().closest('law');
         var $end_mark = $location.parent().parent().closest('law');
 
-        // Debugging helper.
-        var locator = [];
-
-        // Iterate through the <location> section to locate the text that we
-        // want to show as changed.
-        $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,definition,name,sen-title,sen').each(function() {
-            var $location_step = $(this);
-
-            // Sometimes unusual placements of markers are required. An
-            // example is a marker that starts at the beginning of an
-            // article's name, and then highlights maybe 4 subarticles in a
-            // 5-subarticle article, but doesn't cover the article in its
-            // entirety. In these cases, it is necessary to specifify the
-            // $start_mark and $end_mark more precisely through the XML, by
-            // using <start> and <end> clauses in the <location> clause. They
-            // work exactly like the <location> clause, except that <start>
-            // only affects $start_mark and <end> only affects $end_mark.
-            //
-            // For this, we need to keep track of whether we're in a
-            // <location>, <start> or <end> clause when deciding whether to
-            // follow the next entity ("art", "subart", "numart" etc.). We do
-            // this by iterating with temporary $start_mark and $end_mark
-            // variables called $current_start_mark and $current_end_mark
-            // respectively. Only afterwards do we decide whether we want to
-            // actually use them or not, depending on which clause we happen
-            // to be processing. If we're in a <location> cluse, we'll always
-            // apply them both, but if we're in a <start> clause, we'll only
-            // want to apply $current_start_mark to $start_mark, and if we're
-            // in an <end> clause, we'll only want to apply $current_end_mark
-            // to $end_mark.
-            var location_clause = lowercase_tagname($location_step.parent());
-
-            // Temporary variables to be applied later according to which
-            // location clause we're in.
-            var $current_start_mark = $start_mark;
-            var $current_end_mark = $end_mark;
-
-            var tag_name = lowercase_tagname($location_step);
-            var nr = $location_step.text().trim();
-
-            locator.push({"tag": tag_name, "nr": nr});
-
-            if (nr.length) {
-                // Check if the number is a range, for example "1-4", which
-                // would mean that the highlighting should start at entity nr.
-                // 1 (for example, article 1) and end at entity nr. 4 (for
-                // example, article 4).
-                var minus_index = nr.indexOf('-');
-                if (minus_index > -1) {
-                    var start_i = nr.substring(0, minus_index);
-                    var end_i = nr.substring(minus_index + 1);
-                }
-                else {
-                    var start_i = nr;
-                    var end_i = nr;
-                }
-
-                // If we cannot find an element explicitly numbered according
-                // to what's being requested, we will try to figure it out.
-                //
-                // Note that our iterators, start_i and end_i, actually start
-                // at 1 instead of 0.
-                $start_check = $current_start_mark.children(tag_name + '[nr="' + start_i + '"]');
-                $end_check = $current_end_mark.children(tag_name + '[nr="' + end_i + '"]');
-
-                // If the attempt did not result in a valid node, it means
-                // that there is none explicitly ordered as the one requested.
-                if ($start_check.prop('tagName')) {
-                    $current_start_mark = $start_check;
-                }
-                else {
-                    $current_start_mark = $current_start_mark.children(tag_name + ':eq(' + String(parseInt(start_i) - 1) + ')');
-                }
-
-                // Same story as with $current_start_mark above.
-                if ($end_check.prop('tagName')) {
-                    $current_end_mark = $end_check;
-                }
-                else {
-                    $current_end_mark = $current_end_mark.children(tag_name + ':eq(' + String(parseInt(end_i) - 1) + ')');
-                }
-            }
-            else {
-                // If no number is requested (f.e. article 3 or subarticle 5),
-                // we will assume the first node with the given tag name.
-                $current_start_mark = $current_start_mark.children(tag_name).first();
-                $current_end_mark = $current_end_mark.children(tag_name).first();
-            }
-
-            // We may need to access the $location_step node from $start_mark
-            // or $end_mark when adding markers later on, for example to get
-            // the "words" attribute.
-            $current_start_mark.location_node = $location_step;
-            $current_end_mark.location_node = $location_step;
-
-            // We don't necessarily want to apply our conclusion unless we're
-            // in the proper location clause. See comment above describing
-            // $current_start_mark, $current_end_mark and location_clause.
-            if (location_clause == 'location') {
-                $start_mark = $current_start_mark;
-                $end_mark = $current_end_mark;
-            }
-            else if (location_clause == 'start') {
-                $start_mark = $current_start_mark;
-            }
-            else if (location_clause == 'end') {
-                $end_mark = $current_end_mark;
-            }
-
-        });
+        if ($location.attr("xpath") === undefined) {
+            // TODO: Instead of setting the `location_node` here, we should just
+            //       set whatever variables we need, which currently are `words`
+            //       and `repeat`.
+            var $location_start = $location.find("start");
+            var $location_end = $location.find("end");
+            $start_mark = $(getElementByXPath("//" + $location_start.attr("xpath")));
+            $start_mark.location_node = $location_start;
+            $end_mark = $(getElementByXPath("//" + $location_end.attr("xpath")));
+            $end_mark.location_node = $location_end;
+        }
+        else {
+            $start_mark = $(getElementByXPath("//" + $location.attr("xpath")));
+            $start_mark.location_node = $location;
+            $end_mark = $start_mark;
+        }
 
         // Let's be nice to XML writers and tell them what's wrong.
         if (!$start_mark.prop('tagName')) {
@@ -351,7 +262,6 @@ var process_footnote = function() {
             return;
         }
 
-        console.log("Locator: ", locator.map((item)=>`${item.tag}[${item.nr}]`).join(":"));
         /***********************************************/
         /* Add markers to denote the highlighted area. */
         /***********************************************/
@@ -493,54 +403,7 @@ var process_footnote = function() {
     // above for a thorough understanding of what's going on here.
     $footnote.find('location[type="deletion"]').each(function() {
         var $location = $(this);
-
-        // Will contain the final location step once the iteration is done.
-        var $step = null;
-
-        // Start with the entire law and then narrow it down.
-        var $mark = $location.parent().parent().closest('law');
-
-        // Iterate through the location steps.
-        $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,name,sen-title,sen').each(function() {
-            $step = $(this);
-
-            var tag_name = lowercase_tagname($step);
-            var nr = $step.text().trim();
-
-            // If no number is defined, we assume that it's the first (and
-            // presumably only) tag.
-            if (!nr) {
-                nr = '1';
-            }
-
-            // Narrow the mark according to the location step.
-            var $check = $mark.children(tag_name + '[nr="' + nr + '"]');
-
-            // If no location step was found, it is presumably because it's a
-            // tag that does not explicitly define a "nr" attribute (such as
-            // <sen>), so we'll have to infer the correct tag by its order.
-            //
-            // But before we get to that, let's check if it was found.
-            if ($check.prop('tagName')) {
-                $mark = $check;
-            }
-            else {
-                // Create a selector that finds the tag by its order.
-                var selector = tag_name + ':eq(' + String(parseInt(nr) - 1) + ')';
-
-                if ($mark.children(selector).length == 0) {
-                    // The tag does not exist. We'll have to create it
-                    // ourselves. This occurs when a change or deletion marker
-                    // should be placed in a tag that is otherwise empty, and
-                    // therefore is not in the XML. It's no problem, we can
-                    // just make it on the fly.
-                    $mark.append($('<' + tag_name + '></' + tag_name + '>'));
-                }
-
-                // Okay, now it should definitely exist.
-                $mark = $mark.children(selector);
-            }
-        });
+        var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
 
         // If the mark is not a valid tag any more, we'll just skip it.
         if (!$mark || !$mark.prop('tagName')) {
@@ -554,15 +417,15 @@ var process_footnote = function() {
         // with and without other deletion or replacement markers.
         var before_mark_content = '';
         var after_mark_content = '';
-        if ($step.attr('before-mark')) {
-            var before_mark_re = new RegExp($step.attr('before-mark').trim());
+        if ($location.attr('before-mark')) {
+            var before_mark_re = new RegExp($location.attr('before-mark').trim());
             var items = before_mark_re.exec($mark.html());
             if (items && items.length > 0) {
                 before_mark_content = items[0];
             }
         }
-        if ($step.attr('after-mark')) {
-            var after_mark_re = new RegExp($step.attr('after-mark').trim());
+        if ($location.attr('after-mark')) {
+            var after_mark_re = new RegExp($location.attr('after-mark').trim());
             var items = after_mark_re.exec($mark.html());
             if (items && items.length > 0) {
                 after_mark_content = items[0];
@@ -599,8 +462,8 @@ var process_footnote = function() {
         // bla, … 2)". For these purposes, we will check if such a punctuation
         // mark is defined in the XML and add it accordingly.
         var middle_punctuation = '';
-        if ($step.attr('middle-punctuation')) {
-            middle_punctuation = $step.attr('middle-punctuation');
+        if ($location.attr('middle-punctuation')) {
+            middle_punctuation = $location.attr('middle-punctuation');
         }
 
         var closing_marker = '';
@@ -644,39 +507,7 @@ var process_footnote = function() {
     // simpler, because it only needs to add one bit of superscripted text.
     $footnote.find('location[type="pointer"]').each(function() {
         var $location = $(this);
-
-        // Will contain the final location step once the iteration is done.
-        var $step = null;
-
-        // Start with the entire law and then narrow it down.
-        var $mark = $location.parent().parent().closest('law');
-
-        // Iterate through the location steps.
-        $location.find('chapter,ambiguous-section,art,art-chapter,subart,numart,paragraph,nr-title,name,sen-title,sen').each(function() {
-            $step = $(this);
-
-            var tag_name = lowercase_tagname($step);
-            var nr = $step.text().trim();
-
-            // If no number is defined, we assume that it's the first (and
-            // presumably only) tag.
-            if (!nr) {
-                nr = '1';
-            }
-
-            // Narrow the mark according to the location step.
-            var $check = $mark.children(tag_name + '[nr="' + nr + '"]');
-
-            // If no location step was found, it is presumably because it's a
-            // tag that does not explicitly define a "nr" attribute (such as
-            // <sen>), so we'll have to infer the correct tag by its order.
-            if ($check.prop('tagName')) {
-                $mark = $check;
-            }
-            else {
-                $mark = $mark.children(tag_name + ':eq(' + String(parseInt(nr) - 1) + ')');
-            }
-        });
+        var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
 
         // If the mark is not a valid tag any more, we'll just skip it.
         if (!$mark || !$mark.prop('tagName')) {
@@ -692,15 +523,15 @@ var process_footnote = function() {
         // and without other deletion or replacement markers.
         var before_mark_content = '';
         var after_mark_content = '';
-        if ($step.attr('before-mark')) {
-            var before_mark_re = new RegExp($step.attr('before-mark').trim());
+        if ($location.attr('before-mark')) {
+            var before_mark_re = new RegExp($location.attr('before-mark').trim());
             var contents = before_mark_re.exec($mark.html());
             if (contents && contents.length > 0) {
                 before_mark_content = contents[0];
             }
         }
-        if ($step.attr('after-mark')) {
-            var after_mark_re = new RegExp($step.attr('after-mark').trim());
+        if ($location.attr('after-mark')) {
+            var after_mark_re = new RegExp($location.attr('after-mark').trim());
             var contents = after_mark_re.exec($mark.html());
             if (contents && contents.length > 0) {
                 after_mark_content = contents[0];

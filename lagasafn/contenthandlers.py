@@ -161,56 +161,6 @@ def next_footnote_sup(elem, cursor):
     return num
 
 
-def generate_ancestors(elem, parent):
-    # Locations of markers in footnote XML are denoted as a list of tags,
-    # whose name correspond to the tag name where the marker is to be located,
-    # and whose value represents the target node's "nr" attribute.
-    # Example:
-    #
-    # <art nr="5">
-    #   <subart nr="1">
-    #     <sen>[Notice the markers?]</sen>
-    #   </subart>
-    # </art>
-    #
-    # This will result in location XML in the footnote XML as such:
-    #
-    # <location>
-    #   <art>5</art>
-    #   <subart>1</subart>
-    #   <sen>1</sen>
-    # </location>
-    #
-    # To achieve this, we iterate through the ancestors of the node currently
-    # being processed. For each ancestor that we find, we add to the location
-    # XML.
-    ancestors = []
-    for ancestor in elem.iterancestors():
-        # We don't need the root node in a list of ancestors. It's obvious
-        # that any tag mentioned here is contained in the root node.
-        if ancestor.tag == "law":
-            break
-
-        # Figure out what the 'nr' attribute would be, if it were defined.
-        if "nr" in ancestor.attrib:
-            ancestors.insert(0, E(ancestor.tag, ancestor.attrib["nr"]))
-        else:
-            ancestors.insert(0, E(ancestor.tag, str(order_among_siblings(ancestor))))
-
-        if ancestor == parent:
-            # We're not interested in anything
-            # beyond the parent node.
-            break
-
-    # If we cannot find a 'nr' attribute, we'll figure it out and still put it in.
-    if "nr" in elem.attrib:
-        ancestors.append(E(elem.tag, str(elem.attrib["nr"])))
-    else:
-        ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
-
-    return ancestors
-
-
 # Examines the often mysterious issue of whether we're dealing with a new
 # chapter or not. There is quite a bit of ambiguity possible so this question
 # needs to be dealt with in more than a one-liner, both for flow and code

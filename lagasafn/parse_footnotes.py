@@ -5,11 +5,11 @@
 from lxml.builder import E
 import re
 from formencode.doctest_xml_compare import xml_compare
-from lagasafn.contenthandlers import generate_ancestors
 from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import next_footnote_sup
 from lagasafn.utils import UnexpectedClosingBracketException, order_among_siblings, super_iter, xml_lists_identical
+from lagasafn.pathing import make_xpath_from_node
 
 
 def parse_footnotes(parser):
@@ -347,10 +347,6 @@ def parse_footnote(parser):
                     # will continue from here.
                     cursor = opening_found + 1
 
-                    # Get the ancestors of the node (see function's
-                    # comments for details.)
-                    ancestors = generate_ancestors(desc, parent)
-
                     # We now try to figure out whether we want to mark
                     # an entire entity (typically a sentence), or if
                     # we want to mark a portion of it. If we want to
@@ -413,6 +409,7 @@ def parse_footnote(parser):
                         opening_found > 0 or partial_at_start
                     ) and not all_encompassing
 
+                    words = None
                     if use_words:
                         # We'll start with everything from the opening
                         # marker onward. Because of possible markers
@@ -473,12 +470,12 @@ def parse_footnote(parser):
                         # space that we also clear.
                         words = strip_markers(words).strip()
 
-                        # Add the "words" attribute to the last element.
-                        ancestors[-1].attrib["words"] = words
-
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
-                    opening_locations.append(ancestors)
+                    opening_locations.append({
+                        "xpath": make_xpath_from_node(desc),
+                        "words": words,
+                    })
 
                 elif closing_found > -1 and (
                     closing_found < opening_found or opening_found == -1
@@ -513,9 +510,10 @@ def parse_footnote(parser):
                         # This exception spouts some details.
                         raise UnexpectedClosingBracketException(desc)
 
-                    # Get the ancestors of the node (see function's
-                    # comments for details.)
-                    ancestors = generate_ancestors(desc, parent)
+                    ended_at = {
+                        "xpath": make_xpath_from_node(desc),
+                        "words": None,  # Maybe filled later.
+                    }
 
                     # If the start location had a "words" attribute,
                     # indicating that a specific set of words should
@@ -523,7 +521,7 @@ def parse_footnote(parser):
                     # to the end location, so that the <start> and
                     # <end> tags will get truncated into a unified
                     # <location> tag...
-                    if "words" in started_at[-1].attrib:
+                    if started_at["words"] is not None:
                         # ...except, if it turns out that we're
                         # actually dealing with a different sentence
                         # than was specified in the start location,
@@ -539,7 +537,11 @@ def parse_footnote(parser):
                         # each attribute containing the set of words
                         # contained in their respective sentences.
                         sen_nr = str(order_among_siblings(desc))
-                        if desc.tag == "sen" and sen_nr != started_at[-1].text:
+                        try:
+                            started_sen_nr = parser.law.xpath(started_at["xpath"])[0].attrib["nr"]
+                        except KeyError:
+                            started_sen_nr = ''
+                        if desc.tag == "sen" and sen_nr != started_sen_nr:
                             # Remove pairs of opening/closing markers
                             # from the "words", so that we find the
                             # correct closing marker. (See comment on
@@ -552,9 +554,9 @@ def parse_footnote(parser):
                             )
                             words = desc.text[: desc.text.find("]")]
                         else:
-                            words = started_at[-1].attrib["words"]
+                            words = started_at["words"]
 
-                        ancestors[-1].attrib["words"] = words
+                        ended_at["words"] = words
 
                     # Stuff our findings into a list of marker
                     # locations that can be appended to the footnote
@@ -570,7 +572,7 @@ def parse_footnote(parser):
                             # 'ended_at' is determined from the processing
                             # of the closing marker, which is what we just
                             # performed.
-                            "ended_at": ancestors,
+                            "ended_at": ended_at,
                         }
                     )
 
@@ -590,7 +592,6 @@ def parse_footnote(parser):
             # Keeps track of where we are currently looking for
             # markers within the entity being checked, like above.
             cursor = 0
-
 
             deletion_found = desc.text.find("…", cursor)
             if deletion_found > -1:
@@ -621,9 +622,6 @@ def parse_footnote(parser):
                 if num is None or num == "":
                     deletion_found = desc.text.find("…", cursor)
                     continue
-
-                # See function's comments for details.
-                ancestors = generate_ancestors(desc, parent)
 
                 # len('</sup>') == 6
                 sup_end = desc.text.find("</sup>", deletion_found + 1) + 6
@@ -656,22 +654,20 @@ def parse_footnote(parser):
                 # compatibility with other symbols, we'll put in a
                 # comma as the value and expect the marker renderer to
                 # use that directly instead of assuming a comma.
+                middle_punctuation = None
                 if desc.text[deletion_found + 1 : deletion_found + 2] == ",":
-                    ancestors[-1].attrib["middle-punctuation"] = ","
-
-                # Assign the regular expressions for the texts before
-                # and after the deletion mark, to the last node in the
-                # location XML.
-                if before_mark:
-                    ancestors[-1].attrib["before-mark"] = before_mark
-                if after_mark:
-                    ancestors[-1].attrib["after-mark"] = after_mark
+                    middle_punctuation = ","
 
                 marker_locations.append(
                     {
                         "num": int(num),
                         "type": "deletion",
-                        "started_at": ancestors,
+                        "started_at": {
+                            "xpath": make_xpath_from_node(desc),
+                            "middle_punctuation": middle_punctuation,
+                            "before_mark": before_mark,
+                            "after_mark": after_mark
+                        }
                     }
                 )
 
@@ -697,9 +693,6 @@ def parse_footnote(parser):
             while pointer_found > -1:
                 # Keep track of how far we've already searched.
                 cursor = pointer_found + 1
-
-                # See function's comments for details.
-                ancestors = generate_ancestors(desc, parent)
 
                 # If this is in fact a closing or deletion marker,
                 # then either the symbol "[" or "…" will appear
@@ -742,19 +735,15 @@ def parse_footnote(parser):
                 before_mark = "^" + regexify_markers(desc.text[:pointer_found])
                 after_mark = regexify_markers(desc.text[sup_end:]) + "$"
 
-                # Assign the regular expressions for the texts before
-                # and after the pointer, to the last node in the
-                # location XML.
-                if before_mark:
-                    ancestors[-1].attrib["before-mark"] = before_mark
-                if after_mark:
-                    ancestors[-1].attrib["after-mark"] = after_mark
-
                 marker_locations.append(
                     {
                         "num": int(num),
                         "type": "pointer",
-                        "started_at": ancestors,
+                        "started_at": {
+                            "xpath": make_xpath_from_node(desc),
+                            "before_mark": before_mark,
+                            "after_mark": after_mark,
+                        },
                     }
                 )
 
@@ -831,8 +820,9 @@ def parse_footnote(parser):
             location = E("location", {"type": ml["type"]})
 
             if ml["type"] in ["pointer", "deletion"]:
-                for node in ml["started_at"]:
-                    location.append(node)
+                location.attrib["xpath"] = ml["started_at"]["xpath"]
+                location.attrib["before-mark"] = ml["started_at"]["before_mark"]
+                location.attrib["after-mark"] = ml["started_at"]["after_mark"]
 
                 location_target.append(location)
 
@@ -842,23 +832,24 @@ def parse_footnote(parser):
                 # marker's locations.
                 started_at = ml["started_at"]
                 ended_at = ml["ended_at"]
-                if xml_lists_identical(started_at, ended_at):
-                    for node in started_at:
-                        location.append(node)
+                if (
+                    started_at["xpath"] == ended_at["xpath"]
+                    and started_at["words"] == ended_at["words"]
+                ):
+                    location.attrib["xpath"] = started_at["xpath"]
+                    if started_at["words"] is not None:
+                        location.attrib["words"] = started_at["words"]
                 else:
-                    # If, however, the the starting and ending
-                    # locations differ and we are not denoting a
-                    # region of text with "words", we'll need
-                    # sub-location nodes, <start> and <end>, within
-                    # the <location> element, so that the opening and
-                    # closing markers can be placed in completely
-                    # different places.
                     start = E("start")
                     end = E("end")
-                    for node in started_at:
-                        start.append(node)
-                    for node in ended_at:
-                        end.append(node)
+
+                    start.attrib["xpath"] = started_at["xpath"]
+                    end.attrib["xpath"] = ended_at["xpath"]
+
+                    if started_at["words"] is not None:
+                        start.attrib["words"] = started_at["words"]
+                    if ended_at["words"] is not None:
+                        end.attrib["words"] = ended_at["words"]
 
                     location.append(start)
                     location.append(end)
@@ -877,7 +868,7 @@ def parse_footnote(parser):
                 twin_found = False
                 for maybe_twin in location_target.findall("location"):
                     if xml_compare(maybe_twin, location):
-                        maybe_twin.getchildren()[-1].attrib["repeat"] = "true"
+                        maybe_twin.attrib["repeat"] = "true"
                         twin_found = True
                         break
 
