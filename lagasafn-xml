@@ -45,7 +45,6 @@ from lagasafn.parser import parse_sentence_with_title
 from lagasafn.parser import parse_subarticle
 from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
-from lagasafn.parser import postprocess_law
 from lagasafn.parse_footnotes import parse_footnotes
 from lagasafn.parse_footnotes import parse_footnote
 
@@ -242,9 +241,6 @@ def make_xml(law_num, law_year):
 
     parse_law(parser)
 
-    # TODO: Deprecate this function in favor of a `parse_table` function.
-    postprocess_law(parser)
-
     # Write the XML object to output file.
     write_xml(parser.law, XML_FILENAME % (parser.law_year, parser.law_num))
 
@@ -311,7 +307,6 @@ def make_xml(law_num, law_year):
     # all its content. Now, we do some post-processing of the already existing
     # content. This is kept separate mostly for reasons of clarity.
     ##########################################################################
-    postprocess_law(parser)
 
 
 

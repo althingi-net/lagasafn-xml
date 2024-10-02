@@ -29,6 +29,9 @@ def parse_footnotes(parser):
     if parser.trail_last().tag == "num-and-date":
         parser.note("Appending footnotes to law after finding num-and-date.")
         parser.law.append(parser.footnotes)
+    elif parser.trail_last().tag == "appendix":
+        parser.note("Appending footnotes to appendix after finding appendix.")
+        parser.appendix.append(parser.footnotes)
     elif parser.trail_last().tag == "chapter":
         parser.note("Appending footnotes to chapter after finding chapter.")
         parser.chapter.append(parser.footnotes)
@@ -240,9 +243,10 @@ def parse_footnote(parser):
             r'((… <sup style="font-size:60%"> \d+\) </sup>)? ?\]? ?'
             r'<sup style="font-size:60%"> \d+\) </sup>)'
         )
+        deletion_mark_re = r'(… <sup style="font-size:60%"> \d+\) </sup>)'
         nodes_to_kill = []
 
-        if parent == None:
+        if parent is None:
             parser.note("We think this should never happen; if you see this note, please investigate.")
             parser.leave("footnote-end")
             parser.leave("footnote")
@@ -285,7 +289,7 @@ def parse_footnote(parser):
             # ("peek") to the current one ("desc"), until there are no
             # closing markers in the next node. (Probably there is
             # only one, but you never know.)
-            while parser.matcher.check(peek.text, close_mark_re):
+            while parser.matcher.check(peek.text.strip(), close_mark_re):
                 # Get the actual closing marker from the next node.
                 stuff_to_move = parser.matcher.result()[0]
 
@@ -294,6 +298,20 @@ def parse_footnote(parser):
 
                 # Remove the closing marker from the next node.
                 peek.text = re.sub(close_mark_re, "", peek.text, 1)
+            while parser.matcher.check(peek.text.strip(), deletion_mark_re) and peek.tag != "mark-container":
+                # FIXME: This loop and the one above are virtually identical.
+                # Could use some code fancification.
+
+                # Do the exact same thing for deletion markers.
+
+                # Get the actual deletion marker from the next node.
+                stuff_to_move = parser.matcher.result()[0]
+
+                # Add the deletion marker to the current node.
+                desc.text += stuff_to_move
+
+                # Remove the deletion marker from the next node.
+                peek.text = re.sub(deletion_mark_re, "", peek.text, 1)
 
             # If there's no content left in the next node, aside from
             # the closing markers that we just moved, then we'll put
@@ -573,6 +591,7 @@ def parse_footnote(parser):
                             # of the closing marker, which is what we just
                             # performed.
                             "ended_at": ended_at,
+                            #"middle_punctuation": middle_punctuation,
                         }
                     )
 
@@ -823,6 +842,11 @@ def parse_footnote(parser):
                 location.attrib["xpath"] = ml["started_at"]["xpath"]
                 location.attrib["before-mark"] = ml["started_at"]["before_mark"]
                 location.attrib["after-mark"] = ml["started_at"]["after_mark"]
+                # FIXME: This if-sentence is ridiculous. We should rather make
+                # sure that `middle_punctuation` always exists in
+                # `ml["started_at"]`, even as `None`.
+                if "middle_punctuation" in ml["started_at"] and ml["started_at"]["middle_punctuation"] is not None:
+                    location.attrib["middle-punctuation"] = ml["started_at"]["middle_punctuation"]
 
                 location_target.append(location)
 

@@ -50,7 +50,18 @@ chapter > nr-title { font-weight: bold; }
 chapter > name { font-weight: bold; }
 name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
 
-ambiguous-section { font-style: italic; }
+/* appendix */
+appendix { display: block; margin-top: 1.5em; }
+appendix > nr-title { font-weight: bold; }
+appendix > name { font-weight: bold; }
+appendix > appendix-part { display: block; }
+appendix > appendix-part > nr-title { font-style: italic; }
+appendix > appendix-part > name { font-style: italic; }
+appendix > appendix-chapter { display: block; }
+appendix > appendix-chapter > name { font-weight: bold }
+appendix > draft { display: block; }
+
+ambiguous-section { display: block; font-style: italic; }
 
 /* article */
 art { display: block; margin-top: 0px; }
@@ -73,22 +84,31 @@ numart > name { font-style: italic; }
 numart > paragraph > name { font-style: italic; }
 numart[style-note="inline-with-parent"] { display: inline; }
 
+numart-chapter { display: block; text-indent: 1.04em; }
+numart-chapter > nr-title { font-weight: bold; }
+numart-chapter > name { font-weight: bold; }
+
 /* paragraph */
 paragraph { display: block; text-indent: 1.04em; }
+/* Disabled for now. Might be re-introduced when `paragraph` gets used in
+ * `subart`s, `numart`s and such.
 paragraph:first-of-type { display: inline; text-indent: 0; }
+*/
 
 /* sentence title */
 sen-title { font-style: italic; }
 
 /* sentence */
-sen sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
-sen span.fraction-denominator { font-size: 60%; line-height: 23px; }
+.legal-document sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+.legal-document span.fraction-denominator { font-size: 60%; line-height: 23px; }
 
 /* table */
-sen table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
-sen table tr:hover { background: #f3f2ed; }
-sen table th, sen table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
-sen table td:last-child, sen table th:last-child { border-right-width: 0px; }
+.legal-document table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
+.legal-document table tr:hover { background: #f3f2ed; }
+.legal-document table th, .legal-document table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
+.legal-document table td:last-child, .legal-document table th:last-child { border-right-width: 0px; }
+table-nr-title { font-weight: bold; }
+table-title { font-weight: bold; }
 
 /* footnotes */
 footnotes { display: none; text-indent: 1.04em;  }
@@ -98,3 +118,5 @@ footnote sup { display: inline; font-size: 7.69px !important; font-style: italic
 footnote-sen { display: inline; font-style: italic; font-size: 12.8px; }
 footnote-sen:nth-child(3) { margin-left: -1px; }
 location { display: none; }
+
+mark-container { display: block; }

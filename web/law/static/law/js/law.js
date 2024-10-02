@@ -541,7 +541,7 @@ var process_footnote = function() {
             }
         }
 
-        pointer_symbol = ' <sup>' + footnote_nr + ')</sup> ';
+        pointer_symbol = ' <sup style="font-size:60%"> ' + footnote_nr + ') </sup> ';
 
         // If we're pointing to a delelted section, and there's no content,
         // we want to add a deletion symbol instead of a pointer.
@@ -722,9 +722,9 @@ $(document).ready(function() {
 
     $('law').each(process_law);
     $('law art').each(process_art);
-    $('law art > subart').each(process_subart);
-    $('law art > subart[definition]').each(process_definitions);
-    $('law art sen').each(process_sentence);
+    $('law subart').each(process_subart);
+    $('law subart[definition]').each(process_definitions);
+    $('law sen').each(process_sentence);
 
     // The minister-clause is included in the XML only as HTML, but displayed
     // as text by default. Here we read it, and write it again, forcing the

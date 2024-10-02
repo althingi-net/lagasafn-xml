@@ -61,13 +61,21 @@ class LawParser:
         # their values should make sense at the end of the processing of a
         # particular line or clause. Never put nonsense into them because it will
         # completely confuse the processing elsewhere.
+        self.appendix = None
+        self.appendix_part = None
+        self.appendix_chapter = None
         self.chapter = None
         self.subchapter = None
         self.art = None
         self.art_chapter = None
         self.subart = None
+        self.numart_chapter = None
         self.numart = None
         self.ambiguous_section = None
+        self.table = None
+        self.tbody = None
+        self.tr = None
+        self.td = None
         self.footnotes = None
 
         self.parse_path = []
@@ -316,6 +324,8 @@ def parse_law(parser):
         if parse_presidential_decree_preamble(parser):
             continue
         if parse_numerical_article(parser):
+            continue
+        if parse_appendix(parser):
             continue
 
         # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
@@ -725,6 +735,7 @@ def parse_chapter(parser):
     name_or_nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
+    nr = None
     if parser.line == "<b>":
         parser.enter("chapter-nr-title")
         chapter_nr_title = name_or_nr_title
@@ -740,7 +751,7 @@ def parse_chapter(parser):
             roman_nr = maybe_nr
             nr_type = "roman"
         except roman.InvalidRomanNumeralError:
-            nr = int(maybe_nr)
+            nr = str(int(maybe_nr))
             roman_nr = None
             nr_type = "arabic"
 
@@ -768,7 +779,7 @@ def parse_chapter(parser):
         parser.consume("</b>")
         
         parser.chapter = E.chapter(
-            {"nr": str(nr), "nr-type": nr_type},
+            {"nr": nr, "nr-type": nr_type},
             E("nr-title", chapter_nr_title),
             E("name", chapter_name),
         )
@@ -929,22 +940,282 @@ def parse_extra_docs(parser):
 
 
 def parse_appendix(parser):
-    if check_chapter(parser.lines, parser.law) in ["appendix"] and parser.trail_reached(
-        "intro-finished"
+    if not (
+        check_chapter(parser.lines, parser.law) == "appendix"
+        and parser.trail_reached("intro-finished")
     ):
-        # Accompanying documents vary in origin and format, and are not a
-        # part of the formal legal text itself, even though legal text may
-        # reference them. Parsing them is beyond the scope of this tool.
-        # They always show up at the end, so at this point, our work is
-        # done. We'll escape the loop and go for post-processing.
-        return True
-    return False
+        return False
+
+    parser.enter("appendix")
+
+    nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    nr_title = strip_links(nr_title, strip_hellip_link=True).strip()
+
+    parser.appendix = E("appendix", E("nr-title", nr_title))
+
+    # Get the appendix number, if there is one.
+    nr_title_stripped = strip_links(
+        strip_markers(nr_title, strip_hellip_link=True)
+    ).strip()
+    nr = ""
+    nr_type = ""
+    roman_nr = ""
+    if nr_title_stripped.strip(".").lower() == "viðauki":
+        # A single, non-numbered appendix.
+        pass
+    else:
+        if nr_title_stripped.strip(".").lower().endswith(" viðauki"):
+            maybe_nr = nr_title_stripped.split(" ")[0].strip(".")
+        elif nr_title_stripped.lower().startswith("viðauki "):
+            maybe_nr = nr_title_stripped.split(" ")[1].strip(".")
+        else:
+            raise Exception("Unsupported appendix.")
+
+        if is_roman(maybe_nr):
+            nr = maybe_nr
+            nr_type = "roman"
+            roman_nr = str(roman.fromRoman(maybe_nr))
+        else:
+            nr = str(int(maybe_nr))
+            nr_type = "arabic"
+
+    # Adjust the number settings if appropriate.
+    if len(nr) and len(nr_type):
+        parser.appendix.attrib["nr"] = nr
+        parser.appendix.attrib["nr-type"] = nr_type
+        if nr_type == "roman":
+            parser.appendix.attrib["roman-nr"] = roman_nr
+
+    # See if the appendix has a name.
+    if parser.line == "<b>":
+        name = parser.collect_until("</b>")
+        parser.appendix.append(E("name", name))
+        parser.consume("</b>")
+
+    parser.consume("<br/>")
+
+    parser.law.append(parser.appendix)
+
+    parser.chapter = None
+    parser.art = None
+    parser.subart = None
+    parser.numart = None
+
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_appendix_part(parser):
+            continue
+        if parse_appendix_chapter(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_appendix_draft(parser):
+            continue
+        if parse_numart_chapter(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        break
+
+    # FIXME: Presumably this should be `parser.appendix = None`. Not fixing now
+    # because we're in the middle of something rather complicated and don't
+    # want to risk breaking something.
+    parser.appendix_part = None
+
+    parser.trail_push(parser.appendix)
+    parse_footnotes(parser)
+    parser.leave("appendix")
+    return True
+
+
+def parse_appendix_chapter(parser):
+    if not check_chapter(parser.lines, parser.law) == "appendix-chapter":
+        return False
+
+    parser.enter("appendix-chapter")
+
+    parser.appendix_chapter = E("appendix-chapter")
+
+    parser.appendix.append(parser.appendix_chapter)
+
+    # Parse the name.
+    name = parser.collect_until("</b>")
+    parser.consume("</b>")
+    parser.consume("<br/>")
+
+    name = strip_links(name, strip_hellip_link=True)
+
+    parser.appendix_chapter.append(E("name", name))
+
+    while True:
+        if parse_numerical_article(parser):
+            continue
+        break
+
+    parser.appendix_chapter = None
+
+    parser.leave("appendix-chapter")
+
+    return True
+
+
+def parse_numart_chapter(parser):
+    """
+    Only known to occur in appendices so far, specifically lög nr. 7/1998 (153c).
+    """
+    if not check_chapter(parser.lines, parser.law) == "numart-chapter":
+        return False
+
+    # Needed for `numart`s to properly locate themselves inside a
+    # `numart-chapter`.
+    parser.numart = None
+
+    parser.enter("numart-chapter")
+    parser.numart_chapter = E("numart-chapter")
+
+    nr_and_name = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    nr = nr_and_name.split(".")[0]
+    name = nr_and_name[len(nr) + 2:]
+
+    parser.numart_chapter.attrib["nr"] = nr
+    parser.numart_chapter.append(E("nr-title", nr + "."))
+    parser.numart_chapter.append(E("name",  name))
+
+    if parser.appendix is not None:
+        parser.appendix.append(parser.numart_chapter)
+
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_numerical_article(parser):
+            continue
+        break
+
+    parser.numart_chapter = None
+    parser.leave("numart-chapter")
+
+    return True
+
+
+def parse_paragraph(parser):
+    if not begins_with_regular_content(parser.line):
+        return False
+
+    parser.enter("paragraph")
+
+    parser.paragraph = E("paragraph")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    sens = separate_sentences(content)
+
+    add_sentences(parser.paragraph, sens)
+
+    # NOTE: This is being done here and there in the code, most notably in
+    # `parse_subart`. In time, this `parse_paragraph` function should be used
+    # instead, in which case more node support should be added where once this
+    # functionality has been removed from their respective `parse_` functions.
+    if parser.art_chapter is not None:
+        parser.art_chapter.append(parser.paragraph)
+    elif parser.appendix is not None:
+        parser.appendix.append(parser.paragraph)
+
+    parser.paragraph = None
+
+    parser.leave("paragraph")
+
+    return True
+
+
+def parse_appendix_draft(parser):
+    # Draft is a misnomer. The Icelandic word is "uppdráttur" which we have no
+    # idea how to translate, so this is as good as any.
+    #
+    # This phenomenon is currently only known to exist in the appendix of lög
+    # nr. 88/2018 and lög nr. 38/2002. The original bill contained images in its
+    # PDF version, but nothing in the HTML version.
+    if not parser.line.startswith("Uppdráttur"):
+        return False
+
+    parser.enter("appendix-draft")
+
+    parser.appendix_draft = E("draft")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    sens = separate_sentences(strip_links(content))
+
+    # The name is just the first sentence.
+    # Example:
+    # "Uppdráttur I. Strandsvæðisskipulag á Vestfjörðum..."
+    nr_title = sens[0]
+    sens = sens[1:]
+
+    # Figure out the number.
+    roman_nr = nr_title.split(" ")[1].strip(".")
+    nr = roman.fromRoman(roman_nr)
+
+    parser.appendix_draft.attrib["nr"] = roman_nr
+    parser.appendix_draft.attrib["roman-nr"] = str(nr)
+    parser.appendix_draft.attrib["number-type"] = "roman"
+
+    parser.appendix_draft.append(E("nr-title", nr_title))
+
+    add_sentences(parser.appendix_draft, sens)
+
+    parser.appendix.append(parser.appendix_draft)
+
+    parser.appendix_draft = None
+
+    parser.leave("appendix-draft")
+
+    return True
+
+
+def parse_appendix_part(parser):
+    # Occurs in lög nr. 98/2019 (153c).
+    if not (
+        parser.line == "<i>"
+        and "-hluti" in parser.peeks()
+    ):
+        return False
+
+    parser.enter("appendix-part")
+
+    parser.consume("<i>")
+    content = parser.collect_until("</i>", collect_first_line=True)
+    parser.consume("</i>")
+
+    parser.appendix_part = E("appendix-part")
+
+    if ":" in content:
+        nr_title, name = content.split(":")
+        nr_title = nr_title.strip() + ":"
+        name = name.strip()
+        parser.appendix_part.append(E("nr-title", nr_title))
+    else:
+        name = content
+
+    parser.appendix_part.append(E("name", name))
+    parser.appendix.append(parser.appendix_part)
+
+    parser.leave("appendix-part")
+
+    return True
 
 
 def parse_stray_deletion(parser):
     """
-    FIXME/TODO: This needs proper handling.
-    Currently ignores, resulting in bad content.
+    FIXME/TODO: This needs proper locating.
     """
     removed_anchor = "<a href=\"https://www.althingi.is/altext/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða.\">"
 
@@ -956,16 +1227,13 @@ def parse_stray_deletion(parser):
 
     parser.enter("stray-deletion")
 
-    if re.match(removed_anchor, parser.line):
-        parser.next()
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
 
-    parser.consume("…")
+    mark_container = E("mark-container", { "expiry-symbol-offset": "0" }, content)
 
-    parser.maybe_consume("</a>")
-
-    if parser.line == '<sup style="font-size:60%">':
-        parser.collect_until("</sup>")
-        parser.consume("</sup>")
+    if parser.numart is not None:
+        parser.numart.append(mark_container)
 
     parser.leave("stray-deletion")
 
@@ -1063,26 +1331,22 @@ def parse_article_chapter(parser):
     elif parser.art is not None:
         parser.art.append(parser.art_chapter)
 
-    # Check if the `art-chapter` contains text content which is not
-    # contained in a `subart` or `numart` below the `art-chapter`.
-    # This is only known to occur in 7. gr. laga nr. 90/2003.
-    #
-    # NOTE: We only check for one "paragraph", since we are currently
-    # not aware of there being a case where there are more. The
-    # children of `art-chapter`s are almost always `numart`s and when
-    # we find text like this, it is presumably just one paragraph or a
-    # short preface to a list of `numart` that follow.
-    if begins_with_regular_content(parser.peek(2)):
-        # Scroll over the break the belongs to the `art-chapter`.
-        parser.scroll_until("<br/>")
-        content = parser.collect_until("<br/>")
+    parser.consume("<br/>")
 
-        sens = separate_sentences(strip_links(content))
-        add_sentences(parser.art_chapter, sens)
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
+            # Only known to occur in 7. gr. laga nr. 90/2003.
+            continue
+        break
 
     parser.trail_push(parser.art_chapter)
 
     parser.leave("art-chapter")
+
+    parser.art_chapter = None
 
     return True
 
@@ -1140,6 +1404,11 @@ def parse_sentence_with_title(parser):
             and parser.peeks(2) == "</i>"
         )
     ):
+        return False
+
+    # Sentence-titles are not known to occur in appendices as of 2024-09-23. If
+    # they begin to occur, we'll need to handle this differently.
+    if parser.appendix_part is not None:
         return False
 
     # Parse a sentence with a title. These are rare, but occur in 3.
@@ -1444,19 +1713,20 @@ def parse_subarticle(parser):
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
 
     # Check if there's a table inside the subarticle. 
-    # (TODO: This finds the end of the table, not the beginning. Check that this makes sense.)
     linecount_to_table = parser.occurrence_distance(
-        parser.lines, r"<\/table>", linecount_to_br
+        parser.lines, r'<table width="100%">', linecount_to_br
     )
 
     subart_name = ""
     # If a table is found inside the subarticle, we'll want to end the
-    # subarticle when the table ends.
+    # sentence when the table begins.
     if linecount_to_table is not None:
-        # We must append the string '</table>' because it gets left
-        # behind by the collet_until function.
-        content = parser.collect_until("</table>") + "</table>"
-        parser.consume("</table>")
+        content = parser.collect_until('<table width="100%">')
+    elif parser.peeks() == "<span>":
+        # This means that maybe a `numart` is coming up in the beginning.
+        # Content will be empty, but caught by `parse_numerical_article`.
+        content = ""
+        parser.next()
     else:
         # Everything is normal.
         content = parser.collect_until("<br/>")
@@ -1465,7 +1735,8 @@ def parse_subarticle(parser):
     parser.subart = E("subart", {"nr": subart_nr})
 
     if parser.matcher.check(content, "^<b>(.*)</b>(.*)<i>(.*)</i>"):
-        # TODO: This is never used!
+        # FIXME: This probably belongs in its own `parse_person` function!
+
         # Check if the subarticle content contains bold AND italic text, which
         # may indicate a person (bold) is being given a role (italic).
 
@@ -1486,6 +1757,8 @@ def parse_subarticle(parser):
         add_sentences(parser.subart, sens)
 
     elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
+        # FIXME: This should probably be merged with `parse_definition`.
+
         # Check for definitions in subarts. (Example: 153c, 7/1998)
         raw_definition, before, definition = parser.matcher.result()
 
@@ -1547,6 +1820,10 @@ def parse_subarticle(parser):
         parser.art_chapter.append(parser.subart)
     elif parser.art is not None:
         parser.art.append(parser.subart)
+    elif parser.appendix_part is not None:
+        parser.appendix_part.append(parser.subart)
+    elif parser.appendix is not None:
+        parser.appendix.append(parser.subart)
     elif parser.chapter is not None:
         parser.chapter.append(parser.subart)
     else:
@@ -1557,6 +1834,8 @@ def parse_subarticle(parser):
 
     while True:
         parser.maybe_consume_many("<br/>")
+        if parse_table(parser):
+            continue
         if parse_sentence_with_title(parser):
             continue
         if parse_stray_deletion(parser):
@@ -1578,9 +1857,9 @@ def parse_subarticle(parser):
 
 
 def parse_definition(parser):
-    if parser.line != "<i>":
+    if parser.line != "<i>" or parser.appendix_part is not None:
         return False
-    
+
     parser.enter("definition")
     # Parse a definition.
     definition = parser.collect_until("</i>")
@@ -1625,7 +1904,8 @@ def parse_deletion_marker(parser):
 
 def parse_numerical_article(parser):
     if not (
-        parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        parser.matcher.check(parser.line, r'<span id="(F\d?)?[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        # FIXME: Try matching the following line without a regex check.
         or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
         or is_numart_address(parser.line)
     ):
@@ -1651,10 +1931,16 @@ def parse_numerical_article(parser):
         ". ", ""
     )
 
-    # Support for numart ranges, which are only known to occur when
-    # many numarts have been removed. This occurs for example in 145.
-    # gr. laga nr. 108/2007.
     if parser.matcher.check(numart_nr, r"(\d+)\.–(\d+)"):
+        # Support for numart ranges, which are only known to occur when many
+        # numarts have been removed. This occurs for example in 145. gr. laga
+        # nr. 108/2007.
+        from_numart_nr, to_numart_nr = parser.matcher.result()
+        numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
+    elif parser.matcher.check(numart_nr, r"([A-Z])\.[–-]([A-Z])"):
+        # Support for alphabetical ranges, which are also only known to occur
+        # when many numarts have been removed. This happens in temporary
+        # clauses of lög nr. 99/1993.
         from_numart_nr, to_numart_nr = parser.matcher.result()
         numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
 
@@ -1669,6 +1955,19 @@ def parse_numerical_article(parser):
         prev_numart = parser.numart
     else:
         prev_numart = None
+
+    if numart_nr == "1.1":
+        # This happens when a `numart` is detected in a tree-scheme (example in
+        # appendix of lög nr. 55/2012). In those cases, the previous `numart`
+        # will have been previously detected as numeric, since it begins in the
+        # same way, with a "1". We correct that here.
+        #
+        # But sometimes, this is actually the start of a tree-scheme `numart`
+        # list inside something like a `numart-chapter`, in which case we don't
+        # need change anything retro-actively.
+        # Example: I. viðauki laga nr. 7/1998 (153c).
+        if prev_numart is not None and prev_numart.attrib["nr-type"] == "numeric":
+            prev_numart.attrib["nr-type"] = "tree"
 
     # This is only known to happen in 3. gr. laga nr. 160/2010. A
     # numart has been removed and the numbers of its following numarts
@@ -1695,6 +1994,7 @@ def parse_numerical_article(parser):
         add_sentences(dummy_numart, [content])
         prev_numart.getparent().append(dummy_numart)
         parser.scroll_until("<br/>")
+        parser.leave("numart")
         return
 
     # In 6. tölul. 1. gr. laga nr. 119/2018, the removal of previous
@@ -1788,6 +2088,8 @@ def parse_numerical_article(parser):
             # was appended to.
             parent = prev_numart.getparent()
         else:
+            # FIXME: These is no obvious reason for this `if`-block to be
+            # inside an `else`-block.
             if numart_nr.lower() in ["a", "i", "—", "–"] or (
                 numart_nr.isdigit() and int(numart_nr) == 1
             ):
@@ -1808,7 +2110,21 @@ def parse_numerical_article(parser):
                 # of the list we've been working on recently, which is
                 # the same parent as the nodes that came before we
                 # started the sub-list.
-                parent = prev_numart.getparent().getparent()
+                #
+                # We'll need to iterate through ancestors in case there are
+                # multiple levels of `numart`s, checking each time if the
+                # current `numart_nr` matches the expected next numart number
+                # from each ancestor. Once `numart_nr` matches what we
+                # expected, we know we've found the right ancestor.
+                found_parent = None
+                maybe_parent = prev_numart.getparent()
+                while found_parent is None:
+                    expected = numart_next_nrs(maybe_parent)
+                    if numart_nr in expected:
+                        found_parent = maybe_parent
+                    maybe_parent = maybe_parent.getparent()
+
+                parent = maybe_parent
 
     # A parent may already be set above if `numart` currently being
     # handled is not the first one in its parent article/subarticle.
@@ -1827,6 +2143,14 @@ def parse_numerical_article(parser):
             and parser.art_chapter.getparent().tag == "subart"
         ):
             parent = parser.art_chapter
+        elif parser.numart_chapter is not None:
+            parent = parser.numart_chapter
+        elif parser.appendix_chapter is not None:
+            parent = parser.appendix_chapter
+        elif parser.appendix_part is not None:
+            parent = parser.appendix_part
+        elif parser.appendix is not None:
+            parent = parser.appendix
         elif parser.subart is not None:
             parent = parser.subart
         elif parser.art is not None:
@@ -1843,7 +2167,12 @@ def parse_numerical_article(parser):
             parent = parser.law
 
     # Figure out the numart's type.
-    if numart_nr[0].isdigit():
+    if re.match(r"^\d+\.\d+$", numart_nr) or re.match(r"^\d+\.\d+\.\d+$", numart_nr):
+        # NOTE: This has to be checked before the "numeric" detection below,
+        # because the first character of these tree-scheme `numart_nr`s is also
+        # a digit.
+        numart_type = "tree"
+    elif numart_nr[0].isdigit():
         numart_type = "numeric"
     elif numart_nr in ["—", "–"]:
         numart_type = "en-dash"
@@ -1861,7 +2190,7 @@ def parse_numerical_article(parser):
 
         if numart_nr.lower() == "i":
             # See comment for `special_roman` above.
-            if prev_numart is None or prev_numart.attrib["nr"] != "h" or special_roman:
+            if prev_numart is None or prev_numart.attrib["nr"].lower() != "h" or special_roman:
                 numart_type = "roman"
             else:
                 numart_type = "alphabet"
@@ -2021,13 +2350,18 @@ def parse_numerical_article(parser):
             # Inserted immediately after the `nr-title`, so 1.
             parser.numart.insert(1, E("name", numart_name))
 
+    while True:
+        parser.maybe_consume("<br/>")
         # Handle extra paragraphs that we don't know where to place.
-        while begins_with_regular_content(parser.lines.peek()):
+        if begins_with_regular_content(parser.line):
+            # FIXME: Move this stuff to `parse_paragraph` and start using that
+            # here instead of this.
+
             # When regular (text) content immediately follows a
             # numart, and not a new location like an article,
             # subarticle or another numart, we must determine its
             # nature. We'll start by finding the content.
-            extra_content = parser.collect_until("<br/>")
+            extra_content = parser.collect_until("<br/>", collect_first_line=True)
 
             # Process the extra content into extra sentences.
             extra_sens = separate_sentences(strip_links(extra_content))
@@ -2080,6 +2414,10 @@ def parse_numerical_article(parser):
             # numart, so that the next numart gets the right parent.
             if extra_sens_target.tag == "numart":
                 parser.numart = extra_sens_target
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        break
 
     parser.trail_push(parser.numart)
     parser.leave("numart")
@@ -2088,115 +2426,116 @@ def parse_numerical_article(parser):
 
 def parse_table(parser):
     if not parser.matcher.check(parser.line, "<table"):
-        return
+        return False
 
     parser.enter("table")
-    # Parse a stray table, that we haven't run across inside a
-    # subarticle. We'll append it to previously parsed thing. The
-    # table width is only for consistency with the typical input.
 
-    content = (
-        '<table width="100%">'
-        + parser.collect_until("</table>")
-        + "</table>"
-    )
-    sen = separate_sentences(content).pop()
+    parser.table = E("table")
+    parser.tbody = E("tbody")
+    parser.table.append(parser.tbody)
+
+    parser.consume('<table width="100%">')
+    parser.consume("<tbody>")
 
     if parser.subart is not None:
-        add_sentences(parser.subart, [sen])
+        parser.subart.append(parser.table)
     elif parser.art is not None:
-        add_sentences(parser.art, [sen])
+        parser.art.append(parser.table)
+
+    while True:
+        if parse_tr(parser):
+            continue
+
+        break
+
+    parser.consume("</tbody>")
+    parser.consume("</table>")
+
+    parser.table = None
+    parser.tbody = None
 
     parser.leave("table")
+    return True
 
 
-def postprocess_law(parser):
-    # FIXME: This function only converts bare-HTML tables into slightly better
-    # XML. There is no good reason to do this in post-processing, now that we
-    # have recursive-descent. Much rather, we should move this to a new parser
-    # function called `parse_table` and handle it like everything else.
+def parse_tr(parser):
+    if not parser.matcher.check(parser.line, "<tr>"):
+        return False
 
-    parser.enter("postprocess")
-    # Turn HTML tables, currently encoded into HTML characters, into properly
-    # structured and clean XML tables with properly presented content.
-    #
-    # We have no reason to create a table structure different from the HTML
-    # structure. We'll just make sure that the data is sanitized properly and
-    # that there is no useless information, by recreating the table in XML.
-    # This way, it'll be quite easy for a layout engine in a browser to render
-    # it correctly.
-    for sen in parser.law.xpath("//sen"):
-        if sen.text.find("<table ") == 0:
-            # The XML table that we are going to produce.
-            table = E("table")
+    parser.enter("tr")
 
-            # The HTML table from which we're fetching information.
-            html_table = etree.HTML(sen.text).find("body/table/tbody")
+    parser.tr = E("tr")
+    parser.next()
 
-            # Find the rows and headers inside the HTML.
-            rows = super_iter(html_table)
+    parser.tbody.append(parser.tr)
 
-            # If the table has a header, it will typically be the top row
-            # (exception explained below). We'll check the first column of the
-            # top row to check whether the headers are designated via <b> tags
-            # or <i> tags. If no such tags are found, we are forced to
-            # conclude that there is no header. This is also not always true
-            # (also explained below).
-            #
-            # TODO: In temporary clause XII in law nr. 29/1993, tables are
-            # found with three rows of headers. These are currently not
-            # supported and result in missing data.
-            #
-            # TODO: In 5. mgr. 19. gr. laga nr. 87/2004, headers are not
-            # stylized at all, thereby making them virtually indistinguishable
-            # from headers. These are currently unsupported at the moment,
-            # meaning they will be interpreted as if they were data cells.
-            #
-            # TODO: In 96. gr. laga nr. 55/1991, bold and italic items seem to
-            # be skipped altogether. This must be the code's fault, somehow.
+    while True:
+        if parse_td(parser):
+            continue
 
-            toprow = next(rows)
-            if toprow[0].find("b") is not None:
-                header_style = "b"
-            elif toprow[0].find("i") is not None:
-                header_style = "i"
-            else:
-                header_style = ""
+        break
 
-            # If we've determined that the table has a header at all...
-            if header_style:
-                thead = E("thead", E("tr"))
-                table.append(thead)
+    parser.consume("</tr>")
 
-                # Add headers to the XML table.
-                for col in toprow:
-                    header = col.find(header_style).text.strip()
-                    if header_style != "b":
-                        # Headers are normally bold, but there are exceptions.
-                        # We'll only designate a header style when we run into
-                        # an exception to the rule.
-                        thead.find("tr").append(
-                            E("th", header, {"header-style": header_style})
-                        )
-                    else:
-                        thead.find("tr").append(E("th", header))
-            else:
-                # Roll one back because we've decided that the first row is
-                # not a header after all.
-                rows.prev()
+    parser.tr = None
 
-            tbody = E("tbody")
-            table.append(tbody)
+    parser.leave("tr")
+    return True
 
-            # Add rows.
-            for row in rows:
-                tr = E("tr")
-                tbody.append(tr)
-                for col in row:
-                    tr.append(E("td", col.text.strip()))
 
-            # Replace HTML-encoded text with XML table.
-            sen.text = None
-            sen.append(table)
+def parse_td(parser):
+    if not parser.matcher.check(parser.line, r"<td .*>"):
+        return False
 
-    parser.leave("postprocess")
+    # TODO: Support for `colspan="2"` found in 29/1993.
+
+    parser.enter("td")
+
+    parser.td = E("td")
+    parser.tr.append(parser.td)
+
+    # Only add content if the `td` is not empty, otherwise it starts adding
+    # everything from the next `td`.
+    if parser.peeks() == "</td>":
+        parser.next()
+        parser.consume("</td>")
+    else:
+        table_nr_title = table_title = ""
+
+        if parser.peeks() == "<b>":
+            parser.next()
+            parser.consume("<b>")
+            table_nr_title, table_title = get_nr_and_name(
+                parser.collect_until("</b>", collect_first_line=True)
+            )
+            parser.td.attrib["header-style"] = "b"
+        elif parser.peeks() == "<i>":
+            parser.next()
+            parser.consume("<i>")
+            table_nr_title, table_title = get_nr_and_name(
+                parser.collect_until("</i>", collect_first_line=True)
+            )
+            parser.td.attrib["header-style"] = "i"
+
+        # NOTE: We don't place the `table-nr-title` in an attribute here
+        # because it is unclear how it would be useful for referencing. They
+        # may show up in the first row or the first column, or even the
+        # non-first column of a non-first row.
+        #
+        # We may need a much more sophisticated way of identifying columns and
+        # rows when they are changed by bills or referenced by other laws.
+        if len(table_nr_title):
+            parser.td.append(E("table-nr-title", "%s." % table_nr_title))
+
+        if len(table_title):
+            parser.td.append(E("table-title", table_title))
+
+        content = parser.collect_until("</td>")
+        parser.consume("</td>")
+
+        add_sentences(parser.td, separate_sentences(content))
+
+    parser.td = None
+
+    parser.leave("td")
+    return True

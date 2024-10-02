@@ -86,6 +86,24 @@ def numart_next_nrs(prev_numart):
                 str(int(prev_numart_nr)) + "a",
             ]
 
+            # But! We may also expect a tree-like numbering scheme:
+            # 1.
+            # 1.1
+            # 1.1.1
+            # 1.1.2
+            # 1.2.1
+            # 1.2.2
+            # ...etc.
+            # Since "1." is indistinguishable between the "numeric" and "tree"
+            # schemes, we need to expect a "tree" scheme, even though the
+            # parser currently thinks that it's "numeric".
+            #
+            # We limit this expectation to single-digit numbers, though, since
+            # these structures are extremely unlikely to even reach 9, let
+            # alone above.
+            if len(prev_numart_nr) == 1:
+                expected_numart_nrs.append("%s.1" % prev_numart_nr)
+
         elif matcher.check(prev_numart_nr, r"(\d+)-(\d+)"):
             # Numarts may be ranges, (see 145. gr. laga nr. 108/2007), in
             # which case we only need to concern ourselves with the latter
@@ -112,6 +130,52 @@ def numart_next_nrs(prev_numart):
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
 
+    elif prev_numart.attrib["nr-type"] == "tree":
+        # NOTE: This could be generalized to support more permutations of
+        # predictable `numart_nr`s, but we haven't run across them yet, and
+        # these are exceedingly rare, basically only existing in appendices and
+        # strange documents. So we'll just let this do until we need something
+        # more sophisticated.
+
+        values = prev_numart.attrib["nr"].split(".")
+
+        # Predict that the tree branches out again.
+        expected_numart_nrs.append(prev_numart.attrib["nr"] + ".1")
+
+        # Go through each place and figure out what can be expected from any of
+        # them being incremented.
+        for place, value in enumerate(values):
+            dealing_with = values[:place+1]
+            expected_numart_nrs.append(
+                ".".join(dealing_with[:-1] + [str(int(dealing_with[-1])+1)])
+            )
+
+            # A tree-scheme `numart` list may look like this:
+            # 1
+            # 1.1
+            # 1.2
+            # 2
+            # 2.1
+            # 2.2
+            # ...etc.
+            #
+            # But it may also look like this:
+            # 1.1
+            # 1.2
+            # 2.1
+            # 2.2
+            # ...etc.
+            #
+            # In other words, "1.2" in the above example must not only expect
+            # the next `numart` to include "2", but also "2.1.".
+            #
+            # If we're handling the second-last place, we'll add another copy
+            # of what was created above, except with ".1" appended to it.
+            if place == len(values) - 2:
+                expected_numart_nrs.append(
+                    expected_numart_nrs[-1] + ".1"
+                )
+
     elif prev_numart.attrib["nr-type"] == "en-dash":
         expected_numart_nrs += ["—", "–"]
     elif prev_numart.attrib["nr-type"] == "roman":
@@ -130,7 +194,7 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs.append(next_numart_nr)
 
         elif prev_numart_nr == "z":
-            expected_numart_nrs = "þ"
+            expected_numart_nrs = ["þ", "aa"]
 
         elif prev_numart_nr == "þ":
             expected_numart_nrs = "æ"
@@ -172,6 +236,13 @@ def numart_next_nrs(prev_numart):
         elif prev_numart_nr == "ee":
             expected_numart_nrs = ["ef", "ff"]
 
+        elif prev_numart_nr == "U":
+            expected_numart_nrs = ["Ú"]
+        elif prev_numart_nr == "Ú":
+            expected_numart_nrs = ["V"]
+        elif prev_numart_nr == "Z":
+            expected_numart_nrs = ["AA"]
+
         # Same thing as with "aa" above, only uppercase.
         elif prev_numart_nr == "AA":
             expected_numart_nrs = ["AB", "BB"]
@@ -197,6 +268,8 @@ def numart_next_nrs(prev_numart):
             # for now.
             if "–" in prev_numart_nr:
                 prev_numart_nr = prev_numart_nr[prev_numart_nr.find("–") + 1 :]
+            elif "-" in prev_numart_nr:
+                prev_numart_nr = prev_numart_nr[prev_numart_nr.find("-") + 1 :]
 
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -264,7 +337,7 @@ def terminal_width_and_height():
     return width, height
 
 
-def strip_links(text):
+def strip_links(text, strip_hellip_link=False):
     """
     Strips links from text. Also strips trailing whitespace after the link,
     because there is always a newline and a tab after the links in our input.
@@ -284,8 +357,14 @@ def strip_links(text):
     # proper XML in the main processing function. Note that for the time
     # being, they are left as HTML-encoded text and not actual XML (until the
     # aforementioned XML post-processing takes place).
-
-    regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>"
+    #
+    # An exception to this occurs in I. viðauki laga nr. 36/2011. In that case,
+    # the hellip is actually a deletion marker, which then doesn't get parsed
+    # as one, because it contains a link. This is believed to be very rare.
+    if strip_hellip_link:
+        regex = r"<a [^>]*?>\s*(.*?)\s*</a>"
+    else:
+        regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>"
     text = re.sub(regex, r"\1", text)
 
     return text
@@ -388,7 +467,7 @@ def generate_legal_reference(input_node, skip_law=False):
         if node.tag == "numart":
             if node.attrib["nr-type"] == "alphabet":
                 result += "%s-stafl. " % node.attrib["nr"]
-            elif node.attrib["nr-type"] in ["numeric", "roman"]:
+            elif node.attrib["nr-type"] in ["numeric", "roman", "tree"]:
                 result += "%s. tölul. " % node.attrib["nr"]
             elif node.attrib["nr-type"] == "en-dash":
                 result += "%s. pkt. " % node.attrib["nr"]
@@ -438,9 +517,20 @@ def generate_legal_reference(input_node, skip_law=False):
             # technical distinction between a `subart` and `paragraph`, but
             # in human speech, they are called the same thing ("málsgrein").
             result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+        elif node.tag == "appendix":
+            if "nr-type" not in node.attrib:
+                result += "viðauka "
+            elif node.attrib["nr-type"] == "arabic":
+                result += "%s. viðauka " % node.attrib["nr"]
+            elif node.attrib["nr-type"] == "roman":
+                result += "%s. viðauka " % node.attrib["roman-nr"]
+            else:
+                raise Exception("Parsing of node not implemented")
         elif node.tag == "chapter":
             pass
         elif node.tag == "subchapter":
+            pass
+        elif node.tag == "numart-chapter":
             pass
         else:
             raise Exception("Parsing of node not implemented")
@@ -800,10 +890,18 @@ def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
             f.write(pretty_xml_as_string)
         else:
             etree.indent(xml_doc, level=0)
+            xml_string = etree.tostring(
+                xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+            ).decode("utf-8")
+
+            # The "<" symbol gets escaped as "&lt;" earlier in the process, but
+            # the `etree.tostring` function above re-escapes it to `&amp;lt;".
+            # We'll un-escape it here, instead of dealing with CDATA
+            # encapsulation or the like.
+            xml_string = xml_string.replace("&amp;lt;", "&lt;")
+
             f.write(
-                etree.tostring(
-                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-                ).decode("utf-8")
+                xml_string
             )
 
 

@@ -38,9 +38,13 @@ def get_nr_and_name(goo: str) -> (str, str):
     if dot_loc > -1:
         nr = goo[:dot_loc]
         name = goo[dot_loc + 1 :].strip()
-    else:
+    elif is_numart_address(goo):
         nr = goo.strip()
         name = ""
+    else:
+        nr = ""
+        name = goo.strip()
+
     return nr, name
 
 
@@ -81,7 +85,7 @@ def regexify_markers(text):
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
     text = re.sub(
         r'\],?\.? ?<sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'\.?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
+        r'\.? ?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
         text,
     )
 
@@ -102,14 +106,19 @@ def regexify_markers(text):
     return text
 
 
-def strip_markers(text):
+def strip_markers(text, strip_hellip_link=False):
     """
     Strips markers from text and cleans up resulting weirdness.
+
+    By default, it leaves "…" alone when it's a link, but the
+    `strip_hellip_link` parameter can be set to `True` for it to be included.
     """
 
-    # We want to keep "…" when it's a part of a link and not a deletion marker.
-    # Temporarily replacing it with a text we'll replace back later.
-    text = text.replace("> … </a>", "> HELLIP </a>")
+    if not strip_hellip_link:
+        # We want to keep "…" when it's a part of a link and is not a deletion
+        # marker. We'll temporarily replace it with a piece of text that we'll
+        # replace back later.
+        text = text.replace("> … </a>", "> HELLIP </a>")
 
     # Remove change/deletion markers.
     text = text.replace("…", "")
@@ -124,8 +133,9 @@ def strip_markers(text):
     text = text.replace(" ,", ",")
     text = text.replace(" .", ".")
 
-    # Re-insert the "…" that we saved from before.
-    text = text.replace("> HELLIP </a>", "> … </a>")
+    if not strip_hellip_link:
+        # Re-insert the "…" that we saved from before.
+        text = text.replace("> HELLIP </a>", "> … </a>")
 
     return text
 
@@ -173,6 +183,11 @@ def check_chapter(lines, law):
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
 
+    # We must examine the first "sentence" to see if it constitute a Roman
+    # numeral. Possibly we'll analyze it better later to determine things
+    # like subchapters.
+    first = peek_stripped[0 : peek_stripped.find(".")]
+
     # First see if this is ignorable, because in that case we don't need to do
     # anything else.
     line_type = is_ignorable_chapter(peek_stripped)
@@ -183,6 +198,9 @@ def check_chapter(lines, law):
     # a subchapter. This has not been researched.
     if peek_stripped.lower().find("bráðabirgð") > -1:
         line_type = "chapter"
+
+    elif peek_stripped.lower().find("viðauki") > -1:
+        line_type = "appendix"
 
     # Check if this is an "article chapter". Those are not exactly numerical
     # articles, but chapter-like phenomena that resides inside articles, or
@@ -219,24 +237,27 @@ def check_chapter(lines, law):
         else:
             line_type = "art-chapter"
 
-    else:
-        # We must examine the first "sentence" to see if it constitute a Roman
-        # numeral. Possibly we'll analyze it better later to determine things
-        # like subchapters.
-        first = peek_stripped[0 : peek_stripped.find(".")]
-
+    elif any(
+        [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók", "kap"]]
+    ):
         # If f.e. ". kafli" or ". hluti" can be found...
-        if any(
-            [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók"]]
-        ):
-            line_type = "chapter"
+        line_type = "chapter"
+    elif is_roman(first) and first not in ["C", "D"]:
         # We exclude "C" and "D" because as Roman numerals, they are much too
         # high to ever be used for a chapter. Later we may need to revise this
         # when we implement for support chapters/subchapters organized by
         # Latin letters. But since we don't support it yet, we'll just ignore
         # them like we do "A" and "B".
-        elif is_roman(first) and first not in ["C", "D"]:
-            line_type = "chapter"
+        line_type = "chapter"
+    elif first.isdigit():
+        # Check for what we'll call a `numart-chapter`, which is when the first
+        # `numart` is bold.
+        #
+        # This is only known to occur in appendices, and currently the only
+        # example is "I. viðauki laga nr. 7/1998.
+        line_type = 'numart-chapter'
+    elif law.getchildren()[-1].tag == "appendix":
+        line_type = "appendix-chapter"
 
     # If we've reached this point without conclusion, this is an ambiguous
     # bold section that are (as of yet) unable to determine the nature of.
@@ -269,7 +290,7 @@ def separate_sentences(content):
     # subarticle 2 of article 5. Their use results in various combinations of
     # numbers and dots that need to be taken into account to avoid wrongly
     # starting a new sentence when they are encountered.
-    reference_shorthands = ["gr", "mgr", "málsl", "tölul", "staf"]
+    reference_shorthands = ["gr", "mgr", "málsl", "tölul", "staf", "viðauka"]
 
     # Encode recognized short-hands in text so that the dots in them don't get
     # confused for an end of a sentence. They will be decoded when appended to
@@ -652,6 +673,9 @@ def add_sentences(target_node, sens):
         if expiry_loc > -1:
             sen = sen.replace(MAGIC_EXPIRY_TOKEN, "…")
             sen_elem.text = sen
+            # NOTE: In reality, the `expiry-symbol-offset` attribute only
+            # prevents the node from being automatically deleted when it's
+            # "empty" (i.e. empty if it's without markers).
             sen_elem.attrib["expiry-symbol-offset"] = str(expiry_loc)
 
         # Special flag to assist visual software, indicating that even though
@@ -683,12 +707,6 @@ def is_ignorable_chapter(line: str) -> str:
     # raw HTML goo later.
     if matcher.check(line.lower(), "fylgiskj[aö]l"):
         line_type = "extra-docs"
-
-    # Same goes for appendices as extra-docs.
-    elif matcher.check(line.lower(), ".* viðauki") or matcher.check(
-        line.lower(), "viðauki.*"
-    ):
-        line_type = "appendix"
 
     return line_type
 
