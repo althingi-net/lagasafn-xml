@@ -90,6 +90,15 @@ def clean_content(content):
     )
     content = e.sub(r"\1/\2", content)
 
+    # Remove superscript from squared or cubed units of measurements. These
+    # style choices muts be stylized by rendering software if needed.
+    # e = re.
+    e = re.compile(r'( k?m)<small><sup>(\d)</sup></small>')
+    content = e.sub(r"\1\2", content)
+
+    # Remove superscript from "CO2". Must be re-styled in rendering.
+    content = content.replace("CO<small><sub>2</sub></small>", "CO2")
+
     # Remove <a id=""> tags which are unclosed and seem without purpose.
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
     # content = content.replace('<a id="">', '')

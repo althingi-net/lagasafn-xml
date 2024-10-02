@@ -625,6 +625,18 @@ var process_sentence = function() {
         /(^([0-9])\d{1,3})\/(\d{1,2})[^0-9]/g,
         '<sup class="fraction-numerator">$1</sup>/ <span class="fraction-denominator">$2</span> '
     ));
+
+    // Style "CO2".
+    $sen.html($sen.html().replace(
+        /CO2/g,
+        'CO<small><sub>2</sub></small>'
+    ));
+
+    // Style "m2", "km2", "m3" and such.
+    $sen.html($sen.html().replace(
+        / (k)?m([23])/g,
+        ' $1m<small><sup>$2</sup></small>'
+    ));
 }
 
 
