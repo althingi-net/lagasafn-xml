@@ -2266,13 +2266,16 @@ def parse_numerical_article(parser):
     ):
         numart_nr_title += parser.collect_until("</sup>") + " </sup>"
 
-    if parser.peeks() == "<i>":
+    numart_name = ""
+    if parser.peeks() == "<i>" or (parser.peeks() == "[" and parser.peeks(2) == "<i>"):
         # Looks like this numerical article has a name.
-        parser.scroll_until("<i>")
+        # Note that an opening marker may come before the name, in which case
+        # we'll want to include it in the name, so we collect stuff before the `<i>`.
+        numart_name = parser.collect_until("<i>")
 
         # Note that this gets inserted **after** we add the sentences
         # with `add_sentences` below.
-        numart_name = parser.collect_until("</i>")
+        numart_name += parser.collect_until("</i>")
 
         # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
         # The name of a numerical article is contained in two "<i>"
@@ -2280,8 +2283,6 @@ def parse_numerical_article(parser):
         if parser.lines.peeks() == "og" and parser.lines.peeks(2) == "<i>":
             addendum = parser.collect_until("</i>").replace("<i> ", "")
             numart_name += " " + addendum
-    else:
-        numart_name = None
 
     # Read in the remainder of the content.
     content = parser.collect_until("<br/>")
@@ -2346,7 +2347,7 @@ def parse_numerical_article(parser):
 
         # Add the title info to the `numart`.
         parser.numart.insert(0, E("nr-title", numart_nr_title))
-        if numart_name is not None:
+        if len(numart_name) > 0:
             # Inserted immediately after the `nr-title`, so 1.
             parser.numart.insert(1, E("name", numart_name))
 
