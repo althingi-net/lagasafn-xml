@@ -99,8 +99,8 @@ paragraph:first-of-type { display: inline; text-indent: 0; }
 sen-title { font-style: italic; }
 
 /* sentence */
-.legal-document sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
-.legal-document span.fraction-denominator { font-size: 60%; line-height: 23px; }
+sen sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+span.fraction-denominator { font-size: 60%; line-height: 23px; }
 
 /* table */
 .legal-document table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
