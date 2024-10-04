@@ -1393,19 +1393,15 @@ def parse_ambiguous_chapter(parser):
 
 
 def parse_sentence_with_title(parser):
-    # FIXME: I will like to profusely apologize for the utter horror that this
-    # function has become. It should be fixed.
-    # Specifically, this should not be peeking backwards into the history using
-    # `parser.peeks(-1)`.
     if not (
         (
-            parser.peeks(0) == "["
-            and parser.peeks(1) == "<i>"
-            and parser.peeks(3) == "</i>"
-        ) or (
-            parser.peeks(0) == "<i>"
-            and parser.peeks(2) == "</i>"
+            (
+                parser.line in ["[", "[["]
+                and parser.peeks(1) == "<i>"
+            )
+            or parser.line == "<i>"
         )
+        and parser.peeks() != "<small>"
     ):
         return False
 
@@ -1426,17 +1422,17 @@ def parse_sentence_with_title(parser):
 
     parser.enter("sen-title")
 
-    if parser.line == "[":
-        parser.next()
+    parser.numart = None
 
     sen_title_text = ""
-    back_peek = parser.peeks(-1)
-    while len(back_peek) > 0 and back_peek[-1] == "[":
-        sen_title_text += "["
-        back_peek = back_peek[0:-1]
+
+    if parser.line in ["[", "[["]:
+        sen_title_text += parser.line
+        parser.next()
 
     sen_title_text += parser.collect_until("</i>")
     content = parser.collect_until("<br/>")
+    parser.consume("<br/>")
     if parser.subart is not None:
         sen_title = E("sen-title", sen_title_text)
         parser.subart.append(sen_title)
@@ -1715,6 +1711,8 @@ def parse_subarticle(parser):
     # Parse a subart.
     parser.enter("subart")
 
+    parser.numart = None
+
     art_nr, subart_nr = parser.matcher.result()
 
     # Check how far we are from the typical subart end.
@@ -1765,8 +1763,6 @@ def parse_subarticle(parser):
         add_sentences(parser.subart, sens)
 
     elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
-        # FIXME: This should probably be merged with `parse_definition`.
-
         # Check for definitions in subarts. (Example: 153c, 7/1998)
         raw_definition, before, definition = parser.matcher.result()
 
@@ -1850,8 +1846,6 @@ def parse_subarticle(parser):
             continue
         if parse_footnotes(parser):
             continue
-        if parse_definition(parser):
-            continue
         if parse_numerical_article(parser):
             continue
         if parse_article_chapter(parser):
@@ -1866,23 +1860,6 @@ def parse_subarticle(parser):
     parser.subart = None
 
     parser.leave("subart")
-    return True
-
-
-def parse_definition(parser):
-    if parser.line != "<i>" or parser.appendix_part is not None:
-        return False
-
-    parser.enter("definition")
-    # Parse a definition.
-    definition = parser.collect_until("</i>")
-    parser.consume("</i>")
-    value = parser.collect_until("<br/>")
-    d = E("definition", definition)
-    d.attrib["key"] = definition
-    d.attrib["value"] = value
-    parser.subart.append(d)
-    parser.leave("definition")
     return True
 
 
