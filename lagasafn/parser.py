@@ -1382,8 +1382,11 @@ def parse_ambiguous_chapter(parser):
     else:
         parser.law.append(ambiguous_bold_text)
 
+    parser.maybe_consume("<br/>")
+
     parser.trail_push(ambiguous_bold_text)
 
+    parse_footnotes(parser)
     parser.leave("ambiguous-chapter")
 
     return True
@@ -1686,12 +1689,17 @@ def parse_article(parser):
             continue
         if parse_subarticle(parser):
             continue
+        if parse_ambiguous_chapter(parser):
+            continue
         if parse_footnotes(parser):
             continue
         break
 
     parser.maybe_consume_many("<br/>")
     parse_footnotes(parser)
+
+    parser.art = None
+
     parser.leave("art")
     return True
 
@@ -1846,12 +1854,17 @@ def parse_subarticle(parser):
             continue
         if parse_numerical_article(parser):
             continue
+        if parse_article_chapter(parser):
+            continue
 
         break
 
     parser.maybe_consume_many("<br/>")
 
     parser.trail_push(parser.subart)
+
+    parser.subart = None
+
     parser.leave("subart")
     return True
 
