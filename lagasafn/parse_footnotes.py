@@ -555,12 +555,7 @@ def parse_footnote(parser):
                         # marker with its distinct set of "words",
                         # each attribute containing the set of words
                         # contained in their respective sentences.
-                        sen_nr = str(order_among_siblings(desc))
-                        try:
-                            started_sen_nr = parser.law.xpath(started_at["xpath"])[0].attrib["nr"]
-                        except KeyError:
-                            started_sen_nr = ''
-                        if desc.tag == "sen" and sen_nr != started_sen_nr:
+                        if parser.law.xpath(started_at["xpath"])[0] != desc:
                             # Remove pairs of opening/closing markers
                             # from the "words", so that we find the
                             # correct closing marker. (See comment on
