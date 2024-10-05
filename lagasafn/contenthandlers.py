@@ -681,10 +681,11 @@ def add_sentences(target_node, sens):
         # Special flag to assist visual software, indicating that even though
         # this is a new sentence in the file, it visually represents a new
         # sub-paragraph.
-        if sen_nr == 1 and sub_par_nr > 1:
+        if sub_par_nr > 1:
             sen_elem.attrib["ultimate-nr"] = str(prior_sens_count + sen_nr)
             sen_elem.attrib["sub-paragraph-nr"] = str(sub_par_nr)
-            sen_elem.attrib["new-sub-paragraph"] = "true"
+            if sen_nr == 1:
+                sen_elem.attrib["new-sub-paragraph"] = "true"
 
         target_node.append(sen_elem)
 
