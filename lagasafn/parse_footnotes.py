@@ -2,6 +2,7 @@
 #  Parsing functions for footnotes (as a collection) and individual footnotes.
 #  This is a rather complex set of functions, and should probably be simplified.
 #
+import copy
 from lxml.builder import E
 import re
 from formencode.doctest_xml_compare import xml_compare
@@ -891,7 +892,15 @@ def parse_footnote(parser):
                 # the same sentence.
                 twin_found = False
                 for maybe_twin in location_target.findall("location"):
-                    if xml_compare(maybe_twin, location):
+
+                    # We need to compare with the previous elements without the
+                    # `repeat` attribute, because otherwise we run into
+                    # differences when the repetitition happens more than once.
+                    maybe_twin_copy = copy.deepcopy(maybe_twin)
+                    if "repeat" in maybe_twin_copy.attrib:
+                        del maybe_twin_copy.attrib["repeat"]
+
+                    if xml_compare(maybe_twin_copy, location):
                         maybe_twin.attrib["repeat"] = "true"
                         twin_found = True
                         break
