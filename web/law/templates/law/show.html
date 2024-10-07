@@ -34,6 +34,22 @@
             '<refer type="legal-clause-from-text">' + reference.link_label + '</refer>'
         );
     }
+
+    // Scroll to the selected text.
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const xpath = urlParams.get('xpath');
+        const selectedText = urlParams.get('selected_text');
+        if (selectedText.length > 0) {
+            var element = getElementByXPath("//law//" + xpath);
+            element.scrollIntoView({
+                block: "center",
+            });
+            element.classList.add('search-result-selection');
+            selectTextInNode(element, selectedText);
+        }
+    });
+
 </script>
 {% endblock %}
 

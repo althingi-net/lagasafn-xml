@@ -1,3 +1,29 @@
+function selectTextInNode(node, text) {
+
+    const textContent = node.textContent;
+
+    // Find the start and end positions of the target text.
+    const startIndex = textContent.toLowerCase().indexOf(text.toLowerCase());
+    const endIndex = startIndex + text.length;
+
+    const selection = window.getSelection();
+    const range = document.createRange();
+
+    // Select the entire content of the node.
+    range.selectNodeContents(node);
+
+    // Set the start and end of the range to select only the desired text.
+    range.setStart(node.firstChild, startIndex);
+    range.setEnd(node.firstChild, endIndex);
+
+    // Clear any existing selections.
+    selection.removeAllRanges();
+
+    // Add the new range to the selection.
+    selection.addRange(range);
+}
+
+
 var quick_see = function(content, $anchor) {
     var $dialog = $('.quick-dialog');
 

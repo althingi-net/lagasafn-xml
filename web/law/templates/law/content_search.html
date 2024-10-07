@@ -21,7 +21,11 @@
             </h3>
         </div>
         {% for finding in result.findings %}
-            <strong>{{ finding.legal_reference }}</strong>: {{ finding.node.text }}<hr/>
+            <strong>
+                <a href="{% url 'law_show' result.law_entry.identifier %}?xpath={{ finding.xpath }}&selected_text={{ search_text }}">
+                    {{ finding.legal_reference }}
+                </a>
+            </strong>: {{ finding.node.text }}<hr/>
         {% endfor %}
     {% endfor %}
 

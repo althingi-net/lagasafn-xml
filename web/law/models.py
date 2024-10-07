@@ -9,6 +9,7 @@ import os
 import re
 from django.conf import settings
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.pathing import make_xpath_from_node
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
@@ -106,6 +107,7 @@ class LawManager:
                 findings.append({
                     "legal_reference": legal_reference,
                     "node": node,
+                    "xpath": make_xpath_from_node(node),
                 })
 
             if len(nodes):
