@@ -370,6 +370,7 @@ def strip_links(text, strip_hellip_link=False):
     return text
 
 
+# FIXME: Seems unused.
 def order_among_siblings(elem):
     """
     Returns the order of the given element among its siblings. For example, if
@@ -961,3 +962,27 @@ def last_container_added(input_node):
         return input_node
     else:
         return last_container_added(children[-1])
+
+
+def find_unmatched_closing_bracket(content):
+    """
+    Finds the next closing marker in a string, that doesn't have a
+    corresponding opening marker before it.
+
+    We may need to find the closing marker "]" in a text that contains other
+    opening and closing markers, for example in "one [two] three] four" we'll
+    want to find the one by "three" instead of the one by "two", because the
+    one at "two" matches the opening marker before it.
+    """
+
+    opening_count = 0
+
+    for index, char in enumerate(content):
+        if char == "[":
+            opening_count += 1
+        elif char == "]":
+            if opening_count > 0:
+                opening_count -= 1
+            else:
+                return index
+    return -1

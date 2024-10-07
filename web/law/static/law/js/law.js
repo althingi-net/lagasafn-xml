@@ -316,14 +316,28 @@ var process_footnote = function() {
             // attribute in the start location, and after the value of the
             // "words" attribute in the end location.
 
-            var seek_text_start = attr_or_emptystring($start_mark.location_node, 'words');
-            var seek_text_end = attr_or_emptystring($end_mark.location_node, 'words');
+            var seek_text_start_regex_string = attr_or_emptystring($start_mark.location_node, 'words');
+            var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
             var replace_text_start = null;
             var replace_text_end = null;
 
+            var start_match = $start_mark.html().match(new RegExp(seek_text_start_regex_string));
+            var seek_text_start = "";
+            if (start_match != null && start_match.length > 0) {
+                seek_text_start = start_match[0];
+            }
+
+            var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
+            var seek_text_end = "";
+            if (end_match != null && end_match.length > 0) {
+                seek_text_end = end_match[0];
+            }
+
+            var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
+
             if (location_type == 'range') {
                 replace_text_start = '[' + seek_text_start;
-                replace_text_end = seek_text_end + pre_close_space + ']' + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+                replace_text_end = seek_text_end + pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
             }
 
             // If the XML indicates that this is a change that happens
@@ -366,7 +380,7 @@ var process_footnote = function() {
                 if ($end_mark.html() !== undefined) {
                     $end_mark.html($end_mark.html().replace(
                         ' <sup>' + footnote_nr + ')</sup>' + end_symbol,
-                        end_symbol + ' <sup>' + footnote_nr + ')</sup>'
+                        ' <sup>' + footnote_nr + ')</sup>'
                     ));
                 }
             }

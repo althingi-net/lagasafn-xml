@@ -9,7 +9,9 @@ from formencode.doctest_xml_compare import xml_compare
 from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import next_footnote_sup
-from lagasafn.utils import UnexpectedClosingBracketException, order_among_siblings, super_iter, xml_lists_identical
+from lagasafn.utils import UnexpectedClosingBracketException
+from lagasafn.utils import super_iter
+from lagasafn.utils import find_unmatched_closing_bracket
 from lagasafn.pathing import make_xpath_from_node
 
 
@@ -428,6 +430,8 @@ def parse_footnote(parser):
                         opening_found > 0 or partial_at_start
                     ) and not all_encompassing
 
+                    middle_punctuation = None
+
                     words = None
                     if use_words:
                         # We'll start with everything from the opening
@@ -439,36 +443,8 @@ def parse_footnote(parser):
                         # it's not simply the first one.
                         words = desc.text[opening_found + 1 :]
 
-                        # Eliminate **pairs** of opening and closing
-                        # markers beyond the opening marker we're
-                        # currently dealing with. When this has been
-                        # accomplished, the next closing marker should
-                        # be the one that goes with the opening marker
-                        # that we're currently dealing with. Example:
-                        #
-                        #     a word [and another] that says] boo
-                        #
-                        # Should become:
-                        #
-                        #     a word and another that says] boo
-                        #
-                        # Note that the opening/closing marker pair
-                        # around "and another" have disappeared
-                        # because they came in a pair. With such pairs
-                        # removed, we can conclude our "words"
-                        # variable from the remaining non-paired
-                        # closing marker, and the result should be:
-                        #
-                        #     a word and another that says
-                        #
-                        words = re.sub(
-                            r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                            r"\1",
-                            words,
-                        )
-
                         # Find the first non-paired closing marker.
-                        closing_index = words.find("]")
+                        closing_index = find_unmatched_closing_bracket(words)
 
                         # Cut the "words" variable appropriately. If
                         # closing_index wasn't found, it means that
@@ -482,18 +458,15 @@ def parse_footnote(parser):
                         if closing_index > -1:
                             words = words[:closing_index]
 
-                        # Explicitly remove marker stuff, even though
-                        # most likely it will already be gone because
-                        # the marker parsing implicitly avoids
-                        # including them. Such removal may leave stray
-                        # space that we also clear.
-                        words = strip_markers(words).strip()
+                        if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":"]:
+                            middle_punctuation = desc.text[opening_found + 1 + closing_index + 1]
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
                     opening_locations.append({
                         "xpath": make_xpath_from_node(desc),
-                        "words": words,
+                        "words": regexify_markers(words) if words is not None else None,
+                        "middle_punctuation": middle_punctuation,
                     })
 
                 elif closing_found > -1 and (
@@ -532,6 +505,7 @@ def parse_footnote(parser):
                     ended_at = {
                         "xpath": make_xpath_from_node(desc),
                         "words": None,  # Maybe filled later.
+                        "middle_punctuation": None,  # Maybe filled later.
                     }
 
                     # If the start location had a "words" attribute,
@@ -540,6 +514,7 @@ def parse_footnote(parser):
                     # to the end location, so that the <start> and
                     # <end> tags will get truncated into a unified
                     # <location> tag...
+                    middle_punctuation = None
                     if started_at["words"] is not None:
                         # ...except, if it turns out that we're
                         # actually dealing with a different sentence
@@ -556,21 +531,16 @@ def parse_footnote(parser):
                         # each attribute containing the set of words
                         # contained in their respective sentences.
                         if parser.law.xpath(started_at["xpath"])[0] != desc:
-                            # Remove pairs of opening/closing markers
-                            # from the "words", so that we find the
-                            # correct closing marker. (See comment on
-                            # same process in processing of opening
-                            # markers above.)
-                            words = re.sub(
-                                r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                                r"\1",
-                                words,
-                            )
-                            words = desc.text[: desc.text.find("]")]
+                            unmatched_closing = find_unmatched_closing_bracket(desc.text)
+                            words = regexify_markers(desc.text[: unmatched_closing])
+                            if desc.text[unmatched_closing+1] in [".", ",", ":"]:
+                                middle_punctuation = desc.text[unmatched_closing+1]
                         else:
                             words = started_at["words"]
+                            middle_punctuation = started_at["middle_punctuation"]
 
                         ended_at["words"] = words
+                        ended_at["middle_punctuation"] = middle_punctuation
 
                     # Stuff our findings into a list of marker
                     # locations that can be appended to the footnote
@@ -587,7 +557,6 @@ def parse_footnote(parser):
                             # of the closing marker, which is what we just
                             # performed.
                             "ended_at": ended_at,
-                            #"middle_punctuation": middle_punctuation,
                         }
                     )
 
@@ -859,6 +828,8 @@ def parse_footnote(parser):
                     location.attrib["xpath"] = started_at["xpath"]
                     if started_at["words"] is not None:
                         location.attrib["words"] = started_at["words"]
+                    if started_at["middle_punctuation"] is not None:
+                        location.attrib["middle-punctuation"] = started_at["middle_punctuation"]
                 else:
                     start = E("start")
                     end = E("end")
@@ -870,6 +841,11 @@ def parse_footnote(parser):
                         start.attrib["words"] = started_at["words"]
                     if ended_at["words"] is not None:
                         end.attrib["words"] = ended_at["words"]
+
+                    if started_at["middle_punctuation"] is not None:
+                        start.attrib["middle-punctuation"] = started_at["middle_punctuation"]
+                    if ended_at["middle_punctuation"] is not None:
+                        end.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
 
                     location.append(start)
                     location.append(end)

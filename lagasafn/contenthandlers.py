@@ -83,9 +83,11 @@ def regexify_markers(text):
     # NOTE: The three backslashes before the closing parentheses is because
     # we must seek the string after it has been modified by the
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
+    # NOTE: We actually contain content from the given text in the new regex,
+    # so that it doesn't over-match.
     text = re.sub(
-        r'\],?\.? ?<sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'\.? ?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
+        r'\],?\.? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?',
+        r'\.? ?(\],?\.? ?<sup( style="font-size:60%")?> ?\1\) ?</sup>)?,? ?',
         text,
     )
 
