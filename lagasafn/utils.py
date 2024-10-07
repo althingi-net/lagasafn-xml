@@ -986,3 +986,20 @@ def find_unmatched_closing_bracket(content):
             else:
                 return index
     return -1
+
+
+def search_xml_doc(xml_doc, search_string):
+    """
+    Finds nodes in a list of lxml XML document objects that contain the specified search string in their content.
+
+    :param xml_docs: A list of lxml.etree.ElementTree objects, each representing an XML document.
+    :param search_string: The string to search for in the content of XML nodes.
+    :return: A list of nodes that contain the search string in their text content from all documents.
+    """
+    matching_nodes = []
+
+    for element in xml_doc.iter():
+        if element.text and search_string.lower() in element.text.lower():
+            matching_nodes.append(element)
+
+    return matching_nodes

@@ -57,3 +57,17 @@ def law_show_patched(request, identifier):
         content = f.read()
 
     return HttpResponse(content, content_type="text/html")
+
+
+def content_search(request):
+    search_text = request.GET.get("search_text", "")
+
+    results = None
+    if len(search_text):
+        results = LawManager.content_search(search_text)
+
+    ctx = {
+        "search_text": search_text,
+        "results": results,
+    }
+    return render(request, "law/content_search.html", ctx)

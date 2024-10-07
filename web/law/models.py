@@ -10,6 +10,8 @@ import re
 from django.conf import settings
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.utils import generate_legal_reference
+from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
 from lxml import etree
@@ -80,6 +82,38 @@ class LawManager:
             laws.append(LawEntry(node_law_entry, problems))
 
         return stats, laws
+
+    @staticmethod
+    def content_search(search_string: str):
+
+        results = []
+
+        stats, laws = LawManager.index()
+
+        for law_entry in laws:
+            law_xml = Law(law_entry.identifier).xml()
+
+            nodes = search_xml_doc(law_xml, search_string)
+
+            findings = []
+            for node in nodes:
+                legal_reference = ""
+                try:
+                    legal_reference = generate_legal_reference(node.getparent(), skip_law=True)
+                except:
+                    pass
+                findings.append({
+                    "legal_reference": legal_reference,
+                    "node": node,
+                })
+
+            if len(nodes):
+                results.append({
+                    "law_entry": law_entry,
+                    "findings": findings,
+                })
+
+        return results
 
 
 class LawEntry:
