@@ -13,6 +13,7 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
 from lxml import etree
+from math import floor
 
 
 class LawManager:
@@ -110,21 +111,19 @@ class LawEntry:
             original_law_filename,
         )
 
-    def status(self):
+    def display_content_success(self):
+        """
+        Displays the content success as percentage.
+        """
+        content_success = self.problems["content"]["success"]
+        return "%.2f%%" % float(floor(content_success * 10000) / 100)
+
+    def content_success(self):
         """
         Determines the status of the law, judging by known problem types.
         """
-        problems_accounted_for = True
-        for problem_type in PROBLEM_TYPES:
-            if problem_type not in self.problems:
-                problems_accounted_for = False
 
-        if problems_accounted_for:
-            all_ok = all(self.problems[p]["success"] == 1.0 for p in self.problems)
-        else:
-            all_ok = None
-
-        return all_ok
+        return self.problems["content"]["success"]
 
     def __str__(self):
         return self.identifier
