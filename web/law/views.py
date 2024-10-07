@@ -22,11 +22,13 @@ def law_list(request):
 def law_show(request, identifier, view_type: str = "normal"):
     law = Law(identifier)
 
+    references = law.get_references()
+
     ctx = {
         "law": law,
+        "references": references,
         "view_type": view_type,
     }
-
     return render(request, "law/show.html", ctx)
 
 

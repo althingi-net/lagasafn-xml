@@ -8,6 +8,7 @@ with this one.
 import os
 import re
 from django.conf import settings
+from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
@@ -170,6 +171,7 @@ class Law(LawEntry):
 
         # Private containers, essentially for caching.
         self._xml = None
+        self._xml_references = None
         self._name = ""
         self._xml_text = ""
         self._html_text = ""
@@ -304,6 +306,30 @@ class Law(LawEntry):
         self._html_text = result
 
         return self._html_text
+
+    def get_references(self):
+        if self._xml_references is None:
+            self._xml_references = etree.parse(XML_REFERENCES_FILENAME).getroot()
+
+        nodes = self._xml_references.xpath(
+            f"/references/law-ref-entry[@law-nr='{self.nr}' and @law-year='{self.year}']/node"
+        )
+
+        # We'll flatten out the references for simplicity. These will one day
+        # belong to the nodes in the XML itself.
+        references = []
+        for node in nodes:
+            for xml_ref in node.findall("reference"):
+                references.append({
+                    "location": node.attrib["location"],
+                    "link_label": xml_ref.attrib["link-label"],
+                    "inner_reference": xml_ref.attrib["inner-reference"],
+                    "law_nr": xml_ref.attrib["law-nr"],
+                    "law_year": xml_ref.attrib["law-year"],
+                })
+
+        return references
+
 
     def editor_url(self):
         return settings.EDITOR_URL % (self.year, self.nr)
