@@ -651,6 +651,13 @@ var process_sentence = function() {
         / (k)?m([23])/g,
         ' $1m<small><sup>$2</sup></small>'
     ));
+
+    // Add newline to sentences that begin a new paragraph. These apparently
+    // start with three non-breaking spaces instead of the usual `text-indent.`
+    // NOTE: This will be replaced with `<paragraph>` at some point.
+    if ($sen.attr("new-sub-paragraph") == "true") {
+        $sen.before("<br/>&nbsp;&nbsp;&nbsp;");
+    }
 }
 
 
