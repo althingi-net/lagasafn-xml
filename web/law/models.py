@@ -7,6 +7,7 @@ with this one.
 
 import os
 import re
+import requests
 from django.conf import settings
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.pathing import make_xpath_from_node
@@ -17,6 +18,7 @@ from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
 from lxml import etree
+from lxml import html
 from math import floor
 
 
@@ -179,6 +181,7 @@ class Law(LawEntry):
         self._html_text = ""
         self._chapters = []
         self._articles = []
+        self._remote_contents = {}
 
         self.nr, self.year = self.identifier.split("/")
 
@@ -332,6 +335,53 @@ class Law(LawEntry):
 
         return references
 
+    # FIXME: Find a better name for this thing. "Law box" makes no sense.
+    def _get_law_box(self, box_title):
+        box_links = []
+
+        url = "https://www.althingi.is/lagas/nuna/%s%s.html" % (
+            self.year,
+            traditionalize_law_nr(self.nr)
+        )
+
+        if url in self._remote_contents:
+            content = self._remote_contents[url]
+        else:
+            response = requests.get(url)
+
+            if response.status_code != 200:
+                return None
+
+            # Parse the HTML content using lxml
+            content = html.fromstring(response.content)
+
+            self._remote_contents[url] = content
+
+        h5_element = content.xpath("//h5[normalize-space(text())='%s']" % box_title)
+
+        if h5_element is None or len(h5_element) == 0:
+            return box_links
+
+        ul_element = h5_element[0].getnext()
+        if ul_element.tag != 'ul':
+            return box_links
+
+        for li_element in ul_element.xpath("li"):
+            a_element = li_element.find("a")
+            box_links.append({
+                "link": a_element.attrib["href"],
+                "law_name": a_element.attrib["title"],
+                "document_name": a_element.text,
+                "date": a_element.tail.lstrip(", "),
+            })
+
+        return box_links
+
+    def get_interim_laws(self):
+        return self._get_law_box("Samþykkt lög eftir útgáfu lagasafns:")
+
+    def get_ongoing_issues(self):
+        return self._get_law_box("Frumvörp til breytinga á lögunum:")
 
     def editor_url(self):
         return settings.EDITOR_URL % (self.year, self.nr)

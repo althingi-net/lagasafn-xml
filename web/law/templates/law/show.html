@@ -134,6 +134,20 @@
 {% include 'law/dialog/quick_dialog.html' %}
 
 <div class="legal-document {{ view_type }}-view">
+
+    {% if interim_laws or ongoing_issues %}
+        <div class="container">
+            <div class="row">
+                {% if interim_laws %}
+                    {% include "law/remote_box.html" with box_links=interim_laws box_title=_("Approved laws since publication of codex:") %}
+                {% endif %}
+                {% if ongoing_issues %}
+                    {% include "law/remote_box.html" with box_links=ongoing_issues box_title=_("Bills affecting the law:") %}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
     {{ law.html_text|safe }}
 </div>
 
