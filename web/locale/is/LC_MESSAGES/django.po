@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 20:51+0000\n"
+"POT-Creation-Date: 2024-10-08 07:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,85 +18,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: law/templates/law/list.html:9
+#: law/templates/law/content_search.html:9
+msgid "Enter search text..."
+msgstr "Stimplaðu inn leitartexta..."
+
+#: law/templates/law/content_search.html:11 law/templates/law/list.html:37
+msgid "Search"
+msgstr "Leit"
+
+#: law/templates/law/list.html:47
 msgid "Total law count"
 msgstr "Heildarfjöldi laga"
 
-#: law/templates/law/list.html:11
+#: law/templates/law/list.html:49
 msgid "Empty law count"
 msgstr "Fjöldi tómra laga"
 
-#: law/templates/law/list.html:13
+#: law/templates/law/list.html:51
 msgid "Non-empty law count"
 msgstr "Fjöldi laga með efni"
 
-#: law/templates/law/list.html:20
+#: law/templates/law/list.html:59
 msgid "Nr."
 msgstr "Nr."
 
-#: law/templates/law/list.html:21
+#: law/templates/law/list.html:60
 msgid "Name"
 msgstr "Nafn"
 
-#: law/templates/law/list.html:22
+#: law/templates/law/list.html:61
 msgid "Ch."
 msgstr "Ka."
 
-#: law/templates/law/list.html:23
+#: law/templates/law/list.html:62
 msgid "Art."
 msgstr "Gr."
 
-#: law/templates/law/list.html:24
+#: law/templates/law/list.html:63
 msgid "Status"
 msgstr "Staða"
 
-#: law/templates/law/list.html:38
-msgid "Unknown"
-msgstr "Óþekkt"
-
-#: law/templates/law/list.html:40
+#: law/templates/law/list.html:79
 msgid "OK"
 msgstr "Í lagi"
 
-#: law/templates/law/list.html:42
-msgid "Errors"
-msgstr "Villur"
-
-#: law/templates/law/show.html:29
+#: law/templates/law/show.html:61
 msgid "Up 1 pixel"
 msgstr "Upp 1 punkt"
 
-#: law/templates/law/show.html:30
+#: law/templates/law/show.html:62
 msgid "Down 1 pixel"
 msgstr "Niður 1 punkt"
 
-#: law/templates/law/show.html:37
+#: law/templates/law/show.html:68
 msgid "Open original"
 msgstr "Upprunaskjal"
 
-#: law/templates/law/show.html:38
+#: law/templates/law/show.html:70
 msgid "Open in editor"
 msgstr "Opna í ritli"
 
-#: law/templates/law/show.html:43
+#: law/templates/law/show.html:75
 msgid "Hide subart numbers"
 msgstr "Fela númer málsgreina"
 
-#: law/templates/law/show.html:44
+#: law/templates/law/show.html:76
 msgid "Show subart numbers"
 msgstr "Sýna númer málsgreina"
 
-#: law/templates/law/show.html:48
+#: law/templates/law/show.html:80
 msgid "Close all"
 msgstr "Loka öllu"
 
-#: law/templates/law/show.html:49
+#: law/templates/law/show.html:81
 msgid "Open all"
 msgstr "Opna allt"
 
+#: law/templates/law/show.html:142
+msgid "Approved laws since publication of codex:"
+msgstr "Samþykkt lög eftir útgáfu lagasafns:"
+
+#: law/templates/law/show.html:145
+msgid "Bills affecting the law:"
+msgstr "Frumvörp til breytinga á lögunum:"
+
 #: mechlaw/constants.py:3
 msgid "Lagasafn-XML"
-msgstr ""
+msgstr "Lagasafn-XML"
 
 #: templates/base.html:27
 msgid "Error"
@@ -114,9 +122,18 @@ msgstr "Virkni ekki enn tilbúin"
 msgid "Legal Codex"
 msgstr "Lagasafn"
 
-#: templates/base.html:58
-msgid "Home"
-msgstr "Heim"
+#: templates/base.html:55
+msgid "Content Search"
+msgstr "Efnisleit"
+
+#~ msgid "Unknown"
+#~ msgstr "Óþekkt"
+
+#~ msgid "Errors"
+#~ msgstr "Villur"
+
+#~ msgid "Home"
+#~ msgstr "Heim"
 
 #~ msgid "MechLaw"
 #~ msgstr "MechLaw"
