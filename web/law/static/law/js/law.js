@@ -337,7 +337,15 @@ var process_footnote = function() {
 
             if (location_type == 'range') {
                 replace_text_start = '[' + seek_text_start;
-                replace_text_end = seek_text_end + pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+
+                // Strip the middle-punctuation if needed.
+                if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
+                    replace_text_end = seek_text_end.slice(0, -1)
+                }
+                else {
+                    replace_text_end = seek_text_end
+                }
+                replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
             }
 
             // If the XML indicates that this is a change that happens

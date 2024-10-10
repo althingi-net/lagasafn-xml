@@ -456,10 +456,18 @@ def parse_footnote(parser):
                         # string will be placed in an <end> element by
                         # the closing-marker mechanism.
                         if closing_index > -1:
-                            words = words[:closing_index]
+                            words = words[:closing_index].strip()
 
                         if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":"]:
                             middle_punctuation = desc.text[opening_found + 1 + closing_index + 1]
+
+                            # Add the middle-punctuation to the search string.
+                            # It will be moved passed the opening marker by
+                            # rendering mechanism. It is escaped so that "."
+                            # doesn't match any symbol but only a literal ".".
+                            # Incidentally the "," and ":" symbols also get
+                            # escaped, but that has no effect.
+                            words += r"\%s?" % middle_punctuation
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
