@@ -19,21 +19,23 @@
         });
     });
 
-    var references = {{ references|safe }};
-    for (var reference of references) {
-        var target_node = document.evaluate(
-            "//" + reference.location,
-            document,
-            null,
-            XPathResult.FIRST_ORDERED_NODE_TYPE,
-            null
-        ).singleNodeValue;
+    $(document).ready(function() {
+        var references = {{ references|safe }};
+        for (var reference of references) {
+            var target_node = document.evaluate(
+                "//" + reference.location,
+                document,
+                null,
+                XPathResult.FIRST_ORDERED_NODE_TYPE,
+                null
+            ).singleNodeValue;
 
-        target_node.innerHTML = target_node.innerHTML.replace(
-            reference.link_label,
-            '<refer type="legal-clause-from-text">' + reference.link_label + '</refer>'
-        );
-    }
+            target_node.innerHTML = target_node.innerHTML.replace(
+                reference.link_label,
+                '<refer type="legal-clause-from-text">' + reference.link_label + '</refer>'
+            );
+        }
+    });
 
     // Scroll to the selected text.
     $(document).ready(function() {
