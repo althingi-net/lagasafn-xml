@@ -335,8 +335,52 @@ class Law(LawEntry):
 
         return references
 
+    def _get_doc_nr_and_parliament(self, href):
+        pieces = href.split("/")
+        parliament = int(pieces[4])
+        doc_nr = int(pieces[6].rstrip(".html"))
+        return doc_nr, parliament
+
+    def _get_issue_status_from_doc(self, doc_nr, parliament):
+        # Get issue.
+        response = requests.get("https://www.althingi.is/altext/xml/thingskjol/thingskjal/?lthing=%d&skjalnr=%d" % (parliament, doc_nr))
+        response.encoding = "utf-8"
+
+        doc_xml = etree.fromstring(response.content)
+
+        # Extract issue locating information.
+        issue_node = doc_xml.xpath("/þingskjal/málalisti/mál")[0]
+        issue_nr = int(issue_node.attrib["málsnúmer"])
+        issue_parliament = int(issue_node.attrib["þingnúmer"])
+
+        # Extract proposer information.
+        proposer = None
+        proposer_nodes = doc_xml.xpath("/þingskjal/þingskjal/flutningsmenn/flutningsmaður")
+        if len(proposer_nodes) > 0:
+            proposer_node = proposer_nodes[0]
+            proposer_nr = int(proposer_node.attrib["id"])
+            proposer = {
+                "name": proposer_node.find("nafn").text,
+                "link": "https://www.althingi.is/altext/cv/is/?nfaerslunr=%d" % proposer_nr,
+            }
+
+        # Get the issue data.
+        response = requests.get("https://www.althingi.is/altext/xml/thingmalalisti/thingmal/?lthing=%d&malnr=%d" % (issue_parliament, issue_nr))
+        response.encoding = "utf-8"
+
+        issue_xml = etree.fromstring(response.content)
+        status = issue_xml.xpath("/þingmál/mál/staðamáls")[0].text
+
+        return status, proposer
+
     # FIXME: Find a better name for this thing. "Law box" makes no sense.
+    # FIXME: This belongs in some sort of background processing instead of
+    # being run every time a law is viewed.
     def _get_law_box(self, box_title):
+
+        if not settings.FEATURES["law_box"]:
+            return []
+
         box_links = []
 
         url = "https://www.althingi.is/lagas/nuna/%s%s.html" % (
@@ -368,11 +412,17 @@ class Law(LawEntry):
 
         for li_element in ul_element.xpath("li"):
             a_element = li_element.find("a")
+
+            doc_nr, doc_parliament = self._get_doc_nr_and_parliament(a_element.attrib["href"])
+            issue_status, proposer = self._get_issue_status_from_doc(doc_nr, doc_parliament)
+
             box_links.append({
                 "link": a_element.attrib["href"],
                 "law_name": a_element.attrib["title"],
                 "document_name": a_element.text,
                 "date": a_element.tail.lstrip(", "),
+                "issue_status": issue_status,
+                "proposer": proposer,
             })
 
         return box_links
