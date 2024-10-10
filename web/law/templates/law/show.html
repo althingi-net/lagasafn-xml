@@ -41,7 +41,7 @@
     $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
         const xpath = urlParams.get('xpath');
-        const selectedText = urlParams.get('selected_text');
+        const selectedText = urlParams.get('selected_text') || "";
         if (selectedText.length > 0) {
             var element = getElementByXPath("//law//" + xpath);
             element.scrollIntoView({
