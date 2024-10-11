@@ -467,7 +467,7 @@ def parse_footnote(parser):
                             # doesn't match any symbol but only a literal ".".
                             # Incidentally the "," and ":" symbols also get
                             # escaped, but that has no effect.
-                            words += r"\%s?" % middle_punctuation
+                            words += r"\%s" % middle_punctuation
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
@@ -687,7 +687,7 @@ def parse_footnote(parser):
                 cursor = pointer_found + 1
 
                 # If this is in fact a closing or deletion marker,
-                # then either the symbol "[" or "…" will appear
+                # then either the symbol "]" or "…" will appear
                 # somewhere among the 3 characters before the
                 # superscript. Their exact location may depend on the
                 # applied styling or punctuation, since spacing style

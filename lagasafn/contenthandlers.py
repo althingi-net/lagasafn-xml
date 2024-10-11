@@ -79,23 +79,21 @@ def regexify_markers(text):
     # Opening markers.
     text = re.sub(r"\[ ?", r"(\[? ?)?", text)
 
-    # Closing markers.
+    # Closing markers, deletion markers and  pointers.
     # NOTE: The three backslashes before the closing parentheses is because
     # we must seek the string after it has been modified by the
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
     # NOTE: We actually contain content from the given text in the new regex,
     # so that it doesn't over-match.
+    # FIXME: This should be refactored to make the produced regex stricter. For
+    # example, we are taking the number (\d+) and placing it in the produced
+    # regex, and we should be doing the same for the symbols before and after
+    # the HTML markup. We may also want to refactor this so that it's relying
+    # less on regex altogether, or perhaps finding special regex characters
+    # like "." and "]" and replacing them with "\." and "\]" explicitly.
     text = re.sub(
-        r'\],?\.? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?',
-        r'\.? ?(\],?\.? ?<sup( style="font-size:60%")?> ?\1\) ?</sup>)?,? ?',
-        text,
-    )
-
-    # Deletion markers.
-    # NOTE: See comment for closing markers above.
-    text = re.sub(
-        r'… <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
+        r'\.? ?\]?…?,?\.?:? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?',
+        r'\.?:? ?(\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?\1\) ?</sup>)?,? ?',
         text,
     )
 
