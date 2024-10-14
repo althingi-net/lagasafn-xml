@@ -52,20 +52,20 @@ def generate_json(xml_dir: str, json_dir: str):
     print("JSON generated successfully")
 
 
-def update_elasticsearch(json_dir: str, elastic_server: str, elastic_port: int, elastic_index: str, elastic_apikey: str):
-    if not elastic_server or not elastic_port or not elastic_index:
-        print("ElasticSearch server, port or index not provided. Exiting...")
+def update_elasticsearch(json_dir: str, elastic_server: str, elastic_index: str, elastic_apikey: str):
+    if not elastic_server or not elastic_index:
+        print("ElasticSearch server or index not provided. Exiting...")
         return
 
     if not elastic_apikey:
         print("ElasticSearch API key not provided. Exiting...")
         return
         
-    print(f"Inserting JSON into ElasticSearch server {elastic_server}:{elastic_port}/{elastic_index}")
+    print(f"Inserting JSON into ElasticSearch server {elastic_server}/{elastic_index}")
 
     try:
         # Insert or update the JSON into ElasticSearch.
-        es = Elasticsearch(f"{elastic_server}:{elastic_port}", api_key=elastic_apikey)
+        es = Elasticsearch(elastic_server, api_key=elastic_apikey)
         files = os.listdir(json_dir)
 
         for file in files:
@@ -93,16 +93,15 @@ def update_elasticsearch(json_dir: str, elastic_server: str, elastic_port: int, 
 @click.option('--json-dir',               default='data/json/', help='Directory to store/retrieve the JSON files')
 @click.option('--generate/--no-generate', default=True,         help='Generate JSON from the XML')
 @click.option('--update/--no-update',     default=True,         help='Insert the JSON into ElasticSearch')
-@click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'http://localhost'), help='ElasticSearch server')
-@click.option('--elastic-port',           default=lambda: os.environ.get('ELASTIC_PORT', 9200), help='ElasticSearch port')
+@click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'https://localhost:9200'), help='ElasticSearch server')
 @click.option('--elastic-index',          default=lambda: os.environ.get('ELASTIC_INDEX'), help='ElasticSearch index')
 @click.option('--elastic-apikey',         default=lambda: os.environ.get('ELASTIC_APIKEY'), help='ElasticSearch API Key')
-def main(xml_dir: str, json_dir: str, generate: bool, update: bool, elastic_server: str, elastic_port: int, elastic_index: str, elastic_apikey: str):    
+def main(xml_dir: str, json_dir: str, generate: bool, update: bool, elastic_server: str, elastic_index: str, elastic_apikey: str):    
     if generate:
         generate_json(xml_dir, json_dir)
 
     if update:
-        update_elasticsearch(json_dir, elastic_server, elastic_port, elastic_index, elastic_apikey)
+        update_elasticsearch(json_dir, elastic_server, elastic_index, elastic_apikey)
 
 
 if __name__ == '__main__':
