@@ -34,16 +34,20 @@ def generate_json(xml_dir: str, json_dir: str):
     idx = 0
 
     for file in files:
-        idx += 1
-        print(f"{idx:<4}/{count:<4}: {file:<20}", end='\r')
+        try:
+            idx += 1
+            print(f"{idx:<4}/{count:<4}: {file:<20}", end='\r')
 
-        tree = ET.parse(xml_dir + file)
-        root = tree.getroot()
+            tree = ET.parse(xml_dir + file)
+            root = tree.getroot()
 
-        # Convert the XML to JSON
-        structure = xmljson.abdera.data(root)
+            # Convert the XML to JSON
+            structure = xmljson.abdera.data(root)
 
-        open(json_dir + file.replace('.xml', '.json'), 'w').write(json.dumps(structure, indent=2))
+            open(json_dir + file.replace('.xml', '.json'), 'w').write(json.dumps(structure, indent=2))
+        except ET.ParseError as e:
+            print(f"Error parsing XML file {file}. Skipping...")
+            continue
 
     print("JSON generated successfully")
 
