@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # XML or JSON to ElasticSearch
 #
 # Smári McCarthy <smari AT ecosophy.is>
@@ -18,15 +19,11 @@ import click
 import xmljson
 import json
 import xml.etree.ElementTree as ET
-import logging
-from elasticsearch import Elasticsearch
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from elasticsearch import Elasticsearch, ConnectionError
 
 
 def generate_json(xml_dir: str, json_dir: str):
-    logger.info("Generating JSON from XML")
+    print("Generating JSON from XML")
     files = os.listdir(xml_dir)
 
     # Ensure the JSON directory exists
@@ -48,34 +45,44 @@ def generate_json(xml_dir: str, json_dir: str):
 
         open(json_dir + file.replace('.xml', '.json'), 'w').write(json.dumps(structure, indent=2))
 
-    logger.info("JSON generated successfully")
+    print("JSON generated successfully")
 
 
 def update_elasticsearch(json_dir: str, elastic_server: str, elastic_port: int, elastic_index: str, elastic_apikey: str):
     if not elastic_server or not elastic_port or not elastic_index:
-        logger.error("ElasticSearch server, port or index not provided. Exiting...")
+        print("ElasticSearch server, port or index not provided. Exiting...")
         return
 
     if not elastic_apikey:
-        logger.error("ElasticSearch API key not provided. Exiting...")
+        print("ElasticSearch API key not provided. Exiting...")
         return
+        
+    print(f"Inserting JSON into ElasticSearch server {elastic_server}:{elastic_port}/{elastic_index}")
+
+    try:
+        # Insert or update the JSON into ElasticSearch.
+        es = Elasticsearch(f"{elastic_server}:{elastic_port}", api_key=elastic_apikey)
+        files = os.listdir(json_dir)
+
+        for file in files:
+            data = json.load(open(json_dir + file))
+
+            id = file.replace('.json', '')
+
+            # Insert the data into ElasticSearch
+            es.index(index=elastic_index, id=id, document=data)
+
+    except ConnectionRefusedError:
+        print("Could not connect to ElasticSearch server. Exiting...")
+        return
+    except ConnectionAbortedError:
+        print("Connection to ElasticSearch server aborted. Exiting...")
+        return
+    except ConnectionError as e:
+        print(f"Error connecting to ElasticSearch server. Exiting...")
+        return
+
     
-    print(f"API key: {elastic_apikey}, {type(elastic_apikey)}")
-    
-    logger.info(f"Inserting JSON into ElasticSearch server {elastic_server}:{elastic_port}/{elastic_index}")
-
-    # Insert or update the JSON into ElasticSearch.
-    es = Elasticsearch(f"{elastic_server}:{elastic_port}", api_key=elastic_apikey)
-    files = os.listdir(json_dir)
-
-    for file in files:
-        data = json.load(open(json_dir + file))
-
-        id = file.replace('.json', '')
-
-        # Insert the data into ElasticSearch
-        es.index(index=elastic_index, id=id, document=data)
-
 
 @click.command()
 @click.option('--xml-dir',                default='data/xml/',  help='Directory containing the XML files')
