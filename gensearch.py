@@ -19,7 +19,7 @@ import click
 import xmljson
 import json
 import xml.etree.ElementTree as ET
-from elasticsearch import Elasticsearch, ConnectionError
+from elasticsearch import Elasticsearch, ConnectionError, AuthenticationException, AuthorizationException
 
 
 def generate_json(xml_dir: str, json_dir: str):
@@ -96,7 +96,13 @@ def update_elasticsearch(json_dir: str, elastic_server: str, elastic_index: str,
         print("Connection to ElasticSearch server aborted. Exiting...")
         return
     except ConnectionError as e:
-        print(f"Error connecting to ElasticSearch server. Exiting...")
+        print(f"Error connecting to ElasticSearch server: {e}. Exiting...")
+        return
+    except AuthenticationException as e:
+        print(f"Error authenticating to ElasticSearch server: {e}. Exiting...")
+        return
+    except AuthenticationException as e:
+        print(f"Error authorizing to ElasticSearch server: {e}. Exiting...")
         return
 
     
