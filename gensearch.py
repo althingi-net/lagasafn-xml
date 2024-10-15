@@ -52,20 +52,33 @@ def generate_json(xml_dir: str, json_dir: str):
     print("JSON generated successfully")
 
 
-def update_elasticsearch(json_dir: str, elastic_server: str, elastic_index: str, elastic_apikey: str):
+def update_elasticsearch(json_dir: str, elastic_server: str, elastic_index: str, elastic_apikey: str, elastic_user: str, elastic_password: str):
     if not elastic_server or not elastic_index:
         print("ElasticSearch server or index not provided. Exiting...")
         return
-
-    if not elastic_apikey:
-        print("ElasticSearch API key not provided. Exiting...")
+    
+    if not os.path.exists(json_dir):
+        print(f"JSON directory {json_dir} does not exist. Exiting...")
         return
         
-    print(f"Inserting JSON into ElasticSearch server {elastic_server}/{elastic_index}")
+    authtype = None
+    if elastic_apikey:
+        authtype = "apikey"
+    elif elastic_user and elastic_password:
+        authtype = "basic"
+    else:
+        print("No authentication provided. Exiting...")
+        return
+    
+    print(f"Inserting JSON into ElasticSearch server {elastic_server}/{elastic_index} with {authtype} authentication")
 
     try:
         # Insert or update the JSON into ElasticSearch.
-        es = Elasticsearch(elastic_server, api_key=elastic_apikey)
+        if authtype == "basic":
+            es = Elasticsearch(elastic_server, api_key=elastic_apikey)
+        elif authtype == "apikey":
+            es = Elasticsearch(elastic_server, basic_auth=(elastic_user, elastic_password))
+
         files = os.listdir(json_dir)
 
         for file in files:
@@ -96,12 +109,14 @@ def update_elasticsearch(json_dir: str, elastic_server: str, elastic_index: str,
 @click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'https://localhost:9200'), help='ElasticSearch server')
 @click.option('--elastic-index',          default=lambda: os.environ.get('ELASTIC_INDEX'), help='ElasticSearch index')
 @click.option('--elastic-apikey',         default=lambda: os.environ.get('ELASTIC_APIKEY'), help='ElasticSearch API Key')
-def main(xml_dir: str, json_dir: str, generate: bool, update: bool, elastic_server: str, elastic_index: str, elastic_apikey: str):    
+@click.option('--elastic-user',           default=lambda: os.environ.get('ELASTIC_USER'), help='ElasticSearch user')
+@click.option('--elastic-password',       default=lambda: os.environ.get('ELASTIC_PASSWORD'), help='ElasticSearch password')
+def main(xml_dir: str, json_dir: str, generate: bool, update: bool, elastic_server: str, elastic_index: str, elastic_apikey: str, elastic_user: str, elastic_password: str):    
     if generate:
         generate_json(xml_dir, json_dir)
 
     if update:
-        update_elasticsearch(json_dir, elastic_server, elastic_index, elastic_apikey)
+        update_elasticsearch(json_dir, elastic_server, elastic_index, elastic_apikey, elastic_user, elastic_password)
 
 
 if __name__ == '__main__':
