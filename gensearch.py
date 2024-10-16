@@ -53,8 +53,8 @@ def generate_json(xml_dir: str, json_dir: str):
 
 
 def get_elasticsearch(elastic_server: str, elastic_apikey: str, elastic_user: str, elastic_password: str) -> Elasticsearch:
-    if not elastic_server or not elastic_index:
-        print("ElasticSearch server or index not provided. Exiting...")
+    if not elastic_server:
+        print("ElasticSearch server not provided. Exiting...")
         return None
 
     authtype = None
@@ -75,6 +75,9 @@ def get_elasticsearch(elastic_server: str, elastic_apikey: str, elastic_user: st
         elif authtype == "basic":
             es = Elasticsearch(elastic_server, basic_auth=(elastic_user, elastic_password))
 
+        info = es.info()
+        print(f"Connected to ElasticSearch server {info['name']} version {info['version']['number']}")
+
     except ConnectionRefusedError:
         print("Could not connect to ElasticSearch server. Exiting...")
         return None
@@ -90,10 +93,7 @@ def get_elasticsearch(elastic_server: str, elastic_apikey: str, elastic_user: st
     except AuthenticationException as e:
         print(f"Error authorizing to ElasticSearch server: {e}. Exiting...")
         return None
-    
-    info = es.info()
-    print(f"Connected to ElasticSearch server {info['name']} version {info['version']['number']}")
-    
+        
     return es
 
 
@@ -134,7 +134,7 @@ def update_elasticsearch(json_dir: str, es: Elasticsearch, elastic_index: str):
 @click.option('--json-dir',               default='data/json/', help='Directory to store/retrieve the JSON files')
 @click.option('--generate/--no-generate', default=True,         help='Generate JSON from the XML')
 @click.option('--update/--no-update',     default=True,         help='Insert the JSON into ElasticSearch')
-@click.option('--add-mapping',            type=click.File,      help='Add mapping to ElasticSearch')
+@click.option('--add-mapping',            type=click.File('r'), help='Add mapping to ElasticSearch')
 @click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'https://localhost:9200'), help='ElasticSearch server')
 @click.option('--elastic-index',          default=lambda: os.environ.get('ELASTIC_INDEX'), help='ElasticSearch index')
 @click.option('--elastic-apikey',         default=lambda: os.environ.get('ELASTIC_APIKEY'), help='ElasticSearch API Key')
@@ -148,6 +148,8 @@ def main(xml_dir: str, json_dir: str, generate: bool, update: bool, add_mapping:
 
     if add_mapping or update:
         es = get_elasticsearch(elastic_server, elastic_apikey, elastic_user, elastic_password)
+        if not es:
+            return
 
         if add_mapping:
             set_elasticsearch_mapping(es, elastic_index, json.load(add_mapping))

@@ -1,0 +1,132 @@
+{
+    "mappings": {
+      "properties": {
+        "law": {
+          "properties": {
+            "attributes": {
+              "properties": {
+                "nr": { "type": "string" },
+                "year": { "type": "string" },
+                "law-type": { "type": "keyword" }
+              }
+            },
+            "children": {
+              "type": "nested",
+              "properties": {
+                "name": { "type": "text" },
+                "num-and-date": {
+                  "properties": {
+                    "children": {
+                      "type": "nested",
+                      "properties": {
+                        "date": { "type": "date", "format": "yyyy-MM-dd" },
+                        "num": { "type": "integer" },
+                        "original": { "type": "text" }
+                      }
+                    }
+                  }
+                },
+                "minister-clause": { "type": "text" },
+                "art": {
+                  "properties": {
+                    "attributes": {
+                      "properties": {
+                        "nr": { "type": "integer" }
+                      }
+                    },
+                    "children": {
+                      "type": "nested",
+                      "properties": {
+                        "nr-title": { "type": "text" },
+                        "subart": {
+                          "properties": {
+                            "attributes": {
+                              "properties": {
+                                "nr": { "type": "integer" }
+                              }
+                            },
+                            "children": {
+                              "type": "nested",
+                              "properties": {
+                                "sen": {
+                                  "properties": {
+                                    "attributes": {
+                                      "properties": {
+                                        "nr": { "type": "integer" }
+                                      }
+                                    },
+                                    "children": { "type": "text" }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "chapter": {
+                  "properties": {
+                    "attributes": {
+                      "properties": {
+                        "nr": { "type": "integer" },
+                        "nr-type": { "type": "keyword" },
+                        "roman-nr": { "type": "keyword" }
+                      }
+                    },
+                    "children": {
+                      "type": "nested",
+                      "properties": {
+                        "nr-title": { "type": "text" },
+                        "name": { "type": "text" },
+                        "art": {
+                          "properties": {
+                            "attributes": {
+                              "properties": {
+                                "nr": { "type": "integer" }
+                              }
+                            },
+                            "children": {
+                              "type": "nested",
+                              "properties": {
+                                "nr-title": { "type": "text" },
+                                "subart": {
+                                  "properties": {
+                                    "attributes": {
+                                      "properties": {
+                                        "nr": { "type": "integer" }
+                                      }
+                                    },
+                                    "children": {
+                                      "type": "nested",
+                                      "properties": {
+                                        "sen": {
+                                          "properties": {
+                                            "attributes": {
+                                              "properties": {
+                                                "nr": { "type": "integer" }
+                                              }
+                                            },
+                                            "children": { "type": "text" }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
