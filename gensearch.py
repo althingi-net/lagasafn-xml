@@ -22,7 +22,45 @@ import xml.etree.ElementTree as ET
 from elasticsearch import Elasticsearch, ConnectionError, AuthenticationException, AuthorizationException
 
 
-def generate_json(xml_dir: str, json_dir: str):
+settings = {
+    'xml_dir': 'data/xml/',
+    'json_dir': 'data/json/',
+    'elastic_server': 'https://localhost:9200',
+    'elastic_index': None,
+    'elastic_apikey': None,
+    'elastic_user': None,
+    'elastic_password': None
+}
+
+@click.group()
+@click.option('--xml-dir',                default='data/xml/',  help='Directory containing the XML files')
+@click.option('--json-dir',               default='data/json/', help='Directory to store/retrieve the JSON files')
+@click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'https://localhost:9200'), help='ElasticSearch server')
+@click.option('--elastic-index',          default=lambda: os.environ.get('ELASTIC_INDEX'), help='ElasticSearch index')
+@click.option('--elastic-apikey',         default=lambda: os.environ.get('ELASTIC_APIKEY'), help='ElasticSearch API Key')
+@click.option('--elastic-user',           default=lambda: os.environ.get('ELASTIC_USER'), help='ElasticSearch user')
+@click.option('--elastic-password',       default=lambda: os.environ.get('ELASTIC_PASSWORD'), help='ElasticSearch password')
+def cli(xml_dir: str, json_dir: str, 
+         elastic_server: str, elastic_index: str, elastic_apikey: str, elastic_user: str, elastic_password: str
+    ):
+
+    settings['xml_dir'] = xml_dir
+    settings['json_dir'] = json_dir
+    settings['elastic_server'] = elastic_server
+    settings['elastic_index'] = elastic_index
+    settings['elastic_apikey'] = elastic_apikey
+    settings['elastic_user'] = elastic_user
+    settings['elastic_password'] = elastic_password    
+
+
+
+@cli.command()
+def generate_json():
+    """Generate JSON from the XML files in the given xml directory"""
+
+    xml_dir = settings['xml_dir']
+    json_dir = settings['json_dir']
+
     print("Generating JSON from XML")
     files = os.listdir(xml_dir)
 
@@ -52,7 +90,12 @@ def generate_json(xml_dir: str, json_dir: str):
     print("JSON generated successfully")
 
 
-def get_elasticsearch(elastic_server: str, elastic_apikey: str, elastic_user: str, elastic_password: str) -> Elasticsearch:
+def get_elasticsearch() -> Elasticsearch:
+    elastic_server = settings['elastic_server']
+    elastic_apikey = settings['elastic_apikey']
+    elastic_user = settings['elastic_user']
+    elastic_password = settings['elastic_password']
+
     if not elastic_server:
         print("ElasticSearch server not provided. Exiting...")
         return None
@@ -97,8 +140,26 @@ def get_elasticsearch(elastic_server: str, elastic_apikey: str, elastic_user: st
     return es
 
 
-def set_elasticsearch_mapping(es: Elasticsearch, index: str, mapping: dict):
+@cli.command()
+@click.argument('mapping', type=click.File('r'))
+def add_mapping(mapping: click.File):
+    """Set a mapping for an index in ElasticSearch"""
+    index = settings['elastic_index']
+    if not index:
+        print("ElasticSearch index not provided. Exiting...")
+        return
+    
     print(f"Setting mapping for index {index}")
+
+    try:
+        mapping = json.load(mapping)
+    except json.JSONDecodeError:
+        print(f"Error parsing mapping JSON. Exiting...")
+        return
+
+    es = get_elasticsearch()
+    if not es:
+        return
 
     try:
         es.indices.create(index=index, body=mapping)
@@ -109,7 +170,41 @@ def set_elasticsearch_mapping(es: Elasticsearch, index: str, mapping: dict):
     print(f"Mapping set for index {index}")
 
 
-def update_elasticsearch(json_dir: str, es: Elasticsearch, elastic_index: str):    
+@cli.command()
+def delete_mapping():
+    """Delete the mapping for an index in ElasticSearch"""
+
+    index = settings['elastic_index']
+    if not index:
+        print("ElasticSearch index not provided. Exiting...")
+        return
+    
+    print(f"Deleting mapping for index {index}")
+
+    es = get_elasticsearch()
+    if not es:
+        return
+
+    try:
+        es.indices.delete(index=index)
+    except Exception as e:
+        print(f"Error deleting mapping for index {index}: {e}. Exiting...")
+        return
+
+    print(f"Mapping deleted for index {index}")
+
+
+@cli.command()
+def update():
+    """Update ElasticSearch with the JSON files in the given json directory"""
+
+    json_dir = settings['json_dir']
+    elastic_index = settings['elastic_index']
+
+    es = get_elasticsearch()
+    if not es:
+        return
+
     if not os.path.exists(json_dir):
         print(f"JSON directory {json_dir} does not exist. Exiting...")
         return
@@ -129,34 +224,10 @@ def update_elasticsearch(json_dir: str, es: Elasticsearch, elastic_index: str):
         es.index(index=elastic_index, id=id, document=data)
 
 
-@click.command()
-@click.option('--xml-dir',                default='data/xml/',  help='Directory containing the XML files')
-@click.option('--json-dir',               default='data/json/', help='Directory to store/retrieve the JSON files')
-@click.option('--generate/--no-generate', default=True,         help='Generate JSON from the XML')
-@click.option('--update/--no-update',     default=True,         help='Insert the JSON into ElasticSearch')
-@click.option('--add-mapping',            type=click.File('r'), help='Add mapping to ElasticSearch')
-@click.option('--elastic-server',         default=lambda: os.environ.get('ELASTIC_SERVER', 'https://localhost:9200'), help='ElasticSearch server')
-@click.option('--elastic-index',          default=lambda: os.environ.get('ELASTIC_INDEX'), help='ElasticSearch index')
-@click.option('--elastic-apikey',         default=lambda: os.environ.get('ELASTIC_APIKEY'), help='ElasticSearch API Key')
-@click.option('--elastic-user',           default=lambda: os.environ.get('ELASTIC_USER'), help='ElasticSearch user')
-@click.option('--elastic-password',       default=lambda: os.environ.get('ELASTIC_PASSWORD'), help='ElasticSearch password')
-def main(xml_dir: str, json_dir: str, generate: bool, update: bool, add_mapping: click.File, 
-         elastic_server: str, elastic_index: str, elastic_apikey: str, elastic_user: str, elastic_password: str
-        ):
-    if generate:
-        generate_json(xml_dir, json_dir)
-
-    if add_mapping or update:
-        es = get_elasticsearch(elastic_server, elastic_apikey, elastic_user, elastic_password)
-        if not es:
-            return
-
-        if add_mapping:
-            set_elasticsearch_mapping(es, elastic_index, json.load(add_mapping))
-
-        if update:
-            update_elasticsearch(json_dir, es, elastic_index)
+#@click.option('--generate/--no-generate', default=True,         help='Generate JSON from the XML')
+#@click.option('--update/--no-update',     default=True,         help='Insert the JSON into ElasticSearch')
+#@click.option('--add-mapping',            type=click.File('r'), help='Add mapping to ElasticSearch')
 
 
 if __name__ == '__main__':
-    main()
+    cli()
