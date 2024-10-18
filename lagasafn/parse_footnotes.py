@@ -433,6 +433,7 @@ def parse_footnote(parser):
                     middle_punctuation = None
 
                     words = None
+                    instance_num = None
                     if use_words:
                         # We'll start with everything from the opening
                         # marker onward. Because of possible markers
@@ -469,12 +470,34 @@ def parse_footnote(parser):
                             # escaped, but that has no effect.
                             words += r"\%s" % middle_punctuation
 
+                        words = regexify_markers(words)
+
+                        # Describes which instance of the regex is being
+                        # referred to. This is needed when there are multiple
+                        # instances of the text to replace, but not all of them
+                        # should be marked as changed.
+                        #
+                        # This also takes care of the problem where the same
+                        # instance gets replaced repeatedly, resulting in the
+                        # wrong placement of range markers.
+                        if desc.text[:opening_found] == "":
+                            # When the `words` mechanism gets triggered but there
+                            # is no content before it, there is a tendency to
+                            # match the regex with empty space. This happens in
+                            # "Ákvæði til bráðabirgða II laga nr. 82/2008"
+                            # (153c). To avoid this, we decide that the
+                            # `instance_num` should indeed just be 1.
+                            instance_num = 1
+                        else:
+                            instance_num = len(re.findall(words, desc.text[:opening_found])) + 1
+
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
                     opening_locations.append({
                         "xpath": make_xpath_from_node(desc),
-                        "words": regexify_markers(words) if words is not None else None,
+                        "words": words,
                         "middle_punctuation": middle_punctuation,
+                        "instance_num": instance_num,
                     })
 
                 elif closing_found > -1 and (
@@ -514,6 +537,7 @@ def parse_footnote(parser):
                         "xpath": make_xpath_from_node(desc),
                         "words": None,  # Maybe filled later.
                         "middle_punctuation": None,  # Maybe filled later.
+                        "instance_num": None,  # Maybe filled later.
                     }
 
                     # If the start location had a "words" attribute,
@@ -523,6 +547,7 @@ def parse_footnote(parser):
                     # <end> tags will get truncated into a unified
                     # <location> tag...
                     middle_punctuation = None
+                    instance_num = None
                     if started_at["words"] is not None:
                         # ...except, if it turns out that we're
                         # actually dealing with a different sentence
@@ -543,12 +568,22 @@ def parse_footnote(parser):
                             words = regexify_markers(desc.text[: unmatched_closing])
                             if desc.text[unmatched_closing+1] in [".", ",", ":"]:
                                 middle_punctuation = desc.text[unmatched_closing+1]
+
+                            # Not adding 1 here because it will always find the
+                            # text once, if it's the first instance, because
+                            # this is the closing marker. When dealing with the
+                            # opening marker, we don't expect the content to
+                            # arrive before `words`.
+                            instance_num = len(re.findall(words, desc.text[:closing_found]))
+
                         else:
                             words = started_at["words"]
                             middle_punctuation = started_at["middle_punctuation"]
+                            instance_num = started_at["instance_num"]
 
                         ended_at["words"] = words
                         ended_at["middle_punctuation"] = middle_punctuation
+                        ended_at["instance_num"] = instance_num
 
                     # Stuff our findings into a list of marker
                     # locations that can be appended to the footnote
@@ -838,6 +873,8 @@ def parse_footnote(parser):
                         location.attrib["words"] = started_at["words"]
                     if started_at["middle_punctuation"] is not None:
                         location.attrib["middle-punctuation"] = started_at["middle_punctuation"]
+                    if started_at["instance_num"] is not None:
+                        location.attrib["instance-num"] = str(started_at["instance_num"])
                 else:
                     start = E("start")
                     end = E("end")
@@ -854,6 +891,11 @@ def parse_footnote(parser):
                         start.attrib["middle-punctuation"] = started_at["middle_punctuation"]
                     if ended_at["middle_punctuation"] is not None:
                         end.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
+
+                    if started_at["instance_num"] is not None:
+                        start.attrib["instance-num"] = str(started_at["instance_num"])
+                    if ended_at["instance_num"] is not None:
+                        end.attrib["instance-num"] = str(ended_at["instance_num"])
 
                     location.append(start)
                     location.append(end)

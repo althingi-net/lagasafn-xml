@@ -4,6 +4,22 @@
 var IMG_BOX_WHITE = '/static/law/img/box-white.png';
 var IMG_BOX_BLACK = '/static/law/img/box-black.png';
 
+function instanceReplace(content, search_text, replace_text, instance_num) {
+    /*
+     * Replaces the `instance_num`th instance of the `search_text` with the
+     * `replace_text` in `content.
+     */
+    let parts = content.split(search_text);
+
+    if (instance_num > 0 && instance_num <= parts.length - 1) {
+        parts[instance_num - 1] += replace_text;
+        return parts.slice(0, instance_num).join(search_text) + parts.slice(instance_num).join(search_text);
+    }
+
+    // If instanceNum is out of range, return the original content.
+    return content;
+}
+
 function lowercase_tagname(element) {
     if (element.prop('tagName') == undefined) {
         return '';
@@ -364,16 +380,23 @@ var process_footnote = function() {
                 ));
             }
             else {
+                let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
+                let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
+
                 if ($start_mark.html() !== undefined) {
-                    $start_mark.html($start_mark.html().replace(
+                    $start_mark.html(instanceReplace(
+                        $start_mark.html(),
                         seek_text_start,
-                        replace_text_start
+                        replace_text_start,
+                        start_instance_num
                     ));
                 }
                 if ($end_mark.html() !== undefined) {
-                    $end_mark.html($end_mark.html().replace(
+                    $end_mark.html(instanceReplace(
+                        $end_mark.html(),
                         seek_text_end,
-                        replace_text_end
+                        replace_text_end,
+                        end_instance_num
                     ));
                 }
             }
