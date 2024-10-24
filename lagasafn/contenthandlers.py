@@ -85,17 +85,32 @@ def regexify_markers(text):
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
     # NOTE: We actually contain content from the given text in the new regex,
     # so that it doesn't over-match.
-    # FIXME: This should be refactored to make the produced regex stricter. For
-    # example, we are taking the number (\d+) and placing it in the produced
-    # regex, and we should be doing the same for the symbols before and after
-    # the HTML markup. We may also want to refactor this so that it's relying
-    # less on regex altogether, or perhaps finding special regex characters
-    # like "." and "]" and replacing them with "\." and "\]" explicitly.
-    text = re.sub(
-        r'\.? ?\]?…?,?\.?:? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?',
-        r'\.?:? ?(\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?\1\) ?</sup>)?,? ?',
-        text,
-    )
+    matches = re.findall(r'((\.?) ?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)', text)
+    for match in matches:
+        # The replacement string needs a little bit of adjusting depending on
+        # the input, to a greater extent than possible with simple regex
+        # replacements. For example, a "." is moved from a sentence like
+        # "something." passed the closing marker if it exists, "something].".
+        # Additional markers may be found around it, creating more somewhat
+        # convoluted situations.
+        replacement_string = ""
+        if len(match[1]) or len(match[2]):  # Found a dot.
+            # The dot can be found on either side of the "]", depending on
+            # surroundings. We therefore need to have this optional "." if it
+            # shows up on either side of the "]". Note that always including it
+            # , without this condition, it breaks laws under certain conditions.
+            #
+            # NOTE: This optional dot is added to the front of the replacement
+            # regex, despite being detected in two separate locations in the
+            # input. This is because it is moved passed the closing marker
+            # under certain conditions.
+            replacement_string += r'\.?'
+        replacement_string += r':? ?(\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?' + match[3] + r'\) ?</sup>)?,? ?'
+
+        text = text.replace(
+            match[0],
+            replacement_string
+        )
 
     # FIXME: This is unexplained.
     text = text.replace(" ,", r" ?,")
