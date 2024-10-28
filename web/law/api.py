@@ -10,8 +10,24 @@ from ninja import NinjaAPI
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
 from typing import List
+from .searchengine import SearchEngine
+from datetime import datetime
 
 api = NinjaAPI()
+
+# Initialize the global search engine
+searchengine = SearchEngine("search_index.pkl")
+
+@api.get("search/")
+def search(request, q: str):
+    start_time = datetime.now()
+    results = searchengine.search(q)
+    end_time = datetime.now()
+    return { 
+        "query": q, 
+        "time": (end_time - start_time).total_seconds(),
+        "results": results.sort(),
+    }
 
 
 def convert_to_text(elements: List[Element]):

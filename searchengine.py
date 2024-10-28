@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #
 # Python based full text search engine for XML files
 #
@@ -17,19 +18,6 @@ from lxml import etree as ET
 from math import log
 import pdb
 
-class IndexItem:
-    def __init__(self, filename: str, xpath: str, start: int, end: int):
-        self.filename = filename
-        self.xpath = xpath
-        self.start = start
-        self.end = end
-
-    def __str__(self):
-        return f"{self.filename}: {self.xpath} ({self.start}-{self.end})"
-
-    def __repr__(self):
-        return self.__str__()
-
 
 class Results:
     def __init__(self):
@@ -42,58 +30,50 @@ class Results:
     def files(self):
         return self.result_files
     
+    def sort_info(self, info):
+        flattened = []
+        for xpath, set in info.items():
+            flattened.append((xpath, set["locations"], set["score"]))
+
+        return sorted(flattened, key=lambda x: x[2], reverse=True)
+
     def sort(self):
         # Here we sort the result files by overall score, and the hits within
         # the files by their sub-score
         self.flattened = []
         for file, info in self.result_files.items():
-            self.flattened.append((file, info, sum([z["score"] for y,z in info.items()])))
+            self.flattened.append((file, self.sort_info(info), sum([z["score"] for y,z in info.items()])))
 
         self.sorted = sorted(self.flattened, key=lambda x: x[2], reverse=True)
         return self.sorted
 
-    def add(self, results, intersect_files=False):
-        _results = results
-        if intersect_files:
-            # If we want to intersect the files, we need to find the files that don't come up in
-            # this set of results and remove them from the result_files dictionary, as well as the
-            # results from this set.
-            files = self.get_files()
-            new_files = [item.filename for item in results]
-            for file in files:
-                if file not in new_files:
-                    del self.result_files[file]
+    def add(self, results):
+        for item in results:
+            filename, xpath, start, end = item
+            if filename not in self.result_files:
+                self.result_files[filename] = {}
 
-            for item in _results:
-                if item.filename not in files:
-                    _results.remove(item)
+            if xpath not in self.result_files[filename]:
+                self.result_files[filename][xpath] = {"locations": [], "score": 0}
 
-        for item in _results:
-            if item.filename not in self.result_files:
-                self.result_files[item.filename] = {}
-
-            if item.xpath not in self.result_files[item.filename]:
-                self.result_files[item.filename][item.xpath] = {"locations": [], "score": 0}
-
-            self.result_files[item.filename][item.xpath]["score"] += 1
-            self.result_files[item.filename][item.xpath]["locations"].append((item.start, item.end))
-
-        #for file in self.result_files:
-        #    self.result_files[file]["score"] = log(self._index[] / self.result_files[file]["count"])
+            self.result_files[filename][xpath]["score"] += 1
+            self.result_files[filename][xpath]["locations"].append((start, end))
 
     def get_files(self):
         return self.result_files.keys()
     
 
 class SearchEngine:
-    def __init__(self):
+    def __init__(self, index_file="search_index.pkl"):
         # Load the search index from a pickle file
         self.bin = Bin()
-        self._index_file = "search_index.pkl"
+        self._index_file = index_file
         try:
+            print("Loading index...", end="", flush=True)
             fh = open(self._index_file, 'rb')
             self._index = pickle.load(fh)
             fh.close()
+            print(" done.")
         except FileNotFoundError:
             print("No search index found, starting with an empty index")
             self._index = {}
@@ -189,7 +169,7 @@ class SearchEngine:
     def index_token(self, token: str, filename: str, xpath: str, start: int, end: int):
         if token not in self._index:
             self._index[token] = []
-        self._index[token].append(IndexItem(filename, xpath, start, end))
+        self._index[token].append((filename, xpath, start, end))
 
     def search(self, query):
         print("Searching the index")
@@ -198,7 +178,7 @@ class SearchEngine:
 
         for (token, start, end) in tokens:
             if token in self._index:
-                results.add(self._index[token], intersect_files=False)
+                results.add(self._index[token])
         
         results.sort()
         return results
