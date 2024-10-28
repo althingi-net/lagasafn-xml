@@ -9,6 +9,7 @@
 # We want to support Icelandic language stemming, because the XML files are in Icelandic.
 #
 
+from datetime import datetime
 import os
 from typing import List
 import click
@@ -25,6 +26,7 @@ class Results:
         # and a list of start and end positions in the text of each XPath.
         self.result_files = {}
         self.flattened = []
+        self.metadata = {}
 
     @property
     def files(self):
@@ -36,6 +38,12 @@ class Results:
             flattened.append((xpath, set["locations"], set["score"]))
 
         return sorted(flattened, key=lambda x: x[2], reverse=True)
+    
+    def augment_with_metadata(self, metadata):
+        for file in self.result_files.keys():
+            if file not in metadata:
+                continue
+            self.metadata[file] = metadata[file]
 
     def sort(self):
         # Here we sort the result files by overall score, and the hits within
@@ -49,7 +57,7 @@ class Results:
 
     def add(self, results):
         for item in results:
-            filename, xpath, start, end = item
+            filename, xpath, start, end, context = item
             if filename not in self.result_files:
                 self.result_files[filename] = {}
 
@@ -57,7 +65,7 @@ class Results:
                 self.result_files[filename][xpath] = {"locations": [], "score": 0}
 
             self.result_files[filename][xpath]["score"] += 1
-            self.result_files[filename][xpath]["locations"].append((start, end))
+            self.result_files[filename][xpath]["locations"].append((start, end, context))
 
     def get_files(self):
         return self.result_files.keys()
@@ -76,10 +84,10 @@ class SearchEngine:
             print(" done.")
         except FileNotFoundError:
             print("No search index found, starting with an empty index")
-            self._index = {}
+            self._index = {"metadata": {}, "tokens": {}}
 
     def empty(self):
-        self._index = {}
+        self._index = {"metadata": {}, "tokens": {}}
         self.save_index()
 
     def save_index(self):
@@ -87,6 +95,7 @@ class SearchEngine:
 
     def index_dir(self, xml_dir: str):
         print("Building the search index")
+        time_start = datetime.now()
         files = os.listdir(xml_dir)
         count = len(files)
         idx = 0
@@ -96,11 +105,32 @@ class SearchEngine:
             self.index_file(os.path.join(xml_dir, xml_file), save_index=False)
 
         self.save_index()
+        time_end = datetime.now()
+
+        print(f"Indexing complete in {(time_end - time_start).total_seconds()} seconds. Indexed:")
+        print(f"{len(self._index["metadata"]):>10} files")
+        print(f"{len(self._index["tokens"]):>10} tokens")
+        locs = sum([len(x) for y,x in self._index["tokens"].items()])
+        print(f"{locs:>10} locations")
+        
+
+    def index_metadata(self, xml_file: str, metadata: dict):
+        self._index["metadata"][xml_file] = metadata
 
     def index_file(self, xml_file: str, save_index=True):
         # Parse the XML file
         tree = ET.parse(xml_file)
         root = tree.getroot()
+
+        metadata = dict(root.items())
+
+        name = root.find("name")
+        if name is not None:
+            metadata["title"] = name.text
+        else:
+            print(f"Could not find <name> tag in {xml_file}")
+
+        self.index_metadata(xml_file, metadata)
 
         for child in root.iter():
             # Tokenize the text
@@ -113,7 +143,7 @@ class SearchEngine:
 
             for (token, start, end) in tokens:
                 # Token stemming not implemented.
-                self.index_token(token, xml_file, xpath, start, end)
+                self.index_token(token, xml_file, xpath, start, end, text)
 
         if save_index:
             self.save_index()
@@ -166,10 +196,10 @@ class SearchEngine:
 
         return toks
 
-    def index_token(self, token: str, filename: str, xpath: str, start: int, end: int):
-        if token not in self._index:
-            self._index[token] = []
-        self._index[token].append((filename, xpath, start, end))
+    def index_token(self, token: str, filename: str, xpath: str, start: int, end: int, context:str):
+        if token not in self._index["tokens"]:
+            self._index["tokens"][token] = []
+        self._index["tokens"][token].append((filename, xpath, start, end, context))
 
     def search(self, query):
         print("Searching the index")
@@ -177,9 +207,10 @@ class SearchEngine:
         results = Results()
 
         for (token, start, end) in tokens:
-            if token in self._index:
-                results.add(self._index[token])
-        
+            if token in self._index["tokens"]:
+                results.add(self._index["tokens"][token])
+
+        results.augment_with_metadata(self._index["metadata"])
         results.sort()
         return results
 
