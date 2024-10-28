@@ -52,17 +52,20 @@ class UnexpectedClosingBracketException(Exception):
 # the first key, and the legal number as the second key ("123" in "123/2020").
 # Law number typecasted to integer to get canonical order.
 def sorted_law(law_ids):
-    return list(
-        reversed(
-            sorted(
-                law_ids,
-                key=lambda law_id: (
-                    law_id[law_id.find("/") + 1 :],
-                    int(law_id[: law_id.find("/")]),
-                ),
-            )
+
+    def sorter(law_id):
+        nr = law_id[: law_id.find("/")]
+        if nr.isdigit():
+            nr = int(nr)
+        else:
+            nr = 0
+
+        return (
+            law_id[law_id.find("/") + 1 :],
+            nr,
         )
-    )
+
+    return list(reversed(sorted(law_ids, key=sorter)))
 
 
 def numart_next_nrs(prev_numart):
