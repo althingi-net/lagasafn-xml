@@ -90,10 +90,7 @@ numart-chapter > name { font-weight: bold; }
 
 /* paragraph */
 paragraph { display: block; text-indent: 1.04em; }
-/* Disabled for now. Might be re-introduced when `paragraph` gets used in
- * `subart`s, `numart`s and such.
 paragraph:first-of-type { display: inline; text-indent: 0; }
-*/
 
 /* sentence title */
 sen-title { font-style: italic; }

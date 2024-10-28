@@ -1434,10 +1434,14 @@ def parse_sentence_with_title(parser):
     content = parser.collect_until("<br/>")
     parser.consume("<br/>")
     if parser.subart is not None:
+        paragraph = add_sentences(parser.subart, separate_sentences(content))
+
         sen_title = E("sen-title", sen_title_text)
         parser.subart.append(sen_title)
 
-        add_sentences(parser.subart, separate_sentences(content))
+        # The sentence title belongs inside the paragraph that
+        # `add_sentences` creates, so it is inserted afterwards.
+        paragraph.insert(0, sen_title)
 
         parser.trail_push(sen_title)
 
@@ -1775,9 +1779,9 @@ def parse_subarticle(parser):
         content = content.replace(raw_definition, before + definition.strip())
 
         sens = separate_sentences(strip_links(content))
-        add_sentences(parser.subart, sens)
+        paragraph = add_sentences(parser.subart, sens)
 
-        added_sens = parser.subart.findall("sen")
+        added_sens = paragraph.findall("sen")
 
         # Something strange is going on if these are different, so we'll throw
         # an error, just in case.
@@ -1786,11 +1790,11 @@ def parse_subarticle(parser):
 
         # It is also unexpected to see a definition being applied when there
         # already is one.
-        if "definition" in parser.subart.attrib:
-            raise Exception("Unexpectedly existing definition in `subart`.")
+        if "definition" in paragraph.attrib:
+            raise Exception("Unexpectedly existing definition in `paragraph`.")
 
-        # Add the definition to the subart.
-        parser.subart.attrib["definition"] = definition
+        # Add the definition to the paragraph.
+        paragraph.attrib["definition"] = definition
 
     else:
         sens = separate_sentences(strip_links(content))
@@ -2089,8 +2093,9 @@ def parse_numerical_article(parser):
                 # says it's at the beginning, being either 'a' or 1.
                 # In this case, we'll choose the previous `numart` as
                 # the parent, so that this new list will be inside the
-                # previous one.
-                parent = prev_numart
+                # previous one. We append to the last paragraph of
+                # that parent.
+                parent = prev_numart.findall("paragraph")[-1]
             else:
                 # A different list is being handled now, but it's not
                 # starting at the beginning (is neither 'a' nor 1).
@@ -2101,20 +2106,41 @@ def parse_numerical_article(parser):
                 # the same parent as the nodes that came before we
                 # started the sub-list.
                 #
+                # Parent is a `paragraph`, grandparent is another
+                # `numart`, great-grandparent is the last `paragraph`
+                # of the "grandparent numart", which is the one we
+                # want to append to.
+                #
+                # Hey, it's simpler than the British monarchy.
+                #
                 # We'll need to iterate through ancestors in case there are
                 # multiple levels of `numart`s, checking each time if the
                 # current `numart_nr` matches the expected next numart number
                 # from each ancestor. Once `numart_nr` matches what we
                 # expected, we know we've found the right ancestor.
                 found_parent = None
-                maybe_parent = prev_numart.getparent()
+                maybe_sibling = prev_numart.getparent()
                 while found_parent is None:
-                    expected = numart_next_nrs(maybe_parent)
-                    if numart_nr in expected:
-                        found_parent = maybe_parent
-                    maybe_parent = maybe_parent.getparent()
+                    # We know that the parent is never the first
+                    # `maybe_parent`'s parent because that would mean that the
+                    # current `numart` is a sibling of the `prev_numart` which
+                    # makes no sense in this place in the code, so we can
+                    # safely assume that the first possible `found_parent` is
+                    # the `prev_numart`'s parent.
+                    maybe_sibling = maybe_sibling.getparent()
+                    if maybe_sibling.tag == "paragraph":
+                        maybe_sibling = maybe_sibling.getchildren()[-1]
 
-                parent = maybe_parent
+                    expected = numart_next_nrs(maybe_sibling)
+
+                    if numart_nr in expected:
+                        # Yes! We found the sibling, so we know its parent.
+                        found_parent = maybe_sibling.getparent()
+                    else:
+                        # Doesn't make sense. Let's try the parent.
+                        maybe_sibling = maybe_sibling.getparent()
+
+                parent = found_parent
 
     # A parent may already be set above if `numart` currently being
     # handled is not the first one in its parent article/subarticle.
@@ -2142,7 +2168,9 @@ def parse_numerical_article(parser):
         elif parser.appendix is not None:
             parent = parser.appendix
         elif parser.subart is not None:
-            parent = parser.subart
+            # A numart should belong to the same paragraph as a
+            # potential sentence explaining what's being listed.
+            parent = parser.subart.findall("paragraph")[-1]
         elif parser.art is not None:
             # FIXME: Investigate if this ever actually happens and
             # explain when it does, or remove this clause.

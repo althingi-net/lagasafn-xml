@@ -292,7 +292,7 @@ def parse_footnote(parser):
             # ("peek") to the current one ("desc"), until there are no
             # closing markers in the next node. (Probably there is
             # only one, but you never know.)
-            while parser.matcher.check(peek.text.strip(), close_mark_re):
+            while parser.matcher.check(peek.text.strip(), close_mark_re) and peek.tag != "mark-container":
                 # Get the actual closing marker from the next node.
                 stuff_to_move = parser.matcher.result()[0]
 

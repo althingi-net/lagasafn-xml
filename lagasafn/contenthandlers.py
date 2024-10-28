@@ -646,39 +646,30 @@ def separate_sentences(content):
 
 def add_sentences(target_node, sens):
     """
-    Gracefully adds a bunch of sentences to a target node, but also considering
-    the sentences that are already there before and may need specifying as
-    belonging to different sub-paragraphs.
+    Gracefully adds a bunch of sentences to a target node, enclosing them in
+    a paragraph. If the target node is itself a paragraph, the sentences get
+    added to it, and the already existing paragraph returned instead.
 
-    NOTE:
-    The original version of this function enclosed the provided sentences in a
-    paragraph, unless the target node was already a paragraph, and then
-    returned that paragraph. We have disbanded the use of paragraphs (at least
-    for now) due to difficulties they introduce in creating a WYSIWYG editor.
-    Instead, what was previously expressed using specific `<paragraph>` tags
-    is now expressed in attributes of the `sen` elements created by this
-    function. This is hopefully enough for other software to make sense of the
-    nature of the text when formatting and referencing.
+    Returns the created/found paragraph for further use by caller.
     """
 
-    # There may be already existing sentences in the element we're adding to.
-    # This happens when a new sentence actually denotes a new sub-paragraph.
-    # However, since our format does not contain sub-paragraphs (due to
-    # limitations it places on a visual editor), we will instead represent
-    # this information in attributes.
-    sub_par_nr = 1
-    prior_sens = target_node.findall("sen")
-    prior_sens_count = len(prior_sens)
+    if target_node.tag == "paragraph":
+        # If target node is a paragraph, then the target and paragraph are
+        # the same thing. This is to prevent paragraphs inside paragraphs when
+        # a numart is contained within a paragraph, but also has text
+        # following the numart. This happens in 18/2013, 132/2020 and 80/2022
+        # in version 152c.
+        paragraph = target_node
+    else:
+        # Construct paragraph, determining its number by examining how many
+        # already exist in the target node.
+        paragraph_nr = str(len(target_node.findall("paragraph")) + 1)
+        paragraph = E("paragraph", {"nr": paragraph_nr})
 
-    # Figure out if these sentences are in a new sub-paragraph.
-    if prior_sens_count > 0:
-        last_sen = prior_sens[-1]
-        if "sub-paragraph-nr" in last_sen.attrib:
-            sub_par_nr = int(last_sen.attrib["sub-paragraph-nr"]) + 1
-        else:
-            sub_par_nr = 2
+        # Append paragraph to given node.
+        target_node.append(paragraph)
 
-    # Append sentences to element and automatically configure them.
+    # Append sentences to paragraph, giving them numbers.
     sen_nr = 0
     for sen in sens:
         sen_nr += 1
@@ -694,16 +685,10 @@ def add_sentences(target_node, sens):
             # "empty" (i.e. empty if it's without markers).
             sen_elem.attrib["expiry-symbol-offset"] = str(expiry_loc)
 
-        # Special flag to assist visual software, indicating that even though
-        # this is a new sentence in the file, it visually represents a new
-        # sub-paragraph.
-        if sub_par_nr > 1:
-            sen_elem.attrib["ultimate-nr"] = str(prior_sens_count + sen_nr)
-            sen_elem.attrib["sub-paragraph-nr"] = str(sub_par_nr)
-            if sen_nr == 1:
-                sen_elem.attrib["new-sub-paragraph"] = "true"
+        paragraph.append(sen_elem)
 
-        target_node.append(sen_elem)
+    # Return paragraph, whether contructed or already existing.
+    return paragraph
 
 
 def is_ignorable_chapter(line: str) -> str:
