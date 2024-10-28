@@ -9,6 +9,11 @@ from os.path import isfile
 from os.path import join
 
 
+def law_search(request):
+    ctx = {}
+    return render(request, "law/search.html", ctx)
+
+
 def law_list(request):
     stats, laws = LawManager.index()
 

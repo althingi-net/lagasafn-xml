@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<script language="javascript" type="text/javascript">
+function law_search(event) {
+    // TODO: Add debounce
+    let q = event.currentTarget.value;
+    console.log("Searching", q);
+    fetch(`/api/law/search/?q=${q}`).then(
+        async (response) => {
+            results = await response.json()
+            console.log(results);
+
+            $("#laws-found").text(results["metadata"].length);
+            $("#hits-found").text(results["results"].length);
+
+            let results_div = $(".results");
+            results_div.empty();
+
+            for (let [file, hits, score] of results["results"]) {
+                let result_div = $("<div></div>");
+                let title = $("<h3></h3>");
+                title.text(`${results["metadata"][file]["title"]} (${results["metadata"][file]["nr"]}/${results["metadata"][file]["year"]})`);
+                result_div.append(title);
+                let hits_list = $("<ul></ul>");
+                for (let [xpath, locations, score] of hits) {
+                    let hit_item = $("<li></li>");
+
+                    // Here we want to highlight the hits in the text.
+                    // Start by adding the first part of the text, then each of the locations and their surrounding text, then the last part of the text.
+                    var last_end = 0;
+                    var text = locations[0][2];
+                    var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
+                    hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
+                    for (let idx = 0; idx < sorted_locations.length; idx++) {
+                        let start = sorted_locations[idx][0];
+                        let end = sorted_locations[idx][1];
+
+                        hit_item.append($("<span></span>").text(text.slice(start, end)).css("background-color", "yellow"));
+                        if (idx < sorted_locations.length - 1) {
+                            let next_start = sorted_locations[idx+1][0];
+                            hit_item.append($(`<span class="remainder">${text.slice(end, next_start)}</span>`));
+                        }
+                    }
+                    hit_item.append($("<span></span>").text(text.slice(sorted_locations[sorted_locations.length-1][1], text.length)));
+
+                    hits_list.append(hit_item);
+                }
+                result_div.append(hits_list);
+                results_div.append(result_div);
+            }
+        },
+        (reason) => {
+            console.log("Error searching: ", reason);
+        }
+    )
+}
+</script>
+{% endblock %}
+
+{% block controls %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <input type="search" oninput="law_search(event)"/>
+    <div class="statistics">
+        <div>{% trans "Laws found" %} <span id="laws-found"></span></div>
+        <div>{% trans "Hits found" %} <span id="hits-found"></span></div>
+    </div>
+    <div class="results">
+
+    </div>
+</div>
+
+{% endblock %}
