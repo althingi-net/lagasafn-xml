@@ -1290,11 +1290,12 @@ def parse_article_chapter(parser):
     art_chapter_goo = parser.collect_until("</b>")
     parser.consume("</b>")
 
-    # Check if there's a name to the article chapter.
-    try:
-        art_chapter_nr, art_chapter_name = art_chapter_goo.strip(".").split(".")
-        art_chapter_name = art_chapter_name.strip()
-    except:
+    # Art chapter number and possibly name.
+    space_loc = art_chapter_goo.find(" ")
+    if space_loc > -1:
+        art_chapter_nr = art_chapter_goo[0:space_loc].strip(".")
+        art_chapter_name = art_chapter_goo[space_loc+1:]
+    else:
         art_chapter_nr = art_chapter_goo.strip(".")
         art_chapter_name = ""
 

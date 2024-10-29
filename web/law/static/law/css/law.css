@@ -70,7 +70,9 @@ art > nr-title .art-deletion { font-weight: normal; }
 art > name { font-style: italic; }
 
 /* art-chapter */
-art-chapter > nr-title { display: block; font-weight: bold; }
+art-chapter { display: block }
+art-chapter > nr-title { font-weight: bold; }
+art-chapter > name { font-weight: bold; }
 art-chapter > sen:first-of-type { margin-left: 1.04em; } /* Only in 7. gr. laga nr. 90/2003 */
 
 /* subarticle */
