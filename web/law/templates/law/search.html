@@ -21,17 +21,23 @@ function law_search(event) {
             for (let [file, hits, score] of results["results"]) {
                 let result_div = $("<div></div>");
                 let title = $("<h3></h3>");
-                title.text(`${results["metadata"][file]["title"]} (${results["metadata"][file]["nr"]}/${results["metadata"][file]["year"]})`);
+                let nr = results["metadata"][file]["nr"];
+                let year = results["metadata"][file]["year"];
+                let lawlink = $(`<a href="/law/show/${nr}/${year}">${results["metadata"][file]["title"]} (${nr}/${year})</a>`);
+                title.append(lawlink);
                 result_div.append(title);
                 let hits_list = $("<ul></ul>");
-                for (let [xpath, locations, score] of hits) {
+                for (let [xpath, locations, score, text] of hits) {
                     let hit_item = $("<li></li>");
 
                     // Here we want to highlight the hits in the text.
                     // Start by adding the first part of the text, then each of the locations and their surrounding text, then the last part of the text.
                     var last_end = 0;
-                    var text = locations[0][2];
+                    if (locations.length == 0) {
+                        continue;
+                    }
                     var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
+                    hit_item.append($("<span></span>").text(xpath).css("font-weight", "bold"));
                     hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
                     for (let idx = 0; idx < sorted_locations.length; idx++) {
                         let start = sorted_locations[idx][0];

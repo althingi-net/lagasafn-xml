@@ -35,7 +35,7 @@ class Results:
     def sort_info(self, info):
         flattened = []
         for xpath, set in info.items():
-            flattened.append((xpath, set["locations"], set["score"]))
+            flattened.append((xpath, set["locations"], set["score"], set["context"]))
 
         return sorted(flattened, key=lambda x: x[2], reverse=True)
     
@@ -62,10 +62,10 @@ class Results:
                 self.result_files[filename] = {}
 
             if xpath not in self.result_files[filename]:
-                self.result_files[filename][xpath] = {"locations": [], "score": 0}
+                self.result_files[filename][xpath] = {"locations": [], "score": 0, "context": context}
 
             self.result_files[filename][xpath]["score"] += 1
-            self.result_files[filename][xpath]["locations"].append((start, end, context))
+            self.result_files[filename][xpath]["locations"].append((start, end))
 
     def get_files(self):
         return self.result_files.keys()
@@ -139,14 +139,16 @@ class SearchEngine:
                 continue
             tokens = self.tokenize(text)
             xpath = child.getroottree().getpath(child)
-            xpath = xpath.replace("/" + root.tag, "") # Remove the root tag from the XPath, because... reasons
+            xpath = "./" + xpath.replace("/" + root.tag, "") # Remove the root tag from the XPath and replace with relative
 
             for (token, start, end) in tokens:
                 # Token stemming not implemented.
+                # ref = self.get_natural_reference(root, xpath)
                 self.index_token(token, xml_file, xpath, start, end, text)
 
         if save_index:
             self.save_index()
+
 
     def split(self, text: str, splitchars: str = [" ", "\n", "\t"]):
         # This will return a list of tuples consisting of the token, 
@@ -264,7 +266,7 @@ def print_results(results):
             locs = info["locations"]
             score = info["score"]
             tree = ET.parse(file)
-            elem = tree.find("./" + xpath)
+            elem = tree.find(xpath)
             text = add_bold_ansi(elem.text, locs)
             print("     ", text)
         print("")
