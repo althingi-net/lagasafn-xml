@@ -2308,6 +2308,12 @@ def parse_numerical_article(parser):
     # Split the content into sentences.
     sens = separate_sentences(strip_links(content))
 
+    # Add the title info to the `numart`.
+    parser.numart.insert(0, E("nr-title", numart_nr_title))
+    if len(numart_name) > 0:
+        # Inserted immediately after the `nr-title`, so 1.
+        parser.numart.insert(1, E("name", numart_name))
+
     # Check if this numart is actually just a content-less container
     # for a sub-numart, by checking if the beginning of the content is
     # in fact the starting of a new list, numeric or alphabetic.
@@ -2362,12 +2368,6 @@ def parse_numerical_article(parser):
     else:
         # Add the sentences to the numart.
         add_sentences(parser.numart, sens)
-
-        # Add the title info to the `numart`.
-        parser.numart.insert(0, E("nr-title", numart_nr_title))
-        if len(numart_name) > 0:
-            # Inserted immediately after the `nr-title`, so 1.
-            parser.numart.insert(1, E("name", numart_name))
 
     while True:
         parser.maybe_consume("<br/>")
