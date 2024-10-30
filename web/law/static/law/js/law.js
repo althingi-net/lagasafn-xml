@@ -317,6 +317,8 @@ var process_footnote = function() {
             post_deletion_space = '';
         }
 
+        var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
+
         if ($start_mark.location_node.attr('words')) {
             // If specific words are specified, we can just replace the
             // existing text with itself plus the relevant symbols for
@@ -349,8 +351,7 @@ var process_footnote = function() {
                 seek_text_end = end_match[0];
             }
 
-            var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
-
+            // FIXME: Won't this always be "range" at this point in the code?
             if (location_type == 'range') {
                 replace_text_start = '[' + seek_text_start;
 
@@ -431,9 +432,15 @@ var process_footnote = function() {
                 $start_mark.html($start_mark.html().replace(/\.$/, ''));
             }
 
-            // Figure out what the closing marker should look like, depending
+            // Strip the middle-punctuation if needed.
+            let end_mark_content = $end_mark.html();
+            if (middle_punctuation.length > 0 && end_mark_content[end_mark_content.length - 1] == middle_punctuation) {
+                $end_mark.html(end_mark_content.slice(0, -1));
+            }
+
+           // Figure out what the closing marker should look like, depending
             // on things we've figured out before.
-            append_closing_text = pre_close_space + ']' + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+            append_closing_text = pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
 
             // Actually append the closing marker.
             $end_mark.append(append_closing_text);

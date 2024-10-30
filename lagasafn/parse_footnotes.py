@@ -584,6 +584,16 @@ def parse_footnote(parser):
                         ended_at["words"] = words
                         ended_at["middle_punctuation"] = middle_punctuation
                         ended_at["instance_num"] = instance_num
+                    else:
+                        # Check for `middle-punctuation` with the closing
+                        # marker, when there are no `words`, and we know that
+                        # the markers encompass the entire element.
+                        middle_punctuation_search = re.search(
+                            r'([,.:]) <sup style="font-size:60%%"> %s\) <\/sup>' % num,
+                            desc.text
+                        )
+                        if middle_punctuation_search is not None:
+                            ended_at["middle_punctuation"] = middle_punctuation_search[1]
 
                     # Stuff our findings into a list of marker
                     # locations that can be appended to the footnote
@@ -868,13 +878,16 @@ def parse_footnote(parser):
                     started_at["xpath"] == ended_at["xpath"]
                     and started_at["words"] == ended_at["words"]
                 ):
-                    location.attrib["xpath"] = started_at["xpath"]
-                    if started_at["words"] is not None:
-                        location.attrib["words"] = started_at["words"]
-                    if started_at["middle_punctuation"] is not None:
-                        location.attrib["middle-punctuation"] = started_at["middle_punctuation"]
-                    if started_at["instance_num"] is not None:
-                        location.attrib["instance-num"] = str(started_at["instance_num"])
+                    # NOTE: We use `ended_at` consciously, because for example
+                    # `middle_punctuation` rules the closing marker and not the
+                    # opening marker.
+                    location.attrib["xpath"] = ended_at["xpath"]
+                    if ended_at["words"] is not None:
+                        location.attrib["words"] = ended_at["words"]
+                    if ended_at["middle_punctuation"] is not None:
+                        location.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
+                    if ended_at["instance_num"] is not None:
+                        location.attrib["instance-num"] = str(ended_at["instance_num"])
                 else:
                     start = E("start")
                     end = E("end")
