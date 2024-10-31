@@ -400,7 +400,9 @@ def parse_footnote(parser):
                             ):
                                 use_words = False
                         else:
-                            # Found no unmatched closing bracket at all, which means that it will appear in some other node. We don't need to designate `words`.
+                            # Found no unmatched closing bracket at all, which
+                            # means that it will appear in some other node. We
+                            # don't need to designate `words`.
                             use_words = False
 
                     middle_punctuation = None
