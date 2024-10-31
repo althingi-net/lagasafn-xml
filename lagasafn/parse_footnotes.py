@@ -381,54 +381,27 @@ def parse_footnote(parser):
                     #
                     #    <sen>2</sen>
                     #
-
-                    # At this point, the variable `opening_found`
-                    # contains the location of the first opening
-                    # marker (the symbol "]") in the current node's
-                    # text.
-
-                    # Find the opening marker after the current one,
-                    # if it exists.
-                    next_opening = desc.text.find("[", opening_found + 1)
-
-                    # Check whether the next opening marker, if it
-                    # exists, is between the current opening marker
-                    # and the next closing marker.
-                    no_opening_between = (
-                        next_opening == -1 or next_opening > closing_found
-                    )
-
-                    # Use "words" if 1) the opening marker is at the
-                    # start of the sentence and 2) there is also a
-                    # closing marker found but 3) there's no opening
-                    # marker between the current marker and its
-                    # corresponding closing marker.
-                    partial_at_start = (
-                        opening_found == 0
-                        and closing_found > -1
-                        and no_opening_between
-                    )
-
-                    # Check if the opening and closing markers
-                    # encompass the entire entity. In these cases, it
-                    # makes no sense to use "words".
-                    all_encompassing = all(
-                        [
-                            opening_found == 0,
-                            no_opening_between,
-                            desc.text[0] == "[",
-                            parser.matcher.check(
-                                desc.text[closing_found:],
+                    use_words = True
+                    if opening_found == 0:
+                        unmatched_closing = find_unmatched_closing_bracket(desc.text[1:])
+                        if unmatched_closing > -1:
+                            # An unmatchec closing bracket was found, but we
+                            # need to make sure that it's truly at the end of
+                            # the node's content.
+                            closing_at_end = re.search(
                                 r'\] <sup style="font-size:60%"> \d+\) </sup>$',
-                            ),
-                        ]
-                    )
-
-                    # Boil this logic down into the question: to use
-                    # words or not to use words?
-                    use_words = (
-                        opening_found > 0 or partial_at_start
-                    ) and not all_encompassing
+                                desc.text
+                            )
+                            # -1 because we're searching for the unmatched
+                            # closing bracket from index 1, not index 0.
+                            if (
+                                closing_at_end is not None
+                                and unmatched_closing == closing_at_end.start() - 1
+                            ):
+                                use_words = False
+                        else:
+                            # Found no unmatched closing bracket at all, which means that it will appear in some other node. We don't need to designate `words`.
+                            use_words = False
 
                     middle_punctuation = None
 
