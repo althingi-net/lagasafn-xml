@@ -801,14 +801,15 @@ $(document).ready(function() {
     $('law art').each(make_togglable);
     //$('.toggle-button').click();
 
+    // FIXME: This fails when there is more than one expiry-symbol in a node.
     $('sen').each(function() { 
         if ($(this).attr("expiry-symbol-offset")) {
             var offset = $(this).attr("expiry-symbol-offset");
             var $expiry_symbol = $('<span class="expiry-symbol">…</span>');
             if ($(this).text().indexOf("…") === -1) {
-                var left = $(this).text().substring(0, offset);
-                var right = $(this).text().substring(offset);
-                $(this).html(left + $expiry_symbol[0].outerHTML + right);
+                var left = $(this).html().substring(0, offset);
+                var right = $(this).html().substring(offset);
+                $(this).html(left + $expiry_symbol[0].outerHTML + " " + right);
             } else {
                 $(this).html($(this).text().replace("…", $expiry_symbol[0].outerHTML));
             }

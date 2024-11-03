@@ -605,7 +605,17 @@ def parse_footnote(parser):
             # markers within the entity being checked, like above.
             cursor = 0
 
-            deletion_found = desc.text.find("…", cursor)
+            # NOTE: Making the space optional before "<sup" only serves to fix
+            # lög nr. 132/1999 (153c) at this moment. But it doesn't seem to
+            # break anything else. -2024-11-03.
+            # NOTE: Making the optional "]" appear between the hellip and
+            # "<sup" occurs in 2. mgr. 63. gr. laga nr. 8/1962 (153c). Probably
+            # also occurs elsewhere.
+            deletion_found = -1
+            deletion_search = re.search(r'… ?[,.;:]?\]? ?<sup', desc.text[cursor:])
+            if deletion_search is not None:
+                deletion_found = deletion_search.start()
+
             if deletion_found > -1:
                 parser.enter("detect-deletion-marker")
 
@@ -613,27 +623,9 @@ def parse_footnote(parser):
                 # Keep track of how far we've already searched.
                 cursor = deletion_found + 1
 
-                # If the deletion marker is immediately followed by a
-                # closing link tag, it means that this is in fact not
-                # a deletion marker, but a comment. They are not
-                # processed here, so we'll update the deletion_found
-                # variable (in the same way as is done at the end of
-                # this loop) and continue.
-                if desc.text[cursor : cursor + 5] == " </a>":
-                    deletion_found = desc.text.find("…", cursor)
-                    continue
-
                 # Find the footnote number next to the deletion marker
                 # that we've found.
                 num = next_footnote_sup(desc, cursor)
-
-                # If no footnote number is found, then we're not
-                # actually dealing with a footnote, but rather the "…"
-                # symbol being used for something else. For what,
-                # exactly, is undetermined as of yet.
-                if num is None or num == "":
-                    deletion_found = desc.text.find("…", cursor)
-                    continue
 
                 # len('</sup>') == 6
                 sup_end = desc.text.find("</sup>", deletion_found + 1) + 6
