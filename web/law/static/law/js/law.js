@@ -678,10 +678,30 @@ var process_sentence = function() {
         '<sup class="fraction-numerator">$1</sup>/ <span class="fraction-denominator">$2</span> '
     ));
 
-    // Style "CO2".
+    // Style some chemicals.
     $sen.html($sen.html().replace(
         /CO2/g,
         'CO<small><sub>2</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /SO2/g,
+        'SO<small><sub>2</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /SF6/g,
+        'SF<small><sub>6</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /NF3/g,
+        'NF<small><sub>3</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /CH4/g,
+        'CH<small><sub>4</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /N2/g,
+        'N<small><sub>2</sub></small>'
     ));
 
     // Style "m2", "km2", "m3" and such.
