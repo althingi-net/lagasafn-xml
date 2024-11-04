@@ -676,13 +676,26 @@ def add_sentences(target_node, sens):
 
         sen_elem = E.sen(sen, nr=str(sen_nr))
 
-        expiry_loc = sen.find(MAGIC_EXPIRY_TOKEN)
+        expiry_loc = strip_markers(sen).strip().find(MAGIC_EXPIRY_TOKEN)
         if expiry_loc > -1:
             sen = sen.replace(MAGIC_EXPIRY_TOKEN, "…")
             sen_elem.text = sen
             # NOTE: In reality, the `expiry-symbol-offset` attribute only
             # prevents the node from being automatically deleted when it's
             # "empty" (i.e. empty if it's without markers).
+            #
+            # FIXME: It used to be the case that this was only used for
+            # non-empty nodes to make sure they didn't get deleted, but is now
+            # used to place the expiry symbol, at least in 1. mgr. 36. gr. laga
+            # nr. 33/2013 (153c). This is inconvenient, because it doesn't
+            # account for other markers in the rendering mechanism, and thus
+            # the `expiry-symbol-offset` will only be correct when there are no
+            # other markers in the same node. So far, this doesn't seem to be a
+            # problem, but if more non-empty nodes with other markers start to
+            # contain the expiry symbol in the future, then it probably needs
+            # to be incorporated into the same mechanism that deals with
+            # opening/closing/deletion/pointer markers with `words` and all, to
+            # be resilient against them.
             sen_elem.attrib["expiry-symbol-offset"] = str(expiry_loc)
 
         paragraph.append(sen_elem)

@@ -360,7 +360,7 @@ var process_footnote = function() {
                     replace_text_end = seek_text_end.slice(0, -1)
                 }
                 else {
-                    replace_text_end = seek_text_end
+                    replace_text_end = seek_text_end;
                 }
                 replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
             }
@@ -422,12 +422,14 @@ var process_footnote = function() {
             // that the opening bracket is placed right after it.
             var $nr_title = $start_mark.children('nr-title');
             if ($nr_title.length > 0) {
+                // FIXME: Seems unused. Confirm and remove.
                 $start_mark.children('nr-title').next().first().prepend('[');
             }
             else {
                 $start_mark.prepend('[');
             }
 
+            // Remove trailing dot after end marker.
             if ($start_mark.html().match(/<\/sup>\.$/)) {
                 $start_mark.html($start_mark.html().replace(/\.$/, ''));
             }
@@ -438,7 +440,7 @@ var process_footnote = function() {
                 $end_mark.html(end_mark_content.slice(0, -1));
             }
 
-           // Figure out what the closing marker should look like, depending
+            // Figure out what the closing marker should look like, depending
             // on things we've figured out before.
             append_closing_text = pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
 
@@ -821,7 +823,10 @@ $(document).ready(function() {
     $('law art').each(make_togglable);
     //$('.toggle-button').click();
 
-    // FIXME: This fails when there is more than one expiry-symbol in a node.
+    // FIXME: The expiry-symbol mechanism is borked. It probably needs to be
+    // implemented like the opening/closing/deletion/pointer markers. Currently
+    // we are just detecting the symbol and enclosing it in a `<span>` so that
+    // it can be identified.
     $('sen').each(function() { 
         if ($(this).attr("expiry-symbol-offset")) {
             var offset = $(this).attr("expiry-symbol-offset");
