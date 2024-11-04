@@ -564,7 +564,7 @@ def parse_footnote(parser):
                         # marker, when there are no `words`, and we know that
                         # the markers encompass the entire element.
                         middle_punctuation_search = re.search(
-                            r'([,.:]) <sup style="font-size:60%%"> %s\) <\/sup>' % num,
+                            r'([,.:]) ?<sup style="font-size:60%%"> %s\) <\/sup>' % num,
                             desc.text
                         )
                         if middle_punctuation_search is not None:

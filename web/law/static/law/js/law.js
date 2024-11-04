@@ -406,15 +406,11 @@ var process_footnote = function() {
             // as a period or a comma, the symbol should appear between the
             // closing marker and the footnote number. For example, it should
             // be "[some text]. 2)" instead of "[some text] 2).".
-            end_symbols = [',', '.', ':'];
-            for (i in end_symbols) {
-                end_symbol = end_symbols[i];
-                if ($end_mark.html() !== undefined) {
-                    $end_mark.html($end_mark.html().replace(
-                        ' <sup>' + footnote_nr + ')</sup>' + end_symbol,
-                        ' <sup>' + footnote_nr + ')</sup>'
-                    ));
-                }
+            if (middle_punctuation.length > 0 && $end_mark.html() !== undefined) {
+                $end_mark.html($end_mark.html().replace(
+                    ' <sup>' + footnote_nr + ')</sup>' + middle_punctuation,
+                    ' <sup>' + footnote_nr + ')</sup>'
+                ));
             }
         }
         else {
@@ -465,6 +461,12 @@ var process_footnote = function() {
             return;
         }
 
+        // Sometimes the XML will indicate that some punctuation should be
+        // immediately following the deletion symbol but before the
+        // superscript. Example: "bla bla …, 2) yada yada" instead of "bla
+        // bla, … 2)". For these purposes, we will check if such a punctuation
+        // mark is defined in the XML and add it accordingly.
+        var middle_punctuation = attr_or_emptystring($location, 'middle-punctuation');
 
         // Get the regular expressions for how the text should look before and
         // after the deletion mark. These regular expressions match the text
@@ -476,6 +478,11 @@ var process_footnote = function() {
             var items = before_mark_re.exec($mark.html());
             if (items && items.length > 0) {
                 before_mark_content = items[0];
+            }
+
+            // Eliminate the middle-punctuation if it precedes the marker.
+            if (before_mark_content.length > 0 && before_mark_content.slice(-2) == middle_punctuation + " ") {
+                before_mark_content = before_mark_content.slice(0, -2);
             }
         }
         if ($location.attr('after-mark')) {
@@ -508,16 +515,6 @@ var process_footnote = function() {
         var after_mark_char = after_mark_content.substring(0, 1);
         if (after_mark_content == '' || after_mark_char == ']' || after_mark_char == '.') {
             post_sup_space = '';
-        }
-
-        // Sometimes the XML will indicate that some punctuation should be
-        // immediately following the deletion symbol but before the
-        // superscript. Example: "bla bla …, 2) yada yada" instead of "bla
-        // bla, … 2)". For these purposes, we will check if such a punctuation
-        // mark is defined in the XML and add it accordingly.
-        var middle_punctuation = '';
-        if ($location.attr('middle-punctuation')) {
-            middle_punctuation = $location.attr('middle-punctuation');
         }
 
         var closing_marker = '';
