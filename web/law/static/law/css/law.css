@@ -118,4 +118,10 @@ footnote-sen { display: inline; font-style: italic; font-size: 12.8px; }
 footnote-sen:nth-child(3) { margin-left: -1px; }
 location { display: none; }
 
+/* definitions */
+/* NOTE: These are only the non-visible containers for definitions. They remain
+ * visible once processed into `<i>` tags.
+ */
+definitions { display: none; }
+
 mark-container { display: block; }

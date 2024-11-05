@@ -1767,36 +1767,6 @@ def parse_subarticle(parser):
         sens = separate_sentences(after)
         add_sentences(parser.subart, sens)
 
-    elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
-        # Check for definitions in subarts. (Example: 153c, 7/1998)
-        raw_definition, before, definition = parser.matcher.result()
-
-        # Fix data so that we know how to treat it.
-        definition = definition.strip()
-        if before is None:
-            before = ""
-
-        # Clear out the HTML content describing the definition.
-        content = content.replace(raw_definition, before + definition.strip())
-
-        sens = separate_sentences(strip_links(content))
-        paragraph = add_sentences(parser.subart, sens)
-
-        added_sens = paragraph.findall("sen")
-
-        # Something strange is going on if these are different, so we'll throw
-        # an error, just in case.
-        if len(sens) != len(added_sens):
-            raise Exception("Lists `sens` and `added_sens` should be same length.")
-
-        # It is also unexpected to see a definition being applied when there
-        # already is one.
-        if "definition" in paragraph.attrib:
-            raise Exception("Unexpectedly existing definition in `paragraph`.")
-
-        # Add the definition to the paragraph.
-        paragraph.attrib["definition"] = definition
-
     else:
         sens = separate_sentences(strip_links(content))
         add_sentences(parser.subart, sens)

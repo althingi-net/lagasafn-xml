@@ -654,16 +654,16 @@ var process_subart = function() {
 
 
 var process_definitions = function() {
-    var $subart = $(this);
-    var definition = $subart.attr("definition");
+    var $definitions = $(this);
 
-    $subart.find("sen").each(function() {
-        var $sen = $(this);
-        var new_html = $sen.html().replace(
-            new RegExp(definition, 'g'),
-            "<i>" + definition + "</i>"
-        );
-        $sen.html(new_html);
+    $definitions.find("definition").each(function() {
+        var definition = $(this).text();
+        console.log("Definition: ", definition);
+        $definitions.parent().find("sen").each(function() {
+            var $sen = $(this);
+            var new_html = replaceAll($sen.html(), definition, "<i>" + definition + "</i>");
+            $sen.html(new_html);
+        });
     });
 }
 
@@ -801,7 +801,7 @@ $(document).ready(function() {
     $('law').each(process_law);
     $('law art').each(process_art);
     $('law subart').each(process_subart);
-    $('law subart[definition]').each(process_definitions);
+    $('law definitions').each(process_definitions);
     $('law sen').each(process_sentence);
 
     // The minister-clause is included in the XML only as HTML, but displayed

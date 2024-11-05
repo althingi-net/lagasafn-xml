@@ -674,7 +674,21 @@ def add_sentences(target_node, sens):
     for sen in sens:
         sen_nr += 1
 
+        # Fish out definitions, denoted by being encompassed between `<i>` and
+        # `</i>`. These must be re-styled by the rendering mechanism.
+        definitions = None
+        definitions_found = re.findall(r"<i>([^<]*)</i>", sen)
+        if len(definitions_found) > 0:
+            definitions = E("definitions")
+            for definition_found in definitions_found:
+                definitions.append(E("definition", definition_found.strip()))
+                sen = sen.replace("<i>%s</i>" % definition_found, definition_found.strip())
+
         sen_elem = E.sen(sen, nr=str(sen_nr))
+
+        # Insert the definitions, if needed.
+        if definitions is not None:
+            paragraph.insert(0, definitions)
 
         expiry_loc = strip_markers(sen).strip().find(MAGIC_EXPIRY_TOKEN)
         if expiry_loc > -1:
