@@ -659,7 +659,7 @@ var process_definitions = function() {
     $definitions.find("definition").each(function() {
         var definition = $(this).text();
         console.log("Definition: ", definition);
-        $definitions.parent().find("sen").each(function() {
+        $definitions.parent().find("> sen").each(function() {
             var $sen = $(this);
             var new_html = replaceAll($sen.html(), definition, "<i>" + definition + "</i>");
             $sen.html(new_html);
