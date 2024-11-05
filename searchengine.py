@@ -8,6 +8,13 @@
 #
 # We want to support Icelandic language stemming, because the XML files are in Icelandic.
 #
+# TODO:
+# We can improve the search engine storage efficiency significantly by making a (file,xpath)->context mapping
+# and use that rather than storing the context with every single token. This will also be faster.
+#
+# NOTE:
+# Hereafter, any changes to the index format should increment the INDEX_VERSION constant.
+INDEX_VERSION = 1
 
 from datetime import datetime
 import os
@@ -56,6 +63,7 @@ class Results:
         return self.sorted
 
     def add(self, results):
+        # NOTE: Any changes to the index format should increment INDEX_VERSION.
         for item in results:
             filename, xpath, start, end, context = item
             if filename not in self.result_files:
@@ -81,13 +89,16 @@ class SearchEngine:
             fh = open(self._index_file, 'rb')
             self._index = pickle.load(fh)
             fh.close()
+            if self._index["version"] != INDEX_VERSION:
+                print(f"Index version mismatch: expected {INDEX_VERSION}, got {self._index['version']}. We cannot guarantee compatibility. Exiting.")
+                exit(1)
             print(" done.")
         except FileNotFoundError:
             print("No search index found, starting with an empty index")
-            self._index = {"metadata": {}, "tokens": {}}
+            self._index = {"metadata": {}, "tokens": {}, "version": INDEX_VERSION}
 
     def empty(self):
-        self._index = {"metadata": {}, "tokens": {}}
+        self._index = {"metadata": {}, "tokens": {}, "version": INDEX_VERSION}
         self.save_index()
 
     def save_index(self):
@@ -199,6 +210,7 @@ class SearchEngine:
         return toks
 
     def index_token(self, token: str, filename: str, xpath: str, start: int, end: int, context:str):
+        # NOTE: If you add or remove anything from the index, remember to increment INDEX_VERSION
         if token not in self._index["tokens"]:
             self._index["tokens"][token] = []
         self._index["tokens"][token].append((filename, xpath, start, end, context))
