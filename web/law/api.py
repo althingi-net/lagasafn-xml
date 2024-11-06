@@ -27,6 +27,7 @@ def search(request, q: str):
         "query": q, 
         "time": (end_time - start_time).total_seconds(),
         "metadata": results.metadata,
+        "refs": results.refs,
         "results": results.sort(),
     }
 

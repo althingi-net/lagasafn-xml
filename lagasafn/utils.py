@@ -465,9 +465,21 @@ def generate_legal_reference(input_node, skip_law=False):
     # case), regardless of whether `skip_law` was true or not, since
     # otherwise we return nothing and that's not useful.
     if node.tag == "law":
-        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
+        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])    
 
     while node.tag != "law":
+        # A few tags are part of the law definition; we don't want to handle it specially
+        if node.tag in ["name", "date", "num-and-date", "nr-title", "sen", "footnote-sen", 
+                        "footnote", "footnotes", "location", "date", "num", "original", 
+                        "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title"]:
+            node = node.getparent()
+            continue
+
+        if node.getparent().tag == "footnote":
+            # Footnotes are not part of the legal reference.
+            node = node.getparent()
+            continue
+
         if node.tag == "numart":
             if node.attrib["nr-type"] == "alphabet":
                 result += "%s-stafl. " % node.attrib["nr"]
@@ -507,8 +519,10 @@ def generate_legal_reference(input_node, skip_law=False):
                     else:
                         # But maybe not always.
                         result += "%s. gr. " % node.attrib["nr"]
+                elif node.getparent().tag == "chapter" and node.getparent().attrib["nr"] == "t":
+                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]
                 else:
-                    raise Exception("Parsing of node not implemented")
+                    raise Exception("Parsing of node '%s' (xpath %s) not implemented" % (node.tag, node.getroottree().getpath(node)))
         elif node.tag == "paragraph":
             # This is a bit out of the ordinary. These paragraphs are
             # typically not denoted in references, which is why we enclose
@@ -537,7 +551,7 @@ def generate_legal_reference(input_node, skip_law=False):
         elif node.tag == "numart-chapter":
             pass
         else:
-            raise Exception("Parsing of node not implemented")
+            raise Exception("Parsing of node '%s' not implemented" % node.tag)
 
         node = node.getparent()
 

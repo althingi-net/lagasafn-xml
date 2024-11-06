@@ -3,65 +3,146 @@
 
 {% block javascript %}
 <script language="javascript" type="text/javascript">
-function law_search(event) {
-    // TODO: Add debounce
-    let q = event.currentTarget.value;
-    console.log("Searching", q);
-    fetch(`/api/law/search/?q=${q}`).then(
-        async (response) => {
-            results = await response.json()
-            console.log(results);
+var sort_option = "relevance";
+var results = {};
 
-            $("#laws-found").text(results["metadata"].length);
-            $("#hits-found").text(results["results"].length);
+function setsort(event) {
+    sort_option = event.currentTarget.value;
+    update_results();
+}
 
-            let results_div = $(".results");
-            results_div.empty();
+function sum_locations(result_set) {
+    var sum = 0;
+    for (let [file, hits, score] of result_set) {
+        sum += score;
+    }
+    return sum;
+}
 
-            for (let [file, hits, score] of results["results"]) {
-                let result_div = $("<div></div>");
-                let title = $("<h3></h3>");
-                let nr = results["metadata"][file]["nr"];
-                let year = results["metadata"][file]["year"];
-                let lawlink = $(`<a href="/law/show/${nr}/${year}">${results["metadata"][file]["title"]} (${nr}/${year})</a>`);
-                title.append(lawlink);
-                result_div.append(title);
-                let hits_list = $("<ul></ul>");
-                for (let [xpath, locations, score, text] of hits) {
-                    let hit_item = $("<li></li>");
+function update_results() {
+    $("#laws-found").text(results["results"].length);
+    $("#hits-found").text(sum_locations(results["results"]));
 
-                    // Here we want to highlight the hits in the text.
-                    // Start by adding the first part of the text, then each of the locations and their surrounding text, then the last part of the text.
-                    var last_end = 0;
-                    if (locations.length == 0) {
-                        continue;
-                    }
-                    var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
-                    hit_item.append($("<span></span>").text(xpath).css("font-weight", "bold"));
-                    hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
-                    for (let idx = 0; idx < sorted_locations.length; idx++) {
-                        let start = sorted_locations[idx][0];
-                        let end = sorted_locations[idx][1];
+    let results_div = $(".search-results");
+    results_div.empty();
 
-                        hit_item.append($("<span></span>").text(text.slice(start, end)).css("background-color", "yellow"));
-                        if (idx < sorted_locations.length - 1) {
-                            let next_start = sorted_locations[idx+1][0];
-                            hit_item.append($(`<span class="remainder">${text.slice(end, next_start)}</span>`));
-                        }
-                    }
-                    hit_item.append($("<span></span>").text(text.slice(sorted_locations[sorted_locations.length-1][1], text.length)));
+    const result_set = structuredClone(results["results"]);
 
-                    hits_list.append(hit_item);
-                }
-                result_div.append(hits_list);
-                results_div.append(result_div);
+    if (result_set.length === 0) {
+        results_div.append($(`<div class=\"no-results\">{% trans "No results" %}</div>`));
+    }
+
+    // Results come automatically sorted by relevance. Here we override that sorting in some cases:
+    if (sort_option === "alphabetical") {
+        result_set.sort((a, b) => {
+            var a_name = results["metadata"][a[0]]["title"];
+            var b_name = results["metadata"][b[0]]["title"];
+            
+            if (a_name < b_name) {
+                return -1;
             }
+            if (a_name > b_name) {
+                return 1;
+            }
+            return 0;
+        })
+    } else if (sort_option === "number") {
+        result_set.sort((a, b) => {
+            var a_year = results["metadata"][a[0]]["year"];
+            var b_year = results["metadata"][b[0]]["year"];
+            var a_nr   = results["metadata"][a[0]]["nr"];
+            var b_nr   = results["metadata"][b[0]]["nr"];
+            
+            // Sort by year, then number
+            if (a_year < b_year) {
+                return -1;
+            }
+            if (a_year > b_year) {
+                return 1;
+            }
+            if (a_nr < b_nr) {
+                return -1;
+            }
+            if (a_nr > b_nr) {
+                return 1;
+            }
+            return 0;
+        })
+    }
+
+    for (let [file, hits, score] of result_set) {
+        let result_div = $("<div></div>");
+        let title = $("<h3></h3>");
+        let nr = results["metadata"][file]["nr"];
+        let year = results["metadata"][file]["year"];
+        let lawlink = $(`<a href="/law/show/${nr}/${year}">${results["metadata"][file]["title"]} (${nr}/${year})</a>`);
+        title.append(lawlink);
+        result_div.append(title);
+        let hits_list = $("<ul></ul>");
+        for (let [xpath, locations, score, text] of hits) {
+            let hit_item = $("<li></li>");
+
+            // Here we want to highlight the hits in the text.
+            // Start by adding the first part of the text, then each of the locations and their surrounding text, then the last part of the text.
+            var last_end = 0;
+            if (locations.length == 0) {
+                continue;
+            }
+            var ref = "";
+            try {
+                ref = results["refs"][file][xpath];
+            } catch (e) {
+            }
+            var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
+            hit_item.append($("<span></span>").text(ref).css("font-weight", "bold"));
+            hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
+            for (let idx = 0; idx < sorted_locations.length; idx++) {
+                let start = sorted_locations[idx][0];
+                let end = sorted_locations[idx][1];
+
+                hit_item.append($("<span></span>").text(text.slice(start, end)).css("background-color", "yellow"));
+                if (idx < sorted_locations.length - 1) {
+                    let next_start = sorted_locations[idx+1][0];
+                    hit_item.append($(`<span class="remainder">${text.slice(end, next_start)}</span>`));
+                }
+            }
+            hit_item.append($("<span></span>").text(text.slice(sorted_locations[sorted_locations.length-1][1], text.length)));
+
+            hits_list.append(hit_item);
+        }
+        result_div.append(hits_list);
+        results_div.append(result_div);
+    }
+
+}
+
+function debounce(func, timeout=300) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+}
+
+const law_search = debounce(() => {
+    let q = $("#search-query").val();
+    if (q.length < 3) {
+        return;
+    }
+    fetch(`/api/law/search/?q=${q}`).then(
+        (response) => {
+            response.json().then(
+                (search_results) => {
+                    results = search_results;
+                    update_results();
+                }
+            )
         },
         (reason) => {
             console.log("Error searching: ", reason);
         }
     )
-}
+});
 </script>
 {% endblock %}
 
@@ -69,14 +150,20 @@ function law_search(event) {
 {% endblock %}
 
 {% block content %}
-
+<div class="searcharea">
+    <input id="search-query" type="search" oninput="law_search()" placeholder="{% trans "Search" %}"/>
+    <select onchange="setsort(event)">
+        <option value="relevance">{% trans "Sort by relevance" %}</option>
+        <option value="alphabetical">{% trans "Sort alphabetically" %}</option>
+        <option value="number">{% trans "Sort by law number" %}</option>
+    </select>
+</div>
 <div class="container">
-    <input type="search" oninput="law_search(event)"/>
     <div class="statistics">
         <div>{% trans "Laws found" %} <span id="laws-found"></span></div>
         <div>{% trans "Hits found" %} <span id="hits-found"></span></div>
     </div>
-    <div class="results">
+    <div class="search-results">
 
     </div>
 </div>

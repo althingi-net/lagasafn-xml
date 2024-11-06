@@ -14,7 +14,7 @@
 #
 # NOTE:
 # Hereafter, any changes to the index format should increment the INDEX_VERSION constant.
-INDEX_VERSION = 1
+INDEX_VERSION = 2
 
 from datetime import datetime
 import os
@@ -24,8 +24,8 @@ import pickle
 from islenska import Bin
 from lxml import etree as ET
 from math import log
-import pdb
 
+from lagasafn.utils import generate_legal_reference
 
 class Results:
     def __init__(self):
@@ -34,6 +34,7 @@ class Results:
         self.result_files = {}
         self.flattened = []
         self.metadata = {}
+        self.refs = {}
 
     @property
     def files(self):
@@ -51,6 +52,16 @@ class Results:
             if file not in metadata:
                 continue
             self.metadata[file] = metadata[file]
+
+    def augment_with_refs(self, refs):
+        for file in self.result_files.keys():
+            if file not in refs:
+                continue
+            self.refs[file] = {}
+            for xpath, ref in refs[file].items():
+                if xpath not in self.result_files[file]:
+                    continue
+                self.result_files[file][xpath]["ref"] = ref
 
     def sort(self):
         # Here we sort the result files by overall score, and the hits within
@@ -92,26 +103,37 @@ class SearchEngine:
             if self._index["version"] != INDEX_VERSION:
                 print(f"Index version mismatch: expected {INDEX_VERSION}, got {self._index['version']}. We cannot guarantee compatibility. Exiting.")
                 exit(1)
-            print(" done.")
+            print(" done. [%d files, %d tokens, %d refs]" % (len(self._index["metadata"]), len(self._index["tokens"]), len(self._index["refs"])))
         except FileNotFoundError:
             print("No search index found, starting with an empty index")
-            self._index = {"metadata": {}, "tokens": {}, "version": INDEX_VERSION}
+            self.empty()
 
     def empty(self):
-        self._index = {"metadata": {}, "tokens": {}, "version": INDEX_VERSION}
+        # NOTE: If you add or remove anything from the index, remember to increment INDEX_VERSION
+        self._index = {"metadata": {}, "tokens": {}, "refs": {}, "version": INDEX_VERSION}
         self.save_index()
 
     def save_index(self):
         pickle.dump(self._index, open(self._index_file, 'wb'))
 
-    def index_dir(self, xml_dir: str):
-        print("Building the search index")
+    def index_xpath_ref(self, xml_file: str, xpath: str, ref: str):
+        if xml_file not in self._index["refs"]:
+            self._index["refs"][xml_file] = {}
+        if xpath not in self._index["refs"][xml_file]:
+            self._index["refs"][xml_file][xpath] = ref
+
+    def index_dir(self, xml_dir: str, exclude: List[str] = []):
+        print("Excluding files:", exclude)
         time_start = datetime.now()
         files = os.listdir(xml_dir)
         count = len(files)
         idx = 0
         for xml_file in files:
             idx += 1
+
+            if xml_file in exclude or os.path.join(xml_dir, xml_file) in exclude:
+                continue
+
             print(f"[{idx:>5}/{count:<5}] Indexing {xml_file}...", end='\r')
             self.index_file(os.path.join(xml_dir, xml_file), save_index=False)
 
@@ -151,6 +173,14 @@ class SearchEngine:
             tokens = self.tokenize(text)
             xpath = child.getroottree().getpath(child)
             xpath = "./" + xpath.replace("/" + root.tag, "") # Remove the root tag from the XPath and replace with relative
+
+            if child.tag in ["art", "subart", "numart", "art-chapter", "paragraph", "chapter", "subchapter", "numart-chapter"]:
+                try:
+                    ref = generate_legal_reference(child, skip_law=True)
+                    self.index_xpath_ref(xml_file, xpath, ref)
+                except:
+                    print(f"Could not generate reference for {xpath} in {xml_file}")
+                    continue
 
             for (token, start, end) in tokens:
                 # Token stemming not implemented.
@@ -225,7 +255,7 @@ class SearchEngine:
                 results.add(self._index["tokens"][token])
 
         results.augment_with_metadata(self._index["metadata"])
-        results.sort()
+        results.augment_with_refs(self._index["refs"])
         return results
 
     def serve(self):
@@ -267,19 +297,20 @@ def add_bold_ansi(text: str, positions: list):
 
 
 def print_results(results):
-    s = results.sort()
-    for file, refs, score in s:
-        print("File:", file)
+    sorted_results = results.sort()
+    print("Search results: (%d references in %d files)" % (len(results.flattened), len(results.files)))
+
+    for file, hits, score in sorted_results:
+        metadata = results.metadata[file]
+        print(f"File: {file}")
+        print("Title:", metadata.get("title", "Unknown"))
         print("Score:", score)
         print("Hits:")
-        for xpath, info in refs.items():
-            print(f"  {xpath}:")
+        for item in hits:
+            xpath, locs, score, context = item
+            print(f"  {xpath}: {results.refs.get(file, {}).get(xpath, '')}")
             # Open the file and print the context of the XPath
-            locs = info["locations"]
-            score = info["score"]
-            tree = ET.parse(file)
-            elem = tree.find(xpath)
-            text = add_bold_ansi(elem.text, locs)
+            text = add_bold_ansi(context, locs)
             print("     ", text)
         print("")
 
@@ -291,9 +322,11 @@ def cli():
 @cli.command()
 @click.argument('xml_dir', type=click.Path(exists=True), required=True)
 @click.option('--empty', '-e', is_flag=True, help='Empty the index before adding the contents of the directory')
-def index(xml_dir, empty):
+@click.option('--exclude', '-x', multiple=True, type=click.Path(), help='A file containing a list of files to exclude from the index')
+@click.option('--index', '-i', type=click.Path(), default="search_index.pkl", help='The target file to save the index to')
+def index(xml_dir, empty, index, exclude):
     """Build the search index"""
-    search_engine = SearchEngine()
+    search_engine = SearchEngine(index)
 
     if empty:
         print(f"Emptying the search index and adding the contents of `{xml_dir}` to the index")
@@ -301,24 +334,26 @@ def index(xml_dir, empty):
     else:
         print(f"Adding the contents of `{xml_dir}` the search index")
 
-    search_engine.index_dir(xml_dir)
+    search_engine.index_dir(xml_dir, exclude)
 
 
 @cli.command()
 @click.argument('query', type=str, required=True)
+@click.option('--index', '-i', type=click.Path(), default="search_index.pkl", help='The target file to save the index to')
 def search(query):
     """Search the index"""
-    search_engine = SearchEngine()
+    search_engine = SearchEngine(index)
     results = search_engine.search(query)
     print_results(results)
 
 
 @cli.command()
-def search_cli():
+@click.option('--index', '-i', type=click.Path(), default="search_index.pkl", help='The target file to save the index to')
+def search_cli(index):
     """Start the search engine command-line interface"""
     from datetime import datetime
     print("Starting the search engine command-line interface")
-    search_engine = SearchEngine()
+    search_engine = SearchEngine(index)
     while True:
         query = input("Enter a search query (or 'exit' to quit): ")
         if query == 'exit':
@@ -328,14 +363,6 @@ def search_cli():
         end_time = datetime.now()
         print_results(results)
         print(f"Search time: {end_time - start_time} seconds")
-
-
-
-@cli.command()
-def serve():
-    """Start the search engine web server"""
-    print("Starting the search engine web server")
-
 
 
 if __name__ == '__main__':

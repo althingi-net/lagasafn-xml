@@ -125,3 +125,52 @@ location { display: none; }
 definitions { display: none; }
 
 mark-container { display: block; }
+
+.searcharea {
+    background: #e0f3ed;
+    border-top: 2px solid #cbded8;
+    border-bottom: 20px solid #cbded8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searcharea input[type="search"] {
+    width: 70%;
+    max-width: 40em;
+    padding: 0.775rem 0.75rem;
+    margin: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid #cbded8;
+}
+
+.searcharea select {
+    padding: 0.775rem 0.75rem;
+    margin: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid #cbded8;
+}
+
+.search-results {
+    margin-top: 1rem;
+}
+
+.statistics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics div {
+    display: inline-block;
+    width: 15em;
+}
+
+.no-results {
+    width: 100%;
+    text-align: center;
+    margin: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 170%;
+}
