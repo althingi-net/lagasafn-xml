@@ -77,7 +77,7 @@ def regexify_markers(text):
     text = text.replace(")", r"\)")
 
     # Opening markers.
-    text = re.sub(r"\[ ?", r"(\[? ?)?", text)
+    text = re.sub(r"\[( )?", r"(\[?\1?)?", text)
 
     # Closing markers, deletion markers and  pointers.
     # NOTE: The three backslashes before the closing parentheses is because
@@ -85,7 +85,7 @@ def regexify_markers(text):
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
     # NOTE: We actually contain content from the given text in the new regex,
     # so that it doesn't over-match.
-    matches = re.findall(r'((\.?) ?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)', text)
+    matches = re.findall(r'((\.?) ?\[?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)', text)
     for match in matches:
         # The replacement string needs a little bit of adjusting depending on
         # the input, to a greater extent than possible with simple regex
@@ -97,15 +97,15 @@ def regexify_markers(text):
         if len(match[1]) or len(match[2]):  # Found a dot.
             # The dot can be found on either side of the "]", depending on
             # surroundings. We therefore need to have this optional "." if it
-            # shows up on either side of the "]". Note that always including it
-            # , without this condition, it breaks laws under certain conditions.
+            # shows up on either side of the "]". Note that always including it,
+            # without this condition, it breaks laws under certain conditions.
             #
             # NOTE: This optional dot is added to the front of the replacement
             # regex, despite being detected in two separate locations in the
             # input. This is because it is moved passed the closing marker
             # under certain conditions.
             replacement_string += r'\.?'
-        replacement_string += r':? ?(\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?' + match[3] + r'\) ?</sup>)?,? ?'
+        replacement_string += r':? ?(\[?\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?' + match[3] + r'\) ?</sup>)?,? ?'
 
         text = text.replace(
             match[0],

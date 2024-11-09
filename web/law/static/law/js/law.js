@@ -1,4 +1,3 @@
-
 // We have the choice between hard-coding these paths or leaving them in a
 // template decoupled from this file. We'll hard-code, for now at least.
 var IMG_BOX_WHITE = '/static/law/img/box-white.png';
@@ -329,41 +328,22 @@ var process_footnote = function() {
             // overwhelming majority of cases, the seek_text will be the same
             // so the same string is being replaced, but every once in a
             // while, a replacement should occur over the span of more than
-            // one sentence. In thos cases, the seek texts will differ and the
+            // one sentence. In those cases, the seek texts will differ and the
             // start marker will be placed before the value of the "words"
             // attribute in the start location, and after the value of the
             // "words" attribute in the end location.
 
             var seek_text_start_regex_string = attr_or_emptystring($start_mark.location_node, 'words');
-            var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
-            var replace_text_start = null;
-            var replace_text_end = null;
 
-            var start_match = $start_mark.html().match(new RegExp(seek_text_start_regex_string));
+            var seek_text_start_regex = new RegExp(seek_text_start_regex_string)
+            var start_mark_content = $start_mark.html();
+            var start_match = start_mark_content.match(seek_text_start_regex);
             var seek_text_start = "";
             if (start_match != null && start_match.length > 0) {
                 seek_text_start = start_match[0];
             }
 
-            var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
-            var seek_text_end = "";
-            if (end_match != null && end_match.length > 0) {
-                seek_text_end = end_match[0];
-            }
-
-            // FIXME: Won't this always be "range" at this point in the code?
-            if (location_type == 'range') {
-                replace_text_start = '[' + seek_text_start;
-
-                // Strip the middle-punctuation if needed.
-                if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
-                    replace_text_end = seek_text_end.slice(0, -1)
-                }
-                else {
-                    replace_text_end = seek_text_end;
-                }
-                replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
-            }
+            var replace_text_start = '[' + seek_text_start;
 
             // If the XML indicates that this is a change that happens
             // repeatedly in the text, then we need to replace all instances
@@ -374,15 +354,9 @@ var process_footnote = function() {
                     seek_text_start,
                     replace_text_start
                 ));
-                $end_mark.html(replaceAll(
-                    $end_mark.html(),
-                    seek_text_end,
-                    replace_text_end
-                ));
             }
             else {
                 let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
-                let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
 
                 if ($start_mark.html() !== undefined) {
                     $start_mark.html(instanceReplace(
@@ -392,6 +366,73 @@ var process_footnote = function() {
                         start_instance_num
                     ));
                 }
+            }
+        }
+        else {
+            // If there is a <nr-title> tag, we'll want to skip that, so
+            // that the opening bracket is placed right after it.
+            var $nr_title = $start_mark.children('nr-title');
+            if ($nr_title.length > 0) {
+                // FIXME: Seems unused. Confirm and remove.
+                $start_mark.children('nr-title').next().first().prepend('[');
+            }
+            else {
+                $start_mark.prepend('[');
+            }
+
+            // Remove trailing dot after end marker, but make sure we're not
+            // interfering with a deletion marker, which is handled elsewhere.
+            if ($start_mark.html().match(/[^…] <\/sup>\.$/)) {
+                $start_mark.html($start_mark.html().replace(/\.$/, ''));
+            }
+        }
+
+        if ($end_mark.location_node.attr('words')) {
+            // If specific words are specified, we can just replace the
+            // existing text with itself plus the relevant symbols for
+            // denoting ranges.
+            //
+            // Note though, that we actually perform two replacements, one for
+            // the start marker and another for the end marker. In the
+            // overwhelming majority of cases, the seek_text will be the same
+            // so the same string is being replaced, but every once in a
+            // while, a replacement should occur over the span of more than
+            // one sentence. In those cases, the seek texts will differ and the
+            // start marker will be placed before the value of the "words"
+            // attribute in the start location, and after the value of the
+            // "words" attribute in the end location.
+
+            var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
+            var replace_text_end = null;
+
+            var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
+            var seek_text_end = "";
+            if (end_match != null && end_match.length > 0) {
+                seek_text_end = end_match[0];
+            }
+
+            // Strip the middle-punctuation if needed.
+            if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
+                replace_text_end = seek_text_end.slice(0, -1)
+            }
+            else {
+                replace_text_end = seek_text_end;
+            }
+            replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+
+            // If the XML indicates that this is a change that happens
+            // repeatedly in the text, then we need to replace all instances
+            // of the words.
+            if ($end_mark.location_node.attr('repeat') == 'true') {
+                $end_mark.html(replaceAll(
+                    $end_mark.html(),
+                    seek_text_end,
+                    replace_text_end
+                ));
+            }
+            else {
+                let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
+
                 if ($end_mark.html() !== undefined) {
                     $end_mark.html(instanceReplace(
                         $end_mark.html(),
@@ -414,22 +455,6 @@ var process_footnote = function() {
             }
         }
         else {
-            // If there is a <nr-title> tag, we'll want to skip that, so
-            // that the opening bracket is placed right after it.
-            var $nr_title = $start_mark.children('nr-title');
-            if ($nr_title.length > 0) {
-                // FIXME: Seems unused. Confirm and remove.
-                $start_mark.children('nr-title').next().first().prepend('[');
-            }
-            else {
-                $start_mark.prepend('[');
-            }
-
-            // Remove trailing dot after end marker.
-            if ($start_mark.html().match(/<\/sup>\.$/)) {
-                $start_mark.html($start_mark.html().replace(/\.$/, ''));
-            }
-
             // Strip the middle-punctuation if needed.
             let end_mark_content = $end_mark.html();
             if (middle_punctuation.length > 0 && end_mark_content[end_mark_content.length - 1] == middle_punctuation) {
@@ -474,8 +499,10 @@ var process_footnote = function() {
         var before_mark_content = '';
         var after_mark_content = '';
         if ($location.attr('before-mark')) {
-            var before_mark_re = new RegExp($location.attr('before-mark').trim());
-            var items = before_mark_re.exec($mark.html());
+            var before_mark_re_text = $location.attr('before-mark').trim();
+            var before_mark_re = new RegExp(before_mark_re_text);
+            var mark_html = $mark.html();
+            var items = before_mark_re.exec(mark_html);
             if (items && items.length > 0) {
                 before_mark_content = items[0];
             }
@@ -566,9 +593,6 @@ var process_footnote = function() {
             return;
         }
 
-        // FIXME: This seems to be some stale debug.
-        //console.log(location_to_string($location), "Mark: " + $mark.html());
-
         // Get the regular expressions for how the text should look before and
         // after the pointer. These regular expressions match the text with
         // and without other deletion or replacement markers.
@@ -658,7 +682,6 @@ var process_definitions = function() {
 
     $definitions.find("definition").each(function() {
         var definition = $(this).text();
-        console.log("Definition: ", definition);
         $definitions.parent().find("> sen").each(function() {
             var $sen = $(this);
             var new_html = replaceAll($sen.html(), definition, "<i>" + definition + "</i>");
@@ -718,50 +741,6 @@ var process_sentence = function() {
 }
 
 
-/*
- * The order in which we process footnotes matters. Opening/closing markers
- * that are inside other opening/closing markers should be processed after the
- * outer ones. This is because the content between the outer ones will change
- * when the inner ones are processed, thereby making replacement of text
- * impossible since it all of a sudden contains markers that don't match the
- * text that should be replaced. Markers that specify a region instead of
- * specific words (via the "words" attribute in the XML) should be processed
- * first because they are always the most outermost. In short; the wider the
- * marked text, the earlier it should be put in.
- *
- * The way we go about ensuring that opening/closing markers outside others
- * get processed first, is by first processing the words-clauses that are the
- * longest. By necessity, a marked clause inside another one will be shorter.
- */
-var get_ordered_footnotes = function() {
-    // The resulting, ordered list of footnotes.
-    var $footnotes = [];
-
-    $('footnotes > footnote').each(function() {
-        var $footnote = $(this);
-        var $words = $footnote.find('[words]');
-        if ($words.length == 0) {
-            // This is essentially an arbitrarily high number. It just needs
-            // to be higher than the length of any plausibly marked text.
-            $footnote.attr('processing-order', '1000000');
-        }
-        else {
-            // The longer the marked text, the earlier it should be processed.
-            $footnote.attr('processing-order', $words.attr('words').length);
-        }
-        $footnotes.push($footnote);
-    });
-
-    // Sort the footnotes according to the 'processing-order' attribute that
-    // we filled earlier. A higher number means higher priority.
-    $footnotes.sort(function($a, $b) {
-        return parseInt($b.attr('processing-order')) - parseInt($a.attr('processing-order'));
-    });
-
-    return $footnotes;
-}
-
-
 var make_togglable = function() {
     var $chapter = $(this);
 
@@ -796,7 +775,7 @@ $(document).ready(function() {
 
     $('footnotes').show();
 
-    $.each(get_ordered_footnotes(), process_footnote);
+    $('footnotes > footnote').each(process_footnote);
 
     $('law').each(process_law);
     $('law art').each(process_art);

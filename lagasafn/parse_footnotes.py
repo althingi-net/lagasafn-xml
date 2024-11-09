@@ -336,6 +336,7 @@ def parse_footnote(parser):
         opening_locations = []
         marker_locations = []
         for desc in parent.iterdescendants():
+
             # Leave the footnotes out of this, since we're only
             # looking for markers in text.
             if "footnotes" in [a.tag for a in desc.iterancestors()]:
@@ -344,6 +345,9 @@ def parse_footnote(parser):
             # Not interested if the node contains no text.
             if not desc.text:
                 continue
+
+            # Make sure that stray whitespace isn't getting in our way.
+            desc.text = desc.text.strip()
 
             ###########################################################
             # Detection of opening and closing markers, "[" and "]",
@@ -364,28 +368,21 @@ def parse_footnote(parser):
                 ):
                     # We have found an opening marker: [
 
-                    # Indicate that our next search for an opening tag
-                    # will continue from here.
+                    # Indicate that our next search for an opening tag will
+                    # continue from here.
                     cursor = opening_found + 1
 
-                    # We now try to figure out whether we want to mark
-                    # an entire entity (typically a sentence), or if
-                    # we want to mark a portion of it. If we want to
-                    # mark a portion, "use_words" shall be True and
-                    # the footnote XML will contain something like
-                    # this:
-                    #
-                    #    <sen words="some marked text">2</sen>
-                    #
-                    # Instead of:
-                    #
-                    #    <sen>2</sen>
-                    #
+                    # We now try to figure out whether we want to mark an
+                    # entire entity (typically a sentence), or if we want to
+                    # mark a portion of it. If we want to mark a portion,
+                    # `use_words` shall be True and the footnote XML will
+                    # contain a `words` attribute will describe which words to
+                    # enclose in square brackets.
                     use_words = True
                     if opening_found == 0:
                         unmatched_closing = find_unmatched_closing_bracket(desc.text[1:])
                         if unmatched_closing > -1:
-                            # An unmatchec closing bracket was found, but we
+                            # An unmatched closing bracket was found, but we
                             # need to make sure that it's truly at the end of
                             # the node's content.
                             closing_at_end = re.search(
@@ -515,6 +512,18 @@ def parse_footnote(parser):
                         "instance_num": None,  # Maybe filled later.
                     }
 
+                    # We trigger the `words` mechanism also is there is a
+                    # deletion marker in the end. Otherwise this can screw up
+                    # the order of markers.
+                    # Occurs at the end of 1. mgr. 12. gr. laga nr. 78/2002 (153c).
+                    ends_with_deletion = re.search(
+                        r'… <sup style="font-size:60%"> \d+\) <\/sup>$',
+                        desc.text
+                    ) is not None
+
+                    # Decide whether to use `words` or not.
+                    use_words = started_at["words"] is not None or ends_with_deletion
+
                     # If the start location had a "words" attribute,
                     # indicating that a specific set of words should
                     # be marked, then we'll copy that attribute here
@@ -523,7 +532,7 @@ def parse_footnote(parser):
                     # <location> tag...
                     middle_punctuation = None
                     instance_num = None
-                    if started_at["words"] is not None:
+                    if use_words:
                         # ...except, if it turns out that we're
                         # actually dealing with a different sentence
                         # than was specified in the start location,
