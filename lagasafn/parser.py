@@ -1709,7 +1709,7 @@ VISITATIONS = 0
 
 def parse_subarticle(parser):
     if not parser.matcher.check(
-        parser.line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'
+        parser.line, r'<img .+ id="[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
     ):
         return False
 
@@ -1718,7 +1718,7 @@ def parse_subarticle(parser):
 
     parser.numart = None
 
-    art_nr, subart_nr = parser.matcher.result()
+    art_nr, unused, subart_nr = parser.matcher.result()
 
     # Check how far we are from the typical subart end.
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
