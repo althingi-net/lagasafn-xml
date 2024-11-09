@@ -1123,10 +1123,20 @@ def parse_paragraph(parser):
     # `parse_subart`. In time, this `parse_paragraph` function should be used
     # instead, in which case more node support should be added where once this
     # functionality has been removed from their respective `parse_` functions.
+    parent = None
     if parser.art_chapter is not None:
-        parser.art_chapter.append(parser.paragraph)
+        parent = parser.art_chapter
     elif parser.appendix is not None:
-        parser.appendix.append(parser.paragraph)
+        parent = parser.appendix
+    elif parser.subart is not None:
+        parent = parser.subart
+
+    if parent is not None:
+        paragraph_nr = str(len(parent.findall("paragraph")) + 1)
+        parser.paragraph.attrib["nr"] = paragraph_nr
+        parent.append(parser.paragraph)
+    else:
+        raise Exception("Could not find parent for paragraph.")
 
     parser.paragraph = None
 
@@ -1824,6 +1834,8 @@ def parse_subarticle(parser):
         if parse_numerical_article(parser):
             continue
         if parse_article_chapter(parser):
+            continue
+        if parse_paragraph(parser):
             continue
 
         break
