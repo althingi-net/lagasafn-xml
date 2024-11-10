@@ -710,12 +710,24 @@ var process_sentence = function() {
         'CO<small><sub>2</sub></small>'
     ));
     $sen.html($sen.html().replace(
+        /CO3/g,
+        'CO<small><sub>3</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
         /SO2/g,
         'SO<small><sub>2</sub></small>'
     ));
     $sen.html($sen.html().replace(
         /SF6/g,
         'SF<small><sub>6</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /Na2/g,
+        'Na<small><sub>2</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /NaHCO3/g,
+        'NaHCO<small><sub>3</sub></small>'
     ));
     $sen.html($sen.html().replace(
         /NF3/g,
@@ -728,6 +740,10 @@ var process_sentence = function() {
     $sen.html($sen.html().replace(
         /N2/g,
         'N<small><sub>2</sub></small>'
+    ));
+    $sen.html($sen.html().replace(
+        /H2/g,
+        'H<small><sub>2</sub></small>'
     ));
 
     // Style "m2", "km2", "m3" and such.

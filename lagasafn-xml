@@ -94,11 +94,15 @@ def clean_content(content):
     # them properly.
     styled_abbreviations = [
         ["CO<small><sub>2</sub></small>", "CO2"],
+        ["CO<small><sub>3</sub></small>", "CO3"],
         ["SO<small><sub>2</sub></small>", "SO2"],
         ["SF<small><sub>6</sub></small>", "SF6"],
+        ["Na<small><sub>2</sub></small>", "Na2"],
+        ["NaHCO<small><sub>3</sub></small>", "NaHCO3"],
         ["NF<small><sub>3</sub></small>", "NF3"],
         ["CH<small><sub>4</sub></small>", "CH4"],
         ["N<small><sub>2</sub></small>", "N2"],
+        ["H<small><sub>2</sub></small>", "H2"],
         ["m<small><sup>2</sup></small>", "m2"],
         ["m<small><sup>3</sup></small>", "m3"],
     ]
