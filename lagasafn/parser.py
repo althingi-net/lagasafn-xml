@@ -1021,6 +1021,8 @@ def parse_appendix(parser):
             continue
         if parse_stray_deletion(parser):
             continue
+        if parse_table(parser):
+            continue
         break
 
     # FIXME: Presumably this should be `parser.appendix = None`. Not fixing now
@@ -2450,6 +2452,8 @@ def parse_table(parser):
         parser.subart.append(parser.table)
     elif parser.art is not None:
         parser.art.append(parser.table)
+    elif parser.appendix is not None:
+        parser.appendix.append(parser.table)
 
     while True:
         if parse_tr(parser):
