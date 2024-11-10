@@ -85,6 +85,7 @@ numart { display: block; text-indent: 1.04em; }
 numart > name { font-style: italic; }
 numart > paragraph > name { font-style: italic; }
 numart[style-note="inline-with-parent"] { display: inline; }
+subart > paragraph:first-of-type > numart:first-of-type { display: inline; text-indent: 0; background: yellow; }
 
 numart-chapter { display: block; text-indent: 1.04em; }
 numart-chapter > nr-title { font-weight: bold; }
