@@ -344,9 +344,10 @@ def separate_sentences(content):
         "f.h.",
         "o.þ.h.",
         "bls.",
+        "kr.",
     ]
     for r in recognized_shorts:
-        content = content.replace(r, r.replace(".", "[DOT]"))
+        content = content.replace(r, r.replace(".", "{DOT}"))
 
     # Certain things, like HTML tables (<table>) and links (<a>) should never
     # be split into separate sentence. We'll run through those tags and encode
@@ -366,7 +367,7 @@ def separate_sentences(content):
             tag_content = content[html_loc:html_end_loc]
 
             # Encode the dots in the tag content.
-            tag_content = tag_content.replace(".", "[DOT]")
+            tag_content = tag_content.replace(".", "{DOT}")
 
             # Stitch the encoded tag content back into the content.
             content = content[:html_loc] + tag_content + content[html_end_loc:]
@@ -463,12 +464,12 @@ def separate_sentences(content):
                 if re.match("^ [A-Z]-lið", next_chunk) is not None:
                     split = False
 
-        # Add the dot that we dropped when splitting.
-        collected += "."
+            # Add the dot that we dropped when splitting.
+            collected += "."
 
         if split:
-            # Decode the "[DOT]"s back into normal dots.
-            collected = collected.replace("[DOT]", ".")
+            # Decode the "{DOT}"s back into normal dots.
+            collected = collected.replace("{DOT}", ".")
 
             # Append the collected sentence.
             sens.append(collected.strip())
@@ -482,7 +483,9 @@ def separate_sentences(content):
     # these cases we have wrongly added it to the final chunk after the split,
     # and so we'll just remove it here. This could probably be done somewhere
     # inside the loop, but it would probably just be less readable.
-    if content and content[-1] != "." and sens[-1][-1] == ".":
+    #
+    # NOTE: We check for both "." or the last character of "{DOT}" in `content`, because it could be either. We're assuming that "}" only being possible here due to the replacement of "." with "{DOT}" above.
+    if content and content[-1] not in [".", "}"] and sens[-1][-1] == ".":
         sens[-1] = sens[-1].strip(".")
 
     # Make sure that tables always live in their own sentence.
