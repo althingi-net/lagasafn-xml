@@ -41,6 +41,8 @@ def parse_footnotes(parser):
     elif parser.trail_last().tag == "ambiguous-section":
         parser.note("Appending footnotes to ambiguous section after finding ambiguous section.")
         parser.ambiguous_section.append(parser.footnotes)
+    elif parser.mark_container is not None:
+        parser.mark_container.append(parser.footnotes)
     elif parser.art is not None:
         # Most commonly, footnotes will be appended to articles.
         parser.note("Appending footnotes to article after finding article.")

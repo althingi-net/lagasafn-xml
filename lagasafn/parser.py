@@ -77,6 +77,7 @@ class LawParser:
         self.tr = None
         self.td = None
         self.footnotes = None
+        self.mark_container = None
 
         self.parse_path = []
 
@@ -1266,10 +1267,20 @@ def parse_stray_deletion(parser):
     content = parser.collect_until("<br/>", collect_first_line=True)
     parser.consume("<br/>")
 
-    mark_container = E("mark-container", { "expiry-symbol-offset": "0" }, content)
+    parser.mark_container = E("mark-container", { "expiry-symbol-offset": "0" }, E("sen", content))
 
     if parser.numart is not None:
-        parser.numart.append(mark_container)
+        parser.numart.append(parser.mark_container)
+    elif parser.chapter is not None:
+        parser.chapter.append(parser.mark_container)
+
+    while True:
+        if parse_footnotes(parser):
+            continue
+
+        break
+
+    parser.mark_container = None
 
     parser.leave("stray-deletion")
 
