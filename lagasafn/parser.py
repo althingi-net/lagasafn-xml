@@ -900,14 +900,20 @@ def parse_chapter(parser):
 
     parser.trail_push(parser.chapter)
 
-    parser.subchapter = None
-
     parser.enter("chapter-content")
     while True:
         parser.maybe_consume_many("<br/>")
         if parse_subchapter(parser):
             continue
+        if parse_ambiguous_section(parser):
+            continue
+        if parse_ambiguous_chapter(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
         if parse_article(parser):
+            continue
+        if parse_subarticle(parser):
             continue
         if parse_footnotes(parser):
             continue
@@ -919,6 +925,8 @@ def parse_chapter(parser):
     parser.leave("chapter-content")
 
     parser.maybe_consume_many("<br/>")
+
+    parser.chapter = None
 
     parser.leave("chapter")
     return True
@@ -1227,6 +1235,15 @@ def parse_appendix_part(parser):
     parser.appendix_part.append(E("name", name))
     parser.appendix.append(parser.appendix_part)
 
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_subarticle(parser):
+            continue
+
+        break
+
+    parser.appendix_part = None
+
     parser.leave("appendix-part")
 
     return True
@@ -1288,9 +1305,20 @@ def parse_subchapter(parser):
     parser.chapter.append(parser.subchapter)
     parser.trail_push(parser.subchapter)
 
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_article(parser):
+            continue
+        if parse_footnotes(parser):
+            continue
+
+        break
+
     del subchapter_goo
     del subchapter_nr
     del subchapter_name
+
+    parser.subchapter = None
 
     parser.leave("subchapter")
 
