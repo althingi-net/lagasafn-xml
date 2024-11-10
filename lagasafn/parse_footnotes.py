@@ -431,7 +431,7 @@ def parse_footnote(parser):
                         if closing_index > -1:
                             words = words[:closing_index].strip()
 
-                        if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":"]:
+                        if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":", ";"]:
                             middle_punctuation = desc.text[opening_found + 1 + closing_index + 1]
 
                             # Add the middle-punctuation to the search string.
@@ -547,10 +547,11 @@ def parse_footnote(parser):
                         # marker with its distinct set of "words",
                         # each attribute containing the set of words
                         # contained in their respective sentences.
+
                         if parser.law.xpath(started_at["xpath"])[0] != desc:
                             unmatched_closing = find_unmatched_closing_bracket(desc.text)
                             words = regexify_markers(desc.text[: unmatched_closing])
-                            if desc.text[unmatched_closing+1] in [".", ",", ":"]:
+                            if desc.text[unmatched_closing+1] in [".", ",", ":", ";"]:
                                 middle_punctuation = desc.text[unmatched_closing+1]
 
                             # Not adding 1 here because it will always find the
