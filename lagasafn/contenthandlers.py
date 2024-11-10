@@ -186,6 +186,46 @@ def next_footnote_sup(elem, cursor):
     return num
 
 
+def word_to_nr(input_word: str) -> str:
+    """
+    Turns cardinal numbers in text into Arabic numerals. Returns original if
+    it's not a cardinal number.
+    """
+    word = input_word.lower()
+    if word == "fyrsti":
+        return "1"
+    elif word == "annar":
+        return "2"
+    elif word == "þriðji":
+        return "3"
+    elif word == "fjórði":
+        return "4"
+    elif word == "fimmti":
+        return "5"
+    elif word == "sjötti":
+        return "6"
+    elif word == "sjöundi":
+        return "7"
+    elif word == "áttundi":
+        return "8"
+    elif word == "níundi":
+        return "9"
+    elif word == "tíundi":
+        return "10"
+    elif word == "ellefti":
+        return "11"
+    elif word == "tólfti":
+        return "12"
+    elif word == "þrettándi":
+        return "13"
+    elif word == "fjórtándi":
+        return "14"
+    elif word == "fimmtándi":
+        return "15"
+    else:
+        return input_word
+
+
 # Examines the often mysterious issue of whether we're dealing with a new
 # chapter or not. There is quite a bit of ambiguity possible so this question
 # needs to be dealt with in more than a one-liner, both for flow and code
@@ -216,6 +256,9 @@ def check_chapter(lines, law):
 
     elif peek_stripped.lower().find("viðauki") > -1:
         line_type = "appendix"
+
+    elif peek_stripped.lower().find("þáttur") > -1:
+        line_type = "superchapter"
 
     # Check if this is an "article chapter". Those are not exactly numerical
     # articles, but chapter-like phenomena that resides inside articles, or
@@ -256,6 +299,8 @@ def check_chapter(lines, law):
         [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók", "kap"]]
     ):
         # If f.e. ". kafli" or ". hluti" can be found...
+        line_type = "chapter"
+    elif peek_stripped.find(" kapítuli") > -1:
         line_type = "chapter"
     elif is_roman(first) and first not in ["C", "D"]:
         # We exclude "C" and "D" because as Roman numerals, they are much too

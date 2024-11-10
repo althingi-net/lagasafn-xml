@@ -550,6 +550,8 @@ def generate_legal_reference(input_node, skip_law=False):
             pass
         elif node.tag == "numart-chapter":
             pass
+        elif node.tag == "superchapter":
+            pass
         else:
             raise Exception("Parsing of node '%s' not implemented" % node.tag)
 

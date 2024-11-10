@@ -13,6 +13,7 @@ from lagasafn.contenthandlers import begins_with_regular_content
 from lagasafn.contenthandlers import is_numart_address
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
+from lagasafn.contenthandlers import word_to_nr
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import is_roman
 from lagasafn.utils import numart_next_nrs
@@ -64,6 +65,7 @@ class LawParser:
         self.appendix = None
         self.appendix_part = None
         self.appendix_chapter = None
+        self.superchapter = None
         self.chapter = None
         self.subchapter = None
         self.art = None
@@ -313,6 +315,8 @@ def parse_law(parser):
         if parse_stray_deletion(parser):
             continue
         if parse_ambiguous_chapter(parser):
+            continue
+        if parse_superchapter(parser):
             continue
         if parse_chapter(parser):
             continue
@@ -703,6 +707,50 @@ def parse_presidential_decree_preamble(parser):
     return True
 
 
+def parse_superchapter(parser):
+    if not check_chapter(parser.lines, parser.law) == "superchapter":
+        return False
+
+    parser.enter("superchapter")
+    parser.superchapter = E("superchapter")
+
+    nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    name = ""
+    if parser.line == "<b>":
+        name = parser.collect_until("</b>")
+        parser.consume("</b>")
+
+    raw_nr = nr_title[:nr_title.find(" þáttur")].strip(".")
+
+    # Turn "8. og 9" into "8-9", in 115/2021.
+    raw_nr = raw_nr.replace(". og", "-")
+
+    # Deal with numbers literally written out.
+    # They currently don't exist beyond the fourth.
+    raw_nr = word_to_nr(raw_nr)
+
+    parser.superchapter.attrib["nr"] = raw_nr
+    parser.superchapter.append(E("nr-title", nr_title))
+    if len(name) > 0:
+        parser.superchapter.append(E("name", name))
+
+    parser.law.append(parser.superchapter)
+
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_chapter(parser):
+            continue
+        if parse_article(parser):
+            continue
+        break
+
+    parser.superchapter = None
+    parser.leave("superchapter")
+
+    return True
+
 def parse_chapter(parser):
     # Chapters are found by finding a <b> tag that comes right after a
     # <br/> tag that occurs after the ministerial clause is done. We use a
@@ -737,7 +785,28 @@ def parse_chapter(parser):
     parser.consume("</b>")
 
     nr = None
-    if parser.line == "<b>":
+    if name_or_nr_title.find("kapítuli.") > -1:
+        # This ancient way of denoting a chapter is always represented by
+        # cardinal numbers, but their `nr-title`s and `name`s are also not in
+        # separate `<b>` clauses.
+        t = strip_markers(name_or_nr_title).strip()
+        first_word = t[:t.find(" ")]
+        nr = word_to_nr(first_word)
+
+        chapter_nr_title = name_or_nr_title[:name_or_nr_title.find("kapítuli") + 9]
+        chapter_name = ""
+        if name_or_nr_title.find("kapítuli. ") > -1:
+            chapter_name = name_or_nr_title[name_or_nr_title.find("kapítuli.") + 10:]
+
+        parser.chapter = E.chapter(
+            {"nr": nr, "nr-type": "cardinal" },
+            E("nr-title", chapter_nr_title),
+        )
+
+        if len(chapter_name):
+            parser.chapter.append(E("name", chapter_name))
+
+    elif parser.line == "<b>":
         parser.enter("chapter-nr-title")
         chapter_nr_title = name_or_nr_title
 
@@ -747,11 +816,11 @@ def parse_chapter(parser):
         # those examples, nr-titles will be "2" and "2b" respectively.
         t = strip_markers(chapter_nr_title).strip()
         maybe_nr = t[0 : t.index(".")]
-        try:
+        if is_roman(maybe_nr):
             nr = str(roman.fromRoman(maybe_nr))
             roman_nr = maybe_nr
             nr_type = "roman"
-        except roman.InvalidRomanNumeralError:
+        else:
             nr = str(int(maybe_nr))
             roman_nr = None
             nr_type = "arabic"
@@ -778,7 +847,7 @@ def parse_chapter(parser):
 
         chapter_name = parser.collect_until("</b>")
         parser.consume("</b>")
-        
+
         parser.chapter = E.chapter(
             {"nr": nr, "nr-type": nr_type},
             E("nr-title", chapter_nr_title),
@@ -855,7 +924,10 @@ def parse_chapter(parser):
 
     # Must happen before the parsing of temporary clauses because iteration of
     # parents to 'law' happens when parsing articles inside them.
-    parser.law.append(parser.chapter)
+    if parser.superchapter is not None:
+        parser.superchapter.append(parser.chapter)
+    else:
+        parser.law.append(parser.chapter)
 
     # Some laws have a chapter for temporary clauses, which may be
     # named something like "Bráðabirgðaákvæði", "Ákvæði til
@@ -1643,6 +1715,8 @@ def parse_article(parser):
         parser.subchapter.append(parser.art)
     elif parser.chapter is not None:
         parser.chapter.append(parser.art)
+    elif parser.superchapter is not None:
+        parser.superchapter.append(parser.art)
     else:
         parser.law.append(parser.art)
 

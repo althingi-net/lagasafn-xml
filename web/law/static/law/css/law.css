@@ -44,8 +44,14 @@ minister-clause { display: none; border-bottom: 1px solid #dddddd; padding-botto
 minister-clause > a { margin-right: 0.7777em; }
 minister-clause > small { font-size: 80%; line-height: 1.88em; }
 
+/* superchapter */
+superchapter { display: block; margin-top: 1.5em; }
+superchapter > nr-title { font-weight: bold; }
+superchapter > name { font-weight: bold; }
+
 /* chapter */
-chapter { display: block; margin-top: 1.5em; }
+chapter { display: block; }
+chapter:not(superchapter > chapter) { margin-top: 1.5em; }
 chapter > nr-title { font-weight: bold; }
 chapter > name { font-weight: bold; }
 name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
