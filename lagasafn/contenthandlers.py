@@ -449,7 +449,12 @@ def separate_sentences(content):
                 next_chunk2 = chunks.peek(2)
                 if (
                     next_chunk.strip().isdigit()
-                    and next_chunk2.strip() in reference_shorthands
+                    and (
+                        next_chunk2.strip() in reference_shorthands
+                        # Support for connecting words such as "1. tölul. 2. og
+                        # 3. mgr." in 1. mgr. 3. gr. laga nr. 88/1991.
+                        or next_chunk2.strip().split(" ")[0] in ["og", "eða"]
+                    )
                 ):
                     split = False
 
