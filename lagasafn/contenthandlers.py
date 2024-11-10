@@ -112,6 +112,9 @@ def regexify_markers(text):
             replacement_string
         )
 
+    # Make stray deletion markers optional, i.e. those that aren't already.
+    text = re.sub(r"…[^?]", r"(… ?)?", text)
+
     # FIXME: This is unexplained.
     text = text.replace(" ,", r" ?,")
 
