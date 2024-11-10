@@ -107,8 +107,11 @@ span.fraction-denominator { font-size: 60%; line-height: 23px; }
 .legal-document table tr:hover { background: #f3f2ed; }
 .legal-document table th, .legal-document table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
 .legal-document table td:last-child, .legal-document table th:last-child { border-right-width: 0px; }
-table-nr-title { font-weight: bold; }
-table-title { font-weight: bold; }
+table-name { display: block; font-weight: bold; }
+td[header-style="b"] table-nr-title { font-weight: bold; }
+td[header-style="b"] table-title { font-weight: bold; }
+td[header-style="i"] table-nr-title { font-style: italic; }
+td[header-style="i"] table-title { font-style: italic;; }
 
 /* footnotes */
 footnotes { display: none; text-indent: 1.04em;  }

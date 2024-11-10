@@ -2475,10 +2475,26 @@ def parse_numerical_article(parser):
 
 
 def parse_table(parser):
-    if not parser.matcher.check(parser.line, "<table"):
+    if not (
+        re.match("<table", parser.line)
+        or (
+            parser.line == "<b>"
+            and parser.peeks(2) == "</b>"
+            and parser.peeks(3) == "<br/>"
+            and re.match("<table", parser.peeks(4)) is not None
+        )
+    ):
         return False
 
     parser.enter("table")
+
+    # Support for a table name. Only known to occur in 100. gr. laga nr.
+    # 55/1991 (153).
+    table_name = ""
+    if parser.line == "<b>":
+        table_name = parser.collect_until("</b>")
+        parser.consume("</b>")
+        parser.consume("<br/>")
 
     parser.table = E("table")
     parser.tbody = E("tbody")
@@ -2487,12 +2503,17 @@ def parse_table(parser):
     parser.consume('<table width="100%">')
     parser.consume("<tbody>")
 
+    parent =  None
     if parser.subart is not None:
-        parser.subart.append(parser.table)
+        parent = parser.subart
     elif parser.art is not None:
-        parser.art.append(parser.table)
+        parent = parser.art
     elif parser.appendix is not None:
-        parser.appendix.append(parser.table)
+        parent = parser.appendix
+
+    if table_name:
+        parent.append(E("table-name", table_name))
+    parent.append(parser.table)
 
     while True:
         if parse_tr(parser):
