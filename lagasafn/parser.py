@@ -1345,6 +1345,8 @@ def parse_stray_deletion(parser):
         parser.numart.append(parser.mark_container)
     elif parser.chapter is not None:
         parser.chapter.append(parser.mark_container)
+    else:
+        parser.law.append(parser.mark_container)
 
     while True:
         if parse_footnotes(parser):
