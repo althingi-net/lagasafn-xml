@@ -273,6 +273,10 @@ def check_chapter(lines, law):
         line_type = 'numart-chapter'
     elif law.getchildren()[-1].tag == "appendix":
         line_type = "appendix-chapter"
+    elif lines.peek().strip()[-1] == ":":
+        # These definitions are not chapters. They occur at least in 1. gr.
+        # laga nr. 58/1998.
+        line_type = "bold-definition"
 
     # If we've reached this point without conclusion, this is an ambiguous
     # bold section that are (as of yet) unable to determine the nature of.
@@ -683,6 +687,15 @@ def add_sentences(target_node, sens):
             for definition_found in definitions_found:
                 definitions.append(E("definition", definition_found.strip()))
                 sen = sen.replace("<i>%s</i>" % definition_found, definition_found.strip())
+
+        # Bold definitions are an anomaly in how definitions are presented.
+        # Seems to happen only in 1. gr. laga nr. 58/1998 (153c).
+        bold_definitions_found = re.findall(r"<b> ([^<]*:) </b>", sen)
+        if len(bold_definitions_found) > 0:
+            definitions = E("definitions")
+            for definition_found in bold_definitions_found:
+                definitions.append(E("definition", { "style": "bold" }, definition_found.strip()))
+                sen = sen.replace("<b> %s </b>" % definition_found, definition_found.strip())
 
         sen_elem = E.sen(sen, nr=str(sen_nr))
 

@@ -1105,7 +1105,14 @@ def parse_numart_chapter(parser):
 
 
 def parse_paragraph(parser):
-    if not begins_with_regular_content(parser.line):
+    if not (
+        begins_with_regular_content(parser.line)
+        # In 58/1998 (153c) definitions are presented in bold.
+        or (
+            parser.line == "<b>"
+            and parser.peeks()[-1] == ":"
+        )
+    ):
         return False
 
     parser.enter("paragraph")

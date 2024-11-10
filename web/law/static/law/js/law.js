@@ -681,10 +681,14 @@ var process_definitions = function() {
     var $definitions = $(this);
 
     $definitions.find("definition").each(function() {
-        var definition = $(this).text();
+        var $definition = $(this);
         $definitions.parent().find("> sen").each(function() {
             var $sen = $(this);
-            var new_html = replaceAll($sen.html(), definition, "<i>" + definition + "</i>");
+            var styled_definition = "<i>" + $definition.text() + "</i>"
+            if (attr_or_emptystring($definition, "style") == "bold") {
+                styled_definition = "<b>" + $definition.text() + "</b>";
+            }
+            var new_html = replaceAll($sen.html(), $definition.text(), styled_definition);
             $sen.html(new_html);
         });
     });
