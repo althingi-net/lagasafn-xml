@@ -2675,6 +2675,15 @@ def parse_td(parser):
             parser.td.append(E("table-nr-title", "%s." % table_nr_title))
 
         if len(table_title):
+
+            # Deal with styled chemical names. Happens in ákvæði til
+            # bráðabirgða XII laga nr. 29/1993.
+            # NOTE: The styling gets re-applied in rendering mechanism.
+            if parser.peeks() == "<small>":
+                extra_content = parser.collect_until("</small>")
+                extra_content = extra_content.replace("<small> <sub> ", "").replace("</sub>", "")
+                table_title += extra_content
+
             parser.td.append(E("table-title", table_title))
 
         content = parser.collect_until("</td>")

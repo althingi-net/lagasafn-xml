@@ -801,7 +801,8 @@ $(document).ready(function() {
     $('law art').each(process_art);
     $('law subart').each(process_subart);
     $('law definitions').each(process_definitions);
-    $('law sen').each(process_sentence);
+    // `table-title` gets to piggyback on this one, instead of having its own processing.
+    $('law sen,law table-title').each(process_sentence);
 
     // The minister-clause is included in the XML only as HTML, but displayed
     // as text by default. Here we read it, and write it again, forcing the
