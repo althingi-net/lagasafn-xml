@@ -345,6 +345,17 @@ var process_footnote = function() {
 
             var replace_text_start = '[' + seek_text_start;
 
+            // We should add a space before the opening bracket if there's not
+            // already empty space or the beginning of a node. This both looks
+            // # more consistent but also fixes 97/2002.
+            if (start_match != null) {
+                var preceding_char = start_mark_content[start_match.index - 1];
+                if (start_match.index > 0 && preceding_char != " " && preceding_char != "[" && preceding_char != "–") {
+                    replace_text_start = " " + replace_text_start;
+                    console.log("WHAT IS THIS:", start_mark_content[start_match.index - 1]);
+                }
+            }
+
             // If the XML indicates that this is a change that happens
             // repeatedly in the text, then we need to replace all instances
             // of the words.
