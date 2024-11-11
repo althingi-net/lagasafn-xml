@@ -760,7 +760,13 @@ def add_sentences(target_node, sens):
             paragraph.insert(0, definitions)
 
         expiry_loc = strip_markers(sen).strip().find(MAGIC_EXPIRY_TOKEN)
-        if expiry_loc > -1:
+        if expiry_loc > -1 or sen == "…":
+
+            # Even if `MAGIC_EXPIRY_TOKEN` wasn't found, we know that its
+            # location is 0 if the "…" was found regardless.
+            if expiry_loc == -1:
+                expiry_loc = 0
+
             sen = sen.replace(MAGIC_EXPIRY_TOKEN, "…")
             sen_elem.text = sen
             # NOTE: In reality, the `expiry-symbol-offset` attribute only
