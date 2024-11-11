@@ -152,7 +152,12 @@ def strip_markers(text, strip_hellip_link=False):
         text = text.replace("  ", " ")
 
     text = text.replace(" ,", ",")
-    text = text.replace(" .", ".")
+
+    # Selectively replace dots when they are followed by space or the end of
+    # line. This is done to save top-level-domains (TLDs) like ".is" and ".eu"
+    # from being truncated in the beginnig.
+    text = re.sub(r" \.$", r".", text)
+    text = re.sub(r" \. ", r".", text)
 
     if not strip_hellip_link:
         # Re-insert the "…" that we saved from before.
@@ -433,6 +438,10 @@ def separate_sentences(content):
         del html_loc
     del non_splittable_tags
 
+    # We must retain the space before top-level domains (TLDs) like ".is" and
+    # ".eu". Otherwise the space gets stripped away.
+    content = content.replace(" .", "{SPACE}{DOT}")
+
     # The collected sentence so far. Chunks are appended to this string until
     # a new sentence is determined to be appropriate. Starts empty and and is
     # reset for every new sentence.
@@ -702,6 +711,12 @@ def separate_sentences(content):
             deletion_found = sen.find("…", cursor)
 
         new_sens.extend(sen.split("[SPLIT]"))
+    sens = new_sens
+
+    # Reclaim the spaces we encoded to prevent from being stripped away.
+    new_sens = []
+    for sen in sens:
+        new_sens.append(sen.replace("{SPACE}", " "))
     sens = new_sens
 
     return sens
