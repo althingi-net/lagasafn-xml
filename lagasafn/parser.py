@@ -1115,6 +1115,8 @@ def parse_appendix(parser):
             continue
         if parse_table(parser):
             continue
+        if parse_article_chapter(parser):
+            continue
         break
 
     # FIXME: Presumably this should be `parser.appendix = None`. Not fixing now
@@ -1498,7 +1500,9 @@ def parse_article_chapter(parser):
 
     # Check if we should append the article chapter to the last
     # sub-article, or the last article.
-    if parser.art.find("art-chapter") is not None:
+    if parser.appendix is not None:
+        parser.appendix.append(parser.art_chapter)
+    elif parser.art.find("art-chapter") is not None:
         parser.art.find("art-chapter").getparent().append(parser.art_chapter)
     elif parser.subart is not None:
         parser.subart.append(parser.art_chapter)
