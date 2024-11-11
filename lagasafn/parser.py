@@ -1218,6 +1218,8 @@ def parse_paragraph(parser):
     parent = None
     if parser.art_chapter is not None:
         parent = parser.art_chapter
+    elif parser.appendix_part is not None:
+        parent = parser.appendix_part
     elif parser.appendix is not None:
         parent = parser.appendix
     elif parser.subart is not None:
@@ -1290,18 +1292,26 @@ def parse_appendix_draft(parser):
 def parse_appendix_part(parser):
     # Occurs in lög nr. 98/2019 (153c).
     if not (
-        parser.line == "<i>"
-        and "-hluti" in parser.peeks()
+        (
+            parser.line == "<i>"
+            and "-hluti" in parser.peeks()
+        )
+        or re.match('.*-hluti\.$', parser.line)
     ):
         return False
 
     parser.enter("appendix-part")
 
-    parser.consume("<i>")
-    content = parser.collect_until("</i>", collect_first_line=True)
-    parser.consume("</i>")
+    style = "n"
+    if parser.line == "<i>":
+        style = "i"
+        parser.consume("<i>")
+        content = parser.collect_until("</i>", collect_first_line=True)
+        parser.consume("</i>")
+    else:
+        content = parser.collect_until("<br/>", collect_first_line=True)
 
-    parser.appendix_part = E("appendix-part")
+    parser.appendix_part = E("appendix-part", { "appendix-style": style })
 
     if ":" in content:
         nr_title, name = content.split(":")
@@ -1312,11 +1322,19 @@ def parse_appendix_part(parser):
         name = content
 
     parser.appendix_part.append(E("name", name))
-    parser.appendix.append(parser.appendix_part)
+
+    if parser.subart is not None:
+        parser.subart.append(parser.appendix_part)
+    else:
+        parser.appendix.append(parser.appendix_part)
 
     while True:
         parser.maybe_consume_many("<br/>")
         if parse_subarticle(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
             continue
 
         break
@@ -1857,8 +1875,11 @@ def parse_article(parser):
 VISITATIONS = 0
 
 def parse_subarticle(parser):
-    if not parser.matcher.check(
-        parser.line, r'<img .+ id="[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
+    if not (
+        parser.matcher.check(
+            parser.line, r'<img .+ id="[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
+        )
+        or parser.line == '<img alt="" height="11" src="hk.jpg" width="11"/>'
     ):
         return False
 
@@ -1867,7 +1888,13 @@ def parse_subarticle(parser):
 
     parser.numart = None
 
-    art_nr, unused, subart_nr = parser.matcher.result()
+    if parser.matcher.match is not None:
+        subart_nr = parser.matcher.result()[2]
+    else:
+        # This happens in appendices when subarticles are not numbered
+        # properly, notably in 4/1995. We'll have to figure out the correct
+        # `subart_nr` without reading from the HTML.
+        subart_nr = str(len(parser.appendix.findall("subart")) + 1)
 
     # Check how far we are from the typical subart end.
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
@@ -1973,6 +2000,8 @@ def parse_subarticle(parser):
         if parse_numerical_article(parser):
             continue
         if parse_article_chapter(parser):
+            continue
+        if parser.appendix is not None and parse_appendix_part(parser):
             continue
         if parse_paragraph(parser):
             continue

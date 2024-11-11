@@ -58,7 +58,11 @@ def begins_with_regular_content(argument):
     # which was a surprise. It may require more sophisticated means
     # of determining regular content in all cases.
     question = strip_markers(strip_links(argument)).strip()
-    if len(question) and question[0] != "<" and not is_numart_address(question):
+    if (
+        (len(question) and question[0] != "<")
+        and not is_numart_address(question)
+        and re.match(r".*-hluti\.$", question) is None
+    ):
         return True
     else:
         return False

@@ -535,6 +535,8 @@ def generate_legal_reference(input_node, skip_law=False):
             # technical distinction between a `subart` and `paragraph`, but
             # in human speech, they are called the same thing ("málsgrein").
             result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+        elif node.tag == "appendix-part":
+            pass
         elif node.tag == "appendix":
             if "nr-type" not in node.attrib:
                 result += "viðauka "

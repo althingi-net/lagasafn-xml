@@ -60,12 +60,12 @@ name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.
 appendix { display: block; margin-top: 1.5em; }
 appendix > nr-title { font-weight: bold; }
 appendix > name { font-weight: bold; }
-appendix > appendix-part { display: block; }
-appendix > appendix-part > nr-title { font-style: italic; }
-appendix > appendix-part > name { font-style: italic; }
-appendix > appendix-chapter { display: block; }
-appendix > appendix-chapter > name { font-weight: bold }
 appendix > draft { display: block; }
+appendix appendix-part { display: block; }
+appendix appendix-part[appendix-style="i"] > nr-title { font-style: italic; }
+appendix appendix-part[appendix-style="i"] > name { font-style: italic; }
+appendix appendix-chapter { display: block; }
+appendix appendix-chapter > name { font-weight: bold }
 
 ambiguous-section { display: block; font-style: italic; }
 
