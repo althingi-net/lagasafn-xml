@@ -69,6 +69,9 @@ def parse_footnotes(parser):
 
     parser.consume("</i>")
 
+    parser.footnotes = None
+    parser.numart = None
+
     parser.leave("footnotes")
     return True
 
