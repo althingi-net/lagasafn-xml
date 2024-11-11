@@ -1222,6 +1222,8 @@ def parse_paragraph(parser):
         parent = parser.appendix
     elif parser.subart is not None:
         parent = parser.subart
+    elif parser.art is not None:
+        parent = parser.art
     else:
         parent = parser.law
 
@@ -1735,6 +1737,11 @@ def parse_article(parser):
         art_name = parser.collect_until("</em>")
         parser.consume("</em>")
         parser.art.append(E("name", strip_links(art_name)))
+    elif parser.line == "<b>":
+        # Only known to happen in m00d00/1275 and possibly 94/1996.
+        art_name = parser.collect_until("</b>")
+        parser.consume("</b>")
+        parser.art.append(E("name", {"name-style": "b"}, strip_links(art_name)))
 
     # Another way to denote an article's name is by immediately
     # following it with bold text. This is very rare but does occur.
@@ -1833,6 +1840,8 @@ def parse_article(parser):
         if parse_ambiguous_chapter(parser):
             continue
         if parse_footnotes(parser):
+            continue
+        if parse_paragraph(parser):
             continue
         break
 

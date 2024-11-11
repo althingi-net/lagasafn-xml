@@ -74,6 +74,7 @@ art { display: block; margin-top: 0px; }
 art > nr-title { display: inline; font-weight: bold; }
 art > nr-title .art-deletion { font-weight: normal; }
 art > name { font-style: italic; }
+art > name[name-style="b"] { font-weight: bold; font-style: normal; }
 
 /* art-chapter */
 art-chapter { display: block }
@@ -99,7 +100,7 @@ numart-chapter > name { font-weight: bold; }
 
 /* paragraph */
 paragraph { display: block; text-indent: 1.04em; }
-paragraph:first-of-type { display: inline; text-indent: 0; }
+paragraph:first-of-type:not(art > paragraph) { display: inline; text-indent: 0; }
 
 /* sentence title */
 sen-title { font-style: italic; }

@@ -57,6 +57,11 @@ def law_show_patched(request, identifier):
         # Pre-1885 law number.
         law_nr = traditionalize_law_nr(law_nr).strip("0")
 
+        # In the single case of law nr. m00d00/1275, we will have an empty
+        # string here.
+        if len(law_nr) == 0:
+            law_nr = "0"
+
     filename = "%s-%s.html" % (law_year, law_nr)
 
     # First check if a patched version exists...
