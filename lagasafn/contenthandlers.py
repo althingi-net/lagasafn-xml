@@ -412,7 +412,7 @@ def separate_sentences(content):
     # Certain things, like HTML tables (<table>) and links (<a>) should never
     # be split into separate sentence. We'll run through those tags and encode
     # every dot within them.
-    non_splittable_tags = ["table", "a"]
+    non_splittable_tags = ["table", "a", "b"]
     for nst in non_splittable_tags:
         cursor = 0
 
@@ -768,7 +768,7 @@ def add_sentences(target_node, sens):
 
         # Bold definitions are an anomaly in how definitions are presented.
         # Seems to happen only in 1. gr. laga nr. 58/1998 (153c).
-        bold_definitions_found = re.findall(r"<b> ([^<]*:) </b>", sen)
+        bold_definitions_found = re.findall(r"<b> ([^<]*[:.]) </b>", sen)
         if len(bold_definitions_found) > 0:
             definitions = E("definitions")
             for definition_found in bold_definitions_found:
