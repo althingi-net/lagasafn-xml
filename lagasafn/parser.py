@@ -2267,7 +2267,26 @@ def parse_numerical_article(parser):
                 # the parent, so that this new list will be inside the
                 # previous one. We append to the last paragraph of
                 # that parent.
-                parent = prev_numart.findall("paragraph")[-1]
+                if (
+                    prev_numart.getparent().getparent() is not None
+                    and prev_numart.getparent().getparent().getchildren()[-1].getchildren()[-1].tag != "numart"
+                ):
+                    # This happens in the rather unfortunate circumstance that
+                    # a list of `numart`s is in one `paragraph` and then
+                    # another list follows in another `paragraph` (as opposed
+                    # to a `subart`).
+                    #
+                    # In this case, we need to check if the last `paragraph` in
+                    # the `subart` is a `numart` or not, to properly judge if
+                    # we should be adding to that list, or if it's another list
+                    # of `numart`s in another paragraph.
+                    #
+                    # Only known to happen in 3. gr. laga nr. 78/1993.
+                    #
+                    # May this never happen again.
+                    parent = prev_numart.getparent().getparent().findall("paragraph")[-1]
+                else:
+                    parent = prev_numart.findall("paragraph")[-1]
             else:
                 # A different list is being handled now, but it's not
                 # starting at the beginning (is neither 'a' nor 1).
