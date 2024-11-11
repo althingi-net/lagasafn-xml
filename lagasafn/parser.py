@@ -332,6 +332,8 @@ def parse_law(parser):
             continue
         if parse_appendix(parser):
             continue
+        if parse_paragraph(parser):
+            continue
 
         # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
 
@@ -1220,6 +1222,8 @@ def parse_paragraph(parser):
         parent = parser.appendix
     elif parser.subart is not None:
         parent = parser.subart
+    else:
+        parent = parser.law
 
     if parent is not None:
         paragraph_nr = str(len(parent.findall("paragraph")) + 1)
