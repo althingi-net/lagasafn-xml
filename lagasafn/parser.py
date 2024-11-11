@@ -572,7 +572,9 @@ def parse_ambiguous_section(parser):
     parser.ambiguous_section = E("ambiguous-section")
     add_sentences(parser.ambiguous_section, separate_sentences(ambiguous_content))
 
-    if parser.chapter is not None:
+    if parser.appendix_chapter is not None:
+        parser.appendix_chapter.append(parser.ambiguous_section)
+    elif parser.chapter is not None:
         parser.chapter.append(parser.ambiguous_section)
     else:
         parser.law.append(parser.ambiguous_section)
@@ -926,7 +928,14 @@ def parse_chapter(parser):
 
     # Must happen before the parsing of temporary clauses because iteration of
     # parents to 'law' happens when parsing articles inside them.
-    if parser.superchapter is not None:
+    if parser.appendix_chapter is not None:
+        # FIXME: This `chapter` is inside an `appendix_chapter`, and may get
+        # confused with normal chapters. This would properly be implemented as
+        # `appendix-chapter`s inside `appendix-chapter`s but that requires
+        # generalizing a bunch of functionality inside `parse_chapter`.
+        # This occurs in viðauka laga nr. 61/2017.
+        parser.appendix_chapter.append(parser.chapter)
+    elif parser.superchapter is not None:
         parser.superchapter.append(parser.chapter)
     else:
         parser.law.append(parser.chapter)
@@ -1140,6 +1149,12 @@ def parse_appendix_chapter(parser):
 
     while True:
         if parse_numerical_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_chapter(parser):
+            continue
+        if parse_ambiguous_section(parser):
             continue
         break
 
@@ -1877,7 +1892,7 @@ VISITATIONS = 0
 def parse_subarticle(parser):
     if not (
         parser.matcher.check(
-            parser.line, r'<img .+ id="[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
+            parser.line, r'<img .+ id="F?[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
         )
         or parser.line == '<img alt="" height="11" src="hk.jpg" width="11"/>'
     ):
@@ -1975,6 +1990,8 @@ def parse_subarticle(parser):
         parser.art_chapter.append(parser.subart)
     elif parser.art is not None:
         parser.art.append(parser.subart)
+    elif parser.appendix_chapter is not None:
+        parser.appendix_chapter.append(parser.subart)
     elif parser.appendix_part is not None:
         parser.appendix_part.append(parser.subart)
     elif parser.appendix is not None:
