@@ -1326,7 +1326,7 @@ def parse_stray_deletion(parser):
     """
     FIXME/TODO: This needs proper locating.
     """
-    removed_anchor = "<a href=\"https://www.althingi.is/altext/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða.\">"
+    removed_anchor = "<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
 
     if not (
         parser.line == "…"
