@@ -1313,7 +1313,7 @@ def parse_appendix_part(parser):
             parser.line == "<i>"
             and "-hluti" in parser.peeks()
         )
-        or re.match('.*-hluti\.$', parser.line)
+        or re.match(r'.*-hluti\.$', parser.line)
     ):
         return False
 
@@ -1367,7 +1367,7 @@ def parse_stray_deletion(parser):
     """
     FIXME/TODO: This needs proper locating.
     """
-    removed_anchor = "<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
+    removed_anchor = r"<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
 
     if not (
         parser.line == "…"
