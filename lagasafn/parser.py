@@ -1339,7 +1339,7 @@ def parse_stray_deletion(parser):
     content = parser.collect_until("<br/>", collect_first_line=True)
     parser.consume("<br/>")
 
-    parser.mark_container = E("mark-container", { "expiry-symbol-offset": "0" }, E("sen", content))
+    parser.mark_container = E("mark-container", E("sen", { "expiry-symbol-offset": "0" }, content))
 
     if parser.numart is not None:
         parser.numart.append(parser.mark_container)
