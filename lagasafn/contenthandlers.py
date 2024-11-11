@@ -307,7 +307,10 @@ def check_chapter(lines, law):
             # - 112/2008
             # - 45/2020
             line_type = "subchapter"
-        else:
+        # When this thing is immediately followed by an article, it's not an
+        # `art-chapter`, it's just something we have no clue what to do about,
+        # ending up as `ambiguous` below. Happens in lög nr. 41/2004.
+        elif re.match(r'<img .+ src=".*sk.jpg" .+\/>', lines.peeks(6)) is None:
             line_type = "art-chapter"
 
     elif any(
