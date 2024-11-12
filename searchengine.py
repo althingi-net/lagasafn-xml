@@ -14,9 +14,15 @@
 #
 # NOTE:
 # Hereafter, any changes to the index format should increment the INDEX_VERSION constant.
-INDEX_VERSION = 2
+INDEX_VERSION = 3
+# Version history:
+#  1: Initial version
+#  2: Added refs index for storing natural language references to XPaths
+#  3: Added tfidf_scores and tf_scores indexes
 
+from collections import defaultdict
 from datetime import datetime
+import math
 import os
 from typing import List
 import click
@@ -35,6 +41,7 @@ class Results:
         self.flattened = []
         self.metadata = {}
         self.refs = {}
+        self.xpaths = {}
 
     @property
     def files(self):
@@ -54,14 +61,11 @@ class Results:
             self.metadata[file] = metadata[file]
 
     def augment_with_refs(self, refs):
+        # TODO: Filter for only stuff that makes sense.
         for file in self.result_files.keys():
-            if file not in refs:
-                continue
             self.refs[file] = {}
             for xpath, ref in refs[file].items():
-                if xpath not in self.result_files[file]:
-                    continue
-                self.result_files[file][xpath]["ref"] = ref
+                self.refs[file][xpath] = ref
 
     def sort(self):
         # Here we sort the result files by overall score, and the hits within
@@ -110,7 +114,16 @@ class SearchEngine:
 
     def empty(self):
         # NOTE: If you add or remove anything from the index, remember to increment INDEX_VERSION
-        self._index = {"metadata": {}, "tokens": {}, "refs": {}, "version": INDEX_VERSION}
+        self._index = {
+            "metadata": defaultdict(dict), 
+            "tokens": defaultdict(list), 
+            "refs": defaultdict(dict), 
+            "tfidf_scores": defaultdict(dict),
+            "tf_scores": defaultdict(dict),
+            "total_documents": 0,
+            "version": INDEX_VERSION
+        }
+        self.document_frequencies = defaultdict(int)
         self.save_index()
 
     def save_index(self):
@@ -137,15 +150,20 @@ class SearchEngine:
             print(f"[{idx:>5}/{count:<5}] Indexing {xml_file}...", end='\r')
             self.index_file(os.path.join(xml_dir, xml_file), save_index=False)
 
+        # Now that we have indexed all the files, we can calculate the TF-IDF scores
+        self.calculate_tfidf()
+
         self.save_index()
         time_end = datetime.now()
+
 
         print(f"Indexing complete in {(time_end - time_start).total_seconds()} seconds. Indexed:")
         print(f"{len(self._index["metadata"]):>10} files")
         print(f"{len(self._index["tokens"]):>10} tokens")
         locs = sum([len(x) for y,x in self._index["tokens"].items()])
         print(f"{locs:>10} locations")
-        
+        refs = sum([len(x) for y,x in self._index["refs"].items()])
+        print(f"{refs:>10} references in {len(self._index['refs'])} files")
 
     def index_metadata(self, xml_file: str, metadata: dict):
         self._index["metadata"][xml_file] = metadata
@@ -165,6 +183,9 @@ class SearchEngine:
 
         self.index_metadata(xml_file, metadata)
 
+        self._index["total_documents"] += 1
+        term_frequencies = defaultdict(int)
+
         for child in root.iter():
             # Tokenize the text
             text = child.text
@@ -178,14 +199,23 @@ class SearchEngine:
                 try:
                     ref = generate_legal_reference(child, skip_law=True)
                     self.index_xpath_ref(xml_file, xpath, ref)
-                except:
-                    print(f"Could not generate reference for {xpath} in {xml_file}")
+                except Exception as e:
+                    print(f"Could not generate reference for {xpath} in {xml_file}: {e}")
                     continue
 
             for (token, start, end) in tokens:
                 # Token stemming not implemented.
-                # ref = self.get_natural_reference(root, xpath)
+                term_frequencies[token] += 1
                 self.index_token(token, xml_file, xpath, start, end, text)
+
+        # Update document frequencies for each unique token in this document
+        for token in term_frequencies.keys():
+            self.document_frequencies[token] += 1
+
+        # Now we can add each token to the index with its TF for this document
+        for token, tf in term_frequencies.items():
+            # Optionally store TF for later calculation of TF-IDF
+            self._index["tf_scores"][token][xml_file] = tf
 
         if save_index:
             self.save_index()
@@ -236,14 +266,28 @@ class SearchEngine:
                 toks.append((tok, start, end))
 
         # toks = list(set(toks))
-
         return toks
+    
 
     def index_token(self, token: str, filename: str, xpath: str, start: int, end: int, context:str):
         # NOTE: If you add or remove anything from the index, remember to increment INDEX_VERSION
         if token not in self._index["tokens"]:
             self._index["tokens"][token] = []
         self._index["tokens"][token].append((filename, xpath, start, end, context))
+
+    
+    def calculate_tfidf(self):
+        """Compute and store TF-IDF for each token in each document"""
+        print("Calculating TF-IDF scores...")
+        for token, doc_data in self._index["tf_scores"].items():
+            idf = math.log(self._index["total_documents"] / (1 + self.document_frequencies[token]))
+            for doc, tf in doc_data.items():
+                tfidf_score = tf * idf
+                # Store the TF-IDF score in the index
+                if token not in self._index["tfidf_scores"]:
+                    self._index["tfidf_scores"][token] = {}
+                self._index["tfidf_scores"][token][doc] = tfidf_score
+
 
     def search(self, query):
         print("Searching the index")
@@ -257,6 +301,7 @@ class SearchEngine:
         results.augment_with_metadata(self._index["metadata"])
         results.augment_with_refs(self._index["refs"])
         return results
+
 
     def serve(self):
         print("Starting the search engine web server")
@@ -351,7 +396,6 @@ def search(query):
 @click.option('--index', '-i', type=click.Path(), default="search_index.pkl", help='The target file to save the index to')
 def search_cli(index):
     """Start the search engine command-line interface"""
-    from datetime import datetime
     print("Starting the search engine command-line interface")
     search_engine = SearchEngine(index)
     while True:
@@ -363,6 +407,17 @@ def search_cli(index):
         end_time = datetime.now()
         print_results(results)
         print(f"Search time: {end_time - start_time} seconds")
+
+@cli.command()
+@click.option('--num', '-n', type=int, default=10, help='The number of top tokens to display')
+@click.option('--index', '-i', type=click.Path(), default="search_index.pkl", help='The target file to save the index to')
+def top(index, num):
+    """Print the top 10 tokens from the search index"""
+    search_engine = SearchEngine(index)
+    items = list(search_engine._index["tokens"].items())
+    items.sort(key=lambda x: len(x[1]), reverse=True)
+    for token, locations in items[:num]:
+        print(f"{token:<15}: {len(locations)} locations")
 
 
 if __name__ == '__main__':

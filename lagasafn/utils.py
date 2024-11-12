@@ -471,12 +471,8 @@ def generate_legal_reference(input_node, skip_law=False):
         # A few tags are part of the law definition; we don't want to handle it specially
         if node.tag in ["name", "date", "num-and-date", "nr-title", "sen", "footnote-sen", 
                         "footnote", "footnotes", "location", "date", "num", "original", 
-                        "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title"]:
-            node = node.getparent()
-            continue
-
-        if node.getparent().tag == "footnote":
-            # Footnotes are not part of the legal reference.
+                        "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title",
+                        "paragraph", "table", "tr", "td", "th", "thead", "tbody"]:
             node = node.getparent()
             continue
 
@@ -498,7 +494,7 @@ def generate_legal_reference(input_node, skip_law=False):
         elif node.tag == "subart":
             result += "%s. málsgr. " % node.attrib["nr"]
         elif node.tag == "art":
-            if node.attrib["nr"].isdigit():
+            if node.attrib["nr"].isdigit() or node.attrib["nr"].isnumeric():
                 result += "%s. gr. " % node.attrib["nr"]
             else:
                 if matcher.check(node.attrib["nr"], r"(\d+)(.+)"):
@@ -520,7 +516,7 @@ def generate_legal_reference(input_node, skip_law=False):
                         # But maybe not always.
                         result += "%s. gr. " % node.attrib["nr"]
                 elif node.getparent().tag == "chapter" and node.getparent().attrib["nr"] == "t":
-                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]
+                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]                    
                 else:
                     raise Exception("Parsing of node '%s' (xpath %s) not implemented" % (node.tag, node.getroottree().getpath(node)))
         elif node.tag == "paragraph":

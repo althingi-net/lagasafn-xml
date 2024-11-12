@@ -88,13 +88,17 @@ function update_results() {
             if (locations.length == 0) {
                 continue;
             }
+
             var ref = "";
             try {
+                console.log("Checking refs for ", file, xpath);
                 ref = results["refs"][file][xpath];
+                console.log("Ref: ", ref);
             } catch (e) {
             }
+
             var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
-            hit_item.append($("<span></span>").text(ref).css("font-weight", "bold"));
+            hit_item.append($("<span class=\"reference\"></span>").text(ref).css("font-weight", "bold"));
             hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
             for (let idx = 0; idx < sorted_locations.length; idx++) {
                 let start = sorted_locations[idx][0];
