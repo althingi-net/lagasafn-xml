@@ -822,12 +822,20 @@ def parse_chapter(parser):
         maybe_nr = t[0 : t.index(".")]
         if is_roman(maybe_nr):
             nr = str(roman.fromRoman(maybe_nr))
-            roman_nr = maybe_nr
             nr_type = "roman"
+
+            extra_match = re.match(r"\.([A-Z])\.", t[len(maybe_nr):])
+            if extra_match is not None:
+                # A special case in lög nr. 41/1979 where a chapter has been
+                # added between "I" and "II", called "I.A".
+                nr += extra_match.groups()[0].lower()
+            del extra_match
+
+            roman_nr = maybe_nr
         else:
             nr = str(int(maybe_nr))
-            roman_nr = None
             nr_type = "arabic"
+            roman_nr = None
 
         # We assume that a chapter nr-title with an alphabetical
         # character (like "II. kafli B" or "2b") can only occur in
