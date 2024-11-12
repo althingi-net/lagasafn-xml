@@ -981,6 +981,8 @@ def parse_chapter(parser):
         parser.next()
         parser.maybe_consume_many("<br/>")
 
+        parser.trail_push(parser.chapter)
+
         while True:
             if parse_article(parser):
                 continue
@@ -989,8 +991,8 @@ def parse_chapter(parser):
             break
 
         parser.leave("temporary-clauses")
-
-    parser.trail_push(parser.chapter)
+    else:
+        parser.trail_push(parser.chapter)
 
     parser.enter("chapter-content")
     while True:
