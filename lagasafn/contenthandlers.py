@@ -415,7 +415,7 @@ def separate_sentences(content):
     # Certain things, like HTML tables (<table>) and links (<a>) should never
     # be split into separate sentence. We'll run through those tags and encode
     # every dot within them.
-    non_splittable_tags = ["table", "a", "b"]
+    non_splittable_tags = ["table", "a", "b", "i"]
     for nst in non_splittable_tags:
         cursor = 0
 
@@ -834,7 +834,7 @@ def is_ignorable_chapter(line: str) -> str:
     # are unable to predict their format and parsing them will always remain
     # error-prone when possible to begin with. Possibly we'll include them as
     # raw HTML goo later.
-    if matcher.check(line.lower(), "\[?fylgiskj[aö]l"):
+    if matcher.check(line.lower(), r"\[?fylgiskj[aö]l"):
         line_type = "extra-docs"
 
     return line_type
