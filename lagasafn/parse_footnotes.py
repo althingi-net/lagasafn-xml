@@ -466,7 +466,16 @@ def parse_footnote(parser):
                             # `instance_num` should indeed just be 1.
                             instance_num = 1
                         else:
-                            instance_num = len(re.findall(words, desc.text[:opening_found])) + 1
+                            # We may need to find the instance number slightly
+                            # differently than by `words` alone. Most notably,
+                            # when `words` starts with a number like 0, it will
+                            # match other numbers ilke 60. We still want
+                            # `words` to be the same, but in that case we need
+                            # to search for 0 specifically.
+                            word_search = words
+                            if len(word_search) > 0 and word_search[0].isdigit():
+                                word_search = r"[^0-9]" + word_search
+                            instance_num = len(re.findall(word_search, desc.text[:opening_found])) + 1
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
