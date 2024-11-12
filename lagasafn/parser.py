@@ -1551,6 +1551,11 @@ def parse_ambiguous_chapter(parser):
     )
     parser.consume("</b>")
 
+    italic = re.match(r"<i>\s?(.*)\s?</i>", ambiguous_bold_text.text)
+    if italic is not None:
+        ambiguous_bold_text.text = italic.groups()[0].strip()
+        ambiguous_bold_text.attrib["ambiguous-style"] = "i"
+
     if parser.subart is not None:
         parser.subart.append(ambiguous_bold_text)
     elif parser.art is not None:

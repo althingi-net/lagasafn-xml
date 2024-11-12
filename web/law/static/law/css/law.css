@@ -68,7 +68,8 @@ appendix appendix-chapter { display: block; }
 appendix appendix-chapter > name { font-weight: bold }
 
 ambiguous-section { display: block; font-style: italic; }
-ambiguous-bold-text { font-weight: bold; }
+ambiguous-bold-text { display: block; font-weight: bold; }
+ambiguous-bold-text[ambiguous-style="i"] { font-style: italic; }
 
 /* article */
 art { display: block; margin-top: 0px; }
