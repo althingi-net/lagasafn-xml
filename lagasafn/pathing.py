@@ -17,7 +17,7 @@ def make_xpath_from_node(node):
     while node is not None and node.getparent() is not None:
         # Extract and format the current node's attributes into XPath syntax.
         attrib_parts = []
-        for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr"]:
+        for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr", "chapter-type"]:
             if wanted_attrib in node.attrib:
                 # IMPORTANT: Single quotes for values, not double quotes.
                 attrib_parts.append(

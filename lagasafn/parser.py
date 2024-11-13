@@ -785,11 +785,15 @@ def parse_chapter(parser):
     # is the chapter nr-title and that the content in the next <b>
     # clause will be the chapter name.
 
+    chapter_type = ""
+
     name_or_nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
     nr = None
     if name_or_nr_title.find("kapítuli.") > -1:
+        chapter_type = "kapítuli"
+
         # This ancient way of denoting a chapter is always represented by
         # cardinal numbers, but their `nr-title`s and `name`s are also not in
         # separate `<b>` clauses.
@@ -850,8 +854,14 @@ def parse_chapter(parser):
         # designate some kind of chapter, because those are logically
         # equivalent, but should never appear both in the same chapter
         # line.
-        for chapter_word_check in ["kafli", "hluti", "bók"]:
+        #
+        # We also record the word as `chapter_type` so that we can distinguish
+        # between things like "1. kafli" and "1. hluti", which may appear in
+        # the same law.
+        chapter_type = ""
+        for chapter_word_check in ["kafli", "hluti", "bók", "kap"]:
             if chapter_word_check in t:
+                chapter_type = chapter_word_check
                 alpha = t[t.index(chapter_word_check) + 6 :].strip(".")
                 if alpha:
                     nr += alpha.lower()
@@ -865,6 +875,18 @@ def parse_chapter(parser):
             E("nr-title", chapter_nr_title),
             E("name", chapter_name),
         )
+
+        # The `chapter-type` explains whether this chapter is shown as "kafli",
+        # "hluti" or whatever else, so that we can distinguish between two
+        # chapters in the same law, where one is named "1. hluti" and the other
+        # "1. kafli'.
+        # FIXME: In reality, "hluti"-chapters should contain other chapters as
+        # opposed to being their siblings, but to implement that, we'll need to
+        # make `chapter`s capable of recursivity. As "hluti"-chapters are not
+        # referenced to our knowledge, we need not concern ourselves with this
+        # at the moment. But we will, some day.
+        if len(chapter_type):
+            parser.chapter.attrib["chapter-type"] = chapter_type
 
         # Record the original Roman numeral if applicable.
         if roman_nr is not None:
