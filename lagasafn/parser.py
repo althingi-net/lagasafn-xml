@@ -1416,10 +1416,10 @@ def parse_stray_deletion(parser):
 
     if parser.numart is not None:
         parser.numart.append(parser.mark_container)
-    elif parser.chapter is not None:
-        parser.chapter.append(parser.mark_container)
     elif parser.subart is not None:
         parser.subart.append(parser.mark_container)
+    elif parser.chapter is not None:
+        parser.chapter.append(parser.mark_container)
     else:
         parser.law.append(parser.mark_container)
 
@@ -2053,8 +2053,6 @@ def parse_subarticle(parser):
             continue
         if parse_stray_deletion(parser):
             continue
-        if parse_footnotes(parser):
-            continue
         if parse_numerical_article(parser):
             continue
         if parse_article_chapter(parser):
@@ -2063,6 +2061,8 @@ def parse_subarticle(parser):
             continue
         if parse_paragraph(parser):
             continue
+        if parse_footnotes(parser):
+            break
 
         break
 
