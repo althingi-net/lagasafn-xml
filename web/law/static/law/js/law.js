@@ -564,6 +564,8 @@ var process_footnote = function() {
         }
 
         // Configure the deletion symbol that we'll drop into the content.
+        // FIXME: The `<sup>` get deleted under certain conditions because of
+        // `expiry-symbol-offset`, which needs some rethinking.
         var deletion_symbol = pre_deletion_space
                 + '…'
                 + middle_punctuation
@@ -835,6 +837,8 @@ $(document).ready(function() {
     // implemented like the opening/closing/deletion/pointer markers. Currently
     // we are just detecting the symbol and enclosing it in a `<span>` so that
     // it can be identified.
+    // FIXME: This screws up the styling of deletion markers when in a node
+    // with `expiry-symbol-offset` defined by removing the `<sup>`.
     $('sen').each(function() { 
         if ($(this).attr("expiry-symbol-offset")) {
             var offset = $(this).attr("expiry-symbol-offset");
