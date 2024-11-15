@@ -11,6 +11,7 @@ from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import next_footnote_sup
 from lagasafn.utils import UnexpectedClosingBracketException
 from lagasafn.utils import super_iter
+from lagasafn.utils import find_common_ancestor
 from lagasafn.utils import find_unmatched_closing_bracket
 from lagasafn.pathing import make_xpath_from_node
 
@@ -546,6 +547,7 @@ def parse_footnote(parser):
                     # <location> tag...
                     middle_punctuation = None
                     instance_num = None
+                    string_length = None
                     if use_words:
                         # ...except, if it turns out that we're
                         # actually dealing with a different sentence
@@ -594,6 +596,26 @@ def parse_footnote(parser):
                         if middle_punctuation_search is not None:
                             ended_at["middle_punctuation"] = middle_punctuation_search[1]
 
+                        # Calculate the distance in characters between the
+                        # opening marker and the closing marker. This will be
+                        # used to prioritize marker insertion during rendering.
+                        node_start = parser.law.xpath(started_at["xpath"])[0]
+                        node_end = desc
+                        common_ancestor = find_common_ancestor(node_start, node_end)
+                        recording = False
+                        total_text = ""
+                        for node in common_ancestor.iterdescendants():
+                            if node == node_start:
+                                recording = True
+
+                            if node.text is not None and recording:
+                                total_text += strip_markers(node.text)
+
+                            if node == node_end:
+                                break
+
+                        string_length = len(total_text)
+
                     # Stuff our findings into a list of marker
                     # locations that can be appended to the footnote
                     # XML.
@@ -601,6 +623,7 @@ def parse_footnote(parser):
                         {
                             "num": int(num) if num is not None else None,
                             "type": "range",
+                            "string_length": string_length,
                             # 'started_at' is determined from previous
                             # processing of the corresponding opening
                             # marker.
@@ -903,6 +926,9 @@ def parse_footnote(parser):
 
                     location.append(start)
                     location.append(end)
+
+                if "string_length" in ml and ml["string_length"] is not None:
+                    location.attrib["string-length"] = str(ml["string_length"])
 
                 # If the location XML that we're adding is identical
                 # to a previous location node in the same footnote

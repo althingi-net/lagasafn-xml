@@ -1024,3 +1024,20 @@ def search_xml_doc(xml_doc, search_string):
             matching_nodes.append(element)
 
     return matching_nodes
+
+
+def find_common_ancestor(node_1, node_2):
+    """
+    Finds the common ancestor of two XML nodes.
+    """
+    ancestors = set()
+    while node_1 is not None:
+        ancestors.add(node_1)
+        node_1 = node_1.getparent()
+
+    while node_2 is not None:
+        if node_2 in ancestors:
+            return node_2
+        node_2 = node_2.getparent()
+
+    return None

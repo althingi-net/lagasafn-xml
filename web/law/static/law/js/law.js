@@ -225,449 +225,453 @@ var process_refer_external = function($refer) {
 
 
 var process_footnote = function() {
+    var $footnotes = $(this);
 
-    var $footnote = $(this);
+    $locations = $footnotes.find('footnote > location');
 
-    var footnote_nr = $footnote.attr('nr');
+    // When placing closing markers, the order may matter. The basic rule is that the longer the string in the changed text, as it appears between the opening and closing markers, the later is should be processed.
+    $locations.sort(function(a, b) {
+        var a = $(a).attr('string-length');
+        var b = $(b).attr('string-length');
+        if (a && b) {
+            return parseInt(a) - parseInt(b);
+        }
+        return 0;
+    });
 
-    // Go through footnotes and place opening/closing markers where text has
-    // been updated.
-    $footnote.find('location[type="range"]').each(function() {
+    // Go through all markers and handle them accordingly.
+    $locations.each(function() {
         var $location = $(this);
+        var footnote_nr = $location.parent().attr('nr');
 
-        // Start with the entire law and narrow it down later. The variables
-        // $start_mark and $end_mark denote the highlight's start point and
-        // end point, respectively. In the beginning, they are both set to the
-        // entire legal document's XML, but then narrowed down afterwards.
-        // This means that each node in <location> narrows it down by one
-        // step, until eventually we have the final node, which is the one
-        // where the highlighting (or marking) should take place.
-        //
-        // Usually, the $start_mark and $end_mark end up being the same thing.
-        // They are only different when the highlight covers a range of
-        // entities.
-        //
-        // Marks are the same thing except they're not a range, but a single
-        // point in the text. In those cases, the $end_mark is used, because
-        // the mark should come after the located text.
-        var $start_mark = $location.parent().parent().closest('law');
-        var $end_mark = $location.parent().parent().closest('law');
+        // Process range-type locations, with opening and closing markers.
+        if ($location.attr('type') == 'range') {
 
-        if ($location.attr("xpath") === undefined) {
-            // TODO: Instead of setting the `location_node` here, we should just
-            //       set whatever variables we need, which currently are `words`
-            //       and `repeat`.
-            var $location_start = $location.find("start");
-            var $location_end = $location.find("end");
-            $start_mark = $(getElementByXPath("//" + $location_start.attr("xpath")));
-            $start_mark.location_node = $location_start;
-            $end_mark = $(getElementByXPath("//" + $location_end.attr("xpath")));
-            $end_mark.location_node = $location_end;
-        }
-        else {
-            $start_mark = $(getElementByXPath("//" + $location.attr("xpath")));
-            $start_mark.location_node = $location;
-            $end_mark = $start_mark;
-        }
-
-        // Let's be nice to XML writers and tell them what's wrong.
-        if (!$start_mark.prop('tagName')) {
-            var art_nr = $location.closest('art').attr('nr');
-            console.error('Invalid location in footnote nr. ' + footnote_nr + ' in article nr. ' + art_nr);
-            return;
-        }
-
-        /***********************************************/
-        /* Add markers to denote the highlighted area. */
-        /***********************************************/
-
-        // Short-hands.
-        var end_tag_name = lowercase_tagname($end_mark);
-        var end_tag_parent_name = lowercase_tagname($end_mark.parent());
-        var location_type = $location.attr('type');
-
-        // If the end mark ontains a table, we'll actually want to append the
-        // closing marker to the very last cell in the last row of the table.
-        // This is a design choice from the official website which we imitate
-        // without concerning ourselves with the reasoning behind it. At any
-        // rate, we will simply designate that last cell as the $end_mark.
-        //
-        // NOTE: This does not support the "words"-mechanism and is assumed to
-        // be mutually exclusive with it. If specificity is needed in the
-        // table structure, support for specifying table cells in the XML
-        // should be added.
-        if ($end_mark.find('table').length) {
-            $end_mark = $end_mark.find('table').find('tbody > tr').last().find('td').last();
-        }
-
-        // Adjust spaces immediately before and after the closing marker
-        // according to design choices. (We don't know the logic behind those
-        // design choices, we just imitate them from the official website.)
-        var pre_close_space = '';
-        if (end_tag_name == 'nr-title' && end_tag_parent_name == 'numart') {
-            pre_close_space = ' ';
-        }
-        var post_deletion_space = ' ';
-        if (
-            end_tag_name == 'name'
-            || (end_tag_name == 'nr-title' && end_tag_parent_name == 'art')
-            || lowercase_tagname($end_mark) == 'td'
-        ) {
-            post_deletion_space = '';
-        }
-
-        var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
-
-        if ($start_mark.location_node.attr('words')) {
-            // If specific words are specified, we can just replace the
-            // existing text with itself plus the relevant symbols for
-            // denoting ranges.
-            //
-            // Note though, that we actually perform two replacements, one for
-            // the start marker and another for the end marker. In the
-            // overwhelming majority of cases, the seek_text will be the same
-            // so the same string is being replaced, but every once in a
-            // while, a replacement should occur over the span of more than
-            // one sentence. In those cases, the seek texts will differ and the
-            // start marker will be placed before the value of the "words"
-            // attribute in the start location, and after the value of the
-            // "words" attribute in the end location.
-
-            var seek_text_start_regex_string = attr_or_emptystring($start_mark.location_node, 'words');
-
-            var seek_text_start_regex = new RegExp(seek_text_start_regex_string)
-            var start_mark_content = $start_mark.html();
-            var start_match = start_mark_content.match(seek_text_start_regex);
-            var seek_text_start = "";
-            if (start_match != null && start_match.length > 0) {
-                seek_text_start = start_match[0];
-            }
-
-            var replace_text_start = '[' + seek_text_start;
-
-            // We should add a space before the opening bracket if there's not
-            // already empty space or the beginning of a node. This both looks
-            // # more consistent but also fixes 97/2002.
-            if (start_match != null) {
-                var preceding_char = start_mark_content[start_match.index - 1];
-                if (start_match.index > 0 && preceding_char != " " && preceding_char != "[" && preceding_char != "–") {
-                    replace_text_start = " " + replace_text_start;
-                    console.log("WHAT IS THIS:", start_mark_content[start_match.index - 1]);
-                }
-            }
-
-            // If the XML indicates that this is a change that happens
-            // repeatedly in the text, then we need to replace all instances
-            // of the words.
-            if ($start_mark.location_node.attr('repeat') == 'true') {
-                $start_mark.html(replaceAll(
-                    $start_mark.html(),
-                    seek_text_start,
-                    replace_text_start
-                ));
+            // Usually, the $start_mark and $end_mark end up being the same
+            // thing. They are only different when the highlight covers a range
+            // of entities.
+            if ($location.attr("xpath") === undefined) {
+                // FIXME: Instead of setting the `location_node` here, we
+                // should just set whatever variables we need, which currently
+                // are `words` and `repeat`.
+                var $location_start = $location.find("start");
+                var $location_end = $location.find("end");
+                $start_mark = $(getElementByXPath("//" + $location_start.attr("xpath")));
+                $start_mark.location_node = $location_start;
+                $end_mark = $(getElementByXPath("//" + $location_end.attr("xpath")));
+                $end_mark.location_node = $location_end;
             }
             else {
-                let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
+                $start_mark = $(getElementByXPath("//" + $location.attr("xpath")));
+                $start_mark.location_node = $location;
+                $end_mark = $start_mark;
+            }
 
-                if ($start_mark.html() !== undefined) {
-                    $start_mark.html(instanceReplace(
+            // Let's be nice to XML writers and tell them what's wrong.
+            if (!$start_mark.prop('tagName')) {
+                var art_nr = $location.closest('art').attr('nr');
+                console.error('Invalid location in footnote nr. ' + footnote_nr + ' in article nr. ' + art_nr);
+                return;
+            }
+
+            /***********************************************/
+            /* Add markers to denote the highlighted area. */
+            /***********************************************/
+
+            // Short-hands.
+            var end_tag_name = lowercase_tagname($end_mark);
+            var end_tag_parent_name = lowercase_tagname($end_mark.parent());
+
+            // If the end mark ontains a table, we'll actually want to append
+            // the closing marker to the very last cell in the last row of the
+            // table. This is a design choice from the official website which
+            // we imitate without concerning ourselves with the reasoning
+            // behind it. At any rate, we will simply designate that last cell
+            // as the $end_mark.
+            //
+            // NOTE: This does not support the "words"-mechanism and is assumed
+            // to be mutually exclusive with it. If specificity is needed in
+            // the table structure, support for specifying table cells in the
+            // XML should be added.
+            if ($end_mark.find('table').length) {
+                $end_mark = $end_mark.find('table').find('tbody > tr').last().find('td').last();
+            }
+
+            // Adjust spaces immediately before and after the closing marker
+            // according to design choices. (We don't know the logic behind those
+            // design choices, we just imitate them from the official website.)
+            var pre_close_space = '';
+            if (end_tag_name == 'nr-title' && end_tag_parent_name == 'numart') {
+                pre_close_space = ' ';
+            }
+            var post_deletion_space = ' ';
+            if (
+                end_tag_name == 'name'
+                || (end_tag_name == 'nr-title' && end_tag_parent_name == 'art')
+                || lowercase_tagname($end_mark) == 'td'
+            ) {
+                post_deletion_space = '';
+            }
+
+            var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
+
+            if ($start_mark.location_node.attr('words')) {
+                // If specific words are specified, we can just replace the
+                // existing text with itself plus the relevant symbols for
+                // denoting ranges.
+                //
+                // Note though, that we actually perform two replacements, one for
+                // the start marker and another for the end marker. In the
+                // overwhelming majority of cases, the seek_text will be the same
+                // so the same string is being replaced, but every once in a
+                // while, a replacement should occur over the span of more than
+                // one sentence. In those cases, the seek texts will differ and the
+                // start marker will be placed before the value of the "words"
+                // attribute in the start location, and after the value of the
+                // "words" attribute in the end location.
+
+                var seek_text_start_regex_string = attr_or_emptystring($start_mark.location_node, 'words');
+
+                var seek_text_start_regex = new RegExp(seek_text_start_regex_string)
+                var start_mark_content = $start_mark.html();
+                var start_match = start_mark_content.match(seek_text_start_regex);
+                var seek_text_start = "";
+                if (start_match != null && start_match.length > 0) {
+                    seek_text_start = start_match[0];
+                }
+
+                var replace_text_start = '[' + seek_text_start;
+
+                // We should add a space before the opening bracket if there's not
+                // already empty space or the beginning of a node. This both looks
+                // # more consistent but also fixes 97/2002.
+                if (start_match != null) {
+                    var preceding_char = start_mark_content[start_match.index - 1];
+                    if (start_match.index > 0 && preceding_char != " " && preceding_char != "[" && preceding_char != "–") {
+                        replace_text_start = " " + replace_text_start;
+                        console.log("WHAT IS THIS:", start_mark_content[start_match.index - 1]);
+                    }
+                }
+
+                // If the XML indicates that this is a change that happens
+                // repeatedly in the text, then we need to replace all instances
+                // of the words.
+                if ($start_mark.location_node.attr('repeat') == 'true') {
+                    $start_mark.html(replaceAll(
                         $start_mark.html(),
                         seek_text_start,
-                        replace_text_start,
-                        start_instance_num
+                        replace_text_start
                     ));
                 }
-            }
-        }
-        else {
-            // If there is a <nr-title> tag, we'll want to skip that, so
-            // that the opening bracket is placed right after it.
-            var $nr_title = $start_mark.children('nr-title');
-            if ($nr_title.length > 0) {
-                // FIXME: Seems unused. Confirm and remove.
-                $start_mark.children('nr-title').next().first().prepend('[');
+                else {
+                    let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
+
+                    if ($start_mark.html() !== undefined) {
+                        $start_mark.html(instanceReplace(
+                            $start_mark.html(),
+                            seek_text_start,
+                            replace_text_start,
+                            start_instance_num
+                        ));
+                    }
+                }
             }
             else {
-                $start_mark.prepend('[');
+                // If there is a <nr-title> tag, we'll want to skip that, so
+                // that the opening bracket is placed right after it.
+                var $nr_title = $start_mark.children('nr-title');
+                if ($nr_title.length > 0) {
+                    // FIXME: Seems unused. Confirm and remove.
+                    $start_mark.children('nr-title').next().first().prepend('[');
+                }
+                else {
+                    $start_mark.prepend('[');
+                }
+
+                // Remove trailing dot after end marker, but make sure we're not
+                // interfering with a deletion marker, which is handled elsewhere.
+                if ($start_mark.html().match(/[^…] <\/sup>\.$/)) {
+                    $start_mark.html($start_mark.html().replace(/\.$/, ''));
+                }
             }
 
-            // Remove trailing dot after end marker, but make sure we're not
-            // interfering with a deletion marker, which is handled elsewhere.
-            if ($start_mark.html().match(/[^…] <\/sup>\.$/)) {
-                $start_mark.html($start_mark.html().replace(/\.$/, ''));
-            }
-        }
+            if ($end_mark.location_node.attr('words')) {
+                // If specific words are specified, we can just replace the
+                // existing text with itself plus the relevant symbols for
+                // denoting ranges.
+                //
+                // Note though, that we actually perform two replacements, one for
+                // the start marker and another for the end marker. In the
+                // overwhelming majority of cases, the seek_text will be the same
+                // so the same string is being replaced, but every once in a
+                // while, a replacement should occur over the span of more than
+                // one sentence. In those cases, the seek texts will differ and the
+                // start marker will be placed before the value of the "words"
+                // attribute in the start location, and after the value of the
+                // "words" attribute in the end location.
 
-        if ($end_mark.location_node.attr('words')) {
-            // If specific words are specified, we can just replace the
-            // existing text with itself plus the relevant symbols for
-            // denoting ranges.
-            //
-            // Note though, that we actually perform two replacements, one for
-            // the start marker and another for the end marker. In the
-            // overwhelming majority of cases, the seek_text will be the same
-            // so the same string is being replaced, but every once in a
-            // while, a replacement should occur over the span of more than
-            // one sentence. In those cases, the seek texts will differ and the
-            // start marker will be placed before the value of the "words"
-            // attribute in the start location, and after the value of the
-            // "words" attribute in the end location.
+                var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
+                var replace_text_end = null;
 
-            var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
-            var replace_text_end = null;
+                var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
+                var seek_text_end = "";
+                if (end_match != null && end_match.length > 0) {
+                    seek_text_end = end_match[0];
+                }
 
-            var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
-            var seek_text_end = "";
-            if (end_match != null && end_match.length > 0) {
-                seek_text_end = end_match[0];
-            }
+                // Strip the middle-punctuation if needed.
+                if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
+                    replace_text_end = seek_text_end.slice(0, -1)
+                }
+                else {
+                    replace_text_end = seek_text_end;
+                }
+                replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
 
-            // Strip the middle-punctuation if needed.
-            if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
-                replace_text_end = seek_text_end.slice(0, -1)
-            }
-            else {
-                replace_text_end = seek_text_end;
-            }
-            replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
-
-            // If the XML indicates that this is a change that happens
-            // repeatedly in the text, then we need to replace all instances
-            // of the words.
-            if ($end_mark.location_node.attr('repeat') == 'true') {
-                $end_mark.html(replaceAll(
-                    $end_mark.html(),
-                    seek_text_end,
-                    replace_text_end
-                ));
-            }
-            else {
-                let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
-
-                if ($end_mark.html() !== undefined) {
-                    $end_mark.html(instanceReplace(
+                // If the XML indicates that this is a change that happens
+                // repeatedly in the text, then we need to replace all instances
+                // of the words.
+                if ($end_mark.location_node.attr('repeat') == 'true') {
+                    $end_mark.html(replaceAll(
                         $end_mark.html(),
                         seek_text_end,
-                        replace_text_end,
-                        end_instance_num
+                        replace_text_end
+                    ));
+                }
+                else {
+                    let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
+
+                    if ($end_mark.html() !== undefined) {
+                        $end_mark.html(instanceReplace(
+                            $end_mark.html(),
+                            seek_text_end,
+                            replace_text_end,
+                            end_instance_num
+                        ));
+                    }
+                }
+
+                // When a change is marked immediately before certain symbols such
+                // as a period or a comma, the symbol should appear between the
+                // closing marker and the footnote number. For example, it should
+                // be "[some text]. 2)" instead of "[some text] 2).".
+                if (middle_punctuation.length > 0 && $end_mark.html() !== undefined) {
+                    $end_mark.html($end_mark.html().replace(
+                        ' <sup>' + footnote_nr + ')</sup>' + middle_punctuation,
+                        ' <sup>' + footnote_nr + ')</sup>'
                     ));
                 }
             }
+            else {
+                // Strip the middle-punctuation if needed.
+                let end_mark_content = $end_mark.html();
+                if (middle_punctuation.length > 0 && end_mark_content[end_mark_content.length - 1] == middle_punctuation) {
+                    $end_mark.html(end_mark_content.slice(0, -1));
+                }
 
-            // When a change is marked immediately before certain symbols such
-            // as a period or a comma, the symbol should appear between the
-            // closing marker and the footnote number. For example, it should
-            // be "[some text]. 2)" instead of "[some text] 2).".
-            if (middle_punctuation.length > 0 && $end_mark.html() !== undefined) {
-                $end_mark.html($end_mark.html().replace(
-                    ' <sup>' + footnote_nr + ')</sup>' + middle_punctuation,
-                    ' <sup>' + footnote_nr + ')</sup>'
-                ));
+                // Figure out what the closing marker should look like, depending
+                // on things we've figured out before.
+                append_closing_text = pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+
+                // Actually append the closing marker.
+                $end_mark.append(append_closing_text);
             }
         }
-        else {
-            // Strip the middle-punctuation if needed.
-            let end_mark_content = $end_mark.html();
-            if (middle_punctuation.length > 0 && end_mark_content[end_mark_content.length - 1] == middle_punctuation) {
-                $end_mark.html(end_mark_content.slice(0, -1));
+        else if ($location.attr('type') == 'deletion') {
+
+            // Go through footnotes and place deletion markers where text has been
+            // removed from law.
+            //
+            // This section approaches things very similarly to how type="range"
+            // locations are dealt with above. Please see the comments for the section
+            // above for a thorough understanding of what's going on here.
+
+            var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
+
+            // If the mark is not a valid tag any more, we'll just skip it.
+            if (!$mark || !$mark.prop('tagName')) {
+                console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
+                return;
             }
 
-            // Figure out what the closing marker should look like, depending
-            // on things we've figured out before.
-            append_closing_text = pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+            // Sometimes the XML will indicate that some punctuation should be
+            // immediately following the deletion symbol but before the
+            // superscript. Example: "bla bla …, 2) yada yada" instead of "bla
+            // bla, … 2)". For these purposes, we will check if such a punctuation
+            // mark is defined in the XML and add it accordingly.
+            var middle_punctuation = attr_or_emptystring($location, 'middle-punctuation');
 
-            // Actually append the closing marker.
-            $end_mark.append(append_closing_text);
+            // Get the regular expressions for how the text should look before and
+            // after the deletion mark. These regular expressions match the text
+            // with and without other deletion or replacement markers.
+            var before_mark_content = '';
+            var after_mark_content = '';
+            if ($location.attr('before-mark')) {
+                var before_mark_re_text = $location.attr('before-mark').trim();
+                var before_mark_re = new RegExp(before_mark_re_text);
+                var mark_html = $mark.html();
+                var items = before_mark_re.exec(mark_html);
+                if (items && items.length > 0) {
+                    before_mark_content = items[0];
+                }
+
+                // Eliminate the middle-punctuation if it precedes the marker.
+                if (before_mark_content.length > 0 && before_mark_content.slice(-2) == middle_punctuation + " ") {
+                    before_mark_content = before_mark_content.slice(0, -2);
+                }
+            }
+            if ($location.attr('after-mark')) {
+                var after_mark_re = new RegExp($location.attr('after-mark').trim());
+                var items = after_mark_re.exec($mark.html());
+                if (items && items.length > 0) {
+                    after_mark_content = items[0];
+                }
+            }
+
+            // Get the tag names of the mark and its parent, so that we can figure
+            // out the context that we're dealing with when determining how to
+            // present the deletion symbol.
+            var tag_name = lowercase_tagname($mark);
+            var tag_parent_name = lowercase_tagname($mark.parent());
+
+            // Whether there is a space before or after the deletion symbol is
+            // determined by various factors according to the design choices of
+            // the official documents online. We are unaware of the reasoning
+            // behind these design choices, we just imitate them.
+            var pre_deletion_space = ' ';
+            var post_deletion_space = ' ';
+            var post_sup_space = ' ';
+            if (tag_name == 'name' && tag_parent_name == 'chapter') {
+                post_deletion_space = '';
+            }
+            if ($mark.html() == '[' || $mark.html() == '') {
+                pre_deletion_space = '';
+            }
+            var after_mark_char = after_mark_content.substring(0, 1);
+            if (after_mark_content == '' || after_mark_char == ']' || after_mark_char == '.') {
+                post_sup_space = '';
+            }
+
+            var closing_marker = '';
+            // We need to find the condition in which there's a "]" that we want to keep.
+            // TODO: This condition is probaly too specific and should be generalized. It leads to
+            //       an improvement on law 8/1962, but not much else.
+            if ($mark.html().match(/\]/) && before_mark_content === "" && after_mark_content === "") {
+                closing_marker = ']';
+            }
+
+            // Configure the deletion symbol that we'll drop into the content.
+            // FIXME: The `<sup>` get deleted under certain conditions because of
+            // `expiry-symbol-offset`, which needs some rethinking.
+            var deletion_symbol = pre_deletion_space
+                    + '…'
+                    + middle_punctuation
+                    + closing_marker
+                    + post_deletion_space
+                    + '<sup>'
+                    + footnote_nr
+                    + ')</sup>'
+                    + post_sup_space;
+            if (tag_name == 'nr-title' && tag_parent_name == 'art' && after_mark_content == '') {
+                // When a deletion symbol appears at the end of an article's
+                // nr-title segment, it means that the article's content in its
+                // entirety has been deleted. The official design is for the
+                // symbol and superscript to have normal weight (i.e. be non-bold)
+                // instead of being bold weight.
+                deletion_symbol = '<span class="art-deletion">' + deletion_symbol + '</span>';
+            }
+
+            // Replace the content with what was found before the deletion mark,
+            // then the deletion mark itself and finally whatever came after the
+            // deletion mark.
+            $mark.html(before_mark_content + deletion_symbol + after_mark_content);
+        }
+        else if ($location.attr('type') == 'pointer') {
+
+            // Go through the pointers and place them in the text. Pointers are really
+            // just superscripted numbers corresponding to footnotes which do not
+            // indicate a modification to the text.
+            //
+            // This section is very similar to the type="deletion" section above, but
+            // simpler, because it only needs to add one bit of superscripted text.
+            var $location = $(this);
+            var footnote_nr = $location.parent().attr('nr');
+
+            var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
+
+            // If the mark is not a valid tag any more, we'll just skip it.
+            if (!$mark || !$mark.prop('tagName')) {
+                console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
+                return;
+            }
+
+            // Get the regular expressions for how the text should look before and
+            // after the pointer. These regular expressions match the text with
+            // and without other deletion or replacement markers.
+            var before_mark_content = '';
+            var after_mark_content = '';
+            if ($location.attr('before-mark')) {
+                var before_mark_re = new RegExp($location.attr('before-mark').trim());
+                var contents = before_mark_re.exec($mark.html());
+                if (contents && contents.length > 0) {
+                    before_mark_content = contents[0];
+                }
+            }
+            if ($location.attr('after-mark')) {
+                var after_mark_re = new RegExp($location.attr('after-mark').trim());
+                var contents = after_mark_re.exec($mark.html());
+                if (contents && contents.length > 0) {
+                    after_mark_content = contents[0];
+                }
+                if (after_mark_content == '.' && before_mark_content.match(/\.$/)) {
+                    after_mark_content = '';
+                }
+            }
+
+            pointer_symbol = ' <sup style="font-size:60%"> ' + footnote_nr + ') </sup> ';
+
+            // If we're pointing to a delelted section, and there's no content,
+            // we want to add a deletion symbol instead of a pointer.
+            if (before_mark_content == '' && after_mark_content == '') {
+                // TODO: There are a lot of edge cases here:
+                // Law 37/1992 wants us to add a deletion symbol and the pointer symbol instead of returning.
+
+                return;
+            }
+
+            // Replace the content with what was found before the deletion mark,
+            // then the deletion mark itself and finally whatever came after the
+            // deletion mark.
+            $mark.html(before_mark_content + pointer_symbol + after_mark_content);
         }
     });
 
-    // Go through footnotes and place deletion markers where text has been
-    // removed from law.
-    //
-    // This section approaches things very similarly to how type="range"
-    // locations are dealt with above. Please see the comments for the section
-    // above for a thorough understanding of what's going on here.
-    $footnote.find('location[type="deletion"]').each(function() {
-        var $location = $(this);
-        var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
+    // Make footnotes presentable to a human.
+    $footnotes.find('footnote').each(function() {
+        var $footnote = $(this);
+        var footnote_nr = $footnote.attr('nr');
+        // Note that there may be more than one sentence.
+        var $footnote_sen = $footnote.find('footnote-sen');
 
-        // If the mark is not a valid tag any more, we'll just skip it.
-        if (!$mark || !$mark.prop('tagName')) {
-            console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
-            return;
+        // Add the superscripted iterator to the first footnote sentence.
+        $footnote_sen.first().before('<sup>' + footnote_nr + ')</sup>');
+
+        // Activate internal HTML inside the footnote, which is escaped for XML
+        // compatibility reasons. It's not possible to use <![CDATA[]]> in HTML,
+        // and we don't want HTML inside XML elements, because then validators
+        // would understand it as a part of the XML's structure, when in fact it's
+        // just content intended for a browser.
+        $footnote_sen.each(function() {
+            $(this).html($(this).html().replace(/\&lt\;/g, '<').replace(/\&gt\;/g, '>'));
+        });
+
+        // Turn the displayed label of the first footnote into a link, if one is
+        // specified in the 'href' attribute.
+        var href = $footnote.attr('href');
+        if (href) {
+            $footnote_sen.first().html('<a href="' + href + '" target="_blank">' + $footnote_sen.first().html() + '</a>');
         }
-
-        // Sometimes the XML will indicate that some punctuation should be
-        // immediately following the deletion symbol but before the
-        // superscript. Example: "bla bla …, 2) yada yada" instead of "bla
-        // bla, … 2)". For these purposes, we will check if such a punctuation
-        // mark is defined in the XML and add it accordingly.
-        var middle_punctuation = attr_or_emptystring($location, 'middle-punctuation');
-
-        // Get the regular expressions for how the text should look before and
-        // after the deletion mark. These regular expressions match the text
-        // with and without other deletion or replacement markers.
-        var before_mark_content = '';
-        var after_mark_content = '';
-        if ($location.attr('before-mark')) {
-            var before_mark_re_text = $location.attr('before-mark').trim();
-            var before_mark_re = new RegExp(before_mark_re_text);
-            var mark_html = $mark.html();
-            var items = before_mark_re.exec(mark_html);
-            if (items && items.length > 0) {
-                before_mark_content = items[0];
-            }
-
-            // Eliminate the middle-punctuation if it precedes the marker.
-            if (before_mark_content.length > 0 && before_mark_content.slice(-2) == middle_punctuation + " ") {
-                before_mark_content = before_mark_content.slice(0, -2);
-            }
-        }
-        if ($location.attr('after-mark')) {
-            var after_mark_re = new RegExp($location.attr('after-mark').trim());
-            var items = after_mark_re.exec($mark.html());
-            if (items && items.length > 0) {
-                after_mark_content = items[0];
-            }
-        }
-
-        // Get the tag names of the mark and its parent, so that we can figure
-        // out the context that we're dealing with when determining how to
-        // present the deletion symbol.
-        var tag_name = lowercase_tagname($mark);
-        var tag_parent_name = lowercase_tagname($mark.parent());
-
-        // Whether there is a space before or after the deletion symbol is
-        // determined by various factors according to the design choices of
-        // the official documents online. We are unaware of the reasoning
-        // behind these design choices, we just imitate them.
-        var pre_deletion_space = ' ';
-        var post_deletion_space = ' ';
-        var post_sup_space = ' ';
-        if (tag_name == 'name' && tag_parent_name == 'chapter') {
-            post_deletion_space = '';
-        }
-        if ($mark.html() == '[' || $mark.html() == '') {
-            pre_deletion_space = '';
-        }
-        var after_mark_char = after_mark_content.substring(0, 1);
-        if (after_mark_content == '' || after_mark_char == ']' || after_mark_char == '.') {
-            post_sup_space = '';
-        }
-
-        var closing_marker = '';
-        // We need to find the condition in which there's a "]" that we want to keep.
-        // TODO: This condition is probaly too specific and should be generalized. It leads to
-        //       an improvement on law 8/1962, but not much else.
-        if ($mark.html().match(/\]/) && before_mark_content === "" && after_mark_content === "") {
-            closing_marker = ']';
-        }
-
-        // Configure the deletion symbol that we'll drop into the content.
-        // FIXME: The `<sup>` get deleted under certain conditions because of
-        // `expiry-symbol-offset`, which needs some rethinking.
-        var deletion_symbol = pre_deletion_space
-                + '…'
-                + middle_punctuation
-                + closing_marker
-                + post_deletion_space
-                + '<sup>'
-                + footnote_nr
-                + ')</sup>'
-                + post_sup_space;
-        if (tag_name == 'nr-title' && tag_parent_name == 'art' && after_mark_content == '') {
-            // When a deletion symbol appears at the end of an article's
-            // nr-title segment, it means that the article's content in its
-            // entirety has been deleted. The official design is for the
-            // symbol and superscript to have normal weight (i.e. be non-bold)
-            // instead of being bold weight.
-            deletion_symbol = '<span class="art-deletion">' + deletion_symbol + '</span>';
-        }
-
-        // Replace the content with what was found before the deletion mark,
-        // then the deletion mark itself and finally whatever came after the
-        // deletion mark.
-        $mark.html(before_mark_content + deletion_symbol + after_mark_content);
     });
-
-    // Go through the pointers and place them in the text. Pointers are really
-    // just superscripted numbers corresponding to footnotes which do not
-    // indicate a modification to the text.
-    //
-    // This section is very similar to the type="deletion" section above, but
-    // simpler, because it only needs to add one bit of superscripted text.
-    $footnote.find('location[type="pointer"]').each(function() {
-        var $location = $(this);
-        var $mark = $(getElementByXPath('//law/' + $location.attr('xpath')));
-
-        // If the mark is not a valid tag any more, we'll just skip it.
-        if (!$mark || !$mark.prop('tagName')) {
-            console.warn('Invalid deletion location in footnote nr. ' + footnote_nr);
-            return;
-        }
-
-        // Get the regular expressions for how the text should look before and
-        // after the pointer. These regular expressions match the text with
-        // and without other deletion or replacement markers.
-        var before_mark_content = '';
-        var after_mark_content = '';
-        if ($location.attr('before-mark')) {
-            var before_mark_re = new RegExp($location.attr('before-mark').trim());
-            var contents = before_mark_re.exec($mark.html());
-            if (contents && contents.length > 0) {
-                before_mark_content = contents[0];
-            }
-        }
-        if ($location.attr('after-mark')) {
-            var after_mark_re = new RegExp($location.attr('after-mark').trim());
-            var contents = after_mark_re.exec($mark.html());
-            if (contents && contents.length > 0) {
-                after_mark_content = contents[0];
-            }
-            if (after_mark_content == '.' && before_mark_content.match(/\.$/)) {
-                after_mark_content = '';
-            }
-        }
-
-        pointer_symbol = ' <sup style="font-size:60%"> ' + footnote_nr + ') </sup> ';
-
-        // If we're pointing to a delelted section, and there's no content,
-        // we want to add a deletion symbol instead of a pointer.
-        if (before_mark_content == '' && after_mark_content == '') {
-            // TODO: There are a lot of edge cases here:
-            // Law 37/1992 wants us to add a deletion symbol and the pointer symbol instead of returning.
-            
-            return;
-        }
-
-        // Replace the content with what was found before the deletion mark,
-        // then the deletion mark itself and finally whatever came after the
-        // deletion mark.
-        $mark.html(before_mark_content + pointer_symbol + after_mark_content);
-    });
-
-    // Note that there may be more than one sentence.
-    var $footnote_sen = $footnote.find('footnote-sen');
-
-    // Add the superscripted iterator to the first footnote sentence.
-    $footnote_sen.first().before('<sup>' + footnote_nr + ')</sup>');
-
-    // Activate internal HTML inside the footnote, which is escaped for XML
-    // compatibility reasons. It's not possible to use <![CDATA[]]> in HTML,
-    // and we don't want HTML inside XML elements, because then validators
-    // would understand it as a part of the XML's structure, when in fact it's
-    // just content intended for a browser.
-    $footnote_sen.each(function() {
-        $(this).html($(this).html().replace(/\&lt\;/g, '<').replace(/\&gt\;/g, '>'));
-    });
-
-    // Turn the displayed label of the first footnote into a link, if one is
-    // specified in the 'href' attribute.
-    var href = $footnote.attr('href');
-    if (href) {
-        $footnote_sen.first().html('<a href="' + href + '" target="_blank">' + $footnote_sen.first().html() + '</a>');
-    }
-
 }
 
 
@@ -808,7 +812,7 @@ $(document).ready(function() {
 
     $('footnotes').show();
 
-    $('footnotes > footnote').each(process_footnote);
+    $('footnotes').each(process_footnote);
 
     $('law').each(process_law);
     $('law art').each(process_art);
