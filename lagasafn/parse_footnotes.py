@@ -36,6 +36,8 @@ def parse_footnotes(parser):
     elif parser.trail_last().tag == "appendix":
         parser.note("Appending footnotes to appendix after finding appendix.")
         parser.appendix.append(parser.footnotes)
+    elif parser.trail_last().tag == "subchapter":
+        parser.subchapter.append(parser.footnotes)
     elif parser.trail_last().tag == "chapter":
         parser.note("Appending footnotes to chapter after finding chapter.")
         parser.chapter.append(parser.footnotes)

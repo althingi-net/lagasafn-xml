@@ -56,6 +56,12 @@ chapter > nr-title { font-weight: bold; }
 chapter > name { font-weight: bold; }
 name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
 
+/* subchapter */
+subchapter { display: block; }
+subchapter > nr-title { font-weight: bold; }
+subchapter > name { font-weight: bold; }
+name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+
 /* appendix */
 appendix { display: block; margin-top: 1.5em; }
 appendix > nr-title { font-weight: bold; }
