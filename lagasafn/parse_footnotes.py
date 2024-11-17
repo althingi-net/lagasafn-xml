@@ -708,8 +708,9 @@ def parse_footnote(parser):
                 # comma as the value and expect the marker renderer to
                 # use that directly instead of assuming a comma.
                 middle_punctuation = None
-                if desc.text[deletion_found + 1 : deletion_found + 2] == ",":
-                    middle_punctuation = ","
+                potential_middle_punctuation = desc.text[deletion_found + 1 : deletion_found + 2]
+                if potential_middle_punctuation in [",", ";", ":"]:
+                    middle_punctuation = potential_middle_punctuation
 
                 marker_locations.append(
                     {
