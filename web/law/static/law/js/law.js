@@ -229,14 +229,14 @@ var process_footnote = function() {
 
     $locations = $footnotes.find('footnote > location');
 
-    // When placing closing markers, the order may matter. The basic rule is that the longer the string in the changed text, as it appears between the opening and closing markers, the later is should be processed.
+    // When placing closing markers, the order may matter. The basic rule is
+    // that the longer the string in the changed text, as it appears between
+    // the opening and closing markers, the later is should be processed.
     $locations.sort(function(a, b) {
-        var a = $(a).attr('string-length');
-        var b = $(b).attr('string-length');
-        if (a && b) {
-            return parseInt(a) - parseInt(b);
-        }
-        return 0;
+        var length_a = parseInt($(a).attr('string-length')) || Number.MAX_SAFE_INTEGER;
+        var length_b = parseInt($(b).attr('string-length')) || Number.MAX_SAFE_INTEGER;
+
+        return length_a - length_b;
     });
 
     // Go through all markers and handle them accordingly.
@@ -349,7 +349,6 @@ var process_footnote = function() {
                     var preceding_char = start_mark_content[start_match.index - 1];
                     if (start_match.index > 0 && preceding_char != " " && preceding_char != "[" && preceding_char != "–") {
                         replace_text_start = " " + replace_text_start;
-                        console.log("WHAT IS THIS:", start_mark_content[start_match.index - 1]);
                     }
                 }
 
@@ -413,10 +412,20 @@ var process_footnote = function() {
                 var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
                 var replace_text_end = null;
 
-                var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string));
+                // NOTE: The 'g' flag (global) flag in the regex is because
+                // under certain circumstances we'll match an empty string
+                // first, but the correct string second. We simply test for
+                // this and react accordingly.
+                // WARNING: This may be overly fragile toward `words`
+                // definitions in the XML, but may also just be more resilient.
+                // Remove this warning if 2024-11-17 was a very long time ago.
+                var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string, 'g'));
                 var seek_text_end = "";
                 if (end_match != null && end_match.length > 0) {
                     seek_text_end = end_match[0];
+                    if (seek_text_end == "" && end_match[1] !== undefined) {
+                        seek_text_end = end_match[1];
+                    }
                 }
 
                 // Strip the middle-punctuation if needed.
