@@ -1090,10 +1090,24 @@ def parse_appendix(parser):
         # A single, non-numbered appendix.
         pass
     else:
+        extra_nr = ""
         if nr_title_stripped.strip(".").lower().endswith(" viðauki"):
             maybe_nr = nr_title_stripped.split(" ")[0].strip(".")
         elif nr_title_stripped.lower().startswith("viðauki "):
-            maybe_nr = nr_title_stripped.split(" ")[1].strip(".")
+            splitted = nr_title_stripped.split(" ")
+            maybe_nr = splitted[1].strip(".")
+
+            # Deal with an extra alphabetic character after a Roman appendix,
+            # so that it fits between two pre-existing chapters. Happens in
+            # 162/2002 (153c), where there is an appendix numbered "XI A"
+            # between "XI" and "XII".
+            if len(splitted) == 3:
+                match = re.match(r'([A-Z])\.', splitted[2])
+                if match is not None:
+                    extra_nr = match.group()
+
+            del splitted
+
         else:
             raise Exception("Unsupported appendix.")
 
@@ -1101,6 +1115,10 @@ def parse_appendix(parser):
             nr = maybe_nr
             nr_type = "roman"
             roman_nr = str(roman.fromRoman(maybe_nr))
+
+            if len(extra_nr):
+                nr += " %s" % extra_nr
+                roman_nr += extra_nr.lower()
         else:
             nr = str(int(maybe_nr))
             nr_type = "arabic"
