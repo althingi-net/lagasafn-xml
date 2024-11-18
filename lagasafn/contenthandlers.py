@@ -145,6 +145,18 @@ def strip_markers(text, strip_hellip_link=False):
         # replace back later.
         text = text.replace("> … </a>", "> HELLIP </a>")
 
+    # A special case of the use of the hellip, which we don't want to remove,
+    # is when it is used to express the range of letters as denoted in
+    # c-lið 1. mgr. 45. gr. laga nr. 112/2021. It doesn't occur elsewhere, but
+    # if it gets used elsewhere, we'll want the same rule to apply.
+    # It looks like this:
+    #
+    #     A, AA …, B, BB …
+    #
+    # A fancier way to express such continuous strings may be implemented if we
+    # run into different permutations of them. Until then, this'll do.
+    text = text.replace("A, AA …, B, BB …", "CONTINUOUS_STRING_OF_LETTERS")
+
     # Remove change/deletion markers.
     text = text.replace("…", "")
     text = text.replace("[", "")
@@ -162,6 +174,9 @@ def strip_markers(text, strip_hellip_link=False):
     # from being truncated in the beginnig.
     text = re.sub(r" \.$", r".", text)
     text = re.sub(r" \. ", r".", text)
+
+    # Reclaim the continuous string of letters.
+    text = text.replace("CONTINUOUS_STRING_OF_LETTERS", "A, AA …, B, BB …")
 
     if not strip_hellip_link:
         # Re-insert the "…" that we saved from before.
