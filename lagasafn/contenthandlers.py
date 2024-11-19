@@ -688,6 +688,13 @@ def separate_sentences(content):
     new_sens = []
     deletion_offsets = []
     for sen in sens:
+
+        # Ampersands come already encoded when reading from the cleaned. This
+        # is done here instead of at the document-level because a bunch of
+        # things actually need to be properly escaped as "&amp;", but never
+        # ampersands in sentence content.
+        sen = sen.replace("&amp;", "&")
+
         cursor = 0
         deletion_found = sen.find("…", cursor)
         while deletion_found > -1:
