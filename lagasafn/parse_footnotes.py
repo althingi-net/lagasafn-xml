@@ -527,7 +527,38 @@ def parse_footnote(parser):
                         "words": None,  # Maybe filled later.
                         "middle_punctuation": None,  # Maybe filled later.
                         "instance_num": None,  # Maybe filled later.
+                        "combined_with_closing": None,  # Maybe filled later.
                     }
+
+                    # In appendices V and VI in lög nr. 88/2005 and a few other
+                    # places, there is a peculiar mix of what appears to be a
+                    # deletion and a closing marker. This is because the
+                    # "deletion marker" is actually not a deletion marker, but
+                    # rather to indicate either that the text of the appendix
+                    # (in the case of appendices) is in an external document,
+                    # or that the content has been removed by non-specific
+                    # means, such as by expiration or the disenactment of the
+                    # entire law aside from a few clauses, for example 97/1993.
+                    #
+                    # The opening/closing brackets are then to express that
+                    # they were added by amendment and were not in the original
+                    # law when enacted. When this "fake" deletion marker mixes
+                    # with the closing marker, it results in a relatively rare
+                    # situation where a hellip precedes a closing marker, with
+                    # the closing marker with a supertext (number). In
+                    # appendices, it appears that they both use the same
+                    # supertext number to point toward the relevant document as
+                    # in 88/2005.
+                    #
+                    # This can be contrasted with appendices I through IV,
+                    # which all have a hellip to indicate that the text is in
+                    # an external document. (Codex version 153c.)
+                    #
+                    # We'll express this oddity in the XML with an attribute in
+                    # the range, indicating that a hellip should be placed
+                    # before the closing marker by the rendering mechanism.
+                    if desc.text[:cursor-1].strip().endswith("…"):
+                        ended_at["combined_with_closing"] = "…"
 
                     # We trigger the `words` mechanism also is there is a
                     # deletion marker in the end. Otherwise this can screw up
@@ -671,6 +702,13 @@ def parse_footnote(parser):
             while deletion_found > -1:
                 # Keep track of how far we've already searched.
                 cursor = deletion_found + 1
+
+                # If the deletion marker is immediately following by a closing
+                # marker, then this is in fact not a deletion marker.
+                # Occurs for example in appendixes V and VI in lög nr. 88/2005.
+                if desc.text[cursor:].strip().startswith("]"):
+                    deletion_found = desc.text.find("…", cursor)
+                    continue
 
                 # Find the footnote number next to the deletion marker
                 # that we've found.
@@ -905,6 +943,8 @@ def parse_footnote(parser):
                         location.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
                     if ended_at["instance_num"] is not None:
                         location.attrib["instance-num"] = str(ended_at["instance_num"])
+                    if ended_at["combined_with_closing"] is not None:
+                        location.attrib["combined-with-closing"] = ended_at["combined_with_closing"]
                 else:
                     start = E("start")
                     end = E("end")
@@ -926,6 +966,9 @@ def parse_footnote(parser):
                         start.attrib["instance-num"] = str(started_at["instance_num"])
                     if ended_at["instance_num"] is not None:
                         end.attrib["instance-num"] = str(ended_at["instance_num"])
+
+                    if ended_at["combined_with_closing"] is not None:
+                        end.attrib["combined-with-closing"] = ended_at["combined_with_closing"]
 
                     location.append(start)
                     location.append(end)

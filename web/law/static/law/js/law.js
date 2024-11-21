@@ -282,6 +282,9 @@ var process_footnote = function() {
             var end_tag_name = lowercase_tagname($end_mark);
             var end_tag_parent_name = lowercase_tagname($end_mark.parent());
 
+            var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
+            var combined_with_closing = attr_or_emptystring($end_mark.location_node, 'combined-with-closing');
+
             // If the end mark ontains a table, we'll actually want to append
             // the closing marker to the very last cell in the last row of the
             // table. This is a design choice from the official website which
@@ -301,7 +304,7 @@ var process_footnote = function() {
             // according to design choices. (We don't know the logic behind those
             // design choices, we just imitate them from the official website.)
             var pre_close_space = '';
-            if (end_tag_name == 'nr-title' && end_tag_parent_name == 'numart') {
+            if ((end_tag_name == 'nr-title' && end_tag_parent_name == 'numart') || combined_with_closing.length > 0) {
                 pre_close_space = ' ';
             }
             var post_deletion_space = ' ';
@@ -312,8 +315,6 @@ var process_footnote = function() {
             ) {
                 post_deletion_space = '';
             }
-
-            var middle_punctuation = attr_or_emptystring($end_mark.location_node, 'middle-punctuation');
 
             if ($start_mark.location_node.attr('words')) {
                 // If specific words are specified, we can just replace the
@@ -435,7 +436,7 @@ var process_footnote = function() {
                 else {
                     replace_text_end = seek_text_end;
                 }
-                replace_text_end += pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+                replace_text_end += pre_close_space + combined_with_closing + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
 
                 // If the XML indicates that this is a change that happens
                 // repeatedly in the text, then we need to replace all instances
@@ -480,7 +481,7 @@ var process_footnote = function() {
 
                 // Figure out what the closing marker should look like, depending
                 // on things we've figured out before.
-                append_closing_text = pre_close_space + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+                append_closing_text = pre_close_space + combined_with_closing + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
 
                 // Actually append the closing marker.
                 $end_mark.append(append_closing_text);
