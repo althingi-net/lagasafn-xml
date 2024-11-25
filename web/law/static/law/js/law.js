@@ -375,6 +375,11 @@ var process_footnote = function() {
                         ));
                     }
                 }
+
+                // On occasion, the adding of an extra space above can result
+                // in double spaces, which we don't want. Just to make sure, we
+                // remove them here, since they should never occur.
+                $start_mark.html($start_mark.html().replace("  ", " "));
             }
             else {
                 // If there is a <nr-title> tag, we'll want to skip that, so
@@ -467,8 +472,8 @@ var process_footnote = function() {
                 // be "[some text]. 2)" instead of "[some text] 2).".
                 if (middle_punctuation.length > 0 && $end_mark.html() !== undefined) {
                     $end_mark.html($end_mark.html().replace(
-                        ' <sup>' + footnote_nr + ')</sup>' + middle_punctuation,
-                        ' <sup>' + footnote_nr + ')</sup>'
+                        '<sup>' + footnote_nr + ')</sup>' + middle_punctuation,
+                        '<sup>' + footnote_nr + ')</sup>'
                     ));
                 }
             }

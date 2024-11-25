@@ -442,14 +442,6 @@ def parse_footnote(parser):
                         if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":", ";"]:
                             middle_punctuation = desc.text[opening_found + 1 + closing_index + 1]
 
-                            # Add the middle-punctuation to the search string.
-                            # It will be moved passed the opening marker by
-                            # rendering mechanism. It is escaped so that "."
-                            # doesn't match any symbol but only a literal ".".
-                            # Incidentally the "," and ":" symbols also get
-                            # escaped, but that has no effect.
-                            words += r"\%s" % middle_punctuation
-
                         words = regexify_markers(words)
 
                         # Describes which instance of the regex is being
@@ -478,7 +470,7 @@ def parse_footnote(parser):
                             word_search = words
                             if len(word_search) > 0 and word_search[0].isdigit():
                                 word_search = r"[^0-9]" + word_search
-                            instance_num = len(re.findall(word_search, desc.text[:opening_found])) + 1
+                            instance_num = len(re.findall(word_search, strip_markers(desc.text[:opening_found]))) + 1
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
