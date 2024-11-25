@@ -378,7 +378,7 @@ class Law(LawEntry):
     # being run every time a law is viewed.
     def _get_law_box(self, box_title):
 
-        if not settings.FEATURES["law_box"]:
+        if "law_box" not in settings.FEATURES or not settings.FEATURES["law_box"]:
             return []
 
         box_links = []
