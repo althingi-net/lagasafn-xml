@@ -72,15 +72,18 @@ function update_results() {
 
     for (let [file, hits, score] of result_set) {
         let result_div = $("<div></div>");
-        let title = $("<h3></h3>");
+        let title = $("<h3 class=\"law-title\"></h3>");
         let nr = results["metadata"][file]["nr"];
         let year = results["metadata"][file]["year"];
-        let lawlink = $(`<a href="/law/show/${nr}/${year}">${results["metadata"][file]["title"]} (${nr}/${year})</a>`);
+        let lawlink = $(`<a href="/law/show/${nr}/${year}">${results["metadata"][file]["title"]}</a>`);
+        title.append($(`<div class="law-number">${nr}/${year}</div>`));
         title.append(lawlink);
         result_div.append(title);
-        let hits_list = $("<ul></ul>");
+        let hits_list = $("<tbody></tbody>");
         for (let [xpath, locations, score, text] of hits) {
-            let hit_item = $("<li></li>");
+            let hit_item = $("<tr></tr>");
+            let hit_ref = $("<td></td>");
+            let hit_text = $("<td></td>");
 
             // Here we want to highlight the hits in the text.
             // Start by adding the first part of the text, then each of the locations and their surrounding text, then the last part of the text.
@@ -91,30 +94,33 @@ function update_results() {
 
             var ref = "";
             try {
-                console.log("Checking refs for ", file, xpath);
+                // First, trim "sen" or "paragraph" with optional brackets ("[4]") from the end of the xpath:
+                xpath = xpath.replace(/\/(sen|paragraph)(\[\d+\]){0,1}$/, "");
                 ref = results["refs"][file][xpath];
-                console.log("Ref: ", ref);
             } catch (e) {
             }
 
             var sorted_locations = locations.sort((a, b) => a[0] - b[0]);
-            hit_item.append($("<span class=\"reference\"></span>").text(ref).css("font-weight", "bold"));
-            hit_item.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
+            hit_ref.append($(`<a href="/law/show/${nr}/${year}?xpath=${xpath}&selected_text=${ref}" class="reference"></a>`).text(ref).css("font-weight", "bold"));
+            hit_text.append($("<span></span>").text(text.slice(0, sorted_locations[0][0])));
             for (let idx = 0; idx < sorted_locations.length; idx++) {
                 let start = sorted_locations[idx][0];
                 let end = sorted_locations[idx][1];
 
-                hit_item.append($("<span></span>").text(text.slice(start, end)).css("background-color", "yellow"));
+                hit_text.append($("<span></span>").text(text.slice(start, end)).css("background-color", "yellow"));
                 if (idx < sorted_locations.length - 1) {
                     let next_start = sorted_locations[idx+1][0];
-                    hit_item.append($(`<span class="remainder">${text.slice(end, next_start)}</span>`));
+                    hit_text.append($(`<span class="remainder">${text.slice(end, next_start)}</span>`));
                 }
             }
-            hit_item.append($("<span></span>").text(text.slice(sorted_locations[sorted_locations.length-1][1], text.length)));
+            hit_text.append($("<span></span>").text(text.slice(sorted_locations[sorted_locations.length-1][1], text.length)));
+
+            hit_item.append(hit_ref);
+            hit_item.append(hit_text);
 
             hits_list.append(hit_item);
         }
-        result_div.append(hits_list);
+        result_div.append("<table></table>").append(hits_list);
         results_div.append(result_div);
     }
 
@@ -164,8 +170,9 @@ const law_search = debounce(() => {
 </div>
 <div class="container">
     <div class="statistics">
-        <div>{% trans "Laws found" %} <span id="laws-found"></span></div>
-        <div>{% trans "Hits found" %} <span id="hits-found"></span></div>
+        {% blocktranslate with hits='<span id="hits-found">0</span>' laws='<span id="laws-found">0</span>' %}
+        Found&nbsp;{{ hits }}&nbsp;hits in&nbsp;{{ laws }}&nbsp;laws
+        {% endblocktranslate %}
     </div>
     <div class="search-results">
 

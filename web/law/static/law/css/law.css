@@ -177,6 +177,31 @@ mark-container sen { margin-left: 0.8em; }
     margin-bottom: 10rem;
 }
 
+.search-results .law-title {
+    margin-left: 21rem;
+}
+
+.search-results .law-number {
+    display: inline-block;
+    min-width: 5em;
+    margin-top: 1rem;
+}
+
+.search-results td {
+    vertical-align: top;
+}
+
+.search-results td:not(:first-child) {
+    padding-bottom: 1.3rem;
+}
+
+.search-results .reference {
+    display: inline-block;
+    font-weight: bold;
+    min-width: 20rem;
+    margin-right: 1rem;
+}
+
 .statistics {
     display: flex;
     justify-content: center;
