@@ -535,6 +535,21 @@ var process_footnote = function() {
                 var items = after_mark_re.exec($mark.html());
                 if (items && items.length > 0) {
                     after_mark_content = items[0];
+
+                    // This occurs in the peculiar scenario where a deletion
+                    // marker is added between two opening markers, like in
+                    // 2. mgr. 6. gr. laga nr. 161/2002. The problem is that
+                    // the opening marker gets doubled by being copied by this
+                    // mechanism from the opening marker that comes from after
+                    // the deletion marker, and the latter opening marker is
+                    // added, resulting in two where there should be one.
+                    //
+                    // This is perhaps not an ideal solution, possibly even a
+                    // bit of a brute-force solution, but it works, and there
+                    // are no known instances where it messes anything else up.
+                    if (after_mark_content[0] == "[" && before_mark_content.slice(-1) == "[") {
+                        before_mark_content = before_mark_content.slice(0, -1);
+                    }
                 }
             }
 
