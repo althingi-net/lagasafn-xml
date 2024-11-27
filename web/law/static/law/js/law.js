@@ -435,8 +435,15 @@ var process_footnote = function() {
                 }
 
                 // Strip the middle-punctuation if needed.
-                if (middle_punctuation.length > 0 && seek_text_end[seek_text_end.length - 1] == middle_punctuation) {
+                if (middle_punctuation.length > 0 && seek_text_end.slice(-1) == middle_punctuation) {
                     replace_text_end = seek_text_end.slice(0, -1)
+                }
+                else if (middle_punctuation.length > 0 && seek_text_end.slice(-2) == middle_punctuation + ' ') {
+                    // There may be a stray space in the end which we've found
+                    // difficult to get rid of by manipulating the regex
+                    // generation in `def regexify_markers` on the processing
+                    // side. This could probably be made nicer.
+                    replace_text_end = seek_text_end.slice(0, -2)
                 }
                 else {
                     replace_text_end = seek_text_end;
