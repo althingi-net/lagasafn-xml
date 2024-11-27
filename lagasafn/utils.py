@@ -472,7 +472,11 @@ def generate_legal_reference(input_node, skip_law=False):
         if node.tag in ["name", "date", "num-and-date", "nr-title", "sen", "footnote-sen", 
                         "footnote", "footnotes", "location", "date", "num", "original", 
                         "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title",
-                        "paragraph", "table", "tr", "td", "th", "thead", "tbody"]:
+                        "table", "tr", "td", "th", "thead", "tbody"]:
+            node = node.getparent()
+            continue
+
+        if node.getparent().tag == "footnote":
             node = node.getparent()
             continue
 
