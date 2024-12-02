@@ -7,12 +7,19 @@ with this one.
 
 import os
 import re
+import requests
 from django.conf import settings
+from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.pathing import make_xpath_from_node
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.utils import generate_legal_reference
+from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
 from law.exceptions import LawException
 from lxml import etree
+from lxml import html
+from math import floor
 
 
 class LawManager:
@@ -80,6 +87,39 @@ class LawManager:
 
         return stats, laws
 
+    @staticmethod
+    def content_search(search_string: str):
+
+        results = []
+
+        stats, laws = LawManager.index()
+
+        for law_entry in laws:
+            law_xml = Law(law_entry.identifier).xml()
+
+            nodes = search_xml_doc(law_xml, search_string)
+
+            findings = []
+            for node in nodes:
+                legal_reference = ""
+                try:
+                    legal_reference = generate_legal_reference(node.getparent(), skip_law=True)
+                except:
+                    pass
+                findings.append({
+                    "legal_reference": legal_reference,
+                    "node": node,
+                    "xpath": make_xpath_from_node(node),
+                })
+
+            if len(nodes):
+                results.append({
+                    "law_entry": law_entry,
+                    "findings": findings,
+                })
+
+        return results
+
 
 class LawEntry:
     """
@@ -110,21 +150,19 @@ class LawEntry:
             original_law_filename,
         )
 
-    def status(self):
+    def display_content_success(self):
+        """
+        Displays the content success as percentage.
+        """
+        content_success = self.problems["content"]["success"]
+        return "%.2f%%" % float(floor(content_success * 10000) / 100)
+
+    def content_success(self):
         """
         Determines the status of the law, judging by known problem types.
         """
-        problems_accounted_for = True
-        for problem_type in PROBLEM_TYPES:
-            if problem_type not in self.problems:
-                problems_accounted_for = False
 
-        if problems_accounted_for:
-            all_ok = all(self.problems[p]["success"] == 1.0 for p in self.problems)
-        else:
-            all_ok = None
-
-        return all_ok
+        return self.problems["content"]["success"]
 
     def __str__(self):
         return self.identifier
@@ -137,11 +175,13 @@ class Law(LawEntry):
 
         # Private containers, essentially for caching.
         self._xml = None
+        self._xml_references = None
         self._name = ""
         self._xml_text = ""
         self._html_text = ""
         self._chapters = []
         self._articles = []
+        self._remote_contents = {}
 
         self.nr, self.year = self.identifier.split("/")
 
@@ -271,6 +311,127 @@ class Law(LawEntry):
         self._html_text = result
 
         return self._html_text
+
+    def get_references(self):
+        if self._xml_references is None:
+            self._xml_references = etree.parse(XML_REFERENCES_FILENAME).getroot()
+
+        nodes = self._xml_references.xpath(
+            f"/references/law-ref-entry[@law-nr='{self.nr}' and @law-year='{self.year}']/node"
+        )
+
+        # We'll flatten out the references for simplicity. These will one day
+        # belong to the nodes in the XML itself.
+        references = []
+        for node in nodes:
+            for xml_ref in node.findall("reference"):
+                references.append({
+                    "location": node.attrib["location"],
+                    "link_label": xml_ref.attrib["link-label"],
+                    "inner_reference": xml_ref.attrib["inner-reference"],
+                    "law_nr": xml_ref.attrib["law-nr"],
+                    "law_year": xml_ref.attrib["law-year"],
+                })
+
+        return references
+
+    def _get_doc_nr_and_parliament(self, href):
+        pieces = href.split("/")
+        parliament = int(pieces[4])
+        doc_nr = int(pieces[6].rstrip(".html"))
+        return doc_nr, parliament
+
+    def _get_issue_status_from_doc(self, doc_nr, parliament):
+        # Get issue.
+        response = requests.get("https://www.althingi.is/altext/xml/thingskjol/thingskjal/?lthing=%d&skjalnr=%d" % (parliament, doc_nr))
+        response.encoding = "utf-8"
+
+        doc_xml = etree.fromstring(response.content)
+
+        # Extract issue locating information.
+        issue_node = doc_xml.xpath("/þingskjal/málalisti/mál")[0]
+        issue_nr = int(issue_node.attrib["málsnúmer"])
+        issue_parliament = int(issue_node.attrib["þingnúmer"])
+
+        # Extract proposer information.
+        proposer = None
+        proposer_nodes = doc_xml.xpath("/þingskjal/þingskjal/flutningsmenn/flutningsmaður")
+        if len(proposer_nodes) > 0:
+            proposer_node = proposer_nodes[0]
+            proposer_nr = int(proposer_node.attrib["id"])
+            proposer = {
+                "name": proposer_node.find("nafn").text,
+                "link": "https://www.althingi.is/altext/cv/is/?nfaerslunr=%d" % proposer_nr,
+            }
+
+        # Get the issue data.
+        response = requests.get("https://www.althingi.is/altext/xml/thingmalalisti/thingmal/?lthing=%d&malnr=%d" % (issue_parliament, issue_nr))
+        response.encoding = "utf-8"
+
+        issue_xml = etree.fromstring(response.content)
+        status = issue_xml.xpath("/þingmál/mál/staðamáls")[0].text
+
+        return status, proposer
+
+    # FIXME: Find a better name for this thing. "Law box" makes no sense.
+    # FIXME: This belongs in some sort of background processing instead of
+    # being run every time a law is viewed.
+    def _get_law_box(self, box_title):
+
+        if "law_box" not in settings.FEATURES or not settings.FEATURES["law_box"]:
+            return []
+
+        box_links = []
+
+        url = "https://www.althingi.is/lagas/nuna/%s%s.html" % (
+            self.year,
+            traditionalize_law_nr(self.nr)
+        )
+
+        if url in self._remote_contents:
+            content = self._remote_contents[url]
+        else:
+            response = requests.get(url)
+
+            if response.status_code != 200:
+                return None
+
+            # Parse the HTML content using lxml
+            content = html.fromstring(response.content)
+
+            self._remote_contents[url] = content
+
+        h5_element = content.xpath("//h5[normalize-space(text())='%s']" % box_title)
+
+        if h5_element is None or len(h5_element) == 0:
+            return box_links
+
+        ul_element = h5_element[0].getnext()
+        if ul_element.tag != 'ul':
+            return box_links
+
+        for li_element in ul_element.xpath("li"):
+            a_element = li_element.find("a")
+
+            doc_nr, doc_parliament = self._get_doc_nr_and_parliament(a_element.attrib["href"])
+            issue_status, proposer = self._get_issue_status_from_doc(doc_nr, doc_parliament)
+
+            box_links.append({
+                "link": a_element.attrib["href"],
+                "law_name": a_element.attrib["title"],
+                "document_name": a_element.text,
+                "date": a_element.tail.lstrip(", "),
+                "issue_status": issue_status,
+                "proposer": proposer,
+            })
+
+        return box_links
+
+    def get_interim_laws(self):
+        return self._get_law_box("Samþykkt lög eftir útgáfu lagasafns:")
+
+    def get_ongoing_issues(self):
+        return self._get_law_box("Frumvörp til breytinga á lögunum:")
 
     def editor_url(self):
         return settings.EDITOR_URL % (self.year, self.nr)

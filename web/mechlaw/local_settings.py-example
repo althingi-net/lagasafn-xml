@@ -44,4 +44,5 @@ USE_TZ = True
 # Feature-knobs. They decide which optional features are active.
 FEATURES = {
     "link_to_editor": True,
+    "law_box": False,
 }

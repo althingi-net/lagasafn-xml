@@ -18,6 +18,40 @@
             window.scrollBy(0, -70);  // 70 is estimated header height.
         });
     });
+
+    $(document).ready(function() {
+        var references = {{ references|safe }};
+        for (var reference of references) {
+            var target_node = document.evaluate(
+                "//" + reference.location,
+                document,
+                null,
+                XPathResult.FIRST_ORDERED_NODE_TYPE,
+                null
+            ).singleNodeValue;
+
+            target_node.innerHTML = target_node.innerHTML.replace(
+                reference.link_label,
+                '<refer type="legal-clause-from-text">' + reference.link_label + '</refer>'
+            );
+        }
+    });
+
+    // Scroll to the selected text.
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const xpath = urlParams.get('xpath');
+        const selectedText = urlParams.get('selected_text') || "";
+        if (selectedText.length > 0) {
+            var element = getElementByXPath("//law//" + xpath);
+            element.scrollIntoView({
+                block: "center",
+            });
+            element.classList.add('search-result-selection');
+            selectTextInNode(element, selectedText);
+        }
+    });
+
 </script>
 {% endblock %}
 
@@ -102,6 +136,20 @@
 {% include 'law/dialog/quick_dialog.html' %}
 
 <div class="legal-document {{ view_type }}-view">
+
+    {% if interim_laws or ongoing_issues %}
+        <div class="container">
+            <div class="row">
+                {% if interim_laws %}
+                    {% include "law/remote_box.html" with box_links=interim_laws box_title=_("Approved laws since publication of codex:") %}
+                {% endif %}
+                {% if ongoing_issues %}
+                    {% include "law/remote_box.html" with box_links=ongoing_issues box_title=_("Bills affecting the law:") %}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
     {{ law.html_text|safe }}
 </div>
 

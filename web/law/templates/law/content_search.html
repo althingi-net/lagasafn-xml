@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="container">
+
+    <form method="get">
+        <div class="input-group">
+            <input class="form-control" type="text" name="search_text" autofocus="true" placeholder="{% trans 'Enter search text...' %}" value="{{ search_text }}" />
+            <span class="input-group-btn">
+                <input class="btn btn-primary" type="submit" value="{% trans 'Search' %}" />
+            <span>
+        </div>
+    </form>
+
+    {% for result in results %}
+        <div>
+            <h3>
+                {{ result.law_entry.identifier }}
+                <a href="{% url 'law_show' result.law_entry.identifier %}">{{ result.law_entry.name }}</a>
+            </h3>
+        </div>
+        {% for finding in result.findings %}
+            <strong>
+                <a href="{% url 'law_show' result.law_entry.identifier %}?xpath={{ finding.xpath }}&selected_text={{ search_text }}">
+                    {{ finding.legal_reference }}
+                </a>
+            </strong>: {{ finding.node.text }}<hr/>
+        {% endfor %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

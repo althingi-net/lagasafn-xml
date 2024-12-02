@@ -22,6 +22,7 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.population import population_game
 from lagasafn.references import parse_references
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
@@ -30,7 +31,7 @@ from lxml import etree
 from lxml.builder import E
 from multiprocessing import Pool
 from sys import stderr
-from lagasafn.parser import LawParser
+from lagasafn.parser import LawParser, parse_law
 from lagasafn.parser import parse_intro
 from lagasafn.parser import parse_ambiguous_chapter
 from lagasafn.parser import parse_ambiguous_section
@@ -40,13 +41,13 @@ from lagasafn.parser import parse_article_chapter
 from lagasafn.parser import parse_chapter
 from lagasafn.parser import parse_deletion_marker
 from lagasafn.parser import parse_extra_docs
-from lagasafn.parser import parse_footnotes
 from lagasafn.parser import parse_numerical_article
 from lagasafn.parser import parse_sentence_with_title
 from lagasafn.parser import parse_subarticle
 from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
-from lagasafn.parser import postprocess_law
+from lagasafn.parse_footnotes import parse_footnotes
+from lagasafn.parse_footnotes import parse_footnote
 
 VERBOSE_MODE = False
 
@@ -88,6 +89,26 @@ def clean_content(content):
         r'<sup style="font-size:60%">(\d+)</sup>/<span style="font-size:60%">(\d+)</span>'
     )
     content = e.sub(r"\1/\2", content)
+
+    # Chemicals, distances and such are styled in the HTML itself. We want to
+    # remove styling from them and instead have the rendering mechanism style
+    # them properly.
+    styled_abbreviations = [
+        ["CO<small><sub>2</sub></small>", "CO2"],
+        ["CO<small><sub>3</sub></small>", "CO3"],
+        ["SO<small><sub>2</sub></small>", "SO2"],
+        ["SF<small><sub>6</sub></small>", "SF6"],
+        ["Na<small><sub>2</sub></small>", "Na2"],
+        ["NaHCO<small><sub>3</sub></small>", "NaHCO3"],
+        ["NF<small><sub>3</sub></small>", "NF3"],
+        ["CH<small><sub>4</sub></small>", "CH4"],
+        ["N<small><sub>2</sub></small>", "N2"],
+        ["H<small><sub>2</sub></small>", "H2"],
+        ["m<small><sup>2</sup></small>", "m2"],
+        ["m<small><sup>3</sup></small>", "m3"],
+    ]
+    for styled, unstyled in styled_abbreviations:
+        content = content.replace(styled, unstyled)
 
     # Remove <a id=""> tags which are unclosed and seem without purpose.
     # For example, see source of page: http://www.althingi.is/altext/143/s/0470.html
@@ -216,49 +237,49 @@ def patch_law(law_num, law_year):
 
 
 def make_xml(law_num, law_year):
+    # TODO: This function needs cleaning up. There's a bunch of commented and
+    # inactive stuff here "following `return`" that should be removed if it's
+    # not useful anymore.
     parser = LawParser(law_num, law_year)
     global VERBOSE_MODE
     if VERBOSE_MODE:
-        print("Parsing law %d/%d" % (law_year, law_num))
+        print("Parsing law %d/%d" % (law_num, law_year))
         parser.verbosity = 1
 
-    law = parser.law
-    lines = parser.lines
-    matcher = parser.matcher
-    occurrence_distance = parser.occurrence_distance
+    #law = parser.law
+    #lines = parser.lines
+    #matcher = parser.matcher
+    #occurrence_distance = parser.occurrence_distance
 
-    # parser.line = next(parser.lines).strip()
-    # parse_intro(parser)
+    parse_law(parser)
 
+    # Write the XML object to output file.
+    write_xml(parser.law, XML_FILENAME % (parser.law_year, parser.law_num))
+
+    return
+
+    parse_intro(parser)
 
     # print("Left intro after line %s" % parser.lines.current_line_number)
     # The cleaned document that we're processing is expected to put every tag,
     # both its opening and closing, on a separate line. This allows us to
     # browse the HTML contents on a per-line basis.
+    if not parser.trail_reached("intro-finished"):
+        parser.error("Intro not finished after line %s. Aborting!" % parser.lines.current_line_number)
+        return
+
+    parser.enter("content")
+
     for line in lines:
         line = line.strip()
-        print("Top level parsing line %s: %s" % (parser.lines.current_line_number, line))
-        parser.line = line
-
-        parser.enter("preamble")
+        if line == "<br/>":
+            continue
+        parser.note("Top level enter [%s]: %s" % (parser.lines.current_line_number, line))
 
         # Beware: The order of these function calls is sometimes important.
         #         They are updating state based on guard clauses, and while
         #         the guard clauses *should* make this order irrelevant,
         #         but let's not take any chances until we're certain.
-
-        parse_intro(parser)
-
-        # Intro is finished after here.
-        # We'll early-escape all the following parser steps if we're not done
-        # with the intro.
-        #
-        # if not parser.trail_reached("intro-finished"):
-        #    continue
-        parser.leave("preamble")
-        parser.enter("content")
-
-        parse_chapter(parser)
 
         # TODO: These two functions must happen here and must have the break condition,
         # otherwise things break farther down the parse.
@@ -267,32 +288,38 @@ def make_xml(law_num, law_year):
         if parse_extra_docs(parser) or parse_appendix(parser):
             break
 
+        parse_chapter(parser)
         parse_subchapter(parser)
         parse_article_chapter(parser)
-        parse_ambiguous_chapter(parser)
-        parse_ambiguous_section(parser)
+        #parse_ambiguous_chapter(parser)
+        #parse_ambiguous_section(parser)
         parse_sentence_with_title(parser)
         parse_article(parser)
         parse_subarticle(parser)
         parse_numerical_article(parser)
+        parse_footnotes(parser)
         parse_deletion_marker(parser)
 
         # TODO: Check if we can reuse this logic within parse_subarticle
         parse_table(parser)
 
-        parser.leave("content")
+        l = parser.lines.current_line
+        if l == None:
+            parser.note("Top level leave [%s] with NONE" % parser.lines.current_line_number)
+        else:
+            parser.note("Top level leave [%s]: %s" % (parser.lines.current_line_number, l.strip()))
 
-        parse_footnotes(parser)
+        # parse_footnote(parser)
 
+    # parse_end_of_file(parser)
+
+    parser.leave("content")
     ##########################################################################
     # At this point, the XML object `law` contains the entire document with
     # all its content. Now, we do some post-processing of the already existing
     # content. This is kept separate mostly for reasons of clarity.
     ##########################################################################
-    postprocess_law(parser)
 
-    # Write the XML object to output file.
-    write_xml(law, XML_FILENAME % (parser.law_year, parser.law_num))
 
 
 def process_law(law_id):
@@ -629,7 +656,15 @@ def usage(exec_name, message=None):
     print(file=stderr)
     print("Options:", file=stderr)
     print("    --help                    Display this help message.", file=stderr)
+    print(
+        "    --verbose                 Show a lot more information about what's going on.",
+        file=stderr
+    )
     print(file=stderr)
+    print(
+        "    --population-game         Run the population game, a fun developer tool.",
+        file=stderr
+    )
     print(
         "    --try-broken              Try processing laws known to have failed.",
         file=stderr,
@@ -659,6 +694,7 @@ def usage(exec_name, message=None):
         file=stderr,
     )
     print("    --skip-references         Skip the parsing of references.", file=stderr),
+
     print(file=stderr)
     if message:
         print("Error: %s" % message, file=stderr)
@@ -677,7 +713,8 @@ def main(argv):
         "--skip-index",
         "--references-only",
         "--skip-references",
-        "--verbose"
+        "--verbose",
+        "--population-game"
     ]
 
     if "--verbose" in argv:
@@ -694,6 +731,10 @@ def main(argv):
     elif "--references-only" in argv:
         parse_references()
         quit()
+    elif "--population-game" in argv:
+        population_game()
+        quit()
+
 
     # Container for laws that are about to be processed.
     law_ids = []
@@ -797,12 +838,13 @@ def main(argv):
     display_errors(law_ids)
 
 
-try:
-    main(sys.argv)
-except KeyboardInterrupt:
-    quit()
-except Exception as e:
-    if settings.DEBUG:
-        raise
-    else:
-        print("Error: %s" % e, file=stderr)
+if __name__ == "__main__":
+    try:
+        main(sys.argv)
+    except KeyboardInterrupt:
+        quit()
+    except Exception as e:
+        if settings.DEBUG:
+            raise
+        else:
+            print("Error: %s" % e, file=stderr)

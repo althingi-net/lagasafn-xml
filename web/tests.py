@@ -195,6 +195,11 @@ class WebTests(StaticLiveServerTestCase):
                     difference_at = i
                     break
 
+            # If the difference doesn't occur within `local_text`, then the
+            # problem is at its end.
+            if difference_at == 0:
+                difference_at = len(local_text)
+
             # We'll encode this as JSON.
             # NOTE: These texts are void of whitespace, because when evaluating
             # correctness, we have hitherto not cared about that.

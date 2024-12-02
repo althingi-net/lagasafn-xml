@@ -6,26 +6,24 @@ from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
 from lxml.builder import E
-from lagasafn.contenthandlers import generate_ancestors
 from lagasafn.contenthandlers import get_nr_and_name
-from lagasafn.contenthandlers import next_footnote_sup
-from lagasafn.contenthandlers import regexify_markers
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import begins_with_regular_content
+from lagasafn.contenthandlers import is_numart_address
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
-from lagasafn.utils import UnexpectedClosingBracketException
+from lagasafn.contenthandlers import word_to_nr
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import is_roman
 from lagasafn.utils import numart_next_nrs
-from lagasafn.utils import order_among_siblings
-from lagasafn.utils import xml_lists_identical
 from lagasafn.utils import determine_month
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
 from lagasafn.utils import Trail
 from lagasafn.utils import Matcher
+
+from .parse_footnotes import parse_footnotes
 
 LAW_FILENAME = os.path.join(
     DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -64,15 +62,24 @@ class LawParser:
         # their values should make sense at the end of the processing of a
         # particular line or clause. Never put nonsense into them because it will
         # completely confuse the processing elsewhere.
-        self.line = None
+        self.appendix = None
+        self.appendix_part = None
+        self.appendix_chapter = None
+        self.superchapter = None
         self.chapter = None
         self.subchapter = None
         self.art = None
         self.art_chapter = None
         self.subart = None
+        self.numart_chapter = None
         self.numart = None
         self.ambiguous_section = None
+        self.table = None
+        self.tbody = None
+        self.tr = None
+        self.td = None
         self.footnotes = None
+        self.mark_container = None
 
         self.parse_path = []
 
@@ -106,33 +113,48 @@ class LawParser:
         # Set up the collection:
         self.collection = []
 
+    @property
+    def line(self):
+        if self.lines.current_line is None:
+            return None
+        return self.lines.current_line.strip()
+
     def enter(self, path):
         if self.verbosity > 0:
-            print("%s>> Entering %s" % ("  " * len(self.parse_path), path))
+            print("%s>> Entering %s at line %d" % ("  " * len(self.parse_path), path, self.lines.current_line_number))
         self.parse_path.append(path)
 
     def leave(self, guard=None):
+        import inspect
+
+        frame = inspect.currentframe()
+        caller_frame = frame.f_back
+        filename = caller_frame.f_code.co_filename
+        line_number = caller_frame.f_lineno
+
         if len(self.parse_path) < 1:
             print("ERROR: Trying to leave a path that doesn't exist.")
             return
 
         if self.verbosity > 0:
-            print("%s<< Leaving %s" % ("  " * (len(self.parse_path)-1), self.parse_path[-1]))
+            print("%s<< Leaving %s at line %d" % ("  " * (len(self.parse_path)-1), self.parse_path[-1], self.lines.current_line_number))
 
         if guard is not None:
             if self.parse_path[-1] != guard:
-                print("ERROR: Trying to leave a path that doesn't match the guard.")
+                self.error("At %s:%s: trying to leave a path (%s) that doesn't match the guard (%s)." % (filename, line_number, "->".join(self.parse_path), guard))
                 return
         self.parse_path.pop()
 
     def leave_if_last(self, path):
         if len(self.parse_path) > 0 and self.parse_path[-1] == path:
-            self.leave()
+            self.leave(path)
 
     def note(self, note):
         if self.verbosity > 0:
-            print("%s  - Note: %s" % ("  " * len(self.parse_path), note))
+            print("%s[ NOTE ][%d] %s" % ("  " * len(self.parse_path), self.lines.current_line_number, note))
 
+    def error(self, error):
+        print("%s[ERROR ]: %s" % ("  " * len(self.parse_path), error))
 
     def peek(self, n=1):
         return self.lines.peek(n)
@@ -141,17 +163,34 @@ class LawParser:
         return self.lines.peeks(n)
 
     def next(self):
-        return self.lines.next()
+        return next(self.lines)
     
     def nexts(self):
-        return self.lines.next().strip()
+        return next(self.lines).strip()
 
     def next_until(self, end_string):
         return self.lines.next_until(end_string)
     
     def next_untils(self, end_string):
         return self.lines.next_until(end_string).strip()
-            
+        
+    def consume(self, term):
+        if self.line != term:
+            if self.verbosity > 0:
+                self.dump_remaining(10)
+            raise Exception("ERROR: Expected '%s' but got '%s'." % (term, self.line))
+        self.next()
+
+    def maybe_consume(self, term):
+        if self.line == term:
+            self.next()
+            return True
+        return False
+    
+    def maybe_consume_many(self, term):
+        while self.line == term:
+            self.next()
+        return True
 
     def trail_push(self, item):
         self.trail.append(item)
@@ -169,26 +208,40 @@ class LawParser:
     # and resetting the collection for the next time we need to collect a bunch of text.
 
     def collect(self, string):
-        self.collection.append(string.strip())
+        try:
+            self.collection.append(string.strip())
+        except AttributeError:
+            self.dump_state()
 
     def uncollect(self):
         result = " ".join(self.collection).strip()
         self.collection = []
         return result
 
-    def collect_until(self, end_string):
+    def collect_until(self, end_string, collect_first_line=False):
         # Will collect lines until the given string is found, and then return the
         # collected lines.
+
+        # TODO: The collect_first_line parameter is a bit of a hack. Ideally we should always include the first line,
+        #       but because of the way most of the parser is written, this causes a lot of problems. We should refactor
+        #       the entire parser to always use collect_first_line=True and then once all of the collect_until() calls
+        #       have been replaced, we can remove the parameter entirely.
+        #           - Smári, 2024-08-09
+
         done = False
+
+        if collect_first_line:
+            self.collect(self.line)
+
         while not done:
             try:
-                line = next(self.lines).strip()
+                self.next()
             except StopIteration:
-                print("ERROR: Unexpected end of file on line %d while collecting until '%s'." % (self.lines.current_line_number, end_string))
-            if self.matcher.check(line, end_string):
+                raise Exception("ERROR: Unexpected end of file on line %d while collecting until '%s'. \nLine: '%s'" % (self.lines.current_line_number, end_string, self.line))
+            if self.matcher.check(self.line, end_string):
                 done = True
                 continue
-            self.collect(line)
+            self.collect(self.line)
 
         total = self.uncollect().strip()
 
@@ -219,10 +272,24 @@ class LawParser:
 
         return None
 
+    def dump_remaining(self, max_lines=10):
+        current_line = self.lines.current_line_number
+        i = current_line
+        # We want to include the current line in the output.
+        self.lines.index -= 1
+        for line in self.lines:
+            print("Line %d: %s" % (i, line), end="")
+            i += 1
+            if i > current_line + max_lines:
+                break
+        # Reset the iterator to the original place.
+        self.lines.index = current_line
+
     def dump_state(self):
         print("Current parser state: ")
         print(" parse_path: '%s'" % ("->".join(self.parse_path)))
         print(" line: '%s'" % (self.line))
+        print(" line number: %d" % (self.lines.current_line_number))
         print(" chapter: '%s'" % (self.chapter))
         print(" subchapter: '%s'" % (self.subchapter))
         print(" art: '%s'" % (self.art))
@@ -232,16 +299,92 @@ class LawParser:
         print(" ambiguous_section: '%s'" % (self.ambiguous_section))
         print(" footnotes: '%s'" % (self.footnotes))
 
+    def report_location(self):
+        print("[DEBUG] Line %d: %s" % (self.lines.current_line_number, self.line))
+
 
 ####### Individual section parser functions below:
 
+def parse_law(parser):
+    parse_intro(parser)
+
+    while True:
+        parser.maybe_consume("<hr/>")
+        parser.maybe_consume_many("<br/>")
+        # We continue while we pass any of the checks below, and break (at the end) if we don't.
+        if parse_stray_deletion(parser):
+            continue
+        if parse_ambiguous_chapter(parser):
+            continue
+        if parse_superchapter(parser):
+            continue
+        if parse_chapter(parser):
+            continue
+        if parse_ambiguous_section(parser):
+            continue
+        if parse_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_presidential_decree_preamble(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_appendix(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+
+        # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
+
+        # If we didn't parse a chapter or an article, we're done.
+        break
+
+    parse_end_of_law(parser)
+    # Return whether we have reached the end of the file.
+    return parser.lines.current_line_number, parser.lines.total_lines
+
 
 def parse_intro(parser):
+    parser.enter("intro")
+
+    parser.scroll_until("<h2>")    # Nothing before the opening <hr/> is meaningful.
+
     # Parse elements in the intro.
     parse_law_title(parser)
     parse_law_number_and_date(parser)
+
+    # We always get a <hr/> after the law number and date.    
+    parser.consume("<hr/>")
+
+    # TODO: Parsing procedural links is unimplemented.
+    # parse_procedural_links(parser)
+
+    if parser.line == "<i>":
+        parse_footnotes(parser)      # This will eat any footnotes associated with the title.
+
+    parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
-    parse_presidential_decree_preamble(parser)
+    parser.maybe_consume_many("<br/>")
+
+    parser.trail_milestone("intro-finished")
+    parser.leave("intro")
+
+
+def parse_end_of_law(parser):
+    if parser.line != "</body>":
+        parser.note("Trying to parse end of file without having reached the end of the file.")
+        return
+
+    parser.enter("end-of-file")
+    # Do we want to do anything here?
+    parser.scroll_until("</html>")
+    parser.leave("end-of-file")
+
+
+def parse_procedural_links(parser):
+    # TODO: Unimplemented.
+    return
 
 
 def parse_law_title(parser):
@@ -301,10 +444,11 @@ def parse_law_title(parser):
     parser.law.append(name)
     parser.trail_push(name)
 
-    parser.leave()
+    parser.leave("law-title")
 
 
 def parse_law_number_and_date(parser):
+    parser.scroll_until("<strong>")
     if parser.line != "<strong>" or parser.trail_last().tag != "name":
         return
 
@@ -312,6 +456,7 @@ def parse_law_number_and_date(parser):
 
     # Parse the num and date, which appears directly below the law name.
     num_and_date = parser.collect_until("</strong>")
+    parser.next()
 
     # The num-and-date tends to contain excess whitespace.
     num_and_date = num_and_date.replace("  ", " ")
@@ -380,12 +525,14 @@ def parse_law_number_and_date(parser):
 
     parser.trail_push(xml_num_and_date)
 
-    parser.leave()
+    parser.consume("</p>")
+
+    parser.leave("law-number-and-date")
 
 
 def parse_ambiguous_section(parser):
     if not (parser.peeks(0) == "<em>" and parser.trail_reached("intro-finished")):
-        return
+        return False
 
     parser.enter("ambiguous-section")
 
@@ -418,20 +565,29 @@ def parse_ambiguous_section(parser):
     # <ambiguous-section> contained, if at some point a programmer
     # needs to deal with them when using the XML.
     ambiguous_content = parser.collect_until("</em>")
+    parser.consume("</em>")
 
     # FIXME: Separating the sentences like this incorrectly parses
     # what should be a `nr-title` as a `sen.`
     parser.ambiguous_section = E("ambiguous-section")
     add_sentences(parser.ambiguous_section, separate_sentences(ambiguous_content))
 
-    if parser.chapter is not None:
+    if parser.appendix_chapter is not None:
+        parser.appendix_chapter.append(parser.ambiguous_section)
+    elif parser.chapter is not None:
         parser.chapter.append(parser.ambiguous_section)
     else:
         parser.law.append(parser.ambiguous_section)
 
+    parser.maybe_consume_many("<br/>")
+
     parser.trail_push(parser.ambiguous_section)
 
-    parser.leave()
+    parse_footnotes(parser)
+
+    parser.leave("ambiguous-section")
+
+    return True
 
 
 def parse_minister_clause_footnotes(parser):
@@ -471,17 +627,39 @@ def parse_minister_clause_footnotes(parser):
     # is indicated is if "intro-finished" is in the processing trail. As a
     # result, we check for that pattern, but only match if we haven't yet
     # finished "intro-finished".
-    #
-    # TODO: Consider creating a specified function for this check. It is
-    # ridiculously messy as is.
+
+    # TODO: Procedural links should be handled by `parse_procedural_links` and
+    # be outside of the `minister-clause`. We're cramming it in here so that
+    # the output file format doesn't change while the parser is being changed
+    # to recursive-descent. As a result, the procedural links are still just
+    # retained in their original HTML form inside the XML for now.
+    # Example:
+    #  <a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=150&amp;mnr=666">
+    #   <i>
+    #    Ferill málsins á Alþingi.
+    #   </i>
+    #  </a>
+    #  <a href="https://www.althingi.is/altext/150/s/1130.html">
+    #   <i>
+    #    Frumvarp til laga.
+    #   </i>
+    #  </a>
+    minister_clause = ""
+    if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
+        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        parser.consume("</a>")
+
+    if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
+        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        parser.consume("</a>")
+
+    while parser.line == "<br/>":
+        minister_clause += "<br/> "
+        parser.next()
+
     if (
-        parser.line == "<hr/>"
-        and parser.trail_last().tag == "num-and-date"
-        and parser.peeks(2) != "<small>"
-    ) or (
-        parser.line == "<br/>"
-        and parser.peeks(-1) == "</i>"
-        and parser.peeks(-2) == "</small>"
+        parser.line == "<small>"
+        and (parser.peeks(1) in ["<b>", "<em>"] or parser.peeks(1).startswith("Felld"))
         and not parser.trail_reached("intro-finished")
     ):
         parser.enter("minister-clause-footnotes")
@@ -494,35 +672,88 @@ def parse_minister_clause_footnotes(parser):
         # is no minister clause.
         hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
         if hr_distance is not None and hr_distance > 0:
-            minister_clause = parser.collect_until("<hr/>")
+            minister_clause += parser.collect_until("<hr/>", collect_first_line=True)
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
-        parser.trail_milestone("intro-finished")
-        parser.leave()
+        parser.consume("<hr/>")
+        parser.maybe_consume_many("<br/>")
+        parser.leave("minister-clause-footnotes")
 
 
 def parse_presidential_decree_preamble(parser):
-    if (
-        parser.line == "<br/>"
-        and parser.peek(-1).strip() == "<hr/>"
-        and parser.peek(-2).strip() == "</small>"
-        and parser.trail_reached("intro-finished")
+    """
+    Parses stray text in presidential decrees.
+    """
+    # NOTE: This may possibly be either expanded or re-used to create a parsing
+    # function for general stray text that pops up in less consistently
+    # formatted documents, such as international agreements.
+
+    # FIXME: This currently does not properly handle paragraphs, i.e. when
+    # stray text is followed by other stray text in a new paragraph. See
+    # `contenthandlers.add_sentences`. It should be used here.
+
+    if not (
+        len(parser.parse_path) == 0
+        and begins_with_regular_content(parser.line)
         and parser.law.attrib["law-type"] == "speaker-verdict"
-        and parser.peek(1).find("<img") == -1
     ):
-        parser.enter("presidential-decree-preamble")
-        # Sometimes, in presidential decrees ("speaker-verdict", erroneously),
-        # the minister clause is followed by a preamble, which we will parse
-        # into a "sen".
-        # The only example of this that this guard currently catches is 7/2022.
-        distance = parser.occurrence_distance(parser.lines, "<br/>")
-        if distance is not None and begins_with_regular_content(parser.lines.peek()):
-            preamble = parser.collect_until("<br/>")
-            parser.law.append(E("sen", preamble))
+        return False
 
-        parser.leave()
+    parser.enter("presidential-decree-preamble")
 
+    stray_text = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+    parser.law.append(E("sen", stray_text))
+
+    parser.leave("presidential-decree-preamble")
+
+    return True
+
+
+def parse_superchapter(parser):
+    if not check_chapter(parser.lines, parser.law) == "superchapter":
+        return False
+
+    parser.enter("superchapter")
+    parser.superchapter = E("superchapter")
+
+    nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    name = ""
+    if parser.line == "<b>":
+        name = parser.collect_until("</b>")
+        parser.consume("</b>")
+
+    raw_nr = nr_title[:nr_title.find(" þáttur")].strip(".")
+
+    # Turn "8. og 9" into "8-9", in 115/2021.
+    raw_nr = raw_nr.replace(". og", "-")
+
+    # Deal with numbers literally written out.
+    # They currently don't exist beyond the fourth.
+    raw_nr = word_to_nr(raw_nr)
+
+    parser.superchapter.attrib["nr"] = raw_nr
+    parser.superchapter.append(E("nr-title", nr_title))
+    if len(name) > 0:
+        parser.superchapter.append(E("name", name))
+
+    parser.law.append(parser.superchapter)
+
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_chapter(parser):
+            continue
+        if parse_article(parser):
+            continue
+        break
+
+    parser.superchapter = None
+    parser.leave("superchapter")
+
+    return True
 
 def parse_chapter(parser):
     # Chapters are found by finding a <b> tag that comes right after a
@@ -533,7 +764,7 @@ def parse_chapter(parser):
         check_chapter(parser.lines, parser.law) == "chapter"
         and parser.trail_reached("intro-finished")
     ):
-        return
+        return False
 
     parser.enter("chapter")
     # Parse what we will believe to be a chapter.
@@ -554,9 +785,37 @@ def parse_chapter(parser):
     # is the chapter nr-title and that the content in the next <b>
     # clause will be the chapter name.
 
-    name_or_nr_title = parser.collect_until("</b>")
+    chapter_type = ""
 
-    if parser.lines.peeks() == "<b>":
+    name_or_nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    nr = None
+    if name_or_nr_title.find("kapítuli.") > -1:
+        chapter_type = "kapítuli"
+
+        # This ancient way of denoting a chapter is always represented by
+        # cardinal numbers, but their `nr-title`s and `name`s are also not in
+        # separate `<b>` clauses.
+        t = strip_markers(name_or_nr_title).strip()
+        first_word = t[:t.find(" ")]
+        nr = word_to_nr(first_word)
+
+        chapter_nr_title = name_or_nr_title[:name_or_nr_title.find("kapítuli") + 9]
+        chapter_name = ""
+        if name_or_nr_title.find("kapítuli. ") > -1:
+            chapter_name = name_or_nr_title[name_or_nr_title.find("kapítuli.") + 10:]
+
+        parser.chapter = E.chapter(
+            {"nr": nr, "nr-type": "cardinal" },
+            E("nr-title", chapter_nr_title),
+        )
+
+        if len(chapter_name):
+            parser.chapter.append(E("name", chapter_name))
+
+    elif parser.line == "<b>":
+        parser.enter("chapter-nr-title")
         chapter_nr_title = name_or_nr_title
 
         # Let's see if we can figure out the number of this chapter.
@@ -565,14 +824,22 @@ def parse_chapter(parser):
         # those examples, nr-titles will be "2" and "2b" respectively.
         t = strip_markers(chapter_nr_title).strip()
         maybe_nr = t[0 : t.index(".")]
-        try:
+        if is_roman(maybe_nr):
             nr = str(roman.fromRoman(maybe_nr))
-            roman_nr = maybe_nr
             nr_type = "roman"
-        except roman.InvalidRomanNumeralError:
-            nr = int(maybe_nr)
-            roman_nr = None
+
+            extra_match = re.match(r"\.([A-Z])\.", t[len(maybe_nr):])
+            if extra_match is not None:
+                # A special case in lög nr. 41/1979 where a chapter has been
+                # added between "I" and "II", called "I.A".
+                nr += extra_match.groups()[0].lower()
+            del extra_match
+
+            roman_nr = maybe_nr
+        else:
+            nr = str(int(maybe_nr))
             nr_type = "arabic"
+            roman_nr = None
 
         # We assume that a chapter nr-title with an alphabetical
         # character (like "II. kafli B" or "2b") can only occur in
@@ -587,29 +854,49 @@ def parse_chapter(parser):
         # designate some kind of chapter, because those are logically
         # equivalent, but should never appear both in the same chapter
         # line.
-        for chapter_word_check in ["kafli", "hluti", "bók"]:
+        #
+        # We also record the word as `chapter_type` so that we can distinguish
+        # between things like "1. kafli" and "1. hluti", which may appear in
+        # the same law.
+        chapter_type = ""
+        for chapter_word_check in ["kafli", "hluti", "bók", "kap"]:
             if chapter_word_check in t:
+                chapter_type = chapter_word_check
                 alpha = t[t.index(chapter_word_check) + 6 :].strip(".")
                 if alpha:
                     nr += alpha.lower()
         del t
 
-        parser.scroll_until("<b>")
         chapter_name = parser.collect_until("</b>")
+        parser.consume("</b>")
 
         parser.chapter = E.chapter(
-            {"nr": str(nr), "nr-type": nr_type},
+            {"nr": nr, "nr-type": nr_type},
             E("nr-title", chapter_nr_title),
             E("name", chapter_name),
         )
+
+        # The `chapter-type` explains whether this chapter is shown as "kafli",
+        # "hluti" or whatever else, so that we can distinguish between two
+        # chapters in the same law, where one is named "1. hluti" and the other
+        # "1. kafli'.
+        # FIXME: In reality, "hluti"-chapters should contain other chapters as
+        # opposed to being their siblings, but to implement that, we'll need to
+        # make `chapter`s capable of recursivity. As "hluti"-chapters are not
+        # referenced to our knowledge, we need not concern ourselves with this
+        # at the moment. But we will, some day.
+        if len(chapter_type):
+            parser.chapter.attrib["chapter-type"] = chapter_type
 
         # Record the original Roman numeral if applicable.
         if roman_nr is not None:
             parser.chapter.attrib["roman-nr"] = roman_nr
 
-    else:
-        chapter_name = name_or_nr_title
+        parser.leave("chapter-nr-title")
 
+    else:
+        parser.enter("chapter-name-only")
+        chapter_name = name_or_nr_title
         # When the chapter doesn't have both a nr-title and a name,
         # what we see may be either a name or a Roman numeral. If it's
         # a Roman numeral, we'll want to do two things; 1) Include the
@@ -667,6 +954,22 @@ def parse_chapter(parser):
             nr = None
             parser.chapter = E.chapter({"nr-type": "name"}, E("name", chapter_name))
 
+        parser.leave("chapter-name-only")
+
+    # Must happen before the parsing of temporary clauses because iteration of
+    # parents to 'law' happens when parsing articles inside them.
+    if parser.appendix_chapter is not None:
+        # FIXME: This `chapter` is inside an `appendix_chapter`, and may get
+        # confused with normal chapters. This would properly be implemented as
+        # `appendix-chapter`s inside `appendix-chapter`s but that requires
+        # generalizing a bunch of functionality inside `parse_chapter`.
+        # This occurs in viðauka laga nr. 61/2017.
+        parser.appendix_chapter.append(parser.chapter)
+    elif parser.superchapter is not None:
+        parser.superchapter.append(parser.chapter)
+    else:
+        parser.law.append(parser.chapter)
+
     # Some laws have a chapter for temporary clauses, which may be
     # named something like "Bráðabirgðaákvæði", "Ákvæði til
     # bráðabirgða" and probably something else as well. We will assume
@@ -697,22 +1000,56 @@ def parse_chapter(parser):
         if nr is None:
             parser.chapter.attrib["nr"] = "t"
         parser.chapter.attrib["nr-type"] = "temporary-clauses"
-        parser.leave()
+        parser.next()
+        parser.maybe_consume_many("<br/>")
 
-    parser.law.append(parser.chapter)
+        parser.trail_push(parser.chapter)
 
-    parser.trail_push(parser.chapter)
+        while True:
+            if parse_article(parser):
+                continue
+            if parse_footnotes(parser):
+                continue
+            break
 
-    parser.subchapter = None
-    parser.leave()
+        parser.leave("temporary-clauses")
+    else:
+        parser.trail_push(parser.chapter)
 
-    parser.leave()
+    parser.enter("chapter-content")
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_subchapter(parser):
+            continue
+        if parse_ambiguous_section(parser):
+            continue
+        if parse_ambiguous_chapter(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        if parse_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_footnotes(parser):
+            continue
+
+        #if parse_subchapter(parser):
+        #    continue
+        break
+
+    parser.leave("chapter-content")
+
+    parser.maybe_consume_many("<br/>")
+
+    parser.chapter = None
+
+    parser.leave("chapter")
+    return True
 
 
 # The following two functions are kind of identical but are separated for future reference
 # and semantic distinction.
-
-
 def parse_extra_docs(parser):
     if check_chapter(parser.lines, parser.law) in [
         "extra-docs",
@@ -727,201 +1064,654 @@ def parse_extra_docs(parser):
 
 
 def parse_appendix(parser):
-    if check_chapter(parser.lines, parser.law) in ["appendix"] and parser.trail_reached(
-        "intro-finished"
+    if not (
+        check_chapter(parser.lines, parser.law) == "appendix"
+        and parser.trail_reached("intro-finished")
     ):
-        # Accompanying documents vary in origin and format, and are not a
-        # part of the formal legal text itself, even though legal text may
-        # reference them. Parsing them is beyond the scope of this tool.
-        # They always show up at the end, so at this point, our work is
-        # done. We'll escape the loop and go for post-processing.
-        return True
-    return False
+        return False
+
+    parser.enter("appendix")
+
+    nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    nr_title = strip_links(nr_title, strip_hellip_link=True).strip()
+
+    parser.appendix = E("appendix", E("nr-title", nr_title))
+
+    # Get the appendix number, if there is one.
+    nr_title_stripped = strip_links(
+        strip_markers(nr_title, strip_hellip_link=True)
+    ).strip()
+    nr = ""
+    nr_type = ""
+    roman_nr = ""
+    if nr_title_stripped.strip(".").lower() == "viðauki":
+        # A single, non-numbered appendix.
+        pass
+    else:
+        extra_nr = ""
+        if nr_title_stripped.strip(".").lower().endswith(" viðauki"):
+            maybe_nr = nr_title_stripped.split(" ")[0].strip(".")
+        elif nr_title_stripped.lower().startswith("viðauki "):
+            splitted = nr_title_stripped.split(" ")
+            maybe_nr = splitted[1].strip(".")
+
+            # Deal with an extra alphabetic character after a Roman appendix,
+            # so that it fits between two pre-existing chapters. Happens in
+            # 162/2002 (153c), where there is an appendix numbered "XI A"
+            # between "XI" and "XII".
+            if len(splitted) == 3:
+                match = re.match(r'([A-Z])\.', splitted[2])
+                if match is not None:
+                    extra_nr = match.group()
+
+            del splitted
+
+        else:
+            raise Exception("Unsupported appendix.")
+
+        if is_roman(maybe_nr):
+            nr = maybe_nr
+            nr_type = "roman"
+            roman_nr = str(roman.fromRoman(maybe_nr))
+
+            if len(extra_nr):
+                nr += " %s" % extra_nr
+                roman_nr += extra_nr.lower()
+        else:
+            nr = str(int(maybe_nr))
+            nr_type = "arabic"
+
+    # Adjust the number settings if appropriate.
+    if len(nr) and len(nr_type):
+        parser.appendix.attrib["nr"] = nr
+        parser.appendix.attrib["nr-type"] = nr_type
+        if nr_type == "roman":
+            parser.appendix.attrib["roman-nr"] = roman_nr
+
+    # See if the appendix has a name.
+    if parser.line == "<b>":
+        name = parser.collect_until("</b>")
+        parser.appendix.append(E("name", name))
+        parser.consume("</b>")
+
+    parser.consume("<br/>")
+
+    parser.law.append(parser.appendix)
+
+    parser.chapter = None
+    parser.art = None
+    parser.subart = None
+    parser.numart = None
+
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_appendix_part(parser):
+            continue
+        if parse_appendix_chapter(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_appendix_draft(parser):
+            continue
+        if parse_numart_chapter(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        if parse_table(parser):
+            continue
+        if parse_article_chapter(parser):
+            continue
+        break
+
+    # FIXME: Presumably this should be `parser.appendix = None`. Not fixing now
+    # because we're in the middle of something rather complicated and don't
+    # want to risk breaking something.
+    parser.appendix_part = None
+
+    parser.trail_push(parser.appendix)
+    parse_footnotes(parser)
+    parser.leave("appendix")
+    return True
+
+
+def parse_appendix_chapter(parser):
+    if not check_chapter(parser.lines, parser.law) == "appendix-chapter":
+        return False
+
+    parser.enter("appendix-chapter")
+
+    parser.appendix_chapter = E("appendix-chapter")
+
+    parser.appendix.append(parser.appendix_chapter)
+
+    # Parse the name.
+    name = parser.collect_until("</b>")
+    parser.consume("</b>")
+    parser.consume("<br/>")
+
+    name = strip_links(name, strip_hellip_link=True)
+
+    parser.appendix_chapter.append(E("name", name))
+
+    while True:
+        if parse_numerical_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_chapter(parser):
+            continue
+        if parse_ambiguous_section(parser):
+            continue
+        break
+
+    parser.appendix_chapter = None
+
+    parser.leave("appendix-chapter")
+
+    return True
+
+
+def parse_numart_chapter(parser):
+    """
+    Only known to occur in appendices so far, specifically lög nr. 7/1998 (153c).
+    """
+    if not check_chapter(parser.lines, parser.law) == "numart-chapter":
+        return False
+
+    # Needed for `numart`s to properly locate themselves inside a
+    # `numart-chapter`.
+    parser.numart = None
+
+    parser.enter("numart-chapter")
+    parser.numart_chapter = E("numart-chapter")
+
+    nr_and_name = parser.collect_until("</b>")
+    parser.consume("</b>")
+
+    nr = nr_and_name.split(".")[0]
+    name = nr_and_name[len(nr) + 2:]
+
+    parser.numart_chapter.attrib["nr"] = nr
+    parser.numart_chapter.append(E("nr-title", nr + "."))
+    parser.numart_chapter.append(E("name",  name))
+
+    if parser.appendix is not None:
+        parser.appendix.append(parser.numart_chapter)
+
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_numerical_article(parser):
+            continue
+        break
+
+    parser.numart_chapter = None
+    parser.leave("numart-chapter")
+
+    return True
+
+
+def parse_paragraph(parser):
+    if not (
+        begins_with_regular_content(parser.line)
+        # In 58/1998 (153c) definitions are presented in bold.
+        or (
+            parser.line == "<b>"
+            and parser.peeks()[-1] == ":"
+        )
+    ):
+        return False
+
+    parser.enter("paragraph")
+
+    parser.paragraph = E("paragraph")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    sens = separate_sentences(content)
+
+    add_sentences(parser.paragraph, sens)
+
+    # NOTE: This is being done here and there in the code, most notably in
+    # `parse_subart`. In time, this `parse_paragraph` function should be used
+    # instead, in which case more node support should be added where once this
+    # functionality has been removed from their respective `parse_` functions.
+    parent = None
+    if parser.art_chapter is not None:
+        parent = parser.art_chapter
+    elif parser.appendix_part is not None:
+        parent = parser.appendix_part
+    elif parser.appendix is not None:
+        parent = parser.appendix
+    elif parser.subart is not None:
+        parent = parser.subart
+    elif parser.art is not None:
+        parent = parser.art
+    else:
+        parent = parser.law
+
+    if parent is not None:
+        paragraph_nr = str(len(parent.findall("paragraph")) + 1)
+        parser.paragraph.attrib["nr"] = paragraph_nr
+        parent.append(parser.paragraph)
+    else:
+        raise Exception("Could not find parent for paragraph.")
+
+    parser.paragraph = None
+
+    parser.leave("paragraph")
+
+    return True
+
+
+def parse_appendix_draft(parser):
+    # Draft is a misnomer. The Icelandic word is "uppdráttur" which we have no
+    # idea how to translate, so this is as good as any.
+    #
+    # This phenomenon is currently only known to exist in the appendix of lög
+    # nr. 88/2018 and lög nr. 38/2002. The original bill contained images in its
+    # PDF version, but nothing in the HTML version.
+    if not parser.line.startswith("Uppdráttur"):
+        return False
+
+    parser.enter("appendix-draft")
+
+    parser.appendix_draft = E("draft")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    sens = separate_sentences(strip_links(content))
+
+    # The name is just the first sentence.
+    # Example:
+    # "Uppdráttur I. Strandsvæðisskipulag á Vestfjörðum..."
+    nr_title = sens[0]
+    sens = sens[1:]
+
+    # Figure out the number.
+    roman_nr = nr_title.split(" ")[1].strip(".")
+    nr = roman.fromRoman(roman_nr)
+
+    parser.appendix_draft.attrib["nr"] = roman_nr
+    parser.appendix_draft.attrib["roman-nr"] = str(nr)
+    parser.appendix_draft.attrib["number-type"] = "roman"
+
+    parser.appendix_draft.append(E("nr-title", nr_title))
+
+    add_sentences(parser.appendix_draft, sens)
+
+    parser.appendix.append(parser.appendix_draft)
+
+    parser.appendix_draft = None
+
+    parser.leave("appendix-draft")
+
+    return True
+
+
+def parse_appendix_part(parser):
+    # Occurs in lög nr. 98/2019 (153c).
+    if not (
+        (
+            parser.line == "<i>"
+            and "-hluti" in parser.peeks()
+        )
+        or re.match(r'.*-hluti\.$', parser.line)
+    ):
+        return False
+
+    parser.enter("appendix-part")
+
+    style = "n"
+    if parser.line == "<i>":
+        style = "i"
+        parser.consume("<i>")
+        content = parser.collect_until("</i>", collect_first_line=True)
+        parser.consume("</i>")
+    else:
+        content = parser.collect_until("<br/>", collect_first_line=True)
+
+    parser.appendix_part = E("appendix-part", { "appendix-style": style })
+
+    if ":" in content:
+        nr_title, name = content.split(":")
+        nr_title = nr_title.strip() + ":"
+        name = name.strip()
+        parser.appendix_part.append(E("nr-title", nr_title))
+    else:
+        name = content
+
+    parser.appendix_part.append(E("name", name))
+
+    if parser.subart is not None:
+        parser.subart.append(parser.appendix_part)
+    else:
+        parser.appendix.append(parser.appendix_part)
+
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_subarticle(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+
+        break
+
+    parser.appendix_part = None
+
+    parser.leave("appendix-part")
+
+    return True
+
+
+def parse_stray_deletion(parser):
+    """
+    FIXME/TODO: This needs proper locating.
+    """
+    removed_anchor = r"<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
+
+    if not (
+        parser.line == "…"
+        or re.match(removed_anchor, parser.line)
+    ):
+        return False
+
+    parser.enter("stray-deletion")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    elem_sen = E("sen", content)
+
+    # If the element contains nothing but an expiry symbol (i.e., not really a
+    # deletion marker), we'll want to clear the content and let the rendering
+    # mechanism add it again.
+    if content == "…":
+        elem_sen.attrib["expiry-symbol-offset"] = "0"
+        elem_sen.text = ""
+
+    parser.mark_container = E("mark-container", elem_sen)
+
+    if parser.numart is not None:
+        parser.numart.append(parser.mark_container)
+    elif parser.subart is not None:
+        parser.subart.append(parser.mark_container)
+    elif parser.chapter is not None:
+        parser.chapter.append(parser.mark_container)
+    else:
+        parser.law.append(parser.mark_container)
+
+    while True:
+        if parse_footnotes(parser):
+            continue
+
+        break
+
+    parser.mark_container = None
+
+    parser.leave("stray-deletion")
+
+    return True
 
 
 def parse_subchapter(parser):
     # Parse a subchapter.
-    if check_chapter(parser.lines, parser.law) == "subchapter" and parser.trail_reached(
+    if not check_chapter(parser.lines, parser.law) == "subchapter" or not parser.trail_reached(
         "intro-finished"
     ):
-        parser.enter("subchapter")
+        return False
 
-        subchapter_goo = parser.collect_until("</b>")
+    parser.enter("subchapter")
 
-        subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
+    subchapter_goo = parser.collect_until("</b>")
+    parser.consume("</b>")
 
-        parser.subchapter = E(
-            "subchapter",
-            {
-                "nr": strip_markers(subchapter_nr),
-                "nr-type": "alphabet",
-            },
-            E("nr-title", "%s." % subchapter_nr),
-        )
+    subchapter_nr, subchapter_name = get_nr_and_name(subchapter_goo)
 
-        if len(subchapter_name):
-            parser.subchapter.append(E("name", subchapter_name))
+    parser.subchapter = E(
+        "subchapter",
+        {
+            "nr": strip_markers(subchapter_nr),
+            "nr-type": "alphabet",
+        },
+        E("nr-title", "%s." % subchapter_nr),
+    )
 
-        parser.chapter.append(parser.subchapter)
-        parser.trail_push(parser.subchapter)
+    if len(subchapter_name):
+        parser.subchapter.append(E("name", subchapter_name))
 
-        del subchapter_goo
-        del subchapter_nr
-        del subchapter_name
+    parser.chapter.append(parser.subchapter)
+    parser.trail_push(parser.subchapter)
+
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_article(parser):
+            continue
+        if parse_footnotes(parser):
+            continue
+
+        break
+
+    del subchapter_goo
+    del subchapter_nr
+    del subchapter_name
+
+    parser.subchapter = None
+
+    parser.leave("subchapter")
+
+    return True
 
 
 def parse_article_chapter(parser):
-    if check_chapter(
+    if not check_chapter(
         parser.lines, parser.law
-    ) == "art-chapter" and parser.trail_reached("intro-finished"):
-        parser.enter("art-chapter")
+    ) == "art-chapter" or not parser.trail_reached("intro-finished"):
+        return False
 
-        # Parse an article chapter.
-        art_chapter_goo = parser.collect_until("</b>")
+    parser.enter("art-chapter")
 
-        # Check if there's a name to the article chapter.
-        try:
-            art_chapter_nr, art_chapter_name = art_chapter_goo.strip(".").split(".")
-            art_chapter_name = art_chapter_name.strip()
-        except:
-            art_chapter_nr = art_chapter_goo.strip(".")
-            art_chapter_name = ""
+    # Parse an article chapter.
+    art_chapter_goo = parser.collect_until("</b>")
+    parser.consume("</b>")
 
-        parser.art_chapter = E(
-            "art-chapter",
-            {
-                "nr": art_chapter_nr,
-                "nr-type": "alphabet",
-            },
-            E("nr-title", "%s." % art_chapter_nr),
-        )
+    # Art chapter number and possibly name.
+    space_loc = art_chapter_goo.find(" ")
+    if space_loc > -1:
+        art_chapter_nr = art_chapter_goo[0:space_loc].strip(".")
+        art_chapter_name = art_chapter_goo[space_loc+1:]
+    else:
+        art_chapter_nr = art_chapter_goo.strip(".")
+        art_chapter_name = ""
 
-        if len(art_chapter_name):
-            parser.art_chapter.append(E("name", art_chapter_name))
+    parser.art_chapter = E(
+        "art-chapter",
+        {
+            "nr": art_chapter_nr,
+            "nr-type": "alphabet",
+        },
+        E("nr-title", "%s." % art_chapter_nr),
+    )
 
-        # Article chapters may appear in an article, containing
-        # sub-articles, or they may in fact appear inside sub-articles.
-        # The correct parent is obvious when we first run into an
-        # `art-chapter` in an `art`. But when we run into another one, we
-        # will have access to both a `subart` and an `art`, not knowing
-        # which one to append the `art-chapter` to, at least not by only
-        # seeing if a `subart` exists (because it always exists).
-        # Instead, we have to check if the `art` already has an
-        # `art-chapter`, and if so, append the new `art-chapter` to the
-        # parent of the previous one. Otherwise, we can go by the
-        # existence of `subart` and `art` like normally.
+    if len(art_chapter_name):
+        parser.art_chapter.append(E("name", art_chapter_name))
 
-        # Check if we should append the article chapter to the last
-        # sub-article, or the last article.
-        if parser.art.find("art-chapter") is not None:
-            parser.art.find("art-chapter").getparent().append(parser.art_chapter)
-        elif parser.subart is not None:
-            parser.subart.append(parser.art_chapter)
-        elif parser.art is not None:
-            parser.art.append(parser.art_chapter)
+    # Article chapters may appear in an article, containing
+    # sub-articles, or they may in fact appear inside sub-articles.
+    # The correct parent is obvious when we first run into an
+    # `art-chapter` in an `art`. But when we run into another one, we
+    # will have access to both a `subart` and an `art`, not knowing
+    # which one to append the `art-chapter` to, at least not by only
+    # seeing if a `subart` exists (because it always exists).
+    # Instead, we have to check if the `art` already has an
+    # `art-chapter`, and if so, append the new `art-chapter` to the
+    # parent of the previous one. Otherwise, we can go by the
+    # existence of `subart` and `art` like normally.
 
-        # Check if the `art-chapter` contains text content which is not
-        # contained in a `subart` or `numart` below the `art-chapter`.
-        # This is only known to occur in 7. gr. laga nr. 90/2003.
-        #
-        # NOTE: We only check for one "paragraph", since we are currently
-        # not aware of there being a case where there are more. The
-        # children of `art-chapter`s are almost always `numart`s and when
-        # we find text like this, it is presumably just one paragraph or a
-        # short preface to a list of `numart` that follow.
-        if begins_with_regular_content(parser.peek(2)):
-            # Scroll over the break the belongs to the `art-chapter`.
-            parser.scroll_until("<br/>")
-            content = parser.collect_until("<br/>")
+    # Check if we should append the article chapter to the last
+    # sub-article, or the last article.
+    if parser.appendix is not None:
+        parser.appendix.append(parser.art_chapter)
+    elif parser.art.find("art-chapter") is not None:
+        parser.art.find("art-chapter").getparent().append(parser.art_chapter)
+    elif parser.subart is not None:
+        parser.subart.append(parser.art_chapter)
+    elif parser.art is not None:
+        parser.art.append(parser.art_chapter)
 
-            sens = separate_sentences(strip_links(content))
-            add_sentences(parser.art_chapter, sens)
+    parser.consume("<br/>")
 
-        parser.trail_push(parser.art_chapter)
+    while True:
+        parser.maybe_consume("<br/>")
+        if parse_numerical_article(parser):
+            continue
+        if parse_paragraph(parser):
+            # Only known to occur in 7. gr. laga nr. 90/2003.
+            continue
+        break
 
-        parser.leave()
+    parser.trail_push(parser.art_chapter)
+
+    parser.leave("art-chapter")
+
+    parser.art_chapter = None
+
+    return True
 
 
 def parse_ambiguous_chapter(parser):
-    if check_chapter(parser.lines, parser.law) == "ambiguous" and parser.trail_reached(
-        "intro-finished"
-    ):
-        # Parse a mysterious text that might be a chapter but we're unable
-        # to determine it as such. They are bold, they are bad, but they
-        # don't really make an awful lot of sense. We'll just splash them
-        # in as ambiguous bold text and leave it at that.
-        #
-        # This occurs before the table in 96. gr. laga nr. 55/1991, in
-        # version 151b, although the table was removed in version 151c.
-        #
-        # It happens quite a bit, and like `ambiguous-section`, should
-        # theoretically be replaced by something more formal at some
-        # point, should the format of published law ever allow.
-        parser.enter("ambiguous-chapter")
+    if check_chapter(parser.lines, parser.law) != "ambiguous":
+        return False
 
-        ambiguous_bold_text = E(
-            "ambiguous-bold-text", parser.collect_until("</b>")
-        )
+    # Parse a mysterious text that might be a chapter but we're unable
+    # to determine it as such. They are bold, they are bad, but they
+    # don't really make an awful lot of sense. We'll just splash them
+    # in as ambiguous bold text and leave it at that.
+    #
+    # This occurs before the table in 96. gr. laga nr. 55/1991, in
+    # version 151b, although the table was removed in version 151c.
+    #
+    # It happens quite a bit, and like `ambiguous-section`, should
+    # theoretically be replaced by something more formal at some
+    # point, should the format of published law ever allow.
+    parser.enter("ambiguous-chapter")
 
-        if parser.subart is not None:
-            parser.subart.append(ambiguous_bold_text)
-        elif parser.art is not None:
-            parser.art.append(ambiguous_bold_text)
-        elif parser.chapter is not None:
-            parser.chapter.append(ambiguous_bold_text)
-        else:
-            parser.law.append(ambiguous_bold_text)
+    ambiguous_bold_text = E(
+        "ambiguous-bold-text", parser.collect_until("</b>")
+    )
+    parser.consume("</b>")
 
-        parser.trail_push(ambiguous_bold_text)
+    italic = re.match(r"<i>\s?(.*)\s?</i>", ambiguous_bold_text.text)
+    if italic is not None:
+        ambiguous_bold_text.text = italic.groups()[0].strip()
+        ambiguous_bold_text.attrib["ambiguous-style"] = "i"
 
-        parser.leave()
+    if parser.subart is not None:
+        parser.subart.append(ambiguous_bold_text)
+    elif parser.art is not None:
+        parser.art.append(ambiguous_bold_text)
+    elif parser.chapter is not None:
+        parser.chapter.append(ambiguous_bold_text)
+    else:
+        parser.law.append(ambiguous_bold_text)
+
+    parser.maybe_consume("<br/>")
+
+    parser.trail_push(ambiguous_bold_text)
+
+    parse_footnotes(parser)
+    parser.leave("ambiguous-chapter")
+
+    return True
 
 
 def parse_sentence_with_title(parser):
-    if (
-        parser.peeks(0) == "<i>"
-        and parser.peeks(2) == "</i>"
-        and parser.trail_reached("intro-finished")
+    if not (
+        (
+            (
+                parser.line in ["[", "[["]
+                and parser.peeks(1) == "<i>"
+            )
+            or parser.line == "<i>"
+        )
+        and parser.peeks() != "<small>"
     ):
-        parser.enter("sen-with-title")
-        # Parse a sentence with a title. These are rare, but occur in 3.
-        # gr. laga nr. 55/2009. Usually they are numbered, parsed as
-        # numarts instead, but not here.
+        return False
 
-        # In 3. gr. laga nr. 55/2009, sentences with titles have the
-        # opening marks located right before the <i> tag, meaning that we
-        # have no proper place to put it in. We'll place it in the
-        # beginning of the sen-title instead. There can be more than one,
-        # so we'll append continuously until we run out of opening marks.
+    # Sentence-titles are not known to occur in appendices as of 2024-09-23. If
+    # they begin to occur, we'll need to handle this differently.
+    if parser.appendix_part is not None:
+        return False
 
-        sen_title_text = ""
-        back_peek = parser.peeks(-1)
-        while len(back_peek) > 0 and back_peek[-1] == "[":
-            sen_title_text += "["
-            back_peek = back_peek[0:-1]
+    # Parse a sentence with a title. These are rare, but occur in 3.
+    # gr. laga nr. 55/2009. Usually they are numbered, parsed as
+    # numarts instead, but not here.
 
-        sen_title_text += parser.collect_until("</i>")
-        content = parser.collect_until("<br/>")
-        if parser.subart is not None:
-            sen_title = E("sen-title", sen_title_text)
-            parser.subart.append(sen_title)
+    # In 3. gr. laga nr. 55/2009, sentences with titles have the
+    # opening marks located right before the <i> tag, meaning that we
+    # have no proper place to put it in. We'll place it in the
+    # beginning of the sen-title instead. There can be more than one,
+    # so we'll append continuously until we run out of opening marks.
 
-            add_sentences(parser.subart, separate_sentences(content))
+    parser.enter("sen-title")
 
-            parser.trail_push(sen_title)
+    parser.numart = None
 
-        parser.leave()
+    sen_title_text = ""
+
+    if parser.line in ["[", "[["]:
+        sen_title_text += parser.line
+        parser.next()
+
+    sen_title_text += parser.collect_until("</i>")
+    content = parser.collect_until("<br/>")
+    parser.consume("<br/>")
+    if parser.subart is not None:
+        paragraph = add_sentences(parser.subart, separate_sentences(content))
+
+        sen_title = E("sen-title", sen_title_text)
+        parser.subart.append(sen_title)
+
+        # The sentence title belongs inside the paragraph that
+        # `add_sentences` creates, so it is inserted afterwards.
+        paragraph.insert(0, sen_title)
+
+        parser.trail_push(sen_title)
+
+    parser.leave("sen-title")
+
+    return True
 
 
 def parse_article(parser):
+    # Articles have navigation spans on them with "G???" IDs with their number.
+    # We'll skip over them, as long as we are sure that after them we have the 
+    # begining of an article.
+    if parser.line.startswith("<span id=\"G") and parser.matcher.check(parser.peeks(2), r'<img .+ src=".*sk.jpg" .+\/>'):
+        parser.next()   # Consume <span id="G???">
+        parser.next()   # Consume </span>
+    else:
+        pass
+
+    # This is not redundant because of the format of the above guard, but they could be combined.
     if not parser.matcher.check(parser.peeks(0), r'<img .+ src=".*sk.jpg" .+\/>'):
-        return
+        return False
 
     parser.enter("art")
 
     # Parse an article.
     parser.scroll_until("<b>")
     art_nr_title = parser.collect_until("</b>")
+    parser.consume("</b>")
 
     clean_art_nr_title = strip_markers(art_nr_title)
 
@@ -1019,9 +1809,10 @@ def parse_article(parser):
     # Note that in this specific case, we actually want to include the
     # HTML, which we are appending "</a>" at the end. Normally we don't
     # want that, so `parser.collect_until` doesn't include it.
-    if parser.peeks().find("<a ") == 0 and parser.peeks(3) == "</a>":
-        art_title_link = parser.collect_until("</a>")
+    if parser.line.find("<a ") == 0 and parser.peeks(2) == "</a>":
+        art_title_link = parser.collect_until("</a>", collect_first_line=True)
         art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
+        parser.consume("</a>")
 
     # Create the tags, configure them and append to the chapter.
     parser.art = E("art", E("nr-title", art_nr_title))
@@ -1035,21 +1826,33 @@ def parse_article(parser):
         parser.subchapter.append(parser.art)
     elif parser.chapter is not None:
         parser.chapter.append(parser.art)
+    elif parser.superchapter is not None:
+        parser.superchapter.append(parser.art)
     else:
         parser.law.append(parser.art)
 
     # Check if the next line is an <em>, because if so, then the
     # article has a name title and we need to grab it. Note that not
     # all articles have names.
-    if parser.peeks() == "<em>":
-        parser.scroll_until("<em>")
+    if parser.line == "<em>":
         art_name = parser.collect_until("</em>")
-
+        parser.consume("</em>")
         parser.art.append(E("name", strip_links(art_name)))
+    elif parser.line == "<b>":
+        # Only known to happen in m00d00/1275 and possibly 94/1996.
+        art_name = parser.collect_until("</b>")
+        parser.consume("</b>")
+        parser.art.append(E("name", {"name-style": "b"}, strip_links(art_name)))
 
     # Another way to denote an article's name is by immediately
     # following it with bold text. This is very rare but does occur.
-    elif parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
+    #
+    # FIXME: This section was disabled because it caused damage and it doesn't
+    # seem to belong here. Somewhere we're doing this. It just looks like it's
+    # in the wrong place. Also, we should check if we can handle article names
+    # that are bold. It even kind of looks like two different things got mixed
+    # up here.
+    elif False and parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
         # Exceptional case: 94/1996 contains a very strange temporary
         # clause chapter. It was originally a temporary article (24.
         # gr.) with a name denoted differently than other articles in
@@ -1106,6 +1909,7 @@ def parse_article(parser):
 
         parser.scroll_until("<b>")
         art_name = parser.collect_until("</b>")
+        parser.consume("</b>")
 
         parser.art.append(
             E("name", strip_links(art_name), {"original-ui-style": "bold"})
@@ -1114,9 +1918,10 @@ def parse_article(parser):
     # Check if the article is empty aside from markers that need to be
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
-    while parser.peeks() in ["…", "]"]:
-        marker = parser.collect_until("</sup>")
+    while parser.line in ["…", "]"]:
+        marker = parser.collect_until("</sup>", collect_first_line=True)
         parser.art.getchildren()[-1].text += " " + marker + " </sup>"
+        parser.consume("</sup>")
 
     parser.trail_push(parser.art)
 
@@ -1125,42 +1930,83 @@ def parse_article(parser):
     parser.subart = None
     parser.art_chapter = None
 
-    parser.leave()
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_article_chapter(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_subarticle(parser):
+            continue
+        if parse_ambiguous_chapter(parser):
+            continue
+        if parse_footnotes(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+        break
 
+    parser.maybe_consume_many("<br/>")
+    parse_footnotes(parser)
+
+    parser.art = None
+
+    parser.leave("art")
+    return True
+
+
+VISITATIONS = 0
 
 def parse_subarticle(parser):
-    if not parser.matcher.check(
-        parser.line, r'<img .+ id="[GB](\d+)[A-Z]?M(\d+)" src=".*hk.jpg" .+\/>'
+    if not (
+        parser.matcher.check(
+            parser.line, r'<img .+ id="F?[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
+        )
+        or parser.line == '<img alt="" height="11" src="hk.jpg" width="11"/>'
     ):
-        return
-    # Parse a subart.
+        return False
 
+    # Parse a subart.
     parser.enter("subart")
 
-    art_nr, subart_nr = parser.matcher.result()
+    parser.numart = None
+
+    if parser.matcher.match is not None:
+        subart_nr = parser.matcher.result()[2]
+    else:
+        # This happens in appendices when subarticles are not numbered
+        # properly, notably in 4/1995. We'll have to figure out the correct
+        # `subart_nr` without reading from the HTML.
+        subart_nr = str(len(parser.appendix.findall("subart")) + 1)
 
     # Check how far we are from the typical subart end.
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
 
-    # Check if there's a table inside the subarticle.
+    # Check if there's a table inside the subarticle. 
     linecount_to_table = parser.occurrence_distance(
-        parser.lines, r"<\/table>", linecount_to_br
+        parser.lines, r'<table width="100%">', linecount_to_br
     )
 
     subart_name = ""
     # If a table is found inside the subarticle, we'll want to end the
-    # subarticle when the table ends.
+    # sentence when the table begins.
     if linecount_to_table is not None:
-        # We must append the string '</table>' because it gets left
-        # behind by the collet_until function.
-        content = parser.collect_until("</table>") + "</table>"
+        content = parser.collect_until('<table width="100%">')
+    elif parser.peeks() == "<span>":
+        # This means that maybe a `numart` is coming up in the beginning.
+        # Content will be empty, but caught by `parse_numerical_article`.
+        content = ""
+        parser.next()
     else:
         # Everything is normal.
         content = parser.collect_until("<br/>")
+        parser.maybe_consume_many("<br/>")
 
     parser.subart = E("subart", {"nr": subart_nr})
 
     if parser.matcher.check(content, "^<b>(.*)</b>(.*)<i>(.*)</i>"):
+        # FIXME: This probably belongs in its own `parse_person` function!
+
         # Check if the subarticle content contains bold AND italic text, which
         # may indicate a person (bold) is being given a role (italic).
 
@@ -1179,37 +2025,6 @@ def parse_subarticle(parser):
         parser.subart.append(E("name", name))
         sens = separate_sentences(after)
         add_sentences(parser.subart, sens)
-
-    elif parser.matcher.check(content, r"^((\[\s)?<i>(.*)</i>)"):
-        # Check for definitions in subarts. (Example: 153c, 7/1998)
-
-        raw_definition, before, definition = parser.matcher.result()
-
-        # Fix data so that we know how to treat it.
-        definition = definition.strip()
-        if before is None:
-            before = ""
-
-        # Clear out the HTML content describing the definition.
-        content = content.replace(raw_definition, before + definition.strip())
-
-        sens = separate_sentences(strip_links(content))
-        add_sentences(parser.subart, sens)
-
-        added_sens = parser.subart.findall("sen")
-
-        # Something strange is going on if these are different, so we'll throw
-        # an error, just in case.
-        if len(sens) != len(added_sens):
-            raise Exception("Lists `sens` and `added_sens` should be same length.")
-
-        # It is also unexpected to see a definition being applied when there
-        # already is one.
-        if "definition" in parser.subart.attrib:
-            raise Exception("Unexpectedly existing definition in `subart`.")
-
-        # Add the definition to the subart.
-        parser.subart.attrib["definition"] = definition
 
     else:
         sens = separate_sentences(strip_links(content))
@@ -1243,6 +2058,12 @@ def parse_subarticle(parser):
         parser.art_chapter.append(parser.subart)
     elif parser.art is not None:
         parser.art.append(parser.subart)
+    elif parser.appendix_chapter is not None:
+        parser.appendix_chapter.append(parser.subart)
+    elif parser.appendix_part is not None:
+        parser.appendix_part.append(parser.subart)
+    elif parser.appendix is not None:
+        parser.appendix.append(parser.subart)
     elif parser.chapter is not None:
         parser.chapter.append(parser.subart)
     else:
@@ -1251,8 +2072,35 @@ def parse_subarticle(parser):
         # subarticles. Possibly in a chapter, and possibly not.
         parser.law.append(parser.subart)
 
+    while True:
+        parser.maybe_consume_many("<br/>")
+        if parse_table(parser):
+            continue
+        if parse_sentence_with_title(parser):
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        if parse_numerical_article(parser):
+            continue
+        if parse_article_chapter(parser):
+            continue
+        if parser.appendix is not None and parse_appendix_part(parser):
+            continue
+        if parse_paragraph(parser):
+            continue
+        if parse_footnotes(parser):
+            break
+
+        break
+
+    parser.maybe_consume_many("<br/>")
+
     parser.trail_push(parser.subart)
+
+    parser.subart = None
+
     parser.leave("subart")
+    return True
 
 
 def parse_deletion_marker(parser):
@@ -1286,10 +2134,20 @@ def parse_deletion_marker(parser):
 
 def parse_numerical_article(parser):
     if not (
-        parser.matcher.check(parser.line, r'<span id="[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        parser.matcher.check(parser.line, r'<span id="(F\d?)?[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        # FIXME: Try matching the following line without a regex check.
         or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
+        or is_numart_address(parser.line)
     ):
-        return
+        return False
+
+    # Sometimes a numart isn't properly defined in the HTML with the `<span>`
+    # as described above. This impacts parsing in a few ways. We detect it here
+    # and react to it in the code that follows.
+    denoted_with_span = True
+    if not parser.line.startswith("<span"):
+        denoted_with_span = False
+        parser.lines.index -= 1
 
     parser.enter("numart")
     # Parse a numart, or numerical article.
@@ -1303,10 +2161,16 @@ def parse_numerical_article(parser):
         ". ", ""
     )
 
-    # Support for numart ranges, which are only known to occur when
-    # many numarts have been removed. This occurs for example in 145.
-    # gr. laga nr. 108/2007.
     if parser.matcher.check(numart_nr, r"(\d+)\.–(\d+)"):
+        # Support for numart ranges, which are only known to occur when many
+        # numarts have been removed. This occurs for example in 145. gr. laga
+        # nr. 108/2007.
+        from_numart_nr, to_numart_nr = parser.matcher.result()
+        numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
+    elif parser.matcher.check(numart_nr, r"([A-Z])\.[–-]([A-Z])"):
+        # Support for alphabetical ranges, which are also only known to occur
+        # when many numarts have been removed. This happens in temporary
+        # clauses of lög nr. 99/1993.
         from_numart_nr, to_numart_nr = parser.matcher.result()
         numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
 
@@ -1321,6 +2185,19 @@ def parse_numerical_article(parser):
         prev_numart = parser.numart
     else:
         prev_numart = None
+
+    if numart_nr == "1.1":
+        # This happens when a `numart` is detected in a tree-scheme (example in
+        # appendix of lög nr. 55/2012). In those cases, the previous `numart`
+        # will have been previously detected as numeric, since it begins in the
+        # same way, with a "1". We correct that here.
+        #
+        # But sometimes, this is actually the start of a tree-scheme `numart`
+        # list inside something like a `numart-chapter`, in which case we don't
+        # need change anything retro-actively.
+        # Example: I. viðauki laga nr. 7/1998 (153c).
+        if prev_numart is not None and prev_numart.attrib["nr-type"] == "numeric":
+            prev_numart.attrib["nr-type"] = "tree"
 
     # This is only known to happen in 3. gr. laga nr. 160/2010. A
     # numart has been removed and the numbers of its following numarts
@@ -1347,6 +2224,7 @@ def parse_numerical_article(parser):
         add_sentences(dummy_numart, [content])
         prev_numart.getparent().append(dummy_numart)
         parser.scroll_until("<br/>")
+        parser.leave("numart")
         return
 
     # In 6. tölul. 1. gr. laga nr. 119/2018, the removal of previous
@@ -1440,6 +2318,8 @@ def parse_numerical_article(parser):
             # was appended to.
             parent = prev_numart.getparent()
         else:
+            # FIXME: These is no obvious reason for this `if`-block to be
+            # inside an `else`-block.
             if numart_nr.lower() in ["a", "i", "—", "–"] or (
                 numart_nr.isdigit() and int(numart_nr) == 1
             ):
@@ -1449,8 +2329,28 @@ def parse_numerical_article(parser):
                 # says it's at the beginning, being either 'a' or 1.
                 # In this case, we'll choose the previous `numart` as
                 # the parent, so that this new list will be inside the
-                # previous one.
-                parent = prev_numart
+                # previous one. We append to the last paragraph of
+                # that parent.
+                if (
+                    prev_numart.getparent().getparent() is not None
+                    and prev_numart.getparent().getparent().getchildren()[-1].getchildren()[-1].tag != "numart"
+                ):
+                    # This happens in the rather unfortunate circumstance that
+                    # a list of `numart`s is in one `paragraph` and then
+                    # another list follows in another `paragraph` (as opposed
+                    # to a `subart`).
+                    #
+                    # In this case, we need to check if the last `paragraph` in
+                    # the `subart` is a `numart` or not, to properly judge if
+                    # we should be adding to that list, or if it's another list
+                    # of `numart`s in another paragraph.
+                    #
+                    # Only known to happen in 3. gr. laga nr. 78/1993.
+                    #
+                    # May this never happen again.
+                    parent = prev_numart.getparent().getparent().findall("paragraph")[-1]
+                else:
+                    parent = prev_numart.findall("paragraph")[-1]
             else:
                 # A different list is being handled now, but it's not
                 # starting at the beginning (is neither 'a' nor 1).
@@ -1460,7 +2360,42 @@ def parse_numerical_article(parser):
                 # of the list we've been working on recently, which is
                 # the same parent as the nodes that came before we
                 # started the sub-list.
-                parent = prev_numart.getparent().getparent()
+                #
+                # Parent is a `paragraph`, grandparent is another
+                # `numart`, great-grandparent is the last `paragraph`
+                # of the "grandparent numart", which is the one we
+                # want to append to.
+                #
+                # Hey, it's simpler than the British monarchy.
+                #
+                # We'll need to iterate through ancestors in case there are
+                # multiple levels of `numart`s, checking each time if the
+                # current `numart_nr` matches the expected next numart number
+                # from each ancestor. Once `numart_nr` matches what we
+                # expected, we know we've found the right ancestor.
+                found_parent = None
+                maybe_sibling = prev_numart.getparent()
+                while found_parent is None:
+                    # We know that the parent is never the first
+                    # `maybe_parent`'s parent because that would mean that the
+                    # current `numart` is a sibling of the `prev_numart` which
+                    # makes no sense in this place in the code, so we can
+                    # safely assume that the first possible `found_parent` is
+                    # the `prev_numart`'s parent.
+                    maybe_sibling = maybe_sibling.getparent()
+                    if maybe_sibling.tag == "paragraph":
+                        maybe_sibling = maybe_sibling.getchildren()[-1]
+
+                    expected = numart_next_nrs(maybe_sibling)
+
+                    if numart_nr in expected:
+                        # Yes! We found the sibling, so we know its parent.
+                        found_parent = maybe_sibling.getparent()
+                    else:
+                        # Doesn't make sense. Let's try the parent.
+                        maybe_sibling = maybe_sibling.getparent()
+
+                parent = found_parent
 
     # A parent may already be set above if `numart` currently being
     # handled is not the first one in its parent article/subarticle.
@@ -1479,8 +2414,18 @@ def parse_numerical_article(parser):
             and parser.art_chapter.getparent().tag == "subart"
         ):
             parent = parser.art_chapter
+        elif parser.numart_chapter is not None:
+            parent = parser.numart_chapter
+        elif parser.appendix_chapter is not None:
+            parent = parser.appendix_chapter
+        elif parser.appendix_part is not None:
+            parent = parser.appendix_part
+        elif parser.appendix is not None:
+            parent = parser.appendix
         elif parser.subart is not None:
-            parent = parser.subart
+            # A numart should belong to the same paragraph as a
+            # potential sentence explaining what's being listed.
+            parent = parser.subart.findall("paragraph")[-1]
         elif parser.art is not None:
             # FIXME: Investigate if this ever actually happens and
             # explain when it does, or remove this clause.
@@ -1495,7 +2440,12 @@ def parse_numerical_article(parser):
             parent = parser.law
 
     # Figure out the numart's type.
-    if numart_nr[0].isdigit():
+    if re.match(r"^\d+\.\d+$", numart_nr) or re.match(r"^\d+\.\d+\.\d+$", numart_nr):
+        # NOTE: This has to be checked before the "numeric" detection below,
+        # because the first character of these tree-scheme `numart_nr`s is also
+        # a digit.
+        numart_type = "tree"
+    elif numart_nr[0].isdigit():
         numart_type = "numeric"
     elif numart_nr in ["—", "–"]:
         numart_type = "en-dash"
@@ -1513,7 +2463,7 @@ def parse_numerical_article(parser):
 
         if numart_nr.lower() == "i":
             # See comment for `special_roman` above.
-            if prev_numart is None or prev_numart.attrib["nr"] != "h" or special_roman:
+            if prev_numart is None or prev_numart.attrib["nr"].lower() != "h" or special_roman:
                 numart_type = "roman"
             else:
                 numart_type = "alphabet"
@@ -1560,7 +2510,22 @@ def parse_numerical_article(parser):
     parent.append(parser.numart)
 
     # NOTE: Gets added after we add the sentences with `add_sentences`.
-    numart_nr_title = parser.collect_until("</span>")
+    if denoted_with_span:
+        numart_nr_title = parser.collect_until("</span>")
+    else:
+        numart_nr_title = parser.peeks()
+
+    # Sometimes the content of a `numart` is in its own separate line instead
+    # of immediately following the `name` inline. We must account for it by
+    # consuming the `<br/>` tag to continue parsing correctly.
+    # Occurs in:
+    # - in 1-6. tölul. 7. gr. laga nr. 112/2021.
+    #
+    # TODO: This styling choice should be communicated in the XML somehow. It
+    # has no bearing on the meaning or referencing, but it should in principle
+    # be possible to render the file identically to the official version.
+    if parser.line == "<br/>":
+        parser.consume("<br/>")
 
     # Check for a closing bracket.
     # Example:
@@ -1574,13 +2539,16 @@ def parse_numerical_article(parser):
     ):
         numart_nr_title += parser.collect_until("</sup>") + " </sup>"
 
-    if parser.peeks() == "<i>":
+    numart_name = ""
+    if parser.peeks() == "<i>" or (parser.peeks() == "[" and parser.peeks(2) == "<i>"):
         # Looks like this numerical article has a name.
-        parser.scroll_until("<i>")
+        # Note that an opening marker may come before the name, in which case
+        # we'll want to include it in the name, so we collect stuff before the `<i>`.
+        numart_name = parser.collect_until("<i>")
 
         # Note that this gets inserted **after** we add the sentences
         # with `add_sentences` below.
-        numart_name = parser.collect_until("</i>")
+        numart_name += parser.collect_until("</i>")
 
         # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
         # The name of a numerical article is contained in two "<i>"
@@ -1588,14 +2556,18 @@ def parse_numerical_article(parser):
         if parser.lines.peeks() == "og" and parser.lines.peeks(2) == "<i>":
             addendum = parser.collect_until("</i>").replace("<i> ", "")
             numart_name += " " + addendum
-    else:
-        numart_name = None
 
     # Read in the remainder of the content.
     content = parser.collect_until("<br/>")
 
     # Split the content into sentences.
     sens = separate_sentences(strip_links(content))
+
+    # Add the title info to the `numart`.
+    parser.numart.insert(0, E("nr-title", numart_nr_title))
+    if len(numart_name) > 0:
+        # Inserted immediately after the `nr-title`, so 1.
+        parser.numart.insert(1, E("name", numart_name))
 
     # Check if this numart is actually just a content-less container
     # for a sub-numart, by checking if the beginning of the content is
@@ -1652,19 +2624,18 @@ def parse_numerical_article(parser):
         # Add the sentences to the numart.
         add_sentences(parser.numart, sens)
 
-        # Add the title info to the `numart`.
-        parser.numart.insert(0, E("nr-title", numart_nr_title))
-        if numart_name is not None:
-            # Inserted immediately after the `nr-title`, so 1.
-            parser.numart.insert(1, E("name", numart_name))
-
+    while True:
+        parser.maybe_consume("<br/>")
         # Handle extra paragraphs that we don't know where to place.
-        while begins_with_regular_content(parser.lines.peek()):
+        if begins_with_regular_content(parser.line):
+            # FIXME: Move this stuff to `parse_paragraph` and start using that
+            # here instead of this.
+
             # When regular (text) content immediately follows a
             # numart, and not a new location like an article,
             # subarticle or another numart, we must determine its
             # nature. We'll start by finding the content.
-            extra_content = parser.collect_until("<br/>")
+            extra_content = parser.collect_until("<br/>", collect_first_line=True)
 
             # Process the extra content into extra sentences.
             extra_sens = separate_sentences(strip_links(extra_content))
@@ -1717,949 +2688,160 @@ def parse_numerical_article(parser):
             # numart, so that the next numart gets the right parent.
             if extra_sens_target.tag == "numart":
                 parser.numart = extra_sens_target
+            continue
+        if parse_stray_deletion(parser):
+            continue
+        break
 
     parser.trail_push(parser.numart)
-    parser.leave()
+    parser.leave("numart")
+    return True
 
 
 def parse_table(parser):
-    if not parser.matcher.check(parser.line, "<table"):
-        return
+    if not (
+        re.match("<table", parser.line)
+        or (
+            parser.line == "<b>"
+            and parser.peeks(2) == "</b>"
+            and parser.peeks(3) == "<br/>"
+            and re.match("<table", parser.peeks(4)) is not None
+        )
+    ):
+        return False
 
     parser.enter("table")
-    # Parse a stray table, that we haven't run across inside a
-    # subarticle. We'll append it to previously parsed thing. The
-    # table width is only for consistency with the typical input.
 
-    content = (
-        '<table width="100%">'
-        + parser.collect_until("</table>")
-        + "</table>"
-    )
-    sen = separate_sentences(content).pop()
+    # Support for a table name. Only known to occur in 100. gr. laga nr.
+    # 55/1991 (153).
+    table_name = ""
+    if parser.line == "<b>":
+        table_name = parser.collect_until("</b>")
+        parser.consume("</b>")
+        parser.consume("<br/>")
 
+    parser.table = E("table")
+    parser.tbody = E("tbody")
+    parser.table.append(parser.tbody)
+
+    parser.consume('<table width="100%">')
+    parser.consume("<tbody>")
+
+    parent =  None
     if parser.subart is not None:
-        add_sentences(parser.subart, [sen])
+        parent = parser.subart
     elif parser.art is not None:
-        add_sentences(parser.art, [sen])
+        parent = parser.art
+    elif parser.appendix is not None:
+        parent = parser.appendix
 
-    parser.leave()
+    if table_name:
+        parent.append(E("table-name", table_name))
+    parent.append(parser.table)
+
+    while True:
+        if parse_tr(parser):
+            continue
+
+        break
+
+    parser.consume("</tbody>")
+    parser.consume("</table>")
+
+    parser.table = None
+    parser.tbody = None
+
+    parser.leave("table")
+    return True
 
 
-def parse_footnotes(parser):
-    if parser.line == "<small>":
-        # Footnote section. Contains footnotes.
-        parser.enter("footnotes")
+def parse_tr(parser):
+    if not parser.matcher.check(parser.line, "<tr>"):
+        return False
 
-        parser.footnotes = E("footnotes")
+    parser.enter("tr")
 
-        # Try an append the footnotes to whatever's appropriate given the
-        # content we've run into.
-        if parser.trail_last().tag == "num-and-date":
-            parser.law.append(parser.footnotes)
-        elif parser.trail_last().tag == "chapter":
-            parser.chapter.append(parser.footnotes)
-        elif parser.trail_last().tag == "ambiguous-section":
-            parser.ambiguous_section.append(parser.footnotes)
-        elif parser.art is not None:
-            # Most commonly, footnotes will be appended to articles.
-            parser.art.append(parser.footnotes)
-        elif parser.subart is not None:
-            # In law that don't actually have articles, but only
-            # subarticles (which are rare, but do exist), we'll need to
-            # append the footnotes to the subarticle instead of the
-            # article.
-            parser.subart.append(parser.footnotes)
+    parser.tr = E("tr")
+    parser.next()
 
-        parser.trail_push(parser.footnotes)
-        parser.leave()
+    parser.tbody.append(parser.tr)
 
-    elif parser.line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
-        "footnotes",
-        "footnote",
-    ]:
-        parser.enter("footnote")
-        # We've found a footnote inside the footnote section!
+    while True:
+        if parse_td(parser):
+            continue
 
-        # Scroll past the closing tag, since we're not going to use its
-        # content (see comment below).
-        parser.scroll_until("</sup>")
+        break
 
-        # Determine the footnote number.
-        # In a perfect world, we should be able to get the footnote number
-        # with a line like this:
-        #
-        #     footnote_nr = parser.collect_until(lines, '</sup>').strip(')')
-        #
-        # But it may in fact be wrong, like in 149. gr. laga nr. 19/1940,
-        # where two consecutive footnotes are numbered as 1 below the
-        # article. The numbers are correct in the reference in the article
-        # itself, though. For this reason, we'll deduce the correct number
-        # from the number of <footnote> tags present in the current
-        # <footnotes> tag. That count plus one should be the correct
-        # number.
-        #
-        # The footnote number, and in fact other numbers, are always used
-        # as strings because they really function more like names rather
-        # than numbers. So we make it a string right away.
-        footnote_nr = str(len(parser.footnotes.findall("footnote")) + 1)
+    parser.consume("</tr>")
 
-        # Create the footnote XML node.
-        footnote = E("footnote")
+    parser.tr = None
 
-        peek = parser.peeks()
-        if parser.matcher.check(peek, r'<a href="(\/altext\/.*)">'):
-            parser.enter("footnote-link")
-            # This is a footnote regarding a legal change.
-            href = "https://www.althingi.is%s" % parser.matcher.result()[0]
+    parser.leave("tr")
+    return True
 
-            # Retrieve the the content of the link to the external law
-            # that we found.
-            parser.scroll_until(r'<a href="(\/altext\/.*)">')
-            footnote_sen = parser.collect_until("</a>")
 
-            # Update the footnote with the content discovered so far.
-            footnote.attrib["href"] = href
-            footnote.append(E("footnote-sen", footnote_sen))
+def parse_td(parser):
+    if not parser.matcher.check(parser.line, r"<td .*>"):
+        return False
 
-            # If the content found so far adheres to the recognized
-            # pattern of external law, we'll put that information in
-            # attributes as well. (It should.)
-            if parser.matcher.check(footnote_sen, r"L\. (\d+)\/(\d{4}), (\d+)\. gr\."):
-                parser.enter("footnote-law")
-                fn_law_nr, fn_law_year, fn_art_nr = parser.matcher.result()
-                footnote.attrib["law-nr"] = fn_law_nr
-                footnote.attrib["law-year"] = fn_law_year
-                footnote.attrib["law-art"] = fn_art_nr
-                parser.note("Footnote law: %s/%s, %s. gr." % (fn_law_nr, fn_law_year, fn_art_nr))
-                parser.leave()
-            
-            parser.leave()
+    # TODO: Support for `colspan="2"` found in 29/1993.
 
-        # Some footnotes don't contain a link to an external law like
-        # above but rather some arbitrary information. In these cases
-        # we'll need to parse the content differently. But also, sometimes
-        # a link to an external law is followed by extra content, which
-        # will also be parsed here and included in the footnote.
-        #
-        # We will gather everything we run across into a string called
-        # `gathered`, until we run into a string that indicates that
-        # either this footnote section has ended, or we've run across a
-        # new footnote. Either one of the expected tags should absolutely
-        # appear, but even if they don't, this will still error out
-        # instead of looping forever, despite the "while True" condition,
-        # because "next(lines)" will eventually run out of lines.
-        gathered = ""
-        while True:
-            if parser.peeks() in ["</small>", '<sup style="font-size:60%">']:
-                parser.note("Ran into end of footnote without a link.")
-                parser.leave()
-                break
-            else:
-                # The text we want is separated into lines with arbitrary
-                # indenting and HTML comments which will later be removed.
-                # As a result, meaningless whitespace is all over the
-                # place. To fix this, we'll remove whitespace from either
-                # side of the string, but add a space at the end, which
-                # will occasionally result in a double whitespace or a
-                # whitespace between tags and content. Those will be fixed
-                # later, resulting in a neat string without any unwanted
-                # whitespace.
-                gathered += next(parser.lines).strip() + " "
+    parser.enter("td")
 
-            # Get rid of HTML comments.
-            gathered = re.sub(r'<!--.*?"-->', "", gathered)
+    parser.td = E("td")
+    parser.tr.append(parser.td)
 
-            # Get rid of remaining unwanted whitespace (see above).
-            gathered = (
-                gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
+    # Only add content if the `td` is not empty, otherwise it starts adding
+    # everything from the next `td`.
+    if parser.peeks() == "</td>":
+        parser.next()
+        parser.consume("</td>")
+    else:
+        table_nr_title = table_title = ""
+
+        if parser.peeks() == "<b>":
+            parser.next()
+            parser.consume("<b>")
+            table_nr_title, table_title = get_nr_and_name(
+                parser.collect_until("</b>", collect_first_line=True)
             )
-
-        # If extra content was found, we'll put that in a separate
-        # sentence inside the footnote. If there already was a
-        # <footnote-sen> because we found a link to an external law, then
-        # there will be two sentences in the footnote. If this is the only
-        # content found and there is no link to an external law, then
-        # there will only be this one.
-        if len(gathered):
-            footnote.append(E("footnote-sen", gathered.strip()))
-
-        # Explicitly state the footnote number as an attribute in the
-        # footnote, so that a parser doesn't have to infer it from the
-        # order of footnotes.
-        footnote.attrib["nr"] = footnote_nr
-
-        # Append the footnote to the `footnotes` node which is expected to
-        # exist from an earlier iteration.
-        parser.footnotes.append(footnote)
-
-        if parser.peeks() == "</small>":
-            #parser.enter("footnotes-end")
-            parser.note("Found end of footnote?")
-
-            # At this point, the basic footnote XML has been produced,
-            # enough to show the footnotes themselves below each article.
-            # We will now see if we can parse the markers in the content
-            # that the footnotes apply to, and add marker locations to the
-            # footnote XML. We will then remove the markers from the text.
-            # This way, the text and the marker location information are
-            # separated.
-
-            # The parent is the uppermost node above the footnotes but
-            # below the document root node.
-            parent = parser.footnotes.getparent()
-            while parent.getparent() is not None and parent.getparent() != parser.law:
-                parent = parent.getparent()
-
-            # Closing markers have a tendency to appear after the sentence
-            # that they refer to, like so:
-            #
-            # [Here is some sentence.] 2)
-            #
-            # This will result in two sentences:
-            # 1. [Here is some sentence.
-            # 2. ] 2)
-            #
-            # We'll want to combine these two, so we iterate through the
-            # sentences that we have produced and find those that start
-            # with closing markers and move the closing markers to the
-            # previous sentence. This will make parsing end markers much
-            # simpler. If the sentence where we found the closing marker
-            # is empty, we'll delete it.
-            #
-            # In `close_mark_re` we allow for a preceding deletion mark
-            # and move that as well, since it must belong to the previous
-            # sentence if it precedes the closing marker that clear does.
-            # (Happens in 2. mgr. 165. gr. laga nr. 19/1940.)
-            close_mark_re = (
-                r'((… <sup style="font-size:60%"> \d+\) </sup>)? ?\]? ?'
-                r'<sup style="font-size:60%"> \d+\) </sup>)'
+            parser.td.attrib["header-style"] = "b"
+        elif parser.peeks() == "<i>":
+            parser.next()
+            parser.consume("<i>")
+            table_nr_title, table_title = get_nr_and_name(
+                parser.collect_until("</i>", collect_first_line=True)
             )
-            nodes_to_kill = []
-
-            parser.enter("iter-descendants")
-            for desc in parent.iterdescendants():
-                peek = desc.getnext()
-
-                # When a closing marker (see the comment for the
-                # `for`-loop above) appears at the beginning of the node
-                # following the one with the opening marker, it will
-                # usually be the next `sen` following a `sen`. It can also
-                # happen that the closing marker appears in the
-                # grand-child, so we also need to check for it there.
-                #
-                # Consider:
-                #     <sen>[Some text</sen>
-                #     <sen>] 2) Some other text</sen>
-                #
-                # But this code allows for:
-                #
-                #     <nr-title>[a.</nr-title>
-                #     <paragraph>
-                #         <sen>] 2) Some other text</sen>
-                #
-                # ...by also checking the immediate grand-child of the
-                # current node.
-                if peek is not None and peek.tag == "paragraph":
-                    peek_children = peek.getchildren()
-                    if len(peek_children) > 0:
-                        peek = peek_children[0]
-
-                # We have nothing to do here if the following node doesn't
-                # exist or contain anything.
-                if peek is None or peek.text is None:
-                    continue
-
-                # Keep moving the closing markers from the next node
-                # ("peek") to the current one ("desc"), until there are no
-                # closing markers in the next node. (Probably there is
-                # only one, but you never know.)
-                while parser.matcher.check(peek.text, close_mark_re):
-                    # Get the actual closing marker from the next node.
-                    stuff_to_move = parser.matcher.result()[0]
-
-                    # Add the closing marker to the current node.
-                    desc.text += stuff_to_move
-
-                    # Remove the closing marker from the next node.
-                    peek.text = re.sub(close_mark_re, "", peek.text, 1)
-
-                # If there's no content left in the next node, aside from
-                # the closing markers that we just moved, then we'll put
-                # the next node on a list of nodes that we'll delete
-                # later. We can't delete it here because it will break the
-                # iteration (parent.iterdescendants).
-                #
-                # We still wish to retain empty nodes that contain
-                # attributes important for recreating the content visually.
-                if len(peek.text) == 0 and "expiry-symbol-offset" not in peek.attrib:
-                    nodes_to_kill.append(peek)
-
-            parser.leave()
-
-            # Delete nodes marked for deletion.
-            for node_to_kill in nodes_to_kill:
-                node_to_kill.getparent().remove(node_to_kill)
-
-            opening_locations = []
-            marker_locations = []
-            for desc in parent.iterdescendants():
-                # Leave the footnotes out of this, since we're only
-                # looking for markers in text.
-                if "footnotes" in [a.tag for a in desc.iterancestors()]:
-                    continue
-
-                # Not interested if the node contains no text.
-                if not desc.text:
-                    continue
-
-                ###########################################################
-                # Detection of opening and closing markers, "[" and "]",
-                # respectively, as well as accompanied superscripted text
-                # denoting their number.
-                ###########################################################
-
-                parser.enter("detect-opening-and-closing-marker")
-                # Keeps track of where we are currently looking for
-                # markers within the entity being checked.
-                cursor = 0
-
-                opening_found = desc.text.find("[", cursor)
-                closing_found = desc.text.find("]", cursor)
-                while opening_found > -1 or closing_found > -1:
-                    if opening_found > -1 and (
-                        opening_found < closing_found or closing_found == -1
-                    ):
-                        # We have found an opening marker: [
-
-                        # Indicate that our next search for an opening tag
-                        # will continue from here.
-                        cursor = opening_found + 1
-
-                        # Get the ancestors of the node (see function's
-                        # comments for details.)
-                        ancestors = generate_ancestors(desc, parent)
-
-                        # We now try to figure out whether we want to mark
-                        # an entire entity (typically a sentence), or if
-                        # we want to mark a portion of it. If we want to
-                        # mark a portion, "use_words" shall be True and
-                        # the footnote XML will contain something like
-                        # this:
-                        #
-                        #    <sen words="some marked text">2</sen>
-                        #
-                        # Instead of:
-                        #
-                        #    <sen>2</sen>
-                        #
-
-                        # At this point, the variable `opening_found`
-                        # contains the location of the first opening
-                        # marker (the symbol "]") in the current node's
-                        # text.
-
-                        # Find the opening marker after the current one,
-                        # if it exists.
-                        next_opening = desc.text.find("[", opening_found + 1)
-
-                        # Check whether the next opening marker, if it
-                        # exists, is between the current opening marker
-                        # and the next closing marker.
-                        no_opening_between = (
-                            next_opening == -1 or next_opening > closing_found
-                        )
-
-                        # Use "words" if 1) the opening marker is at the
-                        # start of the sentence and 2) there is also a
-                        # closing marker found but 3) there's no opening
-                        # marker between the current marker and its
-                        # corresponding closing marker.
-                        partial_at_start = (
-                            opening_found == 0
-                            and closing_found > -1
-                            and no_opening_between
-                        )
-
-                        # Check if the opening and closing markers
-                        # encompass the entire entity. In these cases, it
-                        # makes no sense to use "words".
-                        all_encompassing = all(
-                            [
-                                opening_found == 0,
-                                no_opening_between,
-                                desc.text[0] == "[",
-                                parser.matcher.check(
-                                    desc.text[closing_found:],
-                                    r'\] <sup style="font-size:60%"> \d+\) </sup>$',
-                                ),
-                            ]
-                        )
-
-                        # Boil this logic down into the question: to use
-                        # words or not to use words?
-                        use_words = (
-                            opening_found > 0 or partial_at_start
-                        ) and not all_encompassing
-
-                        if use_words:
-                            # We'll start with everything from the opening
-                            # marker onward. Because of possible markers
-                            # in the text that should end up in "words",
-                            # we'll need to do a bit of processing to
-                            # figure out where exactly the appropriate
-                            # closing marker is located. Quite possibly,
-                            # it's not simply the first one.
-                            words = desc.text[opening_found + 1 :]
-
-                            # Eliminate **pairs** of opening and closing
-                            # markers beyond the opening marker we're
-                            # currently dealing with. When this has been
-                            # accomplished, the next closing marker should
-                            # be the one that goes with the opening marker
-                            # that we're currently dealing with. Example:
-                            #
-                            #     a word [and another] that says] boo
-                            #
-                            # Should become:
-                            #
-                            #     a word and another that says] boo
-                            #
-                            # Note that the opening/closing marker pair
-                            # around "and another" have disappeared
-                            # because they came in a pair. With such pairs
-                            # removed, we can conclude our "words"
-                            # variable from the remaining non-paired
-                            # closing marker, and the result should be:
-                            #
-                            #     a word and another that says
-                            #
-                            words = re.sub(
-                                r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                                r"\1",
-                                words,
-                            )
-
-                            # Find the first non-paired closing marker.
-                            closing_index = words.find("]")
-
-                            # Cut the "words" variable appropriately. If
-                            # closing_index wasn't found, it means that
-                            # the "words" actually span beyond this
-                            # sentence. Instead of cutting the words
-                            # string (by -1 because the closing symbol
-                            # wasn't found, which would make no sense), we
-                            # leave it intact. The rest of the "words"
-                            # string will be placed in an <end> element by
-                            # the closing-marker mechanism.
-                            if closing_index > -1:
-                                words = words[:closing_index]
-
-                            # Explicitly remove marker stuff, even though
-                            # most likely it will already be gone because
-                            # the marker parsing implicitly avoids
-                            # including them. Such removal may leave stray
-                            # space that we also clear.
-                            words = strip_markers(words).strip()
-
-                            # Add the "words" attribute to the last element.
-                            ancestors[-1].attrib["words"] = words
-
-                        # We'll "pop" this list when we find the closing
-                        # marker, as per below.
-                        opening_locations.append(ancestors)
-
-                    elif closing_found > -1 and (
-                        closing_found < opening_found or opening_found == -1
-                    ):
-                        # We have found a closing marker: ]
-
-                        cursor = closing_found + 1
-
-                        # Find the footnote number next to the closing
-                        # marker that we've found.
-                        num = next_footnote_sup(desc, cursor)
-
-                        # We have figured out the starting location in the
-                        # former clause of the if-sentence.
-                        try:
-                            started_at = opening_locations.pop()
-                        except IndexError:
-                            # Error: We've run into an unexpected closing
-                            # bracket. This happens when Parliament
-                            # updates a law, and the changes are marked in
-                            # the HTML files, but the corresponding
-                            # opening bracket is missing. Typically, a law
-                            # is being changed that has already been
-                            # changed, and there should be two opening
-                            # bracket ("[[") to mark the beginning of a
-                            # change to a change, but there is only one
-                            # ("[") due to human error.
-                            #
-                            # Please see the chapter "Patching errors in
-                            # data" in the `README.md`.
-                            #
-                            # This exception spouts some details.
-                            raise UnexpectedClosingBracketException(desc)
-
-                        # Get the ancestors of the node (see function's
-                        # comments for details.)
-                        ancestors = generate_ancestors(desc, parent)
-
-                        # If the start location had a "words" attribute,
-                        # indicating that a specific set of words should
-                        # be marked, then we'll copy that attribute here
-                        # to the end location, so that the <start> and
-                        # <end> tags will get truncated into a unified
-                        # <location> tag...
-                        if "words" in started_at[-1].attrib:
-                            # ...except, if it turns out that we're
-                            # actually dealing with a different sentence
-                            # than was specified in the start location,
-                            # but the "words" attribute is being used, it
-                            # means that a string is to be marked that
-                            # spans more than one sentence.
-                            #
-                            # In such a case, the start location will
-                            # determine the opening marker via its "words"
-                            # attribute, but the end location (being
-                            # processed here) will determine the closing
-                            # marker with its distinct set of "words",
-                            # each attribute containing the set of words
-                            # contained in their respective sentences.
-                            sen_nr = str(order_among_siblings(desc))
-                            if desc.tag == "sen" and sen_nr != started_at[-1].text:
-                                # Remove pairs of opening/closing markers
-                                # from the "words", so that we find the
-                                # correct closing marker. (See comment on
-                                # same process in processing of opening
-                                # markers above.)
-                                words = re.sub(
-                                    r'\[(.*?)\] <sup style="font-size:60%"> \d+\) </sup>',
-                                    r"\1",
-                                    words,
-                                )
-                                words = desc.text[: desc.text.find("]")]
-                            else:
-                                words = started_at[-1].attrib["words"]
-
-                            ancestors[-1].attrib["words"] = words
-
-                        # Stuff our findings into a list of marker
-                        # locations that can be appended to the footnote
-                        # XML.
-                        marker_locations.append(
-                            {
-                                "num": int(num) if num is not None else None,
-                                "type": "range",
-                                # 'started_at' is determined from previous
-                                # processing of the corresponding opening
-                                # marker.
-                                "started_at": started_at,
-                                # 'ended_at' is determined from the processing
-                                # of the closing marker, which is what we just
-                                # performed.
-                                "ended_at": ancestors,
-                            }
-                        )
-
-                    # Check again for the next opening and closing
-                    # markers, except from our cursor, this time.
-                    closing_found = desc.text.find("]", cursor)
-                    opening_found = desc.text.find("[", cursor)
-
-                parser.leave()
-
-                ##########################################################
-                # Detection of deletion markers, indicated by the "…"
-                # character, followed by superscripted text indicating its
-                # reference number.
-                ##########################################################
-
-                # Keeps track of where we are currently looking for
-                # markers within the entity being checked, like above.
-                cursor = 0
-
-
-                deletion_found = desc.text.find("…", cursor)
-                if deletion_found > -1:
-                    parser.enter("detect-deletion-marker")
-
-                while deletion_found > -1:
-                    # Keep track of how far we've already searched.
-                    cursor = deletion_found + 1
-
-                    # If the deletion marker is immediately followed by a
-                    # closing link tag, it means that this is in fact not
-                    # a deletion marker, but a comment. They are not
-                    # processed here, so we'll update the deletion_found
-                    # variable (in the same way as is done at the end of
-                    # this loop) and continue.
-                    if desc.text[cursor : cursor + 5] == " </a>":
-                        deletion_found = desc.text.find("…", cursor)
-                        continue
-
-                    # Find the footnote number next to the deletion marker
-                    # that we've found.
-                    num = next_footnote_sup(desc, cursor)
-
-                    # If no footnote number is found, then we're not
-                    # actually dealing with a footnote, but rather the "…"
-                    # symbol being used for something else. For what,
-                    # exactly, is undetermined as of yet.
-                    if num is None or num == "":
-                        deletion_found = desc.text.find("…", cursor)
-                        continue
-
-                    # See function's comments for details.
-                    ancestors = generate_ancestors(desc, parent)
-
-                    # len('</sup>') == 6
-                    sup_end = desc.text.find("</sup>", deletion_found + 1) + 6
-
-                    # We'll take the text that comes before and after the
-                    # deletion mark, and replace their markers with
-                    # regular expressions that match them, both with the
-                    # markers and without them. This way, any mechanism
-                    # intended to put the deletion markers back in works
-                    # on the text regardless of whether the other deletion
-                    # or replacement markers are already there or not.
-                    before_mark = "^" + regexify_markers(desc.text[:deletion_found])
-                    after_mark = regexify_markers(desc.text[sup_end:]) + "$"
-
-                    # Deletion markers are styled like this when they
-                    # indicate deleted content immediately before a comma:
-                    #
-                    # "bla bla bla …, 2) yada yada"
-                    #
-                    # The native text without deletion markers would look
-                    # like this:
-                    #
-                    # "bla bla bla, yada yada"
-                    #
-                    # We therefore need to check for a comma immediately
-                    # following the deletion symbol itself (…). If it's
-                    # there, then well communicate the need to add it in
-                    # the middle of the deletion marker via the attribute
-                    # "middle-punctuation". For possible future
-                    # compatibility with other symbols, we'll put in a
-                    # comma as the value and expect the marker renderer to
-                    # use that directly instead of assuming a comma.
-                    if desc.text[deletion_found + 1 : deletion_found + 2] == ",":
-                        ancestors[-1].attrib["middle-punctuation"] = ","
-
-                    # Assign the regular expressions for the texts before
-                    # and after the deletion mark, to the last node in the
-                    # location XML.
-                    if before_mark:
-                        ancestors[-1].attrib["before-mark"] = before_mark
-                    if after_mark:
-                        ancestors[-1].attrib["after-mark"] = after_mark
-
-                    marker_locations.append(
-                        {
-                            "num": int(num),
-                            "type": "deletion",
-                            "started_at": ancestors,
-                        }
-                    )
-
-                    deletion_found = desc.text.find("…", cursor)
-
-                parser.leave_if_last("detect-deletion-marker")
-
-                ##########################################################
-                # Detect single superscripted numbers, which indicate
-                # points that belong to a reference without indicating any
-                # kind of change to the text itself. Such markers will be
-                # called pointers from now on.
-                ##########################################################
-
-                # Keeps track of where we are currently looking for
-                # pointers within the entity being checked, like above.
-                cursor = 0
-
-                pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
-                if pointer_found > -1:
-                    parser.enter("detect-pointer")
-
-                while pointer_found > -1:
-                    # Keep track of how far we've already searched.
-                    cursor = pointer_found + 1
-
-                    # See function's comments for details.
-                    ancestors = generate_ancestors(desc, parent)
-
-                    # If this is in fact a closing or deletion marker,
-                    # then either the symbol "[" or "…" will appear
-                    # somewhere among the 3 characters before the
-                    # superscript. Their exact location may depend on the
-                    # applied styling or punctuation, since spacing style
-                    # differs slightly according to the location of
-                    # closing and deletion markers, and punctuation can
-                    # appear between the symbol and superscript (i.e.
-                    # "bla]. 2)".
-                    chars_before_start = pointer_found - 3 if pointer_found >= 3 else 0
-                    chars_before = desc.text[chars_before_start:pointer_found].strip()
-                    if "…" in chars_before or "]" in chars_before:
-                        # This is a closing or deletion marker, which
-                        # we're not interested in at this point.
-                        pointer_found = desc.text.find(
-                            '<sup style="font-size:60%">', cursor
-                        )
-                        continue
-
-                    # Catch all the superscript content, so that we may
-                    # its length, and while we're at it, grab the footnote
-                    # number as well.
-                    parser.matcher.check(
-                        desc.text[pointer_found:],
-                        r'(<sup style="font-size:60%"> (\d+)\) </sup>)',
-                    )
-                    sup, num = parser.matcher.result()
-
-                    # Determine where the symbol ends.
-                    sup_end = pointer_found + len(sup)
-
-                    # We'll take the text that comes before and after the
-                    # pointer, and replace their markers with regular
-                    # expressions that match them, both with the markers
-                    # and without them. This way, any mechanism intended
-                    # to put the deletion markers back in works on the
-                    # text regardless of whether the other deletion or
-                    # replacement markers are already there or not.
-                    before_mark = "^" + regexify_markers(desc.text[:pointer_found])
-                    after_mark = regexify_markers(desc.text[sup_end:]) + "$"
-
-                    # Assign the regular expressions for the texts before
-                    # and after the pointer, to the last node in the
-                    # location XML.
-                    if before_mark:
-                        ancestors[-1].attrib["before-mark"] = before_mark
-                    if after_mark:
-                        ancestors[-1].attrib["after-mark"] = after_mark
-
-                    marker_locations.append(
-                        {
-                            "num": int(num),
-                            "type": "pointer",
-                            "started_at": ancestors,
-                        }
-                    )
-
-                    pointer_found = desc.text.find(
-                        '<sup style="font-size:60%">', cursor
-                    )
-
-                parser.leave_if_last("detect-pointer")
-
-                ##########################################################
-                # At this point, we're done processing the following:
-                # 1. Opening/closing markers ("[" and "]")
-                # 2. Deletion markers ("…")
-                # 3. Pointers (indicated by superscripted number)
-                ##########################################################
-
-                # Now that we're done processing the markers and can add
-                # them to the footnotes in XML format, we'll delete them
-                # from the text itself. This may leave spaces on the edges
-                # which we'll remove as well.
-                desc.text = strip_markers(desc.text).strip()
-
-            # If no marker locations have been defined, we have nothing
-            # more to do here.
-            if len(marker_locations) == 0:
-                return
-
-            # Finally, we'll start to build and add the location XML to
-            # the footnotes, out of all this information we've crunched
-            # from the text!
-
-            # We'll want to be able to "peek" backwards easily, so we'll
-            # use the super_iterator. We could also use enumerate() but we
-            # figure that using the peek function is more readable than
-            # playing around with iterators.
-            parser.enter("marker-locations")
-            marker_locations = super_iter(marker_locations)
-
-            for ml in marker_locations:
-                # If the num is None, then the range is not attributable
-                # to a footnote. This occurs in 4. mgr. 10. gr. laga nr.
-                # 40/2007 to indicate that a lowercase letter has been
-                # made uppercase as an implicit result of a legal change
-                # that removed the first portion of the sentence. As far
-                # as we can tell, this is not a rule but rather just the
-                # explanation in that case. Unspecified ranges may
-                # presumably exist for other reasons.
-                #
-                # When this happens, we will respond by adding an
-                # <unspecified-ranges> tag immediately following the
-                # <footnotes> tag that already exists. We will then then
-                # simply stuff the <location> element in there instead of
-                # the footnote that we should find in cases when `num` is
-                # an integer (i.e. referring to a numbered footnote).
-                if ml["num"] is None:
-                    # Find the index where we'll want to add the new
-                    # <unspecified-ranges> element.
-                    new_index = parser.footnotes.getparent().index(parser.footnotes) + 1
-
-                    # Create the new <unspecified-ranges> element.
-                    location_target = E("unspecified-ranges")
-
-                    # Add the new element immediately after the
-                    # <footnotes> element.
-                    parser.footnotes.getparent().insert(new_index, location_target)
-                else:
-                    # Get the marker's appropriate footnote XML.
-                    location_target = parser.footnotes.getchildren()[ml["num"] - 1]
-
-                # Create the location XML node itself.
-                location = E("location", {"type": ml["type"]})
-
-                if ml["type"] in ["pointer", "deletion"]:
-                    for node in ml["started_at"]:
-                        location.append(node)
-
-                    location_target.append(location)
-
-                elif ml["type"] == "range":
-                    # If the starting and ending locations are identical,
-                    # we will only want a <location> element to denote the
-                    # marker's locations.
-                    started_at = ml["started_at"]
-                    ended_at = ml["ended_at"]
-                    if xml_lists_identical(started_at, ended_at):
-                        for node in started_at:
-                            location.append(node)
-                    else:
-                        # If, however, the the starting and ending
-                        # locations differ and we are not denoting a
-                        # region of text with "words", we'll need
-                        # sub-location nodes, <start> and <end>, within
-                        # the <location> element, so that the opening and
-                        # closing markers can be placed in completely
-                        # different places.
-                        start = E("start")
-                        end = E("end")
-                        for node in started_at:
-                            start.append(node)
-                        for node in ended_at:
-                            end.append(node)
-
-                        location.append(start)
-                        location.append(end)
-
-                    # If the location XML that we're adding is identical
-                    # to a previous location node in the same footnote
-                    # node, then instead of adding the same location node
-                    # again, we'll configure the previous one as
-                    # repetitive. We assume that if the same words are
-                    # marked twice, that all instances of the same words
-                    # should be marked in the given element.
-                    #
-                    # This is done to make it easier to use the XML when
-                    # the same set of words should be marked repeatedly in
-                    # the same sentence.
-                    twin_found = False
-                    for maybe_twin in location_target.findall("location"):
-                        if xml_compare(maybe_twin, location):
-                            maybe_twin.getchildren()[-1].attrib["repeat"] = "true"
-                            twin_found = True
-                            break
-
-                    if not twin_found:
-                        # Finally, we add the location node to the footnote
-                        # node (or unspecified-ranges node).
-                        location_target.append(location)
-
-            parser.leave()
-
-        parser.trail_push(footnote)
-        parser.leave()
-
-
-def postprocess_law(parser):
-    parser.enter("postprocess")
-    # Turn HTML tables, currently encoded into HTML characters, into properly
-    # structured and clean XML tables with properly presented content.
-    #
-    # We have no reason to create a table structure different from the HTML
-    # structure. We'll just make sure that the data is sanitized properly and
-    # that there is no useless information, by recreating the table in XML.
-    # This way, it'll be quite easy for a layout engine in a browser to render
-    # it correctly.
-    for sen in parser.law.xpath("//sen"):
-        if sen.text.find("<table ") == 0:
-            # The XML table that we are going to produce.
-            table = E("table")
-
-            # The HTML table from which we're fetching information.
-            html_table = etree.HTML(sen.text).find("body/table/tbody")
-
-            # Find the rows and headers inside the HTML.
-            rows = super_iter(html_table)
-
-            # If the table has a header, it will typically be the top row
-            # (exception explained below). We'll check the first column of the
-            # top row to check whether the headers are designated via <b> tags
-            # or <i> tags. If no such tags are found, we are forced to
-            # conclude that there is no header. This is also not always true
-            # (also explained below).
-            #
-            # TODO: In temporary clause XII in law nr. 29/1993, tables are
-            # found with three rows of headers. These are currently not
-            # supported and result in missing data.
-            #
-            # TODO: In 5. mgr. 19. gr. laga nr. 87/2004, headers are not
-            # stylized at all, thereby making them virtually indistinguishable
-            # from headers. These are currently unsupported at the moment,
-            # meaning they will be interpreted as if they were data cells.
-            #
-            # TODO: In 96. gr. laga nr. 55/1991, bold and italic items seem to
-            # be skipped altogether. This must be the code's fault, somehow.
-
-            toprow = next(rows)
-            if toprow[0].find("b") is not None:
-                header_style = "b"
-            elif toprow[0].find("i") is not None:
-                header_style = "i"
-            else:
-                header_style = ""
-
-            # If we've determined that the table has a header at all...
-            if header_style:
-                thead = E("thead", E("tr"))
-                table.append(thead)
-
-                # Add headers to the XML table.
-                for col in toprow:
-                    header = col.find(header_style).text.strip()
-                    if header_style != "b":
-                        # Headers are normally bold, but there are exceptions.
-                        # We'll only designate a header style when we run into
-                        # an exception to the rule.
-                        thead.find("tr").append(
-                            E("th", header, {"header-style": header_style})
-                        )
-                    else:
-                        thead.find("tr").append(E("th", header))
-            else:
-                # Roll one back because we've decided that the first row is
-                # not a header after all.
-                rows.prev()
-
-            tbody = E("tbody")
-            table.append(tbody)
-
-            # Add rows.
-            for row in rows:
-                tr = E("tr")
-                tbody.append(tr)
-                for col in row:
-                    tr.append(E("td", col.text.strip()))
-
-            # Replace HTML-encoded text with XML table.
-            sen.text = None
-            sen.append(table)
-
-    parser.leave()
+            parser.td.attrib["header-style"] = "i"
+
+        # NOTE: We don't place the `table-nr-title` in an attribute here
+        # because it is unclear how it would be useful for referencing. They
+        # may show up in the first row or the first column, or even the
+        # non-first column of a non-first row.
+        #
+        # We may need a much more sophisticated way of identifying columns and
+        # rows when they are changed by bills or referenced by other laws.
+        if len(table_nr_title):
+            parser.td.append(E("table-nr-title", "%s." % table_nr_title))
+
+        if len(table_title):
+
+            # Deal with styled chemical names. Happens in ákvæði til
+            # bráðabirgða XII laga nr. 29/1993.
+            # NOTE: The styling gets re-applied in rendering mechanism.
+            if parser.peeks() == "<small>":
+                extra_content = parser.collect_until("</small>")
+                extra_content = extra_content.replace("<small> <sub> ", "").replace("</sub>", "")
+                table_title += extra_content
+
+            parser.td.append(E("table-title", table_title))
+
+        content = parser.collect_until("</td>")
+        parser.consume("</td>")
+
+        add_sentences(parser.td, separate_sentences(content))
+
+    parser.td = None
+
+    parser.leave("td")
+    return True

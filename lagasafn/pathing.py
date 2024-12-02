@@ -17,7 +17,7 @@ def make_xpath_from_node(node):
     while node is not None and node.getparent() is not None:
         # Extract and format the current node's attributes into XPath syntax.
         attrib_parts = []
-        for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr"]:
+        for wanted_attrib in ["nr", "ultimate-nr", "sub-paragraph-nr", "chapter-type"]:
             if wanted_attrib in node.attrib:
                 # IMPORTANT: Single quotes for values, not double quotes.
                 attrib_parts.append(
@@ -30,7 +30,9 @@ def make_xpath_from_node(node):
         if attributes_xpath:
             xpath_part = f"{node.tag}[{attributes_xpath}]"
         else:
-            xpath_part = node.tag
+            siblings = [e for e in node.getparent() if e.tag == node.tag]
+            place_among_siblings = siblings.index(node) + 1
+            xpath_part = "%s[%d]" % (node.tag, place_among_siblings)
 
         # Insert the constructed XPath part at the beginning of the list.
         xpath_parts.insert(0, xpath_part)

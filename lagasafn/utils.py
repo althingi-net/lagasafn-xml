@@ -52,17 +52,20 @@ class UnexpectedClosingBracketException(Exception):
 # the first key, and the legal number as the second key ("123" in "123/2020").
 # Law number typecasted to integer to get canonical order.
 def sorted_law(law_ids):
-    return list(
-        reversed(
-            sorted(
-                law_ids,
-                key=lambda law_id: (
-                    law_id[law_id.find("/") + 1 :],
-                    int(law_id[: law_id.find("/")]),
-                ),
-            )
+
+    def sorter(law_id):
+        nr = law_id[: law_id.find("/")]
+        if nr.isdigit():
+            nr = int(nr)
+        else:
+            nr = 0
+
+        return (
+            law_id[law_id.find("/") + 1 :],
+            nr,
         )
-    )
+
+    return list(reversed(sorted(law_ids, key=sorter)))
 
 
 def numart_next_nrs(prev_numart):
@@ -85,6 +88,24 @@ def numart_next_nrs(prev_numart):
                 str(int(prev_numart_nr) + 1),
                 str(int(prev_numart_nr)) + "a",
             ]
+
+            # But! We may also expect a tree-like numbering scheme:
+            # 1.
+            # 1.1
+            # 1.1.1
+            # 1.1.2
+            # 1.2.1
+            # 1.2.2
+            # ...etc.
+            # Since "1." is indistinguishable between the "numeric" and "tree"
+            # schemes, we need to expect a "tree" scheme, even though the
+            # parser currently thinks that it's "numeric".
+            #
+            # We limit this expectation to single-digit numbers, though, since
+            # these structures are extremely unlikely to even reach 9, let
+            # alone above.
+            if len(prev_numart_nr) == 1:
+                expected_numart_nrs.append("%s.1" % prev_numart_nr)
 
         elif matcher.check(prev_numart_nr, r"(\d+)-(\d+)"):
             # Numarts may be ranges, (see 145. gr. laga nr. 108/2007), in
@@ -112,6 +133,52 @@ def numart_next_nrs(prev_numart):
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
 
+    elif prev_numart.attrib["nr-type"] == "tree":
+        # NOTE: This could be generalized to support more permutations of
+        # predictable `numart_nr`s, but we haven't run across them yet, and
+        # these are exceedingly rare, basically only existing in appendices and
+        # strange documents. So we'll just let this do until we need something
+        # more sophisticated.
+
+        values = prev_numart.attrib["nr"].split(".")
+
+        # Predict that the tree branches out again.
+        expected_numart_nrs.append(prev_numart.attrib["nr"] + ".1")
+
+        # Go through each place and figure out what can be expected from any of
+        # them being incremented.
+        for place, value in enumerate(values):
+            dealing_with = values[:place+1]
+            expected_numart_nrs.append(
+                ".".join(dealing_with[:-1] + [str(int(dealing_with[-1])+1)])
+            )
+
+            # A tree-scheme `numart` list may look like this:
+            # 1
+            # 1.1
+            # 1.2
+            # 2
+            # 2.1
+            # 2.2
+            # ...etc.
+            #
+            # But it may also look like this:
+            # 1.1
+            # 1.2
+            # 2.1
+            # 2.2
+            # ...etc.
+            #
+            # In other words, "1.2" in the above example must not only expect
+            # the next `numart` to include "2", but also "2.1.".
+            #
+            # If we're handling the second-last place, we'll add another copy
+            # of what was created above, except with ".1" appended to it.
+            if place == len(values) - 2:
+                expected_numart_nrs.append(
+                    expected_numart_nrs[-1] + ".1"
+                )
+
     elif prev_numart.attrib["nr-type"] == "en-dash":
         expected_numart_nrs += ["—", "–"]
     elif prev_numart.attrib["nr-type"] == "roman":
@@ -130,7 +197,7 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs.append(next_numart_nr)
 
         elif prev_numart_nr == "z":
-            expected_numart_nrs = "þ"
+            expected_numart_nrs = ["þ", "aa"]
 
         elif prev_numart_nr == "þ":
             expected_numart_nrs = "æ"
@@ -172,6 +239,13 @@ def numart_next_nrs(prev_numart):
         elif prev_numart_nr == "ee":
             expected_numart_nrs = ["ef", "ff"]
 
+        elif prev_numart_nr == "U":
+            expected_numart_nrs = ["Ú"]
+        elif prev_numart_nr == "Ú":
+            expected_numart_nrs = ["V"]
+        elif prev_numart_nr == "Z":
+            expected_numart_nrs = ["AA"]
+
         # Same thing as with "aa" above, only uppercase.
         elif prev_numart_nr == "AA":
             expected_numart_nrs = ["AB", "BB"]
@@ -197,6 +271,8 @@ def numart_next_nrs(prev_numart):
             # for now.
             if "–" in prev_numart_nr:
                 prev_numart_nr = prev_numart_nr[prev_numart_nr.find("–") + 1 :]
+            elif "-" in prev_numart_nr:
+                prev_numart_nr = prev_numart_nr[prev_numart_nr.find("-") + 1 :]
 
             expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
@@ -264,7 +340,7 @@ def terminal_width_and_height():
     return width, height
 
 
-def strip_links(text):
+def strip_links(text, strip_hellip_link=False):
     """
     Strips links from text. Also strips trailing whitespace after the link,
     because there is always a newline and a tab after the links in our input.
@@ -284,13 +360,20 @@ def strip_links(text):
     # proper XML in the main processing function. Note that for the time
     # being, they are left as HTML-encoded text and not actual XML (until the
     # aforementioned XML post-processing takes place).
-
-    regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>"
+    #
+    # An exception to this occurs in I. viðauki laga nr. 36/2011. In that case,
+    # the hellip is actually a deletion marker, which then doesn't get parsed
+    # as one, because it contains a link. This is believed to be very rare.
+    if strip_hellip_link:
+        regex = r"<a [^>]*?>\s*(.*?)\s*</a>"
+    else:
+        regex = r"<a [^>]*?>\s*([^…]*?)\s*</a>"
     text = re.sub(regex, r"\1", text)
 
     return text
 
 
+# FIXME: Seems unused.
 def order_among_siblings(elem):
     """
     Returns the order of the given element among its siblings. For example, if
@@ -382,13 +465,25 @@ def generate_legal_reference(input_node, skip_law=False):
     # case), regardless of whether `skip_law` was true or not, since
     # otherwise we return nothing and that's not useful.
     if node.tag == "law":
-        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
+        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])    
 
     while node.tag != "law":
+        # A few tags are part of the law definition; we don't want to handle it specially
+        if node.tag in ["name", "date", "num-and-date", "nr-title", "sen", "footnote-sen", 
+                        "footnote", "footnotes", "location", "date", "num", "original", 
+                        "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title",
+                        "table", "tr", "td", "th", "thead", "tbody"]:
+            node = node.getparent()
+            continue
+
+        if node.getparent().tag == "footnote":
+            node = node.getparent()
+            continue
+
         if node.tag == "numart":
             if node.attrib["nr-type"] == "alphabet":
                 result += "%s-stafl. " % node.attrib["nr"]
-            elif node.attrib["nr-type"] in ["numeric", "roman"]:
+            elif node.attrib["nr-type"] in ["numeric", "roman", "tree"]:
                 result += "%s. tölul. " % node.attrib["nr"]
             elif node.attrib["nr-type"] == "en-dash":
                 result += "%s. pkt. " % node.attrib["nr"]
@@ -403,7 +498,7 @@ def generate_legal_reference(input_node, skip_law=False):
         elif node.tag == "subart":
             result += "%s. málsgr. " % node.attrib["nr"]
         elif node.tag == "art":
-            if node.attrib["nr"].isdigit():
+            if node.attrib["nr"].isdigit() or node.attrib["nr"].isnumeric():
                 result += "%s. gr. " % node.attrib["nr"]
             else:
                 if matcher.check(node.attrib["nr"], r"(\d+)(.+)"):
@@ -424,8 +519,10 @@ def generate_legal_reference(input_node, skip_law=False):
                     else:
                         # But maybe not always.
                         result += "%s. gr. " % node.attrib["nr"]
+                elif node.getparent().tag == "chapter" and node.getparent().attrib["nr"] == "t":
+                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]                    
                 else:
-                    raise Exception("Parsing of node not implemented")
+                    raise Exception("Parsing of node '%s' (xpath %s) not implemented" % (node.tag, node.getroottree().getpath(node)))
         elif node.tag == "paragraph":
             # This is a bit out of the ordinary. These paragraphs are
             # typically not denoted in references, which is why we enclose
@@ -438,12 +535,27 @@ def generate_legal_reference(input_node, skip_law=False):
             # technical distinction between a `subart` and `paragraph`, but
             # in human speech, they are called the same thing ("málsgrein").
             result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+        elif node.tag == "appendix-part":
+            pass
+        elif node.tag == "appendix":
+            if "nr-type" not in node.attrib:
+                result += "viðauka "
+            elif node.attrib["nr-type"] == "arabic":
+                result += "%s. viðauka " % node.attrib["nr"]
+            elif node.attrib["nr-type"] == "roman":
+                result += "%s. viðauka " % node.attrib["roman-nr"]
+            else:
+                raise Exception("Parsing of node not implemented")
         elif node.tag == "chapter":
             pass
         elif node.tag == "subchapter":
             pass
+        elif node.tag == "numart-chapter":
+            pass
+        elif node.tag == "superchapter":
+            pass
         else:
-            raise Exception("Parsing of node not implemented")
+            raise Exception("Parsing of node '%s' not implemented" % node.tag)
 
         node = node.getparent()
 
@@ -658,6 +770,18 @@ class super_iter:
 
     def __iter__(self):
         return self
+    
+    @property
+    def total_lines(self):
+        return len(self.collection)
+
+    @property
+    def current_line(self):
+        if self.index == 0:
+            return None
+        if self.index > len(self.collection):
+            return None
+        return self.collection[self.index - 1]
 
     @property
     def current_line_number(self):
@@ -672,7 +796,10 @@ class super_iter:
         return self.collection[peek_index]
 
     def peeks(self, number_of_lines=1):
-        return self.peek(number_of_lines).strip()
+        r = self.peek(number_of_lines)
+        if r:
+            return r.strip()
+        return None
 
 
 class Matcher:
@@ -785,10 +912,18 @@ def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
             f.write(pretty_xml_as_string)
         else:
             etree.indent(xml_doc, level=0)
+            xml_string = etree.tostring(
+                xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+            ).decode("utf-8")
+
+            # The "<" symbol gets escaped as "&lt;" earlier in the process, but
+            # the `etree.tostring` function above re-escapes it to `&amp;lt;".
+            # We'll un-escape it here, instead of dealing with CDATA
+            # encapsulation or the like.
+            xml_string = xml_string.replace("&amp;lt;", "&lt;")
+
             f.write(
-                etree.tostring(
-                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-                ).decode("utf-8")
+                xml_string
             )
 
 
@@ -848,3 +983,61 @@ def last_container_added(input_node):
         return input_node
     else:
         return last_container_added(children[-1])
+
+
+def find_unmatched_closing_bracket(content):
+    """
+    Finds the next closing marker in a string, that doesn't have a
+    corresponding opening marker before it.
+
+    We may need to find the closing marker "]" in a text that contains other
+    opening and closing markers, for example in "one [two] three] four" we'll
+    want to find the one by "three" instead of the one by "two", because the
+    one at "two" matches the opening marker before it.
+    """
+
+    opening_count = 0
+
+    for index, char in enumerate(content):
+        if char == "[":
+            opening_count += 1
+        elif char == "]":
+            if opening_count > 0:
+                opening_count -= 1
+            else:
+                return index
+    return -1
+
+
+def search_xml_doc(xml_doc, search_string):
+    """
+    Finds nodes in a list of lxml XML document objects that contain the specified search string in their content.
+
+    :param xml_docs: A list of lxml.etree.ElementTree objects, each representing an XML document.
+    :param search_string: The string to search for in the content of XML nodes.
+    :return: A list of nodes that contain the search string in their text content from all documents.
+    """
+    matching_nodes = []
+
+    for element in xml_doc.iter():
+        if element.text and search_string.lower() in element.text.lower():
+            matching_nodes.append(element)
+
+    return matching_nodes
+
+
+def find_common_ancestor(node_1, node_2):
+    """
+    Finds the common ancestor of two XML nodes.
+    """
+    ancestors = set()
+    while node_1 is not None:
+        ancestors.add(node_1)
+        node_1 = node_1.getparent()
+
+    while node_2 is not None:
+        if node_2 in ancestors:
+            return node_2
+        node_2 = node_2.getparent()
+
+    return None

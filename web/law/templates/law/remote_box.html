@@ -1,0 +1,32 @@
+
+<div class="col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4 class="text-center">{{ box_title }}</h4>
+            <ul>
+            {% for box_link in box_links %}
+                <li>
+                    <a target="_new" href="{{ box_link.link }}">
+                        {{ box_link.law_name }}
+                    </a>
+                    <br/>
+                    <small>
+                        {{ box_link.document_name }}
+                        - {{ box_link.date }}
+                        {% if box_link.issue_status %}
+                            - <strong>{{ box_link.issue_status }}</strong>
+                        {% endif %}
+                        {% if box_link.proposer %}
+                            <br/>
+                            Flm.
+                            <a target="_new" href="{{ box_link.proposer.link }}">
+                                {{ box_link.proposer.name }}
+                            </a>
+                        {% endif %}
+                    </small>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

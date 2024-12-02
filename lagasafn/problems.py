@@ -101,12 +101,11 @@ class ProblemHandler:
 
         # From 0.0.. to 1.0.., indicating level of success from 0% to 100%.
         status_entry.attrib["success"] = f"{success:.8f}"
-        if distance > 0:
-            if success == 1.0:
-                print("Inconsistency: distance > 0 and success == 1.0")
-                status_entry.attrib["distance"] = "0"
-            else:
-                status_entry.attrib["distance"] = f"{distance}"
+        if distance > 0 and success == 1.0:
+            print("Inconsistency: distance > 0 and success == 1.0")
+            status_entry.attrib["distance"] = "0"
+        else:
+            status_entry.attrib["distance"] = f"{distance}"
 
         if len(message):
             status_entry.attrib["message"] = message

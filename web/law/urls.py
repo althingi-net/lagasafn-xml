@@ -4,6 +4,8 @@ from law import views
 
 urlpatterns = [
     path("list/", views.law_list, name="law_list"),
+    path("content-search/", views.content_search, name="content_search"),
+    path("search/", views.law_search, name="law_search"),
     path(
         "show/<path:identifier>/patched/",
         views.law_show_patched,

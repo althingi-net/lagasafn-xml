@@ -17,14 +17,35 @@ SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
 
+def is_numart_address(input):
+    """
+    Checks if the given string input is a legit numart address.
+
+    It may be, for example:
+    - 1.
+    - 2.
+    - 3.-4.
+    - 5.–6.
+
+    Note that those "–" and "-" are not the same symbol. Sometimes one is used
+    and sometimes the other.
+    """
+    matcher = Matcher()
+    return matcher.check(input.strip(), r"^\d+\.([-–]\d+\.)?$")
+
+
 def get_nr_and_name(goo: str) -> (str, str):
     dot_loc = goo.find(".")
     if dot_loc > -1:
         nr = goo[:dot_loc]
         name = goo[dot_loc + 1 :].strip()
-    else:
+    elif is_numart_address(goo):
         nr = goo.strip()
         name = ""
+    else:
+        nr = ""
+        name = goo.strip()
+
     return nr, name
 
 
@@ -38,7 +59,11 @@ def begins_with_regular_content(argument):
     # which was a surprise. It may require more sophisticated means
     # of determining regular content in all cases.
     question = strip_markers(strip_links(argument)).strip()
-    if len(question) and question[0] != "<":
+    if (
+        (len(question) and question[0] != "<")
+        and not is_numart_address(question)
+        and re.match(r".*-hluti\.$", question) is None
+    ):
         return True
     else:
         return False
@@ -57,25 +82,46 @@ def regexify_markers(text):
     text = text.replace(")", r"\)")
 
     # Opening markers.
-    text = re.sub(r"\[ ?", r"(\[? ?)?", text)
+    text = re.sub(r"\[( )?", r"(\[?\1?)?", text)
 
-    # Closing markers.
+    # Closing markers, deletion markers and  pointers.
     # NOTE: The three backslashes before the closing parentheses is because
     # we must seek the string after it has been modified by the
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
-    text = re.sub(
-        r'\],?\.? ?<sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'\.?(\],?\.? ?<sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
-        text,
-    )
+    # NOTE: We actually contain content from the given text in the new regex,
+    # so that it doesn't over-match.
+    matches = re.findall(r'((\.?) ?\[?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)', text)
+    for match in matches:
+        # The replacement string needs a little bit of adjusting depending on
+        # the input, to a greater extent than possible with simple regex
+        # replacements. For example, a "." is moved from a sentence like
+        # "something." passed the closing marker if it exists, "something].".
+        # Additional markers may be found around it, creating more somewhat
+        # convoluted situations.
+        replacement_string = ""
+        if len(match[1]) or len(match[2]):  # Found a dot.
+            # The dot can be found on either side of the "]", depending on
+            # surroundings. We therefore need to have this optional "." if it
+            # shows up on either side of the "]". Note that always including it,
+            # without this condition, it breaks laws under certain conditions.
+            #
+            # NOTE: This optional dot is added to the front of the replacement
+            # regex, despite being detected in two separate locations in the
+            # input. This is because it is moved passed the closing marker
+            # under certain conditions.
+            replacement_string += r'\.?'
+        replacement_string += r':? ?(\[?\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?' + match[3] + r'\) ?</sup>)?,? ?'
 
-    # Deletion markers.
-    # NOTE: See comment for closing markers above.
-    text = re.sub(
-        r'… <sup style="font-size:60%"> ?\d+\\\) ?</sup>,? ?',
-        r'(… <sup( style="font-size:60%")?> ?\\d+\) ?</sup>)?,? ?',
-        text,
-    )
+        text = text.replace(
+            match[0],
+            replacement_string
+        )
+
+    # Make stray deletion markers optional, i.e. those that aren't already.
+    text = re.sub(r"…[^?]", r"(… ?)?", text)
+
+    # Make closing markers optional.
+    text = re.sub(r"\]([^?])", r"\]?\1", text)
 
     # FIXME: This is unexplained.
     text = text.replace(" ,", r" ?,")
@@ -86,14 +132,31 @@ def regexify_markers(text):
     return text
 
 
-def strip_markers(text):
+def strip_markers(text, strip_hellip_link=False):
     """
     Strips markers from text and cleans up resulting weirdness.
+
+    By default, it leaves "…" alone when it's a link, but the
+    `strip_hellip_link` parameter can be set to `True` for it to be included.
     """
 
-    # We want to keep "…" when it's a part of a link and not a deletion marker.
-    # Temporarily replacing it with a text we'll replace back later.
-    text = text.replace("> … </a>", "> HELLIP </a>")
+    if not strip_hellip_link:
+        # We want to keep "…" when it's a part of a link and is not a deletion
+        # marker. We'll temporarily replace it with a piece of text that we'll
+        # replace back later.
+        text = text.replace("> … </a>", "> HELLIP </a>")
+
+    # A special case of the use of the hellip, which we don't want to remove,
+    # is when it is used to express the range of letters as denoted in
+    # c-lið 1. mgr. 45. gr. laga nr. 112/2021. It doesn't occur elsewhere, but
+    # if it gets used elsewhere, we'll want the same rule to apply.
+    # It looks like this:
+    #
+    #     A, AA …, B, BB …
+    #
+    # A fancier way to express such continuous strings may be implemented if we
+    # run into different permutations of them. Until then, this'll do.
+    text = text.replace("A, AA …, B, BB …", "CONTINUOUS_STRING_OF_LETTERS")
 
     # Remove change/deletion markers.
     text = text.replace("…", "")
@@ -106,10 +169,19 @@ def strip_markers(text):
         text = text.replace("  ", " ")
 
     text = text.replace(" ,", ",")
-    text = text.replace(" .", ".")
 
-    # Re-insert the "…" that we saved from before.
-    text = text.replace("> HELLIP </a>", "> … </a>")
+    # Selectively replace dots when they are followed by space or the end of
+    # line. This is done to save top-level-domains (TLDs) like ".is" and ".eu"
+    # from being truncated in the beginnig.
+    text = re.sub(r" \.$", r".", text)
+    text = re.sub(r" \. ", r".", text)
+
+    # Reclaim the continuous string of letters.
+    text = text.replace("CONTINUOUS_STRING_OF_LETTERS", "A, AA …, B, BB …")
+
+    if not strip_hellip_link:
+        # Re-insert the "…" that we saved from before.
+        text = text.replace("> HELLIP </a>", "> … </a>")
 
     return text
 
@@ -145,54 +217,44 @@ def next_footnote_sup(elem, cursor):
     return num
 
 
-def generate_ancestors(elem, parent):
-    # Locations of markers in footnote XML are denoted as a list of tags,
-    # whose name correspond to the tag name where the marker is to be located,
-    # and whose value represents the target node's "nr" attribute.
-    # Example:
-    #
-    # <art nr="5">
-    #   <subart nr="1">
-    #     <sen>[Notice the markers?]</sen>
-    #   </subart>
-    # </art>
-    #
-    # This will result in location XML in the footnote XML as such:
-    #
-    # <location>
-    #   <art>5</art>
-    #   <subart>1</subart>
-    #   <sen>1</sen>
-    # </location>
-    #
-    # To achieve this, we iterate through the ancestors of the node currently
-    # being processed. For each ancestor that we find, we add to the location
-    # XML.
-    ancestors = []
-    for ancestor in elem.iterancestors():
-        # We don't need the root node in a list of ancestors. It's obvious
-        # that any tag mentioned here is contained in the root node.
-        if ancestor.tag == "law":
-            break
-
-        # Figure out what the 'nr' attribute would be, if it were defined.
-        if "nr" in ancestor.attrib:
-            ancestors.insert(0, E(ancestor.tag, ancestor.attrib["nr"]))
-        else:
-            ancestors.insert(0, E(ancestor.tag, str(order_among_siblings(ancestor))))
-
-        if ancestor == parent:
-            # We're not interested in anything
-            # beyond the parent node.
-            break
-
-    # If we cannot find a 'nr' attribute, we'll figure it out and still put it in.
-    if "nr" in elem.attrib:
-        ancestors.append(E(elem.tag, str(elem.attrib["nr"])))
+def word_to_nr(input_word: str) -> str:
+    """
+    Turns cardinal numbers in text into Arabic numerals. Returns original if
+    it's not a cardinal number.
+    """
+    word = input_word.lower()
+    if word == "fyrsti":
+        return "1"
+    elif word == "annar":
+        return "2"
+    elif word == "þriðji":
+        return "3"
+    elif word == "fjórði":
+        return "4"
+    elif word == "fimmti":
+        return "5"
+    elif word == "sjötti":
+        return "6"
+    elif word == "sjöundi":
+        return "7"
+    elif word == "áttundi":
+        return "8"
+    elif word == "níundi":
+        return "9"
+    elif word == "tíundi":
+        return "10"
+    elif word == "ellefti":
+        return "11"
+    elif word == "tólfti":
+        return "12"
+    elif word == "þrettándi":
+        return "13"
+    elif word == "fjórtándi":
+        return "14"
+    elif word == "fimmtándi":
+        return "15"
     else:
-        ancestors.append(E(elem.tag, str(order_among_siblings(elem))))
-
-    return ancestors
+        return input_word
 
 
 # Examines the often mysterious issue of whether we're dealing with a new
@@ -207,6 +269,11 @@ def check_chapter(lines, law):
     # Short-hand.
     peek_stripped = strip_markers(lines.peek()).strip()
 
+    # We must examine the first "sentence" to see if it constitute a Roman
+    # numeral. Possibly we'll analyze it better later to determine things
+    # like subchapters.
+    first = peek_stripped[0 : peek_stripped.find(".")]
+
     # First see if this is ignorable, because in that case we don't need to do
     # anything else.
     line_type = is_ignorable_chapter(peek_stripped)
@@ -217,6 +284,12 @@ def check_chapter(lines, law):
     # a subchapter. This has not been researched.
     if peek_stripped.lower().find("bráðabirgð") > -1:
         line_type = "chapter"
+
+    elif peek_stripped.lower().find("viðauki") > -1:
+        line_type = "appendix"
+
+    elif peek_stripped.lower().find("þáttur") > -1:
+        line_type = "superchapter"
 
     # Check if this is an "article chapter". Those are not exactly numerical
     # articles, but chapter-like phenomena that resides inside articles, or
@@ -250,27 +323,39 @@ def check_chapter(lines, law):
             # - 112/2008
             # - 45/2020
             line_type = "subchapter"
-        else:
+        # When this thing is immediately followed by an article, it's not an
+        # `art-chapter`, it's just something we have no clue what to do about,
+        # ending up as `ambiguous` below. Happens in lög nr. 41/2004.
+        elif re.match(r'<img .+ src=".*sk.jpg" .+\/>', lines.peeks(6)) is None:
             line_type = "art-chapter"
 
-    else:
-        # We must examine the first "sentence" to see if it constitute a Roman
-        # numeral. Possibly we'll analyze it better later to determine things
-        # like subchapters.
-        first = peek_stripped[0 : peek_stripped.find(".")]
-
+    elif any(
+        [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók", "kap"]]
+    ):
         # If f.e. ". kafli" or ". hluti" can be found...
-        if any(
-            [peek_stripped.find(". %s" % w) > -1 for w in ["kafli", "hluti", "bók"]]
-        ):
-            line_type = "chapter"
+        line_type = "chapter"
+    elif peek_stripped.find(" kapítuli") > -1:
+        line_type = "chapter"
+    elif is_roman(first) and first not in ["C", "D"]:
         # We exclude "C" and "D" because as Roman numerals, they are much too
         # high to ever be used for a chapter. Later we may need to revise this
         # when we implement for support chapters/subchapters organized by
         # Latin letters. But since we don't support it yet, we'll just ignore
         # them like we do "A" and "B".
-        elif is_roman(first) and first not in ["C", "D"]:
-            line_type = "chapter"
+        line_type = "chapter"
+    elif first.isdigit():
+        # Check for what we'll call a `numart-chapter`, which is when the first
+        # `numart` is bold.
+        #
+        # This is only known to occur in appendices, and currently the only
+        # example is "I. viðauki laga nr. 7/1998.
+        line_type = 'numart-chapter'
+    elif law.getchildren()[-1].tag == "appendix":
+        line_type = "appendix-chapter"
+    elif lines.peek().strip()[-1] == ":":
+        # These definitions are not chapters. They occur at least in 1. gr.
+        # laga nr. 58/1998.
+        line_type = "bold-definition"
 
     # If we've reached this point without conclusion, this is an ambiguous
     # bold section that are (as of yet) unable to determine the nature of.
@@ -303,7 +388,7 @@ def separate_sentences(content):
     # subarticle 2 of article 5. Their use results in various combinations of
     # numbers and dots that need to be taken into account to avoid wrongly
     # starting a new sentence when they are encountered.
-    reference_shorthands = ["gr", "mgr", "málsl", "tölul", "staf"]
+    reference_shorthands = ["gr", "mgr", "málsl", "tölul", "staf", "viðauka"]
 
     # Encode recognized short-hands in text so that the dots in them don't get
     # confused for an end of a sentence. They will be decoded when appended to
@@ -337,14 +422,16 @@ def separate_sentences(content):
         "þ.m",
         "f.h.",
         "o.þ.h.",
+        "bls.",
+        "kr.",
     ]
     for r in recognized_shorts:
-        content = content.replace(r, r.replace(".", "[DOT]"))
+        content = content.replace(r, r.replace(".", "{DOT}"))
 
     # Certain things, like HTML tables (<table>) and links (<a>) should never
     # be split into separate sentence. We'll run through those tags and encode
     # every dot within them.
-    non_splittable_tags = ["table", "a"]
+    non_splittable_tags = ["table", "a", "b", "i"]
     for nst in non_splittable_tags:
         cursor = 0
 
@@ -359,7 +446,7 @@ def separate_sentences(content):
             tag_content = content[html_loc:html_end_loc]
 
             # Encode the dots in the tag content.
-            tag_content = tag_content.replace(".", "[DOT]")
+            tag_content = tag_content.replace(".", "{DOT}")
 
             # Stitch the encoded tag content back into the content.
             content = content[:html_loc] + tag_content + content[html_end_loc:]
@@ -373,6 +460,10 @@ def separate_sentences(content):
         del cursor
         del html_loc
     del non_splittable_tags
+
+    # We must retain the space before top-level domains (TLDs) like ".is" and
+    # ".eu". Otherwise the space gets stripped away.
+    content = content.replace(" .", "{SPACE}{DOT}")
 
     # The collected sentence so far. Chunks are appended to this string until
     # a new sentence is determined to be appropriate. Starts empty and and is
@@ -442,7 +533,12 @@ def separate_sentences(content):
                 next_chunk2 = chunks.peek(2)
                 if (
                     next_chunk.strip().isdigit()
-                    and next_chunk2.strip() in reference_shorthands
+                    and (
+                        next_chunk2.strip() in reference_shorthands
+                        # Support for connecting words such as "1. tölul. 2. og
+                        # 3. mgr." in 1. mgr. 3. gr. laga nr. 88/1991.
+                        or next_chunk2.strip().split(" ")[0] in ["og", "eða"]
+                    )
                 ):
                     split = False
 
@@ -451,12 +547,12 @@ def separate_sentences(content):
                 if re.match("^ [A-Z]-lið", next_chunk) is not None:
                     split = False
 
-        # Add the dot that we dropped when splitting.
-        collected += "."
+            # Add the dot that we dropped when splitting.
+            collected += "."
 
         if split:
-            # Decode the "[DOT]"s back into normal dots.
-            collected = collected.replace("[DOT]", ".")
+            # Decode the "{DOT}"s back into normal dots.
+            collected = collected.replace("{DOT}", ".")
 
             # Append the collected sentence.
             sens.append(collected.strip())
@@ -470,7 +566,9 @@ def separate_sentences(content):
     # these cases we have wrongly added it to the final chunk after the split,
     # and so we'll just remove it here. This could probably be done somewhere
     # inside the loop, but it would probably just be less readable.
-    if content and content[-1] != "." and sens[-1][-1] == ".":
+    #
+    # NOTE: We check for both "." or the last character of "{DOT}" in `content`, because it could be either. We're assuming that "}" only being possible here due to the replacement of "." with "{DOT}" above.
+    if content and content[-1] not in [".", "}"] and sens[-1][-1] == ".":
         sens[-1] = sens[-1].strip(".")
 
     # Make sure that tables always live in their own sentence.
@@ -591,6 +689,13 @@ def separate_sentences(content):
     new_sens = []
     deletion_offsets = []
     for sen in sens:
+
+        # Ampersands come already encoded when reading from the cleaned. This
+        # is done here instead of at the document-level because a bunch of
+        # things actually need to be properly escaped as "&amp;", but never
+        # ampersands in sentence content.
+        sen = sen.replace("&amp;", "&")
+
         cursor = 0
         deletion_found = sen.find("…", cursor)
         while deletion_found > -1:
@@ -638,65 +743,102 @@ def separate_sentences(content):
         new_sens.extend(sen.split("[SPLIT]"))
     sens = new_sens
 
+    # Reclaim the spaces we encoded to prevent from being stripped away.
+    new_sens = []
+    for sen in sens:
+        new_sens.append(sen.replace("{SPACE}", " "))
+    sens = new_sens
+
     return sens
 
 
 def add_sentences(target_node, sens):
     """
-    Gracefully adds a bunch of sentences to a target node, but also considering
-    the sentences that are already there before and may need specifying as
-    belonging to different sub-paragraphs.
+    Gracefully adds a bunch of sentences to a target node, enclosing them in
+    a paragraph. If the target node is itself a paragraph, the sentences get
+    added to it, and the already existing paragraph returned instead.
 
-    NOTE:
-    The original version of this function enclosed the provided sentences in a
-    paragraph, unless the target node was already a paragraph, and then
-    returned that paragraph. We have disbanded the use of paragraphs (at least
-    for now) due to difficulties they introduce in creating a WYSIWYG editor.
-    Instead, what was previously expressed using specific `<paragraph>` tags
-    is now expressed in attributes of the `sen` elements created by this
-    function. This is hopefully enough for other software to make sense of the
-    nature of the text when formatting and referencing.
+    Returns the created/found paragraph for further use by caller.
     """
 
-    # There may be already existing sentences in the element we're adding to.
-    # This happens when a new sentence actually denotes a new sub-paragraph.
-    # However, since our format does not contain sub-paragraphs (due to
-    # limitations it places on a visual editor), we will instead represent
-    # this information in attributes.
-    sub_par_nr = 1
-    prior_sens = target_node.findall("sen")
-    prior_sens_count = len(prior_sens)
+    if target_node.tag == "paragraph":
+        # If target node is a paragraph, then the target and paragraph are
+        # the same thing. This is to prevent paragraphs inside paragraphs when
+        # a numart is contained within a paragraph, but also has text
+        # following the numart. This happens in 18/2013, 132/2020 and 80/2022
+        # in version 152c.
+        paragraph = target_node
+    else:
+        # Construct paragraph, determining its number by examining how many
+        # already exist in the target node.
+        paragraph_nr = str(len(target_node.findall("paragraph")) + 1)
+        paragraph = E("paragraph", {"nr": paragraph_nr})
 
-    # Figure out if these sentences are in a new sub-paragraph.
-    if prior_sens_count > 0:
-        last_sen = prior_sens[-1]
-        if "sub-paragraph-nr" in last_sen.attrib:
-            sub_par_nr = int(last_sen.attrib["sub-paragraph-nr"]) + 1
-        else:
-            sub_par_nr = 2
+        # Append paragraph to given node.
+        target_node.append(paragraph)
 
-    # Append sentences to element and automatically configure them.
+    # Append sentences to paragraph, giving them numbers.
     sen_nr = 0
     for sen in sens:
         sen_nr += 1
 
+        # Fish out definitions, denoted by being encompassed between `<i>` and
+        # `</i>`. These must be re-styled by the rendering mechanism.
+        definitions = None
+        definitions_found = re.findall(r"<i>([^<]*)</i>", sen)
+        if len(definitions_found) > 0:
+            definitions = E("definitions")
+            for definition_found in definitions_found:
+                definitions.append(E("definition", definition_found.strip()))
+                sen = sen.replace("<i>%s</i>" % definition_found, definition_found.strip())
+
+        # Bold definitions are an anomaly in how definitions are presented.
+        # Seems to happen only in 1. gr. laga nr. 58/1998 (153c).
+        bold_definitions_found = re.findall(r"<b> ([^<]*[:.]) </b>", sen)
+        if len(bold_definitions_found) > 0:
+            definitions = E("definitions")
+            for definition_found in bold_definitions_found:
+                definitions.append(E("definition", { "style": "bold" }, definition_found.strip()))
+                sen = sen.replace("<b> %s </b>" % definition_found, definition_found.strip())
+
         sen_elem = E.sen(sen, nr=str(sen_nr))
 
-        expiry_loc = sen.find(MAGIC_EXPIRY_TOKEN)
-        if expiry_loc > -1:
+        # Insert the definitions, if needed.
+        if definitions is not None:
+            paragraph.insert(0, definitions)
+
+        expiry_loc = strip_markers(sen).strip().find(MAGIC_EXPIRY_TOKEN)
+        if expiry_loc > -1 or sen == "…":
+
+            # Even if `MAGIC_EXPIRY_TOKEN` wasn't found, we know that its
+            # location is 0 if the "…" was found regardless.
+            if expiry_loc == -1:
+                expiry_loc = 0
+
             sen = sen.replace(MAGIC_EXPIRY_TOKEN, "…")
             sen_elem.text = sen
+            # NOTE: In reality, the `expiry-symbol-offset` attribute only
+            # prevents the node from being automatically deleted when it's
+            # "empty" (i.e. empty if it's without markers).
+            #
+            # FIXME: It used to be the case that this was only used for
+            # non-empty nodes to make sure they didn't get deleted, but is now
+            # used to place the expiry symbol, at least in 1. mgr. 36. gr. laga
+            # nr. 33/2013 (153c). This is inconvenient, because it doesn't
+            # account for other markers in the rendering mechanism, and thus
+            # the `expiry-symbol-offset` will only be correct when there are no
+            # other markers in the same node. So far, this doesn't seem to be a
+            # problem, but if more non-empty nodes with other markers start to
+            # contain the expiry symbol in the future, then it probably needs
+            # to be incorporated into the same mechanism that deals with
+            # opening/closing/deletion/pointer markers with `words` and all, to
+            # be resilient against them.
             sen_elem.attrib["expiry-symbol-offset"] = str(expiry_loc)
 
-        # Special flag to assist visual software, indicating that even though
-        # this is a new sentence in the file, it visually represents a new
-        # sub-paragraph.
-        if sen_nr == 1 and sub_par_nr > 1:
-            sen_elem.attrib["ultimate-nr"] = str(prior_sens_count + sen_nr)
-            sen_elem.attrib["sub-paragraph-nr"] = str(sub_par_nr)
-            sen_elem.attrib["new-sub-paragraph"] = "true"
+        paragraph.append(sen_elem)
 
-        target_node.append(sen_elem)
+    # Return paragraph, whether contructed or already existing.
+    return paragraph
 
 
 def is_ignorable_chapter(line: str) -> str:
@@ -715,14 +857,8 @@ def is_ignorable_chapter(line: str) -> str:
     # are unable to predict their format and parsing them will always remain
     # error-prone when possible to begin with. Possibly we'll include them as
     # raw HTML goo later.
-    if matcher.check(line.lower(), "fylgiskj[aö]l"):
+    if matcher.check(line.lower(), r"\[?fylgiskj[aö]l"):
         line_type = "extra-docs"
-
-    # Same goes for appendices as extra-docs.
-    elif matcher.check(line.lower(), ".* viðauki") or matcher.check(
-        line.lower(), "viðauki.*"
-    ):
-        line_type = "appendix"
 
     return line_type
 

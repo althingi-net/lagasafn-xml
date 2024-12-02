@@ -75,12 +75,12 @@
                 <td class="law-list-ch">{% if law.chapter_count %}{{ law.chapter_count }}{% endif %}</td>
                 <td class="law-list-art">{% if law.art_count %}{{ law.art_count }}{% endif %}</td>
                 <td class="law-list-status">
-                    {% if law.status is None %}
-                        <span class="badge bg-warning">{% trans 'Unknown' %}</span>
-                    {% elif law.status %}
-                        <span class="badge bg-success">{% trans 'OK' %}</span>
+                    {% if law.content_success == 1.0 %}
+                        <span class="label label-success">{% trans 'OK' %}</span>
+                    {% elif law.content_success >= 0.9999 %}
+                        <span class="label label-warning">{{ law.display_content_success }}</span>
                     {% else %}
-                        <span class="badge bg-danger">{% trans 'Errors' %}</span>
+                        <span class="label label-danger">{{ law.display_content_success }}</span>
                     {% endif %}
                 </td>
             </tr>

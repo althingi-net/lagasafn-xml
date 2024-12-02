@@ -44,22 +44,50 @@ minister-clause { display: none; border-bottom: 1px solid #dddddd; padding-botto
 minister-clause > a { margin-right: 0.7777em; }
 minister-clause > small { font-size: 80%; line-height: 1.88em; }
 
+/* superchapter */
+superchapter { display: block; margin-top: 1.5em; }
+superchapter > nr-title { font-weight: bold; }
+superchapter > name { font-weight: bold; }
+
 /* chapter */
-chapter { display: block; margin-top: 1.5em; }
+chapter { display: block; }
+chapter:not(superchapter > chapter) { margin-top: 1.5em; }
 chapter > nr-title { font-weight: bold; }
 chapter > name { font-weight: bold; }
 name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
 
-ambiguous-section { font-style: italic; }
+/* subchapter */
+subchapter { display: block; }
+subchapter > nr-title { font-weight: bold; }
+subchapter > name { font-weight: bold; }
+name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
+
+/* appendix */
+appendix { display: block; margin-top: 1.5em; }
+appendix > nr-title { font-weight: bold; }
+appendix > name { font-weight: bold; }
+appendix > draft { display: block; }
+appendix appendix-part { display: block; }
+appendix appendix-part[appendix-style="i"] > nr-title { font-style: italic; }
+appendix appendix-part[appendix-style="i"] > name { font-style: italic; }
+appendix appendix-chapter { display: block; }
+appendix appendix-chapter > name { font-weight: bold }
+
+ambiguous-section { display: block; font-style: italic; }
+ambiguous-bold-text { display: block; font-weight: bold; }
+ambiguous-bold-text[ambiguous-style="i"] { font-style: italic; }
 
 /* article */
 art { display: block; margin-top: 0px; }
 art > nr-title { display: inline; font-weight: bold; }
 art > nr-title .art-deletion { font-weight: normal; }
 art > name { font-style: italic; }
+art > name[name-style="b"] { font-weight: bold; font-style: normal; }
 
 /* art-chapter */
-art-chapter > nr-title { display: block; font-weight: bold; }
+art-chapter { display: block }
+art-chapter > nr-title { font-weight: bold; }
+art-chapter > name { font-weight: bold; }
 art-chapter > sen:first-of-type { margin-left: 1.04em; } /* Only in 7. gr. laga nr. 90/2003 */
 
 /* subarticle */
@@ -72,23 +100,33 @@ numart { display: block; text-indent: 1.04em; }
 numart > name { font-style: italic; }
 numart > paragraph > name { font-style: italic; }
 numart[style-note="inline-with-parent"] { display: inline; }
+subart > paragraph:first-of-type > numart:first-child { display: inline; text-indent: 0; }
+
+numart-chapter { display: block; text-indent: 1.04em; }
+numart-chapter > nr-title { font-weight: bold; }
+numart-chapter > name { font-weight: bold; }
 
 /* paragraph */
 paragraph { display: block; text-indent: 1.04em; }
-paragraph:first-of-type { display: inline; text-indent: 0; }
+paragraph:first-of-type:not(art > paragraph) { display: inline; text-indent: 0; }
 
 /* sentence title */
 sen-title { font-style: italic; }
 
 /* sentence */
 sen sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }
-sen span.fraction-denominator { font-size: 60%; line-height: 23px; }
+span.fraction-denominator { font-size: 60%; line-height: 23px; }
 
 /* table */
-sen table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
-sen table tr:hover { background: #f3f2ed; }
-sen table th, sen table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
-sen table td:last-child, sen table th:last-child { border-right-width: 0px; }
+.legal-document table { width: 100%; border-collapse: collapse; border-spacing: 0; color: #000000; margin-bottom: 20px; }
+.legal-document table tr:hover { background: #f3f2ed; }
+.legal-document table th, .legal-document table td { padding: .625em 20px .25em 20px; border-right: 1px solid #dad7cc; border-bottom: 1px solid #dad7cc; }
+.legal-document table td:last-child, .legal-document table th:last-child { border-right-width: 0px; }
+table-name { display: block; font-weight: bold; }
+td[header-style="b"] table-nr-title { font-weight: bold; }
+td[header-style="b"] table-title { font-weight: bold; }
+td[header-style="i"] table-nr-title { font-style: italic; }
+td[header-style="i"] table-title { font-style: italic;; }
 
 /* footnotes */
 footnotes { display: none; text-indent: 1.04em;  }
@@ -98,3 +136,88 @@ footnote sup { display: inline; font-size: 7.69px !important; font-style: italic
 footnote-sen { display: inline; font-style: italic; font-size: 12.8px; }
 footnote-sen:nth-child(3) { margin-left: -1px; }
 location { display: none; }
+
+/* definitions */
+/* NOTE: These are only the non-visible containers for definitions. They remain
+ * visible once processed into `<i>` tags.
+ */
+definitions { display: none; }
+
+/* mark-container */
+mark-container { display: block; }
+mark-container sen { margin-left: 0.8em; }
+
+.searcharea {
+    background: #e0f3ed;
+    border-top: 2px solid #cbded8;
+    border-bottom: 20px solid #cbded8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searcharea input[type="search"] {
+    width: 70%;
+    max-width: 40em;
+    padding: 0.775rem 0.75rem;
+    margin: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid #cbded8;
+}
+
+.searcharea select {
+    padding: 0.775rem 0.75rem;
+    margin: 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid #cbded8;
+}
+
+.search-results {
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+}
+
+.search-results .law-title {
+    margin-left: 21rem;
+}
+
+.search-results .law-number {
+    display: inline-block;
+    min-width: 5em;
+    margin-top: 1rem;
+}
+
+.search-results td {
+    vertical-align: top;
+}
+
+.search-results td:not(:first-child) {
+    padding-bottom: 1.3rem;
+}
+
+.search-results .reference {
+    display: inline-block;
+    font-weight: bold;
+    min-width: 20rem;
+    margin-right: 1rem;
+}
+
+.statistics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics div {
+    display: inline-block;
+    width: 15em;
+}
+
+.no-results {
+    width: 100%;
+    text-align: center;
+    margin: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 170%;
+}
