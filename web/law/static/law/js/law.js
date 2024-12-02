@@ -224,10 +224,13 @@ var process_refer_external = function($refer) {
 }
 
 
+// FIXME: This should maybe be called `process_locations`, since it doesn't
+// only handle locations within footnotes but also locations within
+// `unspecified-ranges`, which appear in 7/1998 and 40/2007.
 var process_footnote = function() {
     var $footnotes = $(this);
 
-    $locations = $footnotes.find('footnote > location');
+    $locations = $footnotes.find('footnote > location, > location');
 
     // When placing closing markers, the order may matter. The basic rule is
     // that the longer the string in the changed text, as it appears between
@@ -448,7 +451,16 @@ var process_footnote = function() {
                 else {
                     replace_text_end = seek_text_end;
                 }
-                replace_text_end += pre_close_space + combined_with_closing + ']' + middle_punctuation + post_deletion_space + '<sup>' + footnote_nr + ')</sup>';
+
+                // Construct the replacement string.
+                replace_text_end += pre_close_space + combined_with_closing + ']' + middle_punctuation + post_deletion_space;
+
+                // Add the footnote number, indeed only if there is one. There
+                // are cases without them called `unspecified-ranges` which
+                // work the same but aren't references to anything.
+                if (footnote_nr !== undefined) {
+                    replace_text_end += '<sup>' + footnote_nr + ')</sup>';
+                }
 
                 // If the XML indicates that this is a change that happens
                 // repeatedly in the text, then we need to replace all instances
@@ -849,7 +861,7 @@ $(document).ready(function() {
 
     $('footnotes').show();
 
-    $('footnotes').each(process_footnote);
+    $('footnotes,unspecified-ranges').each(process_footnote);
 
     $('law').each(process_law);
     $('law art').each(process_art);
