@@ -910,11 +910,25 @@ def parse_chapter(parser):
             has_ranged_roman = False
             if "–" in maybe_roman_nr:
                 maybe_roman_nr_a, maybe_roman_nr_b = maybe_roman_nr.split("–")
-                maybe_roman_nr_a = maybe_roman_nr_a.strip(".")
+                maybe_roman_nr_a = maybe_roman_nr_a.strip(".").strip()
+                maybe_roman_nr_b = maybe_roman_nr_b.strip(".").strip()
+
+                # Check for things like "XI. kafli A", which would be between
+                # "XI. kafli" and "XII. kafli" or similar.
+                extra_a = extra_b = ""
+                if " " in maybe_roman_nr_a:
+                    maybe_roman_nr_a, maybe_extra_a = maybe_roman_nr_a.split(" ")
+                    if re.match(r"[A-Z]", maybe_extra_a):
+                        extra_a = maybe_extra_a.lower()
+                if " " in maybe_roman_nr_b:
+                    maybe_roman_nr_b, maybe_extra_b = maybe_roman_nr_b.split(" ")
+                    if re.match(r"[A-Z]", maybe_extra_b):
+                        extra_b = maybe_extra_b.lower()
+
                 if is_roman(maybe_roman_nr_a) and is_roman(maybe_roman_nr_b):
                     nr_a = roman.fromRoman(maybe_roman_nr_a)
                     nr_b = roman.fromRoman(maybe_roman_nr_b)
-                    nr = "%s-%s" % (nr_a, nr_b)
+                    nr = "%s%s-%s%s" % (nr_a, extra_a, nr_b, extra_b)
                     roman_nr = "%s-%s" % (
                         roman.toRoman(nr_a),
                         roman.toRoman(nr_b),
