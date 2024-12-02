@@ -1430,7 +1430,16 @@ def parse_stray_deletion(parser):
     content = parser.collect_until("<br/>", collect_first_line=True)
     parser.consume("<br/>")
 
-    parser.mark_container = E("mark-container", E("sen", { "expiry-symbol-offset": "0" }, content))
+    elem_sen = E("sen", content)
+
+    # If the element contains nothing but an expiry symbol (i.e., not really a
+    # deletion marker), we'll want to clear the content and let the rendering
+    # mechanism add it again.
+    if content == "…":
+        elem_sen.attrib["expiry-symbol-offset"] = "0"
+        elem_sen.text = ""
+
+    parser.mark_container = E("mark-container", elem_sen)
 
     if parser.numart is not None:
         parser.numart.append(parser.mark_container)

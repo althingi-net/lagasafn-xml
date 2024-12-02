@@ -893,15 +893,21 @@ $(document).ready(function() {
     // FIXME: This screws up the styling of deletion markers when in a node
     // with `expiry-symbol-offset` defined by removing the `<sup>`.
     $('sen').each(function() { 
-        if ($(this).attr("expiry-symbol-offset")) {
-            var offset = $(this).attr("expiry-symbol-offset");
+        let $sen = $(this);
+        if ($sen.attr("expiry-symbol-offset")) {
+            var offset = $sen.attr("expiry-symbol-offset");
             var $expiry_symbol = $('<span class="expiry-symbol">…</span>');
-            if ($(this).text().indexOf("…") === -1) {
-                var left = $(this).html().substring(0, offset);
-                var right = $(this).html().substring(offset);
-                $(this).html(left + $expiry_symbol[0].outerHTML + " " + right);
+            let hellip_loc = $sen.text().indexOf("…");
+            // A special case exists in 118. gr. laga nr. 161/2002 (153c) where
+            // an expiry symbol is immediately followed by a deletion marker.
+            // We must detect that so that the deletion marker doesn't get
+            // confused with an expiry-symbol and replaced.
+            if (hellip_loc === -1 || (hellip_loc > -1 && $sen.html().slice(hellip_loc + 1, hellip_loc + 6) == " <sup")) {
+                var left = $sen.html().substring(0, offset);
+                var right = $sen.html().substring(offset);
+                $sen.html(left + $expiry_symbol[0].outerHTML + " " + right);
             } else {
-                $(this).html($(this).text().replace("…", $expiry_symbol[0].outerHTML));
+                $sen.html($sen.text().replace("…", $expiry_symbol[0].outerHTML));
             }
         }
     });
