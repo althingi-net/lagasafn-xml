@@ -3,6 +3,7 @@ import os
 import re
 import string
 
+from lagasafn.constants import SPLITMAP_FILENAME
 from lagasafn.utils import Matcher
 from lagasafn.utils import is_roman
 from lagasafn.utils import last_container_added
@@ -13,7 +14,6 @@ from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
 from reynir import NounPhrase
 
-SPLITMAP_FILENAME = os.path.join("data", "json-maps", "splitmap.json")
 MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
 

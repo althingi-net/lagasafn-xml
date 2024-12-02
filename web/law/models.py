@@ -9,6 +9,9 @@ import os
 import re
 import requests
 from django.conf import settings
+from lagasafn.constants import PROBLEMS_FILENAME
+from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.problems import PROBLEM_TYPES
@@ -39,7 +42,7 @@ class LawManager:
         # index below.
         problem_map = {}
         problems = etree.parse(
-            os.path.join(settings.DATA_DIR, "problems.xml")
+            os.path.join(PROBLEMS_FILENAME)
         ).getroot()
         for problem_law_entry in problems.findall("problem-law-entry"):
             statuses = {}
@@ -57,7 +60,7 @@ class LawManager:
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
 
         # Read and parse the index
-        index = etree.parse(os.path.join(settings.DATA_DIR, "index.xml")).getroot()
+        index = etree.parse(os.path.join(XML_INDEX_FILENAME)).getroot()
 
         # Gather statistics.
         for node_stat in index.findall("stats/"):
@@ -185,6 +188,11 @@ class Law(LawEntry):
 
         self.nr, self.year = self.identifier.split("/")
 
+        try:
+            self.year = int(self.year)
+        except (ValueError, TypeError):
+            raise LawException("Year must be an integer in '%s'" % self.identifier)
+
         if not os.path.isfile(self.path()):
             raise LawException("Could not find law '%s'" % self.identifier)
 
@@ -261,7 +269,7 @@ class Law(LawEntry):
         return self._articles
 
     def path(self):
-        return os.path.join(settings.DATA_DIR, f"{self.year}.{self.nr}.xml")
+        return XML_FILENAME % (self.year, self.nr)
 
     def xml(self):
         """

@@ -2,6 +2,9 @@ import os
 import re
 import roman
 from formencode.doctest_xml_compare import xml_compare
+from lagasafn.constants import CLEAN_FILENAME
+from lagasafn.constants import PATCHED_FILENAME
+from lagasafn.constants import XML_FILENAME
 from lagasafn.settings import DATA_DIR
 from lagasafn import settings
 from lxml import etree
@@ -24,24 +27,6 @@ from lagasafn.utils import Trail
 from lagasafn.utils import Matcher
 
 from .parse_footnotes import parse_footnotes
-
-LAW_FILENAME = os.path.join(
-    DATA_DIR, "original", settings.CURRENT_PARLIAMENT_VERSION, "%d%s.html"
-)  # % (law_year, law_num)
-CLEAN_FILENAME = os.path.join(
-    DATA_DIR, "cleaned", "%d-%d.html"
-)  # % (law_year, law_num)
-PATCHED_FILENAME = os.path.join(
-    DATA_DIR, "patched", "%d-%d.html"
-)  # % (law_year, law_num)
-PATCH_FILENAME = os.path.join(
-    DATA_DIR, "patches", settings.CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
-)  # % (law_year, law_num)
-XML_FILENAME = os.path.join(DATA_DIR, "xml", "%d.%s.xml")  # % (law_year, law_num)
-XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", "index.xml")
-XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", "references.xml")
-
-ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
 
 
 class LawParser:

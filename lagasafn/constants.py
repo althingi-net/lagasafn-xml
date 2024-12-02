@@ -14,8 +14,11 @@ PATCHED_FILENAME = os.path.join(
 PATCH_FILENAME = os.path.join(
     DATA_DIR, "patches", CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
 )  # % (law_year, law_num)
-XML_FILENAME = os.path.join(DATA_DIR, "xml", "%d.%s.xml")  # % (law_year, law_num)
-XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", "index.xml")
-XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", "references.xml")
+XML_FILENAME = os.path.join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "%d.%s.xml")  # % (law_year, law_num)
+XML_INDEX_FILENAME = os.path.join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "index.xml")
+XML_REFERENCES_FILENAME = os.path.join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "references.xml")
 
-ERRORMAP_FILENAME = os.path.join("data", "json-maps", "errormap.json")
+ERRORMAP_FILENAME = os.path.join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "errormap.json")
+STRAYTEXTMAP_FILENAME = os.path.join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "straytextmap.json")
+SPLITMAP_FILENAME = os.path.join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "splitmap.json")
+PROBLEMS_FILENAME = os.path.join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "problems.xml")

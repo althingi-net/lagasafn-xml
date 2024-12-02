@@ -5,9 +5,8 @@ import roman
 import subprocess
 
 from lagasafn import settings
+from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lxml import etree
-
-STRAYTEXTMAP_FILENAME = os.path.join("data", "json-maps", "straytextmap.json")
 
 
 class UnexpectedClosingBracketException(Exception):
