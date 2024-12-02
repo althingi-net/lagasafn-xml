@@ -7,27 +7,26 @@
     <original>2015 nr. 45 8. júlí</original>
   </num-and-date>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=144&amp;amp;mnr=402"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/144/s/0578.html"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 1. janúar 2016. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjt/2019.150.html"&gt; L. 150/2019 &lt;/a&gt; (tóku gildi 31. des. 2019). &lt;a href="/altext/stjt/2021.108.html"&gt; L. 108/2021 &lt;/a&gt; (tóku gildi 1. jan. 2022). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; heilbrigðisráðherra &lt;/b&gt; eða &lt;b&gt; heilbrigðisráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
-  <chapter nr="1" nr-type="roman" roman-nr="I">
+  <chapter nr="1" nr-type="roman" chapter-type="kafli" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <name>Markmið, gildissvið og stjórnsýsla.</name>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <name>Markmið.</name>
       <subart nr="1">
-        <sen nr="1">Markmið laga þessara er að tryggja slysatryggðum bætur frá almannatryggingum vegna vinnuslysa eða annarra tiltekinna slysa og atvinnusjúkdóma óháð tekjum hins slysatryggða, sbr. einnig lög um almannatryggingar, lög um sjúkratryggingar og önnur lög eftir því sem við á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Markmið laga þessara er að tryggja slysatryggðum bætur frá almannatryggingum vegna vinnuslysa eða annarra tiltekinna slysa og atvinnusjúkdóma óháð tekjum hins slysatryggða, sbr. einnig lög um almannatryggingar, lög um sjúkratryggingar og önnur lög eftir því sem við á.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Bæturnar eru ýmist greiddar í peningum eða veittar í formi aðstoðar eins og nánar er kveðið á um í lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bæturnar eru ýmist greiddar í peningum eða veittar í formi aðstoðar eins og nánar er kveðið á um í lögum þessum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="1" nr="1">
           <footnote-sen>L. 108/2021, 1. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>1</subart>
-            <sen words="og atvinnusjúkdóma">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="og atvinnusjúkdóma" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -35,17 +34,14 @@
       <nr-title>2. gr.</nr-title>
       <name>Gildissvið.</name>
       <subart nr="1">
-        <sen nr="1">Í lögum þessum er mælt fyrir um slysatryggingar almannatrygginga vegna tiltekinna slysa og atvinnusjúkdóma, hverjir eru tryggðir og bætur slysatrygginga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í lögum þessum er mælt fyrir um slysatryggingar almannatrygginga vegna tiltekinna slysa og atvinnusjúkdóma, hverjir eru tryggðir og bætur slysatrygginga.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="2" nr="1">
           <footnote-sen>L. 108/2021, 2. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <sen words="vegna tiltekinna slysa og atvinnusjúkdóma">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="vegna tiltekinna slysa og atvinnusjúkdóma" middle-punctuation="," instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -53,18 +49,14 @@
       <nr-title>3. gr.</nr-title>
       <name>Framkvæmd slysatrygginga.</name>
       <subart nr="1">
-        <sen nr="1">Sjúkratryggingastofnunin, sbr. lög um sjúkratryggingar, annast framkvæmd slysatrygginga almannatrygginga samkvæmt lögum þessum.</sen>
-        <sen nr="2"></sen>
+        <paragraph nr="1">
+          <sen nr="1">Sjúkratryggingastofnunin, sbr. lög um sjúkratryggingar, annast framkvæmd slysatrygginga almannatrygginga samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="3" nr="1">
           <footnote-sen>L. 108/2021, 3. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>3</art>
-            <subart>1</subart>
-            <sen before-mark="^" after-mark="$">2</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Sjúkratryggingastofnunin, sbr. lög um sjúkratryggingar, annast framkvæmd slysatrygginga almannatrygginga samkvæmt lögum þessum." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -72,81 +64,73 @@
       <nr-title>4. gr.</nr-title>
       <name>Yfirstjórn.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra fer með yfirstjórn slysatrygginga almannatrygginga samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra fer með yfirstjórn slysatrygginga almannatrygginga samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="2" nr-type="roman" roman-nr="II">
+  <chapter nr="2" nr-type="roman" chapter-type="kafli" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <name>Slysatryggingar.</name>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <name>Almenn ákvæði.</name>
       <subart nr="1">
-        <sen nr="1">Slysatryggingar almannatrygginga taka til slysa við vinnu, iðnnám, björgunarstörf, tilteknar íþróttaæfingar, íþróttasýningar, íþróttakeppni eða heimilisstörf, enda sé hinn slasaði tryggður samkvæmt ákvæðum 7. eða 8. gr.</sen>
-        <sen nr="2">Með slysi er átt við skyndilegan óvæntan atburð sem veldur meiðslum á líkama hins tryggða og gerist án vilja hans.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Slysatryggingar almannatrygginga taka til slysa við vinnu, iðnnám, björgunarstörf, tilteknar íþróttaæfingar, íþróttasýningar, íþróttakeppni eða heimilisstörf, enda sé hinn slasaði tryggður samkvæmt ákvæðum 7. eða 8. gr.</sen>
+          <sen nr="2">Með slysi er átt við skyndilegan óvæntan atburð sem veldur meiðslum á líkama hins tryggða og gerist án vilja hans.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Maður telst vera við vinnu:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">Þegar hann er á vinnustað á þeim tíma þegar honum er ætlað að vera að störfum, svo og í matar- og kaffitímum.</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">Í sendiferð í þágu atvinnurekstrar eða í nauðsynlegum ferðum á eðlilegri leið til vinnu og frá, enda sé aðeins um að ræða ferðir sem eru farnar samdægurs milli vinnustaðar og heimilis eða matstaðar.</sen>
-          <sen nr="2">Sama gildir um lengri ferðir af þessu tagi ef starfsmaður er á launum hjá vinnuveitanda í ferðinni.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Maður telst vera við vinnu:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Þegar hann er á vinnustað á þeim tíma þegar honum er ætlað að vera að störfum, svo og í matar- og kaffitímum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Í sendiferð í þágu atvinnurekstrar eða í nauðsynlegum ferðum á eðlilegri leið til vinnu og frá, enda sé aðeins um að ræða ferðir sem eru farnar samdægurs milli vinnustaðar og heimilis eða matstaðar.</sen>
+              <sen nr="2">Sama gildir um lengri ferðir af þessu tagi ef starfsmaður er á launum hjá vinnuveitanda í ferðinni.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Slys telst ekki verða við vinnu ef það hlýst af athöfnum slasaða sjálfs sem ekki standa í neinu sambandi við vinnuna.</sen>
-        <sen nr="2">Hafi slasaði verið valdur að slysi af ásetningi eða stórfelldu gáleysi er heimilt að lækka eða fella niður greiðslur bóta samkvæmt lögum þessum.</sen>
-        <sen nr="3">Tryggingin tekur þó til allra slysa á sjómanni sem verða um borð í skipi hans eða þegar hann ásamt skipinu er staddur utan heimahafnar skips eða útgerðarstaðar.</sen>
-        <sen nr="4">Enn fremur tekur tryggingin til allra slysa á friðargæsluliðum íslenska ríkisins sem verða þegar þeir eru staddir erlendis við friðargæslustörf.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Slys telst ekki verða við vinnu ef það hlýst af athöfnum slasaða sjálfs sem ekki standa í neinu sambandi við vinnuna.</sen>
+          <sen nr="2">Hafi slasaði verið valdur að slysi af ásetningi eða stórfelldu gáleysi er heimilt að lækka eða fella niður greiðslur bóta samkvæmt lögum þessum.</sen>
+          <sen nr="3">Tryggingin tekur þó til allra slysa á sjómanni sem verða um borð í skipi hans eða þegar hann ásamt skipinu er staddur utan heimahafnar skips eða útgerðarstaðar.</sen>
+          <sen nr="4">Enn fremur tekur tryggingin til allra slysa á friðargæsluliðum íslenska ríkisins sem verða þegar þeir eru staddir erlendis við friðargæslustörf.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Trygging samkvæmt þessari grein gildir þó ekki ef bótaskylda er fyrir hendi samkvæmt lögboðinni ábyrgðartryggingu ökutækis eða slysatryggingu ökumanns og eiganda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Trygging samkvæmt þessari grein gildir þó ekki ef bótaskylda er fyrir hendi samkvæmt lögboðinni ábyrgðartryggingu ökutækis eða slysatryggingu ökumanns og eiganda.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Til slysa teljast sjúkdómar sem stafa af skaðlegum áhrifum efna, geislaorku eða öðru hliðstæðu sem ríkjandi eru í hæsta lagi fáeina daga og rekja verður til vinnunnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Til slysa teljast sjúkdómar sem stafa af skaðlegum áhrifum efna, geislaorku eða öðru hliðstæðu sem ríkjandi eru í hæsta lagi fáeina daga og rekja verður til vinnunnar.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1"></sen>
+        <paragraph nr="1">
+          <sen nr="1"></sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="4" nr="1">
           <footnote-sen>L. 108/2021, 4. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>1</subart>
-            <sen words="tilteknar">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>1</subart>
-            <sen words="óvæntan">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>2</subart>
-            <numart>b</numart>
-            <sen words="á eðlilegri leið">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>3</subart>
-            <sen>2</sen>
-          </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>6</subart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="tilteknar" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="óvæntan" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" words="á eðlilegri leið" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -154,36 +138,26 @@
       <nr-title>5. gr. a.</nr-title>
       <name>Atvinnusjúkdómar.</name>
       <subart nr="1">
-        <sen nr="1">Með atvinnusjúkdómi er átt við sjúkdóm sem orsakast af vinnu eða aðstæðum í starfsumhverfi.</sen>
-        <sen nr="2">Ákvæði laga þessara gilda um bótaskylda atvinnusjúkdóma, eftir því sem við getur átt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Með atvinnusjúkdómi er átt við sjúkdóm sem orsakast af vinnu eða aðstæðum í starfsumhverfi.</sen>
+          <sen nr="2">Ákvæði laga þessara gilda um bótaskylda atvinnusjúkdóma, eftir því sem við getur átt.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra skal í reglugerð kveða nánar á um hvaða atvinnusjúkdómar teljast bótaskyldir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal í reglugerð kveða nánar á um hvaða atvinnusjúkdómar teljast bótaskyldir.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/390-2023"&gt;Rg. 390/2023&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>5a</art>
-            <subart>2</subart>
-            <sen before-mark="^Ráðherra skal í reglugerð" after-mark="kveða nánar á um hvaða atvinnusjúkdómar teljast bótaskyldir.\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra skal í reglugerð" after-mark="kveða nánar á um hvaða atvinnusjúkdómar teljast bótaskyldir\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="5" nr="2">
           <footnote-sen>L. 108/2021, 5. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>5a</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>5a</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="289">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/nr-title[1]"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
@@ -192,52 +166,31 @@
       <nr-title>6. gr.</nr-title>
       <name>Tilkynning.</name>
       <subart nr="1">
-        <sen nr="1">Þegar að höndum ber slys, sem ætla má bótaskylt samkvæmt þessum lögum, skal atvinnurekandi eða hinn tryggði, ef ekki er um atvinnurekanda að ræða, tafarlaust senda tilkynningu um slysið til sjúkratryggingastofnunarinnar á því formi sem stofnunin ákveður.</sen>
-        <sen nr="2">Hinum slasaða eða öðrum þeim sem vilja gera kröfu til bóta vegna slyssins ber að fylgjast með því að tilkynningarskyldunni sé fullnægt og geta þessir aðilar leitað aðstoðar lögreglustjóra ef atvinnurekandi vanrækir tilkynninguna.</sen>
-        <sen nr="3">Ef atvik að slysinu eru óljós eða mál ekki nægilega upplýst eða ástæða er til að ætla að slysið hafi orðið af hirðuleysi eða lélegum útbúnaði, svo og ef sjúkratryggingastofnunin eða annar hvor aðila, atvinnurekandi eða hinn slasaði eða fyrirsvarsmaður hans, óskar þess, skal lögreglustjóri rannsaka málið.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar að höndum ber slys, sem ætla má bótaskylt samkvæmt þessum lögum, skal atvinnurekandi eða hinn tryggði, ef ekki er um atvinnurekanda að ræða, tafarlaust senda tilkynningu um slysið til sjúkratryggingastofnunarinnar á því formi sem stofnunin ákveður.</sen>
+          <sen nr="2">Hinum slasaða eða öðrum þeim sem vilja gera kröfu til bóta vegna slyssins ber að fylgjast með því að tilkynningarskyldunni sé fullnægt og geta þessir aðilar leitað aðstoðar lögreglustjóra ef atvinnurekandi vanrækir tilkynninguna.</sen>
+          <sen nr="3">Ef atvik að slysinu eru óljós eða mál ekki nægilega upplýst eða ástæða er til að ætla að slysið hafi orðið af hirðuleysi eða lélegum útbúnaði, svo og ef sjúkratryggingastofnunin eða annar hvor aðila, atvinnurekandi eða hinn slasaði eða fyrirsvarsmaður hans, óskar þess, skal lögreglustjóri rannsaka málið.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ef sá sem átti að tilkynna slys hefur vanrækt það skal það ekki vera því til fyrirstöðu að hinn slasaði eða eftirlátnir vandamenn hans geti gert kröfu til bóta ef það er gert áður en ár er liðið frá því að slysið bar að höndum.</sen>
-        <sen nr="2">Heimilt er þó að greiða bætur þótt ár sé liðið frá því að slys bar að höndum ef atvik eru svo ljós að drátturinn torveldar ekki gagnaöflun um atriði sem máli skipta, enda séu ljós læknisfræðileg orsakatengsl milli slyssins og einkenna slasaða þegar tilkynning berst.</sen>
-        <sen nr="3">Ekki er heimilt að greiða bætur ef meira en tíu ár eru liðin frá slysdegi þegar tilkynning berst.</sen>
-        <sen nr="4">Ráðherra setur reglugerð um nánari framkvæmd ákvæðisins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef sá sem átti að tilkynna slys hefur vanrækt það skal það ekki vera því til fyrirstöðu að hinn slasaði eða eftirlátnir vandamenn hans geti gert kröfu til bóta ef það er gert áður en ár er liðið frá því að slysið bar að höndum.</sen>
+          <sen nr="2">Heimilt er þó að greiða bætur þótt ár sé liðið frá því að slys bar að höndum ef atvik eru svo ljós að drátturinn torveldar ekki gagnaöflun um atriði sem máli skipta, enda séu ljós læknisfræðileg orsakatengsl milli slyssins og einkenna slasaða þegar tilkynning berst.</sen>
+          <sen nr="3">Ekki er heimilt að greiða bætur ef meira en tíu ár eru liðin frá slysdegi þegar tilkynning berst.</sen>
+          <sen nr="4">Ráðherra setur reglugerð um nánari framkvæmd ákvæðisins.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="6" nr="1">
           <footnote-sen>L. 108/2021, 6. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>1</subart>
-            <sen words="til sjúkratryggingastofnunarinnar á því formi sem stofnunin ákveður">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>1</subart>
-            <sen before-mark="^" after-mark="Hinum slasaða eða öðrum þeim sem vilja gera kröfu til bóta vegna slyssins ber að fylgjast með því að tilkynningarskyldunni sé fullnægt og geta þessir aðilar leitað aðstoðar lögreglustjóra ef atvinnurekandi vanrækir tilkynninguna.$">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>2</subart>
-            <sen words="enda séu ljós læknisfræðileg orsakatengsl milli slyssins og einkenna slasaða þegar tilkynning berst">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>2</subart>
-            <sen words="Ekki er heimilt að greiða bætur ef meira en tíu ár eru liðin frá slysdegi þegar tilkynning berst.">3</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="til sjúkratryggingastofnunarinnar á því formi sem stofnunin ákveður" middle-punctuation="." instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Þegar að höndum ber slys, sem ætla má bótaskylt samkvæmt þessum lögum, skal atvinnurekandi eða hinn tryggði, ef ekki er um atvinnurekanda að ræða, tafarlaust senda tilkynningu um slysið (\[??)?til sjúkratryggingastofnunarinnar á því formi sem stofnunin ákveður\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?" after-mark="$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="enda séu ljós læknisfræðileg orsakatengsl milli slyssins og einkenna slasaða þegar tilkynning berst" middle-punctuation="." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" string-length="0"/>
         </footnote>
         <footnote nr="2">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1515-2022"&gt;Rg. 1515/2022&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>2</subart>
-            <sen before-mark="^Ráðherra setur reglugerð" after-mark="um nánari framkvæmd ákvæðisins.$">4</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" before-mark="^Ráðherra setur reglugerð" after-mark="um nánari framkvæmd ákvæðisins.$"/>
         </footnote>
       </footnotes>
     </art>
@@ -245,76 +198,83 @@
       <nr-title>7. gr.</nr-title>
       <name>Slysatryggðir.</name>
       <subart nr="1">
-        <sen nr="1">Slysatryggðir samkvæmt lögum þessum eru:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">Launþegar sem starfa hér á landi að undanskildum erlendum ríkisborgurum sem gegna embætti fyrir erlend ríki og erlendu starfsliði slíkra embættismanna.</sen>
-          <sen nr="2">Starf um borð í íslensku skipi eða íslensku loftfari, eða skipi eða loftfari sem er gert út eða rekið af íslenskum aðilum, jafngildir starfi hér á landi samkvæmt þessum lið, enda séu laun greidd hér á landi.</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">Nemendur í iðnnámi í löggiltum iðngreinum og nemar í starfsnámi sem stunda nám í heilbrigðisgreinum og raunvísindum og háskólanemar þegar þeir sinna verklegu námi.</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">Útgerðarmenn sem sjálfir eru skipverjar.</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">Þeir sem vinna að björgun manna úr lífsháska eða vörnum gegn yfirvofandi meiri háttar tjóni á verðmætum.</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">Íþróttafólk sem tekur þátt í íþróttaiðkunum, hvort heldur er æfingum, sýningum eða keppni og er orðið 16 ára.</sen>
-          <sen nr="2">Með reglugerðarákvæði má ákveða nánar gildissvið þessa ákvæðis og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum.</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">Atvinnurekendur í landbúnaði sem vinna landbúnaðarstörf, makar þeirra og börn á aldrinum 13–17 ára.</sen>
-        </numart>
-        <numart nr="g" nr-type="alphabet">
-          <nr-title>g.</nr-title>
-          <sen nr="1">Atvinnurekendur sem starfa að eigin atvinnurekstri í öðrum atvinnugreinum en um getur í f-lið.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Slysatryggðir samkvæmt lögum þessum eru:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Launþegar sem starfa hér á landi að undanskildum erlendum ríkisborgurum sem gegna embætti fyrir erlend ríki og erlendu starfsliði slíkra embættismanna.</sen>
+              <sen nr="2">Starf um borð í íslensku skipi eða íslensku loftfari, eða skipi eða loftfari sem er gert út eða rekið af íslenskum aðilum, jafngildir starfi hér á landi samkvæmt þessum lið, enda séu laun greidd hér á landi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Nemendur í iðnnámi í löggiltum iðngreinum og nemar í starfsnámi sem stunda nám í heilbrigðisgreinum og raunvísindum og háskólanemar þegar þeir sinna verklegu námi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Útgerðarmenn sem sjálfir eru skipverjar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Þeir sem vinna að björgun manna úr lífsháska eða vörnum gegn yfirvofandi meiri háttar tjóni á verðmætum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Íþróttafólk sem tekur þátt í íþróttaiðkunum, hvort heldur er æfingum, sýningum eða keppni og er orðið 16 ára.</sen>
+              <sen nr="2">Með reglugerðarákvæði má ákveða nánar gildissvið þessa ákvæðis og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Atvinnurekendur í landbúnaði sem vinna landbúnaðarstörf, makar þeirra og börn á aldrinum 13–17 ára.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" nr-type="alphabet">
+            <nr-title>g.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Atvinnurekendur sem starfa að eigin atvinnurekstri í öðrum atvinnugreinum en um getur í f-lið.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Heimilt er að veita undanþágu frá slysatryggingu skv. a-lið 1. mgr. ef hlutaðeigandi er sannanlega tryggður samkvæmt erlendri slysatryggingalöggjöf.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Heimilt er að veita undanþágu frá slysatryggingu skv. a-lið 1. mgr. ef hlutaðeigandi er sannanlega tryggður samkvæmt erlendri slysatryggingalöggjöf.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Launþegi telst hver sá sem tekur að sér vinnu gegn endurgjaldi án þess að vera sjálfur atvinnurekandi í því sambandi, hvort sem um er að ræða tímakaup, föst laun, aflahlut eða greiðslu fyrir ákvæðisvinnu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Launþegi telst hver sá sem tekur að sér vinnu gegn endurgjaldi án þess að vera sjálfur atvinnurekandi í því sambandi, hvort sem um er að ræða tímakaup, föst laun, aflahlut eða greiðslu fyrir ákvæðisvinnu.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Maki atvinnurekanda og börn hans á aldrinum 13–17 ára, sbr. g-lið 1. mgr., teljast ekki launþegar samkvæmt þessari grein nema þau starfi við atvinnureksturinn og þiggi laun fyrir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Maki atvinnurekanda og börn hans á aldrinum 13–17 ára, sbr. g-lið 1. mgr., teljast ekki launþegar samkvæmt þessari grein nema þau starfi við atvinnureksturinn og þiggi laun fyrir.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Skilyrði þess að launþegar eða þeir sem reikna sér endurgjald teljist slysatryggðir skv. 1. mgr. er að staðin hafi verið skil á, eftir því sem við á, tekjuskatti eða reiknuðu endurgjaldi til skattyfirvalda í samræmi við lög um tekjuskatt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skilyrði þess að launþegar eða þeir sem reikna sér endurgjald teljist slysatryggðir skv. 1. mgr. er að staðin hafi verið skil á, eftir því sem við á, tekjuskatti eða reiknuðu endurgjaldi til skattyfirvalda í samræmi við lög um tekjuskatt.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1545-2021"&gt;Rg. 1545/2021&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>7</art>
-            <subart>1</subart>
-            <numart>e</numart>
-            <sen before-mark="^Með reglugerðarákvæði" after-mark="má ákveða nánar gildissvið þessa ákvæðis (\[? ?)?og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Með reglugerðarákvæði" after-mark="má ákveða nánar gildissvið þessa ákvæðis (\[??)?og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="7" nr="2">
           <footnote-sen>L. 108/2021, 7. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>7</art>
-            <subart>1</subart>
-            <numart>e</numart>
-            <sen words="og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>7</art>
-            <subart>5</subart>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='2']" words="og takmarka það við félaga í formbundnum íþróttafélögum sem hafa íþróttaiðkun að meginmarkmiði og eru aðilar að tilteknum íþróttasamböndum" middle-punctuation="." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
@@ -322,20 +282,19 @@
       <nr-title>8. gr.</nr-title>
       <name>Trygging við heimilisstörf.</name>
       <subart nr="1">
-        <sen nr="1">Þeir sem stunda heimilisstörf geta tryggt sér rétt til slysabóta við þau störf með því að skrá ósk þar að lútandi í skattframtal í byrjun hvers árs.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem stunda heimilisstörf geta tryggt sér rétt til slysabóta við þau störf með því að skrá ósk þar að lútandi í skattframtal í byrjun hvers árs.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra er með reglugerð heimilt að skilgreina nánar tryggingartímabil og hvað teljist til heimilisstarfa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er með reglugerð heimilt að skilgreina nánar tryggingartímabil og hvað teljist til heimilisstarfa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/550-2017"&gt;Rg. 550/2017&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1541-2021"&gt;1541/2021&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/479-2022"&gt;479/2022&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>8</art>
-            <subart>2</subart>
-            <sen before-mark="^Ráðherra er með reglugerð" after-mark="heimilt að skilgreina nánar tryggingartímabil og hvað teljist til heimilisstarfa.$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er með reglugerð" after-mark="heimilt að skilgreina nánar tryggingartímabil og hvað teljist til heimilisstarfa.$"/>
         </footnote>
       </footnotes>
     </art>
@@ -343,17 +302,14 @@
       <nr-title>9. gr.</nr-title>
       <name>Bætur slysatrygginga almannatrygginga.</name>
       <subart nr="1">
-        <sen nr="1">Bætur slysatrygginga almannatrygginga eru sjúkrahjálp, dagpeningar, miskabætur vegna varanlegs líkamstjóns og dánarbætur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bætur slysatrygginga almannatrygginga eru sjúkrahjálp, dagpeningar, miskabætur vegna varanlegs líkamstjóns og dánarbætur.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="8" nr="1">
           <footnote-sen>L. 108/2021, 8. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>9</art>
-            <subart>1</subart>
-            <sen words="miskabætur vegna varanlegs líkamstjóns">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="miskabætur vegna varanlegs líkamstjóns" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -361,160 +317,138 @@
       <nr-title>10. gr.</nr-title>
       <name>Sjúkrahjálp.</name>
       <subart nr="1">
-        <sen nr="1">Nú veldur bótaskylt slys sjúkleika og vinnutjóni í minnst 10 daga og skal þá greiða nauðsynlegan kostnað vegna lækningar hins slasaða og tjóns á gervilimum eða hjálpartækjum svo sem hér segir:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Að fullu skal greiða:</sen>
-          <numart nr="a" nr-type="alphabet">
-            <nr-title>a.</nr-title>
-            <sen nr="1">Læknishjálp sem samið hefur verið um samkvæmt lögum um sjúkratryggingar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú veldur bótaskylt slys sjúkleika og vinnutjóni í minnst 10 daga og skal þá greiða nauðsynlegan kostnað vegna lækningar hins slasaða og tjóns á gervilimum eða hjálpartækjum svo sem hér segir:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Að fullu skal greiða:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Læknishjálp sem samið hefur verið um samkvæmt lögum um sjúkratryggingar.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Sjúkrahúsvist, svo lengi sem afleiðingar slyssins gera hana nauðsynlega, sé hinn slasaði ekki sjúkratryggður samkvæmt lögum um sjúkratryggingar.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Lyf og umbúðir.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Viðgerð vegna brots eða löskunar á heilbrigðum tönnum eða vel viðgerðum.</sen>
+                  <sen nr="2">Greiðslu fyrir sams konar viðgerðir á lélegri tönnum og gervitönnum má takmarka við kostnað sem ætla má að orðið hefði ef þær hefðu verið heilbrigðar.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Gervilimi eða svipuð hjálpartæki, svo og viðgerð á þeim eða endurnýjun ef viðgerð telst ekki fullnægjandi.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" nr-type="alphabet">
+                <nr-title>f.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Sjúkraflutning með sjúkraflugvél eða sjúkrabíl fyrst eftir slys eða þegar ella verður nauðsynlegt að senda sjúkling með slíkum farartækjum til meðferðar hjá lækni eða á sjúkrahúsi, þó ekki fyrir einstakar ferðir þegar um langa meðferð er að ræða.</sen>
+                  <sen nr="2">Sama gildir um flutning með skipi þegar öðrum farartækjum verður ekki við komið.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="g" nr-type="alphabet">
+                <nr-title>g.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Sjúkraþjálfun, iðjuþjálfun og talþjálfun.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
           </numart>
-          <numart nr="b" nr-type="alphabet">
-            <nr-title>b.</nr-title>
-            <sen nr="1">Sjúkrahúsvist, svo lengi sem afleiðingar slyssins gera hana nauðsynlega, sé hinn slasaði ekki sjúkratryggður samkvæmt lögum um sjúkratryggingar.</sen>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Greiða skal:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Að hálfu ferðakostnað til læknis með leigubíl, enda sé sjúklingur ekki fær um að ferðast með áætlunarbíl eða strætisvagni.</sen>
+                  <sen nr="2">Ekki skal þó greiddur ferðakostnaður vegna ferða hins slasaða í einkabifreið.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Að 3/4 kostnað við sams konar ferðir með áætlunarbíl, -flugvél eða -skipi eða samkvæmt kílómetragjaldi, enda sé um meira en 20 km vegalengd að ræða.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
           </numart>
-          <numart nr="c" nr-type="alphabet">
-            <nr-title>c.</nr-title>
-            <sen nr="1">Lyf og umbúðir.</sen>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Heimilt er að greiða:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Hjúkrun í heimahúsum, veitta af vandalausum.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Styrk upp í kostnað vegna löskunar á tönnum þegar áður hafa verið framkvæmdar kostnaðarsamar aðgerðir á þeim sem ónýst hafa við slysið.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1"/>
+              </numart>
+            </paragraph>
           </numart>
-          <numart nr="d" nr-type="alphabet">
-            <nr-title>d.</nr-title>
-            <sen nr="1">Viðgerð vegna brots eða löskunar á heilbrigðum tönnum eða vel viðgerðum.</sen>
-            <sen nr="2">Greiðslu fyrir sams konar viðgerðir á lélegri tönnum og gervitönnum má takmarka við kostnað sem ætla má að orðið hefði ef þær hefðu verið heilbrigðar.</sen>
-          </numart>
-          <numart nr="e" nr-type="alphabet">
-            <nr-title>e.</nr-title>
-            <sen nr="1">Gervilimi eða svipuð hjálpartæki, svo og viðgerð á þeim eða endurnýjun ef viðgerð telst ekki fullnægjandi.</sen>
-          </numart>
-          <numart nr="f" nr-type="alphabet">
-            <nr-title>f.</nr-title>
-            <sen nr="1">Sjúkraflutning með sjúkraflugvél eða sjúkrabíl fyrst eftir slys eða þegar ella verður nauðsynlegt að senda sjúkling með slíkum farartækjum til meðferðar hjá lækni eða á sjúkrahúsi, þó ekki fyrir einstakar ferðir þegar um langa meðferð er að ræða.</sen>
-            <sen nr="2">Sama gildir um flutning með skipi þegar öðrum farartækjum verður ekki við komið.</sen>
-          </numart>
-          <numart nr="g" nr-type="alphabet">
-            <nr-title>g.</nr-title>
-            <sen nr="1">Sjúkraþjálfun, iðjuþjálfun og talþjálfun.</sen>
-          </numart>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Greiða skal:</sen>
-          <numart nr="a" nr-type="alphabet">
-            <nr-title>a.</nr-title>
-            <sen nr="1">Að hálfu ferðakostnað til læknis með leigubíl, enda sé sjúklingur ekki fær um að ferðast með áætlunarbíl eða strætisvagni.</sen>
-            <sen nr="2">Ekki skal þó greiddur ferðakostnaður vegna ferða hins slasaða í einkabifreið.</sen>
-          </numart>
-          <numart nr="b" nr-type="alphabet">
-            <nr-title>b.</nr-title>
-            <sen nr="1">Að 3/4 kostnað við sams konar ferðir með áætlunarbíl, -flugvél eða -skipi eða samkvæmt kílómetragjaldi, enda sé um meira en 20 km vegalengd að ræða.</sen>
-          </numart>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <sen nr="1">Heimilt er að greiða:</sen>
-          <numart nr="a" nr-type="alphabet">
-            <nr-title>a.</nr-title>
-            <sen nr="1">Hjúkrun í heimahúsum, veitta af vandalausum.</sen>
-          </numart>
-          <numart nr="b" nr-type="alphabet">
-            <nr-title>b.</nr-title>
-            <sen nr="1">Styrk upp í kostnað vegna löskunar á tönnum þegar áður hafa verið framkvæmdar kostnaðarsamar aðgerðir á þeim sem ónýst hafa við slysið.</sen>
-          </numart>
-          <numart nr="c" nr-type="alphabet">
-            <nr-title>c.</nr-title>
-          </numart>
-        </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Að svo miklu leyti sem samningar samkvæmt lögum um sjúkratryggingar ná ekki til sjúkrahjálpar skv. 1. mgr. getur ráðherra ákveðið endurgreiðslu að nokkru eða öllu leyti með reglugerð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að svo miklu leyti sem samningar samkvæmt lögum um sjúkratryggingar ná ekki til sjúkrahjálpar skv. 1. mgr. getur ráðherra ákveðið endurgreiðslu að nokkru eða öllu leyti með reglugerð.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Nú veldur slys ekki óvinnufærni í 10 daga en hefur þó í för með sér kostnað sem um ræðir í þessari grein og má þá greiða hann að svo miklu leyti sem hann fæst ekki greiddur hjá sjúkratryggingum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú veldur slys ekki óvinnufærni í 10 daga en hefur þó í för með sér kostnað sem um ræðir í þessari grein og má þá greiða hann að svo miklu leyti sem hann fæst ekki greiddur hjá sjúkratryggingum.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Kostnaður vegna sjúkrahjálpar sem fellur til þegar liðin eru fimm ár eða meira frá slysdegi greiðist ekki.</sen>
-        <sen nr="2">Þó er heimilt, ef alveg sérstaklega stendur á, að greiða kostnað sem fellur til í allt að tíu ár frá slysdegi enda séu skýr læknisfræðileg orsakatengsl milli slyssins og kostnaðarins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Kostnaður vegna sjúkrahjálpar sem fellur til þegar liðin eru fimm ár eða meira frá slysdegi greiðist ekki.</sen>
+          <sen nr="2">Þó er heimilt, ef alveg sérstaklega stendur á, að greiða kostnað sem fellur til í allt að tíu ár frá slysdegi enda séu skýr læknisfræðileg orsakatengsl milli slyssins og kostnaðarins.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Einungis skal greiða nauðsynlegan kostnað skv. 1. mgr. sem fellur til hér á landi nema annað leiði af milliríkjasamningum.</sen>
-        <sen nr="2">Þó skal greiða óhjákvæmilega sjúkrahjálp sem fellur til erlendis ef slasaði er tryggður samkvæmt ákvæðum 2. málsl. b-liðar 2. mgr. 5. gr. eða samkvæmt ákvæðum laga um sjúkratryggingar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Einungis skal greiða nauðsynlegan kostnað skv. 1. mgr. sem fellur til hér á landi nema annað leiði af milliríkjasamningum.</sen>
+          <sen nr="2">Þó skal greiða óhjákvæmilega sjúkrahjálp sem fellur til erlendis ef slasaði er tryggður samkvæmt ákvæðum 2. málsl. b-liðar 2. mgr. 5. gr. eða samkvæmt ákvæðum laga um sjúkratryggingar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="9" nr="1">
           <footnote-sen>L. 108/2021, 9. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>1</numart>
-            <numart>d</numart>
-            <sen words="og gervitönnum">2</sen>
-          </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>1</numart>
-            <numart>e</numart>
-            <sen before-mark="^" after-mark="$">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>1</numart>
-            <numart>f</numart>
-            <sen words="langa meðferð">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>1</numart>
-            <numart>g</numart>
-            <sen words="iðjuþjálfun og talþjálfun">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>2</numart>
-            <numart>a</numart>
-            <sen>2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>2</numart>
-            <numart>b</numart>
-            <sen>1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>3</numart>
-            <numart>b</numart>
-            <sen words="áður hafa verið framkvæmdar">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <numart>3</numart>
-            <numart>c</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='2']" words="og gervitönnum" instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Gervilimi eða svipuð hjálpartæki, svo og viðgerð á þeim eða endurnýjun ef viðgerð telst ekki fullnægjandi." after-mark="$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']" words="langa meðferð" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/numart[@nr='g']/paragraph[@nr='1']/sen[@nr='1']" words="iðjuþjálfun og talþjálfun" middle-punctuation="." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" words="áður hafa verið framkvæmdar" instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/numart[@nr='c']/nr-title[1]" before-mark="^c." after-mark="$"/>
         </footnote>
         <footnote nr="2">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/541-2002"&gt;Rg. 541/2002&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/335-2011"&gt;335/2011&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>10</art>
-            <subart>2</subart>
-            <sen before-mark="^Að svo miklu leyti sem samningar samkvæmt lögum um sjúkratryggingar ná ekki til sjúkrahjálpar skv. 1. mgr. getur ráðherra ákveðið endurgreiðslu að nokkru eða öllu leyti með reglugerð." after-mark="$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Að svo miklu leyti sem samningar samkvæmt lögum um sjúkratryggingar ná ekki til sjúkrahjálpar skv. 1. mgr. getur ráðherra ákveðið endurgreiðslu að nokkru eða öllu leyti með reglugerð." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -522,42 +456,38 @@
       <nr-title>11. gr.</nr-title>
       <name>Dagpeningar.</name>
       <subart nr="1">
-        <sen nr="1">Dagpeningar greiðast frá og með 8. degi eftir að slys varð, enda hafi hinn slasaði verið óvinnufær í minnst 10 daga.</sen>
-        <sen nr="2">Dagpeningar greiðast þangað til hinn slasaði verður vinnufær eða hann deyr, þó ekki lengur en 52 vikur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Dagpeningar greiðast frá og með 8. degi eftir að slys varð, enda hafi hinn slasaði verið óvinnufær í minnst 10 daga.</sen>
+          <sen nr="2">Dagpeningar greiðast þangað til hinn slasaði verður vinnufær eða hann deyr, þó ekki lengur en 52 vikur.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Sjúkratryggingastofnuninni er heimilt að ákveða að dagpeningar skuli greiddir lengur, einkum ef ekki er lokið lækningatilraunum og óvíst er hvort um varanlegan miska verður að ræða og líkur eru til að afstýra megi eða draga úr miska með lengri bótagreiðslu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sjúkratryggingastofnuninni er heimilt að ákveða að dagpeningar skuli greiddir lengur, einkum ef ekki er lokið lækningatilraunum og óvíst er hvort um varanlegan miska verður að ræða og líkur eru til að afstýra megi eða draga úr miska með lengri bótagreiðslu.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Dagpeningar eru 1.727 kr. á dag fyrir hvern einstakling og 387 kr. fyrir hvert barn á framfæri, þar með talin börn utan heimilis sem hinn slasaði sannanlega greiðir með samkvæmt úrskurði stjórnvalds, staðfestu samkomulagi eða skilnaðarleyfisbréfi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Dagpeningar eru 1.727 kr. á dag fyrir hvern einstakling og 387 kr. fyrir hvert barn á framfæri, þar með talin börn utan heimilis sem hinn slasaði sannanlega greiðir með samkvæmt úrskurði stjórnvalds, staðfestu samkomulagi eða skilnaðarleyfisbréfi.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Greiðslur samkvæmt þessari grein mega ekki fara fram úr 3/4 af tekjum bótaþega við þá atvinnu sem hann stundaði þegar slysið varð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Greiðslur samkvæmt þessari grein mega ekki fara fram úr 3/4 af tekjum bótaþega við þá atvinnu sem hann stundaði þegar slysið varð.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Nú greiðir vinnuveitandi hinum slasaða laun í slysaforföllum og renna þá dagpeningagreiðslur samkvæmt þessari grein til vinnuveitandans þann tíma, þó aldrei hærri greiðsla en sem nemur 3/4 hlutum launanna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú greiðir vinnuveitandi hinum slasaða laun í slysaforföllum og renna þá dagpeningagreiðslur samkvæmt þessari grein til vinnuveitandans þann tíma, þó aldrei hærri greiðsla en sem nemur 3/4 hlutum launanna.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="10" nr="1">
           <footnote-sen>L. 108/2021, 10. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>11</art>
-            <subart>1</subart>
-            <sen before-mark="^Dagpeningar greiðast þangað til hinn slasaði verður vinnufær" after-mark="eða hann deyr, þó ekki lengur en 52 vikur.$">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>11</art>
-            <subart>2</subart>
-            <sen words="varanlegan">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>11</art>
-            <subart>2</subart>
-            <sen words="miska" repeat="true">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Dagpeningar greiðast þangað til hinn slasaði verður vinnufær" after-mark="eða hann deyr, þó ekki lengur en 52 vikur.$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="varanlegan" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="miska" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="miska" instance-num="2"/>
         </footnote>
       </footnotes>
     </art>
@@ -565,31 +495,28 @@
       <nr-title>12. gr.</nr-title>
       <name>Miskabætur.</name>
       <subart nr="1">
-        <sen nr="1">Ef slys veldur varanlegu líkamstjóni skal greiða hinum slasaða miskabætur skv. 4. gr. skaðabótalaga, nr. 50/1993.</sen>
-        <sen nr="2">Tekjur hins slasaða hafa ekki áhrif á bæturnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef slys veldur varanlegu líkamstjóni skal greiða hinum slasaða miskabætur skv. 4. gr. skaðabótalaga, nr. 50/1993.</sen>
+          <sen nr="2">Tekjur hins slasaða hafa ekki áhrif á bæturnar.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Miskabætur greiðast ekki ef varanlegur miski er metinn minni en 10 stig.</sen>
-        <sen nr="2">Hafi slasaður áður fengið metinn varanlegan miska vegna annars bótaskylds slyss skal taka tillit til samanlagðs miska.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Miskabætur greiðast ekki ef varanlegur miski er metinn minni en 10 stig.</sen>
+          <sen nr="2">Hafi slasaður áður fengið metinn varanlegan miska vegna annars bótaskylds slyss skal taka tillit til samanlagðs miska.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Sjúkratryggingastofnuninni er heimilt að semja við lækna utan stofnunarinnar um að gera tillögu að mati á varanlegum miska umsækjenda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sjúkratryggingastofnuninni er heimilt að semja við lækna utan stofnunarinnar um að gera tillögu að mati á varanlegum miska umsækjenda.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="11" nr="1">
           <footnote-sen>L. 108/2021, 11. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>12</art>
-              <name>1</name>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>12</art>
-              <subart>3</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="496">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/name[1]"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
@@ -598,28 +525,22 @@
       <nr-title>13. gr.</nr-title>
       <name>Dánarbætur.</name>
       <subart nr="1">
-        <sen nr="1">Ef slys veldur dauða innan tveggja ára frá slysdegi skal greiða eftirlifandi maka eða sambúðarmaka þess látna dánarbætur að fjárhæð 4.900.000 kr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef slys veldur dauða innan tveggja ára frá slysdegi skal greiða eftirlifandi maka eða sambúðarmaka þess látna dánarbætur að fjárhæð 4.900.000 kr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Nú lætur hinn látni ekki eftir sig maka eða sambúðarmaka sem á rétt á bótum skv. 1. mgr. og skal þá bæta slysið með 896.827 kr. sem skiptast að jöfnu milli barna og/eða fósturbarna hins látna ef á lífi eru, en ella til dánarbús hans.</sen>
-        <sen nr="2">Frá dánarbótum sem greiddar eru vandamönnum ber að draga þær miskabætur sem greiddar hafa verið í einu lagi skv. 12. gr. vegna sama slyss.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú lætur hinn látni ekki eftir sig maka eða sambúðarmaka sem á rétt á bótum skv. 1. mgr. og skal þá bæta slysið með 896.827 kr. sem skiptast að jöfnu milli barna og/eða fósturbarna hins látna ef á lífi eru, en ella til dánarbús hans.</sen>
+          <sen nr="2">Frá dánarbótum sem greiddar eru vandamönnum ber að draga þær miskabætur sem greiddar hafa verið í einu lagi skv. 12. gr. vegna sama slyss.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="12" nr="1">
           <footnote-sen>L. 108/2021, 12. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>13</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>13</art>
-              <subart>2</subart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="517">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
           </location>
         </footnote>
       </footnotes>
@@ -628,28 +549,22 @@
       <nr-title>14. gr.</nr-title>
       <name>Samspil og skörun bóta.</name>
       <subart nr="1">
-        <sen nr="1">Slysadagpeningar greiðast ekki fyrir sama tímabil og sjúkradagpeningar samkvæmt lögum um sjúkratryggingar.</sen>
-        <sen nr="2">Hafi umsækjandi um slysadagpeninga þegar fengið greidda sjúkradagpeninga fyrir sama tímabil skulu slysadagpeningar nema mismuninum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Slysadagpeningar greiðast ekki fyrir sama tímabil og sjúkradagpeningar samkvæmt lögum um sjúkratryggingar.</sen>
+          <sen nr="2">Hafi umsækjandi um slysadagpeninga þegar fengið greidda sjúkradagpeninga fyrir sama tímabil skulu slysadagpeningar nema mismuninum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Slysadagpeningar á sama tímabil vegna fleiri en eins slyss geta að hámarki numið fullum dagpeningum skv. 3.–4. mgr. 11. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Slysadagpeningar á sama tímabil vegna fleiri en eins slyss geta að hámarki numið fullum dagpeningum skv. 3.–4. mgr. 11. gr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="13" nr="1">
           <footnote-sen>L. 108/2021, 13. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>14</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>14</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="361">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
@@ -658,88 +573,94 @@
       <nr-title>15. gr.</nr-title>
       <name>Ákvörðun bóta.</name>
       <subart nr="1">
-        <sen nr="1">Allar umsóknir skulu ákvarðaðar svo fljótt sem kostur er á og skulu bætur reiknaðar frá þeim degi þegar umsækjandinn hefur uppfyllt skilyrði til bótanna.</sen>
-        <sen nr="2"></sen>
+        <paragraph nr="1">
+          <sen nr="1">Allar umsóknir skulu ákvarðaðar svo fljótt sem kostur er á og skulu bætur reiknaðar frá þeim degi þegar umsækjandinn hefur uppfyllt skilyrði til bótanna.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Bætur vegna sjúkrahjálpar, dagpeninga og dánarbætur skal aldrei ákvarða lengra aftur í tímann en tvö ár frá því að umsókn og önnur gögn sem nauðsynleg eru til að unnt sé að taka ákvörðun um bótarétt og fjárhæð bóta berast sjúkratryggingastofnuninni.</sen>
-        <sen nr="2">Um greiðslur miskabóta aftur í tímann ásamt vöxtum fer samkvæmt lögum um fyrningu kröfuréttinda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bætur vegna sjúkrahjálpar, dagpeninga og dánarbætur skal aldrei ákvarða lengra aftur í tímann en tvö ár frá því að umsókn og önnur gögn sem nauðsynleg eru til að unnt sé að taka ákvörðun um bótarétt og fjárhæð bóta berast sjúkratryggingastofnuninni.</sen>
+          <sen nr="2">Um greiðslur miskabóta aftur í tímann ásamt vöxtum fer samkvæmt lögum um fyrningu kröfuréttinda.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvarðaðar bætur falla niður ef þær eru ekki sóttar innan tólf mánaða, en ákvarða má bætur á ný ef rökstudd umsókn berst.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvarðaðar bætur falla niður ef þær eru ekki sóttar innan tólf mánaða, en ákvarða má bætur á ný ef rökstudd umsókn berst.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Grundvöll bótaréttar má skoða hvenær sem er og færa til samræmis við þær breytingar sem orðið hafa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Grundvöll bótaréttar má skoða hvenær sem er og færa til samræmis við þær breytingar sem orðið hafa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="14" nr="1">
           <footnote-sen>L. 108/2021, 14. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>15</art>
-            <subart>1</subart>
-            <sen before-mark="^" after-mark="$">2</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>15</art>
-            <subart>2</subart>
-            <sen words="miskabóta aftur í tímann ásamt vöxtum">2</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Allar umsóknir skulu ákvarðaðar svo fljótt sem kostur er á og skulu bætur reiknaðar frá þeim degi þegar umsækjandinn hefur uppfyllt skilyrði til bótanna." after-mark="$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="miskabóta aftur í tímann ásamt vöxtum" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="3" nr-type="roman" roman-nr="III">
+  <chapter nr="3" nr-type="roman" chapter-type="kafli" roman-nr="III">
     <nr-title>III. kafli.</nr-title>
     <name>Ýmis ákvæði.</name>
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <name>Tekjur.</name>
       <subart nr="1">
-        <sen nr="1">Útgjöld slysatrygginga skulu borin af tekjum ríkissjóðs af tryggingagjaldi og iðgjöldum skv. 3. mgr.</sen>
-        <sen nr="2">Þá skal árlega ákveða í fjárlögum framlag sem standa skal undir kostnaði af bótum vegna þeirra sem um getur í e-lið 1. mgr. 7. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Útgjöld slysatrygginga skulu borin af tekjum ríkissjóðs af tryggingagjaldi og iðgjöldum skv. 3. mgr.</sen>
+          <sen nr="2">Þá skal árlega ákveða í fjárlögum framlag sem standa skal undir kostnaði af bótum vegna þeirra sem um getur í e-lið 1. mgr. 7. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Sjúkratryggingastofnunin skal ár hvert gera áætlun um bótagreiðslur og rekstrarkostnað slysatrygginga næsta almanaksár.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sjúkratryggingastofnunin skal ár hvert gera áætlun um bótagreiðslur og rekstrarkostnað slysatrygginga næsta almanaksár.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Iðgjöld útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna skulu vera 0,65% af samanlögðum launum og aflahlut sjómanna sem starfa hjá þeim hverju sinni.</sen>
-        <sen nr="2">Iðgjöld þessi skulu ásamt dagpeningum skv. 6. mgr. 21. gr. standa undir greiðslu launa og/eða aflahlutar skv. 2. mgr. 21. gr. og rekstrarkostnaði slysatrygginga vegna framkvæmdar sjúkratryggingastofnunarinnar við tryggingu þessa.</sen>
-        <sen nr="3">Iðgjöld þeirra sem stunda heimilisstörf skv. 8. gr. skulu ákveðin þannig að þau standi undir kostnaði við trygginguna og rekstrarkostnaði sjúkratryggingastofnunarinnar vegna framkvæmdarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna skulu vera 0,65% af samanlögðum launum og aflahlut sjómanna sem starfa hjá þeim hverju sinni.</sen>
+          <sen nr="2">Iðgjöld þessi skulu ásamt dagpeningum skv. 6. mgr. 21. gr. standa undir greiðslu launa og/eða aflahlutar skv. 2. mgr. 21. gr. og rekstrarkostnaði slysatrygginga vegna framkvæmdar sjúkratryggingastofnunarinnar við tryggingu þessa.</sen>
+          <sen nr="3">Iðgjöld þeirra sem stunda heimilisstörf skv. 8. gr. skulu ákveðin þannig að þau standi undir kostnaði við trygginguna og rekstrarkostnaði sjúkratryggingastofnunarinnar vegna framkvæmdarinnar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="17">
       <nr-title>17. gr.</nr-title>
       <name>Iðgjöld.</name>
       <subart nr="1">
-        <sen nr="1">Iðgjöld skv. 16. gr. skal ríkisskattstjóri leggja á með tekjuskatti og færa þau á skattskrá, sbr. 98. gr. laga nr. 90/2003, um tekjuskatt, og skulu ákvæði 99. gr. þeirra laga og ákvæði laga nr. 30/1992, um yfirskattanefnd, gilda um iðgjöld eftir því sem við á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld skv. 16. gr. skal ríkisskattstjóri leggja á með tekjuskatti og færa þau á skattskrá, sbr. 98. gr. laga nr. 90/2003, um tekjuskatt, og skulu ákvæði 99. gr. þeirra laga og ákvæði laga nr. 30/1992, um yfirskattanefnd, gilda um iðgjöld eftir því sem við á.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ákvæði laga nr. 113/1990, um tryggingagjald, skulu eiga við um gjaldstofn, gjaldskyldu, greiðslutímabil, álagningu og innheimtu iðgjalds útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna.</sen>
-        <sen nr="2">Að tekjuári liðnu skal fara fram endanleg ákvörðun iðgjaldsins í samræmi við launaframtal og skal iðgjaldið sérgreint í álagningarskrá og skattskrá.</sen>
-        <sen nr="3">Ríkisskattstjóri skal halda skrá yfir gjaldskylda aðila og skal eftir atvikum leita staðfestingar á iðgjaldi útgerðaraðila þegar greiðsluskylda sjúkratryggingastofnunarinnar er ákvörðuð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði laga nr. 113/1990, um tryggingagjald, skulu eiga við um gjaldstofn, gjaldskyldu, greiðslutímabil, álagningu og innheimtu iðgjalds útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna.</sen>
+          <sen nr="2">Að tekjuári liðnu skal fara fram endanleg ákvörðun iðgjaldsins í samræmi við launaframtal og skal iðgjaldið sérgreint í álagningarskrá og skattskrá.</sen>
+          <sen nr="3">Ríkisskattstjóri skal halda skrá yfir gjaldskylda aðila og skal eftir atvikum leita staðfestingar á iðgjaldi útgerðaraðila þegar greiðsluskylda sjúkratryggingastofnunarinnar er ákvörðuð.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Gjalddagar iðgjalda skulu ákveðnir í reglugerð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Gjalddagar iðgjalda skulu ákveðnir í reglugerð.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="18">
       <nr-title>18. gr.</nr-title>
       <name>Innheimta.</name>
       <subart nr="1">
-        <sen nr="1">Iðgjöld til slysatrygginga skulu innheimt af innheimtumönnum ríkissjóðs og sveitarsjóða eða sérstökum innheimtustofnunum.</sen>
-        <sen nr="2">Ákvæði laga nr. 90/2003, um tekjuskatt, og eftir atvikum laga um innheimtu opinberra skatta og gjalda, þar á meðal um dráttarvexti og fjárnámsrétt, gilda um innheimtu iðgjalda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld til slysatrygginga skulu innheimt af innheimtumönnum ríkissjóðs og sveitarsjóða eða sérstökum innheimtustofnunum.</sen>
+          <sen nr="2">Ákvæði laga nr. 90/2003, um tekjuskatt, og eftir atvikum laga um innheimtu opinberra skatta og gjalda, þar á meðal um dráttarvexti og fjárnámsrétt, gilda um innheimtu iðgjalda.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.150.html#G22" law-nr="150" law-year="2019" law-art="22" nr="1">
           <footnote-sen>L. 150/2019, 22. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <art>18</art>
-            <subart>1</subart>
-            <sen words="og eftir atvikum laga um innheimtu opinberra skatta og gjalda">2</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='18']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="og eftir atvikum laga um innheimtu opinberra skatta og gjalda" middle-punctuation="," instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -747,7 +668,9 @@
       <nr-title>19. gr.</nr-title>
       <name>Iðgjöld útgerðarmanna.</name>
       <subart nr="1">
-        <sen nr="1">Iðgjöld útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna skv. 16. gr. skulu hvíla sem lögveð á hlutaðeigandi skipum og ganga fyrir öllum öðrum veðum en lögveðum fyrir gjöldum ríkissjóðs.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld útgerðarmanna fiskiskipa vegna slysatrygginga sjómanna skv. 16. gr. skulu hvíla sem lögveð á hlutaðeigandi skipum og ganga fyrir öllum öðrum veðum en lögveðum fyrir gjöldum ríkissjóðs.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="20">
@@ -755,11 +678,7 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="15" nr="1">
           <footnote-sen>L. 108/2021, 15. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>3</chapter>
-            <art>20</art>
-            <nr-title before-mark="^20. gr." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='20']/nr-title[1]" before-mark="^20. gr." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -767,54 +686,69 @@
       <nr-title>21. gr.</nr-title>
       <name>Viðbótartrygging útgerðarmanna fiskiskipa.</name>
       <subart nr="1">
-        <sen nr="1">Útgerðarmenn fiskiskipa skulu tryggja áhættu vegna bótaskyldra slysa samkvæmt lögum þessum og 1. mgr. 36. gr. sjómannalaga hjá sjúkratryggingastofnuninni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Útgerðarmenn fiskiskipa skulu tryggja áhættu vegna bótaskyldra slysa samkvæmt lögum þessum og 1. mgr. 36. gr. sjómannalaga hjá sjúkratryggingastofnuninni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Sjúkratryggingastofnunin greiðir útgerðarmönnum fjárhæð sem svarar til fullra launa og/eða aflahlutar sjómanna í allt að tvo mánuði.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sjúkratryggingastofnunin greiðir útgerðarmönnum fjárhæð sem svarar til fullra launa og/eða aflahlutar sjómanna í allt að tvo mánuði.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Útgerðarmenn skulu greiða iðgjald skv. 16. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Útgerðarmenn skulu greiða iðgjald skv. 16. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Útgerðarmenn sem þess óska geta sagt upp tryggingu, sbr. 1. mgr., fyrir 1. nóvember ár hvert vegna næsta árs á eftir.</sen>
-        <sen nr="2">Tilkynning um uppsögn skal berast sjúkratryggingastofnuninni.</sen>
-        <sen nr="3">Eftir að uppsögn hefur öðlast gildi eiga útgerðarmenn ekki rétt á greiðslum vegna launa eða aflahlutar í forföllum vegna slysa en njóta slysatrygginga almennra launþega.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Útgerðarmenn sem þess óska geta sagt upp tryggingu, sbr. 1. mgr., fyrir 1. nóvember ár hvert vegna næsta árs á eftir.</sen>
+          <sen nr="2">Tilkynning um uppsögn skal berast sjúkratryggingastofnuninni.</sen>
+          <sen nr="3">Eftir að uppsögn hefur öðlast gildi eiga útgerðarmenn ekki rétt á greiðslum vegna launa eða aflahlutar í forföllum vegna slysa en njóta slysatrygginga almennra launþega.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Halda skal tryggingum samkvæmt þessari grein reikningslega aðskildum frá annarri starfsemi sjúkratryggingastofnunarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Halda skal tryggingum samkvæmt þessari grein reikningslega aðskildum frá annarri starfsemi sjúkratryggingastofnunarinnar.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1">Dagpeningar skv. 11. gr. skulu renna til sjúkratryggingastofnunarinnar þann tíma sem greiðslur launa og aflahlutar eiga sér stað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Dagpeningar skv. 11. gr. skulu renna til sjúkratryggingastofnunarinnar þann tíma sem greiðslur launa og aflahlutar eiga sér stað.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="22">
       <nr-title>22. gr.</nr-title>
       <name>Réttindi milli landa.</name>
       <subart nr="1">
-        <sen nr="1">Þegar milliríkjasamningar sem Ísland er aðili að kveða á um gagnkvæm réttindi til slysatrygginga almannatrygginga skulu þeir sem falla undir íslenska löggjöf samkvæmt ákvæðum samninganna öðlast réttindi samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar milliríkjasamningar sem Ísland er aðili að kveða á um gagnkvæm réttindi til slysatrygginga almannatrygginga skulu þeir sem falla undir íslenska löggjöf samkvæmt ákvæðum samninganna öðlast réttindi samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ákvæði 1. mgr. eiga einnig við um einstaklinga sem eru sjúkratryggðir skv. 1. mgr. 11. gr. laga um sjúkratryggingar og starfa erlendis fyrir aðila sem hefur aðsetur og starfsemi á Íslandi, enda sé tryggingagjald greitt hér á landi af launum hans, sbr. lög um tryggingagjald.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði 1. mgr. eiga einnig við um einstaklinga sem eru sjúkratryggðir skv. 1. mgr. 11. gr. laga um sjúkratryggingar og starfa erlendis fyrir aðila sem hefur aðsetur og starfsemi á Íslandi, enda sé tryggingagjald greitt hér á landi af launum hans, sbr. lög um tryggingagjald.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra setur reglugerð um nánari framkvæmd greinarinnar, m.a. um heimild til að draga frá bótum samkvæmt lögum þessum bætur samkvæmt erlendri löggjöf fyrir sama tímabil og bætur eru greiddar fyrir hér á landi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra setur reglugerð um nánari framkvæmd greinarinnar, m.a. um heimild til að draga frá bótum samkvæmt lögum þessum bætur samkvæmt erlendri löggjöf fyrir sama tímabil og bætur eru greiddar fyrir hér á landi.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="23">
       <nr-title>23. gr.</nr-title>
       <name>Reglugerðarheimild.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/541-2002"&gt;Rg. 541/2002&lt;/a&gt;(um endurgreiðslu slysatrygginga á nauðsynlegum kostnaði vegna sjúkrahjálpar), sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/002-2019"&gt;2/2019&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/049-2020"&gt;49/2020&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/550-2017"&gt;Rg. 550/2017&lt;/a&gt;(um slysatryggingu við heimilisstörf), sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1541-2021"&gt;1541/2021&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/479-2022"&gt;479/2022&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1545-2021"&gt;Rg. 1545/2021&lt;/a&gt;(um slysatryggingar íþróttafólks samkvæmt lögum um slysatryggingar almannatrygginga). &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1515-2022"&gt;Rg. 1515/2022&lt;/a&gt;(um tilkynningarfrest slysa samkvæmt lögum nr. 45/2015 um slysatryggingar almannatrygginga). &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/390-2023"&gt;Rg. 390/2023&lt;/a&gt;(um atvinnusjúkdóma). &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/694-2023"&gt;Rg. 694/2023&lt;/a&gt;(um fjárhæðir bóta slysatrygginga almannatrygginga fyrir árið 2023).</footnote-sen>
-          <location type="pointer">
-            <chapter>3</chapter>
-            <art>23</art>
-            <subart>1</subart>
-            <sen before-mark="^Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum." after-mark="$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er heimilt að kveða á um nánari framkvæmd laga þessara í reglugerðum." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -822,19 +756,16 @@
       <nr-title>24. gr.</nr-title>
       <name>Innleiðing.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra er heimilt að innleiða með reglugerð almannatryggingareglur Evrópusambandsins eins og þær eru felldar inn í VI. viðauka við samninginn um Evrópska efnahagssvæðið, sbr. lög nr. 2/1993, með síðari breytingum, sbr. einnig ákvörðun sameiginlegu EES-nefndarinnar nr. 76/2011 frá 1. júlí 2011 sem fellir undir samninginn reglugerðir Evrópuþingsins og ráðsins (EB) nr. 883/2004 um samræmingu almannatryggingakerfa, með síðari breytingum, og nr. 987/2009 um framkvæmd hennar.</sen>
-        <sen nr="2">Reglugerðir Evrópusambandsins, sem teknar verða upp í samninginn og fela í sér breytingar eða viðbætur við þær reglugerðir, er einnig heimilt að innleiða með reglugerð.</sen>
-        <sen nr="3">Sama á við um almannatryggingareglur stofnsamnings Fríverslunarsamtaka Evrópu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að innleiða með reglugerð almannatryggingareglur Evrópusambandsins eins og þær eru felldar inn í VI. viðauka við samninginn um Evrópska efnahagssvæðið, sbr. lög nr. 2/1993, með síðari breytingum, sbr. einnig ákvörðun sameiginlegu EES-nefndarinnar nr. 76/2011 frá 1. júlí 2011 sem fellir undir samninginn reglugerðir Evrópuþingsins og ráðsins (EB) nr. 883/2004 um samræmingu almannatryggingakerfa, með síðari breytingum, og nr. 987/2009 um framkvæmd hennar.</sen>
+          <sen nr="2">Reglugerðir Evrópusambandsins, sem teknar verða upp í samninginn og fela í sér breytingar eða viðbætur við þær reglugerðir, er einnig heimilt að innleiða með reglugerð.</sen>
+          <sen nr="3">Sama á við um almannatryggingareglur stofnsamnings Fríverslunarsamtaka Evrópu.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/410-2019"&gt;Rg. 410/2019&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/781-2019"&gt;Rg. 781/2019&lt;/a&gt;.</footnote-sen>
-          <location type="pointer">
-            <chapter>3</chapter>
-            <art>24</art>
-            <subart>1</subart>
-            <sen before-mark="^Reglugerðir Evrópusambandsins, sem teknar verða upp í samninginn og fela í sér breytingar eða viðbætur við þær reglugerðir, er einnig heimilt að innleiða með reglugerð" after-mark=".$">2</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='24']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Reglugerðir Evrópusambandsins, sem teknar verða upp í samninginn og fela í sér breytingar eða viðbætur við þær reglugerðir, er einnig heimilt að innleiða með reglugerð" after-mark=".$"/>
         </footnote>
       </footnotes>
     </art>
@@ -842,26 +773,29 @@
       <nr-title>25. gr.</nr-title>
       <name>Gildistaka og lagaskil.</name>
       <subart nr="1">
-        <sen nr="1">Lög þessi öðlast gildi 1. janúar 2016.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi öðlast gildi 1. janúar 2016.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ákvæði laga um sjúkratryggingar gilda um slysatryggingar eftir því sem við á, m.a. um málsmeðferð, ákvarðanir og greiðslur bóta, þagnarskyldu, meðferð persónuupplýsinga, stjórnsýslukærur og hækkun bóta.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði laga um sjúkratryggingar gilda um slysatryggingar eftir því sem við á, m.a. um málsmeðferð, ákvarðanir og greiðslur bóta, þagnarskyldu, meðferð persónuupplýsinga, stjórnsýslukærur og hækkun bóta.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvæði laga um almannatryggingar gilda eftir því sem við á um réttarstöðu sambúðarfólks, greiðslur til þriðja aðila, fangelsisvist, gæsluvarðhald og aðra dvöl á stofnun samkvæmt úrskurði, dvöl á sjúkrahúsi og upplýsingaskyldu heilbrigðisstarfsmanna, svo og um framsal og veðsetningu bótakrafna, kyrrsetningu og fjárnám.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði laga um almannatryggingar gilda eftir því sem við á um réttarstöðu sambúðarfólks, greiðslur til þriðja aðila, fangelsisvist, gæsluvarðhald og aðra dvöl á stofnun samkvæmt úrskurði, dvöl á sjúkrahúsi og upplýsingaskyldu heilbrigðisstarfsmanna, svo og um framsal og veðsetningu bótakrafna, kyrrsetningu og fjárnám.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1"></sen>
+        <paragraph nr="1">
+          <sen nr="1"></sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="16" nr="1">
           <footnote-sen>L. 108/2021, 16. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>3</chapter>
-            <art>25</art>
-            <subart>4</subart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='25']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -875,36 +809,35 @@
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
-        <sen nr="1">Endurskoða skal lög þessi innan tveggja ára frá gildistöku þeirra.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Endurskoða skal lög þessi innan tveggja ára frá gildistöku þeirra.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þeir sem fá mánaðarlegar lífeyrisgreiðslur vegna örorku í kjölfar slyss fyrir 1. janúar 2022 fá eftirstöðvar bóta greiddar í einu lagi frá sjúkratryggingastofnuninni í samræmi við 15. gr. og lýkur þannig greiðslu örorkubóta vegna slyss.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem fá mánaðarlegar lífeyrisgreiðslur vegna örorku í kjölfar slyss fyrir 1. janúar 2022 fá eftirstöðvar bóta greiddar í einu lagi frá sjúkratryggingastofnuninni í samræmi við 15. gr. og lýkur þannig greiðslu örorkubóta vegna slyss.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ef samanlagðar bætur skv. 1. mgr. og tengdar bætur samkvæmt lögum um almannatryggingar, nr. 100/2007, og lögum um félagslega aðstoð, nr. 99/2007, eru lægri en þær bætur sem þeir njóta fyrir 1. janúar 2022 skal sjúkratryggingastofnunin reikna út eingreiðsluverðmæti bótanna og greiða út mismuninn með greiðslu örorkubóta vegna slyss.</sen>
-        <sen nr="2">Einungis er um að ræða þau takmarkatilvik þegar einstaklingur á rétt til lífeyrisgreiðslna vegna slysatrygginga en uppfyllir ekki skilyrði til lífeyrisgreiðslna samkvæmt lögum um almannatryggingar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef samanlagðar bætur skv. 1. mgr. og tengdar bætur samkvæmt lögum um almannatryggingar, nr. 100/2007, og lögum um félagslega aðstoð, nr. 99/2007, eru lægri en þær bætur sem þeir njóta fyrir 1. janúar 2022 skal sjúkratryggingastofnunin reikna út eingreiðsluverðmæti bótanna og greiða út mismuninn með greiðslu örorkubóta vegna slyss.</sen>
+          <sen nr="2">Einungis er um að ræða þau takmarkatilvik þegar einstaklingur á rétt til lífeyrisgreiðslna vegna slysatrygginga en uppfyllir ekki skilyrði til lífeyrisgreiðslna samkvæmt lögum um almannatryggingar.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Þeir sem fá greiddar mánaðarlegar dánarbætur skv. 13. gr. fyrir 1. janúar 2022 fá það sem eftir stendur af bótarétti sínum greitt í einu lagi frá sjúkratryggingastofnuninni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem fá greiddar mánaðarlegar dánarbætur skv. 13. gr. fyrir 1. janúar 2022 fá það sem eftir stendur af bótarétti sínum greitt í einu lagi frá sjúkratryggingastofnuninni.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.108.html" law-nr="108" law-year="2021" law-art="17" nr="1">
           <footnote-sen>L. 108/2021, 17. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>t</chapter>
-              <art>II</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>t</chapter>
-              <art>II</art>
-              <subart>3</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="942">
+            <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+            <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>

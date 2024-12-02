@@ -10,32 +10,26 @@
   <art nr="1-74">
     <nr-title>1.–74. gr. &lt;a href="https://www.althingi.is/altext/stjt/1989.087.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</nr-title>
   </art>
-  <chapter nr="14" nr-type="roman" roman-nr="XIV">
+  <chapter nr="14" nr-type="roman" chapter-type="kafli" roman-nr="XIV">
     <nr-title>XIV. kafli.</nr-title>
     <name>Um kostnaðaruppgjör milli ríkissjóðs og sveitarfélaga.</name>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá Lagasafn 1995, bls. 235.</footnote-sen>
-        <location type="pointer">
-          <chapter>14</chapter>
-          <name before-mark="^Um kostnaðaruppgjör milli ríkissjóðs og sveitarfélaga." after-mark="$">1</name>
-        </location>
+        <location type="pointer" xpath="chapter[@nr='14' and @chapter-type='kafli']/name[1]" before-mark="^Um kostnaðaruppgjör milli ríkissjóðs og sveitarfélaga." after-mark="$"/>
       </footnote>
     </footnotes>
     <art nr="75">
       <nr-title>75. gr. &lt;a href="https://www.althingi.is/altext/stjt/1989.087.html" title="Hér hefur annaðhvort verið fellt brott ákvæði um breytingar á öðrum lögum eða um brottfall þeirra, eða úrelt ákvæði til bráðabirgða."&gt; … &lt;/a&gt;</nr-title>
     </art>
   </chapter>
-  <chapter nr="15" nr-type="roman" roman-nr="XV">
+  <chapter nr="15" nr-type="roman" chapter-type="kafli" roman-nr="XV">
     <nr-title>XV. kafli.</nr-title>
     <name>Gildistaka.</name>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá Lagasafn 1995, bls. 235.</footnote-sen>
-        <location type="pointer">
-          <chapter>15</chapter>
-          <name before-mark="^Gildistaka." after-mark="$">1</name>
-        </location>
+        <location type="pointer" xpath="chapter[@nr='15' and @chapter-type='kafli']/name[1]" before-mark="^Gildistaka." after-mark="$"/>
       </footnote>
     </footnotes>
     <art nr="76">

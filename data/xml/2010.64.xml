@@ -9,97 +9,99 @@
   <footnotes>
     <footnote href="https://www.althingi.is/altext/stjt/2013.053.html" law-nr="53" law-year="2013" law-art="5" nr="1">
       <footnote-sen>L. 53/2013, 5. gr.</footnote-sen>
-      <location type="range">
-        <name>1</name>
-      </location>
+      <location type="range" xpath="name[1]" string-length="0"/>
     </footnote>
   </footnotes>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=138&amp;amp;mnr=548"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/138/s/0938.html"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 24. júní 2010. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjt/2011.126.html"&gt; L. 126/2011 &lt;/a&gt; (tóku gildi 30. sept. 2011). &lt;a href="/altext/stjt/2013.053.html"&gt; L. 53/2013 &lt;/a&gt; (tóku gildi 1. sept. 2013 nema 4. gr. sem tók gildi 12. apríl 2013). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; fjármála- og efnahagsráðherra &lt;/b&gt; eða &lt;b&gt; fjármála- og efnahagsráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Markmið og tilgangur Nýs Landspítala ohf. er að standa að nauðsynlegum undirbúningi útboðs byggingar nýs Landspítala við Hringbraut í Reykjavík.</sen>
-      <sen nr="2">Fyrir undirritun samninga að loknu útboði skal leita samþykkis Alþingis með almennum lögum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Markmið og tilgangur Nýs Landspítala ohf. er að standa að nauðsynlegum undirbúningi útboðs byggingar nýs Landspítala við Hringbraut í Reykjavík.</sen>
+        <sen nr="2">Fyrir undirritun samninga að loknu útboði skal leita samþykkis Alþingis með almennum lögum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Ákvæði laga um hlutafélög gilda um félagið ef ekki er kveðið á um annað í lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði laga um hlutafélög gilda um félagið ef ekki er kveðið á um annað í lögum þessum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2013.053.html" law-nr="53" law-year="2013" law-art="1" nr="1">
         <footnote-sen>L. 53/2013, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
-        <location type="deletion">
-          <art>1</art>
-          <subart>2</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+        <location type="deletion" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Um fullnaðarhönnun, byggingu og útboð hins nýja spítala skulu gilda lög um skipan opinberra framkvæmda, nr. 84/2001.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Um fullnaðarhönnun, byggingu og útboð hins nýja spítala skulu gilda lög um skipan opinberra framkvæmda, nr. 84/2001.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Félaginu skal vera heimilt að gera hvers konar samninga við aðra aðila til að ná tilgangi sínum á sem hagkvæmastan hátt.</sen>
-      <sen nr="2">Tilgangi félagsins skal nánar lýst í samþykktum þess.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Félaginu skal vera heimilt að gera hvers konar samninga við aðra aðila til að ná tilgangi sínum á sem hagkvæmastan hátt.</sen>
+        <sen nr="2">Tilgangi félagsins skal nánar lýst í samþykktum þess.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Stjórn félagsins skal eins og unnt er vinna að verkefnum skv. 1. mgr. 1. gr. í samráði og samvinnu við helstu hagsmunaaðila verkefnisins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórn félagsins skal eins og unnt er vinna að verkefnum skv. 1. mgr. 1. gr. í samráði og samvinnu við helstu hagsmunaaðila verkefnisins.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Ráðherra er heimilt að ákveða að tilteknir skýrt afmarkaðir, minni byggingarhlutar, eða byggingar, séu boðnir út í formi langtímaleigu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að ákveða að tilteknir skýrt afmarkaðir, minni byggingarhlutar, eða byggingar, séu boðnir út í formi langtímaleigu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2013.053.html" law-nr="53" law-year="2013" law-art="2" nr="1">
         <footnote-sen>L. 53/2013, 2. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>3</subart>
-          <sen words="1. mgr. 1. gr.">1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>4</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="1. mgr. 1. gr." instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Stjórn félagsins skal skipuð þremur mönnum og jafnmörgum til vara.</sen>
-      <sen nr="2">Þeir skulu kosnir á aðalfundi ár hvert.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórn félagsins skal skipuð þremur mönnum og jafnmörgum til vara.</sen>
+        <sen nr="2">Þeir skulu kosnir á aðalfundi ár hvert.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Framkvæmdastjóri skal hafa haldgóða menntun eða reynslu af sambærilegum verkefnum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Framkvæmdastjóri skal hafa haldgóða menntun eða reynslu af sambærilegum verkefnum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Stjórnarmenn og framkvæmdastjóri skulu vera lögráða.</sen>
-      <sen nr="2">Þeir mega ekki á síðustu fimm árum hafa verið úrskurðaðir gjaldþrota eða hlotið dóm í tengslum við atvinnurekstur samkvæmt almennum hegningarlögum, samkeppnislögum, lögum um fjármálafyrirtæki, hlutafélög, einkahlutafélög, bókhald, ársreikninga eða gjaldþrotaskipti o.fl.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórnarmenn og framkvæmdastjóri skulu vera lögráða.</sen>
+        <sen nr="2">Þeir mega ekki á síðustu fimm árum hafa verið úrskurðaðir gjaldþrota eða hlotið dóm í tengslum við atvinnurekstur samkvæmt almennum hegningarlögum, samkeppnislögum, lögum um fjármálafyrirtæki, hlutafélög, einkahlutafélög, bókhald, ársreikninga eða gjaldþrotaskipti o.fl.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Stjórnarmenn og framkvæmdastjóri skulu hvorki taka þátt í meðferð mála þar sem þeir eiga verulegra hagsmuna að gæta né mála er varða aðila sem eru þeim tengdir persónulega eða fjárhagslega.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórnarmenn og framkvæmdastjóri skulu hvorki taka þátt í meðferð mála þar sem þeir eiga verulegra hagsmuna að gæta né mála er varða aðila sem eru þeim tengdir persónulega eða fjárhagslega.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Hlutafé félagsins við stofnun þess skal vera 20 milljónir króna og greiðast úr ríkissjóði.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hlutafé félagsins við stofnun þess skal vera 20 milljónir króna og greiðast úr ríkissjóði.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
@@ -107,37 +109,31 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2013.053.html" law-nr="53" law-year="2013" law-art="3" nr="1">
         <footnote-sen>L. 53/2013, 3. gr.</footnote-sen>
-        <location type="deletion">
-          <art>5</art>
-          <nr-title before-mark="^5. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='5']/nr-title[1]" before-mark="^5. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="t">
     <nr-title>Ákvæði til bráðabirgða.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra er heimilt að heimila Nýjum Landspítala ohf. að fara í forval vegna undirbúnings útboðs fullnaðarhönnunar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að heimila Nýjum Landspítala ohf. að fara í forval vegna undirbúnings útboðs fullnaðarhönnunar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2013.053.html" law-nr="53" law-year="2013" law-art="4" nr="1">
         <footnote-sen>L. 53/2013, 4. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>t</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>t</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="139">
+          <start xpath="art[@nr='t']/nr-title[1]"/>
+          <end xpath="art[@nr='t']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>

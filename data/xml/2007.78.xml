@@ -11,36 +11,43 @@
     <nr-title>1. gr.</nr-title>
     <name>Gildissvið laganna.</name>
     <subart nr="1">
-      <sen nr="1">Lög þessi gilda um starfstengda eftirlaunasjóði í skilningi tilskipunar Evrópuþingsins og ráðsins 2003/41/EB, um starfsemi og eftirlit með lögaðilum sem sjá um starfstengd eftirlaun.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi gilda um starfstengda eftirlaunasjóði í skilningi tilskipunar Evrópuþingsins og ráðsins 2003/41/EB, um starfsemi og eftirlit með lögaðilum sem sjá um starfstengd eftirlaun.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Lög þessi taka ekki til:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Lífeyrissjóða sem falla undir reglugerð (EBE) nr. 1408/71, um beitingu almannatryggingareglna gagnvart launþegum, sjálfstætt starfandi einstaklingum og aðstandendum þeirra sem flytjast á milli aðildarríkja, og reglugerð (EBE) nr. 574/72, um breytingu á málsmeðferð við innleiðingu reglugerðar (EBE) nr. 1408/71.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Sjóða sem falla undir tilskipun 73/239/EBE, um samræmingu á lögum og stjórnsýslufyrirmælum til að hefja og reka starfsemi á sviði frumtrygginga annarra en líftrygginga, tilskipun 85/611/EBE, um samræmingu á lögum og stjórnsýslufyrirmælum um fyrirtæki um sameiginlega fjárfestingu í framseljanlegum verðbréfum (UCITS), tilskipun 93/22/EBE, um fjárfestingarþjónustu á sviði verðbréfaviðskipta, tilskipun 2000/12/EB, um stofnun og rekstur lánastofnana, tilskipun 2002/83/EB um líftryggingar og tilskipun 2011/61/ESB um rekstraraðila sérhæfðra sjóða.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Sjóða sem reknir eru með gegnumstreymiskerfi.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Sjóða þar sem sjóðfélagar hafa ekki lögvarinn rétt til lífeyris og iðgjaldagreiðendur geta krafist greiðslna sinna aftur án þess að skyldum til greiðslu lífeyris sé fullnægt.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi taka ekki til:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Lífeyrissjóða sem falla undir reglugerð (EBE) nr. 1408/71, um beitingu almannatryggingareglna gagnvart launþegum, sjálfstætt starfandi einstaklingum og aðstandendum þeirra sem flytjast á milli aðildarríkja, og reglugerð (EBE) nr. 574/72, um breytingu á málsmeðferð við innleiðingu reglugerðar (EBE) nr. 1408/71.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Sjóða sem falla undir tilskipun 73/239/EBE, um samræmingu á lögum og stjórnsýslufyrirmælum til að hefja og reka starfsemi á sviði frumtrygginga annarra en líftrygginga, tilskipun 85/611/EBE, um samræmingu á lögum og stjórnsýslufyrirmælum um fyrirtæki um sameiginlega fjárfestingu í framseljanlegum verðbréfum (UCITS), tilskipun 93/22/EBE, um fjárfestingarþjónustu á sviði verðbréfaviðskipta, tilskipun 2000/12/EB, um stofnun og rekstur lánastofnana, tilskipun 2002/83/EB um líftryggingar og tilskipun 2011/61/ESB um rekstraraðila sérhæfðra sjóða.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Sjóða sem reknir eru með gegnumstreymiskerfi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Sjóða þar sem sjóðfélagar hafa ekki lögvarinn rétt til lífeyris og iðgjaldagreiðendur geta krafist greiðslna sinna aftur án þess að skyldum til greiðslu lífeyris sé fullnægt.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.045.html#G120" law-nr="45" law-year="2020" law-art="120" nr="1">
         <footnote-sen>L. 45/2020, 120. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>2</subart>
-          <numart>2</numart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
@@ -48,50 +55,66 @@
     <nr-title>2. gr.</nr-title>
     <name>Skilgreiningar.</name>
     <subart nr="1">
-      <sen nr="1">Í lögum þessum merkir:</sen>
-      <sen-title>Aðildarfyrirtæki:</sen-title>
-      <sen nr="1" ultimate-nr="2" sub-paragraph-nr="2" new-sub-paragraph="true">Fyrirtæki eða annar aðili sem starfar sem vinnuveitandi eða er sjálfstætt starfandi og greiðir framlög til starfstengds eftirlaunasjóðs.</sen>
-      <sen-title>Eftirlaunaréttindi:</sen-title>
-      <sen nr="1" ultimate-nr="3" sub-paragraph-nr="3" new-sub-paragraph="true">Réttindi sem eru greidd þegar eftirlaunaaldri er náð eða þegar þess er vænst að honum verði náð eða þegar þau eru greidd sem viðbótarframlag, í formi greiðslna við andlát, örorku eða starfslok, eða í formi stuðningsgreiðslna eða þjónustu vegna sjúkdóms, fátæktar eða andláts.</sen>
-      <sen-title>Samningur um eftirlaunaréttindi:</sen-title>
-      <sen nr="1" ultimate-nr="4" sub-paragraph-nr="4" new-sub-paragraph="true">Samningur, samkomulag eða reglur sem fela í sér hvaða eftirlaunaréttindi eru tryggð og hvaða skilyrði þarf að uppfylla.</sen>
-      <sen-title>Sjóðfélagi:</sen-title>
-      <sen nr="1" ultimate-nr="5" sub-paragraph-nr="5" new-sub-paragraph="true">Einstaklingur sem á rétt á eða mun eiga rétt á starfstengdum eftirlaunagreiðslum á grundvelli iðgjaldagreiðslna í samræmi við ákvæði samnings um eftirlaunaréttindi.</sen>
-      <sen-title>Starfstengdur eftirlaunasjóður:</sen-title>
-      <sen nr="1" ultimate-nr="6" sub-paragraph-nr="6" new-sub-paragraph="true">Lögaðili sem starfar, á sjóðmynduðum grundvelli, aðskilinn frá þeim aðila sem greiðir iðgjöldin, í þeim tilgangi að tryggja eftirlaunarétt í samræmi við samninga þar um.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Í lögum þessum merkir:</sen>
+      </paragraph>
+      <paragraph nr="2">
+        <sen-title>Aðildarfyrirtæki:</sen-title>
+        <sen nr="1">Fyrirtæki eða annar aðili sem starfar sem vinnuveitandi eða er sjálfstætt starfandi og greiðir framlög til starfstengds eftirlaunasjóðs.</sen>
+      </paragraph>
+      <paragraph nr="3">
+        <sen-title>Eftirlaunaréttindi:</sen-title>
+        <sen nr="1">Réttindi sem eru greidd þegar eftirlaunaaldri er náð eða þegar þess er vænst að honum verði náð eða þegar þau eru greidd sem viðbótarframlag, í formi greiðslna við andlát, örorku eða starfslok, eða í formi stuðningsgreiðslna eða þjónustu vegna sjúkdóms, fátæktar eða andláts.</sen>
+      </paragraph>
+      <paragraph nr="4">
+        <sen-title>Samningur um eftirlaunaréttindi:</sen-title>
+        <sen nr="1">Samningur, samkomulag eða reglur sem fela í sér hvaða eftirlaunaréttindi eru tryggð og hvaða skilyrði þarf að uppfylla.</sen>
+      </paragraph>
+      <paragraph nr="5">
+        <sen-title>Sjóðfélagi:</sen-title>
+        <sen nr="1">Einstaklingur sem á rétt á eða mun eiga rétt á starfstengdum eftirlaunagreiðslum á grundvelli iðgjaldagreiðslna í samræmi við ákvæði samnings um eftirlaunaréttindi.</sen>
+      </paragraph>
+      <paragraph nr="6">
+        <sen-title>Starfstengdur eftirlaunasjóður:</sen-title>
+        <sen nr="1">Lögaðili sem starfar, á sjóðmynduðum grundvelli, aðskilinn frá þeim aðila sem greiðir iðgjöldin, í þeim tilgangi að tryggja eftirlaunarétt í samræmi við samninga þar um.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <name>Aðild að starfstengdum eftirlaunasjóðum.</name>
     <subart nr="1">
-      <sen nr="1">Aðild að starfstengdum eftirlaunasjóðum skal byggjast á samningi á milli starfsmanna og vinnuveitanda þeirra.</sen>
-      <sen nr="2">Þá er sjálfstætt starfandi aðilum heimilt að semja um aðild að starfstengdum eftirlaunasjóðum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Aðild að starfstengdum eftirlaunasjóðum skal byggjast á samningi á milli starfsmanna og vinnuveitanda þeirra.</sen>
+        <sen nr="2">Þá er sjálfstætt starfandi aðilum heimilt að semja um aðild að starfstengdum eftirlaunasjóðum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <name>Skilyrði fyrir starfsemi starfstengds eftirlaunasjóðs.</name>
     <subart nr="1">
-      <sen nr="1">Ráðuneytið veitir starfstengdum eftirlaunasjóði starfsleyfi að uppfylltum sömu skilyrðum og koma fram í V. kafla laga nr. 129/1997, um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðuneytið veitir starfstengdum eftirlaunasjóði starfsleyfi að uppfylltum sömu skilyrðum og koma fram í V. kafla laga nr. 129/1997, um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ákvæði 18. gr. og IV. og VI.–X. kafla laga nr. 129/1997 gilda um starfsemi starfstengdra eftirlaunasjóða nema annað komi fram í lögum þessum.</sen>
-      <sen nr="2">Ákvæði 36. gr. laga nr. 129/1997 gildir þó ekki um starfsemi starfstengdra eftirlaunasjóða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 18. gr. og IV. og VI.–X. kafla laga nr. 129/1997 gilda um starfsemi starfstengdra eftirlaunasjóða nema annað komi fram í lögum þessum.</sen>
+        <sen nr="2">Ákvæði 36. gr. laga nr. 129/1997 gildir þó ekki um starfsemi starfstengdra eftirlaunasjóða.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Starfstengdur eftirlaunasjóður skal vera skráður hjá Fjármálaeftirlitinu og háður eftirliti þess.</sen>
-      <sen nr="2">Starfstengdur eftirlaunasjóður skal takmarka starfsemi sína við rekstur sem varðar starfstengd eftirlaun.</sen>
-      <sen nr="3">Starfsemi starfstengds eftirlaunasjóðs skal vera fjárhagslega og lagalega aðskilin frá starfsemi aðildarfyrirtækis.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Starfstengdur eftirlaunasjóður skal vera skráður hjá Fjármálaeftirlitinu og háður eftirliti þess.</sen>
+        <sen nr="2">Starfstengdur eftirlaunasjóður skal takmarka starfsemi sína við rekstur sem varðar starfstengd eftirlaun.</sen>
+        <sen nr="3">Starfsemi starfstengds eftirlaunasjóðs skal vera fjárhagslega og lagalega aðskilin frá starfsemi aðildarfyrirtækis.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="464" nr="1">
         <footnote-sen>L. 126/2011, 464. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <subart>1</subart>
-          <sen words="Ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðuneytið" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -99,52 +122,66 @@
     <nr-title>5. gr.</nr-title>
     <name>Fjárfestingarreglur starfstengdra eftirlaunasjóða.</name>
     <subart nr="1">
-      <sen nr="1">Starfstengdur eftirlaunasjóður skal móta fjárfestingarstefnu og ávaxta fé sjóðsins með hliðsjón af þeim kjörum sem best eru boðin á hverjum tíma með tilliti til ávöxtunar og áhættu.</sen>
-      <sen nr="2">Í því skyni skulu fjárfestingar sjóðsins vera í samræmi við eftirfarandi reglur:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Við fjárfestingar í eignum skal hafa hagsmuni sjóðfélaga og eftirlaunaþega að leiðarljósi.</sen>
-        <sen nr="2">Ef um er að ræða hugsanlegan hagsmunaárekstur skal sjóðurinn eða einingin sem stýrir safni hans sjá til þess að fjárfestingin sé eingöngu í þágu sjóðfélaga.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Fjárfest skal í eignum með þeim hætti að öryggi, gæði, lausafjárstaða og arðsemi safnsins í heild sé tryggt.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Fyrst og fremst skal fjárfest með eignunum á skipulegum mörkuðum.</sen>
-        <sen nr="2">Fjárfesting í eignum, sem eru ekki skráðar á skipulegum fjármálamarkaði, verður ávallt að vera innan varfærnismarka.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Fjárfesting í afleiddum gerningum skal möguleg að því marki sem þeir geta dregið úr fjárfestingaáhættu eða stuðlað að skilvirkri stýringu eignasafnsins.</sen>
-        <sen nr="2">Þá skal meta á varfærnisgrundvelli, með hliðsjón af eigninni sem liggur til grundvallar, og fella inn í matið á eignum sjóðsins.</sen>
-        <sen nr="3">Sjóðurinn skal einnig forðast óþarfa áhættu gagnvart einum mótaðila og gagnvart annarri notkun afleiðna.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">Eignirnar skulu vera nægilega fjölbreytilegar þannig að komast megi hjá því að treyst sé óþarflega mikið á tiltekna eign, útgefanda eða fyrirtækjasamstæðu og uppsöfnun áhættu í eignasafninu í heild.</sen>
-        <sen nr="2">Fjárfestingar í eignum, sem eru gefnar út af sama útgefanda eða af útgefendum sem tilheyra sömu samstæðu, skulu ekki leiða til þess að sjóðurinn lendi í óhóflegri áhættusamþjöppun.</sen>
-      </numart>
-      <numart nr="6" nr-type="numeric">
-        <nr-title>6.</nr-title>
-        <sen nr="1">Fjárfesting í aðildarfyrirtæki skal ekki vera meiri en 5% eignasafnsins í heild og, þegar aðildarfyrirtæki er hluti af samstæðu, skal fjárfesting í fyrirtækjum í sömu samstæðu og aðildarfyrirtæki tilheyrir ekki vera yfir 10% eignasafnsins.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Starfstengdur eftirlaunasjóður skal móta fjárfestingarstefnu og ávaxta fé sjóðsins með hliðsjón af þeim kjörum sem best eru boðin á hverjum tíma með tilliti til ávöxtunar og áhættu.</sen>
+        <sen nr="2">Í því skyni skulu fjárfestingar sjóðsins vera í samræmi við eftirfarandi reglur:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Við fjárfestingar í eignum skal hafa hagsmuni sjóðfélaga og eftirlaunaþega að leiðarljósi.</sen>
+            <sen nr="2">Ef um er að ræða hugsanlegan hagsmunaárekstur skal sjóðurinn eða einingin sem stýrir safni hans sjá til þess að fjárfestingin sé eingöngu í þágu sjóðfélaga.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Fjárfest skal í eignum með þeim hætti að öryggi, gæði, lausafjárstaða og arðsemi safnsins í heild sé tryggt.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Fyrst og fremst skal fjárfest með eignunum á skipulegum mörkuðum.</sen>
+            <sen nr="2">Fjárfesting í eignum, sem eru ekki skráðar á skipulegum fjármálamarkaði, verður ávallt að vera innan varfærnismarka.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Fjárfesting í afleiddum gerningum skal möguleg að því marki sem þeir geta dregið úr fjárfestingaáhættu eða stuðlað að skilvirkri stýringu eignasafnsins.</sen>
+            <sen nr="2">Þá skal meta á varfærnisgrundvelli, með hliðsjón af eigninni sem liggur til grundvallar, og fella inn í matið á eignum sjóðsins.</sen>
+            <sen nr="3">Sjóðurinn skal einnig forðast óþarfa áhættu gagnvart einum mótaðila og gagnvart annarri notkun afleiðna.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Eignirnar skulu vera nægilega fjölbreytilegar þannig að komast megi hjá því að treyst sé óþarflega mikið á tiltekna eign, útgefanda eða fyrirtækjasamstæðu og uppsöfnun áhættu í eignasafninu í heild.</sen>
+            <sen nr="2">Fjárfestingar í eignum, sem eru gefnar út af sama útgefanda eða af útgefendum sem tilheyra sömu samstæðu, skulu ekki leiða til þess að sjóðurinn lendi í óhóflegri áhættusamþjöppun.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" nr-type="numeric">
+          <nr-title>6.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Fjárfesting í aðildarfyrirtæki skal ekki vera meiri en 5% eignasafnsins í heild og, þegar aðildarfyrirtæki er hluti af samstæðu, skal fjárfesting í fyrirtækjum í sömu samstæðu og aðildarfyrirtæki tilheyrir ekki vera yfir 10% eignasafnsins.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ákvæði 5. og 6. tölul. 1. mgr. eiga ekki við gagnvart fjárfestingum í ríkisskuldabréfum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 5. og 6. tölul. 1. mgr. eiga ekki við gagnvart fjárfestingum í ríkisskuldabréfum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Með hliðsjón af eðli, umfangi og starfsemi starfstengdra eftirlaunasjóða skal Fjármálaeftirlitið hafa eftirlit með lánshæfismatsferlum þeirra, meta út frá fjárfestingarstefnum hvernig stuðst er við lánshæfismöt lánshæfismatsfyrirtækja og, þegar við á, hvetja starfstengda eftirlaunasjóði til að draga úr notkun á slíkum lánshæfismötum í því augnamiði að þeir reiði sig ekki einvörðungu eða kerfisbundið á slík lánshæfismöt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Með hliðsjón af eðli, umfangi og starfsemi starfstengdra eftirlaunasjóða skal Fjármálaeftirlitið hafa eftirlit með lánshæfismatsferlum þeirra, meta út frá fjárfestingarstefnum hvernig stuðst er við lánshæfismöt lánshæfismatsfyrirtækja og, þegar við á, hvetja starfstengda eftirlaunasjóði til að draga úr notkun á slíkum lánshæfismötum í því augnamiði að þeir reiði sig ekki einvörðungu eða kerfisbundið á slík lánshæfismöt.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.045.html#G120" law-nr="45" law-year="2020" law-art="120" nr="1">
         <footnote-sen>L. 45/2020, 120. gr.</footnote-sen>
-        <location type="range">
-          <art>5</art>
-          <subart>3</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
@@ -152,97 +189,129 @@
     <nr-title>6. gr.</nr-title>
     <name>Varasjóður.</name>
     <subart nr="1">
-      <sen nr="1">Starfstengdur eftirlaunasjóður skal mynda varasjóð umfram skuldbindingar til að standa undir sveiflum vegna lífeyriskerfa þar sem sjóðurinn sjálfur en ekki aðildarfyrirtæki ber líffræðilega áhættu eða þar sem gefið er loforð um ákveðna ávöxtun eða ákveðin réttindi.</sen>
-      <sen nr="2">Varasjóðurinn skal endurspegla eignir og áhættugerð allra lífeyriskerfa sem sjóðurinn starfrækir og vera varanlegur.</sen>
-      <sen nr="3">Eignir í varasjóði skulu ekki vera háðar fyrirsjáanlegum skuldbindingum heldur vera varafjármagn vegna mismunar milli áætlaðra og raunverulegra gjalda og hagnaðar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Starfstengdur eftirlaunasjóður skal mynda varasjóð umfram skuldbindingar til að standa undir sveiflum vegna lífeyriskerfa þar sem sjóðurinn sjálfur en ekki aðildarfyrirtæki ber líffræðilega áhættu eða þar sem gefið er loforð um ákveðna ávöxtun eða ákveðin réttindi.</sen>
+        <sen nr="2">Varasjóðurinn skal endurspegla eignir og áhættugerð allra lífeyriskerfa sem sjóðurinn starfrækir og vera varanlegur.</sen>
+        <sen nr="3">Eignir í varasjóði skulu ekki vera háðar fyrirsjáanlegum skuldbindingum heldur vera varafjármagn vegna mismunar milli áætlaðra og raunverulegra gjalda og hagnaðar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <name>Upplýsingaskylda starfstengdra lífeyrissjóða.</name>
     <subart nr="1">
-      <sen nr="1">Starfstengdur lífeyrissjóður skal veita sjóðfélögum og lífeyrisþegum eftirfarandi upplýsingar óski þeir eftir því:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">upplýsingar um meginefni fjárfestingarstefnu skv. 37. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997, þar sem fram koma a.m.k. upplýsingar um aðferðir sjóðsins við mælingar á áhættu, aðferðir við áhættustjórnun og markmið um eignasamsetningu með tilliti til eðlis og líftíma skuldbindinga,</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">í þeim tilvikum þegar sjóðfélagi ber fjárfestingaáhættu, ítarlegar og greinargóðar upplýsingar um fjárfestingarvalkosti, ef við á, og raunverulega eignasamsetningu auk upplýsinga um stig áhættu og kostnað tengdan fjárfestingum,</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">ítarlegar og greinargóðar upplýsingar um ráðstafanir vegna flutnings á réttindum þeirra til annars starfstengds eftirlaunasjóðs vegna loka ráðningarsamnings.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Starfstengdur lífeyrissjóður skal veita sjóðfélögum og lífeyrisþegum eftirfarandi upplýsingar óski þeir eftir því:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">upplýsingar um meginefni fjárfestingarstefnu skv. 37. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997, þar sem fram koma a.m.k. upplýsingar um aðferðir sjóðsins við mælingar á áhættu, aðferðir við áhættustjórnun og markmið um eignasamsetningu með tilliti til eðlis og líftíma skuldbindinga,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">í þeim tilvikum þegar sjóðfélagi ber fjárfestingaáhættu, ítarlegar og greinargóðar upplýsingar um fjárfestingarvalkosti, ef við á, og raunverulega eignasamsetningu auk upplýsinga um stig áhættu og kostnað tengdan fjárfestingum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">ítarlegar og greinargóðar upplýsingar um ráðstafanir vegna flutnings á réttindum þeirra til annars starfstengds eftirlaunasjóðs vegna loka ráðningarsamnings.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Við starfslok eða þegar réttur til útgreiðslu réttinda skapast skal senda sjóðfélaga viðeigandi upplýsingar um réttindin og valkosti við útgreiðslu þeirra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Við starfslok eða þegar réttur til útgreiðslu réttinda skapast skal senda sjóðfélaga viðeigandi upplýsingar um réttindin og valkosti við útgreiðslu þeirra.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <name>Iðgjaldagreiðslur frá öðrum ríkjum.</name>
     <subart nr="1">
-      <sen nr="1">Starfstengdum eftirlaunasjóði sem hefur starfsleyfi hér á landi er heimilt að veita viðtöku iðgjaldi vegna starfsmanns sem starfar í öðru ríki.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Starfstengdum eftirlaunasjóði sem hefur starfsleyfi hér á landi er heimilt að veita viðtöku iðgjaldi vegna starfsmanns sem starfar í öðru ríki.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Þegar um er að ræða iðgjaldagreiðslur frá aðildarríki Evrópska efnahagssvæðisins skal viðkomandi eftirlaunasjóður tilkynna Fjármálaeftirlitinu frá hvaða aðildarríki Evrópska efnahagssvæðisins iðgjaldagreiðslan kemur, nafn greiðanda og helstu einkenni viðkomandi samnings.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þegar um er að ræða iðgjaldagreiðslur frá aðildarríki Evrópska efnahagssvæðisins skal viðkomandi eftirlaunasjóður tilkynna Fjármálaeftirlitinu frá hvaða aðildarríki Evrópska efnahagssvæðisins iðgjaldagreiðslan kemur, nafn greiðanda og helstu einkenni viðkomandi samnings.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Fjármálaeftirlitið skal láta eftirlitsaðila í öðru aðildarríki Evrópska efnahagssvæðisins í té upplýsingar skv. 2. mgr. og tilkynna viðkomandi eftirlaunasjóði þar um.</sen>
-      <sen nr="2">Að því loknu er eftirlaunasjóðnum heimilt að veita iðgjaldi viðtöku vegna starfsmanns sem starfar í öðru aðildarríki Evrópska efnahagssvæðisins í samræmi við lög og reglur aðildarríkisins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Fjármálaeftirlitið skal láta eftirlitsaðila í öðru aðildarríki Evrópska efnahagssvæðisins í té upplýsingar skv. 2. mgr. og tilkynna viðkomandi eftirlaunasjóði þar um.</sen>
+        <sen nr="2">Að því loknu er eftirlaunasjóðnum heimilt að veita iðgjaldi viðtöku vegna starfsmanns sem starfar í öðru aðildarríki Evrópska efnahagssvæðisins í samræmi við lög og reglur aðildarríkisins.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <name>Eftirlit.</name>
     <subart nr="1">
-      <sen nr="1">Fjármálaeftirlitið getur krafist þess að tilteknir þættir í starfsemi starfstengds eftirlaunasjóðs verði takmarkaðir eða stöðvaðir tímabundið í því skyni að koma í veg fyrir háttsemi sem er talin andstæð ákvæðum laga þessara en einkum ef:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">sjóðurinn verndar ekki með fullnægjandi hætti hagsmuni sjóðfélaga og lífeyrisþega,</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">sjóðurinn uppfyllir ekki lengur skilyrði fyrir starfsleyfi,</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">sjóðurinn vanrækir með alvarlegum hætti að rækja skyldur sínar samkvæmt þeim reglum sem gilda um starfsemi hans,</sen>
-      </numart>
-      <numart nr="d" nr-type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen nr="1">um starfsemi í öðru landi er að ræða og sjóðurinn virðir ekki kröfur vinnu- og félagsmálalöggjafar gistiríkis er snerta starfstengdan lífeyri.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Fjármálaeftirlitið getur krafist þess að tilteknir þættir í starfsemi starfstengds eftirlaunasjóðs verði takmarkaðir eða stöðvaðir tímabundið í því skyni að koma í veg fyrir háttsemi sem er talin andstæð ákvæðum laga þessara en einkum ef:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">sjóðurinn verndar ekki með fullnægjandi hætti hagsmuni sjóðfélaga og lífeyrisþega,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">sjóðurinn uppfyllir ekki lengur skilyrði fyrir starfsleyfi,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">sjóðurinn vanrækir með alvarlegum hætti að rækja skyldur sínar samkvæmt þeim reglum sem gilda um starfsemi hans,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" nr-type="alphabet">
+          <nr-title>d.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">um starfsemi í öðru landi er að ræða og sjóðurinn virðir ekki kröfur vinnu- og félagsmálalöggjafar gistiríkis er snerta starfstengdan lífeyri.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ákvörðun um að takmarka eða stöðva tiltekna þætti í starfsemi starfstengds eftirlaunasjóðs skal ítarlega rökstudd og tilkynnt sjóðnum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvörðun um að takmarka eða stöðva tiltekna þætti í starfsemi starfstengds eftirlaunasjóðs skal ítarlega rökstudd og tilkynnt sjóðnum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Fjármálaeftirlitið getur krafist kyrrsetningar eigna starfstengds eftirlaunasjóðs reynist sjóðurinn ekki gjaldhæfur að mati Fjármálaeftirlitsins eða eigi stofnunin ekki skyldubundinn varasjóð, sbr. 6. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Fjármálaeftirlitið getur krafist kyrrsetningar eigna starfstengds eftirlaunasjóðs reynist sjóðurinn ekki gjaldhæfur að mati Fjármálaeftirlitsins eða eigi stofnunin ekki skyldubundinn varasjóð, sbr. 6. gr.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <name>Refsiákvæði.</name>
     <subart nr="1">
-      <sen nr="1">Um brot gegn lögum þessum fer skv. 55. gr. laga nr. 129/1997, um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Um brot gegn lögum þessum fer skv. 55. gr. laga nr. 129/1997, um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <name>Reglugerðarheimild.</name>
     <subart nr="1">
-      <sen nr="1">Ráðherra er heimilt að kveða nánar á um framkvæmd laganna með reglugerð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að kveða nánar á um framkvæmd laganna með reglugerð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="464" nr="1">
         <footnote-sen>L. 126/2011, 464. gr.</footnote-sen>
-        <location type="range">
-          <art>11</art>
-          <subart>1</subart>
-          <sen words="Ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -250,31 +319,28 @@
     <nr-title>12. gr.</nr-title>
     <name>Innleiðing.</name>
     <subart nr="1">
-      <sen nr="1">Með lögum þessum eru eftirfarandi tilskipanir Evrópuþingsins og ráðsins innleiddar:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Tilskipun 2003/41/EB frá 3. júní 2003 um starfsemi og eftirlit með stofnunum sem sjá um starfstengdan lífeyri, eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 88/2006 sem birt var 19. október 2006.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Tilskipun 2013/14/ESB frá 21. maí 2013 um breytingu á tilskipun 2003/41/EB um starfsemi og eftirlit með stofnunum sem sjá um starfstengdan lífeyri, tilskipun 2009/65/EB um samræmingu á lögum og stjórnsýslufyrirmælum um verðbréfasjóði (UCITS) og tilskipun 2011/61/ESB um rekstraraðila sérhæfðra sjóða að því er varðar oftraust á lánshæfismöt, með þeim aðlögunum sem leiðir af ákvörðun sameiginlegu EES-nefndarinnar nr. 20/2018 frá 9. febrúar 2018.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Með lögum þessum eru eftirfarandi tilskipanir Evrópuþingsins og ráðsins innleiddar:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Tilskipun 2003/41/EB frá 3. júní 2003 um starfsemi og eftirlit með stofnunum sem sjá um starfstengdan lífeyri, eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 88/2006 sem birt var 19. október 2006.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Tilskipun 2013/14/ESB frá 21. maí 2013 um breytingu á tilskipun 2003/41/EB um starfsemi og eftirlit með stofnunum sem sjá um starfstengdan lífeyri, tilskipun 2009/65/EB um samræmingu á lögum og stjórnsýslufyrirmælum um verðbréfasjóði (UCITS) og tilskipun 2011/61/ESB um rekstraraðila sérhæfðra sjóða að því er varðar oftraust á lánshæfismöt, með þeim aðlögunum sem leiðir af ákvörðun sameiginlegu EES-nefndarinnar nr. 20/2018 frá 9. febrúar 2018.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.045.html#G120" law-nr="45" law-year="2020" law-art="120" nr="1">
         <footnote-sen>L. 45/2020, 120. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>12</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>12</art>
-            <subart>1</subart>
-            <numart>2</numart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="796">
+          <start xpath="art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -283,7 +349,9 @@
     <nr-title>13. gr.</nr-title>
     <name>Gildistaka.</name>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast gildi 1. júlí 2007.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast gildi 1. júlí 2007.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

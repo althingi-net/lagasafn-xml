@@ -7,34 +7,44 @@
     <original>2023 nr. 68 22. júní</original>
   </num-and-date>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=153&amp;amp;mnr=974"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/153/s/1522.html"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 8. júlí 2023. &lt;/b&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; utanríkisráðherra &lt;/b&gt; eða &lt;b&gt; utanríkisráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
-  <chapter nr="1" nr-type="roman" roman-nr="I">
+  <chapter nr="1" nr-type="roman" chapter-type="kafli" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <name>Markmið, gildissvið og orðskýringar.</name>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <name>Markmið.</name>
       <subart nr="1">
-        <sen nr="1">Markmiðið með lögum þessum er að:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Mæla fyrir um framkvæmd þvingunaraðgerða sem ákveðnar eru af öryggisráði Sameinuðu þjóðanna á grundvelli 41. gr. sáttmála Sameinuðu þjóðanna, af alþjóðastofnunum eða af ríkjahópum til að viðhalda friði og öryggi og/eða tryggja virðingu fyrir mannréttindum og mannfrelsi.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Hindra fjármögnun hryðjuverka, mannréttindabrota og brota á mannúðarrétti og útbreiðslu og fjármögnun gereyðingarvopna.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Markmiðið með lögum þessum er að:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Mæla fyrir um framkvæmd þvingunaraðgerða sem ákveðnar eru af öryggisráði Sameinuðu þjóðanna á grundvelli 41. gr. sáttmála Sameinuðu þjóðanna, af alþjóðastofnunum eða af ríkjahópum til að viðhalda friði og öryggi og/eða tryggja virðingu fyrir mannréttindum og mannfrelsi.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Hindra fjármögnun hryðjuverka, mannréttindabrota og brota á mannúðarrétti og útbreiðslu og fjármögnun gereyðingarvopna.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
     </art>
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <name>Gildissvið.</name>
       <subart nr="1">
-        <sen nr="1">Lög þessi gilda um íslenska ríkisborgara og útlendinga sem geta sætt refsiábyrgð samkvæmt ákvæðum almennra hegningarlaga um refsilögsögu.</sen>
-        <sen nr="2">Íslenskir ríkisborgarar bera auk þess refsiábyrgð fyrir verknað sem þeir fremja erlendis þrátt fyrir að verknaðurinn sé ekki refsiverður samkvæmt lögum þess ríkis þar sem brotið var framið.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi gilda um íslenska ríkisborgara og útlendinga sem geta sætt refsiábyrgð samkvæmt ákvæðum almennra hegningarlaga um refsilögsögu.</sen>
+          <sen nr="2">Íslenskir ríkisborgarar bera auk þess refsiábyrgð fyrir verknað sem þeir fremja erlendis þrátt fyrir að verknaðurinn sé ekki refsiverður samkvæmt lögum þess ríkis þar sem brotið var framið.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Lög þessi gilda um lögaðila sem skráðir eru eða stofnað er til samkvæmt íslenskum lögum hvar sem þeir starfa eða eru staðsettir.</sen>
-        <sen nr="2">Ef lögaðili er skráður eða til hans stofnað erlendis taka lögin til starfsemi hans að því leyti sem hún á sér stað innan íslenskrar lögsögu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi gilda um lögaðila sem skráðir eru eða stofnað er til samkvæmt íslenskum lögum hvar sem þeir starfa eða eru staðsettir.</sen>
+          <sen nr="2">Ef lögaðili er skráður eða til hans stofnað erlendis taka lögin til starfsemi hans að því leyti sem hún á sér stað innan íslenskrar lögsögu.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="3">
@@ -43,1000 +53,1428 @@
       <numart nr="1" nr-type="numeric">
         <nr-title>1.</nr-title>
         <name>Aðili:</name>
-        <sen nr="1">Einstaklingur eða lögaðili, þ.m.t. ríkisstjórnir, fyrirtæki, samsteypur, stofnanir, sjóðir og samtök.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Einstaklingur eða lögaðili, þ.m.t. ríkisstjórnir, fyrirtæki, samsteypur, stofnanir, sjóðir og samtök.</sen>
+        </paragraph>
       </numart>
       <numart nr="2" nr-type="numeric">
         <nr-title>2.</nr-title>
         <name>Efnahagslegur auður:</name>
-        <sen nr="1">Hvers kyns eignir, efnislegar jafnt sem óefnislegar, færanlegar eða ófæranlegar, sem eru ekki fjármunir en sem unnt er að nota til að afla fjármuna, vöru eða þjónustu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hvers kyns eignir, efnislegar jafnt sem óefnislegar, færanlegar eða ófæranlegar, sem eru ekki fjármunir en sem unnt er að nota til að afla fjármuna, vöru eða þjónustu.</sen>
+        </paragraph>
       </numart>
       <numart nr="3" nr-type="numeric">
         <nr-title>3.</nr-title>
         <name>Eftirlitsaðilar:</name>
-        <sen nr="1">Fjármálaeftirlitið og ríkisskattstjóri.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálaeftirlitið og ríkisskattstjóri.</sen>
+        </paragraph>
       </numart>
       <numart nr="4" nr-type="numeric">
         <nr-title>4.</nr-title>
         <name>Fjármunir:</name>
-        <sen nr="1">Hvers kyns fjáreignir og ágóði, þ.m.t.:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">reiðufé, ávísanir, peningakröfur, víxlar, póstávísanir og aðrir greiðslugerningar,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">inneignir hjá fjármálastofnunum eða öðrum aðilum, inneignir á reikningum, skuldir og fjárskuldbindingar,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">fjármálagerningar sem verslað er með í og/eða utan viðskiptavettvanga, þ.m.t. hlutabréf og hlutir, skírteini fyrir verðbréfum, skuldabréf, lán, ábyrgðir, skuldaviðurkenningar og afleiðusamningar,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">vextir, arðgreiðslur eða aðrar tekjur eða verðmæti sem rekja má til eða myndast af eignum,</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">lánsviðskipti, réttur til skuldajöfnunar, tryggingar, áfangatryggingar eða aðrar fjárskuldbindingar,</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">ábyrgðir, farmbréf og reikningar,</sen>
-        </numart>
-        <numart nr="g" nr-type="alphabet">
-          <nr-title>g.</nr-title>
-          <sen nr="1">skjöl sem færa sönnur á hlutdeild í fjármunum eða fjármagni,</sen>
-        </numart>
-        <numart nr="h" nr-type="alphabet">
-          <nr-title>h.</nr-title>
-          <sen nr="1">hvers konar gerningar til að fjármagna útflutning.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Hvers kyns fjáreignir og ágóði, þ.m.t.:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">reiðufé, ávísanir, peningakröfur, víxlar, póstávísanir og aðrir greiðslugerningar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">inneignir hjá fjármálastofnunum eða öðrum aðilum, inneignir á reikningum, skuldir og fjárskuldbindingar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">fjármálagerningar sem verslað er með í og/eða utan viðskiptavettvanga, þ.m.t. hlutabréf og hlutir, skírteini fyrir verðbréfum, skuldabréf, lán, ábyrgðir, skuldaviðurkenningar og afleiðusamningar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">vextir, arðgreiðslur eða aðrar tekjur eða verðmæti sem rekja má til eða myndast af eignum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">lánsviðskipti, réttur til skuldajöfnunar, tryggingar, áfangatryggingar eða aðrar fjárskuldbindingar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ábyrgðir, farmbréf og reikningar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" nr-type="alphabet">
+            <nr-title>g.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skjöl sem færa sönnur á hlutdeild í fjármunum eða fjármagni,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" nr-type="alphabet">
+            <nr-title>h.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvers konar gerningar til að fjármagna útflutning.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </numart>
       <numart nr="5" nr-type="numeric">
         <nr-title>5.</nr-title>
         <name>Fjármögnun hryðjuverka:</name>
-        <sen nr="1">Fjármögnun hryðjuverka samkvæmt skilgreiningu laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármögnun hryðjuverka samkvæmt skilgreiningu laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+        </paragraph>
       </numart>
       <numart nr="6" nr-type="numeric">
         <nr-title>6.</nr-title>
         <name>Frysting efnahagslegs auðs:</name>
-        <sen nr="1">Að koma í veg fyrir hvers konar nýtingu efnahagslegs auðs í því skyni að afla fjármuna, vöru eða þjónustu, þ.m.t. með sölu, leigu eða veðsetningu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að koma í veg fyrir hvers konar nýtingu efnahagslegs auðs í því skyni að afla fjármuna, vöru eða þjónustu, þ.m.t. með sölu, leigu eða veðsetningu.</sen>
+        </paragraph>
       </numart>
       <numart nr="7" nr-type="numeric">
         <nr-title>7.</nr-title>
         <name>Frysting fjármuna:</name>
-        <sen nr="1">Að koma í veg fyrir hvers konar flutning, millifærslu, breytingu, notkun á, aðgang að eða viðskipti með fjármuni á einhvern hátt sem mundi leiða til breytinga á umfangi þeirra, fjárhæð, staðsetningu, eignarrétti, eignarhaldi, eðli, áfangastað eða annarra breytinga sem gera notkun fjármuna mögulega, þ.m.t. eignastýring.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að koma í veg fyrir hvers konar flutning, millifærslu, breytingu, notkun á, aðgang að eða viðskipti með fjármuni á einhvern hátt sem mundi leiða til breytinga á umfangi þeirra, fjárhæð, staðsetningu, eignarrétti, eignarhaldi, eðli, áfangastað eða annarra breytinga sem gera notkun fjármuna mögulega, þ.m.t. eignastýring.</sen>
+        </paragraph>
       </numart>
       <numart nr="8" nr-type="numeric">
         <nr-title>8.</nr-title>
         <name>Gereyðingarvopn:</name>
-        <sen nr="1">Kjarna-, efna-, sýkla- eða eiturvopn eða burðarkerfi fyrir slík vopn, sbr. lög um afvopnun, takmörkun vígbúnaðar og útflutningseftirlit.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Kjarna-, efna-, sýkla- eða eiturvopn eða burðarkerfi fyrir slík vopn, sbr. lög um afvopnun, takmörkun vígbúnaðar og útflutningseftirlit.</sen>
+        </paragraph>
       </numart>
       <numart nr="9" nr-type="numeric">
         <nr-title>9.</nr-title>
         <name>Raunverulegur eigandi:</name>
-        <sen nr="1">Hugtakið eins og það er skilgreint í 13. tölul. 3. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hugtakið eins og það er skilgreint í 13. tölul. 3. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        </paragraph>
       </numart>
       <numart nr="10" nr-type="numeric">
         <nr-title>10.</nr-title>
         <name>Skráður aðili:</name>
-        <sen nr="1">Aðili sem hefur verið skráður á þvingunarlista samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðili sem hefur verið skráður á þvingunarlista samkvæmt lögum þessum.</sen>
+        </paragraph>
       </numart>
       <numart nr="11" nr-type="numeric">
         <nr-title>11.</nr-title>
         <name>Tilkynningarskyldur aðili:</name>
-        <sen nr="1">Aðili sem fellur undir 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðili sem fellur undir 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        </paragraph>
       </numart>
       <numart nr="12" nr-type="numeric">
         <nr-title>12.</nr-title>
         <name>Útbreiðsla og fjármögnun gereyðingarvopna:</name>
-        <sen nr="1">Þróun, framleiðsla, öflun, söfnun, notkun, útvegun, eignarhald, flutningur, miðlun, viðskipti með eða varsla á gereyðingarvopnum, sbr. 2. gr. reglugerðar um alþjóðlegar öryggisaðgerðir varðandi gereyðingarvopn, nr. 123/2009.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þróun, framleiðsla, öflun, söfnun, notkun, útvegun, eignarhald, flutningur, miðlun, viðskipti með eða varsla á gereyðingarvopnum, sbr. 2. gr. reglugerðar um alþjóðlegar öryggisaðgerðir varðandi gereyðingarvopn, nr. 123/2009.</sen>
+        </paragraph>
       </numart>
       <numart nr="13" nr-type="numeric">
         <nr-title>13.</nr-title>
         <name>Yfirflug:</name>
-        <sen nr="1">För loftfars um íslenska lofthelgi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">För loftfars um íslenska lofthelgi.</sen>
+        </paragraph>
       </numart>
     </art>
   </chapter>
-  <chapter nr="2" nr-type="roman" roman-nr="II">
+  <chapter nr="2" nr-type="roman" chapter-type="kafli" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <name>Þvingunaraðgerðir.</name>
     <art nr="4">
       <nr-title>4. gr.</nr-title>
       <name>Þvingunaraðgerðir öryggisráðs Sameinuðu þjóðanna.</name>
       <subart nr="1">
-        <sen nr="1">Ríkisstjórnin skal gera þær ráðstafanir sem eru nauðsynlegar til þess að framkvæma ályktanir sem öryggisráð Sameinuðu þjóðanna samþykkir skv. 41. gr. sáttmála Sameinuðu þjóðanna og Íslandi er skylt að hlíta vegna aðildar sinnar að þeim.</sen>
-        <sen nr="2">Kynna skal slíkar ráðstafanir reglulega fyrir utanríkismálanefnd Alþingis.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisstjórnin skal gera þær ráðstafanir sem eru nauðsynlegar til þess að framkvæma ályktanir sem öryggisráð Sameinuðu þjóðanna samþykkir skv. 41. gr. sáttmála Sameinuðu þjóðanna og Íslandi er skylt að hlíta vegna aðildar sinnar að þeim.</sen>
+          <sen nr="2">Kynna skal slíkar ráðstafanir reglulega fyrir utanríkismálanefnd Alþingis.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <name>Þvingunaraðgerðir alþjóðastofnana o.fl.</name>
       <subart nr="1">
-        <sen nr="1">Ríkisstjórninni er heimilt, að höfðu samráði við utanríkismálanefnd Alþingis, sbr. lög um þingsköp Alþingis, að taka þátt í og gera þær ráðstafanir sem eru nauðsynlegar til þess að framkvæma ákvarðanir alþjóðastofnana, ríkjahópa eða samstarfsríkja um þvingunaraðgerðir sem miða að því að viðhalda friði og öryggi, tryggja virðingu fyrir mannréttindum og mannfrelsi og koma í veg fyrir fjármögnun hryðjuverka og fjármögnun og útbreiðslu gereyðingarvopna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisstjórninni er heimilt, að höfðu samráði við utanríkismálanefnd Alþingis, sbr. lög um þingsköp Alþingis, að taka þátt í og gera þær ráðstafanir sem eru nauðsynlegar til þess að framkvæma ákvarðanir alþjóðastofnana, ríkjahópa eða samstarfsríkja um þvingunaraðgerðir sem miða að því að viðhalda friði og öryggi, tryggja virðingu fyrir mannréttindum og mannfrelsi og koma í veg fyrir fjármögnun hryðjuverka og fjármögnun og útbreiðslu gereyðingarvopna.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <name>Framkvæmd þvingunaraðgerða.</name>
       <subart nr="1">
-        <sen nr="1">Heimilt er að innleiða fyrirmæli ályktunar um þvingunaraðgerðir skv. 4. og 5. gr. með reglugerð.</sen>
-        <sen nr="2">Í þeim tilgangi getur reglugerð m.a. mælt fyrir um:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">bann við viðskiptum og fjárfestingum,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">bann við inn- og útflutningi, þ.m.t. á vopnum,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">frystingu á fjármunum og öðrum eignum,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">bann við samskiptum, þar á meðal fjarskiptum og menningarsamskiptum,</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">landgöngubann og bann við ferðum farartækja,</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">bann við að veita þjónustu og þjálfun,</sen>
-        </numart>
-        <numart nr="g" nr-type="alphabet">
-          <nr-title>g.</nr-title>
-          <sen nr="1">bann við að veita efnahagsaðstoð og tæknilega aðstoð,</sen>
-        </numart>
-        <numart nr="h" nr-type="alphabet">
-          <nr-title>h.</nr-title>
-          <sen nr="1">bann við starfsemi og þátttöku í atvinnulífi,</sen>
-        </numart>
-        <numart nr="i" nr-type="alphabet">
-          <nr-title>i.</nr-title>
-          <sen nr="1">bann við yfirflugi og hafnbann,</sen>
-        </numart>
-        <numart nr="j" nr-type="alphabet">
-          <nr-title>j.</nr-title>
-          <sen nr="1">bann við efndum krafna,</sen>
-        </numart>
-        <numart nr="k" nr-type="alphabet">
-          <nr-title>k.</nr-title>
-          <sen nr="1">aðrar aðgerðir sem ákveðnar eru til að viðhalda friði og öryggi, til að tryggja virðingu fyrir mannréttindum og mannfrelsi og koma í veg fyrir fjármögnun hryðjuverka og/eða fjármögnun og útbreiðslu gereyðingarvopna.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Heimilt er að innleiða fyrirmæli ályktunar um þvingunaraðgerðir skv. 4. og 5. gr. með reglugerð.</sen>
+          <sen nr="2">Í þeim tilgangi getur reglugerð m.a. mælt fyrir um:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við viðskiptum og fjárfestingum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við inn- og útflutningi, þ.m.t. á vopnum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">frystingu á fjármunum og öðrum eignum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við samskiptum, þar á meðal fjarskiptum og menningarsamskiptum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">landgöngubann og bann við ferðum farartækja,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við að veita þjónustu og þjálfun,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" nr-type="alphabet">
+            <nr-title>g.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við að veita efnahagsaðstoð og tæknilega aðstoð,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" nr-type="alphabet">
+            <nr-title>h.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við starfsemi og þátttöku í atvinnulífi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" nr-type="alphabet">
+            <nr-title>i.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við yfirflugi og hafnbann,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="j" nr-type="alphabet">
+            <nr-title>j.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">bann við efndum krafna,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="k" nr-type="alphabet">
+            <nr-title>k.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">aðrar aðgerðir sem ákveðnar eru til að viðhalda friði og öryggi, til að tryggja virðingu fyrir mannréttindum og mannfrelsi og koma í veg fyrir fjármögnun hryðjuverka og/eða fjármögnun og útbreiðslu gereyðingarvopna.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Í reglugerð skal taka fram um hvaða ályktun er að ræða, þær þvingunaraðgerðir sem koma eiga til framkvæmda og gegn hverjum þær beinast.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í reglugerð skal taka fram um hvaða ályktun er að ræða, þær þvingunaraðgerðir sem koma eiga til framkvæmda og gegn hverjum þær beinast.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Nú gefur öryggisráð Sameinuðu þjóðanna eða Evrópusambandið út lista yfir aðila, hluti, tækni eða annað viðfang þvingunaraðgerða skv. 1. mgr. og er ráðherra þá heimilt í reglugerð að vísa til hans á vefsetri öryggisráðs Sameinuðu þjóðanna eða Stjórnartíðinda Evrópusambandsins og telst það lögmæt birting.</sen>
-        <sen nr="2">Í reglugerð er ráðherra heimilt að kveða á um að breytingar eða uppfærslur lista öðlist sjálfkrafa gildi við uppfærslu eða breytingar á vefsetri öryggisráðs Sameinuðu þjóðanna eða Stjórnartíðinda Evrópusambandsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú gefur öryggisráð Sameinuðu þjóðanna eða Evrópusambandið út lista yfir aðila, hluti, tækni eða annað viðfang þvingunaraðgerða skv. 1. mgr. og er ráðherra þá heimilt í reglugerð að vísa til hans á vefsetri öryggisráðs Sameinuðu þjóðanna eða Stjórnartíðinda Evrópusambandsins og telst það lögmæt birting.</sen>
+          <sen nr="2">Í reglugerð er ráðherra heimilt að kveða á um að breytingar eða uppfærslur lista öðlist sjálfkrafa gildi við uppfærslu eða breytingar á vefsetri öryggisráðs Sameinuðu þjóðanna eða Stjórnartíðinda Evrópusambandsins.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Ráðuneytið skal halda skrár um þvingunaraðgerðir sem eru í gildi hér á landi og gegn hverjum þær beinast.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið skal halda skrár um þvingunaraðgerðir sem eru í gildi hér á landi og gegn hverjum þær beinast.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="7">
       <nr-title>7. gr.</nr-title>
       <name>Réttindi og skyldur sem fara í bága við þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Óheimilt er að efna samninga, eða fullnægja öðrum réttindum og skyldum, sem fara í bága við þessi lög og reglugerðir settar með stoð í þeim.</sen>
-        <sen nr="2">Þetta á við hvort sem þessi réttindi og skyldur stofnuðust fyrir eða eftir gildistöku viðkomandi reglugerðar nema annað sé tekið fram í henni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Óheimilt er að efna samninga, eða fullnægja öðrum réttindum og skyldum, sem fara í bága við þessi lög og reglugerðir settar með stoð í þeim.</sen>
+          <sen nr="2">Þetta á við hvort sem þessi réttindi og skyldur stofnuðust fyrir eða eftir gildistöku viðkomandi reglugerðar nema annað sé tekið fram í henni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Vanefnd á réttindum og skyldum skv. 1. mgr. skal ekki leiða af sér skaðabótaskyldu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vanefnd á réttindum og skyldum skv. 1. mgr. skal ekki leiða af sér skaðabótaskyldu.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="8">
       <nr-title>8. gr.</nr-title>
       <name>Brottfall þvingunaraðgerðar.</name>
       <subart nr="1">
-        <sen nr="1">Sé ályktun öryggisráðs Sameinuðu þjóðanna eða ákvörðun eða ályktun alþjóðastofnunar eða ríkjahóps um þvingunaraðgerðir afturkölluð, fallin úr gildi eða eigi hún ekki lengur við skal ráðherra svo fljótt sem verða má fella úr gildi reglugerð sem kemur þvingunaraðgerðinni til framkvæmda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sé ályktun öryggisráðs Sameinuðu þjóðanna eða ákvörðun eða ályktun alþjóðastofnunar eða ríkjahóps um þvingunaraðgerðir afturkölluð, fallin úr gildi eða eigi hún ekki lengur við skal ráðherra svo fljótt sem verða má fella úr gildi reglugerð sem kemur þvingunaraðgerðinni til framkvæmda.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <name>Undanþágur frá þvingunaraðgerð.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra getur veitt undanþágu frá þvingunaraðgerð sem framkvæmd er með heimild í þessum lögum þegar gildar ástæður eru fyrir hendi.</sen>
-        <sen nr="2">Heimilt er að setja skilyrði fyrir undanþágu til þess að tryggja að með henni sé ekki grafið undan eða komist fram hjá markmiði þvingunaraðgerðarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra getur veitt undanþágu frá þvingunaraðgerð sem framkvæmd er með heimild í þessum lögum þegar gildar ástæður eru fyrir hendi.</sen>
+          <sen nr="2">Heimilt er að setja skilyrði fyrir undanþágu til þess að tryggja að með henni sé ekki grafið undan eða komist fram hjá markmiði þvingunaraðgerðarinnar.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="3" nr-type="roman" roman-nr="III">
+  <chapter nr="3" nr-type="roman" chapter-type="kafli" roman-nr="III">
     <nr-title>III. kafli.</nr-title>
     <name>Frysting fjármuna og efnahagslegs auðs og bann við efndum krafna.</name>
     <art nr="10">
       <nr-title>10. gr.</nr-title>
       <name>Frysting fjármuna og efnahagslegs auðs.</name>
       <subart nr="1">
-        <sen nr="1">Skylt er að frysta fjármuni og efnahagslegan auð í samræmi við reglugerðir sem settar eru á grundvelli laga þessara til að koma í veg fyrir hvers konar fjármagnsflutning, svo sem afhendingu fjármuna, úttektir, millifærslu, eignarskráningu sem og önnur viðskipti, og hindra þannig að aðilar sem sæta frystingu fjármuna og efnahagslegs auðs fái greiðslur í hendur eða geti nýtt fjármuni með öðrum hætti.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skylt er að frysta fjármuni og efnahagslegan auð í samræmi við reglugerðir sem settar eru á grundvelli laga þessara til að koma í veg fyrir hvers konar fjármagnsflutning, svo sem afhendingu fjármuna, úttektir, millifærslu, eignarskráningu sem og önnur viðskipti, og hindra þannig að aðilar sem sæta frystingu fjármuna og efnahagslegs auðs fái greiðslur í hendur eða geti nýtt fjármuni með öðrum hætti.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þegar fjármunir og efnahagslegur auður er frystur tekur frystingin til fjármuna og efnahagslegs auðs sem í heild eða að hluta, beint eða óbeint, tilheyrir, er í eigu, í vörslu eða undir stjórn aðila sem skráður er á lista yfir þvingunaraðgerðir og sem samkvæmt slíkum þvingunaraðgerðum skal sæta frystingu fjármuna og efnahagslegs auðs.</sen>
-        <sen nr="2">Frysting nær einnig til fjármuna og efnahagslegs auðs aðila sem koma fram fyrir hönd aðila sem sætir frystingu fjármuna og efnahagslegs auðs.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar fjármunir og efnahagslegur auður er frystur tekur frystingin til fjármuna og efnahagslegs auðs sem í heild eða að hluta, beint eða óbeint, tilheyrir, er í eigu, í vörslu eða undir stjórn aðila sem skráður er á lista yfir þvingunaraðgerðir og sem samkvæmt slíkum þvingunaraðgerðum skal sæta frystingu fjármuna og efnahagslegs auðs.</sen>
+          <sen nr="2">Frysting nær einnig til fjármuna og efnahagslegs auðs aðila sem koma fram fyrir hönd aðila sem sætir frystingu fjármuna og efnahagslegs auðs.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Frysting fjármuna eða efnahagslegs auðs kemur ekki í veg fyrir að lagðir séu inn á reikninga sem hafa verið frystir:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">vextir eða aðrar tekjur af þessum reikningum,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">greiðslur samkvæmt samningum, samkomulagi eða skuldbindingum sem stofnað var til eða mynduðust áður en þvingunaraðgerðirnar voru ákveðnar.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Frysting fjármuna eða efnahagslegs auðs kemur ekki í veg fyrir að lagðir séu inn á reikninga sem hafa verið frystir:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">vextir eða aðrar tekjur af þessum reikningum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">greiðslur samkvæmt samningum, samkomulagi eða skuldbindingum sem stofnað var til eða mynduðust áður en þvingunaraðgerðirnar voru ákveðnar.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Vextir, aðrar tekjur og greiðslur skv. 3. mgr. skulu jafnframt frystar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vextir, aðrar tekjur og greiðslur skv. 3. mgr. skulu jafnframt frystar.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Þeir sem fryst hafa fjármuni eða efnahagslegan auð, sbr. 1. mgr., skulu án tafar tilkynna eigendum, ráðherra og skrifstofu fjármálagreininga lögreglu um slíkar ráðstafanir.</sen>
-        <sen nr="2">Tilkynningarskyldir aðilar, sem sæta eftirliti skv. 1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu einnig tilkynna Fjármálaeftirlitinu um slíkar ráðstafanir.</sen>
-        <sen nr="3">Tilkynningarskyldir aðilar, sem sæta eftirliti skv. 2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu einnig tilkynna ríkisskattstjóra um slíkar ráðstafanir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem fryst hafa fjármuni eða efnahagslegan auð, sbr. 1. mgr., skulu án tafar tilkynna eigendum, ráðherra og skrifstofu fjármálagreininga lögreglu um slíkar ráðstafanir.</sen>
+          <sen nr="2">Tilkynningarskyldir aðilar, sem sæta eftirliti skv. 1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu einnig tilkynna Fjármálaeftirlitinu um slíkar ráðstafanir.</sen>
+          <sen nr="3">Tilkynningarskyldir aðilar, sem sæta eftirliti skv. 2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu einnig tilkynna ríkisskattstjóra um slíkar ráðstafanir.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1">Frystir fjármunir eða efnahagslegur auður skal vera í vörslu þess aðila sem hann var hjá þegar frysting er framkvæmd nema ráðherra gefi fyrirmæli um annað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Frystir fjármunir eða efnahagslegur auður skal vera í vörslu þess aðila sem hann var hjá þegar frysting er framkvæmd nema ráðherra gefi fyrirmæli um annað.</sen>
+        </paragraph>
       </subart>
       <subart nr="7">
-        <sen nr="1">Ef fjármunir eða efnahagslegur auður er frystur í góðri trú samkvæmt lögum þessum eða reglugerðum settum á grundvelli þeirra skulu viðkomandi aðilar eða starfsmenn þeirra ekki vera bótaskyldir á nokkurn hátt vegna frystingarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef fjármunir eða efnahagslegur auður er frystur í góðri trú samkvæmt lögum þessum eða reglugerðum settum á grundvelli þeirra skulu viðkomandi aðilar eða starfsmenn þeirra ekki vera bótaskyldir á nokkurn hátt vegna frystingarinnar.</sen>
+        </paragraph>
       </subart>
       <subart nr="8">
-        <sen nr="1">Ráðherra heldur skrá yfir alla fjármuni og efnahagslegan auð sem hefur verið frystur á grundvelli laga þessara og reglugerða settra á grundvelli þeirra.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra heldur skrá yfir alla fjármuni og efnahagslegan auð sem hefur verið frystur á grundvelli laga þessara og reglugerða settra á grundvelli þeirra.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <name>Undanþága frá frystingu fjármuna eða efnahagslegs auðs.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra getur heimilað að frystingu sé aflétt að því er varðar fjármuni eða efnahagslegan auð sem er:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">nauðsynlegur til að uppfylla grunnþarfir viðkomandi einstaklings og aðstandenda á framfæri hans, þ.m.t. greiðslur vegna matarkaupa, leigu íbúðarhúsnæðis eða veðlána, lyfja og læknismeðferðar, skattheimtu, tryggingariðgjalda og opinberra þjónustugjalda,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">nauðsynlegur vegna óvenjulegra útgjalda,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">ætlaður til greiðslu á samningsskuldbindingum sem stofnuðust áður en skylda til frystingar stofnaðist að því tilskildu að staðfest sé að:</sen>
-          <numart nr="1" nr-type="numeric">
-            <nr-title>1.</nr-title>
-            <sen nr="1">samningurinn tengist ekki fjárhagsaðstoð, hlutum, tæknilegri aðstoð eða þjónustu samkvæmt skilgreiningum þessara laga sem er óheimil samkvæmt reglugerðum settum á grundvelli þessara laga, og</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra getur heimilað að frystingu sé aflétt að því er varðar fjármuni eða efnahagslegan auð sem er:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">nauðsynlegur til að uppfylla grunnþarfir viðkomandi einstaklings og aðstandenda á framfæri hans, þ.m.t. greiðslur vegna matarkaupa, leigu íbúðarhúsnæðis eða veðlána, lyfja og læknismeðferðar, skattheimtu, tryggingariðgjalda og opinberra þjónustugjalda,</sen>
+            </paragraph>
           </numart>
-          <numart nr="2" nr-type="numeric">
-            <nr-title>2.</nr-title>
-            <sen nr="1">greiðslan, með beinum eða óbeinum hætti, berist ekki til aðila sem skráður er á lista yfir þvingunaraðgerðir samkvæmt lögum þessum,</sen>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">nauðsynlegur vegna óvenjulegra útgjalda,</sen>
+            </paragraph>
           </numart>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">eingöngu ætlaður til að greiða hæfilega sérfræðiþóknun og til endurgreiðslu á kostnaði vegna lögfræðiþjónustu, og</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">eingöngu ætlaður til að greiða þóknanir eða þjónustugjöld fyrir venjubundna vörslu eða umsýslu frystra fjármuna eða efnahagslegs auðs.</sen>
-        </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ætlaður til greiðslu á samningsskuldbindingum sem stofnuðust áður en skylda til frystingar stofnaðist að því tilskildu að staðfest sé að:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">samningurinn tengist ekki fjárhagsaðstoð, hlutum, tæknilegri aðstoð eða þjónustu samkvæmt skilgreiningum þessara laga sem er óheimil samkvæmt reglugerðum settum á grundvelli þessara laga, og</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">greiðslan, með beinum eða óbeinum hætti, berist ekki til aðila sem skráður er á lista yfir þvingunaraðgerðir samkvæmt lögum þessum,</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">eingöngu ætlaður til að greiða hæfilega sérfræðiþóknun og til endurgreiðslu á kostnaði vegna lögfræðiþjónustu, og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">eingöngu ætlaður til að greiða þóknanir eða þjónustugjöld fyrir venjubundna vörslu eða umsýslu frystra fjármuna eða efnahagslegs auðs.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Áður en veitt er undanþága frá frystingu fjármuna skv. 1. mgr. skal ráðherra, eftir því sem við á, leita álits eða tilkynna það til viðeigandi nefnda öryggisráðs Sameinuðu þjóðanna eða stofnana þeirra með a.m.k. tveggja vikna fyrirvara á því formi sem viðkomandi aðilar leggja til.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Áður en veitt er undanþága frá frystingu fjármuna skv. 1. mgr. skal ráðherra, eftir því sem við á, leita álits eða tilkynna það til viðeigandi nefnda öryggisráðs Sameinuðu þjóðanna eða stofnana þeirra með a.m.k. tveggja vikna fyrirvara á því formi sem viðkomandi aðilar leggja til.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um undanþágur frá frystingu fjármuna eða efnahagslegs auðs, þ.m.t. um umsóknir og umsóknargögn.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um undanþágur frá frystingu fjármuna eða efnahagslegs auðs, þ.m.t. um umsóknir og umsóknargögn.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <name>Aflétting frystingar.</name>
       <subart nr="1">
-        <sen nr="1">Hafi fjármunir ekki verið gerðir upptækir á grundvelli ákvæða almennra hegningarlaga skal aflétta frystingu þegar aðilar eru afskráðir af lista yfir þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi fjármunir ekki verið gerðir upptækir á grundvelli ákvæða almennra hegningarlaga skal aflétta frystingu þegar aðilar eru afskráðir af lista yfir þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ef staðfest er að fjármunir hafi verið frystir hjá aðila sem ber sama eða svipað nafn og aðili sem skráður er á lista yfir þvingunarráðstafanir skal ráðherra gefa fyrirmæli um að aflétta þvingunarráðstöfunum.</sen>
-        <sen nr="2">Fylgja skal ákvæðum 23. gr. eftir því sem við á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef staðfest er að fjármunir hafi verið frystir hjá aðila sem ber sama eða svipað nafn og aðili sem skráður er á lista yfir þvingunarráðstafanir skal ráðherra gefa fyrirmæli um að aflétta þvingunarráðstöfunum.</sen>
+          <sen nr="2">Fylgja skal ákvæðum 23. gr. eftir því sem við á.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Um tilkynningar um afléttingu frystingar fer eftir 23. og 24. gr. eftir því sem við á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Um tilkynningar um afléttingu frystingar fer eftir 23. og 24. gr. eftir því sem við á.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <name>Ráðstafanir vegna eftirlits með því hvort viðskiptamenn og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Tilkynningarskyldir aðilar skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu hafa viðeigandi kerfi, ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
-        <sen nr="2">Fjármálaeftirlitið getur veitt undanþágu frá kröfu um slíkt kerfi sýni tilkynningarskyldur aðili fram á að markmiði laganna verði náð með ferlum og aðferðum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilkynningarskyldir aðilar skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu hafa viðeigandi kerfi, ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
+          <sen nr="2">Fjármálaeftirlitið getur veitt undanþágu frá kröfu um slíkt kerfi sýni tilkynningarskyldur aðili fram á að markmiði laganna verði náð með ferlum og aðferðum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Tilkynningarskyldir aðilar skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu innleiða ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilkynningarskyldir aðilar skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu innleiða ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Viðskiptamenn og raunverulegir eigendur skulu skimaðir gagnvart listum yfir þvingunaraðgerðir í upphafi viðskipta og reglulega á meðan samningssambandið varir.</sen>
-        <sen nr="2">Þá skulu aðilar sem eiga aðild að millifærslum fjármuna til og frá erlendum ríkjum skimaðir gagnvart listum yfir þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Viðskiptamenn og raunverulegir eigendur skulu skimaðir gagnvart listum yfir þvingunaraðgerðir í upphafi viðskipta og reglulega á meðan samningssambandið varir.</sen>
+          <sen nr="2">Þá skulu aðilar sem eiga aðild að millifærslum fjármuna til og frá erlendum ríkjum skimaðir gagnvart listum yfir þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Tilkynningarskyldir aðilar skulu varðveita afrit af gögnum og upplýsingum sem staðfesta að skimun hafi farið fram og að lagt hafi verið mat á niðurstöðu skimunar skv. 3. mgr. í að lágmarki fimm ár frá því að samningssambandi lýkur eða einstök viðskipti hafa átt sér stað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilkynningarskyldir aðilar skulu varðveita afrit af gögnum og upplýsingum sem staðfesta að skimun hafi farið fram og að lagt hafi verið mat á niðurstöðu skimunar skv. 3. mgr. í að lágmarki fimm ár frá því að samningssambandi lýkur eða einstök viðskipti hafa átt sér stað.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Þegar grunur leikur á um að viðskiptamaður eða raunverulegur eigandi hafi gert ráðstafanir til að komast hjá frystingu fjármuna eða efnahagslegs auðs skv. 10. gr. skal tilkynningarskyldur aðili tilkynna þeim eftirlitsaðila sem fer með eftirlit með tilkynningarskylda aðilanum skv. 26. gr. um slíkt.</sen>
-        <sen nr="2">Jafnframt skal tilkynningarskyldur aðili tilkynna skrifstofu fjármálagreininga lögreglu og ráðherra um slíkar ráðstafanir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar grunur leikur á um að viðskiptamaður eða raunverulegur eigandi hafi gert ráðstafanir til að komast hjá frystingu fjármuna eða efnahagslegs auðs skv. 10. gr. skal tilkynningarskyldur aðili tilkynna þeim eftirlitsaðila sem fer með eftirlit með tilkynningarskylda aðilanum skv. 26. gr. um slíkt.</sen>
+          <sen nr="2">Jafnframt skal tilkynningarskyldur aðili tilkynna skrifstofu fjármálagreininga lögreglu og ráðherra um slíkar ráðstafanir.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="14">
       <nr-title>14. gr.</nr-title>
       <name>Bann við efndum krafna.</name>
       <subart nr="1">
-        <sen nr="1">Óheimilt er að efna kröfur sem tengjast samningi eða viðskiptum þegar aðgerðir, í samræmi við reglugerðir sem settar eru á grundvelli laga þessara, hafa áhrif á framkvæmd þeirra, beint eða óbeint, í heild eða að hluta, þ.m.t. kröfur um skaðleysisbætur eða aðrar ámóta kröfur, t.d. bótakröfur eða kröfur samkvæmt ábyrgðarloforði, einkum framlengingar- eða greiðslukröfur vegna skuldabréfa eða ábyrgðar eða skaðleysisbóta og þá sérstaklega fjárhagslegrar ábyrgðar eða fjárhagslegra skaðleysisbóta, í hvaða mynd sem er, ef slíkar kröfur eru settar fram af:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">einstaklingum, lögaðilum, rekstrareiningum eða stofnunum sem sæta banni við efndum krafna samkvæmt reglugerðum sem settar eru á grundvelli laga þessara eða</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">einstaklingum, lögaðilum, rekstrareiningum eða stofnunum sem starfa í gegnum eða fyrir hönd aðila skv. a-lið.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Óheimilt er að efna kröfur sem tengjast samningi eða viðskiptum þegar aðgerðir, í samræmi við reglugerðir sem settar eru á grundvelli laga þessara, hafa áhrif á framkvæmd þeirra, beint eða óbeint, í heild eða að hluta, þ.m.t. kröfur um skaðleysisbætur eða aðrar ámóta kröfur, t.d. bótakröfur eða kröfur samkvæmt ábyrgðarloforði, einkum framlengingar- eða greiðslukröfur vegna skuldabréfa eða ábyrgðar eða skaðleysisbóta og þá sérstaklega fjárhagslegrar ábyrgðar eða fjárhagslegra skaðleysisbóta, í hvaða mynd sem er, ef slíkar kröfur eru settar fram af:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">einstaklingum, lögaðilum, rekstrareiningum eða stofnunum sem sæta banni við efndum krafna samkvæmt reglugerðum sem settar eru á grundvelli laga þessara eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">einstaklingum, lögaðilum, rekstrareiningum eða stofnunum sem starfa í gegnum eða fyrir hönd aðila skv. a-lið.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þegar mál er til meðferðar vegna fullnustu kröfu skal sönnunarbyrði vegna þeirrar fullyrðingar að eigi sé bannað skv. 1. mgr. að efna kröfuna hvíla á þeim aðila sem leitar eftir fullnustu kröfunnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar mál er til meðferðar vegna fullnustu kröfu skal sönnunarbyrði vegna þeirrar fullyrðingar að eigi sé bannað skv. 1. mgr. að efna kröfuna hvíla á þeim aðila sem leitar eftir fullnustu kröfunnar.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvæði þetta er með fyrirvara um rétt aðila sem um getur í 1. mgr. til að skjóta málum til dómstóla sem skeri úr um lögmæti þess að samningsbundnar skyldur séu ekki uppfylltar í samræmi við reglugerðir sem settar eru á grundvelli laga þessara.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði þetta er með fyrirvara um rétt aðila sem um getur í 1. mgr. til að skjóta málum til dómstóla sem skeri úr um lögmæti þess að samningsbundnar skyldur séu ekki uppfylltar í samræmi við reglugerðir sem settar eru á grundvelli laga þessara.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="4" nr-type="roman" roman-nr="IV">
+  <chapter nr="4" nr-type="roman" chapter-type="kafli" roman-nr="IV">
     <nr-title>IV. kafli.</nr-title>
     <name>Landgöngubann og yfirflugsbann.</name>
     <art nr="15">
       <nr-title>15. gr.</nr-title>
       <name>Landgöngubann.</name>
       <subart nr="1">
-        <sen nr="1">Meina ber einstaklingi, öðrum en íslenskum ríkisborgara, landgöngu eða gegnumferð í samræmi við reglugerðir sem settar eru á grundvelli laga þessara, sbr. e-lið 1. mgr. 6. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Meina ber einstaklingi, öðrum en íslenskum ríkisborgara, landgöngu eða gegnumferð í samræmi við reglugerðir sem settar eru á grundvelli laga þessara, sbr. e-lið 1. mgr. 6. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Við skráningu einstaklings á lista yfir þvingunaraðgerðir vegna landgöngubanns skal, eins og við á, skrá fullt nafn aðila, dulnefni, kynskráningu, fæðingardag, fæðingarstað, búsetu, ríkisfang og vegabréfsnúmer.</sen>
-        <sen nr="2">Upplýsingar skulu skráðar í samræmi við viðmið Alþjóðaflugmálastofnunarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Við skráningu einstaklings á lista yfir þvingunaraðgerðir vegna landgöngubanns skal, eins og við á, skrá fullt nafn aðila, dulnefni, kynskráningu, fæðingardag, fæðingarstað, búsetu, ríkisfang og vegabréfsnúmer.</sen>
+          <sen nr="2">Upplýsingar skulu skráðar í samræmi við viðmið Alþjóðaflugmálastofnunarinnar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <name>Undanþágur frá landgöngubanni.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra er heimilt að veita undanþágu frá landgöngubanni þegar Ísland er skuldbundið að þjóðarétti sem gistiland alþjóðlegrar ráðstefnu sem Sameinuðu þjóðirnar boða til eða sem fram fer á þeirra vegum eða samkvæmt marghliða samningi þar sem kveðið er á um forréttindi og friðhelgi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að veita undanþágu frá landgöngubanni þegar Ísland er skuldbundið að þjóðarétti sem gistiland alþjóðlegrar ráðstefnu sem Sameinuðu þjóðirnar boða til eða sem fram fer á þeirra vegum eða samkvæmt marghliða samningi þar sem kveðið er á um forréttindi og friðhelgi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra er heimilt að veita undanþágu frá landgöngubanni ef ferð er réttlætt af knýjandi mannúðarástæðum eða með þátttöku í fundum alþjóðlegra milliríkjastofnana þar sem fram fara pólitísk skoðanaskipti sem efla með beinum hætti stefnumarkmið þvingunaraðgerða, þ.m.t. að binda enda á alvarleg mannréttindabrot eða efla mannréttindi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að veita undanþágu frá landgöngubanni ef ferð er réttlætt af knýjandi mannúðarástæðum eða með þátttöku í fundum alþjóðlegra milliríkjastofnana þar sem fram fara pólitísk skoðanaskipti sem efla með beinum hætti stefnumarkmið þvingunaraðgerða, þ.m.t. að binda enda á alvarleg mannréttindabrot eða efla mannréttindi.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra er heimilt að veita undanþágu ef koma eða gegnumferð er nauðsynleg til þess að meðferð dómstóla geti farið fram.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að veita undanþágu ef koma eða gegnumferð er nauðsynleg til þess að meðferð dómstóla geti farið fram.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="17">
       <nr-title>17. gr.</nr-title>
       <name>Yfirflugsbann og undanþága frá yfirflugsbanni.</name>
       <subart nr="1">
-        <sen nr="1">Meina ber loftförum að fara í, úr eða í gegnum íslenska lofthelgi í samræmi við reglugerðir sem settar eru á grundvelli laga þessara.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Meina ber loftförum að fara í, úr eða í gegnum íslenska lofthelgi í samræmi við reglugerðir sem settar eru á grundvelli laga þessara.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ákvæði 1. mgr. gildir ekki ef um er að ræða nauðlendingu eða yfirflug á grundvelli neyðarástands.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði 1. mgr. gildir ekki ef um er að ræða nauðlendingu eða yfirflug á grundvelli neyðarástands.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra er heimilt að veita undanþágu frá 1. mgr., þ.m.t. ef slíkt er réttlætt af knýjandi mannúðarástæðum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að veita undanþágu frá 1. mgr., þ.m.t. ef slíkt er réttlætt af knýjandi mannúðarástæðum.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="5" nr-type="roman" roman-nr="V">
+  <chapter nr="5" nr-type="roman" chapter-type="kafli" roman-nr="V">
     <nr-title>V. kafli.</nr-title>
     <name>Tilnefning á og afskráning af lista yfir þvingunaraðgerðir.</name>
     <art nr="18">
       <nr-title>18. gr.</nr-title>
       <name>Rannsókn vegna tilnefningar á lista yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Þrátt fyrir að grunur liggi ekki fyrir um refsivert athæfi er lögreglu heimilt að hefja rannsókn á aðila samkvæmt ákvæðum laga um meðferð sakamála ef réttmætur grundvöllur eða réttmætar ástæður eru til að ætla að hann uppfylli skilyrði fyrir skráningu á lista yfir þvingunaraðgerðir skv. 19., 20. eða 21. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir að grunur liggi ekki fyrir um refsivert athæfi er lögreglu heimilt að hefja rannsókn á aðila samkvæmt ákvæðum laga um meðferð sakamála ef réttmætur grundvöllur eða réttmætar ástæður eru til að ætla að hann uppfylli skilyrði fyrir skráningu á lista yfir þvingunaraðgerðir skv. 19., 20. eða 21. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Rannsókn samkvæmt þessu ákvæði skal framkvæma án þess að þeim aðila sem rannsókn beinist að sé tilkynnt um hana.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Rannsókn samkvæmt þessu ákvæði skal framkvæma án þess að þeim aðila sem rannsókn beinist að sé tilkynnt um hana.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="19">
       <nr-title>19. gr.</nr-title>
       <name>Tilnefning á lista öryggisráðs Sameinuðu þjóðanna yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Ríkislögreglustjóri sendir ráðherra rökstudda tillögu um tilnefningu aðila á lista öryggisráðs Sameinuðu þjóðanna yfir þvingunaraðgerðir.</sen>
-        <sen nr="2">Tillögunni skulu fylgja, eftir því sem við á:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">niðurstöður rannsóknar, sbr. 18. gr.,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">gögn sem sýna fram á þátttöku, stuðning eða aðstoð tilnefnds aðila í átökum, brotum eða öðru sem er grundvöllur þvingunaraðgerðar,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">upplýsingar um aðferðir og fjármuni sem notaðir hafa verið í tengslum við átök, brot eða annað sem er grundvöllur þvingunaraðgerðar,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">önnur bein eða óbein sönnunargögn,</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">nafn eða nöfn tilnefndra aðila eða aðrar upplýsingar sem kunna að varpa ljósi á hver hann eða þeir eru,</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">upplýsingar um fæðingardag, fæðingarstað, búsetu og ríkisfang,</sen>
-        </numart>
-        <numart nr="g" nr-type="alphabet">
-          <nr-title>g.</nr-title>
-          <sen nr="1">upplýsingar um fjölskyldutengsl tilnefnds aðila,</sen>
-        </numart>
-        <numart nr="h" nr-type="alphabet">
-          <nr-title>h.</nr-title>
-          <sen nr="1">sakaskrá tilnefnds aðila og upplýsingar úr málaskrá lögreglu og</sen>
-        </numart>
-        <numart nr="i" nr-type="alphabet">
-          <nr-title>i.</nr-title>
-          <sen nr="1">upplýsingar um þá einstaklinga sem hafa yfirráð yfir lögaðila, ef um lögaðila er að ræða.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Ríkislögreglustjóri sendir ráðherra rökstudda tillögu um tilnefningu aðila á lista öryggisráðs Sameinuðu þjóðanna yfir þvingunaraðgerðir.</sen>
+          <sen nr="2">Tillögunni skulu fylgja, eftir því sem við á:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">niðurstöður rannsóknar, sbr. 18. gr.,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">gögn sem sýna fram á þátttöku, stuðning eða aðstoð tilnefnds aðila í átökum, brotum eða öðru sem er grundvöllur þvingunaraðgerðar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsingar um aðferðir og fjármuni sem notaðir hafa verið í tengslum við átök, brot eða annað sem er grundvöllur þvingunaraðgerðar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">önnur bein eða óbein sönnunargögn,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">nafn eða nöfn tilnefndra aðila eða aðrar upplýsingar sem kunna að varpa ljósi á hver hann eða þeir eru,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsingar um fæðingardag, fæðingarstað, búsetu og ríkisfang,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" nr-type="alphabet">
+            <nr-title>g.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsingar um fjölskyldutengsl tilnefnds aðila,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" nr-type="alphabet">
+            <nr-title>h.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">sakaskrá tilnefnds aðila og upplýsingar úr málaskrá lögreglu og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" nr-type="alphabet">
+            <nr-title>i.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsingar um þá einstaklinga sem hafa yfirráð yfir lögaðila, ef um lögaðila er að ræða.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Áður en ráðherra tekur ákvörðun um tilnefningu skal hann ráðfæra sig við ráðherra viðkomandi málaflokks og kalla eftir frekari upplýsingum, sé þess þörf.</sen>
-        <sen nr="2">Jafnframt skal ráðherra, eftir því sem unnt er, afla frekari upplýsinga frá því ríki þar sem aðili sem fyrirhugað er að tilnefna er búsettur og/eða hefur ríkisborgararétt og eftir atvikum frá alþjóða- og Evrópustofnunum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Áður en ráðherra tekur ákvörðun um tilnefningu skal hann ráðfæra sig við ráðherra viðkomandi málaflokks og kalla eftir frekari upplýsingum, sé þess þörf.</sen>
+          <sen nr="2">Jafnframt skal ráðherra, eftir því sem unnt er, afla frekari upplýsinga frá því ríki þar sem aðili sem fyrirhugað er að tilnefna er búsettur og/eða hefur ríkisborgararétt og eftir atvikum frá alþjóða- og Evrópustofnunum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Þrátt fyrir þagnarskyldu er öllum opinberum aðilum skylt að veita ráðherra upplýsingar við rannsókn mála samkvæmt þessu ákvæði.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir þagnarskyldu er öllum opinberum aðilum skylt að veita ráðherra upplýsingar við rannsókn mála samkvæmt þessu ákvæði.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Við mat á því hvort tilnefna eigi aðila á lista yfir þvingunaraðgerðir skal ráðherra taka tillit til:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">atriða sem gefa til kynna hvers konar þátttöku, stuðning eða aðild aðilinn á að þeim átökum, brotum eða öðru sem er grundvöllur þvingunaraðgerðar,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">hvort höfðað hafi verið sakamál á hendur aðila sem fyrirhugað er að tilnefna vegna tengsla hans við átök, brot eða annað sem er grundvöllur þvingunaraðgerðar,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">gæða þeirra upplýsinga sem aflað hefur verið til að auðkenna aðila sem fyrirhugað er að tilnefna til að koma í veg fyrir að rangur aðili sé tilnefndur,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">tengsla við aðila sem þegar eru á lista yfir þvingunaraðgerðir,</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">tegundar og gæða gagna sem sýna fram á tengsl við þau átök, brot eða annað sem er grundvöllur þvingunaraðgerðar, og</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">annarra viðeigandi upplýsinga.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Við mat á því hvort tilnefna eigi aðila á lista yfir þvingunaraðgerðir skal ráðherra taka tillit til:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">atriða sem gefa til kynna hvers konar þátttöku, stuðning eða aðild aðilinn á að þeim átökum, brotum eða öðru sem er grundvöllur þvingunaraðgerðar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvort höfðað hafi verið sakamál á hendur aðila sem fyrirhugað er að tilnefna vegna tengsla hans við átök, brot eða annað sem er grundvöllur þvingunaraðgerðar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">gæða þeirra upplýsinga sem aflað hefur verið til að auðkenna aðila sem fyrirhugað er að tilnefna til að koma í veg fyrir að rangur aðili sé tilnefndur,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">tengsla við aðila sem þegar eru á lista yfir þvingunaraðgerðir,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">tegundar og gæða gagna sem sýna fram á tengsl við þau átök, brot eða annað sem er grundvöllur þvingunaraðgerðar, og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">annarra viðeigandi upplýsinga.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Tilnefna skal aðila á lista yfir þvingunaraðgerðir ef réttmætur grundvöllur eða réttmætar ástæður eru fyrir tilnefningu hans.</sen>
-        <sen nr="2">Sakamálarannsókn, ákæra eða sakfelling er ekki nauðsynleg forsenda tilnefningar.</sen>
-        <sen nr="3">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á lista öryggisráðs Sameinuðu þjóðanna yfir þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilnefna skal aðila á lista yfir þvingunaraðgerðir ef réttmætur grundvöllur eða réttmætar ástæður eru fyrir tilnefningu hans.</sen>
+          <sen nr="2">Sakamálarannsókn, ákæra eða sakfelling er ekki nauðsynleg forsenda tilnefningar.</sen>
+          <sen nr="3">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á lista öryggisráðs Sameinuðu þjóðanna yfir þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1">Ráðherra tilkynnir viðeigandi nefnd öryggisráðs Sameinuðu þjóðanna um tilnefningu á því formi sem viðkomandi nefnd leggur til.</sen>
-        <sen nr="2">Tilkynningu skulu fylgja öll viðeigandi gögn, þar á meðal upplýsingar um nafn tilnefnds aðila, aðrar persónugreinanlegar upplýsingar og forsendur og rökstuðningur fyrir tilnefningunni.</sen>
-        <sen nr="3">Í tilkynningu skal jafnframt koma fram hvort heimilt sé að upplýsa að Ísland sé tilnefningarríki.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra tilkynnir viðeigandi nefnd öryggisráðs Sameinuðu þjóðanna um tilnefningu á því formi sem viðkomandi nefnd leggur til.</sen>
+          <sen nr="2">Tilkynningu skulu fylgja öll viðeigandi gögn, þar á meðal upplýsingar um nafn tilnefnds aðila, aðrar persónugreinanlegar upplýsingar og forsendur og rökstuðningur fyrir tilnefningunni.</sen>
+          <sen nr="3">Í tilkynningu skal jafnframt koma fram hvort heimilt sé að upplýsa að Ísland sé tilnefningarríki.</sen>
+        </paragraph>
       </subart>
       <subart nr="7">
-        <sen nr="1">Ráðherra skal árlega endurskoða tilnefningar á lista yfir þvingunaraðgerðir og grundvöll þeirra.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal árlega endurskoða tilnefningar á lista yfir þvingunaraðgerðir og grundvöll þeirra.</sen>
+        </paragraph>
       </subart>
       <subart nr="8">
-        <sen nr="1">Ráðherra er heimilt að deila upplýsingum sem varða tilnefningu á lista yfir þvingunaraðgerðir með þeim erlendu stjórnvöldum sem hafa það hlutverk að tilnefna aðila á lista yfir þvingunaraðgerðir.</sen>
-        <sen nr="2">Sama á við um alþjóða- og Evrópustofnanir sem sinna málaflokknum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að deila upplýsingum sem varða tilnefningu á lista yfir þvingunaraðgerðir með þeim erlendu stjórnvöldum sem hafa það hlutverk að tilnefna aðila á lista yfir þvingunaraðgerðir.</sen>
+          <sen nr="2">Sama á við um alþjóða- og Evrópustofnanir sem sinna málaflokknum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="20">
       <nr-title>20. gr.</nr-title>
       <name>Tilnefning á innlenda lista yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Tilnefning aðila á innlenda lista yfir þvingunaraðgerðir fer fram með sama hætti og tilnefning aðila skv. 19. gr., eftir því sem við á.</sen>
-        <sen nr="2">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á innlenda lista yfir þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilnefning aðila á innlenda lista yfir þvingunaraðgerðir fer fram með sama hætti og tilnefning aðila skv. 19. gr., eftir því sem við á.</sen>
+          <sen nr="2">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á innlenda lista yfir þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Hafi aðili verið skráður á lista yfir þvingunaraðgerðir skv. 1. mgr. skal nafn viðkomandi aðila birt án tafar í reglugerð sem kveður nánar á um þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi aðili verið skráður á lista yfir þvingunaraðgerðir skv. 1. mgr. skal nafn viðkomandi aðila birt án tafar í reglugerð sem kveður nánar á um þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Sé þess óskað að önnur ríki framfylgi þvingunaraðgerðum gagnvart aðila sem skráður er á lista yfir þvingunaraðgerðir skv. 1. mgr., þ.m.t. frystingu fjármuna eða efnahagslegs auðs, skal ráðherra senda beiðni þess efnis til lögbærra stjórnvalda.</sen>
-        <sen nr="2">Beiðninni skulu fylgja öll viðeigandi gögn, þar á meðal upplýsingar um nafn tilnefnds aðila, aðrar persónugreinanlegar upplýsingar og forsendur og rökstuðningur fyrir tilnefningunni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sé þess óskað að önnur ríki framfylgi þvingunaraðgerðum gagnvart aðila sem skráður er á lista yfir þvingunaraðgerðir skv. 1. mgr., þ.m.t. frystingu fjármuna eða efnahagslegs auðs, skal ráðherra senda beiðni þess efnis til lögbærra stjórnvalda.</sen>
+          <sen nr="2">Beiðninni skulu fylgja öll viðeigandi gögn, þar á meðal upplýsingar um nafn tilnefnds aðila, aðrar persónugreinanlegar upplýsingar og forsendur og rökstuðningur fyrir tilnefningunni.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="21">
       <nr-title>21. gr.</nr-title>
       <name>Tilnefning á lista frá öðrum ríkjum eða ríkjahópum.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra tekur við beiðni um tilnefningu á lista yfir þvingunaraðgerðir frá öðrum ríkjum, ríkjasvæðum eða samböndum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra tekur við beiðni um tilnefningu á lista yfir þvingunaraðgerðir frá öðrum ríkjum, ríkjasvæðum eða samböndum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Áður en ákvörðun er tekin um skráningu aðila á lista yfir þvingunaraðgerðir frá öðrum ríkjum, ríkjasvæðum eða samböndum skal ráðherra ráðfæra sig við ríkislögreglustjóra og ríkissaksóknara og gilda ákvæði 19. gr. eftir því sem við á, þar á meðal um rökstuðning og sönnunarkröfur.</sen>
-        <sen nr="2">Slíkt samráð skal fara fram án tafar og afstaða til beiðninnar liggja fyrir eins fljótt og unnt er.</sen>
-        <sen nr="3">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á lista frá öðrum ríkjum, ríkjasvæðum eða samböndum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Áður en ákvörðun er tekin um skráningu aðila á lista yfir þvingunaraðgerðir frá öðrum ríkjum, ríkjasvæðum eða samböndum skal ráðherra ráðfæra sig við ríkislögreglustjóra og ríkissaksóknara og gilda ákvæði 19. gr. eftir því sem við á, þar á meðal um rökstuðning og sönnunarkröfur.</sen>
+          <sen nr="2">Slíkt samráð skal fara fram án tafar og afstaða til beiðninnar liggja fyrir eins fljótt og unnt er.</sen>
+          <sen nr="3">Ákvæði IV.–VII. kafla stjórnsýslulaga gilda ekki um ákvörðun ráðherra um tilnefningu á lista frá öðrum ríkjum, ríkjasvæðum eða samböndum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Hafi aðili verið skráður á lista yfir þvingunaraðgerðir skv. 1. mgr. skal nafn viðkomandi aðila birt án tafar í reglugerð sem kveður nánar á um þvingunaraðgerðir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi aðili verið skráður á lista yfir þvingunaraðgerðir skv. 1. mgr. skal nafn viðkomandi aðila birt án tafar í reglugerð sem kveður nánar á um þvingunaraðgerðir.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Ráðherra skal tilkynna þeim sem sendi beiðni skv. 1. mgr. hvort orðið hafi verið við beiðninni eða henni hafnað um leið og ákvörðun liggur fyrir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal tilkynna þeim sem sendi beiðni skv. 1. mgr. hvort orðið hafi verið við beiðninni eða henni hafnað um leið og ákvörðun liggur fyrir.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="22">
       <nr-title>22. gr.</nr-title>
       <name>Tilkynning um skráningu á lista yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Hafi íslenskur ríkisborgari, einstaklingur sem búsettur er á Íslandi eða lögaðili með staðfestu á Íslandi verið skráður á lista yfir þvingunaraðgerðir skv. 19. eða 21. gr. skal ráðherra eftir því sem unnt er:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">tilkynna um skráningu hans á lista yfir þvingunaraðgerðir, hvaða þvingunaraðgerðum hann sætir og áhrif þeirra,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">veita skráðum aðila þær upplýsingar sem heimilt er að veita um ástæður skráningarinnar,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">upplýsa skráðan aðila um rétt til að óska eftir afskráningu eða endurskoðun skráningarinnar, ef við á, þar á meðal hvert beina skuli slíkri beiðni,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">veita skráðum aðila aðrar viðeigandi upplýsingar og</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">veita skráðum aðila upplýsingar um hvort og þá hvernig hægt er að óska eftir undanþágu frá þvingunaraðgerðum.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Hafi íslenskur ríkisborgari, einstaklingur sem búsettur er á Íslandi eða lögaðili með staðfestu á Íslandi verið skráður á lista yfir þvingunaraðgerðir skv. 19. eða 21. gr. skal ráðherra eftir því sem unnt er:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">tilkynna um skráningu hans á lista yfir þvingunaraðgerðir, hvaða þvingunaraðgerðum hann sætir og áhrif þeirra,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">veita skráðum aðila þær upplýsingar sem heimilt er að veita um ástæður skráningarinnar,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsa skráðan aðila um rétt til að óska eftir afskráningu eða endurskoðun skráningarinnar, ef við á, þar á meðal hvert beina skuli slíkri beiðni,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">veita skráðum aðila aðrar viðeigandi upplýsingar og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">veita skráðum aðila upplýsingar um hvort og þá hvernig hægt er að óska eftir undanþágu frá þvingunaraðgerðum.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra skal með sama hætti og kveðið er á um í 1. mgr. tilkynna öllum aðilum sem skráðir hafa verið á lista skv. 20. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal með sama hætti og kveðið er á um í 1. mgr. tilkynna öllum aðilum sem skráðir hafa verið á lista skv. 20. gr.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="23">
       <nr-title>23. gr.</nr-title>
       <name>Endurskoðun ákvarðana um skráningu á lista yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Aðilar sem telja sig ranglega tilgreinda á lista yfir aðila sem þvingunaraðgerð beinist gegn geta borið upp við ráðherra rökstutt og skriflegt erindi um að vera fjarlægðir af listanum.</sen>
-        <sen nr="2">Þá getur ráðherra ákveðið að leggja fram beiðni hjá þar til bærum aðilum um að viðkomandi verði fjarlægður af listanum.</sen>
-        <sen nr="3">Við slíka ákvörðun skal ráðherra gæta ákvæða stjórnsýslulaga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðilar sem telja sig ranglega tilgreinda á lista yfir aðila sem þvingunaraðgerð beinist gegn geta borið upp við ráðherra rökstutt og skriflegt erindi um að vera fjarlægðir af listanum.</sen>
+          <sen nr="2">Þá getur ráðherra ákveðið að leggja fram beiðni hjá þar til bærum aðilum um að viðkomandi verði fjarlægður af listanum.</sen>
+          <sen nr="3">Við slíka ákvörðun skal ráðherra gæta ákvæða stjórnsýslulaga.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Í erindi til ráðherra skv. 1. mgr. skal að lágmarki eftirfarandi koma fram:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">fullt nafn, kennitala og lögheimili,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">upplýsingar um þá þvingunaraðgerð sem aðili telur sig ranglega tilgreindan vegna á lista yfir aðila sem sæta þvingunaraðgerðum,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">rökstuðningur fyrir því hvers vegna aðili telur sig ranglega tilgreindan á lista og</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">ef um lögaðila er að ræða skal auk upplýsinga í a–c-lið upplýsa um hluthafa, stjórnendur, ÍSAT-atvinnugreinaflokkun og helstu starfsemi lögaðilans.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Í erindi til ráðherra skv. 1. mgr. skal að lágmarki eftirfarandi koma fram:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">fullt nafn, kennitala og lögheimili,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">upplýsingar um þá þvingunaraðgerð sem aðili telur sig ranglega tilgreindan vegna á lista yfir aðila sem sæta þvingunaraðgerðum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">rökstuðningur fyrir því hvers vegna aðili telur sig ranglega tilgreindan á lista og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ef um lögaðila er að ræða skal auk upplýsinga í a–c-lið upplýsa um hluthafa, stjórnendur, ÍSAT-atvinnugreinaflokkun og helstu starfsemi lögaðilans.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvörðun ráðherra skv. 1. mgr. skal liggja fyrir eigi síðar en 14 dögum eftir að fullnægjandi upplýsingar hafa borist frá aðila skv. 2. mgr.</sen>
-        <sen nr="2">Fallist ráðherra ekki á beiðni aðila skv. 1. mgr. skal ráðherra leiðbeina viðkomandi um þau úrræði sem eru fyrir hendi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvörðun ráðherra skv. 1. mgr. skal liggja fyrir eigi síðar en 14 dögum eftir að fullnægjandi upplýsingar hafa borist frá aðila skv. 2. mgr.</sen>
+          <sen nr="2">Fallist ráðherra ekki á beiðni aðila skv. 1. mgr. skal ráðherra leiðbeina viðkomandi um þau úrræði sem eru fyrir hendi.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Ef aðili vill ekki una ákvörðun um skráningu á lista yfir þvingunaraðgerðir getur hann höfðað mál til ógildingar hennar fyrir dómstólum.</sen>
-        <sen nr="2">Málshöfðun frestar ekki réttaráhrifum ákvörðunar og skulu slík mál sæta flýtimeðferð í samræmi við ákvæði XIX. kafla laga um meðferð einkamála.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef aðili vill ekki una ákvörðun um skráningu á lista yfir þvingunaraðgerðir getur hann höfðað mál til ógildingar hennar fyrir dómstólum.</sen>
+          <sen nr="2">Málshöfðun frestar ekki réttaráhrifum ákvörðunar og skulu slík mál sæta flýtimeðferð í samræmi við ákvæði XIX. kafla laga um meðferð einkamála.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Ákvörðunum um skráningu aðila á lista yfir þvingunaraðgerðir samkvæmt lögum þessum verður ekki skotið til æðra stjórnvalds.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvörðunum um skráningu aðila á lista yfir þvingunaraðgerðir samkvæmt lögum þessum verður ekki skotið til æðra stjórnvalds.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="24">
       <nr-title>24. gr.</nr-title>
       <name>Afskráning af lista yfir þvingunaraðgerðir.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra skal óska eftir afskráningu aðila af lista yfir þvingunaraðgerðir skv. 19. gr.</sen>
-        <sen nr="2">:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">ef hann telur að skilyrði fyrir skráningu séu ekki lengur uppfyllt,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">hafi ráðherra í samræmi við 1. mgr. 23. gr. fallist á beiðni aðila um að fjarlægja aðilann af lista vegna rangrar tilgreiningar á lista yfir aðila sem þvingunaraðgerð beinist gegn,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">hafi dómstóll í samræmi við 4. mgr. 23. gr. komist að þeirri niðurstöðu að fella skuli skráðan aðila af lista yfir þvingunaraðgerðir eða</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">skráður aðili er látinn.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal óska eftir afskráningu aðila af lista yfir þvingunaraðgerðir skv. 19. gr.</sen>
+          <sen nr="2">:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ef hann telur að skilyrði fyrir skráningu séu ekki lengur uppfyllt,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hafi ráðherra í samræmi við 1. mgr. 23. gr. fallist á beiðni aðila um að fjarlægja aðilann af lista vegna rangrar tilgreiningar á lista yfir aðila sem þvingunaraðgerð beinist gegn,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hafi dómstóll í samræmi við 4. mgr. 23. gr. komist að þeirri niðurstöðu að fella skuli skráðan aðila af lista yfir þvingunaraðgerðir eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skráður aðili er látinn.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra skal fjarlægja skráðan aðila af lista yfir þvingunaraðgerðir skv. 20. gr. ef einhver af þeim atriðum sem nefnd eru í 1. mgr. eiga við.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal fjarlægja skráðan aðila af lista yfir þvingunaraðgerðir skv. 20. gr. ef einhver af þeim atriðum sem nefnd eru í 1. mgr. eiga við.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra skal fjarlægja skráðan aðila af lista yfir þvingunaraðgerðir skv. 21. gr. hafi tilkynning þess efnis komið frá skráningarríki, nema forsendur séu til að gefa út reglugerð skv. 20. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal fjarlægja skráðan aðila af lista yfir þvingunaraðgerðir skv. 21. gr. hafi tilkynning þess efnis komið frá skráningarríki, nema forsendur séu til að gefa út reglugerð skv. 20. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Beiðni um afskráningu skv. 1. mgr. skal send viðeigandi nefnd öryggisráðs Sameinuðu þjóðanna á því formi sem hún leggur til.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Beiðni um afskráningu skv. 1. mgr. skal send viðeigandi nefnd öryggisráðs Sameinuðu þjóðanna á því formi sem hún leggur til.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Beiðni um afskráningu skv. 1. mgr. skulu fylgja þau gögn og upplýsingar sem viðkomandi nefndir krefjast, þar á meðal upplýsingar um skráðan aðila, forsendur og rökstuðningur fyrir beiðni um afskráningu og viðeigandi gögn sem sýna fram á að viðkomandi uppfylli ekki lengur skilyrði skráningar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Beiðni um afskráningu skv. 1. mgr. skulu fylgja þau gögn og upplýsingar sem viðkomandi nefndir krefjast, þar á meðal upplýsingar um skráðan aðila, forsendur og rökstuðningur fyrir beiðni um afskráningu og viðeigandi gögn sem sýna fram á að viðkomandi uppfylli ekki lengur skilyrði skráningar.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1">Hafi aðili verið afskráður af lista yfir þvingunaraðgerðir skal ráðherra án tafar tilkynna honum það.</sen>
-        <sen nr="2">Ráðherra skal jafnframt senda tilkynningu þess efnis til stjórnvalda skv. 25. gr. og beina fyrirmælum til þeirra sem hafa frysta fjármuni eða efnahagslegan auð í sinni vörslu, sbr. III. kafla, um að aflétta frystingu þá þegar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi aðili verið afskráður af lista yfir þvingunaraðgerðir skal ráðherra án tafar tilkynna honum það.</sen>
+          <sen nr="2">Ráðherra skal jafnframt senda tilkynningu þess efnis til stjórnvalda skv. 25. gr. og beina fyrirmælum til þeirra sem hafa frysta fjármuni eða efnahagslegan auð í sinni vörslu, sbr. III. kafla, um að aflétta frystingu þá þegar.</sen>
+        </paragraph>
       </subart>
       <subart nr="7">
-        <sen nr="1">Ráðherra veitir leiðbeiningar um hvernig skráðir aðilar geta óskað beint eftir endurskoðun eða afskráningu af lista yfir þvingunaraðgerðir hjá öryggisráði Sameinuðu þjóðanna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra veitir leiðbeiningar um hvernig skráðir aðilar geta óskað beint eftir endurskoðun eða afskráningu af lista yfir þvingunaraðgerðir hjá öryggisráði Sameinuðu þjóðanna.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="25">
       <nr-title>25. gr.</nr-title>
       <name>Tilkynningar.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra skal eins fljótt og unnt er tilkynna eftirlitsaðilum og eftir atvikum öðrum viðeigandi stjórnvöldum um:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">skráningu og allar breytingar sem verða á listum yfir þvingunaraðgerðir skv. 19.–21. gr.,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">afléttingu frystingar skv. 12. gr.,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">afskráningu af lista yfir þvingunaraðgerðir skv. 24. gr.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra skal eins fljótt og unnt er tilkynna eftirlitsaðilum og eftir atvikum öðrum viðeigandi stjórnvöldum um:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skráningu og allar breytingar sem verða á listum yfir þvingunaraðgerðir skv. 19.–21. gr.,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">afléttingu frystingar skv. 12. gr.,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">afskráningu af lista yfir þvingunaraðgerðir skv. 24. gr.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Fjármálaeftirlitið skal án tafar framsenda allar tilkynningar skv. 1. mgr. til tilkynningarskyldra aðila skv. a–j-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
-        <sen nr="2">Ríkisskattstjóri skal án tafar birta allar tilkynningar skv. 1. mgr. á aðgengilegan máta fyrir tilkynningarskylda aðila skv. l–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálaeftirlitið skal án tafar framsenda allar tilkynningar skv. 1. mgr. til tilkynningarskyldra aðila skv. a–j-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+          <sen nr="2">Ríkisskattstjóri skal án tafar birta allar tilkynningar skv. 1. mgr. á aðgengilegan máta fyrir tilkynningarskylda aðila skv. l–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="6" nr-type="roman" roman-nr="VI">
+  <chapter nr="6" nr-type="roman" chapter-type="kafli" roman-nr="VI">
     <nr-title>VI. kafli.</nr-title>
     <name>Eftirlit og samvinna.</name>
     <art nr="26">
       <nr-title>26. gr.</nr-title>
       <name>Eftirlit.</name>
       <subart nr="1">
-        <sen nr="1">Fjármálaeftirlitið hefur eftirlit með því að tilkynningarskyldir aðilar sem falla undir 1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, fari að ákvæðum 10. og 13. gr. laga þessara.</sen>
-        <sen nr="2">Um eftirlitið fer samkvæmt lögum um opinbert eftirlit með fjármálastarfsemi og þeim sérlögum sem um starfsemi eftirlitsskyldra aðila gilda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálaeftirlitið hefur eftirlit með því að tilkynningarskyldir aðilar sem falla undir 1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, fari að ákvæðum 10. og 13. gr. laga þessara.</sen>
+          <sen nr="2">Um eftirlitið fer samkvæmt lögum um opinbert eftirlit með fjármálastarfsemi og þeim sérlögum sem um starfsemi eftirlitsskyldra aðila gilda.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ríkisskattstjóri hefur eftirlit með því að tilkynningarskyldir aðilar sem falla undir 2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, fari að ákvæðum 10. og 13. gr. laga þessara og getur sett nánari reglur um framkvæmd eftirlitsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisskattstjóri hefur eftirlit með því að tilkynningarskyldir aðilar sem falla undir 2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, fari að ákvæðum 10. og 13. gr. laga þessara og getur sett nánari reglur um framkvæmd eftirlitsins.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Í tengslum við eftirlit skv. 1. og 2. mgr. geta eftirlitsaðilar gert vettvangskannanir eða óskað upplýsinga hjá tilkynningarskyldum aðilum á þann hátt og svo oft sem þeir telja þörf á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í tengslum við eftirlit skv. 1. og 2. mgr. geta eftirlitsaðilar gert vettvangskannanir eða óskað upplýsinga hjá tilkynningarskyldum aðilum á þann hátt og svo oft sem þeir telja þörf á.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Í tengslum við eftirlit skv. 1. og 2. mgr. er aðilum skylt að láta eftirlitsaðilum í té án tafar allar upplýsingar og gögn sem eftirlitsaðilar telja nauðsynleg.</sen>
-        <sen nr="2">Skiptir þá ekki máli hvort upplýsingarnar eða gögnin varða þann aðila sem beiðninni er beint til eða annan aðila ef sá aðili sem beiðninni er beint til getur veitt upplýsingar um þætti sem varða eftirlit samkvæmt lögum þessum.</sen>
-        <sen nr="3">Lagaákvæði um þagnarskyldu takmarka ekki skyldu til þess að veita upplýsingar og aðgang að gögnum.</sen>
-        <sen nr="4">Þetta gildir þó ekki um upplýsingar sem lögmaður öðlast við athugun á lagalegri stöðu skjólstæðings í tengslum við dómsmál, þ.m.t. þegar hann veitir ráðgjöf um hvort höfða eigi mál eða komast hjá máli, eða upplýsingar sem hann öðlast fyrir, á meðan eða eftir lok dómsmáls, ef upplýsingarnar hafa bein tengsl við málið.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í tengslum við eftirlit skv. 1. og 2. mgr. er aðilum skylt að láta eftirlitsaðilum í té án tafar allar upplýsingar og gögn sem eftirlitsaðilar telja nauðsynleg.</sen>
+          <sen nr="2">Skiptir þá ekki máli hvort upplýsingarnar eða gögnin varða þann aðila sem beiðninni er beint til eða annan aðila ef sá aðili sem beiðninni er beint til getur veitt upplýsingar um þætti sem varða eftirlit samkvæmt lögum þessum.</sen>
+          <sen nr="3">Lagaákvæði um þagnarskyldu takmarka ekki skyldu til þess að veita upplýsingar og aðgang að gögnum.</sen>
+          <sen nr="4">Þetta gildir þó ekki um upplýsingar sem lögmaður öðlast við athugun á lagalegri stöðu skjólstæðings í tengslum við dómsmál, þ.m.t. þegar hann veitir ráðgjöf um hvort höfða eigi mál eða komast hjá máli, eða upplýsingar sem hann öðlast fyrir, á meðan eða eftir lok dómsmáls, ef upplýsingarnar hafa bein tengsl við málið.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Aðilum sem beiðni skv. 4. mgr. er beint að er óheimilt að veita þriðja aðila upplýsingar um beiðnina.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðilum sem beiðni skv. 4. mgr. er beint að er óheimilt að veita þriðja aðila upplýsingar um beiðnina.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="27">
       <nr-title>27. gr.</nr-title>
       <name>Samhæfing og samvinna stjórnvalda.</name>
       <subart nr="1">
-        <sen nr="1">Samhæfing stjórnvalda vegna verkefna sem falla undir lög þessi skal fara fram í stýrihópi sem skipaður er í samræmi við lög um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Samhæfing stjórnvalda vegna verkefna sem falla undir lög þessi skal fara fram í stýrihópi sem skipaður er í samræmi við lög um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þrátt fyrir þagnarskyldu aðila sem eiga sæti í stýrihópi er þeim heimilt að deila upplýsingum og gögnum sín á milli til þess að vinna að markmiði laga þessara skv. 1. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir þagnarskyldu aðila sem eiga sæti í stýrihópi er þeim heimilt að deila upplýsingum og gögnum sín á milli til þess að vinna að markmiði laga þessara skv. 1. gr.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="7" nr-type="roman" roman-nr="VII">
+  <chapter nr="7" nr-type="roman" chapter-type="kafli" roman-nr="VII">
     <nr-title>VII. kafli.</nr-title>
     <name>Þvingunarúrræði og viðurlög vegna tilkynningarskyldra aðila.</name>
     <art nr="28">
       <nr-title>28. gr.</nr-title>
       <name>Úrbætur.</name>
       <subart nr="1">
-        <sen nr="1">Komi í ljós að tilkynningarskyldur aðili fylgir ekki ákvæðum laga þessara, reglugerða eða reglna settra á grundvelli þeirra skulu eftirlitsaðilar krefjast þess að úr sé bætt innan hæfilegs frests.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Komi í ljós að tilkynningarskyldur aðili fylgir ekki ákvæðum laga þessara, reglugerða eða reglna settra á grundvelli þeirra skulu eftirlitsaðilar krefjast þess að úr sé bætt innan hæfilegs frests.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="29">
       <nr-title>29. gr.</nr-title>
       <name>Dagsektir.</name>
       <subart nr="1">
-        <sen nr="1">Eftirlitsaðilar skv. 26. gr. geta lagt dagsektir á tilkynningarskyldan aðila og aðila skv. 4. mgr. 26. gr. veiti hann ekki umbeðnar upplýsingar eða sinni ekki kröfum um úrbætur innan frests skv. 28. gr.</sen>
-        <sen nr="2">Dagsektir leggjast á þar til farið hefur verið að kröfum eftirlitsaðila.</sen>
-        <sen nr="3">Dagsektir geta numið frá 10 þús. kr. til 1 millj. kr. á dag.</sen>
-        <sen nr="4">Við ákvörðun um fjárhæð dagsekta er heimilt að taka tillit til eðlis vanrækslu eða brots og fjárhagslegs styrkleika viðkomandi aðila.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skv. 26. gr. geta lagt dagsektir á tilkynningarskyldan aðila og aðila skv. 4. mgr. 26. gr. veiti hann ekki umbeðnar upplýsingar eða sinni ekki kröfum um úrbætur innan frests skv. 28. gr.</sen>
+          <sen nr="2">Dagsektir leggjast á þar til farið hefur verið að kröfum eftirlitsaðila.</sen>
+          <sen nr="3">Dagsektir geta numið frá 10 þús. kr. til 1 millj. kr. á dag.</sen>
+          <sen nr="4">Við ákvörðun um fjárhæð dagsekta er heimilt að taka tillit til eðlis vanrækslu eða brots og fjárhagslegs styrkleika viðkomandi aðila.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Dagsektir skulu ákveðnar af Fjármálaeftirlitinu eða ríkisskattstjóra, eftir því sem við á.</sen>
-        <sen nr="2">Óinnheimtar dagsektir falla ekki niður þótt aðilar verði síðar við kröfum eftirlitsaðila nema Fjármálaeftirlitið eða ríkisskattstjóri, eftir því sem við á, samþykki lækkun eða niðurfellingu þeirra.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Dagsektir skulu ákveðnar af Fjármálaeftirlitinu eða ríkisskattstjóra, eftir því sem við á.</sen>
+          <sen nr="2">Óinnheimtar dagsektir falla ekki niður þótt aðilar verði síðar við kröfum eftirlitsaðila nema Fjármálaeftirlitið eða ríkisskattstjóri, eftir því sem við á, samþykki lækkun eða niðurfellingu þeirra.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvarðanir um dagsektir samkvæmt þessari grein eru aðfararhæfar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvarðanir um dagsektir samkvæmt þessari grein eru aðfararhæfar.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Innheimtar dagsektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Innheimtar dagsektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="30">
       <nr-title>30. gr.</nr-title>
       <name>Stjórnvaldssektir.</name>
       <subart nr="1">
-        <sen nr="1">Eftirlitsaðilar skv. 26. gr. geta lagt stjórnvaldssektir á tilkynningarskyldan aðila og eftir atvikum starfsmenn hans sem brjóta gegn eftirtöldum ákvæðum laga þessara, reglugerðum og reglum settum á grundvelli þeirra:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">10. gr. um frystingu fjármuna og efnahagslegs auðs, þar á meðal að verða ekki við fyrirmælum um að frysta fjármuni og efnahagslegan auð, hvort sem er í heild eða að hluta, að tilkynna viðeigandi aðilum ekki um frystingu fjármuna eða efnahagslegs auðs, að tilkynna ekki viðeigandi aðilum um ráðstafanir til að komast hjá frystingu fjármuna eða efnahagslegs auðs, að gera aðra fjármuni eða efnahagslegan auð, beint eða óbeint, tiltækan þeim aðilum eða gera þeim kleift að njóta góðs af fjármununum eða efnahagslegum auði.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">13. gr. um ráðstafanir vegna eftirlits með því hvort viðskiptamenn og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir og skjölun vegna slíkra ráðstafana.</sen>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <sen nr="1">4. mgr. 26. gr. um að láta eftirlitsaðilum í té án tafar allar upplýsingar og gögn sem eftirlitsaðilar telja nauðsynleg, svo sem með því að verða ekki við slíkri beiðni eða með því að veita eftirlitsaðilum rangar eða villandi upplýsingar.</sen>
-        </numart>
-        <numart nr="4" nr-type="numeric">
-          <nr-title>4.</nr-title>
-          <sen nr="1">5. mgr. 26. gr. með því að veita þriðja aðila upplýsingar um beiðni skv. 4. mgr.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skv. 26. gr. geta lagt stjórnvaldssektir á tilkynningarskyldan aðila og eftir atvikum starfsmenn hans sem brjóta gegn eftirtöldum ákvæðum laga þessara, reglugerðum og reglum settum á grundvelli þeirra:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">10. gr. um frystingu fjármuna og efnahagslegs auðs, þar á meðal að verða ekki við fyrirmælum um að frysta fjármuni og efnahagslegan auð, hvort sem er í heild eða að hluta, að tilkynna viðeigandi aðilum ekki um frystingu fjármuna eða efnahagslegs auðs, að tilkynna ekki viðeigandi aðilum um ráðstafanir til að komast hjá frystingu fjármuna eða efnahagslegs auðs, að gera aðra fjármuni eða efnahagslegan auð, beint eða óbeint, tiltækan þeim aðilum eða gera þeim kleift að njóta góðs af fjármununum eða efnahagslegum auði.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">13. gr. um ráðstafanir vegna eftirlits með því hvort viðskiptamenn og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir og skjölun vegna slíkra ráðstafana.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">4. mgr. 26. gr. um að láta eftirlitsaðilum í té án tafar allar upplýsingar og gögn sem eftirlitsaðilar telja nauðsynleg, svo sem með því að verða ekki við slíkri beiðni eða með því að veita eftirlitsaðilum rangar eða villandi upplýsingar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">5. mgr. 26. gr. með því að veita þriðja aðila upplýsingar um beiðni skv. 4. mgr.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Við ákvörðun stjórnvaldssekta skal tekið tillit til allra atvika sem máli skipta, þ.m.t.:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">alvarleika brots,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">hvað brotið hefur staðið lengi,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">ábyrgðar hins brotlega hjá lögaðilanum,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-          <sen nr="1">fjárhagsstöðu hins brotlega,</sen>
-        </numart>
-        <numart nr="e" nr-type="alphabet">
-          <nr-title>e.</nr-title>
-          <sen nr="1">ávinnings af broti eða taps sem forðað er með broti,</sen>
-        </numart>
-        <numart nr="f" nr-type="alphabet">
-          <nr-title>f.</nr-title>
-          <sen nr="1">hvort brot hafi leitt til taps fyrir þriðja aðila,</sen>
-        </numart>
-        <numart nr="g" nr-type="alphabet">
-          <nr-title>g.</nr-title>
-          <sen nr="1">hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
-        </numart>
-        <numart nr="h" nr-type="alphabet">
-          <nr-title>h.</nr-title>
-          <sen nr="1">samstarfsvilja hins brotlega,</sen>
-        </numart>
-        <numart nr="i" nr-type="alphabet">
-          <nr-title>i.</nr-title>
-          <sen nr="1">fyrri brota,</sen>
-        </numart>
-        <numart nr="j" nr-type="alphabet">
-          <nr-title>j.</nr-title>
-          <sen nr="1">hvort um ítrekað brot er að ræða.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Við ákvörðun stjórnvaldssekta skal tekið tillit til allra atvika sem máli skipta, þ.m.t.:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">alvarleika brots,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvað brotið hefur staðið lengi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ábyrgðar hins brotlega hjá lögaðilanum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">fjárhagsstöðu hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ávinnings af broti eða taps sem forðað er með broti,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvort brot hafi leitt til taps fyrir þriðja aðila,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="g" nr-type="alphabet">
+            <nr-title>g.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvers konar mögulegra kerfislegra áhrifa brotsins,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="h" nr-type="alphabet">
+            <nr-title>h.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">samstarfsvilja hins brotlega,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="i" nr-type="alphabet">
+            <nr-title>i.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">fyrri brota,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="j" nr-type="alphabet">
+            <nr-title>j.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hvort um ítrekað brot er að ræða.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 5 millj. kr. til 800 millj. kr.</sen>
-        <sen nr="2">Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 500 þús. kr. til 625 millj. kr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 5 millj. kr. til 800 millj. kr. Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 500 þús. kr. til 625 millj. kr.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Þrátt fyrir 3. mgr. geta stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, verið allt að 10% af heildarveltu samkvæmt síðasta samþykkta ársreikningi lögaðilans eða 10% af síðasta samþykkta samstæðureikningi ef lögaðili er hluti af samstæðu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir 3. mgr. geta stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, verið allt að 10% af heildarveltu samkvæmt síðasta samþykkta ársreikningi lögaðilans eða 10% af síðasta samþykkta samstæðureikningi ef lögaðili er hluti af samstæðu.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 500 þús. kr. til 500 millj. kr.</sen>
-        <sen nr="2">Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 100 þús. kr. til 125 millj. kr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 500 þús. kr. til 500 millj. kr. Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 100 þús. kr. til 125 millj. kr.</sen>
+        </paragraph>
       </subart>
       <subart nr="6">
-        <sen nr="1">Ákvarðanir um stjórnvaldssektir skulu teknar af Fjármálaeftirlitinu eða ríkisskattstjóra, eftir því sem við á, og eru þær aðfararhæfar.</sen>
-        <sen nr="2">Sektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
-        <sen nr="3">Séu stjórnvaldssektir ekki greiddar innan mánaðar frá ákvörðun álagningar þeirra skal greiða dráttarvexti af fjárhæð sektarinnar.</sen>
-        <sen nr="4">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
-        <sen nr="5">Stjórnvaldssektum verður beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvarðanir um stjórnvaldssektir skulu teknar af Fjármálaeftirlitinu eða ríkisskattstjóra, eftir því sem við á, og eru þær aðfararhæfar.</sen>
+          <sen nr="2">Sektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+          <sen nr="3">Séu stjórnvaldssektir ekki greiddar innan mánaðar frá ákvörðun álagningar þeirra skal greiða dráttarvexti af fjárhæð sektarinnar.</sen>
+          <sen nr="4">Um ákvörðun og útreikning dráttarvaxta fer eftir lögum um vexti og verðtryggingu.</sen>
+          <sen nr="5">Stjórnvaldssektum verður beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
+        </paragraph>
       </subart>
       <subart nr="7">
-        <sen nr="1">Ef aðili brýtur gegn lögum þessum, reglugerðum eða reglum settum á grundvelli þeirra, og fyrir liggur að hann hafi hlotið fjárhagslegan ávinning af broti, er heimilt að ákvarða hinum brotlega sektarfjárhæð sem getur, þrátt fyrir ákvæði 3.–5. mgr., orðið allt að tvöfaldri þeirri fjárhæð sem fjárhagslegur ávinningur hins brotlega nemur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef aðili brýtur gegn lögum þessum, reglugerðum eða reglum settum á grundvelli þeirra, og fyrir liggur að hann hafi hlotið fjárhagslegan ávinning af broti, er heimilt að ákvarða hinum brotlega sektarfjárhæð sem getur, þrátt fyrir ákvæði 3.–5. mgr., orðið allt að tvöfaldri þeirri fjárhæð sem fjárhagslegur ávinningur hins brotlega nemur.</sen>
+        </paragraph>
       </subart>
       <subart nr="8">
-        <sen nr="1">Þegar brot á lögum þessum er framið í starfsemi lögaðila og í þágu hans má leggja stjórnvaldssekt á lögaðilann án tillits til þess hvort sök verður sönnuð á fyrirsvarsmann eða starfsmann lögaðila.</sen>
-        <sen nr="2">Hafi fyrirsvarsmaður eða starfsmaður gerst sekur um brot á lögum þessum má einnig leggja stjórnvaldssekt á lögaðilann ef brotið var í þágu hans.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar brot á lögum þessum er framið í starfsemi lögaðila og í þágu hans má leggja stjórnvaldssekt á lögaðilann án tillits til þess hvort sök verður sönnuð á fyrirsvarsmann eða starfsmann lögaðila.</sen>
+          <sen nr="2">Hafi fyrirsvarsmaður eða starfsmaður gerst sekur um brot á lögum þessum má einnig leggja stjórnvaldssekt á lögaðilann ef brotið var í þágu hans.</sen>
+        </paragraph>
       </subart>
       <subart nr="9">
-        <sen nr="1">Eftirlitsaðilar skulu, eftir því sem við á, hafa samstarf um og samræma aðgerðir við beitingu viðurlaga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skulu, eftir því sem við á, hafa samstarf um og samræma aðgerðir við beitingu viðurlaga.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="31">
       <nr-title>31. gr.</nr-title>
       <name>Sátt.</name>
       <subart nr="1">
-        <sen nr="1">Hafi aðili gerst brotlegur við ákvæði laga þessara, reglugerðir eða reglur sem settar eru á grundvelli þeirra eða ákvarðanir eftirlitsaðila sem á þeim byggjast er eftirlitsaðilum heimilt að ljúka málinu með sátt með samþykki málsaðila.</sen>
-        <sen nr="2">Sátt er bindandi fyrir málsaðila þegar hann hefur samþykkt og staðfest efni hennar með undirskrift sinni.</sen>
-        <sen nr="3">Eftirlitsaðilar setja nánari reglur um framkvæmd ákvæðisins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi aðili gerst brotlegur við ákvæði laga þessara, reglugerðir eða reglur sem settar eru á grundvelli þeirra eða ákvarðanir eftirlitsaðila sem á þeim byggjast er eftirlitsaðilum heimilt að ljúka málinu með sátt með samþykki málsaðila.</sen>
+          <sen nr="2">Sátt er bindandi fyrir málsaðila þegar hann hefur samþykkt og staðfest efni hennar með undirskrift sinni.</sen>
+          <sen nr="3">Eftirlitsaðilar setja nánari reglur um framkvæmd ákvæðisins.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="32">
       <nr-title>32. gr.</nr-title>
       <name>Eignaupptaka.</name>
       <subart nr="1">
-        <sen nr="1">Gera má upptæka hluti, samkvæmt ákvæðum almennra hegningarlaga, sem hafa verið notaðir við brot, hafa orðið til við brot eða með öðrum hætti tengjast framningu brots samkvæmt lögum þessum.</sen>
-        <sen nr="2">Þá má gera upptækan ávinning af broti eða fjárhæð sem svarar til hans í heild eða hluta.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Gera má upptæka hluti, samkvæmt ákvæðum almennra hegningarlaga, sem hafa verið notaðir við brot, hafa orðið til við brot eða með öðrum hætti tengjast framningu brots samkvæmt lögum þessum.</sen>
+          <sen nr="2">Þá má gera upptækan ávinning af broti eða fjárhæð sem svarar til hans í heild eða hluta.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="33">
       <nr-title>33. gr.</nr-title>
       <name>Réttur til að fella ekki á sig sök.</name>
       <subart nr="1">
-        <sen nr="1">Í máli sem beinist að einstaklingi og lokið getur með álagningu stjórnvaldssekta hefur aðili, sem rökstuddur grunur leikur á að hafi gerst sekur um lögbrot, rétt til að neita að svara spurningum eða afhenda gögn eða muni nema hægt sé að útiloka að það geti haft þýðingu fyrir ákvörðun um brot hans.</sen>
-        <sen nr="2">Eftirlitsaðilar skulu leiðbeina hinum grunaða um þennan rétt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í máli sem beinist að einstaklingi og lokið getur með álagningu stjórnvaldssekta hefur aðili, sem rökstuddur grunur leikur á að hafi gerst sekur um lögbrot, rétt til að neita að svara spurningum eða afhenda gögn eða muni nema hægt sé að útiloka að það geti haft þýðingu fyrir ákvörðun um brot hans.</sen>
+          <sen nr="2">Eftirlitsaðilar skulu leiðbeina hinum grunaða um þennan rétt.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="34">
       <nr-title>34. gr.</nr-title>
       <name>Frestur til að leggja á stjórnvaldssektir.</name>
       <subart nr="1">
-        <sen nr="1">Heimild eftirlitsaðila til að leggja á stjórnvaldssektir fellur niður þegar fimm ár eru liðin frá því að háttsemi lauk.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Heimild eftirlitsaðila til að leggja á stjórnvaldssektir fellur niður þegar fimm ár eru liðin frá því að háttsemi lauk.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Frestur skv. 1. mgr. rofnar þegar eftirlitsaðili tilkynnir aðila um upphaf rannsóknar á meintu broti.</sen>
-        <sen nr="2">Rof frests hefur réttaráhrif gagnvart öllum sem staðið hafa að broti.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Frestur skv. 1. mgr. rofnar þegar eftirlitsaðili tilkynnir aðila um upphaf rannsóknar á meintu broti.</sen>
+          <sen nr="2">Rof frests hefur réttaráhrif gagnvart öllum sem staðið hafa að broti.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="35">
       <nr-title>35. gr.</nr-title>
       <name>Málshöfðunarfrestur.</name>
       <subart nr="1">
-        <sen nr="1">Vilji aðili ekki una ákvörðun eftirlitsaðila getur hann höfðað mál til ógildingar hennar fyrir dómstólum.</sen>
-        <sen nr="2">Mál skal höfðað innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
-        <sen nr="3">Málshöfðun frestar ekki réttaráhrifum ákvörðunar né heimild til aðfarar samkvæmt henni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vilji aðili ekki una ákvörðun eftirlitsaðila getur hann höfðað mál til ógildingar hennar fyrir dómstólum.</sen>
+          <sen nr="2">Mál skal höfðað innan þriggja mánaða frá því að aðila var tilkynnt um ákvörðunina.</sen>
+          <sen nr="3">Málshöfðun frestar ekki réttaráhrifum ákvörðunar né heimild til aðfarar samkvæmt henni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Sé mál höfðað til ógildingar ákvörðunar skv. 29. gr. innan 14 daga frá því að viðkomandi aðila var tilkynnt um hana og óski hann jafnframt eftir að málið hljóti flýtimeðferð er ekki heimilt að innheimta dagsektir fyrr en dómur hefur fallið.</sen>
-        <sen nr="2">Þrátt fyrir málshöfðun til ógildingar ákvörðunar skv. 29. gr. leggjast dagsektir áfram á viðkomandi aðila.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sé mál höfðað til ógildingar ákvörðunar skv. 29. gr. innan 14 daga frá því að viðkomandi aðila var tilkynnt um hana og óski hann jafnframt eftir að málið hljóti flýtimeðferð er ekki heimilt að innheimta dagsektir fyrr en dómur hefur fallið.</sen>
+          <sen nr="2">Þrátt fyrir málshöfðun til ógildingar ákvörðunar skv. 29. gr. leggjast dagsektir áfram á viðkomandi aðila.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ákvörðunum samkvæmt lögum þessum verður ekki skotið til æðra stjórnvalds.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvörðunum samkvæmt lögum þessum verður ekki skotið til æðra stjórnvalds.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="36">
       <nr-title>36. gr.</nr-title>
       <name>Opinber birting viðurlaga.</name>
       <subart nr="1">
-        <sen nr="1">Eftirlitsaðilar skulu birta á vef sínum stjórnsýsluviðurlög sem ákveðin eru í samræmi við 30. og 31. gr.</sen>
-        <sen nr="2">Ákvarðanir skulu birtar eins fljótt og unnt er eftir að brotlegum aðila hefur verið tilkynnt um ákvörðunina.</sen>
-        <sen nr="3">Í tilkynningunni skal að lágmarki upplýsa um tegund og eðli brots og hver ber ábyrgð á brotinu.</sen>
-        <sen nr="4">Ekki er skylt að birta upplýsingar um viðurlög ef brotið sætir enn rannsókn.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skulu birta á vef sínum stjórnsýsluviðurlög sem ákveðin eru í samræmi við 30. og 31. gr.</sen>
+          <sen nr="2">Ákvarðanir skulu birtar eins fljótt og unnt er eftir að brotlegum aðila hefur verið tilkynnt um ákvörðunina.</sen>
+          <sen nr="3">Í tilkynningunni skal að lágmarki upplýsa um tegund og eðli brots og hver ber ábyrgð á brotinu.</sen>
+          <sen nr="4">Ekki er skylt að birta upplýsingar um viðurlög ef brotið sætir enn rannsókn.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ef birting skv. 1. mgr. veldur hlutaðeigandi aðila tjóni sem er ekki í eðlilegu samræmi við það brot sem um ræðir eða birtingin verður talin stefna hagsmunum fjármálamarkaðarins eða rannsóknarhagsmunum í hættu skal viðkomandi eftirlitsaðili:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">fresta birtingu þar til slíkar aðstæður eru ekki lengur fyrir hendi,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">birta upplýsingar um beitingu viðurlaga en fresta nafngreiningu þar til slíkar aðstæður eru ekki lengur fyrir hendi og</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">ekki birta neinar upplýsingar ef birting skv. a- eða b-lið stefnir hagsmunum fjármálamarkaðarins í hættu eða ef réttmæti fyrir birtingu ákvörðunarinnar, samanborið við þá hagsmuni sem um ræðir, er minni háttar.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Ef birting skv. 1. mgr. veldur hlutaðeigandi aðila tjóni sem er ekki í eðlilegu samræmi við það brot sem um ræðir eða birtingin verður talin stefna hagsmunum fjármálamarkaðarins eða rannsóknarhagsmunum í hættu skal viðkomandi eftirlitsaðili:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">fresta birtingu þar til slíkar aðstæður eru ekki lengur fyrir hendi,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">birta upplýsingar um beitingu viðurlaga en fresta nafngreiningu þar til slíkar aðstæður eru ekki lengur fyrir hendi og</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ekki birta neinar upplýsingar ef birting skv. a- eða b-lið stefnir hagsmunum fjármálamarkaðarins í hættu eða ef réttmæti fyrir birtingu ákvörðunarinnar, samanborið við þá hagsmuni sem um ræðir, er minni háttar.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Eftirlitsaðilar skulu birta með sama hætti og greinir í 1. mgr. ef mál hefur verið höfðað til ógildingar á ákvörðun um beitingu stjórnsýsluviðurlaga og niðurstöður málsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skulu birta með sama hætti og greinir í 1. mgr. ef mál hefur verið höfðað til ógildingar á ákvörðun um beitingu stjórnsýsluviðurlaga og niðurstöður málsins.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Upplýsingar sem birtar eru skulu vera aðgengilegar á vef eftirlitsaðila að lágmarki í fimm ár.</sen>
-        <sen nr="2">Persónuupplýsingar skulu þó ekki vera aðgengilegar lengur en málefnalegar ástæður krefjast samkvæmt lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Upplýsingar sem birtar eru skulu vera aðgengilegar á vef eftirlitsaðila að lágmarki í fimm ár.</sen>
+          <sen nr="2">Persónuupplýsingar skulu þó ekki vera aðgengilegar lengur en málefnalegar ástæður krefjast samkvæmt lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Eftirlitsaðilar skulu birta opinberlega stefnu sem þeir fylgja við framkvæmd birtingar samkvæmt þessu ákvæði.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eftirlitsaðilar skulu birta opinberlega stefnu sem þeir fylgja við framkvæmd birtingar samkvæmt þessu ákvæði.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="8" nr-type="roman" roman-nr="VIII">
+  <chapter nr="8" nr-type="roman" chapter-type="kafli" roman-nr="VIII">
     <nr-title>VIII. kafli.</nr-title>
     <name>Viðurlög vegna brota gegn þvingunaraðgerðum.</name>
     <art nr="37">
       <nr-title>37. gr.</nr-title>
       <name>Viðurlög.</name>
       <subart nr="1">
-        <sen nr="1">Sá sem brýtur gegn boði eða banni sem mælt er fyrir um í reglugerð skv. 1. mgr. 6. gr. eða boði eða banni skv. 7. gr. skal sæta sektum eða fangelsi allt að fjórum árum, nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
-        <sen nr="2">Sé brotið stórfellt varðar það sektum eða fangelsi allt að sex árum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sá sem brýtur gegn boði eða banni sem mælt er fyrir um í reglugerð skv. 1. mgr. 6. gr. eða boði eða banni skv. 7. gr. skal sæta sektum eða fangelsi allt að fjórum árum, nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
+          <sen nr="2">Sé brotið stórfellt varðar það sektum eða fangelsi allt að sex árum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Hafi brot sem vísað er til í 1. mgr. verið framið af stórfelldu gáleysi varðar það sektum eða fangelsi allt að einu ári.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi brot sem vísað er til í 1. mgr. verið framið af stórfelldu gáleysi varðar það sektum eða fangelsi allt að einu ári.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Þegar brot er framið í starfsemi lögaðila og í þágu hans má gera honum sekt án tillits til þess hvort sök verður sönnuð á fyrirsvarsmann eða starfsmann lögaðilans.</sen>
-        <sen nr="2">Hafi fyrirsvarsmaður eða starfsmaður gerst sekur um brot má samhliða ákvörðun um refsingu þeirra gera lögaðilanum sekt ef brotið var í þágu hans.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar brot er framið í starfsemi lögaðila og í þágu hans má gera honum sekt án tillits til þess hvort sök verður sönnuð á fyrirsvarsmann eða starfsmann lögaðilans.</sen>
+          <sen nr="2">Hafi fyrirsvarsmaður eða starfsmaður gerst sekur um brot má samhliða ákvörðun um refsingu þeirra gera lögaðilanum sekt ef brotið var í þágu hans.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Tilraun og hlutdeild í brotum á reglugerðum settum samkvæmt lögum þessum er refsiverð samkvæmt almennum hegningarlögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilraun og hlutdeild í brotum á reglugerðum settum samkvæmt lögum þessum er refsiverð samkvæmt almennum hegningarlögum.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Hafi ályktun öryggisráðs Sameinuðu þjóðanna, alþjóðastofnunar eða ríkjahóps um þvingunaraðgerðir verið afturkölluð eða sé hún fallin úr gildi þegar brot er framið verður refsingu ekki beitt samkvæmt þessum lögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hafi ályktun öryggisráðs Sameinuðu þjóðanna, alþjóðastofnunar eða ríkjahóps um þvingunaraðgerðir verið afturkölluð eða sé hún fallin úr gildi þegar brot er framið verður refsingu ekki beitt samkvæmt þessum lögum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="38">
       <nr-title>38. gr.</nr-title>
       <name>Eignaupptaka og haldlagning.</name>
       <subart nr="1">
-        <sen nr="1">Gera má upptæka hluti, samkvæmt ákvæðum almennra hegningarlaga, sem hafa verið notaðir við brot, hafa orðið til við brot eða með öðrum hætti tengjast framningu brots samkvæmt lögum þessum, reglugerðum og reglum settum á grundvelli þeirra.</sen>
-        <sen nr="2">Þá má gera upptækan ávinning af broti eða fjárhæð sem svarar til hans í heild eða hluta.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Gera má upptæka hluti, samkvæmt ákvæðum almennra hegningarlaga, sem hafa verið notaðir við brot, hafa orðið til við brot eða með öðrum hætti tengjast framningu brots samkvæmt lögum þessum, reglugerðum og reglum settum á grundvelli þeirra.</sen>
+          <sen nr="2">Þá má gera upptækan ávinning af broti eða fjárhæð sem svarar til hans í heild eða hluta.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Kveði reglugerð sett skv. 6. gr. á um upptöku eigna, tiltekinna eigna eða hluta sem eru í vörslu aðila sem skráðir hafa verið á lista yfir þvingunaraðgerðir í samræmi við reglugerðir sem settar eru á grundvelli laga þessara má gera slíkar eignir eða hluti upptæka, samkvæmt ákvæðum almennra hegningarlaga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Kveði reglugerð sett skv. 6. gr. á um upptöku eigna, tiltekinna eigna eða hluta sem eru í vörslu aðila sem skráðir hafa verið á lista yfir þvingunaraðgerðir í samræmi við reglugerðir sem settar eru á grundvelli laga þessara má gera slíkar eignir eða hluti upptæka, samkvæmt ákvæðum almennra hegningarlaga.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðherra er heimilt í reglugerð og að höfðu samráði við ráðherra sem fer með málefni lögreglu og löggæslu að kveða nánar á um framkvæmd haldlagningar skv. 2. mgr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt í reglugerð og að höfðu samráði við ráðherra sem fer með málefni lögreglu og löggæslu að kveða nánar á um framkvæmd haldlagningar skv. 2. mgr.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="9" nr-type="roman" roman-nr="IX">
+  <chapter nr="9" nr-type="roman" chapter-type="kafli" roman-nr="IX">
     <nr-title>IX. kafli.</nr-title>
     <name>Ýmis ákvæði.</name>
     <art nr="39">
       <nr-title>39. gr.</nr-title>
       <name>Vinnsla persónuupplýsinga.</name>
       <subart nr="1">
-        <sen nr="1">Vinnsla persónuupplýsinga vegna eftirlits með viðskiptamönnum og raunverulegum eigendum skv. 13. gr. skal samræmast löggjöf um persónuvernd og vinnslu persónuupplýsinga og eingöngu vera í þeim tilgangi að hafa eftirlit með því að viðskiptamenn og raunverulegir eigendur séu ekki á listum yfir þvingunaraðgerðir.</sen>
-        <sen nr="2">Önnur vinnsla, notkun eða miðlun er óheimil á grundvelli þessara laga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vinnsla persónuupplýsinga vegna eftirlits með viðskiptamönnum og raunverulegum eigendum skv. 13. gr. skal samræmast löggjöf um persónuvernd og vinnslu persónuupplýsinga og eingöngu vera í þeim tilgangi að hafa eftirlit með því að viðskiptamenn og raunverulegir eigendur séu ekki á listum yfir þvingunaraðgerðir.</sen>
+          <sen nr="2">Önnur vinnsla, notkun eða miðlun er óheimil á grundvelli þessara laga.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Tilkynningarskyldur aðili skal veita nýjum viðskiptamönnum upplýsingar um vinnslu persónuupplýsinga skv. 13. gr. og um tilgang vinnslunnar áður en hann stofnar til samningssambands eða áður en einstök viðskipti eru framkvæmd.</sen>
-        <sen nr="2">Að lágmarki skal upplýsa um skyldur tilkynningarskyldra aðila um vinnslu og meðferð persónuupplýsinga samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tilkynningarskyldur aðili skal veita nýjum viðskiptamönnum upplýsingar um vinnslu persónuupplýsinga skv. 13. gr. og um tilgang vinnslunnar áður en hann stofnar til samningssambands eða áður en einstök viðskipti eru framkvæmd.</sen>
+          <sen nr="2">Að lágmarki skal upplýsa um skyldur tilkynningarskyldra aðila um vinnslu og meðferð persónuupplýsinga samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Þrátt fyrir löggjöf um persónuvernd og vinnslu persónuupplýsinga á hinn skráði ekki rétt á að fá upplýsingar um hvaða persónuupplýsingar hafa verið skráðar af tilkynningarskyldum aðilum ef slík upplýsingagjöf:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">kemur í veg fyrir að tilkynningarskyldur aðili, eftirlitsaðilar samkvæmt lögum þessum eða skrifstofa fjármálagreininga lögreglu geti uppfyllt skyldur sínar samkvæmt lögunum eða</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">hindrar greiningar, rannsóknir eða aðrar aðgerðir samkvæmt lögum þessum eða veldur því að vörnum, rannsóknum eða greiningum á brotum á ákvæðum laga þessara sé stefnt í hættu.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir löggjöf um persónuvernd og vinnslu persónuupplýsinga á hinn skráði ekki rétt á að fá upplýsingar um hvaða persónuupplýsingar hafa verið skráðar af tilkynningarskyldum aðilum ef slík upplýsingagjöf:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">kemur í veg fyrir að tilkynningarskyldur aðili, eftirlitsaðilar samkvæmt lögum þessum eða skrifstofa fjármálagreininga lögreglu geti uppfyllt skyldur sínar samkvæmt lögunum eða</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hindrar greiningar, rannsóknir eða aðrar aðgerðir samkvæmt lögum þessum eða veldur því að vörnum, rannsóknum eða greiningum á brotum á ákvæðum laga þessara sé stefnt í hættu.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Vinnsla og varðveisla persónuupplýsinga skv. 13. gr. telst til almannahagsmuna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vinnsla og varðveisla persónuupplýsinga skv. 13. gr. telst til almannahagsmuna.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="40">
       <nr-title>40. gr.</nr-title>
       <name>Reglugerðarheimild.</name>
       <subart nr="1">
-        <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um framkvæmd laga þessara, þar á meðal um álagningu dagsekta og stjórnvaldssekta skv. VII. kafla, vörslu frystra fjármuna og efnahagslegs auðs og um ráðstafanir vegna eftirlits skv. 13. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um framkvæmd laga þessara, þar á meðal um álagningu dagsekta og stjórnvaldssekta skv. VII. kafla, vörslu frystra fjármuna og efnahagslegs auðs og um ráðstafanir vegna eftirlits skv. 13. gr.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="41">
       <nr-title>41. gr.</nr-title>
       <name>Gildistaka.</name>
       <subart nr="1">
-        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1" expiry-symbol-offset="0">…</sen>
+        <paragraph nr="1">
+          <sen nr="1" expiry-symbol-offset="0">…</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>

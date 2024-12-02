@@ -7,490 +7,559 @@
     <original>1944 nr. 2 21. janúar</original>
   </num-and-date>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=62&amp;amp;mnr=112"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/pdf/62/s/0202.pdf"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 18. febrúar 1944. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjtnr.html#1983010"&gt; L. 10/1983 &lt;/a&gt; (tóku gildi 25. mars 1983). &lt;a href="/altext/stjt/1993.116.html"&gt; L. 116/1993 &lt;/a&gt; (tóku gildi 1. jan. 1994; &lt;em&gt; EES-samningurinn: &lt;/em&gt; IX. viðauki). &lt;a href="/altext/stjt/1995.010.html"&gt; L. 10/1995 &lt;/a&gt; (tóku gildi 1. mars 1995). &lt;a href="/altext/stjt/2008.088.html"&gt; L. 88/2008 &lt;/a&gt; (tóku gildi 1. jan. 2009 nema brbákv. VII sem tók gildi 21. júní 2008). &lt;a href="/altext/stjt/2011.126.html"&gt; L. 126/2011 &lt;/a&gt; (tóku gildi 30. sept. 2011). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; fjármála- og efnahagsráðherra &lt;/b&gt; eða &lt;b&gt; fjármála- og efnahagsráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
-  <chapter nr="1" nr-type="roman" roman-nr="I">
+  <chapter nr="1" nr-type="roman" chapter-type="kafli" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <name>Stofnun tryggingarinnar.</name>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Setja skal á fót stofnun til að standa straum af tjóni af völdum hernaðar á fasteignum, skipum og lausafé landsmanna, sem ekki er tryggt gegn tjóni af völdum ófriðar eða fæst bætt á öðrum vettvangi.</sen>
-        <sen nr="2">Stofnunin nefnist Ófriðartryggingin.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Setja skal á fót stofnun til að standa straum af tjóni af völdum hernaðar á fasteignum, skipum og lausafé landsmanna, sem ekki er tryggt gegn tjóni af völdum ófriðar eða fæst bætt á öðrum vettvangi.</sen>
+          <sen nr="2">Stofnunin nefnist Ófriðartryggingin.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Stofnunina skal þó ekki setja á fót fyrr en eitthvert hernaðartjón hefur að höndum borið, og koma lög þessi að engu leyti til framkvæmda fyrr en slíkt tjón hefur átt sér stað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Stofnunina skal þó ekki setja á fót fyrr en eitthvert hernaðartjón hefur að höndum borið, og koma lög þessi að engu leyti til framkvæmda fyrr en slíkt tjón hefur átt sér stað.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1"></sen>
+        <paragraph nr="1">
+          <sen nr="1"></sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1993.116.html" law-nr="116" law-year="1993" law-art="25" nr="1">
           <footnote-sen>L. 116/1993, 25. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>3</subart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Stofnunin starfar í fjórum deildum, fasteignadeild, skipadeild, véla- og tækjadeild og lausafjártryggingadeild.</sen>
-        <sen nr="2">Hafa þær sameiginlega stjórn og bera sameiginlega stjórnarkostnað og annan kostnað af rekstri stofnunarinnar, en að öðru leyti hafa þær aðskilinn fjárhag.</sen>
-        <sen nr="3">Ráðuneytið skiptir rekstrarkostnaði stofnunarinnar á deildir hennar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Stofnunin starfar í fjórum deildum, fasteignadeild, skipadeild, véla- og tækjadeild og lausafjártryggingadeild.</sen>
+          <sen nr="2">Hafa þær sameiginlega stjórn og bera sameiginlega stjórnarkostnað og annan kostnað af rekstri stofnunarinnar, en að öðru leyti hafa þær aðskilinn fjárhag.</sen>
+          <sen nr="3">Ráðuneytið skiptir rekstrarkostnaði stofnunarinnar á deildir hennar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="19" nr="1">
           <footnote-sen>L. 126/2011, 19. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <sen words="Ráðuneytið">3</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" words="Ráðuneytið" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="2" nr-type="roman" roman-nr="II">
+  <chapter nr="2" nr-type="roman" chapter-type="kafli" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <name>Fasteignatryggingin.</name>
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ráðherra ákveður, hvað telja skuli tryggingarskyld mannvirki.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra ákveður, hvað telja skuli tryggingarskyld mannvirki.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Eigendur eða umráðamenn tryggingarskyldra mannvirkja, sem ekki eru í skyldutryggingu fyrir eldsvoða, eru skyldir til að senda Ófriðartryggingunni tilkynningar um þau, þegar er hún hefur tekið til starfa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eigendur eða umráðamenn tryggingarskyldra mannvirkja, sem ekki eru í skyldutryggingu fyrir eldsvoða, eru skyldir til að senda Ófriðartryggingunni tilkynningar um þau, þegar er hún hefur tekið til starfa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1995.010.html" law-nr="10" law-year="1995" law-art="1" nr="1">
           <footnote-sen>L. 10/1995, 1. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>3</art>
-            <subart>1</subart>
-            <sen words="Ráðherra">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="4">
       <nr-title>4. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Landið allt er eitt tryggingarsvæði, en ráðuneytið ákveður með reglugerð eða auglýsingu skiptingu fasteignanna í áhættuflokka með mismunandi iðgjöldum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Landið allt er eitt tryggingarsvæði, en ráðuneytið ákveður með reglugerð eða auglýsingu skiptingu fasteignanna í áhættuflokka með mismunandi iðgjöldum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Iðgjöld reiknast af brunabótaverði.</sen>
-        <sen nr="2">Húseignir og mannvirki, sem ekki eru virt til brunabóta, skal stjórn stofnunarinnar láta virða sérstaklega, og á sama hátt og til brunabóta væri, með aðstoð brunatryggingarfélaga húseigna, sem starfa á hverjum stað, og skal gera viðaukaskrá yfir þau við brunatryggingarskrárnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld reiknast af brunabótaverði.</sen>
+          <sen nr="2">Húseignir og mannvirki, sem ekki eru virt til brunabóta, skal stjórn stofnunarinnar láta virða sérstaklega, og á sama hátt og til brunabóta væri, með aðstoð brunatryggingarfélaga húseigna, sem starfa á hverjum stað, og skal gera viðaukaskrá yfir þau við brunatryggingarskrárnar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Áfallnar bætur eða eftirstöðvar þeirra ávaxtast með 5% á ári frá því er tjónið varð og þangað til þær eru greiddar að fullu.</sen>
-        <sen nr="2">Vextir þessir ganga fyrst og fremst til greiðslu vaxta af kröfum þeim, sem tryggðar eru með þinglesnum veðrétti í fasteign þeirri, er skemmst hefur eða eyðst, og greiðast þeir á umsömdum gjalddögum veðskuldarinnar.</sen>
-        <sen nr="3">Jafnframt vöxtum greiðast afborganir af hinum þinglesnu veðskuldum, og skal draga þær frá bótunum, er þær verða endanlega greiddar.</sen>
-        <sen nr="4">Þó greiðist ekki hærri árleg afborgun af neinni slíkri skuld, en sem svarar 1/20 hluta hennar, eins og hún var, þegar fasteignin skemmist eða eyðist, og eigi hærri vextir en 5%, og geta veðhafar eigi krafist frekari greiðslu meðan fasteignin er ónothæf eða bætur eigi greiddar að fullu.</sen>
-        <sen nr="5">Færist greiðsla skuldarinnar aftur um tilsvarandi tíma, sem þarf til að ljúka því af henni með umsömdum afborgunum, sem með þessu móti kann að hafa vangreiðst, meðan fasteignin var ónothæf eða bætur ekki greiddar að fullu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Áfallnar bætur eða eftirstöðvar þeirra ávaxtast með 5% á ári frá því er tjónið varð og þangað til þær eru greiddar að fullu.</sen>
+          <sen nr="2">Vextir þessir ganga fyrst og fremst til greiðslu vaxta af kröfum þeim, sem tryggðar eru með þinglesnum veðrétti í fasteign þeirri, er skemmst hefur eða eyðst, og greiðast þeir á umsömdum gjalddögum veðskuldarinnar.</sen>
+          <sen nr="3">Jafnframt vöxtum greiðast afborganir af hinum þinglesnu veðskuldum, og skal draga þær frá bótunum, er þær verða endanlega greiddar.</sen>
+          <sen nr="4">Þó greiðist ekki hærri árleg afborgun af neinni slíkri skuld, en sem svarar 1/20 hluta hennar, eins og hún var, þegar fasteignin skemmist eða eyðist, og eigi hærri vextir en 5%, og geta veðhafar eigi krafist frekari greiðslu meðan fasteignin er ónothæf eða bætur eigi greiddar að fullu.</sen>
+          <sen nr="5">Færist greiðsla skuldarinnar aftur um tilsvarandi tíma, sem þarf til að ljúka því af henni með umsömdum afborgunum, sem með þessu móti kann að hafa vangreiðst, meðan fasteignin var ónothæf eða bætur ekki greiddar að fullu.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Verði eitthvað afgangs af téðum 5% vöxtum, þegar greiddir hafa verið vextir af veðkröfum samkvæmt framansögðu, greiðist það til eiganda fasteignarinnar í lok hvers árs.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Verði eitthvað afgangs af téðum 5% vöxtum, þegar greiddir hafa verið vextir af veðkröfum samkvæmt framansögðu, greiðist það til eiganda fasteignarinnar í lok hvers árs.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="7">
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Bætur, þar með talið vextir og afborganir samkvæmt 6. gr., greiðast með iðgjöldum, sem krafin eru af öllum tryggðum húseignum og mannvirkjum, einnig þeim, sem orðið hafa fyrir ófriðartjóni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bætur, þar með talið vextir og afborganir samkvæmt 6. gr., greiðast með iðgjöldum, sem krafin eru af öllum tryggðum húseignum og mannvirkjum, einnig þeim, sem orðið hafa fyrir ófriðartjóni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Hámark iðgjaldanna samtals er 10% af þeim upphæðum, sem iðgjöld reiknast af.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Hámark iðgjaldanna samtals er 10% af þeim upphæðum, sem iðgjöld reiknast af.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ef þessi takmörkun hefur í för með sér, að ekki er hægt að bæta ófriðartjónið að fullu, skulu bætur greiddar úr ríkissjóði eftir því, sem fé verður veitt til þess í fjárlögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef þessi takmörkun hefur í för með sér, að ekki er hægt að bæta ófriðartjónið að fullu, skulu bætur greiddar úr ríkissjóði eftir því, sem fé verður veitt til þess í fjárlögum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="8">
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Iðgjöld skulu innheimt, þegar ófriðartjón gefur tilefni til, og geta þau numið allt að 1% á ári af matsverðinu.</sen>
-        <sen nr="2">Innheimtumenn brunabótagjalda innheimta þau eftir sömu reglum og þessi gjöld.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld skulu innheimt, þegar ófriðartjón gefur tilefni til, og geta þau numið allt að 1% á ári af matsverðinu.</sen>
+          <sen nr="2">Innheimtumenn brunabótagjalda innheimta þau eftir sömu reglum og þessi gjöld.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Iðgjöld hafa lögtaksrétt og veð í fasteignum næst á eftir opinberum gjöldum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðgjöld hafa lögtaksrétt og veð í fasteignum næst á eftir opinberum gjöldum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ef innheimt eru meiri iðgjöld en nægja til að bæta ófriðartjón og allan kostnað að fullu, skal endurgreiða það, sem umfram er, hlutfallslega eftir greiddum iðgjöldum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef innheimt eru meiri iðgjöld en nægja til að bæta ófriðartjón og allan kostnað að fullu, skal endurgreiða það, sem umfram er, hlutfallslega eftir greiddum iðgjöldum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Bætur greiðast að jafnaði ekki fyrr en ófriðnum er lokið, sbr. þó 35. gr. og 6. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bætur greiðast að jafnaði ekki fyrr en ófriðnum er lokið, sbr. þó 35. gr. og 6. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðuneytið ákveður, að fengnum tillögum tryggingarstjórnarinnar, hverjar bætur skuli greiddar, þegar byggingar eða mannvirki eru ekki endurreist eða er breytt verulega.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið ákveður, að fengnum tillögum tryggingarstjórnarinnar, hverjar bætur skuli greiddar, þegar byggingar eða mannvirki eru ekki endurreist eða er breytt verulega.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="10">
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Bætur greiðast eigandanum, ef engar þinglýstar kröfur hvíla á eigninni eða hafa verið tilkynntar ófriðartryggingunni og viðurkenndar af eiganda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Bætur greiðast eigandanum, ef engar þinglýstar kröfur hvíla á eigninni eða hafa verið tilkynntar ófriðartryggingunni og viðurkenndar af eiganda.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Sama máli gegnir, þó að þinglýstar kröfur hvíli á eigninni eða hafi verið tilkynntar og viðurkenndar, ef byggingar eða mannvirki eru endurreist, enda sé réttur veðhafa að fullu tryggður, að dómi tryggingarstjórnarinnar.</sen>
-        <sen nr="2">Ella skal greiða kröfuhöfum bætur á undan eiganda og í þeirri röð, sem veð þeirra segja til.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sama máli gegnir, þó að þinglýstar kröfur hvíli á eigninni eða hafi verið tilkynntar og viðurkenndar, ef byggingar eða mannvirki eru endurreist, enda sé réttur veðhafa að fullu tryggður, að dómi tryggingarstjórnarinnar.</sen>
+          <sen nr="2">Ella skal greiða kröfuhöfum bætur á undan eiganda og í þeirri röð, sem veð þeirra segja til.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ef hús er endurreist, eiga leigutakar, sem voru í eldra húsinu, forgangsrétt að leigu í hinu nýja húsi með sömu kjörum og áður, þó með þeim breytingum, sem nauðsynlegar verða að teljast vegna breyttra aðstæðna.</sen>
-        <sen nr="2">Þessa réttar er þó því aðeins hægt að neyta, að völ sé á svipuðu húsnæði og áður í húsinu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef hús er endurreist, eiga leigutakar, sem voru í eldra húsinu, forgangsrétt að leigu í hinu nýja húsi með sömu kjörum og áður, þó með þeim breytingum, sem nauðsynlegar verða að teljast vegna breyttra aðstæðna.</sen>
+          <sen nr="2">Þessa réttar er þó því aðeins hægt að neyta, að völ sé á svipuðu húsnæði og áður í húsinu.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="3" nr-type="roman" roman-nr="III">
+  <chapter nr="3" nr-type="roman" chapter-type="kafli" roman-nr="III">
     <nr-title>III. kafli.</nr-title>
     <name>Skipatryggingin.</name>
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skylt er að tryggja hjá Ófriðartryggingunni öll íslensk skip, sem eingöngu stunda fiskveiðar við strendur landsins og flutninga hér við land í þágu innlendra aðila, önnur en strandferðaskip ríkisins.</sen>
-        <sen nr="2">Eigendur og umráðamenn þeirra skipa, sem ekki eru tryggð samkvæmt lögum nr. 32 11. júní 1942, skulu senda Ófriðartryggingunni tilkynningu um þau, þegar er hún tekur til starfa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skylt er að tryggja hjá Ófriðartryggingunni öll íslensk skip, sem eingöngu stunda fiskveiðar við strendur landsins og flutninga hér við land í þágu innlendra aðila, önnur en strandferðaskip ríkisins.</sen>
+          <sen nr="2">Eigendur og umráðamenn þeirra skipa, sem ekki eru tryggð samkvæmt lögum nr. 32 11. júní 1942, skulu senda Ófriðartryggingunni tilkynningu um þau, þegar er hún tekur til starfa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>Nú l. 98/2000.</footnote-sen>
-          <location type="pointer">
-            <chapter>3</chapter>
-            <art>12</art>
-            <subart>1</subart>
-            <sen before-mark="^Eigendur og umráðamenn þeirra skipa, sem ekki eru tryggð samkvæmt lögum nr. 32 11. júní 1942," after-mark="skulu senda Ófriðartryggingunni tilkynningu um þau, þegar er hún tekur til starfa.$">2</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Eigendur og umráðamenn þeirra skipa, sem ekki eru tryggð samkvæmt lögum nr. 32 11. júní 1942," after-mark="skulu senda Ófriðartryggingunni tilkynningu um þau, þegar er hún tekur til starfa.$"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skip skal ófriðartryggja fyrir sömu fjárhæð og þau eru vátryggð fyrir hjá vélbátaábyrgðarfélagi.</sen>
-        <sen nr="2">Nú er skip ekki vátryggt hjá vélbátaábyrgðarfélagi, og skal það þá metið af trúnaðarmönnum Ófriðartryggingarinnar, sem eru hinir sömu og trúnaðarmenn vélbátaábyrgðarfélaganna, hver á sínu svæði, eftir því sem við getur átt.</sen>
-        <sen nr="3">Upphæð tryggingar fer eftir sömu reglum og hjá vélbátaábyrgðarfélögunum.</sen>
-        <sen nr="4">Stjórn Ófriðartryggingarinnar hefur sams konar rétt til yfirmats og endurmats og stjórn Samábyrgðar Íslands á fiskiskipum hefur samkvæmt lögum nr. 32 frá 1942.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skip skal ófriðartryggja fyrir sömu fjárhæð og þau eru vátryggð fyrir hjá vélbátaábyrgðarfélagi.</sen>
+          <sen nr="2">Nú er skip ekki vátryggt hjá vélbátaábyrgðarfélagi, og skal það þá metið af trúnaðarmönnum Ófriðartryggingarinnar, sem eru hinir sömu og trúnaðarmenn vélbátaábyrgðarfélaganna, hver á sínu svæði, eftir því sem við getur átt.</sen>
+          <sen nr="3">Upphæð tryggingar fer eftir sömu reglum og hjá vélbátaábyrgðarfélögunum.</sen>
+          <sen nr="4">Stjórn Ófriðartryggingarinnar hefur sams konar rétt til yfirmats og endurmats og stjórn Samábyrgðar Íslands á fiskiskipum hefur samkvæmt lögum nr. 32 frá 1942.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>Nú l. 98/2000.</footnote-sen>
-          <location type="pointer">
-            <chapter>3</chapter>
-            <art>13</art>
-            <subart>1</subart>
-            <sen before-mark="^Stjórn Ófriðartryggingarinnar hefur sams konar rétt til yfirmats og endurmats og stjórn Samábyrgðar Íslands á fiskiskipum hefur samkvæmt lögum nr. 32 frá 1942." after-mark="$">4</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" before-mark="^Stjórn Ófriðartryggingarinnar hefur sams konar rétt til yfirmats og endurmats og stjórn Samábyrgðar Íslands á fiskiskipum hefur samkvæmt lögum nr. 32 frá 1942." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="14">
       <nr-title>14. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Vélbátaábyrgðarfélögum er skylt að hafa á hendi innheimtu iðgjalda, hverju á sínu tryggingarsvæði, undir umsjón Samábyrgðar Íslands á fiskiskipum.</sen>
-        <sen nr="2">Iðgjaldið getur numið allt að 1% á ári, frá því að Ófriðartryggingin tekur til starfa, en þó ekki yfir 4% af tryggingarfjárhæðinni, nema sérstaklega verði ákveðið með lögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Vélbátaábyrgðarfélögum er skylt að hafa á hendi innheimtu iðgjalda, hverju á sínu tryggingarsvæði, undir umsjón Samábyrgðar Íslands á fiskiskipum.</sen>
+          <sen nr="2">Iðgjaldið getur numið allt að 1% á ári, frá því að Ófriðartryggingin tekur til starfa, en þó ekki yfir 4% af tryggingarfjárhæðinni, nema sérstaklega verði ákveðið með lögum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="15">
       <nr-title>15. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ráðuneytið ákveður þóknun til vélbátaábyrgðarfélaganna fyrir aðstoð þá, er þau veita samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið ákveður þóknun til vélbátaábyrgðarfélaganna fyrir aðstoð þá, er þau veita samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Um bætur fyrir tjón á skipum fer eftir sömu reglum og um bætur fyrir sjótjón samkvæmt lögum nr. 32 frá 1942, um vátrygging vélbáta.</sen>
-        <sen nr="2">Skal ríkissjóður leggja fram fé til bótanna, og endurgreiðist það af iðgjöldum, eftir því sem þau hrökkva til.</sen>
-        <sen nr="3">Að öðru leyti gilda ákvæði fasteignatrygginga, sbr. II. kafla laga þessara, að svo miklu leyti sem við á.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Um bætur fyrir tjón á skipum fer eftir sömu reglum og um bætur fyrir sjótjón samkvæmt lögum nr. 32 frá 1942, um vátrygging vélbáta.</sen>
+          <sen nr="2">Skal ríkissjóður leggja fram fé til bótanna, og endurgreiðist það af iðgjöldum, eftir því sem þau hrökkva til.</sen>
+          <sen nr="3">Að öðru leyti gilda ákvæði fasteignatrygginga, sbr. II. kafla laga þessara, að svo miklu leyti sem við á.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>Nú l. 98/2000.</footnote-sen>
-          <location type="pointer">
-            <chapter>3</chapter>
-            <art>16</art>
-            <subart>1</subart>
-            <sen before-mark="^Um bætur fyrir tjón á skipum fer eftir sömu reglum og um bætur fyrir sjótjón samkvæmt lögum nr. 32 frá 1942," after-mark="um vátrygging vélbáta.$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Um bætur fyrir tjón á skipum fer eftir sömu reglum og um bætur fyrir sjótjón samkvæmt lögum nr. 32 frá 1942," after-mark="um vátrygging vélbáta.$"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="4" nr-type="roman" roman-nr="IV">
+  <chapter nr="4" nr-type="roman" chapter-type="kafli" roman-nr="IV">
     <nr-title>IV. kafli.</nr-title>
     <name>Véla- og tækjatryggingin.</name>
     <art nr="17">
       <nr-title>17. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skylt er eigendum eða umráðamönnum að tryggja allar vélar og tæki, sem ekki eru tryggð í fasteignatryggingunni, sbr. 3. gr., og eru að minnsta kosti 2000 króna virði, á einum og sama stað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skylt er eigendum eða umráðamönnum að tryggja allar vélar og tæki, sem ekki eru tryggð í fasteignatryggingunni, sbr. 3. gr., og eru að minnsta kosti 2000 króna virði, á einum og sama stað.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Setja má nánari reglur um það, hvað telja beri tryggingarskyldar vélar og tæki samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Setja má nánari reglur um það, hvað telja beri tryggingarskyldar vélar og tæki samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Eigendur eða umráðamenn tryggingarskyldra véla og tækja eru skyldir til að senda Ófriðartryggingunni tilkynningar um slíkar vélar og tæki jafnskjótt sem hún hefur tekið til starfa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Eigendur eða umráðamenn tryggingarskyldra véla og tækja eru skyldir til að senda Ófriðartryggingunni tilkynningar um slíkar vélar og tæki jafnskjótt sem hún hefur tekið til starfa.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="18">
       <nr-title>18. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tryggingarupphæð véla og tækja er brunabótaverðið, nema annað sé tiltekið af tryggingartaka og samþykkt af tryggingarstjórninni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tryggingarupphæð véla og tækja er brunabótaverðið, nema annað sé tiltekið af tryggingartaka og samþykkt af tryggingarstjórninni.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="19">
       <nr-title>19. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Brunatryggingarfélögum er skylt að hafa á hendi innheimtu iðgjaldanna.</sen>
-        <sen nr="2">Hámark iðgjalda er 10% af tryggingarupphæðunum og geta numið allt að 2% á ári.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Brunatryggingarfélögum er skylt að hafa á hendi innheimtu iðgjaldanna.</sen>
+          <sen nr="2">Hámark iðgjalda er 10% af tryggingarupphæðunum og geta numið allt að 2% á ári.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="20">
       <nr-title>20. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ráðuneytið ákveður þóknun til brunatryggingarfélaga fyrir aðstoð þá, er þau veita samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið ákveður þóknun til brunatryggingarfélaga fyrir aðstoð þá, er þau veita samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="21">
       <nr-title>21. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Að öðru leyti gilda ákvæðin um fasteignatrygginguna, að svo miklu leyti sem þau geta átt við.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að öðru leyti gilda ákvæðin um fasteignatrygginguna, að svo miklu leyti sem þau geta átt við.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="5" nr-type="roman" roman-nr="V">
+  <chapter nr="5" nr-type="roman" chapter-type="kafli" roman-nr="V">
     <nr-title>V. kafli.</nr-title>
     <name>Lausafjártryggingin.</name>
     <art nr="22">
       <nr-title>22. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ríkisstjórninni er heimilt, ef til þess kemur, sbr. 1. gr., að tjón verði af völdum ófriðarins á vörubirgðum eða öðru lausafé í landinu, sem ekki er tryggt samkvæmt IV. kafla þessara laga, að leggja aukagjald á allar innfluttar vörur og sérstakt útflutningsgjald á allar útfluttar vörur.</sen>
-        <sen nr="2">Gjaldi þessu, sem ekki má nema meira en 2% af verði varanna, sbr. 23. gr., skal verja til þess að bæta tjón á vörubirgðum og öðru lausafé landsmanna innan lands, sem hlýst af hernaði í landinu, sbr. 34. gr., að því leyti, sem þessir fjármunir eru ekki tryggðir á annan hátt fyrir slíku tjóni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisstjórninni er heimilt, ef til þess kemur, sbr. 1. gr., að tjón verði af völdum ófriðarins á vörubirgðum eða öðru lausafé í landinu, sem ekki er tryggt samkvæmt IV. kafla þessara laga, að leggja aukagjald á allar innfluttar vörur og sérstakt útflutningsgjald á allar útfluttar vörur.</sen>
+          <sen nr="2">Gjaldi þessu, sem ekki má nema meira en 2% af verði varanna, sbr. 23. gr., skal verja til þess að bæta tjón á vörubirgðum og öðru lausafé landsmanna innan lands, sem hlýst af hernaði í landinu, sbr. 34. gr., að því leyti, sem þessir fjármunir eru ekki tryggðir á annan hátt fyrir slíku tjóni.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="23">
       <nr-title>23. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Nú verður tjón af völdum hernaðar á munum þeim, sem um ræðir í þessum kafla, og ákveður þá ríkisstjórnin, sbr. 1. gr., að innheimta skuli gjöld þau, sem um ræðir í 22. gr., frá og með næsta degi eftir að henni berst tilkynning eða hún verður á annan hátt áskynja um tjónið.</sen>
-        <sen nr="2">Ákveður hún þá jafnframt, hvert hundraðsgjald skuli greiða og hversu lengi, eða hvort það skuli innheimt um óákveðinn tíma, þangað til annað verði ákveðið.</sen>
-        <sen nr="3">Gjöldin skulu þá lögð á verð aðfluttra og útfluttra vara eftir sömu reglum og verðtollur og útflutningsgjald, og skulu þau innheimt af innheimtumönnum ríkissjóðs, á sama hátt og verðtollur og útflutningsgjald, og greidd ásamt þeim tollum til ríkissjóðs, sem svo greiðir þau Ófriðartryggingunni.</sen>
-        <sen nr="4">Ráðuneyti er fer með tekjuöflun ríkisins gefur innheimtumönnum ríkissjóðs fyrirmæli um innheimtu gjaldanna, eftir því sem þörf gerist.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú verður tjón af völdum hernaðar á munum þeim, sem um ræðir í þessum kafla, og ákveður þá ríkisstjórnin, sbr. 1. gr., að innheimta skuli gjöld þau, sem um ræðir í 22. gr., frá og með næsta degi eftir að henni berst tilkynning eða hún verður á annan hátt áskynja um tjónið.</sen>
+          <sen nr="2">Ákveður hún þá jafnframt, hvert hundraðsgjald skuli greiða og hversu lengi, eða hvort það skuli innheimt um óákveðinn tíma, þangað til annað verði ákveðið.</sen>
+          <sen nr="3">Gjöldin skulu þá lögð á verð aðfluttra og útfluttra vara eftir sömu reglum og verðtollur og útflutningsgjald, og skulu þau innheimt af innheimtumönnum ríkissjóðs, á sama hátt og verðtollur og útflutningsgjald, og greidd ásamt þeim tollum til ríkissjóðs, sem svo greiðir þau Ófriðartryggingunni.</sen>
+          <sen nr="4">Ráðuneyti er fer með tekjuöflun ríkisins gefur innheimtumönnum ríkissjóðs fyrirmæli um innheimtu gjaldanna, eftir því sem þörf gerist.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="19" nr="1">
           <footnote-sen>L. 126/2011, 19. gr.</footnote-sen>
-          <location type="range">
-            <chapter>5</chapter>
-            <art>23</art>
-            <subart>1</subart>
-            <sen words="Ráðuneyti er fer með tekjuöflun ríkisins">4</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" words="Ráðuneyti er fer með tekjuöflun ríkisins" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="24">
       <nr-title>24. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Rétt til bóta á hver sá, sem hefur orðið fyrir ófriðartjóni á verðmætum þeim, sem um ræðir í þessum kafla.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Rétt til bóta á hver sá, sem hefur orðið fyrir ófriðartjóni á verðmætum þeim, sem um ræðir í þessum kafla.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Frá matsupphæð tjónsins dregst, þegar um lausafé, annað en vörubirgðir, er að ræða, 1/4 hluti, þó svo, að frádrátturinn nemi eigi hærri upphæð en 5000 krónum hjá sama manni eða fyrirtæki, og greiðast bætur fyrir tjónið með þeim frádrætti.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Frá matsupphæð tjónsins dregst, þegar um lausafé, annað en vörubirgðir, er að ræða, 1/4 hluti, þó svo, að frádrátturinn nemi eigi hærri upphæð en 5000 krónum hjá sama manni eða fyrirtæki, og greiðast bætur fyrir tjónið með þeim frádrætti.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Frá matsupphæð vörubirgða skal draga 1/20 hluta, og greiðast bætur fyrir tjónið með þeim frádrætti.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Frá matsupphæð vörubirgða skal draga 1/20 hluta, og greiðast bætur fyrir tjónið með þeim frádrætti.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="25">
       <nr-title>25. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tjón það, sem um ræðir í þessum kafla, skal að jafnaði ekki bætt nema að hálfu samkvæmt 24. gr. þegar er það hefur verið gert upp.</sen>
-        <sen nr="2">Hinn helmingur tjónsins greiðist að styrjöldinni lokinni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tjón það, sem um ræðir í þessum kafla, skal að jafnaði ekki bætt nema að hálfu samkvæmt 24. gr. þegar er það hefur verið gert upp.</sen>
+          <sen nr="2">Hinn helmingur tjónsins greiðist að styrjöldinni lokinni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Nú færir eigandi glataðra eða skemmdra vörubirgða sönnur á, að hann muni bíða stórfelldan fjárhagslegan hnekki, ef hann fær ekki útborgaðar frekari bætur en að framan greinir, og er þá stjórn Ófriðartryggingarinnar heimilt að greiða meiri bætur og jafnvel bæta tjónið að fullu, sérstaklega ef ætla má, að ekki sé unnt með öðru móti að afla nýrra birgða nógu fljótt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú færir eigandi glataðra eða skemmdra vörubirgða sönnur á, að hann muni bíða stórfelldan fjárhagslegan hnekki, ef hann fær ekki útborgaðar frekari bætur en að framan greinir, og er þá stjórn Ófriðartryggingarinnar heimilt að greiða meiri bætur og jafnvel bæta tjónið að fullu, sérstaklega ef ætla má, að ekki sé unnt með öðru móti að afla nýrra birgða nógu fljótt.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Sá hluti bótanna, sem ekki greiðist fyrr en að styrjöldinni lokinni, ávaxtast með 5% á ári til greiðsludags, og fer um greiðslu vaxta og afborgana af lánum, sem tryggð kunna að vera með handveði eða þinglýstu sjálfsvörsluveði í hinum skemmdu eða glötuðu munum, á sama hátt og segir í 6. gr. um fasteignaveðslán, eftir því sem við getur átt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Sá hluti bótanna, sem ekki greiðist fyrr en að styrjöldinni lokinni, ávaxtast með 5% á ári til greiðsludags, og fer um greiðslu vaxta og afborgana af lánum, sem tryggð kunna að vera með handveði eða þinglýstu sjálfsvörsluveði í hinum skemmdu eða glötuðu munum, á sama hátt og segir í 6. gr. um fasteignaveðslán, eftir því sem við getur átt.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="26">
       <nr-title>26. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Nú verður svo stórkostlegt tjón á fjármunum þeim, sem um ræðir í þessum kafla, að eigi þykir fært að bæta það að fullu samkvæmt fyrirmælum 24. gr., og skal það þá bætt að því, sem á vantar, úr ríkissjóði, eftir því sem fé verður veitt til þess í fjárlögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú verður svo stórkostlegt tjón á fjármunum þeim, sem um ræðir í þessum kafla, að eigi þykir fært að bæta það að fullu samkvæmt fyrirmælum 24. gr., og skal það þá bætt að því, sem á vantar, úr ríkissjóði, eftir því sem fé verður veitt til þess í fjárlögum.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="6" nr-type="roman" roman-nr="VI">
+  <chapter nr="6" nr-type="roman" chapter-type="kafli" roman-nr="VI">
     <nr-title>VI. kafli.</nr-title>
     <name>Stjórn Ófriðartryggingarinnar.</name>
     <art nr="27">
       <nr-title>27. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Nú verður ríkisstjórnin áskynja um verulegt, sbr. 36. gr., bótaskylt tjón samkvæmt lögum þessum, og gerir hún þá þegar ráðstafanir til þess, að Ófriðartryggingin taki til starfa.</sen>
-        <sen nr="2">Skipar ráðuneytið þriggja manna nefnd til að veita tryggingunni forstöðu, en Brunabótafélagi Íslands skal falið að annast daglegar framkvæmdir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú verður ríkisstjórnin áskynja um verulegt, sbr. 36. gr., bótaskylt tjón samkvæmt lögum þessum, og gerir hún þá þegar ráðstafanir til þess, að Ófriðartryggingin taki til starfa.</sen>
+          <sen nr="2">Skipar ráðuneytið þriggja manna nefnd til að veita tryggingunni forstöðu, en Brunabótafélagi Íslands skal falið að annast daglegar framkvæmdir.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="19" nr="1">
           <footnote-sen>L. 126/2011, 19. gr.</footnote-sen>
-          <location type="range">
-            <chapter>6</chapter>
-            <art>27</art>
-            <subart>1</subart>
-            <sen words="ráðuneytið">2</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='27']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="ráðuneytið" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="28">
       <nr-title>28. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tryggingarstjórnin ræður matsmenn og aðra starfsmenn eftir þörfum.</sen>
-        <sen nr="2">Skrifstofumenn til viðbótar starfsliði sínu ræður þó stjórn Brunabótafélags Íslands að því leyti, sem fast starfsfólk félagsins kemst ekki yfir hin daglegu störf, sem því eru falin.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tryggingarstjórnin ræður matsmenn og aðra starfsmenn eftir þörfum.</sen>
+          <sen nr="2">Skrifstofumenn til viðbótar starfsliði sínu ræður þó stjórn Brunabótafélags Íslands að því leyti, sem fast starfsfólk félagsins kemst ekki yfir hin daglegu störf, sem því eru falin.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="29">
       <nr-title>29. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ráðuneytið ákveður þóknun stjórnar Ófriðartryggingarinnar.</sen>
-        <sen nr="2">Enn fremur ákveður ráðuneytið, hvað Brunabótafélagi Íslands skuli greitt fyrir störf þess í þágu Ófriðartryggingarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið ákveður þóknun stjórnar Ófriðartryggingarinnar.</sen>
+          <sen nr="2">Enn fremur ákveður ráðuneytið, hvað Brunabótafélagi Íslands skuli greitt fyrir störf þess í þágu Ófriðartryggingarinnar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="19" nr="1">
           <footnote-sen>L. 126/2011, 19. gr.</footnote-sen>
-          <location type="range">
-            <chapter>6</chapter>
-            <art>29</art>
-            <subart>1</subart>
-            <sen words="Ráðuneytið">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='29']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðuneytið" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="7" nr-type="roman" roman-nr="VII">
+  <chapter nr="7" nr-type="roman" chapter-type="kafli" roman-nr="VII">
     <nr-title>VII. kafli.</nr-title>
     <name>Almenn ákvæði.</name>
     <art nr="30">
       <nr-title>30. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Brunatryggingarfélögum er skylt að aðstoða við skrásetningu þeirra fasteigna, véla og tækja, sem tryggja ber samkvæmt 3. og 17. gr.</sen>
-        <sen nr="2">Einnig ber þeim að veita Ófriðartryggingunni vitneskju um, hvort lausafé, sem um ræðir í V. kafla laga þessara og glatast hefur eða skemmst af völdum ófriðarins, hefur verið tryggt gegn eldsvoða hjá þeim, og þá fyrir hve háa upphæð.</sen>
-        <sen nr="3">Enn fremur ber þeim að veita aðrar þær upplýsingar um hlutaðeigandi lausafé, sem óskað verður eftir og þau geta veitt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Brunatryggingarfélögum er skylt að aðstoða við skrásetningu þeirra fasteigna, véla og tækja, sem tryggja ber samkvæmt 3. og 17. gr.</sen>
+          <sen nr="2">Einnig ber þeim að veita Ófriðartryggingunni vitneskju um, hvort lausafé, sem um ræðir í V. kafla laga þessara og glatast hefur eða skemmst af völdum ófriðarins, hefur verið tryggt gegn eldsvoða hjá þeim, og þá fyrir hve háa upphæð.</sen>
+          <sen nr="3">Enn fremur ber þeim að veita aðrar þær upplýsingar um hlutaðeigandi lausafé, sem óskað verður eftir og þau geta veitt.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="31">
       <nr-title>31. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tjón skal tilkynna Ófriðartryggingunni áður en vika er liðin frá því að það varð.</sen>
-        <sen nr="2">Fjárkröfur eru fyrndar, ef eigandi eða umráðamaður hinna skemmdu eða glötuðu eigna hefur ekki fært sönnur á réttmæti þeirra, áður en þrír mánuðir eru liðnir frá því, er hann tilkynnti tjónið og bar fram kröfur um bætur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tjón skal tilkynna Ófriðartryggingunni áður en vika er liðin frá því að það varð.</sen>
+          <sen nr="2">Fjárkröfur eru fyrndar, ef eigandi eða umráðamaður hinna skemmdu eða glötuðu eigna hefur ekki fært sönnur á réttmæti þeirra, áður en þrír mánuðir eru liðnir frá því, er hann tilkynnti tjónið og bar fram kröfur um bætur.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="32">
       <nr-title>32. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þegar tryggingarstjórnin fær tilkynningu eða berst vitneskja um tjón, er ætla má, að falli undir trygginguna, skal hún strax gera ráðstafanir til þess að fá úr því skorið, hvort um ófriðartjón sé að ræða, og láta meta skaðann.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar tryggingarstjórnin fær tilkynningu eða berst vitneskja um tjón, er ætla má, að falli undir trygginguna, skal hún strax gera ráðstafanir til þess að fá úr því skorið, hvort um ófriðartjón sé að ræða, og láta meta skaðann.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Um mat á tjóni og ákvörðun bótagreiðslu fer eftir þeim reglum, er gilda um brunatjón, að svo miklu leyti sem þær geta átt við.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Um mat á tjóni og ákvörðun bótagreiðslu fer eftir þeim reglum, er gilda um brunatjón, að svo miklu leyti sem þær geta átt við.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="33">
       <nr-title>33. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ófriðartjón telst hvers konar eyðilegging eða skemmdir á hinu tryggða, sem orsakast beint eða óbeint af hernaði, þar með talin hlutleysisbrot og borgaraóeirðir meðan á ófriðnum stendur og í sambandi við hann.</sen>
-        <sen nr="2">Þetta nær þó ekki til skemmda eða óhagræðis, sem menn kunna að verða fyrir vegna vistar hins breska setuliðs í landinu.</sen>
-        <sen nr="3">Ríkisstjórnin ákveður, hvenær því ástandi, sem að framan greinir, telst vera lokið.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ófriðartjón telst hvers konar eyðilegging eða skemmdir á hinu tryggða, sem orsakast beint eða óbeint af hernaði, þar með talin hlutleysisbrot og borgaraóeirðir meðan á ófriðnum stendur og í sambandi við hann.</sen>
+          <sen nr="2">Þetta nær þó ekki til skemmda eða óhagræðis, sem menn kunna að verða fyrir vegna vistar hins breska setuliðs í landinu.</sen>
+          <sen nr="3">Ríkisstjórnin ákveður, hvenær því ástandi, sem að framan greinir, telst vera lokið.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="34">
       <nr-title>34. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Að svo miklu leyti sem tryggingin bætir ófriðartjón eignast hún kröfur um bætur, sem hinn tryggði kann að eiga á hendur öðrum skaðabótaskyldum aðilum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að svo miklu leyti sem tryggingin bætir ófriðartjón eignast hún kröfur um bætur, sem hinn tryggði kann að eiga á hendur öðrum skaðabótaskyldum aðilum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="35">
       <nr-title>35. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þegar sérstaklega stendur á, getur stjórn Ófriðartryggingarinnar, ef allir stjórnarmenn eru því samþykkir, ákveðið að bæta í einstökum tilfellum og að nokkru leyti tjón, sem um ræðir í II. og IV. kafla, áður en endanleg uppgerð á tjóni hefur farið fram.</sen>
-        <sen nr="2">Þó skal að jafnaði ekki þá þegar greiða meira en hálfar bætur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar sérstaklega stendur á, getur stjórn Ófriðartryggingarinnar, ef allir stjórnarmenn eru því samþykkir, ákveðið að bæta í einstökum tilfellum og að nokkru leyti tjón, sem um ræðir í II. og IV. kafla, áður en endanleg uppgerð á tjóni hefur farið fram.</sen>
+          <sen nr="2">Þó skal að jafnaði ekki þá þegar greiða meira en hálfar bætur.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skilyrði fyrir slíkri undanþágu er, að endurbætur á hinu skemmda byrji þegar í stað og sé lokið innan tiltekins tíma.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skilyrði fyrir slíkri undanþágu er, að endurbætur á hinu skemmda byrji þegar í stað og sé lokið innan tiltekins tíma.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ef bæta þarf tjón skv. II. og IV. kafla eða greiða vexti og afborganir skv. 6. gr., sbr. 21. gr., og innheimt iðgjöld hrökkva ekki fyrir þeim greiðslum, er Ófriðartryggingunni heimilt að taka — til bráðabirgða — lán gegn veði í iðgjöldunum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ef bæta þarf tjón skv. II. og IV. kafla eða greiða vexti og afborganir skv. 6. gr., sbr. 21. gr., og innheimt iðgjöld hrökkva ekki fyrir þeim greiðslum, er Ófriðartryggingunni heimilt að taka — til bráðabirgða — lán gegn veði í iðgjöldunum.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Nú þarf að bæta tjón skv. V. kafla þessara laga, og innheimt gjöld skv. 24. gr., sbr. 22. gr., hrökkva ekki fyrir þeim greiðslum, og er þá ríkisstjórninni heimilt að taka lán eða veita nauðsynlegar tryggingar fyrir láni, er Ófriðartryggingin tekur, til þess að hægt sé að bæta ófriðartjón á vörubirgðum eða öðru lausafé eins fljótt og nauðsyn ber til.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú þarf að bæta tjón skv. V. kafla þessara laga, og innheimt gjöld skv. 24. gr., sbr. 22. gr., hrökkva ekki fyrir þeim greiðslum, og er þá ríkisstjórninni heimilt að taka lán eða veita nauðsynlegar tryggingar fyrir láni, er Ófriðartryggingin tekur, til þess að hægt sé að bæta ófriðartjón á vörubirgðum eða öðru lausafé eins fljótt og nauðsyn ber til.</sen>
+        </paragraph>
       </subart>
       <subart nr="5">
-        <sen nr="1">Allur kostnaður við lán eða tryggingar samkvæmt þessari grein skal greiddur á sama hátt og tjónið sjálft.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Allur kostnaður við lán eða tryggingar samkvæmt þessari grein skal greiddur á sama hátt og tjónið sjálft.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="36">
       <nr-title>36. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Nú verður svo lítið tjón, sem bæta þarf samkvæmt lögum þessum, að ríkisstjórninni þykir ekki ástæða til að stofna Ófriðartrygginguna, og greiðir þá ríkissjóður, að styrjöldinni lokinni, bætur fyrir það og kostnað allan, sem leiðir af því.</sen>
-        <sen nr="2">Komi hins vegar verulegt tjón fyrir, skal kostnaður við Ófriðartrygginguna greiddur á sama hátt og það.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nú verður svo lítið tjón, sem bæta þarf samkvæmt lögum þessum, að ríkisstjórninni þykir ekki ástæða til að stofna Ófriðartrygginguna, og greiðir þá ríkissjóður, að styrjöldinni lokinni, bætur fyrir það og kostnað allan, sem leiðir af því.</sen>
+          <sen nr="2">Komi hins vegar verulegt tjón fyrir, skal kostnaður við Ófriðartrygginguna greiddur á sama hátt og það.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Verði afgangur, þegar allt tjón er bætt samkvæmt V. kafla þessara laga, af verðtolli þeim og útflutningsgjaldi, sem innheimt kann að hafa verið samkvæmt kaflanum, rennur sá afgangur í ríkissjóð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Verði afgangur, þegar allt tjón er bætt samkvæmt V. kafla þessara laga, af verðtolli þeim og útflutningsgjaldi, sem innheimt kann að hafa verið samkvæmt kaflanum, rennur sá afgangur í ríkissjóð.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="37">
       <nr-title>37. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Heimili og varnarþing Ófriðartryggingarinnar er í Reykjavík.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Heimili og varnarþing Ófriðartryggingarinnar er í Reykjavík.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="38">
       <nr-title>38. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Öll skjöl varðandi ófriðartryggingar eru stimpilfrjáls.</sen>
-        <sen nr="2">Enn fremur skal Ófriðartryggingin undanþegin sköttum og útsvörum til ríkis og bæjarfélags.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Öll skjöl varðandi ófriðartryggingar eru stimpilfrjáls.</sen>
+          <sen nr="2">Enn fremur skal Ófriðartryggingin undanþegin sköttum og útsvörum til ríkis og bæjarfélags.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="39">
       <nr-title>39. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ráðuneytið getur sett reglugerð um framkvæmd þessara laga eftir því, sem þörf þykir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðuneytið getur sett reglugerð um framkvæmd þessara laga eftir því, sem þörf þykir.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="40">
       <nr-title>40. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Brot gegn lögum þessum varða sektum, nema þyngri refsing liggi við broti samkvæmt öðrum lögum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Brot gegn lögum þessum varða sektum, nema þyngri refsing liggi við broti samkvæmt öðrum lögum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-nr="88" law-year="2008" law-art="233" nr="1">
           <footnote-sen>L. 88/2008, 233. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>7</chapter>
-            <art>40</art>
-            <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Brot gegn lögum þessum varða sektum, nema þyngri refsing liggi við broti samkvæmt öðrum lögum." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='40']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Brot gegn lögum þessum varða sektum, nema þyngri refsing liggi við broti samkvæmt öðrum lögum." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1983010?g27" law-nr="10" law-year="1983" law-art="27" nr="2">
           <footnote-sen>L. 10/1983, 27. gr.</footnote-sen>
-          <location type="range">
-            <chapter>7</chapter>
-            <art>40</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='40']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>

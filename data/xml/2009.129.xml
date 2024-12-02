@@ -10,175 +10,143 @@
   <chapter nr="1" nr-type="roman" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <ambiguous-section>
-      <sen nr="1">Kolefnisgjald á kolefni af jarðefnauppruna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Kolefnisgjald á kolefni af jarðefnauppruna.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2012.146.html" law-nr="146" law-year="2012" law-art="15" nr="1">
           <footnote-sen>L. 146/2012, 15. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <ambiguous-section>1</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1']/ambiguous-section[1]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Greiða skal í ríkissjóð kolefnisgjald af eldsneyti sem inniheldur kolefni af jarðefnauppruna og notað er á fljótandi eða loftkenndu formi eða í iðnaðarferlum þannig að sú notkun leiði til losunar koltvísýrings í andrúmsloftið.</sen>
-        <sen nr="2">Með eldsneyti sem inniheldur kolefni af jarðefnauppruna á fljótandi eða loftkenndu formi er átt við gas- og dísilolíu, bensín, brennsluolíu og jarðolíugas og annað loftkennt kolvatnsefni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Greiða skal í ríkissjóð kolefnisgjald af eldsneyti sem inniheldur kolefni af jarðefnauppruna og notað er á fljótandi eða loftkenndu formi eða í iðnaðarferlum þannig að sú notkun leiði til losunar koltvísýrings í andrúmsloftið.</sen>
+          <sen nr="2">Með eldsneyti sem inniheldur kolefni af jarðefnauppruna á fljótandi eða loftkenndu formi er átt við gas- og dísilolíu, bensín, brennsluolíu og jarðolíugas og annað loftkennt kolvatnsefni.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Fjárhæð kolefnisgjalds skal vera 13 kr. á hvern lítra af gas- og dísilolíu, 11,30 kr. á hvern lítra af bensíni, 15,95 kr. á hvert kílógramm af brennsluolíu og 14,15 kr. á hvert kílógramm af jarðolíugasi og öðru loftkenndu kolvatnsefni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjárhæð kolefnisgjalds skal vera 13 kr. á hvern lítra af gas- og dísilolíu, 11,30 kr. á hvern lítra af bensíni, 15,95 kr. á hvert kílógramm af brennsluolíu og 14,15 kr. á hvert kílógramm af jarðolíugasi og öðru loftkenndu kolvatnsefni.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2022.129.html" law-nr="129" law-year="2022" law-art="1" nr="1">
           <footnote-sen>L. 129/2022, 1. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>2</subart>
-            <sen words="13 kr.">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>2</subart>
-            <sen words="11,30 kr.">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>2</subart>
-            <sen words="15,95 kr.">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>1</art>
-            <subart>2</subart>
-            <sen words="14,15 kr.">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="13 kr." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="11,30 kr." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="15,95 kr." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="14,15 kr." instance-num="1"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.146.html" law-nr="146" law-year="2012" law-art="15" nr="2">
           <footnote-sen>L. 146/2012, 15. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>1</chapter>
-              <art>1</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>1</chapter>
-              <art>1</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="649">
+            <start xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Gjaldskyldir aðilar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Gjaldskyldir aðilar.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="2">
       <nr-title>2. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Gjaldskyldir aðilar samkvæmt lögum þessum eru:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Allir þeir sem flytja til landsins vöru sem gjaldskyld er samkvæmt lögum þessum, hvort sem er til endursölu eða eigin nota.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Allir þeir sem framleiða hér á landi vöru sem gjaldskyld er samkvæmt lögum þessum, vinna að framleiðslu hennar eða setja saman, hvort sem er til endursölu eða eigin nota.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Gjaldskyldir aðilar samkvæmt lögum þessum eru:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Allir þeir sem flytja til landsins vöru sem gjaldskyld er samkvæmt lögum þessum, hvort sem er til endursölu eða eigin nota.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Allir þeir sem framleiða hér á landi vöru sem gjaldskyld er samkvæmt lögum þessum, vinna að framleiðslu hennar eða setja saman, hvort sem er til endursölu eða eigin nota.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Aðilar sem eiga rétt á endurgreiðslu virðisaukaskatts skv. 10. mgr. 42. gr. laga um virðisaukaskatt, nr. 50/1988, eru undanþegnir gjaldskyldu í samræmi við sérlög eða ákvæði alþjóðasamninga eða tvíhliða samninga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðilar sem eiga rétt á endurgreiðslu virðisaukaskatts skv. 10. mgr. 42. gr. laga um virðisaukaskatt, nr. 50/1988, eru undanþegnir gjaldskyldu í samræmi við sérlög eða ákvæði alþjóðasamninga eða tvíhliða samninga.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Gjaldskyldum aðilum ber að standa skil á kolefnisgjaldi við tollafgreiðslu ef um innflutning er að ræða en við afhendingu í tilviki innlendrar framleiðslu eða aðvinnslu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Gjaldskyldum aðilum ber að standa skil á kolefnisgjaldi við tollafgreiðslu ef um innflutning er að ræða en við afhendingu í tilviki innlendrar framleiðslu eða aðvinnslu.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2017.059.html" law-nr="59" law-year="2017" law-art="23" nr="1">
           <footnote-sen>L. 59/2017, 23. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>2</subart>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Álagning, innheimta, eftirlit o.fl.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Álagning, innheimta, eftirlit o.fl.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tollyfirvöld annast álagningu kolefnisgjalds samkvæmt lögum þessum og hafa með höndum eftirlit.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tollyfirvöld annast álagningu kolefnisgjalds samkvæmt lögum þessum og hafa með höndum eftirlit.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Gjöld, sem lögð eru á samkvæmt lögum þessum, mynda gjaldstofn til virðisaukaskatts.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Gjöld, sem lögð eru á samkvæmt lögum þessum, mynda gjaldstofn til virðisaukaskatts.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ríkisskattstjóri annast innheimtu kolefnisgjalds.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisskattstjóri annast innheimtu kolefnisgjalds.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.141.html" law-nr="141" law-year="2019" law-art="64" nr="1">
           <footnote-sen>L. 141/2019, 64. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>3</art>
-            <subart>1</subart>
-            <sen words="Tollyfirvöld">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>3</art>
-            <subart>1</subart>
-            <sen words="hafa">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Tollyfirvöld" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="hafa" instance-num="1"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2018.142.html" law-nr="142" law-year="2018" law-art="39" nr="2">
           <footnote-sen>L. 142/2018, 39. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>3</art>
-            <subart>1</subart>
-            <sen before-mark="^(\[? ?)?Tollyfirvöld\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?annast álagningu" after-mark="kolefnisgjalds samkvæmt lögum þessum og (\[? ?)?hafa\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?með höndum eftirlit.$">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>3</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='1']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Tollyfirvöld:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?annast álagningu" after-mark="kolefnisgjalds samkvæmt lögum þessum og (\[??)?hafa:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?með höndum eftirlit.$"/>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Ýmis ákvæði.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ýmis ákvæði.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="4">
       <nr-title>4. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Að því leyti sem eigi er kveðið á um gjaldskyldu, álagningu, úrskurð um flokkun til gjaldskyldu, eftirlit, innheimtu, vörslusviptingu, uppboð, sektir, viðurlög, refsingar og aðra framkvæmd varðandi kolefnisgjald, skv. I. kafla laga þessara, skulu gilda ákvæði tollalaga, nr. 88/2005, um innfluttar vörur og ákvæði laga nr. 50/1988, um virðisaukaskatt, um innlendar framleiðsluvörur, eftir því sem við getur átt, svo og reglugerða og annarra fyrirmæla settra samkvæmt þeim.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að því leyti sem eigi er kveðið á um gjaldskyldu, álagningu, úrskurð um flokkun til gjaldskyldu, eftirlit, innheimtu, vörslusviptingu, uppboð, sektir, viðurlög, refsingar og aðra framkvæmd varðandi kolefnisgjald, skv. I. kafla laga þessara, skulu gilda ákvæði tollalaga, nr. 88/2005, um innfluttar vörur og ákvæði laga nr. 50/1988, um virðisaukaskatt, um innlendar framleiðsluvörur, eftir því sem við getur átt, svo og reglugerða og annarra fyrirmæla settra samkvæmt þeim.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra getur með reglugerð sett nánari fyrirmæli um framkvæmd laga þessara.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra getur með reglugerð sett nánari fyrirmæli um framkvæmd laga þessara.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2014.124.html" law-nr="124" law-year="2014" law-art="4" nr="1">
           <footnote-sen>L. 124/2014, 4. gr.</footnote-sen>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>4</art>
-            <subart>1</subart>
-            <sen words="um innfluttar vörur og ákvæði laga nr. 50/1988, um virðisaukaskatt, um innlendar framleiðsluvörur">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='1']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="um innfluttar vörur og ákvæði laga nr. 50/1988, um virðisaukaskatt, um innlendar framleiðsluvörur" middle-punctuation="," instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -186,180 +154,225 @@
   <chapter nr="2" nr-type="roman" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <ambiguous-section>
-      <sen nr="1">Skattur af raforku og heitu vatni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skattur af raforku og heitu vatni.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="5">
       <nr-title>5. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Greiða skal í ríkissjóð sérstakan skatt af seldri raforku og heitu vatni eins og nánar er kveðið á um í lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Greiða skal í ríkissjóð sérstakan skatt af seldri raforku og heitu vatni eins og nánar er kveðið á um í lögum þessum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1"></sen>
+        <paragraph nr="1">
+          <sen nr="1"></sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Fjárhæð skatts af heitu vatni skal vera 2,0% af smásöluverði á heitu vatni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjárhæð skatts af heitu vatni skal vera 2,0% af smásöluverði á heitu vatni.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Heimilt er að miða innheimtu skatts af raforku og heitu vatni við áætlaða sölu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Heimilt er að miða innheimtu skatts af raforku og heitu vatni við áætlaða sölu.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2012.146.html" law-nr="146" law-year="2012" law-art="17" nr="1">
           <footnote-sen>L. 146/2012, 17. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>5</art>
-            <subart>2</subart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Skattskyldir aðilar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skattskyldir aðilar.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="6">
       <nr-title>6. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skattskyldan nær til þeirra aðila sem selja raforku og heitt vatn á síðasta stigi viðskipta, þ.e. sölu til notenda, en notandi telst vera sá sem endurselur ekki raforku eða heitt vatn.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldan nær til þeirra aðila sem selja raforku og heitt vatn á síðasta stigi viðskipta, þ.e. sölu til notenda, en notandi telst vera sá sem endurselur ekki raforku eða heitt vatn.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Undanþegnir skattskyldu skv. 1. mgr. eru þeir sem selja raforku eða heitt vatn fyrir minna en 2.000.000 kr. á hverju 12 mánaða tímabili frá því að starfsemi hefst.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Undanþegnir skattskyldu skv. 1. mgr. eru þeir sem selja raforku eða heitt vatn fyrir minna en 2.000.000 kr. á hverju 12 mánaða tímabili frá því að starfsemi hefst.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ríkisskattstjóri heldur skrá yfir skattskylda aðila samkvæmt þessari grein.</sen>
-        <sen nr="2">Skattskyldir aðilar skulu ótilkvaddir senda ríkisskattstjóra tilkynningu um skattskylda starfsemi áður en starfsemi hefst.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisskattstjóri heldur skrá yfir skattskylda aðila samkvæmt þessari grein.</sen>
+          <sen nr="2">Skattskyldir aðilar skulu ótilkvaddir senda ríkisskattstjóra tilkynningu um skattskylda starfsemi áður en starfsemi hefst.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2021.133.html" law-nr="133" law-year="2021" law-art="9" nr="1">
           <footnote-sen>L. 133/2021, 9. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>2</subart>
-            <sen words="2.000.000 kr. á hverju 12 mánaða tímabili frá því að starfsemi hefst">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="2.000.000 kr. á hverju 12 mánaða tímabili frá því að starfsemi hefst" middle-punctuation="." instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="7">
       <nr-title>7. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Til skattskyldrar sölu eða afhendingar telst ekki:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Raforka eða heitt vatn sem afhent er öðrum skattskyldum aðila.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Raforka eða heitt vatn sem afhent er eða notað eingöngu til framleiðslu á raforku eða heitu vatni til endursölu.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Til skattskyldrar sölu eða afhendingar telst ekki:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Raforka eða heitt vatn sem afhent er öðrum skattskyldum aðila.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Raforka eða heitt vatn sem afhent er eða notað eingöngu til framleiðslu á raforku eða heitu vatni til endursölu.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra er með reglugerð heimilt að kveða nánar á um skilyrði og framkvæmd vegna undanþágu frá greiðslu skatts af raforku og heitu vatni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra er með reglugerð heimilt að kveða nánar á um skilyrði og framkvæmd vegna undanþágu frá greiðslu skatts af raforku og heitu vatni.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="8">
       <nr-title>8. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skattskyldir aðilar skulu við sölu eða afhendingu á raforku eða heitu vatni gefa út sölureikning þar sem eftirfarandi upplýsingar koma fram:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Útgáfudagur.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Útgáfustaður.</sen>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <sen nr="1">Afhendingarstaður ef annar en útgáfustaður.</sen>
-        </numart>
-        <numart nr="4" nr-type="numeric">
-          <nr-title>4.</nr-title>
-          <sen nr="1">Nafn og kennitala seljanda.</sen>
-        </numart>
-        <numart nr="5" nr-type="numeric">
-          <nr-title>5.</nr-title>
-          <sen nr="1">Nafn og kennitala kaupanda.</sen>
-        </numart>
-        <numart nr="6" nr-type="numeric">
-          <nr-title>6.</nr-title>
-          <sen nr="1">Magn, einingarverð og heildarverð á raforku eða heitu vatni.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldir aðilar skulu við sölu eða afhendingu á raforku eða heitu vatni gefa út sölureikning þar sem eftirfarandi upplýsingar koma fram:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Útgáfudagur.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Útgáfustaður.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Afhendingarstaður ef annar en útgáfustaður.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Nafn og kennitala seljanda.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="5" nr-type="numeric">
+            <nr-title>5.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Nafn og kennitala kaupanda.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" nr-type="numeric">
+            <nr-title>6.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Magn, einingarverð og heildarverð á raforku eða heitu vatni.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Auk upplýsinga sem tilgreindar eru í 1. mgr. skal á sölureikningi koma fram hvort skattur af raforku og heitu vatni sé lagður á og hver fjárhæð hans er.</sen>
-        <sen nr="2">Um varðveislu sölureikninga gilda ákvæði laga nr. 145/1994, um bókhald.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Auk upplýsinga sem tilgreindar eru í 1. mgr. skal á sölureikningi koma fram hvort skattur af raforku og heitu vatni sé lagður á og hver fjárhæð hans er.</sen>
+          <sen nr="2">Um varðveislu sölureikninga gilda ákvæði laga nr. 145/1994, um bókhald.</sen>
+        </paragraph>
       </subart>
     </art>
     <ambiguous-section>
-      <sen nr="1">Álagning.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Álagning.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Ríkisskattstjóri annast álagningu skatts af raforku og heitu vatni á þá aðila sem skráningarskyldir eru skv. 6. gr., vegna sölu þeirra á raforku eða heitu vatni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisskattstjóri annast álagningu skatts af raforku og heitu vatni á þá aðila sem skráningarskyldir eru skv. 6. gr., vegna sölu þeirra á raforku eða heitu vatni.</sen>
+        </paragraph>
       </subart>
     </art>
     <ambiguous-section>
-      <sen nr="1">Uppgjör og innheimta.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Uppgjör og innheimta.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="10">
       <nr-title>10. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skylda til að innheimta skatt af raforku og heitu vatni og standa skil á honum í ríkissjóð hvílir á þeim aðilum sem selja raforku eða heitt vatn til endanlegra notenda, í samræmi við ákvæði raforkulaga, nr. 65/2003, og orkulaga, nr. 58/1967.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skylda til að innheimta skatt af raforku og heitu vatni og standa skil á honum í ríkissjóð hvílir á þeim aðilum sem selja raforku eða heitt vatn til endanlegra notenda, í samræmi við ákvæði raforkulaga, nr. 65/2003, og orkulaga, nr. 58/1967.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skattskyldir aðilar sem hlotið hafa skráningu skv. 6. gr. skulu greiða skatt af raforku og heitu vatni fyrir hvert uppgjörstímabil miðað við sölu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldir aðilar sem hlotið hafa skráningu skv. 6. gr. skulu greiða skatt af raforku og heitu vatni fyrir hvert uppgjörstímabil miðað við sölu.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Við uppgjör skatts af raforku og heitu vatni má draga frá fjárhæð sem nemur sannanlega töpuðum útistandandi kröfum eða ofgreiddum skatti, sbr. 4. mgr. 5. gr., af raforku og heitu vatni sem áður hefur verið skilað í ríkissjóð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Við uppgjör skatts af raforku og heitu vatni má draga frá fjárhæð sem nemur sannanlega töpuðum útistandandi kröfum eða ofgreiddum skatti, sbr. 4. mgr. 5. gr., af raforku og heitu vatni sem áður hefur verið skilað í ríkissjóð.</sen>
+        </paragraph>
       </subart>
     </art>
     <ambiguous-section>
-      <sen nr="1">Uppgjörstímabil og skýrslur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Uppgjörstímabil og skýrslur.</sen>
+      </paragraph>
     </ambiguous-section>
     <art nr="11">
       <nr-title>11. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Uppgjörstímabil skatts af raforku og heitu vatni er tveir mánuðir, janúar og febrúar, mars og apríl, maí og júní, júlí og ágúst, september og október, nóvember og desember.</sen>
-        <sen nr="2">Gjalddagi er fimmti dagur annars mánaðar eftir lok uppgjörstímabils.</sen>
-        <sen nr="3">Beri gjalddaga upp á helgidag eða almennan frídag færist hann yfir á næsta virka dag á eftir.</sen>
-        <sen nr="4">Eigi síðar en á gjalddaga skulu skattskyldir aðilar, sem hlotið hafa skráningu skv. 6. gr., ótilkvaddir skila innheimtumanni ríkissjóðs skýrslu yfir magn gjaldskyldrar raforku og heits vatns á uppgjörstímabilinu og standa skil á greiðslu skattsins.</sen>
-        <sen nr="5">Ráðherra kveður í reglugerð á um greiðslustaði, greiðslufyrirkomulag og efni skýrslu, þar á meðal hvernig rafrænum skilum á skýrslu og greiðslu skuli háttað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Uppgjörstímabil skatts af raforku og heitu vatni er tveir mánuðir, janúar og febrúar, mars og apríl, maí og júní, júlí og ágúst, september og október, nóvember og desember.</sen>
+          <sen nr="2">Gjalddagi er fimmti dagur annars mánaðar eftir lok uppgjörstímabils.</sen>
+          <sen nr="3">Beri gjalddaga upp á helgidag eða almennan frídag færist hann yfir á næsta virka dag á eftir.</sen>
+          <sen nr="4">Eigi síðar en á gjalddaga skulu skattskyldir aðilar, sem hlotið hafa skráningu skv. 6. gr., ótilkvaddir skila innheimtumanni ríkissjóðs skýrslu yfir magn gjaldskyldrar raforku og heits vatns á uppgjörstímabilinu og standa skil á greiðslu skattsins.</sen>
+          <sen nr="5">Ráðherra kveður í reglugerð á um greiðslustaði, greiðslufyrirkomulag og efni skýrslu, þar á meðal hvernig rafrænum skilum á skýrslu og greiðslu skuli háttað.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="517" nr="1">
           <footnote-sen>L. 126/2011, 517. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>11</art>
-            <subart>1</subart>
-            <sen words="Ráðherra">5</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" words="Ráðherra" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Ýmis ákvæði</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ýmis ákvæði</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="36" nr="1">
           <footnote-sen>L. 135/2019, 36. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <ambiguous-section>6</ambiguous-section>
-            <sen before-mark="^Ýmis ákvæði" after-mark="$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2']/ambiguous-section[6]/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ýmis ákvæði" after-mark="$"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Að því leyti sem eigi er ákveðið í lögum þessum um álagningu, tilhögun bókhalds, eftirlit, upplýsingaskyldu, viðurlög, kærur og aðra framkvæmd varðandi skatt af raforku og heitu vatni, skv. II. kafla laga þessara, skulu gilda, eftir því sem við geta átt, ákvæði laga nr. 50/1988, um virðisaukaskatt.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að því leyti sem eigi er ákveðið í lögum þessum um álagningu, tilhögun bókhalds, eftirlit, upplýsingaskyldu, viðurlög, kærur og aðra framkvæmd varðandi skatt af raforku og heitu vatni, skv. II. kafla laga þessara, skulu gilda, eftir því sem við geta átt, ákvæði laga nr. 50/1988, um virðisaukaskatt.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skattur, sem lagður er á samkvæmt lögum þessum, myndar gjaldstofn til virðisaukaskatts.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattur, sem lagður er á samkvæmt lögum þessum, myndar gjaldstofn til virðisaukaskatts.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
@@ -368,458 +381,938 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
         <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-        <location type="range">
-          <chapter>3</chapter>
-          <nr-title>1</nr-title>
-        </location>
+        <location type="range" xpath="chapter[@nr='3']/nr-title[1]" string-length="0"/>
       </footnote>
     </footnotes>
     <ambiguous-section>
-      <sen nr="1">Skattlagning flúoraðra gróðurhúsalofttegunda.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skattlagning flúoraðra gróðurhúsalofttegunda.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <ambiguous-section>1</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/ambiguous-section[1]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skattskyldir aðilar skulu greiða í ríkissjóð sérstakan skatt á hvert kíló af flúoruðum gróðurhúsalofttegundum sem fluttar eru til landsins eftir því sem nánar er kveðið á um í þessum kafla.</sen>
-        <sen nr="2">Með flúoruðum gróðurhúsalofttegundum er átt við vetnisflúorkolefni, perflúorkolefni, brennisteinshexaflúoríð og aðrar gróðurhúsalofttegundir sem innihalda flúor eða blöndur sem innihalda einhver þessara efna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldir aðilar skulu greiða í ríkissjóð sérstakan skatt á hvert kíló af flúoruðum gróðurhúsalofttegundum sem fluttar eru til landsins eftir því sem nánar er kveðið á um í þessum kafla.</sen>
+          <sen nr="2">Með flúoruðum gróðurhúsalofttegundum er átt við vetnisflúorkolefni, perflúorkolefni, brennisteinshexaflúoríð og aðrar gróðurhúsalofttegundir sem innihalda flúor eða blöndur sem innihalda einhver þessara efna.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Fjárhæð skatts á hvert kíló flúoraðrar gróðurhúsalofttegundar skal vera eftirfarandi:</sen>
-        <sen nr="2">
-          <table>
-            <thead>
-              <tr>
-                <th header-style="i">Tollnr. (IS)</th>
-                <th header-style="i">Iðnaðarheiti</th>
-                <th header-style="i">Skattur</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2812.9010</td>
-                <td>Brennisteinshexaflúoríð (SF</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7810</td>
-                <td>Blanda R404A</td>
-                <td>9.805 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7811</td>
-                <td>Blanda R407C</td>
-                <td>4.435 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7812</td>
-                <td>Blanda R407F</td>
-                <td>4.563 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7813</td>
-                <td>Blanda R410A</td>
-                <td>5.220 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7814</td>
-                <td>Blanda R422A</td>
-                <td>7.858 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7815</td>
-                <td>Blanda R422D</td>
-                <td>6.823 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7816</td>
-                <td>Blanda R428A</td>
-                <td>9.018 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7817</td>
-                <td>Blanda R434A</td>
-                <td>8.113 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7818</td>
-                <td>Blanda R437A</td>
-                <td>4.513 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7819</td>
-                <td>Blanda R438A</td>
-                <td>5.663 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7820</td>
-                <td>Blanda R448A</td>
-                <td>3.468 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7821</td>
-                <td>Blanda R449A</td>
-                <td>3.493 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7822</td>
-                <td>Blanda R507</td>
-                <td>9.963 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7823</td>
-                <td>Blanda R508B</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>3824.7824</td>
-                <td>Blanda R452A</td>
-                <td>5.350 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3941</td>
-                <td>HFC-125</td>
-                <td>8.750 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3942</td>
-                <td>HFC-134</td>
-                <td>2.750 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3943</td>
-                <td>HFC-134a</td>
-                <td>3.575 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3944</td>
-                <td>HFC-143</td>
-                <td>883 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3945</td>
-                <td>HFC-143a</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3946</td>
-                <td>HFC-152</td>
-                <td>133 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3947</td>
-                <td>HFC-152a</td>
-                <td>310 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3948</td>
-                <td>HFC-161</td>
-                <td>30 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3949</td>
-                <td>HFC-227ea</td>
-                <td>8.050 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3950</td>
-                <td>HFC-23</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3951</td>
-                <td>HFC-236cb</td>
-                <td>3.350 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3952</td>
-                <td>HFC-236ea</td>
-                <td>3.425 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3953</td>
-                <td>HFC-236fa</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3954</td>
-                <td>HFC-245ca</td>
-                <td>1.733 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3955</td>
-                <td>HFC-245fa</td>
-                <td>2.575 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3956</td>
-                <td>HFC-32</td>
-                <td>1.688 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3957</td>
-                <td>HFC-365 mfc</td>
-                <td>1.985 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3958</td>
-                <td>HFC-41</td>
-                <td>230 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3959</td>
-                <td>HFC-43-10 mee</td>
-                <td>4.100 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3960</td>
-                <td>PFC-116</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3961</td>
-                <td>PFC-14</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3962</td>
-                <td>PFC-218</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3963</td>
-                <td>PFC-3-1-10 (R-31-10)</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3964</td>
-                <td>PFC-4-1-12 (R-41-12)</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.3965</td>
-                <td>PFC-5-1-14 (R-51-14)</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-              <tr>
-                <td>2903.8910</td>
-                <td>PFC-c-318</td>
-                <td>10.000 kr./kg</td>
-              </tr>
-            </tbody>
-          </table>
-        </sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjárhæð skatts á hvert kíló flúoraðrar gróðurhúsalofttegundar skal vera eftirfarandi:</sen>
+        </paragraph>
+        <table>
+          <tbody>
+            <tr>
+              <td header-style="i">
+                <table-nr-title>Tollnr.</table-nr-title>
+                <table-title>(IS)</table-title>
+                <paragraph nr="1"/>
+              </td>
+              <td header-style="i">
+                <table-title>Iðnaðarheiti</table-title>
+                <paragraph nr="1"/>
+              </td>
+              <td header-style="i">
+                <table-title>Skattur</table-title>
+                <paragraph nr="1"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2812.9010</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Brennisteinshexaflúoríð (SF6)</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7810</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R404A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">9.805 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7811</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R407C</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">4.435 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7812</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R407F</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">4.563 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7813</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R410A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">5.220 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7814</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R422A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">7.858 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7815</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R422D</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">6.823 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7816</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R428A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">9.018 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7817</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R434A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">8.113 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7818</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R437A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">4.513 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7819</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R438A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">5.663 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7820</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R448A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3.468 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7821</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R449A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3.493 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7822</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R507</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">9.963 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7823</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R508B</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3824.7824</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">Blanda R452A</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">5.350 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3941</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-125</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">8.750 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3942</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-134</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2.750 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3943</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-134a</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3.575 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3944</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-143</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">883 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3945</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-143a</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3946</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-152</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">133 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3947</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-152a</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">310 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3948</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-161</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">30 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3949</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-227ea</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">8.050 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3950</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-23</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3951</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-236cb</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3.350 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3952</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-236ea</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">3.425 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3953</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-236fa</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3954</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-245ca</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">1.733 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3955</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-245fa</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2.575 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3956</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-32</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">1.688 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3957</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-365 mfc</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">1.985 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3958</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-41</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">230 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3959</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">HFC-43-10 mee</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">4.100 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3960</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-116</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3961</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-14</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3962</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-218</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3963</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-3-1-10 (R-31-10)</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3964</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-4-1-12 (R-41-12)</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.3965</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-5-1-14 (R-51-14)</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">2903.8910</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">PFC-c-318</sen>
+                </paragraph>
+              </td>
+              <td>
+                <paragraph nr="1">
+                  <sen nr="1">10.000 kr./kg</sen>
+                </paragraph>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </subart>
       <subart nr="3">
-        <sen nr="1">Sé um að ræða innflutning á flúoruðum gróðurhúsalofttegundum öðrum en þeim sem tilteknar eru í 2. mgr. skal greiða skatt miðað við eftirfarandi forsendur:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">Fyrir flúoraðar gróðurhúsalofttegundir sem ekki eru tilteknar í 2. mgr. skal greiða skatt að fjárhæð 10.000 kr.</sen>
-          <sen nr="2">/kg.</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">Fyrir blöndur sem ekki eru tilteknar í 2. mgr. skal reikna fjárhæð skatts út frá hlutföllum þeirra efna sem blandan samanstendur af.</sen>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <sen nr="1">Fyrir aðrar blöndur sem ekki eru tilteknar í 2. mgr. og ekki er hægt að beita ákvæði 2. tölul. um skal greiða skatt að fjárhæð 10.000 kr.</sen>
-          <sen nr="2">/kg.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Sé um að ræða innflutning á flúoruðum gróðurhúsalofttegundum öðrum en þeim sem tilteknar eru í 2. mgr. skal greiða skatt miðað við eftirfarandi forsendur:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fyrir flúoraðar gróðurhúsalofttegundir sem ekki eru tilteknar í 2. mgr. skal greiða skatt að fjárhæð 10.000 kr./kg.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fyrir blöndur sem ekki eru tilteknar í 2. mgr. skal reikna fjárhæð skatts út frá hlutföllum þeirra efna sem blandan samanstendur af.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fyrir aðrar blöndur sem ekki eru tilteknar í 2. mgr. og ekki er hægt að beita ákvæði 2. tölul. um skal greiða skatt að fjárhæð 10.000 kr./kg.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>3</chapter>
-              <art>13</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>3</chapter>
-              <art>13</art>
-              <subart>3</subart>
-              <numart>3</numart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="2403">
+            <start xpath="chapter[@nr='3']/art[@nr='13']/nr-title[1]"/>
+            <end xpath="chapter[@nr='3']/art[@nr='13']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Skattskyldir aðilar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skattskyldir aðilar.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <ambiguous-section>2</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/ambiguous-section[2]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="14">
       <nr-title>14. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Skattskyldir aðilar samkvæmt lögum þessum eru allir þeir sem flytja til landsins flúoraðar gróðurhúsalofttegundir sem falla undir ákvæði 13. gr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldir aðilar samkvæmt lögum þessum eru allir þeir sem flytja til landsins flúoraðar gróðurhúsalofttegundir sem falla undir ákvæði 13. gr.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skattskyldum aðilum ber að standa skil á skattinum við tollafgreiðslu.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattskyldum aðilum ber að standa skil á skattinum við tollafgreiðslu.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>3</chapter>
-              <art>14</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>3</chapter>
-              <art>14</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="222">
+            <start xpath="chapter[@nr='3']/art[@nr='14']/nr-title[1]"/>
+            <end xpath="chapter[@nr='3']/art[@nr='14']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Álagning og innheimta.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Álagning og innheimta.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <ambiguous-section>3</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/ambiguous-section[3]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="15">
       <nr-title>15. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Tollyfirvöld annast álagningu samkvæmt þessum kafla.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Tollyfirvöld annast álagningu samkvæmt þessum kafla.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skattur, sem lagður er á samkvæmt þessum kafla, myndar stofn til virðisaukaskatts.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skattur, sem lagður er á samkvæmt þessum kafla, myndar stofn til virðisaukaskatts.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ríkisskattstjóri annast innheimtu samkvæmt þessum kafla.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ríkisskattstjóri annast innheimtu samkvæmt þessum kafla.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>3</chapter>
-              <art>15</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>3</chapter>
-              <art>15</art>
-              <subart>3</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="198">
+            <start xpath="chapter[@nr='3']/art[@nr='15']/nr-title[1]"/>
+            <end xpath="chapter[@nr='3']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Endurgreiðsla vegna útflutnings.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Endurgreiðsla vegna útflutnings.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2020.033.html" law-nr="33" law-year="2020" law-art="34" nr="1">
           <footnote-sen>L. 33/2020, 34. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <ambiguous-section>4</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/ambiguous-section[4]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="15a">
       <nr-title>15. gr. a.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þegar sannanlega er flutt úr landi flúoruð gróðurhúsalofttegund skv. 13. gr., sem skattur var sannanlega greiddur af við innflutning, getur skattskyldur aðili sótt um endurgreiðslu á þeim skatti hafi ekki liðið meira en 12 mánuðir frá tollafgreiðslu hennar, frá og með 1. janúar 2020.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar sannanlega er flutt úr landi flúoruð gróðurhúsalofttegund skv. 13. gr., sem skattur var sannanlega greiddur af við innflutning, getur skattskyldur aðili sótt um endurgreiðslu á þeim skatti hafi ekki liðið meira en 12 mánuðir frá tollafgreiðslu hennar, frá og með 1. janúar 2020.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Aðili sem óskar endurgreiðslu skv. 1. mgr. skal, innan sex mánaða frá því að vara er flutt úr landi, sækja um endurgreiðslu í sérstakri skýrslu til tollyfirvalda, á því formi sem þau ákveða, þar sem m.a. eru tilgreind tollskrárnúmer flúoraðrar gróðurhúsalofttegundar, sá kílóafjöldi sem fluttur var inn undir því númeri og fjárhæð þess skatts sem sannanlega var greiddur við innflutning viðkomandi vöru.</sen>
-        <sen nr="2">Leggja skal fram þær upplýsingar og gögn sem nauðsynleg eru til afgreiðslu umsóknar, svo sem staðfestingu tollyfirvalda á inn- og útflutningi og staðfestingu á greiðslu skattsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Aðili sem óskar endurgreiðslu skv. 1. mgr. skal, innan sex mánaða frá því að vara er flutt úr landi, sækja um endurgreiðslu í sérstakri skýrslu til tollyfirvalda, á því formi sem þau ákveða, þar sem m.a. eru tilgreind tollskrárnúmer flúoraðrar gróðurhúsalofttegundar, sá kílóafjöldi sem fluttur var inn undir því númeri og fjárhæð þess skatts sem sannanlega var greiddur við innflutning viðkomandi vöru.</sen>
+          <sen nr="2">Leggja skal fram þær upplýsingar og gögn sem nauðsynleg eru til afgreiðslu umsóknar, svo sem staðfestingu tollyfirvalda á inn- og útflutningi og staðfestingu á greiðslu skattsins.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Fjárhæð sem sótt er um endurgreiðslu á hverju sinni skal vera að lágmarki 10.000 kr.</sen>
-        <sen nr="2">Fallist tollyfirvöld á umsóknina án frekari skýringa skal endurgreiðsla fara fram eigi síðar en 30 dögum eftir að umsókn er lögð fram, enda hafi fullnægjandi upplýsingar og gögn fylgt henni.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjárhæð sem sótt er um endurgreiðslu á hverju sinni skal vera að lágmarki 10.000 kr. Fallist tollyfirvöld á umsóknina án frekari skýringa skal endurgreiðsla fara fram eigi síðar en 30 dögum eftir að umsókn er lögð fram, enda hafi fullnægjandi upplýsingar og gögn fylgt henni.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2020.033.html" law-nr="33" law-year="2020" law-art="34" nr="1">
           <footnote-sen>L. 33/2020, 34. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>3</chapter>
-              <art>15a</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>3</chapter>
-              <art>15a</art>
-              <subart>3</subart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="1152">
+            <start xpath="chapter[@nr='3']/art[@nr='15a']/nr-title[1]"/>
+            <end xpath="chapter[@nr='3']/art[@nr='15a']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
     </art>
     <ambiguous-section>
-      <sen nr="1">Ýmis ákvæði.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ýmis ákvæði.</sen>
+      </paragraph>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <ambiguous-section>5</ambiguous-section>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/ambiguous-section[5]/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </ambiguous-section>
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Að svo miklu leyti sem ekki er á annan veg kveðið á um í þessum kafla skulu ákvæði tollalaga, nr. 88/2005, eiga við um álagningu, innheimtu, tilhögun bókhalds, eftirlit, upplýsingaskyldu, viðurlög, kærur og aðra framkvæmd skattheimtu samkvæmt þessum kafla.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að svo miklu leyti sem ekki er á annan veg kveðið á um í þessum kafla skulu ákvæði tollalaga, nr. 88/2005, eiga við um álagningu, innheimtu, tilhögun bókhalds, eftirlit, upplýsingaskyldu, viðurlög, kærur og aðra framkvæmd skattheimtu samkvæmt þessum kafla.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðherra getur með reglugerð sett nánari fyrirmæli um framkvæmd þessa kafla.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðherra getur með reglugerð sett nánari fyrirmæli um framkvæmd þessa kafla.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>3</chapter>
-              <art>16</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>3</chapter>
-              <art>16</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="340">
+            <start xpath="chapter[@nr='3']/art[@nr='16']/nr-title[1]"/>
+            <end xpath="chapter[@nr='3']/art[@nr='16']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
@@ -827,26 +1320,19 @@
     <art nr="17">
       <nr-title>17. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Lög þessi öðlast gildi 1. janúar 2010.</sen>
-        <sen nr="2">2. mgr. 5. gr. laganna, skattur af raforku, fellur úr gildi 31. desember 2015.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi öðlast gildi 1. janúar 2010.</sen>
+          <sen nr="2">2. mgr. 5. gr. laganna, skattur af raforku, fellur úr gildi 31. desember 2015.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="37" nr="1">
           <footnote-sen>L. 135/2019, 37. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <art>17</art>
-            <nr-title>1</nr-title>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/art[@nr='17']/nr-title[1]" string-length="0"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2012.146.html" law-nr="146" law-year="2012" law-art="17" nr="2">
           <footnote-sen>L. 146/2012, 17. gr.</footnote-sen>
-          <location type="range">
-            <chapter>3</chapter>
-            <art>17</art>
-            <subart>1</subart>
-            <sen>2</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='3']/art[@nr='17']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
@@ -856,22 +1342,16 @@
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 1. gr. skal fjárhæð kolefnisgjalds vera 10,40 kr. á hvern lítra af gas- og dísilolíu, 9,10 kr. á hvern lítra af bensíni, 12,80 kr. á hvert kílógramm af brennsluolíu og 11,40 kr. á hvert kílógramm af jarðolíugasi og öðru loftkenndu kolvatnsefni til 1. janúar 2020.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 1. gr. skal fjárhæð kolefnisgjalds vera 10,40 kr. á hvern lítra af gas- og dísilolíu, 9,10 kr. á hvern lítra af bensíni, 12,80 kr. á hvert kílógramm af brennsluolíu og 11,40 kr. á hvert kílógramm af jarðolíugasi og öðru loftkenndu kolvatnsefni til 1. janúar 2020.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2018.138.html" law-nr="138" law-year="2018" law-art="2" nr="1">
           <footnote-sen>L. 138/2018, 2. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>t</chapter>
-              <name>1</name>
-            </start>
-            <end>
-              <chapter>t</chapter>
-              <art>I</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="316">
+            <start xpath="chapter[@nr='t']/name[1]"/>
+            <end xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>
@@ -879,23 +1359,16 @@
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þrátt fyrir ákvæði 13. gr. skal á árinu 2020 greiða helming þeirra fjárhæða skatts sem þar eru tilteknar af flúoruðum gróðurhúsalofttegundum sem fluttar eru til landsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þrátt fyrir ákvæði 13. gr. skal á árinu 2020 greiða helming þeirra fjárhæða skatts sem þar eru tilteknar af flúoruðum gróðurhúsalofttegundum sem fluttar eru til landsins.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.135.html" law-nr="135" law-year="2019" law-art="38" nr="1">
           <footnote-sen>L. 135/2019, 38. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>t</chapter>
-              <art>II</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>t</chapter>
-              <art>II</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="174">
+            <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+            <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
         </footnote>
       </footnotes>

@@ -10,28 +10,26 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Embætti umboðsmanns barna hefur það hlutverk að bæta hag barna og standa vörð um hagsmuni, þarfir og réttindi þeirra, m.a. samkvæmt samningi Sameinuðu þjóðanna um réttindi barnsins og fleiri alþjóðasamningum, svo sem nánar greinir í lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Embætti umboðsmanns barna hefur það hlutverk að bæta hag barna og standa vörð um hagsmuni, þarfir og réttindi þeirra, m.a. samkvæmt samningi Sameinuðu þjóðanna um réttindi barnsins og fleiri alþjóðasamningum, svo sem nánar greinir í lögum þessum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Umboðsmaður barna er í störfum sínum óháður fyrirmælum frá öðrum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna er í störfum sínum óháður fyrirmælum frá öðrum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Með börnum er í lögum þessum átt við einstaklinga allt að 18 ára aldri.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Með börnum er í lögum þessum átt við einstaklinga allt að 18 ára aldri.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="1" nr="1">
         <footnote-sen>L. 148/2018, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>2</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="312">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -39,293 +37,243 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra skipar umboðsmann barna til fimm ára í senn.</sen>
-      <sen nr="2">Skipa má umboðsmanninn að nýju til fimm ára án auglýsingar en eigi oftar.</sen>
-      <sen nr="3">Við skipun nýs umboðsmanns skal leita umsagnar ráðgjafarhóps barna skv. 2. mgr. 3. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra skipar umboðsmann barna til fimm ára í senn.</sen>
+        <sen nr="2">Skipa má umboðsmanninn að nýju til fimm ára án auglýsingar en eigi oftar.</sen>
+        <sen nr="3">Við skipun nýs umboðsmanns skal leita umsagnar ráðgjafarhóps barna skv. 2. mgr. 3. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Umboðsmaður barna skal hafa lokið háskólaprófi.</sen>
-      <sen nr="2">Hafi umboðsmaður barna ekki lokið embættisprófi í lögfræði skal lögfræðingur starfa við embættið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna skal hafa lokið háskólaprófi.</sen>
+        <sen nr="2">Hafi umboðsmaður barna ekki lokið embættisprófi í lögfræði skal lögfræðingur starfa við embættið.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Um laun og önnur launakjör umboðsmanns barna fer skv. 39. gr. a laga nr. 70/1996, um réttindi og skyldur starfsmanna ríkisins.</sen>
-      <sen nr="2">Umboðsmanni barna er óheimilt að hafa með höndum önnur launuð störf nema með leyfi ráðherra eða takast á hendur verkefni sem eigi samrýmast starfi hans.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Um laun og önnur launakjör umboðsmanns barna fer skv. 39. gr. a laga nr. 70/1996, um réttindi og skyldur starfsmanna ríkisins.</sen>
+        <sen nr="2">Umboðsmanni barna er óheimilt að hafa með höndum önnur launuð störf nema með leyfi ráðherra eða takast á hendur verkefni sem eigi samrýmast starfi hans.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1997.083.html" law-nr="83" law-year="1997" law-art="11" nr="1">
         <footnote-sen>L. 83/1997, 11. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="2" nr="2">
         <footnote-sen>L. 148/2018, 2. gr.</footnote-sen>
-        <location type="deletion">
-          <art>2</art>
-          <subart>1</subart>
-          <sen before-mark="^Skipa má umboðsmanninn að nýju til fimm ára án auglýsingar en eigi oftar" after-mark=".$">2</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen>3</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>3</subart>
-          <sen words="nema með leyfi ráðherra">2</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Skipa má umboðsmanninn að nýju til fimm ára án auglýsingar en eigi oftar" after-mark=".$"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" string-length="0"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" words="nema með leyfi ráðherra" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2016.130.html" law-nr="130" law-year="2016" law-art="8" nr="3">
         <footnote-sen>L. 130/2016, 8. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>3</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Umboðsmaður barna skal vinna að því að stjórnvöld, einstaklingar, félög og önnur samtök einstaklinga og fyrirsvarsmenn lögpersóna taki fullt tillit til réttinda, þarfa og hagsmuna barna.</sen>
-      <sen nr="2">Í starfi sínu skal umboðsmaður barna setja fram ábendingar og tillögur um úrbætur sem snerta hag barna á öllum sviðum samfélagsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna skal vinna að því að stjórnvöld, einstaklingar, félög og önnur samtök einstaklinga og fyrirsvarsmenn lögpersóna taki fullt tillit til réttinda, þarfa og hagsmuna barna.</sen>
+        <sen nr="2">Í starfi sínu skal umboðsmaður barna setja fram ábendingar og tillögur um úrbætur sem snerta hag barna á öllum sviðum samfélagsins.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Umboðsmaður barna skal í störfum sínum leitast við að hafa virkt samráð við börn og hafa hóp barna sér til ráðgjafar um þau málefni sem snúa að börnum í íslensku samfélagi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna skal í störfum sínum leitast við að hafa virkt samráð við börn og hafa hóp barna sér til ráðgjafar um þau málefni sem snúa að börnum í íslensku samfélagi.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Umboðsmaður barna skal einkum:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">hafa frumkvæði að stefnumarkandi umræðu í samfélaginu um málefni barna,</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">fylgjast með þróun og túlkun samnings Sameinuðu þjóðanna um réttindi barnsins,</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">koma á framfæri tillögum um úrbætur á réttarreglum og fyrirmælum stjórnvalda er varða börn sérstaklega,</sen>
-      </numart>
-      <numart nr="d" nr-type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen nr="1">stuðla að því að samningur Sameinuðu þjóðanna um réttindi barnsins sé virtur sem og aðrir alþjóðasamningar sem varða réttindi og velferð barna og fullgiltir hafa verið af Íslands hálfu og enn fremur benda á að samningar um þetta efni verði fullgiltir,</sen>
-      </numart>
-      <numart nr="e" nr-type="alphabet">
-        <nr-title>e.</nr-title>
-        <sen nr="1">bregðast við með tiltækum úrræðum telji hann að aðilar þeir, er greinir í upphafi 1. mgr., hafi með athöfnum sínum eða athafnaleysi brotið gegn réttindum, þörfum og hagsmunum barna í samfélaginu, t.d. með því að beina rökstuddri álitsgerð til viðkomandi aðila ásamt tillögum um úrbætur eigi það við,</sen>
-      </numart>
-      <numart nr="f" nr-type="alphabet">
-        <nr-title>f.</nr-title>
-        <sen nr="1">stuðla að því að kynna fyrir almenningi löggjöf og aðrar réttarreglur er varða börn og ungmenni og beita sér fyrir því að gerðar verði rannsóknir á þessu sviði.</sen>
-      </numart>
-      <numart nr="g" nr-type="alphabet">
-        <nr-title>g.</nr-title>
-        <sen nr="1">afla og miðla gögnum og upplýsingum um aðstæður barna og stöðu tiltekinna hópa barna hverju sinni í samvinnu við ýmsa aðila; þau gögn skulu lögð til grundvallar samræmdri og markvissri stefnu í málefnum barna á öllum stigum stjórnsýslunnar í samræmi við ákvæði samnings Sameinuðu þjóðanna um réttindi barnsins,</sen>
-      </numart>
-      <numart nr="h" nr-type="alphabet">
-        <nr-title>h.</nr-title>
-        <sen nr="1">stuðla að þátttöku barna í samfélagslegri umræðu og allri stefnumótun og ákvarðanatöku í málefnum barna hjá ríki og sveitarfélögum,</sen>
-      </numart>
-      <numart nr="i" nr-type="alphabet">
-        <nr-title>i.</nr-title>
-        <sen nr="1">stuðla að því að börn fái kynningu á samningi Sameinuðu þjóðanna um réttindi barnsins og þeim réttindum sem í honum felast.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna skal einkum:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">hafa frumkvæði að stefnumarkandi umræðu í samfélaginu um málefni barna,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">fylgjast með þróun og túlkun samnings Sameinuðu þjóðanna um réttindi barnsins,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">koma á framfæri tillögum um úrbætur á réttarreglum og fyrirmælum stjórnvalda er varða börn sérstaklega,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" nr-type="alphabet">
+          <nr-title>d.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">stuðla að því að samningur Sameinuðu þjóðanna um réttindi barnsins sé virtur sem og aðrir alþjóðasamningar sem varða réttindi og velferð barna og fullgiltir hafa verið af Íslands hálfu og enn fremur benda á að samningar um þetta efni verði fullgiltir,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="e" nr-type="alphabet">
+          <nr-title>e.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">bregðast við með tiltækum úrræðum telji hann að aðilar þeir, er greinir í upphafi 1. mgr., hafi með athöfnum sínum eða athafnaleysi brotið gegn réttindum, þörfum og hagsmunum barna í samfélaginu, t.d. með því að beina rökstuddri álitsgerð til viðkomandi aðila ásamt tillögum um úrbætur eigi það við,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="f" nr-type="alphabet">
+          <nr-title>f.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">stuðla að því að kynna fyrir almenningi löggjöf og aðrar réttarreglur er varða börn og ungmenni og beita sér fyrir því að gerðar verði rannsóknir á þessu sviði.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="g" nr-type="alphabet">
+          <nr-title>g.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">afla og miðla gögnum og upplýsingum um aðstæður barna og stöðu tiltekinna hópa barna hverju sinni í samvinnu við ýmsa aðila; þau gögn skulu lögð til grundvallar samræmdri og markvissri stefnu í málefnum barna á öllum stigum stjórnsýslunnar í samræmi við ákvæði samnings Sameinuðu þjóðanna um réttindi barnsins,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="h" nr-type="alphabet">
+          <nr-title>h.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">stuðla að þátttöku barna í samfélagslegri umræðu og allri stefnumótun og ákvarðanatöku í málefnum barna hjá ríki og sveitarfélögum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="i" nr-type="alphabet">
+          <nr-title>i.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">stuðla að því að börn fái kynningu á samningi Sameinuðu þjóðanna um réttindi barnsins og þeim réttindum sem í honum felast.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="3" nr="1">
         <footnote-sen>L. 148/2018, 3. gr.</footnote-sen>
-        <location type="range">
-          <art>3</art>
-          <subart>2</subart>
-          <sen>1</sen>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+        <location type="range" string-length="81">
+          <start xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='b']/nr-title[1]"/>
+          <end xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" middle-punctuation=","/>
         </location>
-        <location type="range">
-          <start>
-            <art>3</art>
-            <subart>3</subart>
-            <numart>b</numart>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>3</art>
-            <subart>3</subart>
-            <numart>b</numart>
-            <sen>1</sen>
-          </end>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='c']/nr-title[1]" string-length="0"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1']" words="stjórnvalda" instance-num="1"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='d']/nr-title[1]" string-length="0"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1']" words="samningur Sameinuðu þjóðanna um réttindi barnsins sé virtur sem og aðrir alþjóðasamningar" instance-num="1"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='e']/nr-title[1]" string-length="0"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1']" words="t.d. með því að beina rökstuddri álitsgerð til viðkomandi aðila ásamt tillögum um úrbætur eigi það við" middle-punctuation="," instance-num="1"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='f']/nr-title[1]" string-length="0"/>
+        <location type="range" string-length="571">
+          <start xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='g']/nr-title[1]"/>
+          <end xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='i']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>c</numart>
-          <nr-title>1</nr-title>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>c</numart>
-          <sen words="stjórnvalda">1</sen>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>d</numart>
-          <nr-title>1</nr-title>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>d</numart>
-          <sen words="samningur Sameinuðu þjóðanna um réttindi barnsins sé virtur sem og aðrir alþjóðasamningar">1</sen>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>e</numart>
-          <nr-title>1</nr-title>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>e</numart>
-          <sen words="t.d. með því að beina rökstuddri álitsgerð til viðkomandi aðila ásamt tillögum um úrbætur eigi það við">1</sen>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <numart>f</numart>
-          <nr-title>1</nr-title>
-        </location>
-        <location type="range">
-          <start>
-            <art>3</art>
-            <subart>3</subart>
-            <numart>g</numart>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>3</art>
-            <subart>3</subart>
-            <numart>i</numart>
-            <sen>1</sen>
-          </end>
-        </location>
-        <location type="deletion">
-          <art>3</art>
-          <subart>4</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='3']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Öllum er heimilt að leita til umboðsmanns barna með erindi sín en erindi frá börnum njóta forgangs.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Öllum er heimilt að leita til umboðsmanns barna með erindi sín en erindi frá börnum njóta forgangs.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Umboðsmaður barna tekur mál til meðferðar að eigin frumkvæði eða eftir rökstuddum ábendingum.</sen>
-      <sen nr="2">Hann ákveður sjálfur hvort ábending gefur tilefni til meðferðar af hans hálfu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna tekur mál til meðferðar að eigin frumkvæði eða eftir rökstuddum ábendingum.</sen>
+        <sen nr="2">Hann ákveður sjálfur hvort ábending gefur tilefni til meðferðar af hans hálfu.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Umboðsmaður barna tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Umboðsmaður barna endurskoðar ekki ákvarðanir stjórnvalda í einstökum málum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna endurskoðar ekki ákvarðanir stjórnvalda í einstökum málum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="4" nr="1">
         <footnote-sen>L. 148/2018, 4. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <subart>1</subart>
-          <sen words="en erindi frá börnum njóta forgangs">1</sen>
-        </location>
-        <location type="range">
-          <art>4</art>
-          <subart>4</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="en erindi frá börnum njóta forgangs" middle-punctuation="." instance-num="1"/>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Stjórnvöldum er skylt þrátt fyrir þagnarskyldu að veita umboðsmanni barna allar þær upplýsingar sem að hans mati eru nauðsynlegar til að hann geti sinnt hlutverki sínu.</sen>
-      <sen nr="2">Með sama hætti er einstaklingum, félögum og samtökum einstaklinga skylt að veita umboðsmanni barna allar upplýsingar sem að hans mati eru nauðsynlegar til að hann geti sinnt hlutverki sínu skv. e-lið 3. mgr. 3. gr.</sen>
-      <sen nr="3">Umboðsmaður getur ekki krafist upplýsinga sem varða öryggi ríkisins inn á við eða út á við eða utanríkismál er leynt skulu fara nema með leyfi ráðherra þess sem í hlut á.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórnvöldum er skylt þrátt fyrir þagnarskyldu að veita umboðsmanni barna allar þær upplýsingar sem að hans mati eru nauðsynlegar til að hann geti sinnt hlutverki sínu.</sen>
+        <sen nr="2">Með sama hætti er einstaklingum, félögum og samtökum einstaklinga skylt að veita umboðsmanni barna allar upplýsingar sem að hans mati eru nauðsynlegar til að hann geti sinnt hlutverki sínu skv. e-lið 3. mgr. 3. gr.</sen>
+        <sen nr="3">Umboðsmaður getur ekki krafist upplýsinga sem varða öryggi ríkisins inn á við eða út á við eða utanríkismál er leynt skulu fara nema með leyfi ráðherra þess sem í hlut á.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Umboðsmaður barna skal einnig, er hann telur nauðsyn bera til, hafa óheftan aðgang að öllum stofnunum sem vista börn eða hafa afskipti af börnum á einn eða annan hátt í starfsemi sinni, hvort sem þær eru reknar af opinberum aðilum eða einstaklingum, félögum eða öðrum samtökum einstaklinga.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna skal einnig, er hann telur nauðsyn bera til, hafa óheftan aðgang að öllum stofnunum sem vista börn eða hafa afskipti af börnum á einn eða annan hátt í starfsemi sinni, hvort sem þær eru reknar af opinberum aðilum eða einstaklingum, félögum eða öðrum samtökum einstaklinga.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Komi upp ágreiningur vegna ákvæða 1. og 2. mgr. er umboðsmanni barna heimilt að leita úrlausnar dómstóla.</sen>
-      <sen nr="2">Um málsmeðferð fer eftir lögum um meðferð einkamála.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Komi upp ágreiningur vegna ákvæða 1. og 2. mgr. er umboðsmanni barna heimilt að leita úrlausnar dómstóla.</sen>
+        <sen nr="2">Um málsmeðferð fer eftir lögum um meðferð einkamála.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="5" nr="1">
         <footnote-sen>L. 148/2018, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>5</art>
-          <subart>1</subart>
-          <sen words="e-lið 3. mgr.">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="e-lið 3. mgr." instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Á umboðsmanni barna og starfsmönnum hans hvílir þagnarskylda skv. X. kafla stjórnsýslulaga.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Á umboðsmanni barna og starfsmönnum hans hvílir þagnarskylda skv. X. kafla stjórnsýslulaga.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2019.071.html" law-nr="71" law-year="2019" law-art="5" nr="1">
         <footnote-sen>L. 71/2019, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>6</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6a">
     <nr-title>6. gr. a.</nr-title>
     <subart nr="1">
-      <sen nr="1">Umboðsmaður barna boðar til þings um málefni barna annað hvert ár og skulu niðurstöður og ályktanir þingsins kynntar ríkisstjórn.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna boðar til þings um málefni barna annað hvert ár og skulu niðurstöður og ályktanir þingsins kynntar ríkisstjórn.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Á þinginu skal fjalla um málefni barna og við upphaf þess leggur umboðsmaður fram skýrslu um stöðu þeirra.</sen>
-      <sen nr="2">Í skýrslunni skal m.a. fjallað um stöðu og þróun málefna barna á helstu sviðum samfélagsins, þar á meðal með hliðsjón af samningi Sameinuðu þjóðanna um réttindi barnsins.</sen>
-      <sen nr="3">Önnur verkefni þingsins ákveður umboðsmaður barna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Á þinginu skal fjalla um málefni barna og við upphaf þess leggur umboðsmaður fram skýrslu um stöðu þeirra.</sen>
+        <sen nr="2">Í skýrslunni skal m.a. fjallað um stöðu og þróun málefna barna á helstu sviðum samfélagsins, þar á meðal með hliðsjón af samningi Sameinuðu þjóðanna um réttindi barnsins.</sen>
+        <sen nr="3">Önnur verkefni þingsins ákveður umboðsmaður barna.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Þingið er öllum opið en umboðsmaður barna skal bjóða fjölbreyttum hópi barna til þingsins, alþingismönnum og fulltrúum stofnana ríkis og sveitarfélaga, auk fulltrúa aðila vinnumarkaðarins og frjálsra félagasamtaka sem koma að málefnum barna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þingið er öllum opið en umboðsmaður barna skal bjóða fjölbreyttum hópi barna til þingsins, alþingismönnum og fulltrúum stofnana ríkis og sveitarfélaga, auk fulltrúa aðila vinnumarkaðarins og frjálsra félagasamtaka sem koma að málefnum barna.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Seta á þinginu er ólaunuð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Seta á þinginu er ólaunuð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="6" nr="1">
         <footnote-sen>L. 148/2018, 6. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>6a</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>6a</art>
-            <subart>4</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="732">
+          <start xpath="art[@nr='6a']/nr-title[1]"/>
+          <end xpath="art[@nr='6a']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -333,64 +281,47 @@
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Umboðsmaður barna ræður sjálfur starfsmenn embættisins.</sen>
-      <sen nr="2">Honum er einnig heimilt að ráða sérfræðinga til að vinna að einstökum verkefnum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Umboðsmaður barna ræður sjálfur starfsmenn embættisins.</sen>
+        <sen nr="2">Honum er einnig heimilt að ráða sérfræðinga til að vinna að einstökum verkefnum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðuneytið skal hafa eftirlit með fjárreiðum embættisins.</sen>
-      <sen nr="2">Umboðsmaður barna skal gefa ráðherra árlega skýrslu um starfsemi sína á liðnu almanaksári.</sen>
-      <sen nr="3">Skýrsluna skal birta opinberlega fyrir 1. september ár hvert.</sen>
-      <sen nr="4"></sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðuneytið skal hafa eftirlit með fjárreiðum embættisins.</sen>
+        <sen nr="2">Umboðsmaður barna skal gefa ráðherra árlega skýrslu um starfsemi sína á liðnu almanaksári.</sen>
+        <sen nr="3">Skýrsluna skal birta opinberlega fyrir 1. september ár hvert.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ráðherra er heimilt að setja nánari reglur um starfshætti umboðsmanns barna í reglugerð að fengnum tillögum umboðsmanns.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að setja nánari reglur um starfshætti umboðsmanns barna í reglugerð að fengnum tillögum umboðsmanns.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="194" nr="1">
         <footnote-sen>L. 126/2011, 194. gr.</footnote-sen>
-        <location type="range">
-          <art>8</art>
-          <subart>1</subart>
-          <sen words="Ráðuneytið">1</sen>
-        </location>
-        <location type="range">
-          <art>8</art>
-          <subart>1</subart>
-          <sen words="ráðherra">2</sen>
-        </location>
-        <location type="range">
-          <art>8</art>
-          <subart>2</subart>
-          <sen words="Ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðuneytið" instance-num="1"/>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="ráðherra" instance-num="1"/>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2018.148.html" law-nr="148" law-year="2018" law-art="7" nr="2">
         <footnote-sen>L. 148/2018, 7. gr.</footnote-sen>
-        <location type="deletion">
-          <art>8</art>
-          <subart>1</subart>
-          <sen before-mark="^Skýrsluna skal" after-mark="birta opinberlega fyrir 1. september ár hvert.$">3</sen>
-        </location>
-        <location type="deletion">
-          <art>8</art>
-          <subart>1</subart>
-          <sen before-mark="^" after-mark="$">4</sen>
-        </location>
-        <location type="range">
-          <art>8</art>
-          <subart>2</subart>
-          <sen words="er heimilt að setja">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Skýrsluna skal" after-mark="birta opinberlega fyrir 1. september ár hvert\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+        <location type="deletion" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Skýrsluna skal:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?birta opinberlega fyrir 1. september ár hvert." after-mark="$"/>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="er heimilt að setja" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast gildi 1. janúar 1995.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast gildi 1. janúar 1995.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

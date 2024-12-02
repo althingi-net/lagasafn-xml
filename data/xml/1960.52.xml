@@ -10,29 +10,33 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd samþykkt frá 6. mars 1948, um alþjóðasiglingamálastofnun (IMCO), með þeim fyrirvara, að Ísland muni taka staðfestingu sína til athugunar á ný, ef síðar yrði ákveðið, að siglingamálastofnunin (IMCO) skyldi einnig fjalla um mál, sem eru algerlega fjármálalegs eða viðskiptalegs eðlis.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd samþykkt frá 6. mars 1948, um alþjóðasiglingamálastofnun (IMCO), með þeim fyrirvara, að Ísland muni taka staðfestingu sína til athugunar á ný, ef síðar yrði ákveðið, að siglingamálastofnunin (IMCO) skyldi einnig fjalla um mál, sem eru algerlega fjármálalegs eða viðskiptalegs eðlis.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Samtímis sé því lýst yfir, að af Íslands hálfu sé áhersla lögð á raunhæft gildi 59. gr. samþykktarinnar, varðandi uppsögn á þátttöku.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samtímis sé því lýst yfir, að af Íslands hálfu sé áhersla lögð á raunhæft gildi 59. gr. samþykktarinnar, varðandi uppsögn á þátttöku.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Samþykkt þessi er prentuð á íslensku og ensku sem fylgiskjal með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samþykkt þessi er prentuð á íslensku og ensku sem fylgiskjal með lögum þessum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá Stjtíð. A 1960, bls. 186.</footnote-sen>
-        <location type="pointer">
-          <art>1</art>
-          <subart>3</subart>
-          <sen before-mark="^Samþykkt þessi er prentuð á íslensku og ensku sem fylgiskjal með lögum þessum." after-mark="$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='1']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Samþykkt þessi er prentuð á íslensku og ensku sem fylgiskjal með lögum þessum." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Þegar samþykkt sú, er um ræðir í 1. gr., hefur verið staðfest, skulu ákvæði hennar hafa lagagildi hér á landi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þegar samþykkt sú, er um ræðir í 1. gr., hefur verið staðfest, skulu ákvæði hennar hafa lagagildi hér á landi.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

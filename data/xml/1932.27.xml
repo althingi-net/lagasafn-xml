@@ -10,53 +10,51 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Til þess að bæta samgöngur um vatnasvæði Þverár og Markarfljóts í Rangárvallasýslu og varna skemmdum af ágangi vatns, skal gera þessi mannvirki:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Nauðsynlegar fyrirhleðslur til þess að veita Markarfljóti, Álum, Affalli og Þverá að Markarfljótsbrú.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Nauðsynlegar endurbætur og lenging varnargarðsins hjá Seljalandi til varnar landspjöllum undir Eyjafjöllum.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Varnargarða innan Háamúla í Fljótshlíð og sunnan Markarfljótsbrúar undir Eyjafjöllum, eftir því sem þurfa þykir til að verjast eyðingu gróðurlendis á þessum slóðum.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Nauðsynlegar fyrirhleðslur og önnur mannvirki til varnar gegn yfirvofandi stórfelldum skemmdum á vatnasvæðinu að dómi ráðherra.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">Flóðgáttir til áveitu, þar sem öruggt er og nauðsyn þykir.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Til þess að bæta samgöngur um vatnasvæði Þverár og Markarfljóts í Rangárvallasýslu og varna skemmdum af ágangi vatns, skal gera þessi mannvirki:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Nauðsynlegar fyrirhleðslur til þess að veita Markarfljóti, Álum, Affalli og Þverá að Markarfljótsbrú.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Nauðsynlegar endurbætur og lenging varnargarðsins hjá Seljalandi til varnar landspjöllum undir Eyjafjöllum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Varnargarða innan Háamúla í Fljótshlíð og sunnan Markarfljótsbrúar undir Eyjafjöllum, eftir því sem þurfa þykir til að verjast eyðingu gróðurlendis á þessum slóðum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Nauðsynlegar fyrirhleðslur og önnur mannvirki til varnar gegn yfirvofandi stórfelldum skemmdum á vatnasvæðinu að dómi ráðherra.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Flóðgáttir til áveitu, þar sem öruggt er og nauðsyn þykir.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="10" nr="1">
         <footnote-sen>L. 126/2011, 10. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <numart>4</numart>
-          <sen words="ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1943018?g1" law-nr="18" law-year="1943" law-art="1" nr="2">
         <footnote-sen>L. 18/1943, 1. gr.</footnote-sen>
         <footnote-sen>Tilvitnanir annars staðar í lögunum til liða í &lt;a href="1932027.html#G1"&gt;1. gr. eiga við greinina eins og hún var upphaflega orðuð í l. 27/1932&lt;/a&gt;.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>1</subart>
-            <numart>5</numart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="712">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -64,125 +62,158 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Vegurinn frá vegamótum Fljótshlíðarvegar fyrir vestan Garðsauka um brýr þær, sem taldar eru í 1. gr., skal vera þjóðvegur, og kostar ríkissjóður að öllu mannvirki þau, sem talin eru í 1. gr.</sen>
-      <sen nr="2">1.–5. lið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vegurinn frá vegamótum Fljótshlíðarvegar fyrir vestan Garðsauka um brýr þær, sem taldar eru í 1. gr., skal vera þjóðvegur, og kostar ríkissjóður að öllu mannvirki þau, sem talin eru í 1. gr.</sen>
+        <sen nr="2">1.–5. lið.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Brýr á Þverá og Affall skal gera sem fulltraustar bráðabirgðabrýr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brýr á Þverá og Affall skal gera sem fulltraustar bráðabirgðabrýr.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Nauðsynlegar fyrirhleðslur og önnur mannvirki, sem talin eru í 1. gr.</sen>
-      <sen nr="2">6. og 7. lið, skal kosta þannig:</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nauðsynlegar fyrirhleðslur og önnur mannvirki, sem talin eru í 1. gr. 6. og 7. lið, skal kosta þannig:</sen>
+      </paragraph>
+      <paragraph nr="2">
+        <sen nr="1">Ríkissjóður kostar að öllu leyti mannvirki þau, sem talin eru í 1. gr., 1. og 2. lið.</sen>
+      </paragraph>
+      <paragraph nr="3">
+        <sen nr="1">Ríkissjóður kostar að 7/8 hlutum mannvirki þau, sem talin eru í 3. lið, en sýslufélag Rangárvallasýslu að 1/8 hluta.</sen>
+      </paragraph>
+      <paragraph nr="4">
+        <sen nr="1">Ríkissjóður kostar að 3/4 hlutum fyrirhleðslur og önnur mannvirki, sem talin eru í 4. og 5. lið, og sýslufélag Rangárvallasýslu að 1/4 hluta.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1943018?g2" law-nr="18" law-year="1943" law-art="2" nr="1">
         <footnote-sen>L. 18/1943, 2. gr.</footnote-sen>
+        <location type="range" string-length="343">
+          <start xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='2']/sen[@nr='1']"/>
+          <end xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='4']/sen[@nr='1']"/>
+        </location>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Sýslunefnd Rangárvallasýslu veitist heimild til að jafna niður, að einhverju eða öllu leyti, þeim hluta fyrirhleðslukostnaðarins, sem sýslufélaginu ber að inna af hendi samkvæmt 2. gr., á þær jarðir í sýslunni, sem hagnað hafa af fyrirhleðslunni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sýslunefnd Rangárvallasýslu veitist heimild til að jafna niður, að einhverju eða öllu leyti, þeim hluta fyrirhleðslukostnaðarins, sem sýslufélaginu ber að inna af hendi samkvæmt 2. gr., á þær jarðir í sýslunni, sem hagnað hafa af fyrirhleðslunni.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Við niðurjöfnun þessa skal aðallega miðað við þær auknar nytjar, sem jarðirnar hafa fengið vegna fyrirhleðslanna.</sen>
-      <sen nr="2">Skal sýslunefnd afla ábyggilegra skýrslna um þetta áður en jafnað er niður gjaldinu, og skulu skýrslurnar gefnar af tveim óvilhöllum mönnum, er til þess skulu sérstaklega dómkvaddir.</sen>
-      <sen nr="3">Verði þeir eigi sammála um einhver atriði, dómkveður héraðsdómari, ef hann á hér eigi hagsmuna að gæta, ella næsti héraðsdómari, þriðja manninn sem oddamann.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Við niðurjöfnun þessa skal aðallega miðað við þær auknar nytjar, sem jarðirnar hafa fengið vegna fyrirhleðslanna.</sen>
+        <sen nr="2">Skal sýslunefnd afla ábyggilegra skýrslna um þetta áður en jafnað er niður gjaldinu, og skulu skýrslurnar gefnar af tveim óvilhöllum mönnum, er til þess skulu sérstaklega dómkvaddir.</sen>
+        <sen nr="3">Verði þeir eigi sammála um einhver atriði, dómkveður héraðsdómari, ef hann á hér eigi hagsmuna að gæta, ella næsti héraðsdómari, þriðja manninn sem oddamann.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Niðurjöfnun sýslunefndar geta jarðeigendur, sem gjaldið er jafnað niður á, skotið til ráðherra, er lætur rannsaka málavöxtu og leggur á þá fullnaðarúrskurð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Niðurjöfnun sýslunefndar geta jarðeigendur, sem gjaldið er jafnað niður á, skotið til ráðherra, er lætur rannsaka málavöxtu og leggur á þá fullnaðarúrskurð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="10" nr="1">
         <footnote-sen>L. 126/2011, 10. gr.</footnote-sen>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <sen words="ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra" middle-punctuation="," instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Sé gjald það, sem þannig er jafnað niður á jarðir þær, sem hér eiga hlut að máli samkvæmt 3. gr., eigi greitt með þeim hætti, er sýslunefnd áskilur, getur hún látið taka eignarnámi jörð þá, sem vanskilin stafa frá, og verður sýslufélagið eigandi jarðarinnar.</sen>
-      <sen nr="2">Greiðir það jarðeiganda það, sem umfram er af matsverði jarðarinnar gjaldi því og kostnaði, sem honum ber að greiða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé gjald það, sem þannig er jafnað niður á jarðir þær, sem hér eiga hlut að máli samkvæmt 3. gr., eigi greitt með þeim hætti, er sýslunefnd áskilur, getur hún látið taka eignarnámi jörð þá, sem vanskilin stafa frá, og verður sýslufélagið eigandi jarðarinnar.</sen>
+        <sen nr="2">Greiðir það jarðeiganda það, sem umfram er af matsverði jarðarinnar gjaldi því og kostnaði, sem honum ber að greiða.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Til þess að meta jörð til eignarnáms samkvæmt því, sem hér segir, dómkveður héraðsdómari 3 óvilhalla menn, sem ekki eru við fyrirtækið riðnir.</sen>
-      <sen nr="2">Um mat þetta, og yfirmat, þurfi á því að halda, fer að öðru leyti eftir ákvæðum vatnalaganna frá 20. júní 1923.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Til þess að meta jörð til eignarnáms samkvæmt því, sem hér segir, dómkveður héraðsdómari 3 óvilhalla menn, sem ekki eru við fyrirtækið riðnir.</sen>
+        <sen nr="2">Um mat þetta, og yfirmat, þurfi á því að halda, fer að öðru leyti eftir ákvæðum vatnalaganna frá 20. júní 1923.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórnin sér um framkvæmd allra þeirra mannvirkja, er um ræðir í þessum lögum, en umsjón og viðhald mannvirkja þeirra, er um ræðir í 1. gr., 6. og 7. lið, að þeim loknum, annast sýslunefnd, þó með þeirri undantekningu, er um getur í 7. gr.</sen>
-      <sen nr="2">Kostnaði, sem af viðhaldi leiðir, getur sýslunefnd jafnað niður á hlutaðeigandi jarðir, eftir sömu reglum og í 3. gr. segir um niðurjöfnun á stofnkostnaðarhlutdeild sýslufélagsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórnin sér um framkvæmd allra þeirra mannvirkja, er um ræðir í þessum lögum, en umsjón og viðhald mannvirkja þeirra, er um ræðir í 1. gr., 6. og 7. lið, að þeim loknum, annast sýslunefnd, þó með þeirri undantekningu, er um getur í 7. gr.</sen>
+        <sen nr="2">Kostnaði, sem af viðhaldi leiðir, getur sýslunefnd jafnað niður á hlutaðeigandi jarðir, eftir sömu reglum og í 3. gr. segir um niðurjöfnun á stofnkostnaðarhlutdeild sýslufélagsins.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Leiguliði á jörð skal skyldur, ef jarðeigandi krefst, að viðlögðum ábúðarmissi, að greiða hinn árlega niðurjafnaða viðhaldskostnað, en af stofnkostnaði eigi meira en vexti af því, sem jarðeigandi hefir lagt fram.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Leiguliði á jörð skal skyldur, ef jarðeigandi krefst, að viðlögðum ábúðarmissi, að greiða hinn árlega niðurjafnaða viðhaldskostnað, en af stofnkostnaði eigi meira en vexti af því, sem jarðeigandi hefir lagt fram.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Bætur fyrir skemmdir á landi, er sannað þykir, að fyrirhleðslur þær, sem gerðar eru til þess að veita vötnum í farveg Markarfljóts, hafi beinlínis valdið, skal telja með kostnaði við verkið.</sen>
-      <sen nr="2">Má ákveða slíkar skaðabætur eftir samkomulagi milli landeiganda og umboðsmanna stjórnarvalda þeirra, sem bætur eiga að greiða.</sen>
-      <sen nr="3">Nú næst ekki samkomulag, eða ef um verulegt tjón er að ræða, og skal þá ákveða bætur eftir mati tveggja dómkvaddra manna, að tilkvöddum báðum málsaðiljum.</sen>
-      <sen nr="4">Skal að öðru leyti fara um framkvæmd matsins og greiðslu skaðabóta, svo sem fyrir er mælt í vatnalögunum frá 20. júní 1923.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Bætur fyrir skemmdir á landi, er sannað þykir, að fyrirhleðslur þær, sem gerðar eru til þess að veita vötnum í farveg Markarfljóts, hafi beinlínis valdið, skal telja með kostnaði við verkið.</sen>
+        <sen nr="2">Má ákveða slíkar skaðabætur eftir samkomulagi milli landeiganda og umboðsmanna stjórnarvalda þeirra, sem bætur eiga að greiða.</sen>
+        <sen nr="3">Nú næst ekki samkomulag, eða ef um verulegt tjón er að ræða, og skal þá ákveða bætur eftir mati tveggja dómkvaddra manna, að tilkvöddum báðum málsaðiljum.</sen>
+        <sen nr="4">Skal að öðru leyti fara um framkvæmd matsins og greiðslu skaðabóta, svo sem fyrir er mælt í vatnalögunum frá 20. júní 1923.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Viðhald mannvirkja þeirra, sem gerð verða samkvæmt lögum þessum, skal kosta af sýslufélagi Rangárvallasýslu og ríkissjóði í sömu hlutföllum og stofnkostnað.</sen>
-      <sen nr="2">Framkvæmd viðhaldsins annast ríkisstjórnin.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Viðhald mannvirkja þeirra, sem gerð verða samkvæmt lögum þessum, skal kosta af sýslufélagi Rangárvallasýslu og ríkissjóði í sömu hlutföllum og stofnkostnað.</sen>
+        <sen nr="2">Framkvæmd viðhaldsins annast ríkisstjórnin.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ákvæði laga þessara um viðhald flóðgátta og mannvirkja til varnar ágangi vatns skulu einnig gilda að því er snertir mannvirki, sem gerð hafa verið samkvæmt lögum nr. 69 14. nóvember 1917, um fyrirhleðslu fyrir Þverá og Markarfljót.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði laga þessara um viðhald flóðgátta og mannvirkja til varnar ágangi vatns skulu einnig gilda að því er snertir mannvirki, sem gerð hafa verið samkvæmt lögum nr. 69 14. nóvember 1917, um fyrirhleðslu fyrir Þverá og Markarfljót.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórnin skal hafa eftirlit með því, að mannvirkjum þeim, er gerð verða, sé vel við haldið, og skal sýslunefnd Rangárvallasýslu skylt að hlíta fyrirskipunum hennar hér að lútandi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórnin skal hafa eftirlit með því, að mannvirkjum þeim, er gerð verða, sé vel við haldið, og skal sýslunefnd Rangárvallasýslu skylt að hlíta fyrirskipunum hennar hér að lútandi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Um viðhaldið og allt það, er þar til heyrir, skal sýslunefnd gera samþykkt, og skulu þar greindar þær jarðir allar, sem verkið nær til samkvæmt ákvæðum þessara laga.</sen>
-      <sen nr="2">Samþykktin öðlast gildi, er hún hefir hlotið staðfesting ráðuneytisins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Um viðhaldið og allt það, er þar til heyrir, skal sýslunefnd gera samþykkt, og skulu þar greindar þær jarðir allar, sem verkið nær til samkvæmt ákvæðum þessara laga.</sen>
+        <sen nr="2">Samþykktin öðlast gildi, er hún hefir hlotið staðfesting ráðuneytisins.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Sektir má ákveða í samþykktinni fyrir brot gegn henni, og renna þær í sérstakan sjóð, til viðhalds fyrirhleðslunum.</sen>
-      <sen nr="2"></sen>
+      <paragraph nr="1">
+        <sen nr="1">Sektir má ákveða í samþykktinni fyrir brot gegn henni, og renna þær í sérstakan sjóð, til viðhalds fyrirhleðslunum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="10" nr="1">
         <footnote-sen>L. 126/2011, 10. gr.</footnote-sen>
-        <location type="range">
-          <art>9</art>
-          <subart>2</subart>
-          <sen words="ráðuneytisins">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='9']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="ráðuneytisins" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-nr="19" law-year="1991" law-art="194" nr="2">
         <footnote-sen>L. 19/1991, 194. gr.</footnote-sen>
-        <location type="deletion">
-          <art>9</art>
-          <subart>3</subart>
-          <sen before-mark="^" after-mark="$">2</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Sektir má ákveða í samþykktinni fyrir brot gegn henni, og renna þær í sérstakan sjóð, til viðhalds fyrirhleðslunum." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórninni er heimilt að taka lán til framkvæmda þeirra, sem taldar eru í 1.–4. lið 1. gr. laga þessara.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er heimilt að taka lán til framkvæmda þeirra, sem taldar eru í 1.–4. lið 1. gr. laga þessara.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

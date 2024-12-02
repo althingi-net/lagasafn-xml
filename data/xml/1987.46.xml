@@ -10,7 +10,9 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög um staðgreiðslu opinberra gjalda öðlast gildi 1. janúar 1988.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög um staðgreiðslu opinberra gjalda öðlast gildi 1. janúar 1988.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2-8">
@@ -18,10 +20,7 @@
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá Lagasafn 1990, d. 400–402.</footnote-sen>
-        <location type="deletion">
-          <art>2-8</art>
-          <nr-title before-mark="^2.–8. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='2-8']/nr-title[1]" before-mark="^2.–8. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>

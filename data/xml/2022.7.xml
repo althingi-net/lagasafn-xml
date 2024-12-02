@@ -13,8 +13,11 @@
     <name>Forsætisráðherra.</name>
     <subart nr="1">
       <name> Katrín Jakobsdóttir </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir forsætisráðuneytið skv. 1. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir forsætisráðuneytið skv. 1. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> forsætisráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="2">
@@ -22,22 +25,18 @@
     <name>Dómsmálaráðherra.</name>
     <subart nr="1">
       <name>Guðrún Hafsteinsdóttir</name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir dómsmálaráðuneytið skv. 2. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir dómsmálaráðuneytið skv. 2. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name>dómsmálaráðherra.</name>
+      <paragraph nr="2"/>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Forsetaúrskurður nr. 44/2023, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <name>1</name>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>1</subart>
-            <name>2</name>
-          </end>
+        <location type="range" string-length="234">
+          <start xpath="art[@nr='2']/name[1]"/>
+          <end xpath="art[@nr='2']/subart[@nr='1']/name[2]"/>
         </location>
       </footnote>
     </footnotes>
@@ -47,8 +46,11 @@
     <name>Félags- og vinnumarkaðsráðherra.</name>
     <subart nr="1">
       <name> Guðmundur Ingi Guðbrandsson </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir félags- og vinnumarkaðsráðuneyti skv. 3. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir félags- og vinnumarkaðsráðuneyti skv. 3. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> félags- og vinnumarkaðsráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="4">
@@ -56,8 +58,11 @@
     <name>Fjármála- og efnahagsráðherra.</name>
     <subart nr="1">
       <name> Bjarni Benediktsson </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir fjármála- og efnahagsráðuneytið skv. 4. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir fjármála- og efnahagsráðuneytið skv. 4. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> fjármála- og efnahagsráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="5">
@@ -65,8 +70,11 @@
     <name>Háskóla-, iðnaðar- og nýsköpunarráðherra.</name>
     <subart nr="1">
       <name> Áslaug Arna Sigurbjörnsdóttir </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir háskóla-, iðnaðar- og nýsköpunarráðuneytið skv. 5. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir háskóla-, iðnaðar- og nýsköpunarráðuneytið skv. 5. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> háskóla-, iðnaðar- og nýsköpunarráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="6">
@@ -74,8 +82,11 @@
     <name>Heilbrigðisráðherra.</name>
     <subart nr="1">
       <name> Willum Þór Þórsson </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir heilbrigðisráðuneytið skv. 6. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir heilbrigðisráðuneytið skv. 6. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> heilbrigðisráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="7">
@@ -83,8 +94,11 @@
     <name>Innviðaráðherra.</name>
     <subart nr="1">
       <name> Sigurður Ingi Jóhannsson </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir innviðaráðuneytið skv. 7. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir innviðaráðuneytið skv. 7. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> innviðaráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="8">
@@ -92,8 +106,11 @@
     <name>Matvælaráðherra.</name>
     <subart nr="1">
       <name> Svandís Svavarsdóttir </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir matvælaráðuneytið skv. 8. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir matvælaráðuneytið skv. 8. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> matvælaráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="9">
@@ -101,8 +118,11 @@
     <name>Menningar- og viðskiptaráðherra.</name>
     <subart nr="1">
       <name> Lilja Dögg Alfreðsdóttir </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir menningar- og viðskiptaráðuneytið skv. 9. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir menningar- og viðskiptaráðuneytið skv. 9. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> menningar- og viðskiptaráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="10">
@@ -110,8 +130,11 @@
     <name>Mennta- og barnamálaráðherra.</name>
     <subart nr="1">
       <name> Ásmundur Einar Daðason </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir mennta- og barnamálaráðuneytið skv. 10. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir mennta- og barnamálaráðuneytið skv. 10. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> mennta- og barnamálaráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="11">
@@ -119,8 +142,11 @@
     <name>Umhverfis-, orku- og loftslagsráðherra.</name>
     <subart nr="1">
       <name> Guðlaugur Þór Þórðarson </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir umhverfis-, orku- og loftslagsráðuneytið skv. 11. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir umhverfis-, orku- og loftslagsráðuneytið skv. 11. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> umhverfis-, orku- og loftslagsráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="12">
@@ -128,15 +154,20 @@
     <name>Utanríkisráðherra.</name>
     <subart nr="1">
       <name> Þórdís Kolbrún Reykfjörð Gylfadóttir </name>
-      <sen nr="1">fer með stjórnarmálefni sem heyra undir utanríkisráðuneytið skv. 12. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið </sen>
+      <paragraph nr="1">
+        <sen nr="1">fer með stjórnarmálefni sem heyra undir utanríkisráðuneytið skv. 12. gr. forsetaúrskurðar um skiptingu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands og ber embættisheitið</sen>
+      </paragraph>
       <name> utanríkisráðherra. </name>
+      <paragraph nr="2"/>
     </subart>
   </art>
   <art nr="13">
     <nr-title>13. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Úrskurður þessi öðlast gildi 1. febrúar 2022.</sen>
-      <sen nr="2" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1">Úrskurður þessi öðlast gildi 1. febrúar 2022.</sen>
+        <sen nr="2" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

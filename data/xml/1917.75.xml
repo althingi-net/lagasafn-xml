@@ -9,83 +9,79 @@
   <footnotes>
     <footnote nr="1">
       <footnote-sen>Lögin falla úr gildi 1. jan. 2024 skv. &lt;a href="/altext/stjt/2022.074.html"&gt;l. 74/2022, 14. gr.&lt;/a&gt;</footnote-sen>
-      <location type="pointer">
-        <name before-mark="^Lög um útmælingar lóða í kaupstöðum, löggiltum kauptúnum o.fl." after-mark="$">1</name>
-      </location>
+      <location type="pointer" xpath="name[1]" before-mark="^Lög um útmælingar lóða í kaupstöðum, löggiltum kauptúnum o.fl." after-mark="$"/>
     </footnote>
   </footnotes>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=28&amp;amp;mnr=139"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/pdf/28/s/0260.pdf"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 27. febrúar 1918. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjtnr.html#1983010"&gt; L. 10/1983 &lt;/a&gt; (tóku gildi 25. mars 1983). &lt;a href="/altext/stjtnr.html#1986011"&gt; L. 11/1986 &lt;/a&gt; (tóku gildi 1. maí 1986). &lt;a href="/altext/stjt/1991.092.html"&gt; L. 92/1991 &lt;/a&gt; (tóku gildi 1. júlí 1992 nema 103. gr. sem tók gildi 9. jan. 1992). &lt;br/&gt; &lt;/small&gt;</minister-clause>
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Rétt er hverjum þeim, sem heimilt er að lögum að versla hér á landi, að fá sér útmældar óbyggðar lóðir í kaupstöðum eða löggiltum kauptúnum til verslunar.</sen>
-      <sen nr="2">Sama rétt eiga sjávarútvegsmenn, búsettir hér á landi, til að fá sér útmældar lóðir í kaupstöðum, löggiltum kauptúnum og veiðistöðum til útvegs.</sen>
-      <sen nr="3">Bæði þeim, er lóðina eiga í löggiltu kauptúni eða veiðistöð eða stórar óbyggðar lóðir í kaupstöðum, og öðrum, sem önnur lögmæt réttindi eiga yfir landinu eða lóðunum, er skylt að láta af hendi svo mikla óbyggða lóð, sem þörf er á til fyrirhugaðrar verslunar eða sjávarútvegs, enda sé lóðin eigi nauðsynleg til verslunar, sjávarútvegs eða iðnaðar, sem þar er fyrir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Rétt er hverjum þeim, sem heimilt er að lögum að versla hér á landi, að fá sér útmældar óbyggðar lóðir í kaupstöðum eða löggiltum kauptúnum til verslunar.</sen>
+        <sen nr="2">Sama rétt eiga sjávarútvegsmenn, búsettir hér á landi, til að fá sér útmældar lóðir í kaupstöðum, löggiltum kauptúnum og veiðistöðum til útvegs.</sen>
+        <sen nr="3">Bæði þeim, er lóðina eiga í löggiltu kauptúni eða veiðistöð eða stórar óbyggðar lóðir í kaupstöðum, og öðrum, sem önnur lögmæt réttindi eiga yfir landinu eða lóðunum, er skylt að láta af hendi svo mikla óbyggða lóð, sem þörf er á til fyrirhugaðrar verslunar eða sjávarútvegs, enda sé lóðin eigi nauðsynleg til verslunar, sjávarútvegs eða iðnaðar, sem þar er fyrir.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Útmæling lóða samkvæmt 1. gr. má aldrei fara fram, nema hreppsnefnd eða bæjarstjórn, þar sem útmælingar er beiðst, veiti meðmæli sín.</sen>
-      <sen nr="2">Þegar þau meðmæli eru fengin, skal sá, er útmælingar æskir, leita eignarnámsmats eftir almennum reglum um framkvæmd eignarnáms.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Útmæling lóða samkvæmt 1. gr. má aldrei fara fram, nema hreppsnefnd eða bæjarstjórn, þar sem útmælingar er beiðst, veiti meðmæli sín.</sen>
+        <sen nr="2">Þegar þau meðmæli eru fengin, skal sá, er útmælingar æskir, leita eignarnámsmats eftir almennum reglum um framkvæmd eignarnáms.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="5" nr="1">
         <footnote-sen>L. 92/1991, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="leita eignarnámsmats eftir almennum reglum um framkvæmd eignarnáms">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="leita eignarnámsmats eftir almennum reglum um framkvæmd eignarnáms" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1986011?g9" law-nr="11" law-year="1986" law-art="9" nr="2">
         <footnote-sen>L. 11/1986, 9. gr.</footnote-sen>
-        <location type="deletion">
-          <art>2</art>
-          <subart>2</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Það skal með öllu bannað að leggja þá kvöð á lóðir eða húseignir í kaupstöðum, löggiltum kauptúnum eða veiðistöðum, að eigi megi nota þær til verslunar eða annarrar tiltekinnar atvinnu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Það skal með öllu bannað að leggja þá kvöð á lóðir eða húseignir í kaupstöðum, löggiltum kauptúnum eða veiðistöðum, að eigi megi nota þær til verslunar eða annarrar tiltekinnar atvinnu.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Þótt einstakir menn kunni að eiga höfn þá, sem löggilt kauptún er við, mega þeir eigi bægja neinum frá að leggja skipum sínum þar við akkeri, né frá aðgöngu að höfninni til þess að ferma eða afferma skip, að svo miklu leyti, sem það kemur ekki í bága við bryggjuafnot sjálfra þeirra, og eigi má landeigandi heldur varna stjórnarvöldum eða einstökum mönnum að gera hringa, landfestar eða önnur skipsfestaráhöld þar á höfninni, þar á, sem svo hagar til, að þess konar áhöld eru nauðsynleg.</sen>
-      <sen nr="2">Ef einstakir menn eiga höfn, skipalægi eða uppsátur í veiðistöð, mega þeir eigi heldur meina öðrum mönnum að leggja þar fiskiskipum sínum eða nota uppsátur eða önnur lendingargögn, nema í bága komi við afnot sjálfra þeirra, né heldur banna öðrum að gera þar lendingarbætur eða aðrar umbætur, sem nauðsynlegar eru sjávarútvegi þar.</sen>
-      <sen nr="3">Endurgjald til handa landeiganda fyrir nám hafnar hans eða uppsáturs til eignar eða afnota og afnot hafnargagna og lendinga fer eftir lögum um eignarnám.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þótt einstakir menn kunni að eiga höfn þá, sem löggilt kauptún er við, mega þeir eigi bægja neinum frá að leggja skipum sínum þar við akkeri, né frá aðgöngu að höfninni til þess að ferma eða afferma skip, að svo miklu leyti, sem það kemur ekki í bága við bryggjuafnot sjálfra þeirra, og eigi má landeigandi heldur varna stjórnarvöldum eða einstökum mönnum að gera hringa, landfestar eða önnur skipsfestaráhöld þar á höfninni, þar á, sem svo hagar til, að þess konar áhöld eru nauðsynleg.</sen>
+        <sen nr="2">Ef einstakir menn eiga höfn, skipalægi eða uppsátur í veiðistöð, mega þeir eigi heldur meina öðrum mönnum að leggja þar fiskiskipum sínum eða nota uppsátur eða önnur lendingargögn, nema í bága komi við afnot sjálfra þeirra, né heldur banna öðrum að gera þar lendingarbætur eða aðrar umbætur, sem nauðsynlegar eru sjávarútvegi þar.</sen>
+        <sen nr="3">Endurgjald til handa landeiganda fyrir nám hafnar hans eða uppsáturs til eignar eða afnota og afnot hafnargagna og lendinga fer eftir lögum um eignarnám.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Nú notar einhver hringa, landfestar eða önnur skipsfestaráhöld eða lendingartæki, sem hann hvorki á né hefur umráð yfir, og ber honum þá tafarlaust að láta áhöldin laus við eiganda eða umráðamann, þegar skip þeirra þurfa á þeim að halda, að viðlögðum allt að 5000 kr. sektum fyrir hvern dag, er hann lætur fyrir farast að sleppa áhöldunum, og bæti þar að auki allt það tjón, er af því kann að leiða, að hann lét þau ekki laus þegar í stað.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú notar einhver hringa, landfestar eða önnur skipsfestaráhöld eða lendingartæki, sem hann hvorki á né hefur umráð yfir, og ber honum þá tafarlaust að láta áhöldin laus við eiganda eða umráðamann, þegar skip þeirra þurfa á þeim að halda, að viðlögðum allt að 5000 kr. sektum fyrir hvern dag, er hann lætur fyrir farast að sleppa áhöldunum, og bæti þar að auki allt það tjón, er af því kann að leiða, að hann lét þau ekki laus þegar í stað.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Skip það, er notar heimildarlaust hafnartæki eða lendingartæki annars manns, og farmur þess er að veði fyrir sektum og skaðabótum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skip það, er notar heimildarlaust hafnartæki eða lendingartæki annars manns, og farmur þess er að veði fyrir sektum og skaðabótum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="5" nr="1">
         <footnote-sen>L. 92/1991, 5. gr.</footnote-sen>
-        <location type="deletion">
-          <art>4</art>
-          <subart>1</subart>
-          <sen before-mark="^" after-mark="Endurgjald til handa landeiganda fyrir nám hafnar hans eða uppsáturs til eignar eða afnota og afnot hafnargagna og lendinga fer eftir lögum um eignarnám.$">3</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Ef einstakir menn eiga höfn, skipalægi eða uppsátur í veiðistöð, mega þeir eigi heldur meina öðrum mönnum að leggja þar fiskiskipum sínum eða nota uppsátur eða önnur lendingargögn, nema í bága komi við afnot sjálfra þeirra, né heldur banna öðrum að gera þar lendingarbætur eða aðrar umbætur, sem nauðsynlegar eru sjávarútvegi þar." after-mark="$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1983010?g31" law-nr="10" law-year="1983" law-art="31" nr="2">
         <footnote-sen>L. 10/1983, 31. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <subart>2</subart>
-          <sen words="allt að 5000 kr.">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="allt að 5000 kr." instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -94,17 +90,16 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="5" nr="1">
         <footnote-sen>L. 92/1991, 5. gr.</footnote-sen>
-        <location type="deletion">
-          <art>5</art>
-          <nr-title before-mark="^5. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='5']/nr-title[1]" before-mark="^5. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi ná ekki til Reykjavíkur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi ná ekki til Reykjavíkur.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

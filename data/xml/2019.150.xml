@@ -9,9 +9,7 @@
   <footnotes>
     <footnote nr="1">
       <footnote-sen>Lögunum var breytt með &lt;a href="/altext/stjt/2023.045.html"&gt;l. 45/2023, 12. gr.&lt;/a&gt;; breytingarnar taka gildi 1. jan. 2024 skv. &lt;a href="/altext/stjt/2023.045.html"&gt;11. gr. s.l.&lt;/a&gt;</footnote-sen>
-      <location type="pointer">
-        <name before-mark="^Lög um innheimtu opinberra skatta og gjalda" after-mark="$">1</name>
-      </location>
+      <location type="pointer" xpath="name[1]" before-mark="^Lög um innheimtu opinberra skatta og gjalda" after-mark="$"/>
     </footnote>
   </footnotes>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=150&amp;amp;mnr=314"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/150/s/0355.html"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 31. desember 2019. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjt/2021.029.html"&gt; L. 29/2021 &lt;/a&gt; (tóku gildi 1. maí 2021; um lagaskil sjá 42. gr. og brbákv.). &lt;a href="/altext/stjt/2021.133.html"&gt; L. 133/2021 &lt;/a&gt; (tóku gildi 31. des. 2021 nema 3. gr. og 9.–19. gr. sem tóku gildi 1. jan. 2022; um lagaskil sjá 26. gr.). &lt;a href="/altext/stjt/2023.045.html"&gt; L. 45/2023 &lt;/a&gt; (taka gildi 1. jan. 2024 nema 8. gr. og b-liður 9. gr. sem tóku gildi 21. júní 2023; um lagaskil sjá nánar 11. gr.). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; fjármála- og efnahagsráðherra &lt;/b&gt; eða &lt;b&gt; fjármála- og efnahagsráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
@@ -19,106 +17,142 @@
     <nr-title>1. gr.</nr-title>
     <name>Gildissvið.</name>
     <subart nr="1">
-      <sen nr="1">Lög þessi gilda um innheimtu á sköttum, gjöldum og sektum ásamt vöxtum, álagi og kostnaði sem lögð eru á af stjórnvöldum og sem innheimtumönnum ríkissjóðs er falið að innheimta.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi gilda um innheimtu á sköttum, gjöldum og sektum ásamt vöxtum, álagi og kostnaði sem lögð eru á af stjórnvöldum og sem innheimtumönnum ríkissjóðs er falið að innheimta.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Þá gilda lögin um innheimtu erlendra skatta, gjalda og sekta sem innheimtumönnum er falið að innheimta á grundvelli samninga sem Ísland hefur gert við önnur ríki.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þá gilda lögin um innheimtu erlendra skatta, gjalda og sekta sem innheimtumönnum er falið að innheimta á grundvelli samninga sem Ísland hefur gert við önnur ríki.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Lögin gilda einnig um endurgreiðslur oftekinna skatta og gjalda og um endurgreiðslur oftekinna sekta sem lagðar eru á af stjórnvöldum.</sen>
-      <sen nr="2">Lögin gilda þó ekki um endurgreiðslu sekta sem innheimtar eru á grundvelli laga um fullnustu refsinga eða með vísan til þeirra laga.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lögin gilda einnig um endurgreiðslur oftekinna skatta og gjalda og um endurgreiðslur oftekinna sekta sem lagðar eru á af stjórnvöldum.</sen>
+        <sen nr="2">Lögin gilda þó ekki um endurgreiðslu sekta sem innheimtar eru á grundvelli laga um fullnustu refsinga eða með vísan til þeirra laga.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Sérákvæði annarra laga um skatta, gjöld og sektir sem mæla fyrir á annan veg ganga framar ákvæðum laga þessara.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sérákvæði annarra laga um skatta, gjöld og sektir sem mæla fyrir á annan veg ganga framar ákvæðum laga þessara.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <name>Orðskýringar.</name>
     <subart nr="1">
-      <sen nr="1">Í lögum þessum er merking eftirfarandi orða sem hér segir:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <name>Afskrift:</name>
-        <sen nr="1">Það að færa kröfur á hendur gjaldanda niður að hluta eða öllu leyti samkvæmt lögum.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <name>Eindagi:</name>
-        <sen nr="1">Síðasti dagur til að greiða kröfu áður en dráttarvextir eða álag leggjast á hana.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <name>Gjaldandi:</name>
-        <sen nr="1">Greiðandi skatta, gjalda eða sekta.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <name>Gjalddagi:</name>
-        <sen nr="1">Sá dagur sem fyrst er heimilt að krefja gjaldanda um greiðslu kröfu.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <name>Greiðsluáætlun:</name>
-        <sen nr="1">Áætlun um greiðslu skatta, gjalda og sekta sem gerð er m.a. í því skyni að létta greiðslubyrði gjaldanda og fresta innheimtuaðgerðum.</sen>
-      </numart>
-      <numart nr="6" nr-type="numeric">
-        <nr-title>6.</nr-title>
-        <name>Skuldajöfnun:</name>
-        <sen nr="1">Þegar inneign er notuð til að greiða gjaldfallna skuld.</sen>
-      </numart>
-      <numart nr="7" nr-type="numeric">
-        <nr-title>7.</nr-title>
-        <name>Þing- og sveitarsjóðsgjöld:</name>
-        <sen nr="1">Tekjuskattur, útsvar, gjald í Framkvæmdasjóð aldraðra, útvarpsgjald, slysatryggingagjald vegna heimilisstarfa, ofgreiddar barnabætur, ofgreiddar vaxtabætur og önnur ótalin gjöld sem innheimt eru með vísan til laga um tekjuskatt og samsvarandi gjöld samkvæmt samningum við önnur ríki.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Í lögum þessum er merking eftirfarandi orða sem hér segir:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <name>Afskrift:</name>
+          <paragraph nr="1">
+            <sen nr="1">Það að færa kröfur á hendur gjaldanda niður að hluta eða öllu leyti samkvæmt lögum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <name>Eindagi:</name>
+          <paragraph nr="1">
+            <sen nr="1">Síðasti dagur til að greiða kröfu áður en dráttarvextir eða álag leggjast á hana.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <name>Gjaldandi:</name>
+          <paragraph nr="1">
+            <sen nr="1">Greiðandi skatta, gjalda eða sekta.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <name>Gjalddagi:</name>
+          <paragraph nr="1">
+            <sen nr="1">Sá dagur sem fyrst er heimilt að krefja gjaldanda um greiðslu kröfu.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <name>Greiðsluáætlun:</name>
+          <paragraph nr="1">
+            <sen nr="1">Áætlun um greiðslu skatta, gjalda og sekta sem gerð er m.a. í því skyni að létta greiðslubyrði gjaldanda og fresta innheimtuaðgerðum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" nr-type="numeric">
+          <nr-title>6.</nr-title>
+          <name>Skuldajöfnun:</name>
+          <paragraph nr="1">
+            <sen nr="1">Þegar inneign er notuð til að greiða gjaldfallna skuld.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="7" nr-type="numeric">
+          <nr-title>7.</nr-title>
+          <name>Þing- og sveitarsjóðsgjöld:</name>
+          <paragraph nr="1">
+            <sen nr="1">Tekjuskattur, útsvar, gjald í Framkvæmdasjóð aldraðra, útvarpsgjald, slysatryggingagjald vegna heimilisstarfa, ofgreiddar barnabætur, ofgreiddar vaxtabætur og önnur ótalin gjöld sem innheimt eru með vísan til laga um tekjuskatt og samsvarandi gjöld samkvæmt samningum við önnur ríki.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <name>Hlutverk innheimtumanna ríkissjóðs.</name>
     <subart nr="1">
-      <sen nr="1">Innheimtumenn ríkissjóðs annast innheimtu skatta og gjalda hver í sínu umdæmi.</sen>
-      <sen nr="2">Með sköttum og gjöldum er átt við hvers konar skatta og gjöld sem lögð eru á lögum samkvæmt.</sen>
-      <sen nr="3">Þá annast innheimtumenn innheimtu sekta sem lagðar eru á af stjórnvöldum og þeim er falið að innheimta.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumenn ríkissjóðs annast innheimtu skatta og gjalda hver í sínu umdæmi.</sen>
+        <sen nr="2">Með sköttum og gjöldum er átt við hvers konar skatta og gjöld sem lögð eru á lögum samkvæmt.</sen>
+        <sen nr="3">Þá annast innheimtumenn innheimtu sekta sem lagðar eru á af stjórnvöldum og þeim er falið að innheimta.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Innheimtumenn ríkissjóðs eru ríkisskattstjóri í umdæmi sýslumannsins á höfuðborgarsvæðinu en sýslumenn í öðrum umdæmum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumenn ríkissjóðs eru ríkisskattstjóri í umdæmi sýslumannsins á höfuðborgarsvæðinu en sýslumenn í öðrum umdæmum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Auk þeirra verkefna sem ríkisskattstjóra er falið sem einum innheimtumanna ríkissjóðs skal hann m.a. annast eftirtalin verkefni er lúta að framkvæmd innheimtu skatta og gjalda:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Stefnumótun á sviði innheimtumála á landsvísu með hagræðingu, samræmingu, framþróun og öryggi varðandi innheimtu opinberra gjalda að leiðarljósi.</sen>
-        <sen nr="2">Í þessu skyni skal ríkisskattstjóri m.a. annast áhættugreiningu á sviði innheimtu opinberra gjalda.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Samræmingar- og eftirlitshlutverk gagnvart öðrum innheimtumönnum ríkissjóðs, m.a. með setningu verklagsreglna.</sen>
-        <sen nr="2">Ríkisskattstjóra er heimilt að beina bindandi fyrirmælum til annarra innheimtumanna um innheimtuaðgerðir í einstökum málum eða málaflokkum ef settar reglur eru ekki virtar.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Umsjón og þróun tölvukerfa og rafrænnar stjórnsýslu á sviði innheimtu skatta og gjalda.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Auk þeirra verkefna sem ríkisskattstjóra er falið sem einum innheimtumanna ríkissjóðs skal hann m.a. annast eftirtalin verkefni er lúta að framkvæmd innheimtu skatta og gjalda:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Stefnumótun á sviði innheimtumála á landsvísu með hagræðingu, samræmingu, framþróun og öryggi varðandi innheimtu opinberra gjalda að leiðarljósi.</sen>
+            <sen nr="2">Í þessu skyni skal ríkisskattstjóri m.a. annast áhættugreiningu á sviði innheimtu opinberra gjalda.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Samræmingar- og eftirlitshlutverk gagnvart öðrum innheimtumönnum ríkissjóðs, m.a. með setningu verklagsreglna.</sen>
+            <sen nr="2">Ríkisskattstjóra er heimilt að beina bindandi fyrirmælum til annarra innheimtumanna um innheimtuaðgerðir í einstökum málum eða málaflokkum ef settar reglur eru ekki virtar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Umsjón og þróun tölvukerfa og rafrænnar stjórnsýslu á sviði innheimtu skatta og gjalda.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Ráðherra getur ákveðið í reglugerð að fela öðrum aðila en þeim sem um getur í 1. mgr. innheimtu skatta samkvæmt lögum um tekjuskatt í tilteknu umdæmi eða umdæmum.</sen>
-      <sen nr="2">Á sama hátt getur ráðherra ákveðið að sami innheimtumaður annist innheimtu í fleiri en einu umdæmi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra getur ákveðið í reglugerð að fela öðrum aðila en þeim sem um getur í 1. mgr. innheimtu skatta samkvæmt lögum um tekjuskatt í tilteknu umdæmi eða umdæmum.</sen>
+        <sen nr="2">Á sama hátt getur ráðherra ákveðið að sami innheimtumaður annist innheimtu í fleiri en einu umdæmi.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Þá er ráðherra, sveitarstjórnum og forráðamönnum annarra opinberra stofnana heimilt að semja svo um að innheimta skuli í einu lagi öll gjöld sem greiða ber þessum aðilum.</sen>
-      <sen nr="2">Fela má innheimtuna innheimtumanni ríkissjóðs, sveitarfélagi eða sérstakri innheimtustofnun.</sen>
-      <sen nr="3">Allar heimildir og skyldur innheimtumanna ríkissjóðs, sveitarfélaga og stofnana vegna gjaldheimtu skulu þá færast til þess aðila sem tekur gjaldheimtuna að sér.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þá er ráðherra, sveitarstjórnum og forráðamönnum annarra opinberra stofnana heimilt að semja svo um að innheimta skuli í einu lagi öll gjöld sem greiða ber þessum aðilum.</sen>
+        <sen nr="2">Fela má innheimtuna innheimtumanni ríkissjóðs, sveitarfélagi eða sérstakri innheimtustofnun.</sen>
+        <sen nr="3">Allar heimildir og skyldur innheimtumanna ríkissjóðs, sveitarfélaga og stofnana vegna gjaldheimtu skulu þá færast til þess aðila sem tekur gjaldheimtuna að sér.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/241-2020"&gt;Rg. 241/2020&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>3</art>
-          <subart>4</subart>
-          <sen before-mark="^Ráðherra getur ákveðið í reglugerð" after-mark="að fela öðrum aðila en þeim sem um getur í 1. mgr. innheimtu skatta samkvæmt lögum um tekjuskatt í tilteknu umdæmi eða umdæmum.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='3']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra getur ákveðið í reglugerð" after-mark="að fela öðrum aðila en þeim sem um getur í 1. mgr. innheimtu skatta samkvæmt lögum um tekjuskatt í tilteknu umdæmi eða umdæmum.$"/>
       </footnote>
     </footnotes>
   </art>
@@ -126,167 +160,223 @@
     <nr-title>4. gr.</nr-title>
     <name>Áfrýjun eða deila um skattskyldu.</name>
     <subart nr="1">
-      <sen nr="1">Áfrýjun eða deila um skattskyldu frestar hvorki eindaga skatta og gjalda né leysir gjaldanda undan viðurlögum við vangreiðslu þeirra.</sen>
-      <sen nr="2">Innheimtumönnum ríkissjóðs ber að innheimta skattkröfur sem byggjast á áætlunum skattyfirvalda með sama hætti og skuld samkvæmt skattskýrslum.</sen>
-      <sen nr="3">Innheimtuúrræðum er ekki frestað þótt skattskýrslu hafi ekki verið skilað eða skattálagning verið kærð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Áfrýjun eða deila um skattskyldu frestar hvorki eindaga skatta og gjalda né leysir gjaldanda undan viðurlögum við vangreiðslu þeirra.</sen>
+        <sen nr="2">Innheimtumönnum ríkissjóðs ber að innheimta skattkröfur sem byggjast á áætlunum skattyfirvalda með sama hætti og skuld samkvæmt skattskýrslum.</sen>
+        <sen nr="3">Innheimtuúrræðum er ekki frestað þótt skattskýrslu hafi ekki verið skilað eða skattálagning verið kærð.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <name>Kæruheimild og endurupptaka.</name>
     <subart nr="1">
-      <sen nr="1">Gjaldanda er unnt að fá ákvarðanir innheimtumanns ríkissjóðs endurskoðaðar með stjórnsýslukæru til ráðuneytisins á grundvelli VII. kafla stjórnsýslulaga, nr. 37/1993.</sen>
-      <sen nr="2">Ákvörðun innheimtumanns er kæranleg innan þriggja mánaða frá því að aðila máls er tilkynnt um ákvörðun.</sen>
-      <sen nr="3">Gjaldanda er jafnframt heimilt að fara fram á endurupptöku ákvörðunar hjá innheimtumanni í samræmi við ákvæði 24. gr. sömu laga.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Gjaldanda er unnt að fá ákvarðanir innheimtumanns ríkissjóðs endurskoðaðar með stjórnsýslukæru til ráðuneytisins á grundvelli VII. kafla stjórnsýslulaga, nr. 37/1993.</sen>
+        <sen nr="2">Ákvörðun innheimtumanns er kæranleg innan þriggja mánaða frá því að aðila máls er tilkynnt um ákvörðun.</sen>
+        <sen nr="3">Gjaldanda er jafnframt heimilt að fara fram á endurupptöku ákvörðunar hjá innheimtumanni í samræmi við ákvæði 24. gr. sömu laga.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <name>Jafnræðisregla.</name>
     <subart nr="1">
-      <sen nr="1">Við úrlausn mála er varða innheimtu skatta, gjalda og sekta samkvæmt lögum þessum skal þess gætt að allir gjaldendur sem eins stendur á um hljóti sömu málsmeðferð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Við úrlausn mála er varða innheimtu skatta, gjalda og sekta samkvæmt lögum þessum skal þess gætt að allir gjaldendur sem eins stendur á um hljóti sömu málsmeðferð.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <name>Dráttarvextir, álag og kostnaður.</name>
     <subart nr="1">
-      <sen nr="1">Hafi skattar og gjöld ekki verið greidd á eindaga skal greiða dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, af þeirri fjárhæð sem gjaldfallin er frá gjalddaga.</sen>
-      <sen nr="2">Í lögboðnum tilvikum bætist við álag.</sen>
-      <sen nr="3">Dráttarvextir og álag sem leggjast á skatta og gjöld eru hluti kröfunnar og fyrnast ekki sjálfstætt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hafi skattar og gjöld ekki verið greidd á eindaga skal greiða dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, af þeirri fjárhæð sem gjaldfallin er frá gjalddaga.</sen>
+        <sen nr="2">Í lögboðnum tilvikum bætist við álag.</sen>
+        <sen nr="3">Dráttarvextir og álag sem leggjast á skatta og gjöld eru hluti kröfunnar og fyrnast ekki sjálfstætt.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Sé vaxtatímabil lengra en tólf mánuðir án þess að vextirnir séu greiddir skulu þeir lagðir við höfuðstól og nýir vextir reiknaðir af samanlagðri fjárhæð, sbr. 12. gr. laga um vexti og verðtryggingu, nr. 38/2001.</sen>
-      <sen nr="2">Ekki skal bæta vöxtum við höfuðstól oftar en á tólf mánaða fresti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé vaxtatímabil lengra en tólf mánuðir án þess að vextirnir séu greiddir skulu þeir lagðir við höfuðstól og nýir vextir reiknaðir af samanlagðri fjárhæð, sbr. 12. gr. laga um vexti og verðtryggingu, nr. 38/2001.</sen>
+        <sen nr="2">Ekki skal bæta vöxtum við höfuðstól oftar en á tólf mánaða fresti.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Óheimilt er að lækka eða fella niður dráttarvexti og álag nema lög mæli fyrir á annan veg.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Óheimilt er að lækka eða fella niður dráttarvexti og álag nema lög mæli fyrir á annan veg.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Gjaldandi skal greiða lögboðinn kostnað vegna innheimtuaðgerða og er óheimilt að fella hann niður.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Gjaldandi skal greiða lögboðinn kostnað vegna innheimtuaðgerða og er óheimilt að fella hann niður.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Innheimtumaður gefur ekki út skuldleysisvottorð til gjaldanda skuldi hann gjaldfallna skatta, gjöld eða sektir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumaður gefur ekki út skuldleysisvottorð til gjaldanda skuldi hann gjaldfallna skatta, gjöld eða sektir.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <name>Endurgreiðsla oftekins fjár.</name>
     <subart nr="1">
-      <sen nr="1">Stjórnvöld sem innheimta skatta, gjöld eða sektir skulu endurgreiða það fé sem ofgreitt reynist lögum samkvæmt ásamt vöxtum skv. 1. mgr. 8. gr. laga um vexti og verðtryggingu, nr. 38/2001, af því fé sem oftekið var frá þeim tíma sem greiðslan átti sér stað og þar til endurgreiðsla fer fram.</sen>
-      <sen nr="2">Vextir skulu þó ekki greiddir ef endurgreiðsla fer fram innan 30 daga frá því að fé var oftekið.</sen>
-      <sen nr="3">Stjórnvöld skulu hafa frumkvæði að endurgreiðslu þegar þeim verður ljóst að ofgreitt hefur verið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Stjórnvöld sem innheimta skatta, gjöld eða sektir skulu endurgreiða það fé sem ofgreitt reynist lögum samkvæmt ásamt vöxtum skv. 1. mgr. 8. gr. laga um vexti og verðtryggingu, nr. 38/2001, af því fé sem oftekið var frá þeim tíma sem greiðslan átti sér stað og þar til endurgreiðsla fer fram.</sen>
+        <sen nr="2">Vextir skulu þó ekki greiddir ef endurgreiðsla fer fram innan 30 daga frá því að fé var oftekið.</sen>
+        <sen nr="3">Stjórnvöld skulu hafa frumkvæði að endurgreiðslu þegar þeim verður ljóst að ofgreitt hefur verið.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Sé kæra til meðferðar hjá yfirskattanefnd og nefndin kveður ekki upp úrskurð innan lögboðins frests skv. 1. mgr. 8. gr. laga um yfirskattanefnd, nr. 30/1992, skal greiða gjaldanda dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, af fjárhæð sem yfirskattanefnd úrskurðar að skuli endurgreiða, eða dæmd er síðar, frá þeim tíma þegar frestur nefndarinnar til að kveða upp úrskurð leið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé kæra til meðferðar hjá yfirskattanefnd og nefndin kveður ekki upp úrskurð innan lögboðins frests skv. 1. mgr. 8. gr. laga um yfirskattanefnd, nr. 30/1992, skal greiða gjaldanda dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, af fjárhæð sem yfirskattanefnd úrskurðar að skuli endurgreiða, eða dæmd er síðar, frá þeim tíma þegar frestur nefndarinnar til að kveða upp úrskurð leið.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Hafi dómsmál verið höfðað til endurgreiðslu skatta, gjalda eða sekta má krefjast dráttarvaxta frá þeim tíma þegar dómsmál telst höfðað.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hafi dómsmál verið höfðað til endurgreiðslu skatta, gjalda eða sekta má krefjast dráttarvaxta frá þeim tíma þegar dómsmál telst höfðað.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Greiða skal gjaldanda dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá þeim degi þegar bært stjórnvald ákvarðar inneign enda hafi endurgreiðsla ekki farið fram innan 30 daga frá því tímamarki.</sen>
-      <sen nr="2">Hafi gjaldandi ekki veitt innheimtumanni nauðsynlegar upplýsingar til að endurgreiðsla geti farið fram, svo sem um bankareikning til innborgunar, sbr. 6. mgr., skal greiða dráttarvexti frá þeim degi þegar gjaldandi veitir upplýsingarnar hafi endurgreiðsla ekki farið fram innan 30 daga frá því tímamarki.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Greiða skal gjaldanda dráttarvexti skv. 1. mgr. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá þeim degi þegar bært stjórnvald ákvarðar inneign enda hafi endurgreiðsla ekki farið fram innan 30 daga frá því tímamarki.</sen>
+        <sen nr="2">Hafi gjaldandi ekki veitt innheimtumanni nauðsynlegar upplýsingar til að endurgreiðsla geti farið fram, svo sem um bankareikning til innborgunar, sbr. 6. mgr., skal greiða dráttarvexti frá þeim degi þegar gjaldandi veitir upplýsingarnar hafi endurgreiðsla ekki farið fram innan 30 daga frá því tímamarki.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Ákvæði 4. mgr. gengur framar 1. og 3. mgr. 5. gr. laga um vexti og verðtryggingu, nr. 38/2001.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 4. mgr. gengur framar 1. og 3. mgr. 5. gr. laga um vexti og verðtryggingu, nr. 38/2001.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Endurgreiðsla skal fara fram með innborgun á bankareikning gjaldanda nema skilyrði séu til skuldajöfnunar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Endurgreiðsla skal fara fram með innborgun á bankareikning gjaldanda nema skilyrði séu til skuldajöfnunar.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen nr="1">Krafa um endurgreiðslu samkvæmt lögum þessum fyrnist þegar fjögur ár eru liðin frá því að greiðsla átti sér stað eða inneign myndaðist.</sen>
-      <sen nr="2">Þegar krafa um endurgreiðslu fyrnist fyrnast jafnframt áfallnir vextir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Krafa um endurgreiðslu samkvæmt lögum þessum fyrnist þegar fjögur ár eru liðin frá því að greiðsla átti sér stað eða inneign myndaðist.</sen>
+        <sen nr="2">Þegar krafa um endurgreiðslu fyrnist fyrnast jafnframt áfallnir vextir.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <name>Skuldajöfnun.</name>
     <subart nr="1">
-      <sen nr="1">Skuldajafna skal inneignum á móti gjaldföllnum sköttum, gjöldum, sektum og sakarkostnaði nema lög mæli fyrir á annan veg.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skuldajafna skal inneignum á móti gjaldföllnum sköttum, gjöldum, sektum og sakarkostnaði nema lög mæli fyrir á annan veg.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Skuldajafna skal inneignum á móti erlendum sköttum, gjöldum og sektum sem eru til innheimtu hér á landi á grundvelli samninga sem Ísland hefur gert við önnur ríki nema lög mæli fyrir á annan veg.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skuldajafna skal inneignum á móti erlendum sköttum, gjöldum og sektum sem eru til innheimtu hér á landi á grundvelli samninga sem Ísland hefur gert við önnur ríki nema lög mæli fyrir á annan veg.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Skuldajafna skal barnabótum á móti fyrirframgreiddum barnabótum og ofgreiddum barnabótum.</sen>
-      <sen nr="2">Skuldajafna skal barnabótum á móti kröfum um ofgreiddar barnabætur sem eru til innheimtu hér á landi á grundvelli samninga sem Ísland hefur gert við önnur ríki.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skuldajafna skal barnabótum á móti fyrirframgreiddum barnabótum og ofgreiddum barnabótum.</sen>
+        <sen nr="2">Skuldajafna skal barnabótum á móti kröfum um ofgreiddar barnabætur sem eru til innheimtu hér á landi á grundvelli samninga sem Ísland hefur gert við önnur ríki.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Skuldajafna skal inneignum á móti gjaldföllnum sköttum, gjöldum og sektum sem gjaldandi ber sjálfskuldarábyrgð á nema lög mæli fyrir á annan veg.</sen>
-      <sen nr="2">Hér undir fellur m.a. sjálfskuldarábyrgð skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og ábyrgð félagsmanna sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skuldajafna skal inneignum á móti gjaldföllnum sköttum, gjöldum og sektum sem gjaldandi ber sjálfskuldarábyrgð á nema lög mæli fyrir á annan veg.</sen>
+        <sen nr="2">Hér undir fellur m.a. sjálfskuldarábyrgð skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og ábyrgð félagsmanna sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <name>Ábyrgð þriðja aðila.</name>
     <subart nr="1">
-      <sen nr="1">Beri gjaldandi ábyrgð á greiðslu skatta, gjalda eða sekta þriðja aðila samkvæmt lögum getur innheimtumaður ríkissjóðs gengið að honum til greiðslu þeirra skulda sem hann ber ábyrgð á.</sen>
-      <sen nr="2">Hér undir fellur m.a. ábyrgð skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og ábyrgð félagsmanna sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Beri gjaldandi ábyrgð á greiðslu skatta, gjalda eða sekta þriðja aðila samkvæmt lögum getur innheimtumaður ríkissjóðs gengið að honum til greiðslu þeirra skulda sem hann ber ábyrgð á.</sen>
+        <sen nr="2">Hér undir fellur m.a. ábyrgð skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og ábyrgð félagsmanna sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Gera má aðför hjá þeim sem ber ábyrgð á sköttum, gjöldum eða sektum til tryggingar þeim skuldum sem hann ber ábyrgð á samkvæmt lögum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Gera má aðför hjá þeim sem ber ábyrgð á sköttum, gjöldum eða sektum til tryggingar þeim skuldum sem hann ber ábyrgð á samkvæmt lögum.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Með ábyrgð samkvæmt þessari grein er átt við sjálfskuldarábyrgð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Með ábyrgð samkvæmt þessari grein er átt við sjálfskuldarábyrgð.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="11">
     <nr-title>11. gr.</nr-title>
     <name>Launaafdráttur.</name>
     <subart nr="1">
-      <sen nr="1">Öllum launagreiðendum er skylt að kröfu innheimtumanns ríkissjóðs að halda eftir af launum launþega til greiðslu þing- og sveitarsjóðsgjalda sem lögð eru á launþega og innheimta ber samkvæmt lögum um tekjuskatt og IV. kafla laga um tekjustofna sveitarfélaga, nr. 4/1995.</sen>
-      <sen nr="2">Þá er launagreiðendum skylt að kröfu innheimtumanns að halda eftir af launum launþega til greiðslu þing- og sveitarsjóðsgjalda sem hann ber sjálfskuldarábyrgð á skv. 1. mgr. 116. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Öllum launagreiðendum er skylt að kröfu innheimtumanns ríkissjóðs að halda eftir af launum launþega til greiðslu þing- og sveitarsjóðsgjalda sem lögð eru á launþega og innheimta ber samkvæmt lögum um tekjuskatt og IV. kafla laga um tekjustofna sveitarfélaga, nr. 4/1995.</sen>
+        <sen nr="2">Þá er launagreiðendum skylt að kröfu innheimtumanns að halda eftir af launum launþega til greiðslu þing- og sveitarsjóðsgjalda sem hann ber sjálfskuldarábyrgð á skv. 1. mgr. 116. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Innheimtumaður ríkissjóðs sendir kröfu um launaafdrátt til launagreiðanda á því formi sem ríkisskattstjóri ákveður og er ríkisskattstjóra jafnframt heimilt að ákveða á hvaða formi skilagreinar launagreiðanda skuli vera.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumaður ríkissjóðs sendir kröfu um launaafdrátt til launagreiðanda á því formi sem ríkisskattstjóri ákveður og er ríkisskattstjóra jafnframt heimilt að ákveða á hvaða formi skilagreinar launagreiðanda skuli vera.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Frádráttur launagreiðanda vegna staðgreiðslu opinberra gjalda, þing- og sveitarsjóðsgjalda, lögbundinna iðgjalda í lífeyrissjóð og stéttarfélag og meðlags samkvæmt kröfu Innheimtustofnunar sveitarfélaga skal aldrei vera meiri en sem nemur 75% af heildarlaunum launþega.</sen>
-      <sen nr="2">Launþegi getur óskað eftir að gera greiðsluáætlun um lækkun launaafdráttar vegna þing- og sveitarsjóðsgjalda skv. 12. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Frádráttur launagreiðanda vegna staðgreiðslu opinberra gjalda, þing- og sveitarsjóðsgjalda, lögbundinna iðgjalda í lífeyrissjóð og stéttarfélag og meðlags samkvæmt kröfu Innheimtustofnunar sveitarfélaga skal aldrei vera meiri en sem nemur 75% af heildarlaunum launþega.</sen>
+        <sen nr="2">Launþegi getur óskað eftir að gera greiðsluáætlun um lækkun launaafdráttar vegna þing- og sveitarsjóðsgjalda skv. 12. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Sex dögum eftir útborgun launa skal launagreiðandi ótilkvaddur standa skil á afdregnum launum eða launum sem honum bar að halda eftir skv. 1. mgr. ásamt skilagrein.</sen>
-      <sen nr="2">Sé lokadagur skilafrests almennur frídagur lengist fresturinn til næsta virka dags.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sex dögum eftir útborgun launa skal launagreiðandi ótilkvaddur standa skil á afdregnum launum eða launum sem honum bar að halda eftir skv. 1. mgr. ásamt skilagrein.</sen>
+        <sen nr="2">Sé lokadagur skilafrests almennur frídagur lengist fresturinn til næsta virka dags.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Launagreiðandi sem eigi hefur skilað á réttum degi fé sem hann hefur haldið eftir eða bar að halda eftir skv. 1. mgr. skal greiða dráttarvexti skv. 7. gr.</sen>
-      <sen nr="2">Gjalddagi er útborgunardagur launa og eindagi sá dagur þegar launagreiðanda bar að skila fénu til innheimtumanns, sbr. 4. mgr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Launagreiðandi sem eigi hefur skilað á réttum degi fé sem hann hefur haldið eftir eða bar að halda eftir skv. 1. mgr. skal greiða dráttarvexti skv. 7. gr.</sen>
+        <sen nr="2">Gjalddagi er útborgunardagur launa og eindagi sá dagur þegar launagreiðanda bar að skila fénu til innheimtumanns, sbr. 4. mgr.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Launagreiðandi ber sjálfskuldarábyrgð á þing- og sveitarsjóðsgjöldum sem hann hefur haldið eftir eða bar að halda eftir skv. 1. mgr.</sen>
-      <sen nr="2">Launagreiðandi og launþegi bera óskipta ábyrgð á greiðslu þing- og sveitarsjóðsgjalda og getur innheimtumaður gengið að hvorum aðila fyrir sig.</sen>
-      <sen nr="3">Launþegi ber þó ekki ábyrgð á greiðslu þing- og sveitarsjóðsgjalda sem hann sannar að launagreiðandi hafi haldið eftir af launum hans.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Launagreiðandi ber sjálfskuldarábyrgð á þing- og sveitarsjóðsgjöldum sem hann hefur haldið eftir eða bar að halda eftir skv. 1. mgr.</sen>
+        <sen nr="2">Launagreiðandi og launþegi bera óskipta ábyrgð á greiðslu þing- og sveitarsjóðsgjalda og getur innheimtumaður gengið að hvorum aðila fyrir sig.</sen>
+        <sen nr="3">Launþegi ber þó ekki ábyrgð á greiðslu þing- og sveitarsjóðsgjalda sem hann sannar að launagreiðandi hafi haldið eftir af launum hans.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen nr="1">Krafa vegna fjár sem launagreiðandi hefur haldið eftir eða bar að halda eftir samkvæmt þessari grein er aðfararhæf samkvæmt lögum gagnvart launagreiðanda án undangengins dóms eða sáttar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Krafa vegna fjár sem launagreiðandi hefur haldið eftir eða bar að halda eftir samkvæmt þessari grein er aðfararhæf samkvæmt lögum gagnvart launagreiðanda án undangengins dóms eða sáttar.</sen>
+      </paragraph>
     </subart>
     <subart nr="8">
-      <sen nr="1">Innheimtustofnun sveitarfélaga, stéttarfélög og lífeyrissjóðir skulu láta innheimtumanni ríkissjóðs í té upplýsingar og gögn vegna launaafdráttar með rafrænum hætti ef því verður við komið og án endurgjalds til að hann geti rækt hlutverk sitt samkvæmt ákvæði þessu.</sen>
-      <sen nr="2">Innheimtumanni er heimil vinnsla persónuupplýsinga, þar á meðal upplýsinga um greiðslur gjaldanda til stéttarfélags, lífeyrissjóðs og Innheimtustofnunar sveitarfélaga og upplýsinga á launaseðli sem gjaldandi lætur innheimtumanni í té í þeim tilgangi að sinna lögbundnu hlutverki sínu samkvæmt ákvæði þessu að uppfylltum skilyrðum laga um persónuvernd og vinnslu persónuupplýsinga.</sen>
-      <sen nr="3">Ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæði þessu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtustofnun sveitarfélaga, stéttarfélög og lífeyrissjóðir skulu láta innheimtumanni ríkissjóðs í té upplýsingar og gögn vegna launaafdráttar með rafrænum hætti ef því verður við komið og án endurgjalds til að hann geti rækt hlutverk sitt samkvæmt ákvæði þessu.</sen>
+        <sen nr="2">Innheimtumanni er heimil vinnsla persónuupplýsinga, þar á meðal upplýsinga um greiðslur gjaldanda til stéttarfélags, lífeyrissjóðs og Innheimtustofnunar sveitarfélaga og upplýsinga á launaseðli sem gjaldandi lætur innheimtumanni í té í þeim tilgangi að sinna lögbundnu hlutverki sínu samkvæmt ákvæði þessu að uppfylltum skilyrðum laga um persónuvernd og vinnslu persónuupplýsinga.</sen>
+        <sen nr="3">Ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæði þessu.</sen>
+      </paragraph>
     </subart>
     <subart nr="9">
-      <sen nr="1">Launaafdráttur er heimill á meðan launþegi ber ábyrgð á kröfum sem ekki fást greiddar við gjaldþrotaskipti skv. 2. mgr. 165. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Launaafdráttur er heimill á meðan launþegi ber ábyrgð á kröfum sem ekki fást greiddar við gjaldþrotaskipti skv. 2. mgr. 165. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991.</sen>
+      </paragraph>
     </subart>
     <subart nr="10">
-      <sen nr="1">Ráðherra skal með reglugerð setja nánari reglur um framkvæmd þessarar greinar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra skal með reglugerð setja nánari reglur um framkvæmd þessarar greinar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.133.html" law-nr="133" law-year="2021" law-art="20" nr="1">
         <footnote-sen>L. 133/2021, 20. gr.</footnote-sen>
-        <location type="range">
-          <art>11</art>
-          <subart>4</subart>
-          <sen words="ásamt skilagrein">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='11']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="ásamt skilagrein" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote nr="2">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/240-2020"&gt;Rg. 240/2020&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>11</art>
-          <subart>10</subart>
-          <sen before-mark="^Ráðherra skal með reglugerð" after-mark="setja nánari reglur um framkvæmd þessarar greinar.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='11']/subart[@nr='10']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra skal með reglugerð" after-mark="setja nánari reglur um framkvæmd þessarar greinar.$"/>
       </footnote>
     </footnotes>
   </art>
@@ -294,92 +384,96 @@
     <nr-title>12. gr.</nr-title>
     <name>Greiðsluáætlanir.</name>
     <subart nr="1">
-      <sen nr="1">Innheimtumanni ríkissjóðs er heimilt að gera greiðsluáætlun við gjaldanda um skatta, gjöld og sektir að beiðni gjaldanda.</sen>
-      <sen nr="2">Greiðsluáætlun felur í sér viðurkenningu gjaldanda á kröfu og rýfur fyrningu hennar.</sen>
-      <sen nr="3">Gild greiðsluáætlun frestar innheimtuaðgerðum vegna skatta, gjalda og sekta sem undir hana falla nema hætta sé á að hagsmunir ríkissjóðs fari annars forgörðum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumanni ríkissjóðs er heimilt að gera greiðsluáætlun við gjaldanda um skatta, gjöld og sektir að beiðni gjaldanda.</sen>
+        <sen nr="2">Greiðsluáætlun felur í sér viðurkenningu gjaldanda á kröfu og rýfur fyrningu hennar.</sen>
+        <sen nr="3">Gild greiðsluáætlun frestar innheimtuaðgerðum vegna skatta, gjalda og sekta sem undir hana falla nema hætta sé á að hagsmunir ríkissjóðs fari annars forgörðum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Lögboðnir dráttarvextir leggjast á skatta, gjöld og sektir þrátt fyrir að um þau hafi verið gerð greiðsluáætlun.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lögboðnir dráttarvextir leggjast á skatta, gjöld og sektir þrátt fyrir að um þau hafi verið gerð greiðsluáætlun.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Skuldajöfnun inneigna sem myndast í skattkerfinu skal fara fram þrátt fyrir gilda greiðsluáætlun.</sen>
-      <sen nr="2">Skuldajöfnun upp í kröfur sem falla undir greiðsluáætlun hefur ekki áhrif á skyldu gjaldanda til að inna af hendi greiðslur samkvæmt henni.</sen>
-      <sen nr="3">Gjaldandi hefur ekki forræði á ráðstöfun greiðslna inn á kröfur sem falla undir greiðsluáætlun.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skuldajöfnun inneigna sem myndast í skattkerfinu skal fara fram þrátt fyrir gilda greiðsluáætlun.</sen>
+        <sen nr="2">Skuldajöfnun upp í kröfur sem falla undir greiðsluáætlun hefur ekki áhrif á skyldu gjaldanda til að inna af hendi greiðslur samkvæmt henni.</sen>
+        <sen nr="3">Gjaldandi hefur ekki forræði á ráðstöfun greiðslna inn á kröfur sem falla undir greiðsluáætlun.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Ákvörðun um gerð greiðsluáætlana einstaklinga er heimil á grundvelli sjálfvirkrar gagnavinnslu.</sen>
-      <sen nr="2">Gjaldandi á rétt til mannlegrar íhlutunar af hálfu innheimtumanns til að láta skoðun sína í ljós og til að vefengja ákvörðunina.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvörðun um gerð greiðsluáætlana einstaklinga er heimil á grundvelli sjálfvirkrar gagnavinnslu.</sen>
+        <sen nr="2">Gjaldandi á rétt til mannlegrar íhlutunar af hálfu innheimtumanns til að láta skoðun sína í ljós og til að vefengja ákvörðunina.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Falli greiðsluáætlun úr gildi, sem gerð var eftir árangurslaust fjárnám, er innheimtumanni ríkissjóðs heimilt að skrá þær upplýsingar hjá fjárhagsupplýsingastofum sem hafa starfsleyfi til að miðla upplýsingum um vanskil skv. 15. gr. laga um persónuvernd og vinnslu persónuupplýsinga, nr. 90/2018, en með því verður gjaldandi skráður á ný á vanskilaskrá.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Falli greiðsluáætlun úr gildi, sem gerð var eftir árangurslaust fjárnám, er innheimtumanni ríkissjóðs heimilt að skrá þær upplýsingar hjá fjárhagsupplýsingastofum sem hafa starfsleyfi til að miðla upplýsingum um vanskil skv. 15. gr. laga um persónuvernd og vinnslu persónuupplýsinga, nr. 90/2018, en með því verður gjaldandi skráður á ný á vanskilaskrá.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Ríkisskattstjóri setur verklagsreglur um greiðsluáætlanir og nánari skilyrði um gerð þeirra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisskattstjóri setur verklagsreglur um greiðsluáætlanir og nánari skilyrði um gerð þeirra.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="13">
     <nr-title>13. gr.</nr-title>
     <name>Stöðvun atvinnurekstrar.</name>
     <subart nr="1">
-      <sen nr="1">Þar sem lög kveða á um getur innheimtumaður ríkissjóðs látið lögreglu stöðva atvinnurekstur hjá þeim aðilum sem gera ekki fullnægjandi skil á sköttum og gjöldum, m.a. með innsigli á starfsstöðvar, skrifstofur, vörur og atvinnutæki.</sen>
-      <sen nr="2">Gjaldanda skal tilkynnt um fyrirhugaða stöðvun atvinnurekstrar og gefinn sjö daga frestur frá dagsetningu tilkynningar til að greiða kröfu eða gera greiðsluáætlun.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þar sem lög kveða á um getur innheimtumaður ríkissjóðs látið lögreglu stöðva atvinnurekstur hjá þeim aðilum sem gera ekki fullnægjandi skil á sköttum og gjöldum, m.a. með innsigli á starfsstöðvar, skrifstofur, vörur og atvinnutæki.</sen>
+        <sen nr="2">Gjaldanda skal tilkynnt um fyrirhugaða stöðvun atvinnurekstrar og gefinn sjö daga frestur frá dagsetningu tilkynningar til að greiða kröfu eða gera greiðsluáætlun.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="14">
     <nr-title>14. gr.</nr-title>
     <name>Kyrrsetningar.</name>
     <subart nr="1">
-      <sen nr="1">Til tryggingar greiðslu væntanlegrar skattkröfu, fésektar og sakarkostnaðar vegna mála sem sæta skattrannsókn eða lögreglurannsókn er ríkisskattstjóra heimilt að krefjast kyrrsetningar hjá skattaðila og öðrum þeim sem vegna tengsla sinna við mál eru grunaðir um háttsemi er varðar refsingu skv. 109. gr. laga um tekjuskatt, nr. 90/2003, 40. gr. laga um virðisaukaskatt, nr. 50/1988, 30. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 19. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, ef hætta þykir á að eignum verði ella skotið undan eða þær glatist eða rýrni að mun, enda megi ætla að meint refsiverð háttsemi leiði til sektarákvörðunar skv. 110. gr. laga um tekjuskatt, nr. 90/2003, 41. gr. laga um virðisaukaskatt, nr. 50/1988, 31. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 20. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, eða varði ákæru skv. 262. gr. almennra hegningarlaga, nr. 19/1940.</sen>
-      <sen nr="2">Með sama hætti er heimilt að krefjast kyrrsetningar hjá aðilum sem bera ábyrgð á skattgreiðslum skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og hjá aðilum sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
-      <sen nr="3">Kyrrsetning skal framkvæmd á meðan mál er til meðferðar hjá skattrannsóknarstjóra eða lögreglu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Til tryggingar greiðslu væntanlegrar skattkröfu, fésektar og sakarkostnaðar vegna mála sem sæta skattrannsókn eða lögreglurannsókn er ríkisskattstjóra heimilt að krefjast kyrrsetningar hjá skattaðila og öðrum þeim sem vegna tengsla sinna við mál eru grunaðir um háttsemi er varðar refsingu skv. 109. gr. laga um tekjuskatt, nr. 90/2003, 40. gr. laga um virðisaukaskatt, nr. 50/1988, 30. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 19. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, ef hætta þykir á að eignum verði ella skotið undan eða þær glatist eða rýrni að mun, enda megi ætla að meint refsiverð háttsemi leiði til sektarákvörðunar skv. 110. gr. laga um tekjuskatt, nr. 90/2003, 41. gr. laga um virðisaukaskatt, nr. 50/1988, 31. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 20. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, eða varði ákæru skv. 262. gr. almennra hegningarlaga, nr. 19/1940.</sen>
+        <sen nr="2">Með sama hætti er heimilt að krefjast kyrrsetningar hjá aðilum sem bera ábyrgð á skattgreiðslum skv. 116. gr. laga um tekjuskatt, nr. 90/2003, og hjá aðilum sem bera beina, óskipta og ótakmarkaða ábyrgð á skuldbindingum félags.</sen>
+        <sen nr="3">Kyrrsetning skal framkvæmd á meðan mál er til meðferðar hjá skattrannsóknarstjóra eða lögreglu.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ríkisskattstjóri annast rekstur mála skattrannsóknarstjóra skv. 1. mgr.</sen>
-      <sen nr="2">Skal skattrannsóknarstjóri í kyrrsetningarkröfu tilgreina ætlaðar fjárhæðir vantalinna skatta skattaðila samkvæmt rannsókn þess máls sem um ræðir svo sem hún þá stendur, sem og ætlaðar fjárhæðir fésekta sem kunni samkvæmt rannsókninni að verða gerðar skattaðila eða öðrum þeim sem kyrrsetningar verður krafist hjá skv. 1. mgr.</sen>
-      <sen nr="3">Ríkisskattstjóra er heimill aðgangur að öllum nauðsynlegum upplýsingum og gögnum sem skattyfirvöld, fjármálastofnanir og aðrir aðilar búa yfir, sbr. 19. gr., og snerta ráðstafanir samkvæmt þessari grein.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisskattstjóri annast rekstur mála skattrannsóknarstjóra skv. 1. mgr.</sen>
+        <sen nr="2">Skal skattrannsóknarstjóri í kyrrsetningarkröfu tilgreina ætlaðar fjárhæðir vantalinna skatta skattaðila samkvæmt rannsókn þess máls sem um ræðir svo sem hún þá stendur, sem og ætlaðar fjárhæðir fésekta sem kunni samkvæmt rannsókninni að verða gerðar skattaðila eða öðrum þeim sem kyrrsetningar verður krafist hjá skv. 1. mgr.</sen>
+        <sen nr="3">Ríkisskattstjóra er heimill aðgangur að öllum nauðsynlegum upplýsingum og gögnum sem skattyfirvöld, fjármálastofnanir og aðrir aðilar búa yfir, sbr. 19. gr., og snerta ráðstafanir samkvæmt þessari grein.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Um framkvæmd og gildi kyrrsetningar fer sem um kyrrsetningu fjármuna almennt sé að ræða með þeim undantekningum að ekki þarf að setja tryggingu fyrir greiðslu bóta sem gerðarþoli kann að öðlast rétt til, ekki þarf að höfða mál til staðfestingar kyrrsetningu og ekki skal greiða gjöld fyrir ráðstafanir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Um framkvæmd og gildi kyrrsetningar fer sem um kyrrsetningu fjármuna almennt sé að ræða með þeim undantekningum að ekki þarf að setja tryggingu fyrir greiðslu bóta sem gerðarþoli kann að öðlast rétt til, ekki þarf að höfða mál til staðfestingar kyrrsetningu og ekki skal greiða gjöld fyrir ráðstafanir.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Kyrrsetning fellur niður ef rannsókn leiðir ekki til þess að skattar skattaðila verði hækkaðir eða honum eða öðrum þeim sem rökstuddur grunur um refsiverða háttsemi beinist að skv. 109. gr. laga um tekjuskatt, nr. 90/2003, 40. gr. laga um virðisaukaskatt, nr. 50/1988, 30. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 19. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, verði gerð fésekt hvort sem er af skattyfirvöldum eða fyrir dómi.</sen>
-      <sen nr="2">Sá sem kyrrsetning beinist að á þá heimtingu á að felldar verði úr gildi þær ráðstafanir sem gerðar hafa verið til tryggingar kyrrsetningunni.</sen>
-      <sen nr="3">Kyrrsetning fellur á sama hátt niður ef inntar eru af hendi þær greiðslur sem kyrrsetning á að tryggja.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Kyrrsetning fellur niður ef rannsókn leiðir ekki til þess að skattar skattaðila verði hækkaðir eða honum eða öðrum þeim sem rökstuddur grunur um refsiverða háttsemi beinist að skv. 109. gr. laga um tekjuskatt, nr. 90/2003, 40. gr. laga um virðisaukaskatt, nr. 50/1988, 30. gr. laga um staðgreiðslu opinberra gjalda, nr. 45/1987, og 19. gr. laga um staðgreiðslu skatts á fjármagnstekjur, nr. 94/1996, verði gerð fésekt hvort sem er af skattyfirvöldum eða fyrir dómi.</sen>
+        <sen nr="2">Sá sem kyrrsetning beinist að á þá heimtingu á að felldar verði úr gildi þær ráðstafanir sem gerðar hafa verið til tryggingar kyrrsetningunni.</sen>
+        <sen nr="3">Kyrrsetning fellur á sama hátt niður ef inntar eru af hendi þær greiðslur sem kyrrsetning á að tryggja.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Leggja má fyrir héraðsdóm ágreining um lögmæti kyrrsetningargerðar með sama hætti og greinir í 2. mgr. 102. gr. laga um meðferð sakamála, nr. 88/2008.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Leggja má fyrir héraðsdóm ágreining um lögmæti kyrrsetningargerðar með sama hætti og greinir í 2. mgr. 102. gr. laga um meðferð sakamála, nr. 88/2008.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.133.html" law-nr="133" law-year="2021" law-art="21" nr="1">
         <footnote-sen>L. 133/2021, 21. gr.</footnote-sen>
-        <location type="range">
-          <art>14</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
-        <location type="range">
-          <art>14</art>
-          <subart>1</subart>
-          <sen words="eða lögreglu">3</sen>
-        </location>
-        <location type="deletion">
-          <art>14</art>
-          <subart>2</subart>
-          <sen before-mark="^Ríkisskattstjóri annast rekstur mála" after-mark="(\[? ?)?skattrannsóknarstjóra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skv. 1. mgr.$">1</sen>
-        </location>
-        <location type="range">
-          <art>14</art>
-          <subart>2</subart>
-          <sen>2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+        <location type="range" xpath="art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" words="eða lögreglu" middle-punctuation="." instance-num="1"/>
+        <location type="deletion" xpath="art[@nr='14']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ríkisskattstjóri annast rekstur mála" after-mark="(\[??)?skattrannsóknarstjóra:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?skv. 1. mgr.$"/>
+        <location type="range" xpath="art[@nr='14']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2021.029.html" law-nr="29" law-year="2021" law-art="26" nr="2">
         <footnote-sen>L. 29/2021, 26. gr.</footnote-sen>
-        <location type="range">
-          <art>14</art>
-          <subart>2</subart>
-          <sen words="skattrannsóknarstjóra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='14']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="skattrannsóknarstjóra" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -387,37 +481,44 @@
     <nr-title>15. gr.</nr-title>
     <name>Nauðasamningar.</name>
     <subart nr="1">
-      <sen nr="1">Innheimtumanni ríkissjóðs er heimilt að samþykkja nauðasamning gjaldanda við kröfuhafa að uppfylltum eftirfarandi skilyrðum:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Gjaldandi skuldi ekki virðisaukaskatt, staðgreiðslu opinberra gjalda, tryggingagjald eða vörugjald af ökutækjum.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Skattar og gjöld séu ekki tilkomin vegna endurákvörðunar skattyfirvalda vegna skattsvika.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Skattar og gjöld séu ekki byggð á áætlunum stjórnvalda.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Gjaldandi skuldi hvorki skattsekt yfirskattanefndar eða skattrannsóknarstjóra né fésekt ársreikningaskrár ríkisskattstjóra.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">Ljóst sé að hagsmunum ríkissjóðs verði betur borgið með nauðasamningi.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumanni ríkissjóðs er heimilt að samþykkja nauðasamning gjaldanda við kröfuhafa að uppfylltum eftirfarandi skilyrðum:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Gjaldandi skuldi ekki virðisaukaskatt, staðgreiðslu opinberra gjalda, tryggingagjald eða vörugjald af ökutækjum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Skattar og gjöld séu ekki tilkomin vegna endurákvörðunar skattyfirvalda vegna skattsvika.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Skattar og gjöld séu ekki byggð á áætlunum stjórnvalda.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Gjaldandi skuldi hvorki skattsekt yfirskattanefndar eða skattrannsóknarstjóra né fésekt ársreikningaskrár ríkisskattstjóra.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Ljóst sé að hagsmunum ríkissjóðs verði betur borgið með nauðasamningi.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.029.html" law-nr="29" law-year="2021" law-art="26" nr="1">
         <footnote-sen>L. 29/2021, 26. gr.</footnote-sen>
-        <location type="range">
-          <art>15</art>
-          <subart>1</subart>
-          <numart>4</numart>
-          <sen words="skattrannsóknarstjóra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="skattrannsóknarstjóra" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -425,62 +526,71 @@
     <nr-title>16. gr.</nr-title>
     <name>Afskriftir eldri krafna.</name>
     <subart nr="1">
-      <sen nr="1">Ríkisskattstjóra er heimilt að afskrifa kröfur vegna þing- og sveitarsjóðsgjalda einstaklinga ásamt áföllnum dráttarvöxtum þegar tíu ár eru liðin frá stofnun kröfunnar að uppfylltum eftirfarandi skilyrðum:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Ljóst þyki að gjaldandi geti ekki greitt höfuðstól ásamt áföllnum dráttarvöxtum.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Greiðsluáætlun um lækkun launaafdráttar sé í gildi.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Gjaldanda hafi verið synjað um greiðsluaðlögun hjá umboðsmanni skuldara eða greiðsluaðlögunarumleitanir reynst árangurslausar.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Ábyrgð samsköttunaraðila sé ekki fyrir hendi, sbr. 1. mgr. 116. gr. laga um tekjuskatt, nr. 90/2003.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">Gjaldandi hafi ekki áður fengið afskrifaðar kröfur á grundvelli þessa ákvæðis.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisskattstjóra er heimilt að afskrifa kröfur vegna þing- og sveitarsjóðsgjalda einstaklinga ásamt áföllnum dráttarvöxtum þegar tíu ár eru liðin frá stofnun kröfunnar að uppfylltum eftirfarandi skilyrðum:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Ljóst þyki að gjaldandi geti ekki greitt höfuðstól ásamt áföllnum dráttarvöxtum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Greiðsluáætlun um lækkun launaafdráttar sé í gildi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Gjaldanda hafi verið synjað um greiðsluaðlögun hjá umboðsmanni skuldara eða greiðsluaðlögunarumleitanir reynst árangurslausar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Ábyrgð samsköttunaraðila sé ekki fyrir hendi, sbr. 1. mgr. 116. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Gjaldandi hafi ekki áður fengið afskrifaðar kröfur á grundvelli þessa ákvæðis.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ríkisskattstjóri tekur umsóknir til afgreiðslu samkvæmt ákvæði þessu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisskattstjóri tekur umsóknir til afgreiðslu samkvæmt ákvæði þessu.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="17">
     <nr-title>17. gr.</nr-title>
     <name>Tilkynningar og upplýsingagjöf til skattrannsóknarstjóra og annars stjórnvalds sem fer með rannsókn máls.</name>
     <subart nr="1">
-      <sen nr="1">Fái innheimtumaður ríkissjóðs vitneskju í starfi sínu um atvik sem hann telur vekja rökstuddan grun um að gjaldandi eða aðrir hafi gerst sekir um refsivert athæfi skal hann, ef ekki standa sérstök rök til annars, tilkynna það skattrannsóknarstjóra, lögreglu, héraðssaksóknara eða öðru stjórnvaldi sem rannsókn háttseminnar heyrir undir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Fái innheimtumaður ríkissjóðs vitneskju í starfi sínu um atvik sem hann telur vekja rökstuddan grun um að gjaldandi eða aðrir hafi gerst sekir um refsivert athæfi skal hann, ef ekki standa sérstök rök til annars, tilkynna það skattrannsóknarstjóra, lögreglu, héraðssaksóknara eða öðru stjórnvaldi sem rannsókn háttseminnar heyrir undir.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Innheimtumanni er skylt að veita skattrannsóknarstjóra, lögreglu og héraðssaksóknara allar nauðsynlegar upplýsingar og gögn sem þau óska eftir og unnt er að láta þeim í té.</sen>
-      <sen nr="2">Innheimtumanni er skylt að veita öðru stjórnvaldi skv. 1. mgr. allar nauðsynlegar upplýsingar og gögn um þau mál sem hann hefur tilkynnt því um á grundvelli 1. mgr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumanni er skylt að veita skattrannsóknarstjóra, lögreglu og héraðssaksóknara allar nauðsynlegar upplýsingar og gögn sem þau óska eftir og unnt er að láta þeim í té.</sen>
+        <sen nr="2">Innheimtumanni er skylt að veita öðru stjórnvaldi skv. 1. mgr. allar nauðsynlegar upplýsingar og gögn um þau mál sem hann hefur tilkynnt því um á grundvelli 1. mgr.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Ákvæði 20. gr. sem og ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæðum þessarar greinar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 20. gr. sem og ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæðum þessarar greinar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.029.html" law-nr="29" law-year="2021" law-art="26" nr="1">
         <footnote-sen>L. 29/2021, 26. gr.</footnote-sen>
-        <location type="range">
-          <art>17</art>
-          <name words="skattrannsóknarstjóra">1</name>
-        </location>
-        <location type="range">
-          <art>17</art>
-          <subart>1</subart>
-          <sen words="skattrannsóknarstjóra">1</sen>
-        </location>
-        <location type="range">
-          <art>17</art>
-          <subart>2</subart>
-          <sen words="skattrannsóknarstjóra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='17']/name[1]" words="skattrannsóknarstjóra" instance-num="1"/>
+        <location type="range" xpath="art[@nr='17']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="skattrannsóknarstjóra" middle-punctuation="," instance-num="1"/>
+        <location type="range" xpath="art[@nr='17']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="skattrannsóknarstjóra" middle-punctuation="," instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -488,55 +598,77 @@
     <nr-title>18. gr.</nr-title>
     <name>Rafræn þjónusta.</name>
     <subart nr="1">
-      <sen nr="1">Rafræn miðlun gagna og málsmeðferð er heimil, sbr. 39. gr. stjórnsýslulaga, nr. 37/1993.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Rafræn miðlun gagna og málsmeðferð er heimil, sbr. 39. gr. stjórnsýslulaga, nr. 37/1993.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ríkisskattstjóra er heimilt að ákveða að greiðsla skatta, gjalda og sekta skuli eingöngu fara fram með rafrænum hætti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisskattstjóra er heimilt að ákveða að greiðsla skatta, gjalda og sekta skuli eingöngu fara fram með rafrænum hætti.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="19">
     <nr-title>19. gr.</nr-title>
     <name>Upplýsingagjöf.</name>
     <subart nr="1">
-      <sen nr="1">Gjaldendum, stjórnvöldum og öðrum hlutaðeigandi aðilum er skylt að veita innheimtumanni ríkissjóðs án endurgjalds og á því formi sem óskað er allar nauðsynlegar upplýsingar og gögn sem innheimtumaður óskar eftir og unnt er að láta honum í té svo að hann geti rækt hlutverk sitt skv. 3. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Gjaldendum, stjórnvöldum og öðrum hlutaðeigandi aðilum er skylt að veita innheimtumanni ríkissjóðs án endurgjalds og á því formi sem óskað er allar nauðsynlegar upplýsingar og gögn sem innheimtumaður óskar eftir og unnt er að láta honum í té svo að hann geti rækt hlutverk sitt skv. 3. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Innheimtumanni ríkissjóðs skal heimill aðgangur að fasteigna-, skipa- og ökutækjaskrám, verðbréfamiðstöð og vinnuvélaskrá Vinnueftirlitsins í því skyni að sannreyna eignastöðu einstakra gjaldenda.</sen>
-      <sen nr="2">Jafnframt skal ríkisskattstjóri veita öðrum innheimtumönnum aðgang að skattframtölum gjaldanda í þeim tilgangi að kanna eignastöðu vegna innheimtuaðgerða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimtumanni ríkissjóðs skal heimill aðgangur að fasteigna-, skipa- og ökutækjaskrám, verðbréfamiðstöð og vinnuvélaskrá Vinnueftirlitsins í því skyni að sannreyna eignastöðu einstakra gjaldenda.</sen>
+        <sen nr="2">Jafnframt skal ríkisskattstjóri veita öðrum innheimtumönnum aðgang að skattframtölum gjaldanda í þeim tilgangi að kanna eignastöðu vegna innheimtuaðgerða.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Auk þeirrar heimildar sem kveðið er á um í 2. mgr. hefur innheimtumaður ríkissjóðs heimild til að óska eftir upplýsingum um eignir sem varðveittar kunna að vera í bönkum, sparisjóðum og öðrum fjármálafyrirtækjum, þ.m.t. innlán og verðbréfaeign sem og upplýsingar um skuldastöðu í því skyni að sannreyna eignastöðu gjaldenda í tengslum við kyrrsetningargerðir og innheimtuaðgerðir.</sen>
-      <sen nr="2">Fjármálafyrirtækjum er skylt að upplýsa innheimtumann ríkissjóðs án endurgjalds um eignastöðu viðskiptamanna sinna hjá fyrirtækinu samkvæmt beiðni þar um.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Auk þeirrar heimildar sem kveðið er á um í 2. mgr. hefur innheimtumaður ríkissjóðs heimild til að óska eftir upplýsingum um eignir sem varðveittar kunna að vera í bönkum, sparisjóðum og öðrum fjármálafyrirtækjum, þ.m.t. innlán og verðbréfaeign sem og upplýsingar um skuldastöðu í því skyni að sannreyna eignastöðu gjaldenda í tengslum við kyrrsetningargerðir og innheimtuaðgerðir.</sen>
+        <sen nr="2">Fjármálafyrirtækjum er skylt að upplýsa innheimtumann ríkissjóðs án endurgjalds um eignastöðu viðskiptamanna sinna hjá fyrirtækinu samkvæmt beiðni þar um.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Þá skal innheimtumanni heimill rafrænn aðgangur að yfirlitum um framvindu skipta dánarbúa hjá sýslumönnum án endurgjalds vegna innheimtu hjá erfingjum dánarbúa, endurgreiðslna inneigna dánarbúa og vegna afskrifta eignalausra dánarbúa.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þá skal innheimtumanni heimill rafrænn aðgangur að yfirlitum um framvindu skipta dánarbúa hjá sýslumönnum án endurgjalds vegna innheimtu hjá erfingjum dánarbúa, endurgreiðslna inneigna dánarbúa og vegna afskrifta eignalausra dánarbúa.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Ákvæði 1. mgr. 94. gr. laga um tekjuskatt, nr. 90/2003, eiga við um innheimtumann á sama hátt og önnur skattyfirvöld.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 1. mgr. 94. gr. laga um tekjuskatt, nr. 90/2003, eiga við um innheimtumann á sama hátt og önnur skattyfirvöld.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæðum þessarar greinar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði annarra laga um trúnaðar- og þagnarskyldu víkja fyrir ákvæðum þessarar greinar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="20">
     <nr-title>20. gr.</nr-title>
     <name>Þagnarskylda.</name>
     <subart nr="1">
-      <sen nr="1">Á innheimtumanni ríkissjóðs hvílir þagnarskylda skv. X. kafla stjórnsýslulaga, nr. 37/1993.</sen>
-      <sen nr="2">Innheimtumanni er óheimilt, að viðlagðri ábyrgð skv. XIV. kafla almennra hegningarlaga, nr. 19/1940, um brot í opinberu starfi, að skýra frá því sem hann kemst að í starfi sínu og leynt á að fara, þar á meðal um tekjur og efnahag gjaldenda.</sen>
-      <sen nr="3">Þagnarskyldan helst þótt látið sé af störfum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Á innheimtumanni ríkissjóðs hvílir þagnarskylda skv. X. kafla stjórnsýslulaga, nr. 37/1993.</sen>
+        <sen nr="2">Innheimtumanni er óheimilt, að viðlagðri ábyrgð skv. XIV. kafla almennra hegningarlaga, nr. 19/1940, um brot í opinberu starfi, að skýra frá því sem hann kemst að í starfi sínu og leynt á að fara, þar á meðal um tekjur og efnahag gjaldenda.</sen>
+        <sen nr="3">Þagnarskyldan helst þótt látið sé af störfum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="21">
     <nr-title>21. gr.</nr-title>
     <name>Gildistaka og lagaskil.</name>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-      <sen nr="2" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <sen nr="2" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Sé mál tekið upp að nýju eða ákvörðun kærð til æðra stjórnvalds eftir gildistöku laga þessara skal beita lögunum um þau mál upp frá því.</sen>
-      <sen nr="2">Um endurgreiðslukröfur sem berast fyrir gildistöku laganna fer samkvæmt ákvæðum laga um endurgreiðslu oftekinna skatta og gjalda, nr. 29/1995.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé mál tekið upp að nýju eða ákvörðun kærð til æðra stjórnvalds eftir gildistöku laga þessara skal beita lögunum um þau mál upp frá því.</sen>
+        <sen nr="2">Um endurgreiðslukröfur sem berast fyrir gildistöku laganna fer samkvæmt ákvæðum laga um endurgreiðslu oftekinna skatta og gjalda, nr. 29/1995.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="22">

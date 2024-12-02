@@ -10,35 +10,35 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Húseigendum er skylt að brunatryggja allar húseignir.</sen>
-      <sen nr="2">Húseignir samkvæmt lögum þessum eru hvers konar byggingar sem ætlaðar eru til íbúðar, atvinnustarfsemi, geymslu eða annarra afnota.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Húseigendum er skylt að brunatryggja allar húseignir.</sen>
+        <sen nr="2">Húseignir samkvæmt lögum þessum eru hvers konar byggingar sem ætlaðar eru til íbúðar, atvinnustarfsemi, geymslu eða annarra afnota.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Hús í smíðum er eigendum einnig skylt að brunatryggja á smíðatímanum.</sen>
-      <sen nr="2">Fer um vátryggingarfjárhæð þeirra á hverjum tíma eftir samkomulagi milli eiganda og vátryggingafélags.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hús í smíðum er eigendum einnig skylt að brunatryggja á smíðatímanum.</sen>
+        <sen nr="2">Fer um vátryggingarfjárhæð þeirra á hverjum tíma eftir samkomulagi milli eiganda og vátryggingafélags.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Vátryggingarskyldar húseignir skv. 1. mgr. er skylt að meta eigi síðar en fjórum vikum eftir að byggingu þeirra lauk eða þær hafa verið teknar í notkun.</sen>
-      <sen nr="2">Eigandi ber ábyrgð á því að tilkynna vátryggingafélagi um lok byggingar eða notkun húseignar og óska eftir mati.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vátryggingarskyldar húseignir skv. 1. mgr. er skylt að meta eigi síðar en fjórum vikum eftir að byggingu þeirra lauk eða þær hafa verið teknar í notkun.</sen>
+        <sen nr="2">Eigandi ber ábyrgð á því að tilkynna vátryggingafélagi um lok byggingar eða notkun húseignar og óska eftir mati.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Vátryggingafélag skal ekki taka gilda uppsögn á brunatryggingu skv. 1. og 2. mgr. nema uppsögn fylgi staðfesting á að húseigandi hafi stofnað til nýrrar brunatryggingar hjá öðru vátryggingafélagi.</sen>
-      <sen nr="2">Við eigendaskipti skal viðkomandi vátryggingafélag ekki taka gilda uppsögn nema henni fylgi staðfesting á að nýr eigandi hafi stofnað til brunatryggingar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vátryggingafélag skal ekki taka gilda uppsögn á brunatryggingu skv. 1. og 2. mgr. nema uppsögn fylgi staðfesting á að húseigandi hafi stofnað til nýrrar brunatryggingar hjá öðru vátryggingafélagi.</sen>
+        <sen nr="2">Við eigendaskipti skal viðkomandi vátryggingafélag ekki taka gilda uppsögn nema henni fylgi staðfesting á að nýr eigandi hafi stofnað til brunatryggingar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="1" nr="1">
         <footnote-sen>L. 34/1999, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>4</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="970">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -46,136 +46,103 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Vátryggingarfjárhæð húseignar skv. 1. mgr. 1. gr. skal nema fullu verði eignarinnar eftir virðingu.</sen>
-      <sen nr="2">Húsnæðis- og mannvirkjastofnun annast virðingu húseignar samkvæmt matskerfi og verklagsreglum stofnunarinnar.</sen>
-      <sen nr="3">Heiti þeirrar gerðar er brunabótamat.</sen>
-      <sen nr="4">Er markmið matsins að finna vátryggingarverðmæti húseignarinnar á þeim tíma er virðing fer fram.</sen>
-      <sen nr="5">Skal matið taka til þeirra efnislegu verðmæta húseignarinnar sem eyðilagst geta af eldi og miðast við byggingarkostnað að teknu tilliti til aldurs, slits, viðhalds og ástands eignar að öðru leyti.</sen>
-      <sen nr="6">Matið skal skrá í fasteignaskrá þar sem því skal viðhaldið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vátryggingarfjárhæð húseignar skv. 1. mgr. 1. gr. skal nema fullu verði eignarinnar eftir virðingu.</sen>
+        <sen nr="2">Húsnæðis- og mannvirkjastofnun annast virðingu húseignar samkvæmt matskerfi og verklagsreglum stofnunarinnar.</sen>
+        <sen nr="3">Heiti þeirrar gerðar er brunabótamat.</sen>
+        <sen nr="4">Er markmið matsins að finna vátryggingarverðmæti húseignarinnar á þeim tíma er virðing fer fram.</sen>
+        <sen nr="5">Skal matið taka til þeirra efnislegu verðmæta húseignarinnar sem eyðilagst geta af eldi og miðast við byggingarkostnað að teknu tilliti til aldurs, slits, viðhalds og ástands eignar að öðru leyti.</sen>
+        <sen nr="6">Matið skal skrá í fasteignaskrá þar sem því skal viðhaldið.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Húsnæðis- og mannvirkjastofnun getur endurmetið skyldutryggðar húseignir þegar stofnunin sér ástæðu til.</sen>
-      <sen nr="2">Ákvæði 13., 14. og 18. gr. stjórnsýslulaga gilda ekki við meðferð mála um ákvörðun brunabótamats.</sen>
-      <sen nr="3">Eiganda skal send tilkynning um nýtt eða breytt brunabótamat.</sen>
-      <sen nr="4">Sætti eigandi sig ekki við ákvörðun brunabótamats getur hann gert skriflega og rökstudda kröfu um endurupptöku málsins innan eins mánaðar frá tilkynningu ákvörðunar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Húsnæðis- og mannvirkjastofnun getur endurmetið skyldutryggðar húseignir þegar stofnunin sér ástæðu til.</sen>
+        <sen nr="2">Ákvæði 13., 14. og 18. gr. stjórnsýslulaga gilda ekki við meðferð mála um ákvörðun brunabótamats.</sen>
+        <sen nr="3">Eiganda skal send tilkynning um nýtt eða breytt brunabótamat.</sen>
+        <sen nr="4">Sætti eigandi sig ekki við ákvörðun brunabótamats getur hann gert skriflega og rökstudda kröfu um endurupptöku málsins innan eins mánaðar frá tilkynningu ákvörðunar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Brunabótamat nýrrar húseignar og endurmat skv. 2. mgr. skal vera húseiganda að kostnaðarlausu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brunabótamat nýrrar húseignar og endurmat skv. 2. mgr. skal vera húseiganda að kostnaðarlausu.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Húseiganda er ætíð heimilt á sinn kostnað að óska eftir því að Húsnæðis- og mannvirkjastofnun endurmeti húseign hans.</sen>
-      <sen nr="2">Skylt er húseiganda að óska nýs brunabótamats á húseign ef ætla má að verðmæti eignarinnar hafi aukist vegna endurbyggingar eða endurbóta.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Húseiganda er ætíð heimilt á sinn kostnað að óska eftir því að Húsnæðis- og mannvirkjastofnun endurmeti húseign hans.</sen>
+        <sen nr="2">Skylt er húseiganda að óska nýs brunabótamats á húseign ef ætla má að verðmæti eignarinnar hafi aukist vegna endurbyggingar eða endurbóta.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Sé ágreiningur á milli vátryggingafélags og húseiganda um matsfjárhæð getur hvor aðili um sig óskað endurmats á sinn kostnað.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé ágreiningur á milli vátryggingafélags og húseiganda um matsfjárhæð getur hvor aðili um sig óskað endurmats á sinn kostnað.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Ef húseigandi eða vátryggingafélag vill ekki una mati Húsnæðis- og mannvirkjastofnunar er heimilt að vísa ágreiningi þar um til yfirfasteignamatsnefndar, sbr. 5. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ef húseigandi eða vátryggingafélag vill ekki una mati Húsnæðis- og mannvirkjastofnunar er heimilt að vísa ágreiningi þar um til yfirfasteignamatsnefndar, sbr. 5. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen nr="1">Húsnæðis- og mannvirkjastofnun er heimilt að lækka vátryggingarfjárhæðir húseigna (brunabótamat) sem eru í lélegu ástandi og hafa lítt eða ekki verið í notkun frá því sem brunabótamat þeirra hefði ella orðið skv. 1. mgr.</sen>
-      <sen nr="2">Heimild þessi verður því aðeins nýtt að fyrir liggi staðfesting sveitarstjórnar á ástandi eignar og notkun og að hún geri ekki athugasemdir við að mat verði lækkað.</sen>
-      <sen nr="3">Húsnæðis- og mannvirkjastofnun tilkynnir eiganda húseignar, vátryggingafélagi og veðhöfum, ef einhverjir eru, um breytingu á vátryggingarfjárhæð samkvæmt þessari málsgrein.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Húsnæðis- og mannvirkjastofnun er heimilt að lækka vátryggingarfjárhæðir húseigna (brunabótamat) sem eru í lélegu ástandi og hafa lítt eða ekki verið í notkun frá því sem brunabótamat þeirra hefði ella orðið skv. 1. mgr.</sen>
+        <sen nr="2">Heimild þessi verður því aðeins nýtt að fyrir liggi staðfesting sveitarstjórnar á ástandi eignar og notkun og að hún geri ekki athugasemdir við að mat verði lækkað.</sen>
+        <sen nr="3">Húsnæðis- og mannvirkjastofnun tilkynnir eiganda húseignar, vátryggingafélagi og veðhöfum, ef einhverjir eru, um breytingu á vátryggingarfjárhæð samkvæmt þessari málsgrein.</sen>
+      </paragraph>
     </subart>
     <subart nr="8">
-      <sen nr="1">Séu húseignir á eyðijörðum nýttar sem sumarhús eða til annarrar dægradvalar fer um brunabótamat slíkra eigna sem væru þær sumarbústaðir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Séu húseignir á eyðijörðum nýttar sem sumarhús eða til annarrar dægradvalar fer um brunabótamat slíkra eigna sem væru þær sumarbústaðir.</sen>
+      </paragraph>
     </subart>
     <subart nr="9">
-      <sen nr="1">Ef brunabótamat byggist á beinni skoðun á húseign skal gefa húseiganda, eða fulltrúa hans, kost á því að vera viðstaddur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ef brunabótamat byggist á beinni skoðun á húseign skal gefa húseiganda, eða fulltrúa hans, kost á því að vera viðstaddur.</sen>
+      </paragraph>
     </subart>
     <subart nr="10">
-      <sen nr="1">Húsnæðis- og mannvirkjastofnun er heimilt að reikna brunabótamat án skoðunar.</sen>
-      <sen nr="2">Skal útreikningur þessi gerður á grundvelli upplýsinga sem fyrir liggja í fasteignaskrá og í öðrum þeim gögnum sem hún kann að hafa yfir að ráða.</sen>
-      <sen nr="3"></sen>
+      <paragraph nr="1">
+        <sen nr="1">Húsnæðis- og mannvirkjastofnun er heimilt að reikna brunabótamat án skoðunar.</sen>
+        <sen nr="2">Skal útreikningur þessi gerður á grundvelli upplýsinga sem fyrir liggja í fasteignaskrá og í öðrum þeim gögnum sem hún kann að hafa yfir að ráða.</sen>
+      </paragraph>
     </subart>
     <subart nr="11">
-      <sen nr="1">Vátryggingarfjárhæð breytist til samræmis við breytingar á vísitölu byggingarkostnaðar hinna ýmsu tegunda húseigna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vátryggingarfjárhæð breytist til samræmis við breytingar á vísitölu byggingarkostnaðar hinna ýmsu tegunda húseigna.</sen>
+      </paragraph>
     </subart>
     <subart nr="12">
-      <sen nr="1">Í reglugerð skal kveða nánar á um tilhögun brunabótamats samkvæmt þessari grein.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Í reglugerð skal kveða nánar á um tilhögun brunabótamats samkvæmt þessari grein.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2022.036.html" law-nr="36" law-year="2022" law-art="15" nr="1">
         <footnote-sen>L. 36/2022, 15. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">2</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>2</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>4</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>6</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnunar">1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>7</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">1</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>7</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">3</sen>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>10</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnun">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" words="Húsnæðis- og mannvirkjastofnunar" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='3']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='10']/paragraph[@nr='1']/sen[@nr='1']" words="Húsnæðis- og mannvirkjastofnun" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2008.083.html" law-nr="83" law-year="2008" law-art="24" nr="2">
         <footnote-sen>L. 83/2008, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="fasteignaskrá">6</sen>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='6']" words="fasteignaskrá" instance-num="1"/>
+        <location type="range" string-length="324">
+          <start xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
+          <end xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']"/>
         </location>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <subart>2</subart>
-            <sen>2</sen>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>2</subart>
-            <sen>4</sen>
-          </end>
-        </location>
-        <location type="range">
-          <art>2</art>
-          <subart>10</subart>
-          <sen words="fasteignaskrá">2</sen>
-        </location>
-        <location type="deletion">
-          <art>2</art>
-          <subart>10</subart>
-          <sen before-mark="^" after-mark="$">3</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='10']/paragraph[@nr='1']/sen[@nr='2']" words="fasteignaskrá" instance-num="1"/>
+        <location type="deletion" xpath="art[@nr='2']/subart[@nr='10']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Skal útreikningur þessi gerður á grundvelli upplýsinga sem fyrir liggja í (\[??)?fasteignaskrá:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?og í öðrum þeim gögnum sem hún kann að hafa yfir að ráða." after-mark="$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="2" nr="3">
         <footnote-sen>L. 34/1999, 2. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>12</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="2893">
+          <start xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='2']/subart[@nr='12']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -183,107 +150,83 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Bætur fyrir tjón á húseign má aðeins greiða til þess að gera við húseign sem skemmst hefur við bruna eða til endurbyggingar.</sen>
-      <sen nr="2">Vátryggjanda er skylt að sjá til þess áður en bætur eru greiddar að þeim sé réttilega varið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Bætur fyrir tjón á húseign má aðeins greiða til þess að gera við húseign sem skemmst hefur við bruna eða til endurbyggingar.</sen>
+        <sen nr="2">Vátryggjanda er skylt að sjá til þess áður en bætur eru greiddar að þeim sé réttilega varið.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Vátryggjanda er heimilt að veita undanþágu frá byggingarskyldu að höfðu samráði við skipulagsyfirvöld gegn því skilyrði að 15% dragist frá bótafjárhæðinni.</sen>
-      <sen nr="2">Frádrætti þessum skal þó ekki beitt ef endurbygging er eigi heimil af skipulagsástæðum eða öðrum ástæðum sem tjónþola er ekki sjálfrátt um.</sen>
-      <sen nr="3">Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji vátryggjandi brunabótamat húseignar greinilega hærra en markaðsverð húseignar er vátryggjanda heimilt að miða bótafjárhæð við markaðsverð viðkomandi húseignar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Vátryggjanda er heimilt að veita undanþágu frá byggingarskyldu að höfðu samráði við skipulagsyfirvöld gegn því skilyrði að 15% dragist frá bótafjárhæðinni.</sen>
+        <sen nr="2">Frádrætti þessum skal þó ekki beitt ef endurbygging er eigi heimil af skipulagsástæðum eða öðrum ástæðum sem tjónþola er ekki sjálfrátt um.</sen>
+        <sen nr="3">Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji vátryggjandi brunabótamat húseignar greinilega hærra en markaðsverð húseignar er vátryggjanda heimilt að miða bótafjárhæð við markaðsverð viðkomandi húseignar.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Nú verður brunatjón meira en helmingur brunabótamatsverðs og sveitarstjórn telur nauðsynlegt vegna eldhættu eða af skipulagsástæðum að hlutaðeigandi hús verði fjarlægt og er henni þá heimilt að leysa húsið til sín.</sen>
-      <sen nr="2">Greiðir hún þá mismun þann sem er á brunabótum og heildarmatsverði hússins.</sen>
-      <sen nr="3">Ef sveitarstjórn eða eigandi telja brunabótamatsverð ekki rétt getur hvor um sig krafist endurmats Húsnæðis- og mannvirkjastofnunar og skal þá miða greiðslu við endurmatsverðið.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú verður brunatjón meira en helmingur brunabótamatsverðs og sveitarstjórn telur nauðsynlegt vegna eldhættu eða af skipulagsástæðum að hlutaðeigandi hús verði fjarlægt og er henni þá heimilt að leysa húsið til sín.</sen>
+        <sen nr="2">Greiðir hún þá mismun þann sem er á brunabótum og heildarmatsverði hússins.</sen>
+        <sen nr="3">Ef sveitarstjórn eða eigandi telja brunabótamatsverð ekki rétt getur hvor um sig krafist endurmats Húsnæðis- og mannvirkjastofnunar og skal þá miða greiðslu við endurmatsverðið.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Ágreiningi um bótafjárhæð skv. 2. mgr. eða um endurmatsverð skv. 3. mgr. er heimilt að skjóta til gerðardóms sem ráðherra vátryggingamála setur nánari ákvæði um í reglugerð.</sen>
-      <sen nr="2">Kostnað við úrskurð ber sá er gerð gengur á móti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ágreiningi um bótafjárhæð skv. 2. mgr. eða um endurmatsverð skv. 3. mgr. er heimilt að skjóta til gerðardóms sem ráðherra vátryggingamála setur nánari ákvæði um í reglugerð.</sen>
+        <sen nr="2">Kostnað við úrskurð ber sá er gerð gengur á móti.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="3" nr="1">
         <footnote-sen>L. 34/1999, 3. gr.</footnote-sen>
-        <location type="deletion">
-          <art>3</art>
-          <subart>2</subart>
-          <sen before-mark="^Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji vátryggjandi brunabótamat húseignar greinilega hærra en markaðsverð húseignar er vátryggjanda heimilt að miða bótafjárhæð við markaðsverð viðkomandi húseignar." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">3</sen>
-        </location>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <sen>3</sen>
-        </location>
-        <location type="range">
-          <start>
-            <art>3</art>
-            <subart>4</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>3</art>
-            <subart>4</subart>
-            <sen>2</sen>
-          </end>
+        <location type="deletion" xpath="art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Hafi ákvörðun verið tekin um að veita undanþágu frá byggingarskyldu og telji vátryggjandi brunabótamat húseignar greinilega hærra en markaðsverð húseignar er vátryggjanda heimilt að miða bótafjárhæð við markaðsverð viðkomandi húseignar." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" string-length="0"/>
+        <location type="range" string-length="223">
+          <start xpath="art[@nr='3']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='3']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1994.150.html" law-nr="150" law-year="1994" law-art="2" nr="2">
         <footnote-sen>L. 150/1994, 2. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>3</art>
-            <subart>2</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>3</art>
-            <subart>2</subart>
-            <sen>3</sen>
-          </end>
+        <location type="range" string-length="531">
+          <start xpath="art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2022.036.html" law-nr="36" law-year="2022" law-art="15" nr="3">
         <footnote-sen>L. 36/2022, 15. gr.</footnote-sen>
-        <location type="range">
-          <art>3</art>
-          <subart>3</subart>
-          <sen words="Húsnæðis- og mannvirkjastofnunar">3</sen>
-        </location>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" words="Húsnæðis- og mannvirkjastofnunar" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Hafi brunatrygging húss, sem tekin hefur verið, fallið niður af ástæðum sem húseiganda verður ekki um kennt ber Sambandi íslenskra tryggingafélaga að bæta honum tjón á húseign hans af völdum eldsvoða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hafi brunatrygging húss, sem tekin hefur verið, fallið niður af ástæðum sem húseiganda verður ekki um kennt ber Sambandi íslenskra tryggingafélaga að bæta honum tjón á húseign hans af völdum eldsvoða.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Samband íslenskra tryggingafélaga skal endurkrefja vátryggingafélög, sem hafa með höndum brunatryggingar húsa, um kostnað vegna slíkra bótagreiðslna nema í ljós verði leitt hver ber ábyrgð á að vátrygging féll niður og skal sambandið þá endurkrefja þann aðila.</sen>
-      <sen nr="2">Kostnaði skal skipt á félögin í hlutfalli við bókfærð iðgjöld þeirra í lögboðnum brunatryggingum húsa hér á landi.</sen>
-      <sen nr="3">Skal í því efni miðað við nýjustu upplýsingar um markaðshlutdeild félaganna við uppgjörsdag tjóns.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samband íslenskra tryggingafélaga skal endurkrefja vátryggingafélög, sem hafa með höndum brunatryggingar húsa, um kostnað vegna slíkra bótagreiðslna nema í ljós verði leitt hver ber ábyrgð á að vátrygging féll niður og skal sambandið þá endurkrefja þann aðila.</sen>
+        <sen nr="2">Kostnaði skal skipt á félögin í hlutfalli við bókfærð iðgjöld þeirra í lögboðnum brunatryggingum húsa hér á landi.</sen>
+        <sen nr="3">Skal í því efni miðað við nýjustu upplýsingar um markaðshlutdeild félaganna við uppgjörsdag tjóns.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Skilyrði starfsleyfis lögboðinna brunatrygginga húseigna er að félag skuldbindi sig til að taka þátt í þessari tilhögun um greiðslu bóta vegna óvátryggðra húseigna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Skilyrði starfsleyfis lögboðinna brunatrygginga húseigna er að félag skuldbindi sig til að taka þátt í þessari tilhögun um greiðslu bóta vegna óvátryggðra húseigna.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="5" nr="1">
         <footnote-sen>L. 34/1999, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <nr-title words="4. gr.">1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='4']/nr-title[1]" words="4. gr." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1994.150.html" law-nr="150" law-year="1994" law-art="4" nr="2">
         <footnote-sen>L. 150/1994, 4. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>4</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>4</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="843">
+          <start xpath="art[@nr='4']/nr-title[1]"/>
+          <end xpath="art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -291,23 +234,18 @@
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ágreiningi um brunabótamat má skjóta til úrskurðar yfirfasteignamatsnefndar.</sen>
-      <sen nr="2">Fyrir kostnað við úrskurð nefndarinnar skal greiða samkvæmt gjaldskrá sem ráðherra vátryggingamála setur.</sen>
-      <sen nr="3">Kostnað við úrskurð ber sá sem gerð gengur á móti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ágreiningi um brunabótamat má skjóta til úrskurðar yfirfasteignamatsnefndar.</sen>
+        <sen nr="2">Fyrir kostnað við úrskurð nefndarinnar skal greiða samkvæmt gjaldskrá sem ráðherra vátryggingamála setur.</sen>
+        <sen nr="3">Kostnað við úrskurð ber sá sem gerð gengur á móti.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="7" nr="1">
         <footnote-sen>L. 34/1999, 7. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>5</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>5</art>
-            <subart>1</subart>
-            <sen>3</sen>
-          </end>
+        <location type="range" string-length="238">
+          <start xpath="art[@nr='5']/nr-title[1]"/>
+          <end xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
         </location>
       </footnote>
     </footnotes>
@@ -317,73 +255,49 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2000.040.html" law-nr="40" law-year="2000" law-art="2" nr="1">
         <footnote-sen>L. 40/2000, 2. gr.</footnote-sen>
-        <location type="deletion">
-          <art>6</art>
-          <nr-title before-mark="^(\[? ?)?6. gr." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='6']/nr-title[1]" before-mark="^(\[??)?6. gr." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="9" nr="2">
         <footnote-sen>L. 34/1999, 9. gr.</footnote-sen>
-        <location type="range">
-          <art>6</art>
-          <nr-title>1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='6']/nr-title[1]" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Öll iðgjöld og matskostnaður af húseignum í skyldutryggingu hvíla sem lögveð á eignunum sjálfum og ganga í tvö ár fyrir öllum öðrum skuldbindingum sem á þeim hvíla nema sköttum til ríkissjóðs.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Öll iðgjöld og matskostnaður af húseignum í skyldutryggingu hvíla sem lögveð á eignunum sjálfum og ganga í tvö ár fyrir öllum öðrum skuldbindingum sem á þeim hvíla nema sköttum til ríkissjóðs.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Séu brunatryggingariðgjöld og önnur gjöld og skattar sem ákvörðuð eru sem hlutfall af brunabótamati og innheimtast eiga samhliða innheimtu iðgjalda, svo og matskostnaður, eigi greidd innan sex mánaða frá gjalddaga er heimilt að krefjast nauðungarsölu á hinni vátryggðu eign án undangengins dóms, sáttar eða fjárnáms.</sen>
-      <sen nr="2">Önnur gjöld og skattar samkvæmt þessari málsgrein eru brunavarnagjald, umsýslugjald, forvarnagjald, náttúruhamfaratryggingariðgjald og álag á náttúruhamfaratryggingariðgjald.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Séu brunatryggingariðgjöld og önnur gjöld og skattar sem ákvörðuð eru sem hlutfall af brunabótamati og innheimtast eiga samhliða innheimtu iðgjalda, svo og matskostnaður, eigi greidd innan sex mánaða frá gjalddaga er heimilt að krefjast nauðungarsölu á hinni vátryggðu eign án undangengins dóms, sáttar eða fjárnáms.</sen>
+        <sen nr="2">Önnur gjöld og skattar samkvæmt þessari málsgrein eru brunavarnagjald, umsýslugjald, forvarnagjald, náttúruhamfaratryggingariðgjald og álag á náttúruhamfaratryggingariðgjald.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="4" nr="1">
         <footnote-sen>L. 34/1999, 4. gr.</footnote-sen>
-        <location type="range">
-          <art>7</art>
-          <nr-title>1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='7']/nr-title[1]" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2018.046.html" law-nr="46" law-year="2018" law-art="20" nr="2">
         <footnote-sen>L. 46/2018, 20. gr.</footnote-sen>
-        <location type="range">
-          <art>7</art>
-          <subart>2</subart>
-          <sen words="náttúruhamfaratryggingariðgjald" repeat="true">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="náttúruhamfaratryggingariðgjald" instance-num="1"/>
+        <location type="range" xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="náttúruhamfaratryggingariðgjald" middle-punctuation="." instance-num="2"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1996.131.html" law-nr="131" law-year="1996" law-art="2" nr="3">
         <footnote-sen>L. 131/1996, 2. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>7</art>
-            <subart>2</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>7</art>
-            <subart>2</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="491">
+          <start xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1994.150.html" law-nr="150" law-year="1994" law-art="3" nr="4">
         <footnote-sen>L. 150/1994, 3. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>7</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>7</art>
-            <subart>2</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="683">
+          <start xpath="art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -391,47 +305,37 @@
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra skal setja reglugerð um nánari framkvæmd þessara laga, þar á meðal verksvið vátryggjanda, skyldur vátryggingataka, bótauppgjör, undanskildar áhættur, réttarstöðu við eigendaskipti, rétt veðhafa og framkvæmd virðingar og yfirmats, þar á meðal kostnað virðingar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra skal setja reglugerð um nánari framkvæmd þessara laga, þar á meðal verksvið vátryggjanda, skyldur vátryggingataka, bótauppgjör, undanskildar áhættur, réttarstöðu við eigendaskipti, rétt veðhafa og framkvæmd virðingar og yfirmats, þar á meðal kostnað virðingar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="6" nr="1">
         <footnote-sen>L. 34/1999, 6. gr.</footnote-sen>
-        <location type="range">
-          <art>8</art>
-          <nr-title>1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='8']/nr-title[1]" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1995.010.html" law-nr="10" law-year="1995" law-art="3" nr="2">
         <footnote-sen>L. 10/1995, 3. gr.</footnote-sen>
-        <location type="range">
-          <art>8</art>
-          <subart>1</subart>
-          <sen words="Ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
       </footnote>
       <footnote nr="3">
         <footnote-sen>Augl. 332/1996. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/809-2000"&gt;Rg. 809/2000&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/959-2003"&gt;959/2003&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>8</art>
-          <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?skal setja reglugerð" after-mark="um nánari framkvæmd þessara laga, þar á meðal verksvið vátryggjanda, skyldur vátryggingataka, bótauppgjör, undanskildar áhættur, réttarstöðu við eigendaskipti, rétt veðhafa og framkvæmd virðingar og yfirmats, þar á meðal kostnað virðingar.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Ráðherra:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?skal setja reglugerð" after-mark="um nánari framkvæmd þessara laga, þar á meðal verksvið vátryggjanda, skyldur vátryggingataka, bótauppgjör, undanskildar áhættur, réttarstöðu við eigendaskipti, rétt veðhafa og framkvæmd virðingar og yfirmats, þar á meðal kostnað virðingar.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-      <sen nr="2" expiry-symbol-offset="0"></sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <sen nr="2" expiry-symbol-offset="0"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="8" nr="1">
         <footnote-sen>L. 34/1999, 8. gr.</footnote-sen>
-        <location type="range">
-          <art>9</art>
-          <nr-title>1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='9']/nr-title[1]" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
@@ -442,11 +346,7 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="10" nr="1">
           <footnote-sen>L. 34/1999, 10. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>t</chapter>
-            <art>I</art>
-            <nr-title before-mark="^I." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='t']/art[@nr='I']/nr-title[1]" before-mark="^I." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -455,11 +355,7 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/1999.034.html" law-nr="34" law-year="1999" law-art="10" nr="1">
           <footnote-sen>L. 34/1999, 10. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>t</chapter>
-            <art>II</art>
-            <nr-title before-mark="^II." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]" before-mark="^II." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -468,19 +364,11 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2022.036.html" law-nr="36" law-year="2022" law-art="15" nr="1">
           <footnote-sen>L. 36/2022, 15. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>t</chapter>
-            <art>III</art>
-            <nr-title before-mark="^(\[? ?)?III." after-mark="\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]" before-mark="^(\[??)?III." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2000.040.html" law-nr="40" law-year="2000" law-art="3" nr="2">
           <footnote-sen>L. 40/2000, 3. gr.</footnote-sen>
-          <location type="range">
-            <chapter>t</chapter>
-            <art>III</art>
-            <nr-title>1</nr-title>
-          </location>
+          <location type="range" xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]" string-length="0"/>
         </footnote>
       </footnotes>
     </art>

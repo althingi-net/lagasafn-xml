@@ -10,31 +10,43 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Heimilt er að fullgilda fyrir Íslands hönd samning um dómsvald og um viðurkenningu og fullnustu dóma í einkamálum sem gerður var í Lúganó 30. október 2007 og kemur í stað samnings um dómsvald og um fullnustu dóma í einkamálum sem gerður var í Lúganó 16. september 1988, ásamt þeim þremur bókunum og níu viðaukum sem honum fylgja og teljast óaðskiljanlegur hluti hans.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að fullgilda fyrir Íslands hönd samning um dómsvald og um viðurkenningu og fullnustu dóma í einkamálum sem gerður var í Lúganó 30. október 2007 og kemur í stað samnings um dómsvald og um fullnustu dóma í einkamálum sem gerður var í Lúganó 16. september 1988, ásamt þeim þremur bókunum og níu viðaukum sem honum fylgja og teljast óaðskiljanlegur hluti hans.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Samningurinn ásamt bókunum og viðaukum sem honum fylgja er prentaður sem fylgiskjal með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samningurinn ásamt bókunum og viðaukum sem honum fylgja er prentaður sem fylgiskjal með lögum þessum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lúganósamningurinn og þær þrjár bókanir sem honum fylgja skulu hafa lagagildi hér á landi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lúganósamningurinn og þær þrjár bókanir sem honum fylgja skulu hafa lagagildi hér á landi.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Dómar, sem hvorki þarf að viðurkenna né fullnægja skv. 61. gr. samningsins, fá ekki réttarverkanir hér á landi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Dómar, sem hvorki þarf að viðurkenna né fullnægja skv. 61. gr. samningsins, fá ekki réttarverkanir hér á landi.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ákvæði 1. gr. laga þessara öðlast þegar gildi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákvæði 1. gr. laga þessara öðlast þegar gildi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Önnur ákvæði laganna öðlast gildi um leið og endurskoðaður Lúganósamningur öðlast gildi að því er Ísland varðar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Önnur ákvæði laganna öðlast gildi um leið og endurskoðaður Lúganósamningur öðlast gildi að því er Ísland varðar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
@@ -43,22 +55,17 @@
   <art nr="t">
     <nr-title>Ákvæði til bráðabirgða.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lúganósamningurinn og þær þrjár bókanir sem honum fylgja og hafa lagagildi hér á landi, sbr. 2. gr., gilda um mál sem berast íslenskum dómstólum til meðferðar frá Sameinaða konungsríkinu Stóra-Bretlandi og Norður-Írlandi, enda hafi þau borist fyrir 1. janúar 2021 eða grundvallast á dómi sem kveðinn var þar upp fyrir sama tímamark.</sen>
-      <sen nr="2">Hið sama á við um dómsáttir, opinber skjöl og önnur gögn sem falla undir ákvæði samningsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lúganósamningurinn og þær þrjár bókanir sem honum fylgja og hafa lagagildi hér á landi, sbr. 2. gr., gilda um mál sem berast íslenskum dómstólum til meðferðar frá Sameinaða konungsríkinu Stóra-Bretlandi og Norður-Írlandi, enda hafi þau borist fyrir 1. janúar 2021 eða grundvallast á dómi sem kveðinn var þar upp fyrir sama tímamark.</sen>
+        <sen nr="2">Hið sama á við um dómsáttir, opinber skjöl og önnur gögn sem falla undir ákvæði samningsins.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.017.html" law-nr="17" law-year="2021" law-art="1" nr="1">
         <footnote-sen>L. 17/2021, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>t</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>t</art>
-            <subart>1</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="448">
+          <start xpath="art[@nr='t']/nr-title[1]"/>
+          <end xpath="art[@nr='t']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>

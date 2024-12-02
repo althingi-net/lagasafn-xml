@@ -9,127 +9,143 @@
   <footnotes>
     <footnote nr="1">
       <footnote-sen>Lögin falla úr gildi 1. des. 2023 skv. &lt;a href="2023055.html#G14"&gt;l. 55/2023, 14. gr.&lt;/a&gt;</footnote-sen>
-      <location type="pointer">
-        <name before-mark="^Lög um útgáfu og notkun nafnskírteina" after-mark="$">1</name>
-      </location>
+      <location type="pointer" xpath="name[1]" before-mark="^Lög um útgáfu og notkun nafnskírteina" after-mark="$"/>
     </footnote>
   </footnotes>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=85&amp;amp;mnr=142"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/pdf/85/s/0302.pdf"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 12. júní 1965. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjtnr.html#1974060"&gt; L. 60/1974 &lt;/a&gt; (tóku gildi 11. júní 1974). &lt;a href="/altext/stjtnr.html#1983010"&gt; L. 10/1983 &lt;/a&gt; (tóku gildi 25. mars 1983). &lt;a href="/altext/stjt/2006.050.html"&gt; L. 50/2006 &lt;/a&gt; (tóku gildi 1. júlí 2006). &lt;a href="/altext/stjt/2010.077.html"&gt; L. 77/2010 &lt;/a&gt; (tóku gildi 1. júlí 2010). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; dómsmálaráðherra &lt;/b&gt; eða &lt;b&gt; dómsmálaráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Þjóðskrá Íslands gefur út nafnskírteini til allra einstaklinga, sem skráðir eru hér á landi, þó ekki fyrr en á því almanaksári, er þeir fylla 14 ára aldur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þjóðskrá Íslands gefur út nafnskírteini til allra einstaklinga, sem skráðir eru hér á landi, þó ekki fyrr en á því almanaksári, er þeir fylla 14 ára aldur.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Á nafnskírteini hvers manns skal vera:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Nafn, eins og það er ritað í þjóðskrá.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Nafnnúmer samkvæmt þjóðskrá.</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">Fæðingardagur og -ár.</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">Útgáfutími skírteinis.</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">Reitur fyrir mynd.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Á nafnskírteini hvers manns skal vera:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Nafn, eins og það er ritað í þjóðskrá.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Nafnnúmer samkvæmt þjóðskrá.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Fæðingardagur og -ár.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Útgáfutími skírteinis.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Reitur fyrir mynd.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Heimilt er að ákveða, að aðrar upplýsingar skuli vera á nafnskírteininu, eftir því sem henta þykir.</sen>
-      <sen nr="2">Enn fremur er heimilt að ákveða, að á nafnskírteininu skuli vera nafn skírteinishafa ritað eigin hendi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að ákveða, að aðrar upplýsingar skuli vera á nafnskírteininu, eftir því sem henta þykir.</sen>
+        <sen nr="2">Enn fremur er heimilt að ákveða, að á nafnskírteininu skuli vera nafn skírteinishafa ritað eigin hendi.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Heimilt er að ákveða, að útgáfa nafnskírteinis til útlendinga skuli ekki eiga sér stað fyrr en eftir tveggja ára samfellda dvöl þeirra hér á landi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að ákveða, að útgáfa nafnskírteinis til útlendinga skuli ekki eiga sér stað fyrr en eftir tveggja ára samfellda dvöl þeirra hér á landi.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Kostnaður við útgáfu nafnskírteina greiðist úr ríkissjóði, en ef einstaklingur óskar eftir endurútgáfu nafnskírteinis, þar eð upphaflegt nafnskírteini hans er glatað eða af öðrum ástæðum, er Þjóðskrá Íslands heimilt að taka gjald fyrir það.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Kostnaður við útgáfu nafnskírteina greiðist úr ríkissjóði, en ef einstaklingur óskar eftir endurútgáfu nafnskírteinis, þar eð upphaflegt nafnskírteini hans er glatað eða af öðrum ástæðum, er Þjóðskrá Íslands heimilt að taka gjald fyrir það.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen nr="1">Lögreglustjórar annast um afhendingu nafnskírteina.</sen>
-      <sen nr="2">Hver sá, sem skírteini er gert fyrir skv. 1. gr., skal gefa sig fram í skrifstofu lögreglustjóra eða hreppstjóra í því umdæmi, þar sem hann er á íbúaskrá, til þess að fá skírteinið afhent.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lögreglustjórar annast um afhendingu nafnskírteina.</sen>
+        <sen nr="2">Hver sá, sem skírteini er gert fyrir skv. 1. gr., skal gefa sig fram í skrifstofu lögreglustjóra eða hreppstjóra í því umdæmi, þar sem hann er á íbúaskrá, til þess að fá skírteinið afhent.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
         <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="Þjóðskrá Íslands">1</sen>
-        </location>
-        <location type="range">
-          <art>1</art>
-          <subart>6</subart>
-          <sen words="Þjóðskrá Íslands">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Þjóðskrá Íslands" instance-num="1"/>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" words="Þjóðskrá Íslands" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1974060?g1" law-nr="60" law-year="1974" law-art="1" nr="2">
         <footnote-sen>L. 60/1974, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1974060?g2" law-nr="60" law-year="1974" law-art="2" nr="3">
         <footnote-sen>L. 60/1974, 2. gr.</footnote-sen>
-        <location type="deletion">
-          <art>1</art>
-          <subart>4</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='1']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Nú er ákveðið í lögum, reglugerð eða lögreglusamþykkt, að menn skuli sanna aldur sinn, þegar svo ber undir, og geta þeir þá fullnægt þeirri skyldu með því að leggja fram nafnskírteini sitt.</sen>
-      <sen nr="2">Sömuleiðis geta menn sannað aldur sinn með framlagningu nafnskírteinis, þá er þeir eru krafðir um skilríki samkvæmt ákvæðum um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða fyrir komu eða dvöl á stað.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú er ákveðið í lögum, reglugerð eða lögreglusamþykkt, að menn skuli sanna aldur sinn, þegar svo ber undir, og geta þeir þá fullnægt þeirri skyldu með því að leggja fram nafnskírteini sitt.</sen>
+        <sen nr="2">Sömuleiðis geta menn sannað aldur sinn með framlagningu nafnskírteinis, þá er þeir eru krafðir um skilríki samkvæmt ákvæðum um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða fyrir komu eða dvöl á stað.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Heimilt er að ákveða með reglugerð, að menn skuli sýna nafnskírteini í skiptum sínum við opinberan aðila, sem notar auðkennisnúmer þjóðskrár í umsýslu sinni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að ákveða með reglugerð, að menn skuli sýna nafnskírteini í skiptum sínum við opinberan aðila, sem notar auðkennisnúmer þjóðskrár í umsýslu sinni.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Nafnskírteini skal að öðru leyti notað sem sönnunargagn um, hverjir menn séu, og um aldur, eftir því sem henta þykir, og í skiptum manna á milli og á opinberum vettvangi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nafnskírteini skal að öðru leyti notað sem sönnunargagn um, hverjir menn séu, og um aldur, eftir því sem henta þykir, og í skiptum manna á milli og á opinberum vettvangi.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1974060?g3" law-nr="60" law-year="1974" law-art="3" nr="1">
         <footnote-sen>L. 60/1974, 3. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>2</subart>
-          <sen words="auðkennisnúmer þjóðskrár">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="auðkennisnúmer þjóðskrár" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Við notkun nafnskírteinis í sambandi við fyrirmæli laga, reglugerða og lögreglusamþykkta um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða komu á stað, er nafnskírteinið því aðeins sönnunargagn um aldur, að í því sé mynd af hlutaðeiganda, með embættisstimpli lögreglustjóra og dagsetningu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Við notkun nafnskírteinis í sambandi við fyrirmæli laga, reglugerða og lögreglusamþykkta um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða komu á stað, er nafnskírteinið því aðeins sönnunargagn um aldur, að í því sé mynd af hlutaðeiganda, með embættisstimpli lögreglustjóra og dagsetningu.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Þeir, sem óska, að mynd sé á nafnskírteini sínu, skulu afhenda lögreglustjóra tvær myndir af sér.</sen>
-      <sen nr="2">Skulu þær vera á endingargóðum pappír, 35x45 mm að stærð, og að öðru leyti fullnægjandi að dómi lögreglustjóra.</sen>
-      <sen nr="3">Skírteinishafar greiða sjálfir kostnað við gerð mynda.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þeir, sem óska, að mynd sé á nafnskírteini sínu, skulu afhenda lögreglustjóra tvær myndir af sér.</sen>
+        <sen nr="2">Skulu þær vera á endingargóðum pappír, 35x45 mm að stærð, og að öðru leyti fullnægjandi að dómi lögreglustjóra.</sen>
+        <sen nr="3">Skírteinishafar greiða sjálfir kostnað við gerð mynda.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Ákveða má, að nafnskírteini, sem ljósmynd hefur verið á tiltekið árabil, skuli teljast vera án myndar, þar til sett hefur verið á þau ný mynd, sem fullnægjandi er að dómi lögreglustjóra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ákveða má, að nafnskírteini, sem ljósmynd hefur verið á tiltekið árabil, skuli teljast vera án myndar, þar til sett hefur verið á þau ný mynd, sem fullnægjandi er að dómi lögreglustjóra.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Heimilt er að ákveða, að mynd skuli vera á öllum nafnskírteinum eða ef þau eru ætluð til nánar ákveðinna nota.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að ákveða, að mynd skuli vera á öllum nafnskírteinum eða ef þau eru ætluð til nánar ákveðinna nota.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
@@ -137,53 +153,40 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2006.050.html" law-nr="50" law-year="2006" law-art="9" nr="1">
         <footnote-sen>L. 50/2006, 9. gr.</footnote-sen>
-        <location type="deletion">
-          <art>4</art>
-          <nr-title before-mark="^4. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='4']/nr-title[1]" before-mark="^4. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Heimilt er að ákveða með reglugerð, að handhafar ökuskírteinis skuli geta notað það á sama hátt og nafnskírteini er notað samkvæmt lögum og öðrum opinberum fyrirmælum, enda sé það tryggt, að nafn og aðrar upplýsingar á ökuskírteininu séu samhljóða sömu atriðum á nafnskírteini hlutaðeiganda.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að ákveða með reglugerð, að handhafar ökuskírteinis skuli geta notað það á sama hátt og nafnskírteini er notað samkvæmt lögum og öðrum opinberum fyrirmælum, enda sé það tryggt, að nafn og aðrar upplýsingar á ökuskírteininu séu samhljóða sömu atriðum á nafnskírteini hlutaðeiganda.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Hverjum lögreglustjóra er heimilt að ákveða fyrir sitt umdæmi, að nafnskírteini einstaklinga á aldursbilinu 18–23 ár skuli ekki vera gilt sönnunargagn um aldur, nema lagt sé fram sérstaklega útgefið skírteini með öðrum lit en er á almennu nafnskírteini.</sen>
-      <sen nr="2">Heimild þessi er bundin við notkun nafnskírteinis í sambandi við opinber fyrirmæli um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða fyrir komu eða dvöl á stað.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hverjum lögreglustjóra er heimilt að ákveða fyrir sitt umdæmi, að nafnskírteini einstaklinga á aldursbilinu 18–23 ár skuli ekki vera gilt sönnunargagn um aldur, nema lagt sé fram sérstaklega útgefið skírteini með öðrum lit en er á almennu nafnskírteini.</sen>
+        <sen nr="2">Heimild þessi er bundin við notkun nafnskírteinis í sambandi við opinber fyrirmæli um, að tiltekinn aldur sé skilyrði fyrir viðskiptum eða fyrir komu eða dvöl á stað.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Þjóðskrá Íslands gefur út nafnskírteini með sérstökum lit til einstaklinga í umdæmum, þar sem lögreglustjóri hefur ákveðið að nota heimild þá, er um ræðir í 2. mgr.</sen>
-      <sen nr="2">Greiða skal fyrir útgáfu slíks skírteinis samkvæmt gjaldskrá, er Þjóðskrá Íslands setur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þjóðskrá Íslands gefur út nafnskírteini með sérstökum lit til einstaklinga í umdæmum, þar sem lögreglustjóri hefur ákveðið að nota heimild þá, er um ræðir í 2. mgr.</sen>
+        <sen nr="2">Greiða skal fyrir útgáfu slíks skírteinis samkvæmt gjaldskrá, er Þjóðskrá Íslands setur.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.077.html" law-nr="77" law-year="2010" law-art="5" nr="1">
         <footnote-sen>L. 77/2010, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>5</art>
-          <subart>3</subart>
-          <sen words="Þjóðskrá Íslands">1</sen>
-        </location>
-        <location type="range">
-          <art>5</art>
-          <subart>3</subart>
-          <sen words="Þjóðskrá Íslands">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Þjóðskrá Íslands" instance-num="1"/>
+        <location type="range" xpath="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" words="Þjóðskrá Íslands" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1974060?g4" law-nr="60" law-year="1974" law-art="4" nr="2">
         <footnote-sen>L. 60/1974, 4. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>5</art>
-            <subart>2</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>5</art>
-            <subart>3</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="672">
+          <start xpath="art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -191,32 +194,28 @@
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra er heimilt að setja, með reglugerð eða á annan hátt, nánari fyrirmæli um nafnskírteini og framkvæmd laga þessara að öðru leyti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að setja, með reglugerð eða á annan hátt, nánari fyrirmæli um nafnskírteini og framkvæmd laga þessara að öðru leyti.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/018-1967"&gt;Rg. 18/1967&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>6</art>
-          <subart>1</subart>
-          <sen before-mark="^Ráðherra er heimilt að setja, með reglugerð eða á annan hátt, nánari fyrirmæli um nafnskírteini og framkvæmd laga þessara að öðru leyti." after-mark="$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er heimilt að setja, með reglugerð eða á annan hátt, nánari fyrirmæli um nafnskírteini og framkvæmd laga þessara að öðru leyti." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot gegn ákvæðum þessara laga og gegn reglum settum samkvæmt þeim varða sektum</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot gegn ákvæðum þessara laga og gegn reglum settum samkvæmt þeim varða sektum</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1983010?g29" law-nr="10" law-year="1983" law-art="29" nr="1">
         <footnote-sen>L. 10/1983, 29. gr.</footnote-sen>
-        <location type="deletion">
-          <art>7</art>
-          <subart>1</subart>
-          <sen before-mark="^Brot gegn ákvæðum þessara laga og gegn reglum settum samkvæmt þeim varða sektum" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Brot gegn ákvæðum þessara laga og gegn reglum settum samkvæmt þeim varða sektum" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>

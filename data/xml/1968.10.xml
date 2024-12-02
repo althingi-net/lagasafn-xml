@@ -10,20 +10,20 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd alþjóðasamþykkt um takmörkun á ábyrgð útgerðarmanna, sem gerð var í Brüssel 10. október 1957.</sen>
-      <sen nr="2">Fyrirvara má gera um einstök ákvæði, sem ríkisstjórninni þykir við eiga og heimilt er að gera samkvæmt samþykktinni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd alþjóðasamþykkt um takmörkun á ábyrgð útgerðarmanna, sem gerð var í Brüssel 10. október 1957.</sen>
+        <sen nr="2">Fyrirvara má gera um einstök ákvæði, sem ríkisstjórninni þykir við eiga og heimilt er að gera samkvæmt samþykktinni.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Samþykktin er prentuð á íslensku og ensku sem fylgiskjöl með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samþykktin er prentuð á íslensku og ensku sem fylgiskjöl með lögum þessum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá Stjtíð. A 1968, bls. 26–37.</footnote-sen>
-        <location type="pointer">
-          <art>1</art>
-          <subart>2</subart>
-          <sen before-mark="^Samþykktin er prentuð á íslensku og ensku sem fylgiskjöl með lögum þessum." after-mark="$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Samþykktin er prentuð á íslensku og ensku sem fylgiskjöl með lögum þessum." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>

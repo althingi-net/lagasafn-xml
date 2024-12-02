@@ -10,64 +10,42 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Rétt til að stunda hvalveiðar í fiskveiðilandhelgi Íslands, eins og hún er ákveðin í reglugerð nr. 299 15. júlí 1975, til að landa hvalafla, þótt utan þeirrar landhelgi sé veitt, og til að verka slíkan afla í landi eða í fiskveiðilandhelgi Íslands, hafa þeir einir, er fengið hafa til þess leyfi ráðuneytisins.</sen>
-      <sen nr="2">Slík leyfi má aðeins veita aðilum er fullnægja skilyrðum til að mega stunda fiskveiðar í fiskveiðilandhelgi Íslands.</sen>
-      <sen nr="3">Áður en leyfi er veitt, skal ráðherra leita umsagnar Hafrannsóknastofnunar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Rétt til að stunda hvalveiðar í fiskveiðilandhelgi Íslands, eins og hún er ákveðin í reglugerð nr. 299 15. júlí 1975, til að landa hvalafla, þótt utan þeirrar landhelgi sé veitt, og til að verka slíkan afla í landi eða í fiskveiðilandhelgi Íslands, hafa þeir einir, er fengið hafa til þess leyfi ráðuneytisins.</sen>
+        <sen nr="2">Slík leyfi má aðeins veita aðilum er fullnægja skilyrðum til að mega stunda fiskveiðar í fiskveiðilandhelgi Íslands.</sen>
+        <sen nr="3">Áður en leyfi er veitt, skal ráðherra leita umsagnar Hafrannsóknastofnunar.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Leyfishafi skal á hverjum tíma veita allar þær upplýsingar um starfsemi sína og starfsháttu, sem ráðuneytið telur nauðsynlegar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Leyfishafi skal á hverjum tíma veita allar þær upplýsingar um starfsemi sína og starfsháttu, sem ráðuneytið telur nauðsynlegar.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="ráðuneytisins">1</sen>
-        </location>
-        <location type="range">
-          <art>1</art>
-          <subart>3</subart>
-          <sen words="ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðuneytisins" middle-punctuation="." instance-num="1"/>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="ráðuneytið" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1991.023.html" law-nr="23" law-year="1991" law-art="5" nr="2">
         <footnote-sen>L. 23/1991, 5. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="Slík leyfi má aðeins veita aðilum er fullnægja skilyrðum til að mega stunda fiskveiðar í fiskveiðilandhelgi Íslands.">2</sen>
-        </location>
-        <location type="deletion">
-          <art>1</art>
-          <subart>2</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+        <location type="deletion" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2012.157.html" law-nr="157" law-year="2012" law-art="1" nr="3">
         <footnote-sen>L. 157/2012, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="Hafrannsóknastofnunar">3</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" words="Hafrannsóknastofnunar" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1979040?g1" law-nr="40" law-year="1979" law-art="1" nr="4">
         <footnote-sen>L. 40/1979, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>3</sen>
-          </end>
+        <location type="range" string-length="502">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
         </location>
       </footnote>
     </footnotes>
@@ -75,225 +53,217 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Erlend skip má ekki nota til hvalveiða nema með leyfi ráðherra.</sen>
-      <sen nr="2">Skulu slík leyfi eigi veitt til lengri tíma en eins árs í senn.</sen>
-      <sen nr="3">Eigi skal þetta þó skerða þau leyfi, sem þegar hafa verið veitt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Erlend skip má ekki nota til hvalveiða nema með leyfi ráðherra.</sen>
+        <sen nr="2">Skulu slík leyfi eigi veitt til lengri tíma en eins árs í senn.</sen>
+        <sen nr="3">Eigi skal þetta þó skerða þau leyfi, sem þegar hafa verið veitt.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra" middle-punctuation="." instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Óheimilt er að veiða:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">Hvalkálfa og hvali, sem kálfar fylgja.</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">Tilteknar tegundir hvala og hvali undir tiltekinni lágmarksstærð, eftir því, sem ráðuneytið ákveður nánar í reglugerð með hliðsjón af alþjóðasamningum um hvalveiðar, sem Ísland er eða kann að gerast aðili að.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Óheimilt er að veiða:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Hvalkálfa og hvali, sem kálfar fylgja.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Tilteknar tegundir hvala og hvali undir tiltekinni lágmarksstærð, eftir því, sem ráðuneytið ákveður nánar í reglugerð með hliðsjón af alþjóðasamningum um hvalveiðar, sem Ísland er eða kann að gerast aðili að.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>3</art>
-          <subart>1</subart>
-          <numart>b</numart>
-          <sen words="ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" words="ráðuneytið" instance-num="1"/>
       </footnote>
       <footnote nr="2">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/895-2023"&gt;Rg. 895/2023&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>3</art>
-          <subart>1</subart>
-          <numart>b</numart>
-          <sen before-mark="^Tilteknar tegundir hvala og hvali undir tiltekinni lágmarksstærð, eftir því, sem (\[? ?)?ráðuneytið\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?ákveður nánar í reglugerð" after-mark="með hliðsjón af alþjóðasamningum um hvalveiðar, sem Ísland er eða kann að gerast aðili að.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Tilteknar tegundir hvala og hvali undir tiltekinni lágmarksstærð, eftir því, sem (\[??)?ráðuneytið:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?ákveður nánar í reglugerð" after-mark="með hliðsjón af alþjóðasamningum um hvalveiðar, sem Ísland er eða kann að gerast aðili að.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Með reglugerð getur ráðuneytið:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">Bannað hvalveiðar á tilteknum svæðum.</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">Takmarkað veiðar við ákveðinn tíma árs.</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">Takmarkað heildarveiðimagn, veiðimagn ákveðins fyrirtækis, leiðangurs eða landstöðvar.</sen>
-      </numart>
-      <numart nr="d" nr-type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen nr="1">Takmarkað veiðibúnað.</sen>
-      </numart>
-      <numart nr="e" nr-type="alphabet">
-        <nr-title>e.</nr-title>
-        <sen nr="1">Bannað íslenskum ríkisborgurum og þeim, sem heimilisfang eiga á Íslandi, að taka þátt í hvalveiðum, sem ekki eru háðar jafnströngum fyrirmælum og þeim, sem á Íslandi gilda.</sen>
-      </numart>
-      <numart nr="f" nr-type="alphabet">
-        <nr-title>f.</nr-title>
-        <sen nr="1">Sett hvers konar önnur ákvæði, sem talin eru nauðsynleg vegna þátttöku Íslands í alþjóðasamningum um hvalveiðar.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Með reglugerð getur ráðuneytið:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Bannað hvalveiðar á tilteknum svæðum.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Takmarkað veiðar við ákveðinn tíma árs.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Takmarkað heildarveiðimagn, veiðimagn ákveðins fyrirtækis, leiðangurs eða landstöðvar.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" nr-type="alphabet">
+          <nr-title>d.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Takmarkað veiðibúnað.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="e" nr-type="alphabet">
+          <nr-title>e.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Bannað íslenskum ríkisborgurum og þeim, sem heimilisfang eiga á Íslandi, að taka þátt í hvalveiðum, sem ekki eru háðar jafnströngum fyrirmælum og þeim, sem á Íslandi gilda.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="f" nr-type="alphabet">
+          <nr-title>f.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Sett hvers konar önnur ákvæði, sem talin eru nauðsynleg vegna þátttöku Íslands í alþjóðasamningum um hvalveiðar.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/163-1973"&gt;Rg. 163/1973&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/304-1983"&gt;304/1983&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/239-1984"&gt;239/1984&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/862-2006"&gt;862/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/822-2007"&gt;822/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/456-2008"&gt;456/2008&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/058-2009"&gt;58/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/263-2009"&gt;263/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/359-2009"&gt;359/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1116-2013"&gt;1116/2013&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/263-2014"&gt;263/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/186-2019"&gt;186/2019&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/642-2023"&gt;642/2023&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/489-2009"&gt;Rg. 489/2009&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/533-2018"&gt;533/2018&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1035-2017"&gt;Rg. 1035/2017&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/895-2023"&gt;Rg. 895/2023&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>4</art>
-          <subart>1</subart>
-          <sen before-mark="^Með reglugerð" after-mark="getur (\[? ?)?ráðuneytið]: &lt;sup style=&quot;font-size:60%&quot;&gt; 2\) &lt;/sup&gt;$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Með reglugerð" after-mark="getur (\[??)?ráðuneytið:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="2">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <subart>1</subart>
-          <sen words="ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðuneytið" middle-punctuation=":" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Verkun hvalafla má einungis fara fram á þeim stöðum, sem ráðuneytið samþykkir.</sen>
-      <sen nr="2">Ráðuneytið setur nánari fyrirmæli um fyrirkomulag verkunarinnar, þannig, að af henni hljótist sem minnst ónæði fyrir aðra.</sen>
-      <sen nr="3">Jafnframt skulu sett fyrirmæli um nýtingu hvals til fullnustu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Verkun hvalafla má einungis fara fram á þeim stöðum, sem ráðuneytið samþykkir.</sen>
+        <sen nr="2">Ráðuneytið setur nánari fyrirmæli um fyrirkomulag verkunarinnar, þannig, að af henni hljótist sem minnst ónæði fyrir aðra.</sen>
+        <sen nr="3">Jafnframt skulu sett fyrirmæli um nýtingu hvals til fullnustu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>5</art>
-          <subart>1</subart>
-          <sen words="ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðuneytið" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðuneytið setur reglur um eftirlit með hvalveiðum samkvæmt lögum þessum, og skal þar gert ráð fyrir, að skipaðir verði opinberir eftirlitsmenn, er laun taki úr ríkissjóði.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðuneytið setur reglur um eftirlit með hvalveiðum samkvæmt lögum þessum, og skal þar gert ráð fyrir, að skipaðir verði opinberir eftirlitsmenn, er laun taki úr ríkissjóði.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Jafnframt skal ákveða gjald fyrir leyfi samkvæmt 1. gr. laga þessara til að standast kostnaðinn af eftirlitinu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Jafnframt skal ákveða gjald fyrir leyfi samkvæmt 1. gr. laga þessara til að standast kostnaðinn af eftirlitinu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>6</art>
-          <subart>1</subart>
-          <sen words="Ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðuneytið" instance-num="1"/>
       </footnote>
       <footnote nr="2">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/895-2023"&gt;Rg. 895/2023&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>6</art>
-          <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðuneytið\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?setur reglur" after-mark="um eftirlit með hvalveiðum samkvæmt lögum þessum, og skal þar gert ráð fyrir, að skipaðir verði opinberir eftirlitsmenn, er laun taki úr ríkissjóði.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Ráðuneytið:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?setur reglur" after-mark="um eftirlit með hvalveiðum samkvæmt lögum þessum, og skal þar gert ráð fyrir, að skipaðir verði opinberir eftirlitsmenn, er laun taki úr ríkissjóði.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Útgerðarmaður hvalveiðiskips ber ábyrgð á því, að ekki sé brotið í bága við lög þessi með notkun skipsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Útgerðarmaður hvalveiðiskips ber ábyrgð á því, að ekki sé brotið í bága við lög þessi með notkun skipsins.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðuneytið getur gefið sérstakt leyfi til hvalveiða í vísindalegu augnamiði.</sen>
-      <sen nr="2">Leyfið skal háð þeim skilyrðum, sem ráðuneytið ákveður, og þarf þá ekki að fylgja fyrirmælum laga þessara.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðuneytið getur gefið sérstakt leyfi til hvalveiða í vísindalegu augnamiði.</sen>
+        <sen nr="2">Leyfið skal háð þeim skilyrðum, sem ráðuneytið ákveður, og þarf þá ekki að fylgja fyrirmælum laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="24" nr="1">
         <footnote-sen>L. 126/2011, 24. gr.</footnote-sen>
-        <location type="range">
-          <art>8</art>
-          <subart>1</subart>
-          <sen words="Ráðuneytið">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðuneytið" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðningarkjör hvalveiðimanna skulu ákveðin þannig, að tekjur byggist að miklu leyti á tegund, stærð og verðmæti veiddra hvala, en ekki einungis á fjölda þeirra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðningarkjör hvalveiðimanna skulu ákveðin þannig, að tekjur byggist að miklu leyti á tegund, stærð og verðmæti veiddra hvala, en ekki einungis á fjölda þeirra.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Engin laun má greiða fyrir ólöglega hvalveiði, jafnvel þótt fullnægjandi ástæður séu færðar fyrir veiði hvalsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Engin laun má greiða fyrir ólöglega hvalveiði, jafnvel þótt fullnægjandi ástæður séu færðar fyrir veiði hvalsins.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot gegn lögum þessum og reglugerðum eða ákvæðum leyfisbréfa settum samkvæmt þeim skulu varða sektum 2.000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot gegn lögum þessum og reglugerðum eða ákvæðum leyfisbréfa settum samkvæmt þeim skulu varða sektum 2.000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Auk þess má láta brot varða fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Auk þess má láta brot varða fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Brot samkvæmt framansögðu skulu og varða upptöku á veiðitækjum skipsins, byssum, skotlínu, skutlum og skotfærum, svo og öllum afla skipsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot samkvæmt framansögðu skulu og varða upptöku á veiðitækjum skipsins, byssum, skotlínu, skutlum og skotfærum, svo og öllum afla skipsins.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður hefur verið greitt að fullu.</sen>
-      <sen nr="2">Þó er heimilt að láta skip laust fyrr, ef sett er bankatrygging, eða önnur trygging jafngild, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður hefur verið greitt að fullu.</sen>
+        <sen nr="2">Þó er heimilt að láta skip laust fyrr, ef sett er bankatrygging, eða önnur trygging jafngild, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.092.html" law-nr="92" law-year="1991" law-art="27" nr="1">
         <footnote-sen>L. 92/1991, 27. gr.</footnote-sen>
-        <location type="range">
-          <art>10</art>
-          <subart>4</subart>
-          <sen words="Kyrrsetja skal">1</sen>
-        </location>
-        <location type="deletion">
-          <art>10</art>
-          <subart>4</subart>
-          <sen before-mark="^Þó er heimilt að láta skip laust fyrr, ef sett er bankatrygging, eða önnur trygging jafngild," after-mark="fyrir greiðslu sektarinnar og málskostnaðar.$">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="Kyrrsetja skal" instance-num="1"/>
+        <location type="deletion" xpath="art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Þó er heimilt að láta skip laust fyrr, ef sett er bankatrygging, eða önnur trygging jafngild," after-mark="fyrir greiðslu sektarinnar og málskostnaðar.$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1979040?g2" law-nr="40" law-year="1979" law-art="2" nr="2">
         <footnote-sen>L. 40/1979, 2. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>10</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>10</art>
-            <subart>5</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="940">
+          <start xpath="art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='10']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>

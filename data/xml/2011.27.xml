@@ -10,93 +10,115 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra fer með yfirstjórn mála samkvæmt lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra fer með yfirstjórn mála samkvæmt lögum þessum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Útflutningur á hrossum er heimill án sérstakra leyfa að uppfylltum skilyrðum laga þessara og stjórnvaldsfyrirmæla sem eru sett samkvæmt þeim.</sen>
-      <sen nr="2">Þó má ekki flytja úr landi yngri hross en fjögurra mánaða né fylfullar hryssur sem gengnar eru með sjö mánuði eða lengur.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Útflutningur á hrossum er heimill án sérstakra leyfa að uppfylltum skilyrðum laga þessara og stjórnvaldsfyrirmæla sem eru sett samkvæmt þeim.</sen>
+        <sen nr="2">Þó má ekki flytja úr landi yngri hross en fjögurra mánaða né fylfullar hryssur sem gengnar eru með sjö mánuði eða lengur.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="539" nr="1">
         <footnote-sen>L. 126/2011, 539. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="Ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Óheimilt er að flytja úr landi hross nema héraðsdýralæknir eða eftirlitsdýralæknir Matvælastofnunar hafi skoðað það í útflutningshöfn, metið það hæft til útflutnings með tilliti til dýraverndar og smitsjúkdóma og staðfest að það sé rétt merkt og uppfylli kröfur sem gerðar eru af hlutaðeigandi yfirvöldum í innflutningslandi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Óheimilt er að flytja úr landi hross nema héraðsdýralæknir eða eftirlitsdýralæknir Matvælastofnunar hafi skoðað það í útflutningshöfn, metið það hæft til útflutnings með tilliti til dýraverndar og smitsjúkdóma og staðfest að það sé rétt merkt og uppfylli kröfur sem gerðar eru af hlutaðeigandi yfirvöldum í innflutningslandi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Öll útflutningshross skulu vera örmerkt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Öll útflutningshross skulu vera örmerkt.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Fyrir eftirlit, umsýslu og skjalaskoðun Matvælastofnunar samkvæmt lögum þessum skulu útflytjendur hrossa greiða gjald sem ekki er hærra en raunkostnaður til að standa straum af eftirtöldum kostnaðarþáttum:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">launum starfsfólks sem sinnir störfum vegna eftirlits, umsýslu og skjalaskoðunar,</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">öðrum kostnaði vegna starfsfólks, þ.m.t. kostnaði af aðstöðu, áhöldum, búnaði, þjálfun og ferðalögum, svo og tengdum kostnaði,</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">kostnaði vegna sýnatöku opinberra eftirlitsaðila og kostnaði sem opinberar rannsóknastofur innheimta vegna sýnatöku, greiningar, prófunar og sjúkdómsgreininga sem framkvæmdar eru á opinberum rannsóknastofum.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Fyrir eftirlit, umsýslu og skjalaskoðun Matvælastofnunar samkvæmt lögum þessum skulu útflytjendur hrossa greiða gjald sem ekki er hærra en raunkostnaður til að standa straum af eftirtöldum kostnaðarþáttum:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">launum starfsfólks sem sinnir störfum vegna eftirlits, umsýslu og skjalaskoðunar,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">öðrum kostnaði vegna starfsfólks, þ.m.t. kostnaði af aðstöðu, áhöldum, búnaði, þjálfun og ferðalögum, svo og tengdum kostnaði,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">kostnaði vegna sýnatöku opinberra eftirlitsaðila og kostnaði sem opinberar rannsóknastofur innheimta vegna sýnatöku, greiningar, prófunar og sjúkdómsgreininga sem framkvæmdar eru á opinberum rannsóknastofum.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Ráðherra er heimilt að setja reglugerð um eftirlit, umsýslu og skjalaskoðun Matvælastofnunar og skal hann gefa út gjaldskrá fyrir eftirlit Matvælastofnunar að fengnum tillögum stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að setja reglugerð um eftirlit, umsýslu og skjalaskoðun Matvælastofnunar og skal hann gefa út gjaldskrá fyrir eftirlit Matvælastofnunar að fengnum tillögum stofnunarinnar.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Við gerð reglugerðar og gjaldskrár opinberra eftirlitsaðila er heimilt að taka tillit til eftirfarandi atriða:</sen>
-      <numart nr="a" nr-type="alphabet">
-        <nr-title>a.</nr-title>
-        <sen nr="1">hvers konar fyrirtæki um er að ræða og viðkomandi áhættuþátta,</sen>
-      </numart>
-      <numart nr="b" nr-type="alphabet">
-        <nr-title>b.</nr-title>
-        <sen nr="1">hagsmuna fyrirtækja með litla framleiðslu,</sen>
-      </numart>
-      <numart nr="c" nr-type="alphabet">
-        <nr-title>c.</nr-title>
-        <sen nr="1">hefðbundinna aðferða við framleiðslu, vinnslu og dreifingu,</sen>
-      </numart>
-      <numart nr="d" nr-type="alphabet">
-        <nr-title>d.</nr-title>
-        <sen nr="1">þarfa fyrirtækja með aðsetur á svæðum sem líða fyrir landfræðilegar takmarkanir.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Við gerð reglugerðar og gjaldskrár opinberra eftirlitsaðila er heimilt að taka tillit til eftirfarandi atriða:</sen>
+        <numart nr="a" nr-type="alphabet">
+          <nr-title>a.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">hvers konar fyrirtæki um er að ræða og viðkomandi áhættuþátta,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="b" nr-type="alphabet">
+          <nr-title>b.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">hagsmuna fyrirtækja með litla framleiðslu,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="c" nr-type="alphabet">
+          <nr-title>c.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">hefðbundinna aðferða við framleiðslu, vinnslu og dreifingu,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="d" nr-type="alphabet">
+          <nr-title>d.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">þarfa fyrirtækja með aðsetur á svæðum sem líða fyrir landfræðilegar takmarkanir.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Matvælastofnun skal afla umsagnar hlutaðeigandi hagsmunasamtaka og kynna þeim efni og forsendur reglugerðar og/eða gjaldskrár stofnunarinnar með a.m.k. eins mánaðar fyrirvara.</sen>
-      <sen nr="2">Hafi umsagnir þeirra ekki borist Matvælastofnun að mánuði liðnum er ráðherra þó heimilt að setja reglugerð og gjaldskrá án umsagna þeirra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Matvælastofnun skal afla umsagnar hlutaðeigandi hagsmunasamtaka og kynna þeim efni og forsendur reglugerðar og/eða gjaldskrár stofnunarinnar með a.m.k. eins mánaðar fyrirvara.</sen>
+        <sen nr="2">Hafi umsagnir þeirra ekki borist Matvælastofnun að mánuði liðnum er ráðherra þó heimilt að setja reglugerð og gjaldskrá án umsagna þeirra.</sen>
+      </paragraph>
     </subart>
     <subart nr="7">
-      <sen nr="1">Eftirlitsgjald skal greiða samkvæmt framlögðum reikningi opinbers eftirlitsaðila.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Eftirlitsgjald skal greiða samkvæmt framlögðum reikningi opinbers eftirlitsaðila.</sen>
+      </paragraph>
     </subart>
     <subart nr="8">
-      <sen nr="1">Innheimta má eftirlitsgjaldið með fjárnámi án undangengins dóms eða sáttar.</sen>
-      <sen nr="2">Opinberum eftirlitsaðilum er heimilt að krefjast dráttarvaxta af ógreiddri fjárkröfu vegna eftirlits frá og með gjalddaga fram að greiðsludegi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Innheimta má eftirlitsgjaldið með fjárnámi án undangengins dóms eða sáttar.</sen>
+        <sen nr="2">Opinberum eftirlitsaðilum er heimilt að krefjast dráttarvaxta af ógreiddri fjárkröfu vegna eftirlits frá og með gjalddaga fram að greiðsludegi.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2023.060.html" law-nr="60" law-year="2023" law-art="6" nr="1">
         <footnote-sen>L. 60/2023, 6. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>8</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="1790">
+          <start xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='2']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -104,66 +126,70 @@
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Flutningsför fyrir hross við útflutning skulu hafa fullnægjandi rými, loftræstingu og brynningu.</sen>
-      <sen nr="2">Tryggja skal fóður, fóðrun og eftirlit með hrossunum á flutningstímanum.</sen>
-      <sen nr="3">Matvælastofnun hefur eftirlit með að reglum um aðbúnað og umhirðu sé fylgt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Flutningsför fyrir hross við útflutning skulu hafa fullnægjandi rými, loftræstingu og brynningu.</sen>
+        <sen nr="2">Tryggja skal fóður, fóðrun og eftirlit með hrossunum á flutningstímanum.</sen>
+        <sen nr="3">Matvælastofnun hefur eftirlit með að reglum um aðbúnað og umhirðu sé fylgt.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Óheimilt er að flytja hross frá Íslandi með flutningsfari sem samtímis flytur dýr frá öðrum löndum.</sen>
-      <sen nr="2">Hafi flutningsfar áður verið notað til flutnings á dýrum erlendis skal það þrifið og sótthreinsað áður en það kemur til landsins.</sen>
-      <sen nr="3">Matvælastofnun hefur eftirlit með að reglum um þrif og sótthreinsun sé fylgt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Óheimilt er að flytja hross frá Íslandi með flutningsfari sem samtímis flytur dýr frá öðrum löndum.</sen>
+        <sen nr="2">Hafi flutningsfar áður verið notað til flutnings á dýrum erlendis skal það þrifið og sótthreinsað áður en það kemur til landsins.</sen>
+        <sen nr="3">Matvælastofnun hefur eftirlit með að reglum um þrif og sótthreinsun sé fylgt.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Á tímabilinu 1. október til 15. maí er einungis heimilt að flytja hross til útlanda með flugvélum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Á tímabilinu 1. október til 15. maí er einungis heimilt að flytja hross til útlanda með flugvélum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Matvælastofnun getur ákveðið við sérstakar aðstæður að dýralæknir sé um borð í flutningsfari og hafi yfirumsjón með eftirliti hrossa í flutningi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Matvælastofnun getur ákveðið við sérstakar aðstæður að dýralæknir sé um borð í flutningsfari og hafi yfirumsjón með eftirliti hrossa í flutningi.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Flutningsaðili greiðir allan kostnað sem fellur til vegna veru dýralæknis í flutningsfari.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Flutningsaðili greiðir allan kostnað sem fellur til vegna veru dýralæknis í flutningsfari.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Hrossum sem eru flutt úr landi skal fylgja hestavegabréf er staðfesti uppruna, ætterni, eiganda og aðrar upplýsingar sem nauðsynlegar eru, meðal annars til að uppfylla kröfur þær sem innflutningslönd gera hverju sinni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Hrossum sem eru flutt úr landi skal fylgja hestavegabréf er staðfesti uppruna, ætterni, eiganda og aðrar upplýsingar sem nauðsynlegar eru, meðal annars til að uppfylla kröfur þær sem innflutningslönd gera hverju sinni.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Útflytjendur hrossa greiða gjald fyrir kostnað við útgáfu hestavegabréfa samkvæmt gjaldskrá sem ráðherra setur að fenginni tillögu Bændasamtaka Íslands.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Útflytjendur hrossa greiða gjald fyrir kostnað við útgáfu hestavegabréfa samkvæmt gjaldskrá sem ráðherra setur að fenginni tillögu Bændasamtaka Íslands.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.071.html" law-nr="71" law-year="2021" law-art="23" nr="1">
         <footnote-sen>L. 71/2021, 23. gr.</footnote-sen>
-        <location type="deletion">
-          <art>5</art>
-          <subart>1</subart>
-          <sen before-mark="^Hrossum sem eru flutt úr landi skal fylgja hestavegabréf" after-mark="er staðfesti uppruna, ætterni, eiganda og aðrar upplýsingar sem nauðsynlegar eru, meðal annars til að uppfylla kröfur þær sem innflutningslönd gera hverju sinni.$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Hrossum sem eru flutt úr landi skal fylgja hestavegabréf" after-mark="er staðfesti uppruna, ætterni, eiganda og aðrar upplýsingar sem nauðsynlegar eru, meðal annars til að uppfylla kröfur þær sem innflutningslönd gera hverju sinni.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Af hverju útfluttu hrossi skal greiða 3.500 kr. gjald í stofnverndarsjóð skv. 15. gr. búnaðarlaga, nr. 70/1998.</sen>
-      <sen nr="2">Innheimtumaður ríkissjóðs annast innheimtu gjaldsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Af hverju útfluttu hrossi skal greiða 3.500 kr. gjald í stofnverndarsjóð skv. 15. gr. búnaðarlaga, nr. 70/1998.</sen>
+        <sen nr="2">Innheimtumaður ríkissjóðs annast innheimtu gjaldsins.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2018.124.html" law-nr="124" law-year="2018" law-art="1" nr="1">
         <footnote-sen>L. 124/2018, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>6</art>
-          <subart>1</subart>
-          <sen words="3.500 kr.">1</sen>
-        </location>
-        <location type="range">
-          <art>6</art>
-          <subart>1</subart>
-          <sen words="Innheimtumaður ríkissjóðs">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="3.500 kr." instance-num="1"/>
+        <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="Innheimtumaður ríkissjóðs" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
@@ -172,47 +198,48 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2021.071.html" law-nr="71" law-year="2021" law-art="24" nr="1">
         <footnote-sen>L. 71/2021, 24. gr.</footnote-sen>
-        <location type="deletion">
-          <art>7</art>
-          <nr-title before-mark="^7. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='7']/nr-title[1]" before-mark="^7. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="8">
     <nr-title>8. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um framkvæmd laga þessara, þar með talið um skoðun og merkingu útflutningshrossa, aðstöðu í útflutningshöfn og í flutningsfari, sóttvarnir og upplýsingar sem útflytjendum er skylt að leggja fram vegna útgáfu hestavegabréfa.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um framkvæmd laga þessara, þar með talið um skoðun og merkingu útflutningshrossa, aðstöðu í útflutningshöfn og í flutningsfari, sóttvarnir og upplýsingar sem útflytjendum er skylt að leggja fram vegna útgáfu hestavegabréfa.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1151-2021"&gt;Rg. 1151/2021&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>8</art>
-          <subart>1</subart>
-          <sen before-mark="^Ráðherra er heimilt að setja í reglugerð" after-mark="nánari ákvæði um framkvæmd laga þessara, þar með talið um skoðun og merkingu útflutningshrossa, aðstöðu í útflutningshöfn og í flutningsfari, sóttvarnir og upplýsingar sem útflytjendum er skylt að leggja fram vegna útgáfu hestavegabréfa.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er heimilt að setja í reglugerð" after-mark="nánari ákvæði um framkvæmd laga þessara, þar með talið um skoðun og merkingu útflutningshrossa, aðstöðu í útflutningshöfn og í flutningsfari, sóttvarnir og upplýsingar sem útflytjendum er skylt að leggja fram vegna útgáfu hestavegabréfa.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot gegn lögum þessum og stjórnvaldsreglum settum samkvæmt þeim varða sektum nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
-      <sen nr="2">Mál út af brotum gegn lögum þessum sæta meðferð samkvæmt lögum um meðferð sakamála.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot gegn lögum þessum og stjórnvaldsreglum settum samkvæmt þeim varða sektum nema þyngri refsing liggi við samkvæmt öðrum lögum.</sen>
+        <sen nr="2">Mál út af brotum gegn lögum þessum sæta meðferð samkvæmt lögum um meðferð sakamála.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-      <sen nr="2" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <sen nr="2" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="t">
     <nr-title>Ákvæði til bráðabirgða.</nr-title>
     <subart nr="1">
-      <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 2. gr. er heimilt til 1. nóvember 2011 að flytja út hross sem eru ekki örmerkt hafi þau verið frostmerkt.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 2. gr. er heimilt til 1. nóvember 2011 að flytja út hross sem eru ekki örmerkt hafi þau verið frostmerkt.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

@@ -7,42 +7,45 @@
     <original>1947 nr. 16 12. mars</original>
   </num-and-date>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=66&amp;amp;mnr=66"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/pdf/66/s/0094.pdf"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 1. júlí 1947. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjtnr.html#1957060"&gt; L. 60/1957 &lt;/a&gt; (tóku gildi 25. júní 1957). &lt;a href="/altext/stjtnr.html#1963023"&gt; L. 23/1963 &lt;/a&gt; (tóku gildi 15. maí 1963). &lt;a href="/altext/stjtnr.html#1965063"&gt; L. 63/1965 &lt;/a&gt; (tóku gildi 12. júní 1965). &lt;a href="/altext/stjt/1972.065.html"&gt; L. 65/1972 &lt;/a&gt; (tóku gildi 26. júní 1972; komu til framkvæmda skv. fyrirmælum í 18. gr.). &lt;a href="/altext/stjtnr.html#1975026"&gt; L. 26/1975 &lt;/a&gt; (tóku gildi 11. júní 1975, sjá nú l. 137/1997). &lt;a href="/altext/stjtnr.html#1978051"&gt; L. 51/1978 &lt;/a&gt; (tóku gildi 6. júní 1978). &lt;a href="/altext/stjt/1990.131.html"&gt; L. 131/1990 &lt;/a&gt; (tóku gildi 1. maí 1991). &lt;br/&gt; &lt;/small&gt;</minister-clause>
-  <chapter nr="1" nr-type="roman" roman-nr="I">
+  <chapter nr="1" nr-type="roman" chapter-type="kafli" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <name>Um Kennaraskóla Íslands.</name>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Sjá nú l. 137/1997.</footnote-sen>
-        <location type="deletion">
-          <chapter>1</chapter>
-          <name before-mark="^Um Kennaraskóla Íslands." after-mark="$">1</name>
-        </location>
+        <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/name[1]" before-mark="^Um Kennaraskóla Íslands." after-mark="$"/>
       </footnote>
     </footnotes>
   </chapter>
-  <chapter nr="2" nr-type="roman" roman-nr="II">
+  <chapter nr="2" nr-type="roman" chapter-type="kafli" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <name>Um kennslustofnun í uppeldisvísindum við Háskóla Íslands.</name>
     <art nr="12">
       <nr-title>12. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Við heimspekideild Háskóla Íslands skal koma á fót kennslustofnun í uppeldisvísindum, jafnskjótt og aðstaða er fengin til æfinga- og tilraunakennslu.</sen>
-        <sen nr="2">Hlutverk þessarar stofnunar er að veita kennurum við barnaskóla og skóla gagnfræðastigsins, menntaskóla og sérskóla menntun í uppeldisfræði, sálarfræði og kennslufræði.</sen>
-        <sen nr="3">Auk þess skulu kennarar í uppeldisvísindum annast rannsóknir og leiðbeiningar í þágu uppeldismála landsins, eftir því sem samrýmist kennslustörfum þeirra.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Við heimspekideild Háskóla Íslands skal koma á fót kennslustofnun í uppeldisvísindum, jafnskjótt og aðstaða er fengin til æfinga- og tilraunakennslu.</sen>
+          <sen nr="2">Hlutverk þessarar stofnunar er að veita kennurum við barnaskóla og skóla gagnfræðastigsins, menntaskóla og sérskóla menntun í uppeldisfræði, sálarfræði og kennslufræði.</sen>
+          <sen nr="3">Auk þess skulu kennarar í uppeldisvísindum annast rannsóknir og leiðbeiningar í þágu uppeldismála landsins, eftir því sem samrýmist kennslustörfum þeirra.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="13">
       <nr-title>13. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þeir nemendur, sem búa sig undir kennslustörf við skóla gagnfræðastigsins, skulu stunda kennsluæfingar í þeim skólum, en þeir, sem búa sig undir að verða kennarar í menntaskóla eða sérskóla, skulu stunda kennsluæfingar í menntaskóla eða samsvarandi sérskóla.</sen>
-        <sen nr="2">En að öðru leyti fara kennsluæfingar og annar hagnýtur starfsundirbúningur fram í æfinga- og tilraunaskóla.</sen>
-        <sen nr="3">Háskólakennarar, sem þessa kennslu annast, og nemendur þeirra hafa aðgang að slíkum skóla til athugana og tilrauna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir nemendur, sem búa sig undir kennslustörf við skóla gagnfræðastigsins, skulu stunda kennsluæfingar í þeim skólum, en þeir, sem búa sig undir að verða kennarar í menntaskóla eða sérskóla, skulu stunda kennsluæfingar í menntaskóla eða samsvarandi sérskóla.</sen>
+          <sen nr="2">En að öðru leyti fara kennsluæfingar og annar hagnýtur starfsundirbúningur fram í æfinga- og tilraunaskóla.</sen>
+          <sen nr="3">Háskólakennarar, sem þessa kennslu annast, og nemendur þeirra hafa aðgang að slíkum skóla til athugana og tilrauna.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="14">
       <nr-title>14. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Rétt til að stunda nám í uppeldisvísindum við stofnun þessa og taka þar próf hafa allir þeir, sem lokið hafa almennu kennaraprófi, svo og stúdentar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Rétt til að stunda nám í uppeldisvísindum við stofnun þessa og taka þar próf hafa allir þeir, sem lokið hafa almennu kennaraprófi, svo og stúdentar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="15">
@@ -50,211 +53,250 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1957060?g43" law-nr="60" law-year="1957" law-art="43" nr="1">
           <footnote-sen>L. 60/1957, 43. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>15</art>
-            <nr-title before-mark="^15. gr." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/nr-title[1]" before-mark="^15. gr." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="16">
       <nr-title>16. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Í kennslustofnun í uppeldisvísindum í háskólanum skal kenna eftirtaldar greinar:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">lífeðlisfræði, almenna og hagnýta sálarfræði, sálarfræði barna og unglinga, heilbrigðra, geðveiklaðra, vangefinna og siðferðilega vangæfra;</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">vísindalega og hagnýta uppeldisfræði, sögu uppeldisfræðinnar, sögu uppeldisins, einkum hér á landi, og uppeldislega siðfræði og félagsfræði;</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">almenna kennslufræði og kennsluæfingar í einstökum greinum.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Í kennslustofnun í uppeldisvísindum í háskólanum skal kenna eftirtaldar greinar:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">lífeðlisfræði, almenna og hagnýta sálarfræði, sálarfræði barna og unglinga, heilbrigðra, geðveiklaðra, vangefinna og siðferðilega vangæfra;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">vísindalega og hagnýta uppeldisfræði, sögu uppeldisfræðinnar, sögu uppeldisins, einkum hér á landi, og uppeldislega siðfræði og félagsfræði;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">almenna kennslufræði og kennsluæfingar í einstökum greinum.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þeir nemendur, sem búa sig undir kennslustörf við skóla gagnfræðastigsins, menntaskóla eða sérskóla, skulu leggja stund á almenna sálarfræði barna og unglinga og kennslufræði, einkum í þeim greinum, sem þeir öðlast réttindi til að kenna.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir nemendur, sem búa sig undir kennslustörf við skóla gagnfræðastigsins, menntaskóla eða sérskóla, skulu leggja stund á almenna sálarfræði barna og unglinga og kennslufræði, einkum í þeim greinum, sem þeir öðlast réttindi til að kenna.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Kennsla fer fram í fyrirlestrum, tilraunum og æfingum.</sen>
-        <sen nr="2">Sérstaka áherslu ber að leggja á sjálfstæða vinnu nemenda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Kennsla fer fram í fyrirlestrum, tilraunum og æfingum.</sen>
+          <sen nr="2">Sérstaka áherslu ber að leggja á sjálfstæða vinnu nemenda.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Að öðru leyti fer um nám og próf eftir reglugerð, sem sett er samkvæmt 2. gr. háskólalaganna 23. júní 1936.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Að öðru leyti fer um nám og próf eftir reglugerð, sem sett er samkvæmt 2. gr. háskólalaganna 23. júní 1936.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote nr="1">
           <footnote-sen>Nú l. 41/1999.</footnote-sen>
-          <location type="pointer">
-            <chapter>2</chapter>
-            <art>16</art>
-            <subart>4</subart>
-            <sen before-mark="^Að öðru leyti fer um nám og próf eftir reglugerð, sem sett er samkvæmt 2. gr. háskólalaganna 23. júní 1936." after-mark="$">1</sen>
-          </location>
+          <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Að öðru leyti fer um nám og próf eftir reglugerð, sem sett er samkvæmt 2. gr. háskólalaganna 23. júní 1936." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="3" nr-type="roman" roman-nr="III">
+  <chapter nr="3" nr-type="roman" chapter-type="kafli" roman-nr="III">
     <nr-title>III. kafli.</nr-title>
     <name>Um æfinga- og tilraunaskóla.</name>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1963023?g21" law-nr="23" law-year="1963" law-art="21" nr="1">
         <footnote-sen>L. 23/1963, 21. gr.</footnote-sen>
-        <location type="deletion">
-          <chapter>3</chapter>
-          <name before-mark="^Um æfinga- og tilraunaskóla." after-mark="$">1</name>
-        </location>
+        <location type="deletion" xpath="chapter[@nr='3' and @chapter-type='kafli']/name[1]" before-mark="^Um æfinga- og tilraunaskóla." after-mark="$"/>
       </footnote>
     </footnotes>
   </chapter>
-  <chapter nr="4" nr-type="roman" roman-nr="IV">
+  <chapter nr="4" nr-type="roman" chapter-type="kafli" roman-nr="IV">
     <nr-title>IV. kafli.</nr-title>
     <name>Um Íþróttakennaraskóla Íslands.</name>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1972.065.html" nr="1">
         <footnote-sen>L. 65/1972, 17. gr</footnote-sen>
         <footnote-sen>. Sjá nú l. 137/1997.</footnote-sen>
-        <location type="deletion">
-          <chapter>4</chapter>
-          <name before-mark="^Um Íþróttakennaraskóla Íslands." after-mark="$">1</name>
-        </location>
+        <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/name[1]" before-mark="^Um Íþróttakennaraskóla Íslands." after-mark="$"/>
       </footnote>
     </footnotes>
   </chapter>
-  <chapter nr="5" nr-type="roman" roman-nr="V">
+  <chapter nr="5" nr-type="roman" chapter-type="kafli" roman-nr="V">
     <nr-title>V. kafli.</nr-title>
     <name>Um Handíðakennaraskóla Íslands.</name>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1963023?g21" law-nr="23" law-year="1963" law-art="21" nr="1">
         <footnote-sen>L. 23/1963, 21. gr.</footnote-sen>
-        <location type="deletion">
-          <chapter>5</chapter>
-          <name before-mark="^Um Handíðakennaraskóla Íslands." after-mark="$">1</name>
-        </location>
+        <location type="deletion" xpath="chapter[@nr='5' and @chapter-type='kafli']/name[1]" before-mark="^Um Handíðakennaraskóla Íslands." after-mark="$"/>
       </footnote>
     </footnotes>
   </chapter>
-  <chapter nr="6" nr-type="roman" roman-nr="VI">
+  <chapter nr="6" nr-type="roman" chapter-type="kafli" roman-nr="VI">
     <nr-title>VI. kafli.</nr-title>
     <name>Um húsmæðrakennaraskóla.</name>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1975026" nr="1">
         <footnote-sen>L. 26/1975</footnote-sen>
         <footnote-sen>. Sjá nú l. 137/1997.</footnote-sen>
-        <location type="pointer">
-          <chapter>6</chapter>
-          <name before-mark="^Um húsmæðrakennaraskóla." after-mark="$">1</name>
-        </location>
+        <location type="pointer" xpath="chapter[@nr='6' and @chapter-type='kafli']/name[1]" before-mark="^Um húsmæðrakennaraskóla." after-mark="$"/>
       </footnote>
     </footnotes>
     <art nr="38">
       <nr-title>38. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Húsmæðrakennaraskóli skal starfa í Reykjavík eða nágrenni hennar.</sen>
-        <sen nr="2">Hann skal hafa aðstöðu til þess búreksturs, sem nauðsynlegur er vegna námsins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Húsmæðrakennaraskóli skal starfa í Reykjavík eða nágrenni hennar.</sen>
+          <sen nr="2">Hann skal hafa aðstöðu til þess búreksturs, sem nauðsynlegur er vegna námsins.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="39">
       <nr-title>39. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þegar hús verður reist yfir skólann, skal þar vera heimavist fyrir þá nemendur, er búa sig undir kennarastörf við húsmæðraskóla, svo og aðra nemendur, er heimili eiga utan Reykjavíkur.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þegar hús verður reist yfir skólann, skal þar vera heimavist fyrir þá nemendur, er búa sig undir kennarastörf við húsmæðraskóla, svo og aðra nemendur, er heimili eiga utan Reykjavíkur.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="40">
       <nr-title>40. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Markmið skólans er að búa nemendur undir:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">hússtjórnarkennslu í húsmæðraskólum og skólum gagnfræðastigsins;</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">ráðskonustörf við heimavistarskóla og aðrar opinberar stofnanir.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Markmið skólans er að búa nemendur undir:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hússtjórnarkennslu í húsmæðraskólum og skólum gagnfræðastigsins;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">ráðskonustörf við heimavistarskóla og aðrar opinberar stofnanir.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
     </art>
     <art nr="41">
       <nr-title>41. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Námstími þeirra, er ætla að verða húsmæðraskólakennarar, skal vera 2 ár hið minnsta, en 1 ár fyrir þá nemendur, er búa sig undir hússtjórnarkennslu í skólum gagnfræðastigsins og ráðskonustörf.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Námstími þeirra, er ætla að verða húsmæðraskólakennarar, skal vera 2 ár hið minnsta, en 1 ár fyrir þá nemendur, er búa sig undir hússtjórnarkennslu í skólum gagnfræðastigsins og ráðskonustörf.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Nánari ákvæði um námstíma skulu sett í reglugerð.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nánari ákvæði um námstíma skulu sett í reglugerð.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="42">
       <nr-title>42. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þessi eru almenn inntökuskilyrði í skólann:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1">að nemandi sé eigi yngri en 21 árs fyrir næstu áramót;</sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1">að nemandi sé heilbrigður;</sen>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <sen nr="1">að nemandi sé óspilltur að siðferði.</sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Þessi eru almenn inntökuskilyrði í skólann:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að nemandi sé eigi yngri en 21 árs fyrir næstu áramót;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að nemandi sé heilbrigður;</sen>
+            </paragraph>
+          </numart>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að nemandi sé óspilltur að siðferði.</sen>
+            </paragraph>
+          </numart>
+        </paragraph>
       </subart>
     </art>
     <art nr="43">
       <nr-title>43. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Nemendur, sem búa sig undir kennslu við húsmæðraskóla eða gagnfræðaskóla, skulu áður hafa lokið almennu kennaraprófi eða hlotið hliðstæða menntun að dómi fræðslumálastjórnar.</sen>
-        <sen nr="2">Enn fremur skulu þeir hafa stundað fjögurra mánaða nám í húsmæðraskóla og unnið að minnsta kosti 12 mánuði samtals að heimilisstörfum í kaupstað eða sveit.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Nemendur, sem búa sig undir kennslu við húsmæðraskóla eða gagnfræðaskóla, skulu áður hafa lokið almennu kennaraprófi eða hlotið hliðstæða menntun að dómi fræðslumálastjórnar.</sen>
+          <sen nr="2">Enn fremur skulu þeir hafa stundað fjögurra mánaða nám í húsmæðraskóla og unnið að minnsta kosti 12 mánuði samtals að heimilisstörfum í kaupstað eða sveit.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þeir nemendur, sem búa sig undir ráðskonustörf, skulu auk skyldunáms hafa lokið prófi í húsmæðraskóla og unnið 12 mánuði hið minnsta við eldhússtörf í matsöluhúsi, heimavistarskóla, sjúkrahúsi eða hliðstæðum stofnunum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir nemendur, sem búa sig undir ráðskonustörf, skulu auk skyldunáms hafa lokið prófi í húsmæðraskóla og unnið 12 mánuði hið minnsta við eldhússtörf í matsöluhúsi, heimavistarskóla, sjúkrahúsi eða hliðstæðum stofnunum.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="44">
       <nr-title>44. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þessar námsgreinar skulu kenndar í skólanum:</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þessar námsgreinar skulu kenndar í skólanum:</sen>
+        </paragraph>
+        <paragraph nr="2">
+          <sen nr="1">Verklegar: Matreiðsla, ræsting og þvottur, garðrækt, hirðing húsdýra og búsafurða, meðferð ungbarna og kennsluæfingar.</sen>
+        </paragraph>
+        <paragraph nr="3">
+          <sen nr="1">Bóklegar: Manneldisfræði, efnis- og áhaldafræði og búreikningar.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Í reglugerð skal kveða nánar á um námsgreinar og námsefni.</sen>
-        <sen nr="2">Þar skulu og settar reglur um próf og einkunnir.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í reglugerð skal kveða nánar á um námsgreinar og námsefni.</sen>
+          <sen nr="2">Þar skulu og settar reglur um próf og einkunnir.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="45">
       <nr-title>45. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Við skólann skal starfa einn fastakennari auk skólastjóra.</sen>
-        <sen nr="2">Stundakennara ræður skólastjóri í samráði við fræðslumálastjórn.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Við skólann skal starfa einn fastakennari auk skólastjóra.</sen>
+          <sen nr="2">Stundakennara ræður skólastjóri í samráði við fræðslumálastjórn.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="46">
       <nr-title>46. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Þriggja manna skólanefnd, kosin til fjögurra ára í senn, hefur umsjón með skólanum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þriggja manna skólanefnd, kosin til fjögurra ára í senn, hefur umsjón með skólanum.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Skólanefnd skal þannig skipuð: Félag húsmæðrakennara tilnefnir einn, Kvenfélagasamband Íslands annan, en fræðslumálastjórn hinn þriðja, og er hann formaður nefndarinnar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Skólanefnd skal þannig skipuð: Félag húsmæðrakennara tilnefnir einn, Kvenfélagasamband Íslands annan, en fræðslumálastjórn hinn þriðja, og er hann formaður nefndarinnar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="47">
       <nr-title>47. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Fræðslumálastjórn setur skólanefnd, skólastjóra og kennurum erindisbréf.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fræðslumálastjórn setur skólanefnd, skólastjóra og kennurum erindisbréf.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="48">
       <nr-title>48. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Heimilt er að halda námskeið fyrir kennara í aðalkennslugreinum skólans, enn fremur fyrir fóstrur samkvæmt ákvæðum reglugerðar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Heimilt er að halda námskeið fyrir kennara í aðalkennslugreinum skólans, enn fremur fyrir fóstrur samkvæmt ákvæðum reglugerðar.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>
-  <chapter nr="7" nr-type="roman" roman-nr="VII">
+  <chapter nr="7" nr-type="roman" chapter-type="kafli" roman-nr="VII">
     <nr-title>VII. kafli.</nr-title>
     <name>Um réttindi kennara o.fl.</name>
     <art nr="49">
@@ -262,11 +304,7 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1978051?g18" law-nr="51" law-year="1978" law-art="18" nr="1">
           <footnote-sen>L. 51/1978, 18. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>7</chapter>
-            <art>49</art>
-            <nr-title before-mark="^49. gr." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='49']/nr-title[1]" before-mark="^49. gr." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -278,19 +316,17 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjtnr.html#1978051?g18" law-nr="51" law-year="1978" law-art="18" nr="1">
           <footnote-sen>L. 51/1978, 18. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>7</chapter>
-            <art>51-54</art>
-            <nr-title before-mark="^51.–54. gr." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='51-54']/nr-title[1]" before-mark="^51.–54. gr." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
     <art nr="55">
       <nr-title>55. gr.</nr-title>
       <subart nr="1">
-        <sen nr="1">Fræðslumálastjórn hefur á hendi yfirumsjón þeirra skóla, er um getur í lögum þessum.</sen>
-        <sen nr="2">Kostnaður við rekstur þeirra greiðist úr ríkissjóði.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fræðslumálastjórn hefur á hendi yfirumsjón þeirra skóla, er um getur í lögum þessum.</sen>
+          <sen nr="2">Kostnaður við rekstur þeirra greiðist úr ríkissjóði.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>

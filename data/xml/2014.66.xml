@@ -7,32 +7,24 @@
     <original>2014 nr. 66 28. maí</original>
   </num-and-date>
   <minister-clause>&lt;a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=143&amp;amp;mnr=426"&gt; &lt;i&gt; Ferill málsins á Alþingi. &lt;/i&gt; &lt;/a&gt; &lt;a href="https://www.althingi.is/altext/143/s/0765.html"&gt; &lt;i&gt; Frumvarp til laga. &lt;/i&gt; &lt;/a&gt; &lt;br/&gt; &lt;br/&gt; &lt;small&gt; &lt;b&gt; Tóku gildi 6. júní 2014. &lt;/b&gt; &lt;em&gt; Breytt með: &lt;/em&gt; &lt;a href="/altext/stjt/2019.071.html"&gt; L. 71/2019 &lt;/a&gt; (tóku gildi 5. júlí 2019). &lt;a href="/altext/stjt/2019.091.html"&gt; L. 91/2019 &lt;/a&gt; (tóku gildi 1. jan. 2020 nema 133. gr. sem tók gildi 16. júlí 2019). &lt;br/&gt; &lt;/small&gt; &lt;br/&gt; Ef í lögum þessum er getið um ráðherra eða ráðuneyti án þess að málefnasvið sé tilgreint sérstaklega eða til þess vísað, er átt við &lt;b&gt; fjármála- og efnahagsráðherra &lt;/b&gt; eða &lt;b&gt; fjármála- og efnahagsráðuneyti &lt;/b&gt; sem fer með lög þessi. Upplýsingar um málefnasvið ráðuneyta skv. forsetaúrskurði er að finna hér.</minister-clause>
-  <chapter nr="1" nr-type="roman" roman-nr="I">
+  <chapter nr="1" nr-type="roman" chapter-type="kafli" roman-nr="I">
     <nr-title>I. kafli.</nr-title>
     <name>Markmið og skilgreiningar.</name>
     <art nr="1">
       <nr-title>1. gr.</nr-title>
       <name>Markmið.</name>
       <subart nr="1">
-        <sen nr="1">Markmið laga þessara er að tryggja reglulegt samráð og upplýsingaskipti milli ráðherra og Seðlabanka Íslands í því skyni að efla og varðveita fjármálastöðugleika í almannaþágu, sporna við uppsöfnun kerfisáhættu og stuðla að samhæfðum viðbrögðum við sérstakar aðstæður.</sen>
-        <sen nr="2">Í því skyni er fjármálastöðugleikaráði falið skilgreint hlutverk samkvæmt lögum þessum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Markmið laga þessara er að tryggja reglulegt samráð og upplýsingaskipti milli ráðherra og Seðlabanka Íslands í því skyni að efla og varðveita fjármálastöðugleika í almannaþágu, sporna við uppsöfnun kerfisáhættu og stuðla að samhæfðum viðbrögðum við sérstakar aðstæður.</sen>
+          <sen nr="2">Í því skyni er fjármálastöðugleikaráði falið skilgreint hlutverk samkvæmt lögum þessum.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="23" nr="1">
           <footnote-sen>L. 91/2019, 23. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>1</chapter>
-              <art>1</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>1</chapter>
-              <art>1</art>
-              <subart>1</subart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="356">
+            <start xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
           </location>
         </footnote>
       </footnotes>
@@ -41,144 +33,101 @@
       <nr-title>2. gr.</nr-title>
       <name>Orðskýringar.</name>
       <subart nr="1">
-        <sen nr="1">Í lögum þessum merkir:</sen>
-        <numart nr="1" nr-type="numeric">
-          <nr-title>1.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
-        <numart nr="2" nr-type="numeric">
-          <nr-title>2.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
-        <numart nr="3" nr-type="numeric">
-          <nr-title>3.</nr-title>
-          <name>Fjármálakerfi:</name>
-          <sen nr="1">Allir lögaðilar sem stunda fjármálastarfsemi í skilningi laga um opinbert eftirlit með fjármálastarfsemi, þ.m.t. opinberir lánasjóðir og lífeyrissjóðir, svo og fjármálamarkaðir, kerfislega þýðingarmikil greiðslu- og uppgjörskerfi og Seðlabanki Íslands.</sen>
-        </numart>
-        <numart nr="4" nr-type="numeric">
-          <nr-title>4.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
-        <numart nr="5" nr-type="numeric">
-          <nr-title>5.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
-        <numart nr="6" nr-type="numeric">
-          <nr-title>6.</nr-title>
-          <name>Fjármálastöðugleiki:</name>
-          <sen nr="1">Það ástand þegar ekki er rof eða veruleg truflun á starfsemi fjármálakerfisins og það býr yfir nægum viðnámsþrótti til að þola áföll og ójafnvægi án þess að veruleg neikvæð áhrif verði í miðlun fjármagns, miðlun greiðslna og dreifingu áhættu.</sen>
-        </numart>
-        <numart nr="7" nr-type="numeric">
-          <nr-title>7.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
-        <numart nr="8" nr-type="numeric">
-          <nr-title>8.</nr-title>
-          <name>Kerfisáhætta:</name>
-          <sen nr="1">Þegar samspil fjármálakerfis og þjóðarbúskapar felur í sér hagsveiflumögnun, fjármálafyrirtæki verða viðkvæm fyrir aðgerðum annarra aðila og hætta er á atburðarás sem getur ógnað fjármálastöðugleika með tilheyrandi neikvæðum áhrifum á þjóðarbúskapinn.</sen>
-        </numart>
-        <numart nr="9" nr-type="numeric">
-          <nr-title>9.</nr-title>
-          <sen nr="1"></sen>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Í lögum þessum merkir:</sen>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <name>Fjármálakerfi:</name>
+            <paragraph nr="1">
+              <sen nr="1">Allir lögaðilar sem stunda fjármálastarfsemi í skilningi laga um opinbert eftirlit með fjármálastarfsemi, þ.m.t. opinberir lánasjóðir og lífeyrissjóðir, svo og fjármálamarkaðir, kerfislega þýðingarmikil greiðslu- og uppgjörskerfi og Seðlabanki Íslands.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+          <numart nr="5" nr-type="numeric">
+            <nr-title>5.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+          <numart nr="6" nr-type="numeric">
+            <nr-title>6.</nr-title>
+            <name>Fjármálastöðugleiki:</name>
+            <paragraph nr="1">
+              <sen nr="1">Það ástand þegar ekki er rof eða veruleg truflun á starfsemi fjármálakerfisins og það býr yfir nægum viðnámsþrótti til að þola áföll og ójafnvægi án þess að veruleg neikvæð áhrif verði í miðlun fjármagns, miðlun greiðslna og dreifingu áhættu.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="7" nr-type="numeric">
+            <nr-title>7.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+          <numart nr="8" nr-type="numeric">
+            <nr-title>8.</nr-title>
+            <name>Kerfisáhætta:</name>
+            <paragraph nr="1">
+              <sen nr="1">Þegar samspil fjármálakerfis og þjóðarbúskapar felur í sér hagsveiflumögnun, fjármálafyrirtæki verða viðkvæm fyrir aðgerðum annarra aðila og hætta er á atburðarás sem getur ógnað fjármálastöðugleika með tilheyrandi neikvæðum áhrifum á þjóðarbúskapinn.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="9" nr-type="numeric">
+            <nr-title>9.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="24" nr="1">
           <footnote-sen>L. 91/2019, 24. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>1</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>2</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="range">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>3</numart>
-            <sen words="kerfislega þýðingarmikil greiðslu- og uppgjörskerfi og Seðlabanki Íslands">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>4</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>5</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>7</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>1</chapter>
-            <art>2</art>
-            <subart>1</subart>
-            <numart>9</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/nr-title[1]" before-mark="^1." after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/nr-title[1]" before-mark="^2." after-mark="$"/>
+          <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="kerfislega þýðingarmikil greiðslu- og uppgjörskerfi og Seðlabanki Íslands" middle-punctuation="." instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']/nr-title[1]" before-mark="^4." after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='5']/nr-title[1]" before-mark="^5." after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='7']/nr-title[1]" before-mark="^7." after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='9']/nr-title[1]" before-mark="^9." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="2" nr-type="roman" roman-nr="II">
+  <chapter nr="2" nr-type="roman" chapter-type="kafli" roman-nr="II">
     <nr-title>II. kafli.</nr-title>
     <name>Fjármálastöðugleikaráð.</name>
     <art nr="3">
       <nr-title>3. gr.</nr-title>
       <name>Hlutverk og skipan.</name>
       <subart nr="1">
-        <sen nr="1">Fjármálastöðugleikaráð er formlegur samstarfsvettvangur stjórnvalda um fjármálastöðugleika.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð er formlegur samstarfsvettvangur stjórnvalda um fjármálastöðugleika.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Í fjármálastöðugleikaráði sitja ráðherra, og er hann formaður ráðsins, og seðlabankastjóri.</sen>
-        <sen nr="2">Formaður kallar ráðið saman til fundar þrisvar sinnum á ári en oftar telji annar ráðsmanna þörf á.</sen>
-        <sen nr="3">Fjármálastöðugleikaráð setur sér starfsreglur og heldur gerðabók á fundum sínum.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Í fjármálastöðugleikaráði sitja ráðherra, og er hann formaður ráðsins, og seðlabankastjóri.</sen>
+          <sen nr="2">Formaður kallar ráðið saman til fundar þrisvar sinnum á ári en oftar telji annar ráðsmanna þörf á.</sen>
+          <sen nr="3">Fjármálastöðugleikaráð setur sér starfsreglur og heldur gerðabók á fundum sínum.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Seðlabanki Íslands veitir ráðinu þær upplýsingar sem ráðið óskar eftir til að sinna hlutverki sínu og ber sjálfur þann kostnað sem af hlýst.</sen>
-        <sen nr="2">Umsýsla vegna fjármálastöðugleikaráðs og undirbúningur funda þess er á hendi ráðuneytisins.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Seðlabanki Íslands veitir ráðinu þær upplýsingar sem ráðið óskar eftir til að sinna hlutverki sínu og ber sjálfur þann kostnað sem af hlýst.</sen>
+          <sen nr="2">Umsýsla vegna fjármálastöðugleikaráðs og undirbúningur funda þess er á hendi ráðuneytisins.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="25" nr="1">
           <footnote-sen>L. 91/2019, 25. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>3</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>3</art>
-              <subart>2</subart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="190">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
           </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>3</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
@@ -186,65 +135,50 @@
       <nr-title>4. gr.</nr-title>
       <name>Almenn verkefni.</name>
       <subart nr="1">
-        <sen nr="1">Fjármálastöðugleikaráð er vettvangur samráðs, upplýsingaskipta og stefnumótunar vegna fjármálastöðugleika og samhæfir viðbúnað opinberra aðila þegar fjármálastöðugleika er ógnað.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð er vettvangur samráðs, upplýsingaskipta og stefnumótunar vegna fjármálastöðugleika og samhæfir viðbúnað opinberra aðila þegar fjármálastöðugleika er ógnað.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Helstu verkefni fjármálastöðugleikaráðs eru eftirfarandi:</sen>
-        <numart nr="a" nr-type="alphabet">
-          <nr-title>a.</nr-title>
-          <sen nr="1">að móta opinbera stefnu um fjármálastöðugleika,</sen>
-        </numart>
-        <numart nr="b" nr-type="alphabet">
-          <nr-title>b.</nr-title>
-          <sen nr="1">að vakta efnahagslegt ójafnvægi, áhættu í fjármálakerfinu, óæskilega hvata og aðrar aðstæður sem eru líklegar til að ógna fjármálastöðugleika,</sen>
-        </numart>
-        <numart nr="c" nr-type="alphabet">
-          <nr-title>c.</nr-title>
-          <sen nr="1">að meta árangur af þjóðhagsvarúðartækjum,</sen>
-        </numart>
-        <numart nr="d" nr-type="alphabet">
-          <nr-title>d.</nr-title>
-        </numart>
+        <paragraph nr="1">
+          <sen nr="1">Helstu verkefni fjármálastöðugleikaráðs eru eftirfarandi:</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að móta opinbera stefnu um fjármálastöðugleika,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að vakta efnahagslegt ójafnvægi, áhættu í fjármálakerfinu, óæskilega hvata og aðrar aðstæður sem eru líklegar til að ógna fjármálastöðugleika,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að meta árangur af þjóðhagsvarúðartækjum,</sen>
+            </paragraph>
+          </numart>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1"/>
+          </numart>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Fjármálastöðugleikaráð skal einkum byggja á tillögum eða greiningu Seðlabanka Íslands við vinnslu verkefna skv. 2. mgr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð skal einkum byggja á tillögum eða greiningu Seðlabanka Íslands við vinnslu verkefna skv. 2. mgr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="26" nr="1">
           <footnote-sen>L. 91/2019, 26. gr.</footnote-sen>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>4</art>
-            <subart>1</subart>
-            <sen words="þegar fjármálastöðugleika er ógnað">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>4</art>
-            <subart>2</subart>
-            <numart>b</numart>
-            <sen words="vakta">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>4</art>
-            <subart>2</subart>
-            <numart>c</numart>
-            <sen words="að meta árangur af þjóðhagsvarúðartækjum">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>4</art>
-            <subart>2</subart>
-            <numart>d</numart>
-            <sen before-mark="^" after-mark="$">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>4</art>
-            <subart>3</subart>
-            <sen words="Seðlabanka Íslands">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="þegar fjármálastöðugleika er ógnað" middle-punctuation="." instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" words="vakta" instance-num="1"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1']" words="að meta árangur af þjóðhagsvarúðartækjum" middle-punctuation="," instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='d']/nr-title[1]" before-mark="^d." after-mark="$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Seðlabanka Íslands" instance-num="1"/>
         </footnote>
       </footnotes>
     </art>
@@ -253,11 +187,7 @@
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="27" nr="1">
           <footnote-sen>L. 91/2019, 27. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>5</art>
-            <nr-title before-mark="^5. gr." after-mark="$">1</nr-title>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/nr-title[1]" before-mark="^5. gr." after-mark="$"/>
         </footnote>
       </footnotes>
     </art>
@@ -265,108 +195,76 @@
       <nr-title>6. gr.</nr-title>
       <name>Sérstakar aðstæður.</name>
       <subart nr="1">
-        <sen nr="1">Fjármálastöðugleikaráð fundar sérstaklega þegar fjármálastöðugleika er ógnað eða hætta er á atburðum sem geta valdið umtalsverðum smitáhrifum eða tjóni á fjármálamarkaði.</sen>
-        <sen nr="2">Seðlabanki Íslands skal upplýsa ráðherra, án tafar, telji bankinn að aðstæður skv. 1. málsl. hafi skapast.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð fundar sérstaklega þegar fjármálastöðugleika er ógnað eða hætta er á atburðum sem geta valdið umtalsverðum smitáhrifum eða tjóni á fjármálamarkaði.</sen>
+          <sen nr="2">Seðlabanki Íslands skal upplýsa ráðherra, án tafar, telji bankinn að aðstæður skv. 1. málsl. hafi skapast.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Ráðið leggur mat á til hvaða nauðsynlegu aðgerða eða ráðstafana þurfi að grípa og samræmir aðkomu stjórnvalda.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðið leggur mat á til hvaða nauðsynlegu aðgerða eða ráðstafana þurfi að grípa og samræmir aðkomu stjórnvalda.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Ráðið skal upplýsa efnahags- og viðskiptanefnd Alþingis um helstu aðgerðir og ráðstafanir skv. 2. mgr.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ráðið skal upplýsa efnahags- og viðskiptanefnd Alþingis um helstu aðgerðir og ráðstafanir skv. 2. mgr.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="28" nr="1">
           <footnote-sen>L. 91/2019, 28. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>2</chapter>
-              <art>6</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>2</chapter>
-              <art>6</art>
-              <subart>1</subart>
-              <sen>2</sen>
-            </end>
+          <location type="range" string-length="277">
+            <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
           </location>
-          <location type="deletion">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>2</subart>
-            <sen before-mark="^Ráðið leggur mat á til hvaða nauðsynlegu aðgerða eða ráðstafana þurfi að grípa" after-mark="og samræmir aðkomu stjórnvalda.$">1</sen>
-          </location>
-          <location type="range">
-            <chapter>2</chapter>
-            <art>6</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðið leggur mat á til hvaða nauðsynlegu aðgerða eða ráðstafana þurfi að grípa" after-mark="og samræmir aðkomu stjórnvalda.$"/>
+          <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
   </chapter>
-  <chapter nr="3" nr-type="roman" roman-nr="III">
+  <chapter nr="3" nr-type="roman" chapter-type="kafli" roman-nr="III">
     <nr-title>III. kafli.</nr-title>
-    <name></name>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="29" nr="1">
         <footnote-sen>L. 91/2019, 29. gr.</footnote-sen>
-        <location type="deletion">
-          <chapter>3</chapter>
-          <name before-mark="^" after-mark="$">1</name>
-        </location>
+        <location type="deletion" xpath="chapter[@nr='3' and @chapter-type='kafli']/nr-title[1]" before-mark="^III. kafli." after-mark="$"/>
       </footnote>
     </footnotes>
   </chapter>
-  <chapter nr="4" nr-type="roman" roman-nr="IV">
+  <chapter nr="4" nr-type="roman" chapter-type="kafli" roman-nr="IV">
     <nr-title>IV. kafli.</nr-title>
     <name>Ýmis ákvæði.</name>
     <art nr="9">
       <nr-title>9. gr.</nr-title>
       <name>Gagnaöflun. Þagnarskylda.</name>
       <subart nr="1">
-        <sen nr="1">Seðlabanki Íslands afhendir fjármálastöðugleikaráði upplýsingar og gögn sem hann býr yfir og ráðið telur nauðsynleg vegna hlutverks síns.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Seðlabanki Íslands afhendir fjármálastöðugleikaráði upplýsingar og gögn sem hann býr yfir og ráðið telur nauðsynleg vegna hlutverks síns.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Upplýsingar sem veittar eru ráðinu lúta þagnarskyldu samkvæmt lögum um Seðlabanka Íslands.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Upplýsingar sem veittar eru ráðinu lúta þagnarskyldu samkvæmt lögum um Seðlabanka Íslands.</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Þeir sem sitja í fjármálastöðugleikaráði eru bundnir þagnarskyldu skv. X. kafla stjórnsýslulaga.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem sitja í fjármálastöðugleikaráði eru bundnir þagnarskyldu skv. X. kafla stjórnsýslulaga.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="30" nr="1">
           <footnote-sen>L. 91/2019, 30. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>4</chapter>
-              <art>9</art>
-              <subart>1</subart>
-              <sen>1</sen>
-            </start>
-            <end>
-              <chapter>4</chapter>
-              <art>9</art>
-              <subart>2</subart>
-              <sen>1</sen>
-            </end>
+          <location type="range" string-length="228">
+            <start xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+            <end xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>9</art>
-            <subart>3</subart>
-            <sen before-mark="^(\[? ?)?Þeir sem sitja í fjármálastöðugleikaráði" after-mark="eru bundnir þagnarskyldu skv. X. kafla stjórnsýslulaga.\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Þeir sem sitja í fjármálastöðugleikaráði" after-mark="eru bundnir þagnarskyldu skv. X. kafla stjórnsýslulaga\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2019.071.html" law-nr="71" law-year="2019" law-art="5" nr="2">
           <footnote-sen>L. 71/2019, 5. gr.</footnote-sen>
-          <location type="range">
-            <chapter>4</chapter>
-            <art>9</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
@@ -374,47 +272,35 @@
       <nr-title>10. gr.</nr-title>
       <name>Gagnsæi.</name>
       <subart nr="1">
-        <sen nr="1">Fjármálastöðugleikaráð skal gera fundargerðir sínar opinberar innan eins mánaðar frá því að fundur er haldinn, nema ætla megi að opinber birting geti haft neikvæð áhrif á fjármálastöðugleika.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð skal gera fundargerðir sínar opinberar innan eins mánaðar frá því að fundur er haldinn, nema ætla megi að opinber birting geti haft neikvæð áhrif á fjármálastöðugleika.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Fjármálastöðugleikaráð skal árlega, og oftar ef þörf er á, gera Alþingi grein fyrir meginþáttum í störfum sínum.</sen>
-        <sen nr="2">Birta skal opinberlega starfsreglur fjármálastöðugleikaráðs</sen>
+        <paragraph nr="1">
+          <sen nr="1">Fjármálastöðugleikaráð skal árlega, og oftar ef þörf er á, gera Alþingi grein fyrir meginþáttum í störfum sínum.</sen>
+          <sen nr="2">Birta skal opinberlega starfsreglur fjármálastöðugleikaráðs</sen>
+        </paragraph>
       </subart>
       <subart nr="3">
-        <sen nr="1">Formaður fjármálastöðugleikaráðs skal halda ríkisstjórninni upplýstri um störf ráðsins og viðbúnað stjórnvalda og viðbragðsáætlanir við sérstakar aðstæður.</sen>
-        <sen nr="2">Formenn stjórnmálaflokka á Alþingi, sem ekki eru jafnframt ráðherrar, skulu upplýstir með sama hætti.</sen>
-        <sen nr="3">Ef formaður fjármálastöðugleikaráðs krefst þess að trúnaður ríki um veittar upplýsingar skal gæta fyllstu þagmælsku um þær.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Formaður fjármálastöðugleikaráðs skal halda ríkisstjórninni upplýstri um störf ráðsins og viðbúnað stjórnvalda og viðbragðsáætlanir við sérstakar aðstæður.</sen>
+          <sen nr="2">Formenn stjórnmálaflokka á Alþingi, sem ekki eru jafnframt ráðherrar, skulu upplýstir með sama hætti.</sen>
+          <sen nr="3">Ef formaður fjármálastöðugleikaráðs krefst þess að trúnaður ríki um veittar upplýsingar skal gæta fyllstu þagmælsku um þær.</sen>
+        </paragraph>
       </subart>
       <subart nr="4">
-        <sen nr="1">Ákvæði upplýsingalaga og stjórnsýslulaga um aðgang að gögnum gilda ekki um fundargerðir og þau gögn sem eru unnin fyrir fjármálastöðugleikaráð eða eru þar til meðferðar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Ákvæði upplýsingalaga og stjórnsýslulaga um aðgang að gögnum gilda ekki um fundargerðir og þau gögn sem eru unnin fyrir fjármálastöðugleikaráð eða eru þar til meðferðar.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="31" nr="1">
           <footnote-sen>L. 91/2019, 31. gr.</footnote-sen>
-          <location type="range">
-            <chapter>4</chapter>
-            <art>10</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>10</art>
-            <subart>2</subart>
-            <sen before-mark="^Birta skal opinberlega starfsreglur fjármálastöðugleikaráðs" after-mark="$">2</sen>
-          </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>10</art>
-            <subart>3</subart>
-            <sen before-mark="^Ef formaður fjármálastöðugleikaráðs" after-mark="krefst þess að trúnaður ríki um veittar upplýsingar skal gæta fyllstu þagmælsku um þær.$">3</sen>
-          </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>10</art>
-            <subart>4</subart>
-            <sen before-mark="^Ákvæði upplýsingalaga og stjórnsýslulaga um aðgang að gögnum gilda ekki um fundargerðir og þau gögn sem eru unnin fyrir fjármálastöðugleikaráð" after-mark="eða eru þar til meðferðar.$">1</sen>
-          </location>
+          <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Birta skal opinberlega starfsreglur fjármálastöðugleikaráðs" after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Ef formaður fjármálastöðugleikaráðs" after-mark="krefst þess að trúnaður ríki um veittar upplýsingar skal gæta fyllstu þagmælsku um þær.$"/>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ákvæði upplýsingalaga og stjórnsýslulaga um aðgang að gögnum gilda ekki um fundargerðir og þau gögn sem eru unnin fyrir fjármálastöðugleikaráð" after-mark="eða eru þar til meðferðar.$"/>
         </footnote>
       </footnotes>
     </art>
@@ -422,38 +308,22 @@
       <nr-title>11. gr.</nr-title>
       <name>Hæfisskilyrði.</name>
       <subart nr="1">
-        <sen nr="1">Þeim sem sitja í fjármálastöðugleikaráði er óheimilt að sinna störfum sem geta verið til þess fallin að draga megi óhlutdrægni þeirra í efa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeim sem sitja í fjármálastöðugleikaráði er óheimilt að sinna störfum sem geta verið til þess fallin að draga megi óhlutdrægni þeirra í efa.</sen>
+        </paragraph>
       </subart>
       <subart nr="2">
-        <sen nr="1">Þeir sem sitja í fjármálastöðugleikaráði, sem og allir þeir sem sitja fundi ráðsins eða starfa á þess vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Þeir sem sitja í fjármálastöðugleikaráði, sem og allir þeir sem sitja fundi ráðsins eða starfa á þess vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="32" nr="1">
           <footnote-sen>L. 91/2019, 32. gr.</footnote-sen>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>11</art>
-            <subart>1</subart>
-            <sen before-mark="^Þeim sem sitja í fjármálastöðugleikaráði" after-mark="er óheimilt að sinna störfum sem geta verið til þess fallin að draga megi óhlutdrægni þeirra í efa.$">1</sen>
-          </location>
-          <location type="range">
-            <chapter>4</chapter>
-            <art>11</art>
-            <subart>2</subart>
-            <sen words="þess">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>11</art>
-            <subart>2</subart>
-            <sen middle-punctuation="," before-mark="^Þeir sem sitja í fjármálastöðugleikaráði" after-mark="sem og allir þeir sem sitja fundi ráðsins (… &lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?eða starfa á (\[? ?)?þess\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.$">1</sen>
-          </location>
-          <location type="deletion">
-            <chapter>4</chapter>
-            <art>11</art>
-            <subart>2</subart>
-            <sen before-mark="^Þeir sem sitja í fjármálastöðugleikaráði …, &lt;sup style=&quot;font-size:60%&quot;&gt; 1\) &lt;/sup&gt; sem og allir þeir sem sitja fundi ráðsins" after-mark="eða starfa á (\[? ?)?þess\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.$">1</sen>
-          </location>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Þeim sem sitja í fjármálastöðugleikaráði" after-mark="er óheimilt að sinna störfum sem geta verið til þess fallin að draga megi óhlutdrægni þeirra í efa.$"/>
+          <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="þess" instance-num="1"/>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Þeir sem sitja í fjármálastöðugleikaráði" after-mark="sem og allir þeir sem sitja fundi ráðsins:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?eða starfa á (\[??)?þess:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.$" middle-punctuation=","/>
+          <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Þeir sem sitja í fjármálastöðugleikaráði:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?sem og allir þeir sem sitja fundi ráðsins" after-mark="eða starfa á (\[??)?þess:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?vegum, skulu hver fyrir sig og af sjálfsdáðum gæta að ábyrgð sinni varðandi meðferð innherjaupplýsinga og stöðu innherja samkvæmt ákvæðum laga um verðbréfaviðskipti.$"/>
         </footnote>
       </footnotes>
     </art>
@@ -461,7 +331,9 @@
       <nr-title>12. gr.</nr-title>
       <name>Gildistaka.</name>
       <subart nr="1">
-        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        </paragraph>
       </subart>
     </art>
   </chapter>

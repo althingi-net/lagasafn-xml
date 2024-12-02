@@ -10,79 +10,81 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórninni er heimilt að fullgilda fyrir Íslands hönd samning frá 18. nóvember 1980 um framtíðarsamvinnu ríkja varðandi fiskveiðar á Norðaustur-Atlantshafi.</sen>
-      <sen nr="2">Samningurinn er prentaður sem fylgiskjal með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er heimilt að fullgilda fyrir Íslands hönd samning frá 18. nóvember 1980 um framtíðarsamvinnu ríkja varðandi fiskveiðar á Norðaustur-Atlantshafi.</sen>
+        <sen nr="2">Samningurinn er prentaður sem fylgiskjal með lögum þessum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra er heimilt að setja reglur um framkvæmd samningsins.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra er heimilt að setja reglur um framkvæmd samningsins.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="93" nr="1">
         <footnote-sen>L. 126/2011, 93. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="Ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
       </footnote>
       <footnote nr="2">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/263-1970"&gt;Rg. 263/1970&lt;/a&gt;(um alþjóðlegt fiskveiðieftirlit utan landhelgi og fiskveiðilögsögu). Augl. 222/1971 (um bann við síldveiði með &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/181-1976"&gt;herpinót á svæði í hafinu suður af Írlandi og vestur af Englandi). Rg. 181/1976&lt;/a&gt;(um takmörkun á síldveiðum íslenskra skipa í Norðursjó, Skagerak og á svæði VI (a) vestan Skotlands).</footnote-sen>
-        <location type="pointer">
-          <art>2</art>
-          <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur" after-mark="um framkvæmd samningsins.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Ráðherra:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur" after-mark="um framkvæmd samningsins.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot á reglum sem settar verða samkvæmt 2. gr. laga þessara skulu varða sektum 2000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot á reglum sem settar verða samkvæmt 2. gr. laga þessara skulu varða sektum 2000–40.000 gullkrónum, sbr. lög nr. 4 11. apríl 1924.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ennfremur er heimilt að gera afla og veiðarfæri upptæk.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ennfremur er heimilt að gera afla og veiðarfæri upptæk.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Auk þess má láta brot varða skipstjóra fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Auk þess má láta brot varða skipstjóra fangelsi allt að 6 mánuðum þegar sakir eru miklar eða þegar um ítrekað brot er að ræða.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar er það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður greiddur að fullu.</sen>
-      <sen nr="2">Þó er heimilt að láta skip laust fyrr ef sett er bankatrygging, eða önnur trygging jafngild að mati dómara, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Kyrrsetja skal skip, sem staðið er að meintum ólöglegum veiðum, þegar er það kemur til hafnar, og er eigi heimilt að láta það laust fyrr en dómur hefur verið kveðinn upp í máli ákæruvaldsins gegn skipstjóra skipsins eða máli hans lokið á annan hátt og sekt og kostnaður greiddur að fullu.</sen>
+        <sen nr="2">Þó er heimilt að láta skip laust fyrr ef sett er bankatrygging, eða önnur trygging jafngild að mati dómara, fyrir greiðslu sektarinnar og málskostnaðar.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Til tryggingar greiðslu sektar samkvæmt þessari grein og kostnaðar skal vera lögveð í skipinu.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-nr="19" law-year="1991" law-art="195" nr="1">
         <footnote-sen>L. 19/1991, 195. gr.</footnote-sen>
-        <location type="range">
-          <art>3</art>
-          <subart>4</subart>
-          <sen words="Kyrrsetja skal">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='3']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="Kyrrsetja skal" instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G233" law-nr="88" law-year="2008" law-art="233" nr="2">
         <footnote-sen>L. 88/2008, 233. gr.</footnote-sen>
-        <location type="deletion">
-          <art>3</art>
-          <subart>6</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='3']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-      <sen nr="2" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <sen nr="2" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

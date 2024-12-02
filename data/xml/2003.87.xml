@@ -10,105 +10,113 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Orkustofnun er sérstök ríkisstofnun sem heyrir undir yfirstjórn ráðherra.</sen>
-      <sen nr="2">Orkustofnun er sjálfstæð í ákvörðunum sínum þegar stofnunin sinnir raforkueftirliti samkvæmt raforkulögum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Orkustofnun er sérstök ríkisstofnun sem heyrir undir yfirstjórn ráðherra.</sen>
+        <sen nr="2">Orkustofnun er sjálfstæð í ákvörðunum sínum þegar stofnunin sinnir raforkueftirliti samkvæmt raforkulögum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="375" nr="1">
         <footnote-sen>L. 126/2011, 375. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra" middle-punctuation="." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2019.112.html" law-nr="112" law-year="2019" law-art="8" nr="2">
         <footnote-sen>L. 112/2019, 8. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="Orkustofnun er sjálfstæð í ákvörðunum sínum þegar stofnunin sinnir raforkueftirliti samkvæmt raforkulögum.">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Hlutverk Orkustofnunar er:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">að vera ríkisstjórninni til ráðuneytis um orkumál og önnur auðlindamál sem stofnuninni eru falin með lögum og veita stjórnvöldum ráðgjöf og umsagnir um þau mál,</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">að standa fyrir rannsóknum á orkubúskap þjóðarinnar, á orkulindum landsins og hafsbotnsins og á öðrum jarðrænum auðlindum þannig að unnt sé að meta þær og veita stjórnvöldum ráðgjöf um skynsamlega og hagkvæma nýtingu þeirra,</sen>
-      </numart>
-      <numart nr="3" nr-type="numeric">
-        <nr-title>3.</nr-title>
-        <sen nr="1">að safna gögnum um orkulindir og aðrar jarðrænar auðlindir, nýtingu þeirra og orkubúskap landsmanna, varðveita þau og miðla upplýsingum til stjórnvalda og almennings,</sen>
-      </numart>
-      <numart nr="4" nr-type="numeric">
-        <nr-title>4.</nr-title>
-        <sen nr="1">að vinna að áætlanagerð til langs tíma um orkubúskap þjóðarinnar og hagnýtingu orkulinda og annarra jarðrænna auðlinda landsins og hafsbotnsins,</sen>
-      </numart>
-      <numart nr="5" nr-type="numeric">
-        <nr-title>5.</nr-title>
-        <sen nr="1">að stuðla að samvinnu þeirra sem sinna orkurannsóknum og samræmingu á rannsóknarverkefnum,</sen>
-      </numart>
-      <numart nr="6" nr-type="numeric">
-        <nr-title>6.</nr-title>
-        <sen nr="1">að fylgjast í umboði ráðherra með framkvæmd opinberra leyfa sem gefin eru út til rannsóknar og nýtingar jarðrænna auðlinda og reksturs orkuvera og annarra meiri háttar orkumannvirkja,</sen>
-      </numart>
-      <numart nr="7" nr-type="numeric">
-        <nr-title>7.</nr-title>
-        <sen nr="1">að annast umsýslu Orkusjóðs.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Hlutverk Orkustofnunar er:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að vera ríkisstjórninni til ráðuneytis um orkumál og önnur auðlindamál sem stofnuninni eru falin með lögum og veita stjórnvöldum ráðgjöf og umsagnir um þau mál,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að standa fyrir rannsóknum á orkubúskap þjóðarinnar, á orkulindum landsins og hafsbotnsins og á öðrum jarðrænum auðlindum þannig að unnt sé að meta þær og veita stjórnvöldum ráðgjöf um skynsamlega og hagkvæma nýtingu þeirra,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="3" nr-type="numeric">
+          <nr-title>3.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að safna gögnum um orkulindir og aðrar jarðrænar auðlindir, nýtingu þeirra og orkubúskap landsmanna, varðveita þau og miðla upplýsingum til stjórnvalda og almennings,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="4" nr-type="numeric">
+          <nr-title>4.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að vinna að áætlanagerð til langs tíma um orkubúskap þjóðarinnar og hagnýtingu orkulinda og annarra jarðrænna auðlinda landsins og hafsbotnsins,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="5" nr-type="numeric">
+          <nr-title>5.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að stuðla að samvinnu þeirra sem sinna orkurannsóknum og samræmingu á rannsóknarverkefnum,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="6" nr-type="numeric">
+          <nr-title>6.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að fylgjast í umboði ráðherra með framkvæmd opinberra leyfa sem gefin eru út til rannsóknar og nýtingar jarðrænna auðlinda og reksturs orkuvera og annarra meiri háttar orkumannvirkja,</sen>
+          </paragraph>
+        </numart>
+        <numart nr="7" nr-type="numeric">
+          <nr-title>7.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">að annast umsýslu Orkusjóðs.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Orkustofnun skal enn fremur annast önnur stjórnsýsluverkefni sem stofnuninni eru falin samkvæmt lögum, stjórnvaldsfyrirmælum eða ákvörðun ráðherra.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Orkustofnun skal enn fremur annast önnur stjórnsýsluverkefni sem stofnuninni eru falin samkvæmt lögum, stjórnvaldsfyrirmælum eða ákvörðun ráðherra.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Orkustofnun er heimilt að gera samninga við fyrirtæki eða stofnanir um framkvæmd skilgreindra verkefna, sbr. 2. og 3. tölul. 1. mgr.</sen>
-      <sen nr="2">Leita skal staðfestingar ráðherra á samningum sem gerðir eru til lengri tíma en tveggja ára.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Orkustofnun er heimilt að gera samninga við fyrirtæki eða stofnanir um framkvæmd skilgreindra verkefna, sbr. 2. og 3. tölul. 1. mgr.</sen>
+        <sen nr="2">Leita skal staðfestingar ráðherra á samningum sem gerðir eru til lengri tíma en tveggja ára.</sen>
+      </paragraph>
     </subart>
     <subart nr="4">
-      <sen nr="1">Orkustofnun er heimilt að hafa samvinnu við stofnanir eða fyrirtæki um þjónustustarfsemi, svo sem rekstur húsnæðis, símvörslu, tölvuþjónustu o.fl.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Orkustofnun er heimilt að hafa samvinnu við stofnanir eða fyrirtæki um þjónustustarfsemi, svo sem rekstur húsnæðis, símvörslu, tölvuþjónustu o.fl.</sen>
+      </paragraph>
     </subart>
     <subart nr="5">
-      <sen nr="1">Til að sinna hlutverki sínu skv. 3. tölul. 1. mgr. er Orkustofnun heimilt að krefjast gagna sem varða nýtingu á jarðrænum auðlindum, orkuframleiðslu og orkunotkun, þ.m.t. gagna um innflutning, geymslu og sölu á jarðefnaeldsneyti.</sen>
-      <sen nr="2">Skylt er þeim sem stunda atvinnurekstur er varðar framangreint að afhenda stofnuninni nauðsynleg gögn innan frests sem hún tilgreinir.</sen>
-      <sen nr="3">Í reglugerð skal kveða nánar á um tegund gagna, gæði þeirra og skilafrest.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Til að sinna hlutverki sínu skv. 3. tölul. 1. mgr. er Orkustofnun heimilt að krefjast gagna sem varða nýtingu á jarðrænum auðlindum, orkuframleiðslu og orkunotkun, þ.m.t. gagna um innflutning, geymslu og sölu á jarðefnaeldsneyti.</sen>
+        <sen nr="2">Skylt er þeim sem stunda atvinnurekstur er varðar framangreint að afhenda stofnuninni nauðsynleg gögn innan frests sem hún tilgreinir.</sen>
+        <sen nr="3">Í reglugerð skal kveða nánar á um tegund gagna, gæði þeirra og skilafrest.</sen>
+      </paragraph>
     </subart>
     <subart nr="6">
-      <sen nr="1">Sé gögnum ekki skilað innan tilgreinds frests er Orkustofnun heimilt að leggja dagsektir á viðkomandi fyrirtæki eða stofnun.</sen>
-      <sen nr="2">Dagsektir geta numið 10–100 þús. kr. á dag.</sen>
-      <sen nr="3">Ákvörðun um dagsektir skal tilkynnt bréflega á sannanlegan hátt þeim sem hún beinist að.</sen>
-      <sen nr="4">Ákvarðanir um að leggja á dagsektir eru aðfararhæfar.</sen>
-      <sen nr="5">Innheimtar dagsektir skulu renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé gögnum ekki skilað innan tilgreinds frests er Orkustofnun heimilt að leggja dagsektir á viðkomandi fyrirtæki eða stofnun.</sen>
+        <sen nr="2">Dagsektir geta numið 10–100 þús. kr. á dag.</sen>
+        <sen nr="3">Ákvörðun um dagsektir skal tilkynnt bréflega á sannanlegan hátt þeim sem hún beinist að.</sen>
+        <sen nr="4">Ákvarðanir um að leggja á dagsektir eru aðfararhæfar.</sen>
+        <sen nr="5">Innheimtar dagsektir skulu renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/870-2013"&gt;Rg. 870/2013&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/097-2021"&gt;97/2021&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/549-2015"&gt;Rg. 549/2015&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>2</art>
-          <subart>5</subart>
-          <sen before-mark="^Í reglugerð" after-mark="skal kveða nánar á um tegund gagna, gæði þeirra og skilafrest.$">3</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='2']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Í reglugerð" after-mark="skal kveða nánar á um tegund gagna, gæði þeirra og skilafrest.$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2007.048.html" law-nr="48" law-year="2007" law-art="1" nr="2">
         <footnote-sen>L. 48/2007, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <subart>5</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>6</subart>
-            <sen>5</sen>
-          </end>
+        <location type="range" string-length="830">
+          <start xpath="art[@nr='2']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='2']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='5']"/>
         </location>
       </footnote>
     </footnotes>
@@ -118,27 +126,28 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2008.070.html#G7" law-nr="70" law-year="2008" law-art="7" nr="1">
         <footnote-sen>L. 70/2008, 7. gr.</footnote-sen>
-        <location type="deletion">
-          <art>3</art>
-          <nr-title before-mark="^3. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='3']/nr-title[1]" before-mark="^3. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Orkustofnun skal gera framkvæmdaáætlun til fjögurra ára í senn um þau verkefni sem stofnunin vinnur að skv. 2. og 3. tölul. 1. mgr. 2. gr.</sen>
-      <sen nr="2">Skal hún endurskoðuð árlega og lögð fyrir ráðherra til staðfestingar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Orkustofnun skal gera framkvæmdaáætlun til fjögurra ára í senn um þau verkefni sem stofnunin vinnur að skv. 2. og 3. tölul. 1. mgr. 2. gr.</sen>
+        <sen nr="2">Skal hún endurskoðuð árlega og lögð fyrir ráðherra til staðfestingar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra skipar forstöðumann Orkustofnunar til fimm ára í senn.</sen>
-      <sen nr="2">Nefnist hann orkumálastjóri.</sen>
-      <sen nr="3">Orkumálastjóri fer með stjórn og daglegan rekstur Orkustofnunar.</sen>
-      <sen nr="4">Orkumálastjóri ræður annað starfslið stofnunarinnar.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra skipar forstöðumann Orkustofnunar til fimm ára í senn.</sen>
+        <sen nr="2">Nefnist hann orkumálastjóri.</sen>
+        <sen nr="3">Orkumálastjóri fer með stjórn og daglegan rekstur Orkustofnunar.</sen>
+        <sen nr="4">Orkumálastjóri ræður annað starfslið stofnunarinnar.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="6">
@@ -146,22 +155,21 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2014.110.html" law-nr="110" law-year="2014" law-art="1" nr="1">
         <footnote-sen>L. 110/2014, 1. gr.</footnote-sen>
-        <location type="deletion">
-          <art>6</art>
-          <nr-title before-mark="^6. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='6']/nr-title[1]" before-mark="^6. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ef ráðist er í orkuframkvæmdir sem undirbúnar hafa verið með rannsóknum og áætlunargerð sem kostaðar hafa verið með fé ríkisins skal framkvæmdaraðili endurgreiða Orkustofnun þann kostnað þegar honum er veitt virkjunar- eða nýtingarleyfi.</sen>
-      <sen nr="2">Kostnaðarliðir skulu framreiknaðir með vísitölu neysluverðs til gjalddaga.</sen>
-      <sen nr="3">Orkustofnun skal leggja fram rökstudda greinargerð um endurgreiðslukröfu í hverju tilviki.</sen>
-      <sen nr="4">Rísi ágreiningur um greiðsluna skal hann lagður í gerð þriggja manna að kröfu annars aðila eða beggja á grundvelli laga nr. 53/1989, um samningsbundna gerðardóma.</sen>
-      <sen nr="5">Endurgreiðslu skal að fullu lokið eigi síðar en sjö árum eftir að leyfi hefur verið gefið út.</sen>
-      <sen nr="6">Endurgreiddu fé skal varið til að fjármagna rannsóknir á orkulindum landsins sem gerðar eru skv. 2. tölul. 1. mgr. 2. gr. laga þessara.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ef ráðist er í orkuframkvæmdir sem undirbúnar hafa verið með rannsóknum og áætlunargerð sem kostaðar hafa verið með fé ríkisins skal framkvæmdaraðili endurgreiða Orkustofnun þann kostnað þegar honum er veitt virkjunar- eða nýtingarleyfi.</sen>
+        <sen nr="2">Kostnaðarliðir skulu framreiknaðir með vísitölu neysluverðs til gjalddaga.</sen>
+        <sen nr="3">Orkustofnun skal leggja fram rökstudda greinargerð um endurgreiðslukröfu í hverju tilviki.</sen>
+        <sen nr="4">Rísi ágreiningur um greiðsluna skal hann lagður í gerð þriggja manna að kröfu annars aðila eða beggja á grundvelli laga nr. 53/1989, um samningsbundna gerðardóma.</sen>
+        <sen nr="5">Endurgreiðslu skal að fullu lokið eigi síðar en sjö árum eftir að leyfi hefur verið gefið út.</sen>
+        <sen nr="6">Endurgreiddu fé skal varið til að fjármagna rannsóknir á orkulindum landsins sem gerðar eru skv. 2. tölul. 1. mgr. 2. gr. laga þessara.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="8">
@@ -169,36 +177,35 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2020.076.html#G9" law-nr="76" law-year="2020" law-art="9" nr="1">
         <footnote-sen>L. 76/2020, 9. gr.</footnote-sen>
-        <location type="deletion">
-          <art>8</art>
-          <nr-title before-mark="^8. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='8']/nr-title[1]" before-mark="^8. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra getur í reglugerð mælt nánar fyrir um starfsemi Orkustofnunar og framkvæmd laga þessara.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra getur í reglugerð mælt nánar fyrir um starfsemi Orkustofnunar og framkvæmd laga þessara.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/400-2009"&gt;Rg. 400/2009&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>9</art>
-          <subart>1</subart>
-          <sen before-mark="^Ráðherra getur í reglugerð" after-mark="mælt nánar fyrir um starfsemi Orkustofnunar og framkvæmd laga þessara.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra getur í reglugerð" after-mark="mælt nánar fyrir um starfsemi Orkustofnunar og framkvæmd laga þessara.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi en koma til framkvæmda 1. júlí 2003.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi en koma til framkvæmda 1. júlí 2003.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
   </art>
   <chapter nr-type="temporary-clauses" nr="t">
@@ -206,32 +213,27 @@
     <art nr="I" roman-nr="1" number-type="roman">
       <nr-title>I.</nr-title>
       <subart nr="1">
-        <sen nr="1">Iðnaðarráðherra ákveður í samráði við Orkustofnun og Íslenskar orkurannsóknir hvaða eignir og skuldir Orkustofnunar skuli tilheyra hvorri stofnun.</sen>
-        <sen nr="2">Þó skulu allar rannsóknaniðurstöður og gagnasöfn sem fjármögnuð hafa verið með opinberu fé áfram vera eign Orkustofnunar.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Iðnaðarráðherra ákveður í samráði við Orkustofnun og Íslenskar orkurannsóknir hvaða eignir og skuldir Orkustofnunar skuli tilheyra hvorri stofnun.</sen>
+          <sen nr="2">Þó skulu allar rannsóknaniðurstöður og gagnasöfn sem fjármögnuð hafa verið með opinberu fé áfram vera eign Orkustofnunar.</sen>
+        </paragraph>
       </subart>
     </art>
     <art nr="II" roman-nr="2" number-type="roman">
       <nr-title>II.</nr-title>
       <subart nr="1">
-        <sen nr="1">Starfsemi vatnamælinga Orkustofnunar lýtur yfirstjórn umhverfisráðherra frá 1. janúar 2008.</sen>
-        <sen nr="2">Umhverfisráðherra skal vinna að sameiningu Veðurstofu Íslands og vatnamælinga Orkustofnunar í eina stofnun eigi síðar en 1. janúar 2009.</sen>
-        <sen nr="3">Orkustofnun annast starfsemi vatnamælinga, undir yfirstjórn umhverfisráðherra, þar til ný stofnun tekur til starfa.</sen>
+        <paragraph nr="1">
+          <sen nr="1">Starfsemi vatnamælinga Orkustofnunar lýtur yfirstjórn umhverfisráðherra frá 1. janúar 2008.</sen>
+          <sen nr="2">Umhverfisráðherra skal vinna að sameiningu Veðurstofu Íslands og vatnamælinga Orkustofnunar í eina stofnun eigi síðar en 1. janúar 2009.</sen>
+          <sen nr="3">Orkustofnun annast starfsemi vatnamælinga, undir yfirstjórn umhverfisráðherra, þar til ný stofnun tekur til starfa.</sen>
+        </paragraph>
       </subart>
       <footnotes>
         <footnote href="https://www.althingi.is/altext/stjt/2007.167.html" law-nr="167" law-year="2007" law-art="33" nr="1">
           <footnote-sen>L. 167/2007, 33. gr.</footnote-sen>
-          <location type="range">
-            <start>
-              <chapter>t</chapter>
-              <art>II</art>
-              <nr-title>1</nr-title>
-            </start>
-            <end>
-              <chapter>t</chapter>
-              <art>II</art>
-              <subart>1</subart>
-              <sen>3</sen>
-            </end>
+          <location type="range" string-length="346">
+            <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+            <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
           </location>
         </footnote>
       </footnotes>

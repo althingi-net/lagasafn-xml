@@ -10,73 +10,77 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Heimilt er ráðherra fyrir hönd ríkissjóðs, forráðamönnum sveitarfélaga, svo og opinberum stofnunum að semja sín í milli um, að innheimt skuli í einu lagi gjöld, er greiða ber þessum aðiljum.</sen>
-      <sen nr="2">Má fela gjaldheimtuna innheimtumönnum ríkissjóðs, sveitarsjóða eða sérstakri innheimtustofnun.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er ráðherra fyrir hönd ríkissjóðs, forráðamönnum sveitarfélaga, svo og opinberum stofnunum að semja sín í milli um, að innheimt skuli í einu lagi gjöld, er greiða ber þessum aðiljum.</sen>
+        <sen nr="2">Má fela gjaldheimtuna innheimtumönnum ríkissjóðs, sveitarsjóða eða sérstakri innheimtustofnun.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="35" nr="1">
         <footnote-sen>L. 126/2011, 35. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen words="ráðherra">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Nú takast samningar um gjaldheimtu samkvæmt 1. gr., og skal þá samið um hlutdeild hvers aðilja í kostnaði við hana til eigi skemmri tíma en eins árs í senn.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú takast samningar um gjaldheimtu samkvæmt 1. gr., og skal þá samið um hlutdeild hvers aðilja í kostnaði við hana til eigi skemmri tíma en eins árs í senn.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Allar skyldur, sem innheimtumönnum ríkissjóðs, sveitarsjóða og opinberra stofnana eru lagðar á herðar lögum samkvæmt, svo og allar heimildir, sem þeim eru veittar til þess að framfylgja gjaldheimtunni, skulu falla til þess aðilja, sem samkvæmt samningi tekur innheimtuna að sér.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Allar skyldur, sem innheimtumönnum ríkissjóðs, sveitarsjóða og opinberra stofnana eru lagðar á herðar lögum samkvæmt, svo og allar heimildir, sem þeim eru veittar til þess að framfylgja gjaldheimtunni, skulu falla til þess aðilja, sem samkvæmt samningi tekur innheimtuna að sér.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Heimilt er að samræma gjalddaga einstakra opinberra gjalda, sem innheimt verða með þessum hætti, setja sameiginleg ákvæði um dráttarvexti, vangreiðslu á hluta gjalda fyrirframgreiðslu, skyldur kaupgreiðenda til að halda eftir af kaupi fyrir opinberum gjöldum og annað það, er einvörðungu lýtur að innheimtu gjalda.</sen>
-      <sen nr="2">Nánari ákvæði um þetta má setja í reglugerð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Heimilt er að samræma gjalddaga einstakra opinberra gjalda, sem innheimt verða með þessum hætti, setja sameiginleg ákvæði um dráttarvexti, vangreiðslu á hluta gjalda fyrirframgreiðslu, skyldur kaupgreiðenda til að halda eftir af kaupi fyrir opinberum gjöldum og annað það, er einvörðungu lýtur að innheimtu gjalda.</sen>
+        <sen nr="2">Nánari ákvæði um þetta má setja í reglugerð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/320-1974"&gt;Rg. 320/1974&lt;/a&gt;(Seltjarnarnes). &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/095-1962"&gt;Rg. 95/1962&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/100-1965"&gt;100/1965&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/333-1979"&gt;333/1979&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/129-1981"&gt;129/1981&lt;/a&gt;(Reykjavík).</footnote-sen>
-        <location type="pointer">
-          <art>4</art>
-          <subart>1</subart>
-          <sen before-mark="^Nánari ákvæði um þetta má setja í reglugerð." after-mark="$">2</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Nánari ákvæði um þetta má setja í reglugerð." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Sé sjúkrasamlag aðili að innheimtu, skulu framlög ríkissjóðs og sveitarsjóðs, skv. 58. gr. laga nr. 24 frá 1956, um almannatryggingar, sbr. 21. gr. laga nr. 13 frá 1960, miðast við innheimtar tekjur samlagsins, eins og þær verða samkvæmt samningi aðilja um innheimtuna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sé sjúkrasamlag aðili að innheimtu, skulu framlög ríkissjóðs og sveitarsjóðs, skv. 58. gr. laga nr. 24 frá 1956, um almannatryggingar, sbr. 21. gr. laga nr. 13 frá 1960, miðast við innheimtar tekjur samlagsins, eins og þær verða samkvæmt samningi aðilja um innheimtuna.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Í samþykktum slíks samlags má ákveða:</sen>
-      <numart nr="1" nr-type="numeric">
-        <nr-title>1.</nr-title>
-        <sen nr="1">Að iðgjald hjóna skuli krafið í einu lagi.</sen>
-      </numart>
-      <numart nr="2" nr-type="numeric">
-        <nr-title>2.</nr-title>
-        <sen nr="1">Að víkja frá reglum 78. gr., sbr. 50. og 51. gr. almannatryggingalaga um greiðslufrest iðgjalda og viðurlög við vangreiðslu.</sen>
-      </numart>
+      <paragraph nr="1">
+        <sen nr="1">Í samþykktum slíks samlags má ákveða:</sen>
+        <numart nr="1" nr-type="numeric">
+          <nr-title>1.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Að iðgjald hjóna skuli krafið í einu lagi.</sen>
+          </paragraph>
+        </numart>
+        <numart nr="2" nr-type="numeric">
+          <nr-title>2.</nr-title>
+          <paragraph nr="1">
+            <sen nr="1">Að víkja frá reglum 78. gr., sbr. 50. og 51. gr. almannatryggingalaga um greiðslufrest iðgjalda og viðurlög við vangreiðslu.</sen>
+          </paragraph>
+        </numart>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Nú l. 100/2007.</footnote-sen>
-        <location type="pointer">
-          <art>5</art>
-          <subart>1</subart>
-          <sen before-mark="^Sé sjúkrasamlag aðili að innheimtu, skulu framlög ríkissjóðs og sveitarsjóðs, skv. 58. gr. laga nr. 24 frá 1956, um almannatryggingar," after-mark="sbr. 21. gr. laga nr. 13 frá 1960, miðast við innheimtar tekjur samlagsins, eins og þær verða samkvæmt samningi aðilja um innheimtuna.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Sé sjúkrasamlag aðili að innheimtu, skulu framlög ríkissjóðs og sveitarsjóðs, skv. 58. gr. laga nr. 24 frá 1956, um almannatryggingar," after-mark="sbr. 21. gr. laga nr. 13 frá 1960, miðast við innheimtar tekjur samlagsins, eins og þær verða samkvæmt samningi aðilja um innheimtuna.$"/>
       </footnote>
     </footnotes>
   </art>

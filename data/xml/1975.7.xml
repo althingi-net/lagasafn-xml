@@ -10,36 +10,30 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd samþykkt um alþjóðareglur til að koma í veg fyrir árekstra á sjó, 1972, sem undirrituð var í Lundúnum 20. október 1972.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er heimilt að staðfesta fyrir Íslands hönd samþykkt um alþjóðareglur til að koma í veg fyrir árekstra á sjó, 1972, sem undirrituð var í Lundúnum 20. október 1972.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Ríkisstjórninni er enn fremur heimilt að staðfesta fyrir Íslands hönd breytingar á alþjóðareglunum sem gerðar voru í Lundúnum 19. nóvember 1981, 19. nóvember 1987, 19. október 1989, 4. nóvember 1993 og 29. nóvember 2001.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ríkisstjórninni er enn fremur heimilt að staðfesta fyrir Íslands hönd breytingar á alþjóðareglunum sem gerðar voru í Lundúnum 19. nóvember 1981, 19. nóvember 1987, 19. október 1989, 4. nóvember 1993 og 29. nóvember 2001.</sen>
+      </paragraph>
     </subart>
     <subart nr="3">
-      <sen nr="1">Alþjóðareglurnar með áorðnum breytingum eru prentaðar sem fylgiskjal með lögum þessum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Alþjóðareglurnar með áorðnum breytingum eru prentaðar sem fylgiskjal með lögum þessum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2006.010.html" law-nr="10" law-year="2006" law-art="1" nr="1">
         <footnote-sen>L. 10/2006, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>2</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1993.019.html" law-nr="19" law-year="1993" law-art="1" nr="2">
         <footnote-sen>L. 19/1993, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>3</subart>
-            <sen>1</sen>
-          </end>
+        <location type="range" string-length="485">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
         </location>
       </footnote>
     </footnotes>
@@ -47,39 +41,25 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Alþjóðareglur til að koma í veg fyrir árekstra á sjó hafa lagagildi á Íslandi.</sen>
-      <sen nr="2">Ráðherra er heimilt að setja nánari ákvæði í reglugerð skv. 1. reglu alþjóðareglnanna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Alþjóðareglur til að koma í veg fyrir árekstra á sjó hafa lagagildi á Íslandi.</sen>
+        <sen nr="2">Ráðherra er heimilt að setja nánari ákvæði í reglugerð skv. 1. reglu alþjóðareglnanna.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="63" nr="1">
         <footnote-sen>L. 126/2011, 63. gr.</footnote-sen>
-        <location type="range">
-          <art>2</art>
-          <subart>1</subart>
-          <sen words="Ráðherra">2</sen>
-        </location>
+        <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="Ráðherra" instance-num="1"/>
       </footnote>
       <footnote nr="2">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/524-2008"&gt;Rg. 524/2008&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/361-2009"&gt;361/2009&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1195-2022"&gt;1195/2022&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>2</art>
-          <subart>1</subart>
-          <sen before-mark="^(\[? ?)?Ráðherra\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?er heimilt að setja nánari ákvæði í reglugerð" after-mark="skv. 1. reglu alþjóðareglnanna.\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?$">2</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^(\[??)?Ráðherra:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?er heimilt að setja nánari ákvæði í reglugerð" after-mark="skv. 1. reglu alþjóðareglnanna\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?3\) ?&lt;/sup&gt;)?,? ?$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/2006.010.html" law-nr="10" law-year="2006" law-art="2" nr="3">
         <footnote-sen>L. 10/2006, 2. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>1</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="165">
+          <start xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -90,16 +70,14 @@
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot gegn alþjóðareglunum og viðaukum, sem reglunum fylgja, varða sektum ef ekki liggur þyngri refsing við eftir öðrum lögum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot gegn alþjóðareglunum og viðaukum, sem reglunum fylgja, varða sektum ef ekki liggur þyngri refsing við eftir öðrum lögum.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2006.010.html" law-nr="10" law-year="2006" law-art="3" nr="1">
         <footnote-sen>L. 10/2006, 3. gr.</footnote-sen>
-        <location type="range">
-          <art>4</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>

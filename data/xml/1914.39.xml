@@ -10,79 +10,79 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Sérhver sá, er heimild hefur til fiskiveiða í landhelgi, má setja á land skelfisksbeituverkfæri sín og farvið af skipi sínu, þar sem ekki er friðlýst æðarvarp, selalátur eða árós, sem laxveiði er í.</sen>
-      <sen nr="2">Ef landeigandi verður fyrir tjóni vegna þessa á hann rétt á bótum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Sérhver sá, er heimild hefur til fiskiveiða í landhelgi, má setja á land skelfisksbeituverkfæri sín og farvið af skipi sínu, þar sem ekki er friðlýst æðarvarp, selalátur eða árós, sem laxveiði er í.</sen>
+        <sen nr="2">Ef landeigandi verður fyrir tjóni vegna þessa á hann rétt á bótum.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="6" nr="1">
         <footnote-sen>L. 116/1990, 6. gr.</footnote-sen>
-        <location type="range">
-          <art>1</art>
-          <subart>1</subart>
-          <sen>2</sen>
-        </location>
-        <location type="deletion">
-          <art>1</art>
-          <subart>2</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+        <location type="deletion" xpath="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Eigi má taka beitu í netlögum, nema ábúandi jarðar leyfi.</sen>
-      <sen nr="2">Netlög eru 60 faðmar á sjó út frá stórstraumsfjörumáli.</sen>
-      <sen nr="3">Gera skal formaður ábúanda viðvart í hvert skipti, er hann ætlar að taka beitu fyrir landi hans samkvæmt 1. gr.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Eigi má taka beitu í netlögum, nema ábúandi jarðar leyfi.</sen>
+        <sen nr="2">Netlög eru 60 faðmar á sjó út frá stórstraumsfjörumáli.</sen>
+        <sen nr="3">Gera skal formaður ábúanda viðvart í hvert skipti, er hann ætlar að taka beitu fyrir landi hans samkvæmt 1. gr.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1"></sen>
+      <paragraph nr="1">
+        <sen nr="1"></sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="6" nr="1">
         <footnote-sen>L. 116/1990, 6. gr.</footnote-sen>
-        <location type="deletion">
-          <art>2</art>
-          <subart>2</subart>
-          <sen before-mark="^" after-mark="$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Nú tekur maður í óleyfi skelfisk í netlögum annars manns, og varðar það sekt, og borga skal hann allan svo upp tekinn skelfisk tvöföldu gangverði.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú tekur maður í óleyfi skelfisk í netlögum annars manns, og varðar það sekt, og borga skal hann allan svo upp tekinn skelfisk tvöföldu gangverði.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="6" nr="1">
         <footnote-sen>L. 116/1990, 6. gr.</footnote-sen>
-        <location type="deletion">
-          <art>3</art>
-          <subart>1</subart>
-          <sen before-mark="^Nú tekur maður í óleyfi skelfisk í netlögum annars manns, og varðar það" after-mark="sekt, og borga skal hann allan svo upp tekinn skelfisk tvöföldu gangverði.$">1</sen>
-        </location>
+        <location type="deletion" xpath="art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Nú tekur maður í óleyfi skelfisk í netlögum annars manns, og varðar það" after-mark="sekt, og borga skal hann allan svo upp tekinn skelfisk tvöföldu gangverði.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="4">
     <nr-title>4. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Nú verður jörð fyrir usla af beitutekjumönnum, og skal formaður gjalda fyrir það skaðabætur eftir mati óvilhallra manna.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú verður jörð fyrir usla af beitutekjumönnum, og skal formaður gjalda fyrir það skaðabætur eftir mati óvilhallra manna.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="5">
     <nr-title>5. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Formaður greiðir gjald það, er nefnt er í 1. gr., áður en hann fer af beitufjöru, nema öðruvísi sé um samið.</sen>
-      <sen nr="2">Séu ábúendur fleiri en einn, má greiða gjaldið einum þeirra, enda hafi enginn umboðsmaður gefið sig fram af þeirra hálfu.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Formaður greiðir gjald það, er nefnt er í 1. gr., áður en hann fer af beitufjöru, nema öðruvísi sé um samið.</sen>
+        <sen nr="2">Séu ábúendur fleiri en einn, má greiða gjaldið einum þeirra, enda hafi enginn umboðsmaður gefið sig fram af þeirra hálfu.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Nú greiðir beitutaki ekki gjald þetta áður en hann fer af beitufjöru, og skal hann þá greiða tvöfalt gjald.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú greiðir beitutaki ekki gjald þetta áður en hann fer af beitufjöru, og skal hann þá greiða tvöfalt gjald.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="6">
@@ -90,10 +90,7 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1990.116.html" law-nr="116" law-year="1990" law-art="6" nr="1">
         <footnote-sen>L. 116/1990, 6. gr.</footnote-sen>
-        <location type="deletion">
-          <art>6</art>
-          <nr-title before-mark="^6. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='6']/nr-title[1]" before-mark="^6. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
@@ -102,10 +99,7 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.019.html" law-nr="19" law-year="1991" law-art="194" nr="1">
         <footnote-sen>L. 19/1991, 194. gr.</footnote-sen>
-        <location type="deletion">
-          <art>7</art>
-          <nr-title before-mark="^7. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='7']/nr-title[1]" before-mark="^7. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>

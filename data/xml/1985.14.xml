@@ -10,29 +10,31 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra þeim, sem fer með siglingamál, er heimilt að setja reglur til að framfylgja alþjóðasamningi, sem Ísland er aðili að, um gáma.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra þeim, sem fer með siglingamál, er heimilt að setja reglur til að framfylgja alþjóðasamningi, sem Ísland er aðili að, um gáma.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/624-1997"&gt;Rg. 624/1997&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>1</art>
-          <subart>1</subart>
-          <sen before-mark="^Ráðherra þeim, sem fer með siglingamál, er heimilt að setja reglur" after-mark="til að framfylgja alþjóðasamningi, sem Ísland er aðili að, um gáma.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra þeim, sem fer með siglingamál, er heimilt að setja reglur" after-mark="til að framfylgja alþjóðasamningi, sem Ísland er aðili að, um gáma.$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Brot gegn reglum, sem settar verða samkvæmt lögum þessum, varða sektum.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Brot gegn reglum, sem settar verða samkvæmt lögum þessum, varða sektum.</sen>
+      </paragraph>
     </subart>
   </art>
   <art nr="3">
     <nr-title>3. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+      </paragraph>
     </subart>
   </art>
 </law>

@@ -10,24 +10,18 @@
   <art nr="1">
     <nr-title>1. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Laun og önnur starfskjör, sem aðildarsamtök vinnumarkaðarins semja um, skulu vera lágmarkskjör, óháð kyni, þjóðerni eða ráðningartíma fyrir alla launamenn í viðkomandi starfsgrein á svæði því er samningurinn tekur til.</sen>
-      <sen nr="2">Samningar einstakra launamanna og atvinnurekenda um lakari kjör en hinir almennu kjarasamningar ákveða skulu ógildir.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Laun og önnur starfskjör, sem aðildarsamtök vinnumarkaðarins semja um, skulu vera lágmarkskjör, óháð kyni, þjóðerni eða ráðningartíma fyrir alla launamenn í viðkomandi starfsgrein á svæði því er samningurinn tekur til.</sen>
+        <sen nr="2">Samningar einstakra launamanna og atvinnurekenda um lakari kjör en hinir almennu kjarasamningar ákveða skulu ógildir.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1993.069.html" nr="1">
         <footnote-sen>L. 69/1993, 5. gr</footnote-sen>
         <footnote-sen>. Sjá og Augl. B 285/1997 og Augl. B 503/1997.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>1</sen>
-          </start>
-          <end>
-            <art>1</art>
-            <subart>1</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="336">
+          <start xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+          <end xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -35,26 +29,23 @@
   <art nr="2">
     <nr-title>2. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Samningar aðildarsamtaka vinnumarkaðarins um málsmeðferð í ágreiningsmálum, um hvort laun og ráðningarkjör starfsmanna á íslenskum vinnumarkaði séu í samræmi við ákvæði laga og kjarasamninga, skulu hafa sama almenna gildi og samningar þeirra um laun og önnur starfskjör, sbr. 1. gr., með þeim takmörkunum sem í samningunum felast.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Samningar aðildarsamtaka vinnumarkaðarins um málsmeðferð í ágreiningsmálum, um hvort laun og ráðningarkjör starfsmanna á íslenskum vinnumarkaði séu í samræmi við ákvæði laga og kjarasamninga, skulu hafa sama almenna gildi og samningar þeirra um laun og önnur starfskjör, sbr. 1. gr., með þeim takmörkunum sem í samningunum felast.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Þegar settar eru á fót samráðsnefndir til úrlausnar ágreiningsmála á grundvelli samninga skv. 1. mgr. og atvinnurekandi, sem er málsaðili, á ekki aðild að samtökum atvinnurekenda er honum heimilt að tilnefna einn fulltrúa sem tekur sæti eins fulltrúa samtaka atvinnurekenda í nefndinni.</sen>
-      <sen nr="2">Hið sama gildir um launamann sem er málsaðili og á ekki aðild að stéttarfélagi en fulltrúi hans tekur sæti eins fulltrúa samtaka launafólks í nefndinni.</sen>
-      <sen nr="3">Ákveði málsaðili að tilnefna fulltrúa skal tilnefningin fara fram fyrir upphaf málsmeðferðar hjá samráðsnefndinni.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Þegar settar eru á fót samráðsnefndir til úrlausnar ágreiningsmála á grundvelli samninga skv. 1. mgr. og atvinnurekandi, sem er málsaðili, á ekki aðild að samtökum atvinnurekenda er honum heimilt að tilnefna einn fulltrúa sem tekur sæti eins fulltrúa samtaka atvinnurekenda í nefndinni.</sen>
+        <sen nr="2">Hið sama gildir um launamann sem er málsaðili og á ekki aðild að stéttarfélagi en fulltrúi hans tekur sæti eins fulltrúa samtaka launafólks í nefndinni.</sen>
+        <sen nr="3">Ákveði málsaðili að tilnefna fulltrúa skal tilnefningin fara fram fyrir upphaf málsmeðferðar hjá samráðsnefndinni.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2004.145.html" law-nr="145" law-year="2004" law-art="1" nr="1">
         <footnote-sen>L. 145/2004, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>2</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>2</art>
-            <subart>2</subart>
-            <sen>3</sen>
-          </end>
+        <location type="range" string-length="889">
+          <start xpath="art[@nr='2']/nr-title[1]"/>
+          <end xpath="art[@nr='2']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
         </location>
       </footnote>
     </footnotes>
@@ -64,47 +55,32 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2004.145.html" law-nr="145" law-year="2004" law-art="1" nr="1">
         <footnote-sen>L. 145/2004, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>3. –5</art>
-          <nr-title words="3.">1</nr-title>
-        </location>
+        <location type="range" xpath="art[@nr='3. –5']/nr-title[1]" words="3." instance-num="1"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjt/1997.129.html#G58" law-nr="129" law-year="1997" law-art="58" nr="2">
         <footnote-sen>L. 129/1997, 58. gr.</footnote-sen>
-        <location type="deletion">
-          <art>3. –5</art>
-          <nr-title before-mark="^(\[? ?)?3.\.?(\],?\.? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?\d+\) ?&lt;/sup&gt;)?,? ?–5. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='3. –5']/nr-title[1]" before-mark="^(\[??)?3\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?–5. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="5a">
     <nr-title>5. gr. a.</nr-title>
     <subart nr="1">
-      <sen nr="1">Nú ákveður félagi í lífeyrissjóði, sem á rétt á töku fæðingarorlofs samkvæmt lögum nr. 97/1980, að hverfa úr fyrra starfi að hluta eða öllu leyti og til heimilisstarfa vegna barnsburðar og er þá þeim lífeyrissjóði, sem viðkomandi er félagsmaður í, skylt að veita félagsmanninum heimild til áframhaldandi aðildar að sjóðnum á óbreyttum grundvelli í allt að 7 ár, enda taki félagsmaður þá að sér að greiða iðgjaldahlut atvinnurekanda ásamt sínum eigin.</sen>
-      <sen nr="2">Slíkur félagsmaður nýtur allra sömu réttinda í lífeyrissjóðnum og aðrir félagsmenn, þ. á m. lánsréttinda.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Nú ákveður félagi í lífeyrissjóði, sem á rétt á töku fæðingarorlofs samkvæmt lögum nr. 97/1980, að hverfa úr fyrra starfi að hluta eða öllu leyti og til heimilisstarfa vegna barnsburðar og er þá þeim lífeyrissjóði, sem viðkomandi er félagsmaður í, skylt að veita félagsmanninum heimild til áframhaldandi aðildar að sjóðnum á óbreyttum grundvelli í allt að 7 ár, enda taki félagsmaður þá að sér að greiða iðgjaldahlut atvinnurekanda ásamt sínum eigin.</sen>
+        <sen nr="2">Slíkur félagsmaður nýtur allra sömu réttinda í lífeyrissjóðnum og aðrir félagsmenn, þ. á m. lánsréttinda.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>Nú l. 95/2000.</footnote-sen>
-        <location type="pointer">
-          <art>5a</art>
-          <subart>1</subart>
-          <sen before-mark="^Nú ákveður félagi í lífeyrissjóði, sem á rétt á töku fæðingarorlofs samkvæmt lögum nr. 97/1980," after-mark="að hverfa úr fyrra starfi að hluta eða öllu leyti og til heimilisstarfa vegna barnsburðar og er þá þeim lífeyrissjóði, sem viðkomandi er félagsmaður í, skylt að veita félagsmanninum heimild til áframhaldandi aðildar að sjóðnum á óbreyttum grundvelli í allt að 7 ár, enda taki félagsmaður þá að sér að greiða iðgjaldahlut atvinnurekanda ásamt sínum eigin.$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='5a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Nú ákveður félagi í lífeyrissjóði, sem á rétt á töku fæðingarorlofs samkvæmt lögum nr. 97/1980," after-mark="að hverfa úr fyrra starfi að hluta eða öllu leyti og til heimilisstarfa vegna barnsburðar og er þá þeim lífeyrissjóði, sem viðkomandi er félagsmaður í, skylt að veita félagsmanninum heimild til áframhaldandi aðildar að sjóðnum á óbreyttum grundvelli í allt að 7 ár, enda taki félagsmaður þá að sér að greiða iðgjaldahlut atvinnurekanda ásamt sínum eigin.$"/>
       </footnote>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1985058?g1" law-nr="58" law-year="1985" law-art="1" nr="2">
         <footnote-sen>L. 58/1985, 1. gr.</footnote-sen>
-        <location type="range">
-          <start>
-            <art>5a</art>
-            <nr-title>1</nr-title>
-          </start>
-          <end>
-            <art>5a</art>
-            <subart>1</subart>
-            <sen>2</sen>
-          </end>
+        <location type="range" string-length="565">
+          <start xpath="art[@nr='5a']/nr-title[1]"/>
+          <end xpath="art[@nr='5a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
         </location>
       </footnote>
     </footnotes>
@@ -112,35 +88,33 @@
   <art nr="6">
     <nr-title>6. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Öllum atvinnurekendum er skylt að greiða í fræðslusjóði atvinnulífsins sem og sjúkrasjóði og orlofssjóði viðkomandi stéttarfélaga iðgjöld þau, sem aðildarsamtök vinnumarkaðarins semja um hverju sinni, og samkvæmt þeim reglum, sem kjarasamningar greina.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Öllum atvinnurekendum er skylt að greiða í fræðslusjóði atvinnulífsins sem og sjúkrasjóði og orlofssjóði viðkomandi stéttarfélaga iðgjöld þau, sem aðildarsamtök vinnumarkaðarins semja um hverju sinni, og samkvæmt þeim reglum, sem kjarasamningar greina.</sen>
+      </paragraph>
     </subart>
     <subart nr="2">
-      <sen nr="1">Atvinnurekanda er skylt að halda eftir af launum starfsmanns iðgjaldi hans til viðkomandi stéttarfélags samkvæmt þeim reglum, sem kjarasamningar greina.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Atvinnurekanda er skylt að halda eftir af launum starfsmanns iðgjaldi hans til viðkomandi stéttarfélags samkvæmt þeim reglum, sem kjarasamningar greina.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/2010.076.html" law-nr="76" law-year="2010" law-art="1" nr="1">
         <footnote-sen>L. 76/2010, 1. gr.</footnote-sen>
-        <location type="range">
-          <art>6</art>
-          <subart>1</subart>
-          <sen words="fræðslusjóði atvinnulífsins sem og">1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="fræðslusjóði atvinnulífsins sem og" instance-num="1"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="7">
     <nr-title>7. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Verði dráttur á greiðslu iðgjalda samkvæmt lögum þessum skal skuldari greiða dráttarvexti af skuldinni frá gjalddaga samkvæmt lögum um vexti.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Verði dráttur á greiðslu iðgjalda samkvæmt lögum þessum skal skuldari greiða dráttarvexti af skuldinni frá gjalddaga samkvæmt lögum um vexti.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjtnr.html#1987033?g6" law-nr="33" law-year="1987" law-art="6" nr="1">
         <footnote-sen>L. 33/1987, 6. gr.</footnote-sen>
-        <location type="range">
-          <art>7</art>
-          <subart>1</subart>
-          <sen>1</sen>
-        </location>
+        <location type="range" xpath="art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
       </footnote>
     </footnotes>
   </art>
@@ -149,34 +123,31 @@
     <footnotes>
       <footnote href="https://www.althingi.is/altext/stjt/1991.021.html#G181" law-nr="21" law-year="1991" law-art="181" nr="1">
         <footnote-sen>L. 21/1991, 181. gr.</footnote-sen>
-        <location type="deletion">
-          <art>8</art>
-          <nr-title before-mark="^8. gr." after-mark="$">1</nr-title>
-        </location>
+        <location type="deletion" xpath="art[@nr='8']/nr-title[1]" before-mark="^8. gr." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="9">
     <nr-title>9. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Ráðherra setur nánari ákvæði um framkvæmd laga þessara með reglugerð.</sen>
+      <paragraph nr="1">
+        <sen nr="1">Ráðherra setur nánari ákvæði um framkvæmd laga þessara með reglugerð.</sen>
+      </paragraph>
     </subart>
     <footnotes>
       <footnote nr="1">
         <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/194-1981"&gt;Rg. 194/1981&lt;/a&gt;.</footnote-sen>
-        <location type="pointer">
-          <art>9</art>
-          <subart>1</subart>
-          <sen before-mark="^Ráðherra setur nánari ákvæði um framkvæmd laga þessara með reglugerð." after-mark="$">1</sen>
-        </location>
+        <location type="pointer" xpath="art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra setur nánari ákvæði um framkvæmd laga þessara með reglugerð." after-mark="$"/>
       </footnote>
     </footnotes>
   </art>
   <art nr="10">
     <nr-title>10. gr.</nr-title>
     <subart nr="1">
-      <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
-      <sen nr="2" expiry-symbol-offset="0">…</sen>
+      <paragraph nr="1">
+        <sen nr="1">Lög þessi öðlast þegar gildi.</sen>
+        <sen nr="2" expiry-symbol-offset="0">…</sen>
+      </paragraph>
     </subart>
   </art>
 </law>
