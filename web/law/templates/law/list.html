@@ -77,9 +77,7 @@
                 <td class="law-list-status">
                     {% if law.content_success == 1.0 %}
                         <span class="label label-success">{% trans 'OK' %}</span>
-                    {% elif law.content_success >= 0.99 %}
-                        <span class="label label-success" style="opacity: 0.75;">{{ law.display_content_success }}</span>
-                    {% elif law.content_success >= 0.9 %}
+                    {% elif law.content_success >= 0.9999 %}
                         <span class="label label-warning">{{ law.display_content_success }}</span>
                     {% else %}
                         <span class="label label-danger">{{ law.display_content_success }}</span>
