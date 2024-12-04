@@ -128,6 +128,21 @@ def clean_content(content):
     e = re.compile(r"&hellip;<sup>(\d+)\)</sup>")
     content = e.sub(r'&hellip;<sup style="font-size:60%">\1)</sup>', content)
 
+    # In 3. mgr. 17. gr. laga nr. 6/2001, we have a unique marking with a star
+    # ("*") that seems to indicate the legal context of the change. It is
+    # entirely unclear (as of 2024-12-04) how this is supposed to work. We will
+    # clean it for now, in a rather brutish way, until it is clearer if, and
+    # how, these things will be handled in the future.
+    #
+    # This takes care both of the superscripted star in the text as well as we
+    # the corresponding bit in the footer, which otherwise gets mixed with
+    # another footnote.
+    content = re.sub(
+        r'<sup style="font-size:60%">\*<\/sup>(sbr\. <a href="\/altext\/stjt\/\d{4}.\d{3}.html">\d+\. gr\.<\/a>)?',
+        '',
+        content
+    )
+
     # Find the law content and exit if it does not exist
     soup_law = BeautifulSoup(content, "html5lib").find("html")
     if soup_law is None:
