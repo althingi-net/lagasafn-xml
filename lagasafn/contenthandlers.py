@@ -8,6 +8,7 @@ from lagasafn.utils import Matcher
 from lagasafn.utils import is_roman
 from lagasafn.utils import last_container_added
 from lagasafn.utils import order_among_siblings
+from lagasafn.utils import regex_find
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
 from lagasafn.utils import terminal_width_and_height
@@ -436,7 +437,7 @@ def separate_sentences(content):
         cursor = 0
 
         # Location of the start tag.
-        html_loc = content.find("<%s" % nst, cursor)
+        html_loc = regex_find(content, r"<%s[> ]" % nst, cursor)
 
         while html_loc > -1:
             # Location of the end tag.
@@ -452,7 +453,7 @@ def separate_sentences(content):
             content = content[:html_loc] + tag_content + content[html_end_loc:]
 
             # Continue to see if we find more non-splittable tags.
-            html_loc = content.find("<%s" % nst, html_loc + 1)
+            html_loc = regex_find(content, r"<%s[> ]" % nst, html_loc + 1)
             cursor = html_loc + 1
 
             del html_end_loc

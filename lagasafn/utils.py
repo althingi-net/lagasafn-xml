@@ -1040,3 +1040,17 @@ def find_common_ancestor(node_1, node_2):
         node_2 = node_2.getparent()
 
     return None
+
+
+def regex_find(string_value, regex, start=0):
+    """
+    A replication of the `.find` function on strings, that supports the `start`
+    parameter, except that it finds by regex.
+
+    :param content: The text to search within.
+    :param regex: The regex pattern to match.
+    :param cursor: The position to start the search from.
+    :return: The position of the first match if found, otherwise -1.
+    """
+    match = re.search(regex, string_value[start:])
+    return start + match.start() if match else -1
