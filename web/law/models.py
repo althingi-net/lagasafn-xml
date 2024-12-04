@@ -47,7 +47,10 @@ class LawManager:
         for problem_law_entry in problems.findall("problem-law-entry"):
             statuses = {}
             for status_node in problem_law_entry.findall("status"):
-                success = status_node.attrib["success"]
+                if "success" in status_node.attrib:
+                    success = status_node.attrib["success"]
+                else:
+                    success = "0.0"
                 message = (
                     status_node.attrib["message"]
                     if "message" in status_node.attrib
@@ -157,6 +160,10 @@ class LawEntry:
         """
         Displays the content success as percentage.
         """
+
+        if "content" not in self.problems:
+            return "unknown"
+
         content_success = self.problems["content"]["success"]
         return "%.2f%%" % float(floor(content_success * 10000) / 100)
 

@@ -11,6 +11,13 @@ PROBLEM_TYPES = ["content", "javascript"]
 
 class ProblemHandler:
     def __init__(self):
+        # Create a basic `problems.xml` file if it doesn't exist.
+        if not os.path.exists(PROBLEMS_FILENAME):
+            root = E("problems")
+            tree = etree.ElementTree(root)
+            with open(PROBLEMS_FILENAME, "wb") as f:
+                tree.write(f, pretty_print=True, xml_declaration=True, encoding="utf-8")
+
         self.xml = etree.parse(PROBLEMS_FILENAME).getroot()
         self.problems = {}
 
@@ -21,10 +28,17 @@ class ProblemHandler:
 
     def sort_by_content_distance(self):
 
+        def sorter(element):
+            content_element = element.find("status[@type='content']")
+            if "distance" not in content_element.attrib:
+                return -1
+
+            return int(content_element.attrib["distance"])
+
         # Sort by reversed distance for `content`.
         sorted_entries = sorted(
             self.xml.findall("problem-law-entry"),
-            key=lambda x: int(x.find("status[@type='content']").attrib["distance"]),
+            key=sorter,
             reverse=True,
         )
 
@@ -41,7 +55,10 @@ class ProblemHandler:
         statistics = OrderedDict()
         for status in self.xml.findall("problem-law-entry/status"):
             status_type = status.attrib["type"]
-            success = float(status.attrib["success"]) == 1.0
+            if "success" in status.attrib:
+                success = float(status.attrib["success"]) == 1.0
+            else:
+                success = -1.0
 
             if status_type not in statistics:
                 statistics[status_type] = {
@@ -97,7 +114,10 @@ class ProblemHandler:
         status_entry = self.get_status_entry(identifier, problem_type)
 
         # Remember prior success for measuring progression.
-        prior_success = float(status_entry.attrib["success"])
+        try:
+            prior_success = float(status_entry.attrib["success"])
+        except KeyError:
+            prior_success = float("0.0")
 
         # From 0.0.. to 1.0.., indicating level of success from 0% to 100%.
         status_entry.attrib["success"] = f"{success:.8f}"
