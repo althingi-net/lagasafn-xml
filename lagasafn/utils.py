@@ -228,6 +228,9 @@ def numart_next_nrs(prev_numart):
             # I **guess** this is the right way to deal with it. Maybe I'm
             # wrong and the proper method is just to double the length of the
             # same string with the same letter.
+            #
+            # 2024-12-04: Okay, this is getting ridiculous. This could use some
+            # refactoring into a general formula.
             expected_numart_nrs = ["ab", "bb"]
         elif prev_numart_nr == "bb":
             expected_numart_nrs = ["bc", "cc"]
@@ -237,6 +240,20 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs = ["de", "ee"]
         elif prev_numart_nr == "ee":
             expected_numart_nrs = ["ef", "ff"]
+        elif prev_numart_nr == "ff":
+            expected_numart_nrs = ["fg", "gg"]
+        elif prev_numart_nr == "gg":
+            expected_numart_nrs = ["gh", "hh"]
+        elif prev_numart_nr == "hh":
+            expected_numart_nrs = ["hi", "ii"]
+        elif prev_numart_nr == "ii":
+            expected_numart_nrs = ["ij", "jj"]
+        elif prev_numart_nr == "jj":
+            expected_numart_nrs = ["jk", "kk"]
+        elif prev_numart_nr == "kk":
+            expected_numart_nrs = ["kl", "ll"]
+        elif prev_numart_nr == "ll":
+            expected_numart_nrs = ["lm", "mm"]
 
         elif prev_numart_nr == "U":
             expected_numart_nrs = ["Ú"]
