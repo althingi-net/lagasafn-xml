@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-CURRENT_PARLIAMENT_VERSION = "153c"
+CURRENT_PARLIAMENT_VERSION = "154a"
 
 DEBUG = True
 
