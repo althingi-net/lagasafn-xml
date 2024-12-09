@@ -362,15 +362,12 @@
             <tr>
               <td header-style="b">
                 <table-title>Tollskrárnúmer</table-title>
-                <paragraph nr="1"/>
               </td>
               <td header-style="b">
                 <table-title>Skýring</table-title>
-                <paragraph nr="1"/>
               </td>
               <td header-style="b">
                 <table-title>Hlutfall af tollverði %</table-title>
-                <paragraph nr="1"/>
               </td>
             </tr>
             <tr>
@@ -545,9 +542,9 @@
             </tr>
             <tr>
               <td>
-                <paragraph nr="1">
-                  <sen nr="1"></sen>
-                </paragraph>
+                <mark-container>
+                  <sen></sen>
+                </mark-container>
               </td>
               <td/>
               <td/>
@@ -626,7 +623,7 @@
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2023.102.html" law-nr="102" law-year="2023" law-art="27" nr="4">
           <footnote-sen>L. 102/2023, 27. gr.</footnote-sen>
-          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3']/table[1]/tbody[1]/tr[12]/td[1]/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
+          <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3']/table[1]/tbody[1]/tr[12]/td[1]/mark-container[1]/sen[1]" before-mark="^" after-mark="$"/>
           <location type="range" string-length="83">
             <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3']/table[1]/tbody[1]/tr[13]/td[1]/paragraph[@nr='1']/sen[@nr='1']"/>
             <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3']/table[1]/tbody[1]/tr[14]/td[3]/paragraph[@nr='1']/sen[@nr='1']"/>
