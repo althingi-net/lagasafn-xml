@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup
 from collections import OrderedDict
 from colorama import Fore
 from colorama import Style
-from lagasafn import diff_patch_utils
 from lagasafn import settings
 from lagasafn.constants import LAW_FILENAME
 from lagasafn.constants import ERRORMAP_FILENAME
@@ -22,6 +21,7 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.patching import patch_law
 from lagasafn.population import population_game
 from lagasafn.references import parse_references
 from lagasafn.utils import sorted_law
@@ -240,17 +240,6 @@ def clean_law(law_num, law_year):
         clean_file.close()
 
 
-def patch_law(law_num, law_year):
-    if not os.path.isdir(os.path.dirname(PATCHED_FILENAME)):
-        os.mkdir(os.path.dirname(PATCHED_FILENAME))
-
-    filename = CLEAN_FILENAME % (law_year, law_num)
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
-    patched_content = diff_patch_utils.do_patch(filename, patch_path)
-    with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
-        patched_file.write(patched_content)
-
-
 def make_xml(law_num, law_year):
     # TODO: This function needs cleaning up. There's a bunch of commented and
     # inactive stuff here "following `return`" that should be removed if it's
@@ -351,11 +340,8 @@ def process_law(law_id):
         if os.path.isfile(patched_path):
             os.unlink(patched_path)
 
-        # check if we have patch for current law and parliament version
-        patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
-        if os.path.isfile(patch_path):
-            # use patch file to create patched version of cleaned file
-            patch_law(law_num, law_year)
+        # Apply patch to law if available.
+        patch_law(law_num, law_year)
 
         try:
             make_xml(law_num, law_year)
@@ -692,6 +678,10 @@ def usage(exec_name, message=None):
         "    --rebuild-straytextmap    Force the asking of user about stray text following numarts",
         file=stderr,
     )
+    print(
+        "    --auto-patch              Attempt to auto-patch by patches in other versions of codex.",
+        file=stderr,
+    )
     print(file=stderr)
     print("Index options:", file=stderr)
     print(
@@ -729,7 +719,8 @@ def main(argv):
         "--references-only",
         "--skip-references",
         "--verbose",
-        "--population-game"
+        "--population-game",
+        "--auto-patch",
     ]
 
     if "--verbose" in argv:
