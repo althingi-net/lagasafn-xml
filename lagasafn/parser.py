@@ -213,6 +213,10 @@ class LawParser:
         #       have been replaced, we can remove the parameter entirely.
         #           - Smári, 2024-08-09
 
+        # Immediately stop if we're already at `end_string`.
+        if self.line is not None and self.line.startswith(end_string):
+            return ""
+
         done = False
 
         if collect_first_line:
@@ -1270,19 +1274,14 @@ def parse_paragraph(parser):
 
     parser.paragraph = E("paragraph")
 
-    content = parser.collect_until("<br/>", collect_first_line=True)
-    parser.consume("<br/>")
-
-    sens = separate_sentences(content)
-
-    add_sentences(parser.paragraph, sens)
-
     # NOTE: This is being done here and there in the code, most notably in
     # `parse_subart`. In time, this `parse_paragraph` function should be used
     # instead, in which case more node support should be added where once this
     # functionality has been removed from their respective `parse_` functions.
     parent = None
-    if parser.art_chapter is not None:
+    if parser.td is not None:
+        parent = parser.td
+    elif parser.art_chapter is not None:
         parent = parser.art_chapter
     elif parser.appendix_part is not None:
         parent = parser.appendix_part
@@ -1301,6 +1300,13 @@ def parse_paragraph(parser):
         parent.append(parser.paragraph)
     else:
         raise Exception("Could not find parent for paragraph.")
+
+    content = parser.collect_until("<br/>", collect_first_line=True)
+    parser.consume("<br/>")
+
+    sens = separate_sentences(content)
+
+    add_sentences(parser.paragraph, sens)
 
     parser.paragraph = None
 
@@ -2553,7 +2559,8 @@ def parse_numerical_article(parser):
         # The name of a numerical article is contained in two "<i>"
         # tags separated with an "og".
         if parser.lines.peeks() == "og" and parser.lines.peeks(2) == "<i>":
-            addendum = parser.collect_until("</i>").replace("<i> ", "")
+            parser.consume("</i>")
+            addendum = parser.collect_until("</i>", collect_first_line=True).replace("<i> ", "")
             numart_name += " " + addendum
 
     # Read in the remainder of the content.
@@ -2790,27 +2797,29 @@ def parse_td(parser):
     parser.td = E("td")
     parser.tr.append(parser.td)
 
+    # Consume the "<td>".
+    parser.next()
+
     # Only add content if the `td` is not empty, otherwise it starts adding
     # everything from the next `td`.
-    if parser.peeks() == "</td>":
-        parser.next()
+    if parser.line == "</td>":
         parser.consume("</td>")
     else:
         table_nr_title = table_title = ""
 
-        if parser.peeks() == "<b>":
-            parser.next()
+        if parser.line == "<b>":
             parser.consume("<b>")
             table_nr_title, table_title = get_nr_and_name(
                 parser.collect_until("</b>", collect_first_line=True)
             )
+            parser.consume("</b>")
             parser.td.attrib["header-style"] = "b"
-        elif parser.peeks() == "<i>":
-            parser.next()
+        elif parser.line == "<i>":
             parser.consume("<i>")
             table_nr_title, table_title = get_nr_and_name(
                 parser.collect_until("</i>", collect_first_line=True)
             )
+            parser.consume("</i>")
             parser.td.attrib["header-style"] = "i"
 
         # NOTE: We don't place the `table-nr-title` in an attribute here
@@ -2828,14 +2837,15 @@ def parse_td(parser):
             # Deal with styled chemical names. Happens in ákvæði til
             # bráðabirgða XII laga nr. 29/1993.
             # NOTE: The styling gets re-applied in rendering mechanism.
-            if parser.peeks() == "<small>":
-                extra_content = parser.collect_until("</small>")
+            if parser.line == "<small>":
+                extra_content = parser.collect_until("</small>", collect_first_line=True)
                 extra_content = extra_content.replace("<small> <sub> ", "").replace("</sub>", "")
                 table_title += extra_content
+                parser.consume("</small>")
 
             parser.td.append(E("table-title", table_title))
 
-        content = parser.collect_until("</td>")
+        content = parser.collect_until("</td>", collect_first_line=True)
         parser.consume("</td>")
 
         add_sentences(parser.td, separate_sentences(content))
