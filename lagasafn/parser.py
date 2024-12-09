@@ -261,6 +261,30 @@ class LawParser:
 
         return None
 
+    def next_paragraph_delimiter(self):
+        """
+        Paragraphs may end in more than one ways. Typically it's by a `<br/>`
+        tag, but it may also be a `</td>` and possibly others in the future.
+
+        Here we figure out what tag denotes the paragraph's end (which we're
+        assumed to be in.
+        """
+        # FIXME: This is an objectively disgusting way to do this. it works, but
+        # please make it pretty.
+        td_distance = self.occurrence_distance(self.lines, r"</td>")
+        br_distance = self.occurrence_distance(self.lines, r"<br/>")
+        if td_distance is None:
+            closing = "<br/>"
+        elif br_distance is None:
+            closing = "</td>"
+        else:
+            if td_distance < br_distance:
+                closing = "</td>"
+            else:
+                closing = "<br/>"
+
+        return closing
+
     def dump_remaining(self, max_lines=10):
         current_line = self.lines.current_line_number
         i = current_line
@@ -1301,8 +1325,9 @@ def parse_paragraph(parser):
     else:
         raise Exception("Could not find parent for paragraph.")
 
-    content = parser.collect_until("<br/>", collect_first_line=True)
-    parser.consume("<br/>")
+    closing = parser.next_paragraph_delimiter()
+    content = parser.collect_until(closing, collect_first_line=True)
+    parser.consume(closing)
 
     sens = separate_sentences(content)
 
@@ -1432,8 +1457,9 @@ def parse_stray_deletion(parser):
 
     parser.enter("stray-deletion")
 
-    content = parser.collect_until("<br/>", collect_first_line=True)
-    parser.consume("<br/>")
+    closing = parser.next_paragraph_delimiter()
+    content = parser.collect_until(closing, collect_first_line=True)
+    parser.consume(closing)
 
     elem_sen = E("sen", content)
 
@@ -1446,7 +1472,9 @@ def parse_stray_deletion(parser):
 
     parser.mark_container = E("mark-container", elem_sen)
 
-    if parser.numart is not None:
+    if parser.td is not None:
+        parser.td.append(parser.mark_container)
+    elif parser.numart is not None:
         parser.numart.append(parser.mark_container)
     elif parser.subart is not None:
         parser.subart.append(parser.mark_container)
@@ -2414,7 +2442,9 @@ def parse_numerical_article(parser):
         # `art-chapter` (or `art`). An `art-chapter` can be a child
         # of `art` and parent of many `subart`s, or a child of a
         # `subart` (see lög nr. 90/2003).
-        if (
+        if parser.td is not None:
+            parent = parser.td
+        elif (
             parser.art_chapter is not None
             and parser.art_chapter.getparent().tag == "subart"
         ):
@@ -2518,7 +2548,7 @@ def parse_numerical_article(parser):
     if denoted_with_span:
         numart_nr_title = parser.collect_until("</span>")
     else:
-        numart_nr_title = parser.peeks()
+        numart_nr_title = parser.nexts()
 
     # Sometimes the content of a `numart` is in its own separate line instead
     # of immediately following the `name` inline. We must account for it by
@@ -2564,7 +2594,9 @@ def parse_numerical_article(parser):
             numart_name += " " + addendum
 
     # Read in the remainder of the content.
-    content = parser.collect_until("<br/>")
+    closing = parser.next_paragraph_delimiter()
+    content = parser.collect_until(closing)
+    parser.consume(closing)
 
     # Split the content into sentences.
     sens = separate_sentences(strip_links(content))
@@ -2745,6 +2777,8 @@ def parse_table(parser):
         parent.append(E("table-name", table_name))
     parent.append(parser.table)
 
+    parser.numart = None
+
     while True:
         if parse_tr(parser):
             continue
@@ -2771,6 +2805,8 @@ def parse_tr(parser):
     parser.next()
 
     parser.tbody.append(parser.tr)
+
+    parser.numart = None
 
     while True:
         if parse_td(parser):
@@ -2845,10 +2881,15 @@ def parse_td(parser):
 
             parser.td.append(E("table-title", table_title))
 
-        content = parser.collect_until("</td>", collect_first_line=True)
-        parser.consume("</td>")
-
-        add_sentences(parser.td, separate_sentences(content))
+        while True:
+            parser.maybe_consume("</td>")
+            if parse_paragraph(parser):
+                continue
+            if parse_numerical_article(parser):
+                continue
+            if parse_stray_deletion(parser):
+                continue
+            break
 
     parser.td = None
 
