@@ -11,19 +11,26 @@ from collections import OrderedDict
 from colorama import Fore
 from colorama import Style
 from lagasafn import settings
+from lagasafn.constants import JSON_MAP_BASE_DIR
 from lagasafn.constants import LAW_FILENAME
 from lagasafn.constants import ERRORMAP_FILENAME
 from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
+from lagasafn.constants import PATCHES_BASE_DIR
 from lagasafn.constants import PATCH_FILENAME
+from lagasafn.constants import SPLITMAP_FILENAME
+from lagasafn.constants import STRAYTEXTMAP_FILENAME
+from lagasafn.constants import XML_BASE_DIR
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.patching import attempt_json_map_transfer
 from lagasafn.patching import patch_law
 from lagasafn.population import population_game
 from lagasafn.references import parse_references
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
 from lagasafn.utils import write_xml
@@ -48,8 +55,45 @@ from lagasafn.parser import parse_subchapter
 from lagasafn.parser import parse_table
 from lagasafn.parse_footnotes import parse_footnotes
 from lagasafn.parse_footnotes import parse_footnote
+from os.path import dirname
+from os.path import isdir
+from os.path import isfile
+from os import makedirs
 
 VERBOSE_MODE = False
+
+
+def prepare_environment():
+    """
+    Prepares the environment for a new codex version.
+    """
+
+    def ensure_dir(dirname):
+        if not isdir(dirname):
+            os.makedirs(dirname)
+
+    json_files = [
+        ERRORMAP_FILENAME,
+        STRAYTEXTMAP_FILENAME,
+        SPLITMAP_FILENAME,
+    ]
+
+    dirs = [
+        os.path.join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION),
+        os.path.join(PATCHES_BASE_DIR, CURRENT_PARLIAMENT_VERSION),
+        os.path.join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION),
+    ]
+    for dir in dirs:
+        ensure_dir(dir)
+
+    if "--auto-patch" in settings.options:
+        attempt_json_map_transfer()
+
+    for json_file in json_files:
+        ensure_dir(dirname(json_file))
+        if not isfile(json_file):
+            with open(json_file, "w") as f:
+                f.write("{}")
 
 
 def clean_content(content):
@@ -232,8 +276,8 @@ def clean_law(law_num, law_year):
         print("Error: Law %d/%d does not seem to exist" % (law_year, law_num))
         quit(1)
 
-    if not os.path.isdir(os.path.dirname(CLEAN_FILENAME)):
-        os.mkdir(os.path.dirname(CLEAN_FILENAME))
+    if not os.path.isdir(dirname(CLEAN_FILENAME)):
+        os.mkdir(dirname(CLEAN_FILENAME))
 
     with open(CLEAN_FILENAME % (law_year, law_num), "w") as clean_file:
         clean_file.write(content)
@@ -375,7 +419,7 @@ def process_law(law_id):
 
 def get_available_law_ids():
     law_ids = []
-    for filename in os.listdir(os.path.dirname(LAW_FILENAME)):
+    for filename in os.listdir(dirname(LAW_FILENAME)):
         if re.match(r"^\d{7}\.html$", filename):
             law_year = int(filename[0:4])
             law_num = int(filename[4:7])
@@ -498,7 +542,7 @@ def update_index():
     index.append(law_entries)
 
     # Iterate through all the XML files we have.
-    for law_xml_filename in os.listdir(os.path.dirname(XML_FILENAME)):
+    for law_xml_filename in os.listdir(dirname(XML_FILENAME)):
         # Only interested in XML files.
         if law_xml_filename[-4:] != ".xml":
             continue
@@ -741,7 +785,6 @@ def main(argv):
         population_game()
         quit()
 
-
     # Container for laws that are about to be processed.
     law_ids = []
 
@@ -756,6 +799,8 @@ def main(argv):
             settings.options[arg] = True
         elif arg not in valid_options:
             usage(argv[0], 'Unknown option "%s"' % arg)
+
+    prepare_environment()
 
     # If nothing is selected, we'll process everything.
     if len(law_ids) == 0:

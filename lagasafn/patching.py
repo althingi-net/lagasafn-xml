@@ -1,10 +1,15 @@
 import os
 from lagasafn import diff_patch_utils
 from lagasafn import settings
+from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCH_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
 from lagasafn.constants import PATCHES_BASE_DIR
-from lagasafn.constants import CLEAN_FILENAME
+from lagasafn.constants import JSON_MAP_BASE_DIR
+from lagasafn.constants import XML_BASE_DIR
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from os.path import isfile
+from os.path import join
 from shutil import copy
 from subprocess import DEVNULL
 from subprocess import run
@@ -13,7 +18,7 @@ from subprocess import run
 def patch_law(law_num, law_year) -> bool:
 
     patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
-    if not os.path.isfile(patch_path):
+    if not isfile(patch_path):
 
         # Auto-patch if requested.
         if "--auto-patch" in settings.options:
@@ -33,17 +38,15 @@ def patch_law(law_num, law_year) -> bool:
     return True
 
 
-def auto_patch(law_num, law_year):
-    # Nevermind if the patch already exists.
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
-    if os.path.isfile(patch_path):
-        return
+def get_previous_parliament():
+
+    # I was here. Making functions to transfer JSON maps.
+    # Need to scan for codex versions in `data/xml` and use that instead of `patch_path` up here.
 
     # Scan for available patched parliaments.
-    parliament_dir = os.path.dirname(os.path.dirname(patch_path))
     patched_parliaments = []
-    for item in os.listdir(parliament_dir):
-        if os.path.isdir(os.path.join(parliament_dir, item)):
+    for item in os.listdir(XML_BASE_DIR):
+        if os.path.isdir(os.path.join(XML_BASE_DIR, item)):
             patched_parliaments.append(item)
 
     # We rely on sorting to properly locating previous and next parliaments.
@@ -51,6 +54,17 @@ def auto_patch(law_num, law_year):
 
     # This is a list because when we start iterating backwards, we'll want to try both patches 
     previous_parliament = patched_parliaments[patched_parliaments.index(settings.CURRENT_PARLIAMENT_VERSION) - 1]
+
+    return previous_parliament
+
+
+def auto_patch(law_num, law_year):
+    # Nevermind if the patch already exists.
+    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
+    if isfile(patch_path):
+        return
+
+    previous_parliament = get_previous_parliament()
 
     attempt_patch_transfer(law_num, law_year, previous_parliament)
 
@@ -63,7 +77,7 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
     target_patch = PATCHED_FILENAME % (law_year, law_num)
     patch_filename = PATCH_FILENAME % (law_year, law_num)
 
-    if not os.path.isfile(attempted_patch):
+    if not isfile(attempted_patch):
         return False
 
     result = run(["patch", "--dry-run", filename, attempted_patch], stdout=DEVNULL)
@@ -79,3 +93,20 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
                 return True
 
     return False
+
+
+def attempt_json_map_transfer():
+    previous_parliament = get_previous_parliament()
+
+    json_files = [
+        "errormap.json",
+        "straytextmap.json",
+        "splitmap.json",
+    ]
+
+    for json_file in json_files:
+        previous_path = join(JSON_MAP_BASE_DIR, previous_parliament, json_file)
+        current_path = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, json_file)
+
+        if not isfile(current_path):
+            copy(previous_path, current_path)

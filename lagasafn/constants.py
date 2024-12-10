@@ -2,7 +2,11 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.settings import DATA_DIR
 from os.path import join
 
+# TODO: Make constants file less of a jungle.
+
+JSON_MAP_BASE_DIR = join(DATA_DIR, "json-maps")
 PATCHES_BASE_DIR = join(DATA_DIR, "patches")
+XML_BASE_DIR = join(DATA_DIR, "xml")
 
 LAW_FILENAME = join(
     DATA_DIR, "original", CURRENT_PARLIAMENT_VERSION, "%d%s.html"
@@ -16,11 +20,11 @@ PATCHED_FILENAME = join(
 PATCH_FILENAME = join(
     PATCHES_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
 )  # % (law_year, law_num)
-XML_FILENAME = join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "%d.%s.xml")  # % (law_year, law_num)
-XML_INDEX_FILENAME = join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "index.xml")
-XML_REFERENCES_FILENAME = join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "references.xml")
+XML_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "%d.%s.xml")  # % (law_year, law_num)
+XML_INDEX_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "index.xml")
+XML_REFERENCES_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "references.xml")
 
-ERRORMAP_FILENAME = join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "errormap.json")
-STRAYTEXTMAP_FILENAME = join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "straytextmap.json")
-SPLITMAP_FILENAME = join("data", "json-maps", CURRENT_PARLIAMENT_VERSION, "splitmap.json")
-PROBLEMS_FILENAME = join(DATA_DIR, "xml", CURRENT_PARLIAMENT_VERSION, "problems.xml")
+ERRORMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "errormap.json")
+STRAYTEXTMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "straytextmap.json")
+SPLITMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "splitmap.json")
+PROBLEMS_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "problems.xml")
