@@ -221,3 +221,18 @@ mark-container sen { margin-left: 0.8em; }
     margin-right: auto;
     font-size: 170%;
 }
+
+.highlighted {
+    position: relative;
+
+}
+
+.highlighted::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -24px;
+    bottom: 0;
+    width: 1px;
+    background-color: #1c79c2;
+}

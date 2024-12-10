@@ -13,9 +13,16 @@
             let tag = this.getAttribute("data-tag");
             let nr = this.getAttribute("data-nr");
             let selector = tag + "[nr='" + nr + "']";
-            let elem = document.querySelector(selector)
+            let elem = document.querySelector(selector);
+
+            // Highlight the selected item.
+            document.querySelectorAll(".highlighted").forEach(el => el.classList.remove("highlighted"));
+            elem.classList.add("highlighted");
+
             elem.scrollIntoView();
-            window.scrollBy(0, -70);  // 70 is estimated header height.
+
+            // The scrolling here is essentially arbitrary.
+            window.scrollBy(0, -300);
         });
     });
 
