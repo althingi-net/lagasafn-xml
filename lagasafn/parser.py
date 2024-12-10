@@ -2194,13 +2194,13 @@ def parse_numerical_article(parser):
         ". ", ""
     )
 
-    if parser.matcher.check(numart_nr, r"(\d+)\.–(\d+)"):
+    if parser.matcher.check(numart_nr, r"(\d+)\.[–-](\d+)"):
         # Support for numart ranges, which are only known to occur when many
         # numarts have been removed. This occurs for example in 145. gr. laga
         # nr. 108/2007.
         from_numart_nr, to_numart_nr = parser.matcher.result()
         numart_nr = "%s-%s" % (from_numart_nr, to_numart_nr)
-    elif parser.matcher.check(numart_nr, r"([A-Z])\.[–-]([A-Z])"):
+    elif parser.matcher.check(numart_nr, r"([A-Za-z])\.[–-]([A-Za-z])"):
         # Support for alphabetical ranges, which are also only known to occur
         # when many numarts have been removed. This happens in temporary
         # clauses of lög nr. 99/1993.
