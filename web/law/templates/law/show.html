@@ -89,41 +89,11 @@
 {% if view_type == "normal" %}
     <div class="legal-document menu">
         <ul>
+        {% for art in law.articles %}
+            {% include 'law/link_article.html' %}
+        {% endfor %}
         {% for chapter in law.chapters %}
-            <li class="chapter">
-                <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
-                    {% if chapter.name %}
-                        {{ chapter.name }}
-                    {% else %}
-                        {{ chapter.nr_title }}
-                    {% endif %}
-                </a>
-                <ul>
-                {% for art in chapter.articles %}
-                    <li class="art">
-                        <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
-                            {% if art.name %}
-                                {{ art.name }}
-                            {% else %}
-                                {{ art.nr_title }}
-                            {% endif %}
-                        </a>
-                    </li>
-                {% endfor %}
-                </ul>
-            </li>
-        {% empty %}
-            {% for art in law.articles %}
-                <li class="art">
-                    <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
-                        {% if art.name %}
-                            {{ art.name }}
-                        {% else %}
-                            {{ art.nr_title }}
-                        {% endif %}
-                    </a>
-                </li>
-            {% endfor %}
+            {% include 'law/link_chapter.html' %}
         {% endfor %}
         </ul>
     </div>

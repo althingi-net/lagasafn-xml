@@ -1,0 +1,14 @@
+<li class="chapter">
+    <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
+	{% if chapter.name %}
+	    {{ chapter.name }}
+	{% else %}
+	    {{ chapter.nr_title }}
+	{% endif %}
+    </a>
+    <ul>
+	{% for art in chapter.articles %}
+	    {% include 'law/link_article.html' %}
+	{% endfor %}
+    </ul>
+</li>
