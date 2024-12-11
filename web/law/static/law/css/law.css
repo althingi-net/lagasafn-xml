@@ -9,8 +9,13 @@
 .legal-document.menu a.chapter { font-weight: bold; }
 .legal-document.menu li { margin: 8px 8px 8px 0px; list-style: square; }
 .legal-document.menu li::marker { color: black; }
-.legal-document.menu li.chapter { margin-top: 24px; font-weight: bold; list-style: none; }
+.legal-document.menu ul { padding-left: 12px; }
+.legal-document.menu li.superchapter { margin-top: 24px; font-weight: bold; font-size: large; list-style: none; }
+.legal-document.menu li.superchapter:first-child { margin-top: 12px; }
+.legal-document.menu ul.chapter { padding-left: 12px; }
+.legal-document.menu li.chapter { margin-top: 24px; font-weight: bold; font-size: 16px; list-style: none; }
 .legal-document.menu li.chapter:first-child { margin-top: 12px; }
+.legal-document.menu ul.art { padding-left: 36px; }
 .legal-document.menu li.art { font-weight: normal; }
 
 /*** Basics ***/
@@ -50,8 +55,8 @@ superchapter > nr-title { font-weight: bold; }
 superchapter > name { font-weight: bold; }
 
 /* chapter */
+chapter:not(superchapter > chapter:first-of-type) { margin-top: 1.5em; }
 chapter { display: block; }
-chapter:not(superchapter > chapter) { margin-top: 1.5em; }
 chapter > nr-title { font-weight: bold; }
 chapter > name { font-weight: bold; }
 name sup, nr-title sup { font-size: 60% !important; vertical-align: top; top: 0.89em !important; }

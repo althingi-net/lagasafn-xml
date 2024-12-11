@@ -189,6 +189,7 @@ class Law(LawEntry):
         self._name = ""
         self._xml_text = ""
         self._html_text = ""
+        self._superchapters = []
         self._chapters = []
         self._articles = []
         self._remote_contents = {}
@@ -232,6 +233,61 @@ class Law(LawEntry):
 
         return self._name
 
+    def superchapters(self):
+        if len(self._superchapters):
+            return self._superchapters
+
+        xml = self.xml()
+
+        for superchapter in xml.findall("superchapter"):
+            _superchapter = {
+                "nr": superchapter.attrib["nr"],
+                "chapters": [],
+            }
+
+            # Add nr-title if it exists.
+            nr_title = superchapter.find("nr-title")
+            if nr_title is not None:
+                _superchapter["nr_title"] = nr_title.text
+
+            # Add name if it exists.
+            name = superchapter.find("name")
+            if name is not None:
+                _superchapter["name"] = name.text
+
+            # Add chapters.
+            for chapter in superchapter.findall("chapter"):
+                _chapter = Law._make_chapter(chapter)
+                _superchapter["chapters"].append(_chapter)
+
+            self._superchapters.append(_superchapter)
+
+        return self._superchapters
+
+    @staticmethod
+    def _make_chapter(chapter):
+        _chapter = {
+            "nr": chapter.attrib["nr"],
+            "articles": [],
+        }
+
+        # Add nr-title if it exists.
+        nr_title = chapter.find("nr-title")
+        if nr_title is not None:
+            _chapter["nr_title"] = nr_title.text
+
+        # Add name if it exists.
+        name = chapter.find("name")
+        if name is not None:
+            _chapter["name"] = name.text
+
+        # Add articles.name
+        for art in chapter.findall("art"):
+            _art = Law._make_art(art)
+            _chapter["articles"].append(_art)
+
+        return _chapter
+
     def chapters(self):
         if len(self._chapters):
             return self._chapters
@@ -239,26 +295,7 @@ class Law(LawEntry):
         xml = self.xml()
 
         for chapter in xml.findall("chapter"):
-            _chapter = {
-                "nr": chapter.attrib["nr"],
-                "articles": [],
-            }
-
-            # Add nr-title if it exists.
-            nr_title = chapter.find("nr-title")
-            if nr_title is not None:
-                _chapter["nr_title"] = nr_title.text
-
-            # Add name if it exists.
-            name = chapter.find("name")
-            if name is not None:
-                _chapter["name"] = name.text
-
-            # Add articles.name
-            for art in chapter.findall("art"):
-                _art = Law._make_art(art)
-                _chapter["articles"].append(_art)
-
+            _chapter = self._make_chapter(chapter)
             self._chapters.append(_chapter)
 
         return self._chapters

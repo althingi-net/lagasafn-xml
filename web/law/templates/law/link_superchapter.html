@@ -1,0 +1,14 @@
+<ul class="superchapters">
+    {% for superchapter in superchapters %}
+    <li class="superchapter">
+        <a class="menu-item" data-tag="superchapter" data-nr="{{ superchapter.nr }}">
+            {% if superchapter.name %}
+                {{ superchapter.name }}
+            {% else %}
+                {{ superchapter.nr_title }}
+            {% endif %}
+        </a>
+        {% include 'law/link_chapter.html' with chapters=superchapter.chapters %}
+    </li>
+    {% endfor %}
+</ul>

@@ -95,15 +95,11 @@
 
 {% if view_type == "normal" %}
     <div class="legal-document menu">
-        <ul>
-        {% for art in law.articles %}
-            {% include 'law/link_article.html' %}
-        {% endfor %}
-        {% for chapter in law.chapters %}
-            {% include 'law/link_chapter.html' %}
-        {% endfor %}
-        </ul>
+        {% include 'law/link_article.html' with articles=law.articles %}
+        {% include 'law/link_chapter.html' with chapters=law.chapters %}
+        {% include 'law/link_superchapter.html' with superchapters=law.superchapters %}
     </div>
+
 {% endif %}
 
 {% endblock %}

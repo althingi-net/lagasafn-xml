@@ -882,6 +882,7 @@ $(document).ready(function() {
     $('refer').on('mouseenter', follow_refer);
 
     // Make chapters togglable and close them all;
+    $('law superchapter').each(make_togglable);
     $('law chapter').each(make_togglable);
     $('law art').each(make_togglable);
     //$('.toggle-button').click();
