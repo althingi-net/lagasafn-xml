@@ -5,6 +5,7 @@
 <script language="javascript" type="text/javascript">
     // Constants available to JavaScript.
     const LAW_IDENTIFIER = "{{ law.identifier }}";
+    const SCROLL_OFFSET = 300;  // Essentially arbitrary.
 
     // Activate menu items.
     var elements = document.querySelectorAll(".menu-item");
@@ -19,10 +20,17 @@
             document.querySelectorAll(".highlighted").forEach(el => el.classList.remove("highlighted"));
             elem.classList.add("highlighted");
 
+            // Scroll so that the element is visible.
             elem.scrollIntoView();
 
-            // The scrolling here is essentially arbitrary.
-            window.scrollBy(0, -300);
+            window.scrollBy(0, 0 - SCROLL_OFFSET);
+
+            // If the scrolling has hidden our element, we make it re-appear.
+            let rect = elem.getBoundingClientRect();
+            if (rect.top > SCROLL_OFFSET && rect.bottom > window.innerHeight) {
+                window.scrollBy(0, SCROLL_OFFSET);
+            }
+
         });
     });
 

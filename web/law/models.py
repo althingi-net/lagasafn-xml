@@ -9,6 +9,7 @@ import os
 import re
 import requests
 from django.conf import settings
+from django.utils.html import strip_tags
 from lagasafn.constants import PROBLEMS_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
@@ -205,6 +206,13 @@ class Law(LawEntry):
             raise LawException("Could not find law '%s'" % self.identifier)
 
     @staticmethod
+    def toc_name(text):
+        """
+        Makes the name fancy for displaying cleanly in the table-of-contents.
+        """
+        return strip_tags(text).replace("  ", " ").strip()
+
+    @staticmethod
     def _make_art(art):
         """
         Centralized function for making an `art` in the specific context of
@@ -212,13 +220,13 @@ class Law(LawEntry):
         """
         _art = {
             "nr": art.attrib["nr"],
-            "nr_title": art.find("nr-title").text,
+            "nr_title": Law.toc_name(art.find("nr-title").text),
         }
 
         # Add name if it exists.
         art_name = art.find("name")
         if art_name is not None:
-            _art["name"] = art_name.text
+            _art["name"] = Law.toc_name(art_name.text)
 
         return _art
 
