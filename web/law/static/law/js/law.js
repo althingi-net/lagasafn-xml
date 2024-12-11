@@ -878,9 +878,6 @@ $(document).ready(function() {
     $minister_clause.html(new_text);
     $minister_clause.show();
 
-    // Make references show what they're referring to on mouse-over.
-    $('refer').on('mouseenter', follow_refer);
-
     // Make chapters togglable and close them all;
     $('law superchapter').each(make_togglable);
     $('law chapter').each(make_togglable);
@@ -933,45 +930,6 @@ $(document).ready(function() {
     });
     $("#btn-hide-subart-nrs").click(function() {
         $("subart .mgr").remove();
-    });
-
-    $('law').on('mouseup', function(event) {
-        let selectedText = window.getSelection().toString();
-
-        // We should see at least one of these in the string to bother looking it up.
-        known_parts = [
-            " gr.",
-            " mgr.",
-            " tölul.",
-            "-lið",
-        ]
-        let possibly_legit = false;
-        known_parts.map((part) => {
-            if (selectedText.indexOf(part) > -1) {
-                possibly_legit = true;
-            }
-        });
-
-        if (possibly_legit) {
-
-            // An incomplete experiment that needs finishing before it's safe to use.
-            // It adds the law identifier to the selected text if it's missing.
-            // The dangerous thing about it is that it assumes that the
-            // reference refers to the open law, and not some other. The user
-            // may make a mistake by not including the law identifier, or the
-            // identifier may not in fact be available, like in "3. gr. sömu
-            // laga", referring to some other law that was mentioned previously.
-            /*
-            const pattern = /^\d{1,3}\/\d{4}$/;
-            const contains_law = pattern.test(selectedText);
-            if (!contains_law) {
-                selectedText += " laga nr. " + LAW_IDENTIFIER;
-            }
-            */
-
-            const $anchor = $(document.elementFromPoint(event.clientX, event.clientY));
-            process_refer_legal_clause_from_text(selectedText, $anchor);
-        }
     });
 
     // Browser-tests can check for this to see if something failed in this process.
