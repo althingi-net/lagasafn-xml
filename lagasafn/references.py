@@ -13,6 +13,7 @@ from lxml.builder import E
 # IMPORTANT: These should not be confusable with the end of a law's name.
 conclusives = [
     "af",
+    "að",
     "annars",
     "auglýsingaskyldu",
     "á",
@@ -37,9 +38,12 @@ conclusives = [
     "gildistíð",
     "gildistöku",
     "grundvelli",
+    "gæta",
+    "fjárhæðir",
     "í",
     "ívilnunarúrræðum",
     "kröfur",
+    "leyti",
     "lögum",
     "þessara laga",
     "málsmeðferðarreglna",
@@ -56,6 +60,7 @@ conclusives = [
     "sbr.",
     "sbr. nú",
     "skal",
+    "skilgreiningu",
     "skilningi",
     "skilyrði",
     "skilyrðum",
@@ -85,7 +90,7 @@ inner_reference_patterns = [
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafl[ia]( [A-Z])?)$",  # `chapter`
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
     r"([A-Z][-–]hluta( [A-Z])?)$",  # `chapter`-ish (another version)
-    r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
+    r"(((\d{1,3})\.( gr\.( [a-z] )?)?[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
     r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
@@ -106,7 +111,7 @@ and_inner_reference_patterns = [
     r"(((\d{1,3})\.[-–] ?(\d{1,3})\., )*(\d{1,3})\.[-–] ?(\d{1,3})\.)$",
     r"((([A-Za-z])[-–], )*([A-Za-z])[-–])$",
     r"(((\d{1,3})\., )*(\d{1,3})\.)$",
-    r"(([A-Z]{1,9})\.)$",
+    r"((([A-Z]{1,9})\.[-–])?([A-Z]{1,9})\.)$",
 ]
 
 separators = ["og/eða", "og", "eða"]
