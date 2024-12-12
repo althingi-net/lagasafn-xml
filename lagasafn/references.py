@@ -412,6 +412,7 @@ def parse_references():
                     "l. nr. %s" % nr_and_year,
                     "lög nr. %s" % nr_and_year,
                     "lögum nr. %s" % nr_and_year,
+                    "þágildandi laga, nr. %s" % nr_and_year,
                     "laga nr. %s" % nr_and_year,
                     " lögum, nr. %s" % nr_and_year,
                     " laga, nr. %s" % nr_and_year,
