@@ -21,11 +21,13 @@ conclusives = [
     "ákvæði",
     "ákvæðis",
     "ákvæðum",
+    "ásamt",
     "brott",
     "einnig",
     "ef",
     "eftir",
     "eldri",
+    "er til",  # Important; must not be "til" because that has inner-reference meaning.
     "framar",
     "framkvæmd",
     "fylgja",
@@ -39,6 +41,7 @@ conclusives = [
     "gildistöku",
     "grundvelli",
     "gæta",
+    "heimild",
     "fjárhæðir",
     "í",
     "ívilnunarúrræðum",
@@ -59,6 +62,8 @@ conclusives = [
     "samræmast",
     "sbr.",
     "sbr. nú",
+    "setja",
+    "setningar",
     "skal",
     "skilgreiningu",
     "skilningi",
@@ -68,6 +73,7 @@ conclusives = [
     "skv.",
     "stað",
     "svo og",
+    "tilliti til",  # Important; must not be "til" because that has inner-reference meaning.
     "tíð",
     "undanþegin",
     "undanþegnar",
@@ -79,6 +85,8 @@ conclusives = [
     # example "1. gr. laga þessara") but here they are used to determine the
     # conclusive end of the parsing of an inner reference.
     "þessara",
+    "þessi",
+    "þessum",
     "þó",
     "öðru leyti til",
 ]
@@ -90,7 +98,7 @@ inner_reference_patterns = [
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafl[ia]( [A-Z])?)$",  # `chapter`
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
     r"([A-Z][-–]hluta( [A-Z])?)$",  # `chapter`-ish (another version)
-    r"(((\d{1,3})\.( gr\.( [a-z] )?)?[-–] ?)?(\d{1,3})\. gr\.( [a-z])?(,)?)$",  # `art`
+    r"(((\d{1,3})\.( gr\.( [a-zA-Z] )?)?[-–] ?)?(\d{1,3})\. gr\.( [a-zA-Z])?(,)?)$",  # `art`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
     r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
@@ -111,7 +119,7 @@ and_inner_reference_patterns = [
     r"(((\d{1,3})\.[-–] ?(\d{1,3})\., )*(\d{1,3})\.[-–] ?(\d{1,3})\.)$",
     r"((([A-Za-z])[-–], )*([A-Za-z])[-–])$",
     r"(((\d{1,3})\., )*(\d{1,3})\.)$",
-    r"((([A-Z]{1,9})\.[-–])?([A-Z]{1,9})\.)$",
+    r"(((([A-Z]{1,9})\.[-–])?([A-Z]{1,9})\., )*(([A-Z]{1,9})\.[-–])?([A-Z]{1,9})\.)$",
 ]
 
 separators = ["og/eða", "og", "eða"]
