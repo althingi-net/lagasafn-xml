@@ -1063,6 +1063,9 @@ def generate_synonyms(name: str) -> dict:
         "Lög um landhelgi, aðlægt belti, efnahagslögsögu og landgrunn": [
             "Lög um landhelgi, efnahagslögsögu og landgrunn",
         ],
+        "Lög um skráningu, merki og mat fasteigna": [
+            "Lög um skráningu og mat fasteigna",
+        ],
     }
 
     # Nothing to do here if the provided law has no synonym.
