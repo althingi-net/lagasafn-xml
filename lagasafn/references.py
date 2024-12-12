@@ -13,6 +13,7 @@ from lxml.builder import E
 # IMPORTANT: These should not be confusable with the end of a law's name.
 conclusives = [
     "af",
+    "annars",
     "auglýsingaskyldu",
     "á",
     "ákvæða",
@@ -26,27 +27,34 @@ conclusives = [
     "eldri",
     "framar",
     "framkvæmd",
+    "fylgja",
     "fyrir",
     "fyrirmælum",
     "gegn",
     "gilda",
     "gildi",
+    "gildir",
     "gildistíð",
+    "gildistöku",
     "grundvelli",
     "í",
     "ívilnunarúrræðum",
     "kröfur",
+    "lögum",
     "þessara laga",
     "málsmeðferðarreglna",
     "með",
+    "með síðari breytingum",
     "meðal annars",
     "né",
     "núgildandi",
     "reglum",
+    "reglur",
     "samkvæmt",
     "samnefndum",
     "samræmast",
     "sbr.",
+    "sbr. nú",
     "skal",
     "skilningi",
     "skilyrði",
@@ -54,6 +62,7 @@ conclusives = [
     "skulu",
     "skv.",
     "stað",
+    "svo og",
     "tíð",
     "undanþegin",
     "undanþegnar",
@@ -66,6 +75,7 @@ conclusives = [
     # conclusive end of the parsing of an inner reference.
     "þessara",
     "þó",
+    "öðru leyti til",
 ]
 
 # Patterns describing node-delimited parts of inner references.
@@ -79,6 +89,7 @@ inner_reference_patterns = [
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. mgr\.)$",  # `subart`
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. tölul\.)$",  # `numart`
     r"(([a-zA-Z][-–])?[a-zA-Z][-–]lið(ar)?)$",  # `numart` (alphabetic)
+    r"(([a-zA-Z][-–]) til [a-zA-Z][-–]liða)$",  # `numart` (alphabetic)
     r"(((\d{1,3})\.[-–] ?)?(\d{1,3})\. málsl\.)$",  # `sen`
 ]
 
@@ -92,7 +103,8 @@ inner_reference_patterns = [
 # IMPORTANT: The entire things must be in a group because the length of the
 # entire match is needed in code below.
 and_inner_reference_patterns = [
-    r"(([A-Za-z])[-–])$",
+    r"(((\d{1,3})\.[-–] ?(\d{1,3})\., )*(\d{1,3})\.[-–] ?(\d{1,3})\.)$",
+    r"((([A-Za-z])[-–], )*([A-Za-z])[-–])$",
     r"(((\d{1,3})\., )*(\d{1,3})\.)$",
     r"(([A-Z]{1,9})\.)$",
 ]
@@ -165,8 +177,9 @@ def analyze_potentials(potentials):
     law_permutations = get_law_name_permutations()
     flat_permutations = []
     for nr in law_permutations:
-        main = law_permutations[nr]["main"]
-        flat_permutations.extend([main[case] for case in main.keys()])
+        for dimension in law_permutations[nr].keys():
+            cases = law_permutations[nr][dimension]
+            flat_permutations.extend([cases[case] for case in cases.keys()])
 
     beendone = 0
     while True:
@@ -181,11 +194,21 @@ def analyze_potentials(potentials):
             nrs_and_years = re.findall(inner_pattern, potentials)
             if len(nrs_and_years) > 0:
                 match = nrs_and_years[0][0]
-                reference = "%s %s" % (match, reference)
+                if len(reference) and reference[0] == ",":
+                    # Avoid space if placing before a comma.
+                    reference = "%s%s" % (match, reference)
+                else:
+                    reference = "%s %s" % (match, reference)
                 potentials = potentials[: -len(match)].strip()
 
                 del match
                 continue
+
+        # Check for and consume comma.
+        if potentials.endswith(","):
+            reference = ", %s" % reference
+            potentials = potentials[:-1]
+            continue
 
         # Check if we can prove that we're done by using conclusive words.
         for conclusion_part in conclusives:
@@ -217,24 +240,25 @@ def analyze_potentials(potentials):
                 separator = sep_try
                 break
 
+        # If we can find a permutation of a law name, it means that this
+        # current reference is complete. The found permutation will then be
+        # detected again as a separate reference in the next round.
+        for permutation in flat_permutations:
+            permutation = permutation.removeprefix("lögum ")
+            if potentials.removesuffix(",").endswith(permutation):
+                #import ipdb; ipdb.set_trace()
+                certain_about_inner = True
+                break
+        if certain_about_inner:
+            # Break outer loop as well.
+            break
+
         if len(separator):
             # If we run into a separator with no inner reference, then this is
             # a reference to the entire law and not to an article within it. We
             # may safely assume that we're done parsing.
             if len(reference) == 0:
                 certain_about_inner = True
-                break
-
-            # If we can find a permutation of a law name, it means that this
-            # current reference is complete and the separator is merely
-            # dividing them. The found permutation will then be detected again
-            # as a separate reference in the next round.
-            for permutation in flat_permutations:
-                if potentials[:-len(separator)-1].endswith(permutation):
-                    certain_about_inner = True
-                    break
-            # Break out of inner loop as well.
-            if certain_about_inner:
                 break
 
             # The string ", " preceeding the separator indicates that what
@@ -283,6 +307,9 @@ def analyze_potentials(potentials):
     # May contain stray separator.
     for separator in separators:
         reference = reference.removeprefix(separator).strip()
+
+    # May contain stray comma.
+    reference = reference.removeprefix(",").strip()
 
     # May contain stray whitespace due to concatenation.
     reference = reference.strip()

@@ -1038,6 +1038,9 @@ def generate_synonyms(name: str) -> dict:
         "Lög um skipti á dánarbúum o.fl.": [
             "Skiptalög",
         ],
+        "Lög um Íslandsstofu, sjálfseignarstofnun": [
+            "Lög um Íslandsstofu",
+        ],
     }
 
     # Nothing to do here if the provided law has no synonym.
