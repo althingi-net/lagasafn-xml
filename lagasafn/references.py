@@ -36,6 +36,7 @@ conclusives = [
     "í",
     "ívilnunarúrræðum",
     "kröfur",
+    "þessara laga",
     "málsmeðferðarreglna",
     "með",
     "meðal annars",
@@ -96,14 +97,22 @@ and_inner_reference_patterns = [
     r"(([A-Z]{1,9})\.)$",
 ]
 
+separators = ["og/eða", "og", "eða"]
 
-def get_law_name_permutations(index):
+law_permutations = {}
+
+def get_law_name_permutations():
     """
     Provides a dictionary with law names as key, containing every known
     permutation of the law's name, such as declensions, as well as synonyms and
     their declensions.
     """
-    permutations = {}
+
+    if len(law_permutations) > 0:
+        return law_permutations
+
+    index = etree.parse(XML_INDEX_FILENAME).getroot()
+
     for law_entry in index.xpath("/index/law-entries/law-entry"):
         name_nomenative = law_entry.find("./name-conjugated/accusative").text
         name_accusative = law_entry.find("./name-conjugated/accusative").text
@@ -112,11 +121,11 @@ def get_law_name_permutations(index):
         nr_and_year = "%s/%s" % (law_entry.attrib["nr"], law_entry.attrib["year"])
 
         # Make sure the law exists before we start filling it with stuff.
-        if nr_and_year not in permutations:
-            permutations[nr_and_year] = {}
+        if nr_and_year not in law_permutations:
+            law_permutations[nr_and_year] = {}
 
         # These should always exist.
-        permutations[nr_and_year]["main"] = {
+        law_permutations[nr_and_year]["main"] = {
             "nomenative": name_nomenative,
             "accusative": name_accusative,
             "dative": name_dative,
@@ -127,14 +136,14 @@ def get_law_name_permutations(index):
         synonyms = law_entry.xpath("./synonyms/synonym")
         if len(synonyms) > 0:
             for number, synonym in enumerate(synonyms):
-                permutations[nr_and_year]["synonym_%d" % (number + 1)] = {
+                law_permutations[nr_and_year]["synonym_%d" % (number + 1)] = {
                     "nomenative": synonym.find("nomenative").text,
                     "accusative": synonym.find("accusative").text,
                     "dative": synonym.find("dative").text,
                     "genitive": synonym.find("genitive").text,
                 }
 
-    return permutations
+    return law_permutations
 
 
 def analyze_potentials(potentials):
@@ -152,6 +161,12 @@ def analyze_potentials(potentials):
     certain_about_inner = False
 
     loop_found = False
+
+    law_permutations = get_law_name_permutations()
+    flat_permutations = []
+    for nr in law_permutations:
+        main = law_permutations[nr]["main"]
+        flat_permutations.extend([main[case] for case in main.keys()])
 
     beendone = 0
     while True:
@@ -194,7 +209,7 @@ def analyze_potentials(potentials):
 
         # Check for separators "og/eða", "og" and "eða".
         separator = ""
-        for sep_try in ["og/eða", "og", "eða"]:
+        for sep_try in separators:
             if len(potentials) < len(sep_try):
                 continue
 
@@ -210,9 +225,23 @@ def analyze_potentials(potentials):
                 certain_about_inner = True
                 break
 
+            # If we can find a permutation of a law name, it means that this
+            # current reference is complete and the separator is merely
+            # dividing them. The found permutation will then be detected again
+            # as a separate reference in the next round.
+            for permutation in flat_permutations:
+                if potentials[:-len(separator)-1].endswith(permutation):
+                    certain_about_inner = True
+                    break
+            # Break out of inner loop as well.
+            if certain_about_inner:
+                break
+
             # The string ", " preceeding the separator indicates that what
             # comes before is not a part of the same reference. We determine
             # that the reference is complete.
+            # FIXME: This is a pretty daring assumption. Probably needs a
+            # deeper exploration of what comes before the comma.
             if potentials.rstrip(separator)[-2:] == ", ":
                 certain_about_inner = True
                 break
@@ -251,6 +280,10 @@ def analyze_potentials(potentials):
             break
         beendone += 1
 
+    # May contain stray separator.
+    for separator in separators:
+        reference = reference.removeprefix(separator).strip()
+
     # May contain stray whitespace due to concatenation.
     reference = reference.strip()
 
@@ -277,7 +310,7 @@ def parse_references():
 
     # Every law will have some permutations. Those include declensions
     # (accusative, dative, etc.) and synonyms and also their declensions.
-    permutations = get_law_name_permutations(index)
+    law_permutations = get_law_name_permutations()
 
     # Now iterate through all the laws and parse their contents.
     for law_entry in index.xpath("/index/law-entries/law-entry"):
@@ -324,7 +357,7 @@ def parse_references():
                 # NOTE: It is conceivable that something being caught here
                 # actually refers to a non-law denoted by the same pattern,
                 # such as a regulation or an international document.
-                if nr_and_year not in permutations:
+                if nr_and_year not in law_permutations:
                     problems["does-not-exist"].append(
                         {
                             "nr_and_year": nr_and_year,
@@ -345,10 +378,10 @@ def parse_references():
                     "[law-marker] nr. %s" % nr_and_year,
                 ]
 
-                for category in permutations[nr_and_year]:
-                    accusative = permutations[nr_and_year][category]["accusative"]
-                    dative = permutations[nr_and_year][category]["dative"]
-                    genitive = permutations[nr_and_year][category]["genitive"]
+                for category in law_permutations[nr_and_year]:
+                    accusative = law_permutations[nr_and_year][category]["accusative"]
+                    dative = law_permutations[nr_and_year][category]["dative"]
+                    genitive = law_permutations[nr_and_year][category]["genitive"]
                     potential_start_guesses.extend(
                         [
                             "%s, nr. %s" % (accusative, nr_and_year),
