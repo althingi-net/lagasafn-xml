@@ -411,6 +411,8 @@ def separate_sentences(content):
     # name, but may very well end a sentence.
     recognized_shorts = [
         "A.m.k.",
+        "B.A",
+        "M.a.",
         "t.d.",
         "þ.m.t.",
         "sbr.",
@@ -505,6 +507,23 @@ def separate_sentences(content):
             # Don't start a new sentence if the first character in the next
             # chunk is lowercase.
             if len(next_chunk) > 1 and next_chunk[0] == " " and next_chunk[1].islower():
+                split = False
+
+            # Don't start a new sentence if the next chunk starts with a single
+            # uppercase character, since that indicates that it's a part of a
+            # reference to something. This is only allowed in very narrow cases
+            # though, where it follows an article, an extra document or the like.
+            # Occurs in 3. mgr. 107. gr. laga nr. 88/2005 (154b).
+            if (
+                (
+                    chunk.endswith("gr")
+                    or chunk.endswith("fskj")
+                )
+                and (
+                    re.match(r" ?[A-Z][ .]", next_chunk) is not None
+                    or re.match(r" ?[A-Z]$", next_chunk)
+                )
+            ):
                 split = False
 
             # Don't start a new sentence if the character immediately
