@@ -40,9 +40,6 @@ def patch_law(law_num, law_year) -> bool:
 
 def get_previous_parliament():
 
-    # I was here. Making functions to transfer JSON maps.
-    # Need to scan for codex versions in `data/xml` and use that instead of `patch_path` up here.
-
     # Scan for available patched parliaments.
     patched_parliaments = []
     for item in os.listdir(XML_BASE_DIR):
