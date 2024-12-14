@@ -57,6 +57,12 @@ conclusives = [
     "núgildandi",
     "reglum",
     "reglur",
+    # "ríkisútvarpið" occurs only in 23/2013. The string is actually "gilda um
+    # Ríkisútvarpið", which could also be remedied by turning `conclusives`
+    # into regexes and allowing some text after "gilda um". Seeing that it
+    # won't fix any other problem than this exact line, we'll just leave the
+    # name "ríkisútvarpið" here instead for now and possibly forever.
+    "ríkisútvarpið",
     "samkvæmt",
     "samnefndum",
     "samræmast",
