@@ -2,7 +2,9 @@ import re
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.pathing import get_segment
 from lagasafn.pathing import make_xpath_from_node
+from lagasafn.pathing import make_xpath_from_reference
 from lagasafn.utils import strip_links
 from lagasafn.utils import write_xml
 from lxml import etree
@@ -635,3 +637,68 @@ def parse_references():
     write_xml(xml_ref_doc, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
 
     print(" done")
+
+
+def parse_reference_string(reference):
+    # TODO: Sanity check on reference to prevent garbage input.
+    # ...
+
+    law_nr = None
+    law_year = None
+
+    # Make sure there are no stray spaces in reference. They often appear when
+    # copying from PDF documents.
+    reference = reference.strip()
+    while reference.find("  ") > -1:
+        reference = reference.replace("  ", " ")
+
+    # Turn reference into words that we will parse one by one, but backwards,
+    # because human-readable addressing has the most precision in the
+    # beginning ("1. tölul. 2. gr. laga nr. 123/2000") but data addressing the
+    # other way around.
+    words = reference.split(" ")
+    words.reverse()
+
+    # Parse law number and year if they exist.
+    if "/" in words[0] and words[1] == "nr.":
+        law_nr, law_year = words[0].split("/")
+        law_year = int(law_year)
+        words.pop(0)
+        words.pop(0)
+
+    # Map of known human-readable separators and their mappings into elements.
+    known_seps = {
+        "gr.": "art",
+    }
+
+    # Look for a known separator, forwarding over the possible name of the law
+    # and removing it, since it's not useful. This disregards the law's name.
+    known_sep_found = False
+    while not known_sep_found:
+        if words[0] in known_seps:
+            known_sep_found = True
+        else:
+            words.pop(0)
+
+    # At this point the remaining words should begin with something we can
+    # process into a location inside a document.
+
+    # Remove trailing dots from the remaining words, since they'll only get in
+    # the way from now on, but may end up a law's name above.
+    words = [w.strip(".") for w in words]
+
+    # Create selector.
+    xpath = make_xpath_from_reference(words)
+
+    # Also return the segment.
+    segment = get_segment(law_nr, law_year, xpath)
+
+    return {
+        "xpath": xpath,
+        "law_nr": law_nr,
+        "law_year": law_year,
+        "segment": segment,
+        # "reference": reference,
+        # "trails": trails,  # Debug
+        # "words": words,  # Debug
+    }
