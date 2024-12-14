@@ -101,7 +101,7 @@ conclusives = [
 # IMPORTANT: The entire things must be in a group because the length of the
 # entire match is needed in code below.
 inner_reference_patterns = [
-    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafl[ia]( [A-Z])?)$",  # `chapter`
+    r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. kafl[ia]( [a-zA-Z])?)$",  # `chapter`
     r"(([A-Z]{1,9}\.?[-–])?([A-Z]{1,9})\. hluta( [A-Z])?)$",  # `chapter`-ish
     r"([A-Z][-–]hluta( [A-Z])?)$",  # `chapter`-ish (another version)
     r"(((\d{1,3})\.( gr\.( [a-zA-Z] )?)?[-–] ?)?(\d{1,3})\. gr\.( [a-zA-Z])?(,)?)$",  # `art`
