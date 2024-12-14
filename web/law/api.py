@@ -1,15 +1,14 @@
 from django.http import HttpResponse
+from lagasafn.exceptions import NoSuchElementException
+from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.pathing import get_segment
 from lagasafn.pathing import make_xpath_from_reference
-from law.exceptions import LawException
-from law.models import Law
 from lxml import etree
-from lxml.etree import Element
 from ninja import File
 from ninja import NinjaAPI
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
-from typing import List
 from .searchengine import SearchEngine
 from datetime import datetime
 
@@ -19,7 +18,7 @@ api = NinjaAPI()
 searchengine = SearchEngine("search_index.pkl")
 
 @api.get("search/")
-def search(request, q: str):
+def api_search(request, q: str):
     start_time = datetime.now()
     results = searchengine.search(q)
     end_time = datetime.now()
@@ -32,25 +31,8 @@ def search(request, q: str):
     }
 
 
-def convert_to_text(elements: List[Element]):
-    result = ""
-
-    # Cluck together all text in all descendant nodes.
-    for element in elements:
-        for child in element.iterdescendants():
-            if child.text is not None:
-                result += child.text.strip() + " "
-        result = result.strip() + "\n"
-
-    # Remove double spaces that may result from concatenation above.
-    while "  " in result:
-        result = result.replace("  ", " ")
-
-    return result
-
-
 @api.get("parse-reference/")
-def parse_reference(request, reference):
+def api_parse_reference(request, reference):
     # TODO: Sanity check on reference to prevent garbage input.
     # ...
 
@@ -73,6 +55,7 @@ def parse_reference(request, reference):
     # Parse law number and year if they exist.
     if "/" in words[0] and words[1] == "nr.":
         law_nr, law_year = words[0].split("/")
+        law_year = int(law_year)
         words.pop(0)
         words.pop(0)
 
@@ -104,7 +87,7 @@ def parse_reference(request, reference):
         raise HttpError(500, "Confused by: %s" % ex.args[0])
 
     # Also return the segment.
-    segment = get_segment(request, law_nr, law_year, xpath)
+    segment = get_segment(law_nr, law_year, xpath)
 
     return {
         "xpath": xpath,
@@ -118,33 +101,21 @@ def parse_reference(request, reference):
 
 
 @api.get("get-segment/")
-def get_segment(request, law_nr: int, law_year: int, xpath: str):
+def api_get_segment(request, law_nr: str, law_year: int, xpath: str):
+    """
+    An API version of `get_segment`.
+    """
     try:
-        law = Law("%s/%s" % (law_nr, law_year))
-    except LawException as ex:
-        raise HttpError(400, ex.args[0])
-
-    elements = law.xml().xpath(xpath)
-
-    if len(elements) == 0:
+        law_year = int(law_year)
+        return get_segment(law_nr, law_year, xpath)
+    except NoSuchLawException:
+        raise HttpError(400, "No such law found.")
+    except NoSuchElementException:
         raise HttpError(404, "Could not find requested element.")
-
-    text_result = convert_to_text(elements)
-    xml_result = [
-        etree.tostring(
-            element, pretty_print=True, xml_declaration=False, encoding="utf-8"
-        ).decode("utf-8")
-        for element in elements
-    ]
-
-    return {
-        "text_result": text_result,
-        "xml_result": xml_result,
-    }
 
 
 @api.post("normalize/")
-def normalize(request, input_file: UploadedFile = File(...)):
+def api_normalize(request, input_file: UploadedFile = File(...)):
     """
     Takes an uploaded XML law and makes sure that it is formatted in the same
     way as the codex. Useful for comparison.

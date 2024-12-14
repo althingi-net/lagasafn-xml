@@ -1,4 +1,7 @@
-from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.constants import XML_FILENAME
+from lagasafn.exceptions import NoSuchElementException, NoSuchLawException, ReferenceParsingException
+from lagasafn.utils import convert_to_text
+from lxml import etree
 
 
 def make_xpath_from_node(node):
@@ -97,3 +100,28 @@ def make_xpath_from_reference(input_words: str):
             )
 
     return xpath
+
+
+def get_segment(law_nr: str, law_year: int, xpath: str):
+    try:
+        xml = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+    except:
+        raise NoSuchLawException()
+
+    elements = xml.xpath(xpath)
+
+    if len(elements) == 0:
+        raise NoSuchElementException()
+
+    text_result = convert_to_text(elements)
+    xml_result = [
+        etree.tostring(
+            element, pretty_print=True, xml_declaration=False, encoding="utf-8"
+        ).decode("utf-8")
+        for element in elements
+    ]
+
+    return {
+        "text_result": text_result,
+        "xml_result": xml_result,
+    }

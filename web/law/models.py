@@ -14,13 +14,13 @@ from lagasafn.constants import PROBLEMS_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.exceptions import LawException
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
-from law.exceptions import LawException
 from lxml import etree
 from lxml import html
 from math import floor

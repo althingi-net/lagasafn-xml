@@ -7,6 +7,8 @@ import subprocess
 from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lxml import etree
+from lxml.etree import Element
+from typing import List
 
 
 class UnexpectedClosingBracketException(Exception):
@@ -1071,3 +1073,20 @@ def regex_find(string_value, regex, start=0):
     """
     match = re.search(regex, string_value[start:])
     return start + match.start() if match else -1
+
+
+def convert_to_text(elements: List[Element]):
+    result = ""
+
+    # Cluck together all text in all descendant nodes.
+    for element in elements:
+        for child in element.iterdescendants():
+            if child.text is not None:
+                result += child.text.strip() + " "
+        result = result.strip() + "\n"
+
+    # Remove double spaces that may result from concatenation above.
+    while "  " in result:
+        result = result.replace("  ", " ")
+
+    return result
