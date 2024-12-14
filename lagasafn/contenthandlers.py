@@ -1023,8 +1023,8 @@ def generate_synonyms(name: str) -> dict:
         "Stjórnarskrá lýðveldisins Íslands": [
             "Stjórnarskráin",
         ],
-        "Lög um verðbréfaviðskipti": [
-            "Lög um yfirtökur",
+        "Lög um yfirtökur": [
+            "Lög um verðbréfaviðskipti",
         ],
         "Lög um tekjuskatt": [
             "Tekjuskattslög",

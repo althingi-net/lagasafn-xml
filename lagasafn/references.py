@@ -265,7 +265,6 @@ def analyze_potentials(potentials):
         for permutation in flat_permutations:
             permutation = permutation.removeprefix("lögum ")
             if potentials.removesuffix(",").endswith(permutation):
-                #import ipdb; ipdb.set_trace()
                 certain_about_inner = True
                 break
         if certain_about_inner:
@@ -620,7 +619,7 @@ def parse_references():
                     # if loop_found:  # For debugging loops.
                     #     import ipdb; ipdb.set_trace()
                     #
-                    # import ipdb; ipdb.set_race()
+                    # import ipdb; ipdb.set_trace()
 
                     stat_inconclusive_count += 1
 
