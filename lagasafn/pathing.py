@@ -2,6 +2,7 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.exceptions import NoSuchElementException, NoSuchLawException, ReferenceParsingException
 from lagasafn.utils import convert_to_text
 from lxml import etree
+from typing import List
 
 
 def make_xpath_from_node(node):
@@ -47,12 +48,17 @@ def make_xpath_from_node(node):
     return "/".join(xpath_parts)
 
 
-def make_xpath_from_reference(input_words: str):
+def make_xpath_from_inner_reference(inner_reference: str):
 
-    # We'll be butchering this so better make a copy.
-    words = input_words.copy()
+    # Turn the inner reference into a a reversed list that's easier to deal
+    # with word-by-word.
+    words = inner_reference.split(" ")
+    words.reverse()
 
-    def peek(some_list):
+    # Remove trailing dots, since they'll only get in the way.
+    words = [w.strip(".") for w in words]
+
+    def first_or_blank(some_list):
         """
         Utility function so that we can do this inline.
         """
@@ -60,6 +66,8 @@ def make_xpath_from_reference(input_words: str):
 
     xpath = ""
 
+    # This dictinoary contains translates from the actual words used in an
+    # inner reference, into tag names used in the XML.
     translations = {
         "gr": "art",
         "tölul": "numart",
@@ -84,7 +92,7 @@ def make_xpath_from_reference(input_words: str):
             ent_type = translations[word]
             ent_numbers.append(words.pop(0))
 
-            if peek(words) == "eða":
+            if first_or_blank(words) == "eða":
                 words.pop(0)
                 ent_numbers.append(words.pop(0))
         else:

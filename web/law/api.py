@@ -37,7 +37,17 @@ def api_parse_reference_string(request, reference):
     An API version of `parse_reference_string`.
     """
     try:
-        return parse_reference_string(reference)
+        xpath, law_nr, law_year = parse_reference_string(reference)
+
+        segment = get_segment(law_nr, law_year, xpath)
+
+        return {
+            "xpath": xpath,
+            "law_nr": law_nr,
+            "law_year": law_year,
+            "segment": segment,
+        }
+
     except ReferenceParsingException as ex:
         raise HttpError(500, "Confused by: %s" % ex.args[0])
 

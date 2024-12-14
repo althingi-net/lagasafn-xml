@@ -2,9 +2,10 @@ import re
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.pathing import get_segment
 from lagasafn.pathing import make_xpath_from_node
-from lagasafn.pathing import make_xpath_from_reference
+from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.utils import strip_links
 from lagasafn.utils import write_xml
 from lxml import etree
@@ -136,7 +137,7 @@ law_permutations = {}
 
 def get_law_name_permutations():
     """
-    Provides a dictionary with law names as key, containing every known
+    Provides a dictionary with law ID as key, containing every known
     permutation of the law's name, such as declensions, as well as synonyms and
     their declensions.
     """
@@ -343,6 +344,7 @@ def parse_references():
     # These will record statistics as we run through the data, applied to the
     # XML afterwards.
     stat_loop_count = stat_conclusive_count = stat_inconclusive_count = 0
+    stat_reference_xpath_successes = stat_reference_xpath_failures = 0
     xml_ref_doc = E("references")
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
@@ -542,18 +544,28 @@ def parse_references():
                         )
                         law_ref_entry.append(ref_node)
 
-                    ref_node.append(
-                        E(
-                            "reference",
-                            {
-                                "link-label": link_label,
-                                "inner-reference": reference,
-                                "law-nr": target_law_nr,
-                                "law-year": target_law_year,
-                            },
-                        )
+                    ref_reference = E(
+                        "reference",
+                        {
+                            "link-label": link_label,
+                            "inner-reference": reference,
+                            "law-nr": target_law_nr,
+                            "law-year": target_law_year,
+                        },
                     )
-                    xml_ref_doc.append(law_ref_entry)
+
+                    if len(reference) > 0:
+                        try:
+                            xpath = make_xpath_from_inner_reference(reference)
+                            ref_reference.attrib["xpath"] = xpath
+                            del xpath
+
+                            stat_reference_xpath_successes += 1
+                        except ReferenceParsingException:
+                            ref_reference.attrib["xpath-failure"] = "true"
+                            stat_reference_xpath_failures += 1
+
+                    ref_node.append(ref_reference)
 
                     # Since we know that this is a reference, we can cut it out
                     # of the chunk, so that it won't be confusing the parser
@@ -597,6 +609,9 @@ def parse_references():
                     # Record statistics.
                     stat_conclusive_count += 1
 
+                    # Finally add the entry to the XML document.
+                    xml_ref_doc.append(law_ref_entry)
+
                     # This is a good debugging point when you need to take a
                     # look at something that works here before it fails in the
                     # next iteration.
@@ -634,6 +649,8 @@ def parse_references():
     xml_ref_doc.attrib["stat-loop-count"] = str(stat_loop_count)
     xml_ref_doc.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
     xml_ref_doc.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
+    xml_ref_doc.attrib["stat-reference-xpath-successes"] = str(stat_reference_xpath_successes)
+    xml_ref_doc.attrib["stat-reference-xpath-failures"] = str(stat_reference_xpath_failures)
     write_xml(xml_ref_doc, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
 
     print(" done")
@@ -642,6 +659,11 @@ def parse_references():
 def parse_reference_string(reference):
     # TODO: Sanity check on reference to prevent garbage input.
     # ...
+    # FIXME: This function turns the input `reference` into a list and then
+    # does some weird stuff to remove the outer reference (law name and law
+    # nr/year). It would be better to strip the nr/year and name by more
+    # sophisticated means, as this functionality makes certain assumptions
+    # about the relationship between the inner and outer references.
 
     law_nr = None
     law_year = None
@@ -679,26 +701,18 @@ def parse_reference_string(reference):
             known_sep_found = True
         else:
             words.pop(0)
+    del known_sep_found
 
     # At this point the remaining words should begin with something we can
     # process into a location inside a document.
 
-    # Remove trailing dots from the remaining words, since they'll only get in
-    # the way from now on, but may end up a law's name above.
-    words = [w.strip(".") for w in words]
+    # Reconstruct the inner references from the list we've been using, without
+    # the outer reference.
+    words.reverse()
+    inner_reference = " ".join(words)
+    del words
 
-    # Create selector.
-    xpath = make_xpath_from_reference(words)
+    # Create XPath selector from inner reference.
+    xpath = make_xpath_from_inner_reference(inner_reference)
 
-    # Also return the segment.
-    segment = get_segment(law_nr, law_year, xpath)
-
-    return {
-        "xpath": xpath,
-        "law_nr": law_nr,
-        "law_year": law_year,
-        "segment": segment,
-        # "reference": reference,
-        # "trails": trails,  # Debug
-        # "words": words,  # Debug
-    }
+    return xpath, law_nr, law_year
