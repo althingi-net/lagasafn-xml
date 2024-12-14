@@ -38,7 +38,7 @@ def patch_law(law_num, law_year) -> bool:
     return True
 
 
-def get_previous_parliament():
+def get_other_parliament(iteration: int):
 
     # Scan for available patched parliaments.
     patched_parliaments = []
@@ -50,9 +50,11 @@ def get_previous_parliament():
     patched_parliaments.sort()
 
     # This is a list because when we start iterating backwards, we'll want to try both patches 
-    previous_parliament = patched_parliaments[patched_parliaments.index(settings.CURRENT_PARLIAMENT_VERSION) - 1]
-
-    return previous_parliament
+    try:
+        other_parliament = patched_parliaments[patched_parliaments.index(settings.CURRENT_PARLIAMENT_VERSION) + iteration]
+        return other_parliament
+    except IndexError:
+        return None
 
 
 def auto_patch(law_num, law_year):
@@ -61,9 +63,14 @@ def auto_patch(law_num, law_year):
     if isfile(patch_path):
         return
 
-    previous_parliament = get_previous_parliament()
+    previous_parliament = get_other_parliament(-1)
 
-    attempt_patch_transfer(law_num, law_year, previous_parliament)
+    # First try the patch from the previous parliament, but if that doesn't
+    # work, then try the one from the next parliament.
+    if not attempt_patch_transfer(law_num, law_year, previous_parliament):
+        next_parliament = get_other_parliament(1)
+        if next_parliament is not None:
+            attempt_patch_transfer(law_num, law_year, next_parliament)
 
 
 def attempt_patch_transfer(law_num, law_year, previous_parliament):
@@ -93,7 +100,7 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
 
 
 def attempt_json_map_transfer():
-    previous_parliament = get_previous_parliament()
+    previous_parliament = get_other_parliament(-1)
 
     json_files = [
         "errormap.json",
