@@ -632,8 +632,7 @@
       </subart>
       <subart nr="8">
         <paragraph nr="1">
-          <sen nr="1">Launaframtal félaga sem fengið hafa heimild til að færa bókhald og semja ársreikning í erlendum gjaldmiðli skv. 11. gr.</sen>
-          <sen nr="2">A laga um ársreikninga skal byggjast á upprunalegum fjárhæðum í íslenskum krónum eða umreiknuðum fjárhæðum á daggengi.</sen>
+          <sen nr="1">Launaframtal félaga sem fengið hafa heimild til að færa bókhald og semja ársreikning í erlendum gjaldmiðli skv. 11. gr. A laga um ársreikninga skal byggjast á upprunalegum fjárhæðum í íslenskum krónum eða umreiknuðum fjárhæðum á daggengi.</sen>
         </paragraph>
       </subart>
       <footnotes>
@@ -674,10 +673,7 @@
         </footnote>
         <footnote href="https://www.althingi.is/altext/stjt/2002.034.html" law-nr="34" law-year="2002" law-art="2" nr="8">
           <footnote-sen>L. 34/2002, 2. gr.</footnote-sen>
-          <location type="range" string-length="238">
-            <start xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']"/>
-            <end xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='2']"/>
-          </location>
+          <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
         </footnote>
       </footnotes>
     </art>
