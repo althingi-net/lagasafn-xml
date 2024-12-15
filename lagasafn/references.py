@@ -344,7 +344,7 @@ def parse_references():
     # These will record statistics as we run through the data, applied to the
     # XML afterwards.
     stat_loop_count = stat_conclusive_count = stat_inconclusive_count = 0
-    stat_reference_xpath_successes = stat_reference_xpath_failures = 0
+    stat_xpath_successes = stat_xpath_failures = stat_xpath_resolution_failures = 0
     xml_ref_doc = E("references")
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
@@ -531,6 +531,7 @@ def parse_references():
                     # To adhere to our established norm of separating law
                     # number and law year.
                     target_law_nr, target_law_year = nr_and_year.split("/")
+                    target_law_year = int(target_law_year)
 
                     # Either find or construct the node for the given entry.
                     ref_node = law_ref_entry.find('node[@location="%s"]' % location)
@@ -550,20 +551,28 @@ def parse_references():
                             "link-label": link_label,
                             "inner-reference": reference,
                             "law-nr": target_law_nr,
-                            "law-year": target_law_year,
+                            "law-year": str(target_law_year),
                         },
                     )
 
-                    if len(reference) > 0:
+                    if len(reference) == 0:
+                        # There is no inner reference so we can count this as a succcess.
+                        stat_xpath_successes +=1
+                    else:
                         try:
                             xpath = make_xpath_from_inner_reference(reference)
-                            ref_reference.attrib["xpath"] = xpath
+                            try:
+                                get_segment(target_law_nr, target_law_year, xpath)
+                                ref_reference.attrib["xpath"] = xpath
+                                stat_xpath_successes += 1
+                            except Exception as ex:
+                                ref_reference.attrib["xpath-resolution-failure"] = "true"
+                                stat_xpath_resolution_failures += 1
                             del xpath
 
-                            stat_reference_xpath_successes += 1
                         except ReferenceParsingException:
                             ref_reference.attrib["xpath-failure"] = "true"
-                            stat_reference_xpath_failures += 1
+                            stat_xpath_failures += 1
 
                     ref_node.append(ref_reference)
 
@@ -649,8 +658,9 @@ def parse_references():
     xml_ref_doc.attrib["stat-loop-count"] = str(stat_loop_count)
     xml_ref_doc.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
     xml_ref_doc.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
-    xml_ref_doc.attrib["stat-reference-xpath-successes"] = str(stat_reference_xpath_successes)
-    xml_ref_doc.attrib["stat-reference-xpath-failures"] = str(stat_reference_xpath_failures)
+    xml_ref_doc.attrib["stat-xpath-successes"] = str(stat_xpath_successes)
+    xml_ref_doc.attrib["stat-xpath-failures"] = str(stat_xpath_failures)
+    xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(stat_xpath_resolution_failures)
     write_xml(xml_ref_doc, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
 
     print(" done")
