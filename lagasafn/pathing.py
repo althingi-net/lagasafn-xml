@@ -1,6 +1,8 @@
+import roman
 from lagasafn.constants import XML_FILENAME
 from lagasafn.exceptions import NoSuchElementException, NoSuchLawException, ReferenceParsingException
 from lagasafn.utils import convert_to_text
+from lagasafn.utils import is_roman
 from lxml import etree
 from typing import List
 
@@ -64,6 +66,19 @@ def make_xpath_from_inner_reference(inner_reference: str):
         """
         return some_list[0] if len(some_list) else ""
 
+    def real_number(input_number):
+        """
+        Takes a number that could be a Roman numeral or whatever else, and
+        returns the proper number to look up by.
+        """
+        number = input_number
+
+        # Convert from Roman numeral if appropriate.
+        if is_roman(number):
+            number = roman.fromRoman(number)
+
+        return number
+
     xpath = ""
 
     # This dictinoary contains translates from the actual words used in an
@@ -72,6 +87,8 @@ def make_xpath_from_inner_reference(inner_reference: str):
         "gr": "art",
         "tölul": "numart",
         "mgr": "subart",
+        "kafli": "chapter",
+        "kafla": "chapter",
     }
 
     while len(words):
@@ -90,11 +107,14 @@ def make_xpath_from_inner_reference(inner_reference: str):
             ent_numbers.append(word[: word.find("-lið")])
         elif word in translations.keys():
             ent_type = translations[word]
-            ent_numbers.append(words.pop(0))
 
-            if first_or_blank(words) == "eða":
+            ent_numbers.append(real_number(words.pop(0)))
+
+            # All of these combinatory words result in us looking up all of
+            # them, so they are all in effect "or", for our purposes.
+            if first_or_blank(words) in ["og", "eða", "og/eða"]:
                 words.pop(0)
-                ent_numbers.append(words.pop(0))
+                ent_numbers.append(real_number(words.pop(0)))
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException(word)
