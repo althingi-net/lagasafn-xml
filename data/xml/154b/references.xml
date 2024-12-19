@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<references stat-loop-count="0" stat-inconclusive-count="0" stat-conclusive-count="2302" stat-xpath-successes="1946" stat-xpath-failures="207" stat-xpath-resolution-failures="149">
+<references stat-loop-count="0" stat-inconclusive-count="0" stat-conclusive-count="2302" stat-xpath-successes="1986" stat-xpath-failures="189" stat-xpath-resolution-failures="127">
   <law-ref-entry law-nr="16" law-year="2024">
     <node location="art[@nr='9']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Verði fasteignasölum falið að annast skjalagerð vegna kaupa sem falla undir gildissvið laga þessara gilda ekki um þau eignakaup ákvæði sem koma fram í II. kafla laga um sölu fasteigna og skipa, nr. 70/2015.">
       <reference link-label="II. kafla laga um sölu fasteigna og skipa, nr. 70/2015" inner-reference="II. kafla" law-nr="70" law-year="2015" xpath="//chapter[@nr='2']"/>
@@ -31,7 +31,7 @@
       <reference link-label="lögum um tímabundinn stuðning til greiðslu launa vegna náttúruhamfara í Grindavíkurbæ, nr. 87/2023" inner-reference="" law-nr="87" law-year="2023"/>
     </node>
     <node location="art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem ekki er á annan veg kveðið á um í lögum þessum gilda ákvæði 94.– 97. gr. laga um tekjuskatt, nr. 90/2003, eftir því sem við getur átt um afgreiðslu umsókna og endurákvarðanir Skattsins.">
-      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='94' or @nr='95' or @nr='96' or @nr='97')]"/>
     </node>
     <node location="art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Kröfur um endurgreiðslur samkvæmt grein þessari bera vexti skv. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá þeim degi sem aðili fékk rekstrarstuðning.">
       <reference link-label="4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']"/>
@@ -130,16 +130,16 @@
       <reference link-label="2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="2. mgr. 38. gr." law-nr="140" law-year="2018" xpath="//art[@nr='38']//subart[@nr='2']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Tilkynningarskyldir aðilar skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu hafa viðeigandi kerfi, ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.">
-      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='a' or @nr='b' or @nr='c' or @nr='d' or @nr='e' or @nr='f' or @nr='g' or @nr='h')]"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Tilkynningarskyldir aðilar skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu innleiða ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.">
-      <reference link-label="i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="i–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="i–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='i' or @nr='j' or @nr='k' or @nr='l' or @nr='m' or @nr='n' or @nr='o' or @nr='p' or @nr='q' or @nr='r' or @nr='s' or @nr='t' or @nr='u')]"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='25']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Fjármálaeftirlitið skal án tafar framsenda allar tilkynningar skv. 1. mgr. til tilkynningarskyldra aðila skv. a–j-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.">
-      <reference link-label="a–j-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–j-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="a–j-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–j-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='a' or @nr='b' or @nr='c' or @nr='d' or @nr='e' or @nr='f' or @nr='g' or @nr='h' or @nr='i' or @nr='j')]"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='25']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" text="Ríkisskattstjóri skal án tafar birta allar tilkynningar skv. 1. mgr. á aðgengilegan máta fyrir tilkynningarskylda aðila skv. l–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.">
-      <reference link-label="l–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="l–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="l–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="l–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='l' or @nr='m' or @nr='n' or @nr='o' or @nr='p' or @nr='q' or @nr='r' or @nr='s' or @nr='t' or @nr='u')]"/>
     </node>
     <node location="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='26']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Fjármálaeftirlitið hefur eftirlit með því að tilkynningarskyldir aðilar sem falla undir 1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, fari að ákvæðum 10. og 13. gr. laga þessara.">
       <reference link-label="1. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="1. mgr. 38. gr." law-nr="140" law-year="2018" xpath="//art[@nr='38']//subart[@nr='1']"/>
@@ -148,13 +148,13 @@
       <reference link-label="2. mgr. 38. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="2. mgr. 38. gr." law-nr="140" law-year="2018" xpath="//art[@nr='38']//subart[@nr='2']"/>
     </node>
     <node location="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='30']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 5 millj. kr. til 800 millj. kr. Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 500 þús. kr. til 625 millj. kr.">
-      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='a' or @nr='b' or @nr='c' or @nr='d' or @nr='e' or @nr='f' or @nr='g' or @nr='h')]"/>
     </node>
     <node location="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='30']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir 3. mgr. geta stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, verið allt að 10% af heildarveltu samkvæmt síðasta samþykkta ársreikningi lögaðilans eða 10% af síðasta samþykkta samstæðureikningi ef lögaðili er hluti af samstæðu.">
-      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="a–h-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='a' or @nr='b' or @nr='c' or @nr='d' or @nr='e' or @nr='f' or @nr='g' or @nr='h')]"/>
     </node>
     <node location="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='30']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" text="Stjórnvaldssektir sem lagðar eru á tilkynningarskylda aðila skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, geta numið frá 500 þús. kr. til 500 millj. kr. Stjórnvaldssektir sem lagðar eru á starfsmenn þeirra geta numið frá 100 þús. kr. til 125 millj. kr.">
-      <reference link-label="i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="i–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath-resolution-failure="true"/>
+      <reference link-label="i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="i–u-lið 1. mgr. 2. gr." law-nr="140" law-year="2018" xpath="//art[@nr='2']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='i' or @nr='j' or @nr='k' or @nr='l' or @nr='m' or @nr='n' or @nr='o' or @nr='p' or @nr='q' or @nr='r' or @nr='s' or @nr='t' or @nr='u')]"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="67" law-year="2023">
@@ -416,7 +416,7 @@
       <reference link-label="5. tölul. 1. mgr. 1. gr. laga um aðför, nr. 90/1989" inner-reference="5. tölul. 1. mgr. 1. gr." law-nr="90" law-year="1989" xpath="//art[@nr='1']//subart[@nr='1']//numart[@nr='5']"/>
     </node>
     <node location="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='84']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Um aðgang netöryggissveitar að gögnum og upplýsingum, um sérstaka þagnarskyldu og undanþágur frá slíkri skyldu og um meðferð persónuupplýsinga skal fara eftir ákvæðum 17. og 19.–21. gr. laga um öryggi net- og upplýsingakerfa mikilvægra innviða, nr. 78/2019.">
-      <reference link-label="17. og 19.–21. gr. laga um öryggi net- og upplýsingakerfa mikilvægra innviða, nr. 78/2019" inner-reference="17. og 19.–21. gr." law-nr="78" law-year="2019" xpath="//art[@nr='19.–21' or @nr='17']"/>
+      <reference link-label="17. og 19.–21. gr. laga um öryggi net- og upplýsingakerfa mikilvægra innviða, nr. 78/2019" inner-reference="17. og 19.–21. gr." law-nr="78" law-year="2019" xpath="//art[(@nr='19' or @nr='20' or @nr='21') or @nr='17']"/>
     </node>
     <node location="chapter[@nr='15' and @chapter-type='kafli']/art[@nr='101']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Láti fjarskiptafyrirtæki ekki af broti sínu innan settra tímamarka getur Fjarskiptastofa gripið til viðeigandi ráðstafana skv. 5. mgr. eða 102. gr. eða lagt á dagsektir í samræmi við 19. gr. laga um Fjarskiptastofu, nr. 75/2021.">
       <reference link-label="19. gr. laga um Fjarskiptastofu, nr. 75/2021" inner-reference="19. gr." law-nr="75" law-year="2021" xpath="//art[@nr='19']"/>
@@ -525,7 +525,7 @@
       <reference link-label="2. mgr. 12. gr. sóttvarnalaga, nr. 19/1997" inner-reference="2. mgr. 12. gr." law-nr="19" law-year="1997" xpath="//art[@nr='12']//subart[@nr='2']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem ekki er á annan veg kveðið á um í lögum þessum gilda ákvæði 94.– 97. gr. laga um tekjuskatt, nr. 90/2003, eftir því sem við getur átt um afgreiðslu umsókna og endurákvarðanir Skattsins.">
-      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='94' or @nr='95' or @nr='96' or @nr='97')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Hafi rekstraraðili fengið styrk umfram það sem hann átti rétt á ber honum að endurgreiða þá fjárhæð sem ofgreidd var með vöxtum skv. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá greiðsludegi.">
       <reference link-label="4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']"/>
@@ -815,7 +815,7 @@
   <law-ref-entry law-nr="55" law-year="2021">
     <node location="art[@nr='1']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" text="Jafnframt gilda lögin um þá aðila sem bjóða upp á viðbótartryggingavernd skv. II. kafla laga nr. 129/1997, sbr. 3.–5. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997.">
       <reference link-label="II. kafla laga nr. 129/1997" inner-reference="II. kafla" law-nr="129" law-year="1997" xpath="//chapter[@nr='2']"/>
-      <reference link-label="3.–5. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997" inner-reference="3.–5. mgr. 8. gr." law-nr="129" law-year="1997" xpath-resolution-failure="true"/>
+      <reference link-label="3.–5. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997" inner-reference="3.–5. mgr. 8. gr." law-nr="129" law-year="1997" xpath="//art[@nr='8']//subart[(@nr='3' or @nr='4' or @nr='5')]"/>
     </node>
     <node location="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Ákvæði eftirfarandi reglugerða, eins og þær voru teknar upp í samninginn um Evrópska efnahagssvæðið, skulu hafa lagagildi hér á landi með þeim aðlögunum sem leiðir af ákvörðunum sameiginlegu EES-nefndarinnar nr. 67/2020 frá 30. apríl 2020, sbr. einnig bókun 1 um altæka aðlögun við samninginn um Evrópska efnahagssvæðið, sbr. lög um Evrópska efnahagssvæðið, nr. 2/1993, þar sem bókunin er lögfest:">
       <reference link-label="lög um Evrópska efnahagssvæðið, nr. 2/1993" inner-reference="" law-nr="2" law-year="1993"/>
@@ -930,7 +930,7 @@
       <reference link-label="B-lið 7. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="B-lið 7. gr." law-nr="90" law-year="2003" xpath="//art[@nr='7']//*[self::numart or self::art-chapter][@nr='B']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem ekki er á annan veg kveðið á um í lögum þessum gilda ákvæði 94.– 97. gr. laga um tekjuskatt, nr. 90/2003, eftir því sem við getur átt um afgreiðslu umsókna og endurákvarðanir Skattsins.">
-      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='94' or @nr='95' or @nr='96' or @nr='97')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Hafi rekstraraðili fengið viðspyrnustyrk umfram það sem hann átti rétt á ber honum að endurgreiða þá fjárhæð sem ofgreidd var með vöxtum skv. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá greiðsludegi.">
       <reference link-label="4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']"/>
@@ -1028,7 +1028,7 @@
       <reference link-label="lögum nr. 50/2020" inner-reference="" law-nr="50" law-year="2020"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem ekki er á annan veg kveðið á um í lögum þessum gilda ákvæði 94.– 97. gr. laga um tekjuskatt, nr. 90/2003, eftir því sem við getur átt um afgreiðslu umsókna og endurákvarðanir Skattsins.">
-      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='94' or @nr='95' or @nr='96' or @nr='97')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Hafi rekstraraðili fengið tekjufallsstyrk umfram það sem hann átti rétt á ber honum að endurgreiða þá fjárhæð sem ofgreidd var með vöxtum skv. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá greiðsludegi.">
       <reference link-label="4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']"/>
@@ -1092,13 +1092,13 @@
       <reference link-label="2. tölul. 110. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="2. tölul. 110. gr." law-nr="21" law-year="1991" xpath="//art[@nr='110']//numart[@nr='2']"/>
     </node>
     <node location="superchapter[@nr='3']/chapter[@nr='14' and @chapter-type='kafli']/art[@nr='85a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Næstar kröfum skv. 109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991, sbr. þó a-lið 1. tölul., ganga eftirfarandi kröfur á hendur fyrirtæki eða einingu í þeirri röð sem hér segir:">
-      <reference link-label="109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="109.–112. gr." law-nr="21" law-year="1991" xpath-resolution-failure="true"/>
+      <reference link-label="109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="109.–112. gr." law-nr="21" law-year="1991" xpath="//art[(@nr='109' or @nr='110' or @nr='111' or @nr='112')]"/>
     </node>
     <node location="superchapter[@nr='3']/chapter[@nr='14' and @chapter-type='kafli']/art[@nr='85a']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1']" text="kröfur vegna tryggðra innstæðna og kröfur sem Tryggingarsjóður vegna fjármálafyrirtækja hefur tekið yfir vegna tryggðra innstæðna njóta rétthæðar skv. 112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991,">
       <reference link-label="112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="112. gr." law-nr="21" law-year="1991" xpath="//art[@nr='112']"/>
     </node>
     <node location="superchapter[@nr='3']/chapter[@nr='14' and @chapter-type='kafli']/art[@nr='85a']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Kröfur skv. 1.–3. tölul. 114. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991, í þeirri röð sem þar segir.">
-      <reference link-label="1.–3. tölul. 114. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="1.–3. tölul. 114. gr." law-nr="21" law-year="1991" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. tölul. 114. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="1.–3. tölul. 114. gr." law-nr="21" law-year="1991" xpath="//art[@nr='114']//numart[(@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="60" law-year="2020">
@@ -1145,7 +1145,7 @@
       <reference link-label="12. tölul. 2. mgr. 9. gr. og 2. mgr. 20. gr. laga um hlutafélög, nr. 2/1995" inner-reference="12. tölul. 2. mgr. 9. gr. og 2. mgr. 20. gr." law-nr="2" law-year="1995" xpath-failure="true"/>
     </node>
     <node location="art[@nr='8']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem ekki er á annan veg kveðið á um í lögum þessum gilda ákvæði 94.– 97. gr. laga um tekjuskatt, nr. 90/2003, eftir því sem við getur átt um afgreiðslu umsókna og endurákvarðanir stuðnings.">
-      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="94.– 97. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="94.– 97. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='94' or @nr='95' or @nr='96' or @nr='97')]"/>
     </node>
     <node location="art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Verðbætur reiknast miðað við breytingar á vísitölu neysluverðs, sbr. 1. mgr. 14. gr. laga um vexti og verðtryggingu, nr. 38/2001.">
       <reference link-label="1. mgr. 14. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="1. mgr. 14. gr." law-nr="38" law-year="2001" xpath="//art[@nr='14']//subart[@nr='1']"/>
@@ -1536,7 +1536,7 @@
       <reference link-label="laga um persónuvernd og vinnslu persónuupplýsinga, nr. 90/2018" inner-reference="" law-nr="90" law-year="2018"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" text="Ákvæði 17. og 20.– 22. gr. laga nr. 90/2018, sbr. 12.–22. og 34. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) 2016/679 um vernd einstaklinga í tengslum við vinnslu persónuupplýsinga og um frjálsa miðlun slíkra upplýsinga og niðurfellingu tilskipunar 95/46/EB, gilda þó ekki um starfsemi netöryggissveitar samkvæmt lögum þessum.">
-      <reference link-label="17. og 20.– 22. gr. laga nr. 90/2018" inner-reference="17. og 20.– 22. gr." law-nr="90" law-year="2018" xpath-failure="true"/>
+      <reference link-label="17. og 20.– 22. gr. laga nr. 90/2018" inner-reference="17. og 20.– 22. gr." law-nr="90" law-year="2018" xpath="//art[(@nr='20' or @nr='21' or @nr='22') or @nr='17']"/>
     </node>
     <node location="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='26']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Nú er brot skv. 1. mgr. framið í starfsemi lögaðila og má þá gera lögaðilanum fésekt skv. II. kafla A almennra hegningarlaga, nr. 19/1940.">
       <reference link-label="II. kafla A almennra hegningarlaga, nr. 19/1940" inner-reference="II. kafla A" law-nr="19" law-year="1940" xpath-failure="true"/>
@@ -1623,7 +1623,7 @@
   </law-ref-entry>
   <law-ref-entry law-nr="155" law-year="2018">
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Telji Land og skógur að eigandi eða rétthafi lands sinni ekki gerð landbótaáætlunar eða að hlutaðeigandi aðili eða aðilar fylgi ekki ákvæðum hennar skal stofnunin óska eftir ítölu, sbr. ákvæði 17.–25. gr. laga um afréttamálefni, fjallskil o.fl., nr. 6/1986, eða fara fram á takmörkun umferðar, sbr. 25. gr. og 25. gr. a í lögum um náttúruvernd, nr. 60/2013.">
-      <reference link-label="17.–25. gr. laga um afréttamálefni, fjallskil o.fl., nr. 6/1986" inner-reference="17.–25. gr." law-nr="6" law-year="1986" xpath-resolution-failure="true"/>
+      <reference link-label="17.–25. gr. laga um afréttamálefni, fjallskil o.fl., nr. 6/1986" inner-reference="17.–25. gr." law-nr="6" law-year="1986" xpath="//art[(@nr='17' or @nr='18' or @nr='19' or @nr='20' or @nr='21' or @nr='22' or @nr='23' or @nr='24' or @nr='25')]"/>
       <reference link-label="lögum um náttúruvernd, nr. 60/2013" inner-reference="" law-nr="60" law-year="2013"/>
     </node>
     <node location="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='22']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Hafi land verið tekið eignarnámi til uppgræðslu eða landi verið afsalað til Lands og skógar til uppgræðslu eða til að verjast sandágangi hefur eigandi þeirrar jarðar sem viðkomandi land tilheyrði áður kauprétt að því, sbr. 36. gr. a jarðalaga, nr. 81/2004.">
@@ -1632,7 +1632,7 @@
   </law-ref-entry>
   <law-ref-entry law-nr="145" law-year="2018">
     <node location="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" text="Ákvæði 90. og 92.– 94. gr. laga um tekjuskatt, nr. 90/2003, gilda um öflun og skil þessara upplýsinga, eftir því sem við á.">
-      <reference link-label="90. og 92.– 94. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="90. og 92.– 94. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="90. og 92.– 94. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="90. og 92.– 94. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='92' or @nr='93' or @nr='94') or @nr='90']"/>
     </node>
     <node location="art[@nr='5']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']" text="Ákvörðun ríkisskattstjóra um álagningu þessa gjalds er kæranleg til yfirskattanefndar, sbr. lög nr. 30/1992.">
       <reference link-label="lög nr. 30/1992" inner-reference="" law-nr="30" law-year="1992"/>
@@ -1849,7 +1849,7 @@
       <reference link-label="4. gr. laga um fjármálafyrirtæki, nr. 161/2002" inner-reference="4. gr." law-nr="161" law-year="2002" xpath="//art[@nr='4']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" text="Lánveitandi eða lánamiðlari telst hafa uppfyllt kröfur um upplýsingar skv. 5.– 8. gr. laga um fjarsölu á fjármálaþjónustu, nr. 33/2005, með veitingu upplýsinga á eyðublaði skv. 1. mgr.">
-      <reference link-label="5.– 8. gr. laga um fjarsölu á fjármálaþjónustu, nr. 33/2005" inner-reference="5.– 8. gr." law-nr="33" law-year="2005" xpath-failure="true"/>
+      <reference link-label="5.– 8. gr. laga um fjarsölu á fjármálaþjónustu, nr. 33/2005" inner-reference="5.– 8. gr." law-nr="33" law-year="2005" xpath="//art[(@nr='5' or @nr='6' or @nr='7' or @nr='8')]"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']" text="Ef um er að ræða samskipti í síma skv. 9. gr. laga um fjarsölu á fjármálaþjónustu, nr. 33/2005, skal lýsing á helstu einkennum fjármálaþjónustu, sem ber að veita skv. 2. tölul. 2. mgr. 9. gr. þeirra laga, a.m.k. fela í sér þá þætti sem fram koma í 3.–6. lið A-hluta eyðublaðsins sem birt er í reglugerð skv. 1. mgr.">
       <reference link-label="9. gr. laga um fjarsölu á fjármálaþjónustu, nr. 33/2005" inner-reference="9. gr." law-nr="33" law-year="2005" xpath="//art[@nr='9']"/>
@@ -2563,7 +2563,7 @@
   </law-ref-entry>
   <law-ref-entry law-nr="33" law-year="2013">
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Lánveitandi telst hafa uppfyllt kröfur um upplýsingar skv. 5.– 6. gr. laga nr. 33/2005, um fjarsölu á fjármálaþjónustu, ef hann hefur veitt upplýsingar á stöðluðu eyðublaði skv. 2. mgr.">
-      <reference link-label="5.– 6. gr. laga nr. 33/2005" inner-reference="5.– 6. gr." law-nr="33" law-year="2005" xpath-failure="true"/>
+      <reference link-label="5.– 6. gr. laga nr. 33/2005" inner-reference="5.– 6. gr." law-nr="33" law-year="2005" xpath="//art[(@nr='5' or @nr='6')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" text="Þegar um er að ræða sölu eða markaðssetningu í síma í skilningi 9. gr. laga nr. 33/2005, um fjarsölu á fjármálaþjónustu, skal í lýsingu á helstu einkennum fjármálaþjónustu sem skal veita skv. 2. tölul. 2. mgr. 9. gr. sömu laga tiltaka að lágmarki þau atriði sem eru tilgreind í c–f- og h-lið 4. mgr., ásamt árlegri hlutfallstölu kostnaðar, útskýrt með viðeigandi dæmi og heildarfjárhæð sem neytanda ber að greiða.">
       <reference link-label="9. gr. laga nr. 33/2005" inner-reference="9. gr." law-nr="33" law-year="2005" xpath="//art[@nr='9']"/>
@@ -2572,7 +2572,7 @@
       <reference link-label="3. tölul. 4. gr. laga nr. 33/2005" inner-reference="3. tölul. 4. gr." law-nr="33" law-year="2005" xpath="//art[@nr='4']//numart[@nr='3']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" text="Lánveitandi telst hafa uppfyllt kröfur um upplýsingar samkvæmt þessari málsgrein og skv. 5.– 6. gr. laga nr. 33/2005, um fjarsölu á fjármálaþjónustu, ef hann hefur veitt lánsupplýsingar á stöðluðu eyðublaði, sbr. 2. mgr. 7. gr.">
-      <reference link-label="5.– 6. gr. laga nr. 33/2005" inner-reference="5.– 6. gr." law-nr="33" law-year="2005" xpath-failure="true"/>
+      <reference link-label="5.– 6. gr. laga nr. 33/2005" inner-reference="5.– 6. gr." law-nr="33" law-year="2005" xpath="//art[(@nr='5' or @nr='6')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']" text="Ef samningur hefur verið gerður að beiðni neytanda með fjarskiptaaðferð í skilningi 3. tölul. 4. gr. laga nr. 33/2005, um fjarsölu á fjármálaþjónustu, sem gerir ókleift að veita upplýsingar í samræmi við 1.–4. mgr., einkum í tilvikum skv. 5. mgr., skal lánveitandi þegar í stað eftir gerð samnings uppfylla skyldur sínar skv. 1.–4. mgr. með því að veita upplýsingar um samning skv. 12. gr., að svo miklu leyti sem hún á við.">
       <reference link-label="3. tölul. 4. gr. laga nr. 33/2005" inner-reference="3. tölul. 4. gr." law-nr="33" law-year="2005" xpath="//art[@nr='4']//numart[@nr='3']"/>
@@ -3736,7 +3736,7 @@
       <reference link-label="1. mgr. 2. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997" inner-reference="1. mgr. 2. gr." law-nr="129" law-year="1997" xpath="//art[@nr='2']//subart[@nr='1']"/>
     </node>
     <node location="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='14']/paragraph[@nr='1']/sen[@nr='1']" text="Sú tryggingavernd sem er umfram þá lágmarkstryggingavernd sem lífeyrissjóður skilgreinir og greitt er fyrir með greiðslu iðgjalds samkvæmt sérstökum samningi við þá aðila sem tilgreindir eru í 1.–3. tölul. 3. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997.">
-      <reference link-label="1.–3. tölul. 3. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997" inner-reference="1.–3. tölul. 3. mgr. 8. gr." law-nr="129" law-year="1997" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. tölul. 3. mgr. 8. gr. laga um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, nr. 129/1997" inner-reference="1.–3. tölul. 3. mgr. 8. gr." law-nr="129" law-year="1997" xpath="//art[@nr='8']//subart[@nr='3']//numart[(@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='22']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Til tekna samkvæmt þessum kafla teljast tekjur skv. II. kafla laga um tekjuskatt, nr. 90/2003, að teknu tilliti til ákvæða sömu laga um hvað ekki telst til tekna og frádráttarliða skv. 1., 3., 4. og 5. tölul. A-liðar 1. mgr. 30. gr. og 31. gr. sömu laga eða undantekninga og takmarkana samkvæmt öðrum sérlögum.">
       <reference link-label="II. kafla laga um tekjuskatt, nr. 90/2003" inner-reference="II. kafla" law-nr="90" law-year="2003" xpath="//chapter[@nr='2']"/>
@@ -4509,7 +4509,7 @@
       <reference link-label="4. tölul. 3. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019" inner-reference="4. tölul. 3. gr." law-nr="82" law-year="2019" xpath="//art[@nr='3']//numart[@nr='4']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='10b']/subart[@nr='5']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']" text="Ef fjárvörslusjóður eða sambærilegur aðili á í hlut skal hvað hann varðar gera grein fyrir aðilum sem falla undir a–e-lið 1. mgr. 5. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019.">
-      <reference link-label="a–e-lið 1. mgr. 5. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019" inner-reference="a–e-lið 1. mgr. 5. gr." law-nr="82" law-year="2019" xpath-resolution-failure="true"/>
+      <reference link-label="a–e-lið 1. mgr. 5. gr. laga um skráningu raunverulegra eigenda, nr. 82/2019" inner-reference="a–e-lið 1. mgr. 5. gr." law-nr="82" law-year="2019" xpath="//art[@nr='5']//subart[@nr='1']//*[self::numart or self::art-chapter][(@nr='a' or @nr='b' or @nr='c' or @nr='d' or @nr='e')]"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='10b']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='3']" text="Jafnframt skal ríkisskattstjóri tilkynna slík tilvik til stýrihóps sem starfar skv. 39. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, vegna samhæfingar aðgerða á því sviði.">
       <reference link-label="39. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018" inner-reference="39. gr." law-nr="140" law-year="2018" xpath="//art[@nr='39']"/>
@@ -4597,7 +4597,7 @@
       <reference link-label="lög um Evrópska efnahagssvæðið, nr. 2/1993" inner-reference="" law-nr="2" law-year="1993"/>
     </node>
     <node location="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='39']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Um vátryggingu lausafjár, sem hægt er að skrá sérstaklega í lausafjárbók, skipabók og bifreiðabók, sbr. 2.–4. tölul. 1. mgr. 8. gr. þinglýsingalaga, nr. 39/1978, rekstrartækja, sbr. 2. mgr. 24. gr. laga um samningsveð, nr. 75/1997, og vörubirgða, sbr. 2. mgr. 33. gr. sömu laga, gilda ákvæði 2. mgr. einnig ef réttindum er þinglýst eða þau skráð í viðkomandi skrá.">
-      <reference link-label="2.–4. tölul. 1. mgr. 8. gr. þinglýsingalaga, nr. 39/1978" inner-reference="2.–4. tölul. 1. mgr. 8. gr." law-nr="39" law-year="1978" xpath-resolution-failure="true"/>
+      <reference link-label="2.–4. tölul. 1. mgr. 8. gr. þinglýsingalaga, nr. 39/1978" inner-reference="2.–4. tölul. 1. mgr. 8. gr." law-nr="39" law-year="1978" xpath="//art[@nr='8']//subart[@nr='1']//numart[(@nr='2' or @nr='3' or @nr='4')]"/>
       <reference link-label="2. mgr. 24. gr. laga um samningsveð, nr. 75/1997" inner-reference="2. mgr. 24. gr." law-nr="75" law-year="1997" xpath="//art[@nr='24']//subart[@nr='2']"/>
     </node>
     <node location="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='50']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" text="Almennir vextir samkvæmt þessari grein skulu vera hinir sömu og greiða ber á skaðabætur samkvæmt lögum um vexti og verðtryggingu, nr. 38/2001.">
@@ -4677,13 +4677,13 @@
       <reference link-label="9. tölul. 4. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="9. tölul. 4. gr." law-nr="90" law-year="2003" xpath="//art[@nr='4']//numart[@nr='9']"/>
     </node>
     <node location="art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='2']/sen[@nr='1']" text="Sé almennt markaðsverðmæti fasteignar talið lægra en fasteignamatsverð eignarinnar er erfingjum heimilt að óska eftir mati skv. 17.– 23. gr. laga nr. 20/1991, um skipti á dánarbúum o.fl.">
-      <reference link-label="17.– 23. gr. laga nr. 20/1991" inner-reference="17.– 23. gr." law-nr="20" law-year="1991" xpath-failure="true"/>
+      <reference link-label="17.– 23. gr. laga nr. 20/1991" inner-reference="17.– 23. gr." law-nr="20" law-year="1991" xpath="//art[(@nr='17' or @nr='18' or @nr='19' or @nr='20' or @nr='21' or @nr='22' or @nr='23')]"/>
     </node>
     <node location="art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='2']/sen[@nr='3']" text="Að öðru leyti gilda ákvæði II. kafla laga nr. 20/1991 um mat samkvæmt þessum staflið.">
       <reference link-label="II. kafla laga nr. 20/1991" inner-reference="II. kafla" law-nr="20" law-year="1991" xpath="//chapter[@nr='2']"/>
     </node>
     <node location="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" text="Kostnaður sem fellur á búið vegna ráðstafana skv. 17.– 21. gr. laga nr. 20/1991, um skipti á dánarbúum o.fl., skal einnig koma til frádráttar hvort heldur bú sætir opinberum skiptum eða einkaskiptum.">
-      <reference link-label="17.– 21. gr. laga nr. 20/1991" inner-reference="17.– 21. gr." law-nr="20" law-year="1991" xpath-failure="true"/>
+      <reference link-label="17.– 21. gr. laga nr. 20/1991" inner-reference="17.– 21. gr." law-nr="20" law-year="1991" xpath="//art[(@nr='17' or @nr='18' or @nr='19' or @nr='20' or @nr='21')]"/>
     </node>
     <node location="art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Erfingi, sem telur erfðafjárskatt eða skattstofn samkvæmt ákvæðum laga þessara eigi rétt ákveðinn, getur sent skriflega rökstudda kæru, studda nauðsynlegum gögnum, til yfirskattanefndar og fer meðferð kærunnar þá eftir ákvæðum laga nr. 30/1992, um yfirskattanefnd.">
       <reference link-label="laga nr. 30/1992" inner-reference="" law-nr="30" law-year="1992"/>
@@ -4723,7 +4723,7 @@
       <reference link-label="lögum nr. 78/2007" inner-reference="" law-nr="78" law-year="2007"/>
     </node>
     <node location="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='9']/paragraph[@nr='1']/sen[@nr='2']" text="Ákvæði II.–VI. og VIII. kafla laga um félög til almannaheilla, nr. 110/2021, gilda um lögaðila eftir því sem við á vegna skráningar og hæfis lögaðila í almannaheillaskrá Skattsins.">
-      <reference link-label="II.–VI. og VIII. kafla laga um félög til almannaheilla, nr. 110/2021" inner-reference="II.–VI. og VIII. kafla" law-nr="110" law-year="2021" xpath="//chapter[@nr='8' or @nr='II.–VI']"/>
+      <reference link-label="II.–VI. og VIII. kafla laga um félög til almannaheilla, nr. 110/2021" inner-reference="II.–VI. og VIII. kafla" law-nr="110" law-year="2021" xpath="//chapter[@nr='8' or (@nr='II' or @nr='III' or @nr='IV' or @nr='V' or @nr='VI')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']/art-chapter[@nr='A']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Hafi verið gerður samningur um skiptingu ellilífeyrisgreiðslna á grundvelli 3. mgr. 14. gr. laga nr. 129/1997, um skyldutryggingu lífeyrisréttinda og starfsemi lífeyrissjóða, telst ellilífeyrir til tekna hjá þeim sem fær hann greiddan.">
       <reference link-label="3. mgr. 14. gr. laga nr. 129/1997" inner-reference="3. mgr. 14. gr." law-nr="129" law-year="1997" xpath="//art[@nr='14']//subart[@nr='3']"/>
@@ -4735,8 +4735,8 @@
       <reference link-label="5. gr. laga um stuðning við nýsköpunarfyrirtæki, nr. 152/2009" inner-reference="5. gr." law-nr="152" law-year="2009" xpath="//art[@nr='5']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='18']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" text="Hagnaður einstaklings utan atvinnurekstrar vegna viðskipta með breytanleg skuldabréf sem breytt hefur verið í hlutabréf á lægra verði en nemur markaðsverði bréfanna, sbr. 47.– 49. gr. laga um hlutafélög, nr. 2/1995, og 31.– 32. gr. laga um einkahlutafélög, nr. 138/1994, telst til skattskyldra fjármagnstekna þegar hlutabréfin eru seld.">
-      <reference link-label="47.– 49. gr. laga um hlutafélög, nr. 2/1995" inner-reference="47.– 49. gr." law-nr="2" law-year="1995" xpath-failure="true"/>
-      <reference link-label="31.– 32. gr. laga um einkahlutafélög, nr. 138/1994" inner-reference="31.– 32. gr." law-nr="138" law-year="1994" xpath-failure="true"/>
+      <reference link-label="47.– 49. gr. laga um hlutafélög, nr. 2/1995" inner-reference="47.– 49. gr." law-nr="2" law-year="1995" xpath="//art[(@nr='47' or @nr='48' or @nr='49')]"/>
+      <reference link-label="31.– 32. gr. laga um einkahlutafélög, nr. 138/1994" inner-reference="31.– 32. gr." law-nr="138" law-year="1994" xpath="//art[(@nr='31' or @nr='32')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='18']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Lögaðila er heimilt að fresta yfir tvenn áramót skattlagningu hagnaðar sem myndast hefur við umbreytingu skuldabréfs með breytirétti í hluti í félagi sem fellur undir 3. tölul. 3. gr. laga um stuðning við nýsköpunarfyrirtæki, nr. 152/2009, á því ári þegar viðskiptin eru gerð.">
       <reference link-label="3. tölul. 3. gr. laga um stuðning við nýsköpunarfyrirtæki, nr. 152/2009" inner-reference="3. tölul. 3. gr." law-nr="152" law-year="2009" xpath="//art[@nr='3']//numart[@nr='3']"/>
@@ -5197,7 +5197,7 @@
       <reference link-label="XX. kafla laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="XX. kafla" law-nr="21" law-year="1991" xpath="//chapter[@nr='20']"/>
     </node>
     <node location="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='102']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" text="Að loknum fyrsta kröfuhafafundi eftir lok kröfulýsingarfrests er slitastjórn heimilt í einu lagi eða mörgu að greiða viðurkenndar kröfur skv. 109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991, að hluta eða að fullu að því marki sem tryggt er að eignir fjármálafyrirtækisins hrökkvi til að minnsta kosti jafnhárrar greiðslu allra annarra krafna sem standa eins í réttindaröð og ekki hefur endanlega verið hafnað við slitin.">
-      <reference link-label="109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="109.–112. gr." law-nr="21" law-year="1991" xpath-resolution-failure="true"/>
+      <reference link-label="109.–112. gr. laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="109.–112. gr." law-nr="21" law-year="1991" xpath="//art[(@nr='109' or @nr='110' or @nr='111' or @nr='112')]"/>
     </node>
     <node location="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='103']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" text="Gilda þá öll ákvæði XX. kafla laga um gjaldþrotaskipti o.fl., nr. 21/1991, við slitameðferðina með sama hætti og við gjaldþrotaskipti en þó þannig að frestur til að höfða riftunarmál skv. 1. mgr. 148. gr. sömu laga skal vera 30 mánuðir í stað sex mánaða.">
       <reference link-label="XX. kafla laga um gjaldþrotaskipti o.fl., nr. 21/1991" inner-reference="XX. kafla" law-nr="21" law-year="1991" xpath="//chapter[@nr='20']"/>
@@ -5423,7 +5423,7 @@
       <reference link-label="II. kafla laga nr. 90/2003" inner-reference="II. kafla" law-nr="90" law-year="2003" xpath="//chapter[@nr='2']"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='26']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1']" text="Tekjur umfram 90.000 kr. á ári skv. C-lið 7. gr. laga nr. 90/2003, um tekjuskatt, skulu teljast til tekna við útreikning á dvalarframlagi skv. 21. gr., sbr. og 22. gr. þessara laga.">
-      <reference link-label="C-lið 7. gr. laga nr. 90/2003" inner-reference="C-lið 7. gr." law-nr="90" law-year="2003" xpath="//art[@nr='7']//*[self::numart or self::art-chapter][@nr='C']"/>
+      <reference link-label="C-lið 7. gr. laga nr. 90/2003" inner-reference="C-lið 7. gr." law-nr="90" law-year="2003" xpath-resolution-failure="true"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='26']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir 1. mgr. teljast ekki til tekna bætur frá lífeyristryggingum almannatrygginga samkvæmt lögum um almannatryggingar, bætur samkvæmt lögum um félagslega aðstoð, fjárhagsaðstoð sveitarfélaga, greiðslur úr viðbótarlífeyrissparnaði samkvæmt lögum um almannatryggingar og sambærilegar greiðslur frá ríkjum sem Ísland hefur gert samninga við skv. 59. gr. laga um almannatryggingar, nr. 100/2007.">
       <reference link-label="59. gr. laga um almannatryggingar, nr. 100/2007" inner-reference="59. gr." law-nr="100" law-year="2007" xpath="//art[@nr='59']"/>
@@ -5640,7 +5640,7 @@
     </node>
     <node location="superchapter[@nr='4']/chapter[@nr='t']/art[@nr='II']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='2']" text="Hafi íbúð verið byggð eftir gildistöku laga nr. 51/1980 skal enn fremur gæta ákvæða 1. og 2. mgr. 88. gr. laga nr. 97/1993, en annars 1.–3. og 8. mgr. 89. gr. laga nr. 97/1993, hafi íbúðin verið byggð fyrir gildistöku fyrrnefndra laga.">
       <reference link-label="1. og 2. mgr. 88. gr. laga nr. 97/1993" inner-reference="1. og 2. mgr. 88. gr." law-nr="97" law-year="1993" xpath="//art[@nr='88']//subart[@nr='2' or @nr='1']"/>
-      <reference link-label="1.–3. og 8. mgr. 89. gr. laga nr. 97/1993" inner-reference="1.–3. og 8. mgr. 89. gr." law-nr="97" law-year="1993" xpath="//art[@nr='89']//subart[@nr='8' or @nr='1.–3']"/>
+      <reference link-label="1.–3. og 8. mgr. 89. gr. laga nr. 97/1993" inner-reference="1.–3. og 8. mgr. 89. gr." law-nr="97" law-year="1993" xpath="//art[@nr='89']//subart[@nr='8' or (@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
     <node location="superchapter[@nr='4']/chapter[@nr='t']/art[@nr='II']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='3']" text="Um íbúðir á vegum Byggingarfélags verkamanna fer eftir ákvæðum 90. gr. laga nr. 97/1993.">
       <reference link-label="90. gr. laga nr. 97/1993" inner-reference="90. gr." law-nr="97" law-year="1993" xpath="//art[@nr='90']"/>
@@ -5652,7 +5652,7 @@
       <reference link-label="laga um Húsnæðisstofnun ríkisins, nr. 97/1993" inner-reference="" law-nr="97" law-year="1993"/>
     </node>
     <node location="superchapter[@nr='4']/chapter[@nr='t']/art[@nr='IV']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Um réttarstöðu eigenda félagslegra eignaríbúða fer að öðru leyti eftir því sem mælt er fyrir um í 70.– 71. gr. laga um Húsnæðisstofnun ríkisins, nr. 97/1993, eftir því sem við getur átt og með þeim takmörkunum sem í lögum þessum greinir.">
-      <reference link-label="70.– 71. gr. laga um Húsnæðisstofnun ríkisins, nr. 97/1993" inner-reference="70.– 71. gr." law-nr="97" law-year="1993" xpath-failure="true"/>
+      <reference link-label="70.– 71. gr. laga um Húsnæðisstofnun ríkisins, nr. 97/1993" inner-reference="70.– 71. gr." law-nr="97" law-year="1993" xpath="//art[(@nr='70' or @nr='71')]"/>
     </node>
     <node location="superchapter[@nr='4']/chapter[@nr='t']/art[@nr='V']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Um leigugjald gilda ákvæði 73. gr. laga nr. 97/1993.">
       <reference link-label="73. gr. laga nr. 97/1993" inner-reference="73. gr." law-nr="97" law-year="1993" xpath="//art[@nr='73']"/>
@@ -6098,7 +6098,7 @@
       <reference link-label="3. mgr. 6. gr. laga nr. 100/1952" inner-reference="3. mgr. 6. gr." law-nr="100" law-year="1952" xpath="//art[@nr='6']//subart[@nr='3']"/>
     </node>
     <node location="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Ákvæði 1. mgr. taka enn fremur til manna sem fá íslenskt ríkisfang skv. 2.– 4. gr. laga nr. 100/1952.">
-      <reference link-label="2.– 4. gr. laga nr. 100/1952" inner-reference="2.– 4. gr." law-nr="100" law-year="1952" xpath-failure="true"/>
+      <reference link-label="2.– 4. gr. laga nr. 100/1952" inner-reference="2.– 4. gr." law-nr="100" law-year="1952" xpath="//art[(@nr='2' or @nr='3' or @nr='4')]"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="18" law-year="1996">
@@ -6182,7 +6182,7 @@
       <reference link-label="1. og 3. tölul. 61. gr. laga nr. 90/2003" inner-reference="1. og 3. tölul. 61. gr." law-nr="90" law-year="2003" xpath="//art[@nr='61']//numart[@nr='3' or @nr='1']"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Ákvæði 61.– 64. gr. laga nr. 90/2003, um tekjuskatt, skulu gilda um ákvörðun útsvarsstofns eftir því sem við getur átt.">
-      <reference link-label="61.– 64. gr. laga nr. 90/2003" inner-reference="61.– 64. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="61.– 64. gr. laga nr. 90/2003" inner-reference="61.– 64. gr." law-nr="90" law-year="2003" xpath="//art[(@nr='61' or @nr='62' or @nr='63' or @nr='64')]"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Lækki ríkisskattstjóri tekjuskattsstofn skv. 65. gr. laga nr. 90/2003, um tekjuskatt, skal útsvarsstofn lækka um sömu fjárhæð.">
       <reference link-label="65. gr. laga nr. 90/2003" inner-reference="65. gr." law-nr="90" law-year="2003" xpath="//art[@nr='65']"/>
@@ -6201,7 +6201,7 @@
       <reference link-label="4. mgr. 112. gr. laga nr. 90/2003" inner-reference="4. mgr. 112. gr." law-nr="90" law-year="2003" xpath="//art[@nr='112']//subart[@nr='4']"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='27']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Ákvæði 1.–3. mgr. 112. gr. laga nr. 90/2003, um tekjuskatt, um fyrirframgreiðslu tekjuskatts, skulu gilda um þann hluta útsvars sem stafar af öðrum tekjum en launatekjum.">
-      <reference link-label="1.–3. mgr. 112. gr. laga nr. 90/2003" inner-reference="1.–3. mgr. 112. gr." law-nr="90" law-year="2003" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. mgr. 112. gr. laga nr. 90/2003" inner-reference="1.–3. mgr. 112. gr." law-nr="90" law-year="2003" xpath="//art[@nr='112']//subart[(@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='27']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" text="Þeim erlendu ríkisborgurum eða ríkisfangslausu mönnum, er fengið hafa dvalar- eða landvistarleyfi hér á landi um tiltekinn tíma, er skylt að gera skil á útsvari sínu á sama tíma og kveðið er á um skil á tekjuskatti, sbr. 7. mgr. 112. gr. laga nr. 90/2003, um tekjuskatt.">
       <reference link-label="7. mgr. 112. gr. laga nr. 90/2003" inner-reference="7. mgr. 112. gr." law-nr="90" law-year="2003" xpath="//art[@nr='112']//subart[@nr='7']"/>
@@ -6221,11 +6221,11 @@
   </law-ref-entry>
   <law-ref-entry law-nr="2" law-year="1995">
     <node location="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='63a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Tilkynna skal skriflega skemmst fimm dögum fyrir hluthafafund, þar sem kjósa á félagsstjórn, um framboð til stjórnar í hlutafélagi sem ber skylda til að kjósa sér endurskoðanda skv. 1.–3. mgr. 98. gr. laga nr. 3/2006, um ársreikninga, eða hlutafélagi sem ríkissjóður á helmingshlut eða meira í og lýtur endurskoðun skv. 2. mgr. 6. gr. laga nr. 86/1997, um Ríkisendurskoðun.">
-      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath="//art[@nr='98']//subart[(@nr='1' or @nr='2' or @nr='3')]"/>
       <reference link-label="2. mgr. 6. gr. laga nr. 86/1997" inner-reference="2. mgr. 6. gr." law-nr="86" law-year="1997" xpath-resolution-failure="true"/>
     </node>
     <node location="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='79a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Félagsstjórn í félagi sem ber skylda til að kjósa sér endurskoðanda skv. 1.–3. mgr. 98. gr. laga nr. 3/2006, um ársreikninga, skal samþykkja starfskjarastefnu félagsins varðandi laun og aðrar greiðslur til forstjóra og annarra æðstu stjórnenda félagsins, svo og stjórnarmanna þess.">
-      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath="//art[@nr='98']//subart[(@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
     <node location="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Félögum sem falla undir 87. gr. a laga nr. 3/2006, um ársreikninga, og hafa skilað inn milliuppgjöri og gert það aðgengilegt öllum hluthöfum er heimilt að falla frá samningu endurskoðaðs sameiginlegs efnahags- og rekstrarreiknings ef allir hluthafar félagsins samþykkja það samhljóða á hluthafafundi og skal þá senda hlutafélagaskrá afrit af fundargerð fundarins.">
       <reference link-label="87. gr. a laga nr. 3/2006" inner-reference="87. gr. a" law-nr="3" law-year="2006" xpath-failure="true"/>
@@ -6246,7 +6246,7 @@
   </law-ref-entry>
   <law-ref-entry law-nr="138" law-year="1994">
     <node location="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='54a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Félagsstjórn í félagi sem ber skylda til að kjósa sér endurskoðanda skv. 1.–3. mgr. 98. gr. laga nr. 3/2006, um ársreikninga, skal samþykkja starfskjarastefnu félagsins varðandi laun og aðrar greiðslur til forstjóra og annarra æðstu stjórnenda félagsins, svo og stjórnarmanna þess.">
-      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath-resolution-failure="true"/>
+      <reference link-label="1.–3. mgr. 98. gr. laga nr. 3/2006" inner-reference="1.–3. mgr. 98. gr." law-nr="3" law-year="2006" xpath="//art[@nr='98']//subart[(@nr='1' or @nr='2' or @nr='3')]"/>
     </node>
     <node location="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='96']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Félögum sem falla undir 87. gr. a laga nr. 3/2006, um ársreikninga, og hafa skilað inn milliuppgjöri og gert það aðgengilegt öllum hluthöfum er heimilt að falla frá samningu endurskoðaðs sameiginlegs efnahags- og rekstrarreiknings ef allir hluthafar félagsins samþykkja það samhljóða á hluthafafundi og skal þá senda hlutafélagaskrá afrit af fundargerð fundarins.">
       <reference link-label="87. gr. a laga nr. 3/2006" inner-reference="87. gr. a" law-nr="3" law-year="2006" xpath-failure="true"/>
@@ -6841,7 +6841,7 @@
       <reference link-label="5., 6. og 7. tölul. 1. mgr. 6. gr. og 2. mgr. 10. gr. laga nr. 96/1995" inner-reference="5., 6. og 7. tölul. 1. mgr. 6. gr. og 2. mgr. 10. gr." law-nr="96" law-year="1995" xpath-failure="true"/>
     </node>
     <node location="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='36']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Fella skal niður, lækka eða endurgreiða virðisaukaskatt í þeim tilvikum sem talin eru upp í 2.–12. tölul. 1. mgr. 7. gr. tollalaga, nr. 88/2005, með síðari breytingum, að uppfylltum þeim skilyrðum sem þar eru tilgreind.">
-      <reference link-label="2.–12. tölul. 1. mgr. 7. gr. tollalaga, nr. 88/2005" inner-reference="2.–12. tölul. 1. mgr. 7. gr." law-nr="88" law-year="2005" xpath-resolution-failure="true"/>
+      <reference link-label="2.–12. tölul. 1. mgr. 7. gr. tollalaga, nr. 88/2005" inner-reference="2.–12. tölul. 1. mgr. 7. gr." law-nr="88" law-year="2005" xpath="//art[@nr='7']//subart[@nr='1']//numart[(@nr='2' or @nr='3' or @nr='4' or @nr='5' or @nr='6' or @nr='7' or @nr='8' or @nr='9' or @nr='10' or @nr='11' or @nr='12')]"/>
     </node>
     <node location="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='36']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Úrskurður tollyfirvalda um niðurfellingu, lækkun eða endurgreiðslu virðisaukaskatts skv. 1.–6. tölul. 1. mgr. og 2. mgr. sætir kæru til yfirskattanefndar í samræmi við 118. gr. tollalaga, nr. 88/2005, með síðari breytingum.">
       <reference link-label="118. gr. tollalaga, nr. 88/2005" inner-reference="118. gr." law-nr="88" law-year="2005" xpath="//art[@nr='118']"/>
@@ -7256,7 +7256,7 @@
       <reference link-label="4. mgr. 6. gr. og 4. mgr. 6. gr. a barnalaga, nr. 76/2003" inner-reference="4. mgr. 6. gr. og 4. mgr. 6. gr. a" law-nr="76" law-year="2003" xpath-failure="true"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='24']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Heimilt er samkvæmt kröfu ákæruvalds í sakamáli að dæma sökunaut, sem gerst hefur sekur um háttsemi samkvæmt 194.– 201. gr. almennra hegningarlaga nr. 19/1940 vegna getnaðar barns, til þess að hafa fyrirgert rétti til arfs sér til handa eftir barnið.">
-      <reference link-label="194.– 201. gr. almennra hegningarlaga nr. 19/1940" inner-reference="194.– 201. gr." law-nr="19" law-year="1940" xpath-failure="true"/>
+      <reference link-label="194.– 201. gr. almennra hegningarlaga nr. 19/1940" inner-reference="194.– 201. gr." law-nr="19" law-year="1940" xpath="//art[(@nr='194' or @nr='195' or @nr='196' or @nr='197' or @nr='198' or @nr='199' or @nr='200' or @nr='201')]"/>
     </node>
     <node location="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Um varðveislu kvaðaarfs fer sem um fé ólögráða manna, sbr. 39. gr. lögræðislaga, nr. 68/1984.">
       <reference link-label="39. gr. lögræðislaga, nr. 68/1984" inner-reference="39. gr." law-nr="68" law-year="1984" xpath-resolution-failure="true"/>
@@ -7283,13 +7283,13 @@
   </law-ref-entry>
   <law-ref-entry law-nr="80" law-year="1938">
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='39']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" text="Þeir skulu uppfylla hæfisskilyrði 1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016.">
-      <reference link-label="1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016" inner-reference="1.–6. tölul. 2. mgr. 29. gr." law-nr="50" law-year="2016" xpath-resolution-failure="true"/>
+      <reference link-label="1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016" inner-reference="1.–6. tölul. 2. mgr. 29. gr." law-nr="50" law-year="2016" xpath="//art[@nr='29']//subart[@nr='2']//numart[(@nr='1' or @nr='2' or @nr='3' or @nr='4' or @nr='5' or @nr='6')]"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='39']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']" text="Skal tilnefndur dómari uppfylla hæfisskilyrði 1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016.">
-      <reference link-label="1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016" inner-reference="1.–6. tölul. 2. mgr. 29. gr." law-nr="50" law-year="2016" xpath-resolution-failure="true"/>
+      <reference link-label="1.–6. tölul. 2. mgr. 29. gr. laga um dómstóla, nr. 50/2016" inner-reference="1.–6. tölul. 2. mgr. 29. gr." law-nr="50" law-year="2016" xpath="//art[@nr='29']//subart[@nr='2']//numart[(@nr='1' or @nr='2' or @nr='3' or @nr='4' or @nr='5' or @nr='6')]"/>
     </node>
     <node location="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Málsaðilar geta gefið þeim sem uppfylla skilyrði 1.–4. tölul. 1. mgr. 6. gr. laga um lögmenn, nr. 77/1998, umboð til að reka mál sín fyrir Félagsdómi.">
-      <reference link-label="1.–4. tölul. 1. mgr. 6. gr. laga um lögmenn, nr. 77/1998" inner-reference="1.–4. tölul. 1. mgr. 6. gr." law-nr="77" law-year="1998" xpath-resolution-failure="true"/>
+      <reference link-label="1.–4. tölul. 1. mgr. 6. gr. laga um lögmenn, nr. 77/1998" inner-reference="1.–4. tölul. 1. mgr. 6. gr." law-nr="77" law-year="1998" xpath="//art[@nr='6']//subart[@nr='1']//numart[(@nr='1' or @nr='2' or @nr='3' or @nr='4')]"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="30" law-year="1925">
