@@ -717,7 +717,7 @@ def parse_presidential_decree_preamble(parser):
 
     stray_text = parser.collect_until("<br/>", collect_first_line=True)
     parser.consume("<br/>")
-    parser.law.append(E("sen", stray_text))
+    parser.law.append(E("sen", strip_links(stray_text)))
 
     parser.leave("presidential-decree-preamble")
 
