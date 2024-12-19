@@ -1,6 +1,8 @@
 import roman
 from lagasafn.constants import XML_FILENAME
-from lagasafn.exceptions import NoSuchElementException, NoSuchLawException, ReferenceParsingException
+from lagasafn.exceptions import NoSuchElementException
+from lagasafn.exceptions import NoSuchLawException
+from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.utils import convert_to_text
 from lagasafn.utils import is_roman
 from lxml import etree
@@ -52,13 +54,22 @@ def make_xpath_from_node(node):
 
 def make_xpath_from_inner_reference(inner_reference: str):
 
+    # Sometimes the more obscure symbol "–" is used to denote ranges but
+    # sometimes a regular minus-sign. We'll just want deal with a minus-sign.
+    inner_reference = inner_reference.replace("–", "-")
+
+    # Remove space following a range-symbol (minus-sign) so that components of
+    # ranges don't get parsed individually.
+    inner_reference = inner_reference.replace("- ", "-")
+
+    # Remove dots because they have no meaning in this context and only get in
+    # the way.
+    inner_reference = inner_reference.replace(".", "")
+
     # Turn the inner reference into a a reversed list that's easier to deal
     # with word-by-word.
     words = inner_reference.split(" ")
     words.reverse()
-
-    # Remove trailing dots, since they'll only get in the way.
-    words = [w.strip(".") for w in words]
 
     def first_or_blank(some_list):
         """
@@ -79,9 +90,39 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
         return number
 
+    def make_range(start, end):
+        """
+        Takes two `nr` attribute values, such as "a" and "h", and returns a
+        list of them with all possible values in between.
+
+        This is done both to remedy XPath 1.0's limitation in selecting ranges,
+        and to deal with all sorts of special cases and weirdness in the data.
+        """
+
+        try:
+            if start.isdigit() and end.isdigit():
+                # Start by trying conventional numbers.
+                letters = range(int(start), int(end)+1)
+            elif is_roman(start) and is_roman(end):
+                # Then try Roman numerals.
+                start = roman.fromRoman(start)
+                end = roman.fromRoman(end)
+                latin_range = range(start, end+1)
+                letters = [roman.toRoman(n) for n in latin_range]
+            else:
+                # Finally, try letters.
+                letters = [chr(c) for c in range(ord(start), ord(end) + 1)]
+
+        except Exception:
+            raise ReferenceParsingException(
+                "Could not determine range between '%s' and '%s'." % (start, end)
+            )
+
+        return letters
+
     xpath = ""
 
-    # This dictinoary contains translates from the actual words used in an
+    # This dictionary contains translations from the actual words used in an
     # inner reference, into tag names used in the XML.
     translations = {
         "gr": "art",
@@ -108,13 +149,13 @@ def make_xpath_from_inner_reference(inner_reference: str):
         elif word in translations.keys():
             ent_type = translations[word]
 
-            ent_numbers.append(real_number(words.pop(0)))
+            ent_numbers.append(words.pop(0))
 
             # All of these combinatory words result in us looking up all of
             # them, so they are all in effect "or", for our purposes.
             if first_or_blank(words) in ["og", "eða", "og/eða"]:
                 words.pop(0)
-                ent_numbers.append(real_number(words.pop(0)))
+                ent_numbers.append(words.pop(0))
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException(word)
@@ -122,9 +163,47 @@ def make_xpath_from_inner_reference(inner_reference: str):
         # Assuming something came of this...
         if len(ent_type):
             # ... construct the XPath bit and add it to the result!
+
+            # Process numbers.
+            xpath_numbers = []
+            for ent_number in ent_numbers:
+                if "-" in ent_number:
+                    first, second = ent_number.split("-")
+
+                    # We need to select a range of nodes here.
+                    # This is a bit convoluted due to limitations in XPath 1.0,
+                    # which we are currently stuck with. Instead we'll have to
+                    # figure out what could possibly come between the first and
+                    # second numbers we get, and then look for them all.
+                    #
+                    # There are at least two other ways of doing this that
+                    # we've decided against.
+                    #
+                    # 1. Apply XPath 2.0, which is currently unavailable in
+                    # `lxml` and in general not very well supported anywhere.
+                    # That would not only introduce a new XML library here, but
+                    # also make assumptions about others using the XPath on
+                    # their own systems, or in JavaScript in the front-end.
+                    #
+                    # 2. Have this mechanism look into the XML files for
+                    # direction. We wish to avoid this in order to keep this
+                    # functionality decoupled from the actual data.
+                    letters = make_range(first, second)
+
+                    parts = []
+                    for letter in letters:
+                        parts.append("@nr='%s'" % letter)
+
+                    xpath_number = "(%s)" % " or ".join(parts)
+                else:
+                    xpath_number = "@nr='%s'" % real_number(ent_number)
+
+                xpath_numbers.append(xpath_number)
+
+            # add the next node selection to the xpath string.
             xpath += "//%s[%s]" % (
                 ent_type,
-                " or ".join(["@nr='%s'" % n for n in ent_numbers]),
+                " or ".join(xpath_numbers),
             )
 
     return xpath
