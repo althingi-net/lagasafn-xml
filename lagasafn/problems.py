@@ -1,6 +1,5 @@
 import os
 from lagasafn.constants import PROBLEMS_FILENAME
-from lagasafn.settings import DATA_DIR
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E

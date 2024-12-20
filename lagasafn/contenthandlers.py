@@ -1,13 +1,10 @@
 import json
-import os
 import re
 import string
-
 from lagasafn.constants import SPLITMAP_FILENAME
 from lagasafn.utils import Matcher
 from lagasafn.utils import is_roman
 from lagasafn.utils import last_container_added
-from lagasafn.utils import order_among_siblings
 from lagasafn.utils import regex_find
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
@@ -275,15 +272,15 @@ def check_chapter(lines, law):
     # like subchapters.
     first = peek_stripped[0 : peek_stripped.find(".")]
 
-    # First see if this is ignorable, because in that case we don't need to do
-    # anything else.
-    line_type = is_ignorable_chapter(peek_stripped)
-    if len(line_type) > 0:
-        return line_type
+    line_type = ""
 
-    # We'll assume that temporary clauses are always in a chapter and never in
-    # a subchapter. This has not been researched.
-    if peek_stripped.lower().find("bráðabirgð") > -1:
+    # Check if this is an extra doc.
+    if re.match(r"\[?fylgiskj[aö]l", peek_stripped.lower()) is not None:
+        line_type = "extra-docs"
+
+    elif peek_stripped.lower().find("bráðabirgð") > -1:
+        # We'll assume that temporary clauses are always in a chapter and never
+        # in a subchapter. This has not been researched.
         line_type = "chapter"
 
     elif peek_stripped.lower().find("viðauki") > -1:
@@ -861,45 +858,6 @@ def add_sentences(target_node, sens):
     return paragraph
 
 
-def is_ignorable_chapter(line: str) -> str:
-    """
-    Appendices and accompanying documents are sometimes appended to the law. We
-    can't parse those, so we must ignore them. This function checks if the
-    given line fulfills the criteria for such "ignorable" content.
-
-    Returns the type of ignorable if ignorable, otherwise an empty string.
-    """
-    line_type = ""
-    matcher = Matcher()
-
-    # If the line matches "fylgiskj[aö]l", it indicates that we've run into
-    # accompanying documents that are not a part of the legal text itself. We
-    # are unable to predict their format and parsing them will always remain
-    # error-prone when possible to begin with. Possibly we'll include them as
-    # raw HTML goo later.
-    if matcher.check(line.lower(), r"\[?fylgiskj[aö]l"):
-        line_type = "extra-docs"
-
-    return line_type
-
-
-def remove_ignorables(soup):
-    """
-    Removes ignorables as defined by `is_ignorable_chapter`.
-    """
-    for b_tag in soup.find_all("b"):
-        if is_ignorable_chapter(b_tag.text):
-            to_be_extracted = b_tag
-
-            while to_be_extracted:
-                next_sibling = to_be_extracted.next_sibling
-                to_be_extracted.extract()
-                to_be_extracted = next_sibling
-            break
-
-    return soup
-
-
 def generate_conjugations(name: str) -> dict:
     """
     Generate conjugated names of law.
@@ -1006,7 +964,7 @@ def generate_conjugations(name: str) -> dict:
     }
 
 
-def generate_synonyms(name: str) -> dict:
+def generate_synonyms(name: str):
     """
     Some laws have synonyms.
 

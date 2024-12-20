@@ -661,7 +661,7 @@ def parse_references():
     xml_ref_doc.attrib["stat-xpath-successes"] = str(stat_xpath_successes)
     xml_ref_doc.attrib["stat-xpath-failures"] = str(stat_xpath_failures)
     xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(stat_xpath_resolution_failures)
-    write_xml(xml_ref_doc, XML_REFERENCES_FILENAME, skip_prettyprint_hack=True)
+    write_xml(xml_ref_doc, XML_REFERENCES_FILENAME)
 
     print(" done")
 

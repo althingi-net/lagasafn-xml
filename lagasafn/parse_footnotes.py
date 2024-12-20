@@ -907,9 +907,6 @@ def parse_footnote(parser):
                 location.attrib["xpath"] = ml["started_at"]["xpath"]
                 location.attrib["before-mark"] = ml["started_at"]["before_mark"]
                 location.attrib["after-mark"] = ml["started_at"]["after_mark"]
-                # FIXME: This if-sentence is ridiculous. We should rather make
-                # sure that `middle_punctuation` always exists in
-                # `ml["started_at"]`, even as `None`.
                 if "middle_punctuation" in ml["started_at"] and ml["started_at"]["middle_punctuation"] is not None:
                     location.attrib["middle-punctuation"] = ml["started_at"]["middle_punctuation"]
 
