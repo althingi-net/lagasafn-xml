@@ -1800,7 +1800,7 @@ def parse_article(parser):
         # unconventional way. Typically this occurs only in temporary
         # clauses that may be denoted by Roman numerals or with the
         # string "Ákvæði til bráðabirgða.".
-        art_nr = clean_art_nr_title.strip(".")
+        art_nr = clean_art_nr_title.strip().strip(".")
         try:
             art_roman_nr = str(roman.fromRoman(art_nr))
         except roman.InvalidRomanNumeralError:
