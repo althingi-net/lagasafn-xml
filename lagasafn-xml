@@ -122,12 +122,6 @@ def clean_content(content):
     e = re.compile(r'<a href="\d{7}.html">(.*?)</a>')
     content = e.sub(r"\1", content)
 
-    # Fix inconsistent deletion markers.
-    # TODO: This only occurs in 160/2010 and should be removed once it has
-    # been fixed in the data.
-    e = re.compile(r"&hellip;<sup>(\d+)\)</sup>")
-    content = e.sub(r'&hellip;<sup style="font-size:60%">\1)</sup>', content)
-
     # In 3. mgr. 17. gr. laga nr. 6/2001, we have a unique marking with a star
     # ("*") that seems to indicate the legal context of the change. It is
     # entirely unclear (as of 2024-12-04) how this is supposed to work. We will
