@@ -125,6 +125,7 @@ def parse_footnote(parser):
         # Retrieve the the content of the link to the external law
         # that we found.
         parser.scroll_until(r'<a href="(\/altext\/.*)">')
+        parser.next()
         footnote_sen = parser.collect_until("</a>")
         parser.next()   # Eat the </a> tag.
 

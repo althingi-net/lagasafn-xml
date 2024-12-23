@@ -199,15 +199,9 @@ class LawParser:
         self.collection = []
         return result
 
-    def collect_until(self, end_string, collect_first_line=False):
+    def collect_until(self, end_string):
         # Will collect lines until the given string is found, and then return the
         # collected lines.
-
-        # TODO: The collect_first_line parameter is a bit of a hack. Ideally we should always include the first line,
-        #       but because of the way most of the parser is written, this causes a lot of problems. We should refactor
-        #       the entire parser to always use collect_first_line=True and then once all of the collect_until() calls
-        #       have been replaced, we can remove the parameter entirely.
-        #           - Smári, 2024-08-09
 
         # Immediately stop if we're already at `end_string`.
         if self.line is not None and self.line.startswith(end_string):
@@ -215,7 +209,7 @@ class LawParser:
 
         done = False
 
-        if collect_first_line:
+        if self.line is not None:
             self.collect(self.line)
 
         while not done:
@@ -357,7 +351,7 @@ def parse_law(parser):
 def parse_intro(parser):
     parser.enter("intro")
 
-    parser.scroll_until("<h2>")    # Nothing before the opening <hr/> is meaningful.
+    parser.scroll_until("<h2>")  # Nothing before the opening <hr/> is meaningful.
 
     # Parse elements in the intro.
     parse_law_title(parser)
@@ -403,6 +397,7 @@ def parse_law_title(parser):
     parser.enter("law-title")
 
     # Parse law name.
+    parser.next()
     law_name = strip_links(parser.collect_until("</h2>"))
 
     # Remove double spaces.
@@ -464,6 +459,7 @@ def parse_law_number_and_date(parser):
     parser.enter("law-number-and-date")
 
     # Parse the num and date, which appears directly below the law name.
+    parser.next()
     num_and_date = parser.collect_until("</strong>")
     parser.next()
 
@@ -573,6 +569,7 @@ def parse_ambiguous_section(parser):
     # when parsing the XML, it is possible to check what the last
     # <ambiguous-section> contained, if at some point a programmer
     # needs to deal with them when using the XML.
+    parser.next()
     ambiguous_content = parser.collect_until("</em>")
     parser.consume("</em>")
 
@@ -655,11 +652,11 @@ def parse_minister_clause_footnotes(parser):
     #  </a>
     minister_clause = ""
     if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
-        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        minister_clause += parser.collect_until("</a>") + " </a> "
         parser.consume("</a>")
 
     if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
-        minister_clause += parser.collect_until("</a>", collect_first_line=True) + " </a> "
+        minister_clause += parser.collect_until("</a>") + " </a> "
         parser.consume("</a>")
 
     while parser.line == "<br/>":
@@ -681,7 +678,7 @@ def parse_minister_clause_footnotes(parser):
         # is no minister clause.
         hr_distance = parser.occurrence_distance(parser.lines, "<hr/>")
         if hr_distance is not None and hr_distance > 0:
-            minister_clause += parser.collect_until("<hr/>", collect_first_line=True)
+            minister_clause += parser.collect_until("<hr/>")
             if len(minister_clause):
                 parser.law.append(E("minister-clause", minister_clause))
 
@@ -711,7 +708,7 @@ def parse_presidential_decree_preamble(parser):
 
     parser.enter("presidential-decree-preamble")
 
-    stray_text = parser.collect_until("<br/>", collect_first_line=True)
+    stray_text = parser.collect_until("<br/>")
     parser.consume("<br/>")
     parser.law.append(E("sen", strip_links(stray_text)))
 
@@ -727,11 +724,13 @@ def parse_superchapter(parser):
     parser.enter("superchapter")
     parser.superchapter = E("superchapter")
 
+    parser.next()
     nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
     name = ""
     if parser.line == "<b>":
+        parser.consume("<b>")
         name = parser.collect_until("</b>")
         parser.consume("</b>")
 
@@ -796,6 +795,7 @@ def parse_chapter(parser):
 
     chapter_type = ""
 
+    parser.next()
     name_or_nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -876,6 +876,7 @@ def parse_chapter(parser):
                     nr += alpha.lower()
         del t
 
+        parser.next()
         chapter_name = parser.collect_until("</b>")
         parser.consume("</b>")
 
@@ -1096,6 +1097,7 @@ def parse_appendix(parser):
 
     parser.enter("appendix")
 
+    parser.next()
     nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -1156,6 +1158,7 @@ def parse_appendix(parser):
 
     # See if the appendix has a name.
     if parser.line == "<b>":
+        parser.consume("<b>")
         name = parser.collect_until("</b>")
         parser.appendix.append(E("name", name))
         parser.consume("</b>")
@@ -1213,6 +1216,7 @@ def parse_appendix_chapter(parser):
     parser.appendix.append(parser.appendix_chapter)
 
     # Parse the name.
+    parser.next()
     name = parser.collect_until("</b>")
     parser.consume("</b>")
     parser.consume("<br/>")
@@ -1253,6 +1257,7 @@ def parse_numart_chapter(parser):
     parser.enter("numart-chapter")
     parser.numart_chapter = E("numart-chapter")
 
+    parser.next()
     nr_and_name = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -1321,7 +1326,7 @@ def parse_paragraph(parser):
         raise Exception("Could not find parent for paragraph.")
 
     closing = parser.next_paragraph_delimiter()
-    content = parser.collect_until(closing, collect_first_line=True)
+    content = parser.collect_until(closing)
     parser.consume(closing)
 
     sens = separate_sentences(content)
@@ -1349,7 +1354,7 @@ def parse_appendix_draft(parser):
 
     parser.appendix_draft = E("draft")
 
-    content = parser.collect_until("<br/>", collect_first_line=True)
+    content = parser.collect_until("<br/>")
     parser.consume("<br/>")
 
     sens = separate_sentences(strip_links(content))
@@ -1398,10 +1403,10 @@ def parse_appendix_part(parser):
     if parser.line == "<i>":
         style = "i"
         parser.consume("<i>")
-        content = parser.collect_until("</i>", collect_first_line=True)
+        content = parser.collect_until("</i>")
         parser.consume("</i>")
     else:
-        content = parser.collect_until("<br/>", collect_first_line=True)
+        content = parser.collect_until("<br/>")
 
     parser.appendix_part = E("appendix-part", { "appendix-style": style })
 
@@ -1453,7 +1458,7 @@ def parse_stray_deletion(parser):
     parser.enter("stray-deletion")
 
     closing = parser.next_paragraph_delimiter()
-    content = parser.collect_until(closing, collect_first_line=True)
+    content = parser.collect_until(closing)
     parser.consume(closing)
 
     elem_sen = E("sen", content)
@@ -1500,6 +1505,7 @@ def parse_subchapter(parser):
 
     parser.enter("subchapter")
 
+    parser.next()
     subchapter_goo = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -1549,6 +1555,7 @@ def parse_article_chapter(parser):
     parser.enter("art-chapter")
 
     # Parse an article chapter.
+    parser.next()
     art_chapter_goo = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -1633,6 +1640,7 @@ def parse_ambiguous_chapter(parser):
     # point, should the format of published law ever allow.
     parser.enter("ambiguous-chapter")
 
+    parser.next()
     ambiguous_bold_text = E(
         "ambiguous-bold-text", parser.collect_until("</b>")
     )
@@ -1700,7 +1708,9 @@ def parse_sentence_with_title(parser):
         sen_title_text += parser.line
         parser.next()
 
+    parser.next()
     sen_title_text += parser.collect_until("</i>")
+    parser.consume("</i>")
     content = parser.collect_until("<br/>")
     parser.consume("<br/>")
     if parser.subart is not None:
@@ -1738,6 +1748,7 @@ def parse_article(parser):
 
     # Parse an article.
     parser.scroll_until("<b>")
+    parser.consume("<b>")
     art_nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
@@ -1838,7 +1849,7 @@ def parse_article(parser):
     # HTML, which we are appending "</a>" at the end. Normally we don't
     # want that, so `parser.collect_until` doesn't include it.
     if parser.line.find("<a ") == 0 and parser.peeks(2) == "</a>":
-        art_title_link = parser.collect_until("</a>", collect_first_line=True)
+        art_title_link = parser.collect_until("</a>")
         art_nr_title = "%s %s </a>" % (art_nr_title, art_title_link)
         parser.consume("</a>")
 
@@ -1863,11 +1874,13 @@ def parse_article(parser):
     # article has a name title and we need to grab it. Note that not
     # all articles have names.
     if parser.line == "<em>":
+        parser.consume("<em>")
         art_name = parser.collect_until("</em>")
         parser.consume("</em>")
         parser.art.append(E("name", strip_links(art_name)))
     elif parser.line == "<b>":
         # Only known to happen in m00d00/1275 and possibly 94/1996.
+        parser.next()
         art_name = parser.collect_until("</b>")
         parser.consume("</b>")
         parser.art.append(E("name", {"name-style": "b"}, strip_links(art_name)))
@@ -1876,7 +1889,7 @@ def parse_article(parser):
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
     while parser.line in ["…", "]"]:
-        marker = parser.collect_until("</sup>", collect_first_line=True)
+        marker = parser.collect_until("</sup>")
         parser.art.getchildren()[-1].text += " " + marker + " </sup>"
         parser.consume("</sup>")
 
@@ -1946,6 +1959,7 @@ def parse_subarticle(parser):
     # If a table is found inside the subarticle, we'll want to end the
     # sentence when the table begins.
     if linecount_to_table is not None:
+        parser.next()
         content = parser.collect_until('<table width="100%">')
     elif parser.peeks() == "<span>":
         # This means that maybe a `numart` is coming up in the beginning.
@@ -1954,6 +1968,7 @@ def parse_subarticle(parser):
         parser.next()
     else:
         # Everything is normal.
+        parser.next()
         content = parser.collect_until("<br/>")
         parser.maybe_consume_many("<br/>")
 
@@ -2077,6 +2092,7 @@ def parse_deletion_marker(parser):
     parser.subart = E("subart")
     parser.subart.attrib["nr"] = "1"
 
+    parser.next()
     premature_deletion = parser.collect_until("<br/>")
     add_sentences(parser.subart, [premature_deletion])
 
@@ -2167,6 +2183,7 @@ def parse_numerical_article(parser):
     # when rendering software wants to add deletion markers. A "sen"
     # node is also added for the deletion marker to be addable.
     if numart_nr == "":
+        parser.next()
         content = parser.collect_until("</span>")
         dummy_numart = E(
             "numart",
@@ -2195,6 +2212,7 @@ def parse_numerical_article(parser):
     # immediately above this comment on 2022-01-23).
     elif numart_nr == "</span>" and parser.peeks(2) == "…":
         parser.scroll_until("</span>")
+        parser.next()
         content = parser.collect_until("<br/>")
         dummy_numart = E(
             "numart",
@@ -2454,6 +2472,7 @@ def parse_numerical_article(parser):
 
     # NOTE: Gets added after we add the sentences with `add_sentences`.
     if denoted_with_span:
+        parser.next()
         numart_nr_title = parser.collect_until("</span>")
     else:
         numart_nr_title = parser.nexts()
@@ -2480,6 +2499,7 @@ def parse_numerical_article(parser):
             parser.peeks(4) == "</sup>",
         ]
     ):
+        parser.next()
         numart_nr_title += parser.collect_until("</sup>") + " </sup>"
 
     numart_name = ""
@@ -2487,10 +2507,12 @@ def parse_numerical_article(parser):
         # Looks like this numerical article has a name.
         # Note that an opening marker may come before the name, in which case
         # we'll want to include it in the name, so we collect stuff before the `<i>`.
+        parser.next()
         numart_name = parser.collect_until("<i>")
 
         # Note that this gets inserted **after** we add the sentences
         # with `add_sentences` below.
+        parser.next()
         numart_name += parser.collect_until("</i>")
 
         # This is only known to happen in 37. tölul. 1. mgr. 5. gr. laga nr. 70/2022.
@@ -2498,11 +2520,12 @@ def parse_numerical_article(parser):
         # tags separated with an "og".
         if parser.lines.peeks() == "og" and parser.lines.peeks(2) == "<i>":
             parser.consume("</i>")
-            addendum = parser.collect_until("</i>", collect_first_line=True).replace("<i> ", "")
+            addendum = parser.collect_until("</i>").replace("<i> ", "")
             numart_name += " " + addendum
 
     # Read in the remainder of the content.
     closing = parser.next_paragraph_delimiter()
+    parser.next()
     content = parser.collect_until(closing)
     parser.consume(closing)
 
@@ -2581,7 +2604,7 @@ def parse_numerical_article(parser):
             # numart, and not a new location like an article,
             # subarticle or another numart, we must determine its
             # nature. We'll start by finding the content.
-            extra_content = parser.collect_until("<br/>", collect_first_line=True)
+            extra_content = parser.collect_until("<br/>")
 
             # Process the extra content into extra sentences.
             extra_sens = separate_sentences(strip_links(extra_content))
@@ -2662,6 +2685,7 @@ def parse_table(parser):
     # 55/1991 (153).
     table_name = ""
     if parser.line == "<b>":
+        parser.consume("<b>")
         table_name = parser.collect_until("</b>")
         parser.consume("</b>")
         parser.consume("<br/>")
@@ -2754,14 +2778,14 @@ def parse_td(parser):
         if parser.line == "<b>":
             parser.consume("<b>")
             table_nr_title, table_title = get_nr_and_name(
-                parser.collect_until("</b>", collect_first_line=True)
+                parser.collect_until("</b>")
             )
             parser.consume("</b>")
             parser.td.attrib["header-style"] = "b"
         elif parser.line == "<i>":
             parser.consume("<i>")
             table_nr_title, table_title = get_nr_and_name(
-                parser.collect_until("</i>", collect_first_line=True)
+                parser.collect_until("</i>")
             )
             parser.consume("</i>")
             parser.td.attrib["header-style"] = "i"
@@ -2782,7 +2806,7 @@ def parse_td(parser):
             # bráðabirgða XII laga nr. 29/1993.
             # NOTE: The styling gets re-applied in rendering mechanism.
             if parser.line == "<small>":
-                extra_content = parser.collect_until("</small>", collect_first_line=True)
+                extra_content = parser.collect_until("</small>")
                 extra_content = extra_content.replace("<small> <sub> ", "").replace("</sub>", "")
                 table_title += extra_content
                 parser.consume("</small>")
