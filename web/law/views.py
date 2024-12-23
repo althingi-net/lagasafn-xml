@@ -10,7 +10,7 @@ from os.path import join
 
 
 def law_search(request):
-    ctx = {}
+    ctx = {"q": request.GET.get("q", "")}
     return render(request, "law/search.html", ctx)
 
 

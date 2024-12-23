@@ -139,6 +139,9 @@ const law_search = debounce(() => {
     if (q.length < 3) {
         return;
     }
+    // Set the search query in the URL
+    window.history.pushState({}, "", `/law/search/?q=${q}`);
+
     fetch(`/api/law/search/?q=${q}`).then(
         (response) => {
             response.json().then(
@@ -153,6 +156,14 @@ const law_search = debounce(() => {
         }
     )
 });
+
+$(document).ready(() => {
+    let q = new URLSearchParams(window.location.search).get("q");
+    if (q) {
+        $("#search-query").val(q);
+        law_search();
+    }
+});
 </script>
 {% endblock %}
 
@@ -161,7 +172,7 @@ const law_search = debounce(() => {
 
 {% block content %}
 <div class="searcharea">
-    <input id="search-query" type="search" oninput="law_search()" placeholder="{% trans "Search" %}"/>
+    <input id="search-query" value="{{q}}" type="search" oninput="law_search()" placeholder="{% trans "Search" %}"/>
     <select onchange="setsort(event)">
         <option value="relevance">{% trans "Sort by relevance" %}</option>
         <option value="alphabetical">{% trans "Sort alphabetically" %}</option>
