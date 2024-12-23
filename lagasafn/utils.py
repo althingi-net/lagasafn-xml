@@ -197,40 +197,13 @@ def numart_next_nrs(prev_numart):
 
         elif prev_numart_nr == "z":
             expected_numart_nrs = ["þ", "aa"]
-
         elif prev_numart_nr == "þ":
             expected_numart_nrs = "æ"
-
         elif prev_numart_nr == "æ":
             expected_numart_nrs = "ö"
-
         elif prev_numart_nr == "ö":
-            # After the last character of the Icelandic alphabet, "ö", the
-            # numart can be continued by using two letters, "aa", "ab", "ac"
-            # and so forth. This is hard-coded for now but should be
-            # implemented logically at some point.
-            #
-            # TODO: Implement this logic logically instead of hard-coding.
-
             expected_numart_nrs = ["aa"]
-
         elif prev_numart_nr == "aa":
-            # Presumably by mistake, in 43. gr. laga nr. 55/2009, the numart
-            # "aa" is followed by "bb" instead of "ab".
-            #
-            # TODO: Check if this is still needed if version 150b of the law
-            # is obsolete. Althingi was notified of the mistake during that
-            # parliament, and may have fixed it.
-            #
-            # Even greater madness exists in 8. gr. laga nr. 51/2016, although
-            # that apparent mistake is also in the bill that became the law,
-            # and so won't be fixed without a bill being passed in Parliament.
-            # I **guess** this is the right way to deal with it. Maybe I'm
-            # wrong and the proper method is just to double the length of the
-            # same string with the same letter.
-            #
-            # 2024-12-04: Okay, this is getting ridiculous. This could use some
-            # refactoring into a general formula.
             expected_numart_nrs = ["ab", "bb"]
         elif prev_numart_nr == "bb":
             expected_numart_nrs = ["bc", "cc"]
@@ -254,15 +227,12 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs = ["kl", "ll"]
         elif prev_numart_nr == "ll":
             expected_numart_nrs = ["lm", "mm"]
-
         elif prev_numart_nr == "U":
             expected_numart_nrs = ["Ú"]
         elif prev_numart_nr == "Ú":
             expected_numart_nrs = ["V"]
         elif prev_numart_nr == "Z":
             expected_numart_nrs = ["AA"]
-
-        # Same thing as with "aa" above, only uppercase.
         elif prev_numart_nr == "AA":
             expected_numart_nrs = ["AB", "BB"]
         elif prev_numart_nr == "BB":
