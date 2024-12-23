@@ -58,13 +58,15 @@ class XMLStructureInfo:
                 )
                 self.element_attributes[node.tagName][attr[0]] += 1
 
-    def report(self, format):
+    def report(self, format, sort):
         if format == "json":
-            self._report_json()
+            self._report_json(sort)
         elif format == "yaml":
-            self._report_yaml()
+            self._report_yaml(sort)
+        elif format == "ts":
+            self._report_ts(sort)
 
-    def _report_json(self):
+    def _report_json(self, sort):
         print(
             json.dumps(
                 {
@@ -79,7 +81,7 @@ class XMLStructureInfo:
             )
         )
 
-    def _report_yaml(self):
+    def _report_yaml(self, sort):
         print("elements:")
         for element, count in self.elements.items():
             print(f"  {element}: {count}")
@@ -102,12 +104,16 @@ class XMLStructureInfo:
             for attr, count in attrs.items():
                 print(f"    {attr}: {count}")
 
+    def _report_ts(self, sort):
+        # This should return TypeScript type definitions for each of the data structures
+        pass
 
 @click.command()
 @click.argument("dir", type=click.Path(exists=True))
-@click.option("--format", type=click.Choice(["json", "yaml"]), default="yaml")
+@click.option("--format", type=click.Choice(["json", "yaml", "ts"]), default="yaml")
+@click.option("--sort", type=bool, default=True)
 @click.option("--verbose", type=bool, default=False)
-def main(dir, format, verbose):
+def main(dir, format, sort, verbose):
     """Analyze XML files in DIR and display a summary of elements"""
     info = XMLStructureInfo()
 
@@ -120,7 +126,7 @@ def main(dir, format, verbose):
             if verbose:
                 click.echo(f"Error parsing {file}: {e}", err=True, file=sys.stderr)
 
-    info.report(format)
+    info.report(format, sort)
 
 
 if __name__ == "__main__":
