@@ -1,12 +1,12 @@
-import os
+from os import path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
 CURRENT_PARLIAMENT_VERSION = "154b"
 
 DEBUG = True
 
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = path.join(BASE_DIR, "data")
 
 # Feature knobs are only intended for incomplete functionality.
 FEATURES = {

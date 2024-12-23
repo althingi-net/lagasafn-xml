@@ -1,13 +1,10 @@
 import json
-import os
 import re
 import string
-
 from lagasafn.constants import SPLITMAP_FILENAME
 from lagasafn.utils import Matcher
 from lagasafn.utils import is_roman
 from lagasafn.utils import last_container_added
-from lagasafn.utils import order_among_siblings
 from lagasafn.utils import regex_find
 from lagasafn.utils import strip_links
 from lagasafn.utils import super_iter
@@ -1006,7 +1003,7 @@ def generate_conjugations(name: str) -> dict:
     }
 
 
-def generate_synonyms(name: str) -> dict:
+def generate_synonyms(name: str):
     """
     Some laws have synonyms.
 

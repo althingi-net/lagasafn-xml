@@ -1,9 +1,7 @@
 import json
-import os
 import re
 import roman
 import subprocess
-
 from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lxml import etree
@@ -391,24 +389,6 @@ def strip_links(text, strip_hellip_link=False):
     return text
 
 
-# FIXME: Seems unused.
-def order_among_siblings(elem):
-    """
-    Returns the order of the given element among its siblings. For example, if
-    there are three <doodoo> elements in a row, and you call this function
-    with the second one, it will return 2.
-    """
-
-    result = None
-
-    for i, sibling in enumerate(elem.getparent().findall(elem.tag)):
-        if sibling == elem:
-            result = i + 1
-            break
-
-    return result
-
-
 def xml_lists_identical(one, two):
     """
     Takes two lists of XML nodes and checks whether they have the same
@@ -643,104 +623,45 @@ def ask_user_about_location(extra_sens, numart):
     # (https://www.althingi.is/lagas/151c/2020105.html).
     possible_locations.append(law)
 
-    # This is a hack to avoid having to re-configure the straytextmap every
-    # time we change the XML structure. This is pretty advanced stuff and
-    # requires understanding how the straytextmap is built.
-    #
-    # First, we must create an `old_straytextmap_key`, which is identical to
-    # how the key would have been generated before the XML structure change.
-    #
-    # Then, if that key is found, we record the legal reference, as displayed
-    # to a human. This is important, because it's the only thing that remains
-    # the same before and after an XML structure change. Even then, it's not
-    # even guaranteed, so there may be a bunch of locations that need asking
-    # the user about again.
-    #
-    # The legal reference is then matched against the current options, and
-    # the "response" from the user auto-selected
-    #
-    # IMPORTANT: The section filling out `hack_response` is left with a
-    # False-condition, making it never run, because this is only left here
-    # for reference in case such hacking is required again. Once the XML
-    # structure is finalized, this should (in theory) not be required again.
-    #
-    # For all practical purposes, consider this whole `hack_response` thing
-    # unused, irrelevant code. May it remain so forever.
-    hack_response = None
-    if False and "paragraph" in numart_xpath:
-        # Try to see if the old version of the key exists, which we may use
-        # to auto-select the new key.
+    # Try to explain the situation to the user.
+    width, height = terminal_width_and_height()
+    print()
+    print("-" * width)
+    print(
+        "We have discovered the following text that we are unable to programmatically locate in the XML in:"
+    )
+    print()
+    print("Law: %s/%s" % (law.attrib["nr"], law.attrib["year"]))
+    print()
+    print("It can be found in: %s" % legal_reference)
+    print("Link: %s" % url)
+    print()
+    print("The text in question is:")
+    print()
+    print('"%s"' % joined_extra_sens)
+    print()
+    print(
+        "Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text."
+    )
+    print()
+    print("The options are:")
+    for i, possible_location in enumerate(possible_locations):
+        print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location)))
+    print()
+    print(" - 0: Skip (use only when answer cannot be provided)")
 
-        # Create old version of `numart_xpath`.
-        str_loc = numart_xpath.find("/paragraph")
-        next_slash_loc = numart_xpath.find("/", str_loc + 1)
-        old_numart_xpath = numart_xpath[0:str_loc] + numart_xpath[next_slash_loc:]
+    # Get the user to decide.
+    response = None
+    while response not in range(0, len(possible_locations) + 1):
+        try:
+            response = int(input("Select appropriate option: "))
+        except ValueError:
+            # Ignore nonsensical answer and keep asking.
+            pass
 
-        # Create the version of the key that would exist before.
-        old_straytextmap_key = "%s/%s:%s:%s" % (
-            law.attrib["nr"],
-            law.attrib["year"],
-            old_numart_xpath,
-            joined_extra_sens,
-        )
-
-        # Grab the old legal reference if it exists.
-        if old_straytextmap_key in straytextmap:
-            old_legal_reference = straytextmap[old_straytextmap_key]["legal_reference"]
-
-            for i, possible_location in enumerate(possible_locations):
-                legal_reference = generate_legal_reference(
-                    possible_location, skip_law=True
-                )
-                if legal_reference == old_legal_reference:
-                    # This is what the user pressed when generating the
-                    # straytextmap, before the XML structure change occurred.
-                    hack_response = i + 1
-
-    if hack_response is not None:
-        # Only if the `hack_response` clause above is used, which is
-        # hopefully never.
-        response = hack_response
-    else:
-        # Try to explain the situation to the user.
-        width, height = terminal_width_and_height()
-        print()
-        print("-" * width)
-        print(
-            "We have discovered the following text that we are unable to programmatically locate in the XML in:"
-        )
-        print()
-        print("Law: %s/%s" % (law.attrib["nr"], law.attrib["year"]))
-        print()
-        print("It can be found in: %s" % legal_reference)
-        print("Link: %s" % url)
-        print()
-        print("The text in question is:")
-        print()
-        print('"%s"' % joined_extra_sens)
-        print()
-        print(
-            "Please open the legal codex in the relevant location, and examine which legal reference is the containing element of this text."
-        )
-        print()
-        print("The options are:")
-        for i, possible_location in enumerate(possible_locations):
-            print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location)))
-        print()
-        print(" - 0: Skip (use only when answer cannot be provided)")
-
-        # Get the user to decide.
-        response = None
-        while response not in range(0, len(possible_locations) + 1):
-            try:
-                response = int(input("Select appropriate option: "))
-            except ValueError:
-                # Ignore nonsensical answer and keep asking.
-                pass
-
-        # User opted to skip this one.
-        if response == 0:
-            return None
+    # User opted to skip this one.
+    if response == 0:
+        return None
 
     # Determine the selected node and get its reference.
     selected_node = possible_locations[response - 1]
@@ -830,7 +751,7 @@ class Matcher:
 
     Usage:
 
-    if matcher.check(line, r'<tag goo="(\d+)" splah="(\d+)">'):  # noqa
+    if matcher.check(line, '<tag goo="(\\d+)" splah="(\\d+)">'):  # noqa
         goo, splah = matcher.result()
     """
 
@@ -894,55 +815,22 @@ class Trail:
         return self.nodes[-1]
 
 
-# FIXME: `skip_prettyprint_hack` is there because we get a bunch of unwelcome
-# newlines into the index that we don't get into the legal XML files
-# themselves. The index is generated just fine when not in DEBUG mode, but
-# then the legal XML files get messed up and vice versa. Until this is
-# resolved, we'll keep the optional parameter `skip_prettyprint_hack` so that
-# we can use it when generating legal XML files, but skip it when generating
-# the index, regardless of what the DEBUG flag says.
-def write_xml(xml_doc, filename, skip_prettyprint_hack=False):
+def write_xml(xml_doc, filename):
     with open(filename, "w") as f:
-        # Importing a completely different XML library than the one we're
-        # using elsewhere in the code is a bit weird, but this is the only one
-        # we could find that does pretty printing with proper indenting. That
-        # happens to be very important for seeing whether the end result
-        # works. Since it's only used when DEBUG=True and is very much an
-        # anomaly in the code, it is imported here instead of at the top of
-        # the file.
-        #
-        # When not in DEBUG mode, we'll skip those shenanigans and write it
-        # out with the same library as the one we use elsewhere.
-        #
-        # FIXME: This has been permanently disabled and may be deleted once
-        # we're sure that the changes to the documents don't cause trouble.
-        if False and (settings.DEBUG and not skip_prettyprint_hack):
-            import xml.dom.minidom
+        etree.indent(xml_doc, level=0)
+        xml_string = etree.tostring(
+            xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+        ).decode("utf-8")
 
-            xml = xml.dom.minidom.parseString(
-                etree.tostring(
-                    xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-                ).decode("utf-8")
-            )
-            pretty_xml_as_string = xml.toprettyxml(
-                indent="  ", encoding="utf-8"
-            ).decode("utf-8")
-            f.write(pretty_xml_as_string)
-        else:
-            etree.indent(xml_doc, level=0)
-            xml_string = etree.tostring(
-                xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-            ).decode("utf-8")
+        # The "<" symbol gets escaped as "&lt;" earlier in the process, but the
+        # `etree.tostring` function above re-escapes it to `&amp;lt;". We'll
+        # un-escape it here, instead of dealing with CDATA encapsulation or the
+        # like.
+        xml_string = xml_string.replace("&amp;lt;", "&lt;")
 
-            # The "<" symbol gets escaped as "&lt;" earlier in the process, but
-            # the `etree.tostring` function above re-escapes it to `&amp;lt;".
-            # We'll un-escape it here, instead of dealing with CDATA
-            # encapsulation or the like.
-            xml_string = xml_string.replace("&amp;lt;", "&lt;")
-
-            f.write(
-                xml_string
-            )
+        f.write(
+            xml_string
+        )
 
 
 def traditionalize_law_nr(law_nr: str) -> str:

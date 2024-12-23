@@ -26,16 +26,6 @@ function lowercase_tagname(element) {
     return element.prop('tagName').toLowerCase();
 }
 
-// FIXME: Seems like a stale debug thing. Remove or utilize and comment.
-//function location_to_string($location) {
-//    var location_string = '';
-//    $location.children().each(function() {
-//        var $child = $(this);
-//        location_string += lowercase_tagname($child) + ' ' + $child.text() + ' ';
-//    });
-//    return location_string.trim();
-//}
-
 // Encapsulating function for making XPath queries less messy.
 function getElementByXPath(xpath, contextNode = document) {
     return document.evaluate(xpath, contextNode, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;

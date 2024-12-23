@@ -1,13 +1,9 @@
 import os
 import re
 import roman
-from formencode.doctest_xml_compare import xml_compare
 from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
 from lagasafn.constants import XML_FILENAME
-from lagasafn.settings import DATA_DIR
-from lagasafn import settings
-from lxml import etree
 from lxml.builder import E
 from lagasafn.contenthandlers import get_nr_and_name
 from lagasafn.contenthandlers import strip_markers
@@ -1083,9 +1079,10 @@ def parse_extra_docs(parser):
     ] and parser.trail_reached("intro-finished"):
         # Accompanying documents vary in origin and format, and are not a
         # part of the formal legal text itself, even though legal text may
-        # reference them. Parsing them is beyond the scope of this tool.
-        # They always show up at the end, so at this point, our work is
-        # done. We'll escape the loop and go for post-processing.
+        # reference them.
+        #
+        # Parsing them has hitherto been beyond the scope of this tool, but
+        # that may need to change.
         return True
     return False
 
@@ -1196,14 +1193,12 @@ def parse_appendix(parser):
             continue
         break
 
-    # FIXME: Presumably this should be `parser.appendix = None`. Not fixing now
-    # because we're in the middle of something rather complicated and don't
-    # want to risk breaking something.
-    parser.appendix_part = None
-
     parser.trail_push(parser.appendix)
     parse_footnotes(parser)
+
+    parser.appendix = None
     parser.leave("appendix")
+
     return True
 
 
@@ -1877,77 +1872,6 @@ def parse_article(parser):
         parser.consume("</b>")
         parser.art.append(E("name", {"name-style": "b"}, strip_links(art_name)))
 
-    # Another way to denote an article's name is by immediately
-    # following it with bold text. This is very rare but does occur.
-    #
-    # FIXME: This section was disabled because it caused damage and it doesn't
-    # seem to belong here. Somewhere we're doing this. It just looks like it's
-    # in the wrong place. Also, we should check if we can handle article names
-    # that are bold. It even kind of looks like two different things got mixed
-    # up here.
-    elif False and parser.peeks() == "<b>" and parser.peeks(2) != "Ákvæði til bráðabirgða.":
-        # Exceptional case: 94/1996 contains a very strange temporary
-        # clause chapter. It was originally a temporary article (24.
-        # gr.) with a name denoted differently than other articles in
-        # that bill. It was not a chapter.
-        #
-        # See: https://www.althingi.is/altext/120/s/0751.html
-        #
-        # Then the temporary clauses were altered with law that
-        # assumed that the temporary clause section was, in fact, a
-        # chapter and not an article. This has resulted in an
-        # ambiguity, leaving the legal document itself in unparsable
-        # limbo. The temporary clauses that are current are not
-        # denoted as temporary per se, but rather as strangely
-        # numbered articles that appear after article 24, which is
-        # still called "Temporary clauses" (in Icelandic) and is
-        # technically empty.
-        #
-        # See: https://www.althingi.is/lagas/150b/1996094.html
-        #
-        # Before this block of code was written (for supporting
-        # article names denoted by <b> tags), we would parse this as a
-        # temporary chapter and not as an article, due to the fact
-        # that it contains the word "bráðabirgða". Now that we're
-        # implementing support for bold-denoted article names, it is
-        # parsed as an article name, resulting in the same limbo state
-        # that can be found in the official documents.
-        #
-        # We need to decide whether we wish to imitate the chaotic
-        # limbo in the legal code, or to parse the temporary clauses
-        # as a chapter and leave article 24 as, in effect, empty.
-        #
-        # We have decided the latter, for the following reasons:
-        #
-        # 1. It is clear that Parliament's most recent treatment of
-        #    these clauses have assumed that they belonged to a
-        #    temporary clause chapter, and not an article. This is
-        #    clear from how bills have treated the clauses after the
-        #    original bill was passed.
-        #
-        # 2. The temporary articles are denoted with Roman numerals,
-        #    typical of articles in temporary chapters but otherwise
-        #    not known to occur to denote temporary clauses.
-        #
-        # 3. The purpose of this script is to create a logical and
-        #    coherent collection of Icelandic law. To imitate the
-        #    limbo would go against this goal, whereas interpreting it
-        #    as a chapter brings us closer to achieving it.
-        #
-        # This decision manifests itself in the latter part of the
-        # elif-line above, where we peek 2 lines into the future and
-        # check if it's the article with that specific name. That
-        # latter part only returns true in the very specific case
-        # outlined here.
-
-        parser.scroll_until("<b>")
-        art_name = parser.collect_until("</b>")
-        parser.consume("</b>")
-
-        parser.art.append(
-            E("name", strip_links(art_name), {"original-ui-style": "bold"})
-        )
-
     # Check if the article is empty aside from markers that need to be
     # included in the article <nr-title> or <name> (depending on
     # whether <name> exists at all).
@@ -1987,8 +1911,6 @@ def parse_article(parser):
     parser.leave("art")
     return True
 
-
-VISITATIONS = 0
 
 def parse_subarticle(parser):
     if not (
@@ -2168,8 +2090,7 @@ def parse_deletion_marker(parser):
 def parse_numerical_article(parser):
     if not (
         parser.matcher.check(parser.line, r'<span id="(F\d?)?[BG](\d+)([0-9A-Z]*)L(\d+)">')
-        # FIXME: Try matching the following line without a regex check.
-        or (parser.matcher.check(parser.line, "<span>") and parser.peeks() != "</span>")
+        or (parser.line == "<span>" and parser.peeks() != "</span>")
         or is_numart_address(parser.line)
     ):
         return False
@@ -2346,89 +2267,80 @@ def parse_numerical_article(parser):
 
         # See if this is the next numart in a predictable succession.
         if first_bit_of_numart in expected_numart_nrs:
-            # This `numart` is simply the next one, so we'll want to
-            # append it to whatever node that the previous `numart`
-            # was appended to.
+            # This `numart` is simply the next one, so we'll want to append it
+            # to whatever node that the previous `numart` was appended to.
             parent = prev_numart.getparent()
-        else:
-            # FIXME: These is no obvious reason for this `if`-block to be
-            # inside an `else`-block.
-            if numart_nr.lower() in ["a", "i", "—", "–"] or (
-                numart_nr.isdigit() and int(numart_nr) == 1
+        elif (
+            numart_nr.lower() in ["a", "i", "—", "–"]
+            or numart_nr.isdigit() and int(numart_nr) == 1
+        ):
+            # A new list has started within the one we were already processing,
+            # which we can tell because there was a `numart` before this one,
+            # but this `numart` says it's at the beginning, being either 'a' or
+            # 1. In this case, we'll choose the previous `numart` as the
+            # parent, so that this new list will be inside the previous one. We
+            # append to the last paragraph of that parent.
+            if (
+                prev_numart.getparent().getparent() is not None
+                and prev_numart.getparent().getparent().getchildren()[-1].getchildren()[-1].tag != "numart"
             ):
-                # A new list has started within the one we were
-                # already processing, which we can tell because there
-                # was a `numart` before this one, but this `numart`
-                # says it's at the beginning, being either 'a' or 1.
-                # In this case, we'll choose the previous `numart` as
-                # the parent, so that this new list will be inside the
-                # previous one. We append to the last paragraph of
-                # that parent.
-                if (
-                    prev_numart.getparent().getparent() is not None
-                    and prev_numart.getparent().getparent().getchildren()[-1].getchildren()[-1].tag != "numart"
-                ):
-                    # This happens in the rather unfortunate circumstance that
-                    # a list of `numart`s is in one `paragraph` and then
-                    # another list follows in another `paragraph` (as opposed
-                    # to a `subart`).
-                    #
-                    # In this case, we need to check if the last `paragraph` in
-                    # the `subart` is a `numart` or not, to properly judge if
-                    # we should be adding to that list, or if it's another list
-                    # of `numart`s in another paragraph.
-                    #
-                    # Only known to happen in 3. gr. laga nr. 78/1993.
-                    #
-                    # May this never happen again.
-                    parent = prev_numart.getparent().getparent().findall("paragraph")[-1]
-                else:
-                    parent = prev_numart.findall("paragraph")[-1]
+                # This happens in the rather unfortunate circumstance that a
+                # list of `numart`s is in one `paragraph` and then another list
+                # follows in another `paragraph` (as opposed to a `subart`).
+                #
+                # In this case, we need to check if the last `paragraph` in the
+                # `subart` is a `numart` or not, to properly judge if we should
+                # be adding to that list, or if it's another list of `numart`s
+                # in another paragraph.
+                #
+                # Only known to happen in 3. gr. laga nr. 78/1993.
+                #
+                # May this never happen again.
+                parent = prev_numart.getparent().getparent().findall("paragraph")[-1]
             else:
-                # A different list is being handled now, but it's not
-                # starting at the beginning (is neither 'a' nor 1).
-                # This means that we've been dealing with a sub-list
-                # which has now finished, so we want to continue
-                # appending this `numart` to the parent of the parent
-                # of the list we've been working on recently, which is
-                # the same parent as the nodes that came before we
-                # started the sub-list.
-                #
-                # Parent is a `paragraph`, grandparent is another
-                # `numart`, great-grandparent is the last `paragraph`
-                # of the "grandparent numart", which is the one we
-                # want to append to.
-                #
-                # Hey, it's simpler than the British monarchy.
-                #
-                # We'll need to iterate through ancestors in case there are
-                # multiple levels of `numart`s, checking each time if the
-                # current `numart_nr` matches the expected next numart number
-                # from each ancestor. Once `numart_nr` matches what we
-                # expected, we know we've found the right ancestor.
-                found_parent = None
-                maybe_sibling = prev_numart.getparent()
-                while found_parent is None:
-                    # We know that the parent is never the first
-                    # `maybe_parent`'s parent because that would mean that the
-                    # current `numart` is a sibling of the `prev_numart` which
-                    # makes no sense in this place in the code, so we can
-                    # safely assume that the first possible `found_parent` is
-                    # the `prev_numart`'s parent.
+                parent = prev_numart.findall("paragraph")[-1]
+        else:
+            # A different list is being handled now, but it's not starting at
+            # the beginning (is neither 'a' nor 1). This means that we've been
+            # dealing with a sub-list which has now finished, so we want to
+            # continue appending this `numart` to the parent of the parent of
+            # the list we've been working on recently, which is the same parent
+            # as the nodes that came before we started the sub-list.
+            #
+            # Parent is a `paragraph`, grandparent is another `numart`,
+            # great-grandparent is the last `paragraph` of the "grandparent
+            # numart", which is the one we want to append to.
+            #
+            # Hey, it's simpler than the British monarchy.
+            #
+            # We'll need to iterate through ancestors in case there are
+            # multiple levels of `numart`s, checking each time if the current
+            # `numart_nr` matches the expected next numart number from each
+            # ancestor. Once `numart_nr` matches what we expected, we know
+            # we've found the right ancestor.
+            found_parent = None
+            maybe_sibling = prev_numart.getparent()
+            while found_parent is None:
+                # We know that the parent is never the first
+                # `maybe_parent`'s parent because that would mean that the
+                # current `numart` is a sibling of the `prev_numart` which
+                # makes no sense in this place in the code, so we can
+                # safely assume that the first possible `found_parent` is
+                # the `prev_numart`'s parent.
+                maybe_sibling = maybe_sibling.getparent()
+                if maybe_sibling.tag == "paragraph":
+                    maybe_sibling = maybe_sibling.getchildren()[-1]
+
+                expected = numart_next_nrs(maybe_sibling)
+
+                if numart_nr in expected:
+                    # Yes! We found the sibling, so we know its parent.
+                    found_parent = maybe_sibling.getparent()
+                else:
+                    # Doesn't make sense. Let's try the parent.
                     maybe_sibling = maybe_sibling.getparent()
-                    if maybe_sibling.tag == "paragraph":
-                        maybe_sibling = maybe_sibling.getchildren()[-1]
 
-                    expected = numart_next_nrs(maybe_sibling)
-
-                    if numart_nr in expected:
-                        # Yes! We found the sibling, so we know its parent.
-                        found_parent = maybe_sibling.getparent()
-                    else:
-                        # Doesn't make sense. Let's try the parent.
-                        maybe_sibling = maybe_sibling.getparent()
-
-                parent = found_parent
+            parent = found_parent
 
     # A parent may already be set above if `numart` currently being
     # handled is not the first one in its parent article/subarticle.
@@ -2462,16 +2374,12 @@ def parse_numerical_article(parser):
             # potential sentence explaining what's being listed.
             parent = parser.subart.findall("paragraph")[-1]
         elif parser.art is not None:
-            # FIXME: Investigate if this ever actually happens and
-            # explain when it does, or remove this clause.
+            # This is remarkably common, happens for example in 3. gr. laga nr.
+            # 65/2003 (154b).
             parent = parser.art
-        elif parser.chapter is not None:
-            # FIXME: Investigate if this ever actually happens and
-            # explain when it does, or remove this clause.
-            parent = parser.chapter
         else:
-            # FIXME: Investigate if this ever actually happens and
-            # explain when it does, or remove this clause.
+            # At codex version 154b, this is only known to happen in
+            # presidential decrees, namely 5/2022 and 93/2022.
             parent = parser.law
 
     # Figure out the numart's type.
