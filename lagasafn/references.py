@@ -361,6 +361,20 @@ def parse_references():
     # (accusative, dative, etc.) and synonyms and also their declensions.
     law_permutations = get_law_name_permutations()
 
+    # Construct a regex pattern that will exclude what may otherwise appear to
+    # be references to laws.
+    # FIXME: There has to be a tidier way to do this.
+    law_pattern_regex = r"nr\. (\d{1,3}\/\d{4})"
+    law_pattern_disqualifiers = [
+        "Stjórnartíðindi Evrópusambandsins",
+        "EES-nefndarinnar",
+        "EES-nefndarinnar,",
+        "við EES-samninginn",
+        "auglýsingu",
+    ]
+    for disqualifier in law_pattern_disqualifiers:
+        law_pattern_regex = r"(?<!" + disqualifier + " )" + law_pattern_regex
+
     # Now iterate through all the laws and parse their contents.
     for law_entry in index.xpath("/index/law-entries/law-entry"):
         law_nr = law_entry.attrib["nr"]
@@ -376,20 +390,6 @@ def parse_references():
         for sen in sens:
             # We'll be butchering this so better make a copy.
             chunk = strip_links(sen.text or "")
-
-            # Construct a regex pattern that will exclude what may otherwise
-            # appear to be references to laws.
-            # FIXME: There has to be a tidier way to do this.
-            law_pattern_regex = r"nr\. (\d{1,3}\/\d{4})"
-            law_pattern_disqualifiers = [
-                "Stjórnartíðindi Evrópusambandsins",
-                "EES-nefndarinnar",
-                "EES-nefndarinnar,",
-                "við EES-samninginn",
-                "auglýsingu",
-            ]
-            for disqualifier in law_pattern_disqualifiers:
-                law_pattern_regex = r"(?<!" + disqualifier + " )" + law_pattern_regex
 
             nrs_and_years = re.findall(law_pattern_regex, chunk)
             for nr_and_year in nrs_and_years:
@@ -443,14 +443,14 @@ def parse_references():
                         ]
                     )
 
-                # A string holding potential parts of an inner reference. Gets
+                # a string holding potential parts of an inner reference. gets
                 # continuously analyzed and chipped away at, as we try to
                 # include as much as we can.
                 potentials = ""
 
-                # Begin by finding out where the next outer reference starts.
+                # begin by finding out where the next outer reference starts.
                 def next_outer_reference(chunk, potential_start_guesses):
-                    # NOTE: We call this a starting location, but we're parsing
+                    # note: we call this a starting location, but we're parsing
                     # backwards into the string from the starting location,
                     # even though we're looking for the starting location
                     # forward.
@@ -459,10 +459,10 @@ def parse_references():
 
                     for potential_start_guess in potential_start_guesses:
 
-                        # We match by lowercase, in case the name of the law
+                        # we match by lowercase, in case the name of the law
                         # has an uppercase letter, which happens for example
-                        # when a sentence begins with it. The location is be
-                        # the same regardless of case.
+                        # when a sentence begins with it. the location is the
+                        # same regardless of case.
                         attempt = chunk.lower().find(potential_start_guess.lower())
 
                         if potentials_outer_start == -1 or (
