@@ -4,6 +4,7 @@ from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.pathing import get_segment
 from lagasafn.references import parse_reference_string
+from lagasafn.utils import write_xml
 from lxml import etree
 from ninja import File
 from ninja import NinjaAPI
@@ -90,25 +91,25 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     # Re-encode `minister-clause` because it's actually HTML with some
     # exporting quirks (from the original HTML-exporting software) that we
     # also imitate.
-    minister_clause = xml_doc.find("minister-clause")
-    encoded_clause = ""
-    for child in minister_clause:
-        encoded_clause += etree.tostring(child, encoding="unicode")
-    encoded_clause = encoded_clause.replace(">", "> ")
-    encoded_clause = encoded_clause.replace("<", " <")
-    encoded_clause = encoded_clause.replace("  ", " ").strip()
-    for child in list(minister_clause):
-        minister_clause.remove(child)
-    minister_clause.text = encoded_clause
+    # FIXME: Disabled for now because it's screwing things up rather than
+    # fixing them. Remove comment or fix code depending on what kind of problem
+    # this becomes later.
+    #minister_clause = xml_doc.find("minister-clause")
+    #encoded_clause = ""
+    #for child in minister_clause:
+    #    encoded_clause += etree.tostring(child, encoding="unicode")
+    #encoded_clause = encoded_clause.replace(">", "> ")
+    #encoded_clause = encoded_clause.replace("<", " <")
+    #encoded_clause = encoded_clause.replace("  ", " ").strip()
+    #for child in list(minister_clause):
+    #    minister_clause.remove(child)
+    #minister_clause.text = encoded_clause
 
-    # For details, see comparable section in `lagasafn-xml` project.
-    import xml.dom.minidom
+    etree.indent(xml_doc, level=0)
+    xml_string = etree.tostring(
+        xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+    ).decode("utf-8")
 
-    xml = xml.dom.minidom.parseString(
-        etree.tostring(
-            xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-        ).decode("utf-8")
-    )
-    normalized_file = xml.toprettyxml(indent="  ", encoding="utf-8").decode("utf-8")
+    xml_string = write_xml(xml_doc)
 
-    return HttpResponse(normalized_file, content_type="text/xml")
+    return HttpResponse(xml_string, content_type="text/xml")

@@ -785,22 +785,26 @@ class Trail:
         return self.nodes[-1]
 
 
-def write_xml(xml_doc, filename):
-    with open(filename, "w") as f:
-        etree.indent(xml_doc, level=0)
-        xml_string = etree.tostring(
-            xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-        ).decode("utf-8")
+def write_xml(xml_doc, filename=None):
 
-        # The "<" symbol gets escaped as "&lt;" earlier in the process, but the
-        # `etree.tostring` function above re-escapes it to `&amp;lt;". We'll
-        # un-escape it here, instead of dealing with CDATA encapsulation or the
-        # like.
-        xml_string = xml_string.replace("&amp;lt;", "&lt;")
+    etree.indent(xml_doc, level=0)
+    xml_string = etree.tostring(
+        xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
+    ).decode("utf-8")
 
-        f.write(
-            xml_string
-        )
+    # The "<" symbol gets escaped as "&lt;" earlier in the process, but the
+    # `etree.tostring` function above re-escapes it to `&amp;lt;". We'll
+    # un-escape it here, instead of dealing with CDATA encapsulation or the
+    # like.
+    xml_string = xml_string.replace("&amp;lt;", "&lt;")
+
+    if filename is not None:
+        with open(filename, "w") as f:
+            f.write(
+                xml_string
+            )
+
+    return xml_string
 
 
 def traditionalize_law_nr(law_nr: str) -> str:
