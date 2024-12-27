@@ -2,7 +2,6 @@
 import codecs
 import json
 import re
-import signal
 import os
 import sys
 from bs4 import BeautifulSoup
@@ -24,6 +23,7 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.multiprocessing import CustomPool
 from lagasafn.patching import attempt_json_map_transfer
 from lagasafn.patching import patch_law
 from lagasafn.population import population_game
@@ -653,37 +653,8 @@ def main(argv):
     # Sort the law_ids in their own special way (year first, num second).
     law_ids = sorted_law(law_ids)
 
-    # This is apparently safer than `multiprocessing.cpu_count()`,
-    # according to:
-    # https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
-    cpu_count = len(os.sched_getaffinity(0))
-
-    def init_pool():
-        # Start ignoring the KeyboardInterrupt signal in the main thread. The
-        # result is that it gets caught by the sub-processes, which **don't**
-        # inherit this setting. The exception is then thrown when waiting for
-        # the process pool to finish, and caught by the code running the
-        # `main` function.
-        signal.signal(signal.SIGINT, signal.SIG_IGN)
-
-    with Pool(cpu_count, init_pool) as pool:
-        if "--single-thread" in argv:
-            # Multiprocessing has some wide-reaching implications for various
-            # under-the-hood mechanics like debugging. We need the ability to
-            # have those work, so we offer this option to sidestep threading.
-            #
-            # This is only "yield-ified" so that the results stay compatible
-            # with the code that handles those same results when using
-            # multiprocessing.
-            def yieldify_processing(law_ids):
-                for law_id in law_ids:
-                    yield process_law(law_id)
-
-            results = yieldify_processing(law_ids)
-        else:
-            # Start an asynchronous pool of processes, as many as there are
-            # CPUS, giving them a list of the laws that need processing.
-            results = pool.imap_unordered(process_law, law_ids)
+    with CustomPool() as pool:
+        results = pool.run(process_law, law_ids)
 
         # Open the errormap for recording successes and errors.
         with open(ERRORMAP_FILENAME, "r") as f:
