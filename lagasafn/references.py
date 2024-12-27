@@ -343,8 +343,7 @@ def parse_references():
 
     # These will record statistics as we run through the data, applied to the
     # XML afterwards.
-    stat_loop_count = stat_conclusive_count = stat_inconclusive_count = 0
-    stat_xpath_successes = stat_xpath_failures = stat_xpath_resolution_failures = 0
+    stat_loop_count = stat_inconclusive_count = 0
     xml_ref_doc = E("references")
 
     index = etree.parse(XML_INDEX_FILENAME).getroot()
@@ -556,23 +555,21 @@ def parse_references():
                     )
 
                     if len(reference) == 0:
-                        # There is no inner reference so we can count this as a succcess.
-                        stat_xpath_successes +=1
+                        # Formally record this as a success by setting the
+                        # `xpath` attribute to an empty string.
+                        ref_reference.attrib["xpath"] = ""
                     else:
                         try:
                             xpath = make_xpath_from_inner_reference(reference)
                             try:
                                 get_segment(target_law_nr, target_law_year, xpath)
                                 ref_reference.attrib["xpath"] = xpath
-                                stat_xpath_successes += 1
                             except Exception as ex:
                                 ref_reference.attrib["xpath-resolution-failure"] = "true"
-                                stat_xpath_resolution_failures += 1
                             del xpath
 
                         except ReferenceParsingException:
                             ref_reference.attrib["xpath-failure"] = "true"
-                            stat_xpath_failures += 1
 
                     ref_node.append(ref_reference)
 
@@ -615,9 +612,6 @@ def parse_references():
                     if chunk.find("nr. ") == 0:
                         chunk = "[law-marker] " + chunk
 
-                    # Record statistics.
-                    stat_conclusive_count += 1
-
                     # Finally add the entry to the XML document.
                     xml_ref_doc.append(law_ref_entry)
 
@@ -655,15 +649,20 @@ def parse_references():
         print(".", end="", flush=True)
 
     # Apply statistics to XML.
-    xml_ref_doc.attrib["stat-loop-count"] = str(stat_loop_count)
-    xml_ref_doc.attrib["stat-inconclusive-count"] = str(stat_inconclusive_count)
-    xml_ref_doc.attrib["stat-conclusive-count"] = str(stat_conclusive_count)
-    xml_ref_doc.attrib["stat-xpath-successes"] = str(stat_xpath_successes)
-    xml_ref_doc.attrib["stat-xpath-failures"] = str(stat_xpath_failures)
-    xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(stat_xpath_resolution_failures)
+    xml_ref_doc.attrib["stat-conclusive-count"] = str(len(xml_ref_doc.xpath("//reference")))
+    xml_ref_doc.attrib["stat-xpath-successes"] = str(len(xml_ref_doc.xpath("//reference[@xpath]")))
+    xml_ref_doc.attrib["stat-xpath-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-failure='true']")))
+    xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-resolution-failure='true']")))
+
     write_xml(xml_ref_doc, XML_REFERENCES_FILENAME)
 
     print(" done")
+
+    # Report errors.
+    if stat_inconclusive_count > 0:
+        print("Reference errors: Inconclusives: %d" % stat_inconclusive_count)
+        if stat_loop_count > 0:
+            print(" - Of those, loops: %d" % stat_loop_count)
 
 
 def parse_reference_string(reference):
