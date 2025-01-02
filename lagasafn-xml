@@ -29,6 +29,7 @@ from lagasafn.patching import patch_law
 from lagasafn.population import population_game
 from lagasafn.references import parse_references
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.utils import number_sorter
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
 from lagasafn.utils import write_xml
@@ -500,16 +501,6 @@ def update_index():
         else:
             stats["non-empty-count"] += 1
 
-    def number_sorter(number):
-        """
-        Used for properly sorting numbers in a string, so that "7" comes before
-        "70" by prepending zeroes.
-        """
-        result = str(number)
-        while len(result) < 3:
-            result = "0%s" % result
-        return result
-
     # Sort the law entries by year and number.
     law_entries[:] = reversed(
         sorted(
@@ -618,17 +609,6 @@ def main(argv):
     if "--help" in argv:
         usage(argv[0])
 
-    # Only update the index and immediately quit if so requested.
-    if "--index-only" in argv:
-        update_index()
-        quit()
-    elif "--references-only" in argv:
-        parse_references()
-        quit()
-    elif "--population-game" in argv:
-        population_game()
-        quit()
-
     # Container for laws that are about to be processed.
     law_ids = []
 
@@ -652,6 +632,17 @@ def main(argv):
 
     # Sort the law_ids in their own special way (year first, num second).
     law_ids = sorted_law(law_ids)
+
+    # Only update the index and immediately quit if so requested.
+    if "--index-only" in argv:
+        update_index()
+        quit()
+    elif "--references-only" in argv:
+        parse_references(law_ids)
+        quit()
+    elif "--population-game" in argv:
+        population_game()
+        quit()
 
     with CustomPool() as pool:
         results = pool.run(process_law, law_ids)
@@ -698,7 +689,7 @@ def main(argv):
 
     # Parse references (unless skipped).
     if "--skip-references" not in argv:
-        parse_references()
+        parse_references(law_ids)
 
     # List the errors and identify laws in which they occurred.
     display_errors(law_ids)

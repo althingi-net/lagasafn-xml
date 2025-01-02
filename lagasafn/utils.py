@@ -851,6 +851,41 @@ def traditionalize_law_nr(law_nr: str) -> str:
     return result
 
 
+def untraditionalize_law_nr(law_nr: str, law_year: int) -> str:
+    """
+    Does the reverse of what `traditionalize_law_nr` does, i.e. takes a pre-1885 law number as it is defined by Althingi, and turns it into the filename format that we prefer.
+    """
+    weird_month = law_nr[-1]
+    if weird_month == "0":
+        # Happens in m10d28/1828, where zero means 10. This strange naming
+        # scheme will never be used again, so we just hard-code it here.
+        weird_month = "10"
+    elif len(weird_month) == 1:
+        weird_month = "0%s" % weird_month
+
+    weird_day = law_nr[0:-1]
+    if len(weird_day) == 1:
+        weird_day = "0%s" % weird_day
+    elif law_nr == "0":
+        # Happens in m07d00/1764 and m00d00/1275, where there is no day
+        # specified. Hard-coded here since this will never be done again and
+        # only applies to these very particular, ancient data.
+        if law_year == 1764:
+            weird_day = "00"
+            weird_month = "07"
+        elif law_year == 1275:
+            weird_day = "00"
+            weird_month = "00"
+
+    # I was here. Working on refactoring `process_references` so that it can be multiprocessed.
+    # Needed this function to deal with the `law_id` when it comes in the form of things like 0/1764 or whatever.
+    # I should maybe just make a function that takes `law_id` instead and returns `law_nr` and `law_year` separated,
+    # taking all this nonsense into account.
+
+    untraditionalized = "m%sd%s" % (weird_month, weird_day)
+    return untraditionalized
+
+
 def last_container_added(input_node):
     """
     Finds the last container node added to the `input_node`.
@@ -951,4 +986,15 @@ def convert_to_text(elements: List[Element]):
     while "  " in result:
         result = result.replace("  ", " ")
 
+    return result
+
+
+def number_sorter(number):
+    """
+    Used for properly sorting numbers in a string, so that "7" comes before
+    "70" by prepending zeroes.
+    """
+    result = str(number)
+    while len(result) < 3:
+        result = "0%s" % result
     return result
