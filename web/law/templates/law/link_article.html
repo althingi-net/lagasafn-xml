@@ -2,10 +2,9 @@
     {% for art in articles %}
     <li class="art">
         <a class="menu-item" data-tag="art" data-nr="{{ art.nr }}">
+            <strong>{{ art.nr_title }}</strong>
             {% if art.name %}
-                {{ art.name }}
-            {% else %}
-                {{ art.nr_title }}
+                <em>{{ art.name }}</em>
             {% endif %}
         </a>
     </li>

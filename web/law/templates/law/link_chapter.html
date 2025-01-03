@@ -2,10 +2,9 @@
     {% for chapter in chapters %}
     <li class="chapter">
         <a class="menu-item" data-tag="chapter" data-nr="{{ chapter.nr }}">
+            {{ chapter.nr_title }}
             {% if chapter.name %}
-                {{ chapter.name }}
-            {% else %}
-                {{ chapter.nr_title }}
+                <em>{{ chapter.name }}</em>
             {% endif %}
         </a>
         {% include 'law/link_article.html' with articles=chapter.articles %}
