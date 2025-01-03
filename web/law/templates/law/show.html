@@ -107,10 +107,10 @@
     // Scroll to the selected text.
     $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
-        const xpath = urlParams.get('xpath');
+        const xpath = urlParams.get('xpath') || "";
         const selectedText = urlParams.get('selected_text') || "";
 
-        if (selectedText.length > 0) {
+        if (xpath.length > 0) {
             // Find the element in question.
             var element = getElementByXPath("//law//" + xpath);
 
@@ -125,8 +125,10 @@
                 highlightElement(correctParent);
             }
 
-            // Make the searched text selected.
-            selectTextInNode(element, selectedText);
+            // Make the searched text selected, if provided.
+            if (selectedText.length > 0) {
+                selectTextInNode(element, selectedText);
+            }
         }
     });
 
