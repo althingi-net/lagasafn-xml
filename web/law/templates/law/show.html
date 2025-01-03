@@ -5,7 +5,25 @@
 <script language="javascript" type="text/javascript">
     // Constants available to JavaScript.
     const LAW_IDENTIFIER = "{{ law.identifier }}";
-    const SCROLL_OFFSET = 300;  // Essentially arbitrary.
+
+    // These are nodes that makes sense to highlight when emphasizing search
+    // results or otherwise locating content. In general, it makes no sense to
+    // highlight inline elements.
+    const highlightables = ["art", "subart", "numart", "chapter"];
+
+    function highlightElement(elem) {
+
+        // Highlight the selected item.
+        document.querySelectorAll(".highlighted").forEach(el => el.classList.remove("highlighted"));
+        elem.classList.add("highlighted");
+
+        // Scroll so that the element is visible.
+        elem.scrollIntoView({
+            block: "center",
+        });
+    }
+
+    // I was here. Going to make this re-usable by URL, and thus things like the search results.
 
     // Activate menu items.
     var elements = document.querySelectorAll(".menu-item");
@@ -16,21 +34,7 @@
             let selector = tag + "[nr='" + nr + "']";
             let elem = document.querySelector(selector);
 
-            // Highlight the selected item.
-            document.querySelectorAll(".highlighted").forEach(el => el.classList.remove("highlighted"));
-            elem.classList.add("highlighted");
-
-            // Scroll so that the element is visible.
-            elem.scrollIntoView();
-
-            window.scrollBy(0, 0 - SCROLL_OFFSET);
-
-            // If the scrolling has hidden our element, we make it re-appear.
-            let rect = elem.getBoundingClientRect();
-            if (rect.top > SCROLL_OFFSET && rect.bottom > window.innerHeight) {
-                window.scrollBy(0, SCROLL_OFFSET);
-            }
-
+            highlightElement(elem);
         });
     });
 
@@ -105,12 +109,23 @@
         const urlParams = new URLSearchParams(window.location.search);
         const xpath = urlParams.get('xpath');
         const selectedText = urlParams.get('selected_text') || "";
+
         if (selectedText.length > 0) {
+            // Find the element in question.
             var element = getElementByXPath("//law//" + xpath);
-            element.scrollIntoView({
-                block: "center",
-            });
-            element.classList.add('search-result-selection');
+
+            // Find the proper element to highlight. In general we don't want
+            // to highlight inline elements, but rather known block elements
+            // that makes sense to highlight.
+            var correctParent = element;
+            while (correctParent !== null && !highlightables.includes(correctParent.tagName.toLowerCase())) {
+                correctParent = correctParent.parentElement;
+            }
+            if (correctParent !== null) {
+                highlightElement(correctParent);
+            }
+
+            // Make the searched text selected.
             selectTextInNode(element, selectedText);
         }
     });
