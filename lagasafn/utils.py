@@ -419,7 +419,7 @@ def generate_url(input_node):
     return url
 
 
-def generate_legal_reference(input_node, skip_law=False):
+def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=False):
     """
     Takes an XML node and returns a string representing the formal way of
     referring to the same location in the legal codex.
@@ -492,17 +492,32 @@ def generate_legal_reference(input_node, skip_law=False):
                 else:
                     raise Exception("Parsing of node '%s' (xpath %s) not implemented" % (node.tag, node.getroottree().getpath(node)))
         elif node.tag == "paragraph":
-            # This is a bit out of the ordinary. These paragraphs are
-            # typically not denoted in references, which is why we enclose
-            # them in brackets. However, on occasion we need them to properly
-            # place content coming after `numart`s, and of course they are
-            # needed under-the-hood to pinpoint locations in the XML.
+            # This is a bit out of the ordinary. This type of paragraphs is
+            # typically not denoted in references.
+            #
+            # They are denoted, basically, when there are more than one
+            # paragraph inside a node that typically only contains one
+            # paragraph. For example, a paragraph may come after a list of
+            # `numart`s, or there indeed be more than one `paragraph` inside a
+            # `numart`. Only in those cases do we wish to denote `paragraph`s
+            # as "málsgr."
+            #
+            # However, on occasion we need them to properly place content
+            # coming after `numart`s, and of course they are needed
+            # under-the-hood to pinpoint locations in the XML. For this reason,
+            # the optional boolean parameter `force_inner_paragraph` to force
+            # the showing of them, but then they are called "undirmálsgrein"
+            # for a clear distinction.
             #
             # Also note that when they are referenced in text, they are just
             # called "málsgr." for Icelandic "málsgreinar". We make the
-            # technical distinction between a `subart` and `paragraph`, but
-            # in human speech, they are called the same thing ("málsgrein").
-            result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+            # technical distinction between a `subart` and `paragraph`, but in
+            # human speech, they are called the same thing ("málsgrein").
+            if len(node.getparent().findall("paragraph")) > 1:
+                result += "%s. málsgr. " % node.attrib["nr"]
+            elif force_inner_paragraph:
+                result += "[%s. undirmálsgr.] " % node.attrib["nr"]
+
         elif node.tag == "appendix-part":
             pass
         elif node.tag == "appendix":
