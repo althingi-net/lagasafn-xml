@@ -868,7 +868,9 @@ def traditionalize_law_nr(law_nr: str) -> str:
 
 def untraditionalize_law_nr(law_nr: str, law_year: int) -> str:
     """
-    Does the reverse of what `traditionalize_law_nr` does, i.e. takes a pre-1885 law number as it is defined by Althingi, and turns it into the filename format that we prefer.
+    Does the reverse of what `traditionalize_law_nr` does, i.e. takes a
+    pre-1885 law number as it is defined by Althingi, and turns it into the
+    filename format that we prefer.
     """
     weird_month = law_nr[-1]
     if weird_month == "0":
@@ -891,11 +893,6 @@ def untraditionalize_law_nr(law_nr: str, law_year: int) -> str:
         elif law_year == 1275:
             weird_day = "00"
             weird_month = "00"
-
-    # I was here. Working on refactoring `process_references` so that it can be multiprocessed.
-    # Needed this function to deal with the `law_id` when it comes in the form of things like 0/1764 or whatever.
-    # I should maybe just make a function that takes `law_id` instead and returns `law_nr` and `law_year` separated,
-    # taking all this nonsense into account.
 
     untraditionalized = "m%sd%s" % (weird_month, weird_day)
     return untraditionalized
