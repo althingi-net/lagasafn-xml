@@ -1,9 +1,11 @@
 from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import super_iter
+from lagasafn.utils import is_roman
 from lxml.builder import E
 from lxml.etree import _Element
 import re
+import roman
 
 
 def get_all_text(node: _Element):
@@ -67,7 +69,11 @@ def parse_article_nr_title(tracker: AdvertTracker):
             "processed": "false",
         },
     )
-    tracker.xml.append(art)
+
+    if tracker.targets.chapter is not None:
+        tracker.targets.chapter.append(art)
+    else:
+        tracker.xml.append(art)
 
     # We'll start by gathering all the content of the article into the node for
     # later handling.
@@ -85,6 +91,46 @@ def parse_article_nr_title(tracker: AdvertTracker):
     return True
 
 
+def parse_chapter_nr_title(tracker):
+    text = get_all_text(tracker.current_node())
+
+    if not text.endswith("KAFLI"):
+        return False
+
+    roman_nr = text[:text.index(".")]
+    if not is_roman(roman_nr):
+        raise AdvertParsingException("Expected Roman numeral when parsing chapter: %s" % text)
+
+    nr = roman.fromRoman(roman_nr)
+
+    chapter = E("chapter", { "nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr })
+
+    next(tracker.nodes)
+    description = get_all_text(tracker.current_node())
+    if description.startswith("Breyting á lögum"):
+        nrs_found = re.findall(r"nr\. (\d{1,3})\/(\d{4})", description)
+        if len(nrs_found) > 1:
+            raise AdvertParsingException("Can't deal with more than one law in chapter description.")
+        elif len(nrs_found) == 0:
+            raise AdvertParsingException("Could not find affected law in chapter name.")
+
+        tracker.affected["law-nr"], tracker.affected["law-year"] = nrs_found[0]
+
+        next(tracker.nodes)
+
+    tracker.targets.chapter = chapter
+    tracker.xml.append(chapter)
+
+    while True:
+        if parse_article_nr_title(tracker):
+            continue
+        break
+
+    tracker.targets.chapter = None
+
+    return True
+
+
 def parse_signature_confirmation(tracker: AdvertTracker):
     text = get_all_text(tracker.current_node())
     return text.startswith("Gjört á Bessastöðum") or text.startswith(
@@ -94,10 +140,7 @@ def parse_signature_confirmation(tracker: AdvertTracker):
 
 def convert_advert_law(xml_remote):
 
-    tracker = AdvertTracker()
-
-    # Bare-bones result document.
-    tracker.xml = E("advert", {"type": "law"})
+    tracker = AdvertTracker(E("advert", {"type": "law"}))
 
     # Figure out nr/year from content.
     raw_nr_year = xml_remote.xpath(
@@ -111,7 +154,9 @@ def convert_advert_law(xml_remote):
         0
     ].text
 
-    # Figure out which laws are being changed.
+    # Figure out which laws are being changed. If nothing is found, then
+    # probably multiple laws are being changed and this information will be
+    # inside chapters.
     found_in_description = re.findall(r"nr\. (\d{1,3})\/(\d{4})", description)
     if len(found_in_description) > 1:
         # This never happened between 2024-04-12 and 2025-01-13 at least, but
@@ -147,6 +192,8 @@ def convert_advert_law(xml_remote):
             continue
         if parse_signature_confirmation(tracker):
             break
+        if parse_chapter_nr_title(tracker):
+            continue
 
         # This is a good debugging point.
         # text = get_all_text(node)
