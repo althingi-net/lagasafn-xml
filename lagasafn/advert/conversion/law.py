@@ -97,20 +97,24 @@ def parse_chapter_nr_title(tracker):
     if not text.endswith("KAFLI"):
         return False
 
-    roman_nr = text[:text.index(".")]
+    roman_nr = text[: text.index(".")]
     if not is_roman(roman_nr):
-        raise AdvertParsingException("Expected Roman numeral when parsing chapter: %s" % text)
+        raise AdvertParsingException(
+            "Expected Roman numeral when parsing chapter: %s" % text
+        )
 
     nr = roman.fromRoman(roman_nr)
 
-    chapter = E("chapter", { "nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr })
+    chapter = E("chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
 
     next(tracker.nodes)
     description = get_all_text(tracker.current_node())
     if description.startswith("Breyting á lögum"):
         nrs_found = re.findall(r"nr\. (\d{1,3})\/(\d{4})", description)
         if len(nrs_found) > 1:
-            raise AdvertParsingException("Can't deal with more than one law in chapter description.")
+            raise AdvertParsingException(
+                "Can't deal with more than one law in chapter description."
+            )
         elif len(nrs_found) == 0:
             raise AdvertParsingException("Could not find affected law in chapter name.")
 

@@ -10,6 +10,7 @@ class TargetGroup:
     example, an `art` may belong either in the base XML document or in a
     `chapter` element, which is determined using this.
     """
+
     chapter: _Element | None = None
 
 
