@@ -1,6 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+from bs4 import Comment
 from datetime import datetime
 from lagasafn.utils import write_xml
 from lxml import etree
@@ -107,6 +108,14 @@ def save_advert_originals(advert_rows):
         print(" done")
 
         soup_advert = BeautifulSoup(content, "html5lib").find("html")
+
+        # Find and remove all comments.
+        # NOTE: These comments only happen in a few files and originate in
+        # WordPerfect. They might be useful one day if used consistently by the
+        # producers of the adverts.
+        for comment in soup_advert.find_all(string=lambda text: isinstance(text, Comment)):
+            comment.extract()
+
         xml_doc = etree.HTML(soup_advert.__str__())
 
         orig_advert = xml_doc.xpath("//div[@type='STJT']")[0]
