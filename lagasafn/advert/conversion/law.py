@@ -200,10 +200,10 @@ def convert_advert_law(xml_remote):
             continue
 
         # This is a good debugging point.
-        # text = get_all_text(node)
-        # print()
-        # print("Text: %s" % text)
-        # import ipdb; ipdb.set_trace()
+        text = get_all_text(node)
+        print()
+        print("Text: %s" % text)
+        import ipdb; ipdb.set_trace()
 
         raise AdvertParsingException("Can't parse element: %s" % node)
 
