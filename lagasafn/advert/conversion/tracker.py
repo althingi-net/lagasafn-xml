@@ -12,6 +12,7 @@ class TargetGroup:
     """
 
     chapter: _Element | None = None
+    temp_clause: _Element | None = None
 
 
 class AdvertTracker:

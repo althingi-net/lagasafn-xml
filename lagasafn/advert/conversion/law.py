@@ -16,6 +16,10 @@ def get_all_text(node: _Element):
     FIXME: This concatenates strings with a `<br/>` between them. It's not a
     problem yet, but it will become one. Probably requires rewriting from
     scratch to fix that.
+
+    FIXME: There is another function, `lagasafn.utils.convert_to_text` which
+    was designed for a different purpose. These two should be merged and fixed
+    so that they work with anything in the entire project.
     """
     # Get the text
     result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
@@ -35,20 +39,42 @@ def get_all_text(node: _Element):
 
 def parse_break(tracker: AdvertTracker):
     # Breaks are ignored.
-    return tracker.current_node().tag == "br"
+    if tracker.current_node().tag != "br":
+        return False
+
+    next(tracker.nodes)
+
+    return True
 
 
 def parse_president_declaration(tracker):
     text = get_all_text(tracker.current_node())
-    return text.startswith("Forseti Íslands gjörir kunnugt") or text.startswith(
-        "Handhafar valds forseta Íslands samkvæmt 8. gr. stjórnarskrárinnar"
-    )
+    if not (
+        text.startswith("Forseti Íslands gjörir kunnugt")
+        or text.startswith(
+            "Handhafar valds forseta Íslands samkvæmt 8. gr. stjórnarskrárinnar"
+        )
+    ):
+        return False
+
+    next(tracker.nodes)
+
+    return True
 
 
 def parse_empty(tracker: AdvertTracker):
     # Ignored.
     node = tracker.current_node()
-    return node.text.strip() == "" and len(node.getchildren()) == 0
+    if not (
+        node.text.strip() == ""
+        and node.tail.strip() == ""
+        and len(node.getchildren()) == 0
+    ):
+        return False
+
+    next(tracker.nodes)
+
+    return True
 
 
 def parse_article_nr_title(tracker: AdvertTracker):
@@ -56,7 +82,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
     node = tracker.current_node()
 
     text = get_all_text(node)
-    match = re.match(r"(\d+)\. gr\.", text)
+    match = re.match(r"(\d+)\. gr\.$", text)
     if match is None:
         return False
 
@@ -80,13 +106,15 @@ def parse_article_nr_title(tracker: AdvertTracker):
     original = E("original")
     art.append(original)
 
-    while True:
-        subnode = next(tracker.nodes)
-
-        if parse_empty(tracker):
-            break
-
-        original.append(subnode)
+    next(tracker.nodes)
+    while (
+        not parse_empty(tracker)
+        # On occasion, articles aren't properly ended with an empty node, so we
+        # need to check here if an article immediately follows.
+        and re.match(r"(\d+)\. gr\.$", get_all_text(tracker.current_node())) is None
+    ):
+        original.append(tracker.current_node())
+        next(tracker.nodes)
 
     return True
 
@@ -135,6 +163,36 @@ def parse_chapter_nr_title(tracker):
     return True
 
 
+def parse_temporary_clause_article(tracker: AdvertTracker):
+    text = get_all_text(tracker.current_node())
+    if not (
+        tracker.targets.temp_clause is not None
+        and "." in text
+        and is_roman(text[: text.index(".")])
+    ):
+        return False
+
+    roman_nr = text[: text.index(".")]
+    nr = roman.fromRoman(roman_nr)
+
+    # We have retroactively figured out that this is a temporary article inside
+    # a temporary chapter. We must retro-actively set the type of the chapter
+    if tracker.targets.temp_clause.attrib["temp-clause-type"] == "art":
+        tracker.targets.temp_clause.attrib["temp-clause-type"] = "chapter"
+        del tracker.targets.temp_clause.attrib["processed"]
+
+    temp_art = E("temp-art", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
+
+    tracker.targets.temp_clause.append(temp_art)
+
+    next(tracker.nodes)
+    while not parse_empty(tracker):
+        temp_art.append(tracker.current_node())
+        next(tracker.nodes)
+
+    return True
+
+
 def parse_temporary_clause(tracker: AdvertTracker):
     """
     FIXME: Distinguishing temporary clauses that are expressed in chapters and
@@ -145,26 +203,37 @@ def parse_temporary_clause(tracker: AdvertTracker):
     if text != "Ákvæði til bráðabirgða.":
         return False
 
-    temp_clause = E("temp-clause", { "processed": "false" })
+    # The default type is `art` because we will only find out later if this
+    # temporary clause contains several articles, and is in fact a chapter, or
+    # if it only contains direct content, in which case it's an article.
+    temp_clause = E("temp-clause", {"temp-clause-type": "art", "processed": "false"})
 
+    tracker.targets.temp_clause = temp_clause
     tracker.xml.append(temp_clause)
 
-    while True:
-        subnode = next(tracker.nodes)
+    next(tracker.nodes)
+    while not parse_empty(tracker):
+        if parse_temporary_clause_article(tracker):
+            continue
 
-        if parse_empty(tracker):
-            break
+        temp_clause.append(tracker.current_node())
+        next(tracker.nodes)
 
-        temp_clause.append(subnode)
+    tracker.targets.temp_clause = None
 
     return True
 
 
 def parse_signature_confirmation(tracker: AdvertTracker):
     text = get_all_text(tracker.current_node())
-    return text.startswith("Gjört á Bessastöðum") or text.startswith(
-        "Gjört í Reykjavík"
-    )
+    if not (
+        text.startswith("Gjört á Bessastöðum") or text.startswith("Gjört í Reykjavík")
+    ):
+        return False
+
+    next(tracker.nodes)
+
+    return True
 
 
 def convert_advert_law(xml_remote):
@@ -209,8 +278,8 @@ def convert_advert_law(xml_remote):
 
     tracker.nodes = super_iter(nodes)
 
+    next(tracker.nodes)
     while True:
-        node = next(tracker.nodes)
         if parse_break(tracker):
             continue
         if parse_president_declaration(tracker):
@@ -227,6 +296,7 @@ def convert_advert_law(xml_remote):
             continue
 
         # This is a good debugging point.
+        node = tracker.current_node()
         text = get_all_text(node)
         print()
         print("Text: %s" % text)

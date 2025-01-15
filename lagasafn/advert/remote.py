@@ -113,7 +113,9 @@ def save_advert_originals(advert_rows):
         # NOTE: These comments only happen in a few files and originate in
         # WordPerfect. They might be useful one day if used consistently by the
         # producers of the adverts.
-        for comment in soup_advert.find_all(string=lambda text: isinstance(text, Comment)):
+        for comment in soup_advert.find_all(
+            string=lambda text: isinstance(text, Comment)
+        ):
             comment.extract()
 
         xml_doc = etree.HTML(soup_advert.__str__())
