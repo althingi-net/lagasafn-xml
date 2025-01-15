@@ -28,9 +28,14 @@ for a in $(ls -1 $C1DIR); do
     if [[ "${SKIP[@]}" =~ "$a" ]]; then
         continue
     fi
+    LAW=$(echo -n $a | sed -E 's/^([0-9]{4})\.([0-9md]+)\.xml$/\2\/\1/')
+    DIFF=$(diff -y --suppress-common-lines ${C1DIR}/${a} ${C2DIR}/${a} | wc -l)
+    if [[ "${DIFF}" == "0" ]]; then
+        continue
+    fi
     echo -ne "$a"
     echo -ne "\\033[20G"
-    echo -n $a | sed -E 's/^([0-9]{4})\.([0-9md]+)\.xml$/\2\/\1/'
+    echo -ne "${LAW}"
     echo -ne "\\033[40G"
-    diff -y --suppress-common-lines ${C1DIR}/${a} ${C2DIR}/${a} | wc -l
+    echo $DIFF
 done;
