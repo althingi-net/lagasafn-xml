@@ -1,10 +1,12 @@
+from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import super_iter
 from lxml.builder import E
+from lxml.etree import _Element
 import re
 
 
-def get_all_text(node):
+def get_all_text(node: _Element):
     """
     A function for retrieving the text content of an element and all of its
     descendants. Some special regex needed because of content peculiarities.
@@ -29,24 +31,28 @@ def get_all_text(node):
     return result
 
 
-def parse_break(node):
+def parse_break(tracker: AdvertTracker):
     # Breaks are ignored.
-    return node.tag == "br"
+    return tracker.current_node().tag == "br"
 
 
-def parse_president_declaration(node):
-    text = get_all_text(node)
+def parse_president_declaration(tracker):
+    text = get_all_text(tracker.current_node())
     return text.startswith("Forseti Íslands gjörir kunnugt") or text.startswith(
         "Handhafar valds forseta Íslands samkvæmt 8. gr. stjórnarskrárinnar"
     )
 
 
-def parse_empty(node):
+def parse_empty(tracker: AdvertTracker):
     # Ignored.
+    node = tracker.current_node()
     return node.text.strip() == "" and len(node.getchildren()) == 0
 
 
-def parse_article_nr_title(node, nodes, xml_advert):
+def parse_article_nr_title(tracker: AdvertTracker):
+
+    node = tracker.current_node()
+
     text = get_all_text(node)
     match = re.match(r"(\d+)\. gr\.", text)
     if match is None:
@@ -61,7 +67,7 @@ def parse_article_nr_title(node, nodes, xml_advert):
             "processed": "false",
         },
     )
-    xml_advert.append(art)
+    tracker.xml.append(art)
 
     # We'll start by gathering all the content of the article into the node for
     # later handling.
@@ -69,9 +75,9 @@ def parse_article_nr_title(node, nodes, xml_advert):
     art.append(original)
 
     while True:
-        subnode = next(nodes)
+        subnode = next(tracker.nodes)
 
-        if parse_empty(subnode):
+        if parse_empty(tracker):
             break
 
         original.append(subnode)
@@ -79,8 +85,8 @@ def parse_article_nr_title(node, nodes, xml_advert):
     return True
 
 
-def parse_signature_confirmation(node):
-    text = get_all_text(node)
+def parse_signature_confirmation(tracker: AdvertTracker):
+    text = get_all_text(tracker.current_node())
     return text.startswith("Gjört á Bessastöðum") or text.startswith(
         "Gjört í Reykjavík"
     )
@@ -88,21 +94,10 @@ def parse_signature_confirmation(node):
 
 def convert_advert_law(xml_remote):
 
-    # Container for information about what's being affected at any given point
-    # in time. For example, when we run into "2. mgr.", this might contain
-    # information about in which article, and subsequently in which law, based
-    # on previously parsed content.
-    #
-    # This information doesn't always pop in the same places during the
-    # parsing. For example, which law is being changed can show up in the name
-    # of the advert, or in the name of a chapter.
-    #
-    # We will record as much about this as we can into each element in the
-    # resulting advert XML.
-    affected = {}
+    tracker = AdvertTracker()
 
     # Bare-bones result document.
-    xml_advert = E("advert", {"type": "law"})
+    tracker.xml = E("advert", {"type": "law"})
 
     # Figure out nr/year from content.
     raw_nr_year = xml_remote.xpath(
@@ -125,28 +120,32 @@ def convert_advert_law(xml_remote):
             "Don't know how to handle more than one law number in advert title"
         )
     elif len(found_in_description) == 1:
-        affected["law-nr"], affected["law-year"] = found_in_description[0]
+        tracker.affected["law-nr"], tracker.affected["law-year"] = found_in_description[
+            0
+        ]
 
     # Fill gathered information into XML.
-    xml_advert.attrib["year"] = year
-    xml_advert.attrib["nr"] = nr
-    xml_advert.append(E("description", description))
+    tracker.xml.attrib["year"] = year
+    tracker.xml.attrib["nr"] = nr
+    tracker.xml.append(E("description", description))
 
     nodes = xml_remote.xpath(
         "/div/table[position() = 2]/tbody/tr[@class='advertText']/td[@class='advertTD']"
     )[0].getchildren()
-    nodes = super_iter(nodes)
+
+    tracker.nodes = super_iter(nodes)
+
     while True:
-        node = next(nodes)
-        if parse_break(node):
+        node = next(tracker.nodes)
+        if parse_break(tracker):
             continue
-        if parse_president_declaration(node):
+        if parse_president_declaration(tracker):
             continue
-        if parse_empty(node):
+        if parse_empty(tracker):
             continue
-        if parse_article_nr_title(node, nodes, xml_advert):
+        if parse_article_nr_title(tracker):
             continue
-        if parse_signature_confirmation(node):
+        if parse_signature_confirmation(tracker):
             break
 
         # This is a good debugging point.
@@ -157,4 +156,4 @@ def convert_advert_law(xml_remote):
 
         raise AdvertParsingException("Can't parse element: %s" % node)
 
-    return xml_advert
+    return tracker.xml
