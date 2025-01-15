@@ -673,6 +673,10 @@ def ask_user_about_location(extra_sens, numart):
 # don't get with a regular Python iterator. Note that this thing is
 # incompatible with yields and is NOT a subclass of `iter` (since that's not
 # possible), but rather a class trying its best to masquerade as one.
+#
+# FIXME: The nomenclature here is very specific to a list of lines. We're also
+# using it for lists of nodes, however, so things like `total_lines` or
+# `current_line` should be refactored to reflect more general usage of lists.
 class super_iter:
     def __init__(self, collection):
         self.collection = collection

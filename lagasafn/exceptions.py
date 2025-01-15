@@ -12,3 +12,7 @@ class NoSuchLawException(LawException):
 
 class NoSuchElementException(LawException):
     pass
+
+
+class AdvertParsingException(LawException):
+    pass

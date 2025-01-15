@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+import sys
+from datetime import datetime
+from lagasafn import settings
+from lagasafn.advert.conversion import convert_adverts
+from lagasafn.advert.remote import update_local_adverts
+from sys import stderr
+
+def help():
+    print("Usage: advert-xml <command>")
+    print()
+    print("Commands:")
+    print("    retrieve           Retrieves and saves remote advers on the local disk in a cleaned XML format.")
+    print("    convert            Converts local adverts into their corresponding XML files.")
+    print()
+    quit(2)
+
+
+def main(argv):
+
+    # FIXME: The `from_date is currently hard-coded to the date when legal
+    # codex version 154b was released. Unclear whether this should be a
+    # parameter to the script, or defined by codex version somehow.
+    from_date = datetime(2024, 4, 12)
+
+    to_date = datetime.now()
+
+    if len(argv) < 2:
+        help()
+
+    command = argv[1]
+
+    if command == "retrieve":
+        update_local_adverts(from_date, to_date)
+    elif command == "convert":
+        convert_adverts()
+    else:
+        help()
+
+
+if __name__ == "__main__":
+    try:
+        main(sys.argv)
+    except KeyboardInterrupt:
+        quit()
+    except Exception as e:
+        if settings.DEBUG:
+            raise
+        else:
+            print("Error: %s" % e, file=stderr)
