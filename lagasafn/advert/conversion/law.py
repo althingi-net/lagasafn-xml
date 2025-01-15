@@ -135,6 +135,31 @@ def parse_chapter_nr_title(tracker):
     return True
 
 
+def parse_temporary_clause(tracker: AdvertTracker):
+    """
+    FIXME: Distinguishing temporary clauses that are expressed in chapters and
+    those that are expressed in articles, is an unsolved problem. This
+    currently just shoves the whole thing into a node and leaves it at that.
+    """
+    text = get_all_text(tracker.current_node())
+    if text != "Ákvæði til bráðabirgða.":
+        return False
+
+    temp_clause = E("temp-clause", { "processed": "false" })
+
+    tracker.xml.append(temp_clause)
+
+    while True:
+        subnode = next(tracker.nodes)
+
+        if parse_empty(tracker):
+            break
+
+        temp_clause.append(subnode)
+
+    return True
+
+
 def parse_signature_confirmation(tracker: AdvertTracker):
     text = get_all_text(tracker.current_node())
     return text.startswith("Gjört á Bessastöðum") or text.startswith(
@@ -197,6 +222,8 @@ def convert_advert_law(xml_remote):
         if parse_signature_confirmation(tracker):
             break
         if parse_chapter_nr_title(tracker):
+            continue
+        if parse_temporary_clause(tracker):
             continue
 
         # This is a good debugging point.
