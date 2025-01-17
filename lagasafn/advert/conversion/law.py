@@ -62,7 +62,7 @@ def parse_president_declaration(tracker):
     return True
 
 
-def parse_empty(tracker: AdvertTracker):
+def parse_empty(tracker: AdvertTracker, non_empty_if_next: str = r""):
     # Ignored.
     node = tracker.current_node()
     if not (
@@ -70,6 +70,18 @@ def parse_empty(tracker: AdvertTracker):
         and node.tail.strip() == ""
         and len(node.getchildren()) == 0
     ):
+        return False
+
+    # Sometimes empty nodes denote the end of an article, and sometimes it
+    # belongs inside the content of something being parsed. To distinguish
+    # between these, the argument `non_empty_if_next` is provided, which takes
+    # a regex. If that regex matches the line after the empty space, then we'll
+    # still call this non-empty, so that the empty space can be handled by the
+    # calling parsing function accordingly.
+    #
+    # Occurs in adverts 138/2024 and 140/2024.
+    text = get_all_text(tracker.nodes.peek())
+    if len(non_empty_if_next) and re.match(non_empty_if_next, text) is not None:
         return False
 
     next(tracker.nodes)
@@ -108,7 +120,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
 
     next(tracker.nodes)
     while (
-        not parse_empty(tracker)
+        not parse_empty(tracker, non_empty_if_next=r"[a-z]\. \(.*\)$")
         # On occasion, articles aren't properly ended with an empty node, so we
         # need to check here if an article immediately follows.
         and re.match(r"(\d+)\. gr\.$", get_all_text(tracker.current_node())) is None
