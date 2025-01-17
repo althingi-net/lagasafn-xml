@@ -231,6 +231,8 @@ def parse_signature_confirmation(tracker: AdvertTracker):
     ):
         return False
 
+    tracker.xml.append(E("signed-when", text))
+
     next(tracker.nodes)
 
     return True
