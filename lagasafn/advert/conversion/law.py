@@ -148,7 +148,7 @@ def parse_chapter_nr_title(tracker):
 
         tracker.affected["law-nr"], tracker.affected["law-year"] = nrs_found[0]
 
-        next(tracker.nodes)
+    next(tracker.nodes)
 
     tracker.targets.chapter = chapter
     tracker.xml.append(chapter)
