@@ -211,13 +211,23 @@ def parse_temporary_clause(tracker: AdvertTracker):
     tracker.targets.temp_clause = temp_clause
     tracker.xml.append(temp_clause)
 
+    # We'll need to parse the content differently depending on whether the
+    # temporary clause contains articles (labelled "I.", "II.", "III." etc. or
+    # not, and this keeps track of that.
+    contains_articles = False
+
     next(tracker.nodes)
     while not parse_empty(tracker):
         if parse_temporary_clause_article(tracker):
+            contains_articles = True
             continue
 
-        temp_clause.append(tracker.current_node())
-        next(tracker.nodes)
+        if not contains_articles:
+            temp_clause.append(tracker.current_node())
+            next(tracker.nodes)
+            continue
+
+        break
 
     tracker.targets.temp_clause = None
 
