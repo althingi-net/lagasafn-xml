@@ -42,14 +42,14 @@
 {% block content %}
 
 <div class="container">
-<table class="law-stats">
+<table class="law-info">
     <tr>
         <th>{% trans 'Total law count' %}:</th>
-        <td>{{ stats.total_count }}</td>
+        <td>{{ index.info.total_count }}</td>
         <th>{% trans 'Empty law count' %}:</th>
-        <td>{{ stats.empty_count }}</td>
+        <td>{{ index.info.empty_count }}</td>
         <th>{% trans 'Non-empty law count' %}:</th>
-        <td>{{ stats.non_empty_count }}</td>
+        <td>{{ index.info.non_empty_count }}</td>
     </tr>
 </table>
 
@@ -64,7 +64,7 @@
         </tr>
     </thead>
     <tbody>
-        {% for law in laws %}
+        {% for law in index.laws %}
             <tr class="law-list-row" data-identifier="{{ law.identifier }}">
                 <td class="law-list-nr">
                     <a class="law-link" data-original-url="{{ law.original_url }}" href="{% url 'law_show' law.identifier %}">{{ law.identifier }}</a>

@@ -8,6 +8,7 @@ with this one.
 import os
 import re
 import requests
+from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
 from lagasafn.constants import PROBLEMS_FILENAME
@@ -16,7 +17,6 @@ from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.exceptions import LawException
 from lagasafn.pathing import make_xpath_from_node
-from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import search_xml_doc
@@ -26,15 +26,24 @@ from lxml import html
 from math import floor
 
 
+class LawIndexInfo:
+    date_from: datetime
+    date_to: datetime
+    total_count: int
+    empty_count: int
+    non_empty_count: int
+
+
+class LawIndex:
+    info: LawIndexInfo = LawIndexInfo()
+    laws: list
+
+
 class LawManager:
     @staticmethod
-    def index():
-        # FIXME: This XML should be automatically converted to JSON using
-        # some 3rd party library, instead of being converted from one ad-hoc
-        # format to another ad-hoc format here.
-
+    def index() -> LawIndex:
         # Return variables.
-        stats = {}
+        info = LawIndexInfo()
         laws = []
 
         # Collect known problems to mix with the index.
@@ -64,25 +73,17 @@ class LawManager:
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
 
         # Read and parse the index
-        index = etree.parse(os.path.join(XML_INDEX_FILENAME)).getroot()
+        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME)).getroot()
 
-        # Gather statistics.
-        for node_stat in index.findall("stats/"):
-            # Dashes are preferred in XML but underscores are needed in
-            # templates.
-            var_name = node_stat.tag.replace("-", "_")
-
-            try:
-                # Convert the value to integer if it's an integer.
-                var_value = int(node_stat.text)
-            except ValueError:
-                # Whatever. It's something else.
-                var_value = node_stat.text
-
-            stats[var_name] = var_value
+        # Gather miscellaneous stuff into `info`.
+        info.date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
+        info.date_to = datetime.fromisoformat(xml_index.attrib["date-to"])
+        info.total_count = int(xml_index.xpath("/index/stats/total-count")[0].text)
+        info.empty_count = int(xml_index.xpath("/index/stats/empty-count")[0].text)
+        info.non_empty_count = int(xml_index.xpath("/index/stats/non-empty-count")[0].text)
 
         # Gather the laws in the index.
-        for node_law_entry in index.findall("law-entries/law-entry"):
+        for node_law_entry in xml_index.findall("law-entries/law-entry"):
             if node_law_entry.find("meta/is-empty").text == "true":
                 continue
 
@@ -92,16 +93,19 @@ class LawManager:
 
             laws.append(LawEntry(node_law_entry, problems))
 
-        return stats, laws
+        index = LawIndex()
+        index.info = info
+        index.laws = laws
+        return index
 
     @staticmethod
     def content_search(search_string: str):
 
         results = []
 
-        stats, laws = LawManager.index()
+        index = LawManager.index()
 
-        for law_entry in laws:
+        for law_entry in index.laws:
             law_xml = Law(law_entry.identifier).xml()
 
             nodes = search_xml_doc(law_xml, search_string)

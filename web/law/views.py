@@ -15,11 +15,10 @@ def law_search(request):
 
 
 def law_list(request):
-    stats, laws = LawManager.index()
+    index = LawManager.index()
 
     ctx = {
-        "stats": stats,
-        "laws": laws,
+        "index": index,
     }
     return render(request, "law/list.html", ctx)
 

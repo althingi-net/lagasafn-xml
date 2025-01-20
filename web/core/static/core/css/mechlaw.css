@@ -29,17 +29,17 @@ body { padding-top: 70px; }
 /* FIXME: This would be more appropriate handled by a framework's design
 decisions. Done so now due to lack of access to documentation (internet). */
 
-.law-stats {
+.law-info {
     width: 100%;
     margin-bottom: 12px;
 }
 
-.law-stats th {
+.law-info th {
     width: 1px;
     white-space: nowrap;
 }
 
-.law-stats td {
+.law-info td {
     padding-left: 8px;
 }
 
