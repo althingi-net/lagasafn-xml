@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import codecs
+import cloudscraper
 import json
 import re
 import os
@@ -8,6 +9,7 @@ from bs4 import BeautifulSoup
 from collections import OrderedDict
 from colorama import Fore
 from colorama import Style
+from datetime import datetime
 from lagasafn import settings
 from lagasafn.constants import JSON_MAP_BASE_DIR
 from lagasafn.constants import LAW_FILENAME
@@ -23,18 +25,21 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
+from lagasafn.exceptions import LawException
 from lagasafn.multiprocessing import CustomPool
 from lagasafn.patching import attempt_json_map_transfer
 from lagasafn.patching import patch_law
 from lagasafn.population import population_game
 from lagasafn.references import parse_references
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.utils import determine_month
 from lagasafn.utils import number_sorter
 from lagasafn.utils import sorted_law
 from lagasafn.utils import terminal_width_and_height
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
+from lxml.html import soupparser
 from multiprocessing import Pool
 from sys import stderr
 from lagasafn.parser import LawParser, parse_law
@@ -368,11 +373,56 @@ def display_errors(law_ids):
         )
 
 
+def get_parliament_version_dates(parliament_version):
+    """
+    Each version of a codex (a.k.a. parliament version) has a date associated
+    with it, which is up to what date it incorporates changes passed by
+    Parliament. For example, codex version 154c contains changes up to
+    September 1st, 2024. Version 154b contained changes up to April 12th, 2024,
+    and so version 154c should contain changes advertised by the gazette (i.
+    stjórnartíðindi) from August 13th to September 1st of 2024.
+
+    We'll use these dates to match adverts with a codex version.
+
+    At the time of this writing (2025-01-25), this information is not known to
+    be available anywhere except in the download section of Althingi's website,
+    so we'll just scrape that and place it in the index.
+    """
+    url = "https://www.althingi.is/lagasafn/zip-skra-af-lagasafni/"
+    scraper = cloudscraper.create_scraper()
+    response = scraper.get(url)
+    xml = soupparser.fromstring(response.content)
+
+    # Find the links to the current codex version and the one preceding it.
+    try:
+        link = xml.xpath(
+            "//a[@href='/lagasafn/zip/%s/allt.zip']" % CURRENT_PARLIAMENT_VERSION
+        )[0]
+        prev_link = link.getparent().getnext().find("a")
+    except IndexError:
+        raise LawException("Failed finding date range of legal codex. This usually happens when Althingi's website denies the necessary HTTP request. Try waiting and trying with `--index-only` again.")
+
+    # Read dates from "to" date.
+    day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", link.text).groups()
+    date_to = datetime(int(year), determine_month(month), int(day))
+
+    # Read dates from "from" date.
+    day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", prev_link.text).groups()
+    date_from = datetime(int(year), determine_month(month), int(day))
+
+    return date_from, date_to
+
+
 def update_index():
     print("Updating index...", end="", flush=True)
 
+    date_from, date_to = get_parliament_version_dates(CURRENT_PARLIAMENT_VERSION)
+
     # Index root element.
-    index = E("index")
+    index = E("index", {
+        "date-from": date_from.strftime("%Y-%m-%d"),
+        "date-to": date_to.strftime("%Y-%m-%d"),
+    })
 
     # A place for statistics and such. These will be turned into XML nodes
     # later on but are consolidated here for clarity.
