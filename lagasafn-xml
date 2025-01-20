@@ -10,6 +10,7 @@ from collections import OrderedDict
 from colorama import Fore
 from colorama import Style
 from datetime import datetime
+from datetime import timedelta
 from lagasafn import settings
 from lagasafn.constants import JSON_MAP_BASE_DIR
 from lagasafn.constants import LAW_FILENAME
@@ -393,14 +394,14 @@ def get_parliament_version_dates(parliament_version):
     response = scraper.get(url)
     xml = soupparser.fromstring(response.content)
 
-    # Find the links to the current codex version and the one preceding it.
-    try:
-        link = xml.xpath(
-            "//a[@href='/lagasafn/zip/%s/allt.zip']" % CURRENT_PARLIAMENT_VERSION
-        )[0]
-        prev_link = link.getparent().getnext().find("a")
-    except IndexError:
+    if response.status_code != 200:
         raise LawException("Failed finding date range of legal codex. This usually happens when Althingi's website denies the necessary HTTP request. Try waiting and trying with `--index-only` again.")
+
+    # Find the links to the current codex version and the one preceding it.
+    link = xml.xpath(
+        "//a[@href='/lagasafn/zip/%s/allt.zip']" % CURRENT_PARLIAMENT_VERSION
+    )[0]
+    prev_link = link.getparent().getnext().find("a")
 
     # Read dates from "to" date.
     day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", link.text).groups()
@@ -409,6 +410,10 @@ def get_parliament_version_dates(parliament_version):
     # Read dates from "from" date.
     day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", prev_link.text).groups()
     date_from = datetime(int(year), determine_month(month), int(day))
+
+    # The first day of this version is the one following the last day of the
+    # last version.
+    date_from += timedelta(days=1)
 
     return date_from, date_to
 
