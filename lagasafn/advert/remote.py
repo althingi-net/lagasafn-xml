@@ -121,6 +121,7 @@ def save_advert_originals(advert_rows):
         xml_doc = etree.HTML(soup_advert.__str__())
 
         orig_advert = xml_doc.xpath("//div[@type='STJT']")[0]
+        orig_advert.attrib["record-id"] = advert_row.record_id
 
         write_xml(orig_advert, fullpath)
 
