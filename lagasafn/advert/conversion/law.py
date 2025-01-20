@@ -1,5 +1,7 @@
+from datetime import datetime
 from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
+from lagasafn.utils import determine_month
 from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
 from lxml.builder import E
@@ -276,6 +278,16 @@ def convert_advert_law(xml_remote):
         0
     ].text
 
+    # Figure out the date that this document wash published.
+    raw_publishing_date = xml_remote.xpath("//*[starts-with(normalize-space(text()), 'A deild')]")[0].text
+    pub_day, pub_month, pub_year = re.search(r"Útgáfud\.: (\d+)\. (.+) (\d{4})", raw_publishing_date).groups()
+    published_date = datetime(
+        int(pub_year),
+        determine_month(pub_month),
+        int(pub_day)
+    )
+    del raw_publishing_date, pub_day, pub_month, pub_year
+
     # Figure out which laws are being changed. If nothing is found, then
     # probably multiple laws are being changed and this information will be
     # inside chapters.
@@ -294,6 +306,7 @@ def convert_advert_law(xml_remote):
     # Fill gathered information into XML.
     tracker.xml.attrib["year"] = year
     tracker.xml.attrib["nr"] = nr
+    tracker.xml.attrib["published-date"] = published_date.strftime("%Y-%m-%d")
     tracker.xml.append(E("description", description))
 
     nodes = xml_remote.xpath(
