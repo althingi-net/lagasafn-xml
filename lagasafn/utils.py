@@ -556,7 +556,7 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
 # We are given some extra sentences, that we don't know where to locate
 # because it cannot be determined by the input text alone.
 def ask_user_about_location(extra_sens, numart):
-    legal_reference = generate_legal_reference(numart, skip_law=True)
+    legal_reference = generate_legal_reference(numart, skip_law=True, force_inner_paragraph=True)
     url = generate_url(numart)
 
     # Calculated values that we'll have to use more than once.
@@ -591,7 +591,7 @@ def ask_user_about_location(extra_sens, numart):
         # gets moved about, but then the user will simply be asked again.
         destination_node = law.xpath(entry["xpath"])[0]
         if (
-            generate_legal_reference(destination_node, skip_law=True)
+            generate_legal_reference(destination_node, skip_law=True, force_inner_paragraph=True)
             == entry["legal_reference"]
         ):
             return destination_node
