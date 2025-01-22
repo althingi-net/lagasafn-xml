@@ -59,6 +59,3 @@ def convert_advert(year, nr):
     write_xml(xml_advert, path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr)))
 
     print(" done")
-
-    # for table in xml_remote.xpath("/div/table"):
-    # import ipdb; ipdb.set_trace()

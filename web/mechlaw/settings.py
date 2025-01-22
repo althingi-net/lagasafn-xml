@@ -115,7 +115,6 @@ EDITOR_URL = "https://frumvarp.althingi.net/law/%s.%s"
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        # I was here. Implementing cache to store things from the XML index.
         'LOCATION': os.path.join(BASE_DIR, '.data-cache'),  # Set an appropriate directory
         'TIMEOUT': 300,  # Default timeout (in seconds)
         'OPTIONS': {
