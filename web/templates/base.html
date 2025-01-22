@@ -50,7 +50,10 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">{% trans 'Legal Codex' %}</a>
+                    <a class="navbar-brand" href="/">
+                        {% trans 'Legal Codex' %}
+                        <small>({{ index.info.date_to|date }})</small>
+                    </a>
                     <ul class="nav navbar-nav">
                         <li><a class="navbar-link" href="{% url 'content_search' %}">{% trans 'Content Search' %}</a></li>
                     </ul>

@@ -15,12 +15,7 @@ def law_search(request):
 
 
 def law_list(request):
-    index = LawManager.index()
-
-    ctx = {
-        "index": index,
-    }
-    return render(request, "law/list.html", ctx)
+    return render(request, "law/list.html")
 
 
 def law_show(request, identifier, view_type: str = "normal"):
