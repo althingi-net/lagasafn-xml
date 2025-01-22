@@ -311,7 +311,17 @@ def determine_month(month_string):
     return months.index(month_string) + 1
 
 
-def is_roman(goo):
+def is_roman(goo: str):
+
+    # The `roman` library accepts lowercase Roman numerals, but we may run into
+    # alphabetic text that coinciced with Roman numerals, in which case we deem
+    # them non-Roman.
+    #
+    # Note that this makes us responsible for making potentially Roman numerals
+    # uppercase if we wish to check if they are indeed Roman numerals.
+    if goo.islower():
+        return False
+
     try:
         roman.fromRoman(goo)
         result = True
