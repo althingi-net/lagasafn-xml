@@ -389,6 +389,21 @@ def get_parliament_version_dates(parliament_version):
     be available anywhere except in the download section of Althingi's website,
     so we'll just scrape that and place it in the index.
     """
+
+    # Scraping Cloudflare is error-prone to say the least, and is unlikely to
+    # get easier since their feature is to prevent programs from downloading
+    # content from the web page. However, these dates never change, so when
+    # we're re-creating the index here, we'll allow ourselves to check if we
+    # already have this data, and re-use it if it's available.
+    try:
+        xml_index = etree.parse(XML_INDEX_FILENAME).getroot()
+        date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
+        date_to = datetime.fromisoformat(xml_index.attrib["date-to"])
+        return date_from, date_to
+    except Exception:
+        # If this fails for any reason, we'll want to move on.
+        pass
+
     url = "https://www.althingi.is/lagasafn/zip-skra-af-lagasafni/"
     scraper = cloudscraper.create_scraper()
     response = scraper.get(url)
