@@ -227,6 +227,8 @@ def numart_next_nrs(prev_numart):
             expected_numart_nrs = ["kl", "ll"]
         elif prev_numart_nr == "ll":
             expected_numart_nrs = ["lm", "mm"]
+        elif prev_numart_nr == "mm":
+            expected_numart_nrs = ["mn", "nn"]
         elif prev_numart_nr == "U":
             expected_numart_nrs = ["Ú"]
         elif prev_numart_nr == "Ú":
@@ -641,7 +643,7 @@ def ask_user_about_location(extra_sens, numart):
     print()
     print("The options are:")
     for i, possible_location in enumerate(possible_locations):
-        print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location)))
+        print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location, force_inner_paragraph=True)))
     print()
     print(" - 0: Skip (use only when answer cannot be provided)")
 
@@ -661,7 +663,7 @@ def ask_user_about_location(extra_sens, numart):
     # Determine the selected node and get its reference.
     selected_node = possible_locations[response - 1]
     selected_node_legal_reference = generate_legal_reference(
-        selected_node, skip_law=True
+        selected_node, skip_law=True, force_inner_paragraph=True
     )
 
     # Tell the user what they selected.

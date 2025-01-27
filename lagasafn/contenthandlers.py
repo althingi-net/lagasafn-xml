@@ -555,6 +555,13 @@ def separate_sentences(content):
                         # Support for connecting words such as "1. tölul. 2. og
                         # 3. mgr." in 1. mgr. 3. gr. laga nr. 88/1991.
                         or next_chunk2.strip().split(" ")[0] in ["og", "eða"]
+                        # Support for connecting via comma, such as
+                        # "2. mgr. 37., 43. og 74. gr." in a-stafl. 4. mgr.
+                        # 70. gr. laga nr. 80/2016 (154c).
+                        or (
+                            next_chunk2.startswith(", ")
+                            and next_chunk2.lstrip(", ").isdigit()
+                        )
                     )
                 ):
                     split = False
@@ -811,7 +818,7 @@ def add_sentences(target_node, sens):
 
         # Bold definitions are an anomaly in how definitions are presented.
         # Seems to happen only in 1. gr. laga nr. 58/1998 (153c).
-        bold_definitions_found = re.findall(r"<b> ([^<]*[:.]) </b>", sen)
+        bold_definitions_found = re.findall(r"<b> ([^<]*[:.,]) </b>", sen)
         if len(bold_definitions_found) > 0:
             definitions = E("definitions")
             for definition_found in bold_definitions_found:
@@ -1062,6 +1069,9 @@ def generate_synonyms(name: str):
         ],
         "Lög um skráningu, merki og mat fasteigna": [
             "Lög um skráningu og mat fasteigna",
+        ],
+        "Lög um þjóðlendur": [
+            "Lög um þjóðlendur og ákvörðun marka eignarlanda, þjóðlendna og afrétta",
         ],
     }
 

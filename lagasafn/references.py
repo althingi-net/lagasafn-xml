@@ -2,6 +2,7 @@ import re
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.contenthandlers import strip_markers
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.multiprocessing import CustomPool
@@ -143,11 +144,18 @@ separators = ["og/eða", "og", "eða"]
 # FIXME: There has to be a tidier way to do this.
 law_pattern_regex = r"nr\. (\d{1,3}\/\d{4})"
 law_pattern_disqualifiers = [
-    "Stjórnartíðindi Evrópusambandsins",
-    "EES-nefndarinnar",
-    "EES-nefndarinnar,",
-    "við EES-samninginn",
-    "auglýsingu",
+    r"Stjórnartíðindi Evrópusambandsins",
+    # Special case for "sameiginlegu EES-nefndarinnar nr. 104/2004 frá 9. júlí
+    # 2004 sem birt var 23. desember 2004 í EES-viðbæti við Stjórnartíðindi
+    # Evrópusambandsins nr. 65 og nr. 131/2020 frá" in lög nr. 61/2016.
+    # NOTE: Regex requires this to be fixed-width, so if we'll need `\d{1,3}`
+    # or the like, we may have to have multiple lines for `\d{1}`, `\d{2}` and
+    # `\d{3}`. At that point, however, refactoring may a more proper solution.
+    r"Stjórnartíðindi Evrópusambandsins nr\. \d{2} og",
+    r"EES-nefndarinnar",
+    r"EES-nefndarinnar,",
+    r"við EES-samninginn",
+    r"auglýsingu",
 ]
 for disqualifier in law_pattern_disqualifiers:
     law_pattern_regex = r"(?<!" + disqualifier + " )" + law_pattern_regex
@@ -495,7 +503,7 @@ def process_law_references(law_id: str):
                 potentials = chunk[:potentials_outer_start].strip()
 
                 reference, certain_about_inner, loop_found = analyze_potentials(
-                    potentials
+                    strip_markers(potentials)
                 )
 
                 # FIXME: Disabled for refactoring. Should probably just throw
