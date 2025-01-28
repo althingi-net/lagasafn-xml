@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.cache import caches
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
-from law.models import LawManager
+from lagasafn.models import LawManager
 
 
 def globals(request):

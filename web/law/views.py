@@ -3,8 +3,8 @@ from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
 from lagasafn.utils import traditionalize_law_nr
-from law.models import Law
-from law.models import LawManager
+from lagasafn.models import Law
+from lagasafn.models import LawManager
 from os.path import isfile
 from os.path import join
 
