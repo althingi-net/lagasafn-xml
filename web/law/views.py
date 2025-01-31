@@ -2,6 +2,7 @@ from django.conf import settings
 from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import traditionalize_law_nr
 from lagasafn.models import Law
 from lagasafn.models import LawManager
@@ -19,7 +20,7 @@ def law_list(request):
 
 
 def law_show(request, identifier, view_type: str = "normal"):
-    law = Law(identifier)
+    law = Law(identifier, CURRENT_PARLIAMENT_VERSION)
 
     references = law.get_references()
 
@@ -75,7 +76,7 @@ def content_search(request):
 
     results = None
     if len(search_text):
-        results = LawManager.content_search(search_text)
+        results = LawManager.content_search(search_text, CURRENT_PARLIAMENT_VERSION)
 
     ctx = {
         "search_text": search_text,

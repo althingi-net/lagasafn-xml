@@ -9,6 +9,7 @@ from lagasafn.multiprocessing import CustomPool
 from lagasafn.pathing import get_segment
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.pathing import make_xpath_from_inner_reference
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import number_sorter
 from lagasafn.utils import strip_links
 from lagasafn.utils import untraditionalize_law_nr
@@ -172,7 +173,7 @@ def get_law_name_permutations():
     if len(law_permutations) > 0:
         return law_permutations
 
-    index = etree.parse(XML_INDEX_FILENAME).getroot()
+    index = etree.parse(XML_INDEX_FILENAME % CURRENT_PARLIAMENT_VERSION).getroot()
 
     for law_entry in index.xpath("/index/law-entries/law-entry"):
         name_nomenative = law_entry.find("./name-conjugated/accusative").text
@@ -376,12 +377,12 @@ def process_law_references(law_id: str):
     law_nr, law_year = law_id.split("/")
     law_year = int(law_year)
 
-    law_filename = XML_FILENAME % (law_year, law_nr)
+    law_filename = XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)
     if not isfile(law_filename):
         # Very old laws have a different filename structure. We'll try that
         # before giving up.
         law_nr = untraditionalize_law_nr(law_nr, law_year)
-        law_filename = XML_FILENAME % (law_year, law_nr)
+        law_filename = XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)
         if not isfile(law_filename):
             raise NoSuchLawException(law_filename)
 
@@ -705,7 +706,7 @@ def parse_references(law_ids):
     xml_ref_doc.attrib["stat-xpath-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-failure='true']")))
     xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-resolution-failure='true']")))
 
-    write_xml(xml_ref_doc, XML_REFERENCES_FILENAME)
+    write_xml(xml_ref_doc, XML_REFERENCES_FILENAME % CURRENT_PARLIAMENT_VERSION)
 
     print(" done")
 

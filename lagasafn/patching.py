@@ -17,7 +17,7 @@ from subprocess import run
 
 def patch_law(law_num, law_year) -> bool:
 
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
+    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
     if not isfile(patch_path):
 
         # Auto-patch if requested.
@@ -30,7 +30,7 @@ def patch_law(law_num, law_year) -> bool:
         os.mkdir(os.path.dirname(PATCHED_FILENAME))
 
     filename = CLEAN_FILENAME % (law_year, law_num)
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
+    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
     patched_content = diff_patch_utils.do_patch(filename, patch_path)
     with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
         patched_file.write(patched_content)
@@ -59,7 +59,7 @@ def get_other_parliament(iteration: int):
 
 def auto_patch(law_num, law_year):
     # Nevermind if the patch already exists.
-    patch_path = os.path.join(PATCH_FILENAME % (law_year, law_num))
+    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
     if isfile(patch_path):
         return
 
@@ -79,7 +79,7 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
     filename = CLEAN_FILENAME % (law_year, law_num)
     attempted_patch = os.path.join(PATCHES_BASE_DIR, previous_parliament, "%d-%d.html.patch" % (law_year, law_num))
     target_patch = PATCHED_FILENAME % (law_year, law_num)
-    patch_filename = PATCH_FILENAME % (law_year, law_num)
+    patch_filename = PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
 
     if not isfile(attempted_patch):
         return False

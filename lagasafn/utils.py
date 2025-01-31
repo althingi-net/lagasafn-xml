@@ -4,6 +4,7 @@ import roman
 import subprocess
 from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lxml import etree
 from lxml.etree import Element
 from typing import List
@@ -577,7 +578,7 @@ def ask_user_about_location(extra_sens, numart):
     law = numart.getroottree().getroot()
 
     # Open the straytext map.
-    with open(STRAYTEXTMAP_FILENAME, "r") as f:
+    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
         straytextmap = json.load(f)
 
     # Construct the straytext map key. It must be quite detailed because we
@@ -675,7 +676,7 @@ def ask_user_about_location(extra_sens, numart):
         "xpath": selected_node.getroottree().getpath(selected_node),
         "legal_reference": selected_node_legal_reference,
     }
-    with open(STRAYTEXTMAP_FILENAME, "w") as f:
+    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w") as f:
         json.dump(straytextmap, f)
 
     return selected_node

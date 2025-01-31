@@ -1,5 +1,6 @@
 import os
 from lagasafn.constants import PROBLEMS_FILENAME
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.builder import E
@@ -11,19 +12,19 @@ PROBLEM_TYPES = ["content", "javascript"]
 class ProblemHandler:
     def __init__(self):
         # Create a basic `problems.xml` file if it doesn't exist.
-        if not os.path.exists(PROBLEMS_FILENAME):
+        if not os.path.exists(PROBLEMS_FILENAME % CURRENT_PARLIAMENT_VERSION):
             root = E("problems")
             tree = etree.ElementTree(root)
-            with open(PROBLEMS_FILENAME, "wb") as f:
+            with open(PROBLEMS_FILENAME % CURRENT_PARLIAMENT_VERSION, "wb") as f:
                 tree.write(f, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
-        self.xml = etree.parse(PROBLEMS_FILENAME).getroot()
+        self.xml = etree.parse(PROBLEMS_FILENAME % CURRENT_PARLIAMENT_VERSION).getroot()
         self.problems = {}
 
     def close(self):
         self.sort_by_content_distance()
         self.update_stats()
-        write_xml(self.xml, PROBLEMS_FILENAME)
+        write_xml(self.xml, PROBLEMS_FILENAME % CURRENT_PARLIAMENT_VERSION)
 
     def sort_by_content_distance(self):
 

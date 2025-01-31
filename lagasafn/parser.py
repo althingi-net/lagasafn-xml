@@ -3,7 +3,7 @@ import re
 import roman
 from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
-from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import XML_FILENAME_DIR
 from lxml.builder import E
 from lagasafn.contenthandlers import get_nr_and_name
 from lagasafn.contenthandlers import strip_markers
@@ -13,6 +13,7 @@ from lagasafn.contenthandlers import is_numart_address
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import word_to_nr
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import is_roman
 from lagasafn.utils import numart_next_nrs
@@ -64,8 +65,8 @@ class LawParser:
 
         self.parse_path = []
 
-        if not os.path.isdir(os.path.dirname(XML_FILENAME)):
-            os.mkdir(os.path.dirname(XML_FILENAME))
+        if not os.path.isdir(XML_FILENAME_DIR % CURRENT_PARLIAMENT_VERSION):
+            os.mkdir(XML_FILENAME_DIR % CURRENT_PARLIAMENT_VERSION)
 
         # Check if we have a patched cleaned HTML version of the law.
         if os.path.isfile(PATCHED_FILENAME % (law_year, law_num)):

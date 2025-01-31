@@ -27,6 +27,7 @@ from math import floor
 
 
 class LawIndexInfo:
+    codex_version: str
     date_from: datetime
     date_to: datetime
     total_count: int
@@ -46,13 +47,16 @@ class LawManager:
         info = LawIndexInfo()
         laws = []
 
+        # TODO: Make this configurable by constructor or something.
+        info.codex_version = CURRENT_PARLIAMENT_VERSION
+
         # Collect known problems to mix with the index.
         # A dictionary (map) will be generated with the law's identifier as a
         # key, which can then be quickly looked up when we iterate through the
         # index below.
         problem_map = {}
         problems = etree.parse(
-            os.path.join(PROBLEMS_FILENAME)
+            os.path.join(PROBLEMS_FILENAME % info.codex_version)
         ).getroot()
         for problem_law_entry in problems.findall("problem-law-entry"):
             statuses = {}
@@ -73,7 +77,7 @@ class LawManager:
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
 
         # Read and parse the index
-        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME)).getroot()
+        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME % CURRENT_PARLIAMENT_VERSION)).getroot()
 
         # Gather miscellaneous stuff into `info`.
         info.date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
@@ -91,7 +95,7 @@ class LawManager:
             if node_law_entry.attrib["identifier"] in problem_map:
                 problems = problem_map[node_law_entry.attrib["identifier"]]
 
-            laws.append(LawEntry(node_law_entry, problems))
+            laws.append(LawEntry(node_law_entry, info.codex_version, problems))
 
         index = LawIndex()
         index.info = info
@@ -99,14 +103,14 @@ class LawManager:
         return index
 
     @staticmethod
-    def content_search(search_string: str):
+    def content_search(search_string: str, codex_version: str):
 
         results = []
 
         index = LawManager.index()
 
         for law_entry in index.laws:
-            law_xml = Law(law_entry.identifier).xml()
+            law_xml = Law(law_entry.identifier, codex_version).xml()
 
             nodes = search_xml_doc(law_xml, search_string)
 
@@ -137,7 +141,8 @@ class LawEntry:
     Intermediary model for a legal entry in the index.
     """
 
-    def __init__(self, node_law_entry, problems):
+    def __init__(self, node_law_entry, codex_version: str, problems):
+        self.codex_version = codex_version
         self.identifier = node_law_entry.attrib["identifier"]
         self.name = node_law_entry.find("name").text
         self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
@@ -185,8 +190,9 @@ class LawEntry:
 
 class Law(LawEntry):
 
-    def __init__(self, identifier):
+    def __init__(self, identifier: str, codex_version: str):
         self.identifier = identifier
+        self.codex_version = codex_version
 
         # Private containers, essentially for caching.
         self._xml = None
@@ -325,7 +331,7 @@ class Law(LawEntry):
         return self._articles
 
     def path(self):
-        return XML_FILENAME % (self.year, self.nr)
+        return XML_FILENAME % (self.codex_version, self.year, self.nr)
 
     def xml(self):
         """
@@ -378,7 +384,7 @@ class Law(LawEntry):
 
     def get_references(self):
         if self._xml_references is None:
-            self._xml_references = etree.parse(XML_REFERENCES_FILENAME).getroot()
+            self._xml_references = etree.parse(XML_REFERENCES_FILENAME % CURRENT_PARLIAMENT_VERSION).getroot()
 
         nodes = self._xml_references.xpath(
             f"/references/law-ref-entry[@law-nr='{self.nr}' and @law-year='{self.year}']/node"

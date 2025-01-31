@@ -8,9 +8,13 @@ JSON_MAP_BASE_DIR = join(DATA_DIR, "json-maps")
 PATCHES_BASE_DIR = join(DATA_DIR, "patches")
 XML_BASE_DIR = join(DATA_DIR, "xml")
 
+LAW_FILENAME_DIR = join(
+    DATA_DIR, "original", "%s"
+)  # % codex_version
+
 LAW_FILENAME = join(
-    DATA_DIR, "original", CURRENT_PARLIAMENT_VERSION, "%d%s.html"
-)  # % (law_year, law_num)
+    LAW_FILENAME_DIR, "%d%s.html"
+)  # % (codex_version, law_year, law_num)
 
 CLEAN_FILENAME = join(
     DATA_DIR, "cleaned", "%d-%d.html"
@@ -21,8 +25,8 @@ PATCHED_FILENAME = join(
 )  # % (law_year, law_num)
 
 PATCH_FILENAME = join(
-    PATCHES_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "%d-%d.html.patch"
-)  # % (law_year, law_num)
+    PATCHES_BASE_DIR, "%s", "%d-%d.html.patch"
+)  # % (codex_version, law_year, law_num)
 
 ADVERT_REMOTES_DIR = join(
     DATA_DIR, "adverts", "remote"
@@ -32,11 +36,12 @@ ADVERT_DIR = join(
     DATA_DIR, "adverts", "xml"
 )
 
-XML_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "%d.%s.xml")  # % (law_year, law_num)
-XML_INDEX_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "index.xml")
-XML_REFERENCES_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "references.xml")
+XML_FILENAME_DIR = join(XML_BASE_DIR, "%s")  # % codex_version
+XML_FILENAME = join(XML_FILENAME_DIR, "%d.%s.xml")  # % (codex_version, law_year, law_num)
+XML_INDEX_FILENAME = join(XML_BASE_DIR, "%s", "index.xml")  # % codex_version
+XML_REFERENCES_FILENAME = join(XML_BASE_DIR, "%s", "references.xml")  # % codex_version
 
-ERRORMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "errormap.json")
-STRAYTEXTMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "straytextmap.json")
-SPLITMAP_FILENAME = join(JSON_MAP_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "splitmap.json")
-PROBLEMS_FILENAME = join(XML_BASE_DIR, CURRENT_PARLIAMENT_VERSION, "problems.xml")
+ERRORMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "errormap.json")  # % codex_version
+STRAYTEXTMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "straytextmap.json")  # % codex_version
+SPLITMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "splitmap.json")  # % codex_version
+PROBLEMS_FILENAME = join(XML_BASE_DIR, "%s", "problems.xml")  # % codex_version

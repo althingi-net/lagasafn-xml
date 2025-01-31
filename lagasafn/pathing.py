@@ -3,6 +3,7 @@ from lagasafn.constants import XML_FILENAME
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import convert_to_text
 from lagasafn.utils import is_roman
 from lxml import etree
@@ -211,7 +212,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
 def get_segment(law_nr: str, law_year: int, xpath: str):
     try:
-        xml = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+        xml = etree.parse(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)).getroot()
     except:
         raise NoSuchLawException()
 

@@ -14,6 +14,7 @@ from datetime import timedelta
 from lagasafn import settings
 from lagasafn.constants import JSON_MAP_BASE_DIR
 from lagasafn.constants import LAW_FILENAME
+from lagasafn.constants import LAW_FILENAME_DIR
 from lagasafn.constants import ERRORMAP_FILENAME
 from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
@@ -23,6 +24,7 @@ from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lagasafn.constants import XML_BASE_DIR
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import XML_FILENAME_DIR
 from lagasafn.contenthandlers import generate_conjugations
 from lagasafn.contenthandlers import generate_synonyms
 from lagasafn.contenthandlers import remove_ignorables
@@ -61,9 +63,9 @@ def prepare_environment():
             os.makedirs(dirname)
 
     json_files = [
-        ERRORMAP_FILENAME,
-        STRAYTEXTMAP_FILENAME,
-        SPLITMAP_FILENAME,
+        ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION,
+        STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION,
+        SPLITMAP_FILENAME % CURRENT_PARLIAMENT_VERSION,
     ]
 
     dirs = [
@@ -188,7 +190,9 @@ def clean_content(content):
 
 def clean_law(law_num, law_year):
     with codecs.open(
-        LAW_FILENAME % (law_year, str(law_num).zfill(3)), "r", "ISO-8859-1"
+    LAW_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, str(law_num).zfill(3)),
+        "r",
+        "ISO-8859-1"
     ) as infile:
         raw_content = infile.read()
         infile.close()
@@ -218,7 +222,7 @@ def make_xml(law_num, law_year):
     parse_law(parser)
 
     # Write the XML object to output file.
-    write_xml(parser.law, XML_FILENAME % (parser.law_year, parser.law_num))
+    write_xml(parser.law, XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, parser.law_year, parser.law_num))
 
 
 def process_law(law_id):
@@ -246,7 +250,7 @@ def process_law(law_id):
             # codex. When we fail at parsing a document, the accurate
             # representation is the absence of that document.
             try:
-                os.remove(XML_FILENAME % (law_year, law_num))
+                os.remove(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
             except FileNotFoundError:
                 # This does not matter.
                 pass
@@ -270,7 +274,7 @@ def process_law(law_id):
 
 def get_available_law_ids():
     law_ids = []
-    for filename in os.listdir(dirname(LAW_FILENAME)):
+    for filename in os.listdir(LAW_FILENAME_DIR % CURRENT_PARLIAMENT_VERSION):
         if re.match(r"^\d{7}\.html$", filename):
             law_year = int(filename[0:4])
             law_num = int(filename[4:7])
@@ -282,8 +286,8 @@ def get_available_law_ids():
 def get_broken_law_ids():
     law_ids = []
 
-    if os.path.isfile(ERRORMAP_FILENAME):
-        with open(ERRORMAP_FILENAME, "r") as f:
+    if os.path.isfile(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION):
+        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
             for law_id in errormap.keys():
                 if errormap[law_id] is not None:
@@ -316,7 +320,7 @@ def report(law_id, i, law_count, msg):
 
 # Displays errors known according to errormap.
 def display_errors(law_ids):
-    with open(ERRORMAP_FILENAME, "r") as f:
+    with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
         errormap = json.load(f, object_pairs_hook=OrderedDict)
 
         # Counters.
@@ -374,7 +378,7 @@ def display_errors(law_ids):
         )
 
 
-def get_parliament_version_dates(parliament_version):
+def get_parliament_version_dates(codex_version):
     """
     Each version of a codex (a.k.a. parliament version) has a date associated
     with it, which is up to what date it incorporates changes passed by
@@ -396,7 +400,7 @@ def get_parliament_version_dates(parliament_version):
     # we're re-creating the index here, we'll allow ourselves to check if we
     # already have this data, and re-use it if it's available.
     try:
-        xml_index = etree.parse(XML_INDEX_FILENAME).getroot()
+        xml_index = etree.parse(XML_INDEX_FILENAME % codex_version).getroot()
         date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
         date_to = datetime.fromisoformat(xml_index.attrib["date-to"])
         return date_from, date_to
@@ -457,7 +461,7 @@ def update_index():
     index.append(law_entries)
 
     # Iterate through all the XML files we have.
-    for law_xml_filename in os.listdir(dirname(XML_FILENAME)):
+    for law_xml_filename in os.listdir(XML_FILENAME_DIR % CURRENT_PARLIAMENT_VERSION):
         # Only interested in XML files.
         if law_xml_filename[-4:] != ".xml":
             continue
@@ -473,7 +477,7 @@ def update_index():
 
         # Read the XML file's content, from which we'll get a bunch of
         # information for the index.
-        law = etree.parse(XML_FILENAME % (law_year, law_nr)).getroot()
+        law = etree.parse(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)).getroot()
 
         # Law-specific info for the index.
         identifier = f"{law_nr}/{law_year}"
@@ -588,7 +592,7 @@ def update_index():
     for stat_key in stats.keys():
         node_stats.append(E(stat_key, str(stats[stat_key])))
 
-    write_xml(index, XML_INDEX_FILENAME)
+    write_xml(index, XML_INDEX_FILENAME % CURRENT_PARLIAMENT_VERSION)
 
     print(" done")
 
@@ -718,7 +722,7 @@ def main(argv):
         results = pool.run(process_law, law_ids)
 
         # Open the errormap for recording successes and errors.
-        with open(ERRORMAP_FILENAME, "r") as f:
+        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
 
         # Monitor and record return successes and errors. We'll want to record
@@ -750,7 +754,7 @@ def main(argv):
                     break
         finally:
             # Write the errormap.
-            with open(ERRORMAP_FILENAME, "w") as f:
+            with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w") as f:
                 json.dump(errormap, f)
 
     # Update the index (unless skipped).
