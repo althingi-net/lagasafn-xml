@@ -2,41 +2,12 @@ from datetime import datetime
 from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import determine_month
+from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
 from lxml.builder import E
-from lxml.etree import _Element
 import re
 import roman
-
-
-def get_all_text(node: _Element):
-    """
-    A function for retrieving the text content of an element and all of its
-    descendants. Some special regex needed because of content peculiarities.
-
-    FIXME: This concatenates strings with a `<br/>` between them. It's not a
-    problem yet, but it will become one. Probably requires rewriting from
-    scratch to fix that.
-
-    FIXME: There is another function, `lagasafn.utils.convert_to_text` which
-    was designed for a different purpose. These two should be merged and fixed
-    so that they work with anything in the entire project.
-    """
-    # Get the text
-    result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
-
-    # Remove non-breaking space.
-    result = result.replace("\xa0", " ")
-
-    # Consolidate spaces.
-    while result.find("  ") > -1:
-        result = result.replace("  ", " ")
-
-    # Strip the result.
-    result = result.strip()
-
-    return result
 
 
 def parse_break(tracker: AdvertTracker):
@@ -114,6 +85,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
         tracker.targets.chapter.append(art)
     else:
         tracker.xml.append(art)
+    tracker.targets.art = art
 
     # We'll start by gathering all the content of the article into the node for
     # later handling.
@@ -125,7 +97,10 @@ def parse_article_nr_title(tracker: AdvertTracker):
         not parse_empty(tracker, non_empty_if_next=r"[a-z]\. \(.*\)$")
         # On occasion, articles aren't properly ended with an empty node, so we
         # need to check here if an article immediately follows.
-        and re.match(r"(\d+)\. gr\.$", get_all_text(tracker.current_node())) is None
+        and re.match(
+            r"(\d+)\. gr\.$",
+            get_all_text(tracker.current_node())
+        ) is None
     ):
         original.append(tracker.current_node())
         next(tracker.nodes)
@@ -150,17 +125,11 @@ def parse_chapter_nr_title(tracker):
     chapter = E("chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
 
     next(tracker.nodes)
-    description = get_all_text(tracker.current_node())
-    if description.startswith("Breyting á lögum"):
-        nrs_found = re.findall(r"nr\. (\d{1,3})\/(\d{4})", description)
-        if len(nrs_found) > 1:
-            raise AdvertParsingException(
-                "Can't deal with more than one law in chapter description."
-            )
-        elif len(nrs_found) == 0:
-            raise AdvertParsingException("Could not find affected law in chapter name.")
 
-        tracker.affected["law-nr"], tracker.affected["law-year"] = nrs_found[0]
+    description = get_all_text(tracker.current_node())
+    chapter.append(E("description", description))
+
+    tracker.detect_affected_law(description, chapter)
 
     next(tracker.nodes)
 
@@ -288,20 +257,7 @@ def convert_advert_law(xml_remote):
     )
     del raw_publishing_date, pub_day, pub_month, pub_year
 
-    # Figure out which laws are being changed. If nothing is found, then
-    # probably multiple laws are being changed and this information will be
-    # inside chapters.
-    found_in_description = re.findall(r"nr\. (\d{1,3})\/(\d{4})", description)
-    if len(found_in_description) > 1:
-        # This never happened between 2024-04-12 and 2025-01-13 at least, but
-        # is placed here to prevent mistakes in the future.
-        raise AdvertParsingException(
-            "Don't know how to handle more than one law number in advert title"
-        )
-    elif len(found_in_description) == 1:
-        tracker.affected["law-nr"], tracker.affected["law-year"] = found_in_description[
-            0
-        ]
+    tracker.detect_affected_law(description, tracker.xml)
 
     # Fill gathered information into XML.
     tracker.xml.attrib["year"] = year
@@ -325,12 +281,12 @@ def convert_advert_law(xml_remote):
             continue
         if parse_article_nr_title(tracker):
             continue
-        if parse_signature_confirmation(tracker):
-            break
         if parse_chapter_nr_title(tracker):
             continue
         if parse_temporary_clause(tracker):
             continue
+        if parse_signature_confirmation(tracker):
+            break
 
         # This is a good debugging point.
         node = tracker.current_node()

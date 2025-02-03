@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 import sys
 from datetime import datetime
+from datetime import timedelta
 from lagasafn import settings
 from lagasafn.advert.conversion import convert_adverts
 from lagasafn.advert.remote import update_local_adverts
+from lagasafn.models import LawManager
 from sys import stderr
 
 def help():
@@ -18,11 +20,11 @@ def help():
 
 def main(argv):
 
-    # FIXME: The `from_date is currently hard-coded to the date when legal
-    # codex version 154b was released. Unclear whether this should be a
-    # parameter to the script, or defined by codex version somehow.
-    from_date = datetime(2024, 4, 12)
+    law_index = LawManager.index()
 
+    # We'll handle adverts that were published after the currently selected
+    # codex version was released.
+    from_date = law_index.info.date_to + timedelta(days=1)
     to_date = datetime.now()
 
     if len(argv) < 2:

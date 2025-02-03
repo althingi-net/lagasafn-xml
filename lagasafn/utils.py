@@ -6,7 +6,7 @@ from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lxml import etree
-from lxml.etree import Element
+from lxml.etree import _Element
 from typing import List
 
 
@@ -1001,7 +1001,10 @@ def regex_find(string_value, regex, start=0):
     return start + match.start() if match else -1
 
 
-def convert_to_text(elements: List[Element]):
+def convert_to_text(elements: List[_Element]):
+    """
+    FIXME: Should be consolidated with `get_all_text` function below.
+    """
     result = ""
 
     # Cluck together all text in all descendant nodes.
@@ -1014,6 +1017,35 @@ def convert_to_text(elements: List[Element]):
     # Remove double spaces that may result from concatenation above.
     while "  " in result:
         result = result.replace("  ", " ")
+
+    return result
+
+
+def get_all_text(node: _Element):
+    """
+    A function for retrieving the text content of an element and all of its
+    descendants. Some special regex needed because of content peculiarities.
+
+    FIXME: This concatenates strings with a `<br/>` between them. It's not a
+    problem yet, but it will become one. Probably requires rewriting from
+    scratch to fix that.
+
+    FIXME: There is another function, `lagasafn.utils.convert_to_text` which
+    was designed for a different purpose. These two should be merged and fixed
+    so that they work with anything in the entire project.
+    """
+    # Get the text
+    result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
+
+    # Remove non-breaking space.
+    result = result.replace("\xa0", " ")
+
+    # Consolidate spaces.
+    while result.find("  ") > -1:
+        result = result.replace("  ", " ")
+
+    # Strip the result.
+    result = result.strip()
 
     return result
 
