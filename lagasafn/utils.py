@@ -709,6 +709,9 @@ class super_iter:
             raise StopIteration
         return self.collection[self.index]
 
+    def __len__(self):
+        return self.total_lines
+
     def __iter__(self):
         return self
     
