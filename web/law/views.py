@@ -9,6 +9,8 @@ from lagasafn.models import LawManager
 from os.path import isfile
 from os.path import join
 
+from lagasafn.rted import rted, EditType
+
 
 def law_search(request):
     ctx = {"q": request.GET.get("q", "")}
@@ -35,6 +37,67 @@ def law_show(request, identifier, view_type: str = "normal"):
         "view_type": view_type,
     }
     return render(request, "law/show.html", ctx)
+
+
+def law_compare(request):
+    codexa = request.GET.get("codexa", "154a")
+    codexb = request.GET.get("codexb", "154b")
+    lawref = request.GET.get("lawref", "7/2022")
+    law1 = Law(lawref, codex=codexa)
+    law2 = Law(lawref, codex=codexb)
+
+    # We're going to walk through both laws, and compare them chunk by chunk.
+    # If a chunk is missing in one of the laws, we'll leave a blank for that
+    # law but include the chunk from the other law.
+    #
+    # It's possible that law1 will have a chunk that law2 doesn't have, and vice
+    # versa. We mustn't miss anything!
+    # 
+    # The output is a list of chunks, each chunk being a dictionary containing
+    # "a" from law1, "b" from law2, and "diff" which is a boolean indicating
+    # whether the two chunks are different.
+    chunks = []
+
+    print("Law 1: ", law1.xml())
+    print("Law 2: ", law2.xml())
+
+    # We'll walk through the chunks of both laws.
+    cost, script = rted(law1.xml().getroot(), law2.xml().getroot())
+    script_source_map = {op.source: op for op in script}
+    script_target_map = {op.target: op for op in script}
+
+    a = law1.iter_structure()
+    b = law2.iter_structure()
+
+    def determine_chunk(c1, c2, script):
+        if c1 in script_source_map.keys():
+            if script_source_map[c1].edit_type == EditType.Delete:
+                return {"a": c1, "b": None, "diff": True}
+            if script_source_map[c1].edit_type == EditType.Change:
+                return {"a": c1, "b": script_source_map[c1].target, "diff": True}
+
+        if c2 in script_target_map.keys():
+            if script_target_map[c2].edit_type == EditType.Insert:
+                return {"a": None, "b": c2, "diff": True}
+
+        # There's no difference between the two chunks.
+        return {"a": c1, "b": c2, "diff": False}
+
+    while True:
+        c1 = next(a, None)
+        c2 = next(b, None)
+        if c1 is None and c2 is None:
+            break
+        chunks.append(determine_chunk(c1, c2, script))
+    
+
+    ctx = {
+        "lawref": lawref,
+        "codexa": codexa,
+        "codexb": codexb,
+        "chunks": chunks,
+    }
+    return render(request, "law/compare.html", ctx)
 
 
 def law_show_patched(request, identifier):

@@ -12,7 +12,8 @@ from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
 from lagasafn.constants import PROBLEMS_FILENAME
-from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import XML_FILENAME_WITH_CODEX
+from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.exceptions import LawException
@@ -204,6 +205,7 @@ class Law(LawEntry):
         self._chapters = []
         self._articles = []
         self._remote_contents = {}
+        self.codex = codex
 
         self.nr, self.year = self.identifier.split("/")
 
@@ -381,6 +383,21 @@ class Law(LawEntry):
         self._html_text = result
 
         return self._html_text
+
+    def iter_structure(self):
+        """
+        Iterate such that we return the whole document, in order,
+        but where each chunk is either a structural element, a chapter,
+        an article or sub-article.
+
+        The idea here is that we can create side-by-side comparisons and
+        other such per-structural-unit displays.
+        """
+        xml = self.xml()
+
+        chapters = xml.iter()
+        for chapter in chapters:
+            yield chapter
 
     def get_references(self):
         if self._xml_references is None:

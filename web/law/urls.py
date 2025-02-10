@@ -17,5 +17,10 @@ urlpatterns = [
         {"view_type": "comparison"},
         name="law_show_comparison",
     ),
+    path(
+        "show/compare/",
+        views.law_compare,
+        name="law_show_compare",
+    ),
     path("show/<path:identifier>/", views.law_show, name="law_show"),
 ]

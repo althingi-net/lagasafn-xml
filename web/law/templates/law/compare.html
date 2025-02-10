@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<script language="javascript" type="text/javascript">
+    // Constants available to JavaScript.
+    const LAW_IDENTIFIER = "{{ law.identifier }}";
+    const SCROLL_OFFSET = 300;  // Essentially arbitrary.
+
+    // Activate menu items.
+    var elements = document.querySelectorAll(".menu-item");
+    elements.forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            let tag = this.getAttribute("data-tag");
+            let nr = this.getAttribute("data-nr");
+            let selector = tag + "[nr='" + nr + "']";
+            let elem = document.querySelector(selector);
+
+            // Highlight the selected item.
+            document.querySelectorAll(".highlighted").forEach(el => el.classList.remove("highlighted"));
+            elem.classList.add("highlighted");
+
+            // Scroll so that the element is visible.
+            elem.scrollIntoView();
+
+            window.scrollBy(0, 0 - SCROLL_OFFSET);
+
+            // If the scrolling has hidden our element, we make it re-appear.
+            let rect = elem.getBoundingClientRect();
+            if (rect.top > SCROLL_OFFSET && rect.bottom > window.innerHeight) {
+                window.scrollBy(0, SCROLL_OFFSET);
+            }
+
+        });
+    });
+
+    // Activate references.
+    $(document).ready(function() {
+        var references = {{ references|safe }};
+
+        for (var reference of references) {
+            var target_node = document.evaluate(
+                "//" + reference.location,
+                document,
+                null,
+                XPathResult.FIRST_ORDERED_NODE_TYPE,
+                null
+            ).singleNodeValue;
+
+            target_node.innerHTML = target_node.innerHTML.replace(
+                reference.link_label,
+                '<refer type="legal-clause-from-text">' + reference.link_label + '</refer>'
+            );
+        }
+
+        // Make references show what they're referring to on mouse-over.
+        $('refer').on('click', follow_refer);
+
+    });
+
+    // Experimental functionality for manually checking if we can parse
+    // references by selecting text. Will almost certainly be replaced once
+    // reference-parsing is mature enough, except for development purposes.
+    $('law').on('mouseup', function(event) {
+        let selectedText = window.getSelection().toString();
+
+        // We should see at least one of these in the string to bother looking it up.
+        known_parts = [
+            " gr.",
+            " mgr.",
+            " tölul.",
+            "-lið",
+        ]
+        let possibly_legit = false;
+        known_parts.map((part) => {
+            if (selectedText.indexOf(part) > -1) {
+                possibly_legit = true;
+            }
+        });
+
+        if (possibly_legit) {
+
+            // An incomplete experiment that needs finishing before it's safe to use.
+            // It adds the law identifier to the selected text if it's missing.
+            // The dangerous thing about it is that it assumes that the
+            // reference refers to the open law, and not some other. The user
+            // may make a mistake by not including the law identifier, or the
+            // identifier may not in fact be available, like in "3. gr. sömu
+            // laga", referring to some other law that was mentioned previously.
+            /*
+            const pattern = /^\d{1,3}\/\d{4}$/;
+            const contains_law = pattern.test(selectedText);
+            if (!contains_law) {
+                selectedText += " laga nr. " + LAW_IDENTIFIER;
+            }
+            */
+
+            const $anchor = $(document.elementFromPoint(event.clientX, event.clientY));
+            process_refer_legal_clause_from_text(selectedText, $anchor);
+        }
+    });
+
+    // Scroll to the selected text.
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const xpath = urlParams.get('xpath');
+        const selectedText = urlParams.get('selected_text') || "";
+        if (selectedText.length > 0) {
+            var element = getElementByXPath("//law//" + xpath);
+            element.scrollIntoView({
+                block: "center",
+            });
+            element.classList.add('search-result-selection');
+            selectTextInNode(element, selectedText);
+        }
+    });
+
+</script>
+{% endblock %}
+
+{% block title %}{{ lawref }}: {{codexa}} vs {{codexb}} {% endblock %}
+
+{% block controls %}
+    {% if view_type == "comparison" %}
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="scroll-up" onClick="window.scrollBy(0, -1);">{% trans 'Up 1 pixel' %}</button>
+            <button type="button" class="btn btn-default" id="scroll-down" onClick="window.scrollBy(0, 1);">{% trans 'Down 1 pixel' %}</button>
+        </div>
+        &nbsp;
+    {% endif %}
+
+    <div class="btn-group" role="group">
+        <a href="{{ law.original_url }}" class="btn btn-default" target="_blank">{% trans 'Open original' %}</a>
+        {% if FEATURES.link_to_editor %}
+            <a href="{{ law.editor_url }}" class="btn btn-default" target="_blank">{% trans 'Open in editor' %}</a>
+        {% endif %}
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default" id="btn-hide-subart-nrs">{% trans 'Hide subart numbers' %}</button>
+        <button type="button" class="btn btn-default" id="btn-show-subart-nrs">{% trans 'Show subart numbers' %}</button>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default" id="btn-close-all">{% trans 'Close all' %}</button>
+        <button type="button" class="btn btn-default" id="btn-open-all">{% trans 'Open all' %}</button>
+    </div>
+{% endblock %}
+
+{% block left %}
+
+{% if view_type == "normal" %}
+    <div class="legal-document menu">
+        {% include 'law/link_article.html' with articles=law.articles %}
+        {% include 'law/link_chapter.html' with chapters=law.chapters %}
+        {% include 'law/link_superchapter.html' with superchapters=law.superchapters %}
+    </div>
+
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'law/dialog/quick_dialog.html' %}
+
+<div class="legal-document {{ view_type }}-view">
+    <h1>{{ lawref }}: {{codexa}} vs {{codexb}} </h1>
+
+    {% if interim_laws or ongoing_issues %}
+        <div class="container">
+            <div class="row">
+                {% if interim_laws %}
+                    {% include "law/remote_box.html" with box_links=interim_laws box_title=_("Approved laws since publication of codex:") %}
+                {% endif %}
+                {% if ongoing_issues %}
+                    {% include "law/remote_box.html" with box_links=ongoing_issues box_title=_("Bills affecting the law:") %}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <style>
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .law-column {
+            width: 50%;
+        }
+    </style>
+    <table class="comparison-table">
+    {% for chunk in chunks %}
+        <tr>
+            <td class="law-column">
+                {% include 'law/compare_chunk.html' with chunk=chunk.a %}
+            </td>
+            <td class="law-column">
+                {% include 'law/compare_chunk.html' with chunk=chunk.b %}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
