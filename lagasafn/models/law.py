@@ -12,7 +12,6 @@ from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
 from lagasafn.constants import PROBLEMS_FILENAME
-from lagasafn.constants import XML_FILENAME_WITH_CODEX
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
