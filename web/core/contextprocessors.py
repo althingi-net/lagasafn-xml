@@ -10,7 +10,7 @@ def globals(request):
     # Will be cleared on project startup in `core.apps.ready`.
     cache = caches["default"]
     if cache.get("index") is None:
-        cache.set("index", LawManager.index())
+        cache.set("index", LawManager.index(CURRENT_PARLIAMENT_VERSION))
 
     ctx = {
         "PROJECT_NAME": settings.PROJECT_NAME,

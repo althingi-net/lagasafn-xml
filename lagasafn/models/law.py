@@ -43,13 +43,12 @@ class LawIndex:
 
 class LawManager:
     @staticmethod
-    def index() -> LawIndex:
+    def index(codex_version: str) -> LawIndex:
         # Return variables.
         info = LawIndexInfo()
         laws = []
 
-        # TODO: Make this configurable by constructor or something.
-        info.codex_version = CURRENT_PARLIAMENT_VERSION
+        info.codex_version = codex_version
 
         # Collect known problems to mix with the index.
         # A dictionary (map) will be generated with the law's identifier as a
@@ -108,7 +107,7 @@ class LawManager:
 
         results = []
 
-        index = LawManager.index()
+        index = LawManager.index(codex_version)
 
         for law_entry in index.laws:
             law_xml = Law(law_entry.identifier, codex_version).xml()
