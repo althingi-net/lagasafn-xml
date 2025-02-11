@@ -15,9 +15,10 @@
 #
 
 from lxml import etree
-from typing import List, Tuple, Mapping, Optional
+from typing import List, Tuple, Mapping, Optional, Literal
 from enum import Enum
 from dataclasses import dataclass
+from lagasafn.pathing import make_xpath_from_node
 
 class EditType(Enum):
     # Represents the type of edit operation in the tree edit script.
@@ -34,6 +35,8 @@ class EditType(Enum):
     RemoveAttrib    = 6
     ChangeText      = 7
     ChangeTagType   = 8
+    insert_b        = 10
+    delete_b        = 20
 
 
 @dataclass
@@ -44,11 +47,14 @@ class EditOperation:
     # The target is the target node.
     #
     edit_type: EditType
+    cost: int
     source: etree.Element
     target: etree.Element
+    xpath: str = ""
+    insertmode: Literal["explicit", "child", "after", "before"] = "explicit"
 
     def __str__(self):
-        return f"[{self.edit_type}] {self.source} -> {self.target}"
+        return f"[{self.edit_type}@{self.xpath}] {self.source} -> {self.target}"
 
 SubtreeSizeMap = Mapping[etree.Element, int]
 PathTable = Mapping[etree.Element, etree.Element]
@@ -102,27 +108,42 @@ def compute_heavy_path(node: etree.Element, sizes: SubtreeSizeMap, paths: PathTa
         compute_heavy_path(child, sizes, paths)
 
 
+COMPARISONS = 0
+MAX_DEPTH = 0
+
 def compute_tree_edit_distance(
     source: Optional[etree.Element], 
     target: Optional[etree.Element],
     heavy: PathTable,
+    depth: int = 0
 ) -> (int, TreeEditScript):
 
+    global COMPARISONS
+    global MAX_DEPTH
+
+    COMPARISONS += 1
+    MAX_DEPTH = max(MAX_DEPTH, depth)
+
+    # print(f"Comparing {make_xpath_from_node(source)} -> {make_xpath_from_node(target)}")
     #
     # FIRST: We handle the situation where either source or target is None.
     #
     if source == None and target == None:
         return 0, [] # No cost if both nodes are none.
 
-    # TODO: The costing of this case is wrong
     # Source is empty, insert all nodes from target.
     if source == None:
-        return 1 + len(target.getchildren()), [EditOperation(EditType.insert, None, target)]
+        cost = 10
+        for child in target.iter():
+            cost += 1
+        return cost, [EditOperation(EditType.insert_b, cost, None, target, make_xpath_from_node(target))]
     
-    # TODO: The costing of this case is wrong
     # Target is empty, delete all nodes from source.
     if target == None:
-        return 1 + len(source.getchildren()), [EditOperation(EditType.delete, source, None)]
+        cost = 10
+        for child in source.iter():
+            cost += 1
+        return 1 + cost, [EditOperation(EditType.delete_b, cost, source, None, make_xpath_from_node(source))]
 
     #
     # Both source and target are non-empty.
@@ -130,24 +151,22 @@ def compute_tree_edit_distance(
     #
     # CASE 2: Remove scenario
     #
-    # TODO: This cost is wrong
-    remove_ops : List[EditOperation] = [
-        EditOperation(EditType.delete, source, None)
-    ]
-    remove_cost = 1 + len(source.getchildren())
+    remove_cost = 20 + len(source.getchildren())
     for child in source.iter():
-        remove_cost += 1
+        remove_cost += 3
+    remove_ops : List[EditOperation] = [
+        EditOperation(EditType.delete, remove_cost, source, None, make_xpath_from_node(source))
+    ]
 
     #
     # CASE 3: Insert scenario
     #
-    # TODO: This cost is wrong
-    insert_ops : List[EditOperation] = [
-        EditOperation(EditType.insert, None, target)
-    ]
-    insert_cost = 1 + len(target.getchildren())
+    insert_cost = 20 + len(target.getchildren())
     for child in target.iter():
-        insert_cost += 1
+        insert_cost += 3
+    insert_ops : List[EditOperation] = [
+        EditOperation(EditType.insert, insert_cost, None, target, make_xpath_from_node(target))
+    ]
 
     #
     # CASE 4: Change scenario
@@ -157,11 +176,11 @@ def compute_tree_edit_distance(
 
     if source.tag != target.tag:
         change_cost += 1
-        # change_ops.append(EditOperation(EditType.ChangeTagType, source, target))
+        #change_ops.append(EditOperation(EditType.ChangeTagType, source, target))
 
     if source.text != target.text:
         change_cost += 1
-        # change_ops.append(EditOperation(EditType.ChangeText, source, target))
+        #change_ops.append(EditOperation(EditType.ChangeText, source, target))
 
     # Each attrib change (add, remove, change) costs 1.
     source_attribs = set(source.attrib.keys())
@@ -170,37 +189,65 @@ def compute_tree_edit_distance(
     for key in source_attribs.intersection(target_attribs):
         if source.attrib[key] != target.attrib[key]:
             change_cost += 1
-    
+
     if change_cost > 0:
-        change_ops.append(EditOperation(EditType.change, source, target))
+        change_ops.append(EditOperation(EditType.change, change_cost, source, target, make_xpath_from_node(source)))
 
     # Compute the edit distance for the heavy paths.
-    heavy_source = heavy[source]
-    heavy_target = heavy[target]
+    #heavy_source = heavy[source]
+    #heavy_target = heavy[target]
 
     # The heavy cost is the cost of transforming the heavy paths.
-    heavy_cost, subscript = compute_tree_edit_distance(heavy_source, heavy_target, heavy)
+    #heavy_cost, subscript = compute_tree_edit_distance(heavy_source, heavy_target, heavy, depth+1)
 
-    change_cost += heavy_cost
-    change_ops += subscript
+    #change_cost += heavy_cost
+    #change_ops += subscript
 
     # Process remaining children (non-heavy paths). We do this by aggregating the remaining
     # children into two arrays, and then recursively comparing them. We sum these as "other_cost".
     other_source : List[etree.Element] = []
     for it in source.getchildren():
-        if it != heavy_source:
-            other_source.append(it)
+        #if it != heavy_source:
+        other_source.append(it)
 
     other_target : List[etree.Element] = []
     for it in target.getchildren():
-        if it != heavy_target:
-            other_target.append(it)
+        # if it != heavy_target:
+        other_target.append(it)
 
+    # We'd normally just look at one pair at a time, but we really want to find the pair that has
+    # the least cost. So we are going to try all combinations of source and target children
+    # and find the edit set with the least cost:
+
+    #strategies = []
+    #for j in range(max(len(other_source), len(other_target))):
+    #    strategy_ops  = []
+    #    strategy_cost = 0
+    #    maxarg = max(len(other_source), len(other_target))
+    #    for i in range(maxarg):
+    #        s_child = other_source[(j+i)%maxarg] if (j+i)%maxarg < len(other_source) else None
+    #        t_child = other_target[i] if i < len(other_target) else None
+    #        subcost, subscript = compute_tree_edit_distance(s_child, t_child, heavy, depth+1)
+    #        strategy_cost += subcost
+    #        strategy_ops  += subscript
+#
+    #    strategies.append((strategy_cost, strategy_ops))
+    #
+    #if len(strategies) > 0:
+    #    # Now we have a list of strategies, we can pick the one with the least cost.
+    #    scost, sops = min(strategies, key=lambda x: x[0])
+    #    #print("Strategies: ", len(strategies))
+    #    if depth == 1:
+    #        print(f"Strategies: {len(strategies)} Best strategy: {sops}")
+    #    change_cost += scost
+    #    change_ops  += sops
+
+    # This works but isn't ideal.
     other_cost : int = 0
     for i in range(max(len(other_source), len(other_target))):
         s_child = other_source[i] if i < len(other_source) else None
         t_child = other_target[i] if i < len(other_target) else None
-        subcost, subscript = compute_tree_edit_distance(s_child, t_child, heavy)
+        subcost, subscript = compute_tree_edit_distance(s_child, t_child, heavy, depth+1)
         other_cost += subcost
         change_ops += subscript
 
@@ -210,6 +257,15 @@ def compute_tree_edit_distance(
     # total_cost = change_cost + heavy_cost + other_cost
 
     bestcost = min(remove_cost, insert_cost, change_cost)
+
+    # print("---------------------------------")
+    # print(f"      Depth: {depth}")
+    # print(f"   Location: {make_xpath_from_node(source)} -> {make_xpath_from_node(target)}")
+    # print(f"Remove cost: {remove_cost}; ops: {len(remove_ops)}.")
+    # print(f"Insert cost: {insert_cost}; ops: {len(insert_ops)}.")
+    # print(f"Change cost: {change_cost}; ops: {len(change_ops)}.")
+    # print(f"       Best: {bestcost}.")
+    # print("---------------------------------")
 
     if bestcost == remove_cost:
         return remove_cost, remove_ops
@@ -243,20 +299,22 @@ def rted(source: etree.Element, target: etree.Element) -> Tuple[int, TreeEditScr
     return distance, script
 
 
-if __name__ == "__main__":
-    from lxml import etree
-    file1 = "../data/xml/154a/2003.83.xml"
-    file2 = "../data/xml/154b/2003.83.xml"
-
-    tree1 = etree.parse(file1)
-    tree2 = etree.parse(file2)
-
-    distance, script = rted(tree1.getroot(), tree2.getroot())
+def make_bill(tree1, tree2) -> str:
+    cost, script = rted(tree1.getroot(), tree2.getroot())
+    print("Comparisons: ", COMPARISONS)
+    print("Max depth: ", MAX_DEPTH)
     print("<bill>")
-    print(f"  <law codex=\"154a\" nr=\"{tree1.getroot().attrib["nr"]}\" year=\"{tree1.getroot().attrib["year"]}\" changes=\"{distance}\">")
+    print(f"  <law codex=\"154a\" nr=\"{tree1.getroot().attrib["nr"]}\" year=\"{tree1.getroot().attrib["year"]}\" changes=\"{len(script)}\" cost=\"{cost}\">")
     for op in script:
+
+        # v1 = etree.tostring(op.source, encoding="utf-8", pretty_print=True).decode("utf-8")
+        # v2 = etree.tostring(op.target, encoding="utf-8", pretty_print=True).decode("utf-8")
+        # if v1 == v2:
+        #     print("Skipping identical nodes.")
+        #     continue
+
         #print("\033[1;33m", end="")
-        print(f"    <{op.edit_type.name}>")
+        print(f"    <{op.edit_type.name} location=\"{op.xpath}\" cost=\"{op.cost}\">")
         #print("\033[0m")
 
         if op.source is not None:
