@@ -14,6 +14,7 @@ from django.utils.html import strip_tags
 from lagasafn.constants import PROBLEMS_FILENAME
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.constants import XML_INDEX_FILENAME
+from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.exceptions import LawException
 from lagasafn.pathing import make_xpath_from_node
@@ -203,7 +204,7 @@ class Law(LawEntry):
         self._chapters = []
         self._articles = []
         self._remote_contents = {}
-        self.codex = codex
+        self.codex_version = codex_version
 
         self.nr, self.year = self.identifier.split("/")
 

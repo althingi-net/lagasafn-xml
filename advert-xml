@@ -5,6 +5,7 @@ from datetime import timedelta
 from lagasafn import settings
 from lagasafn.advert.conversion import convert_adverts
 from lagasafn.advert.remote import update_local_adverts
+from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
 from sys import stderr
 
@@ -20,7 +21,7 @@ def help():
 
 def main(argv):
 
-    law_index = LawManager.index()
+    law_index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
 
     # We'll handle adverts that were published after the currently selected
     # codex version was released.
