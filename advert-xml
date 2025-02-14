@@ -13,6 +13,8 @@ def help():
     print("Usage: advert-xml <command>")
     print()
     print("Commands:")
+    print("    all                Runs all commands below in their sequential order.")
+    print()
     print("    retrieve           Retrieves and saves remote advers on the local disk in a cleaned XML format.")
     print("    convert            Converts local adverts into their corresponding XML files.")
     print()
@@ -31,13 +33,21 @@ def main(argv):
     if len(argv) < 2:
         help()
 
-    command = argv[1]
+    commands = argv[1:]
 
-    if command == "retrieve":
+    # Expand the special "all" command.
+    if "all" in commands:
+        commands = ["retrieve", "convert"]
+
+    command_found = False
+    if "retrieve" in commands:
         update_local_adverts(from_date, to_date)
-    elif command == "convert":
+        command_found = True
+    if "convert" in commands:
         convert_adverts()
-    else:
+        command_found = True
+
+    if not command_found:
         help()
 
 
