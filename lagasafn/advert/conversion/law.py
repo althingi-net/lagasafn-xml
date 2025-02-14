@@ -1,10 +1,12 @@
 from datetime import datetime
+from lagasafn.advert.conversion.effectparsing import get_intents
 from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
+from lagasafn.settings import FEATURES
 from lxml.builder import E
 import re
 import roman
@@ -104,6 +106,10 @@ def parse_article_nr_title(tracker: AdvertTracker):
     ):
         original.append(tracker.current_node())
         next(tracker.nodes)
+
+    if FEATURES["PARSE_INTENTS"]:
+        # TODO: Remove feature knob when functionality is complete.
+        intents = get_intents(original)
 
     return True
 

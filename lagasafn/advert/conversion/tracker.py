@@ -95,3 +95,14 @@ class AdvertTracker:
         node.attrib["affected-law-year"] = year
 
         return True
+
+
+class IntentTracker:
+    """
+    Keeps track of stuff relating to intent parsing.
+    """
+
+    original: _Element
+
+    def __init__(self, original: _Element):
+        self.original = original
