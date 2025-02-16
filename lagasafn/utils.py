@@ -822,6 +822,16 @@ class Trail:
 
 def write_xml(xml_doc, filename=None):
 
+    # Strip all elements in document.
+    for element in xml_doc.iter():
+        # If the element has text, strip leading and trailing whitespace
+        if element.text:
+            element.text = element.text.strip()
+
+        # If the element has tail, strip leading and trailing whitespace
+        if element.tail:
+            element.tail = element.tail.strip()
+
     etree.indent(xml_doc, level=0)
     xml_string = etree.tostring(
         xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"

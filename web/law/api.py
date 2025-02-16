@@ -78,16 +78,6 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
 
     xml_doc = etree.fromstring(input_data)
 
-    # Strip all elements in document.
-    for element in xml_doc.iter():
-        # If the element has text, strip leading and trailing whitespace
-        if element.text:
-            element.text = element.text.strip()
-
-        # If the element has tail, strip leading and trailing whitespace
-        if element.tail:
-            element.tail = element.tail.strip()
-
     # Re-encode `minister-clause` because it's actually HTML with some
     # exporting quirks (from the original HTML-exporting software) that we
     # also imitate.
@@ -104,11 +94,6 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     #for child in list(minister_clause):
     #    minister_clause.remove(child)
     #minister_clause.text = encoded_clause
-
-    etree.indent(xml_doc, level=0)
-    xml_string = etree.tostring(
-        xml_doc, pretty_print=True, xml_declaration=True, encoding="utf-8"
-    ).decode("utf-8")
 
     xml_string = write_xml(xml_doc)
 
