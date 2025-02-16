@@ -1,8 +1,11 @@
+from copy import deepcopy
 from lagasafn.constants import ADVERT_DIR
+from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.constants import ADVERT_REMOTES_DIR
 from lagasafn.advert.conversion.law import convert_advert_law
 from lagasafn.utils import write_xml
 from lxml import etree
+from lxml.builder import E
 from os import listdir
 from os import path
 import re
@@ -59,3 +62,33 @@ def convert_advert(year, nr):
     write_xml(xml_advert, path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr)))
 
     print(" done")
+
+
+def create_index():
+    """
+    Creates an index of adverts that exist in XML form.
+    """
+
+    advert_index = E("advert-index")
+
+    for advert_filename in listdir(ADVERT_DIR):
+        fullpath = path.join(ADVERT_DIR, advert_filename)
+        advert = etree.parse(fullpath).getroot()
+
+        advert_entry = E("advert-entry", {
+            "type": advert.attrib["type"],
+            "year": advert.attrib["year"],
+            "nr": advert.attrib["nr"],
+            "published-date": advert.attrib["published-date"],
+        })
+
+        advert_index.append(advert_entry)
+
+    # Sort index for consistency's sake.
+    advert_index[:] = sorted(
+        advert_index,
+        key=lambda n: (int(n.attrib["year"]), int(n.attrib["nr"])),
+        reverse=True
+    )
+
+    write_xml(advert_index, ADVERT_INDEX_FILENAME)

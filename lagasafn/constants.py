@@ -36,6 +36,8 @@ ADVERT_DIR = join(
     DATA_DIR, "adverts", "xml"
 )
 
+ADVERT_INDEX_FILENAME = join(DATA_DIR, "adverts", "index.xml")
+
 XML_FILENAME_DIR = join(XML_BASE_DIR, "%s")  # % codex_version
 XML_FILENAME = join(XML_FILENAME_DIR, "%d.%s.xml")  # % (codex_version, law_year, law_num)
 XML_INDEX_FILENAME = join(XML_BASE_DIR, "%s", "index.xml")  # % codex_version

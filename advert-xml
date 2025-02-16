@@ -4,6 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 from lagasafn import settings
 from lagasafn.advert.conversion import convert_adverts
+from lagasafn.advert.conversion import create_index
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
@@ -17,6 +18,7 @@ def help():
     print()
     print("    retrieve           Retrieves and saves remote advers on the local disk in a cleaned XML format.")
     print("    convert            Converts local adverts into their corresponding XML files.")
+    print("    index              Create index of adverts.")
     print()
     quit(2)
 
@@ -37,7 +39,7 @@ def main(argv):
 
     # Expand the special "all" command.
     if "all" in commands:
-        commands = ["retrieve", "convert"]
+        commands = ["retrieve", "convert", "index"]
 
     command_found = False
     if "retrieve" in commands:
@@ -45,6 +47,9 @@ def main(argv):
         command_found = True
     if "convert" in commands:
         convert_adverts()
+        command_found = True
+    if "index" in commands:
+        create_index()
         command_found = True
 
     if not command_found:
