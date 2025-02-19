@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container">
+<table>
+    <thead>
+        <tr class="advert-list-row">
+            <th class="advert-list-identifier">{% trans 'Nr.' %}</th>
+            <th class="advert-list-description">{% trans 'Description' %}</th>
+            <th class="advert-list-published-date">{% trans 'Published Date' %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for advert in advert_index.adverts %}
+            <tr class="advert-list-row" data-identifier="{{ advert.identifier }}">
+                <td class="advert-list-identifier">
+                    <a href="https://www.stjornartidindi.is/Advert.aspx?RecordID={{ advert.record_id }}" target="_blank">
+                        {{ advert.identifier }}
+                    </a>
+                </td>
+                <td class="advert-list-description">{{ advert.description }}</td>
+                <td class="advert-list-published-date">{{ advert.published_date|date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

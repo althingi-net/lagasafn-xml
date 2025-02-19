@@ -29,46 +29,20 @@ body { padding-top: 70px; }
 /* FIXME: This would be more appropriate handled by a framework's design
 decisions. Done so now due to lack of access to documentation (internet). */
 
-.law-info {
-    width: 100%;
-    margin-bottom: 12px;
-}
+.law-info { width: 100%; margin-bottom: 12px; }
+.law-info th { width: 1px; white-space: nowrap; }
+.law-info td { padding-left: 8px; }
 
-.law-info th {
-    width: 1px;
-    white-space: nowrap;
-}
+.law-list-row { border-bottom: 1px solid #f0f0f0; }
+.law-list-row td, .law-list-row th { padding: 2px 6px 2px 6px; }
+.law-list-nr { text-align: right; vertical-align: top; }
+.law-list-name { width: 99%; }
+.law-list-ch { text-align: right; }
+.law-list-art { text-align: right; }
+.law-list-status { text-align: center; }
 
-.law-info td {
-    padding-left: 8px;
-}
-
-.law-list-row {
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.law-list-row td,
-.law-list-row th {
-    padding: 2px 6px 2px 6px;
-}
-
-.law-list-nr {
-    text-align: right;
-    vertical-align: top;
-}
-
-.law-list-name {
-    width: 99%;
-}
-
-.law-list-ch {
-    text-align: right;
-}
-
-.law-list-art {
-    text-align: right;
-}
-
-.law-list-status {
-    text-align: center;
-}
+.advert-list-row { border-bottom: 1px solid #f0f0f0; }
+.advert-list-row td, .advert-list-row th { padding: 2px 6px 2px 6px; }
+.advert-list-identifier { text-align: right; vertical-align: top; }
+.advert-list-description { width: 99%; }
+.advert-list-published-date { white-space: nowrap; text-align: right; }

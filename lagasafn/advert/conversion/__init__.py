@@ -5,6 +5,7 @@ from lagasafn.constants import ADVERT_REMOTES_DIR
 from lagasafn.advert.conversion.law import convert_advert_law
 from lagasafn.utils import write_xml
 from lxml import etree
+from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
 from os import path
@@ -69,7 +70,7 @@ def create_index():
     Creates an index of adverts that exist in XML form.
     """
 
-    advert_index = E("advert-index")
+    advert_index: _Element = E("advert-index")
 
     for advert_filename in listdir(ADVERT_DIR):
         fullpath = path.join(ADVERT_DIR, advert_filename)
@@ -80,6 +81,8 @@ def create_index():
             "year": advert.attrib["year"],
             "nr": advert.attrib["nr"],
             "published-date": advert.attrib["published-date"],
+            "record-id": advert.attrib["record-id"],
+            "description": advert.find("description").text,
         })
 
         advert_index.append(advert_entry)

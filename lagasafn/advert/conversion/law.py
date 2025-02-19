@@ -239,7 +239,9 @@ def parse_signature_confirmation(tracker: AdvertTracker):
 
 def convert_advert_law(xml_remote):
 
-    tracker = AdvertTracker(E("advert", {"type": "law"}))
+    record_id = xml_remote.attrib["record-id"]
+
+    tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id }))
 
     # Figure out nr/year from content.
     raw_nr_year = xml_remote.xpath(

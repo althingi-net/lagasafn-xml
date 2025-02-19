@@ -7,6 +7,7 @@ from law.api import api as law_api
 
 urlpatterns = [
     path("", lambda request: redirect(reverse("law_list")), name="home"),
+    path("advert/", include("advert.urls")),
     path("law/", include("law.urls")),
     path("api/law/", law_api.urls),
 ]

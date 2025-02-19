@@ -13,7 +13,7 @@ from ninja.files import UploadedFile
 from .searchengine import SearchEngine
 from datetime import datetime
 
-api = NinjaAPI()
+api = NinjaAPI(urls_namespace="law")
 
 # Initialize the global search engine
 searchengine = SearchEngine("search_index.pkl")
