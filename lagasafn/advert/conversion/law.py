@@ -83,6 +83,11 @@ def parse_article_nr_title(tracker: AdvertTracker):
         },
     )
 
+    # Declare what the article supposedly affects.
+    if "law-nr" in tracker.affected and "law-year" in tracker.affected:
+        art.attrib["affected-law-nr"] = tracker.affected["law-nr"]
+        art.attrib["affected-law-year"] = tracker.affected["law-year"]
+
     if tracker.targets.chapter is not None:
         tracker.targets.chapter.append(art)
     else:

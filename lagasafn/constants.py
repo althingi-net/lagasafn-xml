@@ -32,9 +32,8 @@ ADVERT_REMOTES_DIR = join(
     DATA_DIR, "adverts", "remote"
 )
 
-ADVERT_DIR = join(
-    DATA_DIR, "adverts", "xml"
-)
+ADVERT_DIR = join(DATA_DIR, "adverts", "xml")
+ADVERT_FILENAME = join(ADVERT_DIR, "%d.%d.advert.xml")  # % (year, nr)
 
 ADVERT_INDEX_FILENAME = join(DATA_DIR, "adverts", "index.xml")
 

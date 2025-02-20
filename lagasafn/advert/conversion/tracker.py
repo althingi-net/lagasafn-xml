@@ -90,10 +90,6 @@ class AdvertTracker:
         self.affected["law-nr"] = nr
         self.affected["law-year"] = year
 
-        # Set the given node, too.
-        node.attrib["affected-law-nr"] = nr
-        node.attrib["affected-law-year"] = year
-
         return True
 
 

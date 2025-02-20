@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block controls %}
+
+    <div class="btn-group" role="group">
+        <a href="{{ advert.original_url }}" class="btn btn-default" target="_blank">{% trans 'Open original' %}</a>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1>{{ advert.description }}</h1>
+    {% for art in advert.articles %}
+        <h2>{{ art.nr }}</h2>
+        <div>
+            {{ art.original|safe }}
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

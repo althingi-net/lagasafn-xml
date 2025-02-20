@@ -16,7 +16,7 @@
         {% for advert in advert_index.adverts %}
             <tr class="advert-list-row" data-identifier="{{ advert.identifier }}">
                 <td class="advert-list-identifier">
-                    <a href="https://www.stjornartidindi.is/Advert.aspx?RecordID={{ advert.record_id }}" target="_blank">
+                    <a href="{% url 'advert_show' advert.identifier %}">
                         {{ advert.identifier }}
                     </a>
                 </td>

@@ -14,5 +14,9 @@ class NoSuchElementException(LawException):
     pass
 
 
-class AdvertParsingException(LawException):
+class AdvertException(Exception):
+    pass
+
+
+class AdvertParsingException(AdvertException):
     pass
