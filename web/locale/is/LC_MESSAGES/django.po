@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 07:09+0000\n"
+"POT-Creation-Date: 2025-02-19 16:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
+#: advert/templates/advert/list.html:10 law/templates/law/list.html:59
+msgid "Nr."
+msgstr "Nr."
+
+#: advert/templates/advert/list.html:11
+msgid "Description"
+msgstr "Lýsing"
+
+#: advert/templates/advert/list.html:12
+msgid "Published Date"
+msgstr "Dagsetning"
+
+#: law/templates/law/compare.html:126 law/templates/law/show.html:141
+msgid "Up 1 pixel"
+msgstr "Upp 1 punkt"
+
+#: law/templates/law/compare.html:127 law/templates/law/show.html:142
+msgid "Down 1 pixel"
+msgstr "Niður 1 punkt"
+
+#: law/templates/law/compare.html:133 law/templates/law/show.html:148
+msgid "Open original"
+msgstr "Upprunaskjal"
+
+#: law/templates/law/compare.html:135 law/templates/law/show.html:150
+msgid "Open in editor"
+msgstr "Opna í ritli"
+
+#: law/templates/law/compare.html:140 law/templates/law/show.html:155
+msgid "Hide subart numbers"
+msgstr "Fela númer málsgreina"
+
+#: law/templates/law/compare.html:141 law/templates/law/show.html:156
+msgid "Show subart numbers"
+msgstr "Sýna númer málsgreina"
+
+#: law/templates/law/compare.html:145 law/templates/law/show.html:160
+msgid "Close all"
+msgstr "Loka öllu"
+
+#: law/templates/law/compare.html:146 law/templates/law/show.html:161
+msgid "Open all"
+msgstr "Opna allt"
+
+#: law/templates/law/compare.html:174 law/templates/law/show.html:188
+msgid "Approved laws since publication of codex:"
+msgstr "Samþykkt lög eftir útgáfu lagasafns:"
+
+#: law/templates/law/compare.html:177 law/templates/law/show.html:191
+msgid "Bills affecting the law:"
+msgstr "Frumvörp til breytinga á lögunum:"
+
 #: law/templates/law/content_search.html:9
 msgid "Enter search text..."
 msgstr "Stimplaðu inn leitartexta..."
 
 #: law/templates/law/content_search.html:11 law/templates/law/list.html:37
+#: law/templates/law/search.html:175
 msgid "Search"
 msgstr "Leit"
 
@@ -37,10 +90,6 @@ msgstr "Fjöldi tómra laga"
 #: law/templates/law/list.html:51
 msgid "Non-empty law count"
 msgstr "Fjöldi laga með efni"
-
-#: law/templates/law/list.html:59
-msgid "Nr."
-msgstr "Nr."
 
 #: law/templates/law/list.html:60
 msgid "Name"
@@ -62,45 +111,29 @@ msgstr "Staða"
 msgid "OK"
 msgstr "Í lagi"
 
-#: law/templates/law/show.html:61
-msgid "Up 1 pixel"
-msgstr "Upp 1 punkt"
+#: law/templates/law/search.html:32
+msgid "No results"
+msgstr "Engar niðurstöður"
 
-#: law/templates/law/show.html:62
-msgid "Down 1 pixel"
-msgstr "Niður 1 punkt"
+#: law/templates/law/search.html:177
+msgid "Sort by relevance"
+msgstr "Raða eftir vægi"
 
-#: law/templates/law/show.html:68
-msgid "Open original"
-msgstr "Upprunaskjal"
+#: law/templates/law/search.html:178
+msgid "Sort alphabetically"
+msgstr "Raða í stafrófsröð"
 
-#: law/templates/law/show.html:70
-msgid "Open in editor"
-msgstr "Opna í ritli"
+#: law/templates/law/search.html:179
+msgid "Sort by law number"
+msgstr "Raða skv. laganúmeri"
 
-#: law/templates/law/show.html:75
-msgid "Hide subart numbers"
-msgstr "Fela númer málsgreina"
-
-#: law/templates/law/show.html:76
-msgid "Show subart numbers"
-msgstr "Sýna númer málsgreina"
-
-#: law/templates/law/show.html:80
-msgid "Close all"
-msgstr "Loka öllu"
-
-#: law/templates/law/show.html:81
-msgid "Open all"
-msgstr "Opna allt"
-
-#: law/templates/law/show.html:142
-msgid "Approved laws since publication of codex:"
-msgstr "Samþykkt lög eftir útgáfu lagasafns:"
-
-#: law/templates/law/show.html:145
-msgid "Bills affecting the law:"
-msgstr "Frumvörp til breytinga á lögunum:"
+#: law/templates/law/search.html:184
+#, python-format
+msgid ""
+"\n"
+"        Found&nbsp;%(hits)s&nbsp;hits in&nbsp;%(laws)s&nbsp;laws\n"
+"        "
+msgstr ""
 
 #: mechlaw/constants.py:3
 msgid "Lagasafn-XML"
@@ -118,13 +151,17 @@ msgstr "Klausa fannst ekki"
 msgid "Not implemented yet"
 msgstr "Virkni ekki enn tilbúin"
 
-#: templates/base.html:53
+#: templates/base.html:54
 msgid "Legal Codex"
 msgstr "Lagasafn"
 
-#: templates/base.html:55
+#: templates/base.html:58
 msgid "Content Search"
 msgstr "Efnisleit"
+
+#: templates/base.html:59
+msgid "Adverts"
+msgstr "Stjórnartíðindi"
 
 #~ msgid "Unknown"
 #~ msgstr "Óþekkt"
