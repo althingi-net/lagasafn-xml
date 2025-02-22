@@ -83,6 +83,7 @@ def create_index():
             "published-date": advert.attrib["published-date"],
             "record-id": advert.attrib["record-id"],
             "description": advert.find("description").text,
+            "article-count": str(len(advert.xpath("//art"))),
         })
 
         advert_index.append(advert_entry)

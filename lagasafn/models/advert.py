@@ -22,6 +22,7 @@ class AdvertEntry:
     published_date: datetime
     record_id: str = ""
     description: str = ""
+    article_count: int = 0
 
     def __init__(self, identifier: str):
         nr, year = identifier.split("/")
@@ -126,6 +127,7 @@ class AdvertManager:
             entry.published_date = published_date
             entry.record_id = entry_xml.attrib["record-id"]
             entry.description = entry_xml.attrib["description"]
+            entry.article_count = int(entry_xml.attrib["article-count"])
             adverts.append(entry)
 
         index = AdvertIndex()
