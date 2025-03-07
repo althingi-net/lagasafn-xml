@@ -1,26 +1,47 @@
-from copy import deepcopy
 from lagasafn.constants import ADVERT_DIR
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.constants import ADVERT_REMOTES_DIR
+from lagasafn.constants import ADVERT_REMOTE_FILENAME
 from lagasafn.advert.conversion.law import convert_advert_law
+from lagasafn.exceptions import AdvertException
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
 from os import path
+from typing import List
 import re
 
 
-def convert_adverts():
+def convert_adverts(advert_identifiers: List[str] = []):
     """
     Converts all remote adverts into proper XML.
     """
-    filenames = [
-        f
-        for f in listdir(ADVERT_REMOTES_DIR)
-        if re.match(r"^\d{4}\.\d{1,3}\.remote\.xml$", f)
-    ]
+
+    filenames = []
+    if len(advert_identifiers) > 0:
+        for identifier in advert_identifiers:
+            try:
+                nr, year = identifier.split("/")
+                nr = int(nr)
+                year = int(year)
+            except ValueError:
+              raise AdvertException("Invalid advert identifier: %s" % identifier)
+
+            expected_filename = ADVERT_REMOTE_FILENAME % (year, nr)
+
+            if not path.isfile(expected_filename):
+                raise AdvertException("Advert %d/%d not found." % (nr, year))
+
+            filenames.append(path.basename(expected_filename))
+    else:
+        # Get all available filenames if nothing is specified.
+        filenames = [
+            f
+            for f in listdir(ADVERT_REMOTES_DIR)
+            if re.match(r"^\d{4}\.\d{1,3}\.remote\.xml$", f)
+        ]
 
     # An ordered list of "year"/"nr" combinations to process.
     convertibles = []

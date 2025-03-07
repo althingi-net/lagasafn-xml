@@ -19,7 +19,8 @@ def help():
 @click.option("--retrieve", is_flag=True, help="Retrieves and saves remote advers on the local disk in a cleaned XML format.")
 @click.option("--convert", is_flag=True, help="Converts local adverts into their corresponding XML files.")
 @click.option("--make-index", is_flag=True, help="Create index of adverts.")
-def main(full: bool, retrieve: bool, convert: bool, make_index: bool):
+@click.argument("advert_identifiers", nargs=-1)
+def main(full: bool, retrieve: bool, convert: bool, make_index: bool, advert_identifiers: tuple):
 
     # Make sure that the parameters make sense.
     if not any([full, retrieve,  convert, make_index]):
@@ -40,7 +41,7 @@ def main(full: bool, retrieve: bool, convert: bool, make_index: bool):
     if retrieve:
         update_local_adverts(from_date, to_date)
     if convert:
-        convert_adverts()
+        convert_adverts(advert_identifiers)
     if make_index:
         create_index()
 
