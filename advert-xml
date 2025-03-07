@@ -1,68 +1,49 @@
 #!/usr/bin/env python3
-import sys
+import click
 from datetime import datetime
 from datetime import timedelta
-from lagasafn import settings
 from lagasafn.advert.conversion import convert_adverts
 from lagasafn.advert.conversion import create_index
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
-from sys import stderr
 
 def help():
-    print("Usage: advert-xml <command>")
-    print()
-    print("Commands:")
-    print("    all                Runs all commands below in their sequential order.")
-    print()
-    print("    retrieve           Retrieves and saves remote advers on the local disk in a cleaned XML format.")
-    print("    convert            Converts local adverts into their corresponding XML files.")
-    print("    index              Create index of adverts.")
-    print()
+    ctx = click.get_current_context()
+    click.echo(ctx.get_help())
     quit(2)
 
 
-def main(argv):
+@click.command()
+@click.option("--full", is_flag=True, help="Runs --retrieve, --convert and --make-index, in that order.")
+@click.option("--retrieve", is_flag=True, help="Retrieves and saves remote advers on the local disk in a cleaned XML format.")
+@click.option("--convert", is_flag=True, help="Converts local adverts into their corresponding XML files.")
+@click.option("--make-index", is_flag=True, help="Create index of adverts.")
+def main(full: bool, retrieve: bool, convert: bool, make_index: bool):
 
-    law_index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
+    # Make sure that the parameters make sense.
+    if not any([full, retrieve,  convert, make_index]):
+        help()
+
+    # Expand the special "--full" option.
+    if full:
+        retrieve = True
+        convert = True
+        make_index = True
 
     # We'll handle adverts that were published after the currently selected
     # codex version was released.
+    law_index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
     from_date = law_index.info.date_to + timedelta(days=1)
     to_date = datetime.now()
 
-    if len(argv) < 2:
-        help()
-
-    commands = argv[1:]
-
-    # Expand the special "all" command.
-    if "all" in commands:
-        commands = ["retrieve", "convert", "index"]
-
-    command_found = False
-    if "retrieve" in commands:
+    if retrieve:
         update_local_adverts(from_date, to_date)
-        command_found = True
-    if "convert" in commands:
+    if convert:
         convert_adverts()
-        command_found = True
-    if "index" in commands:
+    if make_index:
         create_index()
-        command_found = True
-
-    if not command_found:
-        help()
 
 
 if __name__ == "__main__":
-    try:
-        main(sys.argv)
-    except KeyboardInterrupt:
-        quit()
-    except Exception as e:
-        if settings.DEBUG:
-            raise
-        else:
-            print("Error: %s" % e, file=stderr)
+    main()
