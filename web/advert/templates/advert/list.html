@@ -9,6 +9,7 @@
         <tr class="advert-list-row">
             <th class="advert-list-identifier">{% trans 'Nr.' %}</th>
             <th class="advert-list-description">{% trans 'Description' %}</th>
+            <th class="advert-list-article-count">{% trans 'Art.' %}</th>
             <th class="advert-list-published-date">{% trans 'Published Date' %}</th>
         </tr>
     </thead>
@@ -21,6 +22,7 @@
                     </a>
                 </td>
                 <td class="advert-list-description">{{ advert.description }}</td>
+                <td class="advert-list-article-count">{{ advert.article_count }}</td>
                 <td class="advert-list-published-date">{{ advert.published_date|date }}</td>
             </tr>
         {% endfor %}
