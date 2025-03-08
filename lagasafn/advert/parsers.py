@@ -1,7 +1,7 @@
 from datetime import datetime
-from lagasafn.advert.conversion.effectparsing import get_intents
-from lagasafn.advert.conversion.effectparsing import get_intents_by_ai
-from lagasafn.advert.conversion.tracker import AdvertTracker
+from lagasafn.advert.intent import get_intents
+from lagasafn.advert.intent import get_intents_by_ai
+from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
@@ -257,7 +257,7 @@ def parse_signature_confirmation(tracker: AdvertTracker):
     return True
 
 
-def convert_advert_law(xml_remote):
+def parse_advert(xml_remote):
 
     record_id = xml_remote.attrib["record-id"]
 

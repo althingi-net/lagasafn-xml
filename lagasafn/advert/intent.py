@@ -1,5 +1,5 @@
 import json
-from lagasafn.advert.conversion.tracker import AdvertTracker
+from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.models.intent import IntentModel
 from lagasafn.models.intent import IntentModelList

@@ -2,7 +2,7 @@ from lagasafn.constants import ADVERT_DIR
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.constants import ADVERT_REMOTES_DIR
 from lagasafn.constants import ADVERT_REMOTE_FILENAME
-from lagasafn.advert.conversion.law import convert_advert_law
+from lagasafn.advert.parsers import parse_advert
 from lagasafn.exceptions import AdvertException
 from lagasafn.utils import write_xml
 from lxml import etree
@@ -76,7 +76,7 @@ def convert_advert(year, nr):
     advert_type = xml_remote.xpath("//tr[@class='advertType']/td/br")[0].tail.lower()
 
     if advert_type == "lög":
-        xml_advert = convert_advert_law(xml_remote)
+        xml_advert = parse_advert(xml_remote)
     else:
         print(" skipping (unsupported type '%s')" % advert_type)
         return

@@ -2,8 +2,8 @@
 import click
 from datetime import datetime
 from datetime import timedelta
-from lagasafn.advert.conversion import convert_adverts
-from lagasafn.advert.conversion import create_index
+from lagasafn.advert.commands import convert_adverts
+from lagasafn.advert.commands import create_index
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
