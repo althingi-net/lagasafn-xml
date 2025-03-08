@@ -1,5 +1,6 @@
 from datetime import datetime
 from lagasafn.advert.conversion.effectparsing import get_intents
+from lagasafn.advert.conversion.effectparsing import get_intents_by_ai
 from lagasafn.advert.conversion.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import determine_month
@@ -73,8 +74,14 @@ def parse_article_nr_title(tracker: AdvertTracker):
     if match is None:
         return False
 
-    # Make and add the article node.
+    # Determine the article number.
     art_nr = match.groups()[0]
+
+    # Create the article.
+    # TODO: The article should only be created if it doesn't already exist.
+    # This requires a bit of refactoring, so that instead of files being
+    # created every time that processing takes place, they are read and
+    # modified if they already exist.
     art = E(
         "art",
         {
@@ -112,9 +119,17 @@ def parse_article_nr_title(tracker: AdvertTracker):
         original.append(tracker.current_node())
         next(tracker.nodes)
 
-    if FEATURES["PARSE_INTENTS"]:
-        # TODO: Remove feature knob when functionality is complete.
-        intents = get_intents(original)
+    # TODO: Remove feature knob when functionality is complete.
+    if FEATURES["PARSE_INTENTS"] and "law-nr" in tracker.affected:
+
+        existing_intents = art.find("intents")
+        if existing_intents is None:
+
+            intents = get_intents_by_ai(tracker, original)
+
+            art.append(intents)
+
+            print(".", end="", flush=True)
 
     return True
 

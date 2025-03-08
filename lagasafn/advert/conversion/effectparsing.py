@@ -1,43 +1,58 @@
 import json
+from lagasafn.advert.conversion.tracker import AdvertTracker
+from lagasafn.exceptions import AdvertParsingException
 from lagasafn.models.intent import IntentModel
+from lagasafn.models.intent import IntentModelList
 from lagasafn.utils import get_all_text
 from lagasafn.utils import Matcher
 from lagasafn.utils import super_iter
+from lagasafn.utils import write_xml
 from lxml import etree
+from lxml.builder import E
 from lxml.etree import _Element
 from openai import OpenAI
 from typing import List
 
 
-def get_intent_by_ai(original: _Element):
-    raise Exception("Unimplemented.")
+def get_intents_by_ai(tracker: AdvertTracker, original: _Element):
+    intents = []
 
-    xml_text = etree.tostring(
-        original,
-        encoding="unicode",
-        pretty_print=True
-    ).replace(
-        '\xa0', ' '
-    ).replace(
-        '&#160;', ' '
-    ).strip()
+    with open("data/prompts/intent-parsing.md") as r:
+        prompt = r.read()
+
+        # Fill in necessary information.
+        # TODO: Replace this with proper Django templating.
+        prompt = prompt.replace("{affected_law_nr}", tracker.affected["law-nr"])
+        prompt = prompt.replace("{affected_law_year}", tracker.affected["law-year"])
+
+    xml_text = write_xml(original)
 
     client = OpenAI()
 
     completion = client.beta.chat.completions.parse(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You will take in Icelandic text from a chunk of XML that describes in human language changes to existing laws."},
-            {"role": "user", "content": "Here is the XML content: %s" % xml_text },
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": "Meðfylgjandi XML skjal 'remote.xml' er hér: %s" % xml_text },
         ],
-        response_format=IntentModel,
+        response_format=IntentModelList,
     )
 
-    response = completion.choices[0].message
-    json_goo = json.loads(response.to_dict()["content"])
-    intent = IntentModel(**json_goo)
+    items = json.loads(completion.choices[0].message.to_dict()["content"])["items"]
 
-    return intent
+    intents = E("intents")
+    for item in items:
+        # Construct an XML element from the intent model.
+        intent = E("intent")
+        intents.append(intent)
+        for key in item.keys():
+            # Respecting XML conventions using dashes instead of underscores.
+            element_name = key.replace("_", "-")
+            value = item[key]
+
+            intent.append(E(element_name, value))
+
+    return intents
 
 
 def get_intents(original: _Element) -> List[_Element]:
