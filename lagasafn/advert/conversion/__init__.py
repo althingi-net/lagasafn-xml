@@ -91,6 +91,8 @@ def create_index():
     Creates an index of adverts that exist in XML form.
     """
 
+    print("Creating index...", end="", flush=True)
+
     advert_index: _Element = E("advert-index")
 
     for advert_filename in listdir(ADVERT_DIR):
@@ -109,6 +111,8 @@ def create_index():
 
         advert_index.append(advert_entry)
 
+        print(".", end="", flush=True)
+
     # Sort index for consistency's sake.
     advert_index[:] = sorted(
         advert_index,
@@ -117,3 +121,5 @@ def create_index():
     )
 
     write_xml(advert_index, ADVERT_INDEX_FILENAME)
+
+    print(" done")
