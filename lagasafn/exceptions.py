@@ -20,3 +20,7 @@ class AdvertException(Exception):
 
 class AdvertParsingException(AdvertException):
     pass
+
+
+class IntentParsingException(Exception):
+    pass

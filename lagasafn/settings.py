@@ -16,7 +16,8 @@ DATA_DIR = path.join(BASE_DIR, "data")
 # Feature knobs are only intended for incomplete functionality.
 FEATURES = {
     "PARSE_MARKERS": True,  # FIXME: Feature-complete, knob should be removed.
-    "PARSE_INTENTS": False,
+    "PARSE_INTENTS": True,
+    "PARSE_INTENTS_AI": False,
 }
 
 OPENAI_API_KEY = environ.get("OPENAI_API_KEY", "")

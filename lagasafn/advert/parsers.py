@@ -1,8 +1,9 @@
 from datetime import datetime
-from lagasafn.advert.intent import get_intents
-from lagasafn.advert.intent import get_intents_by_ai
+from lagasafn.advert.intent.parsers import parse_intents_by_text_analysis
+from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
+from lagasafn.exceptions import IntentParsingException
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
@@ -125,9 +126,19 @@ def parse_article_nr_title(tracker: AdvertTracker):
         existing_intents = art.find("intents")
         if existing_intents is None:
 
-            intents = get_intents_by_ai(tracker, original)
+            try:
+                parse_intents_by_text_analysis(tracker, original)
+            except IntentParsingException:
 
-            art.append(intents)
+                # **Maybe** we want to try AI here?
+                if FEATURES["PARSE_INTENTS_AI"]:
+                    # NOTE: The AI parsing currently returns `intents` as XML
+                    # instead of `tracker`'s content being modified by the
+                    # parsing function itself.
+                    intents = parse_intents_by_ai(tracker, original)
+                    art.append(intents)
+                else:
+                    raise
 
             print(".", end="", flush=True)
 
