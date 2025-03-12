@@ -15,13 +15,15 @@ class IntentTracker:
     # Holds the intents as rendered after parsing.
     intents: _Element
 
-    # The next string is checked so often that we retain it here instead of
-    # examining the XML content over and over again.
-    peek_text: str
+    # The current string is checked so often that we store it here instead of
+    # running `get_all_text` on the XML over and over again.
+    current_text: str
 
     def __init__(self, original: _Element):
         self.original = original
         self.lines = super_iter(original.getchildren())
         self.intents = E("intents")
 
-        self.peek_text = get_all_text(self.lines.peek())
+        # We load the first line and get ready to rumble.
+        next(self.lines)
+        self.current_text = get_all_text(self.lines.current)

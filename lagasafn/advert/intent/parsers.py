@@ -68,7 +68,7 @@ def parse_intents_by_ai(advert_tracker: AdvertTracker, original: _Element):
 
 
 def parse_x_laganna_ordast_svo(tracker: IntentTracker):
-    match = re.match(r"(.+) laganna orðast svo:", tracker.peek_text)
+    match = re.match(r"(.+) laganna orðast svo:", tracker.current_text)
     if match is None:
         return False
 
@@ -93,7 +93,7 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
 
 
 def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Á eftir (.+) laganna kemur ný málsgrein, svohljóðandi", tracker.peek_text)
+    match = re.match(r"Á eftir (.+) laganna kemur ný málsgrein, svohljóðandi", tracker.current_text)
     if match is None:
         return False
 
@@ -238,7 +238,7 @@ def parse_sub_x_ordast_svo(tracker: IntentTracker, li: _Element):
 
 def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     # NOTE: That questionable space at the end happens occurs in advert 45/2024.
-    match = re.match(r"Eftirfarandi breytingar verða á (.+) laganna ?:", tracker.peek_text)
+    match = re.match(r"Eftirfarandi breytingar verða á (.+) laganna ?:", tracker.current_text)
     if match is None:
         return False
 
@@ -279,7 +279,7 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
 
 
 def parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Við (.+) laganna bætist nýr málsliður, svohljóðandi: (.+)", tracker.peek_text)
+    match = re.match(r"Við (.+) laganna bætist nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -296,7 +296,7 @@ def parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracke
 
 
 def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Á eftir (.+) laganna kemur ný grein, (.+), ásamt fyrirsögn, svohljóðandi:", tracker.peek_text)
+    match = re.match(r"Á eftir (.+) laganna kemur ný grein, (.+), ásamt fyrirsögn, svohljóðandi:", tracker.current_text)
     if match is None:
         return False
 
@@ -314,7 +314,7 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
 
 
 def parse_vid_login_baetast_x_ny_akvaedi_til_bradabirgda_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Við lögin bætast (.+) ný ákvæði til bráðabirgða, svohljóðandi:", tracker.peek_text)
+    match = re.match(r"Við lögin bætast (.+) ný ákvæði til bráðabirgða, svohljóðandi:", tracker.current_text)
     if match is None:
         return False
 
@@ -328,7 +328,7 @@ def parse_vid_login_baetast_x_ny_akvaedi_til_bradabirgda_svohljodandi(tracker: I
 
 
 def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Á eftir (.+) laganna kemur nýr málsliður, svohljóðandi: (.+)", tracker.peek_text)
+    match = re.match(r"Á eftir (.+) laganna kemur nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -345,7 +345,7 @@ def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTrac
 
 
 def parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker: IntentTracker):
-    match = re.match(r"Við (.+) laganna bætist nýr stafliður, svohljóðandi: (.+)", tracker.peek_text)
+    match = re.match(r"Við (.+) laganna bætist nýr stafliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -363,11 +363,9 @@ def parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker: IntentTracke
 
 def parse_enactment_timing(tracker: IntentTracker):
     # In this case, we'll be working with the text itself and no sub-content.
-    text = tracker.peek_text
+    text = tracker.current_text
     if not text.startswith("Lög þessi öðlast þegar gildi"):
         return False
-
-    next(tracker.lines)
 
     timing = "undetermined"
     implemented_timing = ""
@@ -394,7 +392,7 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
 
     tracker = IntentTracker(original)
 
-    peek_text = tracker.peek_text
+    current_text = tracker.current_text
 
     if parse_x_laganna_ordast_svo(tracker):
         pass
@@ -415,7 +413,7 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_enactment_timing(tracker):
         pass
     else:
-        raise IntentParsingException("Can't figure out: %s" % peek_text)
+        raise IntentParsingException("Can't figure out: %s" % current_text)
 
     advert_tracker.targets.art.append(tracker.intents)
 
