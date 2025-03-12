@@ -5,6 +5,7 @@ from lagasafn.constants import CLEAN_FILENAME
 from lagasafn.constants import PATCHED_FILENAME
 from lagasafn.constants import XML_FILENAME_DIR
 from lxml.builder import E
+from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import get_nr_and_name
 from lagasafn.contenthandlers import strip_markers
 from lagasafn.contenthandlers import add_sentences
@@ -1753,85 +1754,12 @@ def parse_article(parser):
     art_nr_title = parser.collect_until("</b>")
     parser.consume("</b>")
 
-    clean_art_nr_title = strip_markers(art_nr_title)
-
     # Hopefully this stays None. Not because anything will break
     # otherwise, but because Roman numerals are bad.
     art_roman_nr = None
 
     # Analyze the displayed article name.
-    try:
-        # A typical article is called something like "13. gr." or
-        # "13. gr. b". The common theme among typical articles is that
-        # the string ". gr." will appear in them somewhere. Anything
-        # before it is the article number. Anything after it, is an
-        # extra thing which is appended to article names when new
-        # articles are placed between two existing ones. For example,
-        # if there already are articles 13 and 14 but the legislature
-        # believes that a new article properly belongs between them,
-        # the article will probably be called "13. gr. a". We would
-        # want that translated into an sortable `art_nr` f.e. "13a".
-
-        # Find index of common string. If the string does not exist,
-        # it's some sort of a special article. A ValueError will be
-        # raised and we'll deal with it below.
-        gr_index = clean_art_nr_title.index(". gr.")
-
-        # Determine the numeric part of the article's name.
-        art_nr = clean_art_nr_title[0:gr_index]
-
-        # Occasionally an article number actually covers a range, so
-        # far only seen when multiple articles have been removed and
-        # are thus collectively empty. We check for the pattern here
-        # and reconstruct it if needed.
-        if parser.matcher.check(clean_art_nr_title, r"(\d+)\.–(\d+)"):
-            from_art_nr, to_art_nr = parser.matcher.result()
-            art_nr = "%s-%s" % (from_art_nr, to_art_nr)
-
-        # Check if there is an extra part to the name which we'll want
-        # appended to the `art_nr`., such as in "5. gr. a".
-        #
-        # Note: len('.gr.') + 1 = 6
-        art_nr_extra = clean_art_nr_title[gr_index + 6 :].strip().strip(".")
-        if len(art_nr_extra):
-            art_nr = "%s%s" % (art_nr, art_nr_extra)
-
-    except ValueError:
-        # This means that the article's name is formatted in an
-        # unconventional way. Typically this occurs only in temporary
-        # clauses that may be denoted by Roman numerals or with the
-        # string "Ákvæði til bráðabirgða.".
-        art_nr = clean_art_nr_title.strip().strip(".")
-        try:
-            art_roman_nr = str(roman.fromRoman(art_nr))
-        except roman.InvalidRomanNumeralError:
-            # So it's not a Roman numeral. Starting to get special.
-
-            if parser.matcher.check(art_nr, r"^\d+\)$"):
-                # Another possibility is that it's a really old-school
-                # way of denoting articles (early 19th century and
-                # before), which looks like "5)" instead of "5. gr.".
-                art_nr = art_nr.strip(")")
-            elif art_nr == "Ákvæði til bráðabirgða":
-                # Yet another possibility is that it is indeed a
-                # temporary clause, but instead of being numbered with
-                # Roman numerals inside a chapter called "Ákvæði til
-                # bráðabirgða" or similar, it is an article by that
-                # name instead.
-                art_nr = "t"
-            else:
-                # At this point we've run into some kind of article
-                # that we don't know how to deal with yet. We'll just
-                # move on.
-                #
-                # TODO: To investigate what kind of article numbers
-                # are still not supported, an exception could be
-                # thrown here and the script run with options
-                # "-a -e -E":
-                #     raise Exception(
-                #         "Can't figure out: %s" % clean_art_nr_title
-                #     )
-                pass
+    art_nr, art_roman_nr = analyze_art_name(art_nr_title)
 
     # Check if there some HTML that we want included in the `nr-title`.
     # This is typically to denote that something has been removed by
@@ -1857,7 +1785,7 @@ def parse_article(parser):
     # Create the tags, configure them and append to the chapter.
     parser.art = E("art", E("nr-title", art_nr_title))
     parser.art.attrib["nr"] = art_nr
-    if art_roman_nr is not None:
+    if len(art_roman_nr) > 0:
         parser.art.attrib["roman-nr"] = art_roman_nr
         parser.art.attrib["number-type"] = "roman"
 
