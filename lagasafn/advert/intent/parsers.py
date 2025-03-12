@@ -14,16 +14,16 @@ import json
 import re
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
+from lagasafn.contenthandlers import add_sentences
+from lagasafn.contenthandlers import analyze_art_name
+from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
 from lagasafn.utils import get_all_text
-from lagasafn.utils import Matcher
-from lagasafn.utils import super_iter
 from lagasafn.utils import write_xml
 from lxml.builder import E
 from lxml.etree import _Element
 from openai import OpenAI
-from typing import List
 
 
 def parse_intents_by_ai(advert_tracker: AdvertTracker, original: _Element):
@@ -90,6 +90,41 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
     ))
 
     return True
+
+
+def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
+
+    art_nr, roman_art_nr = analyze_art_name(prefilled["art_nr_title"])
+
+    # Not doing this right away, but we still want to notice it, so that we can
+    # do that, once we run into it.
+    if len(roman_art_nr) > 0:
+        raise IntentParsingException("Unimplemented: Roman numerals not yet implemented for article creation.")
+
+    # Start making article.
+    art = E("art", { "nr": art_nr })
+    art.append(E("nr-title", prefilled["art_nr_title"]))
+
+    subart_nr = 0
+    for line in tracker.lines:
+
+        # Check for article name.
+        if (em := tracker.lines.current.find("em")) is not None:
+            art.append(E("name", em.text))
+
+        # Otherwise, it's a `subart`!
+        else:
+            subart_nr += 1
+
+            line = tracker.lines.current
+            sens = separate_sentences(get_all_text(line))
+
+            subart = E("subart", { "nr": str(subart_nr) })
+            add_sentences(subart, sens)
+
+            art.append(subart)
+
+    tracker.inner_targets.art = art
 
 
 def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker):
@@ -302,13 +337,18 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
 
     address, art_nr_new = match.groups()
 
+    parse_inner_art(tracker, {
+        "art_nr_title": art_nr_new,
+    })
+
     tracker.intents.append(E(
         "intent",
         E("action", "add_art"),
         E("address", address),
-        E("art-nr-new", art_nr_new),
-        E("art-content", "[unimplemented]"),
+        E("inner", tracker.inner_targets.art),
     ))
+
+    tracker.inner_targets.art = None
 
     return True
 
