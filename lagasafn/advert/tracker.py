@@ -54,7 +54,7 @@ class AdvertTracker:
         Pass-through function to offer type hint and abstract the currently
         misleading nomenclature of `super_iter`.
         """
-        return cast(_Element, self.nodes.current_line)
+        return cast(_Element, self.nodes.current)
 
     def detect_affected_law(self, text: str, node: _Element) -> bool:
 

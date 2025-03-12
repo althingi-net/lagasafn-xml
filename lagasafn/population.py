@@ -133,9 +133,9 @@ def population_game():
     print(f"Successfully parsed: {success}/{len(laws)} = {success/len(laws)*100:.2f}%.")
     print(f"Terminated early:    {terminated_early}/{len(laws)} = {terminated_early/len(laws)*100:.2f}%.")
 
-    next_tags.accumulate(laws, lambda law: law.parser.line[:30], lambda law: f"{law.year}-{law.number}.html:{law.parser.lines.current_line_number}")
+    next_tags.accumulate(laws, lambda law: law.parser.line[:30], lambda law: f"{law.year}-{law.number}.html:{law.parser.lines.index}")
     next_three.accumulate(laws, lambda law: law.parser.line[:30] + law.parser.peeks(1)[:30] + law.parser.peeks(2)[:30], lambda law: f"{law.number}/{law.year}")
-    stopping_lines.accumulate(laws, lambda law: law.parser.lines.current_line_number)
+    stopping_lines.accumulate(laws, lambda law: law.parser.lines.index)
 
     next_tags.print_locations("Next tags:")
     next_three.print("Next three tags:")

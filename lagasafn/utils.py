@@ -686,64 +686,56 @@ def ask_user_about_location(extra_sens, numart):
 # don't get with a regular Python iterator. Note that this thing is
 # incompatible with yields and is NOT a subclass of `iter` (since that's not
 # possible), but rather a class trying its best to masquerade as one.
-#
-# FIXME: The nomenclature here is very specific to a list of lines. We're also
-# using it for lists of nodes, however, so things like `total_lines` or
-# `current_line` should be refactored to reflect more general usage of lists.
 class super_iter:
     def __init__(self, collection):
         self.collection = collection
-        self.index = 0
+        self.index = -1
 
     def __next__(self):
+        self.index += 1
         try:
             result = self.collection[self.index]
-            self.index += 1
         except IndexError:
+            # Prevent index from growing beyond length.
+            self.index = len(self.collection)
             raise StopIteration
         return result
 
     def prev(self):
         self.index -= 1
         if self.index < 0:
+            # Prevent index from shrinking below -1.
+            self.index = -1
             raise StopIteration
         return self.collection[self.index]
 
     def __len__(self):
-        return self.total_lines
+        return len(self.collection)
 
     def __iter__(self):
         return self
     
     @property
-    def total_lines(self):
-        return len(self.collection)
-
-    @property
-    def current_line(self):
-        if self.index == 0:
+    def current(self):
+        if self.index < 0:
             return None
-        if self.index > len(self.collection):
+        if self.index >= len(self.collection):
             return None
-        return self.collection[self.index - 1]
-
-    @property
-    def current_line_number(self):
-        return self.index
+        return self.collection[self.index]
 
     def remaining(self) -> list:
         return self.collection[self.index:]
 
     # Peek into the next item of the iterator without advancing it. Works with
     # negative numbers to take a peek at previous items.
-    def peek(self, number_of_lines=1):
-        peek_index = self.index - 1 + number_of_lines
+    def peek(self, number_of_places=1):
+        peek_index = self.index + number_of_places
         if peek_index >= len(self.collection) or peek_index < 0:
             return None
         return self.collection[peek_index]
 
-    def peeks(self, number_of_lines=1):
-        r = self.peek(number_of_lines)
+    def peeks(self, number_of_places=1):
+        r = self.peek(number_of_places)
         if r:
             return r.strip()
         return None

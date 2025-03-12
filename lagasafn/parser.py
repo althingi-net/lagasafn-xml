@@ -98,13 +98,13 @@ class LawParser:
 
     @property
     def line(self):
-        if self.lines.current_line is None:
+        if self.lines.current is None:
             return None
-        return self.lines.current_line.strip()
+        return self.lines.current.strip()
 
     def enter(self, path):
         if self.verbosity > 0:
-            print("%s>> Entering %s at line %d" % ("  " * len(self.parse_path), path, self.lines.current_line_number))
+            print("%s>> Entering %s at line index %d" % ("  " * len(self.parse_path), path, self.lines.index))
         self.parse_path.append(path)
 
     def leave(self, guard=None):
@@ -120,7 +120,7 @@ class LawParser:
             return
 
         if self.verbosity > 0:
-            print("%s<< Leaving %s at line %d" % ("  " * (len(self.parse_path)-1), self.parse_path[-1], self.lines.current_line_number))
+            print("%s<< Leaving %s at line index %d" % ("  " * (len(self.parse_path)-1), self.parse_path[-1], self.lines.index))
 
         if guard is not None:
             if self.parse_path[-1] != guard:
@@ -134,7 +134,7 @@ class LawParser:
 
     def note(self, note):
         if self.verbosity > 0:
-            print("%s[ NOTE ][%d] %s" % ("  " * len(self.parse_path), self.lines.current_line_number, note))
+            print("%s[ NOTE ][%d] %s" % ("  " * len(self.parse_path), self.lines.index, note))
 
     def error(self, error):
         print("%s[ERROR ]: %s" % ("  " * len(self.parse_path), error))
@@ -218,7 +218,7 @@ class LawParser:
             try:
                 self.next()
             except StopIteration:
-                raise Exception("ERROR: Unexpected end of file on line %d while collecting until '%s'. \nLine: '%s'" % (self.lines.current_line_number, end_string, self.line))
+                raise Exception("ERROR: Unexpected end of file on line index %d while collecting until '%s'. \nLine: '%s'" % (self.lines.index, end_string, self.line))
             if self.matcher.check(self.line, end_string):
                 done = True
                 continue
@@ -278,23 +278,21 @@ class LawParser:
         return closing
 
     def dump_remaining(self, max_lines=10):
-        current_line = self.lines.current_line_number
-        i = current_line
-        # We want to include the current line in the output.
-        self.lines.index -= 1
+        current_index = self.lines.index
+        i = current_index
         for line in self.lines:
             print("Line %d: %s" % (i, line), end="")
             i += 1
-            if i > current_line + max_lines:
+            if i > current_index + max_lines:
                 break
         # Reset the iterator to the original place.
-        self.lines.index = current_line
+        self.lines.index = current_index
 
     def dump_state(self):
         print("Current parser state: ")
         print(" parse_path: '%s'" % ("->".join(self.parse_path)))
         print(" line: '%s'" % (self.line))
-        print(" line number: %d" % (self.lines.current_line_number))
+        print(" line index: %d" % (self.lines.index))
         print(" chapter: '%s'" % (self.chapter))
         print(" subchapter: '%s'" % (self.subchapter))
         print(" art: '%s'" % (self.art))
@@ -305,7 +303,7 @@ class LawParser:
         print(" footnotes: '%s'" % (self.footnotes))
 
     def report_location(self):
-        print("[DEBUG] Line %d: %s" % (self.lines.current_line_number, self.line))
+        print("[DEBUG] Line index %d: %s" % (self.lines.index, self.line))
 
 
 ####### Individual section parser functions below:
@@ -340,14 +338,14 @@ def parse_law(parser):
         if parse_paragraph(parser):
             continue
 
-        # print("ERROR: Couldn't parse anything at line %d." % parser.lines.current_line_number)
+        # print("ERROR: Couldn't parse anything at line index %d." % parser.lines.index)
 
         # If we didn't parse a chapter or an article, we're done.
         break
 
     parse_end_of_law(parser)
     # Return whether we have reached the end of the file.
-    return parser.lines.current_line_number, parser.lines.total_lines
+    return parser.lines.index + 1, len(parser.lines)
 
 
 def parse_intro(parser):
