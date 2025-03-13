@@ -146,6 +146,10 @@ def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
 
         raise IntentParsingException("Don't know what to do with line: %s" % get_all_text(line))
 
+    tracker.targets.inner.append(tracker.inner_targets.art)
+
+    tracker.inner_targets.art = None
+
     return True
 
 
@@ -359,18 +363,22 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
 
     address, art_nr_new = match.groups()
 
+    intent = E(
+        "intent",
+        E("action", "add_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
     parse_inner_art(tracker, {
         "art_nr_title": art_nr_new,
     })
 
-    tracker.intents.append(E(
-        "intent",
-        E("action", "add_art"),
-        E("address", address),
-        E("inner", tracker.inner_targets.art),
-    ))
-
-    tracker.inner_targets.art = None
+    tracker.targets.inner = None
 
     return True
 
