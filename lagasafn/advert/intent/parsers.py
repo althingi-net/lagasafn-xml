@@ -94,7 +94,8 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
 
 def parse_inner_art_name(tracker: IntentTracker):
     if not (
-        tracker.lines.current.attrib["style"] == "text-align: center;"
+        "style" in tracker.lines.current.attrib
+        and tracker.lines.current.attrib["style"] == "text-align: center;"
     ):
         return False
 
@@ -108,7 +109,10 @@ def parse_inner_art_name(tracker: IntentTracker):
 
 
 def parse_inner_art_subart(tracker: IntentTracker):
-    if tracker.lines.current.attrib["style"] != "text-align: justify;":
+    if not (
+        "style" in tracker.lines.current.attrib
+        and tracker.lines.current.attrib["style"] == "text-align: justify;"
+    ):
         return False
 
     # Figure out the number from existing `subart`s within the article.
@@ -124,9 +128,42 @@ def parse_inner_art_subart(tracker: IntentTracker):
     return True
 
 
+def parse_inner_art_address(tracker: IntentTracker, only_check: bool = False):
+    if "style" in tracker.lines.current.attrib:
+        return False
+    match = re.match(r"\((.+)\)", tracker.lines.current.text.strip())
+    if match is None:
+        return False
+
+    # We may want to only check for the criteria without actually parsing, in
+    # which case we exit immediately.
+    if only_check:
+        return True
+
+    art_nr_title = match.groups()[0]
+
+    art_nr, roman_art_nr = analyze_art_name(art_nr_title)
+    if len(roman_art_nr) > 0:
+        # We may need to support this, but not until we need to.
+        raise IntentParsingException("Unimplemented: Roman numerals not yet implemented for article creation.")
+
+    tracker.inner_targets.art.attrib["nr"] = art_nr
+    tracker.inner_targets.art.find("nr-title").text = art_nr_title
+
+    return True
+
+
 def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
 
-    art_nr, roman_art_nr = analyze_art_name(prefilled["art_nr_title"])
+    # NOTE: This may actually remain empty and be figured out during parsing of
+    # `tracker.lines` later, depending on the nature of the content.
+    art_nr_title = ""
+    if "art_nr_title" in prefilled:
+        art_nr_title = prefilled["art_nr_title"]
+
+    # Remember, these may both be empty strings if `art_nr_title` is still
+    # empty at this point.
+    art_nr, roman_art_nr = analyze_art_name(art_nr_title)
 
     # Not doing this right away, but we still want to notice it, so that we can
     # do that, once we run into it.
@@ -135,10 +172,19 @@ def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
 
     # Start making article.
     tracker.inner_targets.art = E("art", { "nr": art_nr })
-    tracker.inner_targets.art.append(E("nr-title", prefilled["art_nr_title"]))
+    tracker.inner_targets.art.append(E("nr-title", art_nr_title))
 
     for line in tracker.lines:
+        # If we run into an article address when we already have one, we should
+        # start a new article.
+        if len(tracker.inner_targets.art.attrib["nr"]) > 0 and parse_inner_art_address(tracker, only_check=True):
+            # Take back the attempt to parse this thing, so that the calling
+            # function can.
+            tracker.lines.index -= 1
+            break
 
+        if parse_inner_art_address(tracker):
+            continue
         if parse_inner_art_name(tracker):
             continue
         if parse_inner_art_subart(tracker):
@@ -383,6 +429,36 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
     return True
 
 
+def parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker: IntentTracker):
+    # While it is no doubt tempting to parse the amount of articles being added
+    # here, we'll start doing it this way so that it's more resilient parsing
+    # the new `art-nr`s as well. May very well change once we have a more
+    # exhaustive list of possible additions.
+    match = re.match(r"Á eftir (.+) laganna koma tvær nýjar greinar, (.+) og (.+), svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, art_nr_new_1, art_nr_new_2 = match.groups()
+
+    intent = E(
+        "intent",
+        E("action", "add_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
+    parse_inner_art(tracker)
+    parse_inner_art(tracker)
+
+    tracker.targets.inner = None
+
+    return True
+
+
 def parse_vid_login_baetast_x_ny_akvaedi_til_bradabirgda_svohljodandi(tracker: IntentTracker):
     match = re.match(r"Við lögin bætast (.+) ný ákvæði til bráðabirgða, svohljóðandi:", tracker.current_text)
     if match is None:
@@ -479,6 +555,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker):
+        pass
+    elif parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker):
         pass
     elif parse_enactment_timing(tracker):
         pass
