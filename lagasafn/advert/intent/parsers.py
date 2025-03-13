@@ -92,6 +92,38 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
     return True
 
 
+def parse_inner_art_name(tracker: IntentTracker):
+    if not (
+        tracker.lines.current.attrib["style"] == "text-align: center;"
+    ):
+        return False
+
+    em = tracker.lines.current.find("em")
+    if em is None:
+        return False
+
+    tracker.inner_targets.art.append(E("name", em.text))
+
+    return True
+
+
+def parse_inner_art_subart(tracker: IntentTracker):
+    if tracker.lines.current.attrib["style"] != "text-align: justify;":
+        return False
+
+    # Figure out the number from existing `subart`s within the article.
+    subart_nr = len(tracker.inner_targets.art.findall("subart")) + 1
+
+    sens = separate_sentences(get_all_text(tracker.lines.current))
+
+    subart = E("subart", { "nr": str(subart_nr) })
+    add_sentences(subart, sens)
+
+    tracker.inner_targets.art.append(subart)
+
+    return True
+
+
 def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
 
     art_nr, roman_art_nr = analyze_art_name(prefilled["art_nr_title"])
@@ -102,29 +134,19 @@ def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
         raise IntentParsingException("Unimplemented: Roman numerals not yet implemented for article creation.")
 
     # Start making article.
-    art = E("art", { "nr": art_nr })
-    art.append(E("nr-title", prefilled["art_nr_title"]))
+    tracker.inner_targets.art = E("art", { "nr": art_nr })
+    tracker.inner_targets.art.append(E("nr-title", prefilled["art_nr_title"]))
 
-    subart_nr = 0
     for line in tracker.lines:
 
-        # Check for article name.
-        if (em := tracker.lines.current.find("em")) is not None:
-            art.append(E("name", em.text))
+        if parse_inner_art_name(tracker):
+            continue
+        if parse_inner_art_subart(tracker):
+            continue
 
-        # Otherwise, it's a `subart`!
-        else:
-            subart_nr += 1
+        raise IntentParsingException("Don't know what to do with line: %s" % get_all_text(line))
 
-            line = tracker.lines.current
-            sens = separate_sentences(get_all_text(line))
-
-            subart = E("subart", { "nr": str(subart_nr) })
-            add_sentences(subart, sens)
-
-            art.append(subart)
-
-    tracker.inner_targets.art = art
+    return True
 
 
 def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker):
