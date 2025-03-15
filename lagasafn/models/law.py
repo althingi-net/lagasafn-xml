@@ -77,7 +77,7 @@ class LawManager:
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
 
         # Read and parse the index
-        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME % CURRENT_PARLIAMENT_VERSION)).getroot()
+        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME % codex_version)).getroot()
 
         # Gather miscellaneous stuff into `info`.
         info.date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
