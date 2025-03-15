@@ -559,9 +559,29 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
     # At this point, `node` will be the top-most `law` tag. #
     #########################################################
 
-    # Add the reference to the law if requested.
+    # Add the reference to the law unless skipped.
     if not skip_law:
         result += "laga nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
+    else:
+        # FIXME: When `skip_law` is `True`, the result will end up with a
+        # trailing white-space. We should `strip()` that white-space here.
+        #
+        # However, the current JSON-map data was made assuming these
+        # white-spaces, so if they are stripped here, that data must be
+        # re-made, which is a bit of manual labor.
+        #
+        # There are two ways to fix this:
+        #
+        # 1. Uncomment the following line and do the manual labor again.
+        #
+        # 2. Go through the JSON-map files programmatically and strip the
+        #    relevant keys.
+        #
+        # Until either is done, the following line remains commented but
+        # retained for future generations to deal with.
+
+        #result = result.strip()
+        pass
 
     return result
 
