@@ -19,6 +19,8 @@ from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
+from lagasafn.references import parse_reference_string
+from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import get_all_text
 from lagasafn.utils import write_xml
 from lxml.builder import E
@@ -108,22 +110,72 @@ def parse_inner_art_name(tracker: IntentTracker):
     return True
 
 
-def parse_inner_art_subart(tracker: IntentTracker):
+def parse_inner_art_numarts(tracker: IntentTracker):
+    if tracker.lines.current.tag != "ol":
+        return False
+
+    # Figure out the number type.
+    nr_type = ""
+    if tracker.lines.current.attrib["style"] == "list-style-type: lower-alpha;":
+        nr_type = "alphabet"
+    else:
+        raise IntentParsingException("Unsupported numart nr-type (as of yet).")
+
+    lis = tracker.lines.current.findall("li")
+    for i, li in enumerate(lis):
+        # Just to distinguish between a number that starts at 0 (the `for`
+        # loop) and the number we'll be using for generating data.
+        seq = i + 1
+
+        # Determine the `nr` that will belong to the `numart`. In the adverts,
+        # the content relies on browser rendering of CSS styles to render this
+        # to the user, instead of literal text.
+        nr = ""
+        if nr_type == "alphabet":
+            nr = chr(ord("a") - 1 + seq)
+        else:
+            nr = str(seq)
+
+        numart = E("numart", { "nr": nr, "nr-type": nr_type })
+
+        add_sentences(numart, separate_sentences(li.text))
+
+        tracker.inner_targets.subart.append(numart)
+
+    return True
+
+
+def parse_inner_art_subart(tracker: IntentTracker, prefilled: dict = {}):
     if not (
         "style" in tracker.lines.current.attrib
         and tracker.lines.current.attrib["style"] == "text-align: justify;"
     ):
         return False
 
-    # Figure out the number from existing `subart`s within the article.
-    subart_nr = len(tracker.inner_targets.art.findall("subart")) + 1
+    if "subart_nr" in prefilled:
+        subart_nr = prefilled["subart_nr"]
+    else:
+        # Figure out the number from existing `subart`s within the article.
+        subart_nr = len(tracker.inner_targets.art.findall("subart")) + 1
 
+    tracker.inner_targets.subart = E("subart", { "nr": str(subart_nr) })
+
+    # Add sentences.
     sens = separate_sentences(get_all_text(tracker.lines.current))
+    add_sentences(tracker.inner_targets.subart, sens)
+    del sens
 
-    subart = E("subart", { "nr": str(subart_nr) })
-    add_sentences(subart, sens)
+    # Check if the `subart` contains `numart`s.
+    if tracker.lines.peek() is not None and tracker.lines.peek().tag == "ol":
+        next(tracker.lines)
+        parse_inner_art_numarts(tracker)
 
-    tracker.inner_targets.art.append(subart)
+    if tracker.inner_targets.art is not None:
+        tracker.inner_targets.art.append(tracker.inner_targets.subart)
+    else:
+        tracker.targets.inner.append(tracker.inner_targets.subart)
+
+    tracker.inner_targets.subart = None
 
     return True
 
@@ -224,6 +276,40 @@ def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTrack
     return True
 
 
+def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker):
+    # TODO: Excellent candidate for merging with:
+    #     parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi
+    match = re.match(r"Við (.+) laganna bætist ný málsgrein, svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[0]
+
+    # Need to find the `subart_nr` before moving on.
+    law = tracker.affected_law()
+    xpath = parse_reference_string(address)[0]
+    art = law.xml().xpath(xpath)[0]
+    subart_nr = len(art.findall("subart")) + 1
+
+    # Make the inner.
+    tracker.targets.inner = E("inner")
+
+    # Make the intent.
+    tracker.intents.append(E(
+        "intent",
+        E("action", "add_subart"),
+        E("address", address),
+        tracker.targets.inner,
+    ))
+
+    for line in tracker.lines:
+        parse_inner_art_subart(tracker, {"subart_nr": subart_nr })
+
+    tracker.targets.inner = None
+
+    return True
+
+
 def parse_sub_vid_x_baetist(tracker: IntentTracker, li: _Element):
     match = re.match(r"Við (.+) bætist: (.+)", get_all_text(li))
     if match is None:
@@ -292,6 +378,23 @@ def parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, l
     return True
 
 
+def parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Við bætist nýr málsliður, svohljóðandi: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    text_to = match.groups()[0]
+
+    # NOTE: The address isn't specified here. It will be in the parent node.
+    tracker.intents.append(E(
+        "intent",
+        E("action", "add_sen"),
+        E("text-to", text_to),
+    ))
+
+    return True
+
+
 def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: _Element):
     match = re.match(r"Við bætist ný málsgrein, svohljóðandi: (.+)", get_all_text(li))
     if match is None:
@@ -321,6 +424,22 @@ def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li:
         "intent",
         E("action", "add_numart_numeric"),
         E("text-to", text_to),
+    ))
+
+    return True
+
+
+def parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Fyrirsögn greinarinnar orðast svo: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    name_new = match.groups()[0]
+
+    tracker.intents.append(E(
+        "intent",
+        E("action", "rename_art"),
+        E("text-to", name_new),
     ))
 
     return True
@@ -371,11 +490,15 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
             pass
         elif parse_sub_vid_x_baetast_x_nyir_malslidir_svohljodandi(tracker, li):
             pass
+        elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
+            pass
         elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
             pass
         elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
             pass
         elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
             pass
         elif parse_sub_x_ordast_svo(tracker, li):
             pass
@@ -398,6 +521,62 @@ def parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracke
         E("address", address),
         E("text-to", text_to),
     ))
+
+    return True
+
+
+def parse_a_eftir_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker):
+    # TODO: Great candidate for merging with identical function:
+    #     parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi
+    match = re.match(r"Á eftir (.+) laganna kemur ný grein, (.+), svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, art_nr_new = match.groups()
+
+    intent = E(
+        "intent",
+        E("action", "add_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
+    parse_inner_art(tracker, {
+        "art_nr_title": art_nr_new,
+    })
+
+    tracker.targets.inner = None
+
+    return True
+
+
+def parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á undan (.+) laganna kemur ný grein, (.+), svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, art_nr_new = match.groups()
+
+    intent = E(
+        "intent",
+        E("action", "prepend_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
+    parse_inner_art(tracker, {
+        "art_nr_title": art_nr_new,
+    })
+
+    tracker.targets.inner = None
 
     return True
 
@@ -453,6 +632,118 @@ def parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker
 
     parse_inner_art(tracker)
     parse_inner_art(tracker)
+
+    tracker.targets.inner = None
+
+    return True
+
+
+def parse_vid_login_baetist_ny_grein_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Við lögin bætist ný grein, svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    # Find the last article that isn't a temporary article, and not in a
+    # chapter of temporary clauses.
+    law = tracker.affected_law()
+    last_art = law.xml().xpath("//art[not(@nr='t') and not(../@nr='t')]")[-1]
+
+    # NOTE: The `strip()` is needed due to a bug in `generate_legal_reference`.
+    address = generate_legal_reference(last_art, skip_law=True).strip()
+
+    # The dictation contains no information about what the `nr` of the new
+    # article should be, so we'll need to deduce it.
+    #
+    # Currently, we assume that the last article's `nr` is an integer, but
+    # strictly speaking it doesn't have to be. Instead of the `nr-title`
+    # "164. gr.", it could be "164. gr. a", which would make the `nr` "164a".
+    #
+    # However, this is very unlikely to ever occur, because it would require
+    # such an article to be added between existing articles, and then all the
+    # articles after it being removed. This is currently not known to happen
+    # anywhere. In other words, the last article `nr` is likely to always be an
+    # integer, so we'll assume that to be the case until we find out otherwise.
+    art_nr_new = int(last_art.attrib["nr"]) + 1
+    art_nr_title_new = "%d. gr." % art_nr_new
+
+    intent = E(
+        "intent",
+        E("action", "add_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
+    parse_inner_art(tracker, {"art_nr_title": art_nr_title_new})
+
+    tracker.targets.inner = None
+
+    return True
+
+
+def parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker: IntentTracker):
+
+    # WARNING!
+    #
+    # This phrasing of the content indicates a slight mistake in the bill,
+    # which is easy for a human to mitigate but not obvious to a computer.
+    #
+    # It designates a new article with a specific nr-title, without explaining
+    # **where** to place this new article.
+    #
+    # This is unusual because if it's being added to the end of the law,
+    # there's no need for specifying the new article's nr-title. The fact that
+    # the nr-title is explicitly mentioned indicates that it's being added
+    # somewhere in between existing articles.
+    #
+    # In short, an article is being added to some place inside the law, without
+    # specifying exactly where. It is left up to the human reader to figure out
+    # where, judging by the nr-title of the new article.
+    #
+    # This is known to occur in the following places:
+    #
+    # - 3. gr. laga nr. 44/2024
+    #   https://www.althingi.is/altext/154/s/1615.html
+    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=ca3c8622-2e53-4bd4-bed0-bdffd093458a
+
+    match = re.match(r"Við lögin bætist ný grein, (.+), svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    art_nr_title_new = match.groups()[0]
+    del match
+
+    # We need to deduce where to place the new article.
+    # It's tempting to write some fancy function to do it, but these cases are
+    # hopefully exceedingly rare, so we'll do this now in such a messy way that
+    # it borders on hard-coding. If these are more common than we expect, this
+    # will need improvement, but our current expectations are such that we
+    # can't justify spending much time on making this good enough, if it turns
+    # out that these are maybe 2-3 cases altogether. Time will tell.
+    # Supported:
+    #     11. gr. a
+    match = re.match(r"(.+) a$", art_nr_title_new)
+    if match is None:
+        raise IntentParsingException("Can't figure out where to place new article.")
+
+    address = match.groups()[0]
+    del match
+
+    intent = E(
+        "intent",
+        E("action", "add_art"),
+        E("address", address),
+    )
+    tracker.intents.append(intent)
+
+    inner = E("inner")
+    intent.append(inner)
+    tracker.targets.inner = inner
+
+    parse_inner_art(tracker, {"art_nr_title": art_nr_title_new})
 
     tracker.targets.inner = None
 
@@ -520,6 +811,12 @@ def parse_enactment_timing(tracker: IntentTracker):
     elif text.startswith("Lög þessi öðlast þegar gildi og koma til framkvæmda"):
         timing = "immediate-with-delayed-implementation"
         implemented_timing = text[52:]  # By length of conditional string above.
+    elif text.startswith("Lög þessi öðlast þegar gildi og skulu koma til framkvæmda"):
+        timing = implemented_timing = text[58:].strip(".")
+
+    # FIXME: Both `timing` and `implemented_timing` are either magic strings or
+    # copied verbatum from the data. They should both be parsed into ISO-8601
+    # format here. Note that actual values might be retrieved from metadata.
 
     intent = E(
         "intent",
@@ -548,6 +845,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
         pass
     elif parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracker):
         pass
+    elif parse_a_eftir_x_laganna_kemur_ny_grein_x_svohljodandi(tracker):
+        pass
     elif parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker):
         pass
     elif parse_vid_login_baetast_x_ny_akvaedi_til_bradabirgda_svohljodandi(tracker):
@@ -557,6 +856,14 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker):
         pass
     elif parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker):
+        pass
+    elif parse_vid_login_baetist_ny_grein_svohljodandi(tracker):
+        pass
+    elif parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker):
+        pass
+    elif parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker):
+        pass
+    elif parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker):
         pass
     elif parse_enactment_timing(tracker):
         pass
