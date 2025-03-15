@@ -106,6 +106,7 @@ def create_index():
             "published-date": advert.attrib["published-date"],
             "record-id": advert.attrib["record-id"],
             "description": advert.find("description").text,
+            "applied-to-codex-version": advert.attrib["applied-to-codex-version"],
             "article-count": str(len(advert.xpath("//art"))),
         })
 
