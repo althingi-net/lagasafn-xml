@@ -61,5 +61,5 @@ class IntentTracker:
         return "%s/%d" % (self.affected_law_nr, self.affected_law_year)
 
     def affected_law(self) -> Law:
-        # FIXME: Might want to cache this. Possibly just run it at the constructor.
-        return Law(self.affected_law_identifier(), CURRENT_PARLIAMENT_VERSION)
+        codex_version = self.original.getroottree().getroot().attrib["applied-to-codex-version"]
+        return Law(self.affected_law_identifier(), codex_version)
