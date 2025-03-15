@@ -4,6 +4,7 @@ from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.exceptions import IntentParsingException
+from lagasafn.models.law import LawManager
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
@@ -302,6 +303,7 @@ def parse_advert(xml_remote):
     tracker.xml.attrib["year"] = year
     tracker.xml.attrib["nr"] = nr
     tracker.xml.attrib["published-date"] = published_date.strftime("%Y-%m-%d")
+    tracker.xml.attrib["applied-to-codex-version"] = LawManager.codex_version_at_date(published_date)
     tracker.xml.append(E("description", description))
 
     nodes = xml_remote.xpath(

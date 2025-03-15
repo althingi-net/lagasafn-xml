@@ -11,8 +11,10 @@ import requests
 from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
+from functools import cache
 from lagasafn.constants import PROBLEMS_FILENAME
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
+from lagasafn.constants import XML_BASE_DIR
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
@@ -25,6 +27,9 @@ from lagasafn.utils import traditionalize_law_nr
 from lxml import etree
 from lxml import html
 from math import floor
+from os import listdir
+from os.path import isfile
+from typing import List
 
 
 class LawIndexInfo:
@@ -43,6 +48,7 @@ class LawIndex:
 
 class LawManager:
     @staticmethod
+    @cache
     def index(codex_version: str) -> LawIndex:
         # Return variables.
         info = LawIndexInfo()
@@ -101,6 +107,47 @@ class LawManager:
         index.info = info
         index.laws = laws
         return index
+
+    @staticmethod
+    @cache
+    def codex_versions() -> List[str]:
+        codex_versions = []
+        for item_name in listdir(XML_BASE_DIR):
+
+            # Make sure that the directory name makes sense.
+            if re.match(r"\d{3}[a-z]?", item_name) is None:
+                continue
+
+            # Make sure it has an index file.
+            if not isfile(XML_INDEX_FILENAME % item_name):
+                continue
+
+            codex_versions.append(item_name)
+
+        codex_versions.sort()
+
+        return codex_versions
+
+    @staticmethod
+    def codex_version_at_date(timing: datetime) -> str:
+        # This function is expensive but we are caching `LawManager.index` now,
+        # so it should be fine. It makes no sense to `@cache` this one though,
+        # because we won't be getting the same input consistently.
+        result = ""
+        codex_versions = LawManager.codex_versions()
+
+        # The order here is important because we return the first codex version
+        # we can find that meets the criteria.
+        for codex_version in reversed(codex_versions):
+            index = LawManager.index(codex_version)
+            if timing >= index.info.date_to:
+                result = codex_version
+                break
+
+        if len(result) == 0:
+            raise LawException("Could not determine codex version at date: %s" % timing)
+
+        return result
 
     @staticmethod
     def content_search(search_string: str, codex_version: str):
