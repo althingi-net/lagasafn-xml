@@ -112,19 +112,12 @@ class AdvertManager:
 
         adverts = []
         advert_index_xml = etree.parse(ADVERT_INDEX_FILENAME).getroot()
-        for entry_xml in advert_index_xml.findall("advert-entry"):
-            published_date = isoparse(entry_xml.attrib["published-date"])
-
-            if not (
-                published_date >= info.date_from
-                and published_date <= info.date_to
-            ):
-                continue
+        for entry_xml in advert_index_xml.xpath("advert-entry[@applied-to-codex-version='%s']" % codex_version):
 
             identifier = "%s/%s" % (entry_xml.attrib["nr"], entry_xml.attrib["year"])
 
             entry = AdvertEntry(identifier)
-            entry.published_date = published_date
+            entry.published_date = isoparse(entry_xml.attrib["published-date"])
             entry.record_id = entry_xml.attrib["record-id"]
             entry.description = entry_xml.attrib["description"]
             entry.article_count = int(entry_xml.attrib["article-count"])
