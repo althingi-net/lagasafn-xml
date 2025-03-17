@@ -110,6 +110,10 @@ def create_index():
             "article-count": str(len(advert.xpath("//art"))),
         })
 
+        affected_laws = advert.find("affected-laws")
+        if affected_laws is not None:
+            advert_entry.append(affected_laws)
+
         advert_index.append(advert_entry)
 
         print(".", end="", flush=True)

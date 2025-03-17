@@ -1,6 +1,7 @@
 import re
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.utils import super_iter
+from lxml.builder import E
 from lxml.etree import _Element
 from lxml.etree import Element
 from typing import cast
@@ -89,5 +90,19 @@ class AdvertTracker:
         # Remember this for future reference.
         self.affected["law-nr"] = nr
         self.affected["law-year"] = year
+
+        # Also write this into the XML file so that advers can easily be looked
+        # up by which laws they're changing.
+        #
+        # Start by making sure that the containing element exists.
+        affected_laws = self.xml.find("affected-laws")
+        if affected_laws is None:
+            affected_laws = E("affected-laws")
+            self.xml.insert(0, affected_laws)
+
+        # Insert information about the affected laws into the container.
+        affected_law_exists = len(affected_laws.xpath("*[@nr='%s' and @year='%s']" % (nr, year))) > 0
+        if not affected_law_exists:
+            affected_laws.append(E("affected-law", {"nr": nr, "year": year }, "%s/%s" % (nr, year)))
 
         return True
