@@ -181,15 +181,14 @@
 
 <div class="legal-document {{ view_type }}-view">
 
-    {% if interim_laws or ongoing_issues %}
+    {% if law.interim_adverts %}
+        {% include "law/interim_advert_box.html" %}
+    {% endif %}
+
+    {% if ongoing_issues %}
         <div class="container">
             <div class="row">
-                {% if interim_laws %}
-                    {% include "law/remote_box.html" with box_links=interim_laws box_title=_("Approved laws since publication of codex:") %}
-                {% endif %}
-                {% if ongoing_issues %}
-                    {% include "law/remote_box.html" with box_links=ongoing_issues box_title=_("Bills affecting the law:") %}
-                {% endif %}
+                {% include "law/remote_box.html" with box_links=ongoing_issues box_title=_("Bills affecting the law:") %}
             </div>
         </div>
     {% endif %}

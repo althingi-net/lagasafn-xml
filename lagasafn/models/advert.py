@@ -1,9 +1,10 @@
 from datetime import datetime
 from dateutil.parser import isoparse
+from functools import cache
+from importlib import import_module
 from lagasafn.constants import ADVERT_FILENAME
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.exceptions import AdvertException
-from lagasafn.models import LawManager
 from lxml import etree
 from lxml.etree import _Element
 from os.path import isfile
@@ -24,12 +25,18 @@ class AdvertEntry:
     description: str = ""
     article_count: int = 0
 
+    # We store these as identifiers ("45/2024") instead of separate `nr` and
+    # `year` because these are used for lookup, and we'd rather look up by the
+    # whole value rather than look up by two values.
+    affected_law_identifiers: List[str] = []
+
     def __init__(self, identifier: str):
         nr, year = identifier.split("/")
         self.nr = int(nr)
         self.year = int(year)
 
         self.identifier = identifier
+        self.affected_law_identifiers = []
 
     def original_url(self):
         return "https://www.stjornartidindi.is/Advert.aspx?RecordID=%s" % self.record_id
@@ -102,7 +109,9 @@ class AdvertIndex:
 
 class AdvertManager:
     @staticmethod
+    @cache
     def index(codex_version: str) -> AdvertIndex:
+        LawManager = getattr(import_module("lagasafn.models.law"), "LawManager")
         law_index = LawManager.index(codex_version)
 
         info = AdvertIndexInfo()
@@ -121,6 +130,8 @@ class AdvertManager:
             entry.record_id = entry_xml.attrib["record-id"]
             entry.description = entry_xml.attrib["description"]
             entry.article_count = int(entry_xml.attrib["article-count"])
+            for affected_law in entry_xml.xpath("affected-laws/affected-law"):
+                entry.affected_law_identifiers.append(affected_law.text)
             adverts.append(entry)
 
         index = AdvertIndex()
@@ -128,3 +139,16 @@ class AdvertManager:
         index.adverts = adverts
 
         return index
+
+    @staticmethod
+    @cache
+    def by_affected_law(codex_version: str, nr: str, year: int) -> List[Advert]:
+        identifier = "%s/%s" % (nr, year)
+        index = AdvertManager.index(codex_version)
+
+        adverts = []
+        for advert in index.adverts:
+            if identifier in advert.affected_law_identifiers:
+                adverts.append(advert)
+
+        return adverts

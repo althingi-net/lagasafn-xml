@@ -12,6 +12,7 @@ from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
 from functools import cache
+from importlib import import_module
 from lagasafn.constants import PROBLEMS_FILENAME
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.constants import XML_BASE_DIR
@@ -30,6 +31,9 @@ from math import floor
 from os import listdir
 from os.path import isfile
 from typing import List
+
+# FIXME: We do this to avoid feedback loops in importing, since advert-stuff required law-stuff and vice versa. The downside to this is that we lose type hinting. This should be solved using better module schemes instead.
+AdvertManager = getattr(import_module("lagasafn.models.advert"), "AdvertManager")
 
 
 class LawIndexInfo:
@@ -560,8 +564,9 @@ class Law(LawEntry):
 
         return box_links
 
-    def get_interim_laws(self):
-        return self._get_law_box("Samþykkt lög eftir útgáfu lagasafns:")
+    @cache
+    def interim_adverts(self):
+        return AdvertManager.by_affected_law(self.codex_version, self.nr, self.year)
 
     def get_ongoing_issues(self):
         return self._get_law_box("Frumvörp til breytinga á lögunum:")

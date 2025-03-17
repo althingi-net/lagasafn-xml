@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 panel panel-default panel-body">
+            <h4 class="text-center">{% trans 'Approved laws since publication of codex:' %}</h4>
+            <ul>
+            {% for advert in law.interim_adverts %}
+                <li>
+                    {{ advert.published_date|date }}: 
+                    <a target="_new" href="{% url 'advert_show' advert.identifier %}">
+                        {{ advert.description }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

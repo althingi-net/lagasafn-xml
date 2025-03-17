@@ -26,13 +26,11 @@ def law_show(request, identifier, view_type: str = "normal"):
 
     references = law.get_references()
 
-    interim_laws = law.get_interim_laws()
     ongoing_issues = law.get_ongoing_issues()
 
     ctx = {
         "law": law,
         "references": references,
-        "interim_laws": interim_laws,
         "ongoing_issues": ongoing_issues,
         "view_type": view_type,
     }
