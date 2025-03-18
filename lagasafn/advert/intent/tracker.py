@@ -1,4 +1,5 @@
 from lagasafn.models.law import Law
+from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
@@ -63,3 +64,15 @@ class IntentTracker:
     def affected_law(self) -> Law:
         codex_version = self.original.getroottree().getroot().attrib["applied-to-codex-version"]
         return Law(self.affected_law_identifier(), codex_version)
+
+    def get_codex_version(self):
+        return self.original.getroottree().getroot().attrib["applied-to-codex-version"]
+
+    def get_existing(self, xpath: str) -> _Element:
+        law = Law(self.affected_law_identifier(), self.get_codex_version())
+        target = law.xml().xpath(xpath)[0]
+        return target
+
+    def get_existing_from_address(self, address: str) -> tuple[_Element, str]:
+        xpath = make_xpath_from_inner_reference(address)
+        return (self.get_existing(xpath), xpath)

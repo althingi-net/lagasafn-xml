@@ -19,7 +19,10 @@ from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
+from lagasafn.models.law import Law
+from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.references import parse_reference_string
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import get_all_text
 from lagasafn.utils import write_xml
@@ -74,22 +77,44 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
     if match is None:
         return False
 
-    address = match.groups()[0]
-
     next(tracker.lines)
-    remaining = tracker.lines.remaining()
 
-    if len(remaining) != 1:
-        raise IntentParsingException("Unimplemented: Replacement with multiple lines.")
+    address = match.groups()[0]
+    existing, xpath = tracker.get_existing_from_address(address)
 
-    text_to = get_all_text(remaining[0])
+    inner = E("inner")
+    tracker.targets.inner = inner
 
     tracker.intents.append(E(
         "intent",
         E("action", "replace"),
-        E("address", address),
-        E("text-to", text_to),
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        tracker.targets.inner,
     ))
+
+    prefilled = {
+        "nr": existing.attrib["nr"],
+    }
+    if existing.tag == "art":
+        # The function `parse_inner_art` won't be able to determine the type of
+        # content, except as determined by `prefilled`. It relies on us only
+        # calling it when we know that we expect an article.
+        #
+        # We know that it's an article at this point, but we'd like
+        # `parse_inner_art` to pick up the subarticle inside the article, so we
+        # back up by one step here to make sure that the `subart` gets caught.
+        tracker.lines.index -= 1
+
+        prefilled["nr_title"] = existing.find("nr-title").text
+
+        parse_inner_art(tracker, prefilled)
+    elif existing.tag == "subart":
+        parse_inner_art_subart(tracker, prefilled)
+    else:
+        raise IntentParsingException("Unimplemented tag type for this context: %s" % existing.tag)
+
+    tracker.targets.inner = None
 
     return True
 
@@ -152,13 +177,13 @@ def parse_inner_art_subart(tracker: IntentTracker, prefilled: dict = {}):
     ):
         return False
 
-    if "subart_nr" in prefilled:
-        subart_nr = prefilled["subart_nr"]
+    if "nr" in prefilled:
+        nr = int(prefilled["nr"])
     else:
         # Figure out the number from existing `subart`s within the article.
-        subart_nr = len(tracker.inner_targets.art.findall("subart")) + 1
+        nr = len(tracker.inner_targets.art.findall("subart")) + 1
 
-    tracker.inner_targets.subart = E("subart", { "nr": str(subart_nr) })
+    tracker.inner_targets.subart = E("subart", { "nr": str(nr) })
 
     # Add sentences.
     sens = separate_sentences(get_all_text(tracker.lines.current))
@@ -209,22 +234,28 @@ def parse_inner_art(tracker: IntentTracker, prefilled: dict = {}):
 
     # NOTE: This may actually remain empty and be figured out during parsing of
     # `tracker.lines` later, depending on the nature of the content.
-    art_nr_title = ""
-    if "art_nr_title" in prefilled:
-        art_nr_title = prefilled["art_nr_title"]
+    nr_title = ""
+    nr = ""
 
-    # Remember, these may both be empty strings if `art_nr_title` is still
-    # empty at this point.
-    art_nr, roman_art_nr = analyze_art_name(art_nr_title)
+    # Respect `prefilled["nr_title"]`.
+    if "nr_title" in prefilled:
+        nr_title = prefilled["nr_title"]
 
-    # Not doing this right away, but we still want to notice it, so that we can
-    # do that, once we run into it.
-    if len(roman_art_nr) > 0:
-        raise IntentParsingException("Unimplemented: Roman numerals not yet implemented for article creation.")
+        # Remember, these may both be empty strings if `nr_title` is still
+        # empty at this point.
+        nr, roman_nr = analyze_art_name(nr_title)
+
+        # Not doing this right away, but we still want to notice it, so that we can do that, once we run into it.
+        if len(roman_nr) > 0:
+            raise IntentParsingException("Unimplemented: Roman numerals not yet implemented for article creation.")
+
+    # Respect `prefilled["nr"]`.
+    if "nr" in prefilled:
+        nr = prefilled["nr"]
 
     # Start making article.
-    tracker.inner_targets.art = E("art", { "nr": art_nr })
-    tracker.inner_targets.art.append(E("nr-title", art_nr_title))
+    tracker.inner_targets.art = E("art", { "nr": nr })
+    tracker.inner_targets.art.append(E("nr-title", nr_title))
 
     for line in tracker.lines:
         # If we run into an article address when we already have one, we should
@@ -289,7 +320,7 @@ def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker
     law = tracker.affected_law()
     xpath = parse_reference_string(address)[0]
     art = law.xml().xpath(xpath)[0]
-    subart_nr = len(art.findall("subart")) + 1
+    nr = len(art.findall("subart")) + 1
 
     # Make the inner.
     tracker.targets.inner = E("inner")
@@ -303,7 +334,7 @@ def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker
     ))
 
     for line in tracker.lines:
-        parse_inner_art_subart(tracker, {"subart_nr": subart_nr })
+        parse_inner_art_subart(tracker, {"nr": nr })
 
     tracker.targets.inner = None
 
@@ -316,11 +347,14 @@ def parse_sub_vid_x_baetist(tracker: IntentTracker, li: _Element):
         return False
 
     address, text_to = match.groups()
+    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
+    existing, xpath = tracker.get_existing_from_address(address)
 
     tracker.intents.append(E(
         "intent",
         E("action", "add_text"),
-        E("address", address),
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
         E("text-to", text_to),
     ))
 
@@ -333,11 +367,14 @@ def parse_sub_x_falla_brott(tracker: IntentTracker, li: _Element):
         return False
 
     address = match.groups()[0]
+    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
+    existing, xpath = tracker.get_existing_from_address(address)
 
     tracker.intents.append(E(
         "intent",
         E("action", "delete"),
-        E("address", address),
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
     ))
 
     return True
@@ -514,11 +551,13 @@ def parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracke
         return False
 
     address, text_to = match.groups()
+    existing, xpath = tracker.get_existing_from_address(address)
 
     tracker.intents.append(E(
         "intent",
         E("action", "add_sen"),
-        E("address", address),
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
         E("text-to", text_to),
     ))
 
@@ -532,7 +571,7 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     if match is None:
         return False
 
-    address, art_nr_new = match.groups()
+    address, nr_title_new = match.groups()
 
     intent = E(
         "intent",
@@ -546,7 +585,7 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     tracker.targets.inner = inner
 
     parse_inner_art(tracker, {
-        "art_nr_title": art_nr_new,
+        "nr_title": nr_title_new,
     })
 
     tracker.targets.inner = None
@@ -559,7 +598,7 @@ def parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     if match is None:
         return False
 
-    address, art_nr_new = match.groups()
+    address, nr_title_new = match.groups()
 
     intent = E(
         "intent",
@@ -573,7 +612,7 @@ def parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     tracker.targets.inner = inner
 
     parse_inner_art(tracker, {
-        "art_nr_title": art_nr_new,
+        "nr_title": nr_title_new,
     })
 
     tracker.targets.inner = None
@@ -586,7 +625,7 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
     if match is None:
         return False
 
-    address, art_nr_new = match.groups()
+    address, nr_title_new = match.groups()
 
     intent = E(
         "intent",
@@ -600,7 +639,7 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_asamt_fyrirsogn_svohljodandi(tracke
     tracker.targets.inner = inner
 
     parse_inner_art(tracker, {
-        "art_nr_title": art_nr_new,
+        "nr_title": nr_title_new,
     })
 
     tracker.targets.inner = None
@@ -617,7 +656,7 @@ def parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker
     if match is None:
         return False
 
-    address, art_nr_new_1, art_nr_new_2 = match.groups()
+    address, art_title_new_1, art_title_new_2 = match.groups()
 
     intent = E(
         "intent",
@@ -663,8 +702,8 @@ def parse_vid_login_baetist_ny_grein_svohljodandi(tracker: IntentTracker):
     # articles after it being removed. This is currently not known to happen
     # anywhere. In other words, the last article `nr` is likely to always be an
     # integer, so we'll assume that to be the case until we find out otherwise.
-    art_nr_new = int(last_art.attrib["nr"]) + 1
-    art_nr_title_new = "%d. gr." % art_nr_new
+    nr_new = int(last_art.attrib["nr"]) + 1
+    nr_title_new = "%d. gr." % nr_new
 
     intent = E(
         "intent",
@@ -677,7 +716,7 @@ def parse_vid_login_baetist_ny_grein_svohljodandi(tracker: IntentTracker):
     intent.append(inner)
     tracker.targets.inner = inner
 
-    parse_inner_art(tracker, {"art_nr_title": art_nr_title_new})
+    parse_inner_art(tracker, {"nr_title": nr_title_new})
 
     tracker.targets.inner = None
 
@@ -713,7 +752,7 @@ def parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker: IntentTracker):
     if match is None:
         return False
 
-    art_nr_title_new = match.groups()[0]
+    nr_title_new = match.groups()[0]
     del match
 
     # We need to deduce where to place the new article.
@@ -725,7 +764,7 @@ def parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker: IntentTracker):
     # out that these are maybe 2-3 cases altogether. Time will tell.
     # Supported:
     #     11. gr. a
-    match = re.match(r"(.+) a$", art_nr_title_new)
+    match = re.match(r"(.+) a$", nr_title_new)
     if match is None:
         raise IntentParsingException("Can't figure out where to place new article.")
 
@@ -743,7 +782,7 @@ def parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker: IntentTracker):
     intent.append(inner)
     tracker.targets.inner = inner
 
-    parse_inner_art(tracker, {"art_nr_title": art_nr_title_new})
+    parse_inner_art(tracker, {"nr_title": nr_title_new})
 
     tracker.targets.inner = None
 
