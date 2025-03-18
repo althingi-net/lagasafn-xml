@@ -107,7 +107,7 @@ def create_index():
             "record-id": advert.attrib["record-id"],
             "description": advert.find("description").text,
             "applied-to-codex-version": advert.attrib["applied-to-codex-version"],
-            "article-count": str(len(advert.xpath("//art"))),
+            "article-count": str(len(advert.xpath("//advert-art"))),
         })
 
         affected_laws = advert.find("affected-laws")

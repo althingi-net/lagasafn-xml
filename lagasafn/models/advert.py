@@ -88,7 +88,7 @@ class Advert(AdvertEntry):
         xml = self.xml()
 
         self._articles = []
-        for art in xml.xpath("//art"):
+        for art in xml.xpath("//advert-art"):
             _art = Advert._make_art(art)
             self._articles.append(_art)
 

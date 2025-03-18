@@ -85,7 +85,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
     # created every time that processing takes place, they are read and
     # modified if they already exist.
     art = E(
-        "art",
+        "advert-art",
         {
             "nr": art_nr,
             "processed": "false",
@@ -160,7 +160,7 @@ def parse_chapter_nr_title(tracker):
 
     nr = roman.fromRoman(roman_nr)
 
-    chapter = E("chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
+    chapter = E("advert-chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
 
     next(tracker.nodes)
 
@@ -198,8 +198,8 @@ def parse_temporary_clause_article(tracker: AdvertTracker):
 
     # We have retroactively figured out that this is a temporary article inside
     # a temporary chapter. We must retro-actively set the type of the chapter
-    if tracker.targets.temp_clause.attrib["temp-clause-type"] == "art":
-        tracker.targets.temp_clause.attrib["temp-clause-type"] = "chapter"
+    if tracker.targets.temp_clause.attrib["temp-clause-type"] == "advert-art":
+        tracker.targets.temp_clause.attrib["temp-clause-type"] = "advert-chapter"
         del tracker.targets.temp_clause.attrib["processed"]
 
     temp_art = E("temp-art", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
@@ -227,7 +227,7 @@ def parse_temporary_clause(tracker: AdvertTracker):
     # The default type is `art` because we will only find out later if this
     # temporary clause contains several articles, and is in fact a chapter, or
     # if it only contains direct content, in which case it's an article.
-    temp_clause = E("temp-clause", {"temp-clause-type": "art", "processed": "false"})
+    temp_clause = E("temp-clause", {"temp-clause-type": "advert-art", "processed": "false"})
 
     tracker.targets.temp_clause = temp_clause
     tracker.xml.append(temp_clause)
