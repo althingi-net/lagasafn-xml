@@ -129,6 +129,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
         "gr": "art",
         "tölul": "numart",
         "mgr": "subart",
+        "málsl": "sen",
         "kafli": "chapter",
         "kafla": "chapter",
     }
