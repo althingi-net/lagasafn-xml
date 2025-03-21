@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<references stat-conclusive-count="2302" stat-xpath-successes="1986" stat-xpath-failures="189" stat-xpath-resolution-failures="127">
+<references stat-conclusive-count="2302" stat-xpath-successes="2001" stat-xpath-failures="173" stat-xpath-resolution-failures="128">
   <law-ref-entry law-nr="32" law-year="2024"/>
   <law-ref-entry law-nr="16" law-year="2024">
     <node location="art[@nr='9']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Verði fasteignasölum falið að annast skjalagerð vegna kaupa sem falla undir gildissvið laga þessara gilda ekki um þau eignakaup ákvæði sem koma fram í II. kafla laga um sölu fasteigna og skipa, nr. 70/2015.">
@@ -917,7 +917,7 @@
       <reference link-label="lög um Evrópska efnahagssvæðið, nr. 2/1993" inner-reference="" law-nr="2" law-year="1993" xpath=""/>
     </node>
     <node location="art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir 2. málsl. 1. mgr. 12. gr. laga um vexti og verðtryggingu, nr. 38/2001, má bæta vöxtum við höfuðstól oftar en á tólf mánaða fresti ef þess er þörf til að endurspegla virka vexti vaxtaviðmiðunar.">
-      <reference link-label="2. málsl. 1. mgr. 12. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="2. málsl. 1. mgr. 12. gr." law-nr="38" law-year="2001" xpath-failure="true"/>
+      <reference link-label="2. málsl. 1. mgr. 12. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="2. málsl. 1. mgr. 12. gr." law-nr="38" law-year="2001" xpath="//art[@nr='12']//subart[@nr='1']//sen[@nr='2']"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="3" law-year="2021">
@@ -1037,7 +1037,7 @@
       <reference link-label="B-lið 7. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="B-lið 7. gr." law-nr="90" law-year="2003" xpath="//art[@nr='7']//*[self::numart or self::art-chapter][@nr='B']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" text="Hafi rekstraraðila verið ákvarðaður lokunarstyrkur skv. 1.–2. málsl. 1. tölul. 4. gr. laga nr. 38/2020 er heimilt að draga hann frá tekjum á því tímabili við útreikning tekjufalls samkvæmt þessu ákvæði að því marki sem hann hefur verið tekjufærður innan tímabilsins 1. apríl til 31. október.">
-      <reference link-label="1.–2. málsl. 1. tölul. 4. gr. laga nr. 38/2020" inner-reference="1.–2. málsl. 1. tölul. 4. gr." law-nr="38" law-year="2020" xpath-failure="true"/>
+      <reference link-label="1.–2. málsl. 1. tölul. 4. gr. laga nr. 38/2020" inner-reference="1.–2. málsl. 1. tölul. 4. gr." law-nr="38" law-year="2020" xpath="//art[@nr='4']//numart[@nr='1']//sen[(@nr='1' or @nr='2')]"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Hafi rekstraraðili hlotið stuðning úr ríkissjóði vegna greiðslu hluta launakostnaðar á uppsagnarfresti samkvæmt lögum nr. 50/2020 á tímabilinu 1. apríl til 31. október 2020 skal hann draga fjárhæð þess stuðnings frá rekstrarkostnaði skv. 1. málsl. 1. mgr.">
       <reference link-label="lögum nr. 50/2020" inner-reference="" law-nr="50" law-year="2020" xpath=""/>
@@ -1298,7 +1298,7 @@
       <reference link-label="lög um rafræna auðkenningu og traustþjónustu fyrir rafræn viðskipti, nr. 55/2019" inner-reference="" law-nr="55" law-year="2019" xpath=""/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" text="Þetta á við þrátt fyrir 2. málsl. 1. mgr. 37. gr. stjórnsýslulaga, nr. 37/1993.">
-      <reference link-label="2. málsl. 1. mgr. 37. gr. stjórnsýslulaga, nr. 37/1993" inner-reference="2. málsl. 1. mgr. 37. gr." law-nr="37" law-year="1993" xpath-failure="true"/>
+      <reference link-label="2. málsl. 1. mgr. 37. gr. stjórnsýslulaga, nr. 37/1993" inner-reference="2. málsl. 1. mgr. 37. gr." law-nr="37" law-year="1993" xpath="//art[@nr='37']//subart[@nr='1']//sen[@nr='2']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='19']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" text="Dráttarvextir skv. 6. gr. laga um vexti og verðtryggingu, nr. 38/2001, leggjast á kröfu um endurgreiðslu ef hún er ekki innt af hendi innan eins mánaðar frá því að lánastofnun krafði rekstraraðila um endurgreiðslu.">
       <reference link-label="6. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="6. gr." law-nr="38" law-year="2001" xpath="//art[@nr='6']"/>
@@ -2027,10 +2027,10 @@
       <reference link-label="1. mgr. 13. gr. laga um sjálfseignarstofnanir sem stunda atvinnurekstur, nr. 33/1999" inner-reference="1. mgr. 13. gr." law-nr="33" law-year="1999" xpath="//art[@nr='13']//subart[@nr='1']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Húsnæðis- og mannvirkjastofnun og viðkomandi sveitarfélag geta þó sameiginlega heimilað frestun á endurgreiðslu í allt að ár og ber endurgreiðslukrafan á meðan vexti skv. 1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001.">
-      <reference link-label="1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath-failure="true"/>
+      <reference link-label="1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']//sen[@nr='1']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='7']" text="Krafan ber vexti skv. 1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001, frá næstu mánaðamótum eftir að endurgreiðslur stofnframlaga skulu hefjast.">
-      <reference link-label="1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath-failure="true"/>
+      <reference link-label="1. málsl. 4. gr. laga um vexti og verðtryggingu, nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']//sen[@nr='1']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='3']" text="Við ákvörðun endurgreiðslufjárhæðar skv. 3. mgr. skal miða við síðasta birta fasteignamat íbúðarinnar, að teknu tilliti til verðþróunar íbúðarhúsnæðis frá febrúarmánuði næst á undan matsgerð, sbr. 27. gr. laga um skráningu og mat fasteigna, nr. 6/2001, til þess mánaðar þegar endurgreiðsla á að hefjast.">
       <reference link-label="27. gr. laga um skráningu og mat fasteigna, nr. 6/2001" inner-reference="27. gr." law-nr="6" law-year="2001" xpath="//art[@nr='27']"/>
@@ -2446,7 +2446,7 @@
       <reference link-label="lögum um tekjuskatt, nr. 90/2003" inner-reference="" law-nr="90" law-year="2003" xpath=""/>
     </node>
     <node location="art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Leiðréttingarfjárhæð umsækjanda skv. 2. mgr. 4. gr. er samtala fjárhæðar einstaklinga skv. 7. gr. að teknu tilliti til frádráttarliða einstaklinga skv. 8. gr. og er að hámarki 4 millj. kr. á hvert heimili hvort sem um er að ræða einstaklinga, hjón eða sambýlisfólk sem uppfyllir skilyrði til samsköttunar vegna hjúskaparstöðu sinnar í árslok 2013, sbr. 1. málsl. 3. mgr. 62. gr. laga nr. 90/2003, um tekjuskatt.">
-      <reference link-label="1. málsl. 3. mgr. 62. gr. laga nr. 90/2003" inner-reference="1. málsl. 3. mgr. 62. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="1. málsl. 3. mgr. 62. gr. laga nr. 90/2003" inner-reference="1. málsl. 3. mgr. 62. gr." law-nr="90" law-year="2003" xpath="//art[@nr='62']//subart[@nr='3']//sen[@nr='1']"/>
     </node>
     <node location="art[@nr='11']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" text="Ekki er nauðsynlegt að undirrita sérstaka skilmálabreytingu eða þinglýsa vegna skiptingar á láni í tvo hluta og er breyting þessi undanþegin lögum um neytendalán, nr. 33/2013.">
       <reference link-label="lögum um neytendalán, nr. 33/2013" inner-reference="" law-nr="33" law-year="2013" xpath=""/>
@@ -3097,7 +3097,7 @@
       <reference link-label="2. gr. tollalaga, nr. 88/2005" inner-reference="2. gr." law-nr="88" law-year="2005" xpath="//art[@nr='2']"/>
     </node>
     <node location="art[@nr='5']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" text="Uppgjörstímabil gistináttaskatts hjá skattskyldum aðilum skv. a- og b-lið 3. mgr. 2. gr. og hjá rekstraraðilum skemmtiferðaskipa skv. c-lið 3. mgr. 2. gr., sem notuð eru í starfsemi sem fellur undir lög um virðisaukaskatt, skulu vera þau sömu og uppgjörstímabil virðisaukaskatts skv. 1. málsl. 1. mgr. 24. gr. laga um virðisaukaskatt, nr. 50/1988.">
-      <reference link-label="1. málsl. 1. mgr. 24. gr. laga um virðisaukaskatt, nr. 50/1988" inner-reference="1. málsl. 1. mgr. 24. gr." law-nr="50" law-year="1988" xpath-failure="true"/>
+      <reference link-label="1. málsl. 1. mgr. 24. gr. laga um virðisaukaskatt, nr. 50/1988" inner-reference="1. málsl. 1. mgr. 24. gr." law-nr="50" law-year="1988" xpath="//art[@nr='24']//subart[@nr='1']//sen[@nr='1']"/>
     </node>
     <node location="art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Að því leyti sem eigi er ákveðið í lögum þessum um álagningu, innheimtu, tilhögun bókhalds, eftirlit, upplýsingaskyldu, viðurlög, kærur og aðra framkvæmd skulu gilda, eftir því sem við geta átt, ákvæði laga nr. 50/1988, um virðisaukaskatt.">
       <reference link-label="laga nr. 50/1988" inner-reference="" law-nr="50" law-year="1988" xpath=""/>
@@ -4697,10 +4697,10 @@
       <reference link-label="1. mgr. 21. gr. laga nr. 50/1988" inner-reference="1. mgr. 21. gr." law-nr="50" law-year="1988" xpath="//art[@nr='21']//subart[@nr='1']"/>
     </node>
     <node location="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" text="Undanþegnir gjaldskyldu eru eftirvagnar sem taldir eru upp í 3. málsl. 1. mgr. 63. gr. umferðarlaga, nr. 50/1987, með síðari breytingum.">
-      <reference link-label="3. málsl. 1. mgr. 63. gr. umferðarlaga, nr. 50/1987" inner-reference="3. málsl. 1. mgr. 63. gr." law-nr="50" law-year="1987" xpath-failure="true"/>
+      <reference link-label="3. málsl. 1. mgr. 63. gr. umferðarlaga, nr. 50/1987" inner-reference="3. málsl. 1. mgr. 63. gr." law-nr="50" law-year="1987" xpath-resolution-failure="true"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" text="Við endurákvörðun oftekinna gjalda samkvæmt lögum þessum skal greiða gjaldanda vexti, sem skulu vera jafnháir tveimur þriðju hlutum vaxta sem Seðlabanki Íslands ákveður og birtir skv. 1. málsl. 4. gr. laga nr. 38/2001, um vexti og verðtryggingu, frá þeim tíma sem greiðslan átti sér stað og þar til endurgreiðslan fer fram.">
-      <reference link-label="1. málsl. 4. gr. laga nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath-failure="true"/>
+      <reference link-label="1. málsl. 4. gr. laga nr. 38/2001" inner-reference="1. málsl. 4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']//sen[@nr='1']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='20']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" text="Um meðferð mála hjá nefndinni fer eftir lögum nr. 30/1992, um yfirskattanefnd, með síðari breytingum.">
       <reference link-label="lögum nr. 30/1992" inner-reference="" law-nr="30" law-year="1992" xpath=""/>
@@ -5403,7 +5403,7 @@
       <reference link-label="laga um hlutafélög, nr. 2/1995" inner-reference="" law-nr="2" law-year="1995" xpath=""/>
     </node>
     <node location="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='73']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" text="Ákvæði 1. málsl. 2. mgr. 3. gr. laga nr. 2/1995, um hlutafélög, gilda ekki um fjölda stofnenda í hlutafélagi skv. 2. mgr.">
-      <reference link-label="1. málsl. 2. mgr. 3. gr. laga nr. 2/1995" inner-reference="1. málsl. 2. mgr. 3. gr." law-nr="2" law-year="1995" xpath-failure="true"/>
+      <reference link-label="1. málsl. 2. mgr. 3. gr. laga nr. 2/1995" inner-reference="1. málsl. 2. mgr. 3. gr." law-nr="2" law-year="1995" xpath="//art[@nr='3']//subart[@nr='2']//sen[@nr='1']"/>
     </node>
     <node location="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" text="Fjármálaeftirlitið getur, með hliðsjón af stærð, eðli og umfangi rekstrar fjármálafyrirtækis, og því hversu margþætt starfsemi fyrirtækisins er, heimilað fjármálafyrirtæki að sameina störf áhættunefndar og endurskoðunarnefndar skv. IX. kafla A í lögum um ársreikninga, nr. 3/2006.">
       <reference link-label="lögum um ársreikninga, nr. 3/2006" inner-reference="" law-nr="3" law-year="2006" xpath=""/>
@@ -6043,7 +6043,7 @@
       <reference link-label="lögum nr. 79/1997" inner-reference="" law-nr="79" law-year="1997" xpath=""/>
     </node>
     <node location="art[@nr='t']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir ákvæði 1. og 2. gr. er aðilum sem uppfylla skilyrði 2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006, heimilt að taka á leigu erlent skip, til allt að sex mánaða hvert almanaksár, til veiða og vinnslu samkvæmt veiðiheimildum Íslands á austur-atlantshafsbláuggatúnfiski innan og utan íslenskrar fiskveiðilandhelgi.">
-      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath-failure="true"/>
+      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath="//art[@nr='5']//sen[@nr='2']"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="17" law-year="1998"/>
@@ -6187,7 +6187,7 @@
       <reference link-label="3. mgr. 1. gr. laga um sérstakt gjald vegna ólögmæts sjávarafla, nr. 37/1992" inner-reference="3. mgr. 1. gr." law-nr="37" law-year="1992" xpath="//art[@nr='1']//subart[@nr='3']"/>
     </node>
     <node location="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir ákvæði 3. og 4. gr. er aðilum sem uppfylla skilyrði 2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006, heimilt að taka á leigu erlent skip, til allt að sex mánaða hvert almanaksár, til veiða og vinnslu samkvæmt veiðiheimildum Íslands á austur-atlantshafsbláuggatúnfiski innan og utan íslenskrar fiskveiðilandhelgi.">
-      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath-failure="true"/>
+      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath="//art[@nr='5']//sen[@nr='2']"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="78" law-year="1997"/>
@@ -6432,7 +6432,7 @@
     </node>
     <node location="art[@nr='21a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Ákvæði laga þessara, svo sem um skilaskylda aðila, afdrátt staðgreiðslu og skilaskyldu staðgreiðslu, gilda um greiðslur til höfunda og/eða annarra einstaklinga sem rétthafa vegna síðari afnota eftir að verk skv. 1. gr. höfundalaga, nr. 73/1972, hefur verið gert aðgengilegt almenningi, birt eða gefið út, sbr. 2. og 3. gr. sömu laga, sbr. 4. málsl. 3. mgr. 66. gr. laga um tekjuskatt, nr. 90/2003.">
       <reference link-label="1. gr. höfundalaga, nr. 73/1972" inner-reference="1. gr." law-nr="73" law-year="1972" xpath="//art[@nr='1']"/>
-      <reference link-label="4. málsl. 3. mgr. 66. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="4. málsl. 3. mgr. 66. gr." law-nr="90" law-year="2003" xpath-failure="true"/>
+      <reference link-label="4. málsl. 3. mgr. 66. gr. laga um tekjuskatt, nr. 90/2003" inner-reference="4. málsl. 3. mgr. 66. gr." law-nr="90" law-year="2003" xpath="//art[@nr='66']//subart[@nr='3']//sen[@nr='4']"/>
     </node>
     <node location="art[@nr='II']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Uppreiknað verð á verðbréfum sem uppfylla skilyrði um skráningu á Verðbréfaþingi Íslands, sbr. V. kafla laga nr. 11/1993, skal miðast við vegið meðaltal viðskipta í einstökum flokkum verðbréfa sem fram fara á tímabilinu 15. nóvember til 15. desember 1996 á Verðbréfaþingi Íslands, þar með talin tilkynnt viðskipti fyrir sama tímabil.">
       <reference link-label="V. kafla laga nr. 11/1993" inner-reference="V. kafla" law-nr="11" law-year="1993" xpath-resolution-failure="true"/>
@@ -7185,7 +7185,7 @@
       <reference link-label="lög nr. 2/1993" inner-reference="" law-nr="2" law-year="1993" xpath=""/>
     </node>
     <node location="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Þrátt fyrir ákvæði 4. gr. er aðilum sem uppfylla skilyrði 2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006, heimilt að taka á leigu erlent skip, til allt að sex mánaða hvert almanaksár, til veiða og vinnslu samkvæmt veiðiheimildum Íslands á austur-atlantshafsbláuggatúnfiski innan og utan íslenskrar fiskveiðilandhelgi.">
-      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath-failure="true"/>
+      <reference link-label="2. málsl. 5. gr. laga um stjórn fiskveiða, nr. 116/2006" inner-reference="2. málsl. 5. gr." law-nr="116" law-year="2006" xpath="//art[@nr='5']//sen[@nr='2']"/>
     </node>
   </law-ref-entry>
   <law-ref-entry law-nr="33" law-year="1991"/>
@@ -7815,7 +7815,7 @@
       <reference link-label="l. nr. 14/1979" inner-reference="" law-nr="14" law-year="1979" xpath=""/>
     </node>
     <node location="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='185']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" text="Sjóðurinn skal enn fremur taka til vaxta af takmörkunarfjárhæðinni frá því að atburður varð og fram til sjóðsstofnunarinnar, með fjárhæð sem svarar til almennra vaxta skv. 2. málsl. 4. gr. laga nr. 38/2001, um vexti og verðtryggingu.">
-      <reference link-label="2. málsl. 4. gr. laga nr. 38/2001" inner-reference="2. málsl. 4. gr." law-nr="38" law-year="2001" xpath-failure="true"/>
+      <reference link-label="2. málsl. 4. gr. laga nr. 38/2001" inner-reference="2. málsl. 4. gr." law-nr="38" law-year="2001" xpath="//art[@nr='4']//sen[@nr='2']"/>
     </node>
     <node location="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='220']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Samgöngustofa eða rannsóknarnefnd samgönguslysa geta auk þess krafist þess að sjópróf séu haldin vegna slysa sem verða á erlendum skipum ef slys verður í íslenskri efnahagslögsögu, sbr. 3. gr. laga nr. 41/1979, enda komi skipið eða áhöfn þess í íslenska höfn.">
       <reference link-label="3. gr. laga nr. 41/1979" inner-reference="3. gr." law-nr="41" law-year="1979" xpath="//art[@nr='3']"/>
@@ -8231,7 +8231,7 @@
       <reference link-label="VI. kafla almennra hegningarlaga, nr. 19/1940" inner-reference="VI. kafla" law-nr="19" law-year="1940" xpath="//chapter[@nr='6']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" text="Nú hefur maður, sem dæmdur hefur verið skilorðsbundnum refsidómi í Danmörku, Finnlandi, Noregi eða Svíþjóð, orðið sannur að sök hér á landi um refsivert atferli, og er þá heimilt, enda þótt umsjón hafi ekki verið ákveðin hér eftir 7. gr., að dæma bæði málin í einu lagi eftir reglum 3. og 4. málsl. 60. gr. laga nr. 19/1940, sbr. 7. gr. laga nr. 22/1955.">
-      <reference link-label="3. og 4. málsl. 60. gr. laga nr. 19/1940" inner-reference="3. og 4. málsl. 60. gr." law-nr="19" law-year="1940" xpath-failure="true"/>
+      <reference link-label="3. og 4. málsl. 60. gr. laga nr. 19/1940" inner-reference="3. og 4. málsl. 60. gr." law-nr="19" law-year="1940" xpath="//art[@nr='60']//sen[@nr='4' or @nr='3']"/>
     </node>
     <node location="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" text="Nú hefur maður, sem hlotið hefur hér á landi skilorðsbundinn refsidóm, verið dæmdur í Danmörku, Finnlandi, Noregi eða Svíþjóð fyrir refsivert atferli, framið á skilorðstímanum, en ekki hefur í hinum nýja dómi verið haggað við ákvæðum skilorðsbundna dómsins, og skal þá, eftir því sem við á, beita reglum 59. og 60. gr. laga nr. 19/1940, sbr. 6. og 7. gr. laga nr. 22/1955.">
       <reference link-label="59. og 60. gr. laga nr. 19/1940" inner-reference="59. og 60. gr." law-nr="19" law-year="1940" xpath="//art[@nr='60' or @nr='59']"/>
