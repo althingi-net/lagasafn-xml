@@ -786,6 +786,7 @@ def add_sentences(target_node, sens):
 
     Returns the created/found paragraph for further use by caller.
     """
+    sen_nr = 0
 
     if target_node.tag == "paragraph":
         # If target node is a paragraph, then the target and paragraph are
@@ -794,6 +795,10 @@ def add_sentences(target_node, sens):
         # following the numart. This happens in 18/2013, 132/2020 and 80/2022
         # in version 152c.
         paragraph = target_node
+
+        # Reconfigure the baseline `sen_nr`, in case sentences are being added
+        # to an existing paragraph that contains existing sentences.
+        sen_nr = len(paragraph.xpath("sen"))
     else:
         # Construct paragraph, determining its number by examining how many
         # already exist in the target node.
@@ -803,8 +808,6 @@ def add_sentences(target_node, sens):
         # Append paragraph to given node.
         target_node.append(paragraph)
 
-    # Append sentences to paragraph, giving them numbers.
-    sen_nr = 0
     for sen in sens:
         sen_nr += 1
 
