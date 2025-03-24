@@ -1,3 +1,4 @@
+import re
 import roman
 from lagasafn.constants import XML_FILENAME
 from lagasafn.exceptions import NoSuchElementException
@@ -142,8 +143,14 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
         word = words.pop(0)
 
-        # NOTE: Don't forget to implement support for things like "3. gr. a".
-        # These are not implemented yet, but should be done here.
+        # Check for an alphabetic component to an address like "3. gr. a",
+        # where the "a" is the alphabetic component.
+        alpha_component = ""
+        if re.match(r"^([a-z])$", word) is not None:
+            # Catch it.
+            alpha_component = word
+            # And move forward. The alpha component will be used later.
+            word = words.pop(0)
 
         if word[-4:] == "-lið":
             ent_type = "*[self::numart or self::art-chapter]"
@@ -151,7 +158,14 @@ def make_xpath_from_inner_reference(inner_reference: str):
         elif word in translations.keys():
             ent_type = translations[word]
 
-            ent_numbers.append(words.pop(0))
+            # Construct the number.
+            ent_number = words.pop(0)
+            if len(alpha_component) > 0:
+                # Add the alpha component if needed.
+                ent_number = ent_number + alpha_component
+
+            ent_numbers.append(ent_number)
+            del ent_number
 
             # All of these combinatory words result in us looking up all of
             # them, so they are all in effect "or", for our purposes.
@@ -161,6 +175,9 @@ def make_xpath_from_inner_reference(inner_reference: str):
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException(word)
+
+        # The alpha component should be irrelevant at this point.
+        del alpha_component
 
         # Assuming something came of this...
         if len(ent_type):
