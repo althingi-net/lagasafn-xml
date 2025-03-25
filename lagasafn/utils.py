@@ -835,17 +835,24 @@ class Trail:
         return self.nodes[-1]
 
 
-def write_xml(xml_doc, filename=None):
+def write_xml(xml_doc, filename=None, skip_strip=False):
+    # FIXME: The `skip_strip` parameter convolutes things and possibly
+    # unnecessarily. It is only used in one instance, to write the remote
+    # advert HTML. This remote advert HTML then gets converted into XML. To
+    # remove the `skip_strip` parameter, the conversion from remote advert HTML
+    # to advert XML should work even when `skip_strip=False`.
 
-    # Strip all elements in document.
-    for element in xml_doc.iter():
-        # If the element has text, strip leading and trailing whitespace
-        if element.text:
-            element.text = element.text.strip()
+    # Strip all elements in document by default.
+    # This can be side-stepped because certain data gets screwed up by it.
+    if not skip_strip:
+        for element in xml_doc.iter():
+            # If the element has text, strip leading and trailing whitespace.
+            if element.text:
+                element.text = element.text.strip()
 
-        # If the element has tail, strip leading and trailing whitespace
-        if element.tail:
-            element.tail = element.tail.strip()
+            # If the element has tail, strip leading and trailing whitespace.
+            if element.tail:
+                element.tail = element.tail.strip()
 
     etree.indent(xml_doc, level=0)
     xml_string = etree.tostring(

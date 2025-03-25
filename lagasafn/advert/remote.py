@@ -123,7 +123,7 @@ def save_advert_originals(advert_rows):
         orig_advert = xml_doc.xpath("//div[@type='STJT']")[0]
         orig_advert.attrib["record-id"] = advert_row.record_id
 
-        write_xml(orig_advert, fullpath)
+        write_xml(orig_advert, fullpath, skip_strip=True)
 
 
 def update_local_adverts(from_date, to_date):
