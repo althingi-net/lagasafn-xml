@@ -10,12 +10,21 @@ from lxml.etree import _Element
 class TargetGroup():
     # The `<inner>` tag that will contain the `<art>` or `<chapter>` or
     # whatever's being added to the actual law.
-    inner: _Element | None = None
+    inner: _Element | None
+
+    def __init__(self):
+        self.inner = None
 
 
 class InnerTargetGroup():
-    art: _Element | None = None
-    subart: _Element | None = None
+    art: _Element | None
+    subart: _Element | None
+    numarts: list[_Element]
+
+    def __init__(self):
+        self.art = None
+        self.subart = None
+        self.numarts = []
 
 
 class IntentTracker:
@@ -36,17 +45,20 @@ class IntentTracker:
 
     # Keeps track of inner targets, i.e. those that will end up being part of
     # actual legislation. Articles may be added to chapters, for instance.
-    inner_targets: InnerTargetGroup = InnerTargetGroup()
+    inner_targets: InnerTargetGroup
 
     # Keeps track of targets related to the intent.
     # Note the separate `inner_targets`.
-    targets: TargetGroup = TargetGroup()
+    targets: TargetGroup
 
     # The current string is checked so often that we store it here instead of
     # running `get_all_text` on the XML over and over again.
     current_text: str
 
     def __init__(self, original: _Element):
+        self.inner_targets = InnerTargetGroup()
+        self.targets = TargetGroup()
+
         self.original = original
         self.affected_law_nr = original.getparent().attrib["affected-law-nr"]
         self.affected_law_year = int(original.getparent().attrib["affected-law-year"])
@@ -75,4 +87,5 @@ class IntentTracker:
 
     def get_existing_from_address(self, address: str) -> tuple[_Element, str]:
         xpath = make_xpath_from_inner_reference(address)
-        return (self.get_existing(xpath), xpath)
+        existing = self.get_existing(xpath)
+        return (existing, xpath)

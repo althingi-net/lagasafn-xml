@@ -79,19 +79,6 @@ def make_xpath_from_inner_reference(inner_reference: str):
         """
         return some_list[0] if len(some_list) else ""
 
-    def real_number(input_number):
-        """
-        Takes a number that could be a Roman numeral or whatever else, and
-        returns the proper number to look up by.
-        """
-        number = input_number
-
-        # Convert from Roman numeral if appropriate.
-        if is_roman(number):
-            number = roman.fromRoman(number)
-
-        return number
-
     def make_range(start, end):
         """
         Takes two `nr` attribute values, such as "a" and "h", and returns a
@@ -172,15 +159,33 @@ def make_xpath_from_inner_reference(inner_reference: str):
             if first_or_blank(words) in ["og", "eða", "og/eða"]:
                 words.pop(0)
                 ent_numbers.append(words.pop(0))
+        elif is_roman(word):
+            # We have run into a Roman numeral in a strange location. It is
+            # probably a temporary clause.
+
+            # FIXME: This seems kind of clumsy. Maybe we should rethink the
+            # reversing of the word list. It makes things weirder, not simpler.
+            predicted = ("%s %s %s" % (words[2], words[1], words[0])).lower()
+            if predicted == "ákvæði til bráðabirgða":
+                words.pop(0)
+                words.pop(0)
+                words.pop(0)
+                ent_type = "art"
+                ent_numbers.append(word)
+            else:
+                raise ReferenceParsingException(
+                    "Don't know what to do with Roman numeral: %s" % word
+                )
+
         else:
             # Oh no! We don't know what to do!
-            raise ReferenceParsingException(word)
+            raise ReferenceParsingException("Don't know how to parse word: %s" % word)
 
         # The alpha component should be irrelevant at this point.
         del alpha_component
 
         # Assuming something came of this...
-        if len(ent_type):
+        if len(ent_type) > 0:
             # ... construct the XPath bit and add it to the result!
 
             # Process numbers.
@@ -215,11 +220,34 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
                     xpath_number = "(%s)" % " or ".join(parts)
                 else:
-                    xpath_number = "@nr='%s'" % real_number(ent_number)
+                    # FIXME: This checking for a chapter reflects a mistake in
+                    # the current XML format (2025-03-27) which needs to be
+                    # addressed at some point. Chapters and temporary clauses
+                    # (as articles) are typically denoted in Roman numerals.
+                    #
+                    # However, the `nr` attribute on `chapter` gets turned into
+                    # Arabic numerals during parsing and the Roman numeral
+                    # retains as `roman-nr`. This is the opposite to temporary
+                    # clauses which will have the Roman numeral in the `nr`
+                    # attribute, and the Arabic number in `roman-nr`.
+                    #
+                    # In the future, the XML format should be modified so that
+                    # `nr` always contains the number in the form that's the
+                    # most likely to be used when looking up the element. For
+                    # both chapters and temporary clauses, that means that they
+                    # should be Roman numerals, and the Arabic attribute should
+                    # be in `roman-nr`, or perhaps even a more generally named
+                    # attribute such as `real-nr`.
+                    #
+                    # Until that happens, we need to condition this thing by element type.
+                    if ent_type == "chapter" and is_roman(ent_number):
+                        ent_number = roman.fromRoman(ent_number)
+
+                    xpath_number = "@nr='%s'" % ent_number
 
                 xpath_numbers.append(xpath_number)
 
-            # add the next node selection to the xpath string.
+            # Add the next node selection to the xpath string.
             xpath += "//%s[%s]" % (
                 ent_type,
                 " or ".join(xpath_numbers),

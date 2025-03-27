@@ -16,6 +16,7 @@ import roman
 from copy import deepcopy
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
+from lagasafn.constructors import construct_numart
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
@@ -151,6 +152,14 @@ def parse_inner_art_numarts(tracker: IntentTracker):
     else:
         raise IntentParsingException("Unsupported numart nr-type (as of yet).")
 
+    # Determine target.
+    if len(tracker.inner_targets.numarts) > 0:
+        target = tracker.inner_targets.numarts[-1]
+    elif tracker.inner_targets.subart is not None:
+        target = tracker.inner_targets.subart
+    else:
+        raise IntentParsingException("Can't find target node for numart.")
+
     lis = tracker.lines.current.findall("li")
     for i, li in enumerate(lis):
         # Just to distinguish between a number that starts at 0 (the `for`
@@ -170,7 +179,7 @@ def parse_inner_art_numarts(tracker: IntentTracker):
 
         add_sentences(numart, separate_sentences(li.text))
 
-        tracker.inner_targets.subart.append(numart)
+        target.append(numart)
 
     return True
 
@@ -647,24 +656,12 @@ def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li:
         # is wrong, then it's a bug in how the `existing` node is found.
         action_node = existing.xpath("paragraph")[0]
         action_xpath = make_xpath_from_node(action_node)
+
+        base_numart = action_node.findall("numart")[-1]
     else:
         raise IntentParsingException("Don't know how to add a numart to tag: %s" % existing.tag)
 
-    # We copy the last `numart` and remove all its children, so that we retain
-    # all the attribute information, whatever it may be.
-    numart = deepcopy(action_node.findall("numart")[-1])
-    for child in numart.getchildren():
-        numart.remove(child)
-
-    # We then increase its `nr`.
-    # NOTE: Only simple increases are supported for now. This is where you
-    # should add support for Roman numerals if needed later.
-    numart.attrib["nr"] = str(int(numart.attrib["nr"]) + 1)
-
-    # Add the known content.
-    numart.append(E("nr-title", "%s." % numart.attrib["nr"]))
-    sens = separate_sentences(text_to)
-    add_sentences(numart, sens)
+    numart = construct_numart(text_to, base_numart=base_numart)
 
     tracker.intents.append(E(
         "intent",
@@ -903,6 +900,71 @@ def parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     parse_inner_art(tracker, {"nr_title": nr_title })
 
     tracker.targets.inner = None
+
+    return True
+
+
+def parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á eftir (.+) laganna kemur nýr töluliður, svohljóðandi: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    address, text_to = match.groups()
+    existing, xpath = tracker.get_existing_from_address(address)
+
+    if existing.tag == "numart":
+        action_node = existing
+        action_xpath = make_xpath_from_node(action_node)
+
+        base_numart = action_node
+    else:
+        raise IntentParsingException("Don't know how to add numart to tag: %s" % existing.tag)
+
+    name = ""
+    if (em := tracker.lines.current.find("em")) is not None:
+        name = em.text
+        text_to = em.tail.strip()
+
+    numart = construct_numart(text_to, name, base_numart)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "append",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        E("inner", numart),
+    ))
+
+    return True
+
+
+def parse_vid_x_laganna_baetist(tracker: IntentTracker):
+    match = re.match(r"Við (.+) laganna bætist: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    address, text_to = match.groups()
+    existing, xpath = tracker.get_existing_from_address(address)
+
+    if existing.tag == "sen":
+        action_node = existing
+        action_xpath = make_xpath_from_node(action_node)
+    else:
+        raise IntentParsingException("Don't know how to add sentence to tag: %s" % existing.tag)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "add_text",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        E("text-to", text_to),
+    ))
 
     return True
 
@@ -1155,6 +1217,32 @@ def parse_vid_login_baetast_tvö_ny_akvaedi_til_bradabirgda_svohljodandi(tracker
     return True
 
 
+def parse_akvaedi_til_bradabirgda_x_i_logunum_fellur_brott(tracker: IntentTracker):
+    match = re.match(r"(Ákvæði til bráðabirgða ([A-Z]+)) í lögunum fellur brott.", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[0]
+    existing, xpath = tracker.get_existing_from_address(address)
+
+    if existing.tag == "art":
+        action_node = existing
+        action_xpath = make_xpath_from_node(action_node)
+    else:
+        raise IntentParsingException("Don't know how to delete temporary clause with tag: %s" % existing.tag)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "delete",
+            "action-xpath": action_xpath
+        },
+        E("existing", existing),
+    ))
+
+    return True
+
+
 def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker):
     match = re.match(r"Á eftir (.+) laganna kemur nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
@@ -1315,11 +1403,17 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
         pass
     elif parse_vid_login_baetast_tvö_ny_akvaedi_til_bradabirgda_svohljodandi(tracker):
         pass
+    elif parse_akvaedi_til_bradabirgda_x_i_logunum_fellur_brott(tracker):
+        pass
     elif parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker):
         pass
     elif parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker):
+        pass
+    elif parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker):
+        pass
+    elif parse_vid_x_laganna_baetist(tracker):
         pass
     elif parse_vid_login_baetist_ny_grein_svohljodandi(tracker):
         pass
