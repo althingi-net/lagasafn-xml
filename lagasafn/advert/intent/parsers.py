@@ -762,12 +762,8 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     tracker.intents.attrib["common-address"] = address
 
     next(tracker.lines)
-    remaining = tracker.lines.remaining()
 
-    if len(remaining) != 1:
-        raise IntentParsingException("Don't know what to do with more than one numart.")
-
-    ol = remaining[0]
+    ol = tracker.lines.current
     if ol.tag != "ol":
         raise IntentParsingException("Unexpected tag for numart.")
 

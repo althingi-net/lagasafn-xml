@@ -743,9 +743,6 @@ class super_iter:
             return None
         return self.collection[self.index]
 
-    def remaining(self) -> list:
-        return self.collection[self.index:]
-
     # Peek into the next item of the iterator without advancing it. Works with
     # negative numbers to take a peek at previous items.
     def peek(self, number_of_places=1):
