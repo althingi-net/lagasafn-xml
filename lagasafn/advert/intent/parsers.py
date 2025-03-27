@@ -152,13 +152,23 @@ def parse_inner_art_numarts(tracker: IntentTracker):
     else:
         raise IntentParsingException("Unsupported numart nr-type (as of yet).")
 
-    # Determine target.
+    # Determine pre-target.
     if len(tracker.inner_targets.numarts) > 0:
-        target = tracker.inner_targets.numarts[-1]
+        pre_target = tracker.inner_targets.numarts[-1]
     elif tracker.inner_targets.subart is not None:
-        target = tracker.inner_targets.subart
+        pre_target = tracker.inner_targets.subart
     else:
-        raise IntentParsingException("Can't find target node for numart.")
+        raise IntentParsingException("Can't find pre-target node for numart.")
+
+    # We expect exactly one paragraph inside the pre-target for `numart`s.
+    # This expectation may very well be wrong, in which case an error is thrown
+    # here so that future developers can react appropriately.
+    paragraphs = pre_target.findall("paragraph")
+    if len(paragraphs) > 1:
+        raise IntentParsingException(
+            "Don't know how to deal with adding a numart to tag with non-singular paragraphs: %s" % pre_target.tag
+        )
+    target = paragraphs[0]
 
     lis = tracker.lines.current.findall("li")
     for i, li in enumerate(lis):
@@ -175,9 +185,26 @@ def parse_inner_art_numarts(tracker: IntentTracker):
         else:
             nr = str(seq)
 
-        numart = E("numart", { "nr": nr, "nr-type": nr_type })
+        nr_title = "%s." % nr
 
-        add_sentences(numart, separate_sentences(li.text))
+        name = ""
+        text = li.text.strip()
+        if len(text) == 0 and (em := li.find("em")) is not None:
+            name = em.text
+            text = em.tail.strip()
+
+        numart = E(
+            "numart",
+            {
+                "nr": nr,
+                "nr-type": nr_type
+            },
+            E("nr-title", nr_title),
+        )
+        if len(name) > 0:
+            numart.append(E("name", name))
+
+        add_sentences(numart, separate_sentences(text))
 
         target.append(numart)
 
@@ -921,7 +948,17 @@ def parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTrac
         name = em.text
         text_to = em.tail.strip()
 
-    numart = construct_numart(text_to, name, base_numart)
+    tracker.inner_targets.numarts.append(
+        construct_numart(text_to, name, base_numart)
+    )
+
+    next(tracker.lines)
+
+    # This will either happen once or not at all, judging from "nýr töluliður"
+    # being in the singular above.
+    # Occurs in:
+    # - 1. gr. laga nr. 48/2024
+    parse_inner_art_numarts(tracker)
 
     tracker.intents.append(E(
         "intent",
@@ -931,8 +968,10 @@ def parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTrac
         },
         E("address", {"xpath": xpath }, address),
         E("existing", existing),
-        E("inner", numart),
+        E("inner", tracker.inner_targets.numarts[-1]),
     ))
+
+    tracker.inner_targets.numarts.pop()
 
     return True
 
