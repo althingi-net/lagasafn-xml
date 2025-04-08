@@ -1406,7 +1406,7 @@ def parse_enactment_timing(tracker: IntentTracker):
         "intent",
         {
             "action": "enact",
-            "action-path": action_xpath,
+            "action-xpath": action_xpath,
             "action-timing": timing,
         },
     )
