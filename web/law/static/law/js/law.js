@@ -222,6 +222,32 @@ var process_footnote = function() {
 
     $locations = $footnotes.find('footnote > location, > location');
 
+    // Deletions should be processed first, because they can mess up `range`s
+    // that have already been processed, but not vice versa.
+    $locations.sort(function(a, b) {
+        if ($(a).attr('type') == 'deletion' && $(b).attr('type') != 'deletion') {
+            return -1;
+        }
+        return 0;
+    });
+
+    // When using `words` to denote ranges, we want to deal with the longest
+    // ones first, to prevent a certain kind of clash.
+    // This occurs in:
+    // - 3. tölul. ákvæðis til bráðabirgða laga nr. 100/2007 (155).
+    //   "1. janúar [2025 til og með 31. ágúst 2025] 1)"
+    //   "[1. janúar 2025 til og með 31. ágúst 2025] 1)"
+    $locations.sort(function(a, b) {
+        var words_a = $(a).attr('words');
+        var words_b = $(b).attr('words');
+
+        if (words_a == undefined || words_b == undefined) {
+            return 0;
+        }
+
+        return words_b.length - words_a.length;
+    });
+
     // When placing closing markers, the order may matter. The basic rule is
     // that the longer the string in the changed text, as it appears between
     // the opening and closing markers, the later is should be processed.
@@ -325,13 +351,14 @@ var process_footnote = function() {
                 // "words" attribute in the end location.
 
                 var seek_text_start_regex_string = attr_or_emptystring($start_mark.location_node, 'words');
+                let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
 
-                var seek_text_start_regex = new RegExp(seek_text_start_regex_string)
+                var seek_text_start_regex = new RegExp(seek_text_start_regex_string, 'g')
                 var start_mark_content = $start_mark.html();
                 var start_match = start_mark_content.match(seek_text_start_regex);
                 var seek_text_start = "";
                 if (start_match != null && start_match.length > 0) {
-                    seek_text_start = start_match[0];
+                    seek_text_start = start_match[start_instance_num - 1];
                 }
 
                 var replace_text_start = '[' + seek_text_start;
@@ -346,27 +373,13 @@ var process_footnote = function() {
                     }
                 }
 
-                // If the XML indicates that this is a change that happens
-                // repeatedly in the text, then we need to replace all instances
-                // of the words.
-                if ($start_mark.location_node.attr('repeat') == 'true') {
-                    $start_mark.html(replaceAll(
+                if ($start_mark.html() !== undefined) {
+                    $start_mark.html(instanceReplace(
                         $start_mark.html(),
                         seek_text_start,
-                        replace_text_start
+                        replace_text_start,
+                        start_instance_num
                     ));
-                }
-                else {
-                    let start_instance_num = parseInt($start_mark.location_node.attr("instance-num"));
-
-                    if ($start_mark.html() !== undefined) {
-                        $start_mark.html(instanceReplace(
-                            $start_mark.html(),
-                            seek_text_start,
-                            replace_text_start,
-                            start_instance_num
-                        ));
-                    }
                 }
 
                 // On occasion, the adding of an extra space above can result
@@ -409,21 +422,17 @@ var process_footnote = function() {
                 // "words" attribute in the end location.
 
                 var seek_text_end_regex_string = attr_or_emptystring($end_mark.location_node, 'words');
+                let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
+
                 var replace_text_end = null;
 
-                // NOTE: The 'g' flag (global) flag in the regex is because
-                // under certain circumstances we'll match an empty string
-                // first, but the correct string second. We simply test for
-                // this and react accordingly.
-                // WARNING: This may be overly fragile toward `words`
-                // definitions in the XML, but may also just be more resilient.
-                // Remove this warning if 2024-11-17 was a very long time ago.
                 var end_match = $end_mark.html().match(new RegExp(seek_text_end_regex_string, 'g'));
                 var seek_text_end = "";
                 if (end_match != null && end_match.length > 0) {
-                    seek_text_end = end_match[0];
-                    if (seek_text_end == "" && end_match[1] !== undefined) {
-                        seek_text_end = end_match[1];
+                    let iterator = end_instance_num - 1;
+                    while (seek_text_end == "") {
+                        seek_text_end = end_match[iterator];
+                        iterator += 1;
                     }
                 }
 
@@ -452,27 +461,13 @@ var process_footnote = function() {
                     replace_text_end += '<sup>' + footnote_nr + ')</sup>';
                 }
 
-                // If the XML indicates that this is a change that happens
-                // repeatedly in the text, then we need to replace all instances
-                // of the words.
-                if ($end_mark.location_node.attr('repeat') == 'true') {
-                    $end_mark.html(replaceAll(
+                if ($end_mark.html() !== undefined) {
+                    $end_mark.html(instanceReplace(
                         $end_mark.html(),
                         seek_text_end,
-                        replace_text_end
+                        replace_text_end,
+                        end_instance_num
                     ));
-                }
-                else {
-                    let end_instance_num = parseInt($end_mark.location_node.attr("instance-num"));
-
-                    if ($end_mark.html() !== undefined) {
-                        $end_mark.html(instanceReplace(
-                            $end_mark.html(),
-                            seek_text_end,
-                            replace_text_end,
-                            end_instance_num
-                        ));
-                    }
                 }
 
                 // When a change is marked immediately before certain symbols such
