@@ -53,7 +53,14 @@ class IntentTracker:
 
     # The current string is checked so often that we store it here instead of
     # running `get_all_text` on the XML over and over again.
-    current_text: str
+    cached_current_index: int
+    cached_current_text: str
+    @property
+    def current_text(self) -> str:
+        if self.cached_current_index != self.lines.index:
+            self.cached_current_index = self.lines.index
+            self.cached_current_text = get_all_text(self.lines.current)
+        return self.cached_current_text
 
     def __init__(self, original: _Element):
         self.inner_targets = InnerTargetGroup()
@@ -68,7 +75,9 @@ class IntentTracker:
 
         # We load the first line and get ready to rumble.
         next(self.lines)
-        self.current_text = get_all_text(self.lines.current)
+
+        # Configure cache for "current" text.
+        self.cached_current_index = -1
 
     def affected_law_identifier(self) -> str:
         return "%s/%d" % (self.affected_law_nr, self.affected_law_year)
