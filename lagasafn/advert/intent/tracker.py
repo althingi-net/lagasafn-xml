@@ -20,11 +20,13 @@ class InnerTargetGroup():
     art: _Element | None
     subart: _Element | None
     numarts: list[_Element]
+    table: _Element | None
 
     def __init__(self):
         self.art = None
         self.subart = None
         self.numarts = []
+        self.table = None
 
 
 class IntentTracker:

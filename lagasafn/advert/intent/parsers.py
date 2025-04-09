@@ -14,6 +14,7 @@ import json
 import re
 import roman
 from copy import deepcopy
+from datetime import datetime
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
 from lagasafn.constructors import construct_numart
@@ -23,6 +24,7 @@ from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
 from lagasafn.pathing import make_xpath_from_node
+from lagasafn.utils import determine_month
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import get_all_text
 from lagasafn.utils import write_xml
@@ -121,6 +123,37 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
     tracker.targets.inner = None
 
     return True
+
+
+def parse_inner_table(tracker: IntentTracker):
+    if tracker.lines.current.tag != "table":
+        return False
+
+    table = E("table")
+
+    tbody = E("tbody")
+    table.append(tbody)
+
+    for in_tr in tracker.lines.current.xpath("tbody/tr"):
+
+        tr = E("tr")
+        tbody.append(tr)
+
+        for in_td in in_tr.findall("td"):
+            td = E("td")
+            tr.append(td)
+
+            in_em = in_td.find("em")
+            if in_em is not None:
+                # FIXME: Missing support for `table-nr-title`.
+                td.attrib["header-style"] = "i"
+                td.append(E("table-title", in_em.text))
+            else:
+                add_sentences(td, separate_sentences(in_td.text))
+
+    tracker.targets.inner.append(table)
+
+    return False
 
 
 def parse_inner_art_name(tracker: IntentTracker):
@@ -389,9 +422,50 @@ def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTrack
     return True
 
 
-def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker):
-    # TODO: Excellent candidate for merging with:
+def parse_vid_x_laganna_baetast_thrjar_nyjar_malsgreinar_svohljodandi(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
     #     parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi
+    #     parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi
+    match = re.match(r"Við (.+) laganna bætast þrjár nýjar málsgreinar, svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[0]
+    existing, xpath = tracker.get_existing_from_address(address)
+
+    if existing.tag == "art":
+        action_node = existing
+        action_xpath = make_xpath_from_node(action_node)
+    else:
+        raise IntentParsingException("Don't know how to append subart to tag: %s" % existing.tag)
+
+    tracker.targets.inner = E("inner")
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "add",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        tracker.targets.inner,
+    ))
+
+    nr = len(existing.findall("subart"))
+    for line in tracker.lines:
+        nr += 1
+        parse_inner_art_subart(tracker, {"nr": nr })
+
+    tracker.targets.inner = None
+
+    return True
+
+
+def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi
+    #     parse_vid_x_laganna_baetast_thrjar_nyjar_malsgreinar_svohljodandi
     match = re.match(r"Við (.+) laganna bætist ný málsgrein, svohljóðandi:", tracker.current_text)
     if match is None:
         return False
@@ -424,6 +498,55 @@ def parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker
         parse_inner_art_subart(tracker, {"nr": nr })
 
     tracker.targets.inner = None
+
+    return True
+
+def parse_sub_i_stad_ordanna_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Í stað orðsins „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "replace_text",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        E("text-from", text_from),
+        E("text-to", text_to),
+    ))
+
+    return True
+
+
+def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Á eftir orðinu „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "append_text",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        E("text-from", text_from),
+        E("text-to", text_to),
+    ))
 
     return True
 
@@ -779,6 +902,75 @@ def parse_sub_x_ordast_svo(tracker: IntentTracker, li: _Element):
     return True
 
 
+def parse_sub_tafla_i_x_ordast_svo(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_tafla_i_x_laganna_ordast_svo
+    match = re.match(r"([a-z])\. (Tafla í (.+)) orðast svo:", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[1]
+    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    tracker.targets.inner = E("inner")
+
+    next(tracker.lines)
+
+    parse_inner_table(tracker)
+
+    intent = E(
+        "intent",
+        {
+            "action": "replace",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        tracker.targets.inner,
+    )
+    tracker.intents.append(intent)
+
+    tracker.targets.inner = None
+
+    return True
+
+
+def parse_tafla_i_x_laganna_ordast_svo(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_sub_tafla_i_x_ordast_svo
+    match = re.match(r"(Tafla í (.+)) laganna orðast svo:", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[0]
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    next(tracker.lines)
+
+    tracker.targets.inner = E("inner")
+
+    parse_inner_table(tracker)
+
+    intent = E(
+        "intent",
+        {
+            "action": "replace",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath }, address),
+        E("existing", existing),
+        E("inner", tracker.targets.inner),
+    )
+    tracker.intents.append(intent)
+
+    tracker.targets.inner = None
+
+    return True
+
+
 def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     # NOTE: That questionable space at the end happens occurs in advert 45/2024.
     match = re.match(r"Eftirfarandi breytingar verða á (.+) laganna ?:", tracker.current_text)
@@ -788,35 +980,46 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     address = match.groups()[0]
     tracker.intents.attrib["common-address"] = address
 
-    next(tracker.lines)
+    # Because we need to iterate by different means, depending on the nature of
+    # the content, we need to check the next item, rather than the current one,
+    # to determine how to iterate.
+    if tracker.lines.peek().tag == "ol":
+        next(tracker.lines)
+        for li in tracker.lines.current.findall("li"):
 
-    ol = tracker.lines.current
-    if ol.tag != "ol":
-        raise IntentParsingException("Unexpected tag for numart.")
+            if parse_sub_i_stad_ordanna_x_i_x_kemur(tracker, li):
+                pass
+            elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker, li):
+                pass
+            elif parse_sub_vid_x_baetist(tracker, li):
+                pass
+            elif parse_sub_x_falla_brott(tracker, li):
+                pass
+            elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
+                pass
+            elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
+                pass
+            elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
+                pass
+            elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
+                pass
+            elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
+                pass
+            elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
+                pass
+            elif parse_sub_x_ordast_svo(tracker, li):
+                pass
+            else:
+                raise IntentParsingException("Can't figure out list text: %s" % get_all_text(li))
 
-    for li in ol.findall("li"):
-        li_text = get_all_text(li)
+    elif tracker.lines.peek().tag == "p":
+        for _ in tracker.lines:
+            if parse_sub_tafla_i_x_ordast_svo(tracker):
+                continue
 
-        if parse_sub_vid_x_baetist(tracker, li):
-            pass
-        elif parse_sub_x_falla_brott(tracker, li):
-            pass
-        elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
-            pass
-        elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
-            pass
-        elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
-            pass
-        elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
-            pass
-        elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
-            pass
-        elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
-            pass
-        elif parse_sub_x_ordast_svo(tracker, li):
-            pass
-        else:
-            raise IntentParsingException("Can't figure out list text: %s" % li_text)
+            raise IntentParsingException("Don't know how to parse p-element: %s" % get_all_text(tracker.lines.peek()))
+    else:
+        raise IntentParsingException("Unexpected tag for sub-change: %s" % tracker.lines.peek().tag)
 
     return True
 
@@ -998,6 +1201,58 @@ def parse_vid_x_laganna_baetist(tracker: IntentTracker):
         },
         E("address", {"xpath": xpath }, address),
         E("existing", existing),
+        E("text-to", text_to),
+    ))
+
+    return True
+
+
+def parse_i_stad_ordanna_x_i_x_laganna_kemur(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur
+    match = re.match(r"Í stað orðanna „(.+)“ í (.+) laganna kemur: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "replace_text",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath}, address),
+        E("existing", existing),
+        E("text-from", text_from),
+        E("text-to", text_to),
+    ))
+
+    return True
+
+
+def parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_i_stad_ordanna_x_i_x_laganna_kemur
+    match = re.match(r"Í stað fjárhæðarinnar „(.+)“ í (.+) laganna kemur: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+    existing, xpath = tracker.get_existing_from_address(address)
+    action_xpath = make_xpath_from_node(existing)
+
+    tracker.intents.append(E(
+        "intent",
+        {
+            "action": "replace_text",
+            "action-xpath": action_xpath,
+        },
+        E("address", {"xpath": xpath}, address),
+        E("existing", existing),
+        E("text-from", text_from),
         E("text-to", text_to),
     ))
 
@@ -1374,7 +1629,43 @@ def parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker: IntentTracke
     return True
 
 
-def parse_enactment_timing(tracker: IntentTracker):
+def parse_log_thessi_taka_gildi_d_m_y___(tracker: IntentTracker):
+    match = re.match(r"Lög þessi taka gildi (\d{1,2})\. ([a-zúíáó]{1,9}) (\d{4})( .*)?", tracker.current_text)
+    if match is None:
+        return False
+
+    # Crunch the raw data into usable variables.
+    raw_day, raw_month, raw_year, raw_extra = match.groups()
+    day = int(raw_day)
+    month = determine_month(raw_month)
+    year = int(raw_year)
+    extra = "" if raw_extra is None else raw_extra.strip()
+
+    # Construct the actual datetime, for the sake of being able to.
+    timing = datetime(year, month, day)
+
+    # See comment to similar portion in function:
+    #     parse_log_thessi_odlast_thegar_gildi___
+    existing = tracker.get_existing("/law")
+    action_xpath = make_xpath_from_node(existing)  # Currently always "".
+
+    intent = E(
+        "intent",
+        {
+            "action": "enact",
+            "action-xpath": action_xpath,
+            "action-timing": timing.strftime("%Y-%m-%d"),
+        },
+    )
+    if extra:
+        intent.attrib["action-extra"] = extra
+
+    tracker.intents.append(intent)
+
+    return True
+
+
+def parse_log_thessi_odlast_thegar_gildi___(tracker: IntentTracker):
     # In this case, we'll be working with the text itself and no sub-content.
     text = tracker.current_text
     if not text.startswith("Lög þessi öðlast þegar gildi"):
@@ -1424,7 +1715,9 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
 
     current_text = tracker.current_text
 
-    if parse_x_laganna_ordast_svo(tracker):
+    if parse_tafla_i_x_laganna_ordast_svo(tracker):
+        pass
+    elif parse_x_laganna_ordast_svo(tracker):
         pass
     elif parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker):
         pass
@@ -1450,15 +1743,23 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
         pass
     elif parse_vid_x_laganna_baetist(tracker):
         pass
+    elif parse_i_stad_ordanna_x_i_x_laganna_kemur(tracker):
+        pass
+    elif parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur(tracker):
+        pass
     elif parse_vid_login_baetist_ny_grein_svohljodandi(tracker):
         pass
     elif parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker):
+        pass
+    elif parse_vid_x_laganna_baetast_thrjar_nyjar_malsgreinar_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist_ny_malsgrein_svohljodandi(tracker):
         pass
     elif parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker):
         pass
-    elif parse_enactment_timing(tracker):
+    elif parse_log_thessi_odlast_thegar_gildi___(tracker):
+        pass
+    elif parse_log_thessi_taka_gildi_d_m_y___(tracker):
         pass
     else:
         raise IntentParsingException("Can't figure out: %s" % current_text)

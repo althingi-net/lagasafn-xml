@@ -176,7 +176,12 @@ def make_xpath_from_inner_reference(inner_reference: str):
                 raise ReferenceParsingException(
                     "Don't know what to do with Roman numeral: %s" % word
                 )
-
+        elif word == "í":
+            word = words.pop(0)
+            if word.lower() == "tafla":
+                ent_type = "table"
+            else:
+                raise ReferenceParsingException("Don't know how to parse further: %s" % word)
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException("Don't know how to parse word: %s" % word)
@@ -248,10 +253,9 @@ def make_xpath_from_inner_reference(inner_reference: str):
                 xpath_numbers.append(xpath_number)
 
             # Add the next node selection to the xpath string.
-            xpath += "//%s[%s]" % (
-                ent_type,
-                " or ".join(xpath_numbers),
-            )
+            xpath += "//%s" % ent_type
+            if len(xpath_numbers) > 0:
+                xpath += "[%s]" % " or ".join(xpath_numbers)
 
     return xpath
 
