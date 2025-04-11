@@ -1,5 +1,6 @@
 from lagasafn.models.law import Law
 from lagasafn.pathing import make_xpath_from_inner_reference
+from lagasafn.pathing import make_xpath_from_node
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
@@ -92,11 +93,44 @@ class IntentTracker:
         return self.original.getroottree().getroot().attrib["applied-to-codex-version"]
 
     def get_existing(self, xpath: str) -> _Element:
+        # FIXME: Scheduled for deprecation in favor of `make_intent`.
         law = Law(self.affected_law_identifier(), self.get_codex_version())
-        target = law.xml().xpath(xpath)[0]
-        return target
+        nodes = law.xml().xpath(xpath)
+        if len(nodes) != 1:
+            raise Exception("This method only supports results with a singular node. Update code to use `make_intent`.")
+        return nodes[0]
 
     def get_existing_from_address(self, address: str) -> tuple[_Element, str]:
+        # FIXME: Scheduled for deprecation in favor of `make_intent`.
         xpath = make_xpath_from_inner_reference(address)
         existing = self.get_existing(xpath)
         return (existing, xpath)
+
+    def make_intent(self, action: str, address: str) -> _Element:
+        law = Law(self.affected_law_identifier(), self.get_codex_version())
+
+        # Check if there is a common address of which this address is actually
+        # a sub-address. This occurs when dealing with multiple intents in the
+        # same article, for example.
+        if "common-address" in self.intents.attrib:
+            address = "%s %s" % (address, self.intents.attrib["common-address"])
+
+        xpath = make_xpath_from_inner_reference(address)
+
+        existing = law.xml().xpath(xpath)
+
+        action_xpath = " | ".join(
+            [make_xpath_from_node(n) for n in existing]
+        )
+
+        intent = E(
+            "intent",
+            {
+                "action": action,
+                "action-xpath": action_xpath,
+            },
+            E("address", {"xpath": xpath }, address),
+            E("existing", *existing),
+        )
+
+        return intent

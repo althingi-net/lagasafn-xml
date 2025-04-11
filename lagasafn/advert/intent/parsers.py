@@ -585,19 +585,8 @@ def parse_sub_x_falla_brott(tracker: IntentTracker, li: _Element):
         return False
 
     address = match.groups()[0]
-    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
 
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "delete",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-    ))
+    tracker.intents.append(tracker.make_intent("delete", address))
 
     return True
 
