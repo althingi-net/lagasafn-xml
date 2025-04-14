@@ -4,6 +4,8 @@ from os.path import join
 
 # TODO: Make constants file less of a jungle.
 
+ICELANDIC_DATE_REGEX = r"(\d{1,2})\. ([a-zúíáó]{1,9}) (\d{4})"
+
 JSON_MAP_BASE_DIR = join(DATA_DIR, "json-maps")
 PATCHES_BASE_DIR = join(DATA_DIR, "patches")
 XML_BASE_DIR = join(DATA_DIR, "xml")

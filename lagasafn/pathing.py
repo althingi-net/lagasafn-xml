@@ -122,7 +122,27 @@ def make_xpath_from_inner_reference(inner_reference: str):
         "kafla": "chapter",
     }
 
+    # Consider a complicated address like this:
+    # - 3. málsl. 2. mgr. og 2. málsl. 5. mgr. 156. gr.
+    #
+    # It refers to elements that are quite separate from each other. It really
+    # refers to two separate addresses:
+    # - 3. málsl. 2. mgr. 156. gr.
+    # - 2. málsl. 5. mgr. 156. gr.
+    #
+    # For this branching to occur, the `branch_at_tag` variable is filled in
+    # the loop below when encountering this scenario. The tag at which the
+    # branching should occur (in the above case, "mgr." or `subart` is placed
+    # in this variable, and then caught at the beginning of the next iteration
+    # of the loop.
+    branch_at_tag = ""
+
     while len(words):
+
+        if len(branch_at_tag) > 0:
+            new_branch = xpath[:xpath.rfind("//" + branch_at_tag)].rstrip("/")
+            xpath += " | " + new_branch
+            branch_at_tag = ""
 
         # Initialize.
         ent_type = ""
@@ -158,10 +178,30 @@ def make_xpath_from_inner_reference(inner_reference: str):
             # them, so they are all in effect "or", for our purposes.
             if first_or_blank(words) in ["og", "eða", "og/eða"]:
                 words.pop(0)
-                ent_numbers.append(words.pop(0))
+
+                # See comment to where `branch_at_tag` is initialized.
+                peek = first_or_blank(words)
+                if peek in translations:
+                    branch_at_tag = translations[peek]
+
+                else:
+                    # Add the word that came after "og", "eða", etc.
+                    ent_numbers.append(words.pop(0))
+
+                    # Support for things like "8., 9. og 10. málsl."
+                    while first_or_blank(words).endswith(","):
+                        ent_numbers.append(words.pop(0).strip(","))
+
+                del peek
+
         elif is_roman(word):
             # We have run into a Roman numeral in a strange location. It is
             # probably a temporary clause.
+
+            if len(words) == 0:
+                # This happens when given the `inner_reference`:
+                # "XXII. kafla, 211. eða 218. gr."
+                raise ReferenceParsingException("Unimplemented reference style.")
 
             # FIXME: This seems kind of clumsy. Maybe we should rethink the
             # reversing of the word list. It makes things weirder, not simpler.
@@ -180,6 +220,10 @@ def make_xpath_from_inner_reference(inner_reference: str):
             word = words.pop(0)
             if word.lower() == "tafla":
                 ent_type = "table"
+            elif word.endswith("“"):
+                # The rest is a string inside the content of what's being
+                # referenced, so we know that we're done at this point.
+                break
             else:
                 raise ReferenceParsingException("Don't know how to parse further: %s" % word)
         else:
@@ -202,8 +246,9 @@ def make_xpath_from_inner_reference(inner_reference: str):
                     # We need to select a range of nodes here.
                     # This is a bit convoluted due to limitations in XPath 1.0,
                     # which we are currently stuck with. Instead we'll have to
-                    # figure out what could possibly come between the first and
-                    # second numbers we get, and then look for them all.
+                    # figure out all the possibilities that could come between
+                    # the first and second numbers we get, and then look for
+                    # them all.
                     #
                     # There are at least two other ways of doing this that
                     # we've decided against.
@@ -216,12 +261,53 @@ def make_xpath_from_inner_reference(inner_reference: str):
                     #
                     # 2. Have this mechanism look into the XML files for
                     # direction. We wish to avoid this in order to keep this
-                    # functionality decoupled from the actual data.
-                    letters = make_range(first, second)
+                    # functionality decoupled from the actual data. It will
+                    # also be much, much slower, and require information about
+                    # the specific law to which the inner reference belongs.
+                    #
+                    # Here's a fun problem, though. When an article gets placed
+                    # between two existing ones, its number is usually appended
+                    # with a character. For example, if we have articles `27`
+                    # and `28`, and a new one is added between them, it will
+                    # have the `nr` attribute `27a` (and `nr-title` tag of
+                    # "27. gr. a").
+                    #
+                    # An example of this problem can be seen in the 155 version
+                    # of lög nr. 50/1993:
+                    #
+                    #     http http://localhost:8000/api/law/parse-reference/?reference="27-29. gr. laga nr. 50/1993"
+                    #
+                    # There are not only articles with the `nr` attributes of
+                    # `27`, `28` and `29`, but actually `27`, `27a`, `28` and
+                    # `29`. To select for those, we not only select for the
+                    # `nr` attribute by the value, but also check for anything
+                    # that fulfills these conditions:
+                    #
+                    # 1. Starts with the value (i.e. "27" in the case above).
+                    #
+                    # 2. Has the string length plus one, i.e.: `len(str(27)) + 1`.
+                    #
+                    # 3. Is not a number.
+                    #
+                    # This should only be true in cases where something
+                    # non-numeric has been added to a `nr` attribute that is
+                    # otherwise numberic. It's not pretty, but it works, and
+                    # it's compatible with XPath 1.0.
+                    its = make_range(first, second)
 
                     parts = []
-                    for letter in letters:
-                        parts.append("@nr='%s'" % letter)
+                    for it in its:
+                        parts.append("@nr='%s'" % it)
+
+                        # Check for things like "27a" as described above.
+                        if type(it) is int:
+                            sub_it_length = len(str(it)) + 1
+                            parts.append(
+                                "(starts-with(@nr, '%s') and string-length(@nr) = %d and string(number(@nr)) != @nr)" % (
+                                    it,
+                                    sub_it_length,
+                                )
+                            )
 
                     xpath_number = "(%s)" % " or ".join(parts)
                 else:

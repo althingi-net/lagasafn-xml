@@ -754,6 +754,9 @@ def parse_reference_string(reference):
     while not known_sep_found:
         if words[0] in known_seps:
             known_sep_found = True
+        elif re.match(r"^[a-z]$", words[0]) is not None:
+            # Account for things like "52. gr. a".
+            known_sep_found = True
         else:
             words.pop(0)
     del known_sep_found

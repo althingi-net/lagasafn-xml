@@ -113,15 +113,38 @@ class IntentTracker:
         # a sub-address. This occurs when dealing with multiple intents in the
         # same article, for example.
         if "common-address" in self.intents.attrib:
-            address = "%s %s" % (address, self.intents.attrib["common-address"])
+            if address == "":
+                # This may occur when a change is requested according to the
+                # `common-address`, among changes made to sub-items of it.
+                # Example:
+                # - a-liður 58. gr. laga nr. 53/2024 (155)
+                #   https://www.stjornartidindi.is/Advert.aspx?RecordID=53d9202f-a49b-434c-9ea3-52b65e22135f
+                address = self.intents.attrib["common-address"]
+            else:
+                address = "%s %s" % (address, self.intents.attrib["common-address"])
 
         xpath = make_xpath_from_inner_reference(address)
 
         existing = law.xml().xpath(xpath)
 
-        action_xpath = " | ".join(
-            [make_xpath_from_node(n) for n in existing]
-        )
+        if (
+            len(existing) == 1
+            # FIXME: This `action == "add"` condition here is bogus but
+            # retained because we need it to keep compatibility with changes in
+            # the short term (2025-04-11). Remove it, and adjust the XML so
+            # that it targets the last paragraph of `numart`s and `subart`s
+            # instead of targeting the entire `numart` or `subart`.
+            and action in ["add", "add_text"]
+            and existing[0].tag in ["numart", "subart"]
+        ):
+            # When adding to the specified tags, we always want to target the
+            # last `paragraph` inside them.
+            action_node = existing[0].xpath("paragraph")[-1]
+            action_xpath = make_xpath_from_node(action_node)
+        else:
+            action_xpath = " | ".join(
+                [make_xpath_from_node(n) for n in existing]
+            )
 
         intent = E(
             "intent",
