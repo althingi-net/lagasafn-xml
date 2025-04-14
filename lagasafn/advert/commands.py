@@ -1,7 +1,7 @@
 from lagasafn.constants import ADVERT_DIR
 from lagasafn.constants import ADVERT_INDEX_FILENAME
-from lagasafn.constants import ADVERT_REMOTES_DIR
-from lagasafn.constants import ADVERT_REMOTE_FILENAME
+from lagasafn.advert.filesystem import get_original_advert_identifiers
+from lagasafn.advert.filesystem import get_original_advert_xml
 from lagasafn.advert.parsers import parse_advert
 from lagasafn.exceptions import AdvertException
 from lagasafn.utils import write_xml
@@ -10,52 +10,40 @@ from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
 from os import path
-from typing import List
-import re
 
 
-def convert_adverts(advert_identifiers: List[str] = []):
+def convert_adverts(requested_identifiers: list[str] = []):
     """
     Converts all remote adverts into proper XML.
     """
 
-    filenames = []
-    if len(advert_identifiers) > 0:
-        for identifier in advert_identifiers:
-            try:
-                nr, year = identifier.split("/")
-                nr = int(nr)
-                year = int(year)
-            except ValueError:
-              raise AdvertException("Invalid advert identifier: %s" % identifier)
+    # Identifiers that will end up being converted.
+    identifiers = []
 
-            expected_filename = ADVERT_REMOTE_FILENAME % (year, nr)
+    # Identifiers for which there is original data.
+    original_identifiers = get_original_advert_identifiers()
 
-            if not path.isfile(expected_filename):
-                raise AdvertException("Advert %d/%d not found." % (nr, year))
+    if len(requested_identifiers) > 0:
+        # Check if all the requested adverts exist.
+        for requested_identifier in requested_identifiers:
+            if not requested_identifier in original_identifiers:
+                raise AdvertException("Advert %s not found." % requested_identifier)
 
-            filenames.append(path.basename(expected_filename))
+        identifiers = requested_identifiers
     else:
-        # Get all available filenames if nothing is specified.
-        filenames = [
-            f
-            for f in listdir(ADVERT_REMOTES_DIR)
-            if re.match(r"^\d{4}\.\d{1,3}\.remote\.xml$", f)
-        ]
+        identifiers = original_identifiers
 
     # An ordered list of "year"/"nr" combinations to process.
+    # We are basically doing this to sort this easily.
     convertibles = []
-
-    # Turn filenames into convertibles.
-    for filename in filenames:
-        parts = filename.split(".")
+    for identifier in identifiers:
+        nr, year = [int(part) for part in identifier.split("/")]
         convertibles.append(
             {
-                "year": int(parts[0]),
-                "nr": int(parts[1]),
+                "year": year,
+                "nr": nr,
             }
         )
-
     convertibles = sorted(convertibles, key=lambda c: (c["year"], c["nr"]))
 
     for convertible in convertibles:
@@ -69,9 +57,7 @@ def convert_advert(year, nr):
 
     print("Converting %d/%d..." % (nr, year), end="", flush=True)
 
-    xml_remote = etree.parse(
-        path.join(ADVERT_REMOTES_DIR, "%d.%d.remote.xml" % (year, nr))
-    ).getroot()
+    xml_remote = get_original_advert_xml(year, nr)
 
     advert_type = xml_remote.xpath("//tr[@class='advertType']/td/br")[0].tail.lower()
 
