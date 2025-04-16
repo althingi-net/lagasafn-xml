@@ -68,16 +68,19 @@ def make_xpath_from_inner_reference(inner_reference: str):
     # the way.
     inner_reference = inner_reference.replace(".", "")
 
-    # Turn the inner reference into a a reversed list that's easier to deal
-    # with word-by-word.
+    # Turn the inner reference into a list that's easier to deal. Note that
+    # we're processing it from the end because the order of things in a
+    # reference is the exact opposite of the order of an XPath.
+    # Example:
+    # - Reference: 5. mgr. 2. gr.
+    # - XPath:     //art[@nr='2']//subart[@nr='5']
     words = inner_reference.split(" ")
-    words.reverse()
 
-    def first_or_blank(some_list):
+    def last_or_blank(some_list):
         """
         Utility function so that we can do this inline.
         """
-        return some_list[0] if len(some_list) else ""
+        return some_list[-1] if len(some_list) else ""
 
     def make_range(start, end):
         """
@@ -148,7 +151,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
         ent_type = ""
         ent_numbers = []
 
-        word = words.pop(0)
+        word = words.pop()
 
         # Check for an alphabetic component to an address like "3. gr. a",
         # where the "a" is the alphabetic component.
@@ -157,7 +160,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
             # Catch it.
             alpha_component = word
             # And move forward. The alpha component will be used later.
-            word = words.pop(0)
+            word = words.pop()
 
         if word[-4:] == "-lið":
             ent_type = "*[self::numart or self::art-chapter]"
@@ -166,7 +169,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
             ent_type = translations[word]
 
             # Construct the number.
-            ent_number = words.pop(0)
+            ent_number = words.pop()
             if len(alpha_component) > 0:
                 # Add the alpha component if needed.
                 ent_number = ent_number + alpha_component
@@ -176,25 +179,25 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
             # All of these combinatory words result in us looking up all of
             # them, so they are all in effect "or", for our purposes.
-            if first_or_blank(words) in ["og", "eða", "og/eða"]:
-                words.pop(0)
+            if last_or_blank(words) in ["og", "eða", "og/eða"]:
+                words.pop()
 
                 # See comment to where `branch_at_tag` is initialized.
-                peek = first_or_blank(words)
+                peek = last_or_blank(words)
                 if peek in translations:
                     branch_at_tag = translations[peek]
 
                 else:
                     # Add the word that came after "og", "eða", etc.
-                    ent_numbers.append(words.pop(0))
+                    ent_numbers.append(words.pop())
 
                     # Support for things like "8., 9. og 10. málsl."
-                    while first_or_blank(words).endswith(","):
-                        ent_numbers.append(words.pop(0).strip(","))
+                    while last_or_blank(words).endswith(","):
+                        ent_numbers.append(words.pop().strip(","))
 
                 del peek
 
-        elif is_roman(word):
+        elif re.match(r"[IVXLCDM]+(-[IVXLCDM]+)?$", word):
             # We have run into a Roman numeral in a strange location. It is
             # probably a temporary clause.
 
@@ -203,21 +206,29 @@ def make_xpath_from_inner_reference(inner_reference: str):
                 # "XXII. kafla, 211. eða 218. gr."
                 raise ReferenceParsingException("Unimplemented reference style.")
 
-            # FIXME: This seems kind of clumsy. Maybe we should rethink the
-            # reversing of the word list. It makes things weirder, not simpler.
-            predicted = ("%s %s %s" % (words[2], words[1], words[0])).lower()
-            if predicted == "ákvæði til bráðabirgða":
-                words.pop(0)
-                words.pop(0)
-                words.pop(0)
-                ent_type = "art"
-                ent_numbers.append(word)
+            ent_type = "art"
+            ent_numbers.append(word)
+
+            if last_or_blank(words) in ["og", "eða", "og/eða"]:
+                words.pop()
+                ent_numbers.append(words.pop())
+
+                while last_or_blank(words).endswith(","):
+                    ent_numbers.append(words.pop().strip(","))
+
+            # We expect to run into this at some point if we know what we're
+            # dealing with.
+            if " ".join(words[-3:]).lower() == "ákvæði til bráðabirgða":
+                words.pop()
+                words.pop()
+                words.pop()
             else:
                 raise ReferenceParsingException(
                     "Don't know what to do with Roman numeral: %s" % word
                 )
+
         elif word == "í":
-            word = words.pop(0)
+            word = words.pop()
             if word.lower() == "tafla":
                 ent_type = "table"
             elif word.endswith("“"):
@@ -330,7 +341,8 @@ def make_xpath_from_inner_reference(inner_reference: str):
                     # be in `roman-nr`, or perhaps even a more generally named
                     # attribute such as `real-nr`.
                     #
-                    # Until that happens, we need to condition this thing by element type.
+                    # Until that happens, we need to condition this thing by
+                    # element type.
                     if ent_type == "chapter" and is_roman(ent_number):
                         ent_number = roman.fromRoman(ent_number)
 
