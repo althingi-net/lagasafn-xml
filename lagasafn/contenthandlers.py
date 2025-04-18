@@ -508,6 +508,11 @@ def separate_sentences(content):
             if len(next_chunk) > 1 and next_chunk[0] == " " and next_chunk[1].islower():
                 split = False
 
+            # Don't start a new sentences if the first character in the next
+            # chunk is a colon.
+            if len(next_chunk) > 0 and next_chunk[0] == ":":
+                split = False
+
             # Don't start a new sentence if the next chunk starts with a single
             # uppercase character, since that indicates that it's a part of a
             # reference to something. This is only allowed in very narrow cases
