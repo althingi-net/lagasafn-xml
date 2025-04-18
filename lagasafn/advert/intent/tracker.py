@@ -1,7 +1,7 @@
+from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.law import Law
 from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.pathing import make_xpath_from_node
-from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
 from lxml.builder import E
@@ -106,7 +106,7 @@ class IntentTracker:
         existing = self.get_existing(xpath)
         return (existing, xpath)
 
-    def make_intent(self, action: str, address: str) -> _Element:
+    def make_intent(self, action: str, address: str, node_hint: str = "") -> _Element:
         law = Law(self.affected_law_identifier(), self.get_codex_version())
 
         # Check if there is a common address of which this address is actually
@@ -126,25 +126,36 @@ class IntentTracker:
         xpath = make_xpath_from_inner_reference(address)
 
         existing = law.xml().xpath(xpath)
+        if len(existing) == 0:
+            raise IntentParsingException("Could not find XML content by address: %s" % address)
 
-        if (
-            len(existing) == 1
-            # FIXME: This `action == "add"` condition here is bogus but
-            # retained because we need it to keep compatibility with changes in
-            # the short term (2025-04-11). Remove it, and adjust the XML so
-            # that it targets the last paragraph of `numart`s and `subart`s
-            # instead of targeting the entire `numart` or `subart`.
-            and action in ["add", "add_text"]
-            and existing[0].tag in ["numart", "subart"]
-        ):
-            # When adding to the specified tags, we always want to target the
-            # last `paragraph` inside them.
-            action_node = existing[0].xpath("paragraph")[-1]
-            action_xpath = make_xpath_from_node(action_node)
-        else:
-            action_xpath = " | ".join(
-                [make_xpath_from_node(n) for n in existing]
-            )
+        # FIXME: This should be refactored into a separate function such as
+        # `tracker.add_intent` or similar, that figures this out based on what
+        # has been added to `inner`. Until then, we rely on an optional
+        # argument called `node_hint`. to determine the `action_node` when it's
+        # determined by `inner` content.
+        #
+        # This may require further refactoring of `tracker.make_intent` so that
+        # it returns some kind of `Intent` objects instead of an XML element.
+        #
+        # This may also free us from having to use `existing = ...` everywhere
+        # in the parsing functions.
+        action_xpaths = []
+        for node in existing:
+            action_node = node
+
+            if node.tag == "art":
+                if node_hint == "sen":
+                    action_node = node.xpath("subart/paragraph")[-1]
+                elif node_hint == "name":
+                    action_node = node.xpath("name")[0]
+
+            elif node.tag in ["numart", "subart"]:
+                if node_hint in ["sen", "numart"]:
+                    action_node = node.xpath("paragraph")[-1]
+
+            action_xpaths.append(make_xpath_from_node(action_node))
+        action_xpath = " | ".join(action_xpaths)
 
         intent = E(
             "intent",

@@ -6,7 +6,7 @@ from lxml.builder import E
 from lxml.etree import _Element
 
 
-def construct_numart(text_to: str, name: str = "", base_numart: _Element | None = None) -> _Element:
+def construct_numart(text_to: str, name: str = "", base_numart: _Element | None = None, nr_change: int = 1) -> _Element:
     """
     Constructs a `numart` XML element from the information provided.
     """
@@ -20,10 +20,11 @@ def construct_numart(text_to: str, name: str = "", base_numart: _Element | None 
     for child in numart.getchildren():
         numart.remove(child)
 
-    # We then increase its `nr`.
+    # We then increase its `nr` by default, but respecting the `nr_change`
+    # parameter for exceptions.
     # NOTE: Only simple increases are supported for now. This is where you
     # should add support for Roman numerals if needed later.
-    numart.attrib["nr"] = str(int(numart.attrib["nr"]) + 1)
+    numart.attrib["nr"] = str(int(numart.attrib["nr"]) + nr_change)
 
     # Add the actual content.
     numart.append(E("nr-title", "%s." % numart.attrib["nr"]))

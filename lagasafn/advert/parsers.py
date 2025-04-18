@@ -112,9 +112,13 @@ def parse_article_nr_title(tracker: AdvertTracker):
     while (
         not parse_empty(tracker, non_empty_if_next=r"[a-z]\. \(.*\)$")
         # On occasion, articles aren't properly ended with an empty node, so we
-        # need to check here if an article immediately follows.
+        # need to check here if an article or chapter immediately follows.
         and re.match(
             r"(\d+)\. gr\.$",
+            get_all_text(tracker.current_node())
+        ) is None
+        and re.match(
+            r"([IVXLCDM]+)\. KAFLI",
             get_all_text(tracker.current_node())
         ) is None
     ):

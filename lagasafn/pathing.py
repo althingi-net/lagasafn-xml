@@ -162,9 +162,17 @@ def make_xpath_from_inner_reference(inner_reference: str):
             # And move forward. The alpha component will be used later.
             word = words.pop()
 
-        if word[-4:] == "-lið":
+        if re.search(r"-lið(ur)?$", word):
             ent_type = "*[self::numart or self::art-chapter]"
-            ent_numbers.append(word[: word.find("-lið")])
+
+            nr = word[: word.find("-lið")]
+            if nr.isdigit():
+                ent_numbers.append(nr)
+            else:
+                # Case-insensitivity for `numart`s denoted by letter.
+                ent_numbers.append(nr.lower())
+                ent_numbers.append(nr.upper())
+
         elif word in translations.keys():
             ent_type = translations[word]
 
