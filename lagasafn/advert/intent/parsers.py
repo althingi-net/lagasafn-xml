@@ -2160,48 +2160,53 @@ def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTrac
 
 
 def parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_vid_x_laganna_baetist_nyr_tolulidur_svohljodandi
     match = re.match(r"Við (.+) laganna bætist nýr stafliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
     address, text_to = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "numart":
-        action_node = existing.find("paragraph")
-        action_xpath = make_xpath_from_node(action_node)
-    else:
-        raise IntentParsingException("Don't know how to add numart (alphabetic) to tag: %s" % existing.tag)
+    intent = tracker.make_intent("add", address, "numart")
+    existing = deepcopy(list(intent.find("existing")))
 
     inner = E("inner")
+    if len(existing) == 1 and existing[0].tag in ["subart", "numart"]:
+        base_numart = existing[0].xpath("//numart")[-1]
+        numart = construct_numart(text_to, base_numart=base_numart)
+        inner.append(numart)
+    else:
+        raise IntentParsingException("Don't know how to add numart (alphabetic) at address: %s" % address)
 
-    intent = E(
-        "intent",
-        {
-            "action": "add",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        inner,
-    )
+    intent.append(inner)
     tracker.intents.append(intent)
 
-    # Since we already have all the content we can gather in this function,
-    # we'll just create the `numart` here instead of calling some special
-    # parsing function.
-    #
-    # IMPORTANT: We are currently assuming that the phrasing of this function
-    # indicates that the `numart` is being added to a bunch of `numart`s inside
-    # the addressed element, and that the address is **not** a sibling of the
-    # added `numart`.
-    existing_nr = existing.xpath("//numart[@nr-type='alphabet']")[-1].attrib["nr"]
-    nr = chr(ord(existing_nr) + 1)
-    numart = E("numart", {"nr": nr, "nr-type": "alphabet" })
+    return True
 
-    add_sentences(numart, separate_sentences(text_to))
 
-    inner.append(numart)
+def parse_vid_x_laganna_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi
+    match = re.match(r"Við (.+) laganna bætist nýr töluliður, svohljóðandi: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    address, text_to = match.groups()
+
+    intent = tracker.make_intent("add", address, "numart")
+    existing = deepcopy(list(intent.find("existing")))
+
+    inner = E("inner")
+    if len(existing) == 1 and existing[0].tag in ["subart", "numart"]:
+        base_numart = existing[0].xpath("//numart")[-1]
+        numart = construct_numart(text_to, base_numart=base_numart)
+        inner.append(numart)
+    else:
+        raise IntentParsingException("Don't know how to add numart (numeric) at address: %s" % address)
+
+    intent.append(inner)
+    tracker.intents.append(intent)
 
     return True
 
@@ -2333,6 +2338,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker):
+        pass
+    elif parse_vid_x_laganna_baetist_nyr_tolulidur_svohljodandi(tracker):
         pass
     elif parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker):
         pass

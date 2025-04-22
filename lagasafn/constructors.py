@@ -24,7 +24,10 @@ def construct_numart(text_to: str, name: str = "", base_numart: _Element | None 
     # parameter for exceptions.
     # NOTE: Only simple increases are supported for now. This is where you
     # should add support for Roman numerals if needed later.
-    numart.attrib["nr"] = str(int(numart.attrib["nr"]) + nr_change)
+    if numart.attrib["nr"].isdigit():
+        numart.attrib["nr"] = str(int(numart.attrib["nr"]) + nr_change)
+    else:
+        numart.attrib["nr"] = chr(ord(numart.attrib["nr"]) + nr_change)
 
     # Add the actual content.
     numart.append(E("nr-title", "%s." % numart.attrib["nr"]))
