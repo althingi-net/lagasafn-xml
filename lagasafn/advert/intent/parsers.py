@@ -19,7 +19,7 @@ from datetime import datetime
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
 from lagasafn.constants import ICELANDIC_DATE_REGEX
-from lagasafn.constructors import construct_numart
+from lagasafn.constructors import construct_node
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
@@ -726,7 +726,7 @@ def parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker: IntentTracker, li: _Element
 
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag == "numart":
-        inner.append(construct_numart(text_to, base_numart=existing[0], nr_change=0))
+        inner.append(construct_node(existing[0], text_to, nr_change=0))
     else:
         raise IntentParsingException("Don't know how to prepend numart at address: %s" % address)
 
@@ -846,23 +846,7 @@ def parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker,
 
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag == "numart":
-        new_node = existing[0]
-        for child in list(new_node):
-            new_node.remove(child)
-
-        if new_node.attrib["nr-type"] == "numeric":
-            nr = str(int(new_node.attrib["nr"]) + 1)
-        else:
-            raise IntentParsingException(
-                "Don't know how to create numart with nr-type: %s" % new_node.attrib["nr-type"]
-            )
-
-        new_node.attrib["nr"] = nr
-        sentences = separate_sentences(text_to)
-        add_sentences(new_node, sentences)
-
-        inner.append(new_node)
-
+        inner.append(construct_node(existing[0], text_to))
     else:
         raise IntentParsingException("Don't know how to append numart at address: %s" % address)
 
@@ -884,17 +868,7 @@ def parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker, 
 
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag == "subart":
-        new_node = existing[0]
-        for child in list(new_node):
-            new_node.remove(child)
-
-        nr = str(int(new_node.attrib["nr"]) + 1)
-
-        new_node.attrib["nr"] = nr
-        sentences = separate_sentences(text_to)
-        add_sentences(new_node, sentences)
-
-        inner.append(new_node)
+        inner.append(construct_node(existing[0], text_to))
     else:
         raise IntentParsingException("Don't know how to append subart at address: %s" % address)
 
@@ -1179,7 +1153,7 @@ def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li:
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag == "subart":
         base_numart = existing[0].xpath("//numart")[-1]
-        inner.append(construct_numart(text_to, base_numart=base_numart))
+        inner.append(construct_node(base_numart, text_to))
     else:
         raise IntentParsingException("Don't know how to add numart at address: %s" % address)
 
@@ -1616,7 +1590,7 @@ def parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTrac
         text_to = em.tail.strip()
 
     tracker.inner_targets.numarts.append(
-        construct_numart(text_to, name, base_numart)
+        construct_node(base_numart, text_to, name)
     )
 
     next(tracker.lines)
@@ -2174,7 +2148,7 @@ def parse_vid_x_laganna_baetist_nyr_staflidur_svohljodandi(tracker: IntentTracke
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag in ["subart", "numart"]:
         base_numart = existing[0].xpath("//numart")[-1]
-        numart = construct_numart(text_to, base_numart=base_numart)
+        numart = construct_node(base_numart, text_to)
         inner.append(numart)
     else:
         raise IntentParsingException("Don't know how to add numart (alphabetic) at address: %s" % address)
@@ -2200,7 +2174,7 @@ def parse_vid_x_laganna_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracke
     inner = E("inner")
     if len(existing) == 1 and existing[0].tag in ["subart", "numart"]:
         base_numart = existing[0].xpath("//numart")[-1]
-        numart = construct_numart(text_to, base_numart=base_numart)
+        numart = construct_node(base_numart, text_to)
         inner.append(numart)
     else:
         raise IntentParsingException("Don't know how to add numart (numeric) at address: %s" % address)

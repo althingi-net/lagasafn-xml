@@ -6,34 +6,31 @@ from lxml.builder import E
 from lxml.etree import _Element
 
 
-def construct_numart(text_to: str, name: str = "", base_numart: _Element | None = None, nr_change: int = 1) -> _Element:
+def construct_node(base_node: _Element, text_to: str, name: str = "", nr_change: int = 1) -> _Element:
     """
-    Constructs a `numart` XML element from the information provided.
+    Constructs a Lagasafn-XML node from an already existing node.
     """
 
-    if base_numart is None:
-        raise LawException("Unimplemented: Function 'construct_numart' currently requires 'base_numart'.")
-
-    # We copy the base `numart` and remove all its children, so that we retain
-    # all the attribute information, whatever it may be.
-    numart = deepcopy(base_numart)
-    for child in numart.getchildren():
-        numart.remove(child)
+    # We copy the base node and remove all its children, so that we retain all
+    # the attribute information, whatever it may be.
+    node = deepcopy(base_node)
+    for child in list(node):
+        node.remove(child)
 
     # We then increase its `nr` by default, but respecting the `nr_change`
     # parameter for exceptions.
-    # NOTE: Only simple increases are supported for now. This is where you
-    # should add support for Roman numerals if needed later.
-    if numart.attrib["nr"].isdigit():
-        numart.attrib["nr"] = str(int(numart.attrib["nr"]) + nr_change)
+    if "nr-type" not in node.attrib or node.attrib["nr-type"] == "numeric":
+        node.attrib["nr"] = str(int(node.attrib["nr"]) + nr_change)
+    elif node.attrib["nr-type"] == "alphabet":
+        node.attrib["nr"] = chr(ord(node.attrib["nr"]) + nr_change)
     else:
-        numart.attrib["nr"] = chr(ord(numart.attrib["nr"]) + nr_change)
+        raise LawException("Can't figure out 'nr-type' of node with tag: %s" % base_node.tag)
 
     # Add the actual content.
-    numart.append(E("nr-title", "%s." % numart.attrib["nr"]))
+    node.append(E("nr-title", "%s." % node.attrib["nr"]))
     if len(name) > 0:
-        numart.append(E("name", name))
+        node.append(E("name", name))
     sens = separate_sentences(text_to)
-    add_sentences(numart, sens)
+    add_sentences(node, sens)
 
-    return numart
+    return node
