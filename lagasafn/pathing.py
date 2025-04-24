@@ -68,6 +68,11 @@ def make_xpath_from_inner_reference(inner_reference: str):
     # the way.
     inner_reference = inner_reference.replace(".", "")
 
+    if inner_reference == "ákvæði til bráðabirgða":
+        # Simple enough. Will get more complicated when we need to support
+        # temporary clauses as a single article instead of a chapter.
+        return "//chapter[@nr-type='temporary-clauses']"
+
     # Turn the inner reference into a list that's easier to deal. Note that
     # we're processing it from the end because the order of things in a
     # reference is the exact opposite of the order of an XPath.
@@ -162,7 +167,7 @@ def make_xpath_from_inner_reference(inner_reference: str):
             # And move forward. The alpha component will be used later.
             word = words.pop()
 
-        if re.search(r"-lið(ur)?$", word):
+        if re.search(r"-lið([ua]r)?$", word):
             ent_type = "*[self::numart or self::art-chapter]"
 
             nr = word[: word.find("-lið")]
@@ -185,26 +190,6 @@ def make_xpath_from_inner_reference(inner_reference: str):
             ent_numbers.append(ent_number)
             del ent_number
 
-            # All of these combinatory words result in us looking up all of
-            # them, so they are all in effect "or", for our purposes.
-            if last_or_blank(words) in ["og", "eða", "og/eða"]:
-                words.pop()
-
-                # See comment to where `branch_at_tag` is initialized.
-                peek = last_or_blank(words)
-                if peek in translations:
-                    branch_at_tag = translations[peek]
-
-                else:
-                    # Add the word that came after "og", "eða", etc.
-                    ent_numbers.append(words.pop())
-
-                    # Support for things like "8., 9. og 10. málsl."
-                    while last_or_blank(words).endswith(","):
-                        ent_numbers.append(words.pop().strip(","))
-
-                del peek
-
         elif re.match(r"[IVXLCDM]+(-[IVXLCDM]+)?$", word):
             # We have run into a Roman numeral in a strange location. It is
             # probably a temporary clause.
@@ -217,40 +202,54 @@ def make_xpath_from_inner_reference(inner_reference: str):
             ent_type = "art"
             ent_numbers.append(word)
 
-            if last_or_blank(words) in ["og", "eða", "og/eða"]:
-                words.pop()
-                ent_numbers.append(words.pop())
-
-                while last_or_blank(words).endswith(","):
-                    ent_numbers.append(words.pop().strip(","))
-
-            # We expect to run into this at some point if we know what we're
-            # dealing with.
-            if " ".join(words[-3:]).lower() == "ákvæði til bráðabirgða":
-                words.pop()
-                words.pop()
-                words.pop()
-            else:
-                raise ReferenceParsingException(
-                    "Don't know what to do with Roman numeral: %s" % word
-                )
-
         elif word == "í":
-            word = words.pop()
-            if word.lower() == "tafla":
+            peek = last_or_blank(words)
+            if peek.lower() == "tafla":
+                word = words.pop()
                 ent_type = "table"
-            elif word.endswith("“"):
+            elif peek.endswith("“"):
                 # The rest is a string inside the content of what's being
                 # referenced, so we know that we're done at this point.
                 break
-            else:
-                raise ReferenceParsingException("Don't know how to parse further: %s" % word)
+
+            del peek
+
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException("Don't know how to parse word: %s" % word)
 
         # The alpha component should be irrelevant at this point.
         del alpha_component
+
+        # All of these combinatory words result in us looking up all of them,
+        # so they are all in effect "or", for our purposes.
+        if last_or_blank(words) in ["og", "eða", "og/eða"]:
+            words.pop()
+
+            # See comment to where `branch_at_tag` is initialized.
+            peek = last_or_blank(words)
+            if peek in translations:
+                branch_at_tag = translations[peek]
+
+            else:
+                # Add the word that came after "og", "eða", etc.
+                ent_numbers.append(words.pop())
+
+                # Support for things like "8., 9. og 10. málsl."
+                while last_or_blank(words).endswith(","):
+                    ent_numbers.append(words.pop().strip(","))
+
+            del peek
+
+        # This doesn't directly impact the XPath, since it has already been
+        # processed during the parsing of Roman numerals above.
+        if re.match(
+            r"ákvæði(s)? til bráðabirgða",
+            " ".join(words[-3:]).lower()
+        ) is not None:
+            words.pop()
+            words.pop()
+            words.pop()
 
         # Assuming something came of this...
         if len(ent_type) > 0:

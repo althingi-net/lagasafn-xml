@@ -126,8 +126,6 @@ class IntentTracker:
         xpath = make_xpath_from_inner_reference(address)
 
         existing = law.xml().xpath(xpath)
-        if len(existing) == 0:
-            raise IntentParsingException("Could not find XML content by address: %s" % address)
 
         # FIXME: This should be refactored into a separate function such as
         # `tracker.add_intent` or similar, that figures this out based on what
