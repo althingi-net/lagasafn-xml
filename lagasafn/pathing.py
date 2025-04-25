@@ -72,6 +72,10 @@ def make_xpath_from_inner_reference(inner_reference: str):
         # Simple enough. Will get more complicated when we need to support
         # temporary clauses as a single article instead of a chapter.
         return "//chapter[@nr-type='temporary-clauses']"
+    elif inner_reference.lower() == "heiti":
+        # Also simple enough, and is important to be from the XML root, so that
+        # it doesn't select names of articles or whatever else.
+        return "/law/name"
 
     # Turn the inner reference into a list that's easier to deal. Note that
     # we're processing it from the end because the order of things in a
@@ -148,15 +152,22 @@ def make_xpath_from_inner_reference(inner_reference: str):
     while len(words):
 
         if len(branch_at_tag) > 0:
-            new_branch = xpath[:xpath.rfind("//" + branch_at_tag)].rstrip("/")
-            xpath += " | " + new_branch
+            # Branch out the XPath, but avoiding duplicates.
+            xpath_list = xpath.split(" | ")
+            last_selection = xpath_list[-1]
+            new_branch = last_selection[:last_selection.rfind("//" + branch_at_tag)].rstrip("/")
+            xpath_list.append(new_branch)
+            xpath = " | ".join(xpath_list)
+
+            del xpath_list, last_selection, new_branch
+
             branch_at_tag = ""
 
         # Initialize.
         ent_type = ""
         ent_numbers = []
 
-        word = words.pop()
+        word = words.pop().strip(",")
 
         # Check for an alphabetic component to an address like "3. gr. a",
         # where the "a" is the alphabetic component.
@@ -214,6 +225,13 @@ def make_xpath_from_inner_reference(inner_reference: str):
 
             del peek
 
+        elif word.lower() == "inngangsmálslið":
+            ent_type = "sen"
+            ent_numbers.append("1")
+
+        elif word.lower() == "fyrirsögn":
+            ent_type = "name"
+
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException("Don't know how to parse word: %s" % word)
@@ -239,6 +257,25 @@ def make_xpath_from_inner_reference(inner_reference: str):
                 while last_or_blank(words).endswith(","):
                     ent_numbers.append(words.pop().strip(","))
 
+            del peek
+
+        # Branch XPath when indicated by a comma.
+        # Note that this is a separate mechanism from the one that is dealt
+        # with by parsing concatenations such as "og" and "eða" above. The
+        # difference is that here we might have something like
+        # "8. mgr. 5. gr., 2. mgr. 9. gr.", instead of something like
+        # "8. og 2. mgr. 9. gr.".
+        if last_or_blank(words).endswith(","):
+            peek = last_or_blank(words).strip(",")
+            if peek in translations:
+                branch_at_tag = translations[peek]
+            elif re.match(r"[a-z]$", peek):
+                # This happens when we have something like "21. gr. c", and we
+                # run into the "c" bit of it. We'll need to take the second
+                # last entity to determine at which tag to branch the XPath.
+                branch_at_tag = translations[words[-2]]
+            else:
+                raise ReferenceParsingException("Don't know how to parse concatenated: %s" % peek)
             del peek
 
         # This doesn't directly impact the XPath, since it has already been
