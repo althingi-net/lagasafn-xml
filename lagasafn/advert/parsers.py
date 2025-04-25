@@ -84,18 +84,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
     # This requires a bit of refactoring, so that instead of files being
     # created every time that processing takes place, they are read and
     # modified if they already exist.
-    art = E(
-        "advert-art",
-        {
-            "nr": art_nr,
-            "processed": "false",
-        },
-    )
-
-    # Declare what the article supposedly affects.
-    if "law-nr" in tracker.affected and "law-year" in tracker.affected:
-        art.attrib["affected-law-nr"] = tracker.affected["law-nr"]
-        art.attrib["affected-law-year"] = tracker.affected["law-year"]
+    art = E("advert-art", {"nr": art_nr })
 
     if tracker.targets.chapter is not None:
         tracker.targets.chapter.append(art)
@@ -107,6 +96,13 @@ def parse_article_nr_title(tracker: AdvertTracker):
     # later handling.
     original = E("original")
     art.append(original)
+
+    # Declare what the article supposedly affects. Note that there are articles
+    # which alter many laws, which this configuration won't know about, but
+    # instead the `intent` elements will.
+    if "law-nr" in tracker.affected and "law-year" in tracker.affected:
+        original.attrib["affected-law-nr"] = tracker.affected["law-nr"]
+        original.attrib["affected-law-year"] = tracker.affected["law-year"]
 
     next(tracker.nodes)
     while (

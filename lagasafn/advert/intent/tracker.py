@@ -70,8 +70,8 @@ class IntentTracker:
         self.targets = TargetGroup()
 
         self.original = original
-        self.affected_law_nr = original.getparent().attrib["affected-law-nr"]
-        self.affected_law_year = int(original.getparent().attrib["affected-law-year"])
+        self.affected_law_nr = original.attrib["affected-law-nr"]
+        self.affected_law_year = int(original.attrib["affected-law-year"])
 
         self.lines = super_iter(original.getchildren())
         self.intents = E("intents")
