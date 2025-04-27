@@ -186,8 +186,8 @@ def parse_x_i_logunum_ordast_svo(tracker: IntentTracker):
     return True
 
 
-def parse_x_laganna_fellur_brott(tracker: IntentTracker):
-    match = re.match(r"(.+) laganna fellur brott\.", tracker.current_text)
+def parse_x_laganna_fellur_brott(tracker: IntentTracker, text: str = ""):
+    match = re.match(r"(.+) laganna fellur brott\.", text or tracker.current_text)
     if match is None:
         return False
 
@@ -223,7 +223,23 @@ def parse_x_laganna_falla_brott(tracker: IntentTracker):
 
 
 def parse_x_laganna_asamt_fyrirsognum_falla_brott(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_x_laganna_asamt_fyrirsogn_fellur_brott
     match = re.match(r"(.+) laganna ?, ásamt fyrirsögnum, falla brott.", tracker.current_text)
+    if match is None:
+        return False
+
+    address = match.groups()[0]
+
+    tracker.intents.append(tracker.make_intent("delete", address))
+
+    return True
+
+
+def parse_x_laganna_asamt_fyrirsogn_fellur_brott(tracker: IntentTracker, text: str = ""):
+    # TODO: Great candidate for merging with:
+    #     parse_x_laganna_asamt_fyrirsognum_falla_brott
+    match = re.match(r"(.+) laganna ásamt fyrirsögn fellur brott.", text or tracker.current_text)
     if match is None:
         return False
 
@@ -1372,6 +1388,54 @@ def parse_tafla_i_x_laganna_ordast_svo(tracker: IntentTracker):
     return True
 
 
+def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_logum(tracker: IntentTracker):
+    match = re.match(r"Við gildistöku laga þessara verða eftirfarandi breytingar á öðrum lögum:", tracker.current_text)
+    if match is None:
+        return False
+
+    if tracker.lines.peek().tag == "ol":
+        next(tracker.lines)
+        for law_li in tracker.lines.current.findall("li"):
+
+            # Find the identifier of the affected law.
+            full_law_identifier = get_all_text(law_li.find("em")).strip(":").strip()
+            identifiers = re.search(r"nr\. (\d{1,3}\/\d{4})", full_law_identifier).groups()
+            if len(identifiers) != 1:
+                raise IntentParsingException("Expected exactly one law identifier but received: %s" % identifiers)
+            identifier = identifiers[0]
+            del full_law_identifier, identifiers
+
+            tracker.set_affected_law_identifier(identifier)
+
+            # Sometimes the text we need is in a list, which we'll need to
+            # iterate, but sometimes it just follows the identifier. We'll want
+            # to deal with them both in the same iterating loop, so we combine
+            # the two possibilities into a single list here, aptly named
+            # `texts`, and then iterate through that.
+            sub_lis = law_li.xpath("ol/li")
+            texts = []
+            if len(sub_lis) == 0:
+                texts.append(law_li.find("em").tail.strip())
+            for sub_li in sub_lis:
+                texts.append(get_all_text(sub_li))
+            del sub_lis
+
+            for text in texts:
+                if parse_i_stad_heitisins_x_i_x_i_logunum_kemur(tracker, text):
+                    pass
+                elif parse_x_laganna_fellur_brott(tracker, text):
+                    pass
+                elif parse_x_laganna_asamt_fyrirsogn_fellur_brott(tracker, text):
+                    pass
+                else:
+                    raise IntentParsingException("Can't figure out sub-list text: %s" % text)
+
+    else:
+        raise IntentParsingException("Don't know how to handle tag when changing other laws at enactment: %s" % tracker.lines.peek().tag)
+
+    return True
+
+
 def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     # NOTE: That questionable space at the end happens occurs in advert 45/2024.
     match = re.match(r"Eftirfarandi breytingar verða á (.+) laganna ?:", tracker.current_text)
@@ -1859,7 +1923,30 @@ def parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur(tracker: IntentTracker):
     #     parse_i_stad_ordsins_x_i_x_laganna_kemur
     #     parse_i_stad_ordsins_x_tvivegis_i_x_laganna_kemur
     #     parse_i_stad_tilvisunarinnar_x_i_x_laganna_kemur
+    #     parse_i_stad_heitisins_x_i_x_i_logunum_kemur
     match = re.match(r"Í stað fjárhæðarinnar „(.+)“ í (.+) laganna kemur: (.+)", tracker.current_text)
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+
+    intent = tracker.make_intent("replace_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
+
+    return True
+
+
+def parse_i_stad_heitisins_x_i_x_i_logunum_kemur(tracker: IntentTracker, text: str = ""):
+    # TODO: Great candidate for merging with:
+    #     parse_i_stad_ordanna_x_i_x_laganna_kemur
+    #     parse_i_stad_ordsins_x_i_x_laganna_kemur
+    #     parse_i_stad_ordsins_x_tvivegis_i_x_laganna_kemur
+    #     parse_i_stad_tilvisunarinnar_x_i_x_laganna_kemur
+    #     parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur
+    match = re.match(r"Í stað heitisins „(.+)“ í (.+) í lögunum kemur: (.+)", text or tracker.current_text)
     if match is None:
         return False
 
@@ -2383,6 +2470,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_x_laganna_verdur(tracker):
         pass
     elif parse_x_i_logunum_ordast_svo(tracker):
+        pass
+    elif parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_logum(tracker):
         pass
     elif parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker):
         pass

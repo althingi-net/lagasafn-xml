@@ -82,6 +82,11 @@ class IntentTracker:
         # Configure cache for "current" text.
         self.cached_current_index = -1
 
+    def set_affected_law_identifier(self, identifier: str):
+        nr, year = identifier.split("/")
+        self.affected_law_nr = nr
+        self.affected_law_year = int(year)
+
     def affected_law_identifier(self) -> str:
         return "%s/%d" % (self.affected_law_nr, self.affected_law_year)
 
@@ -186,6 +191,8 @@ class IntentTracker:
             {
                 "action": action,
                 "action-xpath": action_xpath,
+                "action-law-nr": self.affected_law_nr,
+                "action-law-year": str(self.affected_law_year),
             },
             E("address", {"xpath": xpath }, address),
             E("existing", *existing),
