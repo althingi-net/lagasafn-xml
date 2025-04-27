@@ -1,4 +1,4 @@
-from lagasafn.exceptions import IntentParsingException
+from datetime import datetime
 from lagasafn.models.law import Law
 from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.pathing import make_xpath_from_node
@@ -92,19 +92,45 @@ class IntentTracker:
     def get_codex_version(self):
         return self.original.getroottree().getroot().attrib["applied-to-codex-version"]
 
-    def get_existing(self, xpath: str) -> _Element:
-        # FIXME: Scheduled for deprecation in favor of `make_intent`.
-        law = Law(self.affected_law_identifier(), self.get_codex_version())
-        nodes = law.xml().xpath(xpath)
-        if len(nodes) != 1:
-            raise Exception("This method only supports results with a singular node. Update code to use `make_intent`.")
-        return nodes[0]
+    def make_enactment(
+        self,
+        timing: datetime,
+        timing_type: str,
+        extra: str = "",
+        implemented_timing: datetime | None = None,
+        implemented_timing_custom: str = ""
+    ) -> _Element:
+        """
+        Creates a special kind of intent which communicates the enacting of the
+        law, exceptions and particularities about it.
 
-    def get_existing_from_address(self, address: str) -> tuple[_Element, str]:
-        # FIXME: Scheduled for deprecation in favor of `make_intent`.
-        xpath = make_xpath_from_inner_reference(address)
-        existing = self.get_existing(xpath)
-        return (existing, xpath)
+        Placed in a different function than `make_intent` altogether because
+        the needs are radically different, and are likely to become even more
+        different in the future.
+        """
+
+        # NOTE: An `enactment` is strictly speaking an `intent`.
+        enactment = E(
+            "intent",
+            {
+                "action": "enact",
+                "action-xpath": "",
+                "timing": timing.strftime("%Y-%m-%d"),
+                "timing-type": timing_type,
+            },
+        )
+
+        if len(extra) > 0:
+            enactment.attrib["extra"] = extra
+
+        if implemented_timing is not None:
+            enactment.attrib["implemented-timing"] = implemented_timing.strftime("%Y-%m-%d")
+
+        if len(implemented_timing_custom) > 0:
+            enactment.attrib["implemented-timing-custom"] = implemented_timing_custom
+
+        return enactment
+
 
     def make_intent(self, action: str, address: str, node_hint: str = "") -> _Element:
         law = Law(self.affected_law_identifier(), self.get_codex_version())

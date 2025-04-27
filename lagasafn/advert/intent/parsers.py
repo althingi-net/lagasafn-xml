@@ -15,7 +15,6 @@ import json
 import re
 import roman
 from copy import deepcopy
-from datetime import datetime
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
 from lagasafn.constants import ICELANDIC_DATE_REGEX
@@ -25,8 +24,6 @@ from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
-from lagasafn.pathing import make_xpath_from_node
-from lagasafn.utils import determine_month
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import get_all_text
 from lagasafn.utils import write_xml
@@ -523,33 +520,21 @@ def parse_a_eftir_x_laganna_kemur_ny_malsgrein_svohljodandi(tracker: IntentTrack
         return False
 
     address = match.groups()[0]
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    # Make the inner.
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
     tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
 
-    if existing.tag == "subart":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
+    if len(existing) == 1 and existing[0].tag == "subart":
+        nr = int(existing[0].attrib["nr"])
+        for line in tracker.lines:
+            nr += 1
+            parse_inner_art_subart(tracker, {"nr": nr })
     else:
-        raise IntentParsingException("Don't know how to add subart to tag: %s" % existing.tag)
-
-    # Make the intent.
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        tracker.targets.inner,
-    ))
-
-    nr = int(existing.attrib["nr"])
-    for line in tracker.lines:
-        nr += 1
-        parse_inner_art_subart(tracker, {"nr": nr })
+        raise IntentParsingException("Don't know how to add subart at address: %s" % address)
 
     tracker.targets.inner = None
 
@@ -881,21 +866,12 @@ def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
         return False
 
     text_from, address, text_to = match.groups()
-    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
 
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "append_text",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        E("text-from", text_from),
-        E("text-to", text_to),
-    ))
+    intent = tracker.make_intent("append_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
 
     return True
 
@@ -1224,19 +1200,21 @@ def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: 
     if match is None:
         return False
 
+    address = ""
     text_to = match.groups()[0]
-    address = tracker.intents.attrib["common-address"]
-    existing, xpath = tracker.get_existing_from_address(address)
 
+    intent = tracker.make_intent("add", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
     inner = E("inner")
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
+    intent.append(inner)
 
+    if len(existing) == 1 and existing[0].tag == "art":
         # When added to an `art`, then "málsgrein" means a `subart`, not a
         # `paragraph`. This is only because the file format makes a distinction
         # between a `subart` and `paragraph`, but the human language doesn't.
-        subart_nr = len(existing.xpath("subart")) + 1
+        subart_nr = len(existing[0].xpath("subart")) + 1
         subart = E("subart", {"nr": str(subart_nr) })
 
         sens = separate_sentences(text_to)
@@ -1244,19 +1222,7 @@ def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: 
 
         inner.append(subart)
     else:
-        raise IntentParsingException("Don't know how to add paragraph to tag: %s" % existing.tag)
-
-    # NOTE: The address isn't specified here. It will be in the parent node.
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "add",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        inner,
-    ))
+        raise IntentParsingException("Don't know how to add paragraph at address: %s" % address)
 
     return True
 
@@ -1366,27 +1332,16 @@ def parse_sub_tafla_i_x_ordast_svo(tracker: IntentTracker):
         return False
 
     address = match.groups()[1]
-    address = "%s %s" % (address, tracker.intents.attrib["common-address"])
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
+
+    intent = tracker.make_intent("replace", address)
 
     tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
+    tracker.intents.append(intent)
 
     next(tracker.lines)
 
     parse_inner_table(tracker)
-
-    intent = E(
-        "intent",
-        {
-            "action": "replace",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        tracker.targets.inner,
-    )
-    tracker.intents.append(intent)
 
     tracker.targets.inner = None
 
@@ -1401,26 +1356,16 @@ def parse_tafla_i_x_laganna_ordast_svo(tracker: IntentTracker):
         return False
 
     address = match.groups()[0]
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
+
+    intent = tracker.make_intent("replace", address)
+
+    tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
+    tracker.intents.append(intent)
 
     next(tracker.lines)
 
-    tracker.targets.inner = E("inner")
-
     parse_inner_table(tracker)
-
-    intent = E(
-        "intent",
-        {
-            "action": "replace",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        E("inner", tracker.targets.inner),
-    )
-    tracker.intents.append(intent)
 
     tracker.targets.inner = None
 
@@ -1607,31 +1552,20 @@ def parse_a_eftir_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
     if match is None:
         return False
 
-    address, nr_title_new = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
+    address, nr_title = match.groups()
 
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
-    else:
-        raise IntentParsingException("Don't know how to append article after tag: %s" % existing.tag)
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
 
-    intent = E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-    )
     tracker.intents.append(intent)
-
     tracker.targets.inner = E("inner")
 
-    parse_inner_art(tracker, {
-        "nr_title": nr_title_new,
-    })
+    if existing[0].tag == "art":
+        parse_inner_art(tracker, {
+            "nr_title": nr_title,
+        })
+    else:
+        raise IntentParsingException("Don't know how to append article after tag: %s" % existing.tag)
 
     intent.append(tracker.targets.inner)
     tracker.targets.inner = None
@@ -1645,29 +1579,18 @@ def parse_a_undan_x_laganna_kemur_ny_grein_x_svohljodandi(tracker: IntentTracker
         return False
 
     address, nr_title = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
-    else:
-        raise IntentParsingException("Don't know how to prepend article to tag: %s" % existing.tag)
+    intent = tracker.make_intent("prepend", address)
+    existing = deepcopy(list(intent.find("existing")))
 
-    intent = E(
-        "intent",
-        {
-            "action": "prepend",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath}, address),
-        E("existing", existing),
-    )
     tracker.intents.append(intent)
-
     tracker.targets.inner = E("inner")
     intent.append(tracker.targets.inner)
 
-    parse_inner_art(tracker, {"nr_title": nr_title })
+    if len(existing) == 1 and existing[0].tag == "art":
+        parse_inner_art(tracker, {"nr_title": nr_title })
+    else:
+        raise IntentParsingException("Don't know how to prepend article at address: %s" % address)
 
     tracker.targets.inner = None
 
@@ -1728,45 +1651,38 @@ def parse_a_eftir_x_laganna_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTrac
         return False
 
     address, text_to = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "numart":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
 
-        base_numart = action_node
+    inner = E("inner")
+    intent.append(inner)
+    tracker.intents.append(intent)
+
+    if existing[0].tag == "numart":
+        name = ""
+        if (em := tracker.lines.current.find("em")) is not None:
+            name = em.text
+            text_to = em.tail.strip()
+
+        tracker.inner_targets.numarts.append(
+            construct_node(existing[0], text_to, name)
+        )
+
+        next(tracker.lines)
+
+        # This will either happen once or not at all, judging from "nýr töluliður"
+        # being in the singular above.
+        # Occurs in:
+        # - 1. gr. laga nr. 48/2024
+        parse_inner_art_numarts(tracker)
+
+        inner.append(tracker.inner_targets.numarts[-1])
+
+        tracker.inner_targets.numarts.pop()
+
     else:
-        raise IntentParsingException("Don't know how to add numart to tag: %s" % existing.tag)
-
-    name = ""
-    if (em := tracker.lines.current.find("em")) is not None:
-        name = em.text
-        text_to = em.tail.strip()
-
-    tracker.inner_targets.numarts.append(
-        construct_node(base_numart, text_to, name)
-    )
-
-    next(tracker.lines)
-
-    # This will either happen once or not at all, judging from "nýr töluliður"
-    # being in the singular above.
-    # Occurs in:
-    # - 1. gr. laga nr. 48/2024
-    parse_inner_art_numarts(tracker)
-
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        E("inner", tracker.inner_targets.numarts[-1]),
-    ))
-
-    tracker.inner_targets.numarts.pop()
+        raise IntentParsingException("Don't know how to add numart at address: %s" % address)
 
     return True
 
@@ -1845,20 +1761,12 @@ def parse_i_stad_ordanna_x_i_x_laganna_kemur(tracker: IntentTracker):
         return False
 
     text_from, address, text_to = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
 
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "replace_text",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath}, address),
-        E("existing", existing),
-        E("text-from", text_from),
-        E("text-to", text_to),
-    ))
+    intent = tracker.make_intent("replace_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
 
     return True
 
@@ -1956,20 +1864,12 @@ def parse_i_stad_fjarhaedarinnar_x_i_x_laganna_kemur(tracker: IntentTracker):
         return False
 
     text_from, address, text_to = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
-    action_xpath = make_xpath_from_node(existing)
 
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "replace_text",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath}, address),
-        E("existing", existing),
-        E("text-from", text_from),
-        E("text-to", text_to),
-    ))
+    intent = tracker.make_intent("replace_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
 
     return True
 
@@ -2082,29 +1982,18 @@ def parse_a_eftir_x_laganna_koma_tvaer_nyjar_greinar_x_og_x_svohljodandi(tracker
         return False
 
     address = match.groups()[0]
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
-    else:
-        raise IntentParsingException("Don't know how to append article after tag: %s" % existing.tag)
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
 
-    intent = E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing)
-    )
     tracker.intents.append(intent)
-
     tracker.targets.inner = E("inner")
 
-    parse_inner_art(tracker)
-    parse_inner_art(tracker)
+    if existing[0].tag == "art":
+        parse_inner_art(tracker)
+        parse_inner_art(tracker)
+    else:
+        raise IntentParsingException("Don't know how to append article at address: %s" % address)
 
     intent.append(tracker.targets.inner)
     tracker.targets.inner = None
@@ -2124,10 +2013,6 @@ def parse_vid_login_baetist_ny_grein_svohljodandi(tracker: IntentTracker):
 
     # NOTE: The `strip()` is needed due to a bug in `generate_legal_reference`.
     address = generate_legal_reference(last_art, skip_law=True).strip()
-    existing, xpath = tracker.get_existing_from_address(address)
-
-    action_node = existing
-    action_xpath = make_xpath_from_node(action_node)
 
     # The dictation contains no information about what the `nr` of the new
     # article should be, so we'll need to deduce it.
@@ -2143,17 +2028,9 @@ def parse_vid_login_baetist_ny_grein_svohljodandi(tracker: IntentTracker):
     # integer, so we'll assume that to be the case until we find out otherwise.
     nr_title = "%d. gr." % (int(last_art.attrib["nr"]) + 1)
 
-    intent = E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath}, address),
-        E("existing", existing),
-    )
-    tracker.intents.append(intent)
+    intent = tracker.make_intent("append", address)
 
+    tracker.intents.append(intent)
     tracker.targets.inner = E("inner")
     intent.append(tracker.targets.inner)
 
@@ -2210,29 +2087,18 @@ def parse_vid_login_baetist_ny_grein_x_svohljodandi(tracker: IntentTracker):
         raise IntentParsingException("Can't figure out where to place new article.")
 
     address = match.groups()[0]
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
-    else:
-        raise IntentParsingException("Don't know how to append article to tag %s" % existing.tag)
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
 
-    intent = E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-    )
     tracker.intents.append(intent)
-
     tracker.targets.inner = E("inner")
     intent.append(tracker.targets.inner)
 
-    parse_inner_art(tracker, {"nr_title": nr_title})
+    if existing[0].tag == "art":
+        parse_inner_art(tracker, {"nr_title": nr_title})
+    else:
+        raise IntentParsingException("Don't know how to append article at address: %s" % address)
 
     tracker.targets.inner = None
 
@@ -2312,22 +2178,16 @@ def parse_akvaedi_til_bradabirgda_x_i_logunum_fellur_brott(tracker: IntentTracke
         return False
 
     address = match.groups()[0]
-    existing, xpath = tracker.get_existing_from_address(address)
 
-    if existing.tag == "art":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
+    intent = tracker.make_intent("delete", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
+
+    if len(existing) == 1 and existing[0].tag == "art":
+        pass
     else:
-        raise IntentParsingException("Don't know how to delete temporary clause with tag: %s" % existing.tag)
-
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "delete",
-            "action-xpath": action_xpath
-        },
-        E("existing", existing),
-    ))
+        raise IntentParsingException("Don't know how to delete temporary clause at address: %s" % address)
 
     return True
 
@@ -2353,13 +2213,14 @@ def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTrac
         return False
 
     address, text_to = match.groups()
-    existing, xpath = tracker.get_existing_from_address(address)
+
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
 
     inner = E("inner")
-    if existing.tag == "sen":
-        action_node = existing
-        action_xpath = make_xpath_from_node(action_node)
+    intent.append(inner)
 
+    if existing[0].tag == "sen":
         # A temporary paragraph is created only to manipulate the newly created
         # sentences before adding them to the `inner`.
         paragraph = E("paragraph")
@@ -2374,7 +2235,7 @@ def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTrac
         # appearing after the newly added sentences. That must be done by the
         # mechanism that applies this file to the existing law.
         for node in paragraph.xpath("sen"):
-            node.attrib["nr"] = str(int(node.attrib["nr"]) + int(action_node.attrib["nr"]))
+            node.attrib["nr"] = str(int(node.attrib["nr"]) + int(existing[0].attrib["nr"]))
             inner.append(node)
 
         del paragraph
@@ -2382,16 +2243,7 @@ def parse_a_eftir_x_laganna_kemur_nyr_malslidur_svohljodandi(tracker: IntentTrac
     else:
         raise IntentParsingException("Don't know how to add sentence to tag: %s" % existing.tag)
 
-    tracker.intents.append(E(
-        "intent",
-        {
-            "action": "append",
-            "action-xpath": action_xpath,
-        },
-        E("address", {"xpath": xpath }, address),
-        E("existing", existing),
-        inner,
-    ))
+    tracker.intents.append(intent)
 
     return True
 
@@ -2449,6 +2301,8 @@ def parse_vid_x_laganna_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracke
 
 
 def parse_log_thessi_taka_gildi_d_m_y___(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_log_thessi_odlast_gildi_d_m_y___
     match = re.match(r"Lög þessi taka gildi (%s)( .*)?" % ICELANDIC_DATE_REGEX, tracker.current_text)
     if match is None:
         return False
@@ -2457,16 +2311,7 @@ def parse_log_thessi_taka_gildi_d_m_y___(tracker: IntentTracker):
     timing = dateparser.parse(raw_date)
     extra = "" if raw_extra is None else raw_extra.strip()
 
-    intent = E(
-        "intent",
-        {
-            "action": "enact",
-            "action-xpath": "",
-            "action-timing": timing.strftime("%Y-%m-%d"),
-        },
-    )
-    if extra:
-        intent.attrib["action-extra"] = extra
+    intent = tracker.make_enactment(timing, "immediate", extra)
 
     tracker.intents.append(intent)
 
@@ -2474,6 +2319,8 @@ def parse_log_thessi_taka_gildi_d_m_y___(tracker: IntentTracker):
 
 
 def parse_log_thessi_odlast_gildi_d_m_y___(tracker: IntentTracker):
+    # TODO: Great candidate for merging with:
+    #     parse_log_thessi_taka_gildi_d_m_y___
     match = re.match(r"Lög þessi öðlast gildi (%s)( .*)?" % ICELANDIC_DATE_REGEX, tracker.current_text)
     if match is None:
         return False
@@ -2482,16 +2329,7 @@ def parse_log_thessi_odlast_gildi_d_m_y___(tracker: IntentTracker):
     timing = dateparser.parse(raw_date)
     extra = "" if raw_extra is None else raw_extra.strip()
 
-    intent = E(
-        "intent",
-        {
-            "action": "enact",
-            "action-xpath": "",
-            "action-timing": timing.strftime("%Y-%m-%d"),
-        },
-    )
-    if extra:
-        intent.attrib["action-extra"] = extra
+    intent = tracker.make_enactment(timing, "immediate", extra)
 
     tracker.intents.append(intent)
 
@@ -2504,38 +2342,28 @@ def parse_log_thessi_odlast_thegar_gildi___(tracker: IntentTracker):
     if not text.startswith("Lög þessi öðlast þegar gildi"):
         return False
 
-    timing = "undetermined"
-    implemented_timing = ""
-    if text == "Lög þessi öðlast þegar gildi.":
-        timing = "immediate"
-    elif text.startswith("Lög þessi öðlast þegar gildi og koma til framkvæmda"):
-        timing = "immediate-with-delayed-implementation"
-        implemented_timing = text[52:]  # By length of conditional string above.
-    elif text.startswith("Lög þessi öðlast þegar gildi og skulu koma til framkvæmda"):
-        timing = implemented_timing = text[58:].strip(".")
-
-    # FIXME: Both `timing` and `implemented_timing` are either magic strings or
-    # copied verbatum from the data. They should both be parsed into ISO-8601
-    # format here. Note that actual values might be retrieved from metadata.
-
-    # NOTE: This seems pointless, but is here to illustrate how things must
-    # probably be done when we run into enactment clauses that don't enact the
-    # entire law in one go. It is possible that certain clauses get enacted
-    # before others, or that they don't take effect until later. The following
-    # lines serve as a building block for such functionality.
-    existing = tracker.get_existing("/law")
-    action_xpath = make_xpath_from_node(existing)  # Currently always "".
-
-    intent = E(
-        "intent",
-        {
-            "action": "enact",
-            "action-xpath": action_xpath,
-            "action-timing": timing,
-        },
+    timing = dateparser.parse(
+        tracker.original.getroottree().getroot().attrib["published-date"]
     )
-    if implemented_timing:
-        intent.append(E("implemented-timing", implemented_timing))
+    timing_type = "undetermined"
+    implemented_timing = None
+    implemented_timing_custom = ""
+
+    if text == "Lög þessi öðlast þegar gildi.":
+        timing_type = "immediate"
+    elif (match := re.match(r"Lög þessi öðlast þegar gildi og( skulu)? koma til framkvæmda (.+)", text)) is not None:
+        implemented_timing_raw = match.groups()[1]
+        implemented_timing = dateparser.parse(implemented_timing_raw)
+        if implemented_timing is None:
+            implemented_timing_custom = implemented_timing_raw
+        timing_type = "immediate-with-delayed-implemention"
+
+    intent = tracker.make_enactment(
+        timing,
+        timing_type,
+        implemented_timing=implemented_timing,
+        implemented_timing_custom=implemented_timing_custom
+    )
 
     tracker.intents.append(intent)
 
