@@ -54,7 +54,13 @@ def make_xpath_from_node(node):
     return "/".join(xpath_parts)
 
 
-def make_xpath_from_inner_reference(inner_reference: str):
+def make_xpath_from_inner_reference(address: str):
+
+    # We'll be butchering this, so best work on a copy.
+    # NOTE: "Address" is synonymous with "inner reference" in this context. We
+    # should be updating mentions of "inner references" to "addresses" at some
+    # point. In other word, "inner reference" is deprecated wording.
+    inner_reference = address
 
     # Sometimes the more obscure symbol "–" is used to denote ranges but
     # sometimes a regular minus-sign. We'll just want deal with a minus-sign.
@@ -254,7 +260,12 @@ def make_xpath_from_inner_reference(inner_reference: str):
                 ent_numbers.append(words.pop())
 
                 # Support for things like "8., 9. og 10. málsl."
-                while last_or_blank(words).endswith(","):
+                # We still need to make sure that it's not the beginning of
+                # something else, by matching it against `translations`.
+                while (
+                    last_or_blank(words).endswith(",")
+                    and last_or_blank(words).strip(",") not in translations
+                ):
                     ent_numbers.append(words.pop().strip(","))
 
             del peek

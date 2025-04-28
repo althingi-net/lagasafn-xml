@@ -684,6 +684,110 @@ def parse_vid_x_i_logunum_baetist_ny_malsgrein_svohljodandi(tracker: IntentTrack
     return True
 
 
+def parse_sub_intents(tracker: IntentTracker):
+    if not (
+        tracker.lines.current.tag == "ol"
+        and (
+            (
+                "type" in tracker.lines.current.attrib
+                and tracker.lines.current.attrib["type"] == "a"
+            )
+            or (
+                "style" in tracker.lines.current.attrib
+                and tracker.lines.current.attrib["style"] == "list-style-type: lower-alpha;"
+            )
+        )
+    ):
+        return False
+
+    for li in tracker.lines.current.findall("li"):
+
+        if parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_ordsins_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_undan_ordunum_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker, li):
+            pass
+        elif parse_sub_i_stad_ordanna_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_ordanna_x(tracker, li):
+            pass
+        elif parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker, li):
+            pass
+        elif parse_sub_i_stad_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_eftir_ordunum_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_x_baetist(tracker, li):
+            pass
+        elif parse_sub_ordin_x_falla_brott(tracker, li):
+            pass
+        elif parse_sub_x_falla_brott(tracker, li):
+            pass
+        elif parse_sub_x_fellur_brott(tracker, li):
+            pass
+        elif parse_sub_ordid_x_i_x_fellur_brott(tracker, li):
+            pass
+        elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
+            pass
+        elif parse_sub_fyrirsogn_greinarinnar_verdur(tracker, li):
+            pass
+        elif parse_sub_x_ordast_svo(tracker, li):
+            pass
+        else:
+            raise IntentParsingException("Can't figure out list text: %s" % get_all_text(li))
+
+    return True
+
+
+def parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Í stað orðsins „(.+)“ í (.+) laganna kemur: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+
+    intent = tracker.make_intent("replace_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
+
+    return True
+
+
 def parse_sub_i_stad_ordsins_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     match = re.match(r"Í stað orðsins „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
     if match is None:
@@ -1450,72 +1554,10 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     # to determine how to iterate.
     if tracker.lines.peek().tag == "ol":
         next(tracker.lines)
-        for li in tracker.lines.current.findall("li"):
-
-            if parse_sub_i_stad_ordsins_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_undan_ordunum_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker, li):
-                pass
-            elif parse_sub_i_stad_ordanna_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_i_stad_ordanna_x(tracker, li):
-                pass
-            elif parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker, li):
-                pass
-            elif parse_sub_i_stad_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_eftir_ordunum_x_kemur(tracker, li):
-                pass
-            elif parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_x_baetist(tracker, li):
-                pass
-            elif parse_sub_ordin_x_falla_brott(tracker, li):
-                pass
-            elif parse_sub_x_falla_brott(tracker, li):
-                pass
-            elif parse_sub_x_fellur_brott(tracker, li):
-                pass
-            elif parse_sub_ordid_x_i_x_fellur_brott(tracker, li):
-                pass
-            elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
-                pass
-            elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
-                pass
-            elif parse_sub_fyrirsogn_greinarinnar_verdur(tracker, li):
-                pass
-            elif parse_sub_x_ordast_svo(tracker, li):
-                pass
-            else:
-                raise IntentParsingException("Can't figure out list text: %s" % get_all_text(li))
+        if parse_sub_intents(tracker):
+            pass
+        else:
+            raise IntentParsingException("Expected to parse a sub-intent but failed.")
 
     elif tracker.lines.peek().tag == "p":
         for _ in tracker.lines:
@@ -1527,6 +1569,34 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
         raise IntentParsingException("Unexpected tag for sub-change: %s" % tracker.lines.peek().tag)
 
     return True
+
+
+def parse_a_b___(tracker: IntentTracker):
+    # When multiple changes are made in a single article, the article usually
+    # starts with something like "Eftirfarandi breytingar verða á...".
+    #
+    # Example:
+    # - 1. gr. laga nr. 44/2024
+    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=ca3c8622-2e53-4bd4-bed0-bdffd093458a
+    #
+    # Sometimes, however, an article just goes straight into describing the
+    # changes. Under these circumstances, there is no text to parse, only the
+    # list items at the immediate beginning of the article.
+    #
+    # Example:
+    # - 1. gr. laga nr. 66/2024
+    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=bcea380e-be00-4f16-8603-3b72829e27e3
+    #
+    # The latter presumably happens when a change isn't specific to a
+    # particular place in the law, but rather is made all over the place.
+    #
+    # In these circumstances, however, there is nothing to parse at this point,
+    # but rather all the checks are made in `parse_sub_intents` already, so we
+    # simply return its value. We still want to retain this function here
+    # instead of calling `parse_sub_intents` directly from the loop, for
+    # consistency's sake. This may very well be revised once we get into
+    # merging functions.
+    return parse_sub_intents(tracker)
 
 
 def parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker):
@@ -2474,6 +2544,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_logum(tracker):
         pass
     elif parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker):
+        pass
+    elif parse_a_b___(tracker):
         pass
     elif parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi(tracker):
         pass
