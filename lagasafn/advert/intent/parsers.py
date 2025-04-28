@@ -323,9 +323,10 @@ def parse_inner_art_name(tracker: IntentTracker):
     return True
 
 
-def parse_inner_art_numarts(tracker: IntentTracker, ol: _Element | None = None):
-    if ol is None:
-        ol = tracker.lines.current
+def parse_inner_art_numarts(tracker: IntentTracker):
+    #if ol is None:
+    #    ol = tracker.lines.current
+    ol = tracker.lines.current
 
     if ol.tag != "ol":
         return False
@@ -403,8 +404,10 @@ def parse_inner_art_numarts(tracker: IntentTracker, ol: _Element | None = None):
         sub_ols = li.xpath("ol")
         if len(sub_ols) > 0:
             tracker.inner_targets.numarts.append(numart)
-            for sub_ol in sub_ols:
-                parse_inner_art_numarts(tracker, sub_ol)
+            tracker.set_lines(sub_ols)
+            for _ in tracker.lines:
+                parse_inner_art_numarts(tracker)
+            tracker.unset_lines()
             tracker.inner_targets.numarts.pop()
 
         target.append(numart)
@@ -726,86 +729,90 @@ def parse_sub_intents(tracker: IntentTracker):
     ):
         return False
 
-    for li in tracker.lines.current.findall("li"):
+    tracker.set_lines(tracker.lines.current.findall("li"))
 
-        if parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker, li):
+    for li in tracker.lines:
+
+        if parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker):
             pass
-        elif parse_sub_i_stad_ordsins_x_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_ordsins_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker):
             pass
-        elif parse_sub_a_undan_ordunum_x_i_x_kemur(tracker, li):
+        elif parse_sub_a_undan_ordunum_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker, li):
+        elif parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker):
             pass
-        elif parse_sub_i_stad_ordanna_x_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_ordanna_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_ordanna_x(tracker, li):
+        elif parse_sub_i_stad_ordanna_x(tracker):
             pass
-        elif parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker, li):
+        elif parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_x_i_x_kemur(tracker, li):
+        elif parse_sub_i_stad_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker, li):
+        elif parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker):
             pass
-        elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker, li):
+        elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker, li):
+        elif parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker, li):
+        elif parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker):
             pass
-        elif parse_sub_a_eftir_ordunum_x_kemur(tracker, li):
+        elif parse_sub_a_eftir_ordunum_x_kemur(tracker):
             pass
-        elif parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker, li):
+        elif parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker):
             pass
-        elif parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker, li):
+        elif parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker):
             pass
-        elif parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker, li):
+        elif parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker):
             pass
-        elif parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker, li):
+        elif parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_x_baetist(tracker, li):
+        elif parse_sub_vid_x_baetist(tracker):
             pass
-        elif parse_sub_ordin_x_falla_brott(tracker, li):
+        elif parse_sub_ordin_x_falla_brott(tracker):
             pass
-        elif parse_sub_x_falla_brott(tracker, li):
+        elif parse_sub_x_falla_brott(tracker):
             pass
-        elif parse_sub_x_fellur_brott(tracker, li):
+        elif parse_sub_x_fellur_brott(tracker):
             pass
-        elif parse_sub_ordid_x_i_x_fellur_brott(tracker, li):
+        elif parse_sub_ordid_x_i_x_fellur_brott(tracker):
             pass
-        elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
+        elif parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker, li):
+        elif parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker, li):
+        elif parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker, li):
+        elif parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker, li):
+        elif parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker, li):
+        elif parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker):
             pass
-        elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker, li):
+        elif parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker):
             pass
-        elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker, li):
+        elif parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker):
             pass
-        elif parse_sub_fyrirsogn_greinarinnar_verdur(tracker, li):
+        elif parse_sub_fyrirsogn_greinarinnar_verdur(tracker):
             pass
-        elif parse_sub_x_ordast_svo(tracker, li):
+        elif parse_sub_x_ordast_svo(tracker):
             pass
         else:
             raise IntentParsingException("Can't figure out list text: %s" % get_all_text(li))
 
+    tracker.unset_lines()
+
     return True
 
 
-def parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Í stað orðsins „(.+)“ í (.+) laganna kemur: (.+)", get_all_text(li))
+def parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker: IntentTracker):
+    match = re.match(r"Í stað orðsins „(.+)“ í (.+) laganna kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -820,8 +827,8 @@ def parse_sub_i_stad_ordsins_x_i_x_laganna_kemur(tracker: IntentTracker, li: _El
     return True
 
 
-def parse_sub_i_stad_ordsins_x_i_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Í stað orðsins „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+def parse_sub_i_stad_ordsins_x_i_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Í stað orðsins „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -836,8 +843,8 @@ def parse_sub_i_stad_ordsins_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Í stað orðsins „(.+)“ tvívegis í (.+) kemur: (.+)", get_all_text(li))
+def parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Í stað orðsins „(.+)“ tvívegis í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -852,8 +859,8 @@ def parse_sub_i_stad_ordsins_x_tvivegis_i_x_kemur(tracker: IntentTracker, li: _E
     return True
 
 
-def parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Í stað orðins „(.+)“ tvívegis í (.+) og einu sinni í (.+) kemur: (.+)", get_all_text(li))
+def parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Í stað orðins „(.+)“ tvívegis í (.+) og einu sinni í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -873,8 +880,8 @@ def parse_sub_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker: Int
     return True
 
 
-def parse_sub_a_undan_ordunum_x_i_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á undan orðunum „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+def parse_sub_a_undan_ordunum_x_i_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Á undan orðunum „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -889,8 +896,8 @@ def parse_sub_a_undan_ordunum_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á undan (.+) kemur nýr töluliður, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker: IntentTracker):
+    match = re.match(r"Á undan (.+) kemur nýr töluliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -911,11 +918,11 @@ def parse_sub_a_undan_x_kemur_nyr_tolulidur(tracker: IntentTracker, li: _Element
     return True
 
 
-def parse_sub_i_stad_ordanna_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_i_stad_ordanna_x_i_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_i_stad_ordanna_x
     #     parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur
-    match = re.match(r"Í stað orðanna „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    match = re.match(r"Í stað orðanna „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -930,11 +937,11 @@ def parse_sub_i_stad_ordanna_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_i_stad_ordanna_x(tracker: IntentTracker, li: _Element):
+def parse_sub_i_stad_ordanna_x(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_i_stad_ordanna_x_i_x_kemur
     #     parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur
-    match = re.match(r"Í stað orðanna „(.+)“ kemur: (.+)", get_all_text(li))
+    match = re.match(r"Í stað orðanna „(.+)“ kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -949,12 +956,12 @@ def parse_sub_i_stad_ordanna_x(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_i_stad_ordanna_x_i_x_kemur
     #     parse_sub_i_stad_ordanna_x
     #     parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur
-    match = re.match(r"Í stað tilvísunarinnar „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    match = re.match(r"Í stað tilvísunarinnar „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -969,13 +976,13 @@ def parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur(tracker: IntentTracker, li: _El
     return True
 
 
-def parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_i_stad_ordanna_x_i_x_kemur
     #     parse_sub_i_stad_ordanna_x
     #     parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur
     #     parse_sub_i_stad_x_i_x_kemur
-    match = re.match(r"Í stað fjárhæðarinnar „(.+)“ kemur: (.+)", get_all_text(li))
+    match = re.match(r"Í stað fjárhæðarinnar „(.+)“ kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -991,13 +998,13 @@ def parse_sub_i_stad_fjarhaedarinnar_x_kemur(tracker: IntentTracker, li: _Elemen
     return True
 
 
-def parse_sub_i_stad_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_i_stad_x_i_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_i_stad_ordanna_x_i_x_kemur
     #     parse_sub_i_stad_ordanna_x
     #     parse_sub_i_stad_tilvisunarinnar_x_i_x_kemur
     #     parse_sub_i_stad_fjarhaedarinnar_x_kemur
-    match = re.match(r"Í stað „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    match = re.match(r"Í stað „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1012,8 +1019,8 @@ def parse_sub_i_stad_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Í stað (.+) koma tveir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Í stað (.+) koma tveir nýir málsliðir, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1036,8 +1043,8 @@ def parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker: IntentTra
     return True
 
 
-def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á eftir orðinu „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Á eftir orðinu „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1052,10 +1059,10 @@ def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_a_eftir_skammstofuninni_x_i_x_kemur
-    match = re.match(r"Á eftir orðunum „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    match = re.match(r"Á eftir orðunum „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1070,10 +1077,10 @@ def parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+def parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_a_eftir_ordunum_x_i_x_kemur
-    match = re.match(r"Á eftir skammstöfuninni „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    match = re.match(r"Á eftir skammstöfuninni „(.+)“ í (.+) kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1088,8 +1095,8 @@ def parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker: IntentTracker, li: _E
     return True
 
 
-def parse_sub_a_eftir_ordunum_x_kemur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á eftir orðunum „(.+)“ kemur: (.+)", get_all_text(li))
+def parse_sub_a_eftir_ordunum_x_kemur(tracker: IntentTracker):
+    match = re.match(r"Á eftir orðunum „(.+)“ kemur: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1105,8 +1112,8 @@ def parse_sub_a_eftir_ordunum_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á eftir (.+) kemur nýr töluliður, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á eftir (.+) kemur nýr töluliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1127,10 +1134,10 @@ def parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker,
     return True
 
 
-def parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi
-    match = re.match(r"Á eftir (.+) kemur nýr málsliður, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Á eftir (.+) kemur nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1152,10 +1159,10 @@ def parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker,
     return True
 
 
-def parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi
-    match = re.match(r"Á eftir (.+) koma fjórir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Á eftir (.+) koma fjórir nýir málsliðir, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1177,8 +1184,8 @@ def parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker: IntentT
     return True
 
 
-def parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Á eftir (.+) kemur ný málsgrein, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á eftir (.+) kemur ný málsgrein, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1199,8 +1206,8 @@ def parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker: IntentTracker, 
     return True
 
 
-def parse_sub_vid_x_baetist(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Við (.+) bætist: (.+)", get_all_text(li))
+def parse_sub_vid_x_baetist(tracker: IntentTracker):
+    match = re.match(r"Við (.+) bætist: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1214,8 +1221,8 @@ def parse_sub_vid_x_baetist(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_ordin_x_falla_brott(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Orðin „(.+)“ falla brott\.", get_all_text(li))
+def parse_sub_ordin_x_falla_brott(tracker: IntentTracker):
+    match = re.match(r"Orðin „(.+)“ falla brott\.", tracker.current_text)
     if match is None:
         return False
 
@@ -1230,8 +1237,8 @@ def parse_sub_ordin_x_falla_brott(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_x_falla_brott(tracker: IntentTracker, li: _Element):
-    match = re.match(r"(.+) falla brott\.", get_all_text(li))
+def parse_sub_x_falla_brott(tracker: IntentTracker):
+    match = re.match(r"(.+) falla brott\.", tracker.current_text)
     if match is None:
         return False
 
@@ -1242,8 +1249,8 @@ def parse_sub_x_falla_brott(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_x_fellur_brott(tracker: IntentTracker, li: _Element):
-    match = re.match(r"(.+) fellur brott\.", get_all_text(li))
+def parse_sub_x_fellur_brott(tracker: IntentTracker):
+    match = re.match(r"(.+) fellur brott\.", tracker.current_text)
     if match is None:
         return False
 
@@ -1254,8 +1261,8 @@ def parse_sub_x_fellur_brott(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_ordid_x_i_x_fellur_brott(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Orðið „(.+)“ í (.+) fellur brott.", get_all_text(li))
+def parse_sub_ordid_x_i_x_fellur_brott(tracker: IntentTracker):
+    match = re.match(r"Orðið „(.+)“ í (.+) fellur brott.", tracker.current_text)
     if match is None:
         return False
 
@@ -1269,11 +1276,11 @@ def parse_sub_ordid_x_i_x_fellur_brott(tracker: IntentTracker, li: _Element):
     return True
 
 
-def parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_vid_x_laganna_baetist_nyr_malslidur_svohljodandi
     #     parse_sub_vid_baetist_nyr_malslidur_svohljodandi
-    match = re.match(r"Við (.+) bætast tveir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Við (.+) bætast tveir nýir málsliðir, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1298,11 +1305,11 @@ def parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTra
     return True
 
 
-def parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with (currently identical):
     #     parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi
     #     parse_sub_vid_baetist_nyr_malslidur_svohljodandi
-    match = re.match(r"Við (.+) bætist nýr málsliður, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Við (.+) bætist nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1327,12 +1334,12 @@ def parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, l
     return True
 
 
-def parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi
     #     parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi
     #     parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi
-    match = re.match(r"Við bætist nýr málsliður, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Við bætist nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1360,12 +1367,12 @@ def parse_sub_vid_baetist_nyr_malslidur_svohljodandi(tracker: IntentTracker, li:
     return True
 
 
-def parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
+def parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker):
     # TODO: Great candidate for merging with:
     #     parse_sub_vid_x_baetast_tveir_nyir_malslidir_svohljodandi
     #     parse_sub_vid_x_baetist_nyr_malslidur_svohljodandi
     #     parse_sub_vid_baetist_nyr_malslidur_svohljodandi
-    match = re.match(r"Við bætast tveir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+    match = re.match(r"Við bætast tveir nýir málsliðir, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1393,8 +1400,8 @@ def parse_sub_vid_baetast_tveir_nyir_malslidir_svohljodandi(tracker: IntentTrack
     return True
 
 
-def parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Við bætast tveir nýir töluliðir, sem verða (.+), svohljóðandi:", get_all_text(li))
+def parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Við bætast tveir nýir töluliðir, sem verða (.+), svohljóðandi:", tracker.current_text)
     if match is None:
         return False
 
@@ -1405,8 +1412,10 @@ def parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker:
 
     tracker.targets.inner = E("inner")
     if len(existing) == 1 and existing[0].tag == "subart":
-        for ol in li.xpath("ol"):
-            parse_inner_art_numarts(tracker, ol)
+        tracker.set_lines(tracker.lines.current.xpath("ol"))
+        for _ in tracker.lines:
+            parse_inner_art_numarts(tracker)
+        tracker.unset_lines()
     else:
         raise IntentParsingException(
             "Don't know how to add numart at address: %s" % tracker.intents.attrib["common-address"]
@@ -1419,8 +1428,8 @@ def parse_sub_vid_baetast_tveir_nyir_tolulidir_sem_verda_x_svohljodandi(tracker:
     return True
 
 
-def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Við bætist ný málsgrein, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Við bætist ný málsgrein, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1451,8 +1460,8 @@ def parse_sub_vid_baetist_ny_malsgrein_svohljodandi(tracker: IntentTracker, li: 
     return True
 
 
-def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Við bætist nýr töluliður, svohljóðandi: (.+)", get_all_text(li))
+def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Við bætist nýr töluliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1475,8 +1484,8 @@ def parse_sub_vid_baetist_nyr_tolulidur_svohljodandi(tracker: IntentTracker, li:
     return True
 
 
-def parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Fyrirsögn greinarinnar orðast svo: (.+)", get_all_text(li))
+def parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker: IntentTracker):
+    match = re.match(r"Fyrirsögn greinarinnar orðast svo: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1493,8 +1502,8 @@ def parse_sub_fyrirsogn_greinarinnar_ordast_svo(tracker: IntentTracker, li: _Ele
     return True
 
 
-def parse_sub_fyrirsogn_greinarinnar_verdur(tracker: IntentTracker, li: _Element):
-    match = re.match(r"Fyrirsögn greinarinnar verður: (.+)", get_all_text(li))
+def parse_sub_fyrirsogn_greinarinnar_verdur(tracker: IntentTracker):
+    match = re.match(r"Fyrirsögn greinarinnar verður: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1511,8 +1520,8 @@ def parse_sub_fyrirsogn_greinarinnar_verdur(tracker: IntentTracker, li: _Element
     return True
 
 
-def parse_sub_x_ordast_svo(tracker: IntentTracker, li: _Element):
-    match = re.match(r"(.+) orðast svo: (.+)", get_all_text(li))
+def parse_sub_x_ordast_svo(tracker: IntentTracker):
+    match = re.match(r"(.+) orðast svo: (.+)", tracker.current_text)
     if match is None:
         return False
 
@@ -1604,6 +1613,22 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
             del full_law_identifier, identifiers
 
             tracker.set_affected_law_identifier(identifier)
+
+            # FIXME: This forces us to break convention by supplying the
+            # `parse_` functions with text that's captured here instead of
+            # being read from `tracker.current_text` inside the parsing
+            # functions. It's not obvious how to remove the need for that right
+            # now, but we may be able to place this logic in some generalized
+            # parsing function, once we've merged all these parsing functions
+            # together somewhat.
+            #
+            # One perhaps crass option is to switch out `tracker.current_text`
+            # for some variable that explicitly looks for and returns the
+            # `.tail` of `find("em")` if it exists. It would need to be called
+            # `tracker.current_instruction` or something of the sort, rather
+            # than `tracker.current_text`, to underline that it's not dumb text
+            # but has already been pre-processed to some extent. It is
+            # currently only there for caching.
 
             # Sometimes the text we need is in a list, which we'll need to
             # iterate, but sometimes it just follows the identifier. We'll want

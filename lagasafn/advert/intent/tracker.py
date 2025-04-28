@@ -39,6 +39,10 @@ class IntentTracker:
     # Holds the original content to be parsed.
     original: _Element
 
+    # Temporarily keeps `lines` while they are supplanted with sub-nodes to
+    # deal with. See functions `set_lines` and `unset_lines`.
+    lines_trace: list[super_iter]
+
     # Rather nodes than lines. Holds each child node of `original`, for better
     # control during parsing.
     lines: super_iter
@@ -73,13 +77,32 @@ class IntentTracker:
         self.affected_law_nr = original.attrib["affected-law-nr"]
         self.affected_law_year = int(original.attrib["affected-law-year"])
 
+        self.lines_trace = []
         self.lines = super_iter(original.getchildren())
+
         self.intents = E("intents")
 
         # We load the first line and get ready to rumble.
         next(self.lines)
 
         # Configure cache for "current" text.
+        self.cached_current_index = -1
+
+    def set_lines(self, new_lines: list[_Element]):
+        """
+        Tugs the current lines away for temporarily working on a new set.
+        Typically used when iteration of subnodes is required.
+        """
+        self.lines_trace.append(self.lines)
+        self.lines = super_iter(new_lines)
+        self.cached_current_index = -1
+
+    def unset_lines(self):
+        """
+        Restores the previous set of lines, which were previously tugged away
+        by `set_lines`.
+        """
+        self.lines = self.lines_trace.pop()
         self.cached_current_index = -1
 
     def set_affected_law_identifier(self, identifier: str):
