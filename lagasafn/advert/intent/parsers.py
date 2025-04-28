@@ -19,6 +19,7 @@ from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
 from lagasafn.constants import ICELANDIC_DATE_REGEX
 from lagasafn.constructors import construct_node
+from lagasafn.constructors import construct_sens
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import separate_sentences
@@ -99,17 +100,30 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
         }
 
         parse_inner_art(tracker, prefilled)
+
     elif len(existing) == 1 and existing[0].tag == "subart":
+
+        # It may very well happen that a `subart` will be replaced with inline
+        # content at some point. In that case, we should use `construct_node`
+        # here nistead of `parse_inner_art_subart`.
+        if text_to is not None:
+            raise IntentParsingException(
+                "Unimplemented: Inline subart content at address: %s" % address
+            )
+
         next(tracker.lines)
         parse_inner_art_subart(tracker, {"nr": existing[0].attrib["nr"]})
+
     elif len(existing) == 1 and existing[0].tag == "numart":
-        inner_node = existing[0]
-        for inner_child in list(inner_node):
-            inner_node.remove(inner_child)
-        sentences = separate_sentences(text_to)
-        add_sentences(inner_node, sentences)
+        tracker.targets.inner.append(construct_node(existing[0], text_to, nr_change=0))
+
     elif len(existing) == 1 and existing[0].tag == "name":
         tracker.targets.inner.append(E("name", text_to))
+
+    elif len(existing) == 1 and existing[0].tag == "sen":
+        for sen in construct_sens(existing[0], text_to):
+            tracker.targets.inner.append(sen)
+
     else:
         raise IntentParsingException("Don't know how to replace at address: %s" % address)
 
@@ -169,14 +183,26 @@ def parse_x_i_logunum_ordast_svo(tracker: IntentTracker):
         }
 
         parse_inner_art(tracker, prefilled)
+
     elif len(existing) == 1 and existing[0].tag == "subart":
+        # It may very well happen that a `subart` will be replaced with inline
+        # content at some point. In that case, we should use `construct_node`
+        # here nistead of `parse_inner_art_subart`.
+        if text_to is not None:
+            raise IntentParsingException(
+                "Unimplemented: Inline subart content at address: %s" % address
+            )
+
+        next(tracker.lines)
         parse_inner_art_subart(tracker, {"nr": existing[0].attrib["nr"]})
+
     elif len(existing) == 1 and existing[0].tag == "numart":
-        inner_node = existing[0]
-        for inner_child in list(inner_node):
-            inner_node.remove(inner_child)
-        sentences = separate_sentences(text_to)
-        add_sentences(inner_node, sentences)
+        tracker.targets.inner.append(construct_node(existing[0], text_to, nr_change=0))
+
+    elif len(existing) == 1 and existing[0].tag == "sen":
+        for sen in construct_sens(existing[0], text_to):
+            tracker.targets.inner.append(sen)
+
     else:
         raise IntentParsingException("Don't know how to replace at address: %s" % address)
 
@@ -724,15 +750,21 @@ def parse_sub_intents(tracker: IntentTracker):
             pass
         elif parse_sub_i_stad_x_i_x_kemur(tracker, li):
             pass
+        elif parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker, li):
+            pass
         elif parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker, li):
             pass
         elif parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker, li):
+            pass
+        elif parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker, li):
             pass
         elif parse_sub_a_eftir_ordunum_x_kemur(tracker, li):
             pass
         elif parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker, li):
             pass
         elif parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker, li):
+            pass
+        elif parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker, li):
             pass
         elif parse_sub_a_eftir_x_kemur_ny_malsgrein_svohljodandi(tracker, li):
             pass
@@ -980,6 +1012,30 @@ def parse_sub_i_stad_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     return True
 
 
+def parse_sub_i_stad_x_koma_tveir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
+    match = re.match(r"Í stað (.+) koma tveir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    address, text_to = match.groups()
+
+    intent = tracker.make_intent("replace", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    inner = E("inner")
+    if len(existing) > 0 and all([n.tag == "sen" for n in existing]):
+        for sen in construct_sens(existing[0], text_to):
+            inner.append(sen)
+    else:
+        raise IntentParsingException("Don't know how to replace unsupported tags at address %s" % address)
+
+    intent.append(inner)
+
+    tracker.intents.append(intent)
+
+    return True
+
+
 def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
     match = re.match(r"Á eftir orðinu „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
     if match is None:
@@ -997,7 +1053,27 @@ def parse_sub_a_eftir_ordinu_x_i_x_kemur(tracker: IntentTracker, li: _Element):
 
 
 def parse_sub_a_eftir_ordunum_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+    # TODO: Great candidate for merging with:
+    #     parse_sub_a_eftir_skammstofuninni_x_i_x_kemur
     match = re.match(r"Á eftir orðunum „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    text_from, address, text_to = match.groups()
+
+    intent = tracker.make_intent("append_text", address)
+    intent.append(E("text-from", text_from))
+    intent.append(E("text-to", text_to))
+
+    tracker.intents.append(intent)
+
+    return True
+
+
+def parse_sub_a_eftir_skammstofuninni_x_i_x_kemur(tracker: IntentTracker, li: _Element):
+    # TODO: Great candidate for merging with:
+    #     parse_sub_a_eftir_ordunum_x_i_x_kemur
+    match = re.match(r"Á eftir skammstöfuninni „(.+)“ í (.+) kemur: (.+)", get_all_text(li))
     if match is None:
         return False
 
@@ -1052,6 +1128,8 @@ def parse_sub_a_eftir_x_kemur_nyr_tolulidur_svohljodandi(tracker: IntentTracker,
 
 
 def parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker, li: _Element):
+    # TODO: Great candidate for merging with:
+    #     parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi
     match = re.match(r"Á eftir (.+) kemur nýr málsliður, svohljóðandi: (.+)", get_all_text(li))
     if match is None:
         return False
@@ -1062,8 +1140,34 @@ def parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker,
     existing = deepcopy(list(intent.find("existing")))
 
     inner = E("inner")
-    if len(existing) == 1 and existing[0].tag == "sen":
-        inner.append(construct_node(existing[0], text_to))
+    if len(existing) > 0 and all([n.tag == "sen" for n in existing]):
+        for sen in construct_sens(existing[0], text_to, nr_change=1):
+            inner.append(sen)
+    else:
+        raise IntentParsingException("Don't know how to append numart at address: %s" % address)
+
+    intent.append(inner)
+    tracker.intents.append(intent)
+
+    return True
+
+
+def parse_sub_a_eftir_x_koma_fjorir_nyir_malslidir_svohljodandi(tracker: IntentTracker, li: _Element):
+    # TODO: Great candidate for merging with:
+    #     parse_sub_a_eftir_x_kemur_nyr_malslidur_svohljodandi
+    match = re.match(r"Á eftir (.+) koma fjórir nýir málsliðir, svohljóðandi: (.+)", get_all_text(li))
+    if match is None:
+        return False
+
+    address, text_to = match.groups()
+
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    inner = E("inner")
+    if len(existing) > 0 and all([n.tag == "sen" for n in existing]):
+        for sen in construct_sens(existing[0], text_to, nr_change=1):
+            inner.append(sen)
     else:
         raise IntentParsingException("Don't know how to append numart at address: %s" % address)
 
@@ -1415,28 +1519,18 @@ def parse_sub_x_ordast_svo(tracker: IntentTracker, li: _Element):
     address, text_to = match.groups()
 
     intent = tracker.make_intent("replace", address)
-    inner = deepcopy(list(intent.find("existing")))
+    existing = deepcopy(list(intent.find("existing")))
 
-    intent.append(E("inner", *inner))
+    inner = E("inner")
+    intent.append(inner)
     tracker.intents.append(intent)
 
-    if len(inner) == 1 and inner[0].tag in ["numart", "subart"]:
-        inner_node = inner[0]
-        for paragraph in list(inner_node):
-            inner_node.remove(paragraph)
-        inner.append(add_sentences(inner_node, separate_sentences(text_to)))
-        del inner_node
+    if len(existing) == 1 and existing[0].tag in ["numart", "subart"]:
+        inner.append(construct_node(existing[0], text_to, nr_change=0))
 
-    elif len(inner) > 0 and all([i.tag == "sen" for i in inner]):
-        sentences = separate_sentences(text_to)
-
-        if len(sentences) != len(inner):
-            raise IntentParsingException(
-                "Unimplemented: Replacing a number of sentences with a different amount of sentences."
-            )
-
-        for i, sentence in enumerate(sentences):
-            inner[i].text = sentence
+    elif len(existing) > 0 and all([i.tag == "sen" for i in existing]):
+        for sen in construct_sens(existing[0], text_to):
+            inner.append(sen)
 
     else:
         raise IntentParsingException("Don't know how to replace content at address: %s" % address)
