@@ -122,7 +122,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
         next(tracker.nodes)
 
     # TODO: Remove feature knob when functionality is complete.
-    if FEATURES["PARSE_INTENTS"] and "law-nr" in tracker.affected:
+    if FEATURES["PARSE_INTENTS"]:
 
         existing_intents = art.find("intents")
         if existing_intents is None:
@@ -283,9 +283,8 @@ def parse_advert(xml_remote):
     del raw_nr_year
 
     # Find description.
-    description = xml_remote.xpath("/div/table/tbody/tr[@class='advertType2']/td")[
-        0
-    ].text
+    description_node = xml_remote.xpath("/div/table/tbody/tr[@class='advertType2']/td")[0]
+    description = get_all_text(description_node)
 
     # Figure out the date that this document wash published.
     raw_publishing_date = xml_remote.xpath("//*[starts-with(normalize-space(text()), 'A deild')]")[0].text

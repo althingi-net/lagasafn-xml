@@ -163,17 +163,20 @@ for disqualifier in law_pattern_disqualifiers:
 
 law_permutations = {}
 
-def get_law_name_permutations():
+def get_law_name_permutations(codex_version: str = ""):
     """
     Provides a dictionary with law ID as key, containing every known
     permutation of the law's name, such as declensions, as well as synonyms and
     their declensions.
     """
 
+    if codex_version == "":
+        codex_version = CURRENT_PARLIAMENT_VERSION
+
     if len(law_permutations) > 0:
         return law_permutations
 
-    index = etree.parse(XML_INDEX_FILENAME % CURRENT_PARLIAMENT_VERSION).getroot()
+    index = etree.parse(XML_INDEX_FILENAME % codex_version).getroot()
 
     for law_entry in index.xpath("/index/law-entries/law-entry"):
         name_nomenative = law_entry.find("./name-conjugated/accusative").text

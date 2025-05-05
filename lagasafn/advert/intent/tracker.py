@@ -18,12 +18,14 @@ class TargetGroup():
 
 
 class InnerTargetGroup():
+    chapter: _Element | None
     art: _Element | None
     subart: _Element | None
     numarts: list[_Element]
     table: _Element | None
 
     def __init__(self):
+        self.chapter = None
         self.art = None
         self.subart = None
         self.numarts = []
@@ -33,11 +35,14 @@ class InnerTargetGroup():
 class IntentTracker:
     # Holds the information on the law that the intent impacts, inherited from
     # the `AdvertTracker`.
-    affected_law_nr: str
-    affected_law_year: int
+    affected_law_nr: str | None
+    affected_law_year: int | None
 
     # Holds the original content to be parsed.
     original: _Element
+
+    # Holds the identifier of the advert.
+    advert_identifier: str
 
     # Temporarily keeps `lines` while they are supplanted with sub-nodes to
     # deal with. See functions `set_lines` and `unset_lines`.
@@ -74,8 +79,21 @@ class IntentTracker:
         self.targets = TargetGroup()
 
         self.original = original
-        self.affected_law_nr = original.attrib["affected-law-nr"]
-        self.affected_law_year = int(original.attrib["affected-law-year"])
+
+        if (
+            "affected-law-nr" in original.attrib
+            and "affected-law-year" in original.attrib
+        ):
+            self.affected_law_nr = original.attrib["affected-law-nr"]
+            self.affected_law_year = int(original.attrib["affected-law-year"])
+        else:
+            self.affected_law_nr = None
+            self.affected_law_year = None
+
+        self.advert_identifier = "%s/%s" % (
+            self.original.getroottree().getroot().attrib["nr"],
+            self.original.getroottree().getroot().attrib["year"],
+        )
 
         self.lines_trace = []
         self.lines = super_iter(original.getchildren())
@@ -110,7 +128,10 @@ class IntentTracker:
         self.affected_law_nr = nr
         self.affected_law_year = int(year)
 
-    def affected_law_identifier(self) -> str:
+    def affected_law_identifier(self) -> str | None:
+        if self.affected_law_nr is None or self.affected_law_year is None:
+            return None
+
         return "%s/%d" % (self.affected_law_nr, self.affected_law_year)
 
     def affected_law(self) -> Law:
@@ -120,13 +141,43 @@ class IntentTracker:
     def get_codex_version(self):
         return self.original.getroottree().getroot().attrib["applied-to-codex-version"]
 
+    def make_citizenship(self, name, born_year, born_country) -> _Element:
+        """
+        Creates a special intent for giving someone citizenship.
+        """
+        citizenship = E(
+            "intent",
+            {
+                "action": "grant_citizenship",
+                "name": name,
+                "born-year": born_year,
+                "born-country": born_country,
+            },
+        )
+        return citizenship
+
+    def make_repeal(self, repealed_law_identifier) -> _Element:
+        """
+        Creates a special kind of intent which communicates the repeal of law.
+        """
+        repeal = E(
+            "intent",
+            {
+                "action": "repeal",
+                "action-identifier": repealed_law_identifier,
+            },
+        )
+
+        return repeal
+
     def make_enactment(
         self,
         timing: datetime,
         timing_type: str,
         extra: str = "",
         implemented_timing: datetime | None = None,
-        implemented_timing_custom: str = ""
+        implemented_timing_custom: str = "",
+        address: str = "",
     ) -> _Element:
         """
         Creates a special kind of intent which communicates the enacting of the
@@ -137,12 +188,16 @@ class IntentTracker:
         different in the future.
         """
 
+        xpath = ""
+        if address != "":
+            xpath = make_xpath_from_inner_reference(address)
+
         # NOTE: An `enactment` is strictly speaking an `intent`.
         enactment = E(
             "intent",
             {
                 "action": "enact",
-                "action-xpath": "",
+                "action-xpath": xpath,
                 "timing": timing.strftime("%Y-%m-%d"),
                 "timing-type": timing_type,
             },
@@ -176,6 +231,20 @@ class IntentTracker:
                 address = self.intents.attrib["common-address"]
             else:
                 address = "%s %s" % (address, self.intents.attrib["common-address"])
+
+            # There may be an `intents` parent to the `intents`, when we're
+            # more than one level down in changes.
+            #
+            # Example:
+            #  - A-stafl. 7. gr. laga nr. 68/2024:
+            #    https://www.stjornartidindi.is/Advert.aspx?RecordID=559fef86-a7a2-4285-afd3-8f94a271e55f
+            parent = self.intents.getparent()
+            while (
+                parent is not None
+                and parent.tag == "intents"
+            ):
+                address = "%s %s" % (address, parent.attrib["common-address"])
+                parent = parent.getparent()
 
         xpath = make_xpath_from_inner_reference(address)
 

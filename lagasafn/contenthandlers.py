@@ -426,6 +426,7 @@ def separate_sentences(content):
         "o.þ.h.",
         "bls.",
         "kr.",
+        "o.s.frv.",
     ]
     for r in recognized_shorts:
         content = content.replace(r, r.replace(".", "{DOT}"))
