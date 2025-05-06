@@ -28,16 +28,39 @@ def bill_validate(request: HttpRequest):
     nr = law.attrib["nr"]
     year = int(law.attrib["year"])
 
+    return {
+        "validated": True,
+        "bill": {
+            "nr": nr,
+            "year": year,
+        }
+    }
+
+@api.post("publish")
+def bill_publish(request: HttpRequest):
+    """
+       Publish bill XML provided as POST body.
+
+       Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/publish --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
+    """
+
+    bill_xml_string = request.body
+
+    try:
+        bill_xml = etree.fromstring(request.body)
+    except Exception:
+        raise BillException("Invalid XML provided.")
+
+    law = bill_xml.find("law")
+    nr = law.attrib["nr"]
+    year = int(law.attrib["year"])
+
     existing_filename = XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, year, nr)
 
     write_xml(law, existing_filename)
 
-    #import ipdb; ipdb.set_trace()
-
-    # I was here. Going to see what I can do with these bills now.
-    # I should commit and push this basic service when it's capable of receiving the files at all.
     return {
-        "validated": True,
+        "published": True,
         "bill": {
             "nr": nr,
             "year": year,
