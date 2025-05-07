@@ -1,5 +1,5 @@
 from django.http import HttpRequest
-from lagasafn.constants import XML_FILENAME
+from lagasafn.constants import BILL_FILENAME
 from lagasafn.exceptions import BillException
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import write_xml
@@ -55,7 +55,8 @@ def bill_publish(request: HttpRequest):
     nr = law.attrib["nr"]
     year = int(law.attrib["year"])
 
-    existing_filename = XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, year, nr)
+    # FIXME: Support custom bill publishing number.
+    existing_filename = BILL_FILENAME % (CURRENT_PARLIAMENT_VERSION, 1, year, nr)
 
     write_xml(law, existing_filename)
 
