@@ -9,6 +9,18 @@ from ninja.parser import Parser
 
 api = NinjaAPI(urls_namespace="bill", parser=None)
 
+@api.exception_handler(BillException)
+def service_unavailable(request, exc):
+    """
+    Handle exceptions gracefully. Specify custom HTTP error code and return with message intended.
+    """
+
+    return api.create_response(
+        request,
+        { "message": exc.__str__() },
+        status=400,
+    )
+
 @api.post("validate")
 def bill_validate(request: HttpRequest):
     """
