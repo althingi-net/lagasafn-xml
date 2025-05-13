@@ -1,11 +1,13 @@
 from django.http import HttpRequest
 from lagasafn.constants import BILL_FILENAME
 from lagasafn.exceptions import BillException
-from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION, BASE_DIR
 from lagasafn.utils import write_xml
 from lxml import etree
 from ninja import NinjaAPI
 from ninja.parser import Parser
+from git import Repo
+from time import sleep
 
 api = NinjaAPI(urls_namespace="bill", parser=None)
 
@@ -63,19 +65,41 @@ def bill_publish(request: HttpRequest):
     except Exception:
         raise BillException("Invalid XML provided.")
 
+    # Attempt to determine law nr. and year.
     law = bill_xml.find("law")
-    nr = law.attrib["nr"]
-    year = int(law.attrib["year"])
+    law_nr = law.attrib["nr"]
+    law_year = int(law.attrib["year"])
+    bill_nr = 1 # FIXME: Support custom bill publishing number.
 
-    # FIXME: Support custom bill publishing number.
-    existing_filename = BILL_FILENAME % (CURRENT_PARLIAMENT_VERSION, 1, year, nr)
+    # Determine file name for bill, write XML to data directory.
+    existing_filename = BILL_FILENAME % (CURRENT_PARLIAMENT_VERSION, bill_nr, law_year, law_nr)
 
     write_xml(law, existing_filename)
+
+    # The endpoint may be called rapidly in succession, which
+    # can cause one thread to have called git commit, causing a lock
+    # to be placed, while another one is doing exactly the same. This
+    # causes exceptions.
+    #
+    # Thus, we try a few times to commit the change, with increasingly
+    # longer sleep time between attempts.
+
+    failureCnt = 0
+
+    while failureCnt < 10:
+       try:
+           repo = Repo.init(BASE_DIR)
+           repo.index.add(existing_filename)
+           repo.index.commit("Publish bill nr. " + str(bill_nr) + "/" + CURRENT_PARLIAMENT_VERSION + ", law " + str(law_nr) + "/" + str(law_year))
+           break; # On success, break out of the loop.
+       except Exception:
+           failureCnt += 1
+           sleep(failureCnt * 1)
 
     return {
         "published": True,
         "bill": {
-            "nr": nr,
-            "year": year,
+            "nr": law_nr,
+            "year": law_year,
         }
     }
