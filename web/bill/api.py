@@ -23,12 +23,12 @@ def service_unavailable(request, exc):
         status=400,
     )
 
-@api.post("validate")
+@api.post("document/validate")
 def bill_validate(request: HttpRequest):
     """
        Validate bill XML provided as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/validate --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
+       Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/document/validate --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
     """
 
     bill_xml_string = request.body
@@ -50,12 +50,12 @@ def bill_validate(request: HttpRequest):
         }
     }
 
-@api.post("publish")
+@api.post("document/publish")
 def bill_publish(request: HttpRequest):
     """
        Publish bill XML provided as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/publish --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
+       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/document/publish --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
     """
 
     bill_xml_string = request.body
