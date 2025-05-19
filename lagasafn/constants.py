@@ -52,6 +52,8 @@ XML_REFERENCES_FILENAME = join(XML_BASE_DIR, "%s", "references.xml")  # % codex_
 BILL_FILENAME_DIR = join(BILLS_BASE_DIR, "%s") # % codex_version
 BILL_FILENAME = join(BILL_FILENAME_DIR, "%d.%d.%s.xml") # % (bill_num, law_year, law_num)
 
+BILLMETA_FILENAME = join(BILL_FILENAME_DIR, "%d.meta.xml") # % (bill_num)
+
 ERRORMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "errormap.json")  # % codex_version
 STRAYTEXTMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "straytextmap.json")  # % codex_version
 SPLITMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "splitmap.json")  # % codex_version
