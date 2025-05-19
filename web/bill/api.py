@@ -1,5 +1,5 @@
 from django.http import HttpRequest
-from lagasafn.constants import BILL_FILENAME
+from lagasafn.constants import BILLMETA_FILENAME, BILL_FILENAME
 from lagasafn.exceptions import BillException
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION, BASE_DIR
 from lagasafn.utils import write_xml
@@ -22,6 +22,38 @@ def service_unavailable(request, exc):
         { "message": exc.__str__() },
         status=400,
     )
+
+@api.post("meta")
+def bill_meta(request: HttpRequest):
+    """
+       Publish bill meta XML data as POST body.
+
+       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/meta --data '<bill><lagasafnID>1</lagasafnID><title>Skógræktarlög</title><description>Frumvarp um eflingu skógræktar á Íslandi</description></bill>'
+    """
+
+    bill_xml_string = request.body
+
+    try:
+        bill_xml = etree.fromstring(request.body)
+    except Exception:
+        raise BillException("Invalid XML provided.")
+
+    title = bill_xml.find("title")
+    description = bill_xml.find("description")
+    bill_nr = int(bill_xml.find("lagasafnID").text)
+
+    # Determine file name for bill meta, write XML to data directory.
+    existing_filename = BILLMETA_FILENAME % (CURRENT_PARLIAMENT_VERSION, bill_nr)
+
+    write_xml(bill_xml, existing_filename)
+
+    return {
+        "bill": {
+            "saved": True,
+            "title": title.text,
+            "description": description.text,
+        }
+    }
 
 @api.post("document/validate")
 def bill_validate(request: HttpRequest):
@@ -50,8 +82,8 @@ def bill_validate(request: HttpRequest):
         }
     }
 
-@api.post("document/publish")
-def bill_publish(request: HttpRequest):
+@api.post("{bill_id}/document/publish")
+def bill_publish(request: HttpRequest, bill_id):
     """
        Publish bill XML provided as POST body.
 
@@ -69,7 +101,9 @@ def bill_publish(request: HttpRequest):
     law = bill_xml.find("law")
     law_nr = law.attrib["nr"]
     law_year = int(law.attrib["year"])
-    bill_nr = 1 # FIXME: Support custom bill publishing number.
+
+    # Determine bill number
+    bill_nr = int(bill_id)
 
     # Determine file name for bill, write XML to data directory.
     existing_filename = BILL_FILENAME % (CURRENT_PARLIAMENT_VERSION, bill_nr, law_year, law_nr)
