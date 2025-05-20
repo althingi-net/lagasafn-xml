@@ -170,8 +170,10 @@ def make_xpath_from_inner_reference(address: str):
             branch_at_tag = ""
 
         # Initialize.
+        ent_separator = "//"  # Default.
         ent_type = ""
         ent_numbers = []
+        ent_special = ""  # Particularly strange and unusual conditions.
 
         word = words.pop().strip(",")
 
@@ -231,12 +233,26 @@ def make_xpath_from_inner_reference(address: str):
 
             del peek
 
-        elif word.lower() == "inngangsmálslið":
+        elif re.match(r"inngangsmálslið(ur)?", word.lower()) is not None:
             ent_type = "sen"
             ent_numbers.append("1")
 
+        elif re.match(r"lokamálsgrein(ar)?", word.lower()) is not None:
+            ent_type = "subart"
+            ent_special = "last()"
+
         elif word.lower() == "fyrirsögn":
+            ent_separator = "/"
             ent_type = "name"
+
+        elif ' '.join(words) == "skilgreiningu á hugtakinu":
+            lookup_definition = word.capitalize() + ":"
+            ent_type = "paragraph"
+            ent_special = "definitions/definition = '%s'" % lookup_definition
+
+            words.pop()
+            words.pop()
+            words.pop()
 
         else:
             # Oh no! We don't know what to do!
@@ -405,8 +421,11 @@ def make_xpath_from_inner_reference(address: str):
 
                 xpath_numbers.append(xpath_number)
 
+            if len(ent_special) > 0:
+                xpath_numbers.append(ent_special)
+
             # Add the next node selection to the xpath string.
-            xpath += "//%s" % ent_type
+            xpath += "%s%s" % (ent_separator, ent_type)
             if len(xpath_numbers) > 0:
                 xpath += "[%s]" % " or ".join(xpath_numbers)
 

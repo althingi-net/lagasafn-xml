@@ -1069,8 +1069,22 @@ def get_all_text(node: _Element):
     # Get the text
     result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
 
+    result = remove_garbage(result)
+
+    return result
+
+
+def remove_garbage(input_string: str):
+    """
+    Removes garbage like non-breaking space, soft-hyphens, double spaces and
+    such, which tends to be in the original data, but only makes things more
+    difficult in all sorts of different ways.
+    """
     # Remove non-breaking space.
-    result = result.replace("\xa0", " ")
+    result = input_string.replace("\xa0", " ")
+
+    # Remove soft-hyphen.
+    result = result.replace("\u00AD", "")
 
     # Consolidate spaces.
     while result.find("  ") > -1:

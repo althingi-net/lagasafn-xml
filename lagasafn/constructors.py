@@ -26,11 +26,35 @@ def construct_node(base_node: _Element, text_to: str, name: str = "", nr_change:
     else:
         raise LawException("Can't figure out 'nr-type' of node with tag: %s" % base_node.tag)
 
-    # Add the actual content.
-    node.append(E("nr-title", "%s." % node.attrib["nr"]))
+    # Add nr-title, if appropriate.
+    # NOTE: There are occasional examples of `subart`s with a `nr-title` but
+    # the XML format currently (2025-04-28) does not account for them. This
+    # condition should be removed if and when the XML format gets updated to
+    # include them. Until then, they are effectively just normal sentences.
+    if node.tag != "subart":
+        node.append(E("nr-title", "%s." % node.attrib["nr"]))
+
+    # Add name, if present.
     if len(name) > 0:
         node.append(E("name", name))
+
+    # Finally, add sentences.
     sens = separate_sentences(text_to)
     add_sentences(node, sens)
 
     return node
+
+
+def construct_sens(base_node: _Element, text_to, nr_change: int = 0) -> list[_Element]:
+    if base_node.tag != "sen":
+        raise LawException("Function 'construct_sens' requires 'base_node' to be a 'sen' node.")
+
+    # Result value.
+    sens = []
+
+    nr_start = int(base_node.attrib["nr"])
+    sentences = separate_sentences(text_to)
+    for i, sentence in enumerate(sentences):
+        sens.append(E("sen", {"nr": str(nr_start+i+nr_change) }, sentence))
+
+    return sens
