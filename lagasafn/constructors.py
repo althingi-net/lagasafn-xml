@@ -2,11 +2,14 @@ from copy import deepcopy
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import LawException
+from lagasafn.utils import is_roman
 from lxml.builder import E
 from lxml.etree import _Element
+from roman import fromRoman
+from roman import toRoman
 
 
-def construct_node(base_node: _Element, text_to: str, name: str = "", nr_change: int = 1) -> _Element:
+def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_change: int = 1) -> _Element:
     """
     Constructs a Lagasafn-XML node from an already existing node.
     """
@@ -23,24 +26,46 @@ def construct_node(base_node: _Element, text_to: str, name: str = "", nr_change:
         node.attrib["nr"] = str(int(node.attrib["nr"]) + nr_change)
     elif node.attrib["nr-type"] == "alphabet":
         node.attrib["nr"] = chr(ord(node.attrib["nr"]) + nr_change)
+    elif node.attrib["nr-type"] == "roman":
+        # FIXME: Chapter tags erroneously have their Arabic equivalent in the
+        # `nr` attribute and the original Roman number in the `roman-nr`
+        # attribute. This is the exact opposite to how Roman numerals are
+        # treated elsewhere, for example in temporary clauses. The general rule
+        # should be that the `nr` attribute contains the value in the format
+        # that it's the most likely to be looked up by, which in the case of
+        # chapters is Roman.
+        #
+        # Since fixing this is probably going to be a bit of a headache, we
+        # mitigate the problem here until then, by detecting which way it's
+        # being done and reacting accordingly. This special treatment should be
+        # removed once the data is made consistent.
+        if is_roman(node.attrib["nr"]):
+            node.attrib["nr"] = toRoman(fromRoman(node.attrib["nr"]) + nr_change)
+            node.attrib["roman-nr"] = str(int(node.attrib["roman-nr"]) + nr_change)
+        else:
+            node.attrib["nr"] = str(int(node.attrib["nr"]) + nr_change)
+            node.attrib["roman-nr"] = toRoman(fromRoman(node.attrib["roman-nr"]) + nr_change)
     else:
         raise LawException("Can't figure out 'nr-type' of node with tag: %s" % base_node.tag)
 
     # Add nr-title, if appropriate.
     # NOTE: There are occasional examples of `subart`s with a `nr-title` but
-    # the XML format currently (2025-04-28) does not account for them. This
-    # condition should be removed if and when the XML format gets updated to
-    # include them. Until then, they are effectively just normal sentences.
-    if node.tag != "subart":
+    # the XML format currently (2025-04-28) does not account for them.
+    if node.tag == "numart":
         node.append(E("nr-title", "%s." % node.attrib["nr"]))
+    elif node.tag == "chapter":
+        node.append(E("nr-title", "%s. %s" % (node.attrib["roman-nr"], node.attrib["chapter-type"])))
+    else:
+        raise Exception("Don't know how to construct nr-title for tag: %s" % node.tag)
 
     # Add name, if present.
     if len(name) > 0:
         node.append(E("name", name))
 
     # Finally, add sentences.
-    sens = separate_sentences(text_to)
-    add_sentences(node, sens)
+    if len(text_to) > 0:
+        sens = separate_sentences(text_to)
+        add_sentences(node, sens)
 
     return node
 

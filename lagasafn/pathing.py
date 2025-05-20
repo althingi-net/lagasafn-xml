@@ -223,7 +223,7 @@ def make_xpath_from_inner_reference(address: str):
 
         elif word == "í":
             peek = last_or_blank(words)
-            if peek.lower() == "tafla":
+            if peek.lower() in ["tafla", "töflu"]:
                 word = words.pop()
                 ent_type = "table"
             elif peek.endswith("“"):

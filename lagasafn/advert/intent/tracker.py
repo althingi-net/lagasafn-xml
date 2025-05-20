@@ -215,6 +215,23 @@ class IntentTracker:
         return enactment
 
 
+    def make_appendix_intent(self, raw_nr) -> _Element:
+        """
+        Appendices are mostly unimplemented, as their format tends to be
+        somewhat arbitrary. Even official law isn't updated but rather are
+        described as a collection of changes throughout time.
+        """
+        intent = E(
+            "intent",
+            {
+                "action": "change_appendix",
+                "raw-nr": raw_nr,
+            },
+        )
+
+        return intent
+
+
     def make_intent(self, action: str, address: str, node_hint: str = "") -> _Element:
         law = Law(self.affected_law_identifier(), self.get_codex_version())
 
@@ -243,7 +260,8 @@ class IntentTracker:
                 parent is not None
                 and parent.tag == "intents"
             ):
-                address = "%s %s" % (address, parent.attrib["common-address"])
+                if "common-address" in parent.attrib:
+                    address = "%s %s" % (address, parent.attrib["common-address"])
                 parent = parent.getparent()
 
         xpath = make_xpath_from_inner_reference(address)
