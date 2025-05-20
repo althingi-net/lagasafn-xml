@@ -897,8 +897,7 @@
       </subart>
       <subart nr="5">
         <paragraph nr="1">
-          <sen nr="1">Leyfisveitandi getur bundið leyfi eftirfarandi skilyrðum að fengnum umsögnum lögreglustjóra, heilbrigðisnefnda, sveitarstjórnar, slökkviliðs og eftir atvikum annarra umsagnaraðila skv. 10. gr.</sen>
-          <sen nr="2">:</sen>
+          <sen nr="1">Leyfisveitandi getur bundið leyfi eftirfarandi skilyrðum að fengnum umsögnum lögreglustjóra, heilbrigðisnefnda, sveitarstjórnar, slökkviliðs og eftir atvikum annarra umsagnaraðila skv. 10. gr.:</sen>
           <numart nr="1" nr-type="numeric">
             <nr-title>1.</nr-title>
             <paragraph nr="1">
@@ -961,10 +960,7 @@
             <start xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
             <end xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
           </location>
-          <location type="range" string-length="194">
-            <start xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']"/>
-            <end xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" middle-punctuation=":"/>
-          </location>
+          <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" words="Leyfisveitandi getur bundið leyfi eftirfarandi skilyrðum að fengnum umsögnum lögreglustjóra, heilbrigðisnefnda, sveitarstjórnar, slökkviliðs og eftir atvikum annarra umsagnaraðila skv. 10. gr." middle-punctuation=":" instance-num="1"/>
           <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="lögreglustjóri" instance-num="1"/>
           <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="eða öryggisvakt slökkviliðs" instance-num="1"/>
           <location type="range" xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='5']/paragraph[@nr='1']/numart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="eða slökkviliðsstjóri" instance-num="1"/>
