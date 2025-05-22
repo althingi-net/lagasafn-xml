@@ -56,7 +56,7 @@ def bill_meta(request: HttpRequest):
         }
     }
 
-@api.post("document/validate")
+@api.post("document/validate", auth=APIAuthentication())
 def bill_validate(request: HttpRequest):
     """
        Validate bill XML provided as POST body.
@@ -83,7 +83,7 @@ def bill_validate(request: HttpRequest):
         }
     }
 
-@api.post("{bill_id}/document/publish")
+@api.post("{bill_id}/document/publish", auth=APIAuthentication())
 def bill_publish(request: HttpRequest, bill_id):
     """
        Publish bill XML provided as POST body.
