@@ -9,6 +9,8 @@ SECRET_KEY = 'some-random-string'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Access token for API POST & PUT requests.
+API_ACCESS_TOKEN = 'supersecret'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

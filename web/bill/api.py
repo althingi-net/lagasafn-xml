@@ -3,6 +3,7 @@ from lagasafn.constants import BILLMETA_FILENAME, BILL_FILENAME
 from lagasafn.exceptions import BillException
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION, BASE_DIR
 from lagasafn.utils import write_xml
+from web.core.authentication import APIAuthentication
 from lxml import etree
 from ninja import NinjaAPI
 from ninja.parser import Parser
@@ -23,7 +24,7 @@ def service_unavailable(request, exc):
         status=400,
     )
 
-@api.post("meta")
+@api.post("meta", auth=APIAuthentication())
 def bill_meta(request: HttpRequest):
     """
        Publish bill meta XML data as POST body.
@@ -55,7 +56,7 @@ def bill_meta(request: HttpRequest):
         }
     }
 
-@api.post("document/validate")
+@api.post("document/validate", auth=APIAuthentication())
 def bill_validate(request: HttpRequest):
     """
        Validate bill XML provided as POST body.
@@ -82,7 +83,7 @@ def bill_validate(request: HttpRequest):
         }
     }
 
-@api.post("{bill_id}/document/publish")
+@api.post("{bill_id}/document/publish", auth=APIAuthentication())
 def bill_publish(request: HttpRequest, bill_id):
     """
        Publish bill XML provided as POST body.
