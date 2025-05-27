@@ -1,6 +1,9 @@
 class LawException(Exception):
     pass
 
+class BillException(Exception):
+    pass
+
 
 class ReferenceParsingException(LawException):
     pass

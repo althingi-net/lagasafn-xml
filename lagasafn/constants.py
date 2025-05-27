@@ -9,6 +9,7 @@ ICELANDIC_DATE_REGEX = r"(\d{1,2})\. ([a-zúíáó]{1,9}) (\d{4})"
 JSON_MAP_BASE_DIR = join(DATA_DIR, "json-maps")
 PATCHES_BASE_DIR = join(DATA_DIR, "patches")
 XML_BASE_DIR = join(DATA_DIR, "xml")
+BILLS_BASE_DIR = join(DATA_DIR, "bills")
 
 LAW_FILENAME_DIR = join(
     DATA_DIR, "original", "%s"
@@ -47,6 +48,11 @@ XML_FILENAME_DIR = join(XML_BASE_DIR, "%s")  # % codex_version
 XML_FILENAME = join(XML_FILENAME_DIR, "%d.%s.xml")  # % (codex_version, law_year, law_num)
 XML_INDEX_FILENAME = join(XML_BASE_DIR, "%s", "index.xml")  # % codex_version
 XML_REFERENCES_FILENAME = join(XML_BASE_DIR, "%s", "references.xml")  # % codex_version
+
+BILL_FILENAME_DIR = join(BILLS_BASE_DIR, "%s") # % codex_version
+BILL_FILENAME = join(BILL_FILENAME_DIR, "%d.%d.%s.xml") # % (bill_num, law_year, law_num)
+
+BILLMETA_FILENAME = join(BILL_FILENAME_DIR, "%d.meta.xml") # % (bill_num)
 
 ERRORMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "errormap.json")  # % codex_version
 STRAYTEXTMAP_FILENAME = join(JSON_MAP_BASE_DIR, "%s", "straytextmap.json")  # % codex_version
