@@ -83,3 +83,53 @@ def construct_sens(base_node: _Element, text_to, nr_change: int = 0) -> list[_El
         sens.append(E("sen", {"nr": str(nr_start+i+nr_change) }, sentence))
 
     return sens
+
+
+def construct_temp_chapter_from_art(base_node: _Element) -> _Element:
+    """
+    When a law only has one temporary clause, it is an article. When there are
+    more than one, the term "temporary clauses" begins to refer to a chapter,
+    with articles numbered in Roman numerals within it.
+
+    So when there is an existing, single, temporary article, but more temporary
+    articles get added, what really happens is that the temporary article turns
+    into a chapter, the existing one gets placed in it and numbered as 1 (or
+    "I" in Roman numerals) and the new ones added to that chapter.
+
+    This function takes an existing temporary article, and returns a chapter
+    that contains the article already present.
+
+    Example:
+    - 4. gr. laga nr. 73/2024
+      https://stjornartidindi.is/Advert.aspx?RecordID=417b28c4-f82c-46c3-a9a8-09ec25807c30
+    """
+    if base_node.tag != "art":
+        raise LawException(
+            "Function 'construct_temp_chapter_from_art' expects a tag 'art' but received: %s" % base_node.tag
+        )
+
+    # Basic skeleton of our new article.
+    art = E(
+        "art",
+        {
+            "nr": "I",
+            "roman-nr": "1",
+            "number-type": "roman",
+        },
+    )
+
+    # Copy the contents from the existing one.
+    for elem in deepcopy(list(base_node)):
+        art.append(elem)
+
+    # Engulf the whole thing in a chapter.
+    chapter = E(
+        "chapter",
+        {
+            "nr-type": "temporary-clauses",
+            "nr": "t",
+        },
+        art
+    )
+
+    return chapter

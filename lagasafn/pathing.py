@@ -56,6 +56,25 @@ def make_xpath_from_node(node):
 
 def make_xpath_from_inner_reference(address: str):
 
+    # FIXME: This function began its life as a relatively simple one.
+    # Throughout its evolution it has become increasingly convoluted and
+    # contains repeated code that could be generalized. In short, refactoring
+    # is in order.
+    #
+    # Ideas for refactoring:
+    #
+    # 1. Instead of maintaining `xpath` as a string that is changed by various
+    #    sections of the function, a dictionary or even a special object might
+    #    be used so that adjusting according to its existing content would be
+    #    easier. This might allow us to make more concise XPaths, particularly
+    #    when it comes to branching (using XPath unions " | ").
+    #
+    # 2. Commonly used variables like `word` and `peek` could be streamlined,
+    #    also eliminating the need for the weird `last_or_blank` function.
+    #
+    # 3. A special function for dealing with alpha-components here and there,
+    #    instead of repeating similar og identical checks all over.
+
     # We'll be butchering this, so best work on a copy.
     # NOTE: "Address" is synonymous with "inner reference" in this context. We
     # should be updating mentions of "inner references" to "addresses" at some
@@ -74,10 +93,22 @@ def make_xpath_from_inner_reference(address: str):
     # the way.
     inner_reference = inner_reference.replace(".", "")
 
+    # Replace semantic (although consistent) descriptions with more systemic
+    # language for easier parsing.
+    inner_reference = re.sub(
+        r"inngangsmálslið(ur)?",
+        "1 málsl",
+        inner_reference,
+        flags=re.IGNORECASE
+    )
+
     if inner_reference == "ákvæði til bráðabirgða":
-        # Simple enough. Will get more complicated when we need to support
-        # temporary clauses as a single article instead of a chapter.
-        return "//chapter[@nr-type='temporary-clauses']"
+        # Whether it's a single temporary article, or a a chapter of temporary
+        # articles, it will have the attribute `nr` as "t".
+        #
+        # Temporary articles inside a temporary chapter will have Roman
+        # numerals, so this won't match those (and shouldn't).
+        return "//*[@nr='t']"
     elif inner_reference.lower() == "heiti":
         # Also simple enough, and is important to be from the XML root, so that
         # it doesn't select names of articles or whatever else.
@@ -160,9 +191,28 @@ def make_xpath_from_inner_reference(address: str):
         if len(branch_at_tag) > 0:
             # Branch out the XPath, but avoiding duplicates.
             xpath_list = xpath.split(" | ")
+
             last_selection = xpath_list[-1]
-            new_branch = last_selection[:last_selection.rfind("//" + branch_at_tag)].rstrip("/")
+
+            branching_tag_location = last_selection.rfind("//" + branch_at_tag)
+            if branching_tag_location == -1 and branch_at_tag == "sen":
+                # When branching by sentence, there may not be a previous `sen`
+                # in the XPath. This typically occurs when the semantic phrase
+                # "inngangsmálsliður" is used, or some variation thereof, which
+                # has actually been replaced with "1 málsl" when the code
+                # reaches this point.
+                #
+                # Example:
+                # - A-stafl. 10. gr. laga nr. 105/2024
+                #   https://www.stjornartidindi.is/Advert.aspx?RecordID=807f6e79-d283-491d-ae35-34e729daabd5
+                #   Specifically:
+                #       inngangsmálslið og 4. tölul. 1. mgr., 2. og 4. mgr. og 1. málsl. 5. mgr. 7. gr.
+                branching_tag_location = last_selection.rfind("//")
+
+            new_branch = last_selection[:branching_tag_location].rstrip("/")
+
             xpath_list.append(new_branch)
+
             xpath = " | ".join(xpath_list)
 
             del xpath_list, last_selection, new_branch
@@ -230,12 +280,29 @@ def make_xpath_from_inner_reference(address: str):
                 # The rest is a string inside the content of what's being
                 # referenced, so we know that we're done at this point.
                 break
+            elif peek == "tvívegis":
+                # This typically occurs in bills describing multiple instances
+                # of something. It's irrelevant in the context of addressing,
+                # so we ignore it per se, but still may need to react to its
+                # surrounding content for branching.
+                words.pop()
+
+                # Remove a possibly preceding and meaningless "og".
+                if last_or_blank(words) == "og":
+                    words.pop()
+
+                # NOTE: This clause is identical to the one that checks for
+                # `word == "og"`.
+                # Check if we need to branch.
+                peek = last_or_blank(words).strip(",")
+                if re.match(r"[a-z]$", peek) is not None and ent_type == "":
+                    branch_at_tag = translations[words[-2]]
+                elif peek in translations and translations[peek] != ent_type:
+                    branch_at_tag = translations[peek]
+
+                continue
 
             del peek
-
-        elif re.match(r"inngangsmálslið(ur)?", word.lower()) is not None:
-            ent_type = "sen"
-            ent_numbers.append("1")
 
         elif re.match(r"lokamálsgrein(ar)?", word.lower()) is not None:
             ent_type = "subart"
@@ -254,9 +321,36 @@ def make_xpath_from_inner_reference(address: str):
             words.pop()
             words.pop()
 
+        elif word == "og":
+            # FIXME: This comment clause is hard to understand.
+            #
+            # At this point, we're not concatenating anything anymore, but into
+            # separated instances of addresses.
+            #
+            # NOTE: An "og" will typically be caught below, after this run of
+            # `if/elif/else` because it typically concatenates internal
+            # addresses. This clause is for when it doesn't.
+
+            # NOTE: This clause is identical to the one that checks for
+            # `word == "í"`.
+            # Check if we need to branch.
+            peek = last_or_blank(words).strip(",")
+            if re.match(r"[a-z]$", peek) is not None and ent_type == "":
+                branch_at_tag = translations[words[-2]]
+            elif peek in translations and translations[peek] != ent_type:
+                branch_at_tag = translations[peek]
+
+            # Otherwise move on to the next word.
+            continue
+
         else:
             # Oh no! We don't know what to do!
-            raise ReferenceParsingException("Don't know how to parse word: %s" % word)
+            raise ReferenceParsingException(
+                "Don't know how to parse word: '%s' - whole string: %s" % (
+                    word,
+                    address
+                )
+            )
 
         # The alpha component should be irrelevant at this point.
         del alpha_component
@@ -268,12 +362,29 @@ def make_xpath_from_inner_reference(address: str):
 
             # See comment to where `branch_at_tag` is initialized.
             peek = last_or_blank(words)
-            if peek in translations:
+            if re.match(r"[a-z]$", peek) is not None and words[-2] in translations and translations[words[-2]] != ent_type:
+                branch_at_tag = translations[words[-2]]
+            elif peek in translations:
                 branch_at_tag = translations[peek]
 
             else:
-                # Add the word that came after "og", "eða", etc.
-                ent_numbers.append(words.pop())
+                # Find the word that came after "og", "eða", etc.
+                word = words.pop()
+
+                if re.match(r"[a-z]$", word):
+                    alpha_component = word
+
+                    # Make sure that we're dealing with the same entity type as
+                    # the one being parsed.
+                    word = words.pop()
+                    if translations[word] != ent_type:
+                        raise ReferenceParsingException(
+                            "Don't know how to figure out concatenation in: %s" % address
+                        )
+
+                    word = words.pop() + alpha_component
+
+                ent_numbers.append(word)
 
                 # Support for things like "8., 9. og 10. málsl."
                 # We still need to make sure that it's not the beginning of
@@ -282,7 +393,21 @@ def make_xpath_from_inner_reference(address: str):
                     last_or_blank(words).endswith(",")
                     and last_or_blank(words).strip(",") not in translations
                 ):
-                    ent_numbers.append(words.pop().strip(","))
+                    peek = last_or_blank(words).strip(",")
+
+                    # Support for branching between "15. gr. a" and "7., 9." in
+                    # the following example:
+                    #     7. og 8. mgr. 15. gr. a, 7., 9. og 10. mgr. 15. gr. b
+                    #
+                    # This example can be found in:
+                    # - b-stafl. 3. gr. laga nr. 105/2024:
+                    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=807f6e79-d283-491d-ae35-34e729daabd5
+                    if re.match(r"[a-z]$", peek) is not None and words[-2] in translations and translations[words[-2]] != ent_type:
+                        branch_at_tag = translations[words[-2]]
+                        break
+
+                    word = words.pop().strip(",")
+                    ent_numbers.append(word)
 
             del peek
 
@@ -294,7 +419,11 @@ def make_xpath_from_inner_reference(address: str):
         # "8. og 2. mgr. 9. gr.".
         if last_or_blank(words).endswith(","):
             peek = last_or_blank(words).strip(",")
-            if peek in translations:
+            if re.match(r"[a-z]$", peek) is not None and words[-2] in translations:
+                # We detect an alpha-component here, but we don't need to do
+                # anything with it, it will be caught in the next iteration.
+                branch_at_tag = translations[words[-2]]
+            elif peek in translations:
                 branch_at_tag = translations[peek]
             elif re.match(r"[a-z]$", peek):
                 # This happens when we have something like "21. gr. c", and we
