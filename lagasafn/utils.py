@@ -1050,7 +1050,7 @@ def convert_to_text(elements: List[_Element]):
     while "  " in result:
         result = result.replace("  ", " ")
 
-    return result
+    return result.strip()
 
 
 def get_all_text(node: _Element):

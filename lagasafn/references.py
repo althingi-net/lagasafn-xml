@@ -731,6 +731,8 @@ def parse_reference_string(reference):
     reference = reference.strip()
     while reference.find("  ") > -1:
         reference = reference.replace("  ", " ")
+    while reference.find("\n") != -1:
+        reference = reference.replace("\n", " ")
 
     # Turn reference into words that we will parse one by one, but backwards,
     # because human-readable addressing has the most precision in the
