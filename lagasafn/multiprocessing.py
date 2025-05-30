@@ -2,6 +2,7 @@ import os
 import signal
 from lagasafn import settings
 from multiprocessing.pool import Pool
+from multiprocessing import cpu_count
 from multiprocessing import get_context
 
 """
@@ -65,7 +66,13 @@ class CustomPool(Pool):
             # This is apparently safer than `multiprocessing.cpu_count()`,
             # according to:
             # https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
-            processes = len(os.sched_getaffinity(0))
+            #
+            # Although it's not available on MacOS (or in fact anything but
+            # Linux), so we fall back to `cpu_count` in that case.
+            if hasattr(os, "sched_getaffinity"):
+                processes = len(os.sched_getaffinity(0))
+            else:
+                processes = cpu_count()
 
         if initializer is None:
             initializer = init_pool
