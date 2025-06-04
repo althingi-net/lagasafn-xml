@@ -4,6 +4,8 @@ from lagasafn.advert.filesystem import get_original_advert_identifiers
 from lagasafn.advert.filesystem import get_original_advert_xml
 from lagasafn.advert.parsers import parse_advert
 from lagasafn.exceptions import AdvertException
+from lagasafn.exceptions import IntentParsingException
+from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.etree import _Element
@@ -61,16 +63,18 @@ def convert_advert(year, nr):
 
     advert_type = xml_remote.xpath("//tr[@class='advertType']/td/br")[0].tail.lower()
 
-    if advert_type == "lög":
-        xml_advert = parse_advert(xml_remote)
-    else:
+    if advert_type != "lög":
         print(" skipping (unsupported type '%s')" % advert_type)
         return
 
-    write_xml(xml_advert, path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr)))
-
-    print(" done")
-
+    try:
+        xml_advert = parse_advert(xml_remote)
+        write_xml(xml_advert, path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr)))
+        print(" done")
+    except (IntentParsingException, ReferenceParsingException) as ex:
+        print(" failed with %s exception:" % type(ex).__name__)
+        print(ex)
+        print()
 
 def create_index():
     """
