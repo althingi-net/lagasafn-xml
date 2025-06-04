@@ -14,9 +14,14 @@ class TargetGroup:
     `chapter` element, which is determined using this.
     """
 
-    chapter: _Element | None = None
-    art: _Element | None = None
-    temp_clause: _Element | None = None
+    chapter: _Element | None
+    art: _Element | None
+    temp_clause: _Element | None
+
+    def __init__(self):
+        self.chapter = None
+        self.art = None
+        self.temp_clause = None
 
 
 class AdvertTracker:
@@ -35,20 +40,22 @@ class AdvertTracker:
     #
     # We will record as much about this as we can into each element in the
     # resulting advert XML.
-    affected: dict = {}
+    affected: dict
 
     # Contains the resulting XML that will be written to disk.
     xml: _Element
 
     # Contains a `super_iter`-ated set of nodes from the original advert.
-    nodes: super_iter = super_iter([])
+    nodes: super_iter
 
     # See `TargetGroup` class.
-    targets: TargetGroup = TargetGroup()
+    targets: TargetGroup
 
     def __init__(self, xml_doc: _Element):
         self.affected = {}
         self.xml = xml_doc
+        self.nodes = super_iter([])
+        self.targets = TargetGroup()
 
     def current_node(self) -> _Element:
         """
