@@ -102,16 +102,9 @@ def make_xpath_from_inner_reference(address: str):
         flags=re.IGNORECASE
     )
 
-    if inner_reference == "ákvæði til bráðabirgða":
-        # Whether it's a single temporary article, or a a chapter of temporary
-        # articles, it will have the attribute `nr` as "t".
-        #
-        # Temporary articles inside a temporary chapter will have Roman
-        # numerals, so this won't match those (and shouldn't).
-        return "//*[@nr='t']"
-    elif inner_reference.lower() == "heiti":
-        # Also simple enough, and is important to be from the XML root, so that
-        # it doesn't select names of articles or whatever else.
+    if inner_reference.lower() == "heiti":
+        # Refers to the name of the law. Important to be specified from the XML
+        # root, so that it doesn't select names of articles or whatever else.
         return "/law/name"
 
     # Turn the inner reference into a list that's easier to deal. Note that
@@ -271,6 +264,16 @@ def make_xpath_from_inner_reference(address: str):
             ent_type = "art"
             ent_numbers.append(word)
 
+            # If we run into temporary clause designation at this point, we
+            # have already dealt with it.
+            if re.match(
+                r"ákvæði(s)? til bráðabirgða",
+                " ".join(words[-3:]).lower()
+            ) is not None:
+                words.pop()
+                words.pop()
+                words.pop()
+
         elif word == "í":
             peek = last_or_blank(words)
             if peek.lower() in ["tafla", "töflu"]:
@@ -343,6 +346,24 @@ def make_xpath_from_inner_reference(address: str):
             # Otherwise move on to the next word.
             continue
 
+        elif (
+            word == "bráðabirgða"
+            and re.match(
+                r"ákvæði(s)? til",
+                " ".join(words[-2:]).lower()
+            ) is not None
+        ):
+            # Whether it's a single temporary article, or a a chapter of
+            # temporary articles, it will have the attribute `nr` as "t".
+            #
+            # Temporary articles inside a temporary chapter will have Roman
+            # numerals, so this won't match those (and shouldn't).
+            ent_type = "*"
+            ent_numbers.append("t")
+
+            words.pop()
+            words.pop()
+
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException(
@@ -409,6 +430,16 @@ def make_xpath_from_inner_reference(address: str):
                     word = words.pop().strip(",")
                     ent_numbers.append(word)
 
+                # If we run into temporary clause designation at this point, we
+                # have already dealt with it.
+                if re.match(
+                    r"ákvæði(s)? til bráðabirgða",
+                    " ".join(words[-3:]).lower()
+                ) is not None:
+                    words.pop()
+                    words.pop()
+                    words.pop()
+
             del peek
 
         # Branch XPath when indicated by a comma.
@@ -433,16 +464,6 @@ def make_xpath_from_inner_reference(address: str):
             else:
                 raise ReferenceParsingException("Don't know how to parse concatenated: %s" % peek)
             del peek
-
-        # This doesn't directly impact the XPath, since it has already been
-        # processed during the parsing of Roman numerals above.
-        if re.match(
-            r"ákvæði(s)? til bráðabirgða",
-            " ".join(words[-3:]).lower()
-        ) is not None:
-            words.pop()
-            words.pop()
-            words.pop()
 
         # Assuming something came of this...
         if len(ent_type) > 0:

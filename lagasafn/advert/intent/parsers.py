@@ -522,6 +522,33 @@ def parse_a_eftir_x_laganna_kemur_malsgrein_svohljodandi(tracker: IntentTracker)
     return True
 
 
+def parse_a_undan_x_laganna_kemur_malsgrein_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á undan (.+) laganna (kemur|koma) (ný málsgrein|(tvær|þrjár|fjórar|fimm) nýjar málsgreinar), svohljóðandi:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, _, _, _ = match.groups()
+
+    intent = tracker.make_intent("prepend", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
+    tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
+
+    if len(existing) == 1 and existing[0].tag == "subart":
+        nr = int(existing[0].attrib["nr"])
+        for _ in tracker.lines:
+            nr += 1
+            parse_inner_art_subart(tracker, {"nr": nr })
+    else:
+        raise IntentParsingException("Don't know how to add subart at address: %s" % address)
+
+    tracker.targets.inner = None
+
+    return True
+
+
 def parse_vid_x_laganna_baetist_malsgrein_svohljodandi(tracker: IntentTracker):
     match = re.match(r"Við (.+) (laganna|í lögunum) bæt[ia]st (ný málsgrein|(tvær|þrjár|fjórar) nýjar málsgreinar), svohljóðandi:", tracker.current_text)
     if match is None:
@@ -760,22 +787,6 @@ def parse_i_stad_x_kemur(tracker: IntentTracker):
     return True
 
 
-def parse_i_stad_x_i_x_kemur(tracker: IntentTracker):
-    match = re.match(r"Í stað( (orðsins|orðanna|tölunnar|tilvísunarinnar))? „(.+)“( tvívegis)? í (.+?)( laganna)? kemur(, í viðeigandi beygingarfalli)?: (.+)", tracker.current_text)
-    if match is None:
-        return False
-
-    _, _, text_from, _, address, _, _, text_to = match.groups()
-
-    intent = tracker.make_intent("replace_text", address)
-    intent.append(E("text-from", text_from))
-    intent.append(E("text-to", text_to))
-
-    tracker.intents.append(intent)
-
-    return True
-
-
 def parse_i_stad_x_kemur_nyr_malslidur_svohljodandi(tracker: IntentTracker):
     match = re.match(r"Í stað (.+) kemur nýr málsliður, svohljóðandi: (.+)", tracker.current_text)
     if match is None:
@@ -955,11 +966,21 @@ def parse_x_fellur_brott(tracker: IntentTracker):
 
 
 def parse_ordid_x_i_x_fellur_brott(tracker: IntentTracker):
-    match = re.match(r"(Orðið|Orðin|Tilvísunin) „(.+)“( tvívegis)? í (.+) (fellur|falla) brott\.", tracker.current_text)
+
+    # FIXME: This should belong to the planned "prologue" parsing mentioned in
+    # the function `parse_i_stad_x_i_x_kemur`.
+    text = tracker.current_text
+    search = re.search(r" og sama orð hvarvetna annars staðar í lögunum", text)
+    if search is not None:
+        text = text.replace(search.group(), "")
+
+    # --- Start of traditional parsing. ---
+
+    match = re.match(r"(Orðið|Orðin|Tilvísunin) „(.+)“( tvívegis)? í (.+?)( laganna| í lögunum)? (fellur|falla) brott\.", text)
     if match is None:
         return False
 
-    _, text_from, _, address, _ = match.groups()
+    _, text_from, _, address, _, _ = match.groups()
 
     intent = tracker.make_intent("delete_text", address)
     intent.append(E("text-from", text_from))
@@ -1313,7 +1334,7 @@ def parse_vid_gildistoku_laga_thessara_verdur_eftirfarandi_breyting_a_logum_nr_x
 
     tracker.set_affected_law_identifier(identifier)
 
-    if parse_i_stad_x_i_x_laganna_kemur(tracker, text):
+    if parse_i_stad_x_i_x_kemur(tracker, text):
         pass
     elif parse_a_eftir_ordinu_x_i_x_laganna_kemur(tracker, text):
         pass
@@ -1338,7 +1359,7 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_logum_nr_
         next(tracker.lines)
         tracker.set_lines(tracker.lines.current.xpath("li"))
         for _ in tracker.lines:
-            if parse_i_stad_x_i_x_laganna_kemur(tracker):
+            if parse_i_stad_x_i_x_kemur(tracker):
                 pass
             elif parse_x_laganna_fellur_brott(tracker):
                 pass
@@ -1424,13 +1445,19 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
             tracker.set_lines(sub_lis)
 
             for _ in tracker.lines:
-                if parse_i_stad_x_i_x_laganna_kemur(tracker):
+                if parse_i_stad_x_i_x_kemur(tracker):
+                    pass
+                elif parse_a_undan_x_laganna_kemur_malsgrein_svohljodandi(tracker):
+                    pass
+                elif parse_ordid_x_i_x_fellur_brott(tracker):
                     pass
                 elif parse_x_laganna_fellur_brott(tracker):
                     pass
                 elif parse_vid_login_baetist_nytt_x_svohljodandi(tracker):
                     pass
                 elif parse_vid_x_laganna_baetist_malslidur_svohljodandi(tracker):
+                    pass
+                elif parse_vid_x_laganna_baetist_malsgrein_svohljodandi(tracker):
                     pass
                 elif parse_i_stad_x_i_x_og_x_i_x_kemur(tracker):
                     pass
@@ -1468,7 +1495,7 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     # TODO: Consider merging with:
     #     parse_eftirfarandi_breytingar_verda_a_x
     # NOTE: That questionable space at the end happens occurs in advert 45/2024.
-    match = re.match(r"Eftirfarandi breytingar verða á (.+) laganna ?:", tracker.current_text)
+    match = re.match(r"Eftirfarandi breytingar verða á (.+) (laganna|í lögunum) ?:", tracker.current_text)
     if match is None:
         return False
 
@@ -1926,15 +1953,66 @@ def parse_i_stad_ordanna_x_og_x_i_x_x_thrivegis_i_x_og_tvivegis_i_x_i_logunum_ke
     return True
 
 
-def parse_i_stad_x_i_x_laganna_kemur(tracker: IntentTracker, text: str = ""):
-    match = re.match(r"Í stað( (orðsins|orðanna|fjárhæðarinnar|heitisins|tilvísunarinnar|dagsetningarinnar))? „(.+)“( tvívegis)? í (.+) (laganna|í lögunum) kemur(, í viðeigandi beygingarfalli)?: (.+)", text or tracker.current_text)
+def parse_i_stad_x_i_x_kemur(tracker: IntentTracker, text: str = ""):
+    # FIXME: The first chunk of code here, parsing flags from the text, can be
+    # thought of as the proto-stage of a new parser dedicated to analyzing the
+    # text instead of these one-liner regexes in every parsing function.
+    #
+    # The long-term idea is that we will get rid of these one-liner regexes and
+    # the fetching of information from them through groups, instead receiving a
+    # dictionary, or possibly an object, that describes the nature of the
+    # intent. This object would then be sent to `make_intent`.
+    #
+    # The terminology here might get convoluted unless we clean it up. An
+    # `intent` currently refers to the entire change, including content such as
+    # new articles or even new entire chapters. What we need to parse here are
+    # kind of prologues to the intent, which merely describe whether something
+    # is being added, replaced or what not.
+    #
+    # NOTE: This mess began as a result of how things are phrased in general
+    # terms rather than with precise addresses in:
+    #
+    # - 8. gr. laga nr. 110/2024
+    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=47f65e46-e071-48f5-8300-f622a0f73db1
+
+    text = text or tracker.current_text
+
+    flag_from_elsewhere_in_law = False
+    # FIXME: We currently have no process for dealing with "I. viðauka laganna"
+    # here, so it's hard-coded for now, hoping that this is unique.
+    search = re.search(r" og (sama orðs|sömu orða) hvarvetna( í öllum beygingarföllum)? annars staðar í lögunum( og í I. viðauka laganna)?,?", text)
+    if search is not None:
+        # NOTE: If we were in charge of the process, then this wouldn't be
+        # allowed in legal text. Addresses of changes should be specified
+        # exactly. This occurs in 8. gr. laga nr. 110/2024.
+        text = text.replace(search.group(), "")
+        flag_from_elsewhere_in_law = True
+
+    search = re.search(r" þ.m.t. í fyrirsögnum greina( og viðaukum laganna)?,?", text)
+    if search is not None:
+        text = text.replace(search.group(), "")
+
+    search = re.search(r" þ.m.t. í millifyrirsögn á undan (.+?) laganna,", text)
+    if search is not None:
+        text = text.replace(search.group(), "")
+
+    # -- Start of traditional parsing --
+
+    match = re.match(r"Í stað( (orðsins|orðanna|fjárhæðarinnar|heitisins|tilvísunarinnar|dagsetningarinnar|tölunnar))? „(.+)“( tvívegis| fjórum sinnum)? í (.+?)( (laganna|í lögunum))?( að undanskildu(m)? (.+),)? kemur(, í viðeigandi beygingarfalli)?: (.+)", text)
     if match is None:
         return False
 
-    _, _, text_from, _, address, _, _, text_to = match.groups()
+    _, _, text_from, _, address, _, _, _, _, exclude_address, _, text_to = match.groups()
 
     intent = tracker.make_intent("replace_text", address)
-    intent.append(E("text-from", text_from))
+
+    e_text_from = E("text-from", text_from)
+    if flag_from_elsewhere_in_law:
+        e_text_from.attrib["from-elsewhere-in-law"] = "true"
+    if exclude_address is not None:
+        e_text_from.attrib["exclude-address"] = exclude_address
+    intent.append(e_text_from)
+
     intent.append(E("text-to", text_to))
 
     tracker.intents.append(intent)
@@ -2626,9 +2704,30 @@ def parse_outer_article(tracker: IntentTracker):
     # that depends on an article's name has already been called. Otherwise,
     # this one will erroneously skip articles that have content-specific
     # parsers, such as for enactment or changes to other laws.
+
+    # FIXME:
+    # When content starts with the following, we will recognize it as article
+    # content (i.e. not changing existing content). This is almost certainly a
+    # temporary solution, as we are otherwise expecting outer articles to have
+    # names, which is by no means a given. The proper way to go about doing
+    # this, is scanning for any conceivable permutation of changing an existing
+    # law, and then assuming that anything else is an outer article. However,
+    # this cannot reasonably be achieved until we are confident in our
+    # change-detecting being adequate. This may end up being partially manual.
+    #
+    # Occurs in:
+    # - 2. gr. laga nr. 126/2024
+    #   https://www.stjornartidindi.is/Advert.aspx?RecordID=bc93a573-99a3-48ad-8c05-04b8233c8078
+    name_free_indicators = [
+        "Ríkisstjórninni er heimilt ",
+    ]
+
     if not (
         tracker.lines.current.tag == "p"
-        and tracker.lines.current.find("em") is not None
+        and (
+            tracker.lines.current.find("em") is not None
+            or any([tracker.current_text.startswith(s) for s in name_free_indicators])
+        )
     ):
         return False
 
@@ -2698,7 +2797,7 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
         pass
     elif parse_i_stad_x_laganna_koma_fimm_nyjar_greinar_x_svohljodandi_asamt_fyrirsognum(tracker):
         pass
-    elif parse_i_stad_x_i_x_laganna_kemur(tracker):
+    elif parse_i_stad_x_i_x_kemur(tracker):
         pass
     elif parse_i_stad_hlutfallstolunnar_x_og_artalsins_x_tvivegis_i_x_i_logunum_kemur(tracker):
         pass
