@@ -11,6 +11,7 @@ from lxml import etree
 from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
+from os import unlink
 from os import path
 
 
@@ -67,11 +68,20 @@ def convert_advert(year, nr):
         print(" skipping (unsupported type '%s')" % advert_type)
         return
 
+    out_filename = path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr))
+
     try:
         xml_advert = parse_advert(xml_remote)
-        write_xml(xml_advert, path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr)))
+        write_xml(xml_advert, out_filename)
         print(" done")
     except (IntentParsingException, ReferenceParsingException) as ex:
+        # Delete the file if it already existed, so that we can tell the
+        # difference in `git status` and `git diff`.
+        try:
+            unlink(out_filename)
+        except FileNotFoundError:
+            pass
+
         print(" failed with %s exception:" % type(ex).__name__)
         print(ex)
         print()
