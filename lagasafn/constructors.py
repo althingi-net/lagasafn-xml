@@ -20,13 +20,22 @@ def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_ch
     for child in list(node):
         node.remove(child)
 
+    # FIXME: Number-types are variously described in the XML as `nr-type` or
+    # `number-type`. It should always be `nr-type`. To mitigate this problem,
+    # we assign whichever is present to the variable `nr_type`.
+    nr_type = ""
+    if "nr-type" in node.attrib:
+        nr_type = node.attrib["nr-type"]
+    elif "number-type" in node.attrib:
+        nr_type = node.attrib["number-type"]
+
     # We then increase its `nr` by default, but respecting the `nr_change`
     # parameter for exceptions.
-    if "nr-type" not in node.attrib or node.attrib["nr-type"] == "numeric":
+    if nr_type in ["", "numeric"]:
         node.attrib["nr"] = str(int(node.attrib["nr"]) + nr_change)
-    elif node.attrib["nr-type"] == "alphabet":
+    elif nr_type == "alphabet":
         node.attrib["nr"] = chr(ord(node.attrib["nr"]) + nr_change)
-    elif node.attrib["nr-type"] == "roman":
+    elif nr_type == "roman":
         # FIXME: Chapter tags erroneously have their Arabic equivalent in the
         # `nr` attribute and the original Roman number in the `roman-nr`
         # attribute. This is the exact opposite to how Roman numerals are
@@ -53,6 +62,12 @@ def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_ch
     # the XML format currently (2025-04-28) does not account for them.
     if node.tag == "numart":
         node.append(E("nr-title", "%s." % node.attrib["nr"]))
+    elif node.tag == "art":
+        if nr_type == "roman":
+            nr_title_text = "%s." % node.attrib["nr"]
+        else:
+            nr_title_text = "%s. gr." % node.attrib["nr"]
+        node.append(E("nr-title", nr_title_text))
     elif node.tag == "chapter":
         node.append(E("nr-title", "%s. %s" % (node.attrib["roman-nr"], node.attrib["chapter-type"])))
     else:
