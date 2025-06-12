@@ -1144,7 +1144,12 @@ def analyze_art_name(art_nr_title: str) -> tuple[str, str]:
         match = re.match(r"(\d+)\.–(\d+)", clean_art_nr_title)
         if match is not None:
             from_art_nr, to_art_nr = match.groups()
-            art_nr = "%s-%s" % (from_art_nr, to_art_nr)
+
+            # Turn "12-14" into "12,13,14" so that things in between can
+            # reasonably be found using XPath or regex.
+            art_nr = ",".join(
+                [str(nr) for nr in range(int(from_art_nr), int(to_art_nr)+1)]
+            )
 
         # Check if there is an extra part to the name which we'll want
         # appended to the `art_nr`., such as in "5. gr. a".

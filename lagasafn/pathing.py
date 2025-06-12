@@ -567,7 +567,26 @@ def make_xpath_from_inner_reference(address: str):
                     if ent_type == "chapter" and is_roman(ent_number):
                         ent_number = roman.fromRoman(ent_number)
 
-                    xpath_number = "@nr='%s'" % ent_number
+                    # When multiple articles have been deleted, they are
+                    # denoted like "12-14. gr." in the `nr_title`, but as a
+                    # comma-separated sequence of known possibilities in the
+                    # `nr`. Here we check if the `ent_number` is contained in
+                    # such a list, but only for articles.
+                    #
+                    # NOTE: This may need to be extended to `numart`s,
+                    # `chapter`s or other elements that may contain ranges.
+                    # There shouldn't really anything be wrong with applying
+                    # this logic to all elements, but we're trying to keep
+                    # down unnecessary complications in the resulting XPath.
+                    #
+                    # NOTE: This is currently only supported when `ent_number`
+                    # is unitary and not itself a range. It shouldn't be
+                    # particularly complicated to implement it, we just don't
+                    # believe that we'll need it, at this point.
+                    if ent_type == "art":
+                        xpath_number = "contains(concat(',', @nr, ','), ',%s,')" % ent_number
+                    else:
+                        xpath_number = "@nr='%s'" % ent_number
 
                 xpath_numbers.append(xpath_number)
 
