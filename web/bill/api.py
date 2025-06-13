@@ -29,7 +29,7 @@ def bill_meta(request: HttpRequest):
     """
        Publish bill meta XML data as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/meta --data '<bill><lagasafnID>1</lagasafnID><title>Skógræktarlög</title><description>Frumvarp um eflingu skógræktar á Íslandi</description></bill>'
+       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/meta --data '<bill><lagasafnId>1</lagasafnId><title>Skógræktarlög</title><description>Frumvarp um eflingu skógræktar á Íslandi</description></bill>'
     """
 
     bill_xml_string = request.body
@@ -41,7 +41,7 @@ def bill_meta(request: HttpRequest):
 
     title = bill_xml.find("title")
     description = bill_xml.find("description")
-    bill_nr = int(bill_xml.find("lagasafnID").text)
+    bill_nr = int(bill_xml.find("lagasafnId").text)
 
     # Determine file name for bill meta, write XML to data directory.
     existing_filename = BILLMETA_FILENAME % (CURRENT_PARLIAMENT_VERSION, bill_nr)
