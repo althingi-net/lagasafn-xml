@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="law">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="num-and-date">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date" type="xs:date" />
+              <xs:element name="num" type="xs:string" />
+              <xs:element name="original" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="footnotes" minOccurs="0" />
+        <xs:element name="minister-clause" type="xs:string" />
+        <xs:element ref="chapter" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" use="required" />
+      <xs:attribute name="year" type="xs:int" use="required" />
+      <xs:attribute name="law-type" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element ref="footnotes" minOccurs="0" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ambiguous-section" />
+          <xs:element ref="art" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <xs:attribute name="nr-type" type="xs:string" />
+      <xs:attribute name="chapter-type" type="xs:string" />
+      <xs:attribute name="roman-nr" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="art">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="art-chapter" />
+          <xs:element ref="subart" />
+          <!-- Should not be allowed. Belongs in a `paragraph`. -->
+          <xs:element ref="numart" />
+        </xs:choice>
+        <xs:element ref="footnotes" minOccurs="0" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <!-- Should be renamed to `nr-type` for consistency with other tags. -->
+      <xs:attribute name="number-type" type="xs:string" />
+      <xs:attribute name="roman-nr" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="art-chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element name="name" type="xs:string" minOccurs="0" />
+        <xs:element ref="paragraph" minOccurs="0" maxOccurs="unbounded" />
+        <!-- Should not be allowed. Belongs in a `paragraph`. -->
+        <xs:element ref="numart" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <xs:attribute name="nr-type" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="subart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="paragraph" maxOccurs="unbounded" />
+        <xs:element ref="art-chapter" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="numart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="paragraph" />
+          <xs:element ref="numart" />
+          <xs:element ref="mark-container" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <xs:attribute name="style-note" type="xs:string" use="optional" />
+      <xs:attribute name="nr-type" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="paragraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="sen" />
+          <xs:element ref="numart" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sen">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="nr" type="xs:int" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="mark-container">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ambiguous-section">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="paragraph" maxOccurs="unbounded" />
+        <xs:element ref="footnotes" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="footnotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="footnote" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="footnote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="footnote-sen" type="xs:string" maxOccurs="2" />
+        <xs:element name="location" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="start" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="xpath" type="xs:string" />
+                  <xs:attribute name="words" type="xs:string" use="optional"/>
+                  <xs:attribute name="instance-num" type="xs:int" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="end" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="xpath" type="xs:string" />
+                  <xs:attribute name="words" type="xs:string" use="optional"/>
+                  <xs:attribute name="instance-num" type="xs:int" use="optional" />
+                  <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="xpath" type="xs:string" use="optional"/>
+            <xs:attribute name="words" type="xs:string" use="optional"/>
+            <xs:attribute name="instance-num" type="xs:integer" use="optional"/>
+            <xs:attribute name="before-mark" type="xs:string" use="optional"/>
+            <xs:attribute name="after-mark" type="xs:string" use="optional"/>
+            <xs:attribute name="string-length" type="xs:int" use="optional" />
+            <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="href" type="xs:anyURI" use="optional" />
+      <xs:attribute name="law-nr" type="xs:integer" use="optional" />
+      <xs:attribute name="law-year" type="xs:gYear" use="optional" />
+      <xs:attribute name="law-art" type="xs:string" use="optional" />
+      <xs:attribute name="nr" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
