@@ -517,6 +517,12 @@ def parse_law_number_and_date(parser):
         #
         # We will still retain the wrong legal number as
         # "primitive-nr" for traceability.
+        #
+        # TODO: Figure out why this hasn't happened since codex
+        # version 154b, and do one of the following:
+        # - document why it hasn't happened since then or
+        # - update the mechanism to continue working or
+        # - remove it.
         parser.law.attrib["primitive-nr"] = str(parser.law_num)
         parser.law_num = "m%02dd%02d" % (month, day)
         parser.law.attrib["nr"] = parser.law_num

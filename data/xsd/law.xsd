@@ -1,26 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:simpleType name="boldOrItalic">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="b" />
+      <xs:enumeration value="i" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- FIXME: This should not exist. -->
+  <xs:simpleType name="boldOrItalicOrNone">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="b" />
+      <xs:enumeration value="i" />
+      <xs:enumeration value="n" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+    In historical data, we sometimes have dates that don't conform to ISO-8601.
+    For example, `1764-07-00` is used to denote "July, 1764" without pretending
+    to be on July 1st, 1764. In other words, we want to support dates with `00`
+    as the day for such historical data, while keeping true to the ISO-8601
+    format in other respects. But `1764-07-00` is not valid a ISO-8691 date.
+
+    To remedy this, we've created a special date type that uses regex-matching
+    for the very specific circumstance of the day being denoted as `00`. In
+    other cases, we expect the date to be fully ISO-8601 compliant, so that
+    `2025-12-31` will work but `2025-11-31` will not.
+
+    The same logic applies to cases where we only have a year.
+  -->
+  <xs:simpleType name="specialDate">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:date"/>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-(0[1-9]|1[0-2])-00"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-00-00"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:element name="name">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="name-style" type="boldOrItalic" use="optional" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!--
+    FIXME: Turn all `nr-type` and `number-type` attributes into type `nrType`
+    rather than `xs:string`.
+  -->
+
   <xs:element name="law">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="name" type="xs:string" />
+        <xs:element ref="name" />
         <xs:element name="num-and-date">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="date" type="xs:date" />
-              <xs:element name="num" type="xs:string" />
+              <xs:element name="date" type="specialDate" />
+              <xs:element name="num" type="xs:string" minOccurs="0" />
               <xs:element name="original" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element ref="footnotes" minOccurs="0" />
-        <xs:element name="minister-clause" type="xs:string" />
-        <xs:element ref="chapter" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="minister-clause" type="xs:string" minOccurs="0" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="superchapter" />
+          <xs:element ref="chapter" />
+          <xs:element ref="ambiguous-section" />
+          <xs:element ref="ambiguous-bold-text" />
+          <xs:element ref="art" />
+          <xs:element ref="appendix" />
+          <!-- Should be allowed, but not when `law-type` is `law`. -->
+          <xs:element ref="subart" />
+          <xs:element ref="numart" />
+          <xs:element ref="paragraph" />
+          <!-- FIXME: Should not be allowed. Belongs in a `paragraph`. -->
+          <xs:element ref="sen" />
+          <xs:element ref="mark-container" />
+        </xs:choice>
       </xs:sequence>
       <xs:attribute name="nr" type="xs:string" use="required" />
       <xs:attribute name="year" type="xs:int" use="required" />
       <xs:attribute name="law-type" type="xs:string" use="required" />
+      <xs:attribute name="primitive-nr" type="xs:int" use="optional" />
+      <xs:attribute name="subchapter-bold-alphabet" type="xs:boolean" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="superchapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="name" />
+        <xs:element ref="chapter" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="art" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
     </xs:complexType>
   </xs:element>
 
@@ -28,11 +119,17 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="nr-title" type="xs:string" minOccurs="0" />
-        <xs:element name="name" type="xs:string" />
-        <xs:element ref="footnotes" minOccurs="0" />
+        <xs:element ref="name" minOccurs="0" />
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="ambiguous-section" />
+          <xs:element ref="ambiguous-bold-text" />
+          <xs:element ref="subchapter" />
+          <xs:element ref="mark-container" />
           <xs:element ref="art" />
+          <!-- This should ideally not be allowed, but the data is sometimes
+               broken, like in temporary clauses in 111/2024 (156a). -->
+          <xs:element ref="subart" />
+          <xs:element ref="footnotes" />
         </xs:choice>
       </xs:sequence>
       <xs:attribute name="nr" type="xs:string" />
@@ -42,20 +139,47 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="subchapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="name" />
+        <xs:element ref="footnotes" minOccurs="0" />
+        <xs:element ref="art" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <xs:attribute name="nr-type" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="art">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="name" minOccurs="0" />
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="art-chapter" />
           <xs:element ref="subart" />
-          <!-- Should not be allowed. Belongs in a `paragraph`. -->
+          <!-- Only occurs in very old data, from the 13th century, specifically. -->
+          <xs:element ref="paragraph" />
+          <!-- FIXME: Should not be allowed. Belongs in a `paragraph`. -->
           <xs:element ref="numart" />
         </xs:choice>
-        <xs:element ref="footnotes" minOccurs="0" />
+        <!--
+          FIXME: `maxOccurs` here should be 1 (default), not 2. It is 2 here
+          because of a bug in a 98/1999 (156a).
+        -->
+        <xs:element ref="footnotes" minOccurs="0" maxOccurs="2" />
+        <xs:element ref="unspecified-ranges" minOccurs="0" />
+        <!-- FIXME: Should not be allowed. Belongs in a `chapter`. -->
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ambiguous-bold-text" />
+          <xs:element ref="subart" minOccurs="0" />
+          <xs:element ref="footnotes" minOccurs="0" />
+        </xs:sequence>
       </xs:sequence>
       <xs:attribute name="nr" type="xs:string" />
-      <!-- Should be renamed to `nr-type` for consistency with other tags. -->
+      <!-- FIXME: Should be renamed to `nr-type` for consistency with other tags. -->
       <xs:attribute name="number-type" type="xs:string" />
       <xs:attribute name="roman-nr" type="xs:string" />
     </xs:complexType>
@@ -65,9 +189,9 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="nr-title" type="xs:string" />
-        <xs:element name="name" type="xs:string" minOccurs="0" />
+        <xs:element ref="name" minOccurs="0" />
         <xs:element ref="paragraph" minOccurs="0" maxOccurs="unbounded" />
-        <!-- Should not be allowed. Belongs in a `paragraph`. -->
+        <!-- FIXME: Should not be allowed. Belongs in a `paragraph`. -->
         <xs:element ref="numart" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="nr" type="xs:string" />
@@ -78,8 +202,29 @@
   <xs:element name="subart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="paragraph" maxOccurs="unbounded" />
-        <xs:element ref="art-chapter" minOccurs="0" maxOccurs="unbounded" />
+        <xs:choice maxOccurs="unbounded">
+          <!--
+            Names in `subart`s should only be allowed in the beginning. Other
+            things denoted as names should be implemented differently. In fact,
+            the tag shouldn't even be `name` because these don't refer to names
+            of `subart`s but something like names and titles of ministers,
+            institutions or similar.
+
+            This should be implemented like `definitions`.
+          -->
+          <xs:element ref="name" />
+          <xs:element name="table-name" type="xs:string" />
+          <xs:element ref="table" />
+          <xs:element ref="art-chapter" />
+          <!-- FIXME: Should not be allowed. Belongs under `art-chapter`. (Allegedly.) -->
+          <xs:element ref="paragraph" />
+          <!-- FIXME: Should not be allowed. Belongs under `art-chapter`. (Allegedly.) -->
+          <xs:element ref="mark-container" />
+        </xs:choice>
+        <!-- FIXME: Should not be allowed. Belongs under `appendix`. -->
+        <xs:element ref="appendix-part" minOccurs="0" maxOccurs="unbounded" />
+        <!-- FIXME: Should not be allowed. Belongs under `appendix`. -->
+        <xs:element ref="footnotes" minOccurs="0" />
       </xs:sequence>
       <xs:attribute name="nr" type="xs:int" />
     </xs:complexType>
@@ -88,7 +233,8 @@
   <xs:element name="numart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="nr-title" type="xs:string" />
+        <xs:element name="nr-title" type="xs:string" minOccurs="0" />
+        <xs:element ref="name" minOccurs="0" />
         <xs:choice maxOccurs="unbounded">
           <xs:element ref="paragraph" />
           <xs:element ref="numart" />
@@ -101,9 +247,50 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="table">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tbody">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tr" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--
+                      FIXME: Should not be `minOccurs="0"` but default 1. Bug
+                      in 55/1991 (156a).
+                    -->
+                    <xs:element name="td" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="table-nr-title" type="xs:string" minOccurs="0" />
+                          <xs:element name="table-title" type="xs:string" minOccurs="0" />
+                          <xs:element ref="paragraph" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element ref="numart" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element ref="mark-container" minOccurs="0" />
+                        </xs:sequence>
+                        <xs:attribute name="header-style" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="paragraph">
     <xs:complexType>
       <xs:sequence>
+        <!--
+          FIXME: The `sen-title` in 5. gr. laga nr. 140/2018 (156a) should be an
+          `art-chapter` with italic styling noted.
+        -->
+        <xs:element name="sen-title" minOccurs="0" />
+        <xs:element ref="definitions" minOccurs="0" />
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="sen" />
           <xs:element ref="numart" />
@@ -118,6 +305,8 @@
       <xs:simpleContent>
         <xs:extension base="xs:string">
           <xs:attribute name="nr" type="xs:int" />
+          <!-- Should be eliminated. -->
+          <xs:attribute name="expiry-symbol-offset" type="xs:int" />
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -127,16 +316,48 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="sen" />
+        <!-- FIXME: Should not be allowed. Belongs under `art`. -->
+        <xs:element name="footnotes" minOccurs="0" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
+  <!-- FIXME: Should be replaced with a properly implemented "millifyrirsögn". -->
   <xs:element name="ambiguous-section">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="paragraph" maxOccurs="unbounded" />
         <xs:element ref="footnotes" minOccurs="0" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- FIXME: Should be replaced with something more descriptive. -->
+  <xs:element name="ambiguous-bold-text">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="ambiguous-style" type="boldOrItalic" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="definitions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="definition" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="definition">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="style" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
 
@@ -152,41 +373,146 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="footnote-sen" type="xs:string" maxOccurs="2" />
-        <xs:element name="location" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="start" minOccurs="0">
-                <xs:complexType>
-                  <xs:attribute name="xpath" type="xs:string" />
-                  <xs:attribute name="words" type="xs:string" use="optional"/>
-                  <xs:attribute name="instance-num" type="xs:int" use="optional" />
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="end" minOccurs="0">
-                <xs:complexType>
-                  <xs:attribute name="xpath" type="xs:string" />
-                  <xs:attribute name="words" type="xs:string" use="optional"/>
-                  <xs:attribute name="instance-num" type="xs:int" use="optional" />
-                  <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:attribute name="type" type="xs:string" use="required"/>
-            <xs:attribute name="xpath" type="xs:string" use="optional"/>
-            <xs:attribute name="words" type="xs:string" use="optional"/>
-            <xs:attribute name="instance-num" type="xs:integer" use="optional"/>
-            <xs:attribute name="before-mark" type="xs:string" use="optional"/>
-            <xs:attribute name="after-mark" type="xs:string" use="optional"/>
-            <xs:attribute name="string-length" type="xs:int" use="optional" />
-            <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
-          </xs:complexType>
-        </xs:element>
+        <xs:element ref="location" minOccurs="0" maxOccurs="unbounded" />
       </xs:sequence>
       <xs:attribute name="href" type="xs:anyURI" use="optional" />
       <xs:attribute name="law-nr" type="xs:integer" use="optional" />
       <xs:attribute name="law-year" type="xs:gYear" use="optional" />
       <xs:attribute name="law-art" type="xs:string" use="optional" />
       <xs:attribute name="nr" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="unspecified-ranges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="location" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="start" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="xpath" type="xs:string" />
+            <xs:attribute name="words" type="xs:string" use="optional"/>
+            <xs:attribute name="instance-num" type="xs:int" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="end" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="xpath" type="xs:string" />
+            <xs:attribute name="words" type="xs:string" use="optional"/>
+            <xs:attribute name="instance-num" type="xs:int" use="optional" />
+            <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
+            <xs:attribute name="combined-with-closing" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="type" type="xs:string" use="required"/>
+      <xs:attribute name="xpath" type="xs:string" use="optional"/>
+      <xs:attribute name="words" type="xs:string" use="optional"/>
+      <xs:attribute name="instance-num" type="xs:integer" use="optional"/>
+      <xs:attribute name="before-mark" type="xs:string" use="optional"/>
+      <xs:attribute name="after-mark" type="xs:string" use="optional"/>
+      <xs:attribute name="string-length" type="xs:int" use="optional" />
+      <xs:attribute name="middle-punctuation" type="xs:string" use="optional" />
+      <xs:attribute name="combined-with-closing" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="numart-chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="name" />
+        <!--
+          FIXME: `minOccurs` here should be the default 1, but is 0 here
+          because of a bug in 7/1998 (154a).
+        -->
+        <xs:element ref="numart" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="appendix">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="name" minOccurs="0" />
+        <xs:element ref="appendix-chapter" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="appendix-part" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="draft" minOccurs="0" maxOccurs="unbounded" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="numart-chapter" />
+          <!-- FIXME: Should not be allowed. Bug in 7/1998 (156a). -->
+          <xs:element ref="paragraph" />
+          <!-- FIXME: Should not be allowed. Bug in 7/1998 (156a). -->
+          <xs:element name="numart" />
+          <xs:element ref="subart" />
+          <!--
+            FIXME: `art-chapter` makes no sense here. It should be
+            `appendix-part`, `appendix-chapter` or some cleaner definition.
+          -->
+          <xs:element ref="art-chapter" />
+          <xs:element ref="table" />
+        </xs:choice>
+        <xs:element ref="footnotes" minOccurs="0" />
+        <xs:element ref="unspecified-ranges" minOccurs="0" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <xs:attribute name="nr-type" type="xs:string" />
+      <xs:attribute name="roman-nr" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="appendix-chapter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <!--
+            FIXME: It is confusing to have `chapter here`. It should probably be
+            another `appendix-chapter` below the first one, rather.
+          -->
+          <xs:element ref="chapter" />
+          <xs:element ref="ambiguous-section" />
+          <xs:element ref="numart" />
+          <xs:element ref="subart" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="appendix-part">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" minOccurs="0" />
+        <xs:element ref="name" />
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="subart" />
+          <xs:element ref="numart" />
+          <xs:element ref="paragraph" />
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="appendix-style" type="boldOrItalicOrNone" />
+    </xs:complexType>
+  </xs:element>
+
+  <!-- FIXME: Should be renamed from `draft` to `map` or `image`. -->
+  <xs:element name="draft">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nr-title" type="xs:string" />
+        <xs:element ref="paragraph" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="nr" type="xs:string" />
+      <!-- FIXME: Rename `nr-type` for consistency. -->
+      <xs:attribute name="number-type" type="xs:string" />
+      <xs:attribute name="roman-nr" type="xs:string" />
     </xs:complexType>
   </xs:element>
 

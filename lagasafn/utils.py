@@ -4,10 +4,14 @@ import roman
 import subprocess
 from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
+from lagasafn.constants import XSD_FILENAME
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lxml import etree
 from lxml.etree import _Element
+from lxml.etree import XMLSchemaValidateError
+from os.path import isfile
 from typing import List
+from xmlschema import XMLSchema
 
 
 class UnexpectedClosingBracketException(Exception):
@@ -832,6 +836,23 @@ class Trail:
         return self.nodes[-1]
 
 
+def validate_xml(xml_doc) -> bool:
+    """
+    Validates the given XML document if an XSD exists.
+
+    Returns `True` if validation took place and was successful.
+    Returns `False` if there is no corresponding XSD schema.
+    Raises exceptions when validation fails.
+    """
+    if not isfile(XSD_FILENAME % xml_doc.tag):
+        return False
+
+    schema = XMLSchema(XSD_FILENAME % xml_doc.tag)
+    schema.validate(xml_doc)
+
+    return True
+
+
 def write_xml(xml_doc, filename=None, skip_strip=False):
     # FIXME: The `skip_strip` parameter convolutes things and possibly
     # unnecessarily. It is only used in one instance, to write the remote
@@ -850,6 +871,8 @@ def write_xml(xml_doc, filename=None, skip_strip=False):
             # If the element has tail, strip leading and trailing whitespace.
             if element.tail:
                 element.tail = element.tail.strip()
+
+    validate_xml(xml_doc)
 
     etree.indent(xml_doc, level=0)
     xml_string = etree.tostring(
