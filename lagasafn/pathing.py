@@ -363,6 +363,20 @@ def make_xpath_from_inner_reference(address: str):
 
             words.pop()
             words.pop()
+        elif (
+            word == "lögin"
+            and (match := re.match(
+                r"viðauk[ia] (.+) við",
+                " ".join(words[-3:]),
+                re.IGNORECASE,
+            )) is not None
+        ):
+            ent_type = "appendix"
+            ent_numbers.append(match.groups()[0])
+
+            words.pop()
+            words.pop()
+            words.pop()
 
         else:
             # Oh no! We don't know what to do!

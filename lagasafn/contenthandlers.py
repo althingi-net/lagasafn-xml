@@ -1105,6 +1105,21 @@ def generate_synonyms(name: str):
     return result
 
 
+def analyze_chapter_nr_title(chapter_nr_title: str) -> str:
+    """
+    Takes a chapter `nr-title` and returns useful information from it.
+
+    Currently rather primitive but will almost certainly need improvements as
+    we run into more things that are needed.
+    """
+    if not chapter_nr_title.endswith(". kafli"):
+        raise ValueError("Can't parse chapter nr-title: %s" % chapter_nr_title)
+
+    nr, _ = chapter_nr_title.split(".")
+
+    return nr
+
+
 def analyze_art_name(art_nr_title: str) -> tuple[str, str]:
     """
     Takes an article nr-title and gives the `art_nr` in a more technically

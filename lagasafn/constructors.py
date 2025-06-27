@@ -148,3 +148,28 @@ def construct_temp_chapter_from_art(base_node: _Element) -> _Element:
     )
 
     return chapter
+
+
+def construct_appendix() -> _Element:
+    """
+    Appendixes ("Viðaukar") don't really conform to a predictable format, so
+    they are implemented in a rather messy way in the codex.
+
+    Consider:
+    - Lög nr. 162/2002
+      https://www.althingi.is/lagas/156a/2002162.html
+
+    Their names are stated, but their contents are referred to by linking to
+    the changes that have been made. It is up to the reader to figure out what
+    the end result of each appendix should be.
+
+    For this reason, this element is extremely simple and contains no actual
+    content as of yet. Parsing their contents from the adverts themselves may
+    not be feasible until there is a format that can be reliably predicted.
+
+    With that said, feel free to try and see how far you can go! This would be
+    a lovely problem to solve programmatically. We are just avoiding it for now
+    because it hasn't even been solved for traditional publication.
+    """
+    appendix = E("appendix-mention")
+    return appendix

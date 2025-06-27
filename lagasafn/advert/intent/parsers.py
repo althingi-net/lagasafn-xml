@@ -18,11 +18,13 @@ from copy import deepcopy
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.advert.intent.tracker import IntentTracker
 from lagasafn.constants import ICELANDIC_DATE_REGEX
+from lagasafn.constructors import construct_appendix
 from lagasafn.constructors import construct_node
 from lagasafn.constructors import construct_temp_chapter_from_art
 from lagasafn.constructors import construct_sens
 from lagasafn.contenthandlers import add_sentences
 from lagasafn.contenthandlers import analyze_art_name
+from lagasafn.contenthandlers import analyze_chapter_nr_title
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.intent import IntentModelList
@@ -1242,7 +1244,7 @@ def parse_fyrirsogn_greinarinnar_verdur(tracker: IntentTracker):
 
 
 def parse_x_ordast_svo(tracker: IntentTracker):
-    match = re.match(r"(.+?)( laganna)? orðast svo: (.+)", tracker.current_text)
+    match = re.match(r"(.+?)( laganna)? orðast svo: ?(.+)?", tracker.current_text)
     if match is None:
         return False
 
@@ -1276,6 +1278,9 @@ def parse_x_ordast_svo(tracker: IntentTracker):
     elif len(existing) > 0 and all([i.tag == "sen" for i in existing]):
         for sen in construct_sens(existing[0], text_to):
             tracker.targets.inner.append(sen)
+
+    elif len(existing) == 1 and existing[0].tag == "appendix":
+        tracker.targets.inner.append(construct_appendix())
 
     else:
         raise IntentParsingException("Don't know how to replace content at address: %s" % address)
@@ -1751,6 +1756,52 @@ def parse_a_eftir_ordinu_x_i_x_laganna_kemur(tracker: IntentTracker, text: str =
     intent.append(E("text-to", text_to))
 
     tracker.intents.append(intent)
+
+    return True
+
+
+def parse_a_eftir_x_laganna_kemur_nyr_kafli_x_x_x_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Á eftir (.+) laganna kemur nýr kafli, (.+?), (.+), með sjö nýjum greinum, (.+), svohljóðandi(, og breytist kaflanúmer (.+) laganna samkvæmt því)?:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, nr_title, name, _, _, _ = match.groups()
+
+    intent = tracker.make_intent("append", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
+    tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
+
+    if len(existing) == 1 and existing[0].tag == "art":
+        # NOTE: The nomenclature here is the opposite of what it should be.
+        # `nr` should be `roman_nr` and `roman_nr` should be `nr`, but at the
+        # time of this writing (2025-06-06) this hasn't been updated in the XML
+        # yet. We stick to the current and wrong nomenclature to avoid even
+        # more confusion, but these should be reversed once the XML is correct.
+        roman_nr = analyze_chapter_nr_title(nr_title)
+        nr = str(roman.fromRoman(roman_nr))
+
+        tracker.inner_targets.chapter = E(
+            "chapter",
+            {
+                "nr": nr,
+                "nr-type": "roman",
+                "chapter-type": "kafli",
+                "roman-nr": roman_nr,
+            },
+            E("nr-title",  nr_title),
+            E("name", name),
+        )
+
+        for _ in tracker.lines:
+            parse_inner_art(tracker)
+
+        tracker.targets.inner.append(tracker.inner_targets.chapter)
+        tracker.inner_targets.chapter = None
+
+    tracker.targets.inner = None
 
     return True
 
@@ -2664,6 +2715,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
         pass
     elif parse_a_eftir_ordinu_x_i_x_laganna_kemur(tracker):
         pass
+    elif parse_a_eftir_x_laganna_kemur_nyr_kafli_x_x_x_svohljodandi(tracker):
+        pass
     elif parse_a_eftir_x_laganna_kemur_malsgrein_svohljodandi(tracker):
         pass
     elif parse_a_eftir_x_laganna_kemur_malslidur_svohljodandi(tracker):
@@ -2725,6 +2778,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_vid_x_laganna_baetist_malsgrein_svohljodandi(tracker):
         pass
     elif parse_x_laganna_ordast_svo(tracker):
+        pass
+    elif parse_x_ordast_svo(tracker):
         pass
     elif parse_x_laganna_verdur(tracker):
         pass
