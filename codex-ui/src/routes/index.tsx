@@ -1,4 +1,4 @@
-import { createSignal, createResource } from "solid-js";
+import { createSignal, createResource, createMemo } from "solid-js";
 import Header from "~/components/Header";
 import LawStats from "~/components/LawStats";
 import LawTable from "~/components/LawTable";
@@ -84,6 +84,20 @@ export default function Home() {
     nonEmptyCount: 784
   }));
 
+  // Filter laws by search query on each key press
+  const filteredLaws = createMemo(() => {
+    const query = searchQuery().toLowerCase().trim();
+    const all = laws() ?? [];
+    
+    if (!query) return all;
+
+    return all.filter((law) => {
+      const nrMatch = law.nr.toLowerCase().includes(query);
+      const nameMatch = law.name.toLowerCase().includes(query);
+      return nrMatch || nameMatch;
+    });
+  });
+
   return (
     <div>
       <Header 
@@ -98,7 +112,7 @@ export default function Home() {
           emptyCount={stats()?.emptyCount ?? 0}
           nonEmptyCount={stats()?.nonEmptyCount ?? 0}
         />
-        <LawTable laws={laws() ?? []} />
+        <LawTable laws={filteredLaws()} />
       </div>
     </div>
   );
