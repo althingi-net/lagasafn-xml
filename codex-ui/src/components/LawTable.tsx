@@ -1,4 +1,5 @@
 import { For } from "solid-js";
+import { A } from "@solidjs/router";
 
 interface Law {
   nr: string;
@@ -13,6 +14,11 @@ interface LawTableProps {
 }
 
 export default function LawTable(props: LawTableProps) {
+  const getLawUrl = (nr: string) => {
+    const [number, year] = nr.split('/');
+    return `/law/${number}/${year}`;
+  };
+
   return (
     <div class="overflow-x-auto">
       <table class="w-full">
@@ -29,8 +35,22 @@ export default function LawTable(props: LawTableProps) {
           <For each={props.laws}>
             {(law) => (
               <tr class="border-b hover:bg-gray-50/50">
-                <td class="py-2 text-blue-600">{law.nr}</td>
-                <td class="py-2">{law.name}</td>
+                <td class="py-2">
+                  <A 
+                    href={getLawUrl(law.nr)} 
+                    class="text-blue-600 hover:text-blue-800"
+                  >
+                    {law.nr}
+                  </A>
+                </td>
+                <td class="py-2">
+                  <A 
+                    href={getLawUrl(law.nr)} 
+                    class="hover:text-blue-600"
+                  >
+                    {law.name}
+                  </A>
+                </td>
                 <td class="py-2 text-right">{law.chapter}</td>
                 <td class="py-2 text-right">{law.article}</td>
                 <td class="py-2 text-center">
