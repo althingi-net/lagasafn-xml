@@ -1,25 +1,105 @@
-import { A } from "@solidjs/router";
-import Counter from "~/components/Counter";
+import { createSignal, createResource } from "solid-js";
+import Header from "~/components/Header";
+import LawStats from "~/components/LawStats";
+import LawTable from "~/components/LawTable";
+
+interface Law {
+  nr: string;
+  name: string;
+  chapter?: number;
+  article?: number;
+  status: 'OK' | string;
+}
+
+// Dummy data matching the image format
+const DUMMY_LAWS: Law[] = [
+  { nr: "6/2025", name: "Forsetaúrskurður um skiptigu starfa ráðherra", chapter: 12, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "5/2025", name: "Forsetaúrskurður um skiptigu stjórnarmálefna milli ráðuneyta í Stjórnarráði Íslands", chapter: 13, status: "OK" },
+  { nr: "4/2025", name: "Forsetaúrskurður um skiptigu Stjórnarráðs Íslands í ráðuneyti", chapter: 0, status: "OK" },
+  { nr: "130/2024", name: "Lög um stuðningsáætli til rekstraraðila í Grindavíkurbæ vegna jarðhræringa á Reykjanesskkaga", chapter: 17, status: "OK" },
+  { nr: "126/2024", name: "Lög um heimild fyrir ríkisstjórnina til að samþykkja hækkun á kvóta Íslands hjá Alþjóðagjaldeyrissjóðnum", chapter: 2, status: "OK" },
+  { nr: "111/2024", name: "Lög um Náttúruverndarstoufun", chapter: 1, article: 6, status: "OK" },
+  { nr: "110/2024", name: "Lög um Umhverfis- og orkustofnun", chapter: undefined, article: 9, status: "OK" },
+  { nr: "100/2024", name: "Lög um skák", chapter: 3, article: 9, status: "OK" },
+  { nr: "90/2024", name: "Lög um Nýsköpunarsjóðinn Krít", chapter: 1, article: 16, status: "OK" },
+  { nr: "88/2024", name: "Lög um Mannréttindastofnun Íslands", chapter: 1, article: 17, status: "OK" }
+];
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = createSignal("");
+  
+  // Using dummy data
+  const [laws] = createResource(async () => DUMMY_LAWS);
+  const [stats] = createResource(async () => ({
+    totalCount: 1699,
+    emptyCount: 915,
+    nonEmptyCount: 784
+  }));
+
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">Hello world!</h1>
-      <Counter />
-      <p class="mt-8">
-        Visit{" "}
-        <a href="https://solidjs.com" target="_blank" class="text-sky-600 hover:underline">
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <span>Home</span>
-        {" - "}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>{" "}
-      </p>
-    </main>
+    <div>
+      <Header 
+        showSearch={true}
+        searchValue={searchQuery()}
+        onSearchChange={setSearchQuery}
+      />
+
+      <div class="container mx-auto px-4">
+        <LawStats
+          totalCount={stats()?.totalCount ?? 0}
+          emptyCount={stats()?.emptyCount ?? 0}
+          nonEmptyCount={stats()?.nonEmptyCount ?? 0}
+        />
+        <LawTable laws={laws() ?? []} />
+      </div>
+    </div>
   );
 }
