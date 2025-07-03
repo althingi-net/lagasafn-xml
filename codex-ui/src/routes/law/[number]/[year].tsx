@@ -1,5 +1,6 @@
 import { useParams } from "@solidjs/router";
 import { A } from "@solidjs/router";
+import { createSignal, onMount } from "solid-js";
 import Header from "~/components/Header";
 
 interface TableOfContentsItem {
@@ -80,9 +81,46 @@ Samkvæmt tillögu forsætisráðherra og með skírskotun til 15. gr. stjórnar
 
 export default function LawView() {
   const params = useParams();
-  
-  // In a real app, this would fetch from an API
   const law = MOCK_LAW;
+  const [activeSection, setActiveSection] = createSignal<string | null>(null);
+
+  // Handle TOC click
+  const scrollToSection = (e: Event, id: string) => {
+    e.preventDefault();
+    const section = document.getElementById(`section-${id}`);
+    if (section) {
+      // Account for fixed header height (60px) plus some padding
+      const headerOffset = 80;
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      setActiveSection(id);
+      setTimeout(() => setActiveSection(null), 800);
+    }
+  };
+
+  // Format content with section IDs
+  const formattedContent = () => {
+    if (!law.content) return '';
+    
+    // Split content into sections and wrap each with an ID
+    return law.content.split('■').map((section, index) => {
+      if (index === 0) return section; // First split is preamble
+      
+      // Extract section number from the content
+      const match = section.match(/(\d+)\. gr\./);
+      if (!match) return section;
+      
+      const sectionId = match[1];
+      const isActive = activeSection() === sectionId;
+      return `<div id="section-${sectionId}" class="section-content ${isActive ? 'section-highlight' : ''} transition-colors duration-500">■${section}</div>`;
+    }).join('');
+  };
 
   return (
     <div class="min-h-screen bg-[#111]">
@@ -116,12 +154,13 @@ export default function LawView() {
             <nav class="text-sm">
               {law.toc.map((item) => (
                 <div class="py-1">
-                  <A 
-                    href={`#${item.id}`}
+                  <a 
+                    href={`#section-${item.id}`}
                     class="text-blue-400 hover:underline"
+                    onClick={(e) => scrollToSection(e, item.id)}
                   >
                     {item.id}. gr. {item.title}
-                  </A>
+                  </a>
                 </div>
               ))}
             </nav>
@@ -135,7 +174,22 @@ export default function LawView() {
             </div>
 
             <div class="prose max-w-none">
-              <pre class="whitespace-pre-wrap font-sans text-base leading-relaxed">{law.content}</pre>
+              <style>
+                {`
+                  .section-content {
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    border-radius: 0.375rem;
+                  }
+                  .section-highlight {
+                    background-color: #fef9c3;
+                  }
+                `}
+              </style>
+              <pre 
+                class="whitespace-pre-wrap font-sans text-base leading-relaxed"
+                innerHTML={formattedContent()}
+              />
             </div>
           </div>
         </div>
