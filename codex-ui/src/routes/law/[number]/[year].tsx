@@ -88,19 +88,20 @@ export default function LawView() {
   const scrollToSection = (e: Event, id: string) => {
     e.preventDefault();
     const section = document.getElementById(`section-${id}`);
-    if (section) {
-      // Account for fixed header height (60px) plus some padding
-      const headerOffset = 80;
-      const elementPosition = section.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
+    const contentContainer = document.getElementById('content-container');
+    if (section && contentContainer) {
+      const headerOffset = 140;
+      const elementPosition = section.offsetTop;
+      contentContainer.scrollTo({
+        top: elementPosition - headerOffset,
         behavior: "smooth"
       });
 
-      setActiveSection(id);
-      setTimeout(() => setActiveSection(null), 800);
+      // Reset animation by removing and re-adding the section
+      setActiveSection(null);
+      requestAnimationFrame(() => {
+        setActiveSection(id);
+      });
     }
   };
 
@@ -148,10 +149,10 @@ export default function LawView() {
           </div>
         </div>
 
-        <div class="flex gap-8">
+        <div class="flex gap-8" style="height: calc(100vh - 140px)">
           {/* Table of Contents */}
-          <div class="w-[300px] shrink-0">
-            <nav class="text-sm">
+          <div class="w-[300px] shrink-0 overflow-y-auto">
+            <nav class="text-sm pr-4">
               {law.toc.map((item) => (
                 <div class="py-1">
                   <a 
@@ -167,29 +168,42 @@ export default function LawView() {
           </div>
 
           {/* Main Content */}
-          <div class="flex-1 bg-white rounded-lg p-8">
-            <div class="mb-6">
-              <h1 class="text-2xl font-medium mb-2">{law.name}</h1>
-              <p class="text-gray-600">2025 nr. 5 14. mars</p>
-            </div>
+          <div id="content-container" class="flex-1 overflow-y-auto">
+            <div class="bg-white rounded-lg p-8">
+              <div class="mb-6">
+                <h1 class="text-2xl font-medium mb-2">{law.name}</h1>
+                <p class="text-gray-600">2025 nr. 5 14. mars</p>
+              </div>
 
-            <div class="prose max-w-none">
-              <style>
-                {`
-                  .section-content {
-                    padding: 0.5rem;
-                    margin: -0.5rem;
-                    border-radius: 0.375rem;
-                  }
-                  .section-highlight {
-                    background-color: #fef9c3;
-                  }
-                `}
-              </style>
-              <pre 
-                class="whitespace-pre-wrap font-sans text-base leading-relaxed"
-                innerHTML={formattedContent()}
-              />
+              <div class="prose max-w-none">
+                <style>
+                  {`
+                    .section-content {
+                      padding: 0.5rem;
+                      margin: -0.5rem;
+                      border-radius: 0.375rem;
+                    }
+                    .section-highlight {
+                      animation: highlight-pulse 800ms ease-out forwards;
+                    }
+                    @keyframes highlight-pulse {
+                      0% {
+                        background-color: transparent;
+                      }
+                      50% {
+                        background-color: #fef9c3;
+                      }
+                      100% {
+                        background-color: transparent;
+                      }
+                    }
+                  `}
+                </style>
+                <pre 
+                  class="whitespace-pre-wrap font-sans text-base leading-relaxed"
+                  innerHTML={formattedContent()}
+                />
+              </div>
             </div>
           </div>
         </div>
