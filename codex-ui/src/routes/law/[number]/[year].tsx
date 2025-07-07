@@ -80,7 +80,7 @@ Samkvæmt tillögu forsætisráðherra og með skírskotun til 15. gr. stjórnar
 };
 
 export default function LawView() {
-  const params = useParams();
+  const { year, number } = useParams();
   const law = MOCK_LAW;
   const [activeSection, setActiveSection] = createSignal<string | null>(null);
 
@@ -140,19 +140,22 @@ export default function LawView() {
         <div class="flex items-center justify-between py-4">
           <h2 class="text-xl text-white">{law.name}</h2>
           <div class="flex gap-2">
-            <button 
-              class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20"
-              onClick={() => {
-                const parliament = "156a";
-                const year = params.year;
-                const number = params.number?.padStart(3, '0');
-                const url = `https://www.althingi.is/lagas/${parliament}/${year}${number}.html`;
-                window.open(url, '_blank');
-              }}
+            <a 
+              href={`https://www.althingi.is/lagas/156a/${year}${number.padStart(3, '0')}.html`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20 no-underline inline-block text-center"
             >
               Open original
-            </button>
-            <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Open in editor</button>
+            </a>
+            <a 
+              href={`https://frumvarp.althingi.net/law/${year}.${number}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20 no-underline inline-block text-center"
+            >
+              Open in editor
+            </a>
             <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Hide subart numbers</button>
             <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Show subart numbers</button>
             <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Close all</button>
