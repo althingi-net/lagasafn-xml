@@ -1,30 +1,200 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="a163e87f-44d9-473b-ae76-185581d7933a" year="2024" nr="79" published-date="2024-07-08" applied-to-codex-version="154b">
   <affected-laws>
+    <affected-law nr="65" year="2003">65/2003</affected-law>
     <affected-law nr="57" year="1998">57/1998</affected-law>
     <affected-law nr="73" year="1990">73/1990</affected-law>
+    <affected-law nr="15" year="1923">15/1923</affected-law>
     <affected-law nr="88" year="1991">88/1991</affected-law>
   </affected-laws>
   <description>um breytingar á ýmsum lögum vegna eftirlits og leyfisveitinga Orkustofnunar (þjónustugjöld).</description>
   <advert-chapter nr="1" nr-type="roman" roman-nr="I">
     <description>Breyting á raforkulögum, nr. 65/2003.</description>
     <advert-art nr="1">
-      <original>
+      <original affected-law-nr="65" affected-law-year="2003">
         <p style="text-align: justify;">Eftirfarandi breytingar verða á 31. gr. laganna:</p>
         <ol type="a">
           <li style="text-align: justify;">Í stað orðsins „eftirlits“ í 1. mgr. kemur: raforkueftirlits.</li>
           <li style="text-align: justify;">Fyrirsögn greinarinnar orðast svo:<em>Gjaldtaka vegna raforkueftirlits</em>.</li>
         </ol>
       </original>
+      <intents common-address="31. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']" action-law-nr="65" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',31,')]//subart[@nr='1']">1. mgr. 31. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Til að standa undir kostnaði vegna eftirlits samkvæmt lögum þessum skal greiða gjöld sem hér segir:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Flutningsfyrirtækið skal greiða gjald af raforku sem er mötuð inn á flutningskerfið sem nemur 0,75 aurum á hverja kWst.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Dreifiveitur skulu greiða gjald af raforku sem er móttekin frá flutningskerfi eða beint frá virkjunum sem nemur 1,88 aurum á hverja kWst.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>eftirlits</text-from>
+          <text-to>raforkueftirlits.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/name[1]" action-law-nr="65" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',31,')]">31. gr.</address>
+          <existing>
+            <art nr="31">
+              <nr-title>31. gr.</nr-title>
+              <name>Gjaldtaka.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Til að standa undir kostnaði vegna eftirlits samkvæmt lögum þessum skal greiða gjöld sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Flutningsfyrirtækið skal greiða gjald af raforku sem er mötuð inn á flutningskerfið sem nemur 0,75 aurum á hverja kWst.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Dreifiveitur skulu greiða gjald af raforku sem er móttekin frá flutningskerfi eða beint frá virkjunum sem nemur 1,88 aurum á hverja kWst.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir 15. september ár hvert skal skrifstofustjóri Raforkueftirlitsins gefa ráðherra skýrslu um framkvæmd raforkueftirlits á liðnu ári og áætlaðan rekstrarkostnað næsta árs vegna eftirlits á grundvelli laga þessara.</sen>
+                  <sen nr="2">Í skýrslunni skal jafnframt lagt mat á þróun eftirlitsins undangengin þrjú ár.</sen>
+                  <sen nr="3">Skýrslunni skal fylgja umsögn samráðsnefndar eftirlitsskyldra aðila, sbr. 3. gr. b, um áætlað rekstrarumfang næsta árs ásamt áliti skrifstofustjóra Raforkueftirlitsins á umsögninni.</sen>
+                  <sen nr="4">Til að samráðsnefndin geti gefið umsögn skal Raforkueftirlitið eigi síðar en 15. ágúst ár hvert senda henni upplýsingar um áætlað rekstrarumfang ásamt skýringum á helstu rekstrarliðum.</sen>
+                  <sen nr="5">Ef niðurstaða skýrslunnar gefur tilefni til að breyta gjaldtöku skv. 1. mgr. skal ráðherra leggja fram frumvarp þar að lútandi fyrir Alþingi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Raforkueftirlitið skal annast innheimtu gjalda þessara fyrir ríkissjóð.</sen>
+                  <sen nr="2">Gjalddagi skal vera 1. mars ár hvert vegna þess almanaksárs og byggjast á rauntölum vegna liðins árs.</sen>
+                  <sen nr="3">Aðför má gera til fullnustu kröfum um gjaldið án undangengins dóms, úrskurðar eða sáttar.</sen>
+                  <sen nr="4">Raforkueftirlitið ákveður hvernig gjaldi skv. 1. mgr. skuli varið til að sinna raforkueftirliti samkvæmt lögum þessum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Eftirlitsskyldir aðilar skulu greiða kostnað vegna eftirlits faggiltra skoðunarstofa, enda sé ekki um úrtakseftirlit að ræða.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.074.html" law-nr="74" law-year="2021" law-art="16" nr="1">
+                  <footnote-sen>L. 74/2021, 16. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="0,75 aurum" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="1,88 aurum" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2024.022.html" law-nr="22" law-year="2024" law-art="14" nr="2">
+                  <footnote-sen>L. 22/2024, 14. gr.</footnote-sen>
+                  <location type="range" string-length="800">
+                    <start xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='5']"/>
+                  </location>
+                  <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Raforkueftirlitið" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" words="Raforkueftirlitið" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.112.html" law-nr="112" law-year="2019" law-art="6" nr="3">
+                  <footnote-sen>L. 112/2019, 6. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" words="(\[??)?Raforkueftirlitið:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?ákveður hvernig gjaldi skv. 1. mgr. skuli varið til að sinna raforkueftirliti samkvæmt lögum þessum." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.067.html" law-nr="67" law-year="2008" law-art="6" nr="4">
+                  <footnote-sen>L. 67/2008, 6. gr.</footnote-sen>
+                  <location type="range" string-length="380">
+                    <start xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <name>Gjaldtaka vegna raforkueftirlits.</name>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
-      <original>
+      <original affected-law-nr="65" affected-law-year="2003">
         <p style="text-align: justify;">33. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Fyrir leyfi sem Orkustofnun veitir á grundvelli 4. gr. og fyrir eftirlit sem stofnuninni er falið skv. 4., 5. og 6. gr. er heimilt að innheimta gjald. Gjaldið má ekki vera hærra en nemur kostnaði við undirbúning, svo sem vegna nauðsynlegrar aðkeyptrar þjónustu, afgreiðslu leyfis og eftirlits með leyfishöfum.</p>
         <p style="text-align: justify;">Fyrir leyfi til að reisa og reka dreifikerfi, sbr. 13. gr., og leyfi til að stunda raforkuviðskipti, sbr. 18. gr., er heimilt að innheimta gjald. Gjaldið má ekki vera hærra en nemur kostnaði við undir­búning og afgreiðslu leyfis.</p>
         <p style="text-align: justify;">Gjöld samkvæmt þessari grein skulu vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda. Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</p>
         <p style="text-align: justify;">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='33']" action-law-nr="65" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',33,')]">33. gr.</address>
+          <existing>
+            <art nr="33">
+              <nr-title>33. gr.</nr-title>
+              <name>Gjaldtaka vegna útgáfu leyfa.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Til að standa undir kostnaði af undirbúningi og útgáfu leyfa samkvæmt lögum þessum skal greiða gjöld til leyfisveitanda:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Fyrir virkjunarleyfi, sbr. 4. gr., skal greiða gjald.</sen>
+                      <sen nr="2">Gjaldið skal vera sett saman úr fastagjaldi sem nemur 100.000 kr. og gjaldþætti sem er í hlutfalli við stærð virkjunar og nemur 10.000 kr. fyrir hvert MW.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Fyrir leyfi til að reisa og reka dreifikerfi, sbr. 13. gr., skal greiða gjald.</sen>
+                      <sen nr="2">Gjaldið skal vera sett saman úr fastagjaldi sem nemur 50.000 kr. og gjaldþætti sem er í hlutfalli við íbúafjölda á dreifiveitusvæðinu og nemur 10 kr. fyrir hvern íbúa.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Fyrir leyfi til að stunda raforkuviðskipti, sbr. 18. gr., skal greiða 50.000 kr.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="33">
+              <nr-title>33. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir leyfi sem Orkustofnun veitir á grundvelli 4. gr. og fyrir eftirlit sem stofnuninni er falið skv. 4., 5. og 6. gr. er heimilt að innheimta gjald.</sen>
+                  <sen nr="2">Gjaldið má ekki vera hærra en nemur kostnaði við undirbúning, svo sem vegna nauðsynlegrar aðkeyptrar þjónustu, afgreiðslu leyfis og eftirlits með leyfishöfum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir leyfi til að reisa og reka dreifikerfi, sbr. 13. gr., og leyfi til að stunda raforkuviðskipti, sbr. 18. gr., er heimilt að innheimta gjald.</sen>
+                  <sen nr="2">Gjaldið má ekki vera hærra en nemur kostnaði við undirbúning og afgreiðslu leyfis.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gjöld samkvæmt þessari grein skulu vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda.</sen>
+                  <sen nr="2">Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -36,6 +206,56 @@
         <p style="text-align: justify;">Gjald skv. 1. mgr. skal vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda. Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</p>
         <p style="text-align: justify;">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='20']" action-law-nr="57" action-law-year="1998">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]">20. gr.</address>
+          <existing>
+            <art nr="20">
+              <nr-title>20. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Orkustofnun getur afturkallað leyfi samkvæmt lögum þessum ef skilyrðum þeirra er ekki fullnægt.</sen>
+                  <sen nr="2">Nú hlítir leyfishafi ekki skilyrðum þeim sem sett eru í leyfinu eða samningum sem tengjast leyfinu og skal þá ráðherra veita honum skriflega aðvörun og frest til úrbóta.</sen>
+                  <sen nr="3">Sinni leyfishafi ekki slíkri aðvörun skal afturkalla leyfið.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að afturkalla leyfi ef bú leyfishafa er tekið til gjaldþrotaskipta eða hann leitar nauðasamninga.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.131.html" law-nr="131" law-year="2011" law-art="3" nr="1">
+                  <footnote-sen>L. 131/2011, 3. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='20']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Orkustofnun" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="20a">
+              <nr-title>20. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir leyfi sem Orkustofnun veitir á grundvelli 4., 6. og 34. gr. og fyrir eftirlit sem stofnuninni er falið skv. 21. gr. er heimilt að innheimta gjald.</sen>
+                  <sen nr="2">Gjaldið má ekki vera hærra en nemur kostnaði við undirbúning, svo sem vegna nauðsynlegrar aðkeyptrar þjónustu, afgreiðslu leyfis og eftirlits með leyfishöfum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Gjald skv. 1. mgr. skal vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda.</sen>
+                  <sen nr="2">Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -47,15 +267,114 @@
         <p style="text-align: justify;">Gjald skv. 1. mgr. skal vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda. Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</p>
         <p style="text-align: justify;">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="art[@nr='6']" action-law-nr="73" action-law-year="1990">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]">6. gr.</address>
+          <existing>
+            <art nr="6">
+              <nr-title>6. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvarðanir Orkustofnunar er lúta að veitingu, endurskoðun og afturköllun leyfa samkvæmt lögum þessum sæta kæru til úrskurðarnefndar umhverfis- og auðlindamála.</sen>
+                  <sen nr="2">Um aðild, kærufrest, málsmeðferð og annað er varðar kæruna fer samkvæmt lögum um úrskurðarnefndina.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnvaldsákvarðanir Orkustofnunar sem ekki má kæra til úrskurðarnefndar umhverfis- og auðlindamála sæta kæru til ráðherra.</sen>
+                  <sen nr="2">Kæra til ráðherra skal vera skrifleg.</sen>
+                  <sen nr="3">Um meðferð kæru til ráðherra fer að öðru leyti samkvæmt ákvæðum stjórnsýslulaga.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.131.html" law-nr="131" law-year="2011" law-art="11" nr="1">
+                  <footnote-sen>L. 131/2011, 11. gr.</footnote-sen>
+                  <location type="range" string-length="500">
+                    <start xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.068.html" law-nr="68" law-year="2008" law-art="2" nr="2">
+                  <footnote-sen>L. 68/2008, 2. gr.</footnote-sen>
+                  <location type="range" string-length="506">
+                    <start xpath="art[@nr='6']/nr-title[1]"/>
+                    <end xpath="art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="7">
+              <nr-title>7. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir leyfi sem Orkustofnun veitir á grundvelli 2. og 3. gr. og fyrir eftirlit með skilyrðum leyfa er heimilt að innheimta gjald.</sen>
+                  <sen nr="2">Gjaldið má ekki vera hærra en nemur kostnaði við undirbúning, svo sem vegna nauðsynlegrar aðkeyptrar þjónustu, afgreiðslu leyfis og eftirlits með leyfishöfum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Gjald skv. 1. mgr. skal vera í samræmi við gjaldskrá sem ráðherra staðfestir og birt skal í B-deild Stjórnartíðinda.</sen>
+                  <sen nr="2">Upphæð gjalda samkvæmt gjaldskrá skal taka mið af kostnaði við þjónustu og framkvæmd einstakra verkefna og skal byggð á rekstraráætlun þar sem þau atriði eru rökstudd sem ákvörðun gjalds byggist á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="4" nr-type="roman" roman-nr="IV">
     <description>Breyting á vatnalögum, nr. 15/1923.</description>
     <advert-art nr="5">
-      <original affected-law-nr="73" affected-law-year="1990">
+      <original affected-law-nr="15" affected-law-year="1923">
         <p style="text-align: justify;">Við 146. gr. laganna bætist ný málsgrein, svohljóðandi:</p>
         <p style="text-align: justify;">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='146']" action-law-nr="15" action-law-year="1923">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',146,')]">146. gr.</address>
+          <existing>
+            <art nr="146">
+              <nr-title>146. gr.</nr-title>
+              <name>Gjaldtaka.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fyrir leyfi sem stjórnvöld veita á grundvelli þessara laga og fyrir eftirlit sem þeim er falið er heimilt að innheimta gjald.</sen>
+                  <sen nr="2">Gjaldið skal vera í samræmi við gjaldskrá sem staðfest skal af viðkomandi ráðherra og birt í B-deild Stjórnartíðinda.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Gjald skv. 1. mgr. má ekki vera hærra en nemur kostnaði við undirbúning, svo sem vegna nauðsynlegrar aðkeyptrar þjónustu, útgáfu leyfis og eftirlit.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.132.html" law-nr="132" law-year="2011" law-art="81" nr="1">
+                  <footnote-sen>L. 132/2011, 81. gr.</footnote-sen>
+                  <location type="range" string-length="401">
+                    <start xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='146']/name[1]"/>
+                    <end xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='146']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Gjöld samkvæmt þessari grein eru aðfararhæf án undangengins dóms eða sáttar.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="5" nr-type="roman" roman-nr="V">
@@ -64,11 +383,39 @@
       <original affected-law-nr="88" affected-law-year="1991">
         <p style="text-align: justify;">34.–36. tölul. 11. gr. laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='34'] | chapter[@nr='5' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='35'] | chapter[@nr='5' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='36']" action-law-nr="88" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//numart[(@nr='34' or (starts-with(@nr, '34') and string-length(@nr) = 3 and string(number(@nr)) != @nr) or @nr='35' or (starts-with(@nr, '35') and string-length(@nr) = 3 and string(number(@nr)) != @nr) or @nr='36' or (starts-with(@nr, '36') and string-length(@nr) = 3 and string(number(@nr)) != @nr))]">34.–36. tölul. 11. gr.</address>
+          <existing>
+            <numart nr="34" nr-type="numeric">
+              <nr-title>34.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Leyfi til rannsókna og nýtingar jarðvarma á lághitasvæðum, grunnvatns og hveraörvera, sbr. 4., 6. og 34. gr. laga nr. 57/1998 58.000 kr.</sen>
+              </paragraph>
+            </numart>
+            <numart nr="35" nr-type="numeric">
+              <nr-title>35.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Leyfi til rannsókna og nýtingar jarðvarma á háhitasvæðum og jarðefna, sbr. 4. og 6. gr. laga nr. 57/1998 230.000 kr.</sen>
+              </paragraph>
+            </numart>
+            <numart nr="36" nr-type="numeric">
+              <nr-title>36.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Leyfi til leitar og hagnýtingar á efnum á, í eða undir hafsbotninum utan netlaga, sbr. 2. og 3. gr. laga nr. 73/1990 230.000 kr.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="88" affected-law-year="1991">
         <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-07-08" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 1. júlí 2024.</signed-when>

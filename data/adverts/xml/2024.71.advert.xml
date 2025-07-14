@@ -10,6 +10,18 @@
           <span style="color: #000000;">laganna</span>
         </a>koma tveir nýir málsliðir, svohljóðandi: Þá er lífeyris­sjóði heimilt að binda allt að 5% heildareigna í hlutabréfum og skuldabréfum, sem ekki eru skráð á skipulegum markaði, útgefnum af félögum þar sem meginstarfsemin er langtímaleiga íbúðar­húsnæðis til einstaklinga. Undir 2. málsl. falla jafnframt hlutir eða hlutdeildarskírteini sjóða um sameigin­lega fjárfestingu, sem fjárfesta eingöngu í hlutabréfum og skuldabréfum útgefnum af slíkum félögum, og skuldabréf sem sjóðir um sameiginlega fjárfestingu gefa út til að fjármagna slík félög.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='36b']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="129" action-law-year="1997">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',36b,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 36. gr. b</address>
+        <existing>
+          <sen nr="1">Þrátt fyrir 2. mgr. er lífeyrissjóði heimilt að binda allt að 20% heildareigna í fjármálagerningum sem ekki eru skráðir á skipulegum markaði.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Þá er lífeyrissjóði heimilt að binda allt að 5% heildareigna í hlutabréfum og skuldabréfum, sem ekki eru skráð á skipulegum markaði, útgefnum af félögum þar sem meginstarfsemin er langtímaleiga íbúðarhúsnæðis til einstaklinga.</sen>
+          <sen nr="3">Undir 2. málsl. falla jafnframt hlutir eða hlutdeildarskírteini sjóða um sameiginlega fjárfestingu, sem fjárfesta eingöngu í hlutabréfum og skuldabréfum útgefnum af slíkum félögum, og skuldabréf sem sjóðir um sameiginlega fjárfestingu gefa út til að fjármagna slík félög.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="129" affected-law-year="1997">
@@ -17,11 +29,30 @@
           <span style="color: #000000;">laganna</span>
         </a>bætast tveir nýir málsliðir, svohljóðandi: Einnig er lífeyrissjóði heimilt að eiga stærri hluta en 20% í félagi þar sem meginstarfsemin er langtímaleiga íbúðar­húsnæðis til einstaklinga eða í hlutum eða hlutdeildarskírteinum sjóða um sameiginlega fjár­festingu, sem fjárfesta eingöngu í hlutabréfum og skuldabréfum útgefnum af slíkum félögum. Hlutur lífeyrissjóðs skv. 2. málsl. má þó ekki vera stærri en 50% í slíku félagi eða sjóði um sameigin­lega fjárfestingu.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='36c']/subart[@nr='8']/paragraph[@nr='1']" action-law-nr="129" action-law-year="1997">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',36c,')]//subart[@nr='8']">8. mgr. 36. gr. c</address>
+        <existing>
+          <subart nr="8">
+            <paragraph nr="1">
+              <sen nr="1">Þrátt fyrir 7. mgr. er lífeyrissjóði heimilt að eiga stærri hluta en 20% í félagi sem eingöngu sinnir þjónustuverkefnum fyrir lífeyrissjóði.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Einnig er lífeyrissjóði heimilt að eiga stærri hluta en 20% í félagi þar sem meginstarfsemin er langtímaleiga íbúðarhúsnæðis til einstaklinga eða í hlutum eða hlutdeildarskírteinum sjóða um sameiginlega fjárfestingu, sem fjárfesta eingöngu í hlutabréfum og skuldabréfum útgefnum af slíkum félögum.</sen>
+          <sen nr="3">Hlutur lífeyrissjóðs skv. 2. málsl. má þó ekki vera stærri en 50% í slíku félagi eða sjóði um sameiginlega fjárfestingu.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="129" affected-law-year="1997">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-05" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 1. júlí 2024.</signed-when>
 </advert>

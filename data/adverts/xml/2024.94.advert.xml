@@ -1,16 +1,69 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="ee2ac591-41b1-42a5-b358-def4ccd7ef71" year="2024" nr="94" published-date="2024-07-10" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="61" year="2003">61/2003</affected-law>
+  </affected-laws>
   <description>um breytingu á hafnalögum, nr. 61/2003 (Hafnabótasjóður).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="61" affected-law-year="2003">
       <p style="text-align: justify;">Við lögin bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
       <p style="text-align: justify;">Þrátt fyrir ákvæði 1. tölul. 3. mgr. 26. gr. laganna er Hafnabótasjóði heimilt, fram til 1. janúar 2025, að fjármagna framkvæmdir ríkisins án þess að þær séu tilgreindar í gildandi samgöngu­áætlun.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='t']" action-law-nr="61" action-law-year="2003">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <art nr="t">
+            <nr-title>Ákvæði til bráðabirgða.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ákvæði 1. málsl. 3. mgr. 18. gr. kemur til framkvæmda 1. janúar 2016.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2014.119.html" law-nr="119" law-year="2014" law-art="10" nr="1">
+                <footnote-sen>L. 119/2014, 10. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='t']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>Ákvæði til bráðabirgða.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði 1. málsl. 3. mgr. 18. gr. kemur til framkvæmda 1. janúar 2016.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2014.119.html" law-nr="119" law-year="2014" law-art="10" nr="1">
+                  <footnote-sen>L. 119/2014, 10. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='t']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. tölul. 3. mgr. 26. gr. laganna er Hafnabótasjóði heimilt, fram til 1. janúar 2025, að fjármagna framkvæmdir ríkisins án þess að þær séu tilgreindar í gildandi samgönguáætlun.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </chapter>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="61" affected-law-year="2003">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

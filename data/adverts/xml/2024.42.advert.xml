@@ -1,15 +1,47 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="19b0dc96-48a5-481b-8bc6-32de11c349f1" year="2024" nr="42" published-date="2024-05-21" applied-to-codex-version="154b">
-  <description>um breytingu á lögum um tekjustofna sveitarfélaga, nr. 4/1995 (Römpum upp Ísland).</description>
+  <affected-laws>
+    <affected-law nr="4" year="1995">4/1995</affected-law>
+  </affected-laws>
+  <description>um breytingu á lögum um tekjustofna sveitarfélaga, nr. 4/1995 (Römpum upp Ísland).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="4" affected-law-year="1995">
       <p style="text-align: justify;">Í stað orðanna „50 millj. kr. árlega á árunum 2022–2025“ í ákvæði til bráðabirgða XXVI í lögunum kemur: 100 millj. kr. á árinu 2024.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='XXVI']" action-law-nr="4" action-law-year="1995">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXVI,')]">ákvæði til bráðabirgða XXVI</address>
+        <existing>
+          <art nr="XXVI" roman-nr="26" number-type="roman">
+            <nr-title>XXVI.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir ákvæði 13. gr. b er Jöfnunarsjóði sveitarfélaga heimilt á grundvelli samnings að ráðstafa framlagi úr fasteignasjóði Jöfnunarsjóðs sveitarfélaga að upphæð 50 millj. kr. árlega á árunum 2022–2025 til verkefnisins Römpum upp Ísland, í þeim tilgangi að bæta aðgengi fyrir fatlað fólk á landsvísu.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.084.html" law-nr="84" law-year="2022" law-art="1" nr="1">
+                <footnote-sen>L. 84/2022, 1. gr.</footnote-sen>
+                <location type="range" string-length="311">
+                  <start xpath="chapter[@nr='t']/art[@nr='XXVI']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='XXVI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <text-from>50 millj. kr. árlega á árunum 2022–2025</text-from>
+        <text-to>100 millj. kr. á árinu 2024.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="4" affected-law-year="1995">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-05-21" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 10. maí 2024.</signed-when>
 </advert>

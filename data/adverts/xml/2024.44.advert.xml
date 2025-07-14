@@ -18,6 +18,117 @@
           <li style="text-align: justify;">Við bætist nýr töluliður, svohljóðandi: Í tilviki hlutafélaga, einkahlutafélaga, samlagsfélaga og útibúa erlendra hlutafélaga og einkahlutafélaga, einkvæmt evrópskt auðkenni.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 4. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='6']" action-law-nr="17" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1']//numart[@nr='6']">6. tölul. 1. mgr. 4. gr.</address>
+          <existing>
+            <numart nr="6" nr-type="numeric">
+              <nr-title>6.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Nafn, lögheimili og kennitölu forráðamanna.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="6" nr-type="numeric">
+              <nr-title>6.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Nafn, lögheimili og kennitölu stjórnar- og varamanna, prókúruhafa, framkvæmdastjóra, endurskoðenda og skoðunarmanna, félagsmanna í sameignar- og samlagsfélögum og annarra forráðamanna.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="17" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1']">1. mgr. 4. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Í fyrirtækjaskrá skal skrá eftirfarandi upplýsingar eftir því sem við á:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Heiti.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Kennitölu.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Heimilisfang.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Rekstrar- eða félagsform.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Stofndag.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Nafn, lögheimili og kennitölu forráðamanna.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Atvinnugreinarnúmer samkvæmt atvinnugreinaflokkun Hagstofu Íslands.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Slit félags.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9" nr-type="numeric">
+                  <nr-title>9.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Raunverulega eigendur samkvæmt lögum um skráningu raunverulegra eigenda.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="10" nr-type="numeric">
+                  <nr-title>10.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Í tilviki erlendra fjárvörslusjóða og sambærilegra aðila, upplýsingar um fjárvörsluaðila, stofnaðila, ábyrgðaraðila, raunverulegan eiganda eða hóp þeirra og aðra einstaklinga sem hafa yfirráð yfir sjóðnum, samkvæmt lögum um skráningu raunverulegra eigenda, eftir því sem við á.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="11" nr-type="numeric">
+                  <nr-title>11.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Netfang félags og forsvarsmanna.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="12" nr-type="numeric">
+                  <nr-title>12.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Önnur þau atriði sem skylt er að skrá um starfsemi félaga og fyrirtækja samkvæmt lögum eða nauðsynlegt eða hagkvæmt þykir að skrá vegna hagsmuna opinberra aðila eða miðlunar upplýsinga til opinberra aðila, fyrirtækja og almennings.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <numart nr="13" nr-type="numeric">
+              <nr-title>13.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Í tilviki hlutafélaga, einkahlutafélaga, samlagsfélaga og útibúa erlendra hlutafélaga og einkahlutafélaga, einkvæmt evrópskt auðkenni.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="17" affected-law-year="2003">
@@ -33,6 +144,80 @@
         <p style="text-align: justify;">Ríkisskattstjóri skal veita aðgang að persónugreinanlegum upplýsingum úr fyrirtækjaskrá, sbr. 1. mgr. 8. gr., þar á meðal fylgigögnum tilkynninga til fyrirtækjaskrár og upplýsingum sem hafa verið skráðar úr þeim.</p>
         <p style="text-align: justify;">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9a']" action-law-nr="17" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9a,')]">9. gr. a</address>
+          <existing>
+            <art nr="9a">
+              <nr-title>9. gr. a.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Komi í ljós að tilkynningarskyldur aðili fylgir ekki ákvæðum laga þessara skal ríkisskattstjóri krefjast þess að úr sé bætt innan hæfilegs frests.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.082.html#G22" law-nr="82" law-year="2019" law-art="22" nr="1">
+                  <footnote-sen>L. 82/2019, 22. gr.</footnote-sen>
+                  <location type="range" string-length="156">
+                    <start xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9a']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="9b">
+              <nr-title>9. gr. b.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að miðla og taka á móti upplýsingum og gögnum úr fyrirtækjaskrám annarra EES-ríkja í gegnum samtengingarkerfi skráa sem sett er á fót í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding).</sen>
+                  <sen nr="2">Upplýsingaskiptin skulu fara fram í samræmi við þær reglur sem kveðið er á um í tilskipuninni og framkvæmdarreglugerðum settum á grundvelli hennar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja og um gjaldtöku ef við á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra setur með reglugerð ákvæði um almennan aðgang að upplýsingum og gögnum úr fyrirtækjaskrá sem birtast eða veittur er aðgangur að í vefgátt samtengingarkerfis skráa skv. 1. mgr. og veitingu upplýsinga og gagna úr henni, svo og um gjaldtöku fyrir upplýsingar og gögn úr skránni, svo sem fyrir útgáfu vottorða og staðfestinga og önnur afnot af upplýsingum og gögnum skrárinnar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri veitir upplýsingar sem um getur í 9. og 10. tölul. 1. mgr. 4. gr. í gegnum samtengingarkerfi skráa skv. 1. mgr. svo sem nánar er kveðið á um í lögum um skráningu raunverulegra eigenda.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="9c">
+              <nr-title>9. gr. c.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að vinna með persónuupplýsingar að því marki sem honum er það nauðsynlegt til að sinna hlutverki sínu samkvæmt lögum þessum, svo sem vegna skráningar upplýsinga í fyrirtækjaskrá og við að veita aðgang að þeim upplýsingum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Heimildin nær til vinnslu almennra persónuupplýsinga, eins og nafns, kennitölu, heimilisfangs, aðseturs og fjárhagsupplýsinga einstaklinga.</sen>
+                  <sen nr="2">Þessar upplýsingar geta verið um einstaklinga sem stunda atvinnurekstur eða sjálfstæða starfsemi, forsvarsmenn félaga og raunverulega eigendur.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri skal veita aðgang að persónugreinanlegum upplýsingum úr fyrirtækjaskrá, sbr. 1. mgr. 8. gr., þar á meðal fylgigögnum tilkynninga til fyrirtækjaskrár og upplýsingum sem hafa verið skráðar úr þeim.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="17" affected-law-year="2003">
@@ -41,6 +226,41 @@
             <span style="color: #000000;">nr. 200/2019</span>
           </a>, frá 10. júlí 2019, að því er varðar skráningu hlutafélaga, einkahlutafélaga og útibúa erlendra hlutafélaga og einkahlutafélaga.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']" action-law-nr="17" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]">11. gr.</address>
+          <existing>
+            <art nr="11">
+              <nr-title>11. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt að setja með reglugerð nánari ákvæði um framkvæmd laga þessara.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="360" nr="1">
+                  <footnote-sen>L. 126/2011, 360. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
+                </footnote>
+                <footnote nr="2">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/841-2018"&gt;Rg. 841/2018&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Ráðherra:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð" after-mark="nánari ákvæði um framkvæmd laga þessara.$"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="11a">
+              <nr-title>11. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum 16., 18., 19., 20., 22., 24., 29. og 130. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding), eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 200/2019 , frá 10. júlí 2019, að því er varðar skráningu hlutafélaga, einkahlutafélaga og útibúa erlendra hlutafélaga og einkahlutafélaga.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -52,6 +272,87 @@
         <p style="text-align: justify;">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja og um gjaldtöku ef við á.</p>
         <p style="text-align: justify;">Ráðherra setur með reglugerð nánari ákvæði um almennan aðgang að upplýsingum og gögnum úr fyrirtækjaskrá sem birtast eða veittur er aðgangur að í vefgátt samtengingarkerfis skráa skv. 1. mgr. og hvaða upplýsingar og gögn skuli vera aðgengileg, svo og um gjaldtöku fyrir upplýsingar og gögn úr skránni, svo sem fyrir útgáfu vottorða og staðfestinga og önnur afnot af upplýsingum og gögnum skrárinnar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']" action-law-nr="2" action-law-year="1995">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',147,')]">147. gr.</address>
+          <existing>
+            <art nr="147">
+              <nr-title>147. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri skráir íslensk hlutafélög og útibú erlendra hlutafélaga og starfrækir hlutafélagaskrá í því skyni.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þeim ráðherra er fer með skráningu félaga er heimilt að setja með reglugerð nánari ákvæði um skráningu hlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi.</sen>
+                  <sen nr="2">Upplýsingar úr hlutafélagaskrá skal vera unnt að veita með rafrænum hætti.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningar til hlutafélagaskrár ásamt fylgiskjölum og tilskildum skráningar- og birtingargjöldum skal senda beint til hlutafélagaskrár á því formi sem hlutafélagaskrá ákveður.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningar og gögn sem skylt er að senda hlutafélagaskrá skulu vera á íslensku.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="205" nr="1">
+                  <footnote-sen>L. 126/2011, 205. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ríkisskattstjóri" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="Þeim ráðherra er fer með skráningu félaga" instance-num="1"/>
+                </footnote>
+                <footnote nr="2">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/162-2006"&gt;Rg. 162/2006&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/455-2007"&gt;455/2007&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/223-2022"&gt;223/2022&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/841-2018"&gt;Rg. 841/2018&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Þeim ráðherra er fer með skráningu félaga:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð" after-mark="nánari ákvæði um skráningu hlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?3\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/1997.041.html" law-nr="41" law-year="1997" law-art="9" nr="3">
+                  <footnote-sen>L. 41/1997, 9. gr.</footnote-sen>
+                  <location type="range" string-length="433">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.043.html" law-nr="43" law-year="2008" law-art="1" nr="4">
+                  <footnote-sen>L. 43/2008, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2017.026.html" law-nr="26" law-year="2017" law-art="3" nr="5">
+                  <footnote-sen>L. 26/2017, 3. gr.</footnote-sen>
+                  <location type="range" string-length="259">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="147a">
+              <nr-title>147. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að miðla og taka á móti upplýsingum og gögnum úr fyrirtækjaskrám annarra EES-ríkja í gegnum samtengingarkerfi skráa sem sett er á fót í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding).</sen>
+                  <sen nr="2">Upplýsingaskiptin skulu fara fram í samræmi við þær reglur sem kveðið er á um í tilskipuninni og framkvæmdarreglugerðum settum á grundvelli hennar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja og um gjaldtöku ef við á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra setur með reglugerð nánari ákvæði um almennan aðgang að upplýsingum og gögnum úr fyrirtækjaskrá sem birtast eða veittur er aðgangur að í vefgátt samtengingarkerfis skráa skv. 1. mgr. og hvaða upplýsingar og gögn skuli vera aðgengileg, svo og um gjaldtöku fyrir upplýsingar og gögn úr skránni, svo sem fyrir útgáfu vottorða og staðfestinga og önnur afnot af upplýsingum og gögnum skrárinnar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="2" affected-law-year="1995">
@@ -62,6 +363,75 @@
           </a>, þar á meðal fylgigögnum tilkynninga til hluta­félaga­skrár og upplýsingum sem hafa verið skráðar úr þeim.</p>
         <p style="text-align: justify;">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='151']" action-law-nr="2" action-law-year="1995">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',151,')]">151. gr.</address>
+          <existing>
+            <art nr="151">
+              <nr-title>151. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Hlutafélagaskrá skal á kostnað tilkynnanda láta birta í Lögbirtingablaði aðalefni þess sem skrásett hefur verið um stofnun nýrra hlutafélaga og tilvísun í aðalefni aukatilkynninga, t.d. varðandi móttöku sérfræðiskýrslu um öflun fjárhagsverðmæta skv. 8. gr. og yfirlýsingu matsmanna skv. 5. mgr. 122. gr. um rýrari möguleika lánardrottna á fullnustu vegna samrunaáætlunar á grundvelli 123. gr.</sen>
+                  <sen nr="2">Ef vísað er í framangreinda yfirlýsingu matsmanna skal athygli lánardrottna vakin á rétti þeirra til tryggingar skv. 126. gr.</sen>
+                  <sen nr="3">Þá getur hlutafélagaskrá í öðrum tilvikum látið birta meira en tilvísun í aðalefni aukatilkynninga ef hún telur slíkt nauðsynlegt.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Það sem skráð hefur verið og birt í Lögbirtingablaði skal telja manni kunnugt, nema atvik séu svo vaxin að telja megi hann hvorki um það hafa vitað né mátt vita.</sen>
+                  <sen nr="2">Ákvæði 1. málsl. taka þó ekki til ráðstafana sem gerðar eru innan sextán daga eftir birtingu ef viðkomandi maður sannar að hann hafi ekki getað aflað vitneskju um það sem birt var.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Nú hefur birting í Lögbirtingablaði eigi farið fram og hefur tilkynning þá ekki gildi gagnvart öðrum en þeim sem sannanlega höfðu vitneskju um hana.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ef um misræmi er að ræða milli þess sem skráð er og þess sem birt er í Lögbirtingablaði getur félagið ekki borið hinn birta texta fyrir sig gagnvart þriðja manni.</sen>
+                  <sen nr="2">Hann getur hins vegar borið hinn birta texta fyrir sig gagnvart félaginu nema sannað sé að hann hafi haft vitneskju um það sem skráð var.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2009.081.html" law-nr="81" law-year="2009" law-art="2" nr="1">
+                  <footnote-sen>L. 81/2009, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='151']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="5. mgr. 122. gr." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/1997.035.html" law-nr="35" law-year="1997" law-art="10" nr="2">
+                  <footnote-sen>L. 35/1997, 10. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='151']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                  <location type="range" string-length="300">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='151']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='151']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="151a">
+              <nr-title>151. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að vinna með persónuupplýsingar að því marki sem honum er það nauðsynlegt til að sinna hlutverki sínu samkvæmt lögum þessum, svo sem vegna skráningar upplýsinga í hlutafélagaskrá.</sen>
+                  <sen nr="2">Heimildin nær m.a. til þess að skrá upplýsingar skv. 148. gr., svo sem almennar persónuupplýsingar eins og nafn, kennitölu, heimilisfang, aðsetur og fjárhagsupplýsingar einstaklinga.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri skal veita aðgang að persónugreinanlegum upplýsingum úr hlutafélagaskrá, sbr. 1. mgr. 8. gr. laga um fyrirtækjaskrá, nr. 17/2003 , þar á meðal fylgigögnum tilkynninga til hlutafélagaskrár og upplýsingum sem hafa verið skráðar úr þeim.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="2" affected-law-year="1995">
@@ -70,6 +440,72 @@
             <span style="color: #000000;">nr. 200/2019</span>
           </a>, frá 10. júlí 2019.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='20' and @chapter-type='kafli']/art[@nr='163']" action-law-nr="2" action-law-year="1995">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',163,')]">163. gr.</address>
+          <existing>
+            <art nr="163">
+              <nr-title>163. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Hluthafafundur í samlagshlutafélagi getur, með þeim fjölda atkvæða sem krafist er til breytinga á félagssamþykktum og samþykki ábyrgðaraðila, samþykkt að breyta samlagshlutafélagi í hlutafélag.</sen>
+                  <sen nr="2">Ákvæði 6.–8. gr. gilda eftir því sem við á.</sen>
+                  <sen nr="3">Framlagning skýrslu og útsending hennar fer þó eftir 4. mgr. 88. gr.</sen>
+                  <sen nr="4">Við breytinguna tekur hlutafélagið við öllum eignum og skuldum samlagshlutafélagsins án þess að samþykki lánardrottna þurfi að koma til.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningu um ákvörðun skv. 1. mgr. skal innan tveggja vikna senda öllum skráðum hluthöfum, svo og ábyrgðaraðilum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Breyting samlagshlutafélags í hlutafélag telst hafa átt sér stað þegar félagssamþykktum hefur verið breytt á þann veg að það fullnægi kröfum laga þessara enda hafi breytingar á samþykktunum verið skráðar og tilkynning þar að lútandi birt í Lögbirtingablaði.</sen>
+                  <sen nr="2">Ábyrgðaraðilar bera þó áfram ábyrgð á skuldbindingum frá því fyrir breytinguna á félaginu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Gefa skal út hlutabréf í hlutafélagi áður en ár er liðið frá breytingunni.</sen>
+                  <sen nr="2">Óheimilt er að gefa þau út fyrir breytinguna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Ef liðin eru fimm ár frá breytingunni án þess að allir réttbærir aðilar hafi sett fram beiðni um að fá hlutabréf sín í hlutafélaginu afhent getur stjórn hlutafélagsins með auglýsingu í Lögbirtingablaði skorað á aðila að vitja hlutabréfanna innan sex mánaða.</sen>
+                  <sen nr="2">Þegar fresturinn er liðinn og enginn hefur gefið sig fram getur stjórnin á kostnað viðkomandi hluthafa selt hlutabréfin í hlutafélaginu fyrir milligöngu aðila sem að lögum er heimilt að versla með slík bréf.</sen>
+                  <sen nr="3">Frá söluandvirðinu getur félagið dregið kostnað við auglýsinguna og söluna.</sen>
+                  <sen nr="4">Hafi söluandvirðið ekki verið sótt innan fimm ára frá sölu rennur fjárhæðin til félagsins.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.089.html" law-nr="89" law-year="2006" law-art="14" nr="1">
+                  <footnote-sen>L. 89/2006, 14. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='20' and @chapter-type='kafli']/art[@nr='163']/nr-title[1]" words="163. gr." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.088.html" law-nr="88" law-year="2006" law-art="2" nr="2">
+                  <footnote-sen>L. 88/2006, 2. gr.</footnote-sen>
+                  <location type="range" string-length="1659">
+                    <start xpath="chapter[@nr='20' and @chapter-type='kafli']/art[@nr='163']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='20' and @chapter-type='kafli']/art[@nr='163']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="164">
+              <nr-title>164. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding), eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 200/2019 , frá 10. júlí 2019.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -81,6 +517,91 @@
         <p style="text-align: justify;">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja og um gjaldtöku ef við á.</p>
         <p style="text-align: justify;">Ráðherra setur með reglugerð nánari ákvæði um almennan aðgang að upplýsingum og gögnum úr fyrirtækjaskrá sem birtast eða veittur er aðgangur að í vefgátt samtengingarkerfis skráa skv. 1. mgr. og hvaða upplýsingar og gögn skuli vera aðgengileg, svo og um gjaldtöku fyrir upplýsingar og gögn úr skránni, svo sem fyrir útgáfu vottorða og staðfestinga og önnur afnot af upplýsingum og gögnum skrárinnar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']" action-law-nr="138" action-law-year="1994">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',121,')]">121. gr.</address>
+          <existing>
+            <art nr="121">
+              <nr-title>121. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri skráir íslensk einkahlutafélög og útibú erlendra einkahlutafélaga og starfrækir hlutafélagaskrá í því skyni.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þeim ráðherra er fer með skráningu félaga er heimilt að setja með reglugerð nánari ákvæði um skráningu einkahlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi.</sen>
+                  <sen nr="2">Upplýsingar úr hlutafélagaskrá skal vera unnt að veita með rafrænum hætti.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningar til hlutafélagaskrár ásamt fylgiskjölum og tilskildum skráningar- og birtingargjöldum skal senda beint til hlutafélagaskrár á því formi sem hlutafélagaskrá ákveður.</sen>
+                  <sen nr="2">Skal málsmeðferðin vera rafræn sé þess kostur.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningar og gögn sem skylt er að senda hlutafélagaskrá skulu vera á íslensku.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2003.035.html" law-nr="35" law-year="2003" law-art="4" nr="1">
+                  <footnote-sen>L. 35/2003, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Ríkisskattstjóri" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="202" nr="2">
+                  <footnote-sen>L. 126/2011, 202. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="Þeim ráðherra er fer með skráningu félaga" instance-num="1"/>
+                </footnote>
+                <footnote nr="3">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/162-2006"&gt;Rg. 162/2006&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/455-2007"&gt;455/2007&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/223-2022"&gt;223/2022&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/841-2018"&gt;Rg. 841/2018&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^(\[??)?Þeim ráðherra er fer með skráningu félaga:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?er heimilt að setja með reglugerð" after-mark="nánari ákvæði um skráningu einkahlutafélaga, þar með talið um skipulag skráningarinnar, rekstur hlutafélagaskrár, aðgang að skránni og gjaldtöku, m.a. fyrir útgáfu vottorða og afnot af þeim upplýsingum sem hlutafélagaskrá hefur á tölvutæku formi\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?4\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/1997.043.html" law-nr="43" law-year="1997" law-art="8" nr="4">
+                  <footnote-sen>L. 43/1997, 8. gr.</footnote-sen>
+                  <location type="range" string-length="448">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.043.html" law-nr="43" law-year="2008" law-art="2" nr="5">
+                  <footnote-sen>L. 43/2008, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2017.026.html" law-nr="26" law-year="2017" law-art="6" nr="6">
+                  <footnote-sen>L. 26/2017, 6. gr.</footnote-sen>
+                  <location type="range" string-length="305">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="121a">
+              <nr-title>121. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að miðla og taka á móti upplýsingum og gögnum úr fyrirtækjaskrám annarra EES-ríkja í gegnum samtengingarkerfi skráa sem sett er á fót með tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding).</sen>
+                  <sen nr="2">Upplýsingaskiptin skulu fara fram í samræmi við þær reglur sem kveðið er á um í tilskipuninni og framkvæmdarreglugerðum settum á grundvelli hennar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja og um gjaldtöku ef við á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra setur með reglugerð nánari ákvæði um almennan aðgang að upplýsingum og gögnum úr fyrirtækjaskrá sem birtast eða veittur er aðgangur að í vefgátt samtengingarkerfis skráa skv. 1. mgr. og hvaða upplýsingar og gögn skuli vera aðgengileg, svo og um gjaldtöku fyrir upplýsingar og gögn úr skránni, svo sem fyrir útgáfu vottorða og staðfestinga og önnur afnot af upplýsingum og gögnum skrárinnar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="138" affected-law-year="1994">
@@ -91,6 +612,70 @@
           </a>, þar á meðal fylgigögnum tilkynninga til hluta­félaga­skrár og upplýsingum sem hafa verið skráðar úr þeim.</p>
         <p style="text-align: justify;">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='125']" action-law-nr="138" action-law-year="1994">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',125,')]">125. gr.</address>
+          <existing>
+            <art nr="125">
+              <nr-title>125. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Hlutafélagaskrá skal á kostnað tilkynnanda láta birta í Lögbirtingablaði aðalefni þess sem skrásett hefur verið um stofnun nýrra einkahlutafélaga og tilvísun í aðalefni aukatilkynninga.</sen>
+                  <sen nr="2">Þá getur hlutafélagaskrá í öðrum tilvikum látið birta meira en tilvísun í aðalefni aukatilkynninga ef hún telur slíkt nauðsynlegt.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Það sem skráð hefur verið og birt í Lögbirtingablaði skal telja manni kunnugt nema atvik séu svo vaxin að telja megi hann hvorki um það hafa vitað né mátt vita.</sen>
+                  <sen nr="2">Ákvæði 1. málsl. taka þó ekki til ráðstafana sem gerðar eru innan sextán daga eftir birtingu ef viðkomandi maður sannar að hann hafi ekki getað aflað vitneskju um það sem birt var.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Nú hefur birting í Lögbirtingablaði eigi farið fram og hefur tilkynning þá ekki gildi gagnvart öðrum en þeim sem sannanlega höfðu vitneskju um hana.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ef um misræmi er að ræða milli þess sem skráð er og þess sem birt er í Lögbirtingablaði getur félagið ekki borið hinn birta texta fyrir sig gagnvart þriðja manni.</sen>
+                  <sen nr="2">Hann getur hins vegar borið hinn birta texta fyrir sig gagnvart félaginu nema sannað sé að hann hafi haft vitneskju um það sem skráð var.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/1997.031.html" law-nr="31" law-year="1997" law-art="6" nr="1">
+                  <footnote-sen>L. 31/1997, 6. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='125']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                  <location type="range" string-length="300">
+                    <start xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='125']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='125']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="125a">
+              <nr-title>125. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að vinna með persónuupplýsingar að því marki sem honum er það nauðsynlegt til að sinna hlutverki sínu samkvæmt lögum þessum, svo sem vegna skráningar upplýsinga í hlutafélagaskrá.</sen>
+                  <sen nr="2">Heimildin nær m.a. til þess að skrá upplýsingar skv. 122. gr., svo sem almennar persónuupplýsingar eins og nafn, kennitölu, heimilisfang, aðsetur og fjárhagsupplýsingar einstaklinga.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri skal veita aðgang að persónugreinanlegum upplýsingum úr hlutafélagaskrá, sbr. 1. mgr. 8. gr. laga um fyrirtækjaskrá, nr. 17/2003 , þar á meðal fylgigögnum tilkynninga til hlutafélagaskrár og upplýsingum sem hafa verið skráðar úr þeim.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="138" affected-law-year="1994">
@@ -99,6 +684,41 @@
             <span style="color: #000000;">nr. 200/2019</span>
           </a>, frá 10. júlí 2019.</p>
       </original>
+      <intents>
+        <intent action="prepend" action-xpath="chapter[@nr='19' and @chapter-type='kafli']/art[@nr='132']" action-law-nr="138" action-law-year="1994">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',132,')]">132. gr.</address>
+          <existing>
+            <art nr="132">
+              <nr-title>132. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi öðlast gildi 1. janúar 1995.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði til bráðabirgða I og II í lögum um hlutafélög varðandi umskráningu skráðra hlutafélaga sem einkahlutafélög skulu gilda.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Hlutabréf í hlutafélögum, sem verða einkahlutafélög, verða ógild.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="131a">
+              <nr-title>131. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding), eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 200/2019 , frá 10. júlí 2019.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="4" nr-type="roman" roman-nr="IV">
@@ -111,6 +731,117 @@
           <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</li>
         </ol>
       </original>
+      <intents common-address="109. gr.">
+        <intent action="add" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='5']/paragraph[@nr='1']" action-law-nr="3" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',109,')]//subart[@nr='5']">5. mgr. 109. gr.</address>
+          <existing>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Ríkisskattstjóri starfrækir ársreikningaskrá.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="2">Ríkisskattstjóra er heimilt að vinna með persónuupplýsingar að því marki sem honum er það nauðsynlegt til að sinna hlutverki sínu samkvæmt lögum þessum.</sen>
+          </inner>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']" action-law-nr="3" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',109,')]">109. gr.</address>
+          <existing>
+            <art nr="109">
+              <nr-title>109. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Eigi síðar en mánuði eftir samþykkt ársreiknings og samstæðureiknings, ef við á, þó eigi síðar en átta mánuðum eftir lok reikningsárs, skal félag skv. 1. gr. senda ársreikningaskrá ársreikning sinn, sbr. 3. gr., ásamt áritun endurskoðenda eða undirritun skoðunarmanna og upplýsingar um hvenær ársreikningurinn var samþykktur.</sen>
+                  <sen nr="2">Ársreikninga félaga, sem hafa hlutabréf sín eða skuldabréf skráð á skipulegum markaði í ríki innan Evrópska efnahagssvæðisins, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum, skal þó senda þegar í stað eftir samþykkt þeirra og eigi síðar en fjórum mánuðum eftir lok reikningsárs.</sen>
+                  <sen nr="3">Sama gildir um ársreikninga félaga sem beita alþjóðlegum reikningsskilastöðlum samkvæmt heimild í 92. gr.</sen>
+                  <sen nr="4">Ársreikningum og samstæðureikningum skal skilað rafrænt til ársreikningaskrár í samræmi við reglur sem ársreikningaskrá setur.</sen>
+                  <sen nr="5">Á sama hátt skulu félög, sem skyld eru til að semja samstæðureikninga skv. VII. kafla, senda ársreikningaskrá samstæðureikning innan sama tímafrests ásamt áritun endurskoðenda</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. mgr. er félögum sem nýtt hafa sér heimild í 3. gr. til að skila rekstraryfirliti og efnahagsyfirliti byggðum á skattframtali félagsins heimilt að skila slíkum ársreikningi innan þess frests sem ríkisskattstjóri veitir skattaðilum til að skila framtölum sínum, sbr. ákvæði 2. mgr. 93. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gögn sem send eru ársreikningaskrá til birtingar skulu vera á íslensku.</sen>
+                  <sen nr="2">Sé ársreikningur saminn á ensku skv. 2. mgr. 7. gr. skal hann sendur ársreikningaskrá á íslensku og ensku.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ársreikningaskrá skal birta gögn sem skilaskyld eru samkvæmt þessari grein á opinberu vefsvæði.</sen>
+                  <sen nr="2">Ráðherra setur með reglugerð ákvæði um gjaldtöku fyrir annars konar afhendingu gagna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri starfrækir ársreikningaskrá.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.073.html" law-nr="73" law-year="2016" law-art="64" nr="1">
+                  <footnote-sen>L. 73/2016, 64. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="og samstæðureiknings, ef við á" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.014.html" law-nr="14" law-year="2013" law-art="21" nr="2">
+                  <footnote-sen>L. 14/2013, 21. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða undirritun skoðunarmanna" instance-num="1"/>
+                  <location type="deletion" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" before-mark="^Á sama hátt skulu félög, sem skyld eru til að semja samstæðureikninga skv. VII. kafla, senda ársreikningaskrá samstæðureikning innan sama tímafrests ásamt áritun endurskoðenda" after-mark="$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.115.html#G148" law-nr="115" law-year="2021" law-art="148" nr="3">
+                  <footnote-sen>L. 115/2021, 148. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="markaði" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.108.html" law-nr="108" law-year="2006" law-art="12" nr="4">
+                  <footnote-sen>L. 108/2006, 12. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum" middle-punctuation="," instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2007.171.html" law-nr="171" law-year="2007" law-art="16" nr="5">
+                  <footnote-sen>L. 171/2007, 16. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="fjórum" instance-num="1"/>
+                </footnote>
+                <footnote nr="6">
+                  <footnote-sen>Rgl. 786/2023.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" before-mark="^(\[??)?Ársreikningum og samstæðureikningum skal skilað rafrænt til ársreikningaskrár í samræmi við reglur" after-mark="sem ársreikningaskrá setur\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?7\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.119.html" law-nr="119" law-year="2022" law-art="7" nr="7">
+                  <footnote-sen>L. 119/2022, 7. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2018.113.html" law-nr="113" law-year="2018" law-art="3" nr="8">
+                  <footnote-sen>L. 113/2018, 3. gr.</footnote-sen>
+                  <location type="range" string-length="178">
+                    <start xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+                <footnote nr="9">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/707-2021"&gt;Rg. 707/2021&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Ráðherra setur með reglugerð" after-mark="ákvæði um gjaldtöku fyrir annars konar afhendingu gagna\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?10\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.102.html" law-nr="102" law-year="2020" law-art="6" nr="10">
+                  <footnote-sen>L. 102/2020, 6. gr.</footnote-sen>
+                  <location type="range" string-length="181">
+                    <start xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Vinnsla persónuupplýsinga samkvæmt lögum þessum skal samræmast lögum um persónuvernd og vinnslu persónuupplýsinga.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="3" affected-law-year="2006">
@@ -121,6 +852,118 @@
           <br/>
         </p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']" action-law-nr="3" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',109,')]">109. gr.</address>
+          <existing>
+            <art nr="109">
+              <nr-title>109. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Eigi síðar en mánuði eftir samþykkt ársreiknings og samstæðureiknings, ef við á, þó eigi síðar en átta mánuðum eftir lok reikningsárs, skal félag skv. 1. gr. senda ársreikningaskrá ársreikning sinn, sbr. 3. gr., ásamt áritun endurskoðenda eða undirritun skoðunarmanna og upplýsingar um hvenær ársreikningurinn var samþykktur.</sen>
+                  <sen nr="2">Ársreikninga félaga, sem hafa hlutabréf sín eða skuldabréf skráð á skipulegum markaði í ríki innan Evrópska efnahagssvæðisins, í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum, skal þó senda þegar í stað eftir samþykkt þeirra og eigi síðar en fjórum mánuðum eftir lok reikningsárs.</sen>
+                  <sen nr="3">Sama gildir um ársreikninga félaga sem beita alþjóðlegum reikningsskilastöðlum samkvæmt heimild í 92. gr.</sen>
+                  <sen nr="4">Ársreikningum og samstæðureikningum skal skilað rafrænt til ársreikningaskrár í samræmi við reglur sem ársreikningaskrá setur.</sen>
+                  <sen nr="5">Á sama hátt skulu félög, sem skyld eru til að semja samstæðureikninga skv. VII. kafla, senda ársreikningaskrá samstæðureikning innan sama tímafrests ásamt áritun endurskoðenda</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. mgr. er félögum sem nýtt hafa sér heimild í 3. gr. til að skila rekstraryfirliti og efnahagsyfirliti byggðum á skattframtali félagsins heimilt að skila slíkum ársreikningi innan þess frests sem ríkisskattstjóri veitir skattaðilum til að skila framtölum sínum, sbr. ákvæði 2. mgr. 93. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gögn sem send eru ársreikningaskrá til birtingar skulu vera á íslensku.</sen>
+                  <sen nr="2">Sé ársreikningur saminn á ensku skv. 2. mgr. 7. gr. skal hann sendur ársreikningaskrá á íslensku og ensku.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ársreikningaskrá skal birta gögn sem skilaskyld eru samkvæmt þessari grein á opinberu vefsvæði.</sen>
+                  <sen nr="2">Ráðherra setur með reglugerð ákvæði um gjaldtöku fyrir annars konar afhendingu gagna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri starfrækir ársreikningaskrá.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.073.html" law-nr="73" law-year="2016" law-art="64" nr="1">
+                  <footnote-sen>L. 73/2016, 64. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="og samstæðureiknings, ef við á" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.014.html" law-nr="14" law-year="2013" law-art="21" nr="2">
+                  <footnote-sen>L. 14/2013, 21. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða undirritun skoðunarmanna" instance-num="1"/>
+                  <location type="deletion" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" before-mark="^Á sama hátt skulu félög, sem skyld eru til að semja samstæðureikninga skv. VII. kafla, senda ársreikningaskrá samstæðureikning innan sama tímafrests ásamt áritun endurskoðenda" after-mark="$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.115.html#G148" law-nr="115" law-year="2021" law-art="148" nr="3">
+                  <footnote-sen>L. 115/2021, 148. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="markaði" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.108.html" law-nr="108" law-year="2006" law-art="12" nr="4">
+                  <footnote-sen>L. 108/2006, 12. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="í aðildarríki stofnsamnings Fríverslunarsamtaka Evrópu eða í Færeyjum" middle-punctuation="," instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2007.171.html" law-nr="171" law-year="2007" law-art="16" nr="5">
+                  <footnote-sen>L. 171/2007, 16. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="fjórum" instance-num="1"/>
+                </footnote>
+                <footnote nr="6">
+                  <footnote-sen>Rgl. 786/2023.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" before-mark="^(\[??)?Ársreikningum og samstæðureikningum skal skilað rafrænt til ársreikningaskrár í samræmi við reglur" after-mark="sem ársreikningaskrá setur\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?7\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.119.html" law-nr="119" law-year="2022" law-art="7" nr="7">
+                  <footnote-sen>L. 119/2022, 7. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2018.113.html" law-nr="113" law-year="2018" law-art="3" nr="8">
+                  <footnote-sen>L. 113/2018, 3. gr.</footnote-sen>
+                  <location type="range" string-length="178">
+                    <start xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+                <footnote nr="9">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/707-2021"&gt;Rg. 707/2021&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Ráðherra setur með reglugerð" after-mark="ákvæði um gjaldtöku fyrir annars konar afhendingu gagna\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?10\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.102.html" law-nr="102" law-year="2020" law-art="6" nr="10">
+                  <footnote-sen>L. 102/2020, 6. gr.</footnote-sen>
+                  <location type="range" string-length="181">
+                    <start xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="109a">
+              <nr-title>109. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóra er heimilt að miðla og taka á móti upplýsingum og gögnum frá fyrirtækjaskrám annarra EES-ríkja í gegnum samtengingarkerfi skráa sem sett er á fót með tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding).</sen>
+                  <sen nr="2">Upplýsingaskiptin skulu fara fram í samræmi við þær reglur sem kveðið er á um í tilskipuninni og framkvæmdarreglugerðum settum á grundvelli hennar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari reglur í samræmi við tilskipun Evrópuþingsins og ráðsins (ESB) 2017/1132 og framkvæmdarreglugerðir settar á grundvelli hennar um tækniforskriftir og verklagsreglur fyrir samtengingarkerfi skráa, þ.m.t. um upplýsingaskipti milli fyrirtækjaskrár og fyrirtækjaskráa annarra EES-ríkja.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkisskattstjóri veitir aðgang að ársreikningum og samstæðureikningum hlutafélaga, einkahlutafélaga, samlagsfélaga og útibúa erlendra hlutafélaga og einkahlutafélaga í vefgátt samtengingarkerfis skráa skv. 1. mgr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="12">
       <original affected-law-nr="3" affected-law-year="2006">
@@ -129,6 +972,34 @@
             <span style="color: #000000;">nr. 200/2019</span>
           </a>, frá 10. júlí 2019, að því er varðar samtengingarkerfi skráa, sbr. 22. gr. tilskipunarinnar.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='128']" action-law-nr="3" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',128,')]">128. gr.</address>
+          <existing>
+            <art nr="128">
+              <nr-title>128. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á tilskipun Evrópuþingsins og ráðsins 2013/34/ESB frá 26. júní 2013 um árleg reikningsskil, samstæðureikningsskil og tilheyrandi skýrslur tiltekinna tegunda fyrirtækja, um breytingu á tilskipun Evrópuþingsins og ráðsins 2006/43/EB og niðurfellingu tilskipana ráðsins 78/660/EBE og 83/349/EBE, eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 293/2015 frá 30. október 2015, og breytingu á henni með tilskipun 2014/95/ESB, reglugerð (EB) nr. 1606/2002 að því er varðar ársreikninga félaga með takmarkaða ábyrgð og samstæðureikningsskil þeirra, svo og reglugerð framkvæmdastjórnarinnar (EB) nr. 1569/2007.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.073.html" law-nr="73" law-year="2016" law-art="73" nr="1">
+                  <footnote-sen>L. 73/2016, 73. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='128']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding), eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 200/2019 , frá 10. júlí 2019, að því er varðar samtengingarkerfi skráa, sbr. 22. gr. tilskipunarinnar.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="5" nr-type="roman" roman-nr="V">
@@ -142,6 +1013,86 @@
           <li style="text-align: justify;">tilkynningarskyldir aðilar skv. 2. gr. tilskipunar (ESB) 2015/849 skulu við framkvæmd áreiðanleikakönnunar skv. II. kafla tilskipunarinnar tímanlega hafa aðgang að nauðsynlegum upplýsingum um raunverulega eigendur.</li>
         </ol>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']" action-law-nr="82" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]">7. gr.</address>
+          <existing>
+            <art nr="7">
+              <nr-title>7. gr.</nr-title>
+              <name>Aðgangur að upplýsingum um raunverulega eigendur.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Upplýsingar um raunverulega eigendur skv. 4. gr. skulu vera aðgengilegar:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">skrifstofu fjármálagreininga lögreglu,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">eftirlitsaðilum og öðrum stjórnvöldum sem gegna réttarvörsluhlutverki samkvæmt lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">skattyfirvöldum vegna skatteftirlits, upplýsingaskipta milli landa og skattrannsókna,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">tilkynningarskyldum aðilum samkvæmt lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka þegar þeir framkvæma áreiðanleikakönnun og</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">almenningi.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Skrifstofa fjármálagreininga lögreglu, eftirlitsaðilar og stjórnvöld sem gegna réttarvörsluhlutverki og skattyfirvöld skv. a–c-lið 1. mgr. skulu tímanlega hafa óheftan aðgang að öllum skráðum upplýsingum og gögnum um raunverulega eigendur án þess að hlutaðeigandi aðilum sé gert viðvart.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skv. d-lið 1. mgr. skulu tímanlega hafa aðgang að nauðsynlegum upplýsingum og gögnum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Almenningur skv. e-lið 1. mgr. skal hafa aðgang að upplýsingum um nafn raunverulegs eiganda, fæðingarmánuð og -ár, búsetuland, ríkisfang og umfang og tegund eignarhalds.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Upplýsingar um raunverulega eigendur skv. 4. gr. skulu vera aðgengilegar sem hér segir í gegnum samtengingarkerfi skráa sem sett er á fót með 1. mgr. 22. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding) í samræmi við ákvæði 10. mgr. 30. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2015/849 og framkvæmdarreglugerða settra á grundvelli síðarnefndu tilskipunarinnar:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">lögbær yfirvöld og skrifstofur fjármálagreininga lögreglu í aðildarríkjum EES-ríkjanna skulu tímanlega hafa óheftan aðgang að öllum upplýsingum um raunverulega eigendur án þess að hlutaðeigandi aðilum sé gert viðvart,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">tilkynningarskyldir aðilar skv. 2. gr. tilskipunar (ESB) 2015/849 skulu við framkvæmd áreiðanleikakönnunar skv. II. kafla tilskipunarinnar tímanlega hafa aðgang að nauðsynlegum upplýsingum um raunverulega eigendur.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="14">
       <original affected-law-nr="82" affected-law-year="2019">
@@ -152,6 +1103,92 @@
           <li style="text-align: justify;">tilkynningarskyldir aðilar skv. 2. gr. tilskipunar (ESB) 2015/849 skulu við framkvæmd áreiðanleikakönnunar skv. II. kafla tilskipunarinnar tímanlega hafa aðgang að nauðsynlegum upplýsingum.</li>
         </ol>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']" action-law-nr="82" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]">8. gr.</address>
+          <existing>
+            <art nr="8">
+              <nr-title>8. gr.</nr-title>
+              <name>Aðgangur að upplýsingum um fjárvörslusjóði og sambærilega aðila.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Upplýsingar um fjárvörslusjóði og sambærilega aðila skv. 5. gr. skulu vera aðgengilegar:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">skrifstofu fjármálagreininga lögreglu,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">eftirlitsaðilum og öðrum stjórnvöldum sem gegna réttarvörslu samkvæmt lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">skattyfirvöldum vegna skatteftirlits, upplýsingaskipta milli landa og skattrannsókna,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">tilkynningarskyldum aðilum samkvæmt lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka þegar þeir framkvæma áreiðanleikakönnun,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">hverjum þeim einstaklingi og lögaðila sem sýnir fram á lögvarða hagsmuni og</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">hverjum þeim einstaklingi og lögaðila sem með skriflegum hætti óskar eftir upplýsingum um fjárvörslusjóð eða sambærilegan aðila sem fer með eða er eigandi ráðandi eignarhluta í félagi eða öðrum lögaðila, beint eða óbeint, þó ekki aðilum skv. 1. mgr. 2. gr.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Skrifstofa fjármálagreininga lögreglu, eftirlitsaðilar og stjórnvöld sem gegna réttarvörslu og skattyfirvöld skv. a–c-lið 1. mgr. skulu tímanlega hafa óheftan aðgang að öllum skráðum upplýsingum og gögnum um raunverulega eigendur án þess að hlutaðeigandi aðilum sé gert viðvart.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skv. d-lið 1. mgr. skulu tímanlega hafa aðgang að nauðsynlegum upplýsingum og gögnum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Veita skal aðilum skv. e- og f-lið 1. mgr. aðgang að upplýsingum um nafn rétthafa, fæðingarmánuð og -ár, búsetuland, ríkisfang og umfang og tegund eignarhalds.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Upplýsingar um fjárvörslusjóði og sambærilega aðila skv. 5. gr. skulu vera aðgengilegar sem hér segir í gegnum samtengingarkerfi skráa sem sett er á fót með 1. mgr. 22. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2017/1132 frá 14. júní 2017 um tiltekna þætti félagaréttar (kerfisbinding) í samræmi við ákvæði 9. mgr. 31. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2015/849 og framkvæmdarreglugerða settra á grundvelli síðarnefndu tilskipunarinnar:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">lögbær yfirvöld og skrifstofur fjármálagreininga lögreglu í aðildarríkjum EES-ríkjanna skulu tímanlega hafa óheftan aðgang að öllum skráðum upplýsingum um raunverulega eigendur án þess að hlutaðeigandi aðilum sé gert viðvart,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">tilkynningarskyldir aðilar skv. 2. gr. tilskipunar (ESB) 2015/849 skulu við framkvæmd áreiðanleikakönnunar skv. II. kafla tilskipunarinnar tímanlega hafa aðgang að nauðsynlegum upplýsingum.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="15">
       <original affected-law-nr="82" affected-law-year="2019">
@@ -168,11 +1205,50 @@
           </li>
         </ol>
       </original>
+      <intents common-address="20. gr.">
+        <intent action="add" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='20']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="82" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]">20. gr.</address>
+          <existing>
+            <art nr="20">
+              <nr-title>20. gr.</nr-title>
+              <name>Innleiðing á tilskipun.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum 30. og 31. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2015/849 frá 20. maí 2015 um ráðstafanir gegn því að fjármálakerfið sé notað til peningaþvættis eða til fjármögnunar hryðjuverkastarfsemi, um breytingu á reglugerð Evrópuþingsins og ráðsins (ESB) nr. 648/2012, og um niðurfellingu á tilskipun Evrópuþingsins og ráðsins 2005/60/EB og tilskipun ráðsins og framkvæmdastjórnarinnar 2006/70/EB, eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 249/2018, frá 5. desember 2018, um breytingu á IX. viðauka við EES-samninginn (Fjármálaþjónusta), sem er birt í EES-viðbæti við Stjórnartíðindi Evrópusambandsins nr. 17 frá 28. febrúar 2019, bls. 3–5.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <sen nr="2">Lögin fela einnig í sér innleiðingu á ákvæðum g-liðar 15. mgr., j-liðar 16. mgr. og 17. mgr. 1. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2018/843 frá 30. maí 2018 um breytingu á tilskipun (ESB) 2015/849 um ráðstafanir gegn því að fjármálakerfið sé notað til peningaþvættis eða til fjármögnunar hryðjuverka og um breytingu á tilskipunum 2009/138/EB og 2013/36/ESB , eins og tilskipunin var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 63/2020 frá 30. apríl 2020.</sen>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='20']/name[1]" action-law-nr="82" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]">20. gr.</address>
+          <existing>
+            <art nr="20">
+              <nr-title>20. gr.</nr-title>
+              <name>Innleiðing á tilskipun.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi fela í sér innleiðingu á ákvæðum 30. og 31. gr. tilskipunar Evrópuþingsins og ráðsins (ESB) 2015/849 frá 20. maí 2015 um ráðstafanir gegn því að fjármálakerfið sé notað til peningaþvættis eða til fjármögnunar hryðjuverkastarfsemi, um breytingu á reglugerð Evrópuþingsins og ráðsins (ESB) nr. 648/2012, og um niðurfellingu á tilskipun Evrópuþingsins og ráðsins 2005/60/EB og tilskipun ráðsins og framkvæmdastjórnarinnar 2006/70/EB, eins og hún var tekin upp í samninginn um Evrópska efnahagssvæðið með ákvörðun sameiginlegu EES-nefndarinnar nr. 249/2018, frá 5. desember 2018, um breytingu á IX. viðauka við EES-samninginn (Fjármálaþjónusta), sem er birt í EES-viðbæti við Stjórnartíðindi Evrópusambandsins nr. 17 frá 28. febrúar 2019, bls. 3–5.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <name>Innleiðing.</name>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="16">
       <original affected-law-nr="82" affected-law-year="2019">
         <p>Lög þessi öðlast þegar gildi og skulu koma til framkvæmda 1. júní 2024.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-05-22" timing-type="immediate-with-delayed-implemention" implemented-timing="2024-06-01"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört í Reykjavík, 13. maí 2024.</signed-when>

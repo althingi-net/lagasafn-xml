@@ -1,18 +1,363 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="d9d73596-3146-42a4-897f-07f093b5976c" year="2024" nr="124" published-date="2024-11-14" applied-to-codex-version="154c">
+  <affected-laws>
+    <affected-law nr="112" year="2021">112/2021</affected-law>
+  </affected-laws>
   <description>um breytingu á kosningalögum, nr. 112/2021 (kjörskrá).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="112" affected-law-year="2021">
       <p style="text-align: justify;">Við<a href="https://www.althingi.is/lagas/154b/2021112.html" target="_blank">
           <span style="color: #000000;">lögin</span>
         </a>bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
       <p style="text-align: justify;">Þrátt fyrir 6. málsl. 2. mgr. 3. gr. og 2. mgr. 32. gr. skal ákvörðun Þjóðskrár Íslands um að taka kjósanda á kjörskrá gilda frá þeim tíma sem hún var tekin enda hafi umsókn þess efnis borist Þjóðskrá Íslands eftir 1. desember 2023 en fyrir 19. nóvember 2024. Fullnægjandi umsókn um að vera tekinn á kjörskrá sem berst Þjóðskrá Íslands 19. nóvember 2024 eða síðar gildir frá 1. desember 2024.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="112" action-law-year="2021">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Á kjörskrá hvers sveitarfélags skal skv. 28. gr. taka þá sem uppfylla skilyrði 1. gr. laga um réttindi danskra ríkisborgara á Íslandi, nr. 18/1944, sbr. 1. gr. laga nr. 85/1946.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Nú hefur sveitarfélag fengið undanþágu til notkunar prentaðrar kjörskrár og kjósandi sem ekki er á kjörskrá kemur þangað til að greiða atkvæði.</sen>
+                  <sen nr="2">Má kjörstjórn þá leyfa honum að greiða atkvæði ef annað tveggja kemur til:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hann framvísar vottorði, undirrituðu af oddvita sveitarstjórnar eða framkvæmdastjóra sveitarfélags, um að hann afsali sér kosningarrétti þar sem hann er á kjörskrá, enda hafi kjörstjórn þess kjörstaðar þar sem kjósandi hyggst neyta atkvæðisréttar borist tilkynning um hvaða kjósendum sveitarstjórn hefur gefið vottorð.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hann undirritar beiðni á sérstakt eyðublað um að afsala sér kosningarrétti í þeirri kjördeild þar sem nafn hans er á kjörskrá og kjörstjórn á þeim kjörstað þar sem kjósandi óskar að neyta atkvæðisréttar staðfestir slíkt afsal með undirritun oddvita eða tveggja kjörstjórnarmanna.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Kjörstjórn er óheimilt að staðfesta vottorð eða beiðni um afsal kosningarréttar nema sannað verði, með þeim hætti sem kjörstjórn metur gilt, að nafn kjósanda standi á kjörskrá í annarri kjördeild í sama kjördæmi eða í sama sveitarfélagi og hann hafi ekki kosið þar.</sen>
+                  <sen nr="2">Skrá skal athugasemd á kjörskrá, þar sem nafn kjósanda er, um hvar hann neytir kosningarréttar og geta þess í gerðabók.</sen>
+                  <sen nr="3">Afsalið skal færa í gerðabók undirkjörstjórnar þar sem kjósandinn neytir kosningarréttar og vottorðið skal fylgja í frumriti til yfirkjörstjórnar með gerðabók þeirrar kjördeildar þar sem það er lagt fram og notað.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.062.html" law-nr="62" law-year="2023" law-art="42" nr="1">
+                  <footnote-sen>L. 62/2023, 42. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="eða í sama sveitarfélagi" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1"/>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar skipað er í fyrsta skipti í landskjörstjórn skv. 12. gr. skal formaður stjórnar skipaður aðalmaður til fimm ára og varamaður hans til jafnlangs tíma.</sen>
+                  <sen nr="2">Aðrir stjórnarmenn sem kosnir eru af Alþingi skulu skipaðir til eins árs og þriggja ára og varamenn þeirra til jafnlangs tíma.</sen>
+                  <sen nr="3">Hlutkesti skal ráða stjórnartíma hvors fulltrúa.</sen>
+                  <sen nr="4">Annar fulltrúi Sambands íslenskra sveitarfélaga skal skipaður til tveggja ára og hinn til fjögurra ára og varamenn þeirra til jafnlangs tíma.</sen>
+                  <sen nr="5">Hlutkesti skal ráða stjórnartíma hvors fulltrúa Sambandsins.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Við gildistöku laga þessara, 1. janúar 2022, fellur niður umboð þeirrar landskjörstjórnar sem kosin var samkvæmt lögum um kosningar til Alþingis, nr. 24/2000.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="1" nr="1">
+                  <footnote-sen>L. 113/2021, 1. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 143. gr. skal ráðherra skipa nefnd þriggja manna sem falið verði að vinna að undirbúningi framkvæmdar laganna.</sen>
+                  <sen nr="2">Forsætisnefnd Alþingis tilnefnir einn nefndarmann og skal hann vera formaður, Samband íslenskra sveitarfélaga einn og ráðherra einn án tilnefningar.</sen>
+                  <sen nr="3">Nefndin skal starfa þar til Alþingi hefur kosið fulltrúa í landskjörstjórn og ráðherra hefur skipað landskjörstjórn skv. 12. gr.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="2" nr="1">
+                  <footnote-sen>L. 113/2021, 2. gr.</footnote-sen>
+                  <location type="range" string-length="409">
+                    <start xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="V" roman-nr="5" number-type="roman">
+              <nr-title>V.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 143. gr. er nefnd samkvæmt ákvæði til bráðabirgða IV heimilt að:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">skipa framkvæmdastjóra skv. 1. mgr. 13. gr.,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">ákveða aðsetur skrifstofu landskjörstjórnar skv. 3. mgr. 13. gr.,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">standa að gerð þjónustusamnings við Þjóðskrá Íslands skv. 2. mgr. 21. gr.,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">undirbúa reglur og tillögur til ráðherra að reglugerðum samkvæmt nánari fyrirmælum laganna,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">undirbúa aðrar ráðstafanir samkvæmt lögum þessum, eftir því sem tilefni er til.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="2" nr="1">
+                  <footnote-sen>L. 113/2021, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='V']/nr-title[1]" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="3" nr="2">
+                  <footnote-sen>L. 113/2021, 3. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="nefnd samkvæmt ákvæði til bráðabirgða IV" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 143. gr. skal Þjóðskrá Íslands við samþykkt laganna hefja nauðsynlegan undirbúning við gerð og rekstur rafrænnar kjörskrár, sbr. 1. mgr. 21. gr.</sen>
+                  <sen nr="2">Enn fremur skal hún undirbúa útgáfu reglna og leiðbeininga sem henni er falið að setja samkvæmt lögum þessum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Við framkvæmd sveitarstjórnarkosninga 2022 er sveitarstjórnum ekki skylt að notast við rafræna kjörskrá, sbr. 34. gr.</sen>
+                  <sen nr="2">Nefnd samkvæmt ákvæði til bráðabirgða IV er heimilt, í þeim tilgangi að hefja innleiðingu á rafrænni kjörskrá, að óska eftir því við einstakar sveitarstjórnir að notuð verði rafræn kjörskrá við kosningarnar.</sen>
+                  <sen nr="3">Við þann undirbúning skal nefnd samkvæmt ákvæði til bráðabirgða IV hafa samráð við Þjóðskrá Íslands, Samband íslenskra sveitarfélaga og hlutaðeigandi sveitarstjórn.</sen>
+                  <sen nr="4">Önnur sveitarfélög, sem ekki koma að undirbúningi rafrænnar kjörskrár, skulu nota prentaða kjörskrá.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Að loknum kosningum til sveitarstjórna 2022 skal landskjörstjórn skila ráðherra skýrslu þar sem farið er yfir reynsluna af notkun rafrænnar kjörskrár og gerðar tillögur um úrbætur eftir því sem þörf er talin á.</sen>
+                  <sen nr="2">Við undirbúning skýrslunnar skal landskjörstjórn leita umsagnar þeirra yfirkjörstjórna sveitarfélaga sem við á, auk Þjóðskrár Íslands.</sen>
+                  <sen nr="3">Ráðherra skal gera Alþingi og hlutaðeigandi þingnefnd grein fyrir skýrslu landskjörstjórnar.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="2" nr="1">
+                  <footnote-sen>L. 113/2021, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="4" nr="2">
+                  <footnote-sen>L. 113/2021, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="Nefnd samkvæmt ákvæði til bráðabirgða IV" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" words="skal nefnd samkvæmt ákvæði til bráðabirgða IV" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VII" roman-nr="7" number-type="roman">
+              <nr-title>VII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 143. gr. skal ráðherra við samþykkt laganna skipa starfshóp sem falið verði að taka til skoðunar atkvæðagreiðslu utan kjörfundar.</sen>
+                  <sen nr="2">Starfshópurinn skal taka til skoðunar framkvæmd atkvæðagreiðslu utan kjörfundar hjá embættum sýslumanna og reynsluna af henni, einnig þar sem sveitarfélög hafa tekið að sér umsjón með atkvæðagreiðslu utan kjörfundar á landsbyggðinni.</sen>
+                  <sen nr="3">Starfshópurinn skal leggja mat á aðgengi og þörf fyrir þessa þjónustu eftir byggðarlögum í ljósi opnunartíma, vegalengda og fjölda kjósenda, meta hver væri best til þess fallinn að bera ábyrgð á utankjörfundaratkvæðagreiðslum og að veita þjónustuna.</sen>
+                  <sen nr="4">Einnig skal starfshópurinn kanna áhrif rafrænnar kjörskrár á framkvæmd atkvæðagreiðslna utan kjörfundar.</sen>
+                  <sen nr="5">Loks skal starfshópurinn skoða skiptingu kostnaðar við verkefnið milli sýslumanna og sveitarfélaga.</sen>
+                  <sen nr="6">Starfshópurinn skal skila ráðherra niðurstöðum sínum ásamt tillögum til úrbóta fyrir 1. september 2022.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="2" nr="1">
+                  <footnote-sen>L. 113/2021, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Dómsmálaráðherra skal í samráði við landskjörstjórn, Samband íslenskra sveitarfélaga og Alþingi láta vinna nánari greiningu á póstkosningu íslenskra ríkisborgara erlendis í almennum kosningum.</sen>
+                  <sen nr="2">Sérstaklega skal hugað að kosningaleynd og hvernig tryggja megi örugga framkvæmd slíkrar póstkosningar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra skal leggja niðurstöður vinnunnar fyrir Alþingi eigi síðar en við upphaf þings haustið 2022.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.113.html" law-nr="113" law-year="2021" law-art="2" nr="1">
+                  <footnote-sen>L. 113/2021, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IX" roman-nr="9" number-type="roman">
+              <nr-title>IX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 7. tölul. 2. mgr. 22. gr., 143. gr. og 3. tölul. 144. gr. skulu lög um kosningar til sveitarstjórna, nr. 5/1998, og lög um kosningar til Alþingis, nr. 24/2000, halda gildi sínu við atkvæðagreiðslur meðal íbúa sveitarfélaga á grundvelli 38. gr., 107. gr. og 119. gr. sveitarstjórnarlaga, nr. 138/2011, sem fara fram fyrir 14. maí 2022.</sen>
+                  <sen nr="2">Fer um framkvæmd þeirra atkvæðagreiðslna eftir lögum um kosningar til sveitarstjórna, nr. 5/1998, og lögum um kosningar til Alþingis, nr. 24/2000, eftir því sem við getur átt.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.137.html" law-nr="137" law-year="2021" law-art="1" nr="1">
+                  <footnote-sen>L. 137/2021, 1. gr.</footnote-sen>
+                  <location type="range" string-length="532">
+                    <start xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="X" roman-nr="10" number-type="roman">
+              <nr-title>X.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Við sveitarstjórnarkosningar 14. maí 2022 er heimilt, þrátt fyrir ákvæði 5. mgr. 74. gr., að senda atkvæðisbréf einnig til sýslumanns í því umdæmi þar sem kjósandi telur sig vera á kjörskrá.</sen>
+                  <sen nr="2">Einnig skal, þrátt fyrir ákvæði e-liðar 1. mgr. 94. gr., taka til greina atkvæði sem greitt er utan kjörfundar þótt notuð séu eldri kjörgögn þar sem á sendiumslagi kemur fram nafn og heimili kjósanda og/eða notað er fylgibréf sem inniheldur texta um að aðstoð megi veita vegna sjónleysis kjósanda eða að hönd hans sé ónothæf auk vottorðs réttindagæslumanns.</sen>
+                  <sen nr="3">Þá skal, þrátt fyrir ákvæði f-liðar 103. gr., ekki meta ógilt atkvæði sem greitt er utan kjörfundar þó að notuð séu eldri kjörgögn þar sem á sendiumslagi kemur fram nafn og heimili kjósanda og/eða notað er fylgibréf sem inniheldur texta um að aðstoð megi veita vegna sjónleysis kjósanda eða að hönd hans sé ónothæf auk vottorðs réttindagæslumanns.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.018.html" law-nr="18" law-year="2022" law-art="9" nr="1">
+                  <footnote-sen>L. 18/2022, 9. gr.</footnote-sen>
+                  <location type="range" string-length="897">
+                    <start xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='X']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XI" roman-nr="11" number-type="roman">
+              <nr-title>XI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Landskjörstjórn skal gefa út tilkynningar skv. 1. mgr. 113. gr. til þeirra varaþingmanna sem ekki fengu útgefin kjörbréf eftir alþingiskosningar 25. september 2021 og senda nöfn hinna kjörnu þingmanna ásamt nöfnum varaþingmanna til birtingar í Stjórnartíðindum skv. 2. mgr. 113. gr.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.018.html" law-nr="18" law-year="2022" law-art="9" nr="1">
+                  <footnote-sen>L. 18/2022, 9. gr.</footnote-sen>
+                  <location type="range" string-length="286">
+                    <start xpath="chapter[@nr='t']/art[@nr='XI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XII" roman-nr="12" number-type="roman">
+              <nr-title>XII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði laganna um notkun rafrænnar kjörskrár skal notast við prentaða kjörskrá í kosningum sem fram fara á grundvelli laga þessara þar til landskjörstjórn í samráði við ráðuneytið og Þjóðskrá Íslands hefur tekið ákvörðun um innleiðingu hennar.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.062.html" law-nr="62" law-year="2023" law-art="43" nr="1">
+                  <footnote-sen>L. 62/2023, 43. gr.</footnote-sen>
+                  <location type="range" string-length="260">
+                    <start xpath="chapter[@nr='t']/art[@nr='XII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIII" roman-nr="13" number-type="roman">
+              <nr-title>XIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra skal skipa starfshóp sem falið verður að vinna að nánari útfærslu næmisgreiningar.</sen>
+                  <sen nr="2">Í þeim starfshópi eigi sæti fulltrúar landskjörstjórnar, yfirkjörstjórna kjördæma og annarra hagaðila.</sen>
+                  <sen nr="3">Við skipun í starfshópinn skal gætt að jafnræði milli fulltrúa landsbyggðar og höfuðborgarsvæðis.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.062.html" law-nr="62" law-year="2023" law-art="43" nr="1">
+                  <footnote-sen>L. 62/2023, 43. gr.</footnote-sen>
+                  <location type="range" string-length="296">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIV" roman-nr="14" number-type="roman">
+              <nr-title>XIV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir a-lið 1. mgr. 4. gr. og 2. mgr. 6. gr. er kjörgengi í sveitarstjórn Grindavíkurbæjar ekki háð því að kjörinn fulltrúi hafi skráð lögheimili í sveitarfélaginu fram að sveitarstjórnarkosningum 2026.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2024.040.html#G11" law-nr="40" law-year="2024" law-art="11" nr="1">
+                  <footnote-sen>L. 40/2024, 11. gr.</footnote-sen>
+                  <location type="range" string-length="213">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="XV" roman-nr="15" number-type="roman">
+            <nr-title>XV.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 6. málsl. 2. mgr. 3. gr. og 2. mgr. 32. gr. skal ákvörðun Þjóðskrár Íslands um að taka kjósanda á kjörskrá gilda frá þeim tíma sem hún var tekin enda hafi umsókn þess efnis borist Þjóðskrá Íslands eftir 1. desember 2023 en fyrir 19. nóvember 2024.</sen>
+                <sen nr="2">Fullnægjandi umsókn um að vera tekinn á kjörskrá sem berst Þjóðskrá Íslands 19. nóvember 2024 eða síðar gildir frá 1. desember 2024.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="112" affected-law-year="2021">
       <p>Lög þessi öðlast þegar gildi og falla úr gildi 1. desember 2024.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-11-14" timing-type="undetermined"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 14. nóvember 2024.</signed-when>
 </advert>

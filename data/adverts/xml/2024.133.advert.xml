@@ -10,11 +10,32 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 2025.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='1']" action-law-nr="74" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]">1. gr.</address>
+        <existing>
+          <art nr="1">
+            <nr-title>1. gr.</nr-title>
+            <name>Gildissvið.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi gilda um einstaklinga og lögaðila sem stunda tekjuskattsskyldan atvinnurekstur eða sjálfstæða starfsemi og verða fyrir tjóni skv. 6. gr. á tímabilinu frá og með gildistöku laga þessara til og með 31. desember 2024.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <text-from>2024</text-from>
+        <text-to>2025.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="74" affected-law-year="2024">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-12-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 26. nóvember 2024.</signed-when>
 </advert>

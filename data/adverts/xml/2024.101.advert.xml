@@ -19,6 +19,54 @@
         </li>
       </ol>
     </original>
+    <intents common-address="2. gr.">
+      <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='5']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//numart[@nr='5']">5. tölul. 2. gr.</address>
+        <existing>
+          <numart nr="5" nr-type="numeric">
+            <nr-title>5.</nr-title>
+            <name>Færanleg rafhlaða eða rafgeymir:</name>
+            <paragraph nr="1">
+              <sen nr="1">rafhlaða, hnapparafhlaða, rafhlöðupakki eða rafgeymir sem er innsiglaður, unnt er að bera í hendi og er hvorki iðnaðarrafhlaða né iðnaðarrafgeymir né rafhlaða eða rafgeymir fyrir vélknúin ökutæki.</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Rafhlaða eða rafgeymir fyrir vélknúin ökutæki: rafhlaða eða rafgeymir sem notaður er til að ræsa vél, til lýsingar eða sem kveikjubúnaður.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Iðnaðarrafhlaða eða iðnaðarrafgeymir: rafhlaða eða rafgeymir sem er eingöngu ætlaður til notkunar í iðnaði eða til faglegrar notkunar eða sem notaður er í allar tegundir rafknúinna ökutækja.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+        </existing>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='8']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//numart[@nr='8']">8. tölul. 2. gr.</address>
+        <existing>
+          <numart nr="8" nr-type="numeric">
+            <nr-title>8.</nr-title>
+            <name>Rafhlaða eða rafgeymir:</name>
+            <paragraph nr="1">
+              <sen nr="1">uppspretta raforku sem myndast við beina umbreytingu efnaorku og samanstendur af einu einhlaði eða fleiri eða einu endurhlaði eða fleiri.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="8" nr-type="numeric">
+            <nr-title>8.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Rafhlaða eða rafgeymir: uppspretta raforku sem myndast við beina umbreytingu efnaorku og samanstendur af einu einhlaði eða fleiri eða einu endurhlaði eða fleiri: Færanleg rafhlaða eða rafgeymir er rafhlaða, hnapparafhlaða, rafhlöðupakki eða rafgeymir sem er innsiglaður, unnt er að bera í hendi og er hvorki iðnaðarrafhlaða né iðnaðarrafgeymir né rafhlaða eða rafgeymir fyrir vélknúin ökutæki.</sen>
+              <sen nr="2">Rafhlaða eða rafgeymir fyrir vélknúin ökutæki er rafhlaða eða rafgeymir sem notaður er til að ræsa vél, til lýsingar eða sem kveikjubúnaður.</sen>
+              <sen nr="3">Iðnaðarrafhlaða eða iðnaðarrafgeymir er rafhlaða eða rafgeymir sem er eingöngu ætlaður til notkunar í iðnaði eða til faglegrar notkunar eða sem notaður er í allar tegundir rafknúinna ökutækja.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -30,6 +78,28 @@
         <li style="text-align: justify;">Í stað orðanna „endurnýtingar eða endanlegrar förgunar“ í 4. mgr. kemur: endurnýtingar og endanlegrar förgunar.</li>
       </ol>
     </original>
+    <intents common-address="5. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 5. gr.</address>
+        <existing>
+          <sen nr="2">Gjalddagar úrvinnslugjalds á ökutæki eru 1. janúar ár hvert vegna gjaldtímabilsins 1. janúar – 30. júní og 1. júlí ár hvert vegna gjaldtímabilsins 1. júlí – 31. desember.</sen>
+        </existing>
+        <text-from>úrvinnslugjalds</text-from>
+        <text-to>skilagjalds.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='4']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='4']">4. mgr. 5. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Greiða skal skilagjald, 30.000 kr., hverjum þeim sem afhendir gjaldskylt ökutæki til móttökustöðvar til endurnýtingar eða endanlegrar förgunar, enda hafi ökutækið verið afskráð og skilagjald eigenda greitt a.m.k. einu sinni af viðkomandi ökutæki.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>endurnýtingar eða endanlegrar förgunar</text-from>
+        <text-to>endurnýtingar og endanlegrar förgunar.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -41,6 +111,36 @@
         <li>Á eftir 1. mgr. kemur ný málsgrein, svohljóðandi:<br/>Gjalddagi úrvinnslugjalds á ökutæki er nýskráningardagur en um dráttarvexti fer skv. 3. mgr. 12. gr.</li>
       </ol>
     </original>
+    <intents common-address="6. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="2">Gjaldið skal lagt á við nýskráningu ökutækisins.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Gjaldið skal lagt á gjaldskyldan aðila skv. 9. gr. við nýskráningu ökutækisins á grundvelli upplýsinga um innflytjanda, eða eftir atvikum framleiðanda innan lands, við forskráningu ökutækisins.</sen>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']">1. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Úrvinnslugjald, 15.000 kr., skal leggja á hvert gjaldskylt ökutæki skv. 2. mgr. 1. gr. laga um bifreiðagjald, nr. 39/1988.</sen>
+              <sen nr="2">Gjaldið skal lagt á við nýskráningu ökutækisins.</sen>
+              <sen nr="3">Um inntak úrvinnslu ökutækja skal kveðið á í reglugerð sem ráðherra setur.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Gjalddagi úrvinnslugjalds á ökutæki er nýskráningardagur en um dráttarvexti fer skv. 3. mgr. 12. gr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -59,6 +159,1338 @@
         </li>
       </ol>
     </original>
+    <intents common-address="7. gr. a">
+      <intent action="append_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='4']//sen[@nr='2' or @nr='1']">1. og 2. málsl. 4. mgr. 7. gr. a</address>
+        <existing>
+          <sen nr="1">Gjaldskyldur aðili skal við tollafgreiðslu gefa upp þyngd umbúða í vörusendingu til tollafgreiðslu samkvæmt staðfestum upplýsingum þar um.</sen>
+          <sen nr="2">Ef staðfestar upplýsingar um þyngd umbúða vöru fást ekki er gjaldskyldum aðila heimilt að greiða úrvinnslugjald í samræmi við reiknireglur í viðauka XVIII.</sen>
+        </existing>
+        <text-from>þyngd</text-from>
+        <text-to>og tegund.</text-to>
+      </intent>
+      <intent action="add_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 7. gr. a</address>
+        <existing>
+          <sen nr="1">Gjaldskyldur aðili skal við tollafgreiðslu gefa upp þyngd umbúða í vörusendingu til tollafgreiðslu samkvæmt staðfestum upplýsingum þar um.</sen>
+        </existing>
+        <text-to>á því formi sem Skatturinn ákveður.</text-to>
+      </intent>
+      <intents common-address="6. mgr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='6']" action-law-nr="162" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='6']">6. mgr. 7. gr. a</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Pappa-, pappírs-, gler-, málm-, viðar- og plastumbúðir í eftirtöldum tollskrárnúmerum eru undanþegnar úrvinnslugjaldi að því skilyrði uppfylltu að innflytjandi gefi yfirlýsingu í aðflutningsskýrslu, sbr. 3. mgr., um að viðkomandi vara verði sannanlega flutt úr landi og komi ekki til úrvinnslu hér á landi:</sen>
+              </paragraph>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3919.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2909</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.9000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4503.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9004</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9006</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.2002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.4000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2011</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5003</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.2000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2012</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2019</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2101</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2091</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6110</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2900</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2102</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2099</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6190</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7607.1100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2104</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2109</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.2000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2901</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0001</sen>
+                      </paragraph>
+                    </td>
+                    <td/>
+                    <td/>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </subart>
+          </existing>
+          <text-from>4822.6110</text-from>
+          <text-to>4823.6110.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='6']" action-law-nr="162" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='6']">6. mgr. 7. gr. a</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Pappa-, pappírs-, gler-, málm-, viðar- og plastumbúðir í eftirtöldum tollskrárnúmerum eru undanþegnar úrvinnslugjaldi að því skilyrði uppfylltu að innflytjandi gefi yfirlýsingu í aðflutningsskýrslu, sbr. 3. mgr., um að viðkomandi vara verði sannanlega flutt úr landi og komi ekki til úrvinnslu hér á landi:</sen>
+              </paragraph>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3919.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2909</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.9000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4503.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9004</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9006</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.2002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.4000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2011</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5003</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.2000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2012</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2019</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2101</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2091</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6110</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2900</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2102</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2099</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6190</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7607.1100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2104</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2109</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.2000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2901</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0001</sen>
+                      </paragraph>
+                    </td>
+                    <td/>
+                    <td/>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </subart>
+          </existing>
+          <text-from>4822.6190</text-from>
+          <text-to>4823.6190.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='6']" action-law-nr="162" action-law-year="2002" instance-num="1">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='6']">6. mgr. 7. gr. a</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Pappa-, pappírs-, gler-, málm-, viðar- og plastumbúðir í eftirtöldum tollskrárnúmerum eru undanþegnar úrvinnslugjaldi að því skilyrði uppfylltu að innflytjandi gefi yfirlýsingu í aðflutningsskýrslu, sbr. 3. mgr., um að viðkomandi vara verði sannanlega flutt úr landi og komi ekki til úrvinnslu hér á landi:</sen>
+              </paragraph>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3919.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2909</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.9000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4503.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9004</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9006</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.2002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.4000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2011</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5003</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.2000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2012</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2019</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2101</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2091</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6110</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2900</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2102</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2099</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6190</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7607.1100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2104</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2109</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.2000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2901</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0001</sen>
+                      </paragraph>
+                    </td>
+                    <td/>
+                    <td/>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </subart>
+          </existing>
+          <text-from>4822.6910</text-from>
+          <text-to>4823.6910.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7a']/subart[@nr='6']" action-law-nr="162" action-law-year="2002" instance-num="2">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7a,')]//subart[@nr='6']">6. mgr. 7. gr. a</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Pappa-, pappírs-, gler-, málm-, viðar- og plastumbúðir í eftirtöldum tollskrárnúmerum eru undanþegnar úrvinnslugjaldi að því skilyrði uppfylltu að innflytjandi gefi yfirlýsingu í aðflutningsskýrslu, sbr. 3. mgr., um að viðkomandi vara verði sannanlega flutt úr landi og komi ekki til úrvinnslu hér á landi:</sen>
+              </paragraph>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3919.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2909</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.9000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4503.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.4009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9004</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.3090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4823.9006</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3920.2002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.4000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5010</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2011</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5003</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.2000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.5090</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2012</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.5009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7010.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.1009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2019</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2101</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9002</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2091</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6110</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7310.2900</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2102</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.9009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.2099</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6190</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7607.1100</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2104</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.1000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3001</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.1000</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2109</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4415.2000</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4819.3009</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4822.6910</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">7612.9090</sen>
+                      </paragraph>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">3923.2901</sen>
+                      </paragraph>
+                    </td>
+                    <td>
+                      <paragraph nr="1">
+                        <sen nr="1">4416.0001</sen>
+                      </paragraph>
+                    </td>
+                    <td/>
+                    <td/>
+                    <td/>
+                  </tr>
+                </tbody>
+              </table>
+            </subart>
+          </existing>
+          <text-from>4822.6910</text-from>
+          <text-to>4823.6990.</text-to>
+        </intent>
+      </intents>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -66,6 +1498,37 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='1']">1. mgr. 9. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Skylda til að greiða úrvinnslugjald samkvæmt lögum þessum, sbr. þó 5. gr., hvílir á eftirtöldum aðilum:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Öllum sem flytja til landsins gjaldskyldar vörur samkvæmt lögum þessum til endursölu.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Öllum sem flytja til landsins gjaldskyldar vörur samkvæmt lögum þessum til eigin nota.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Öllum sem framleiða gjaldskyldar vörur samkvæmt lögum þessum innan lands.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>sbr. þó 5. gr.</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -73,6 +1536,16 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: og úrvinnslugjalds.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//sen[@nr='1']">1. málsl. 10. gr.</address>
+        <existing>
+          <sen nr="1">Skatturinn annast álagningu úrvinnslugjalds af gjaldskyldum vörum í innflutningi og vegna innlendrar gjaldskyldrar framleiðslu sem og álagningu skilagjalds af ökutækjum.</sen>
+        </existing>
+        <text-from>skilagjalds</text-from>
+        <text-to>og úrvinnslugjalds.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -80,6 +1553,30 @@
           <span style="color: #000000;">laganna</span>
         </a>bætist: sbr. þó 6. gr.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3'] | chapter[@nr='3' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='4'] | chapter[@nr='3' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='5']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='5' or @nr='4' or @nr='3']">3., 4. og 5. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Hvert uppgjörstímabil vegna innfluttrar vöru, sbr. 1. tölul. 1. mgr. 9. gr., er tveir mánuðir eins og tilgreint er í 1. mgr.</sen>
+              <sen nr="2">Gjalddagi hvers tímabils er 28. dagur annars mánaðar eftir lok þess.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Innflytjendur sem flytja vörur til landsins til endursölu skulu eigi síðar en á gjalddaga hvers uppgjörstímabils ótilkvaddir greiða innheimtumanni ríkissjóðs úrvinnslugjald af gjaldskyldum vörum sem voru tollafgreiddar á uppgjörstímabilinu.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Innflytjendur sem flytja gjaldskylda vöru til landsins til eigin nota, sbr. 2. tölul. 1. mgr. 9. gr., skulu greiða úrvinnslugjald við tollafgreiðslu.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-to>sbr. þó 6. gr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -100,6 +1597,24 @@
         <li>8479.1000   8 kr./kg</li>
       </ol>
     </original>
+    <intents common-address="1. málsl. 1. mgr. 13. gr.">
+      <intent action="append_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 13. gr.</address>
+        <existing>
+          <sen nr="1">Heimilt er að kæra álagningu gjalds innan 60 daga frá gjalddaga gjaldsins vegna innlendrar framleiðslu en tollafgreiðsludegi ef um innflutning er að ræða.</sen>
+        </existing>
+        <text-from>framleiðslu</text-from>
+        <text-to>og álagningu skv. 6. gr.</text-to>
+      </intent>
+      <intent action="prepend_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 13. gr.</address>
+        <existing>
+          <sen nr="1">Heimilt er að kæra álagningu gjalds innan 60 daga frá gjalddaga gjaldsins vegna innlendrar framleiðslu en tollafgreiðsludegi ef um innflutning er að ræða.</sen>
+        </existing>
+        <text-from>tollafgreiðsludegi</text-from>
+        <text-to>frá.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -111,6 +1626,9 @@
         <li>8479.1000   8 kr./kg</li>
       </ol>
     </original>
+    <intents>
+      <intent action="change_appendix" raw-nr="XI A"/>
+    </intents>
   </advert-art>
   <advert-art nr="11">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -25725,6 +27243,9 @@
         </tbody>
       </table>
     </original>
+    <intents>
+      <intent action="change_appendix" raw-nr="XVIII"/>
+    </intents>
   </advert-art>
   <advert-art nr="12">
     <original affected-law-nr="162" affected-law-year="2002">
@@ -25749,11 +27270,103 @@
           <strong>Líklegustu söluumbúðir eru gler:</strong>0904–0910, 16041211, 16041217, 16041231–16041239, 19011000, 2001, 2003, 20052002, 20052004–20052009, 20079100–20079900, 20081101, 21033001, 21039010–21039020, 21039040–21039099, 22021049, 22021099, 22029119, 22029909, 22029919, 22029929, 22029939, 22029949, 22029999, 22030013–22030014, 22030019, 22030093–22030094, 22030099, 22041019, 22041029, 22041039, 22042219, 22042239, 22042249, 22042259, 22042269, 22042299, 22042919, 22042929, 22042939, 22042949, 22042959, 22042969, 22042999, 22043019, 22043029, 22059019, 22059099, 22083019, 22084019, 22085039, 22085049, 22087029, 22087089, 22089029, 22089039, 22089079, 22089089, 22089099, 2209, 3303, 33043010, 34051000.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="162" action-law-year="2002">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="24" nr="1">
+                  <footnote-sen>L. 58/2011, 24. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='I']/nr-title[1]" before-mark="^I." after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="24" nr="1">
+                  <footnote-sen>L. 58/2011, 24. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]" before-mark="^II." after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.058.html" law-nr="58" law-year="2011" law-art="24" nr="1">
+                  <footnote-sen>L. 58/2011, 24. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]" before-mark="^(\[??)?III." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2004.128.html" law-nr="128" law-year="2004" law-art="6" nr="2">
+                  <footnote-sen>L. 128/2004, 6. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2004.128.html" law-nr="128" law-year="2004" law-art="6" nr="1">
+                  <footnote-sen>L. 128/2004, 6. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]" before-mark="^(\[??)?IV." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2003.008.html" law-nr="8" law-year="2003" law-art="1" nr="2">
+                  <footnote-sen>L. 8/2003, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="V" roman-nr="5" number-type="roman">
+            <nr-title>V.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. og 2. málsl. 1. mgr. viðauka XVIII við lögin er innflytjanda heimilt fram til 1. janúar 2026 að ákvarða flokkun til álagningarstofns út frá líklegustu tegund söluumbúða í viðkomandi tollskrárnúmeri samkvæmt því sem hér á eftir greinir, geti hann ekki tilgreint meginsöluumbúðir.</sen>
+                <sen nr="2">Styðjast skal við eftirfarandi tilgreiningu meginsöluumbúða vara sem falla undir eftirfarandi tollskrárnúmer eða vöruliði í tollskrá í viðauka við tollalög, nr. 88/2005 :</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="13">
     <original affected-law-nr="162" affected-law-year="2002">
       <p>Lög þessi taka gildi 1. september 2024.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-09-01" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

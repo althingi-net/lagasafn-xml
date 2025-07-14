@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="b2a19d8e-8553-48a0-93ca-bf1f12000865" year="2024" nr="41" published-date="2024-05-21" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="123" year="2010">123/2010</affected-law>
+  </affected-laws>
   <description>um breytingu á skipulagslögum, nr. 123/2010 (tímabundnar uppbyggingarheimildir).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="123" affected-law-year="2010">
       <p>Á eftir 37. gr.<a href="https://www.althingi.is/lagas/154b/2010123.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný grein, 37. gr. a, ásamt fyrirsögn, svohljóðandi:</p>
@@ -13,20 +16,126 @@
       <p style="text-align: justify;">Sveitarstjórn getur ákveðið að heimila útgáfu byggingarleyfis án þess að framkvæma mat skv. 1. mgr. ef um er að ræða óverulega framkvæmd eða framkvæmd fellur að öllu leyti að markmiðum og forsendum deiliskipulags.</p>
       <p style="text-align: justify;">Ráðherra setur í reglugerð nánari fyrirmæli um landnotkunarflokka sem 1. mgr. tekur til, sjónarmið sem sveitarstjórn skal leggja til grundvallar mati á því hvort þörf sé á endurskoðun deiliskipulags og önnur atriði er varða framkvæmd þessarar greinar.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='37']" action-law-nr="123" action-law-year="2010">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]">37. gr.</address>
+        <existing>
+          <art nr="37">
+            <nr-title>37. gr.</nr-title>
+            <name>Deiliskipulag.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Deiliskipulag er skipulagsáætlun fyrir afmarkað svæði eða reit innan sveitarfélags.</sen>
+                <sen nr="2">Í deiliskipulagi eru teknar ákvarðanir um lóðir, lóðanotkun, byggingarreiti, byggðamynstur, þ.m.t. nýtingarhlutfall, útlit mannvirkja og form eftir því sem við á og aðrar skipulagsforsendur sem þurfa að liggja fyrir vegna byggingar- og framkvæmdaleyfa.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Deiliskipulag skal gera fyrir einstök svæði eða reiti þar sem framkvæmdir eru fyrirhugaðar og skal jafnan miða við að það taki til svæða sem mynda heildstæða einingu.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Við gerð deiliskipulags skal byggt á stefnu aðalskipulags og hún útfærð fyrir viðkomandi svæði eða reit.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Deiliskipulag skal setja fram á skipulagsuppdrætti ásamt skipulagsgreinargerð.</sen>
+                <sen nr="2">Í greinargerð deiliskipulags er forsendum þess lýst og sett fram stefna deiliskipulagsins og umhverfismat áætlunarinnar, þegar við á.</sen>
+                <sen nr="3">Í greinargerðinni skal m.a. setja skipulagsskilmála í samræmi við stefnuna.</sen>
+                <sen nr="4">Á skipulagsuppdrætti deiliskipulags skal setja fram þá stefnu sem kynnt er í skipulagsgreinargerð fyrir skipulagssvæðið að svo miklu leyti sem það getur átt við.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Þegar unnið er deiliskipulag í þegar byggðu hverfi skal lagt mat á varðveislugildi svipmóts byggðar og einstakra bygginga sem fyrir eru, með gerð húsakönnunar.</sen>
+                <sen nr="2">Þegar unnið er að slíku hverfisskipulagi er heimilt að víkja frá kröfum um framsetningu sem gerðar eru til deiliskipulagsáætlana í nýrri byggð og leggja frekar áherslu á almennar reglur um yfirbragð byggðarinnar auk almennra rammaskilmála.</sen>
+                <sen nr="3">Reglur um málsmeðferð deiliskipulags gilda um hverfisskipulag eftir því sem við á.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Við deiliskipulagsgerð í þegar byggðu hverfi getur sveitarfélag ákveðið að skilgreina afmarkað svæði sem þróunarsvæði þar sem vinna skal hefðbundið deiliskipulag.</sen>
+                <sen nr="2">Í slíkri áætlun skal tilgreina framkvæmdatíma áætlunarinnar sem skal vera a.m.k. fimm ár en ekki lengri en fimmtán ár.</sen>
+                <sen nr="3">Framkvæmdatími áætlunarinnar hefst við gildistöku áætlunarinnar en ef hann er ekki tilgreindur skal miða við fimmtán ár.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">Um gerð og framsetningu deiliskipulags gilda að öðru leyti ákvæði 12. gr. og ákvæði í skipulagsreglugerð.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2015.087.html#G12" law-nr="87" law-year="2015" law-art="12" nr="1">
+                <footnote-sen>L. 87/2015, 12. gr.</footnote-sen>
+                <location type="deletion" xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Þegar unnið er að slíku hverfisskipulagi er heimilt að víkja frá kröfum um framsetningu sem gerðar eru til deiliskipulagsáætlana í nýrri byggð og leggja frekar áherslu á almennar reglur um yfirbragð" after-mark="byggðarinnar auk almennra rammaskilmála.$"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <art nr="37a">
+            <nr-title>37. gr. a</nr-title>
+            <name>Tímabundnar uppbyggingarheimildir í íbúðarbyggð.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Hafi framkvæmdir við uppbyggingu á svæði sem er skipulagt sem íbúðarbyggð eða svæði þar sem íbúðarbyggð er heimiluð ekki hafist innan fimm ára frá birtingu samþykkts deiliskipulags skal sveitarstjórn, áður en ákvörðun er tekin um samþykkt byggingaráforma, meta hvort þörf er á að skipulagið verði endurskoðað í heild eða að hluta.</sen>
+                <sen nr="2">Hafi engin umsókn um byggingaráform verið lögð fram af hálfu lóðarhafa getur sveitarstjórn kallað eftir skýringum frá honum og á grundvelli þeirra framkvæmt mat, sbr. 1. málsl.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Sveitarstjórn getur ákveðið að heimila útgáfu byggingarleyfis án þess að framkvæma mat skv. 1. mgr. ef um er að ræða óverulega framkvæmd eða framkvæmd fellur að öllu leyti að markmiðum og forsendum deiliskipulags.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur í reglugerð nánari fyrirmæli um landnotkunarflokka sem 1. mgr. tekur til, sjónarmið sem sveitarstjórn skal leggja til grundvallar mati á því hvort þörf sé á endurskoðun deiliskipulags og önnur atriði er varða framkvæmd þessarar greinar.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="123" affected-law-year="2010">
       <p style="text-align: justify;">5. mgr. 51. gr.<a href="https://www.althingi.is/lagas/154b/2010123.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo:</p>
       <p style="text-align: justify;">Ef deiliskipulagi sem fellur undir 6. mgr. 37. gr. eða 37. gr. a er breytt áður en framkvæmdatíma áætlunarinnar lýkur á sá sem sýnt getur fram á að hann verði fyrir tjóni af þeim sökum rétt á bótum með vísan til 1. mgr. Ef deiliskipulagi sem fellur undir 1. málsl. er breytt eftir að áætluðum framkvæmdatíma áætlunar lýkur, sbr. 6. mgr. 37. gr. og 37. gr. a, getur einungis orðið um bótarétt að ræða ef sá sem fyrir tjóni verður af þeim sökum hefur fengið samþykkt byggingaráform eða útgefið byggingarleyfi sem enn er í gildi.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='5']" action-law-nr="123" action-law-year="2010">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='5']">5. mgr. 51. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Ef deiliskipulagi á þróunarsvæði er breytt eða það fellt úr gildi áður en framkvæmdatíma áætlunarinnar lýkur á sá sem sýnt getur fram á að hann verði fyrir tjóni af þeim sökum rétt á bótum með vísan til 1. mgr.</sen>
+              <sen nr="2">Ef deiliskipulagi á þróunarsvæði er breytt eða það fellt úr gildi eftir að framkvæmdatíma áætlunar lýkur getur einungis orðið um bótarétt að ræða ef sá sem fyrir tjóni verður af þeim sökum hefur fengið samþykkt byggingaráform eða útgefið byggingarleyfi sem enn er í gildi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Ef deiliskipulagi sem fellur undir 6. mgr. 37. gr. eða 37. gr. a er breytt áður en framkvæmdatíma áætlunarinnar lýkur á sá sem sýnt getur fram á að hann verði fyrir tjóni af þeim sökum rétt á bótum með vísan til 1. mgr.</sen>
+              <sen nr="2">Ef deiliskipulagi sem fellur undir 1. málsl. er breytt eftir að áætluðum framkvæmdatíma áætlunar lýkur, sbr. 6. mgr. 37. gr. og 37. gr. a, getur einungis orðið um bótarétt að ræða ef sá sem fyrir tjóni verður af þeim sökum hefur fengið samþykkt byggingaráform eða útgefið byggingarleyfi sem enn er í gildi.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="123" affected-law-year="2010">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       <p style="text-align: justify;">Þrátt fyrir 1. mgr. tekur ákvæði 1. gr. (37. gr. a laganna) ekki til deiliskipulags og breytinga á deiliskipulagi sem hafa hlotið samþykki sveitarstjórna og verið birtar í B-deild Stjórnartíðinda fyrir 1. júlí 2024.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-05-21" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 10. maí 2024.</signed-when>
 </advert>

@@ -16,6 +16,56 @@
       <original affected-law-nr="10" affected-law-year="1990">
         <p style="text-align: justify;">Í stað hlutfallstölunnar „2,5%“ og ártalsins „2023“ tvívegis í ákvæði til bráðabirgða II í lögunum kemur: 66.000 kr.; og: 2024.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="10" action-law-year="1990">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. gr. skulu laun forseta Íslands hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="1" nr="1">
+                  <footnote-sen>L. 52/2023, 1. gr.</footnote-sen>
+                  <location type="range" string-length="147">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2,5%</text-from>
+          <text-to>66.000 kr.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="10" action-law-year="1990">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. gr. skulu laun forseta Íslands hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="1" nr="1">
+                  <footnote-sen>L. 52/2023, 1. gr.</footnote-sen>
+                  <location type="range" string-length="147">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2023</text-from>
+          <text-to>2024.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -24,6 +74,56 @@
       <original affected-law-nr="88" affected-law-year="1995">
         <p style="text-align: justify;">Í stað hlutfallstölunnar „2,5%“ og ártalsins „2023“ tvívegis í ákvæði til bráðabirgða II í lögunum kemur: 66.000 kr.; og: 2024.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="88" action-law-year="1995">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. mgr. 15. gr. skal þingfararkaup hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="2" nr="1">
+                  <footnote-sen>L. 52/2023, 2. gr.</footnote-sen>
+                  <location type="range" string-length="148">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2,5%</text-from>
+          <text-to>66.000 kr.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="88" action-law-year="1995">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. mgr. 15. gr. skal þingfararkaup hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="2" nr="1">
+                  <footnote-sen>L. 52/2023, 2. gr.</footnote-sen>
+                  <location type="range" string-length="148">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2023</text-from>
+          <text-to>2024.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -33,6 +133,41 @@
         <p style="text-align: justify;">Ákvæði til bráðabirgða III í lögunum orðast svo:</p>
         <p style="text-align: justify;">Þrátt fyrir ákvæði 2. mgr. 3. gr. og 3. mgr. 16. gr. skulu laun forsætisráðherra og annarra ráðherra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfallslegrar hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024. Laun ráðuneytisstjóra í forsætisráðuneytinu hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 17.378 kr. Laun annarra ráðuneytisstjóra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 16.476 kr.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='III']" action-law-nr="115" action-law-year="2011">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',III,')]">Ákvæði til bráðabirgða III</address>
+          <existing>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 3. gr. og 3. mgr. 16. gr. skulu laun forsætisráðherra, annarra ráðherra og ráðuneytisstjóra hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="3" nr="1">
+                  <footnote-sen>L. 52/2023, 3. gr.</footnote-sen>
+                  <location type="range" string-length="215">
+                    <start xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 2. mgr. 3. gr. og 3. mgr. 16. gr. skulu laun forsætisráðherra og annarra ráðherra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfallslegrar hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024.</sen>
+                  <sen nr="2">Laun ráðuneytisstjóra í forsætisráðuneytinu hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 17.378 kr. Laun annarra ráðuneytisstjóra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 16.476 kr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="4" nr-type="roman" roman-nr="IV">
@@ -42,6 +177,41 @@
         <p style="text-align: justify;">Ákvæði til bráðabirgða X í lögunum orðast svo:</p>
         <p style="text-align: justify;">Þrátt fyrir ákvæði 4. mgr. 44. gr. skulu laun forseta Hæstaréttar, varaforseta Hæstaréttar, annarra hæstaréttardómara, forseta Landsréttar, varaforseta Landsréttar, annarra lands­réttar­dómara, dómstjórans í Reykjavík, varadómstjórans í Reykjavík, dómstjóra utan Reykjavíkur og annarra héraðsdómara hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfalls­legrar hækkunar samkvæmt ákvæðinu hinn 1. júlí 2024. Þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 17.303 kr. hjá forseta Hæstaréttar, 16.028 kr. hjá varaforseta Hæstaréttar, 16.441 kr. hjá öðrum hæstaréttardómurum, 17.378 kr. hjá forseta Landsréttar, 16.750 kr. hjá varaforseta Landsréttar, 17.174 kr. hjá öðrum landsréttardómurum, 18.702 kr. hjá dómstjór­anum í Reykjavík, 14.401 kr. hjá varadómstjóranum í Reykjavík, 17.299 kr. hjá dómstjórum utan Reykjavíkur og 14.782 kr. hjá öðrum héraðsdómurum.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='X']" action-law-nr="50" action-law-year="2016">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',X,')]">Ákvæði til bráðabirgða X</address>
+          <existing>
+            <art nr="X" roman-nr="10" number-type="roman">
+              <nr-title>X.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 4. mgr. 44. gr. skulu laun forseta Hæstaréttar, varaforseta Hæstaréttar, annarra hæstaréttardómara, forseta Landsréttar, varaforseta Landsréttar, annarra landsréttardómara, dómstjórans í Reykjavík, varadómstjórans í Reykjavík, dómstjóra utan Reykjavíkur og annarra héraðsdómara hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="4" nr="1">
+                  <footnote-sen>L. 52/2023, 4. gr.</footnote-sen>
+                  <location type="range" string-length="390">
+                    <start xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='X']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="X" roman-nr="10" number-type="roman">
+              <nr-title>X.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 4. mgr. 44. gr. skulu laun forseta Hæstaréttar, varaforseta Hæstaréttar, annarra hæstaréttardómara, forseta Landsréttar, varaforseta Landsréttar, annarra landsréttardómara, dómstjórans í Reykjavík, varadómstjórans í Reykjavík, dómstjóra utan Reykjavíkur og annarra héraðsdómara hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfallslegrar hækkunar samkvæmt ákvæðinu hinn 1. júlí 2024.</sen>
+                  <sen nr="2">Þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 17.303 kr. hjá forseta Hæstaréttar, 16.028 kr. hjá varaforseta Hæstaréttar, 16.441 kr. hjá öðrum hæstaréttardómurum, 17.378 kr. hjá forseta Landsréttar, 16.750 kr. hjá varaforseta Landsréttar, 17.174 kr. hjá öðrum landsréttardómurum, 18.702 kr. hjá dómstjóranum í Reykjavík, 14.401 kr. hjá varadómstjóranum í Reykjavík, 17.299 kr. hjá dómstjórum utan Reykjavíkur og 14.782 kr. hjá öðrum héraðsdómurum.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="5" nr-type="roman" roman-nr="V">
@@ -51,6 +221,41 @@
         <p style="text-align: justify;">Ákvæði til bráðabirgða XII í lögunum orðast svo:</p>
         <p style="text-align: justify;">Þrátt fyrir ákvæði 1. og 4. mgr. 20. gr., 4. mgr. 22. gr. og 7. mgr. 24. gr. skulu laun ríkis­saksóknara, vararíkissaksóknara, annarra saksóknara hjá ríkissaksóknara, héraðssaksóknara, vara­héraðs­saksóknara, saksóknara sem stýrir sviði eða skrifstofu, annarra saksóknara hjá héraðs­saksóknara og lögreglustjóra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfalls­legrar hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024. Þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 16.441 kr. hjá ríkissaksóknara, 14.307 kr. hjá vara­ríkis­saksóknara, 16.276 kr. hjá öðrum saksóknurum hjá ríkissaksóknara, 16.268 kr. hjá héraðs­saksóknara, 15.468 kr. hjá varahéraðssaksóknara, 16.276 kr. hjá saksóknara sem stýrir sviði eða skrifstofu, 16.276 kr. hjá öðrum saksóknurum hjá héraðssaksóknara, 13.200 kr. hjá lögreglu­stjóranum á höfuðborgar­svæðinu, 13.198 kr. hjá lögreglustjóranum á Suðurnesjum, 18.173 kr. hjá lögreglustjór­anum í Vestmannaeyjum og 21.999 kr. hjá öðrum lögreglustjórum.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='7']/chapter[@nr='t']/art[@nr='XII']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',XII,')]">Ákvæði til bráðabirgða XII</address>
+          <existing>
+            <art nr="XII" roman-nr="12" number-type="roman">
+              <nr-title>XII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. og 4. mgr. 20. gr., 4. mgr. 22. gr. og 7. mgr. 24. gr. skulu laun ríkissaksóknara, vararíkissaksóknara, annarra saksóknara hjá ríkissaksóknara, héraðssaksóknara, varahéraðssaksóknara, saksóknara sem stýrir sviði eða skrifstofu og annarra saksóknara hjá héraðssaksóknara og lögreglustjóra hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðunum hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="5" nr="1">
+                  <footnote-sen>L. 52/2023, 5. gr.</footnote-sen>
+                  <location type="range" string-length="406">
+                    <start xpath="superchapter[@nr='7']/chapter[@nr='t']/art[@nr='XII']/nr-title[1]"/>
+                    <end xpath="superchapter[@nr='7']/chapter[@nr='t']/art[@nr='XII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="XII" roman-nr="12" number-type="roman">
+              <nr-title>XII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. og 4. mgr. 20. gr., 4. mgr. 22. gr. og 7. mgr. 24. gr. skulu laun ríkissaksóknara, vararíkissaksóknara, annarra saksóknara hjá ríkissaksóknara, héraðssaksóknara, varahéraðssaksóknara, saksóknara sem stýrir sviði eða skrifstofu, annarra saksóknara hjá héraðssaksóknara og lögreglustjóra hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hlutfallslegrar hækkunar samkvæmt ákvæðunum hinn 1. júlí 2024.</sen>
+                  <sen nr="2">Þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 16.441 kr. hjá ríkissaksóknara, 14.307 kr. hjá vararíkissaksóknara, 16.276 kr. hjá öðrum saksóknurum hjá ríkissaksóknara, 16.268 kr. hjá héraðssaksóknara, 15.468 kr. hjá varahéraðssaksóknara, 16.276 kr. hjá saksóknara sem stýrir sviði eða skrifstofu, 16.276 kr. hjá öðrum saksóknurum hjá héraðssaksóknara, 13.200 kr. hjá lögreglustjóranum á höfuðborgarsvæðinu, 13.198 kr. hjá lögreglustjóranum á Suðurnesjum, 18.173 kr. hjá lögreglustjóranum í Vestmannaeyjum og 21.999 kr. hjá öðrum lögreglustjórum.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="6" nr-type="roman" roman-nr="VI">
@@ -59,6 +264,56 @@
       <original affected-law-nr="92" affected-law-year="2019">
         <p style="text-align: justify;">Í stað hlutfallstölunnar „2,5%“ og ártalsins „2023“ tvívegis í ákvæði til bráðabirgða VIII í lögunum kemur: 66.000 kr.; og: 2024.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='VIII']" action-law-nr="92" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',VIII,')]">ákvæði til bráðabirgða VIII</address>
+          <existing>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 3. mgr. 5. gr. skulu laun seðlabankastjóra og varaseðlabankastjóra hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="6" nr="1">
+                  <footnote-sen>L. 52/2023, 6. gr.</footnote-sen>
+                  <location type="range" string-length="182">
+                    <start xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2,5%</text-from>
+          <text-to>66.000 kr.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='VIII']" action-law-nr="92" action-law-year="2019">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',VIII,')]">ákvæði til bráðabirgða VIII</address>
+          <existing>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 3. mgr. 5. gr. skulu laun seðlabankastjóra og varaseðlabankastjóra hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="6" nr="1">
+                  <footnote-sen>L. 52/2023, 6. gr.</footnote-sen>
+                  <location type="range" string-length="182">
+                    <start xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>2023</text-from>
+          <text-to>2024.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="7" nr-type="roman" roman-nr="VII">
@@ -68,11 +323,48 @@
         <p style="text-align: justify;">Ákvæði til bráðabirgða II í lögunum orðast svo:</p>
         <p style="text-align: justify;">Þrátt fyrir ákvæði 7. mgr. 20. gr. skulu laun ríkissáttasemjara hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 15.860 kr.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="80" action-law-year="1938">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">Ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 7. mgr. 20. gr. skulu laun ríkissáttasemjara hækka um 2,5% frá og með 1. júlí 2023 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2023.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.052.html" law-nr="52" law-year="2023" law-art="7" nr="1">
+                  <footnote-sen>L. 52/2023, 7. gr.</footnote-sen>
+                  <location type="range" string-length="158">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 7. mgr. 20. gr. skulu laun ríkissáttasemjara hækka um 66.000 kr. frá og með 1. júlí 2024 í stað hækkunar samkvæmt ákvæðinu hinn 1. júlí 2024 og þar af skal hækkun fyrir yfirvinnu og álag sem starfinu fylgir nema 15.860 kr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="80" affected-law-year="1938">
         <p>Lög þessi öðlast þegar gildi.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-06-27" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 26. júní 2024.</signed-when>

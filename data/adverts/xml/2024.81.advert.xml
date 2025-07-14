@@ -15,6 +15,513 @@
           <li style="text-align: justify;">Við bætist nýr töluliður, svohljóðandi:<em>Fjármögnun gereyðingarvopna:</em>Öflun fjár, hvort sem er beint eða óbeint, í þeim tilgangi eða með vitneskju um að nota eigi það í heild eða að hluta til þróunar, framleiðslu, öflunar, söfnunar, notkunar, útvegunar, eignarhalds, flutnings, miðlunar, viðskipta með eða vörslu á gereyðingarvopnum í andstöðu við alþjóðlegar þving­unar­aðgerðir, sbr. lög um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</li>
         </ol>
       </original>
+      <intents common-address="3. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='13']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//numart[@nr='13']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']//numart[@nr='1']">1. tölul. a-liðar 13. tölul. 3. gr.</address>
+          <existing>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">einstaklingur eða einstaklingar sem í raun eiga eða stjórna lögaðila í gegnum beina eða óbeina eignaraðild að meira en 25% hlut í lögaðilanum, ráða yfir meira en 25% atkvæðisréttar eða teljast á annan hátt hafa yfirráð yfir lögaðila; ákvæðið á þó ekki við um lögaðila sem skráðir eru á skipulegum markaði samkvæmt skilgreiningu laga um kauphallir,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>laga um kauphallir</text-from>
+          <text-to>laga um markaði fyrir fjármálagerninga.</text-to>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]">3. gr.</address>
+          <existing>
+            <art nr="3">
+              <nr-title>3. gr.</nr-title>
+              <name>Skilgreiningar.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Í lögum þessum merkir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <name>Aðildarríki:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Ríki sem er aðili að samningnum um Evrópska efnahagssvæðið eða aðili að stofnsamningi Fríverslunarsamtaka Evrópu eða Færeyjar.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <name>Aðili á sviði fjárvörslu og fyrirtækjaþjónustu:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Einstaklingur eða lögaðili sem veitir eftirfarandi þjónustu gegn gjaldi:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">aðstoðar við stofnun fyrirtækja eða annarra lögaðila,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">gegnir eða útvegar annan aðila til að gegna stöðu forstjóra eða framkvæmdastjóra fyrirtækis, stöðu meðeiganda í félagi eða sambærilegri stöðu hjá annarri tegund lögaðila,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="c" nr-type="alphabet">
+                        <nr-title>c.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">útvegar lögheimili eða annað skráð heimilisfang sem á svipaðan hátt er notað til að hafa samband við fyrirtækið eða aðra tengda þjónustu,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="d" nr-type="alphabet">
+                        <nr-title>d.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">starfar sem eða útvegar annan einstakling til að starfa sem fjárvörsluaðili sjóðs eða annars sambærilegs aðila,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="e" nr-type="alphabet">
+                        <nr-title>e.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">starfar sem eða fær annan einstakling til að starfa sem tilnefndur hluthafi fyrir annan aðila en fyrirtæki sem skráð er á skipulegum markaði.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <name>Ávinningur:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvers kyns hagnaður og eignir, hverju nafni sem nefnast, þ.m.t. skjöl sem ætlað er að tryggja rétthafa aðgang að eignum eða öðrum réttindum sem meta má til fjár.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="4" nr-type="numeric">
+                    <nr-title>4.</nr-title>
+                    <name>Efnahagslegur tilgangur:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Ástæður að baki inn- og útgreiðslu, þ.e. hvaða vöru eða þjónustu er verið að greiða fyrir.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="5" nr-type="numeric">
+                    <nr-title>5.</nr-title>
+                    <name>Eftirlitsaðilar:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Fjármálaeftirlitið og ríkisskattstjóri.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="6" nr-type="numeric">
+                    <nr-title>6.</nr-title>
+                    <name>Einstaklingar í áhættuhópi vegna stjórnmálalegra tengsla:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Einstaklingar, innlendir og erlendir, sem eru eða hafa verið háttsettir í opinberri þjónustu, ásamt nánustu fjölskyldu þeirra og nánum samstarfsmönnum.</sen>
+                    </paragraph>
+                    <paragraph nr="2">
+                      <sen nr="1">Til háttsettra einstaklinga í opinberri þjónustu teljast:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">þjóðhöfðingjar, ráðherrar og staðgenglar ráðherra eða aðstoðarráðherrar,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">þingmenn,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="c" nr-type="alphabet">
+                        <nr-title>c.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">einstaklingar í stjórnum stjórnmálaflokka,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="d" nr-type="alphabet">
+                        <nr-title>d.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">hæstaréttardómarar, dómarar við stjórnlagadómstóla eða aðrir háttsettir dómarar við dómstóla þaðan sem niðurstöðu er ekki hægt að áfrýja nema í undantekningartilvikum,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="e" nr-type="alphabet">
+                        <nr-title>e.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">ríkisendurskoðandi og hæstráðendur seðlabanka,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="f" nr-type="alphabet">
+                        <nr-title>f.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">sendiherrar, staðgenglar sendiherra og háttsettir yfirmenn herja,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="g" nr-type="alphabet">
+                        <nr-title>g.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">fulltrúar í stjórn, framkvæmdastjórn eða eftirlitsstjórn fyrirtækja í eigu ríkis,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="h" nr-type="alphabet">
+                        <nr-title>h.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">framkvæmdastjórar, aðstoðarframkvæmdastjórar og stjórnarmenn alþjóðasamtaka og alþjóðastofnana.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                    <paragraph nr="3">
+                      <sen nr="1">Störf sem talin eru upp í a–h-liðum eiga ekki við um millistjórnendur.</sen>
+                    </paragraph>
+                    <paragraph nr="4">
+                      <sen nr="1">Til nánustu fjölskyldu teljast:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">maki,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">sambúðarmaki í skráðri sambúð,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="c" nr-type="alphabet">
+                        <nr-title>c.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">börn, stjúpbörn og makar þeirra eða sambúðarmakar í skráðri sambúð,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="d" nr-type="alphabet">
+                        <nr-title>d.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">foreldrar.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                    <paragraph nr="5">
+                      <sen nr="1">Til náinna samstarfsmanna teljast:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">einstaklingar sem vitað er að hafi verið raunverulegir eigendur lögaðila með einstaklingi sem er eða hefur verið háttsettur og gegnt opinberri þjónustu eða aðrir þekktir samstarfsmenn,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">einstaklingar sem hafa átt náin viðskiptatengsl við einstakling sem er eða hefur verið háttsettur og gegnt opinberri þjónustu,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="c" nr-type="alphabet">
+                        <nr-title>c.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">einstaklingur sem er einn raunverulegur eigandi lögaðila sem vitað er að var stofnaður til hagsbóta fyrir einstakling sem er eða hefur verið háttsettur og gegnt opinberri þjónustu.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="7" nr-type="numeric">
+                    <nr-title>7.</nr-title>
+                    <name>Fjármögnun hryðjuverka:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Öflun fjár, hvort sem er með beinum eða óbeinum hætti, í þeim tilgangi eða með vitneskju um að nota eigi það í heild eða að hluta til að fremja brot sem er refsivert skv. 100. gr. a – 100. gr. c almennra hegningarlaga.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="8" nr-type="numeric">
+                    <nr-title>8.</nr-title>
+                    <name>Gjaldeyrisskiptaþjónusta:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfsemi þar sem í atvinnuskyni fara fram kaup og sala innlends og erlends gjaldeyris.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="9" nr-type="numeric">
+                    <nr-title>9.</nr-title>
+                    <name>Gjaldmiðill:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Seðlar, mynt og aðrir gjaldmiðlar sem seðlabankar eða aðrir til þess lögbærir opinberir aðilar gefa út og eru viðurkenndir lögmæltir gjaldmiðlar.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="10" nr-type="numeric">
+                    <nr-title>10.</nr-title>
+                    <name>Millifærsla fjármuna:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvers konar færsla fjármuna með rafrænum hætti í gegnum greiðslukerfi aðila skv. a- og d–g-lið 1. mgr. 2. gr., innan lands eða yfir landamæri, sem framkvæmd er af greiðanda sem getur verið einstaklingur eða lögaðili og ætlað er að veita viðtakanda aðgang að fjármunum.</sen>
+                      <sen nr="2">Viðtakandi getur verið sá sami og greiðandi.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="11" nr-type="numeric">
+                    <nr-title>11.</nr-title>
+                    <name>Viðskipti tilkynningarskyldra aðila:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Þegar fjármálafyrirtæki veitir tilkynningarskyldum aðila fjármálaþjónustu m.a. í formi innstæðureikninga, alþjóðlegra millifærslna, greiðslujöfnunar, lausafjárstýringar, lánveitinga, verðbréfaviðskipta eða fjárfestinga.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="12" nr-type="numeric">
+                    <nr-title>12.</nr-title>
+                    <name>Peningaþvætti:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Þegar einstaklingur eða lögaðili tekur við ávinningi, nýtir ávinning eða aflar sér eða öðrum ávinnings af broti sem er refsivert samkvæmt almennum hegningarlögum eða öðrum lögum; einnig þegar einstaklingur eða lögaðili umbreytir slíkum ávinningi, flytur hann, sendir, geymir, aðstoðar við afhendingu hans, leynir honum eða upplýsingum um uppruna hans, eðli, staðsetningu, ráðstöfun eða flutningi ávinnings eða stuðlar á annan sambærilegan hátt að því að tryggja öðrum ávinning af slíkum refsiverðum brotum.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="13" nr-type="numeric">
+                    <nr-title>13.</nr-title>
+                    <name>Raunverulegur eigandi:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Einstaklingur, einn eða fleiri, sem í raun á starfsemina eða stýrir þeim viðskiptamanni, lögaðila eða einstaklingi, í hvers nafni viðskipti eða starfsemi er stunduð eða framkvæmd.</sen>
+                      <sen nr="2">Raunverulegur eigandi telst m.a. vera:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">Í tilviki lögaðila:</sen>
+                          <numart nr="1" nr-type="numeric">
+                            <nr-title>1.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">einstaklingur eða einstaklingar sem í raun eiga eða stjórna lögaðila í gegnum beina eða óbeina eignaraðild að meira en 25% hlut í lögaðilanum, ráða yfir meira en 25% atkvæðisréttar eða teljast á annan hátt hafa yfirráð yfir lögaðila; ákvæðið á þó ekki við um lögaðila sem skráðir eru á skipulegum markaði samkvæmt skilgreiningu laga um kauphallir,</sen>
+                            </paragraph>
+                          </numart>
+                          <numart nr="2" nr-type="numeric">
+                            <nr-title>2.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">ef ekki er mögulegt að finna raunverulegan eiganda skv. 1. tölul., t.d. vegna svo dreifðs eignarhalds að engir einstaklingar eiga eða stýra viðskiptamanni í skilningi laga þessara eða ef vafi leikur á um eignarhaldið, skal sá einstaklingur, einn eða fleiri, sem stjórnar starfsemi lögaðilans teljast raunverulegur eigandi.</sen>
+                            </paragraph>
+                          </numart>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">Í tilviki fjárvörslusjóða og sambærilegra aðila, allir eftirtaldir aðilar:</sen>
+                          <numart nr="1" nr-type="numeric">
+                            <nr-title>1.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">fjárvörsluaðili,</sen>
+                            </paragraph>
+                          </numart>
+                          <numart nr="2" nr-type="numeric">
+                            <nr-title>2.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">stofnaðili,</sen>
+                            </paragraph>
+                          </numart>
+                          <numart nr="3" nr-type="numeric">
+                            <nr-title>3.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">ábyrgðaraðili, ef við á,</sen>
+                            </paragraph>
+                          </numart>
+                          <numart nr="4" nr-type="numeric">
+                            <nr-title>4.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">rétthafi, einn eða fleiri; ef rétthafi hefur ekki verið tilgreindur telst rétthafi vera hver sá einstaklingur eða hópur einstaklinga sem mun njóta ávinnings af stofnun fjárvörslusjóðs eða sambærilegs aðila,</sen>
+                            </paragraph>
+                          </numart>
+                          <numart nr="5" nr-type="numeric">
+                            <nr-title>5.</nr-title>
+                            <paragraph nr="1">
+                              <sen nr="1">aðrir einstaklingar sem hafa yfirráð, með beinum eða óbeinum hætti, yfir fjárvörslusjóði eða sambærilegum aðila.</sen>
+                            </paragraph>
+                          </numart>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="14" nr-type="numeric">
+                    <nr-title>14.</nr-title>
+                    <name>Refsiverð háttsemi:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Háttsemi sem fellur undir ákvæði 100. gr. a – 100. gr. c eða 264. gr. almennra hegningarlaga, nr. 19/1940.</sen>
+                      <sen nr="2">Vísvitandi svik gagnvart fjárhagslegum hagsmunum Evrópusambandsins að fjárhæð 50.000 evrur eða meira með fölsuðum, röngum, villandi eða ófullnægjandi yfirlýsingum eða skjölum sem leiða til misnotkunar á fjármunum Evrópusambandsins eða notkun þeirra í öðrum en yfirlýstum tilgangi teljast jafnframt vera refsiverð háttsemi.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="15" nr-type="numeric">
+                    <nr-title>15.</nr-title>
+                    <name>Skelbanki:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Fjármálafyrirtæki eða sambærilegur aðili án raunverulegrar starfsemi eða heimilisfesti í því landi þar sem honum er veitt heimild til að starfa sem er jafnframt ótengdur eftirlitsskyldri samstæðu sem lýtur skilvirku eftirliti hjá viðeigandi eftirlitsaðila.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="16" nr-type="numeric">
+                    <nr-title>16.</nr-title>
+                    <name>Sýndareignir:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvers konar verðmæti á stafrænu formi:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">sem hægt er að nota sem greiðslu eða fjárfestingu og hægt er að miðla, og</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">sem teljast ekki til rafeyris í skilningi laga um útgáfu og meðferð rafeyris eða gjaldmiðils sem er gefinn út af seðlabanka eða öðrum stjórnvöldum.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="17" nr-type="numeric">
+                    <nr-title>17.</nr-title>
+                    <name>Tilkynningarskyldir aðilar:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Aðilar sem taldir eru upp í 1. mgr. 2. gr.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="18" nr-type="numeric">
+                    <nr-title>18.</nr-title>
+                    <name>Viðurkennd persónuskilríki:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Gild persónuskilríki sem gefin eru út af stjórnvöldum eða eru viðurkennd af stjórnvöldum.</sen>
+                      <sen nr="2">Til gildra persónuskilríkja teljast m.a. vegabréf, ökuskírteini og nafnskírteini gefin út af Þjóðskrá Íslands eða samsvarandi erlendum stjórnvöldum og rafræn skilríki sem innihalda fullgild rafræn vottorð sem varðveitt eru á fullgildum undirskriftarbúnaði</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="19" nr-type="numeric">
+                    <nr-title>19.</nr-title>
+                    <name>Yfirstjórn:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Aðili með fullnægjandi þekkingu á áhættu tilkynningarskylds aðila vegna peningaþvættis og fjármögnunar hryðjuverka sem er nægilega háttsettur til að taka ákvarðanir varðandi slíka áhættu.</sen>
+                      <sen nr="2">Viðkomandi þarf ekki í öllum tilvikum að vera stjórnarmaður hjá tilkynningarskyldum aðila.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="20" nr-type="numeric">
+                    <nr-title>20.</nr-title>
+                    <name>Þjónustuveitandi stafrænna veskja:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Einstaklingur eða lögaðili sem býður upp á vörsluþjónustu á auðkennum sýndarfjár, hvort sem er með hugbúnaði, kerfi eða annars konar miðli til að halda utan um, geyma og flytja sýndarfé.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="21" nr-type="numeric">
+                    <nr-title>21.</nr-title>
+                    <name>Áhættuþættir:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Breytilegir þættir sem annaðhvort einir sér eða samanlagt geta aukið eða dregið úr hættu á peningaþvætti eða fjármögnun hryðjuverka.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="22" nr-type="numeric">
+                    <nr-title>22.</nr-title>
+                    <name>Eðlislæg áhætta:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Áhætta áður en tekið er tillit til stýringa og annarra aðferða til að draga úr eða stýra áhættu.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="23" nr-type="numeric">
+                    <nr-title>23.</nr-title>
+                    <name>Eftirstæð áhætta:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Áhætta sem er til staðar eftir að tekið hefur verið tillit til stýringa og annarra aðferða til að draga úr eða stýra áhættu.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="24" nr-type="numeric">
+                    <nr-title>24.</nr-title>
+                    <name>Samningssamband:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Viðskiptasamband milli tilkynningarskylds aðila og viðskiptamanns sem:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">er til komið vegna viðskipta viðskiptamanns hjá tilkynningarskylda aðilanum og</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">gert er ráð fyrir, á þeim tíma sem stofnað er til viðskiptasambandsins, að vari um ákveðinn tíma.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="25" nr-type="numeric">
+                    <nr-title>25.</nr-title>
+                    <name>Þjónustuveitandi sýndareigna:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Einstaklingur eða lögaðili sem:</sen>
+                      <numart nr="a" nr-type="alphabet">
+                        <nr-title>a.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">skiptir sýndareignum yfir í gjaldmiðil eða rafeyri,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="b" nr-type="alphabet">
+                        <nr-title>b.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">skiptir gjaldmiðli eða rafeyri yfir í sýndareignir,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="c" nr-type="alphabet">
+                        <nr-title>c.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">skiptir sýndareignum yfir í aðrar sýndareignir,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="d" nr-type="alphabet">
+                        <nr-title>d.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">varðveitir, framselur eða millifærir sýndareignir, fyrir hönd annars einstaklings eða lögaðila,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="e" nr-type="alphabet">
+                        <nr-title>e.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">veitir þjónustu í tengslum við útgáfu, útboð eða sölu sýndareigna,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="f" nr-type="alphabet">
+                        <nr-title>f.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">er þjónustuveitandi stafrænna veskja, sbr. skilgreiningu í 20. tölul., eða</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="g" nr-type="alphabet">
+                        <nr-title>g.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">fer með öðrum hætti með umráð yfir sýndareignum í atvinnuskyni.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                  <numart nr="26" nr-type="numeric">
+                    <nr-title>26.</nr-title>
+                    <name>Rafeyrir:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Rafeyrir sem fellur undir gildissvið laga um útgáfu og meðferð rafeyris.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="27" nr-type="numeric">
+                    <nr-title>27.</nr-title>
+                    <name>Samstæða:</name>
+                    <paragraph nr="1">
+                      <sen nr="1">Samstæða eins og hún er skilgreind í lögum um ársreikninga.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.096.html" law-nr="96" law-year="2020" law-art="2" nr="1">
+                  <footnote-sen>L. 96/2020, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='6']/paragraph[@nr='2']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1']" words="stjórnum" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.062.html" law-nr="62" law-year="2022" law-art="2" nr="2">
+                  <footnote-sen>L. 62/2022, 2. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='6']/paragraph[@nr='2']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1']" words="ríkisendurskoðandi" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='8']/name[1]" string-length="0"/>
+                  <location type="range" string-length="276">
+                    <start xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='16']/name[1]"/>
+                    <end xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='16']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                  <location type="range" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='18']/paragraph[@nr='1']/sen[@nr='2']" words="m.a." instance-num="1"/>
+                  <location type="range" string-length="1355">
+                    <start xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='21']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='27']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.055.html#G10" law-nr="55" law-year="2019" law-art="10" nr="3">
+                  <footnote-sen>L. 55/2019, 10. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='18']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Til gildra persónuskilríkja teljast (\[??)?m.a\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?vegabréf, ökuskírteini og nafnskírteini gefin út af Þjóðskrá Íslands eða samsvarandi erlendum stjórnvöldum og rafræn skilríki sem innihalda fullgild rafræn vottorð sem varðveitt eru á fullgildum undirskriftarbúnaði" after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <numart nr="28" nr-type="numeric">
+              <nr-title>28.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Fjármögnun gereyðingarvopna: Öflun fjár, hvort sem er beint eða óbeint, í þeim tilgangi eða með vitneskju um að nota eigi það í heild eða að hluta til þróunar, framleiðslu, öflunar, söfnunar, notkunar, útvegunar, eignarhalds, flutnings, miðlunar, viðskipta með eða vörslu á gereyðingarvopnum í andstöðu við alþjóðlegar þvingunaraðgerðir, sbr. lög um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -32,6 +539,165 @@
           </li>
         </ol>
       </original>
+      <intents common-address="4. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1']">1. mgr. 4. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ríkislögreglustjóri skal gera áhættumat sem inniheldur greiningu og mat á hættu á peningaþvætti og fjármögnun hryðjuverka og leiðir til að draga úr greindri áhættu.</sen>
+                <sen nr="2">Áhættumatið skal uppfært á tveggja ára fresti eða oftar ef tilefni er til.</sen>
+                <sen nr="3">Stjórnvöldum er skylt að veita ríkislögreglustjóra upplýsingar sem nauðsynlegar eru við gerð áhættumats.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ríkislögreglustjóri skal annast áhættumat stjórnvalda á peningaþvætti og fjármögnun hryðjuverka.</sen>
+                <sen nr="2">Skýrsla um áhættumat, þar sem gerð er grein fyrir niðurstöðum greiningar og mats á áhættu, ásamt leiðum til að draga úr greindri áhættu, skal gefin út á fjögurra ára fresti eða oftar ef tilefni er til.</sen>
+                <sen nr="3">Í því skyni að draga úr greindri áhættu skal ríkislögreglustjóri taka afstöðu til uppfærslu áhættumats eigi sjaldnar en á tveggja ára fresti.</sen>
+                <sen nr="4">Á sama hátt skal ríkislögreglustjóri annast áhættumat á fjármögnun gereyðingarvopna, þ.m.t. um mat á áhættu, ásamt leiðum til að draga úr greindri áhættu, möguleg brot, aðgerðarleysi eða sniðgöngu við skuldbindingar um alþjóðlegar þvingunaraðgerðir samkvæmt lögum um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intents common-address="3. mgr.">
+          <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+            <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 4. gr.</address>
+            <existing>
+              <sen nr="1">Við gerð áhættumatsins skal tekið tillit til áhættumats sem framkvæmdastjórn Evrópusambandsins framkvæmir, afla víðtækra upplýsinga, bæði frá stjórnvöldum og öðrum sem kunna að búa yfir upplýsingum, og taka tillit til annarra viðeigandi þátta.</sen>
+            </existing>
+            <text-from>Við gerð áhættumatsins</text-from>
+            <text-to>Við gerð áhættumats skv. 1. mgr.</text-to>
+          </intent>
+          <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']" action-law-nr="140" action-law-year="2018">
+            <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='3']">3. mgr. 4. gr.</address>
+            <existing>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Við gerð áhættumatsins skal tekið tillit til áhættumats sem framkvæmdastjórn Evrópusambandsins framkvæmir, afla víðtækra upplýsinga, bæði frá stjórnvöldum og öðrum sem kunna að búa yfir upplýsingum, og taka tillit til annarra viðeigandi þátta.</sen>
+                </paragraph>
+              </subart>
+            </existing>
+            <inner>
+              <sen nr="2">Stjórnvöldum er skylt að veita ríkislögreglustjóra upplýsingar sem hann telur nauðsynlegar við gerð áhættumats skv. 1. mgr.</sen>
+            </inner>
+          </intent>
+        </intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='4']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 4. mgr. 4. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">greina atvinnugreinar eða aðstæður sem fela í sér litla eða mikla hættu á peningaþvætti eða fjármögnun hryðjuverka,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>peningaþvætti og fjármögnun hryðjuverka“ í a- og d-lið og orðanna „peningaþvætti eða fjármögnun hryðjuverka</text-from>
+          <text-to>peningaþvætti og fjármögnun hryðjuverka samkvæmt lögum þessum og fjármögnun gereyðingarvopna samkvæmt lögum um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='5']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='5']">5. mgr. 4. gr.</address>
+          <existing>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Afhenda skal þjóðaröryggisráði, lögbærum stjórnvöldum samkvæmt lögum þessum, evrópskum eftirlitsstofnunum, Eftirlitsstofnun EFTA og lögbærum stjórnvöldum annarra aðildarríkja afrit af áhættumatinu.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>áhættumatinu</text-from>
+          <text-to>áhættumati skv. 1. mgr.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/name[1]" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]">4. gr.</address>
+          <existing>
+            <art nr="4">
+              <nr-title>4. gr.</nr-title>
+              <name>Áhættumat.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkislögreglustjóri skal gera áhættumat sem inniheldur greiningu og mat á hættu á peningaþvætti og fjármögnun hryðjuverka og leiðir til að draga úr greindri áhættu.</sen>
+                  <sen nr="2">Áhættumatið skal uppfært á tveggja ára fresti eða oftar ef tilefni er til.</sen>
+                  <sen nr="3">Stjórnvöldum er skylt að veita ríkislögreglustjóra upplýsingar sem nauðsynlegar eru við gerð áhættumats.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Stýrihópur um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka skv. 39. gr. skal samræma aðgerðir til að draga úr greindri áhættu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Við gerð áhættumatsins skal tekið tillit til áhættumats sem framkvæmdastjórn Evrópusambandsins framkvæmir, afla víðtækra upplýsinga, bæði frá stjórnvöldum og öðrum sem kunna að búa yfir upplýsingum, og taka tillit til annarra viðeigandi þátta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Áhættumat skv. 1. mgr. skal:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">notað til að gera úrbætur á vörnum gegn peningaþvætti og fjármögnun hryðjuverka, þar á meðal greina aðstæður þar sem beita skal aukinni áreiðanleikakönnun og tilgreina til hvaða aðgerða þurfi að grípa,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">greina atvinnugreinar eða aðstæður sem fela í sér litla eða mikla hættu á peningaþvætti eða fjármögnun hryðjuverka,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">notað til að greina hvar þörf er á úrbótum á regluverki,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">fjalla um skipulag og umgjörð aðgerða gegn peningaþvætti og fjármögnun hryðjuverka,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">notað til að úthluta og forgangsraða fjármunum, búnaði og mannauði,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">vera eftirlitsaðilum skv. 38. gr. til leiðbeiningar við áhættumiðað eftirlit,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="g" nr-type="alphabet">
+                    <nr-title>g.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">notað til að deila viðeigandi upplýsingum tímanlega með tilkynningarskyldum aðilum til notkunar við gerð eigin áhættumats skv. 5. gr.,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="h" nr-type="alphabet">
+                    <nr-title>h.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">birt opinberlega, í heild eða að hluta.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Afhenda skal þjóðaröryggisráði, lögbærum stjórnvöldum samkvæmt lögum þessum, evrópskum eftirlitsstofnunum, Eftirlitsstofnun EFTA og lögbærum stjórnvöldum annarra aðildarríkja afrit af áhættumatinu.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <name>Áhættumat stjórnvalda.</name>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -43,6 +709,54 @@
           <li style="text-align: justify;">Við 1. málsl. 12. mgr. bætist: auk áhættu vegna fjármögnunar gereyðingarvopna sam­kvæmt lögum um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</li>
         </ol>
       </original>
+      <intents common-address="5. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 5. gr.</address>
+          <existing>
+            <sen nr="1">Áhættumat á starfsemi felur í sér að bera kennsl á og meta hættu á peningaþvætti og fjármögnun hryðjuverka í starfsemi tilkynningarskylds aðila út frá helstu veikleikum og ógnum sem að starfseminni beinast.</sen>
+          </existing>
+          <text-from>peningaþvætti og fjármögnun hryðjuverka</text-from>
+          <text-to>peningaþvætti og fjármögnun hryðjuverka samkvæmt lögum þessum og fjármögnun gereyðingarvopna samkvæmt lögum um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='3']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='3']">3. mgr. 5. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Við gerð áhættumats ber tilkynningarskyldum aðilum að hafa áhættumat skv. 4. gr. til hliðsjónar ásamt fyrirliggjandi upplýsingum um þekkta áhættu og áhættuþætti.</sen>
+                <sen nr="2">Áhættumat skal taka mið af stærð, eðli, umfangi og margbreytileika í starfsemi tilkynningarskylds aðila.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>áhættumat skv. 4. gr. til hliðsjónar</text-from>
+          <text-to>til hliðsjónar niðurstöður áhættumats skv. 4. gr.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='6']//sen[@nr='1']">1. málsl. 6. mgr. 5. gr.</address>
+          <existing>
+            <sen nr="1">Áhættumat skv. 1. mgr. skal uppfært á tveggja ára fresti eða oftar ef tilefni er til.</sen>
+          </existing>
+          <inner>
+            <sen nr="1">Áhættumat skv. 1. mgr. skal uppfært eftir því sem tilefni er til, svo sem við uppfærslu áhættumats skv. 4. gr. eða ef fyrir liggja upplýsingar um breytingar á þekktri áhættu og áhættuþáttum.</sen>
+            <sen nr="2">Tilkynningarskyldir aðilar skulu eigi sjaldnar en á tveggja ára fresti taka skriflega og rökstudda afstöðu til þess hvort tilefni sé til uppfærslu áhættumats skv. 1. mgr.</sen>
+          </inner>
+        </intent>
+        <intent action="add_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='g']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='12']/paragraph[@nr='1']/numart[@nr='h']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='12']//sen[@nr='1']">1. málsl. 12. mgr. 5. gr.</address>
+          <existing>
+            <sen nr="1">Við mat á því hvernig samningssambönd og einstök viðskipti skulu áhættuflokkuð skal horft til allra viðeigandi áhættuþátta sem geta, einir sér eða samanlagt, aukið eða dregið úr áhættu vegna peningaþvættis eða fjármögnunar hryðjuverka.</sen>
+            <sen nr="1">starfsemi, orðspors og stjórnmálalegra tengsla viðskiptamanns og raunverulegs eiganda,</sen>
+            <sen nr="1">ríkja eða ríkjasvæða sem tengjast viðskiptasambandinu,</sen>
+            <sen nr="1">áhættuþátta sem tengjast þeirri vöru, þjónustu eða færslum sem sóst er eftir,</sen>
+            <sen nr="1">dreifileiða sem notaðar eru,</sen>
+            <sen nr="1">þess hvort viðskiptamaður noti milligönguaðila til að koma fram fyrir sína hönd,</sen>
+            <sen nr="1">þess hvort viðskiptamaður sé lögaðili með flókið eignarhald eða stjórnskipulag,</sen>
+            <sen nr="1">þess hvort viðskiptamaður sé fjárvörslusjóður eða sambærilegur aðili, og</sen>
+            <sen nr="1">þess hvort viðskiptamaður stundi aðallega reiðufjárviðskipti.</sen>
+          </existing>
+          <text-to>auk áhættu vegna fjármögnunar gereyðingarvopna samkvæmt lögum um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -60,6 +774,96 @@
         </ol>
         <p style="text-align: justify;">Stefna tilkynningarskylds aðila skal samþykkt af stjórn og stýringar og verkferlar skulu samþykkt af yfirstjórn. Yfirstjórn skal hafa eftirlit með framkvæmd stefnu, stýringa og verkferla og gefa fyrirmæli um auknar ráðstafanir þar sem við á.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5a,')]">5. gr. a</address>
+          <existing>
+            <art nr="5a">
+              <nr-title>5. gr. a.</nr-title>
+              <name>Stefna, stýringar og verkferlar.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skulu hafa skjalfesta stefnu, stýringar og verkferla til að draga úr og stýra áhættu sem stafar af peningaþvætti og fjármögnun hryðjuverka.</sen>
+                  <sen nr="2">Byggja skal stefnu, stýringar og verkferla á áhættumati skv. 5. gr.</sen>
+                  <sen nr="3">Ráðstafanir tilkynningarskyldra aðila samkvæmt þessu ákvæði skulu vera í samræmi við stærð, eðli, umfang og margbreytileika í starfsemi tilkynningarskylds aðila.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Stefna, stýringar og verkferlar skv. 1. mgr. skulu að lágmarki fela í sér, eftir því sem við á:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">ákvæði um þróun og uppfærslu stefnu, stýringa og verkferla, þ.m.t. aðferðir við áhættustýringu, áreiðanleikakönnun, tilkynningar um grunsamleg viðskipti, varðveislu gagna, innra eftirlit og tilnefningu ábyrgðarmanns, og könnun á hæfi starfsmanna, og</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">kröfu um sjálfstæða endurskoðunardeild eða sjálfstæða úttektaraðila til að framkvæma úttekt á og prófa þá þætti sem um getur í a-lið.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Stefna tilkynningarskylds aðila skal samþykkt af stjórn og stýringar og verkferlar skulu samþykkt af yfirstjórn.</sen>
+                  <sen nr="2">Yfirstjórn skal hafa eftirlit með framkvæmd stefnu, stýringa og verkferla og gefa fyrirmæli um auknar ráðstafanir þar sem við á.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.062.html" law-nr="62" law-year="2022" law-art="3" nr="1">
+                  <footnote-sen>L. 62/2022, 3. gr.</footnote-sen>
+                  <location type="range" string-length="1157">
+                    <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="5a">
+              <nr-title>5. gr. a.</nr-title>
+              <name>Stefna, stýringar og verkferlar.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðstafanir tilkynningarskyldra aðila samkvæmt þessu ákvæði skulu vera í samræmi við stærð, eðli, umfang og margbreytileika í starfsemi þeirra.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skulu hafa skjalfesta stefnu, stýringar og verkferla til að draga úr og stýra áhættu sem stafar af peningaþvætti og fjármögnun hryðjuverka auk áhættu er tengist fjármögnun gereyðingarvopna, sbr. ákvæði laga um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna.</sen>
+                  <sen nr="2">Stefna, stýringar og verkferlar um þessa þætti skulu byggjast á áhættumati stjórnvalda og eigin áhættumati tilkynningarskyldra aðila.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Stefna, stýringar og verkferlar skv. 2. mgr. skulu að lágmarki fela í sér:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">umfjöllun um þróun og uppfærslu stefnu, stýringa og verkferla, þ.m.t. aðferðir við áhættu­stýringu, áreiðanleikakönnun, tilkynningar um grunsamleg viðskipti, varðveislu gagna, innra eftirlit, tilnefningu ábyrgðarmanns og eftir atvikum regluvarðar, könnun á hæfi starfs­manna, og</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">kröfu um að sjálfstæð endurskoðunardeild eða sjálfstæður úttektaraðili framkvæmi úttekt á og prófi þá þætti sem um getur í a-lið, þegar við á með hliðsjón af stærð og eðli starfsemi tilkynningarskylds aðila.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Stefna tilkynningarskylds aðila skal samþykkt af stjórn og stýringar og verkferlar skulu samþykkt af yfirstjórn.</sen>
+                  <sen nr="2">Yfirstjórn skal hafa eftirlit með framkvæmd stefnu, stýringa og verkferla og gefa fyrirmæli um auknar ráðstafanir þar sem við á.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -69,11 +873,56 @@
           <li style="text-align: justify;">3. mgr. orðast svo:<br/>Tryggt skal að tilkynningar skv. 1. mgr. séu sendar á skrifstofu fjármálagreininga lögreglu þess ríkis þar sem tilkynningarskyldur aðili er með staðfestu.</li>
         </ol>
       </original>
+      <intents common-address="21. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='1']//sen[@nr='1']">Inngangsmálsliður 1. mgr. 21. gr.</address>
+          <existing>
+            <sen nr="1">Tilkynningarskyldir aðilar, starfsmenn þeirra og stjórnendur skulu tímanlega:</sen>
+            <sen nr="1">tilkynna skrifstofu fjármálagreininga lögreglu, með þeim hætti sem hún ákveður, um grunsamleg viðskipti og fjármuni sem grunur leikur á að rekja megi til refsiverðrar háttsemi,</sen>
+            <sen nr="1">bregðast við fyrirspurnum skrifstofu fjármálagreininga lögreglu um viðbótarupplýsingar sem tengjast tilkynningum og</sen>
+            <sen nr="1">veita skrifstofu fjármálagreininga lögreglu allar nauðsynlegar upplýsingar sem hún óskar eftir í tengslum við tilkynningar.</sen>
+          </existing>
+          <inner>
+            <sen nr="1">Ábyrgðarmaður eða eftir atvikum regluvörður skv. 34. gr. skal tímanlega.</sen>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='3']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='3']">3. mgr. 21. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ábyrgðarmaður sem tilnefndur er í samræmi við 34. gr. skal tryggja að tilkynningar skv. 1. mgr. séu sendar á skrifstofu fjármálagreininga lögreglu þess ríkis þar sem tilkynningarskyldur aðili er með staðfestu.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Tryggt skal að tilkynningar skv. 1. mgr. séu sendar á skrifstofu fjármálagreininga lögreglu þess ríkis þar sem tilkynningarskyldur aðili er með staðfestu.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="140" affected-law-year="2018">
         <p style="text-align: justify;">Í stað orðanna „kauphöllum samkvæmt lögum um kauphallir“ í 2. mgr. 23. gr. laganna kemur: rekstraraðila markaðar samkvæmt lögum um markaði fyrir fjármálagerninga.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='2']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',23,')]//subart[@nr='2']">2. mgr. 23. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Skyldur skv. 1. mgr. hvíla einnig á kauphöllum samkvæmt lögum um kauphallir.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>kauphöllum samkvæmt lögum um kauphallir</text-from>
+          <text-to>rekstraraðila markaðar samkvæmt lögum um markaði fyrir fjármálagerninga.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -87,6 +936,72 @@
         <p style="text-align: justify;">Tilkynningarskyldir aðilar skulu sjá til þess að þeir sem gegna hlutverkum ábyrgðarmanns og regluvarðar njóti sjálfstæðis í störfum sínum og geti viðhaft hvers konar ráðstafanir sem nauðsynlegar eru til að tryggja skilvirka fylgni við stefnu, stýringar og verkferla auk úrræða, þ.m.t. starfsmenn og tæknilegan búnað, í samræmi við stærð, eðli og áhættu í starfsemi tilkynn­ingar­skylda aðilans. Þá skulu þeir hafa skilyrðislausan aðgang að áreiðanleikakönnun viðskipta­manna, upplýsingum um viðskipti eða beiðnum um viðskipti ásamt öllum þeim gögnum sem geta skipt máli vegna tilkynninga.</p>
         <p style="text-align: justify;">Skrifstofu fjármálagreininga lögreglu og viðeigandi eftirlitsaðilum samkvæmt lögum þessum skal tilkynnt um tilnefningu ábyrgðarmanns og regluvarðar skv. 2. og 3. mgr.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='34']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',34,')]">34. gr.</address>
+          <existing>
+            <art nr="34">
+              <nr-title>34. gr.</nr-title>
+              <name>Ábyrgðarmenn.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar bera ábyrgð á því að ákvæðum laga þessara og reglugerða og reglna sem settar eru samkvæmt þeim sé framfylgt.</sen>
+                  <sen nr="2">Þeim er skylt að tilnefna einn úr hópi stjórnenda sem sérstakan ábyrgðarmann sem að jafnaði annast tilkynningar í samræmi við 21. gr. og hefur skilyrðislausan aðgang að áreiðanleikakönnun viðskiptamanna, viðskiptum eða beiðnum um viðskipti ásamt öllum þeim gögnum sem geta skipt máli vegna tilkynninga.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Skrifstofu fjármálagreininga lögreglu og viðeigandi eftirlitsaðilum samkvæmt lögum þessum skal tilkynnt um tilnefningu ábyrgðarmanns skv. 1. mgr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ábyrgðarmaður skal sjá til þess að innleiddar séu stefnur, stýringar og verkferlar sem stuðli að samræmdum starfsaðferðum og góðri framkvæmd laga þessara í starfsemi tilkynningarskyldra aðila.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.062.html" law-nr="62" law-year="2022" law-art="14" nr="1">
+                  <footnote-sen>L. 62/2022, 14. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='34']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="stýringar" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="34">
+              <nr-title>34. gr.</nr-title>
+              <name>Umgjörð aðgerða gegn peningaþvætti og fjármögnun hryðjuverka</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar bera ábyrgð á því að framfylgt sé ákvæðum laga þessara, laga um framkvæmd alþjóðlegra þvingunaraðgerða og frystingu fjármuna, svo og reglugerða og reglna sem þeim tengjast, og skulu haga umgjörð aðgerða sinna í samræmi við ákvæði þetta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skulu hafa sérstakan ábyrgðarmann, tilnefndan af stjórn og úr hópi stjórnenda.</sen>
+                  <sen nr="2">Ábyrgðarmaður skal annast innleiðingu stefnu, stýringa og verkferla í starfsemi tilkynningarskylda aðilans og afla upplýsinga um veikleika í þeim aðgerðum sem stjórn skal upplýst reglubundið um.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Með hliðsjón af eðli og umfangi starfseminnar skulu tilkynningarskyldir aðilar jafnframt hafa regluvörð, tilnefndan af stjórn, sem skal sinna verkefnum tengdum aðgerðum gegn peningaþvætti, fjármögnun hryðjuverka og fjármögnun gereyðingarvopna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skulu sjá til þess að þeir sem gegna hlutverkum ábyrgðarmanns og regluvarðar njóti sjálfstæðis í störfum sínum og geti viðhaft hvers konar ráðstafanir sem nauðsynlegar eru til að tryggja skilvirka fylgni við stefnu, stýringar og verkferla auk úrræða, þ.m.t. starfsmenn og tæknilegan búnað, í samræmi við stærð, eðli og áhættu í starfsemi tilkynningarskylda aðilans.</sen>
+                  <sen nr="2">Þá skulu þeir hafa skilyrðislausan aðgang að áreiðanleikakönnun viðskiptamanna, upplýsingum um viðskipti eða beiðnum um viðskipti ásamt öllum þeim gögnum sem geta skipt máli vegna tilkynninga.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Skrifstofu fjármálagreininga lögreglu og viðeigandi eftirlitsaðilum samkvæmt lögum þessum skal tilkynnt um tilnefningu ábyrgðarmanns og regluvarðar skv. 2. og 3. mgr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -98,6 +1013,48 @@
           <li style="text-align: justify;">Á eftir orðunum „Óinnheimtar dagsektir falla ekki niður þótt aðilar verði síðar við kröfum eftirlitsaðila nema“ í 3. mgr. kemur: skrifstofa fjármálagreininga lögreglu.</li>
         </ol>
       </original>
+      <intents common-address="45. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 45. gr.</address>
+          <existing>
+            <sen nr="1">Eftirlitsaðilar skv. 38. gr. geta lagt dagsektir á tilkynningarskyldan aðila og aðila skv. 3. mgr. 38. gr. veiti hann ekki umbeðnar upplýsingar eða sinni ekki kröfum um úrbætur innan frests skv. 44. gr.</sen>
+          </existing>
+          <text-from>Eftirlitsaðilar</text-from>
+          <text-to>Skrifstofa fjármálagreininga lögreglu og eftirlitsaðilar.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 45. gr.</address>
+          <existing>
+            <sen nr="1">Eftirlitsaðilar skv. 38. gr. geta lagt dagsektir á tilkynningarskyldan aðila og aðila skv. 3. mgr. 38. gr. veiti hann ekki umbeðnar upplýsingar eða sinni ekki kröfum um úrbætur innan frests skv. 44. gr.</sen>
+          </existing>
+          <text-from>og aðila skv. 3. mgr. 38. gr. veiti hann ekki umbeðnar upplýsingar</text-from>
+          <text-to>og aðila skv. 2. mgr. 20. gr. og 3. mgr. 38. gr. veiti hann ekki umbeðnar upplýsingar til skrifstofu fjármálagreininga lögreglu og eftirlitsaðila.</text-to>
+        </intent>
+        <intent action="append_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='2']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='2']">2. mgr. 45. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Dagsektir skulu ákveðnar af Fjármálaeftirlitinu eða ríkisskattstjóra eftir því sem við á.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Dagsektir skulu ákveðnar af</text-from>
+          <text-to>skrifstofu fjármálagreininga lögreglu.</text-to>
+        </intent>
+        <intent action="append_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='3']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='3']">3. mgr. 45. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Óinnheimtar dagsektir falla ekki niður þótt aðilar verði síðar við kröfum eftirlitsaðila nema Fjármálaeftirlitið eða ríkisskattstjóri, eftir því sem við á, samþykki lækkun eða niðurfellingu þeirra.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Óinnheimtar dagsektir falla ekki niður þótt aðilar verði síðar við kröfum eftirlitsaðila nema</text-from>
+          <text-to>skrifstofa fjármálagreininga lögreglu.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="140" affected-law-year="2018">
@@ -109,6 +1066,84 @@
           <li style="text-align: justify;">24. tölul. orðast svo: 3. mgr. 20. gr. og 4. mgr. 38. gr. með því að veita þriðja aðila upplýsingar um beiðni skv. 2. mgr. 20. gr. og 3. mgr. 38. gr.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 46. gr.">
+        <intent action="insert" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]//subart[@nr='1']//numart[@nr='2']">2. tölul. 1. mgr. 46. gr.</address>
+          <existing>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">7. gr. um nafnlaus viðskipti og þátttöku í viðskiptum til að dylja raunverulegt eignarhald,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">5. gr. a um stefnu, stýringar og verkferla.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='20']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]//subart[@nr='1']//numart[@nr='20']">20. tölul. 1. mgr. 46. gr.</address>
+          <existing>
+            <numart nr="20" nr-type="numeric">
+              <nr-title>20.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 34. gr. um skyldu ábyrgðarmanns til að sjá til þess að innleiddar séu stefnur, reglur og verkferlar sem stuðli að samræmdum starfsaðferðum og góðri framkvæmd laganna,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="20" nr-type="numeric">
+              <nr-title>20.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">2. og 3. mgr. 34. gr. um skyldu til tilnefningar ábyrgðarmanns og regluvarðar og um skyldur þeirra skv. 2.–4. mgr. 34. gr.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='23']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]//subart[@nr='1']//numart[@nr='23']">23. tölul. 1. mgr. 46. gr.</address>
+          <existing>
+            <numart nr="23" nr-type="numeric">
+              <nr-title>23.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 38. gr. með því að veita eftirlitsaðilum rangar eða villandi upplýsingar,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="23" nr-type="numeric">
+              <nr-title>23.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">2. mgr. 20. gr. og 3. mgr. 38. gr. með því að veita rangar eða villandi upplýsingar.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='24']" action-law-nr="140" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]//subart[@nr='1']//numart[@nr='24']">24. tölul. 1. mgr. 46. gr.</address>
+          <existing>
+            <numart nr="24" nr-type="numeric">
+              <nr-title>24.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">4. mgr. 38. gr. með því að veita þriðja aðila upplýsingar um beiðni skv. 3. mgr. 38. gr.,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="24" nr-type="numeric">
+              <nr-title>24.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 20. gr. og 4. mgr. 38. gr. með því að veita þriðja aðila upplýsingar um beiðni skv. 2. mgr. 20. gr. og 3. mgr. 38. gr.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -121,6 +1156,42 @@
           <li style="text-align: justify;">Í stað orðanna „<em>Útbreiðsla og fjármögnun gereyðingarvopna</em>“ í 12. tölul. kemur:<em>Útbreiðsla gereyðingarvopna</em>.</li>
         </ol>
       </original>
+      <intents common-address="3. gr.">
+        <intent action="insert" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/numart[@nr='5']/paragraph[@nr='1']" action-law-nr="68" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//numart[@nr='5']">5. tölul. 3. gr.</address>
+          <existing>
+            <numart nr="5" nr-type="numeric">
+              <nr-title>5.</nr-title>
+              <name>Fjármögnun hryðjuverka:</name>
+              <paragraph nr="1">
+                <sen nr="1">Fjármögnun hryðjuverka samkvæmt skilgreiningu laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="5" nr-type="numeric">
+              <nr-title>5.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Fjármögnun gereyðingarvopna: Öflun fjár, hvort sem er beint eða óbeint, í þeim tilgangi eða með vitneskju um að nota eigi það í heild eða að hluta til þróunar, framleiðslu, öflunar, söfnunar, notkunar, útvegunar, eignarhalds, flutnings, miðlunar, viðskipta með eða vörslu á gereyðingarvopnum í andstöðu við alþjóðlegar þvingunaraðgerðir, sbr. 2. gr. reglugerðar um alþjóðlegar öryggisaðgerðir varðandi gereyðingarvopn, nr. 123/2009.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/numart[@nr='12']" action-law-nr="68" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//numart[@nr='12']">12. tölul. 3. gr.</address>
+          <existing>
+            <numart nr="12" nr-type="numeric">
+              <nr-title>12.</nr-title>
+              <name>Útbreiðsla og fjármögnun gereyðingarvopna:</name>
+              <paragraph nr="1">
+                <sen nr="1">Þróun, framleiðsla, öflun, söfnun, notkun, útvegun, eignarhald, flutningur, miðlun, viðskipti með eða varsla á gereyðingarvopnum, sbr. 2. gr. reglugerðar um alþjóðlegar öryggisaðgerðir varðandi gereyðingarvopn, nr. 123/2009.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>Útbreiðsla og fjármögnun gereyðingarvopna</text-from>
+          <text-to>Útbreiðsla gereyðingarvopna.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="68" affected-law-year="2023">
@@ -129,12 +1200,63 @@
           <br/>
         </p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='13']" action-law-nr="68" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]">13. gr.</address>
+          <existing>
+            <art nr="13">
+              <nr-title>13. gr.</nr-title>
+              <name>Ráðstafanir vegna eftirlits með því hvort viðskiptamenn og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skv. a–h-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu hafa viðeigandi kerfi, ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
+                  <sen nr="2">Fjármálaeftirlitið getur veitt undanþágu frá kröfu um slíkt kerfi sýni tilkynningarskyldur aðili fram á að markmiði laganna verði náð með ferlum og aðferðum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skv. i–u-lið 1. mgr. 2. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018, skulu innleiða ferla og aðferðir til að sinna eftirliti með því hvort viðskiptamenn þeirra og raunverulegir eigendur séu á listum yfir þvingunaraðgerðir.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Viðskiptamenn og raunverulegir eigendur skulu skimaðir gagnvart listum yfir þvingunaraðgerðir í upphafi viðskipta og reglulega á meðan samningssambandið varir.</sen>
+                  <sen nr="2">Þá skulu aðilar sem eiga aðild að millifærslum fjármuna til og frá erlendum ríkjum skimaðir gagnvart listum yfir þvingunaraðgerðir.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningarskyldir aðilar skulu varðveita afrit af gögnum og upplýsingum sem staðfesta að skimun hafi farið fram og að lagt hafi verið mat á niðurstöðu skimunar skv. 3. mgr. í að lágmarki fimm ár frá því að samningssambandi lýkur eða einstök viðskipti hafa átt sér stað.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar grunur leikur á um að viðskiptamaður eða raunverulegur eigandi hafi gert ráðstafanir til að komast hjá frystingu fjármuna eða efnahagslegs auðs skv. 10. gr. skal tilkynningarskyldur aðili tilkynna þeim eftirlitsaðila sem fer með eftirlit með tilkynningarskylda aðilanum skv. 26. gr. um slíkt.</sen>
+                  <sen nr="2">Jafnframt skal tilkynningarskyldur aðili tilkynna skrifstofu fjármálagreininga lögreglu og ráðherra um slíkar ráðstafanir.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Tilkynningarskyldir aðilar skulu bera kennsl á og meta hættu á fjármögnun gereyðingarvopna í starfsemi sinni, samningssamböndum og einstökum viðskiptum í áhættumati sem taka skal mið af stærð, eðli, umfangi og margbreytileika í starfsemi tilkynningarskylda aðilans.</sen>
+                <sen nr="2">Áhættumat skal vera skriflegt og innihalda heildstæða greiningu og m.a. taka mið af niðurstöðu áhættumats stjórnvalda á fjármögnun gereyðingarvopna skv. 4. gr. laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, nr. 140/2018.</sen>
+                <sen nr="3">Eftirlitsaðilar geta ákveðið að gera ekki kröfu um áhættumat með hliðsjón af eðli starfseminnar.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="12">
       <original affected-law-nr="68" affected-law-year="2023">
         <p style="text-align: justify;">Lög þessi öðlast gildi 1. september 2024.</p>
         <p style="text-align: justify;">Þrátt fyrir ákvæði 1. mgr. skal 11. gr. koma til framkvæmda 1. janúar 2025.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-09-01" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört í Reykjavík, 3. júlí 2024.</signed-when>

@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="a994ae3c-9763-44c3-a330-77dcabf7ab6a" year="2024" nr="91" published-date="2024-07-10" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="77" year="2019">77/2019</affected-law>
+  </affected-laws>
   <description>um breytingu á umferðarlögum, nr. 77/2019 (EES-reglur).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 54. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -18,24 +21,159 @@
         <li style="text-align: justify;">Á eftir i-lið 2. mgr. kemur nýr stafliður, svohljóðandi, og breytist röð annarra stafliða samkvæmt því: skyldu flutningsaðila til að greiða kostnað vegna gistingar ökumanns utan ökutækis þegar hann er að störfum.</li>
       </ol>
     </original>
+    <intents common-address="54. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='54']/subart[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',54,')]//subart[@nr='1']">1. mgr. 54. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Í þágu umferðaröryggis og bættra vinnuskilyrða skal ökumaður við akstur í farþega- og farmflutningum í atvinnuskyni á ökutækjum yfir 3,5 tonnum að heildarþyngd njóta nægjanlegrar hvíldar til að geta sinnt störfum sínum.</sen>
+              <sen nr="2">Í því skyni skal kveðið á um hámark daglegrar, vikulegrar og tveggja vikna vinnuskyldu ökumanns og skyldu hans til hvíldar eða til að gera hlé á akstri.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Í þágu umferðaröryggis og bættra vinnuskilyrða skal ökumaður við akstur í farþega- og farmflutningum í atvinnuskyni njóta nægjanlegrar hvíldar til að geta sinnt störfum sínum.</sen>
+              <sen nr="2">Í því skyni skal kveðið á um hámark daglegrar, vikulegrar og tveggja vikna vinnuskyldu ökumanna eftirtalinna ökutækja og skyldu þeirra til hvíldar eða til að gera hlé á akstri ökutækja sem:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">eru yfir 3,5 tonnum að leyfðri heildarþyngd,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">eru hönnuð eða varanlega útbúin til að flytja fleiri en átta farþega,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">eru yfir 2,5 tonnum að leyfðri heildarþyngd og notuð til vöruflutninga á milli ríkja eða gestaflutninga.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='54']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='e']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',54,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='e' or @nr='E']">e-lið 2. mgr. 54. gr.</address>
+        <existing>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skyldu til að varðveita í ökuritaskífum, ökurita, á ökuritakorti eða með öðrum hætti upplýsingar um aksturs- og hvíldartíma,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skyldu flutningsaðila til að skipuleggja vinnu ökumanns í samræmi við ákvæði um aksturs- og hvíldartíma og skrásetja hvernig það er gert.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='54']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='f']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',54,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='f' or @nr='F']">f-lið 2. mgr. 54. gr.</address>
+        <existing>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skyldu til afhendingar gagna með upplýsingum sem skráðar eru og varðveittar, sbr. d- og e-lið,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>sbr. d- og e-lið</text-from>
+        <text-to>sbr. d-, e- og f-lið.</text-to>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='54']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='i']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',54,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='i' or @nr='I']">i-lið 2. mgr. 54. gr.</address>
+        <existing>
+          <numart nr="i" nr-type="alphabet">
+            <nr-title>i.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">gjald fyrir ökuritakort sem standa skal undir kostnaði við útgáfu slíkra korta, þ.m.t. launakostnaði, árlegum rekstrarkostnaði vegna tölvukerfa og annarri umsýslu tengdri ökuritakortum,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="j" nr-type="alphabet">
+            <nr-title>j.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">skyldu flutningsaðila til að greiða kostnað vegna gistingar ökumanns utan ökutækis þegar hann er að störfum.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Á eftir orðinu „endurmenntun“ í 3. málsl. 10. mgr. 58. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: að hluta.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='58']/subart[@nr='10']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',58,')]//subart[@nr='10']//sen[@nr='3']">3. málsl. 10. mgr. 58. gr.</address>
+        <existing>
+          <sen nr="3">Heimilt er að ljúka endurmenntun með fjarnámi.</sen>
+        </existing>
+        <text-from>endurmenntun</text-from>
+        <text-to>að hluta.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Við 62. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist ný málsgrein, svohljóðandi:</p>
       <p style="text-align: justify;">Leiði það af skuldbindingum Íslands samkvæmt samningnum um Evrópska efnahagssvæðið að erlent ökuskírteini skuli gilda hér á landi eða að íslenskt ökuskírteini verði útgefið í stað þess mælir ráðherra nánar fyrir um það og skilyrði þess í reglugerð.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='62']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',62,')]">62. gr.</address>
+        <existing>
+          <art nr="62">
+            <nr-title>62. gr.</nr-title>
+            <name>Erlend ökuskírteini.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur reglur um þau skilyrði sem þeir sem dveljast hér á landi og hafa eigi íslenskt ökuskírteini þurfa að fullnægja til að mega stjórna vélknúnu ökutæki, þ.m.t. hvaða skilyrði handhafi erlends ökuskírteinis þarf að uppfylla til að fá íslenskt ökuskírteini.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra getur ákveðið að ökuskírteini útgefið í öðru ríki sem er aðili að samningnum um Evrópska efnahagssvæðið gildi einnig eftir að handhafi þess hefur sest að hér á landi, samkvæmt nánari reglum.</sen>
+                <sen nr="2">Með sama hætti getur ráðherra ákveðið að ökuskírteini útgefið í öðru ríki gildi hér á landi, enda séu íslensk ökuskírteini jafnframt tekin gild í því ríki.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote nr="1">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/830-2011"&gt;Rg. 830/2011&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/235-2021"&gt;235/2021&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/879-2021"&gt;879/2021&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/010-2022"&gt;10/2022&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/896-2022"&gt;896/2022&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1519-2022"&gt;1519/2022&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1303-2023"&gt;1303/2023&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1615-2023"&gt;1615/2023&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='62']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Með sama hætti getur ráðherra ákveðið" after-mark="að ökuskírteini útgefið í öðru ríki gildi hér á landi, enda séu íslensk ökuskírteini jafnframt tekin gild í því ríki.$"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Leiði það af skuldbindingum Íslands samkvæmt samningnum um Evrópska efnahagssvæðið að erlent ökuskírteini skuli gilda hér á landi eða að íslenskt ökuskírteini verði útgefið í stað þess mælir ráðherra nánar fyrir um það og skilyrði þess í reglugerð.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 69. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -44,9 +182,119 @@
         <li style="text-align: justify;">Við bætast tvær nýjar málsgreinar, svohljóðandi:<br/>Eftirlitsstofnun EFTA er heimilt að leggja sekt á framleiðanda ökutækja þegar skýrslugjöf hans er ekki í samræmi við kröfur sem fram koma í reglugerð sem ráðherra setur. Eftirlitsstofnun EFTA er einnig heimilt að leggja sekt á framleiðanda ökutækja eða aðra markaðsaðila vegna samræmdra aðgerða innan Evrópska efnahagssvæðisins þegar ökutæki, eftirvagn, kerfi, íhlutur eða aðskilin tæknieining samræmist ekki kröfum sem fram koma í reglugerð ráðherra. Ráðherra skal í reglugerð m.a. kveða nánar á um skyldur og ábyrgð framleiðanda ökutækja og annarra markaðsaðila.<br/>Húsnæðis- og mannvirkjastofnun annast markaðseftirlit með vélknúnum ökutækjum og öðru þeim tengdu, samkvæmt nánari ákvörðun ráðherra. Samgöngustofa annast gerðar­viðurkenningar. Ráðherra skal í reglugerð m.a. kveða nánar á um framkvæmd starfa markaðseftirlits- og viðurkenningarstjórnvalda, rétt til upplýsinga og gagna, miðlunar þeirra, aðgang að athafnasvæði markaðsaðila, sýnatöku o.s.frv.</li>
       </ol>
     </original>
+    <intents common-address="69. gr.">
+      <intent action="delete_text" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='6']//sen[@nr='1']">1. málsl. 6. mgr. 69. gr.</address>
+        <existing>
+          <sen nr="1">Eftirlitsstofnun EFTA er heimilt að leggja umframlosunargjald á framleiðanda ökutækja þegar vegið meðaltal útblásturs skaðlegra lofttegunda nýskráðra ökutækja framleiðandans á Evrópska efnahagssvæðinu er hærra en viðmið sem kveðið er á um í reglugerð sem ráðherra setur.</sen>
+        </existing>
+        <text-from>vegið</text-from>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]">69. gr.</address>
+        <existing>
+          <art nr="69">
+            <nr-title>69. gr.</nr-title>
+            <name>Öryggi, gerð og búnaður ökutækis.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ökutæki skal svo gert og því haldið í þannig ástandi að nota megi án þess að af því leiði hætta eða óþægindi fyrir aðra eða skemmd á vegi og það valdi ekki óþarfa hávaða eða mengun.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Eigandi (umráðamaður) ber ábyrgð á að ökutæki sé í lögmæltu ástandi skv. 1. mgr. og í samræmi við þær reglur sem ráðherra setur á grundvelli 4. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ökumaður skal gæta þess að ökutæki sé í góðu ástandi.</sen>
+                <sen nr="2">Sérstaklega skal þess gætt að stýrisbúnaður, hemlar og ljósa- og merkjabúnaður, svo og öryggis- og verndarbúnaður, ökutækis sé í lögmæltu ástandi og virki örugglega.</sen>
+                <sen nr="3">Sama á við um eftirvagn, svo og tengingu ökutækis og eftirvagns og tengibúnað.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Í reglugerð sem ráðherra setur skulu m.a. koma fram eftirfarandi atriði:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">kröfur á grundvelli heildargerðarviðurkenningar ökutækis varðandi gerð, búnað og íhluti þess til að tryggja að einungis séu sett á markað ökutæki hér á landi sem uppfylla kröfur um öryggi og um verndun umhverfis,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">flokkun ökutækja og skilgreiningar á þeim,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">áletranir og merki sem setja skal á ökutæki vegna skráningar eða eftirlits,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">heimild til að kveða á um bann við viðskiptum með tiltekna hluti eða búnað í ökutæki til verndar ökumanni eða farþegum ef þeir uppfylla ekki skilyrði reglna sem settar eru eða ef notkun þeirra mundi leiða til hættu eða verulegra óþæginda fyrir ökumann eða aðra vegfarendur og</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">undanþágur frá kröfum enda sé nægjanlegt öryggi tryggt með öðrum hætti.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Samgöngustofa skal uppfæra reglulega tæknilegar reglur um gerð og búnað ökutækja sem fram koma í alþjóðasamningum sem Ísland hefur samþykkt.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Eftirlitsstofnun EFTA er heimilt að leggja umframlosunargjald á framleiðanda ökutækja þegar vegið meðaltal útblásturs skaðlegra lofttegunda nýskráðra ökutækja framleiðandans á Evrópska efnahagssvæðinu er hærra en viðmið sem kveðið er á um í reglugerð sem ráðherra setur.</sen>
+                <sen nr="2">Í reglugerðinni skal kveðið nánar á um hvernig og í hvaða tilvikum slíkt gjald skal lagt á.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote nr="1">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/822-2004"&gt;Rg. 822/2004&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/375-2005"&gt;375/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/647-2005"&gt;647/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/986-2005"&gt;986/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1071-2005"&gt;1071/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/156-2006"&gt;156/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/427-2006"&gt;427/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/465-2006"&gt;465/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/689-2006"&gt;689/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/953-2006"&gt;953/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/207-2007"&gt;207/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/349-2007"&gt;349/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1116-2007"&gt;1116/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1279-2007"&gt;1279/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/165-2008"&gt;165/2008&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1028-2008"&gt;1028/2008&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/635-2009"&gt;635/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/875-2009"&gt;875/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/326-2010"&gt;326/2010&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/871-2010"&gt;871/2010&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/170-2011"&gt;170/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/722-2011"&gt;722/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/388-2012"&gt;388/2012&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/837-2012"&gt;837/2012&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/898-2012"&gt;898/2012&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/377-2013"&gt;377/2013&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1045-2013"&gt;1045/2013&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/236-2014"&gt;236/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/736-2014"&gt;736/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/918-2014"&gt;918/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/967-2014"&gt;967/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/509-2015"&gt;509/2015&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/159-2016"&gt;159/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/446-2016"&gt;446/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/846-2016"&gt;846/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/982-2016"&gt;982/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/987-2016"&gt;987/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/119-2017"&gt;119/2017&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/699-2017"&gt;699/2017&lt;/a&gt;, 919/2017 46/2018, 346/2018, 544/2018, 1079/2018, 279/2019, 664/2019, 451/2020, 1183/2020, 1185/2020, 628/2021, 1233/2021, 623/2022, 1301/2022, 153/2023 og 1304/2023. Rg. 605/2010, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/290-2011"&gt;290/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/445-2011"&gt;445/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1150-2011"&gt;1150/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1002-2013"&gt;1002/2013&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/671-2015"&gt;671/2015&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/691-2016"&gt;691/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/983-2016"&gt;983/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/768-2017"&gt;768/2017&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/321-2018"&gt;321/2018&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1186-2020"&gt;1186/2020&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1187-2020"&gt;1187/2020&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/526-2023"&gt;526/2023&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1077-2010"&gt;Rg. 1077/2010&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/589-2011"&gt;589/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/980-2013"&gt;980/2013&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1181-2014"&gt;1181/2014&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/871-2015"&gt;871/2015&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/552-2017"&gt;552/2017&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/766-2017"&gt;766/2017&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/543-2018"&gt;543/2018&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/834-2019"&gt;834/2019&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/549-2021"&gt;549/2021&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/742-2022"&gt;742/2022&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/414-2021"&gt;Rg. 414/2021&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1001-2021"&gt;1001/2021&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1397-2021"&gt;1397/2021&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Í reglugerð" after-mark="sem ráðherra setur skulu m.a. koma fram eftirfarandi atriði:$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.039.html" law-nr="39" law-year="2021" law-art="8" nr="2">
+                <footnote-sen>L. 39/2021, 8. gr.</footnote-sen>
+                <location type="range" string-length="362">
+                  <start xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Eftirlitsstofnun EFTA er heimilt að leggja sekt á framleiðanda ökutækja þegar skýrslugjöf hans er ekki í samræmi við kröfur sem fram koma í reglugerð sem ráðherra setur.</sen>
+              <sen nr="2">Eftirlitsstofnun EFTA er einnig heimilt að leggja sekt á framleiðanda ökutækja eða aðra markaðsaðila vegna samræmdra aðgerða innan Evrópska efnahagssvæðisins þegar ökutæki, eftirvagn, kerfi, íhlutur eða aðskilin tæknieining samræmist ekki kröfum sem fram koma í reglugerð ráðherra.</sen>
+              <sen nr="3">Ráðherra skal í reglugerð m.a. kveða nánar á um skyldur og ábyrgð framleiðanda ökutækja og annarra markaðsaðila.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="8">
+            <paragraph nr="1">
+              <sen nr="1">Húsnæðis- og mannvirkjastofnun annast markaðseftirlit með vélknúnum ökutækjum og öðru þeim tengdu, samkvæmt nánari ákvörðun ráðherra.</sen>
+              <sen nr="2">Samgöngustofa annast gerðarviðurkenningar.</sen>
+              <sen nr="3">Ráðherra skal í reglugerð m.a. kveða nánar á um framkvæmd starfa markaðseftirlits- og viðurkenningarstjórnvalda, rétt til upplýsinga og gagna, miðlunar þeirra, aðgang að athafnasvæði markaðsaðila, sýnatöku o.s.frv.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Á eftir 114. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný grein, ásamt fyrirsögn, svohljóðandi:</p>
@@ -63,12 +311,79 @@
         <li style="text-align: justify;">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2022/1280 frá 18. júlí 2022 um sértækar og tímabundnar ráðstafanir, í ljósi innrásar Rússlands í Úkraínu, varðandi skjöl fyrir ökumenn sem gefin eru út í Úkraínu í samræmi við löggjöf landsins, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 113/2023 frá 28. apríl 2023.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='19' and @chapter-type='kafli']/art[@nr='114']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',114,')]">114. gr.</address>
+        <existing>
+          <art nr="114">
+            <nr-title>114. gr.</nr-title>
+            <name>Almenn reglugerð.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra getur ákveðið að setja eina almenna reglugerð um umferðarmál þar sem fram koma þau fyrirmæli samkvæmt lögum þessum sem setja skal eða heimilt er að setja í reglugerð.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="115">
+            <nr-title>115. gr.</nr-title>
+            <name>Innleiðing.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi fela í sér heimild til innleiðingar ákvæða eftirtalinna reglugerða og tilskipunar Evrópuþingsins og ráðsins:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2018/956 frá 28. júní 2018 um vöktun og skýrslugjöf vegna koltvísýringslosunar og eldsneytisnotkunar nýrra þungra ökutækja, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 396/2021 frá 10. desember 2021.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2019/1242 frá 20. júní 2019 um að setja staðla um frammistöðu vegna losunar koltvísýrings fyrir ný, þung ökutæki og um breytingu á reglugerð (EB) nr. 595/2009 og reglugerð Evrópuþingsins og ráðsins (ESB) 2018/956 og tilskipun ráðsins 96/53/EB, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 398/2021 frá 10. desember 2021.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2018/858 frá 30. maí 2018 um viðurkenningu á og markaðseftirlit með vélknúnum ökutækjum og eftirvögnum þeirra og á kerfum, íhlutum og aðskildum tæknieiningum sem ætlaðar eru í slík ökutæki, um breytingu á reglugerðum (EB) nr. 715/2007 og (EB) nr. 595/2009 og niðurfellingu tilskipunar 2007/46/EB, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 49/2022 frá 18. mars 2022.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2020/1054 frá 15. júlí 2020 um breytingu á reglugerð (EB) nr. 561/2006 að því er varðar lágmarkskröfur um daglegan og vikulegan hámarksaksturstíma, lágmarksvinnuhlé og daglegan og vikulegan hvíldartíma og reglugerð (ESB) nr. 165/2014 að því er varðar staðarákvörðun með aðstoð ökurita, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 78/2022 frá 18. mars 2022.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Tilskipunar Evrópuþingsins og ráðsins (ESB) 2018/645 frá 18. apríl 2018 um breytingu á tilskipun 2003/59/EB um grunnþjálfun og reglubundna þjálfun ökumanna tiltekinna öku­tækja til vöru- eða farþegaflutninga og á tilskipun ráðsins 2006/126/EB um ökuskírteini, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 155/2022 frá 29. apríl 2022.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglugerðar Evrópuþingsins og ráðsins (ESB) 2022/1280 frá 18. júlí 2022 um sértækar og tímabundnar ráðstafanir, í ljósi innrásar Rússlands í Úkraínu, varðandi skjöl fyrir ökumenn sem gefin eru út í Úkraínu í samræmi við löggjöf landsins, sbr. ákvörðun sameiginlegu EES-nefndarinnar nr. 113/2023 frá 28. apríl 2023.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       <p style="text-align: justify;">Þrátt fyrir 1. mgr. skal c-liður a-liðar 1. gr. öðlast gildi 1. júlí 2026.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="immediate"/>
+      <intent action="enact" action-xpath="//art[contains(concat(',', @nr, ','), ',1,')]//*[self::numart or self::art-chapter][@nr='a' or @nr='A']//*[self::numart or self::art-chapter][@nr='c' or @nr='C']" timing="2026-07-01" timing-type="specific"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

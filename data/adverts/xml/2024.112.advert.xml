@@ -12,6 +12,25 @@
         <p style="text-align: justify;">2. mgr. 2. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Ráðherra er heimilt að ákveða með reglugerð að verkefni, sem falin eru sýslumanni samkvæmt lögum þessum, verði á hendi eins eða fleiri sýslumanna.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='2']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='2']">2. mgr. 2. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að ákveða að skráning trúfélaga og lífsskoðunarfélaga skv. 1. mgr. verði á hendi eins sýslumanns.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að ákveða með reglugerð að verkefni, sem falin eru sýslumanni samkvæmt lögum þessum, verði á hendi eins eða fleiri sýslumanna.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -24,6 +43,122 @@
         <p style="text-align: justify;">Á aðalfundi skulu kosnir einn eða fleiri endurskoðendur, endurskoðunarfyrirtæki, skoðunarmenn eða trúnaðarmenn úr hópi félagsmanna til að yfirfara ársreikning og varamenn þeirra. Ákvæði laga um endurskoðendur og endurskoðun gilda um hæfi og störf endurskoðenda og endurskoð­unar­fyrirtækja og ákvæði laga um bókhald gilda um hæfi og störf skoðunarmanna og trúnaðar­manna úr hópi félagsmanna. Trúnaðarmenn sem kosnir eru úr hópi félagsmanna mega ekki sitja í stjórn félagsins eða gegna stjórnunarstörfum fyrir það.</p>
         <p style="text-align: justify;">Ársreikningur skal fullgerður og undirritaður eigi síðar en sex mánuðum eftir lok reikningsárs. Ársreikningur skal lagður fram á aðalfundi félags til samþykktar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]">4. gr.</address>
+          <existing>
+            <art nr="4">
+              <nr-title>4. gr.</nr-title>
+              <name>Umsókn um skráningu.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Trúfélag eða lífsskoðunarfélag sem óskar skráningar skal senda sýslumanni umsókn um skráningu.</sen>
+                  <sen nr="2">Með umsókn skulu fylgja upplýsingar um:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">heiti félags og heimilisfang,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">nákvæmt félagatal, þar sem fram koma nöfn, kennitölur og heimili félagsmanna,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">stefnuskrá og/eða trúarkenningar félagsins og tengsl þeirra við önnur trúarbrögð, trúarhreyfingar eða aðrar lífsskoðanir eða lífsskoðunarfélög,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="4" nr-type="numeric">
+                    <nr-title>4.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">lög félagsins og allar aðrar reglur sem kunna að gilda um ráðstöfun fjármuna félagsins,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="5" nr-type="numeric">
+                    <nr-title>5.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">nöfn stjórnarmanna og forstöðumanns,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="6" nr-type="numeric">
+                    <nr-title>6.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">starfsemi félagsins, svo sem reglulegt samkomuhald eða annað sem gefur til kynna að starfsemi þess sé stöðug og virk.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Sýslumaður getur enn fremur, ef tilefni er til, óskað nánari upplýsinga um skipulag trúfélags eða lífsskoðunarfélags, starfshætti, félagssvæði, skiptingu í söfnuði eða deildir ef því er að skipta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Áður en trúfélag eða lífsskoðunarfélag er skráð skal félagið tilnefna forstöðumann sem er ábyrgur gagnvart sýslumanni fyrir því að farið sé að ákvæðum laga þessara.</sen>
+                  <sen nr="2">Um hæfi forstöðumanns gilda ákvæði 7. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Áður en leyfi er veitt til skráningar trúfélags eða lífsskoðunarfélags skal leita álits nefndar sem ráðherra skipar.</sen>
+                  <sen nr="2">Einn nefndarmaður er skipaður samkvæmt tilnefningu lagadeildar hér á landi á háskólastigi, og skal hann vera formaður nefndarinnar, annar tilnefndur af félags- og mannvísindadeild Háskóla Íslands, sá þriðji tilnefndur af guðfræði- og trúarbragðafræðideild Háskóla Íslands og sá fjórði tilnefndur af sagnfræði- og heimspekideild Háskóla Íslands.</sen>
+                  <sen nr="3">Falli atkvæði nefndarmanna jafnt skal atkvæði formanns nefndarinnar hafa tvöfalt vægi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.006.html" law-nr="6" law-year="2013" law-art="5" nr="1">
+                  <footnote-sen>L. 6/2013, 5. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélag" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="heiti félags og heimilisfang" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="stefnuskrá og/eða trúarkenningar félagsins og tengsl þeirra við önnur trúarbrögð, trúarhreyfingar eða aðrar lífsskoðanir eða lífsskoðunarfélög" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélags" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélag" instance-num="1"/>
+                  <location type="range" string-length="547">
+                    <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.145.html" law-nr="145" law-year="2013" law-art="20" nr="2">
+                  <footnote-sen>L. 145/2013, 20. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="Sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="4a">
+              <nr-title>4. gr. a</nr-title>
+              <name>Bókhald og ársreikningar skráðra trúfélaga og lífsskoðunarfélaga.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Skráðum trúfélögum og lífsskoðunarfélögum er skylt að færa bókhald og semja ársreikning í samræmi við lög um bókhald.</sen>
+                  <sen nr="2">Stjórn félags og forstöðumaður skulu semja ársreikning fyrir hvert reikningsár í samræmi við þau lög.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Á aðalfundi skulu kosnir einn eða fleiri endurskoðendur, endurskoðunarfyrirtæki, skoðunarmenn eða trúnaðarmenn úr hópi félagsmanna til að yfirfara ársreikning og varamenn þeirra.</sen>
+                  <sen nr="2">Ákvæði laga um endurskoðendur og endurskoðun gilda um hæfi og störf endurskoðenda og endurskoðunarfyrirtækja og ákvæði laga um bókhald gilda um hæfi og störf skoðunarmanna og trúnaðarmanna úr hópi félagsmanna.</sen>
+                  <sen nr="3">Trúnaðarmenn sem kosnir eru úr hópi félagsmanna mega ekki sitja í stjórn félagsins eða gegna stjórnunarstörfum fyrir það.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ársreikningur skal fullgerður og undirritaður eigi síðar en sex mánuðum eftir lok reikningsárs.</sen>
+                  <sen nr="2">Ársreikningur skal lagður fram á aðalfundi félags til samþykktar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -33,6 +168,63 @@
           <li style="text-align: justify;">Við bætast tvær nýjar málsgreinar, svohljóðandi:<br/>Skráð trúfélög og lífsskoðunarfélög skulu árlega fyrir lok ágústmánaðar senda sýslumanni áritaðan ársreikning fyrir næstliðið ár.<br/>Sýslumanni er á hverjum tíma heimilt að kalla eftir gögnum og upplýsingum sem nauðsynlegar eru í ljósi eftirlitsskyldu hans. Þetta kunna m.a. að vera gögn varðandi hæfi forstöðumanns eða stjórnarmanna, upplýsingar er varða samkomur og athafnir félags, tengsl félagsins við önnur félög og/eða tengsl við atvinnurekstur.</li>
         </ol>
       </original>
+      <intents common-address="5. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 5. gr.</address>
+          <existing>
+            <sen nr="2">Sérstaklega skal gera grein fyrir breytingum á félagatali og ráðstöfun fjármuna félags.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Sérstaklega skal gera grein fyrir breytingum á starfsemi og skipulagi félags og breytingum í stjórn félags.</sen>
+          </inner>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]">5. gr.</address>
+          <existing>
+            <art nr="5">
+              <nr-title>5. gr.</nr-title>
+              <name>Eftirlit með skráðum trúfélögum og lífsskoðunarfélögum.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Skráð trúfélög og lífsskoðunarfélög skulu árlega fyrir lok marsmánaðar senda sýslumanni skýrslu um starfsemi sína á næstliðnu ári og jafnframt gera grein fyrir breytingum sem orðið hafa á þeim atriðum sem upplýsingar ber að veita um í umsókn um skráningu.</sen>
+                  <sen nr="2">Sérstaklega skal gera grein fyrir breytingum á félagatali og ráðstöfun fjármuna félags.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynna skal sýslumanni þegar í stað um skipun, flutning og starfslok forstöðumanns og um tilnefningu nýs forstöðumanns.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.006.html" law-nr="6" law-year="2013" law-art="6" nr="1">
+                  <footnote-sen>L. 6/2013, 6. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/name[1]" string-length="0"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="trúfélög og lífsskoðunarfélög skulu" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="félags" middle-punctuation="." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.145.html" law-nr="145" law-year="2013" law-art="20" nr="2">
+                  <footnote-sen>L. 145/2013, 20. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Skráð trúfélög og lífsskoðunarfélög skulu árlega fyrir lok ágústmánaðar senda sýslumanni áritaðan ársreikning fyrir næstliðið ár.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Sýslumanni er á hverjum tíma heimilt að kalla eftir gögnum og upplýsingum sem nauðsynlegar eru í ljósi eftirlitsskyldu hans.</sen>
+                <sen nr="2">Þetta kunna m.a. að vera gögn varðandi hæfi forstöðumanns eða stjórnarmanna, upplýsingar er varða samkomur og athafnir félags, tengsl félagsins við önnur félög og/eða tengsl við atvinnurekstur.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -47,6 +239,94 @@
         <p style="text-align: justify;">Óinnheimtar stjórnvaldssektir falla ekki niður þótt aðilar verði síðar við kröfum sýslumanns.</p>
         <p style="text-align: justify;">Heimilt er að lækka eða fella niður stjórnvaldssekt skv. 1. og 2. mgr. hafi óviðráðanleg atvik sannanlega valdið því að skráð trúfélag eða lífsskoðunarfélag hafi ekki staðið skil á ársreikningi innan þess frests sem kveðið er á um í 5. gr. Heimild sýslumanns er háð því skilyrði að ársreikningi skráðs trúfélags eða lífsskoðunarfélags hafi verið skilað til sýslumanns í samræmi við ákvæði laga þessara.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]">6. gr.</address>
+          <existing>
+            <art nr="6">
+              <nr-title>6. gr.</nr-title>
+              <name>Skráning felld úr gildi.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ef skilyrði skráningar eru ekki lengur fyrir hendi eða trúfélag eða lífsskoðunarfélag vanrækir skyldur sínar samkvæmt lögum skal sýslumaður veita félaginu skriflega viðvörun og setja því frest til að bæta úr því sem áfátt er.</sen>
+                  <sen nr="2">Skal fresturinn ekki vera skemmri en einn mánuður.</sen>
+                  <sen nr="3">Ef ekki er bætt úr því innan frestsins getur sýslumaður ákveðið að fella skráningu trúfélags eða lífsskoðunarfélags úr gildi.</sen>
+                  <sen nr="4">Áður en skráning er felld úr gildi skal gefa stjórn félags kost á að tjá sig um málið.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar skráð trúfélag eða lífsskoðunarfélag er lagt niður eða starfar af öðrum ástæðum ekki lengur sem skráð trúfélag eða lífsskoðunarfélag er þeim sem annast vörslu embættisbóka, sem því er falið að færa, skylt að afhenda þær sýslumanni.</sen>
+                  <sen nr="2">Embættisbækurnar skulu afhentar Þjóðskjalasafni til varðveislu eftir sömu reglum og gilda um önnur opinber gögn.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Sýslumaður skal auglýsa niðurfellingu skráningar í Lögbirtingablaði og miðast réttaráhrif hennar við það.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.006.html" law-nr="6" law-year="2013" law-art="7" nr="1">
+                  <footnote-sen>L. 6/2013, 7. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélag" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" words="eða lífsskoðunarfélags" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélag" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélag" instance-num="2"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.145.html" law-nr="145" law-year="2013" law-art="20" nr="2">
+                  <footnote-sen>L. 145/2013, 20. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" middle-punctuation="." instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Sýslumaður" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="6a">
+              <nr-title>6. gr. a</nr-title>
+              <name>Stjórnvaldssektir.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Sýslumaður skal leggja stjórnvaldssektir á þau skráðu trúfélög og lífsskoðunarfélög sem vanrækja skyldu samkvæmt lögum þessum til að standa skil á ársreikningi innan þess frests sem kveðið er á um í 5. gr.</sen>
+                  <sen nr="2">Þegar frestur skv. 5. gr. til að skila ársreikningi er liðinn skal sýslumaður leggja á viðkomandi félag stjórnvaldssekt að fjárhæð 600.000 kr. og jafnframt krefjast úrbóta.</sen>
+                  <sen nr="3">Ákvæði 1. mgr. 6. gr. gildir ekki um álagningu stjórnvaldssekta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Skili skráð trúfélag eða lífsskoðunarfélag ársreikningi innan 30 daga frá tilkynningu um álagningu stjórnvaldssektar skal sýslumaður lækka sektarfjárhæð um 90%.</sen>
+                  <sen nr="2">Ef úrbætur eru gerðar innan tveggja mánaða frá tilkynningu um álagningu sektar skal lækka sektarfjárhæðina um 60%.</sen>
+                  <sen nr="3">Ef úrbætur eru gerðar innan þriggja mánaða frá tilkynningu um álagningu sektar skal lækka sektarfjárhæðina um 40%.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnvaldssektir eru aðfararhæfar.</sen>
+                  <sen nr="2">Sektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnvaldssektum verður beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Óinnheimtar stjórnvaldssektir falla ekki niður þótt aðilar verði síðar við kröfum sýslumanns.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að lækka eða fella niður stjórnvaldssekt skv. 1. og 2. mgr. hafi óviðráðanleg atvik sannanlega valdið því að skráð trúfélag eða lífsskoðunarfélag hafi ekki staðið skil á ársreikningi innan þess frests sem kveðið er á um í 5. gr.</sen>
+                  <sen nr="2">Heimild sýslumanns er háð því skilyrði að ársreikningi skráðs trúfélags eða lífsskoðunarfélags hafi verið skilað til sýslumanns í samræmi við ákvæði laga þessara.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -57,6 +337,62 @@
           <li style="text-align: justify;">Í stað „3. mgr.“ í 2. málsl. 5. mgr. kemur: 5. mgr.</li>
         </ol>
       </original>
+      <intents common-address="7. gr.">
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='1']">1. mgr. 7. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Forstöðumaður skráðs trúfélags eða lífsskoðunarfélags skal ekki vera yngri en 25 ára.</sen>
+                <sen nr="2">Hann skal að öðru leyti fullnægja almennum hæfisskilyrðum til að gegna störfum á vegum hins opinbera, öðrum en þeim sem varða ríkisfang.</sen>
+                <sen nr="3">Enn fremur er skilyrði að forstöðumaður eigi til sóknar að gjalda hér á landi samkvæmt lögum um sóknargjöld.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Nú hefur einstaklingur ekki forræði á búi sínu og er hann þá ekki bær til að gegna hlutverki forstöðumanns félags.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Hafi einstaklingur á síðustu þremur árum í tengslum við atvinnurekstur hlotið dóm fyrir verknað sem brýtur gegn almennum hegningarlögum, lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, lögum um hlutafélög, lögum um einkahlutafélög, lögum um bókhald, lögum um ársreikninga, lögum um gjaldþrotaskipti o.fl. eða lögum um staðgreiðslu opinberra gjalda er hann ekki bær til að gegna hlutverki forstöðumanns félags.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='4']">4. mgr. 7. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Forstöðumaður skráðs trúfélags eða lífsskoðunarfélags er háður ábyrgð opinbers starfsmanns í framkvæmd þeirra starfa sem honum eru falin samkvæmt ákvæðum laga.</sen>
+                <sen nr="2">Vanræki hann skyldur sínar samkvæmt ákvæðum laga eða reglugerða settra samkvæmt þeim skal sýslumaður veita honum skriflega viðvörun og tilkynna það stjórn trúfélagsins eða lífsskoðunarfélagsins.</sen>
+                <sen nr="3">Ef ekki er bætt úr eða ef um mjög alvarlegt brot er að ræða getur sýslumaður svipt hann rétti til að framkvæma þau störf sem honum eru falin samkvæmt ákvæðum laga.</sen>
+                <sen nr="4">Sama á við ef hann á annan hátt missir skilyrði til að gegna starfi forstöðumanns.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Forstöðumaður skal á hverjum tíma uppfylla hæfisskilyrði skv. 1.–5. mgr.</sen>
+                <sen nr="2">Missi forstöðumaður hæfi skal hann upplýsa sýslumann um það.</sen>
+                <sen nr="3">Sýslumaður getur á hverjum tíma tekið hæfi forstöðumanns til sérstakrar skoðunar.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='5']//sen[@nr='2']">2. málsl. 5. mgr. 7. gr.</address>
+          <existing>
+            <sen nr="2">Um hæfi umræddra einstaklinga gilda sömu hæfisskilyrði og reglur og um forstöðumenn skv. 1.–3. mgr.</sen>
+          </existing>
+          <text-from>3. mgr.</text-from>
+          <text-to>5. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -69,6 +405,107 @@
         <p style="text-align: justify;">Hafi einstaklingur á síðustu þremur árum hlotið dóm í tengslum við atvinnurekstur fyrir verknað sem brýtur gegn almennum hegningarlögum, lögum um aðgerðir gegn peningaþvætti og fjár­mögnun hryðjuverka, lögum um hlutafélög, lögum um einkahlutafélög, lögum um bókhald, lögum um ársreikninga, lögum um gjaldþrotaskipti o.fl. eða lögum um staðgreiðslu opinberra gjalda er hann ekki bær til að sitja í stjórn félags.</p>
         <p style="text-align: justify;">Stjórnarmenn skulu á hverjum tíma uppfylla hæfisskilyrði samkvæmt þessari grein. Missi stjórnar­­menn hæfi skulu þeir upplýsa sýslumann um það. Sýslumaður getur á hverjum tíma tekið hæfi stjórnar­manna til sérstakrar skoðunar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]">7. gr.</address>
+          <existing>
+            <art nr="7">
+              <nr-title>7. gr.</nr-title>
+              <name>Forstöðumenn skráðra trúfélaga og lífsskoðunarfélaga.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Forstöðumaður skráðs trúfélags eða lífsskoðunarfélags skal ekki vera yngri en 25 ára.</sen>
+                  <sen nr="2">Hann skal að öðru leyti fullnægja almennum hæfisskilyrðum til að gegna störfum á vegum hins opinbera, öðrum en þeim sem varða ríkisfang.</sen>
+                  <sen nr="3">Enn fremur er skilyrði að forstöðumaður eigi til sóknar að gjalda hér á landi samkvæmt lögum um sóknargjöld.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Áður en forstöðumaður trúfélags eða lífsskoðunarfélags tekur til starfa skal hann senda sýslumanni skriflega yfirlýsingu um að hann muni vinna af samviskusemi þau störf sem honum eru í því starfi falin samkvæmt lögum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Forstöðumaður skal færa þær embættisbækur sem sýslumaður fyrirskipar.</sen>
+                  <sen nr="2">Hann gefur jafnframt út fullgild embættisvottorð um það efni sem í embættisbækurnar er skráð og um þau embættisverk sem hann hefur unnið.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Forstöðumaður skráðs trúfélags eða lífsskoðunarfélags er háður ábyrgð opinbers starfsmanns í framkvæmd þeirra starfa sem honum eru falin samkvæmt ákvæðum laga.</sen>
+                  <sen nr="2">Vanræki hann skyldur sínar samkvæmt ákvæðum laga eða reglugerða settra samkvæmt þeim skal sýslumaður veita honum skriflega viðvörun og tilkynna það stjórn trúfélagsins eða lífsskoðunarfélagsins.</sen>
+                  <sen nr="3">Ef ekki er bætt úr eða ef um mjög alvarlegt brot er að ræða getur sýslumaður svipt hann rétti til að framkvæma þau störf sem honum eru falin samkvæmt ákvæðum laga.</sen>
+                  <sen nr="4">Sama á við ef hann á annan hátt missir skilyrði til að gegna starfi forstöðumanns.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Forstöðumönnum skráðra trúfélaga og lífsskoðunarfélaga er heimilt að tilnefna einstaklinga innan þess félags sem þeir veita forstöðu til að annast þau embættisverk sem forstöðumanni skráðs trúfélags eða lífsskoðunarfélags eru falin samkvæmt lögum.</sen>
+                  <sen nr="2">Um hæfi umræddra einstaklinga gilda sömu hæfisskilyrði og reglur og um forstöðumenn skv. 1.–3. mgr.</sen>
+                  <sen nr="3">Sýslumaður getur, samkvæmt umsókn forstöðumanns, veitt tilnefndum einstaklingum löggildingu til þess að gegna verkum forstöðumanns, en ekki lengur en til þriggja ára í senn.</sen>
+                  <sen nr="4">Tilnefndir einstaklingar skulu starfa á ábyrgð og í umboði forstöðumanns viðkomandi skráðs trúfélags eða lífsskoðunarfélags.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Sýslumaður skal upplýsa Þjóðskrá Íslands um þá einstaklinga innan skráðra trúfélaga og lífsskoðunarfélaga sem hafa heimild til þess að annast embættisverk forstöðumanns viðkomandi félags.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.006.html" law-nr="6" law-year="2013" law-art="8" nr="1">
+                  <footnote-sen>L. 6/2013, 8. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/name[1]" string-length="0"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélags" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélags" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélags" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" words="eða lífsskoðunarfélagsins" middle-punctuation="." instance-num="1"/>
+                  <location type="range" string-length="831">
+                    <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.145.html" law-nr="145" law-year="2013" law-art="20" nr="2">
+                  <footnote-sen>L. 145/2013, 20. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='3']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='3']" words="Sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" words="Sýslumaður" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="7a">
+              <nr-title>7. gr. a</nr-title>
+              <name>Stjórnarmenn skráðra trúfélaga og lífsskoðunarfélaga.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnarmenn skráðra trúfélaga og lífsskoðunarfélaga skulu vera lögráða og minnst helmingur stjórnarmanna skal vera búsettur hér á landi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Nú hefur einstaklingur ekki forræði á búi sínu og er hann þá ekki bær til að sitja í stjórn félags.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi einstaklingur á síðustu þremur árum hlotið dóm í tengslum við atvinnurekstur fyrir verknað sem brýtur gegn almennum hegningarlögum, lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, lögum um hlutafélög, lögum um einkahlutafélög, lögum um bókhald, lögum um ársreikninga, lögum um gjaldþrotaskipti o.fl. eða lögum um staðgreiðslu opinberra gjalda er hann ekki bær til að sitja í stjórn félags.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnarmenn skulu á hverjum tíma uppfylla hæfisskilyrði samkvæmt þessari grein.</sen>
+                  <sen nr="2">Missi stjórnarmenn hæfi skulu þeir upplýsa sýslumann um það.</sen>
+                  <sen nr="3">Sýslumaður getur á hverjum tíma tekið hæfi stjórnarmanna til sérstakrar skoðunar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="108" affected-law-year="1999">
@@ -78,6 +515,61 @@
         </p>
         <p style="text-align: justify;">Það varðar sektum eða fangelsi allt að tveimur árum að skýra vísvitandi rangt eða villandi frá högum félags eða öðru er það varðar í opinberri auglýsingu eða tilkynningu, skýrslum, ársreikningi eða tilkynningum til sýslumanns.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']" action-law-nr="108" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]">9. gr.</address>
+          <existing>
+            <art nr="9">
+              <nr-title>9. gr.</nr-title>
+              <name>Innganga og úrsögn úr trúfélagi eða lífsskoðunarfélagi og úrsögn úr þjóðkirkjunni.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Um inngöngu í og aðild að trúfélagi eða lífsskoðunarfélagi gilda þau ákvæði sem lög og samþykktir þeirra mæla fyrir um.</sen>
+                  <sen nr="2">Forstöðumaður sem í hlut á skal gæta þess að skilyrðum laga sé fullnægt og að sá sem leitar inngöngu heyri ekki samtímis til öðru skráðu trúfélagi, lífsskoðunarfélagi eða þjóðkirkjunni.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Úrsögn úr skráðu trúfélagi, lífsskoðunarfélagi eða þjóðkirkjunni skal beint skriflega eða með persónulegri tilkynningu til forstöðumanns sem í hlut á en hann skal gæta þess að skilyrðum laganna sé fullnægt.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Forstöðumaður skal skrá inngöngu í eða úrsögn úr trúfélagi eða lífsskoðunarfélagi og láta í té vottorð því til staðfestu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Að því leyti sem tilkynning til þjóðskrár um inngöngu í og úrsögn úr trúfélagi eða lífsskoðunarfélagi ræður skráningu vegna sérstakra atriða í sambandi við aðild að félagi, svo sem álagningar opinberra gjalda, ræðst gildistími í þeim atriðum af lögmætri tilkynningu til þjóðskrár.</sen>
+                  <sen nr="2">Geta þeir sem hlut eiga að máli annast slíka tilkynningu með framvísun vottorðs skv. 3. mgr.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.006.html" law-nr="6" law-year="2013" law-art="10" nr="1">
+                  <footnote-sen>L. 6/2013, 10. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/name[1]" string-length="0"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélagi" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="lífsskoðunarfélagi" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="lífsskoðunarfélagi" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélagi" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" words="eða lífsskoðunarfélagi" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="9a">
+              <nr-title>9. gr. a</nr-title>
+              <name>Viðurlög.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Það varðar sektum eða fangelsi allt að tveimur árum að skýra vísvitandi rangt eða villandi frá högum félags eða öðru er það varðar í opinberri auglýsingu eða tilkynningu, skýrslum, ársreikningi eða tilkynningum til sýslumanns.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -86,6 +578,17 @@
       <original affected-law-nr="19" affected-law-year="1988">
         <p style="text-align: justify;">2. málsl. 1. mgr. 1. gr. laganna orðast svo: Ráðherra er heimilt að ákveða með reglugerð að verkefni, sem falin eru sýslumanni samkvæmt lögum þessum, verði á hendi eins eða fleiri sýslu­manna.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 1. gr.</address>
+          <existing>
+            <sen nr="2">Ráðherra ákveður hvaða sýslumaður fer með framkvæmd laga þessara.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Ráðherra er heimilt að ákveða með reglugerð að verkefni, sem falin eru sýslumanni samkvæmt lögum þessum, verði á hendi eins eða fleiri sýslumanna.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="19" affected-law-year="1988">
@@ -100,6 +603,95 @@
         <p style="text-align: justify;">Á stjórnarfundi skulu kosnir einn eða fleiri endurskoðendur, endurskoðunarfyrirtæki, skoð­unar­menn eða trúnaðarmenn til að yfirfara ársreikning og varamenn þeirra. Ákvæði laga um endur­skoð­endur og endurskoðun gilda um hæfi og störf endurskoðenda og endurskoð­unar­fyrirtækja og ákvæði laga um bókhald gilda um hæfi og störf skoðunarmanna og trúnaðar­manna. Trúnaðarmenn mega ekki sitja í stjórn eða gegna stjórnunarstörfum fyrir sjóðinn eða stofnun­ina.</p>
         <p style="text-align: justify;">Ársreikningur skal fullgerður og undirritaður eigi síðar en sex mánuðum eftir lok reikningsárs. Ársreikningur skal lagður fram á stjórnarfundi sjóðs eða stofnunar til samþykktar.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="art[@nr='2']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]">2. gr.</address>
+          <existing>
+            <art nr="2">
+              <nr-title>2. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Stofnfé sjóðs eða stofnunar skal vera 300.000 kr. hið minnsta miðað við lánskjaravísitölu þá sem í gildi er við gildistöku laganna og breytist síðan árlega í samræmi við þá vísitölu í janúarmánuði.</sen>
+                  <sen nr="2">Skal sýslumaður auglýsa árlega lágmarksupphæð.</sen>
+                  <sen nr="3">Heimilt skal þó ef sérstakar ástæður þykja mæla með að stofnfé nemi lægri upphæð.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Í skipulagsskrá skal greina stofnfé og hvaðan það er runnið, svo og hvert skuli vera markmið sjóðs eða stofnunar og hvernig fé skuli varið til að ná þeim markmiðum.</sen>
+                  <sen nr="2">Þá skal greina skýrt hvernig stjórn sjóðs eða stofnunar skal skipuð og hver bera skuli ábyrgð á fjárvörslu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Sýslumaður skal halda skrá um alla sjóði og stofnanir sem starfa samkvæmt staðfestri skipulagsskrá og nefnist hún sjóðaskrá.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Staðfestar skipulagsskrár og breytingar á þeim skal birta í B-deild Stjórnartíðinda.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="2" nr="1">
+                  <footnote-sen>L. 143/2006, 2. gr.</footnote-sen>
+                  <location type="range" xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="art[@nr='2']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Sýslumaður" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="2a">
+              <nr-title>2. gr. a.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnarmenn sjóða og stofnana skulu vera lögráða og hafa forræði á búi sínu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi einstaklingur á síðustu þremur árum hlotið dóm í tengslum við atvinnurekstur fyrir verknað sem brýtur gegn almennum hegningarlögum, lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka, lögum um hlutafélög, lögum um einkahlutafélög, lögum um bókhald, lögum um ársreikninga, lögum um gjaldþrotaskipti o.fl. eða lögum um staðgreiðslu opinberra gjalda er hann ekki bær til að sitja í stjórn sjóðs eða stofnunar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar svo ber undir skulu hæfisskilyrði skv. 1. og 2. mgr. einnig eiga við um framkvæmdastjóra og skipaðan fjárvörsluaðila sjóðs eða stofnunar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnarmenn, framkvæmdastjóri og skipaður fjárvörsluaðili skulu á hverjum tíma uppfylla hæfisskilyrði samkvæmt þessari grein.</sen>
+                  <sen nr="2">Missi stjórnarmenn, framkvæmdastjóri eða skipaður fjárvörsluaðili hæfi skulu þeir upplýsa sýslumann um það.</sen>
+                  <sen nr="3">Sýslumaður getur á hverjum tíma tekið hæfi stjórnarmanna, framkvæmdastjóra og skipaðs fjárvörsluaðila til sérstakrar skoðunar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="2b">
+              <nr-title>2. gr. b.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Sjóði eða stofnun er skylt að færa bókhald og semja ársreikning í samræmi við lög um bókhald.</sen>
+                  <sen nr="2">Stjórn, framkvæmdastjóri eða fjárvörsluaðili sjóðs eða stofnunar skal semja ársreikning fyrir hvert reikningsár í samræmi við þau lög.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Á stjórnarfundi skulu kosnir einn eða fleiri endurskoðendur, endurskoðunarfyrirtæki, skoðunarmenn eða trúnaðarmenn til að yfirfara ársreikning og varamenn þeirra.</sen>
+                  <sen nr="2">Ákvæði laga um endurskoðendur og endurskoðun gilda um hæfi og störf endurskoðenda og endurskoðunarfyrirtækja og ákvæði laga um bókhald gilda um hæfi og störf skoðunarmanna og trúnaðarmanna.</sen>
+                  <sen nr="3">Trúnaðarmenn mega ekki sitja í stjórn eða gegna stjórnunarstörfum fyrir sjóðinn eða stofnunina.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ársreikningur skal fullgerður og undirritaður eigi síðar en sex mánuðum eftir lok reikningsárs.</sen>
+                  <sen nr="2">Ársreikningur skal lagður fram á stjórnarfundi sjóðs eða stofnunar til samþykktar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="10">
       <original affected-law-nr="19" affected-law-year="1988">
@@ -109,6 +701,39 @@
           <li style="text-align: justify;">Í stað orðsins „Ríkisendurskoðun“ í 3. mgr. kemur: Sýslumaður.</li>
         </ol>
       </original>
+      <intents common-address="3. gr.">
+        <intent action="replace" action-xpath="art[@nr='3']/subart[@nr='1']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']">1. mgr. 3. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Sá sem ábyrgð ber á sjóði eða stofnun skal eigi síðar en 30. júní ár hvert senda Ríkisendurskoðun reikning sjóðsins eða stofnunarinnar fyrir næstliðið ár ásamt skýrslu um hvernig fé sjóðs eða stofnunar hefur verið ráðstafað á því ári.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Sá sem ábyrgð ber á sjóði eða stofnun skal eigi síðar en 31. ágúst ár hvert senda sýslumanni áritaðan ársreikning fyrir næstliðið ár.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="art[@nr='3']/subart[@nr='3']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='3']">3. mgr. 3. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ríkisendurskoðun skal halda skrá yfir heildartekjur og gjöld svo og eignir og skuldir allra skráðra sjóða og stofnana, svo og athugasemdir sínar við framlagða reikninga.</sen>
+                <sen nr="2">Skal færa nýjar upplýsingar í skrána eftir því sem þær berast.</sen>
+                <sen nr="3">Aðgangur að upplýsingum í skránni er öllum frjáls og skal láta í té afrit af henni til þeirra sem eftir því leita.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Ríkisendurskoðun</text-from>
+          <text-to>Sýslumaður.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="19" affected-law-year="1988">
@@ -120,17 +745,141 @@
         <p style="text-align: justify;">Óinnheimtar stjórnvaldssektir falla ekki niður þótt aðilar verði síðar við kröfum sýslumanns.</p>
         <p style="text-align: justify;">Heimilt er að lækka eða fella niður stjórnvaldssekt skv. 1. og 2. mgr. hafi óviðráðanleg atvik sannanlega valdið því að sjóður eða stofnun hafi ekki staðið skil á ársreikningi innan þess frests sem kveðið er á um í 3. gr. Heimild sýslumanns er háð því skilyrði að ársreikningi sjóðs eða stofnunar hafi verið skilað til sýslumanns í samræmi við ákvæði laga þessara.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="art[@nr='4']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]">4. gr.</address>
+          <existing>
+            <art nr="4">
+              <nr-title>4. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi skýrsla og reikningur sjóðs eða stofnunar eigi borist í eitt ár eða reikningsskil reynast ófullkomin getur sýslumaður, að fengnum tillögum Ríkisendurskoðunar, falið lögreglustjóra að rannsaka fjárreiður sjóðsins eða stofnunarinnar og taka í sína vörslu skjöl og eignir.</sen>
+                  <sen nr="2">Skal lögreglustjóri hafa fjárvörsluna á hendi þar til sýslumaður hefur skipað málum á annan veg.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Kostnað, sem leiðir af rannsókn á fjárreiðum og vörslu sjóðs, má leggja á viðkomandi sjóð eða stofnun eftir mati sýslumanns og í samráði við Ríkisendurskoðun.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="2" nr="1">
+                  <footnote-sen>L. 143/2006, 2. gr.</footnote-sen>
+                  <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumaður" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="sýslumaður" instance-num="1"/>
+                  <location type="range" xpath="art[@nr='4']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanns" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="4">
+              <nr-title>4. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Nú vanrækir sjóður eða stofnun skyldu sína skv. 3. gr. til að senda sýslumanni ársreikning og skal þá sýslumaður leggja stjórnvaldssektir á þann sjóð eða stofnun.</sen>
+                  <sen nr="2">Þegar frestur skv. 3. gr. er liðinn skal sýslumaður leggja á viðkomandi sjóð eða stofnun stjórnvaldssekt að fjárhæð 600.000 kr. og jafnframt krefjast úrbóta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Skili sjóður eða stofnun ársreikningi innan 30 daga frá tilkynningu um álagningu stjórnvaldssektar skal sýslumaður lækka sektarfjárhæð um 90%.</sen>
+                  <sen nr="2">Ef úrbætur eru gerðar innan tveggja mánaða frá tilkynningu um álagningu sektar skal lækka sektarfjárhæðina um 60%.</sen>
+                  <sen nr="3">Ef úrbætur eru gerðar innan þriggja mánaða frá tilkynningu um álagningu sektar skal lækka sektarfjárhæðina um 40%.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnvaldssektir eru aðfararhæfar.</sen>
+                  <sen nr="2">Sektir renna í ríkissjóð að frádregnum kostnaði við innheimtuna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórnvaldssektum verður beitt óháð því hvort lögbrot eru framin af ásetningi eða gáleysi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Óinnheimtar stjórnvaldssektir falla ekki niður þótt aðilar verði síðar við kröfum sýslumanns.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að lækka eða fella niður stjórnvaldssekt skv. 1. og 2. mgr. hafi óviðráðanleg atvik sannanlega valdið því að sjóður eða stofnun hafi ekki staðið skil á ársreikningi innan þess frests sem kveðið er á um í 3. gr.</sen>
+                  <sen nr="2">Heimild sýslumanns er háð því skilyrði að ársreikningi sjóðs eða stofnunar hafi verið skilað til sýslumanns í samræmi við ákvæði laga þessara.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="12">
       <original affected-law-nr="19" affected-law-year="1988">
         <p style="text-align: justify;">2. málsl. 5. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//sen[@nr='2']">2. málsl. 5. gr.</address>
+          <existing>
+            <sen nr="2">Áður en tekin er afstaða til umsóknar um veðsetningu eða sölu slíkrar fasteignar skal leitað umsagnar Ríkisendurskoðunar.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="13">
       <original affected-law-nr="19" affected-law-year="1988">
         <p style="text-align: justify;">Á eftir 6. gr. laganna kemur ný grein, 6. gr. a, svohljóðandi:</p>
         <p style="text-align: justify;">Það varðar sektum eða fangelsi allt að tveimur árum að skýra vísvitandi rangt eða villandi frá högum sjóðs eða stofnunar eða öðru er sjóðinn eða stofnunina varðar í opinberri auglýsingu eða tilkynningu, skýrslum, ársreikningi eða tilkynningum til sýslumanns.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="art[@nr='6']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]">6. gr.</address>
+          <existing>
+            <art nr="6">
+              <nr-title>6. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Nú hafa þjóðfélagshættir og aðstæður breyst svo mjög frá því að skipulagsskrá sjóðs eða stofnunar var staðfest að markmiðum þeim, sem skipulagsskrá gerir ráð fyrir, verður eigi náð eða stjórn verður ekki skipuð samkvæmt ákvæðum hennar og er sýslumanni þá heimilt að breyta skipulagsskrá.</sen>
+                  <sen nr="2">Við slíka breytingu skal þess gætt að fara eftir óskum stofnenda svo sem unnt er.</sen>
+                  <sen nr="3">Ef unnt er skal fá samþykki stjórnar sjóðs eða stofnunar til breytinganna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Eftir sömu reglum og greinir í 1. mgr. er sýslumanni heimilt að sameina tvo eða fleiri sjóði eða stofnanir í einn sjóð eða stofnun.</sen>
+                  <sen nr="2">Þá er sýslumanni heimilt að leggja niður staðfestan sjóð eða stofnun en eignum skal varið til málefna sem skyld eru hinum upphaflegu markmiðum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Áður en breytt er staðfestri skipulagsskrá, sjóðir eða stofnanir sameinaðar eða lagðar niður skal ætíð leita umsagnar Ríkisendurskoðunar.</sen>
+                  <sen nr="2">Ríkisendurskoðun getur einnig átt frumkvæði að því að tekin verði afstaða til aðgerða samkvæmt framansögðu.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2006.143.html" law-nr="143" law-year="2006" law-art="2" nr="1">
+                  <footnote-sen>L. 143/2006, 2. gr.</footnote-sen>
+                  <location type="range" xpath="art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                  <location type="range" xpath="art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="sýslumanni" instance-num="1"/>
+                  <location type="range" xpath="art[@nr='6']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="sýslumanni" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="6a">
+              <nr-title>6. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Það varðar sektum eða fangelsi allt að tveimur árum að skýra vísvitandi rangt eða villandi frá högum sjóðs eða stofnunar eða öðru er sjóðinn eða stofnunina varðar í opinberri auglýsingu eða tilkynningu, skýrslum, ársreikningi eða tilkynningum til sýslumanns.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="14">
       <original affected-law-nr="19" affected-law-year="1988">
@@ -138,11 +887,22 @@
           <br/>
         </p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="19" action-law-year="1988">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//sen[@nr='2']">2. málsl. 7. gr.</address>
+          <existing>
+            <sen nr="2">Má í því sambandi og í samráði við Ríkisendurskoðun setja nánari reglur um samstarf sýslumanns og Ríkisendurskoðunar eftir því sem þurfa þykir.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="15">
       <original affected-law-nr="19" affected-law-year="1988">
         <p style="text-align: justify;">Lög þessi öðlast gildi 1. janúar 2025.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2025-01-01" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 5. júlí 2024.</signed-when>

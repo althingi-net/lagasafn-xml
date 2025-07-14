@@ -11,6 +11,34 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Lög þessi öðlast gildi 1. maí 2025. Ákvæði i–l-liðar 1. tölul. 12. gr. og ákvæði til bráðabirgða II öðlast gildi 1. janúar 2025.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="art[@nr='11']" action-law-nr="88" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]">11. gr.</address>
+        <existing>
+          <art nr="11">
+            <nr-title>11. gr.</nr-title>
+            <name>Gildistaka.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi öðlast gildi 1. janúar 2025.</sen>
+                <sen nr="2">Ákvæði til bráðabirgða I og III öðlast þó þegar gildi.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="11">
+            <nr-title>11. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi öðlast gildi 1. maí 2025.</sen>
+                <sen nr="2">Ákvæði i–l-liðar 1. tölul. 12. gr. og ákvæði til bráðabirgða II öðlast gildi 1. janúar 2025.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="88" affected-law-year="2024">
@@ -18,6 +46,15 @@
           <span style="color: #000000;">lögunum</span>
         </a>bætist: til fjögurra ára.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',I,')]//sen[@nr='1']">1. málsl. ákvæðis til bráðabirgða I</address>
+        <existing>
+          <sen nr="1">Skilyrði 3. mgr. 3. gr., um að ekki skuli kjósa fleiri en þrjá nýja fulltrúa í stjórn á hverjum tíma, á ekki við þegar kosið er í stjórn í fyrsta sinn.</sen>
+        </existing>
+        <text-to>til fjögurra ára.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="88" affected-law-year="2024">
@@ -27,6 +64,37 @@
       <p style="text-align: justify;">Við samþykkt laga þessara skal hefja undirbúning að stofnun Mannréttindastofnunar Íslands, þar á meðal skal Alþingi kjósa fimm einstaklinga í stjórn til eins árs svo skjótt sem verða má og eigi síðar en fyrir lok 155. löggjafarþings. Skilyrði 3. mgr. 3. gr., um að ekki skuli kjósa fleiri en þrjá nýja fulltrúa í stjórn á hverjum tíma, á ekki við um kosningu samkvæmt þessu ákvæði.</p>
       <p style="text-align: justify;">Stjórn Mannréttindastofnunar Íslands skal halda stjórnskipunar- og eftirlitsnefnd upplýstri með reglubundnum hætti um framgang undirbúnings að stofnun Mannréttindastofnunar Íslands.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='III']" action-law-nr="88" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',III,')]">Ákvæði til bráðabirgða III</address>
+        <existing>
+          <art nr="III" roman-nr="3" number-type="roman">
+            <nr-title>III.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Við samþykkt laga þessara skal hefja undirbúning að stofnun Mannréttindastofnunar Íslands, þar á meðal með kosningu fimm einstaklinga í stjórn.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="III" roman-nr="3" number-type="roman">
+            <nr-title>III.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Við samþykkt laga þessara skal hefja undirbúning að stofnun Mannréttindastofnunar Íslands, þar á meðal skal Alþingi kjósa fimm einstaklinga í stjórn til eins árs svo skjótt sem verða má og eigi síðar en fyrir lok 155. löggjafarþings.</sen>
+                <sen nr="2">Skilyrði 3. mgr. 3. gr., um að ekki skuli kjósa fleiri en þrjá nýja fulltrúa í stjórn á hverjum tíma, á ekki við um kosningu samkvæmt þessu ákvæði.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Stjórn Mannréttindastofnunar Íslands skal halda stjórnskipunar- og eftirlitsnefnd upplýstri með reglubundnum hætti um framgang undirbúnings að stofnun Mannréttindastofnunar Íslands.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="88" affected-law-year="2024">
@@ -39,11 +107,72 @@
       <p style="text-align: justify;">b. (V.)</p>
       <p style="text-align: justify;">Frá 1. maí 2025 færast skjöl sem varða störf réttindagæslumanna fatlaðs fólks til Mann­réttinda­stofnunar Íslands.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="88" action-law-year="2024">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Skilyrði 3. mgr. 3. gr., um að ekki skuli kjósa fleiri en þrjá nýja fulltrúa í stjórn á hverjum tíma, á ekki við þegar kosið er í stjórn í fyrsta sinn.</sen>
+                  <sen nr="2">Þegar kosið er í stjórn í annað sinn skulu að lágmarki tveir og að hámarki þrír fulltrúar í stjórn vera kjörnir til fjögurra ára til viðbótar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Störf réttindagæslumanna og annars starfsfólks réttindagæslu fyrir fatlað fólk sem er með ráðningarsamband við félags- og vinnumarkaðsráðuneytið eru lögð niður frá 1. janúar 2025.</sen>
+                  <sen nr="2">Um réttindi og skyldur starfsfólks fer samkvæmt lögum um réttindi og skyldur starfsmanna ríkisins, nr. 70/1996.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Við samþykkt laga þessara skal hefja undirbúning að stofnun Mannréttindastofnunar Íslands, þar á meðal með kosningu fimm einstaklinga í stjórn.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="IV" roman-nr="4" number-type="roman">
+            <nr-title>IV.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Frá samþykkt laga þessara og fram til 1. maí 2025 skal það ráðuneyti sem fer með málefni réttindagæslu fyrir fatlað fólk tryggja að ekki verði rof á þjónustu réttindagæslu fyrir fatlað fólk.</sen>
+                <sen nr="2">Ráðuneytið skal tryggja samfellda þjónustu, m.a. með ráðningu starfsfólks tímabundið til að sinna réttindagæslu fatlaðs fólks og gerð tímabundins þjónustusamnings við Mannréttindaskrifstofu Íslands.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1"/>
+            </subart>
+          </art>
+          <art nr="V" roman-nr="5" number-type="roman">
+            <nr-title>V.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Frá 1. maí 2025 færast skjöl sem varða störf réttindagæslumanna fatlaðs fólks til Mannréttindastofnunar Íslands.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="88" affected-law-year="2024">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-12-05" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 28. nóvember 2024.</signed-when>
 </advert>

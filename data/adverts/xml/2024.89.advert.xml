@@ -17,6 +17,96 @@
         </li>
       </ol>
     </original>
+    <intents common-address="11. gr.">
+      <intent action="add" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='2']">2. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Námsmenn sem fá námslán úr Menntasjóði námsmanna skulu undirrita skuldabréf við lántöku teljist þeir tryggir lánþegar samkvæmt úthlutunarreglum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Uppfylli lánþegi ekki skilyrði um tryggan lánþega er heimilt að taka tillit til félagslegra aðstæðna lánþega sem skal útfæra nánar í úthlutunarreglum.</sen>
+        </inner>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='3'] | chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='5']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='5' or @nr='3']">3. og 5. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Þeir sem teljast ekki tryggir lánþegar geta lagt fram ábyrgðir sem Menntasjóðurinn telur viðunandi.</sen>
+              <sen nr="2">Ábyrgðir geta m.a. verið fasteignaveð, ábyrgðaryfirlýsing fjármálastofnunar eða yfirlýsing ábyrgðarmanns um sjálfskuldarábyrgð á endurgreiðslu námsláns með sömu skilmálum og lán lánþega er með, allt að tiltekinni fjárhæð.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Sjóðstjórn ákveður hvaða skilyrðum ábyrgðarmenn skuli fullnægja.</sen>
+              <sen nr="2">Ábyrgð ábyrgðarmanns, eins eða fleiri, getur fallið niður enda setji námsmaður aðra tryggingu sem sjóðstjórn metur fullnægjandi.</sen>
+              <sen nr="3">Ábyrgð ábyrgðarmanns fellur niður við andlát hans enda sé lánþegi í skilum við Menntasjóðinn.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+      <intent action="delete_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='4']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='4']">4. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Menntasjóðnum er heimilt að veita námslán allt að hámarksfjárhæð samkvæmt úthlutunarreglum eða að þeirri fjárhæð sem ábyrgð hefur verið veitt fyrir skv. 3. mgr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>eða að þeirri fjárhæð sem ábyrgð hefur verið veitt fyrir skv. 3. mgr.</text-from>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='11']/name[1]" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]">11. gr.</address>
+        <existing>
+          <art nr="11">
+            <nr-title>11. gr.</nr-title>
+            <name>Umsókn, samtímagreiðslur og ábyrgðarmenn.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Námsmaður skal sækja um námslán innan umsóknarfrests sem kveðið er á um í úthlutunarreglum.</sen>
+                <sen nr="2">Í umsókn skal tilgreint hvers konar námslán sótt er um og hvort óskað sé eftir fullu láni samkvæmt úthlutunarreglum eða lægri fjárhæð.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Námsmenn sem fá námslán úr Menntasjóði námsmanna skulu undirrita skuldabréf við lántöku teljist þeir tryggir lánþegar samkvæmt úthlutunarreglum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Þeir sem teljast ekki tryggir lánþegar geta lagt fram ábyrgðir sem Menntasjóðurinn telur viðunandi.</sen>
+                <sen nr="2">Ábyrgðir geta m.a. verið fasteignaveð, ábyrgðaryfirlýsing fjármálastofnunar eða yfirlýsing ábyrgðarmanns um sjálfskuldarábyrgð á endurgreiðslu námsláns með sömu skilmálum og lán lánþega er með, allt að tiltekinni fjárhæð.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Menntasjóðnum er heimilt að veita námslán allt að hámarksfjárhæð samkvæmt úthlutunarreglum eða að þeirri fjárhæð sem ábyrgð hefur verið veitt fyrir skv. 3. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Sjóðstjórn ákveður hvaða skilyrðum ábyrgðarmenn skuli fullnægja.</sen>
+                <sen nr="2">Ábyrgð ábyrgðarmanns, eins eða fleiri, getur fallið niður enda setji námsmaður aðra tryggingu sem sjóðstjórn metur fullnægjandi.</sen>
+                <sen nr="3">Ábyrgð ábyrgðarmanns fellur niður við andlát hans enda sé lánþegi í skilum við Menntasjóðinn.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Lánþegar geta valið um hvort námslán þeirra séu greidd út mánaðarlega eða í lok hverrar annar.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <name>Umsókn og samtímagreiðslur.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="60" affected-law-year="2020">
@@ -24,6 +114,24 @@
           <span style="color: #000000;">laganna</span>
         </a>bætast þrír nýir málsliðir, svohljóðandi: Hafi lánþegi lokið fyrsta ári í lánshæfu námi, í samræmi við það sem skipulag námsins gerir ráð fyrir, getur hann áunnið sér námsstyrk fyrir það nám, ákveði hann að skipta yfir í annað lánshæft nám, strax á næsta skólaári. Réttur til námsstyrksins er háður því að lánþegi ljúki síðara náminu í samræmi við það sem skipulag þess náms gerir ráð fyrir. Þessi réttur gildir aðeins einu sinni á þeim tíma sem lánþegi þiggur lán hjá Menntasjóði námsmanna.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='1']">1. mgr. 14. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Lánþegar sem stunda nám sem telst lánshæft skv. II. kafla ávinna sér námsstyrk ljúki þeir námi á þeim tíma sem skipulag námsins gerir ráð fyrir.</sen>
+              <sen nr="2">Námsstyrkur myndast einungis vegna náms sem er skipulagt í a.m.k. tvær annir og sem 60 ECTS-einingar eða ígildi þeirra.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="3">Hafi lánþegi lokið fyrsta ári í lánshæfu námi, í samræmi við það sem skipulag námsins gerir ráð fyrir, getur hann áunnið sér námsstyrk fyrir það nám, ákveði hann að skipta yfir í annað lánshæft nám, strax á næsta skólaári.</sen>
+          <sen nr="4">Réttur til námsstyrksins er háður því að lánþegi ljúki síðara náminu í samræmi við það sem skipulag þess náms gerir ráð fyrir.</sen>
+          <sen nr="5">Þessi réttur gildir aðeins einu sinni á þeim tíma sem lánþegi þiggur lán hjá Menntasjóði námsmanna.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="60" affected-law-year="2020">
@@ -36,6 +144,80 @@
         <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>Ráðherra sem fer með fjárreiður ríkisins setur reglugerð um nánari útfærslu á fjármögnun Menntasjóðs.</li>
       </ol>
     </original>
+    <intents common-address="34. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='34']/subart[@nr='1']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',34,')]//subart[@nr='1']">1. mgr. 34. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Menntasjóði námsmanna er heimilt að taka lán frá Endurlánum ríkissjóðs til að fjármagna lán til lánþega.</sen>
+              <sen nr="2">Menntasjóðnum er þó ekki heimilt að taka lán með útgáfu og sölu á skuldabréfum né öðrum endurgreiðanlegum skuldaviðurkenningum til almennings.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Menntasjóði námsmanna er eingöngu heimilt að taka lán frá Endurlánum ríkissjóðs til að fjármagna lán til lánþega.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='34']/subart[@nr='2']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',34,')]//subart[@nr='2']">2. mgr. 34. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Menntasjóðnum er heimilt að greiða inn á lán frá Endurlánum ríkissjóðs án viðbótarkostnaðar með samþykki fjármála- og efnahagsráðuneytisins.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='34']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',34,')]">34. gr.</address>
+        <existing>
+          <art nr="34">
+            <nr-title>34. gr.</nr-title>
+            <name>Fjármögnun Menntasjóðs námsmanna.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Menntasjóði námsmanna er heimilt að taka lán frá Endurlánum ríkissjóðs til að fjármagna lán til lánþega.</sen>
+                <sen nr="2">Menntasjóðnum er þó ekki heimilt að taka lán með útgáfu og sölu á skuldabréfum né öðrum endurgreiðanlegum skuldaviðurkenningum til almennings.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Menntasjóðnum er heimilt að greiða inn á lán frá Endurlánum ríkissjóðs án viðbótarkostnaðar með samþykki fjármála- og efnahagsráðuneytisins.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Menntasjóðurinn fær framlög til umsýslu og reksturs frá ríkinu.</sen>
+                <sen nr="2">Ríkið leggur jafnframt til fjárframlag vegna styrkgreiðslu til framfærslu barna, niðurfellingar á námslánum og ívilnana.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Sjóðstjórn skal árlega yfirfara og samþykkja fjárhagsáætlanir fyrir sjóðinn á næsta almanaksári með sama hætti og aðrar ríkisstofnanir.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Ársreikningar Menntasjóðsins skulu samþykktir af sjóðstjórn og endurskoðaðir af Ríkisendurskoðun.</sen>
+                <sen nr="2">Þeir skulu birtir í Stjórnartíðindum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra sem fer með fjárreiður ríkisins setur reglugerð um nánari útfærslu á fjármögnun Menntasjóðs.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="60" affected-law-year="2020">
@@ -44,6 +226,43 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga skal falla niður við gildistöku laga þessara. Ákvæðið nær til allra ábyrgða á skuldabréfum sjóðsins, hvort sem er vegna námslána, skuldabréfa vegna vanefnda lántaka, oflána eða af öðrum ástæðum.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">Ákvæði til bráðabirgða II</address>
+        <existing>
+          <art nr="II" roman-nr="2" number-type="roman">
+            <nr-title>II.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga skal falla niður við gildistöku laga þessara, enda sé lánþegi í skilum við Lánasjóð íslenskra námsmanna.</sen>
+                <sen nr="2">Sama gildir um ábyrgðir á námslánum sem eru í óskiptum dánarbúum og ábyrgðaryfirlýsingar fjármálafyrirtækja.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga fellur niður við andlát hans enda sé lánþegi í skilum við Lánasjóð íslenskra námsmanna.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Lánþegi þarf í tilvikum 1. og 2. mgr. ekki að fá annan ábyrgðarmann nema lánþegi teljist ekki tryggur samkvæmt úthlutunarreglum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="II" roman-nr="2" number-type="roman">
+            <nr-title>II.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga skal falla niður við gildistöku laga þessara.</sen>
+                <sen nr="2">Ákvæðið nær til allra ábyrgða á skuldabréfum sjóðsins, hvort sem er vegna námslána, skuldabréfa vegna vanefnda lántaka, oflána eða af öðrum ástæðum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="60" affected-law-year="2020">
@@ -52,11 +271,155 @@
         </a>bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
       <p style="text-align: justify;">Stjórn Menntasjóðs námsmanna skal senda ráðherra uppfærða tillögu að breytingum á úthlutunarreglum sjóðsins vegna lagabreytinga sem varða afnám ábyrgðarmannakerfis lána hjá sjóðnum og heimildarákvæðis til handa sjóðnum um mat á tryggum lánþegum, sem taki gildi eigi síðar en 1. september 2024.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="60" action-law-year="2020">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lánþegar sem eru í námi sem er lánshæft samkvæmt lögum um Lánasjóð íslenskra námsmanna, nr. 21/1992, við það tímamark er lög þessi koma til framkvæmda skulu halda rétti sínum.</sen>
+                  <sen nr="2">Skilyrði er að námslán hafi verið veitt lánþega á tímabilinu 1. janúar 2019 þar til lög þessi koma til framkvæmda.</sen>
+                  <sen nr="3">Réttur fellur niður sjö árum eftir gildistöku þessara laga.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Lánsréttur lánþega samkvæmt eldri lögum dregst frá lánsrétti samkvæmt lögum þessum.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga skal falla niður við gildistöku laga þessara, enda sé lánþegi í skilum við Lánasjóð íslenskra námsmanna.</sen>
+                  <sen nr="2">Sama gildir um ábyrgðir á námslánum sem eru í óskiptum dánarbúum og ábyrgðaryfirlýsingar fjármálafyrirtækja.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ábyrgð ábyrgðarmanns á námslánum teknum í tíð eldri laga fellur niður við andlát hans enda sé lánþegi í skilum við Lánasjóð íslenskra námsmanna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Lánþegi þarf í tilvikum 1. og 2. mgr. ekki að fá annan ábyrgðarmann nema lánþegi teljist ekki tryggur samkvæmt úthlutunarreglum.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lánþegar sem velja endurgreiðslu skv. 21. gr. laga þessara og eru jafnframt að endurgreiða námslán samkvæmt eldri lögum geta óskað eftir að haga endurgreiðslu með þeim hætti að þeir endurgreiði fyrst námslán samkvæmt lögum þessum.</sen>
+                  <sen nr="2">Á næsta almanaksári eftir að endurgreiðslu samkvæmt lögum þessum lýkur eða á að vera lokið skulu lánþegar hefja endurgreiðslu samkvæmt eldri lögum.</sen>
+                  <sen nr="3">Greiðslur samkvæmt eldri lögum frestast því þar til lán samkvæmt lögum þessum eiga að vera að fullu greidd.</sen>
+                  <sen nr="4">Eldri námslán bera vexti þrátt fyrir frestun á endurgreiðslu samkvæmt þessu ákvæði.</sen>
+                  <sen nr="5">Sé ábyrgðarmaður á einhverju námslánanna verður að afla samþykkis hans.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þeir sem skulda námslán við gildistöku laga þessara og taka námslán að nýju geta óskað eftir því að breyta eldri námslánum sínum til samræmis við ákvæði laga þessara um lánakjör og endurgreiðslur.</sen>
+                  <sen nr="2">Skilyrði slíkrar skuldbreytingar er að endurgreiðslur námslánanna séu sambærilegar, umsækjandi sé ekki í vanskilum með námslán sín og að slík umsókn berist Menntasjóði námsmanna fyrir 1. desember 2020.</sen>
+                  <sen nr="3">Sé ábyrgðarmaður á einhverju námslánanna verður að afla samþykkis hans.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði V. kafla laga þessara taka ekki til námslána sem tekin eru í tíð eldri laga.</sen>
+                  <sen nr="2">Nánar skal mæla fyrir um framkvæmd þessa í úthlutunarreglum.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="V" roman-nr="5" number-type="roman">
+              <nr-title>V.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. mgr. 21. gr. geta lánþegar sem hefja nám á tímabilinu 2020–2023 valið að endurgreiða námslán með tekjutengingu séu námslok áður eða á því ári þegar 40 ára aldri er náð.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Viðbótargreiðsla á námslánum, teknum í tíð eldri laga, miðast frá og með gildistöku laga þessara við ákveðinn hundraðshluta af tekjustofni ársins á undan endurgreiðsluári.</sen>
+                  <sen nr="2">Hundraðshluti þessi er eftirfarandi:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">3,4% á G-lánum.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">4,4% á R-lánum.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">3,4% á S-lánum.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Lánþegi getur óskað þess að umsaminn hundraðshluti haldist óbreyttur á námslánum teknum í tíð eldri laga.</sen>
+                  <sen nr="2">Skal umsókn þess efnis berast Menntasjóði námsmanna.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="VII" roman-nr="7" number-type="roman">
+              <nr-title>VII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lánþegum námslána, tekinna í tíð laga um Lánasjóð íslenskra námsmanna, skal frá og með gildistöku laga þessara veittur afsláttur ef greitt er inn á námslán umfram lögbundnar árlegar endurgreiðslur eða þau að fullu greidd.</sen>
+                  <sen nr="2">Hlutfall afsláttar ræðst af eftirstöðvum námsláns en skal þó ekki vera lægra en 5% og ekki hærra en 15%.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Lög þessi skulu endurskoðuð innan þriggja ára frá því að þau koma til framkvæmda.</sen>
+                  <sen nr="2">Ráðherra skal kynna niðurstöður endurskoðunarinnar eigi síðar en á haustþingi 2023.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="IX" roman-nr="9" number-type="roman">
+            <nr-title>IX.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Stjórn Menntasjóðs námsmanna skal senda ráðherra uppfærða tillögu að breytingum á úthlutunarreglum sjóðsins vegna lagabreytinga sem varða afnám ábyrgðarmannakerfis lána hjá sjóðnum og heimildarákvæðis til handa sjóðnum um mat á tryggum lánþegum, sem taki gildi eigi síðar en 1. september 2024.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="60" affected-law-year="2020">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

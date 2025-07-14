@@ -1,16 +1,38 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="9b53e14f-eb18-414c-9393-16590143dac4" year="2024" nr="106" published-date="2024-07-11" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="36" year="1994">36/1994</affected-law>
+  </affected-laws>
   <description>um breytingu á húsaleigulögum, nr. 36/1994 (húsnæðisöryggi og réttarstaða leigjenda).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">4. mgr. 3. gr. a<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo:</p>
       <p style="text-align: justify;">Þegar leigusali er lögaðili sem ekki er rekinn í hagnaðarskyni er honum heimilt að gera að skilyrði fyrir leigu íbúðarhúsnæðis að húsnæðisbætur og/eða sérstakur húsnæðisstuðningur frá sveitarfélagi, sem leigjandi kann að eiga rétt á, greiðist beint til leigusala á leigutímanum.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3a']/subart[@nr='4']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3a,')]//subart[@nr='4']">4. mgr. 3. gr. a</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Þegar leigusali er lögaðili sem ekki er rekinn í hagnaðarskyni er honum heimilt að gera að skilyrði fyrir leigu íbúðarhúsnæðis að húsnæðisbætur, sem leigjandi kann að eiga rétt á, séu greiddar beint til leigusala á leigutíma.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Þegar leigusali er lögaðili sem ekki er rekinn í hagnaðarskyni er honum heimilt að gera að skilyrði fyrir leigu íbúðarhúsnæðis að húsnæðisbætur og/eða sérstakur húsnæðisstuðningur frá sveitarfélagi, sem leigjandi kann að eiga rétt á, greiðist beint til leigusala á leigutímanum.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 5. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -19,46 +41,182 @@
         <li style="text-align: justify;">Í stað orðsins „húsnæðisgrunn“ í 2., 3., 5. og 7. mgr. kemur: leiguskrá húsnæðisgrunns.</li>
       </ol>
     </original>
+    <intents common-address="5. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 5. gr.</address>
+        <existing>
+          <sen nr="3">Um skráningarskyldu breytinga á leigufjárhæð á samningstíma fer skv. 4. mgr. 37. gr. og um afskráningu leigusamninga skv. 4. mgr.</sen>
+        </existing>
+        <text-from>4. mgr. 37. gr.</text-from>
+        <text-to>6. mgr. 37. gr.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='3'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='5'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='7']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='7' or @nr='5' or @nr='3' or @nr='2']">2., 3., 5. og 7. mgr. 5. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Hafi leigusamningur ekki verið skráður skv. 1. mgr. við afhendingu hins leigða er leigjanda heimilt að skrá leigusamning í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Samhliða skráningu leigusamnings í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar getur aðili leigusamnings óskað eftir að stofnunin miðli samningnum til sýslumanns til þinglýsingar.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Leigusamningar sem skráðir hafa verið í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar eru undanþegnir rétti almennings til aðgangs að gögnum samkvæmt ákvæði 5. gr. upplýsingalaga, nr. 140/2012.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um framkvæmd þessarar greinar, m.a. um skilyrði skráningar leigusamninga og breytinga á leigufjárhæð sem og afskráningar leigusamninga í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar, þar á meðal um þær upplýsingar sem veita skuli í því sambandi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>húsnæðisgrunn</text-from>
+        <text-to>leiguskrá húsnæðisgrunns.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Í stað tilvísunarinnar „4. mgr. 37. gr.“ í 1. og 5. mgr. 5. gr. a<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: 6. mgr. 37. gr.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/subart[@nr='1'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5a']/subart[@nr='5']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5a,')]//subart[@nr='5' or @nr='1']">1. og 5. mgr. 5. gr. a</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Húsnæðis- og mannvirkjastofnun getur lagt stjórnvaldssektir á hvern þann sem brýtur gegn skráningarskyldu skv. 1. mgr. 5. gr. um skráningu leigusamninga, 4. mgr. 5. gr. um afskráningu leigusamninga eða 4. mgr. 37. gr. um skráningu breytinga á leigufjárhæð.</sen>
+              <sen nr="2">Stjórnvaldssektir geta numið frá 10.000 kr. til 1.000.000 kr. fyrir hvert brot, eru aðfararhæfar og skulu renna í ríkissjóð að frádregnum kostnaði við álagningu og innheimtu.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Heimild Húsnæðis- og mannvirkjastofnunar til að leggja á stjórnvaldssektir samkvæmt þessari grein fellur niður þegar fimm ár eru liðin frá því að leigusamningur tók gildi vegna skráningarskyldu skv. 1. mgr. 5. gr., þegar fimm ár eru liðin frá lokum leigusamnings vegna afskráningarskyldu skv. 4. mgr. 5. gr. eða þegar fimm ár eru liðin frá breytingu á leigufjárhæð vegna skyldu til skráningar skv. 4. mgr. 37. gr.</sen>
+              <sen nr="2">Frestur skv. 1. málsl. rofnar þegar stofnunin tilkynnir aðila um upphaf rannsóknar á meintu broti.</sen>
+              <sen nr="3">Rof frests hefur réttaráhrif gagnvart öllum sem staðið hafa að broti.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>4. mgr. 37. gr.</text-from>
+        <text-to>6. mgr. 37. gr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">11. tölul. 6. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo: Forgangsréttur leigjanda og tímafrestir skv. X. kafla ef um tímabundinn leigusamning er að ræða.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='11']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//numart[@nr='11']">11. tölul. 6. gr.</address>
+        <existing>
+          <numart nr="11" nr-type="numeric">
+            <nr-title>11.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Forgangsréttur leigjanda skv. X. kafla.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="11" nr-type="numeric">
+            <nr-title>11.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Forgangsréttur leigjanda og tímafrestir skv. X. kafla ef um tímabundinn leigusamning er að ræða.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Við 13. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist ný málsgrein, svohljóðandi:</p>
       <p style="text-align: justify;">Undirritun samkvæmt lögum þessum getur farið fram með rafrænni undirskrift eða eigin­handar­undirskrift.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]">13. gr.</address>
+        <existing>
+          <art nr="13">
+            <nr-title>13. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þurfi aðili leigusamnings vegna fyrirmæla laga þessara að koma á framfæri við gagnaðila skriflegri orðsendingu, hverju nafni sem hún nefnist, þá skal hún send af stað með sannanlegum og tryggilegum hætti og innan þeirra tímamarka eða fresta sem mælt er fyrir um ef því er að skipta.</sen>
+                <sen nr="2">Sé þess gætt þá hefur orðsendingin þá þýðingu og þau réttaráhrif sem henni er ætlað að hafa, jafnvel þótt hún komi afbökuð, of seint eða alls ekki til viðtakanda.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þegar lög þessi áskilja að orðsendingar, hverju nafni sem þær nefnast, séu skriflegar skulu varðveitanlegar og framvísanlegar orðsendingar á rafrænu formi taldar fullnægja þessum áskilnaði séu þær sendar á síma, netfang eða annan ákvörðunarstað sem gefinn er upp í leigusamningi.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2016.063.html" law-nr="63" law-year="2016" law-art="7" nr="1">
+                <footnote-sen>L. 63/2016, 7. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Undirritun samkvæmt lögum þessum getur farið fram með rafrænni undirskrift eða eiginhandarundirskrift.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Á eftir orðhlutanum „Viðgerðar-“ í 1. málsl. 1. mgr. og 1. málsl. 2. mgr. 21. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: endurbóta-.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='4' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='2']//sen[@nr='1'] | //art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. og 1. málsl. 2. mgr. 21. gr.</address>
+        <existing>
+          <sen nr="1">Viðgerðar- og viðhaldsvinnu alla skal leigusali láta vinna fljótt og vel svo að sem minnstri röskun valdi fyrir leigjanda.</sen>
+          <sen nr="1">Leiði viðgerðar- eða viðhaldsvinna á vegum leigusala til verulega skertra afnota eða afnotamissis að mati úttektaraðila, sbr. XIV. kafla, skal leigusali bæta leigjanda það með hlutfallslegum afslætti af leigugjaldi eða á annan þann hátt er aðilar koma sér saman um.</sen>
+        </existing>
+        <text-from>Viðgerðar-</text-from>
+        <text-to>endurbóta-.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Fyrirsögn IV. kafla<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>verður:<strong>Framkvæmdir á leiguhúsnæði.</strong>
       </p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/name[1]" action-law-nr="36" action-law-year="1994">
+        <address xpath="//chapter[@nr='4']/name">Fyrirsögn IV. kafla</address>
+        <existing>
+          <name>Viðhald leiguhúsnæðis.</name>
+        </existing>
+        <inner>
+          <name>Framkvæmdir á leiguhúsnæði.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 37. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -70,9 +228,70 @@
         <li style="text-align: justify;">Í stað orðsins „húsnæðisgrunn“ í 4. málsl. 4. mgr. kemur: leiguskrá húsnæðisgrunns.</li>
       </ol>
     </original>
+    <intents common-address="37. gr.">
+      <intent action="add_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 37. gr.</address>
+        <existing>
+          <sen nr="1">Aðilum er frjálst að semja um fjárhæð húsaleigu og hvort og þá með hvaða hætti hún skuli breytast á leigutímanum.</sen>
+        </existing>
+        <text-to>sbr. þó 3. og 4. mgr.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='3']/paragraph[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='3']">3. mgr. 37. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Tilgreina skal fjárhæð húsaleigu í leigusamningi sem og hvort og þá hvernig og hvenær hún skuli breytast á leigutímanum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Þó er óheimilt að semja um að leigufjárhæð breytist á leigutímanum ef gerður hefur verið tímabundinn leigusamningur til 12 mánaða eða skemmri tíma.</sen>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='3']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='3']">3. mgr. 37. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Tilgreina skal fjárhæð húsaleigu í leigusamningi sem og hvort og þá hvernig og hvenær hún skuli breytast á leigutímanum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Fjárhæð húsaleigu verður ekki breytt á leigutímanum að öðru leyti en heimilt er skv. 1. málsl. 3. mgr. nema aðstæður séu með þeim hætti sem greinir í 37. gr. a – 37. gr. c.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Um ákvörðun leigufjárhæðar við endurnýjun eða framlengingu leigusamnings á grundvelli forgangsréttar leigjanda til áframhaldandi leigu húsnæðis að samningstíma loknum fer skv. 1. mgr. 53. gr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 37. gr.</address>
+        <existing>
+          <sen nr="1">Leigusali, sem hefur atvinnu af útleigu íbúðarhúsnæðis samkvæmt lögum um tekjuskatt, nr. 90/2003, skal skrá fjárhæð húsaleigu og breytingar á henni í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar.</sen>
+        </existing>
+        <inner>
+          <sen nr="1">Leigusali skal skrá fjárhæð húsaleigu og breytingar á henni í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar ef samningur er skráningarskyldur skv. 1. mgr. 5. gr.</sen>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='4']//sen[@nr='4']">4. málsl. 4. mgr. 37. gr.</address>
+        <existing>
+          <sen nr="4">Hafi hækkun leigufjárhæðar ekki verið skráð í húsnæðisgrunn getur leigjandi hafnað því að greiða þann hluta leigufjárhæðar sem nemur hækkuninni þar til úr skráningunni hefur verið bætt.</sen>
+        </existing>
+        <text-from>húsnæðisgrunn</text-from>
+        <text-to>leiguskrá húsnæðisgrunns.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Á eftir 37. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>koma þrjár nýjar greinar, 37. gr. a – 37. gr. c, svohljóðandi:</p>
@@ -91,9 +310,131 @@
       <p style="text-align: justify;">Í tilkynningu til leigjanda skal tilgreina hvenær hækkunin taki gildi sem og ástæðu hækk­unar­innar og skulu henni fylgja viðeigandi gögn því til staðfestingar. Jafnframt skal þar greint frá heimild leigjanda til að bera hækkun leigufjárhæðarinnar undir kærunefnd húsamála skv. 85. gr.</p>
       <p style="text-align: justify;">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um hækkun leigu­fjárhæðar. Samkomulag um breytingu leigufjárhæðar skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal breyting leigufjárhæðar jafnframt skráð í leigu­skrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 6. mgr. 37. gr.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]">37. gr.</address>
+        <existing>
+          <art nr="37">
+            <nr-title>37. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Aðilum er frjálst að semja um fjárhæð húsaleigu og hvort og þá með hvaða hætti hún skuli breytast á leigutímanum.</sen>
+                <sen nr="2">Leigufjárhæðin skal þó vera sanngjörn og eðlileg í garð beggja aðila.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Við mat á því hvort fjárhæð húsaleigu sé sanngjörn og eðlileg í garð beggja aðila skal taka mið af staðháttum, atvikum og ástandi á leigumarkaði á hverjum tíma.</sen>
+                <sen nr="2">Við matið skal einkum litið til markaðsleigu sambærilegs húsnæðis en jafnframt til almenns húsnæðiskostnaðar, þ.m.t. vaxtakostnaðar, skatta og gjalda; staðsetningar, gerðar og ástands leiguhúsnæðis; endurbóta, breytinga og viðhalds sem hvor aðila tekur að sér; leigutíma og annarra sérstakra samningsskyldna og réttinda sem eðlilegt er að hafi áhrif á leigufjárhæðina.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Tilgreina skal fjárhæð húsaleigu í leigusamningi sem og hvort og þá hvernig og hvenær hún skuli breytast á leigutímanum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Leigusali, sem hefur atvinnu af útleigu íbúðarhúsnæðis samkvæmt lögum um tekjuskatt, nr. 90/2003, skal skrá fjárhæð húsaleigu og breytingar á henni í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar.</sen>
+                <sen nr="2">Breytingu á leigufjárhæð skal skrá innan 30 daga frá gildistöku hennar og er slík skráning forsenda þess að hækkun leigufjárhæðar taki gildi gagnvart leigjanda.</sen>
+                <sen nr="3">Vanræki leigusali skráningarskyldu skv. 1. málsl. innan lögmælts frests getur hann sætt sektum, sbr. 5. gr. a.</sen>
+                <sen nr="4">Hafi hækkun leigufjárhæðar ekki verið skráð í húsnæðisgrunn getur leigjandi hafnað því að greiða þann hluta leigufjárhæðar sem nemur hækkuninni þar til úr skráningunni hefur verið bætt.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.121.html" law-nr="121" law-year="2022" law-art="6" nr="1">
+                <footnote-sen>L. 121/2022, 6. gr.</footnote-sen>
+                <location type="deletion" xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Leigufjárhæðin skal þó" after-mark="vera sanngjörn og eðlileg í garð beggja aðila.$"/>
+                <location type="range" string-length="1301">
+                  <start xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <art nr="37a">
+            <nr-title>37. gr. a.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þegar meira en 12 mánuðir eru liðnir frá gildistöku leigusamnings um íbúðarhúsnæði eða annað húsnæði sem leigt er til íbúðar getur leigusali farið fram á hækkun leigufjárhæðar vegna verulegrar hækkunar á reksturskostnaði húsnæðisins eða, sé leigusali lögaðili sem í atvinnuskyni leigir út húsnæði, vegna verulegrar hækkunar á reksturskostnaði á heildarsafni slíks húsnæðis í hans eigu, til viðbótar við samkomulag sem gert hefur verið á grundvelli 1. málsl. 3. mgr. 37. gr., ef við á.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Leigusali skal fara fram á hækkun leigufjárhæðar samkvæmt þessari grein skriflega og með sannanlegum hætti a.m.k. þremur mánuðum áður en fyrirhugað er að hún taki gildi.</sen>
+                <sen nr="2">Leigjandi skal þá innan 30 daga tilkynna leigusala hvort hann fallist á hækkun leigufjárhæðar, sbr. einnig 1. mgr. 8. gr., vísa ágreiningi um hækkunina til kærunefndar húsamála eða segja upp leigusamningnum.</sen>
+                <sen nr="3">Að öðrum kosti telst samningur kominn á um hækkun leigufjárhæðarinnar, sbr. þó 2. mgr. 85. gr.</sen>
+                <sen nr="4">Hækkun leigufjárhæðar tekur gildi á þeim degi sem tilgreindur er í tilkynningu leigusala skv. 1. málsl. nema leigjandi segi upp leigusamningnum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Í tilkynningu til leigjanda skal tilgreina hvenær hækkunin taki gildi sem og ástæðu hækkunarinnar og skulu henni fylgja viðeigandi gögn því til staðfestingar.</sen>
+                <sen nr="2">Jafnframt skal þar greint frá heimild leigjanda til að bera hækkun leigufjárhæðarinnar undir kærunefnd húsamála skv. 85. gr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um hækkun leigufjárhæðar.</sen>
+                <sen nr="2">Samkomulag um breytingu leigufjárhæðar skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal breyting leigufjárhæðar jafnframt skráð í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 6. mgr. 37. gr., ef samningur er skráningarskyldur skv. 1. mgr. 5. gr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="37b">
+            <nr-title>37. gr. b.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þegar meira en 12 mánuðir eru liðnir frá gildistöku leigusamnings og umsamin leigufjárhæð íbúðarhúsnæðis eða annars húsnæðis sem leigt er til íbúðar er lægri eða hærri en markaðsleiga sambærilegs húsnæðis, að teknu tilliti til þeirra atriða sem greinir í 2. mgr. 37. gr., getur aðili leigusamnings farið fram á leiðréttingu leigufjárhæðar að allt að markaðsleigu að teknu tilliti til þeirra atriða.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um leiðréttingu leigufjárhæðar.</sen>
+                <sen nr="2">Samkomulag um breytingu leigufjárhæðar skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal breyting leigufjárhæðar jafnframt skráð í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 6. mgr. 37. gr., ef samningur er skráningarskyldur skv. 1. mgr. 5. gr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Komist aðilar ekki að samkomulagi um leiðréttingu leigufjárhæðar skal vísa ágreiningi um leigufjárhæðina til kærunefndar húsamála til úrskurðar svo fljótt sem verða má, sbr. 2. mgr. 85. gr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="37c">
+            <nr-title>37. gr. c.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þegar meira en 12 mánuðir eru liðnir frá gildistöku leigusamnings getur leigusali, sem er lögaðili sem ekki er rekinn í hagnaðarskyni, farið fram á hækkun leigufjárhæðar til að jafna leigufjárhæð milli sambærilegs íbúðarhúsnæðis eða annars húsnæðis sem leigt er til íbúðar í hans eigu, óháð staðsetningu, í því skyni að stuðla að fjölbreyttri samsetningu íbúa og félagslegri blöndun.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Leigusali skal fara fram á hækkun leigufjárhæðar samkvæmt þessari grein skriflega og með sannanlegum hætti a.m.k. þremur mánuðum áður en fyrirhugað er að hún taki gildi.</sen>
+                <sen nr="2">Leigjandi skal þá innan 30 daga tilkynna leigusala hvort hann fallist á hækkun leigufjárhæðar, sbr. einnig 1. mgr. 8. gr., vísa ágreiningi um hækkunina til kærunefndar húsamála eða segja upp leigusamningnum.</sen>
+                <sen nr="3">Að öðrum kosti telst samningur kominn á um hækkun leigufjárhæðarinnar, sbr. þó 2. mgr. 85. gr.</sen>
+                <sen nr="4">Hækkun leigufjárhæðar tekur gildi á þeim degi sem tilgreindur er í tilkynningu leigusala skv. 1. málsl. nema leigjandi segi upp leigusamningnum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Í tilkynningu til leigjanda skal tilgreina hvenær hækkunin taki gildi sem og ástæðu hækkunarinnar og skulu henni fylgja viðeigandi gögn því til staðfestingar.</sen>
+                <sen nr="2">Jafnframt skal þar greint frá heimild leigjanda til að bera hækkun leigufjárhæðarinnar undir kærunefnd húsamála skv. 85. gr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um hækkun leigufjárhæðar.</sen>
+                <sen nr="2">Samkomulag um breytingu leigufjárhæðar skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal breyting leigufjárhæðar jafnframt skráð í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 6. mgr. 37. gr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 51. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -104,9 +445,72 @@
         <li style="text-align: justify;">8. tölul. 2. mgr. orðast svo: Ef leigjandi er eða hefur verið starfsmaður leigusala og honum hefur verið látið hið leigða húsnæði í té vegna starfsins eða í tengslum við það og leigjandi lætur af störfum að eigin ósk, honum er sagt upp eða vikið úr starfi eða fyrir fram um­sömdum ráðningartíma lýkur.</li>
       </ol>
     </original>
+    <intents common-address="51. gr.">
+      <intent action="append_text" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='1']">1. mgr. 51. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Leigjandi íbúðarhúsnæðis skal að umsömdum leigutíma loknum hafa forgangsrétt til leigu þess, svo fremi sem húsnæðið er falt til áframhaldandi leigu í a.m.k. eitt ár.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>Leigjandi íbúðarhúsnæðis</text-from>
+        <text-to>eða annars húsnæðis sem leigt er til íbúðar á grundvelli tímabundins leigusamnings.</text-to>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='2']//numart[@nr='1']">1. tölul. 2. mgr. 51. gr.</address>
+        <existing>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Ef um einstaklingsherbergi er að ræða.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='2']//numart[@nr='3']">3. tölul. 2. mgr. 51. gr.</address>
+        <existing>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Ef íbúð er leigð með húsgögnum að öllu eða verulegu leyti.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Ef hið leigða húsnæði er leigt með húsgögnum að öllu eða verulegu leyti nema um sé að ræða leigusala sem leigir út samtals þrjár eða fleiri sérgreindar íbúðir og/eða herbergi.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='8']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='2']//numart[@nr='8']">8. tölul. 2. mgr. 51. gr.</address>
+        <existing>
+          <numart nr="8" nr-type="numeric">
+            <nr-title>8.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Ef leigjandi er starfsmaður leigusala og honum hefur verið látið hið leigða húsnæði í té vegna starfsins eða í tengslum við það.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="8" nr-type="numeric">
+            <nr-title>8.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Ef leigjandi er eða hefur verið starfsmaður leigusala og honum hefur verið látið hið leigða húsnæði í té vegna starfsins eða í tengslum við það og leigjandi lætur af störfum að eigin ósk, honum er sagt upp eða vikið úr starfi eða fyrir fram umsömdum ráðningartíma lýkur.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">52. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo:</p>
@@ -114,9 +518,56 @@
       <p style="text-align: justify;">Vilji leigjandi nýta sér forgangsrétt sinn skv. 1. mgr. 51. gr. skal hann tilkynna leigusala það skriflega og með sannanlegum hætti innan 30 daga frá því að honum barst fyrirspurn leigusala skv. 1. mgr. um hvort hann vildi nýta sér forgangsréttinn. Að öðrum kosti fellur forgangsréttur hans niður.</p>
       <p style="text-align: justify;">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um forgangsrétt leigjanda. Samkomulag um endurnýjun eða framlengingu leigusamnings á grundvelli forgangsréttar leigjanda skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal samningurinn jafnframt skráður í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 1. mgr. 5. gr.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='52']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',52,')]">52. gr.</address>
+        <existing>
+          <art nr="52">
+            <nr-title>52. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Vilji leigjandi nota sér forgangsrétt skv. 1. mgr. 51. gr. skal hann tilkynna leigusala það skriflega og með sannanlegum hætti a.m.k. þremur mánuðum áður en leigusamningurinn rennur út við lok uppsagnarfrests eða við lok umsamins leigutíma.</sen>
+                <sen nr="2">Að öðrum kosti fellur forgangsréttur hans niður.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigusali að leigjandi eigi ekki forgangsrétt af þeim ástæðum sem greinir í 2. mgr. 51. gr. skal hann innan 14 daga frá því að hann fær tilkynningu skv. 1. mgr. gera leigjanda skriflega og rökstudda grein fyrir sjónarmiðum sínum og því hverjar ástæður standi forgangsréttinum í vegi.</sen>
+                <sen nr="2">Að öðrum kosti telst hann una forgangsréttinum nema atvik og aðstæður séu með þeim hætti að telja verði slíka tilkynningu óþarfa, svo sem ef glöggt koma fram í leigusamningi eða uppsögn ástæður sem útiloka forgangsréttinn.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="52">
+            <nr-title>52. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Eigi leigjandi forgangsrétt skv. 51. gr. skal leigusali kanna vilja leigjanda til þess að nýta sér forgangsréttinn nema atvik og aðstæður séu með þeim hætti að telja verði það óþarft, svo sem ef leigjandi hefur sjálfur sagt upp leigusamningnum.</sen>
+                <sen nr="2">Skal það gert skriflega og með sannanlegum hætti þegar þrír mánuðir en ekki skemmra en sex vikur eru eftir af umsömdum leigutíma eða til loka uppsagnarfrests.</sen>
+                <sen nr="3">Að öðrum kosti telst leigusalinn una forgangsrétti leigjanda.</sen>
+                <sen nr="4">Hafi tímabundinn leigusamningur verið gerður til skemmri tíma en þriggja mánaða skal frestur skv. 2. málsl. vera 30 dagar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Vilji leigjandi nýta sér forgangsrétt sinn skv. 1. mgr. 51. gr. skal hann tilkynna leigusala það skriflega og með sannanlegum hætti innan 30 daga frá því að honum barst fyrirspurn leigusala skv. 1. mgr. um hvort hann vildi nýta sér forgangsréttinn.</sen>
+                <sen nr="2">Að öðrum kosti fellur forgangsréttur hans niður.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um forgangsrétt leigjanda.</sen>
+                <sen nr="2">Samkomulag um endurnýjun eða framlengingu leigusamnings á grundvelli forgangsréttar leigjanda skal gert skriflega og undirritað af aðilum leigusamningsins, sbr. 1. mgr. 8. gr., og skal samningurinn jafnframt skráður í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar, sbr. 1. mgr. 5. gr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Á eftir 52. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný grein, 52. gr. a, svohljóðandi:</p>
@@ -125,9 +576,59 @@
       <p style="text-align: justify;">Telji leigusali þrátt fyrir andmæli leigjanda að leigjandi eigi ekki forgangsrétt skal hann vísa ágrein­ingnum til kærunefndar húsamála innan 30 daga frá því að honum barst tilkynning um and­mæli leigjanda. Að öðrum kosti telst hann una forgangsréttinum.</p>
       <p style="text-align: justify;">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um forgangsrétt leigjanda við tilkynningar skv. 1. og 2. mgr.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='52']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',52,')]">52. gr.</address>
+        <existing>
+          <art nr="52">
+            <nr-title>52. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Vilji leigjandi nota sér forgangsrétt skv. 1. mgr. 51. gr. skal hann tilkynna leigusala það skriflega og með sannanlegum hætti a.m.k. þremur mánuðum áður en leigusamningurinn rennur út við lok uppsagnarfrests eða við lok umsamins leigutíma.</sen>
+                <sen nr="2">Að öðrum kosti fellur forgangsréttur hans niður.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigusali að leigjandi eigi ekki forgangsrétt af þeim ástæðum sem greinir í 2. mgr. 51. gr. skal hann innan 14 daga frá því að hann fær tilkynningu skv. 1. mgr. gera leigjanda skriflega og rökstudda grein fyrir sjónarmiðum sínum og því hverjar ástæður standi forgangsréttinum í vegi.</sen>
+                <sen nr="2">Að öðrum kosti telst hann una forgangsréttinum nema atvik og aðstæður séu með þeim hætti að telja verði slíka tilkynningu óþarfa, svo sem ef glöggt koma fram í leigusamningi eða uppsögn ástæður sem útiloka forgangsréttinn.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="52a">
+            <nr-title>52. gr. a</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigusali að leigjandi eigi ekki forgangsrétt af einhverri þeirri ástæðu sem greinir í 2. mgr. 51. gr. skal hann gera leigjanda skriflega og rökstudda grein fyrir sjónarmiðum sínum og því hvaða ástæður standi forgangsréttinum í vegi a.m.k. þremur mánuðum áður en leigusamningurinn rennur út við lok uppsagnarfrests eða við lok umsamins leigutíma.</sen>
+                <sen nr="2">Að öðrum kosti telst leigusalinn una forgangsréttinum nema atvik og aðstæður séu þannig að telja verði slíka tilkynningu óþarfa, svo sem ef glöggt koma fram í uppsögn ástæður sem útiloka forgangsréttinn.</sen>
+                <sen nr="3">Hafi tímabundinn leigusamningur verið gerður til skemmri tíma en þriggja mánaða skal frestur skv. 1. málsl. vera 30 dagar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigjandi þær aðstæður sem valda því að forgangsréttur gildir ekki skv. 2. mgr. 51. gr. ekki eiga við í málinu skal hann andmæla afstöðu leigusala með skriflegri tilkynningu sem send skal leigusala með sannanlegum hætti innan 30 daga frá því að honum barst tilkynning leigusala eða afstaða leigusala var kynnt honum með uppsögn eða öðrum hætti skv. 1. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigusali þrátt fyrir andmæli leigjanda að leigjandi eigi ekki forgangsrétt skal hann vísa ágreiningnum til kærunefndar húsamála innan 30 daga frá því að honum barst tilkynning um andmæli leigjanda.</sen>
+                <sen nr="2">Að öðrum kosti telst hann una forgangsréttinum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar um forgangsrétt leigjanda við tilkynningar skv. 1. og 2. mgr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="13">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 53. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -136,9 +637,44 @@
         <li style="text-align: justify;">Á eftir orðinu „endurnýjaðs“ í 2. mgr. kemur: eða framlengds.</li>
       </ol>
     </original>
+    <intents common-address="53. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='53']/subart[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',53,')]//subart[@nr='1']">1. mgr. 53. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þegar samningur er endurnýjaður samkvæmt ákvæðum 51. og 52. gr. skal leigufjárhæðin vera sanngjörn og eðlileg í garð beggja aðila.</sen>
+              <sen nr="2">Líkur eru fyrir því að sú leigufjárhæð, sem áður gilti, sé sanngjörn og verður sá sem vefengir það að sýna fram á annað.</sen>
+              <sen nr="3">Aðrir skilmálar, sem settir eru fyrir endurnýjuðum leigusamningi, skulu og gilda svo fremi sem þeir séu ekki ósanngjarnir eða brjóti í bága við góðar venjur í leiguviðskiptum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þegar samningur er endurnýjaður eða framlengdur samkvæmt ákvæðum 51. og 52. gr. skal leigufjárhæðin vera sanngjörn og eðlileg í garð beggja aðila.</sen>
+              <sen nr="2">Líkur eru fyrir því að sú leigufjárhæð, sem áður gilti, sé sanngjörn og verður sá sem vefengir það að sýna fram á annað á grundvelli breytinga sem átt hafa sér stað á þeim þáttum sem greinir í 2. mgr. 37. gr.</sen>
+              <sen nr="3">Aðrir skilmálar, sem settir eru fyrir endurnýjuðum eða framlengdum leigusamningi, skulu og gilda svo fremi að þeir séu ekki ósanngjarnir eða brjóti í bága við góðar venjur í leiguviðskiptum.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append_text" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='53']/subart[@nr='2']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',53,')]//subart[@nr='2']">2. mgr. 53. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Skilmálar endurnýjaðs leigusamnings skulu að öðru leyti vera hinir sömu og í upphaflegum samningi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>endurnýjaðs</text-from>
+        <text-to>eða framlengds.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="14">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 55. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -147,9 +683,42 @@
         <li style="text-align: justify;">Við 2. mgr. bætist nýr málsliður, svohljóðandi: Í uppsögn skal tilgreina ástæðu uppsagnar, sbr. 1. mgr. 55. gr. a.</li>
       </ol>
     </original>
+    <intents common-address="55. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='55']/subart[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',55,')]//subart[@nr='1']">1. mgr. 55. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Uppsögn ótímabundins leigusamnings er heimil báðum aðilum hans.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Uppsögn ótímabundins leigusamnings er heimil báðum aðilum hans á leigutíma.</sen>
+              <sen nr="2">Um uppsögn leigusala fer skv. 55. gr. a.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='55']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',55,')]//subart[@nr='2']">2. mgr. 55. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Uppsögn skal vera skrifleg og send með sannanlegum hætti.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Í uppsögn skal tilgreina ástæðu uppsagnar, sbr. 1. mgr. 55. gr. a.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="15">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Á eftir 55. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný grein, 55. gr. a, svohljóðandi:</p>
@@ -171,23 +740,168 @@
       <p style="text-align: justify;">Telji leigjandi skilyrði til uppsagnar ótímabundins leigusamnings skv. 1. mgr. ekki vera uppfyllt getur hann borið ágreining um uppsögnina undir kærunefnd húsamála, sbr. 85. gr.</p>
       <p style="text-align: justify;">Hafi leigusali af ásettu ráði, svo sem með málamyndagerningum eða sviksamlegum hætti, náð til sín leiguhúsnæði með ólögmætri uppsögn ótímabundins leigusamnings þá skal hann bæta leigjanda sannanlegt fjártjón hans. Bótakröfu verður leigjandi að setja fram með sannanlegum hætti innan sex mánaða frá því að hann rýmdi húsnæðið. Að öðrum kosti fellur bótaréttur hans niður nema leigusali hafi beitt svikum.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='55']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',55,')]">55. gr.</address>
+        <existing>
+          <art nr="55">
+            <nr-title>55. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Uppsögn ótímabundins leigusamnings er heimil báðum aðilum hans.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Uppsögn skal vera skrifleg og send með sannanlegum hætti.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="55a">
+            <nr-title>55. gr. a</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Leigusala er heimilt að segja upp ótímabundnum leigusamningi um íbúðarhúsnæði eða annað húsnæði sem leigt er til íbúðar í eftirtöldum tilvikum:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef hið leigða húsnæði er í sama húsi og leigusali býr í sjálfur.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef íbúð er leigð með húsgögnum að öllu eða verulegu leyti nema um sé að ræða leigusala sem leigir út samtals þrjár eða fleiri sérgreindar íbúðir og/eða herbergi.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigusali tekur húsnæðið til eigin nota.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigusali ráðstafar eða hyggst ráðstafa húsnæðinu til a.m.k. eins árs til skyldmenna í beinan legg, kjörbarna, fósturbarna, systkina, systkinabarna eða tengdaforeldra.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigusali hyggst selja húsnæðið á næstu sex mánuðum eftir lok leigutímans.</sen>
+                    <sen nr="2">Er aðilum þá heimilt, þrátt fyrir önnur ákvæði laga þessara, að semja um lok leigutíma með ákveðnum skilyrðum og rýmingu þegar húsnæðið verður afhent nýjum eiganda.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef fyrirhugaðar eru verulegar viðgerðir, endurbætur eða breytingar á húsnæðinu á næstu sex mánuðum frá lokum leigutímans sem gera húsnæðið óíbúðarhæft um a.m.k. tveggja mánaða skeið að mati úttektaraðila, sbr. XIV. kafla.</sen>
+                    <sen nr="2">Er aðilum þá heimilt, þrátt fyrir önnur ákvæði laga þessara, að semja um lok leigutíma með ákveðnum skilyrðum og rýmingu þegar viðgerðir, endurbætur eða breytingar hefjast.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigjandi er starfsmaður leigusala og hefur fengið afnot af húsnæði eða hluta húsnæðis til íbúðar vegna þess starfs og leigjandi lætur af störfum að eigin ósk, honum er sagt upp eða vikið úr starfi eða fyrir fram umsömdum ráðningartíma lýkur.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigjandi hefur á leigutímanum gerst sekur um vanefndir eða brot sem varðað gátu riftun.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9" nr-type="numeric">
+                  <nr-title>9.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigjandi hefur á annan hátt vanefnt skyldur sínar á þann veg, eða sýnt af sér slíka háttsemi, að eðlilegt megi telja að leigusali vilji ekki leigja honum áfram eða að veigamiklar ástæður að öðru leyti réttlæti uppsögn samningsins.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="10" nr-type="numeric">
+                  <nr-title>10.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef sanngjarnt mat á hagsmunum beggja aðila og aðstæðum öllum réttlætir að öðru leyti uppsögn ótímabundins leigusamnings.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="11" nr-type="numeric">
+                  <nr-title>11.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ef leigusali er lögaðili sem ekki er rekinn í hagnaðarskyni og leigjandi uppfyllir ekki lengur lögmæt og málefnaleg skilyrði leigusala fyrir leigu húsnæðis eða veitir ekki nauðsynlegar upplýsingar svo unnt sé að staðreyna hvort hann uppfylli skilyrðin, enda komi fram í leigusamningi að réttur hans til hins leigða sé bundinn umræddu skilyrði.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Nota skal stöðluð tilkynningareyðublöð Húsnæðis- og mannvirkjastofnunar við uppsögn ótímabundins leigusamnings skv. 1. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Telji leigjandi skilyrði til uppsagnar ótímabundins leigusamnings skv. 1. mgr. ekki vera uppfyllt getur hann borið ágreining um uppsögnina undir kærunefnd húsamála, sbr. 85. gr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Hafi leigusali af ásettu ráði, svo sem með málamyndagerningum eða sviksamlegum hætti, náð til sín leiguhúsnæði með ólögmætri uppsögn ótímabundins leigusamnings þá skal hann bæta leigjanda sannanlegt fjártjón hans.</sen>
+                <sen nr="2">Bótakröfu verður leigjandi að setja fram með sannanlegum hætti innan sex mánaða frá því að hann rýmdi húsnæðið.</sen>
+                <sen nr="3">Að öðrum kosti fellur bótaréttur hans niður nema leigusali hafi beitt svikum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="16">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Á eftir orðunum „sbr. þó“ í 1. málsl. 2. mgr. 58. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: 37. gr. a, 37. gr. c og.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='58']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',58,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 58. gr.</address>
+        <existing>
+          <sen nr="1">Tímabundnum leigusamningi verður ekki slitið með uppsögn á umsömdum leigutíma, sbr. þó 50. gr.</sen>
+        </existing>
+        <text-from>sbr. þó</text-from>
+        <text-to>37. gr. a, 37. gr. c og.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="17">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Við 2. mgr. 60. gr. og 2. mgr. 61. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist nýr málsliður, svohljóðandi: Riftun skal skrá í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar ef samningur er skrán­ingar­skyldur skv. 1. mgr. 5. gr.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='60']/subart[@nr='2']/paragraph[@nr='1'] | chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',61,')]//subart[@nr='2'] | //art[contains(concat(',', @nr, ','), ',60,')]//subart[@nr='2']">2. mgr. 60. gr. og 2. mgr. 61. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Tilkynning um riftun skv. 1.–8. tölul. 1. mgr. skal vera skrifleg og skal henni fylgja rökstuðningur fyrir riftuninni.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Tilkynning um riftun skv. 1.–11. tölul. 1. mgr. skal vera skrifleg og skal henni fylgja rökstuðningur fyrir riftuninni.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Riftun skal skrá í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar ef samningur er skráningarskyldur skv. 1. mgr. 5. gr.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="18">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 85. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -196,21 +910,68 @@
         <li style="text-align: justify;">2. mgr. orðast svo:<br/>Ágreiningi um leigufjárhæð skv. 37. gr., 37. gr. a, 37. gr. b, 37. gr. c og 1. mgr. 53. gr. skal vísa til kærunefndar húsamála innan þriggja mánaða frá gildistöku leigusamnings eða samkomulags sem gert er síðar á leigutíma um breytingu á leigufjárhæð. Að öðrum kosti teljast aðilar leigusamnings una ákvörðun leigufjárhæðar.</li>
       </ol>
     </original>
+    <intents common-address="85. gr.">
+      <intent action="add" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='85']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',85,')]//subart[@nr='1']">1. mgr. 85. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Greini aðila leigusamnings á við gerð og/eða framkvæmd leigusamnings geta þeir, einn eða fleiri, leitað atbeina kærunefndar húsamála sem kveður upp skriflegan úrskurð svo fljótt sem kostur er og jafnan innan tveggja mánaða frá því að erindi barst henni.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Ágreiningur um leigufjárhæð skal hljóta flýtimeðferð fyrir kærunefndinni og skal úrskurður kveðinn upp innan tveggja mánaða frá því að erindi barst henni.</sen>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='17' and @chapter-type='kafli']/art[@nr='85']/subart[@nr='2']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',85,')]//subart[@nr='2']">2. mgr. 85. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ágreiningi um fjárhæð húsaleigu skal vísa til kærunefndar húsamála innan þriggja mánaða frá gildistöku leigusamnings eða samkomulags sem gert er síðar á leigutíma um breytingu á leigufjárhæð.</sen>
+              <sen nr="2">Að öðrum kosti teljast aðilar leigusamnings una ákvörðun leigufjárhæðar.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ágreiningi um leigufjárhæð skv. 37. gr., 37. gr. a, 37. gr. b, 37. gr. c og 1. mgr. 53. gr. skal vísa til kærunefndar húsamála innan þriggja mánaða frá gildistöku leigusamnings eða samkomulags sem gert er síðar á leigutíma um breytingu á leigufjárhæð.</sen>
+              <sen nr="2">Að öðrum kosti teljast aðilar leigusamnings una ákvörðun leigufjárhæðar.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="19">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Í stað orðsins „húsnæðisgrunn“ í 3. málsl. 2. mgr. 86. gr.<a href="https://www.althingi.is/lagas/154b/1994036.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: leiguskrá húsnæðis­grunns.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='18' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="36" action-law-year="1994">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 86. gr.</address>
+        <existing>
+          <sen nr="3">Húsnæðis- og mannvirkjastofnun skal enn fremur koma á framfæri við almenning upplýsingum er varða húsaleigumál auk þess að annast skráningu leigusamninga í húsnæðisgrunn.</sen>
+        </existing>
+        <text-from>húsnæðisgrunn</text-from>
+        <text-to>leiguskrá húsnæðisgrunns.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="20">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Lög þessi öðlast gildi 1. september 2024 og taka til leigusamninga sem komast á eftir það, þ.m.t. leigusamninga sem eru endurnýjaðir eða framlengdir eftir það tímamark. Aðilum er heimilt að semja um að ákvæði laga þessara taki til leigusamninga sem gerðir voru fyrir gildistöku laga þessara, eftir því sem við getur átt.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-09-01" timing-type="immediate" extra="og taka til leigusamninga sem komast á eftir það, þ.m.t. leigusamninga sem eru endurnýjaðir eða framlengdir eftir það tímamark. Aðilum er heimilt að semja um að ákvæði laga þessara taki til leigusamninga sem gerðir voru fyrir gildistöku laga þessara, eftir því sem við getur átt."/>
+    </intents>
   </advert-art>
   <advert-art nr="21">
-    <original>
+    <original affected-law-nr="36" affected-law-year="1994">
       <p style="text-align: justify;">Við gildistöku laga þessara verða eftirfarandi breytingar á öðrum lögum:</p>
       <ol>
         <li style="text-align: justify;">
@@ -245,6 +1006,133 @@
         </li>
       </ol>
     </original>
+    <intents>
+      <intents common-address="46. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='3']" action-law-nr="44" action-law-year="1998">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]//subart[@nr='3']">3. mgr. 46. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði varðandi leigusamninga í húsnæðisgrunni samkvæmt þessari grein, sbr. einnig 7. mgr. 5. gr. húsaleigulaga, þar á meðal um upplýsingamiðlun til annarra stjórnvalda.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>húsnæðisgrunn“ í 1. mgr. og „húsnæðisgrunni</text-from>
+          <text-to>leiguskrá húsnæðisgrunns.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='4']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='46']/name[1]" action-law-nr="44" action-law-year="1998">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',46,')]">46. gr.</address>
+          <existing>
+            <art nr="46">
+              <nr-title>46. gr.</nr-title>
+              <name>Upplýsingar um leigusamninga í húsnæðisgrunni.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Húsnæðis- og mannvirkjastofnun skal annast skráningu leigusamninga og breytinga á leigufjárhæð ásamt afskráningu leigusamninga samkvæmt húsaleigulögum í húsnæðisgrunn stofnunarinnar og birta opinberlega upplýsingar úr honum, þar á meðal um markaðsleigu húsnæðis.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Húsnæðis- og mannvirkjastofnun skal miðla gögnum og upplýsingum skv. 1. mgr. til skattyfirvalda til forskráningar á skattframtöl og eftirlits með skattskilum vegna leigustarfsemi.</sen>
+                  <sen nr="2">Húsnæðis- og mannvirkjastofnun skal jafnframt miðla leigusamningum til þinglýsingastjóra til þinglýsingar sem og beiðni um aflýsingu þinglýsts leigusamnings óski aðili samningsins eftir því, sbr. 3. mgr. og 4. málsl. 4. mgr. 5. gr. húsaleigulaga, nr. 36/1994.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði varðandi leigusamninga í húsnæðisgrunni samkvæmt þessari grein, sbr. einnig 7. mgr. 5. gr. húsaleigulaga, þar á meðal um upplýsingamiðlun til annarra stjórnvalda.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote nr="1">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/001-2023"&gt;Rg. 1/2023&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="superchapter[@nr='4']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er heimilt að setja í reglugerð" after-mark="nánari ákvæði varðandi leigusamninga í húsnæðisgrunni samkvæmt þessari grein, sbr. einnig 7. mgr. 5. gr. húsaleigulaga, þar á meðal um upplýsingamiðlun til annarra stjórnvalda\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.121.html" law-nr="121" law-year="2022" law-art="11" nr="2">
+                  <footnote-sen>L. 121/2022, 11. gr.</footnote-sen>
+                  <location type="range" string-length="964">
+                    <start xpath="superchapter[@nr='4']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='46']/name[1]"/>
+                    <end xpath="superchapter[@nr='4']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='46']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <name>Upplýsingar um leigusamninga í leiguskrá húsnæðisgrunns.</name>
+          </inner>
+        </intent>
+      </intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='d'] | chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']" action-law-nr="75" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',12,')] | //art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='d' or @nr='D']">d-lið 2. mgr. 9. gr. og 12. gr.</address>
+        <existing>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">umsækjandi sé aðili að leigusamningi um íbúðarhúsnæðið sem sé til a.m.k. þriggja mánaða og skráður hefur verið í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar, sbr. þó 12. gr.,</sen>
+            </paragraph>
+          </numart>
+          <art nr="12">
+            <nr-title>12. gr.</nr-title>
+            <name>Undanþága frá skilyrði um leigusamning sem skráður hefur verið í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir skilyrði d-liðar 2. mgr. 9. gr. um leigusamning sem skráður hefur verið í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar er að uppfylltum öðrum skilyrðum laga þessara heimilt að greiða húsnæðisbætur þrátt fyrir að ekki liggi fyrir skráður leigusamningur þegar um er að ræða tímabundin afnot búseturéttarhafa skv. 15. mgr. 20. gr. laga um húsnæðissamvinnufélög, nr. 66/2003, gerðarþola skv. 6. tölul. 1. mgr. 28. gr. laga um nauðungarsölu, nr. 90/1991, og leigjanda skv. 11. tölul. 1. mgr. 28. gr. sömu laga af íbúðarhúsnæði, sem hann hafði við nauðungarsölu til eigin nota, í allt að tólf mánuði gegn greiðslu samkvæmt ákvörðun sýslumanns.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.121.html" law-nr="121" law-year="2022" law-art="11" nr="1">
+                <footnote-sen>L. 121/2022, 11. gr.</footnote-sen>
+                <location type="range" string-length="764">
+                  <start xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']/name[1]"/>
+                  <end xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <text-from>húsnæðisgrunn</text-from>
+        <text-to>leiguskrá húsnæðisgrunns.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='12']/name[1]" action-law-nr="75" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]/name">Fyrirsögn 12. gr.</address>
+        <existing>
+          <name>Undanþága frá skilyrði um leigusamning sem skráður hefur verið í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar.</name>
+        </existing>
+        <inner>
+          <name>Undanþága frá skilyrði um leigusamning sem skráður hefur verið í leiguskrá húsnæðisgrunns Húsnæðis- og mannvirkjastofnunar.</name>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='66']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4'] | chapter[@nr='6' and @chapter-type='kafli']/art[@nr='70']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='5']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="90" action-law-year="2003">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',70,')]//numart[@nr='5']//*[self::numart or self::art-chapter][@nr='a' or @nr='A'] | //art[contains(concat(',', @nr, ','), ',66,')]//subart[@nr='3']//sen[@nr='4']">4. málsl. 3. mgr. 66. gr. og a-lið 5. tölul. 70. gr.</address>
+        <existing>
+          <sen nr="4">Enn fremur skal ekki reikna tekjuskatt af 50% af tekjum manns af útleigu íbúðarhúsnæðis sem nýtt er til búsetu leigjanda og fellur undir húsaleigulög enda hafi leigusamningur verið skráður í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar, sbr. 5. gr. húsaleigulaga, nr. 36/1994, eða maður talið leigutekjur sérstaklega fram í skattframtali.</sen>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">22% af tekjum ef um menn er að ræða.</sen>
+              <sen nr="2">Þegar um er að ræða tekjur manns af útleigu íbúðarhúsnæðis sem fellur undir húsaleigulög er heimilt að taka tillit til frádráttar skv. a-lið 1. mgr. 58. gr. a.</sen>
+              <sen nr="3">Þó skal ekki leggja tekjuskatt á 50% af tekjum manns af útleigu íbúðarhúsnæðis sem fellur undir húsaleigulög enda hafi leigusamningur verið skráður í húsnæðisgrunn Húsnæðis- og mannvirkjastofnunar, sbr. 5. gr. húsaleigulaga, nr. 36/ 1994, eða maður talið leigutekjur sérstaklega fram í skattframtali,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>húsnæðisgrunn</text-from>
+        <text-to>leiguskrá húsnæðisgrunns.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='117']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="90" action-law-year="2003">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',117,')]//subart[@nr='2']">2. mgr. 117. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Þrátt fyrir ákvæði 1. mgr. skulu skattyfirvöld gefa Hagstofu Íslands skýrslur, í því formi er Hagstofa Íslands ákveður, um framtaldar tekjur og eignir, álagða skatta og önnur atriði er varða skýrslugerð hennar.</sen>
+              <sen nr="2">Þá er skattyfirvöldum heimilt að veita gjaldeyriseftirliti Seðlabanka Íslands upplýsingar er nauðsynlegar eru til eftirlits með gjaldeyrismálum, enda standi ákvæði milliríkjasamninga ekki í vegi fyrir því.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="3">Enn fremur skulu skattyfirvöld veita Húsnæðis- og mannvirkjastofnun upplýsingar sem nauðsynlegar eru til eftirlits með réttri skráningu upplýsinga í leiguskrá húsnæðisgrunns samkvæmt húsaleigulögum, nr. 36/1994 .</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 5. júlí 2024.</signed-when>
 </advert>

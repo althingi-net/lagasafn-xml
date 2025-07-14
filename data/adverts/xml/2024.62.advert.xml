@@ -25,6 +25,16 @@
       <original affected-law-nr="55" affected-law-year="1992">
         <p style="text-align: justify;">Í stað tilvísunarinnar „10. gr.“ í 2. málsl. 2. gr. laganna kemur: 11. gr.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="55" action-law-year="1992">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//sen[@nr='2']">2. málsl. 2. gr.</address>
+          <existing>
+            <sen nr="2">Skulu þrír kosnir af Alþingi, einn valinn af þeim vátryggingafélögum sem innheimta iðgjöld, sbr. 3. mgr. 10. gr., en ráðherra skipar einn og skal hann vera formaður.</sen>
+          </existing>
+          <text-from>10. gr.</text-from>
+          <text-to>11. gr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -33,6 +43,258 @@
       <original affected-law-nr="129" affected-law-year="1997">
         <p style="text-align: justify;">Ákvæði til bráðabirgða II, IV, VI, VII, IX, XIII, XIV og XVIII–XX í lögunum falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='t']/art[@nr='II'] | chapter[@nr='t']/art[@nr='IV'] | chapter[@nr='t']/art[@nr='VI'] | chapter[@nr='t']/art[@nr='VII'] | chapter[@nr='t']/art[@nr='IX'] | chapter[@nr='t']/art[@nr='XIII'] | chapter[@nr='t']/art[@nr='XIV'] | chapter[@nr='t']/art[@nr='XVIII'] | chapter[@nr='t']/art[@nr='XIX'] | chapter[@nr='t']/art[@nr='XX']" action-law-nr="129" action-law-year="1997">
+          <address xpath="//art[(@nr='XVIII' or @nr='XIX' or @nr='XX') or contains(concat(',', @nr, ','), ',XIV,') or contains(concat(',', @nr, ','), ',XIII,') or contains(concat(',', @nr, ','), ',IX,') or contains(concat(',', @nr, ','), ',VII,') or contains(concat(',', @nr, ','), ',VI,') or contains(concat(',', @nr, ','), ',IV,') or contains(concat(',', @nr, ','), ',II,')]">Ákvæði til bráðabirgða II, IV, VI, VII, IX, XIII, XIV og XVIII–XX</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Á árinu 2001 skal fjármálaráðherra láta gera skýrslu um þróun lífeyrismála í framhaldi af samþykkt laga þessara.</sen>
+                  <sen nr="2">Sérstaklega skal fjalla um hvernig lífeyrissjóðir hafa breytt samþykktum sínum og boðið sjóðfélögum upp á fleiri valmöguleika í samsetningu lífeyrisréttinda sinna, sbr. 4. gr., enda er það eitt af markmiðum laga þessara að auka valmöguleika sjóðfélaganna.</sen>
+                  <sen nr="3">Komi í ljós að lífeyrissjóðir hafi almennt ekki boðið upp á valmöguleika með hliðsjón af lágmörkum skv. 4. gr. skal fjármálaráðherra láta, í samráði við hagsmunaaðila, undirbúa frumvarp um breytingu á lögum þessum þannig að þetta markmið þeirra náist.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 3. og 6. málsl. 5. mgr. 36. gr. er lífeyrissjóðum heimilt að eiga eða binda hærra hlutfall af hreinni eign sinni í innlánum og verðbréfum en þar er kveðið á um fram til 1. janúar 2006.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2004.070.html" law-nr="70" law-year="2004" law-art="6" nr="1">
+                  <footnote-sen>L. 70/2004, 6. gr.</footnote-sen>
+                  <location type="range" string-length="207">
+                    <start xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. málsl. 2. mgr. 39. gr. skal lífeyrissjóði vera heimilt að hafa allt að 15% mun á milli eignarliða og framtíðarskuldbindinga vegna lífeyris miðað við tryggingafræðilega athugun fyrir árið 2011 og allt að 13% mun fyrir árin 2012, 2013 og 2014, án þess að honum sé skylt að gera breytingar á samþykktum sjóðsins.</sen>
+                  <sen nr="2">Ákvæði 1. mgr. 39. gr. um að hrein eign lífeyrissjóðs til greiðslu lífeyris ásamt núvirði framtíðariðgjalda skuli vera jafnhá núvirði væntanlegs lífeyris vegna þegar greiddra iðgjalda og framtíðariðgjalda á ekki við um tryggingafræðilega athugun fyrir árin 2011, 2012, 2013 og 2014.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar metið er hvort lífeyrissjóður falli undir 2. málsl. 2. mgr. 39. gr. skal miða við 10% mun á milli eignarliða og lífeyrisskuldbindinga árin 2008, 2009, 2010, 2011, 2012, 2013 og 2014.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 2. málsl. 2. mgr. 39. gr. og með vísan til 2. mgr. þessa ákvæðis er lífeyrissjóði heimilt að hafa meira en 10% mun á milli eignarliða og lífeyrisskuldbindinga samfellt í allt að sjö ár frá og með árinu 2008.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2015.105.html" law-nr="105" law-year="2015" law-art="1" nr="1">
+                  <footnote-sen>L. 105/2015, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Þrátt fyrir ákvæði 1. málsl. 2. mgr. 39. gr. skal lífeyrissjóði vera heimilt að hafa allt að 15% mun á milli eignarliða og framtíðarskuldbindinga vegna lífeyris miðað við tryggingafræðilega athugun fyrir árið 2011 og allt að 13% mun fyrir árin 2012, 2013 og 2014, án þess að honum sé skylt að gera breytingar á samþykktum sjóðsins." instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="2012, 2013 og 2014" middle-punctuation="." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.106.html" law-nr="106" law-year="2013" law-art="10" nr="2">
+                  <footnote-sen>L. 106/2013, 10. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="2008, 2009, 2010" middle-punctuation="," instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Þrátt fyrir ákvæði 2. málsl. 2. mgr. 39. gr. og með vísan til 2. mgr. þessa ákvæðis er lífeyrissjóði heimilt að hafa meira en 10% mun á milli eignarliða og lífeyrisskuldbindinga samfellt í allt að (\[??)?sjö ár:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?3\) ?&lt;/sup&gt;)?,? ?frá og með árinu 2008." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2014.096.html" law-nr="96" law-year="2014" law-art="1" nr="3">
+                  <footnote-sen>L. 96/2014, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" words="2013 og 2014" middle-punctuation="." instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="sjö ár" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.156.html" law-nr="156" law-year="2011" law-art="2" nr="4">
+                  <footnote-sen>L. 156/2011, 2. gr.</footnote-sen>
+                  <location type="range" string-length="802">
+                    <start xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.171.html" law-nr="171" law-year="2008" law-art="13" nr="5">
+                  <footnote-sen>L. 171/2008, 13. gr.</footnote-sen>
+                  <location type="range" string-length="1031">
+                    <start xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VII" roman-nr="7" number-type="roman">
+              <nr-title>VII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 4. málsl. 5. mgr. 36. gr. er lífeyrissjóði heimilt að eiga allt að 20% af hlutafé í samlagshlutafélögum.</sen>
+                  <sen nr="2">Nýjar fjárfestingar eða nýjar skuldbindingar í slíkum félögum, umfram mörk skv. 4. málsl. 5. mgr. 36. gr., eru ekki heimilar eftir 31. desember 2015.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2014.129.html" law-nr="129" law-year="2014" law-art="1" nr="1">
+                  <footnote-sen>L. 129/2014, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="2015" middle-punctuation="." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2009.130.html" law-nr="130" law-year="2009" law-art="40" nr="2">
+                  <footnote-sen>L. 130/2009, 40. gr.</footnote-sen>
+                  <location type="range" string-length="273">
+                    <start xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.171.html" law-nr="171" law-year="2008" law-art="13" nr="3">
+                  <footnote-sen>L. 171/2008, 13. gr.</footnote-sen>
+                  <location type="range" string-length="277">
+                    <start xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IX" roman-nr="9" number-type="roman">
+              <nr-title>IX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Á tímabilinu 1. apríl 2020 til 1. janúar 2022 er vörsluaðila séreignarsparnaðar heimilt að fresta útgreiðslum séreignarsparnaðar að uppfylltum þeim skilyrðum sem kveðið er á um í þessu ákvæði.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Frestun skv. 1. mgr. skal vera almenn og verður einungis beitt mæli sérstakar ástæður með því og hagsmunir rétthafa séreignarsparnaðar krefjist þess.</sen>
+                  <sen nr="2">Frestun á útgreiðslum skal þegar tilkynnt Fjármálaeftirlitinu og er háð samþykki þess, sbr. 44. gr.</sen>
+                  <sen nr="3">Jafnframt skal frestun auglýst opinberlega.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálaeftirlitið getur krafist þess að útgreiðslum séreignarsparnaðar verði frestað krefjist hagsmunir rétthafa sparnaðarins eða almennings þess.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.036.html" law-nr="36" law-year="2021" law-art="4" nr="1">
+                  <footnote-sen>L. 36/2021, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="1. janúar 2022" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.025.html" law-nr="25" law-year="2020" law-art="10" nr="2">
+                  <footnote-sen>L. 25/2020, 10. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="1. apríl 2020 til (\[??)?1. janúar 2022:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2009.013.html" law-nr="13" law-year="2009" law-art="3" nr="3">
+                  <footnote-sen>L. 13/2009, 3. gr.</footnote-sen>
+                  <location type="range" string-length="634">
+                    <start xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIII" roman-nr="13" number-type="roman">
+              <nr-title>XIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. málsl. 2. mgr. 31. gr. er stjórnarmönnum í lífeyrissjóðum heimilt að eiga sæti í stjórn annars lífeyrissjóðs til 1. júlí 2012.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.156.html" law-nr="156" law-year="2011" law-art="3" nr="1">
+                  <footnote-sen>L. 156/2011, 3. gr.</footnote-sen>
+                  <location type="range" string-length="154">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIV" roman-nr="14" number-type="roman">
+              <nr-title>XIV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Við álagningu opinberra gjalda 2012 skulu aðilar sem falla undir 6. tölul. 4. gr. laga nr. 90/2003, um tekjuskatt, og lífeyrissjóðir sem starfa samkvæmt sérlögum, greiða sérstakt gjald í ríkissjóð sem nemur 0,0814% af hreinni eign til greiðslu lífeyris, sbr. 39. gr., eins og hún er í lok næstliðins árs.</sen>
+                  <sen nr="2">Gjalddagi er 1. nóvember 2012 og eindagi 15 dögum síðar.</sen>
+                  <sen nr="3">Greiða skal fyrir fram upp í álagt gjald hinn 31. desember 2011 og miðast sú greiðsla við hreina eign til greiðslu lífeyris eins og hún var í árslok 2010 og það skatthlutfall sem kveðið er á um í ákvæði þessu.</sen>
+                  <sen nr="4">Um álagningu og innheimtu fer samkvæmt ákvæðum X.–XIII. kafla laga nr. 90/2003, um tekjuskatt, eftir því sem við á.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2012.146.html" law-nr="146" law-year="2012" law-art="26" nr="1">
+                  <footnote-sen>L. 146/2012, 26. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Við álagningu opinberra gjalda 2012" after-mark="skulu aðilar sem falla undir 6. tölul. 4. gr. laga nr. 90/2003, um tekjuskatt, og lífeyrissjóðir sem starfa samkvæmt sérlögum, greiða sérstakt gjald í ríkissjóð sem nemur 0,0814% af hreinni eign til greiðslu lífeyris, sbr. 39. gr., eins og hún er í lok næstliðins árs.$"/>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Gjalddagi er 1. nóvember 2012" after-mark="og eindagi 15 dögum síðar.$"/>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Greiða skal fyrir fram upp í álagt gjald hinn 31. desember 2011" after-mark="og miðast sú greiðsla við hreina eign til greiðslu lífeyris eins og hún var í árslok 2010:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?og það skatthlutfall sem kveðið er á um í ákvæði þessu.$"/>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Greiða skal fyrir fram upp í álagt gjald hinn 31. desember 2011:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?og miðast sú greiðsla við hreina eign til greiðslu lífeyris eins og hún var í árslok 2010" after-mark="og það skatthlutfall sem kveðið er á um í ákvæði þessu.$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.156.html" law-nr="156" law-year="2011" law-art="3" nr="2">
+                  <footnote-sen>L. 156/2011, 3. gr.</footnote-sen>
+                  <location type="range" string-length="689">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XVIII" roman-nr="18" number-type="roman">
+              <nr-title>XVIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 39. gr. skal iðgjald launagreiðenda til lífeyrissjóða á opinberum vinnumarkaði vera 11,5% vegna Lífeyrissjóðs starfsmanna ríkisins og 12% vegna A-deildar Brúar lífeyrissjóðs fram til 1. júní 2017 og 11,5% frá 1. júní 2017 þar til um annað hefur verið samið í kjarasamningi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Stjórn Brúar lífeyrissjóðs skal fyrir 1. júní 2017 aðlaga samþykktir A-deildar sjóðsins með sama hætti og kveðið er á um í ákvæði til bráðabirgða VIII í lögum um Lífeyrissjóð starfsmanna ríkisins eftir því sem við getur átt, þar á meðal hvað lífeyristökualdur, aldurstengda réttindaávinnslu, lífeyrisaukasjóði og varúðarsjóði varðar, sbr. ákvæði til bráðabirgða IX–XIV í lögum um Lífeyrissjóð starfsmanna ríkisins.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.127.html" law-nr="127" law-year="2016" law-art="9" nr="1">
+                  <footnote-sen>L. 127/2016, 9. gr.</footnote-sen>
+                  <location type="range" string-length="713">
+                    <start xpath="chapter[@nr='t']/art[@nr='XVIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XVIII']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIX" roman-nr="19" number-type="roman">
+              <nr-title>XIX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Eigi lífeyrissjóður eða vörsluaðili séreignarsparnaðar eignir umfram þau takmörk sem sett eru í 36. gr. b, 36. gr. c og 36. gr. d er honum heimilt að eiga þær áfram en hann skal leitast við að uppfylla ákvæði laganna eins fljótt og auðið er og eigi síðar en 31. desember 2020.</sen>
+                  <sen nr="2">Fjármálaeftirlitið getur þó heimilað lengri frest enda sé það augljóslega í þágu sjóðfélaga.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.113.html" law-nr="113" law-year="2016" law-art="12" nr="1">
+                  <footnote-sen>L. 113/2016, 12. gr.</footnote-sen>
+                  <location type="range" string-length="373">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XX" roman-nr="20" number-type="roman">
+              <nr-title>XX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði samþykkta lífeyrissjóða um vanskilavexti er stjórn lífeyrissjóðs heimilt að setja reglur um innheimtu vanskilavaxta sem eru lægri en dráttarvextir skv. 6. gr. laga um vexti og verðtryggingu, vegna iðgjalda skv. 1. mgr. 2. gr. sem eru komin fram yfir eindaga.</sen>
+                  <sen nr="2">Heimildin tekur til iðgjaldagreiðslutímabils frá 1. janúar 2020 til 1. janúar 2021.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.025.html" law-nr="25" law-year="2020" law-art="11" nr="1">
+                  <footnote-sen>L. 25/2020, 11. gr.</footnote-sen>
+                  <location type="range" string-length="364">
+                    <start xpath="chapter[@nr='t']/art[@nr='XX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -41,6 +303,18 @@
       <original affected-law-nr="87" affected-law-year="1998">
         <p style="text-align: justify;">4. mgr. 8. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='4']" action-law-nr="87" action-law-year="1998">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='4']">4. mgr. 8. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Lendi eftirlitsskyldur aðili, annar en fjármálafyrirtæki, í sérstökum fjárhags- og/eða rekstrarerfiðleikum þannig að Fjármálaeftirlitið telur þörf á að grípa til sérstakra ráðstafana í því skyni að takmarka tjón eða hættu á tjóni á fjármálamarkaði gilda ákvæði 100. gr. a laga um fjármálafyrirtæki um heimildir Fjármálaeftirlitsins til inngrips í starfsemina.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="4" nr-type="roman" roman-nr="IV">
@@ -49,6 +323,14 @@
       <original affected-law-nr="98" affected-law-year="1999">
         <p style="text-align: justify;">Orðið „heildsöluinnlán“ í 2. málsl. 4. mgr. 9. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="98" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='4']//sen[@nr='2']">Orðið „heildsöluinnlán“ í 2. málsl. 4. mgr. 9. gr.</address>
+          <existing>
+            <sen nr="2">Lántökur innlánsstofnunar, eiginfjárreikningar, heildsöluinnlán og safnreikningar, aðrir en reikningar innlánsleiða vörsluaðila lífeyrissparnaðar, teljast ekki til innstæðna.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="5" nr-type="roman" roman-nr="V">
@@ -275,36 +557,302 @@
           <li style="text-align: justify;">2. mgr. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="1. gr. b">
+        <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1b']/subart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',1b,')]//subart[@nr='1']">1. mgr. 1. gr. b</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Í lögum þessum merkir:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <name>Fjármálafyrirtæki:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Lánastofnun eða verðbréfafyrirtæki.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <name>Lánastofnun:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Fyrirtæki sem starfar við að taka á móti innlánum eða öðrum endurgreiðanlegum fjármunum frá almenningi og veita lán fyrir eigin reikning.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <name>Verðbréfafyrirtæki:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Verðbréfafyrirtæki samkvæmt lögum um markaði fyrir fjármálagerninga, að frátöldum lánastofnunum, staðbundnum fyrirtækjum og fyrirtækjum skv. 8. mgr. 14. gr. a.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <name>Staðbundið fyrirtæki:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Fyrirtæki sem stundar viðskipti fyrir eigin reikning á mörkuðum fyrir staðlaða framvirka samninga, valrétti eða aðrar afleiður og á lausafjármörkuðum, eingöngu í þeim tilgangi að verja stöður á afleiðumörkuðum, eða það stundar viðskipti fyrir reikning annarra sem eiga aðild að sömu mörkuðum og þar sem gert er ráð fyrir að uppgjörsaðilar ábyrgist að staðið verði við samninga sem slíkt fyrirtæki gerir.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <name>Fjármálasamsteypa:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Fjármálasamsteypa samkvæmt lögum um viðbótareftirlit með fjármálasamsteypum.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <name>Framkvæmdastjóri:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Einstaklingur sem stjórn fjármálafyrirtækis ræður til þess að standa fyrir rekstri þess í samræmi við ákvæði laga um hlutafélög eða laga þessara, burt séð frá starfsheiti að öðru leyti.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <name>Lykilstarfsmaður:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Starfsmaður fjármálafyrirtækis, annar en framkvæmdastjóri, sem stöðu sinnar vegna getur haft veruleg áhrif á stefnu fyrirtækisins.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <name>Kaupauki:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Starfskjör starfsmanns fjármálafyrirtækis sem að jafnaði eru skilgreind með tilliti til árangurs og eru ekki þáttur í föstum starfskjörum starfsmanns þar sem endanleg fjárhæð eða umfang þeirra liggur ekki fyrir með nákvæmum hætti fyrir fram.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9-11" nr-type="numeric">
+                  <nr-title>9.–11.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="12" nr-type="numeric">
+                  <nr-title>12.</nr-title>
+                  <name>Útibú:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Starfsstöð sem lögum samkvæmt er háð fjármálafyrirtæki, sem hún er hluti af, og annast með beinum hætti öll eða hluta þeirra viðskipta sem fjármálafyrirtæki stundar.</sen>
+                    <sen nr="2">Allar starfsstöðvar, sem komið hefur verið á fót í einu aðildarríki á vegum lánastofnunar sem hefur aðalskrifstofu sína í öðru aðildarríki, teljast eitt útibú.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="13-18" nr-type="numeric">
+                  <nr-title>13.–18.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="19" nr-type="numeric">
+                  <nr-title>19.</nr-title>
+                  <name>Hlutdeildarfélag:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Félag sem fjármálafyrirtæki hefur veruleg áhrif á eða þar sem beinn eða óbeinn eignarhluti nemur 20% eða meira af atkvæðisrétti eða hlutafé.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="20" nr-type="numeric">
+                  <nr-title>20.</nr-title>
+                  <name>Venslaðir aðilar:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Til venslaðra aðila teljast tengdir aðilar samkvæmt settum reikningsskilareglum, sbr. lög um ársreikninga.</sen>
+                    <sen nr="2">Til venslaðra aðila geta einnig talist aðrir aðilar sem Fjármálaeftirlitið metur að eigi beinna og skyldra hagsmuna að gæta vegna starfsemi fjármálafyrirtækis.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="21-25" nr-type="numeric">
+                  <nr-title>21.–25.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="26" nr-type="numeric">
+                  <nr-title>26.</nr-title>
+                  <name>Aðildarríki:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Ríki sem er aðili að samningnum um Evrópska efnahagssvæðið, aðili að stofnsamningi Fríverslunarsamtaka Evrópu eða Færeyjar.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="27-45" nr-type="numeric">
+                  <nr-title>27.–45.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="46" nr-type="numeric">
+                  <nr-title>46.</nr-title>
+                  <name>Móðurfélag í efsta þrepi samstæðu á Evrópska efnahagssvæðinu:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Móðurfélag sem er móðurfélag á Evrópska efnahagssvæðinu, móðureignarhaldsfélag á fjármálasviði á Evrópska efnahagssvæðinu eða blandað móðureignarhaldsfélag í fjármálastarfsemi á Evrópska efnahagssvæðinu.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="47" nr-type="numeric">
+                  <nr-title>47.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="48" nr-type="numeric">
+                  <nr-title>48.</nr-title>
+                  <name>Greiðslujöfnunarsamningur:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Samningur sem felur í sér að unnt er að umreikna samrættar kröfur eða skuldbindingar fjármálafyrirtækis og viðsemjanda þess í eina jafnaða kröfu, þ.m.t. samningur um greiðslujöfnun til uppgjörs.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="49" nr-type="numeric">
+                  <nr-title>49.</nr-title>
+                  <name>Innri aðferð:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Innramatsaðferðin skv. 1. mgr. 143. gr., eiginlíkansaðferðin skv. 221. gr., eigin matsaðferðin skv. 225. gr., þróuðu mæliaðferðirnar skv. 2. mgr. 312. gr., eiginlíkansaðferðin skv. 283. og 363. gr. og innri virðingaraðferðin skv. 3. mgr. 259. gr. reglugerðar (ESB) nr. 575/2013.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="50" nr-type="numeric">
+                  <nr-title>50.</nr-title>
+                  <name>Kerfisáhætta:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Hætta á truflun á fjármálakerfinu sem gæti haft verulegar neikvæðar afleiðingar fyrir fjármálakerfið og raunhagkerfið.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="51" nr-type="numeric">
+                  <nr-title>51.</nr-title>
+                  <name>Raunverulegur eigandi:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Raunverulegur eigandi samkvæmt lögum um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="52" nr-type="numeric">
+                  <nr-title>52.</nr-title>
+                  <name>Þriðjaríkissamstæða:</name>
+                  <paragraph nr="1">
+                    <sen nr="1">Samstæða þar sem móðurfélagið er með staðfestu í ríki utan Evrópska efnahagssvæðisins.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Í lögum þessum merkir:</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1b']/subart[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',1b,')]//subart[@nr='2']">2. mgr. 1. gr. b</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Önnur hugtök hafa í lögum þessum þá merkingu sem í reglugerð (ESB) nr. 575/2013 greinir.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðanna „undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB“ í 7. mgr. 14. gr. laganna kemur: framseldar reglugerðir og framkvæmdarreglugerðir skv. 1. mgr. 117. gr. a.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='7']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='7']">7. mgr. 14. gr.</address>
+          <existing>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að breyta fjárhæðum samkvæmt þessari grein með reglugerð til samræmis við undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB</text-from>
+          <text-to>framseldar reglugerðir og framkvæmdarreglugerðir skv. 1. mgr. 117. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðanna „undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB“ í 14. mgr. 14. gr. a laganna kemur: framseldar reglugerðir og framkvæmdarreglugerðir skv. 1. mgr. 117. gr. a.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='14a']/subart[@nr='14']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14a,')]//subart[@nr='14']">14. mgr. 14. gr. a</address>
+          <existing>
+            <subart nr="14">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að breyta fjárhæðum samkvæmt þessari grein með reglugerð til samræmis við undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í 146. gr. tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB</text-from>
+          <text-to>framseldar reglugerðir og framkvæmdarreglugerðir skv. 1. mgr. 117. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Á eftir orðinu „vátryggingafélaga“ í 2. málsl. 3. mgr. 21. gr. laganna kemur: endurtrygg­inga­félaga.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='21']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 21. gr.</address>
+          <existing>
+            <sen nr="2">Þeim er enn fremur heimilt að veita þjónustu í umboði annarra, svo sem vátryggingafélaga, lífeyrissjóða og annarra fjármálafyrirtækja, enda telji Fjármálaeftirlitið þá starfsemi hvorki skerða möguleika þeirra til þess að veita þjónustu samkvæmt starfsleyfi sínu né skerða möguleika þess til að hafa eftirlit með starfseminni.</sen>
+          </existing>
+          <text-from>vátryggingafélaga</text-from>
+          <text-to>endurtryggingafélaga.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Á eftir orðinu „vátryggingafélag“ í 23. gr. laganna kemur: eða endurtryggingafélag.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='23']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',23,')]">23. gr.</address>
+          <existing>
+            <art nr="23">
+              <nr-title>23. gr.</nr-title>
+              <name>Heimildir til vátryggingastarfsemi.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Viðskiptabönkum, sparisjóðum með stofnframlag skv. 1. mgr. 14. gr. og lánafyrirtækjum er heimilt að reka vátryggingafélag í sérstöku félagi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="31" nr="1">
+                  <footnote-sen>L. 38/2022, 31. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="með stofnframlag skv. 1. mgr." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2012.077.html" law-nr="77" law-year="2012" law-art="4" nr="2">
+                  <footnote-sen>L. 77/2012, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="(\[??)?með stofnframlag skv. 1. mgr\.?:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?14. gr." instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <text-from>vátryggingafélag</text-from>
+          <text-to>eða endurtryggingafélag.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="10">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">4. mgr. 29. gr. a laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='29a']/subart[@nr='4']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',29a,')]//subart[@nr='4']">4. mgr. 29. gr. a</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands setur reglur um með hvaða hætti lán sem eru tryggð með hlutabréfum eða stofnfjárbréfum annars fjármálafyrirtækis koma til útreiknings á áhættu- og eiginfjárgrunni og í mati á eiginfjárþörf til að tryggja að ekki sé hætta á að lánveitingin skapi kerfislæga áhættu í fjármálakerfinu.</sen>
+                <sen nr="2">Reglurnar taki einnig til þess með hvaða hætti meta skal lán sem eru tryggð með veði í eignasöfnum, svo sem vörslureikningum og verðbréfasjóðum, sem innihalda hlutabréf eða stofnfjárbréf, hvort sem þau eru útgefin af fjármálafyrirtækinu sjálfu eða öðrum fjármálafyrirtækjum, þannig að samræmist ákvæðum 1. mgr. og 1. málsl. þessarar málsgreinar.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðanna „leitast við“ í 1. málsl. 2. mgr. 31. gr. a laganna kemur: gera allt sem í valdi þess stendur til.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='31a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',31a,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 31. gr. a</address>
+          <existing>
+            <sen nr="1">Fjármálaeftirlitið skal leitast við að komast að sameiginlegri niðurstöðu með viðkomandi yfirvaldi um hvort útibú teljist mikilvægt.</sen>
+          </existing>
+          <text-from>leitast við</text-from>
+          <text-to>gera allt sem í valdi þess stendur til.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="12">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -315,42 +863,180 @@
           <li style="text-align: justify;">Við bætast tveir nýir málsliðir, svohljóðandi: Upplýsingarnar skulu veittar án ástæðulausrar tafar. Fjármálaeftirlitið skal, þegar það tilkynnir þeim sem hyggst eignast eða auka við virkan eignarhlut um niðurstöðu mats síns, greina frá þeim sjónarmiðum og fyrirvörum sem lögbært yfirvald þess hins sama hefur látið í ljós við samráðið.</li>
         </ol>
       </original>
+      <intents common-address="2. mgr. 42. gr. a">
+        <intent action="append_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='42a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',42a,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 42. gr. a</address>
+          <existing>
+            <sen nr="1">Ef sá sem hyggst eignast eða auka við virkan eignarhlut er fjármálafyrirtæki, vátryggingafélag eða rekstrarfélag verðbréfasjóða með starfsleyfi í öðru aðildarríki eða móðurfélag slíks aðila eða einstaklingur eða lögaðili sem hefur yfirráð yfir slíkum aðila skal Fjármálaeftirlitið hafa samráð við viðeigandi lögbær yfirvöld við mat sitt.</sen>
+          </existing>
+          <text-from>vátryggingafélag</text-from>
+          <text-to>endurtryggingafélag.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='42a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',42a,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 42. gr. a</address>
+          <existing>
+            <sen nr="2">Fjármálaeftirlitið skal að eigin frumkvæði veita viðkomandi yfirvöldum upplýsingar sem eru nauðsynlegar fyrir mat þeirra og verða án ástæðulausrar tafar við óskum um frekari upplýsingar sem skipta máli fyrir matið.</sen>
+          </existing>
+          <text-from>án ástæðulausrar tafar</text-from>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='42a']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',42a,')]//subart[@nr='2']">2. mgr. 42. gr. a</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ef sá sem hyggst eignast eða auka við virkan eignarhlut er fjármálafyrirtæki, vátryggingafélag eða rekstrarfélag verðbréfasjóða með starfsleyfi í öðru aðildarríki eða móðurfélag slíks aðila eða einstaklingur eða lögaðili sem hefur yfirráð yfir slíkum aðila skal Fjármálaeftirlitið hafa samráð við viðeigandi lögbær yfirvöld við mat sitt.</sen>
+                <sen nr="2">Fjármálaeftirlitið skal að eigin frumkvæði veita viðkomandi yfirvöldum upplýsingar sem eru nauðsynlegar fyrir mat þeirra og verða án ástæðulausrar tafar við óskum um frekari upplýsingar sem skipta máli fyrir matið.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="3">Upplýsingarnar skulu veittar án ástæðulausrar tafar.</sen>
+            <sen nr="4">Fjármálaeftirlitið skal, þegar það tilkynnir þeim sem hyggst eignast eða auka við virkan eignarhlut um niðurstöðu mats síns, greina frá þeim sjónarmiðum og fyrirvörum sem lögbært yfirvald þess hins sama hefur látið í ljós við samráðið.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="13">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">2. málsl. 2. mgr. 43. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='43']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',43,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 43. gr.</address>
+          <existing>
+            <sen nr="2">Í niðurstöðunni skal greint frá sjónarmiðum og fyrirvörum sem lögbært yfirvald þess sem hyggst eignast eða auka við virkan eignarhlut hefur látið í ljós við samráð skv. 2. mgr. 42. gr. a.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="14">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðanna „skilaeining“ og „samstæðu innan skilameðferðar samstæðu“ í 2. tölul. 2. mgr. 49. gr. b laganna kemur: skilaaðili; og: skilasamstæðu.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='49b']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',49b,')]//subart[@nr='2']//numart[@nr='2']">2. tölul. 2. mgr. 49. gr. b</address>
+          <existing>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Það hefur ekki verið tilgreint sem skilaeining í neinni samstæðu innan skilameðferðar samstæðu í samræmi við skilastefnuna sem skilavaldið hefur ákvarðað samkvæmt lögum um skilameðferð lánastofnana og verðbréfafyrirtækja.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>skilaeining“ og „samstæðu innan skilameðferðar samstæðu</text-from>
+          <text-to>skilaaðili; og: skilasamstæðu.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="15">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Á eftir tilvísuninni „19. gr. reglugerðar (ESB) nr. 1093/2010“ í 1. málsl. 2. mgr. 49. gr. e laganna kemur: eða 19. gr. reglugerðar (ESB) nr. 1094/2010.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='49e']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',49e,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 49. gr. e</address>
+          <existing>
+            <sen nr="1">Ef ekki næst sameiginleg niðurstaða skal Fjármálaeftirlitið bíða með að taka ákvörðun og vísa málinu til Evrópsku bankaeftirlitsstofnunarinnar, Evrópsku vátrygginga- og lífeyrissjóðaeftirlitsstofnunarinnar eða Eftirlitsstofnunar EFTA, eftir því sem við á, í samræmi við 19. gr. reglugerðar (ESB) nr. 1093/2010, sbr. lög um evrópskt eftirlitskerfi á fjármálamarkaði.</sen>
+          </existing>
+          <text-from>19. gr. reglugerðar (ESB) nr. 1093/2010</text-from>
+          <text-to>eða 19. gr. reglugerðar (ESB) nr. 1094/2010.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="16">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðsins „skilavalds“ í b-lið 49. gr. i laganna kemur: skilastjórnvalds.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='49i']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',49i,')]//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 49. gr. i</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">gerði skilabærni óskilvirkari en ef um væri að ræða tvö milligöngumóðurfélög að mati lögbærs skilavalds milligöngumóðurfélagsins á Evrópska efnahagssvæðinu.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>skilavalds</text-from>
+          <text-to>skilastjórnvalds.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="17">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Á eftir orðinu „vátryggingafélags“ í 1. málsl. 2. mgr. 52. gr. a laganna kemur: endur­trygg­inga­félags.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='52a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',52a,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 52. gr. a</address>
+          <existing>
+            <sen nr="1">Þrátt fyrir ákvæði 1. mgr. getur stjórnarmaður eða starfsmaður fjármálafyrirtækis tekið sæti í stjórn annars fjármálafyrirtækis, vátryggingafélags eða fjármálasamsteypu eða aðila í nánum tengslum við framangreinda aðila ef um er að ræða félag sem er að hluta eða öllu leyti í eigu fjármálafyrirtækisins eða félag sem er að hluta eða öllu leyti í eigu félags með yfirráð í fjármálafyrirtækinu.</sen>
+          </existing>
+          <text-from>vátryggingafélags</text-from>
+          <text-to>endurtryggingafélags.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="18">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">2.–4. mgr. 52. gr. e laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='52e']/subart[@nr='2'] | chapter[@nr='7' and @chapter-type='kafli']/art[@nr='52e']/subart[@nr='3'] | chapter[@nr='7' and @chapter-type='kafli']/art[@nr='52e']/subart[@nr='4']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',52e,')]//subart[(@nr='2' or (starts-with(@nr, '2') and string-length(@nr) = 2 and string(number(@nr)) != @nr) or @nr='3' or (starts-with(@nr, '3') and string-length(@nr) = 2 and string(number(@nr)) != @nr) or @nr='4' or (starts-with(@nr, '4') and string-length(@nr) = 2 and string(number(@nr)) != @nr))]">2.–4. mgr. 52. gr. e</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Er tilkynning berst skv. 1. málsl. 1. mgr. er Fjármálaeftirlitinu heimilt að veita fjármálafyrirtæki frest í allt að sex mánuði til að koma starfsemi í lögmætt horf.</sen>
+                <sen nr="2">Séu til þess ríkar ástæður er Fjármálaeftirlitinu heimilt að framlengja þann frest í allt að sex mánuði í viðbót.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Er tilkynning berst skv. 1. og 2. málsl. 1. mgr. getur Fjármálaeftirlitið krafist þess að stjórn fjármálafyrirtækis afhendi greinargerð og önnur gögn um úrbætur og ráðstafanir á grundvelli 1. mgr.</sen>
+                <sen nr="2">Greinargerð og gögnum skal skilað til Fjármálaeftirlitsins innan tímamarka sem Fjármálaeftirlitið ákveður.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Ákvæði þetta takmarkar á engan hátt aðrar heimildir Fjármálaeftirlitsins samkvæmt lögum þessum, þ.m.t. heimildir í 9. gr., 107. gr. a – 107. gr. e og XII. kafla.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="19">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">1. mgr. 57. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Fjármálafyrirtæki skal varðveita gögn um lán til stjórnarmanna og framkvæmdastjóra og gera þau aðgengileg Fjármálaeftirlitinu óski það eftir því. Sama gildir um lán til maka, barna og foreldra stjórnarmanns eða framkvæmdastjóra og fyrirtækja sem stjórnarmaður, framkvæmdastjóri eða maki, barn eða foreldri hans á virkan eignarhlut í, gegnir í stöðu stjórnarmanns, framkvæmdastjóra eða stjórnanda sem svarar beint til framkvæmdastjóra eða getur af öðrum sökum haft veruleg áhrif á.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57']/subart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',57,')]//subart[@nr='1']">1. mgr. 57. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjármálafyrirtæki skal setja reglur um viðskipti sín við stjórnarmenn, framkvæmdastjóra og lykilstarfsmenn og senda Fjármálaeftirlitinu afrit af reglunum innan 14 daga frá því að þær eru staðfestar af stjórn.</sen>
+                <sen nr="2">Samningur fjármálafyrirtækis um lán, ábyrgðir, kauprétt eða sambærileg viðskipti við stjórnarmann eða framkvæmdastjóra er háður samþykki stjórnar fyrirtækisins.</sen>
+                <sen nr="3">Ákvörðun um slíkt skal bókuð og tilkynnt Fjármálaeftirlitinu.</sen>
+                <sen nr="4">Ákvæði þessarar greinar gilda einnig um maka, börn og foreldra stjórnarmanns eða framkvæmdastjóra fjármálafyrirtækis og fyrirtæki sem stjórnarmaður, framkvæmdastjóri eða maki, barn eða foreldri hans á virkan eignarhlut í, gegnir í stöðu stjórnarmanns, framkvæmdastjóra eða stjórnanda sem svarar beint til framkvæmdastjóra eða getur af öðrum sökum haft veruleg áhrif á.</sen>
+                <sen nr="5">.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjármálafyrirtæki skal varðveita gögn um lán til stjórnarmanna og framkvæmdastjóra og gera þau aðgengileg Fjármálaeftirlitinu óski það eftir því.</sen>
+                <sen nr="2">Sama gildir um lán til maka, barna og foreldra stjórnarmanns eða framkvæmdastjóra og fyrirtækja sem stjórnarmaður, framkvæmdastjóri eða maki, barn eða foreldri hans á virkan eignarhlut í, gegnir í stöðu stjórnarmanns, framkvæmdastjóra eða stjórnanda sem svarar beint til framkvæmdastjóra eða getur af öðrum sökum haft veruleg áhrif á.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="20">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -360,6 +1046,28 @@
           <li style="text-align: justify;">Í stað orðsins „vexti“ í 2. málsl. 6. mgr. kemur: afvöxtun.</li>
         </ol>
       </original>
+      <intents common-address="57. gr. b">
+        <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57b']/subart[@nr='3']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',57b,')]//subart[@nr='3']">3. mgr. 57. gr. b</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Allt að fjórðungur kaupauka má bera vexti að því tilskildu að hann sé greiddur með gerningum sem er haldið eftir í a.m.k. fimm ár.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Allt að fjórðungur kaupauka má bera vexti</text-from>
+          <text-to>Afvaxta má allt að fjórðung kaupauka.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57b']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',57b,')]//subart[@nr='6']//sen[@nr='2']">2. málsl. 6. mgr. 57. gr. b</address>
+          <existing>
+            <sen nr="2">Í reglunum má m.a. kveða á um skilgreiningu fastra starfskjara og kaupauka, markmið kaupaukakerfis, árangurs- og áhættumat, innra eftirlit, ráðningarkaupauka, frestun, lækkun, afturköllun eða endurkröfu kaupauka, vexti skv. 3. mgr. og upplýsingagjöf og gagnsæi.</sen>
+          </existing>
+          <text-from>vexti</text-from>
+          <text-to>afvöxtun.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="21">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -372,6 +1080,78 @@
         </ol>
         <p style="text-align: justify;">Seðlabanki Íslands setur nánari reglur um hvaða hópar starfsfólks teljast við störf sín hafa marktæk áhrif á áhættusnið fjármálafyrirtækis.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57f']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',57f,')]">57. gr. f</address>
+          <existing>
+            <art nr="57f">
+              <nr-title>57. gr. f.</nr-title>
+              <name>Upplýsingar um starfskjör.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálaeftirlitið skal safna upplýsingum:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Sem birtar eru í samræmi við g–i- og k-lið 1. mgr. 450. gr. reglugerðar (ESB) nr. 575/2013 og upplýsingum sem fjármálafyrirtæki veita um mun á launum kynjanna og nýta þær upplýsingar til viðmiðunar um starfskjaraþróun og -framkvæmd.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Um fjölda einstaklinga í hverju fjármálafyrirtæki sem fá jafnvirði 1 millj. evra eða meira í laun á hverju reikningsári og um starfsskyldur þeirra, þau rekstrarsvið sem þeir starfa við og helstu þætti starfskjara þeirra, þar á meðal föst starfskjör, kaupauka og lífeyrisframlög.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálaeftirlitið skal senda Evrópsku bankaeftirlitsstofnuninni upplýsingar skv. 1. mgr.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="82" nr="1">
+                  <footnote-sen>L. 38/2022, 82. gr.</footnote-sen>
+                  <location type="range" string-length="682">
+                    <start xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57f']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='57f']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Eftirfarandi aðilar teljast a.m.k. hafa marktæk áhrif á áhættusnið fjármálafyrirtækis skv. 450. gr. reglugerðar (ESB) nr. 575/2013:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">stjórnarmenn, framkvæmdastjóri og stjórnendur sem svara beint til framkvæmdastjóra,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">starfsmenn sem stýra eftirlitseiningum eða mikilvægum rekstrareiningum,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">starfsmenn sem gegna störfum innan mikilvægra rekstrareininga sem hafa veruleg áhrif á áhættusnið þeirra eininga og sem áttu á undangengnu reikningsári rétt á launagreiðslum sem voru a.m.k. jafnvirði 500 þús. evra og a.m.k. jafn háar og meðallaunagreiðslur fyrir­tækisins til einstaklinga skv. a-lið.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands setur nánari reglur um hvaða hópar starfsfólks teljast við störf sín hafa marktæk áhrif á áhættusnið fjármálafyrirtækis.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="22">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -381,16 +1161,64 @@
           <li style="text-align: justify;">Orðin „eða á hlutdeild í slíku félagi“ falla brott.</li>
         </ol>
       </original>
+      <intents common-address="2. málsl. 5. mgr. 77. gr. a">
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77a']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',77a,')]//subart[@nr='5']//sen[@nr='2']">2. málsl. 5. mgr. 77. gr. a</address>
+          <existing>
+            <sen nr="2">Dótturfélag sem er fjármálafyrirtæki skal fara eftir grein þessari á undirsamstæðugrunni ef það, eða móðurfélag þess ef það er eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag í fjármálastarfsemi, hefur dótturfélag í ríki utan Evrópska efnahagssvæðisins sem er fjármálafyrirtæki, fjármálastofnun eða rekstrarfélag verðbréfasjóða eða á hlutdeild í slíku félagi.</sen>
+          </existing>
+          <text-from>hefur dótturfélag</text-from>
+          <text-to>hefur dóttur- eða hlutdeildarfélag.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77a']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',77a,')]//subart[@nr='5']//sen[@nr='2']">2. málsl. 5. mgr. 77. gr. a</address>
+          <existing>
+            <sen nr="2">Dótturfélag sem er fjármálafyrirtæki skal fara eftir grein þessari á undirsamstæðugrunni ef það, eða móðurfélag þess ef það er eignarhaldsfélag á fjármálasviði eða blandað eignarhaldsfélag í fjármálastarfsemi, hefur dótturfélag í ríki utan Evrópska efnahagssvæðisins sem er fjármálafyrirtæki, fjármálastofnun eða rekstrarfélag verðbréfasjóða eða á hlutdeild í slíku félagi.</sen>
+          </existing>
+          <text-from>eða á hlutdeild í slíku félagi</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="23">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðsins „útgefandi“ í 1. málsl. 1. mgr. og 2. mgr. 78. gr. d laganna kemur: upphafsaðili.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78d']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78d']/subart[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',78d,')]//subart[@nr='2'] | //art[contains(concat(',', @nr, ','), ',78d,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. og 2. mgr. 78. gr. d</address>
+          <existing>
+            <sen nr="1">Fjármálafyrirtæki skal, m.a. með stefnu og ferlum, meta og meðhöndla áhættu, þ.m.t. orðsporsáhættu, vegna verðbréfunar, þar sem fyrirtækið er fjárfestir, útgefandi eða umsýsluaðili slíkra gerninga.</sen>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Fjármálafyrirtæki sem er útgefandi verðbréfunar á áhættuskuldbindingum vegna veltufjármögnunar með ákvæðum um heimild til greiðslu fyrir gjalddaga skal hafa til staðar lausafjáráætlun þar sem tekið er tillit til áætlaðra afborgana og afborgana fyrir gjalddaga.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>útgefandi</text-from>
+          <text-to>upphafsaðili.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="24">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað tilvísunarinnar „10. tölul.“ í 1. mgr. 78. gr. f laganna kemur: 7. tölul.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78f']/subart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',78f,')]//subart[@nr='1']">1. mgr. 78. gr. f</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjármálafyrirtæki skal, með innri ferlum eða staðlaðri aðferð eða einfaldaðri staðlaðri aðferð í samræmi við reglur skv. 10. tölul. 1. mgr. 117. gr. b, greina, meta, stýra og milda áhættu vegna mögulegra vaxtabreytinga sem hafa áhrif á bæði hagrænt virði eigin fjár og hreinar vaxtatekjur vegna viðskipta utan veltubókar.</sen>
+                <sen nr="2">Fjármálaeftirlitið getur krafist þess að fyrirtækið noti stöðluðu aðferðina ef innri ferlar fyrirtækisins eru ekki fullnægjandi.</sen>
+                <sen nr="3">Fjármálaeftirlitið getur krafist þess að lítið og einfalt fjármálafyrirtæki, sbr. 145. tölul. 1. mgr. 4. gr. reglugerðar (ESB) nr. 575/2013, noti stöðluðu aðferðina ef einfaldaða staðlaða aðferðin mætir ekki nægjanlega vaxtaáhættu vegna viðskipta fyrirtækisins utan veltubókar.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>10. tölul.</text-from>
+          <text-to>7. tölul.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="25">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -401,6 +1229,66 @@
           </li>
         </ol>
       </original>
+      <intents common-address="78. gr. i">
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',78i,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 78. gr. i</address>
+          <existing>
+            <sen nr="2">Í því augnamiði skal fjármálafyrirtæki geta staðið af sér ólíka álagsatburði sem tengdir eru áhættu af óhóflegri vogun.</sen>
+          </existing>
+          <text-from>áhættu sem hlýst af óhóflegri vogun“ í 1. málsl. 1. mgr., „óhóflega vogun“ í 2. málsl. 1. mgr., „áhættu vegna óhóflegrar vogunar“ í 1. málsl. 2. mgr. og 3. mgr. og „áhættu af óhóflegri vogun</text-from>
+          <text-to>hættu á of mikilli vogun.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/name[1]" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',78i,')]">78. gr. i</address>
+          <existing>
+            <art nr="78i">
+              <nr-title>78. gr. i.</nr-title>
+              <name>Áhætta vegna óhóflegrar vogunar.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálafyrirtæki skal hafa stefnu og ferla til að greina, stýra og vakta áhættu sem hlýst af óhóflegri vogun.</sen>
+                  <sen nr="2">Á meðal áhættuvísa um óhóflega vogun er útreikningur vogunarhlutfalls og misræmi á milli eigna og skuldbindinga fjármálafyrirtækis.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálafyrirtæki skal meðhöndla áhættu vegna óhóflegrar vogunar með varfærnum hætti og taka tillit til mögulegrar aukinnar áhættu vegna lækkunar á eigin fé vegna vænts eða innleysts taps í samræmi við gildandi reikningsskilareglur.</sen>
+                  <sen nr="2">Í því augnamiði skal fjármálafyrirtæki geta staðið af sér ólíka álagsatburði sem tengdir eru áhættu af óhóflegri vogun.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Seðlabanka Íslands er heimilt að setja reglur um meðhöndlun áhættu vegna óhóflegrar vogunar og útfæra nánar skyldur fjármálafyrirtækis samkvæmt þessari grein.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.038.html" law-nr="38" law-year="2022" law-art="96" nr="1">
+                  <footnote-sen>L. 38/2022, 96. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Fjármálafyrirtæki skal hafa" after-mark="stefnu og ferla til að greina, stýra og vakta áhættu sem hlýst af óhóflegri vogun.$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.091.html" law-nr="91" law-year="2019" law-art="34" nr="2">
+                  <footnote-sen>L. 91/2019, 34. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Seðlabanka Íslands" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.096.html" law-nr="96" law-year="2016" law-art="38" nr="3">
+                  <footnote-sen>L. 96/2016, 38. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="(\[??)?Seðlabanka Íslands:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?er heimilt að setja reglur um meðhöndlun áhættu vegna óhóflegrar vogunar og útfæra nánar skyldur fjármálafyrirtækis samkvæmt þessari grein." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2015.057.html" law-nr="57" law-year="2015" law-art="27" nr="4">
+                  <footnote-sen>L. 57/2015, 27. gr.</footnote-sen>
+                  <location type="range" string-length="793">
+                    <start xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='78i']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <name>Hætta á of mikilli vogun.</name>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="26">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -410,6 +1298,24 @@
           <li style="text-align: justify;">Í stað orðanna „áhættu vegna óhóflegrar vogunar“ 1. málsl. 6. mgr. og „áhættu vegna vogunar“ í 2. málsl. 6. mgr. kemur: hættu á of mikilli vogun.</li>
         </ol>
       </original>
+      <intents common-address="81. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='81']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',81,')]//subart[@nr='5']//sen[@nr='2']">2. málsl. 5. mgr. 81. gr.</address>
+          <existing>
+            <sen nr="2">Fjármálaeftirlitið skal beita heimildum skv. 107. gr. a eða krefjast breytinga á forsendum við mat á áhrifum vaxtabreytinga á hagrænt virði eigin fjár fjármálafyrirtækis, eins og það er reiknað skv. 78. gr. f, öðrum en þeim forsendum sem greinir í reglum skv. 12. tölul. 1. mgr. 117. gr. b, ef skyndileg og óvænt breyting á vöxtum hefur þau áhrif að hagrænt virði eigin fjár fyrirtækisins lækkar um meira en 15% af eiginfjárþætti 1 samkvæmt einhverri af sex áfallasviðsmyndum eftirlitsaðila eða að hreinar vaxtatekjur fyrirtækisins lækka verulega samkvæmt annarri af tveimur áfallasviðsmyndum eftirlitsaðila.</sen>
+          </existing>
+          <text-from>12. tölul.</text-from>
+          <text-to>7. tölul.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='81']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',81,')]//subart[@nr='6']//sen[@nr='2']">2. málsl. 6. mgr. 81. gr.</address>
+          <existing>
+            <sen nr="2">Við mat Fjármálaeftirlitsins á kerfum og ferlum fjármálafyrirtækis til að stýra áhættu vegna vogunar skal einnig taka mið af viðskiptalíkani fjármálafyrirtækisins.</sen>
+          </existing>
+          <text-from>áhættu vegna óhóflegrar vogunar“ 1. málsl. 6. mgr. og „áhættu vegna vogunar</text-from>
+          <text-to>hættu á of mikilli vogun.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="27">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -419,32 +1325,144 @@
           <li style="text-align: justify;">Í stað tilvísunarinnar „skv. 2. mgr. 52. gr. e“ í 5. mgr. kemur: til að auka eigið fé sitt yfir það lágmark sem mælt er fyrir um í reglugerð (ESB) nr. 575/2013.</li>
         </ol>
       </original>
+      <intents common-address="101. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='101']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',101,')]//subart[@nr='2']//numart[@nr='1']">1. tölul. 2. mgr. 101. gr.</address>
+          <existing>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">eftir kröfu Fjármálaeftirlitsins hafi það afturkallað starfsleyfi fyrirtækisins eða synjað því um frest skv. 2. mgr. 52. gr. e eða frestur samkvæmt því ákvæði er á enda án þess að fyrirtækið hafi aukið eigið fé sitt fram yfir það lágmark sem mælt er fyrir um í reglugerð (ESB) nr. 575/2013,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">eftir kröfu Fjármálaeftirlitsins hafi það afturkallað starfsleyfi fyrirtækisins eða synjað því um frest til að auka eigið fé sitt yfir það lágmark sem mælt er fyrir um í reglugerð (ESB) nr. 575/2013 eða ef frestur sem Fjármálaeftirlitið hefur veitt til þess er á enda án þess að fyrirtækið hafi aukið eigið fé sitt fram yfir það lágmark.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='101']/subart[@nr='5']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',101,')]//subart[@nr='5']">5. mgr. 101. gr.</address>
+          <existing>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Við slit fjármálafyrirtækis skal frestdagur ákveðinn eftir sömu reglum og gilda við gjaldþrotaskipti, en þó þannig að hann getur jafnframt ráðist af þeim degi sem Fjármálaeftirlitið hefur veitt fyrirtækinu frest skv. 2. mgr. 52. gr. e, það hefur verið tekið til skilameðferðar skv. 35. gr. laga um skilameðferð lánastofnana og verðbréfafyrirtækja eða ella af því að héraðsdómi berst krafa um slit skv. 2. mgr. ef ekkert hefur áður gerst til að marka frestdag.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>skv. 2. mgr. 52. gr. e</text-from>
+          <text-to>til að auka eigið fé sitt yfir það lágmark sem mælt er fyrir um í reglugerð (ESB) nr. 575/2013.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="28">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">9. mgr. 107. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Lánastofnun skal svo fljótt sem kostur er á upplýsa Fjármálaeftirlitið um breytingar á nánum tengslum sínum við aðra aðila.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='107']/subart[@nr='9']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',107,')]//subart[@nr='9']">9. mgr. 107. gr.</address>
+          <existing>
+            <subart nr="9">
+              <paragraph nr="1">
+                <sen nr="1"/>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="9">
+              <paragraph nr="1">
+                <sen nr="1">Lánastofnun skal svo fljótt sem kostur er á upplýsa Fjármálaeftirlitið um breytingar á nánum tengslum sínum við aðra aðila.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="29">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðanna „óhóflegrar vogunar“ í 7. mgr. 107. gr. a laganna kemur: hættu á of mikilli vogun.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='107a']/subart[@nr='7']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',107a,')]//subart[@nr='7']">7. mgr. 107. gr. a</address>
+          <existing>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">Eigið fé til að mæta kröfu um hærri eiginfjárgrunn skv. 1. tölul. 3. mgr. vegna óhóflegrar vogunar skal samanstanda af eiginfjárþætti 1.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>óhóflegrar vogunar</text-from>
+          <text-to>hættu á of mikilli vogun.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="30">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað orðsins „hliðarstarfsemi“ í 1. málsl. 109. gr. y laganna kemur: viðbótarstarfsemi.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='109y']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',109y,')]//sen[@nr='1']">1. málsl. 109. gr. y</address>
+          <existing>
+            <sen nr="1">Fjármálaeftirlitið skal að ósk annars lögbærs yfirvalds staðreyna upplýsingar frá innlendu fjármálafyrirtæki, eignarhaldsfélagi á fjármálasviði, blönduðu eignarhaldsfélagi í fjármálastarfsemi, fjármálastofnun, félagi í hliðarstarfsemi, blönduðu eignarhaldsfélagi eða dótturfélagi skv. 109. gr. i eða 109. gr. bb, enda hafi Fjármálaeftirlitið heimild til þess.</sen>
+          </existing>
+          <text-from>hliðarstarfsemi</text-from>
+          <text-to>viðbótarstarfsemi.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="31">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">39. tölul. 1. mgr. 110. gr. laganna orðast svo: 57. gr. um viðskipti stjórnarmanna og starfs­manna við fjármálafyrirtæki.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='110']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='39']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',110,')]//subart[@nr='1']//numart[@nr='39']">39. tölul. 1. mgr. 110. gr.</address>
+          <existing>
+            <numart nr="39" nr-type="numeric">
+              <nr-title>39.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">57. gr. um starfsreglur,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="39" nr-type="numeric">
+              <nr-title>39.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">57. gr. um viðskipti stjórnarmanna og starfsmanna við fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="32">
       <original affected-law-nr="161" affected-law-year="2002">
         <p style="text-align: justify;">Í stað tilvísunarinnar „1. mgr.“ í 20. tölul. 1. mgr. 112. gr. b laganna kemur: 2. mgr.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='112b']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='20']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',112b,')]//subart[@nr='1']//numart[@nr='20']">20. tölul. 1. mgr. 112. gr. b</address>
+          <existing>
+            <numart nr="20" nr-type="numeric">
+              <nr-title>20.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">1. mgr. 57. gr. um viðskipti starfsmanna við fjármálafyrirtæki,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>1. mgr.</text-from>
+          <text-to>2. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="33">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -461,6 +1479,86 @@
           <li style="text-align: justify;">Uppfærslu fjárhæða í ákvæðum um stofnframlag fjármálafyrirtækja.</li>
         </ol>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='117a']/subart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',117a,')]//subart[@nr='1']">1. mgr. 117. gr. a</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur reglugerð til að innleiða undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í eftirtöldum ákvæðum tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB, með síðari breytingum, og útfæra ákvæði laga þessara:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">145. gr. um framseldar gerðir.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">146. gr. um framkvæmdargerðir.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur reglugerð til að innleiða framseldar reglugerðir og framkvæmdarreglugerðir sem framkvæmdastjórn Evrópusambandsins samþykkir og varða efni laga þessara.</sen>
+                <sen nr="2">Í slíkri reglugerð má m.a. fjalla um:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Nánari útfærslu orðskýringa.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Verðlagsuppfærslu fjárhæða í ákvæðum um stofnframlag verðbréfafyrirtækja og skyldra fyrir­tækja.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Heimildir lána- og fjármálastofnana til að starfa yfir landamæri.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingaskipti lögbærra yfirvalda.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Meðhöndlun áhættuþátta og könnunar- og matsferli.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Skil fjármálafyrirtækja sem eru kerfislega mikilvæg á alþjóðavísu á ríki-fyrir-ríki skýrslum.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Mat á hæfi fyrirhugaðra eigenda virkra eignarhluta í lánastofnunum.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Uppfærslu fjárhæða í ákvæðum um stofnframlag fjármálafyrirtækja.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="34">
       <original affected-law-nr="161" affected-law-year="2002">
@@ -482,6 +1580,212 @@
           <li style="text-align: justify;">Innri aðferðir við útreikning á eiginfjárkröfum, sbr. D-hluta XIII. kafla.</li>
         </ol>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='117b']/subart[@nr='1']" action-law-nr="161" action-law-year="2002">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',117b,')]//subart[@nr='1']">1. mgr. 117. gr. b</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands setur reglur til að innleiða undirgerðir sem framkvæmdastjórn Evrópusambandsins samþykkir með stoð í eftirtöldum ákvæðum tilskipunar Evrópuþingsins og ráðsins 2013/36/ESB, með síðari breytingum, og útfæra ákvæði laga þessara:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">2. og 3. mgr. 8. gr. um starfsleyfi.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">9. mgr. 22. gr. um tilkynningu og mat á fyrirhuguðum yfirtökum.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">5. og 6. mgr. 35. gr. um tilkynningarskyldu og víxlverkun milli lögbærra yfirvalda.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">5. og 6. mgr. 36. gr. um upphaf starfsemi.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">4. og 5. mgr. 39. gr. um málsmeðferð við tilkynningu.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">6. og 7. mgr. 50. gr. um samstarf um eftirlit.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">4. og 5. mgr. 51. gr. um mikilvæg útibú.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">4. mgr. 77. gr. um innri aðferðir við útreikning á kröfum vegna eiginfjárgrunns.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9" nr-type="numeric">
+                  <nr-title>9.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">7. og 8. mgr. 78. gr. um eftirlitsviðmiðanir innri aðferða við útreikning á kröfum vegna eiginfjárgrunns.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="10" nr-type="numeric">
+                  <nr-title>10.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">5. mgr. 84. gr. um vaxtaáhættu sem verður til við viðskipti önnur en veltubókarviðskipti.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="11" nr-type="numeric">
+                  <nr-title>11.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">2. mgr. 94. gr. um breytilega þætti starfskjara.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="12" nr-type="numeric">
+                  <nr-title>12.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">5. mgr. a 98. gr. um tæknilegar viðmiðanir fyrir eftirlitsúttekt og mat.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="13" nr-type="numeric">
+                  <nr-title>13.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">5. mgr. 113. gr. um sameiginlegar ákvarðanir um varfærniskröfur er varða tilteknar stofnanir.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="14" nr-type="numeric">
+                  <nr-title>14.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">4. og 5. mgr. 116. gr. um samstarfshópa eftirlitsaðila.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="15" nr-type="numeric">
+                  <nr-title>15.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">4. mgr. 120. gr. um eftirlit með blönduðum eignarhaldsfélögum í fjármálastarfsemi.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="16" nr-type="numeric">
+                  <nr-title>16.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">18. mgr. 131. gr. um kerfislega mikilvægar stofnanir á alþjóðavísu og aðrar kerfislega mikilvægar stofnanir.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="17" nr-type="numeric">
+                  <nr-title>17.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">7. mgr. 140. gr. um útreikning á hlutföllum sveiflujöfnunarauka.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="18" nr-type="numeric">
+                  <nr-title>18.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">3. mgr. 143. gr. um almennar kröfur um upplýsingagjöf.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands setur reglur til að innleiða reglugerðir um tæknilega eftirlits- og framkvæmdarstaðla sem framkvæmdastjórn Evrópusambandsins samþykkir og varða efni laga þessara.</sen>
+                <sen nr="2">Í slíkum reglum má m.a. fjalla um:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Kröfur við veitingu starfsleyfis, sbr. II. kafla.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingagjöf vegna starfsemi lánastofnunar í öðru aðildarríki, sbr. V. kafla.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Samstarfshóp eftirlitsaðila, sbr. 3. mgr. 36. gr. a og 109. gr. j.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Samráð lögbærra yfirvalda við mat á fyrirhugaðri öflun eða aukningu á virkum eignarhlut í lánastofnun, sbr. 2. mgr. 42. gr. a.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Gerninga sem eru nýttir við greiðslu kaupauka, sbr. 10. tölul. 1. mgr. 57. gr. b.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Mat á áhættu af vaxtabreytingum, sbr. 78. gr. f og 81. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Staðsetningu útlánaáhættuskuldbindinga, sbr. 85. gr. a.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Mat á því hvort fjármálafyrirtæki eða samstæður séu kerfislega mikilvægar á alþjóðavísu, sbr. 86. gr. b.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9" nr-type="numeric">
+                  <nr-title>9.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem lögbær yfirvöld skulu birta, sbr. 107. gr. i.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="10" nr-type="numeric">
+                  <nr-title>10.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Eftirlit með blönduðum eignarhaldsfélögum í fjármálastarfsemi, sbr. 109. gr. a.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="11" nr-type="numeric">
+                  <nr-title>11.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Sameiginlegar ákvarðanir eftirlitsaðila, sbr. 109. gr. d.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="12" nr-type="numeric">
+                  <nr-title>12.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingaskipti milli lögbærra yfirvalda, sbr. C-hluta XIII. kafla.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="13" nr-type="numeric">
+                  <nr-title>13.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Innri aðferðir við útreikning á eiginfjárkröfum, sbr. D-hluta XIII. kafla.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="6" nr-type="roman" roman-nr="VI">
@@ -490,6 +1794,27 @@
       <original affected-law-nr="55" affected-law-year="2017">
         <p style="text-align: justify;">H-liður 2. mgr. 13. gr. laganna orðast svo: 4. mgr. 16. gr. um nánari framkvæmd við að ákvarða hvort meginviðskiptavettvangur er í þriðja landi.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='h']" action-law-nr="55" action-law-year="2017">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='h' or @nr='H']">H-liður 2. mgr. 13. gr.</address>
+          <existing>
+            <numart nr="h" nr-type="alphabet">
+              <nr-title>h.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 16. gr. um nánari framkvæmd vegna undanþágu ef meginviðskiptavettvangur er í þriðja landi.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="h" nr-type="alphabet">
+              <nr-title>h.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">4. mgr. 16. gr. um nánari framkvæmd við að ákvarða hvort meginviðskiptavettvangur er í þriðja landi.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="7" nr-type="roman" roman-nr="VII">
@@ -499,6 +1824,25 @@
         <p style="text-align: justify;">1. mgr. 4. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Þótt vátryggingafélög utan aðildarríkja, eignarhaldsfélög á vátryggingasviði, blönduð eignar­halds­félög í fjármálastarfsemi og blönduð eignarhaldsfélög á vátryggingasviði falli undir samstæðu­eftirlit skv. 3. gr. felur það ekki í sér að Fjármálaeftirlitið fari með eftirlit með hverju og einu félagi, sbr. þó 43. gr. þegar um er að ræða eignarhaldsfélag á vátryggingasviði eða blandað eignar­halds­félag í fjármálastarfsemi.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='1']" action-law-nr="60" action-law-year="2017">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1']">1. mgr. 4. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjármálaeftirlitið hefur ekki eftirlit með einstökum vátryggingafélögum utan aðildarríkja, eignarhaldsfélögum á vátryggingasviði, blönduðum eignarhaldsfélögum í fjármálastarfsemi og blönduðum eignarhaldsfélögum á vátryggingasviði þótt þau falli undir samstæðueftirlit skv. 3. gr., sbr. þó 43. gr. þegar um er að ræða eignarhaldsfélag á vátryggingasviði eða blandað eignarhaldsfélag í fjármálastarfsemi.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þótt vátryggingafélög utan aðildarríkja, eignarhaldsfélög á vátryggingasviði, blönduð eignarhaldsfélög í fjármálastarfsemi og blönduð eignarhaldsfélög á vátryggingasviði falli undir samstæðueftirlit skv. 3. gr. felur það ekki í sér að Fjármálaeftirlitið fari með eftirlit með hverju og einu félagi, sbr. þó 43. gr. þegar um er að ræða eignarhaldsfélag á vátryggingasviði eða blandað eignarhaldsfélag í fjármálastarfsemi.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="8" nr-type="roman" roman-nr="VIII">
@@ -519,6 +1863,80 @@
           </li>
         </ol>
       </original>
+      <intents common-address="32. gr.">
+        <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='32']/subart[@nr='1']" action-law-nr="61" action-law-year="2017">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',32,')]//subart[@nr='1']">1. mgr. 32. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Með hliðsjón af ákvörðun sameiginlegu EES-nefndarinnar nr. 104/2004 frá 9. júlí 2004 sem birt var 23. desember 2004 í EES-viðbæti við Stjórnartíðindi Evrópusambandsins nr. 65 eru með lögum þessum tekin upp ákvæði tilskipunar Evrópuþingsins og ráðsins 2002/87/EB frá 16. desember 2002 um viðbótareftirlit með lánastofnunum, vátryggingafélögum og verðbréfafyrirtækjum sem eru hluti af fjármálasamsteypu, með áorðnum breytingum samkvæmt tilskipun 2011/89/ESB sem ekki hafa verið teknar upp í samninginn um Evrópska efnahagssvæðið.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Með hliðsjón af ákvörðunum sameiginlegu EES-nefndarinnar nr. 104/2004 frá 9. júlí 2004 sem birt var 23. desember 2004 í EES-viðbæti við Stjórnartíðindi Evrópusambandsins nr. 65 og nr. 131/2020 frá 25. september 2020 sem birt var 6. júlí 2023 í EES-viðbæti við Stjórnartíðindi Evrópusambandsins nr. 52 eru með lögum þessum tekin upp ákvæði tilskipunar Evrópuþingsins og ráðsins 2002/87/EB frá 16. desember 2002 um viðbótareftirlit með lánastofnunum, vátryggingafélögum og verðbréfafyrirtækjum sem eru hluti af fjármálasamsteypu, með áorðnum breytingum samkvæmt tilskipun 2011/89/ESB.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='32']/subart[@nr='3']" action-law-nr="61" action-law-year="2017">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',32,')]//subart[@nr='3']">3. mgr. 32. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Til að útfæra nánar ákvæði laga þessara setur Fjármálaeftirlitið reglur sem byggjast á tæknilegum framkvæmdastöðlum og eftirlitsstöðlum sameiginlegrar nefndar evrópsku eftirlitsstofnananna.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands setur reglur til að innleiða reglugerðir um tæknilega eftirlits- og framkvæmdarstaðla sem framkvæmdastjórn Evrópusambandsins samþykkir og varða efni laga þessara.</sen>
+                <sen nr="2">Í slíkum reglum má m.a. fjalla um:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Orðskýringar, þar á meðal beitingu skilgreiningar á hlutdeild, sbr. 2. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ferli eða viðmið fyrir ákvörðun á viðkomandi eftirlitsstjórnvaldi, sbr. 10. tölul. 2.</sen>
+                    <sen nr="2">gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Tilgreiningu á viðmiðum fyrir auðkenningu á fjármálasamsteypu, sbr. 7. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Beitingu útreikningsaðferða fyrir eiginfjárkröfur fjármálasamsteypa og upplýsingagjöf þar um, sbr. 15. gr. og viðauka.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Samþjöppun áhættu, sbr. 21. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Viðskipti innan samsteypu, sbr. 22. gr.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="9" nr-type="roman" roman-nr="IX">
@@ -532,6 +1950,65 @@
           <li style="text-align: justify;">Á eftir 17. tölul. 2. mgr. kemur nýr töluliður, svohljóðandi: 5. mgr. 45. gr. um aðferða­fræðina við útreikning og viðhald eigin fjár sem miðlægir mótaðilar þurfa að nota.</li>
         </ol>
       </original>
+      <intents common-address="15. gr.">
+        <intent action="append" action-xpath="art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="15" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='1']//numart[@nr='1']">1. tölul. 1. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">6. mgr. 1. gr. um undanþágur.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">2. mgr. 2. gr. a um markað þriðja lands.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="15" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='1']//numart[@nr='3']">3. tölul. 1. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="3" nr-type="numeric">
+              <nr-title>3.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">4. og 5. mgr. 6. gr. a um frestun á stöðustofnunarskyldu samkvæmt reglugerð (ESB) nr. 648/2012 og frestun viðskiptaskyldu samkvæmt reglugerð Evrópuþingsins og ráðsins (ESB) nr. 600/2014 um markaði fyrir fjármálagerninga og um breytingu á reglugerð (ESB) nr. 648/2012, sbr. 3. gr. laga um markaði fyrir fjármálagerninga, nr. 115/2021.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="4" nr-type="numeric">
+              <nr-title>4.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">2. mgr. 13. gr. um fyrirkomulag laga, eftirlits og framfylgdar þriðja lands.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="art[@nr='15']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='17']" action-law-nr="15" action-law-year="2018">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']//numart[@nr='17']">17. tölul. 2. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="17" nr-type="numeric">
+              <nr-title>17.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">2. mgr. 44. gr. um eftirlit með lausafjáráhættu.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="18" nr-type="numeric">
+              <nr-title>18.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">5. mgr. 45. gr. um aðferðafræðina við útreikning og viðhald eigin fjár sem miðlægir mótaðilar þurfa að nota.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="10" nr-type="roman" roman-nr="X">
@@ -544,6 +2021,40 @@
           <li style="text-align: justify;">37. tölul. orðast svo:<em>Virkur eignarhlutur:</em>Bein eða óbein hlutdeild í rekstraraðila sérhæfðra sjóða sem nemur 10% eða meira af hlutafé eða atkvæðisrétti eða sem gerir kleift að hafa veruleg áhrif á stjórnun viðkomandi rekstraraðila.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 3. gr.">
+        <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='33']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='33']">33. tölul. 1. mgr. 3. gr.</address>
+          <existing>
+            <numart nr="33" nr-type="numeric">
+              <nr-title>33.</nr-title>
+              <name>Stofnframlag:</name>
+              <paragraph nr="1">
+                <sen nr="1">Stofnframlag samkvæmt lögum um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='37']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='37']">37. tölul. 1. mgr. 3. gr.</address>
+          <existing>
+            <numart nr="37" nr-type="numeric">
+              <nr-title>37.</nr-title>
+              <name>Virkur eignarhlutur:</name>
+              <paragraph nr="1">
+                <sen nr="1">Virkur eignarhlutur samkvæmt lögum um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="37" nr-type="numeric">
+              <nr-title>37.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Virkur eignarhlutur: Bein eða óbein hlutdeild í rekstraraðila sérhæfðra sjóða sem nemur 10% eða meira af hlutafé eða atkvæðisrétti eða sem gerir kleift að hafa veruleg áhrif á stjórnun viðkomandi rekstraraðila.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="40">
       <original affected-law-nr="45" affected-law-year="2020">
@@ -554,16 +2065,81 @@
           <li style="text-align: justify;">Í stað tilvísunarinnar „6. og 7. mgr.“ í 1. málsl. 8. mgr. kemur: 7. og 8. mgr.</li>
         </ol>
       </original>
+      <intents common-address="15. gr.">
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']">2. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Stofnframlag og eiginfjárgrunnur annarra rekstraraðila en skv. 1. mgr. skal að lágmarki nema jafnvirði 125 þúsunda evra í íslenskum krónum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Til stofnframlags samkvæmt þessari grein má telja liði skv. a–c- og e-lið 1. mgr. 26. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='5']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='5' or @nr='4']">4. og 5. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Sérhæfðir sjóðir teljast í rekstri rekstraraðila skv. 3. mgr. þótt rekstraraðili hafi útvistað verkefni vegna þeirra í samræmi við 29.–31. gr. en til þeirra teljast ekki sjóðir sem rekstraraðili sér um eignastýringu fyrir samkvæmt útvistunarsamningi.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 3. mgr. skal eiginfjárgrunnur rekstraraðila aldrei vera lægri en sem nemur reiknaðri fjárhæð skv. 97. gr. reglugerðar (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki, nr. 161/2002.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>3. mgr.</text-from>
+          <text-to>4. mgr.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='8']//sen[@nr='1']">1. málsl. 8. mgr. 15. gr.</address>
+          <existing>
+            <sen nr="1">Að undanskildum 6. og 7. mgr. á ákvæði þetta ekki við um rekstraraðila sem jafnframt eru rekstrarfélög verðbréfasjóða.</sen>
+          </existing>
+          <text-from>6. og 7. mgr.</text-from>
+          <text-to>7. og 8. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="41">
       <original affected-law-nr="45" affected-law-year="2020">
         <p style="text-align: justify;">Í stað orðsins „dótturfyrirtæki“ í 2. málsl. 1. mgr. og 3. málsl. 2. mgr. 16. gr. laganna kemur: dótturfélag.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='2']//sen[@nr='3'] | //art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. og 3. málsl. 2. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="2">Hið sama á við hyggist aðili, einn sér eða í samstarfi við aðra, auka svo við eignarhlut sinn að virkur eignarhlutur fari yfir 20%, 33% eða 50% eða nemi svo stórum hluta að rekstraraðili verði talið dótturfyrirtæki hans.</sen>
+            <sen nr="3">Fari eignarhluturinn niður fyrir 20%, 33% eða 50% eða svo mikið að rekstraraðili hættir að vera dótturfyrirtæki hlutaðeigandi skal það einnig tilkynnt.</sen>
+          </existing>
+          <text-from>dótturfyrirtæki</text-from>
+          <text-to>dótturfélag.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="42">
       <original affected-law-nr="45" affected-law-year="2020">
         <p style="text-align: justify;">Í stað orðanna „viðskiptamanna í skilningi laga um fjármálafyrirtæki“ í 1. málsl. 5. mgr. 93. gr. laganna kemur: viðskiptavina í skilningi 39. tölul. 1. mgr. 4. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/subchapter[@nr='B']/art[@nr='93']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="45" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',93,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 93. gr.</address>
+          <existing>
+            <sen nr="1">Samanlögð eign sjóðsins í verðbréfum útgefnum af hópi tengdra viðskiptamanna í skilningi laga um fjármálafyrirtæki skal ekki vera meiri en 40% af eign sjóðsins.</sen>
+          </existing>
+          <text-from>viðskiptamanna í skilningi laga um fjármálafyrirtæki</text-from>
+          <text-to>viðskiptavina í skilningi 39. tölul. 1. mgr. 4. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="11" nr-type="roman" roman-nr="XI">
@@ -572,6 +2148,16 @@
       <original affected-law-nr="70" affected-law-year="2020">
         <p style="text-align: justify;">Í stað orðsins „eitt“ í 3. málsl. 5. mgr. 19. gr. laganna kemur: tvö.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='4' and @chapter-type='kafli']/art[@nr='19']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="70" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',19,')]//subart[@nr='5']//sen[@nr='3']">3. málsl. 5. mgr. 19. gr.</address>
+          <existing>
+            <sen nr="3">Þó er ekki hægt að vísa máli til Eftirlitsstofnunar EFTA ef munur á ákvörðun þess og ákvörðun annarra skilastjórnvalda er innan við eitt prósentustig.</sen>
+          </existing>
+          <text-from>eitt</text-from>
+          <text-to>tvö.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="44">
       <original affected-law-nr="70" affected-law-year="2020">
@@ -583,11 +2169,75 @@
           <li style="text-align: justify;">eignir fyrirtækisins eða einingarinnar í skilameðferð á samstæðugrunni eru minni en jafnvirði 900 milljarða evra á samstæðugrunni.</li>
         </ol>
       </original>
+      <intents>
+        <intent action="append" action-xpath="superchapter[@nr='3']/chapter[@nr='10' and @chapter-type='kafli']/art[@nr='57']/subart[@nr='3']" action-law-nr="70" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',57,')]//subart[@nr='3']">3. mgr. 57. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Einungis er heimilt að leggja til fjárframlag skv. 2. mgr. úr skilasjóði þegar:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">félagsaðilar, eigendur fjármagnsgerninga og eigendur eftirgefanlegra skuldbindinga hafa með eftirgjöf eða öðrum hætti lagt fyrirtæki eða einingu í skilameðferð til a.m.k. 8% af heildarskuldbindingum þess, þ.m.t. eigið fé, eins og þær eru metnar skv. VII. kafla við beitingu skilaaðgerða, og</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">fjárframlag skilasjóðs fer ekki umfram 5% af heildarskuldbindingum fyrirtækis eða einingar í skilameðferð, þ.m.t. eigið fé, eins og þær eru metnar skv. VII. kafla við beitingu skilaaðgerða.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Einnig er heimilt, þrátt fyrir 3. mgr., að leggja til fjárframlag skv. 2. mgr. úr skilasjóði þegar:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">framlagið til að mæta tapi og endurfjármögnun, sem um getur í 1. tölul. 3. mgr., samsvarar fjárhæð sem ekki er lægri en 20% af áhættuvegnum eignum fyrirtækisins eða einingarinnar í skilameðferð,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">skilasjóður hefur á að skipa fjárhæð vegna fyrirframgreiddra framlaga sem samsvarar a.m.k. 3% tryggðra innstæðna allra lánastofnana sem hafa starfsleyfi hér á landi,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">eignir fyrirtækisins eða einingarinnar í skilameðferð á samstæðugrunni eru minni en jafnvirði 900 milljarða evra á samstæðugrunni.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="45">
       <original affected-law-nr="70" affected-law-year="2020">
         <p style="text-align: justify;">Í stað tilvísunarinnar „5. mgr.“ í 7. tölul. 1. mgr. 87. gr. laganna kemur: 6. mgr.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='15' and @chapter-type='kafli']/art[@nr='87']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='7']" action-law-nr="70" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',87,')]//subart[@nr='1']//numart[@nr='7']">7. tölul. 1. mgr. 87. gr.</address>
+          <existing>
+            <numart nr="7" nr-type="numeric">
+              <nr-title>7.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">greiða fyrirtæki eða einingu í skilameðferð fjárframlag í samræmi við 5. mgr. 57. gr., eða</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>5. mgr.</text-from>
+          <text-to>6. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="12" nr-type="roman" roman-nr="XII">
@@ -596,6 +2246,20 @@
       <original affected-law-nr="60" affected-law-year="2021">
         <p style="text-align: justify;">Í stað orðanna „meðferð innherjaupplýsinga og viðskipti stjórnenda“ í 2. mgr. 4. gr. laganna kemur: hlutverk og stöðu regluvarðar og skráningu samskipta.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']" action-law-nr="60" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='2']">2. mgr. 4. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Stjórnvöld og aðrir aðilar sem fá reglulega innherjaupplýsingar í starfsemi sinni skulu fylgja reglum Seðlabanka Íslands um meðferð innherjaupplýsinga og viðskipti stjórnenda eftir því sem við getur átt.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>meðferð innherjaupplýsinga og viðskipti stjórnenda</text-from>
+          <text-to>hlutverk og stöðu regluvarðar og skráningu samskipta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="47">
       <original affected-law-nr="60" affected-law-year="2021">
@@ -605,6 +2269,34 @@
           <li style="text-align: justify;">Í stað tilvísunarinnar „9. mgr.“ í 7. tölul. kemur: 6. og 9. mgr.</li>
         </ol>
       </original>
+      <intents common-address="2. mgr. 19. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='19']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='4']" action-law-nr="60" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',19,')]//subart[@nr='2']//numart[@nr='4']">4. tölul. 2. mgr. 19. gr.</address>
+          <existing>
+            <numart nr="4" nr-type="numeric">
+              <nr-title>4.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">7. mgr. 13. gr. um viðurkennda markaðsframkvæmd.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>7. mgr.</text-from>
+          <text-to>7. og 13. mgr.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='19']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='7']" action-law-nr="60" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',19,')]//subart[@nr='2']//numart[@nr='7']">7. tölul. 2. mgr. 19. gr.</address>
+          <existing>
+            <numart nr="7" nr-type="numeric">
+              <nr-title>7.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">9. mgr. 18. gr. um innherjalista.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>9. mgr.</text-from>
+          <text-to>6. og 9. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="13" nr-type="roman" roman-nr="XIII">
@@ -613,6 +2305,17 @@
       <original affected-law-nr="114" affected-law-year="2021">
         <p style="text-align: justify;">Í stað orðsins „dótturfyrirtæki“ í 2. málsl. 1. mgr. og 3. málsl. 2. mgr. 5. gr. laganna kemur: dótturfélag.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="114" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='2']//sen[@nr='3'] | //art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. og 3. málsl. 2. mgr. 5. gr.</address>
+          <existing>
+            <sen nr="2">Hið sama á við hyggist aðili, einn eða í samstarfi við aðra, auka svo við eignarhlut sinn að virkur eignarhlutur fari yfir 20%, 30% eða 50% eða nemi svo stórum hluta að greiðslustofnun verði talin dótturfyrirtæki hans.</sen>
+            <sen nr="3">Fari eignarhluturinn niður fyrir 20%, 30% eða 50% eða svo mikið að greiðslustofnunin hættir að vera dótturfyrirtæki hlutaðeigandi skal það einnig tilkynnt.</sen>
+          </existing>
+          <text-from>dótturfyrirtæki</text-from>
+          <text-to>dótturfélag.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="14" nr-type="roman" roman-nr="XIV">
@@ -621,27 +2324,103 @@
       <original affected-law-nr="115" affected-law-year="2021">
         <p style="text-align: justify;">Í stað tilvísunarinnar „52. gr. e“ í 1. mgr. og 1. málsl. 2. mgr. 10. gr. laganna kemur: 52. gr. f.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1'] | superchapter[@nr='2']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="115" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='2']//sen[@nr='1'] | //art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='1']">1. mgr. og 1. málsl. 2. mgr. 10. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Um hæfi stjórnarmanna og framkvæmdastjóra verðbréfafyrirtækis fer eftir ákvæðum 52. gr. og 52. gr. a laga um fjármálafyrirtæki, nr. 161/2002, og í tilviki kerfislega mikilvægs verðbréfafyrirtækis, 52. gr. e sömu laga.</sen>
+              </paragraph>
+            </subart>
+            <sen nr="1">Fjármálaeftirlitið getur heimilað stjórnarmanni í kerfislega mikilvægu verðbréfafyrirtæki að sitja í stjórn eins annars eftirlitsskylds aðila þrátt fyrir ákvæði 52. gr. e laga um fjármálafyrirtæki.</sen>
+          </existing>
+          <text-from>52. gr. e</text-from>
+          <text-to>52. gr. f.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="50">
       <original affected-law-nr="115" affected-law-year="2021">
         <p style="text-align: justify;">Orðin „14. gr. og“ í 20. gr. laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete_text" action-xpath="superchapter[@nr='2']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='20']" action-law-nr="115" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]">20. gr.</address>
+          <existing>
+            <art nr="20">
+              <nr-title>20. gr.</nr-title>
+              <name>Stofnframlag.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fjármálaeftirlitið skal ekki veita starfsleyfi nema verðbréfafyrirtæki hafi nægilegt stofnframlag skv. 14. gr. og 14. gr. a laga um fjármálafyrirtæki, nr. 161/2002, að teknu tilliti til þeirrar fjárfestingarþjónustu og fjárfestingarstarfsemi sem starfsleyfið tekur til.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <text-from>14. gr. og</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="51">
       <original affected-law-nr="115" affected-law-year="2021">
         <p style="text-align: justify;">2. mgr. 37. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Um kaupaukakerfi og starfslokasamninga verðbréfafyrirtækja sem teljast til fjármálafyrirtækja samkvæmt lögum um fjármálafyrirtæki, nr. 161/2002, fer að öðru leyti skv. C-hluta VII. kafla þeirra laga.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='2']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='2']" action-law-nr="115" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='2']">2. mgr. 37. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Um kaupaukakerfi og starfslokasamninga verðbréfafyrirtækja fer að öðru leyti skv. 57. gr. a og 57. gr. b, sbr. 4. mgr. 25. gr., laga um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Um kaupaukakerfi og starfslokasamninga verðbréfafyrirtækja sem teljast til fjármálafyrirtækja samkvæmt lögum um fjármálafyrirtæki, nr. 161/2002, fer að öðru leyti skv. C-hluta VII. kafla þeirra laga.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="52">
       <original affected-law-nr="115" affected-law-year="2021">
         <p style="text-align: justify;">Í stað orðanna „sex mánaða“ í 3. málsl. 3. mgr. 40. gr. laganna kemur: árs.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='40']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="115" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',40,')]//subart[@nr='3']//sen[@nr='3']">3. málsl. 3. mgr. 40. gr.</address>
+          <existing>
+            <sen nr="3">Fjármálaeftirlitinu er heimilt að veita allt að sex mánaða frest fyrir nýja starfsmenn verðbréfafyrirtækis til að öðlast verðbréfaréttindi og þá sem þurfa vegna breytinga í starfi að hafa verðbréfaréttindi, t.d. vegna stöðuhækkunar, ef sérstakar ástæður mæla með því.</sen>
+          </existing>
+          <text-from>sex mánaða</text-from>
+          <text-to>árs.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="53">
       <original affected-law-nr="115" affected-law-year="2021">
         <p style="text-align: justify;">Í stað tilvísunarinnar „4. mgr.“ í 4. tölul. 2. mgr. 69. gr. laganna kemur: 5. mgr.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='4' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='4']" action-law-nr="115" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='2']//numart[@nr='4']">4. tölul. 2. mgr. 69. gr.</address>
+          <existing>
+            <numart nr="4" nr-type="numeric">
+              <nr-title>4.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Útibúið skal hafa fjármuni til skilyrðislausar ráðstöfunar á bankareikningi hérlendis sem nema a.m.k. stofnframlagi verðbréfafyrirtækja skv. 2., 3. og 4. mgr. 14. gr. a laga nr. 161/2002, um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>4. mgr.</text-from>
+          <text-to>5. mgr.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="15" nr-type="roman" roman-nr="XV">
@@ -654,11 +2433,60 @@
           <li style="text-align: justify;">27. tölul. orðast svo:<em>Virkur eignarhlutur:</em>Bein eða óbein hlutdeild í rekstrarfélagi verðbréfa­sjóða sem nemur 10% eða meira af hlutafé eða atkvæðisrétti eða sem gerir kleift að hafa veruleg áhrif á stjórnun viðkomandi rekstrarfélags.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 3. gr.">
+        <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='23']" action-law-nr="116" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='23']">23. tölul. 1. mgr. 3. gr.</address>
+          <existing>
+            <numart nr="23" nr-type="numeric">
+              <nr-title>23.</nr-title>
+              <name>Stofnframlag:</name>
+              <paragraph nr="1">
+                <sen nr="1">Stofnframlag samkvæmt lögum um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='27']" action-law-nr="116" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='27']">27. tölul. 1. mgr. 3. gr.</address>
+          <existing>
+            <numart nr="27" nr-type="numeric">
+              <nr-title>27.</nr-title>
+              <name>Virkur eignarhlutur:</name>
+              <paragraph nr="1">
+                <sen nr="1">Virkur eignarhlutur samkvæmt lögum um fjármálafyrirtæki.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="27" nr-type="numeric">
+              <nr-title>27.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Virkur eignarhlutur: Bein eða óbein hlutdeild í rekstrarfélagi verðbréfasjóða sem nemur 10% eða meira af hlutafé eða atkvæðisrétti eða sem gerir kleift að hafa veruleg áhrif á stjórnun viðkomandi rekstrarfélags.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="55">
       <original affected-law-nr="116" affected-law-year="2021">
         <p style="text-align: justify;">Við 1. mgr. 12. gr. laganna bætist nýr málsliður, svohljóðandi: Til stofnframlags má telja liði skv. a–c- og e-lið 1. mgr. 26. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="116" action-law-year="2021">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='1']">1. mgr. 12. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Stofnframlag og eiginfjárgrunnur rekstrarfélags verðbréfasjóðs skal að lágmarki nema jafnvirði 125 þúsunda evra í íslenskum krónum, miðað við opinbert viðmiðunargengi, kaupgengi, eins og það er skráð hverju sinni.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="2">Til stofnframlags má telja liði skv. a–c- og e-lið 1. mgr. 26. gr. reglugerðar Evrópuþingsins og ráðsins (ESB) nr. 575/2013, sbr. lög um fjármálafyrirtæki.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="16" nr-type="roman" roman-nr="XVI">
@@ -673,11 +2501,92 @@
           <li style="text-align: justify;">Á eftir 6. tölul. kemur nýr töluliður, svohljóðandi: 5. mgr. 11. gr. um efni og framsetningu upplýsinga sem um getur í c- og d-lið 1. mgr. sömu greinar.</li>
         </ol>
       </original>
+      <intents common-address="2. mgr. 8. gr.">
+        <intent action="prepend" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="25" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//numart[@nr='1']">1. tölul. 2. mgr. 8. gr.</address>
+          <existing>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">6. mgr. 4. gr. um efni, aðferðir og framsetningu upplýsinga sem um getur í 1.–5. mgr. sömu greinar að því er varðar sjálfbærnivísa í tengslum við neikvæð áhrif á loftslagið og önnur umhverfistengd neikvæð áhrif.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 2. gr. a um efni og framsetningu upplýsinga í tengslum við meginregluna um að „valda ekki umtalsverðu tjóni“.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="25" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//numart[@nr='3']">3. tölul. 2. mgr. 8. gr.</address>
+          <existing>
+            <numart nr="3" nr-type="numeric">
+              <nr-title>3.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">3. mgr. 8. gr. um atriði er varða framsetningu og innihald upplýsinga sem verða birtar samkvæmt sömu grein.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="4" nr-type="numeric">
+              <nr-title>4.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">4. mgr. 8. gr. um efni og framsetningu upplýsinga sem um getur í 2. mgr. a sömu greinar.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='4']" action-law-nr="25" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//numart[@nr='4']">4. tölul. 2. mgr. 8. gr.</address>
+          <existing>
+            <numart nr="4" nr-type="numeric">
+              <nr-title>4.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">5. mgr. 9. gr. um atriði er varða framsetningu og innihald upplýsinga sem verða birtar samkvæmt sömu grein.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="5" nr-type="numeric">
+              <nr-title>5.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">6. mgr. 9. gr. um efni og framsetningu upplýsinga sem um getur í 4. mgr. a sömu greinar.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='6']" action-law-nr="25" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//numart[@nr='6']">6. tölul. 2. mgr. 8. gr.</address>
+          <existing>
+            <numart nr="6" nr-type="numeric">
+              <nr-title>6.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">4. mgr. 11. gr. um atriði er varða efni og framsetningu upplýsinga sem um getur í 1. mgr. sömu greinar.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="7" nr-type="numeric">
+              <nr-title>7.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">5. mgr. 11. gr. um efni og framsetningu upplýsinga sem um getur í c- og d-lið 1. mgr. sömu greinar.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="57">
       <original affected-law-nr="25" affected-law-year="2023">
         <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-06-28" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört í Reykjavík, 28. júní 2024.</signed-when>

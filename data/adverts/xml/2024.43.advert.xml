@@ -8,16 +8,81 @@
     <original affected-law-nr="85" affected-law-year="2007">
       <p style="text-align: justify;">Á eftir 1. málsl. 1. mgr. 3. gr. laganna kemur nýr málsliður, svohljóðandi: Rekstrarleyfisskyld gististarfsemi innan þéttbýlis skal vera í samþykktu atvinnuhúsnæði.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="85" action-law-year="2007">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 3. gr.</address>
+        <existing>
+          <sen nr="1">Gististaðir eru staðir þar sem boðin er gisting að hámarki í 30 daga samfleytt í senn gegn endurgjaldi, svo sem á hótelum, gistiheimilum, í gistiskálum, íbúðum og sumarhúsum, með eða án veitinga.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Rekstrarleyfisskyld gististarfsemi innan þéttbýlis skal vera í samþykktu atvinnuhúsnæði.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="85" affected-law-year="2007">
       <p style="text-align: justify;">Við 1. tölul. 4. mgr. 10. gr. laganna bætist nýr stafliður, svohljóðandi: að á aðaluppdráttum sé tilgreint að húsnæði tilheyri notkunarflokki 4 samkvæmt byggingarreglugerð.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']" action-law-nr="85" action-law-year="2007">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='4']//numart[@nr='1']">1. tölul. 4. mgr. 10. gr.</address>
+        <existing>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Sveitarstjórnar sem m.a. staðfestir eftirfarandi atriði:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfsemi sé í samræmi við byggingarleyfi og skipulagsskilmála,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að lokaúttekt hafi farið fram á húsnæðinu,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að afgreiðslutími og staðsetning staðar sem umsókn lýtur að sé innan þeirra marka sem reglur og skipulag sveitarfélagsins segja til um,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfsemi sé í samræmi við ákvæði laga um hollustuhætti og mengunarvarnir og laga um matvæli og, þegar við á, mat heilbrigðisnefndar á grenndaráhrifum starfseminnar, þ.m.t. hljóðvist,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að kröfum um brunavarnir sé fullnægt samkvæmt mati slökkviliðs.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="f" nr-type="alphabet">
+            <nr-title>f.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að á aðaluppdráttum sé tilgreint að húsnæði tilheyri notkunarflokki 4 samkvæmt byggingarreglugerð.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="85" affected-law-year="2007">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-05-22" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 13. maí 2024.</signed-when>
 </advert>

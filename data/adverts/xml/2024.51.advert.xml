@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="e522d2c3-d21f-4ac9-958e-459b3bf5121f" year="2024" nr="51" published-date="2024-06-03" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="88" year="2005">88/2005</affected-law>
+  </affected-laws>
   <description>um breytingu á tollalögum, nr. 88/2005 (ökutæki flóttamanna frá Úkraínu).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2005">
       <p style="text-align: justify;">Við lögin bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
       <p style="text-align: justify;">Einstaklingur sem hefur á árinu 2022 eða síðar flutt ökutæki inn til landsins án greiðslu aðflutningsgjalda á grundvelli a-liðar 4. tölul. 1. mgr. 7. gr., sbr. 18. gr. reglugerðar nr. 630/2008, getur óskað eftir framlengingu á greiðslufresti aðflutningsgjalda í 12 mánuði frá umsóknardegi, að uppfylltum eftirfarandi skilyrðum:</p>
       <ol>
@@ -14,11 +17,535 @@
       </ol>
       <p style="text-align: justify;">Heimild skv. 1. mgr. gildir til og með 31. desember 2024.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="88" action-law-year="2005">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Aðilar sem hafa fengið viðurkenningu tollyfirvalda til reksturs geymslu- og afgreiðslustaðar fyrir ótollafgreiddar vörur eða leyfi ráðherra til reksturs almennrar tollvörugeymslu, tollfrjálsrar forðageymslu, tollfrjálsrar verslunar eða frísvæðis fyrir gildistöku laga þessara skulu innan eins árs frá gildistöku laganna senda ráðherra eða tollyfirvöldum eftir atvikum umsókn um starfsleyfi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi umsókn frá aðilum sem um getur í 1. mgr. ekki borist innan eins árs frá gildistöku laganna skal viðurkenning þeirra eða leyfi falla úr gildi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.141.html" law-nr="141" law-year="2019" law-art="3" nr="1">
+                  <footnote-sen>L. 141/2019, 3. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="tollyfirvalda" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="tollyfirvöldum" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal aðilum sem njóta greiðslufrests á aðflutningsgjöldum heimilt að óska eftir því að fyrirkomulag gjalddaga aðflutningsgjalda vegna uppgjörstímabilsins september til október 2008 verði sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á uppgjörstímabilinu skuli skila eigi síðar en 17. nóvember 2008.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á uppgjörstímabilinu skuli skila eigi síðar en 15. desember 2008.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á uppgjörstímabilinu skuli skila eigi síðar en 5. janúar 2009.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Vextir vegna greiðslufrests aðflutningsgjalda sem veittur er skv. 2. og 3. tölul. 1. mgr., þ.e. frá 17. nóvember til 15. desember 2008 og frá 17. nóvember til 5. janúar 2009, skulu vera almennir meðaltalsvextir, sbr. II. kafla laga nr. 38/2001, um vexti og verðtryggingu, á viðkomandi tímabili.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.130.html" law-nr="130" law-year="2008" law-art="1" nr="1">
+                  <footnote-sen>L. 130/2008, 1. gr.</footnote-sen>
+                  <location type="range" string-length="829">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabila á árinu 2009 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi þriðja mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2009.017.html" law-nr="17" law-year="2009" law-art="1" nr="1">
+                  <footnote-sen>L. 17/2009, 1. gr.</footnote-sen>
+                  <location type="range" string-length="697">
+                    <start xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2017.059.html" law-nr="59" law-year="2017" law-art="14" nr="1">
+                  <footnote-sen>L. 59/2017, 14. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]" before-mark="^(\[??)?IV." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2009.027.html" law-nr="27" law-year="2009" law-art="1" nr="2">
+                  <footnote-sen>L. 27/2009, 1. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="V" roman-nr="5" number-type="roman">
+              <nr-title>V.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilanna janúar og febrúar annars vegar og mars og apríl hins vegar, á árinu 2010 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2010.014.html" law-nr="14" law-year="2010" law-art="1" nr="1">
+                  <footnote-sen>L. 14/2010, 1. gr.</footnote-sen>
+                  <location type="range" string-length="591">
+                    <start xpath="chapter[@nr='t']/art[@nr='V']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilsins nóvember og desember á árinu 2010 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="3" nr-type="numeric">
+                    <nr-title>3.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Þriðjungi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi þriðja mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2010.165.html" law-nr="165" law-year="2010" law-art="58" nr="1">
+                  <footnote-sen>L. 165/2010, 58. gr.</footnote-sen>
+                  <location type="range" string-length="712">
+                    <start xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VII" roman-nr="7" number-type="roman">
+              <nr-title>VII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilsins janúar og febrúar á árinu 2011 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.022.html" law-nr="22" law-year="2011" law-art="1" nr="1">
+                  <footnote-sen>L. 22/2011, 1. gr.</footnote-sen>
+                  <location type="range" string-length="551">
+                    <start xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilanna mars og apríl, maí og júní, júlí og ágúst, september og október og nóvember og desember á árinu 2011 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.046.html" law-nr="46" law-year="2011" law-art="1" nr="1">
+                  <footnote-sen>L. 46/2011, 1. gr.</footnote-sen>
+                  <location type="range" string-length="622">
+                    <start xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VIII']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IX" roman-nr="9" number-type="roman">
+              <nr-title>IX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabila á árinu 2012 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2012.018.html" law-nr="18" law-year="2012" law-art="1" nr="1">
+                  <footnote-sen>L. 18/2012, 1. gr.</footnote-sen>
+                  <location type="range" string-length="528">
+                    <start xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="X" roman-nr="10" number-type="roman">
+              <nr-title>X.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabila á árinu 2013 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.021.html" law-nr="21" law-year="2013" law-art="1" nr="1">
+                  <footnote-sen>L. 21/2013, 1. gr.</footnote-sen>
+                  <location type="range" string-length="527">
+                    <start xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='X']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XI" roman-nr="11" number-type="roman">
+              <nr-title>XI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabila á árinu 2014 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.141.html" law-nr="141" law-year="2013" law-art="3" nr="1">
+                  <footnote-sen>L. 141/2013, 3. gr.</footnote-sen>
+                  <location type="range" string-length="528">
+                    <start xpath="chapter[@nr='t']/art[@nr='XI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XI']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XII" roman-nr="12" number-type="roman">
+              <nr-title>XII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. laganna skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabila á árinu 2015 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2014.125.html" law-nr="125" law-year="2014" law-art="26" nr="1">
+                  <footnote-sen>L. 125/2014, 26. gr.</footnote-sen>
+                  <location type="range" string-length="529">
+                    <start xpath="chapter[@nr='t']/art[@nr='XII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XII']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIII" roman-nr="13" number-type="roman">
+              <nr-title>XIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þeim leyfishöfum tollvörugeymslu sem fengið hafa starfsleyfi skv. 3. málsl. 1. mgr. 91. gr. og hefur verið heimilað að geyma tollafgreidda og ótollafgreidda vöru í sama rými í tollvörugeymslu fyrir 1. janúar 2016 er heimil slík geymsla til 1. janúar 2026 að ákvæðum 94. gr. uppfylltum.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2015.124.html" law-nr="124" law-year="2015" law-art="30" nr="1">
+                  <footnote-sen>L. 124/2015, 30. gr.</footnote-sen>
+                  <location type="range" string-length="291">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIV" roman-nr="14" number-type="roman">
+              <nr-title>XIV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. skal fyrirkomulag gjalddaga aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilanna mars og apríl, maí og júní, júlí og ágúst, september og október og nóvember og desember á árinu 2016 vera sem hér segir:</sen>
+                  <numart nr="1" nr-type="numeric">
+                    <nr-title>1.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 15. degi næsta mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="2" nr-type="numeric">
+                    <nr-title>2.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Helmingi af aðflutningsgjöldum á viðkomandi uppgjörstímabili, sbr. 1. mgr. 122. gr., skal skila eigi síðar en á 5. degi annars mánaðar eftir lok uppgjörstímabils.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.033.html" law-nr="33" law-year="2016" law-art="1" nr="1">
+                  <footnote-sen>L. 33/2016, 1. gr.</footnote-sen>
+                  <location type="range" string-length="612">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIV']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XV" roman-nr="15" number-type="roman">
+              <nr-title>XV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 1. málsl. 4. mgr. 5. gr. skal magntollur samkvæmt viðauka I með lögum þessum á vörur sem falla undir tollskrárnúmer í viðauka VI með lögum þessum uppfærður fyrsta virka dag marsmánaðar 2017 í réttu hlutfalli við breytingu á skráðu tollafgreiðslugengi SDR á tímabilinu frá 26. ágúst 2016 til 28. febrúar 2017.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.102.html" law-nr="102" law-year="2016" law-art="56" nr="1">
+                  <footnote-sen>L. 102/2016, 56. gr.</footnote-sen>
+                  <location type="range" string-length="331">
+                    <start xpath="chapter[@nr='t']/art[@nr='XV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XVI" roman-nr="16" number-type="roman">
+              <nr-title>XVI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ekki skal innheimta tollafgreiðslugjald skv. 1. tölul. 1. mgr. 195. gr. vegna tollafgreiðslu skipa og flugfara til og með 31. desember 2021.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.080.html" law-nr="80" law-year="2022" law-art="263" nr="1">
+                  <footnote-sen>L. 80/2022, 263. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='XVI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="flugfara" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.025.html" law-nr="25" law-year="2020" law-art="6" nr="2">
+                  <footnote-sen>L. 25/2020, 6. gr.</footnote-sen>
+                  <location type="range" string-length="145">
+                    <start xpath="chapter[@nr='t']/art[@nr='XVI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XVI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XVII" roman-nr="17" number-type="roman">
+              <nr-title>XVII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 122. gr. skal gjalddagi aðflutningsgjalda, hjá aðilum sem njóta greiðslufrests á aðflutningsgjöldum, vegna uppgjörstímabilanna mars og apríl, maí og júní, júlí og ágúst, september og október og nóvember og desember á árinu 2020 vera 5. dagur annars mánaðar eftir lok uppgjörstímabils, sbr. 1. og 2. mgr. 122. gr.</sen>
+                  <sen nr="2">Beri gjalddaga upp á helgidag eða almennan frídag færist gjalddagi á næsta virkan dag á eftir.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.025.html" law-nr="25" law-year="2020" law-art="6" nr="1">
+                  <footnote-sen>L. 25/2020, 6. gr.</footnote-sen>
+                  <location type="range" string-length="431">
+                    <start xpath="chapter[@nr='t']/art[@nr='XVII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XVII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XVIII" roman-nr="18" number-type="roman">
+              <nr-title>XVIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 5. gr. skal til og með 31. maí 2023 fella niður tolla af vörum sem fluttar eru inn á tollsvæði ríkisins og eru að öllu leyti upprunnar í Úkraínu.</sen>
+                  <sen nr="2">Við ákvörðun um uppruna vöru skal fara eftir ákvæðum fríverslunarsamnings milli ríkja Fríverslunarsamtaka Evrópu og Úkraínu sem tók gildi 1. júní 2012.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.054.html" law-nr="54" law-year="2022" law-art="1" nr="1">
+                  <footnote-sen>L. 54/2022, 1. gr.</footnote-sen>
+                  <location type="range" string-length="322">
+                    <start xpath="chapter[@nr='t']/art[@nr='XVIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XVIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="XIX" roman-nr="19" number-type="roman">
+            <nr-title>XIX.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Einstaklingur sem hefur á árinu 2022 eða síðar flutt ökutæki inn til landsins án greiðslu aðflutningsgjalda á grundvelli a-liðar 4. tölul. 1. mgr. 7. gr., sbr. 18. gr. reglugerðar nr. 630/2008, getur óskað eftir framlengingu á greiðslufresti aðflutningsgjalda í 12 mánuði frá umsóknardegi, að uppfylltum eftirfarandi skilyrðum:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Ökutækið hefur skráningarnúmer frá Úkraínu.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Skráður eigandi ökutækisins er úkraínskur ríkisborgari sem hefur fengið dvalarleyfi hér á landi af mannúðarástæðum skv. 44. gr. laga um útlendinga, nr. 80/2016.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Eigandi ökutækisins var skráður eigandi ökutækisins á því tímamarki þegar hann fékk dvalarleyfi hér á landi, sbr. 2. tölul.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Lagt sé fram skoðunarvottorð frá skoðunarstofu hér á landi sem sýnir að ökutækið hafi hlotið aðalskoðun, sbr. ákvæði reglugerðar nr. 414/2021 um skoðun ökutækja.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Lagt sé fram alþjóðlegt vátryggingarskírteini eða önnur skilríki um gilda ábyrgðartryggingu vegna notkunar ökutækisins á hinu framlengda tímabili, sbr. ákvæði reglugerðar nr. 1244/2019 um ökutækjatryggingar.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Heimild skv. 1. mgr. gildir til og með 31. desember 2024.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2005">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-06-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 23. maí 2024.</signed-when>
 </advert>

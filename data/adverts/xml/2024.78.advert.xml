@@ -11,6 +11,25 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Þessi kafli gildir um geymslu koldíoxíðs í jörðu á yfirráðasvæði Íslands, þ.e. á landi, innsævi, í landhelgi, efnahagslögsögu og á landgrunni.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33a']/subart[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33a,')]//subart[@nr='1']">1. mgr. 33. gr. a</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þessi kafli gildir um geymslu koldíoxíðs í jörðu, innan efnahagslögsögu og á landgrunni Íslands.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þessi kafli gildir um geymslu koldíoxíðs í jörðu á yfirráðasvæði Íslands, þ.e. á landi, innsævi, í landhelgi, efnahagslögsögu og á landgrunni.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -18,6 +37,27 @@
           <span style="color: #000000;">laganna</span>
         </a>orðast svo: Könnunarleyfi og starfsleyfi til geymslu, þ.m.t. um form og efni umsóknar og leyfis, fjárhagslega tryggingu, breytingar á útgefnum leyfum, kröfur vegna aðila­skipta, niðurfellingu leyfis þegar starfsemi er hætt eða forsendur leyfis bresta og málsmeðferð við veitingu leyfis.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33b']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33b,')]//numart[@nr='1']">1. tölul. 33. gr. b</address>
+        <existing>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Starfsleyfi til geymslu, þ.m.t. um mögulega könnun á fýsileika geymslugeymis, form og efni umsóknar og leyfis, fjárhagslega tryggingu, breytingar á útgefnum leyfum, kröfur vegna aðilaskipta, niðurfellingu leyfis þegar starfsemi er hætt eða forsendur leyfis bresta og málsmeðferð við veitingu leyfis.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Könnunarleyfi og starfsleyfi til geymslu, þ.m.t. um form og efni umsóknar og leyfis, fjárhagslega tryggingu, breytingar á útgefnum leyfum, kröfur vegna aðilaskipta, niðurfellingu leyfis þegar starfsemi er hætt eða forsendur leyfis bresta og málsmeðferð við veitingu leyfis.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -30,6 +70,48 @@
         <li style="text-align: justify;">5. mgr. fellur brott.</li>
       </ol>
     </original>
+    <intents common-address="33. gr. c">
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33c']/subart[@nr='3']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33c,')]//subart[@nr='3']">3. mgr. 33. gr. c</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Umsækjandi starfsleyfis til geymslu hefur í þeim tilvikum þegar könnun þarf að fara fram einkarétt til könnunar á umræddum geymslugeymi, auk forgangsréttar til geymslu á sama svæði að uppfylltum nánari skilyrðum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Í þeim tilvikum þegar könnun þarf að fara fram hefur handhafi könnunarleyfis einkarétt til könnunar á hugsanlegum geymslugeymi, auk forgangsréttar til starfsleyfis til geymslu á sama svæði að því tilskildu að könnun á svæðinu sé lokið, að öll skilyrði könnunarleyfis séu uppfyllt og að sótt sé um starfsleyfi til geymslu á gildistíma könnunarleyfis.</sen>
+              <sen nr="2">Sækja skal um könnunarleyfi hjá Umhverfisstofnun.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33c']/subart[@nr='4']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33c,')]//subart[@nr='4']">4. mgr. 33. gr. c</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ósamrýmanleg not geymslugeymis eru óheimil á meðan könnun stendur yfir og á gildistíma starfsleyfis til geymslu.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>á meðan könnun stendur yfir</text-from>
+        <text-to>á gildistíma könnunarleyfis.</text-to>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33c']/subart[@nr='5']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33c,')]//subart[@nr='5']">5. mgr. 33. gr. c</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Umhverfisstofnun skal setja skilyrði í starfsleyfi um aðgang þriðja aðila að geymslusvæði.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -44,6 +126,108 @@
       </ol>
       <p style="text-align: justify;">Rekstraraðili skal sjá til þess að innihald koldíoxíðsstraums sé efnagreint og að fram fari áhættu­mat sem staðfesti að mengunarstig koldíoxíðsstraums sé í samræmi við kröfur 1. mgr.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33d,')]">33. gr. d</address>
+        <existing>
+          <art nr="33d">
+            <nr-title>33. gr. d.</nr-title>
+            <name>Samsetning koldíoxíðsstraums til geymslu.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Koldíoxíðsstraumur til niðurdælingar og geymslu skal ekki innihalda úrgang.</sen>
+                <sen nr="2">Koldíoxíðsstraumur getur þó innihaldið tilfallandi tengd efni úr uppsprettunni, fönguninni eða niðurdælingarferlinu og snefilefni sem bætt er í hann til að auðvelda vöktun.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1"/>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Rekstraraðili skal sjá til þess að innihald koldíoxíðsstraums sé efnagreint og að fram fari áhættumat sem staðfesti að mengunarstig koldíoxíðsstraums sé í samræmi við kröfur 1. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Styrkur viðbættra efna skal ekki vera svo hár að hann:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafi skaðleg áhrif á áreiðanleika geymslusvæðis eða tengdra innviða,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">stofni umhverfinu eða heilbrigði fólks í hættu.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.067.html" law-nr="67" law-year="2022" law-art="7" nr="1">
+                <footnote-sen>L. 67/2022, 7. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/name[1]" string-length="0"/>
+                <location type="range" string-length="248">
+                  <start xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+                <location type="deletion" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^" after-mark="$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.067.html" law-nr="67" law-year="2022" law-art="2" nr="2">
+                <footnote-sen>L. 67/2022, 2. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1']" words="geymslusvæðis" instance-num="1"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.012.html" law-nr="12" law-year="2021" law-art="3" nr="3">
+                <footnote-sen>L. 12/2021, 3. gr.</footnote-sen>
+                <location type="range" string-length="653">
+                  <start xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33d']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <art nr="33d">
+            <nr-title>33. gr. d.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Koldíoxíðsstraumur skal vera að langmestu leyti úr koldíoxíði.</sen>
+                <sen nr="2">Af þeim sökum má ekki bæta í hann úrgangi eða öðru efni í því skyni að farga úrganginum eða öðru efni.</sen>
+                <sen nr="3">Koldíoxíðsstraumur getur þó innihaldið tilfallandi tengd efni úr uppsprettunni, fönguninni eða niðurdælingarferlinu og snefilefni sem bætt er í hann til að auðvelda vöktun og sannprófun á flæði koldíoxíðs.</sen>
+                <sen nr="4">Styrkur allra tilfallandi og viðbættra efna skal ekki vera svo hár að hann:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafi skaðleg áhrif á áreiðanleika geymslusvæðis eða tengdra innviða,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">stofni umhverfinu eða heilbrigði fólks í hættu,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">brjóti í bága við kröfur annarrar viðeigandi löggjafar.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Rekstraraðili skal sjá til þess að innihald koldíoxíðsstraums sé efnagreint og að fram fari áhættumat sem staðfesti að mengunarstig koldíoxíðsstraums sé í samræmi við kröfur 1. mgr.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -51,6 +235,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 33. gr. k.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33f']/subart[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33f,')]//subart[@nr='1']">1. mgr. 33. gr. f</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Komi fram leki eða umtalsverð hætta á leka á geymslusvæði er Umhverfisstofnun heimilt að nýta fjárhagslega tryggingu, sem lögð hefur verið fram af rekstraraðila, til að bæta úr því ástandi, sbr. 1. mgr. 33. gr. j.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>33. gr. j</text-from>
+        <text-to>33. gr. k.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -64,6 +262,72 @@
         <li style="text-align: justify;">Orðin „og geymslu“ í 3. tölul. falla brott.</li>
       </ol>
     </original>
+    <intents common-address="1. mgr. 33. gr. g">
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33g']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33g,')]//subart[@nr='1']//numart[@nr='1']">1. tölul. 1. mgr. 33. gr. g</address>
+        <existing>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Öll tiltæk gögn benda til þess að koldíoxíð sé fullkomlega og varanlega aflokað allt að 20 árum eftir að geymslusvæði var lokað eða fyrr ef unnt er að sýna fram á að koldíoxíð sé fullkomlega og varanlega aflokað eða steinrunnið.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Öll tiltæk gögn benda til þess að koldíoxíð sé fullkomlega og varanlega aflokað.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="insert" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33g']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33g,')]//subart[@nr='1']//numart[@nr='2']">2. tölul. 1. mgr. 33. gr. g</address>
+        <existing>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fjárhagslegar skyldur skv. 33. gr. j eru uppfylltar.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Lágmarkstími sem Umhverfisstofnun ákvarðar er liðinn.</sen>
+              <sen nr="2">Sá lágmarkstími skal ekki vera styttri en 20 ár nema unnt sé að sýna fram á að koldíoxíð sé fullkomlega og varanlega aflokað áður en því tímabili lýkur.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33g']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33g,')]//subart[@nr='1']//numart[@nr='2']">2. tölul. 1. mgr. 33. gr. g</address>
+        <existing>
+          <numart nr="2" nr-type="numeric">
+            <nr-title>2.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fjárhagslegar skyldur skv. 33. gr. j eru uppfylltar.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>33. gr. j</text-from>
+        <text-to>2. mgr. 33. gr. k.</text-to>
+      </intent>
+      <intent action="delete_text" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33g']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33g,')]//subart[@nr='1']//numart[@nr='3']">3. tölul. 1. mgr. 33. gr. g</address>
+        <existing>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Geymslusvæði hefur verið lokað og öll mannvirki tengd niðurdælingu og geymslu fjarlægð eða frá þeim gengið.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>og geymslu</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -81,6 +345,85 @@
         <li style="text-align: justify;">3. mgr. fellur brott.</li>
       </ol>
     </original>
+    <intents common-address="33. gr. h">
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33h']/subart[@nr='2']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33h,')]//subart[@nr='2']">2. mgr. 33. gr. h</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Rekstraraðila er heimilt að synja um aðgang að flutningskerfi og/eða geymslusvæði, að teknu tilliti til eftirfarandi viðmiða:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">geymslugetu sem eðlilegt er að sé tiltæk á geymslusvæði,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">markmiðs íslenskra stjórnvalda samkvæmt alþjóðalögum um kolefnisföngun og geymslu koldíoxíðs,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">nauðsynjar þess að synja um aðgang í tilvikum þegar tækniforskriftir eru ósamrýmanlegar og erfitt er að bæta úr,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">fjölda þeirra aðila sem óska eftir aðgangi.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Aðgangur sem um getur í 1. mgr. skal veittur á gagnsæjan hátt og án mismununar.</sen>
+              <sen nr="2">Aðgangur skal veittur með sanngjörnum hætti án hindrana og hliðsjón skal höfð af:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">geymslugetu sem eðlilegt er að sé tiltæk á geymslusvæði,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">markmiði íslenskra stjórnvalda samkvæmt alþjóðlegum skuldbindingum um samdrátt í losun koldíoxíðs og reglum um föngun og geymslu koldíoxíðs í jörðu,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">nauðsyn þess að synja um aðgang í tilvikum þegar tækniforskriftir eru ósam­rýman­legar og erfitt er að bæta úr,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">nauðsyn þess að virða tilhlýðilega rökstuddar og eðlilegar þarfir eiganda eða rekstrar­aðila geymslusvæðis eða flutningskerfis og hagsmuni allra annarra sem nota geymsluna eða netið eða viðkomandi vinnslu- eða meðhöndlunarbúnað og kunna að verða fyrir áhrifum.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33h']/subart[@nr='3']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33h,')]//subart[@nr='3']">3. mgr. 33. gr. h</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Rekstraraðila er einkum heimilt að synja um aðgang vegna skorts á rými ef tækniforskriftir eru ósamrýmanlegar og í þeim tilvikum þegar tenging er ekki til staðar og erfitt er að bæta úr.</sen>
+              <sen nr="2">Synji rekstraraðili um aðgang að flutningskerfi og/eða geymslusvæði skal sú ákvörðun rökstudd.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -88,6 +431,21 @@
           <span style="color: #000000;">laganna</span>
         </a>bætist nýr málsliður, svohljóðandi: Falli viðkomandi flutningskerfi eða geymslusvæði undir fleiri en eitt ríki í deilumáli sem nær yfir landamæri skulu hlutaðeigandi ríki hafa samráð sín á milli til þess að ákvæðum þessa kafla sé beitt á samræmdan hátt.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/subart[@nr='3']/paragraph[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33i,')]//subart[@nr='3']">3. mgr. 33. gr. i</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Ef ágreiningur nær yfir landamæri ber að vinna að úrlausn hans eftir þeim reglum er gilda í því landi sem hefur lögsögu yfir flutningskerfi koldíoxíðs og geymslusvæði sem synjað hefur verið um aðgang að.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Falli viðkomandi flutningskerfi eða geymslusvæði undir fleiri en eitt ríki í deilumáli sem nær yfir landamæri skulu hlutaðeigandi ríki hafa samráð sín á milli til þess að ákvæðum þessa kafla sé beitt á samræmdan hátt.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -100,6 +458,60 @@
       </p>
       <p style="text-align: justify;">Ef koldíoxíð er flutt yfir landamæri eða ef geymslusvæðin eða geymslusamstæðurnar liggja yfir landamæri skulu lögbær yfirvöld hlutaðeigandi ríkja í sameiningu uppfylla kröfur laga þessara og annarrar viðeigandi löggjafar þeirra ríkja sem í hlut eiga.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33i,')]">33. gr. i</address>
+        <existing>
+          <art nr="33i">
+            <nr-title>33. gr. i.</nr-title>
+            <name>Lausn deilumála vegna aðgangs að flutningskerfi og geymslusvæði.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Komi upp ágreiningur um aðgang að flutningskerfi og geymslusvæði milli rekstraraðila og mögulegra notenda sker Umhverfisstofnun úr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Rekstraraðila ber að veita allar viðeigandi upplýsingar sem geta stuðlað að lausn ágreinings.</sen>
+                <sen nr="2">Umhverfisstofnun skal taka ákvörðun svo fljótt sem auðið er.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ef ágreiningur nær yfir landamæri ber að vinna að úrlausn hans eftir þeim reglum er gilda í því landi sem hefur lögsögu yfir flutningskerfi koldíoxíðs og geymslusvæði sem synjað hefur verið um aðgang að.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2022.067.html" law-nr="67" law-year="2022" law-art="11" nr="1">
+                <footnote-sen>L. 67/2022, 11. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/name[1]" string-length="0"/>
+                <location type="range" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="geymslusvæði" instance-num="1"/>
+                <location type="deletion" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Komi upp ágreiningur um aðgang að flutningskerfi og (\[??)?geymslusvæði:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?milli rekstraraðila og mögulegra notenda sker Umhverfisstofnun úr." after-mark="$"/>
+                <location type="range" xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="geymslusvæði" instance-num="1"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.012.html" law-nr="12" law-year="2021" law-art="3" nr="2">
+                <footnote-sen>L. 12/2021, 3. gr.</footnote-sen>
+                <location type="range" string-length="562">
+                  <start xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33i']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <art nr="33j">
+            <nr-title>33. gr. j</nr-title>
+            <name>Samstarf yfir landamæri.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ef koldíoxíð er flutt yfir landamæri eða ef geymslusvæðin eða geymslusamstæðurnar liggja yfir landamæri skulu lögbær yfirvöld hlutaðeigandi ríkja í sameiningu uppfylla kröfur laga þessara og annarrar viðeigandi löggjafar þeirra ríkja sem í hlut eiga.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -111,6 +523,38 @@
         <li style="text-align: justify;">2. mgr. orðast svo:<br/>Rekstraraðili skal, áður en ábyrgð á geymslusvæði flyst til Umhverfisstofnunar, greiða fyrirsjáanlegan kostnað við vöktun þar til koldíoxíð er fullkomlega og varanlega aflokað. Miða skal við áætlaðan kostnað af vöktun í a.m.k. 30 ár.</li>
       </ol>
     </original>
+    <intents common-address="33. gr. j">
+      <intent action="replace_text" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33j']/subart[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33j,')]//subart[@nr='1']">1. mgr. 33. gr. j</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Rekstraraðili skal, þegar hann sækir um starfsleyfi til geymslu, sýna fram á að hann sé með tryggingu fyrir allri starfsemi á geymslusvæði.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>tryggingu fyrir allri starfsemi á geymslusvæði</text-from>
+        <text-to>fjárhagslega tryggingu fyrir allri starfsemi á geymslusvæði eða jafngildi tryggingar.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='6a' and @chapter-type='kafli']/art[@nr='33j']/subart[@nr='2']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',33j,')]//subart[@nr='2']">2. mgr. 33. gr. j</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Rekstraraðili skal, áður en ábyrgð á geymslusvæði flyst til Umhverfisstofnunar, greiða fyrirsjáanlegan kostnað við vöktun þar til koldíoxíð er fullkomlega og varanlega aflokað</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Rekstraraðili skal, áður en ábyrgð á geymslusvæði flyst til Umhverfisstofnunar, greiða fyrirsjáanlegan kostnað við vöktun þar til koldíoxíð er fullkomlega og varanlega aflokað.</sen>
+              <sen nr="2">Miða skal við áætlaðan kostnað af vöktun í a.m.k. 30 ár.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
     <original affected-law-nr="7" affected-law-year="1998">
@@ -118,11 +562,35 @@
           <span style="color: #000000;">laganna</span>
         </a>bætist nýr töluliður, 3. tölul., svohljóðandi: Könnunarleyfi, sbr. VI. kafla A.</p>
     </original>
+    <intents>
+      <intent action="insert" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='53']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']" action-law-nr="7" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',53,')]//subart[@nr='1']//numart[@nr='3']">3. tölul. 1. mgr. 53. gr.</address>
+        <existing>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Eftirlit, þ.m.t. sýnatöku, sbr. 51. gr.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Könnunarleyfi, sbr. VI. kafla A.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
     <original affected-law-nr="7" affected-law-year="1998">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-08" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 1. júlí 2024.</signed-when>
 </advert>

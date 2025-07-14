@@ -18,6 +18,111 @@
           </a>kemur: Loftslags- og orkusjóði.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2']/subart[@nr='2'] | art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']//sen[@nr='1'] | //art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='2'] | //art[contains(concat(',', @nr, ','), ',1,')]//sen[@nr='1']">1. málsl. 1. gr., 2. mgr. 2. gr. og 1. málsl. 1. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="1">Starfrækja skal sjóð í eigu íslenska ríkisins sem nefnist Orkusjóður.</sen>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Orkusjóður styður jafnframt við verkefni sem stuðla að orkuöryggi og samkeppnishæfni á sviði orkumála og orkutengd verkefni á grundvelli orkustefnu, nýsköpunarstefnu, byggðastefnu og stefnu stjórnvalda í loftslagsmálum.</sen>
+            </paragraph>
+          </subart>
+          <sen nr="1">Ráðherra skal setja í reglugerð nánari fyrirmæli um skilyrði fyrir framlögum úr Orkusjóði, undirbúning úthlutunar, lánveitingar, þ.m.t. vexti og önnur útlánakjör, greiðslur, eftirlit með framkvæmdum sem Orkusjóður veitir fé til og heimildir til að fella niður endurgreiðsluskyldu lántaka.</sen>
+        </existing>
+        <text-from>Orkusjóður</text-from>
+        <text-to>Loftslags- og orkusjóður.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="art[@nr='2']/subart[@nr='1'] | art[@nr='3']/subart[@nr='1'] | art[@nr='3']/subart[@nr='2'] | art[@nr='3']/subart[@nr='3'] | art[@nr='4']/subart[@nr='1'] | art[@nr='5']/subart[@nr='1'] | art[@nr='5']/subart[@nr='2'] | art[@nr='6'] | art[@nr='7'] | art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | art[@nr='8']/subart[@nr='2']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2'] | //art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']//sen[@nr='2'] | //art[contains(concat(',', @nr, ','), ',7,')] | //art[contains(concat(',', @nr, ','), ',6,')] | //art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='2' or @nr='1'] | //art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1'] | //art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='3' or @nr='2' or @nr='1'] | //art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='1']">1. mgr. 2. gr., 1., 2. og 3. mgr. 3. gr., 1. mgr. 4. gr., 1. og 2. mgr. 5. gr., 6. gr., 7. gr., 2. málsl. 1. mgr. og 2. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Hlutverk Orkusjóðs er að stuðla að hagkvæmri nýtingu orkuauðlinda landsins með styrkjum eða lánum, einkum til aðgerða er miða að því að draga úr notkun jarðefnaeldsneytis og auka nýtingu á innlendum endurnýjanlegum orkugjöfum.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra skipar þrjá einstaklinga í stjórn Orkusjóðs til fjögurra ára, þar af skal einn skipaður formaður.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Stjórn Orkusjóðs skal hafa yfirumsjón með umsýslu sjóðsins í samræmi við hlutverk hans.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Orkustofnun annast daglega umsýslu Orkusjóðs undir yfirstjórn stjórnar sjóðsins.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Stjórn Orkusjóðs gerir tillögur til ráðherra um lánveitingar og framlög úr Orkusjóði í samræmi við áherslur og stefnumótun stjórnvalda sem og fjárhags- og greiðsluáætlun sjóðsins.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þeir sem hljóta styrk eða lán frá Orkusjóði skulu gera grein fyrir framvindu verkefna og ráðstöfun fjár samkvæmt nánari reglum stjórnar Orkusjóðs.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ríkisendurskoðun annast árlega endurskoðun reikninga Orkusjóðs.</sen>
+            </paragraph>
+          </subart>
+          <art nr="6">
+            <nr-title>6. gr.</nr-title>
+            <name>Tekjur.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Tekjur Orkusjóðs eru framlag úr ríkissjóði samkvæmt ákvörðun Alþingis á fjárlögum hverju sinni og vextir af fé sjóðsins.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="7">
+            <nr-title>7. gr.</nr-title>
+            <name>Kostnaður af rekstri.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Kostnaður af rekstri Orkusjóðs greiðist af tekjum hans eða eigin fé.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <sen nr="2">Stjórn Orkusjóðs getur sett nánari reglur og skilyrði um tilfærslu fjármuna milli einstakra verkefna ef nauðsyn krefur.</sen>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari ákvæði um starfsemi og skipulag Orkusjóðs og framkvæmd laga þessara.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>Orkusjóðs</text-from>
+        <text-to>Loftslags- og orkusjóðs.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="art[@nr='4']/subart[@nr='1'] | art[@nr='4']/subart[@nr='2'] | art[@nr='5']/subart[@nr='1'] | art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']//sen[@nr='1'] | //art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1'] | //art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='2' or @nr='1']">1. og 2. mgr. 4. gr., 1. mgr. 5. gr. og 1. málsl. 1. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Stjórn Orkusjóðs gerir tillögur til ráðherra um lánveitingar og framlög úr Orkusjóði í samræmi við áherslur og stefnumótun stjórnvalda sem og fjárhags- og greiðsluáætlun sjóðsins.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Orkusjóði er ekki heimilt að veita Orkustofnun styrki eða lán af fé sjóðsins.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þeir sem hljóta styrk eða lán frá Orkusjóði skulu gera grein fyrir framvindu verkefna og ráðstöfun fjár samkvæmt nánari reglum stjórnar Orkusjóðs.</sen>
+            </paragraph>
+          </subart>
+          <sen nr="1">Ráðherra skal setja í reglugerð nánari fyrirmæli um skilyrði fyrir framlögum úr Orkusjóði, undirbúning úthlutunar, lánveitingar, þ.m.t. vexti og önnur útlánakjör, greiðslur, eftirlit með framkvæmdum sem Orkusjóður veitir fé til og heimildir til að fella niður endurgreiðsluskyldu lántaka.</sen>
+        </existing>
+        <text-from>Orkusjóði</text-from>
+        <text-to>Loftslags- og orkusjóði.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -29,6 +134,17 @@
         </em>
       </p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="art[@nr='1']/name[1]" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]/name">Fyrirsögn 1. gr.</address>
+        <existing>
+          <name>Orkusjóður.</name>
+        </existing>
+        <inner>
+          <name>Loftslags- og orkusjóður.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -38,6 +154,39 @@
       <p style="text-align: justify;">Loftslags- og orkusjóður skal enn fremur styðja við nýsköpunar- og innviðaverkefni á sviði loftslagsmála, verkefni sem stuðla að innleiðingu hringrásarhagkerfisins og verkefni sem lúta að kynningu og fræðslu um áhrif loftslagsbreytinga.</p>
       <p style="text-align: justify;">Jafnframt er hlutverk Loftslags- og orkusjóðs að sjá um beinar stuðningsaðgerðir, svo sem styrki til kaupa á rafbílum og styrki til jarðhitaleitar, eftir atvikum hverju sinni.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="art[@nr='2']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]">2. gr.</address>
+        <existing>
+          <art nr="2">
+            <nr-title>2. gr.</nr-title>
+            <name>Hlutverk.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Hlutverk Orkusjóðs er að stuðla að hagkvæmri nýtingu orkuauðlinda landsins með styrkjum eða lánum, einkum til aðgerða er miða að því að draga úr notkun jarðefnaeldsneytis og auka nýtingu á innlendum endurnýjanlegum orkugjöfum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Orkusjóður styður jafnframt við verkefni sem stuðla að orkuöryggi og samkeppnishæfni á sviði orkumála og orkutengd verkefni á grundvelli orkustefnu, nýsköpunarstefnu, byggðastefnu og stefnu stjórnvalda í loftslagsmálum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Loftslags- og orkusjóður skal enn fremur styðja við nýsköpunar- og innviðaverkefni á sviði loftslagsmála, verkefni sem stuðla að innleiðingu hringrásarhagkerfisins og verkefni sem lúta að kynningu og fræðslu um áhrif loftslagsbreytinga.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Jafnframt er hlutverk Loftslags- og orkusjóðs að sjá um beinar stuðningsaðgerðir, svo sem styrki til kaupa á rafbílum og styrki til jarðhitaleitar, eftir atvikum hverju sinni.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -50,6 +199,70 @@
         <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>Ákvarðanir sem teknar eru um að veita styrki úr Loftslags- og orkusjóði eru endanlegar á stjórnsýslustigi.</li>
       </ol>
     </original>
+    <intents common-address="3. gr.">
+      <intent action="replace" action-xpath="art[@nr='3']/subart[@nr='1']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']">1. mgr. 3. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra skipar þrjá einstaklinga í stjórn Orkusjóðs til fjögurra ára, þar af skal einn skipaður formaður.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra skipar fimm einstaklinga í stjórn Loftslags- og orkusjóðs til fjögurra ára.</sen>
+              <sen nr="2">Formaður skal skipaður án tilnefningar og honum til viðbótar skipar ráðherra einn fulltrúa án tilnefningar, einn fulltrúa, sem hefur þekkingu á loftslagsmálum, samkvæmt tilnefningu háskólasamfélagsins, einn fulltrúa samkvæmt tilnefningu Samtaka atvinnulífsins og einn fulltrúa samkvæmt tilnefningu umhverfisverndarsamtaka.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="art[@nr='3']/subart[@nr='3']/paragraph[@nr='1']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='3']">3. mgr. 3. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Orkustofnun annast daglega umsýslu Orkusjóðs undir yfirstjórn stjórnar sjóðsins.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Stjórninni er þó heimilt að framselja óháðum aðila faglega umsýslu sjóðsins samkvæmt samningi.</sen>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="art[@nr='3']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]">3. gr.</address>
+        <existing>
+          <art nr="3">
+            <nr-title>3. gr.</nr-title>
+            <name>Stjórn.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra skipar þrjá einstaklinga í stjórn Orkusjóðs til fjögurra ára, þar af skal einn skipaður formaður.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Stjórn Orkusjóðs skal hafa yfirumsjón með umsýslu sjóðsins í samræmi við hlutverk hans.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Orkustofnun annast daglega umsýslu Orkusjóðs undir yfirstjórn stjórnar sjóðsins.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ákvarðanir sem teknar eru um að veita styrki úr Loftslags- og orkusjóði eru endanlegar á stjórnsýslustigi.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -57,6 +270,19 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="art[@nr='4']/subart[@nr='1']" action-law-nr="76" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='1']">1. mgr. 4. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Stjórn Orkusjóðs gerir tillögur til ráðherra um lánveitingar og framlög úr Orkusjóði í samræmi við áherslur og stefnumótun stjórnvalda sem og fjárhags- og greiðsluáætlun sjóðsins.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>og framlög</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -66,11 +292,25 @@
         </strong>
       </p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="name[1]" action-law-nr="76" action-law-year="2020">
+        <address xpath="/law/name">Heiti</address>
+        <existing>
+          <name>Lög um Orkusjóð</name>
+        </existing>
+        <inner>
+          <name>Lög um Loftslags- og orkusjóð.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="76" affected-law-year="2020">
       <p style="text-align: justify;">Lög þessi öðlast gildi 1. júlí 2024.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-01" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="76" affected-law-year="2020">
@@ -91,6 +331,123 @@
             </a>:</em>Í stað heitisins „Orkusjóði“ í ákvæði til bráðabirgða LXXVII í lögunum kemur: Loftslags- og orkusjóði.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='4']" action-law-nr="70" action-law-year="2012">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='4']">4. mgr. 4. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Stjórn loftslagssjóðs ber ábyrgð á úthlutunum úr loftslagssjóði og er sjálfstæð og óháð í störfum sínum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='9' and @chapter-type='kafli']" action-law-nr="70" action-law-year="2012">
+        <address xpath="//chapter[@nr='9']">IX. kafli</address>
+        <existing>
+          <chapter nr="9" nr-type="roman" chapter-type="kafli" roman-nr="IX">
+            <nr-title>IX. kafli.</nr-title>
+            <name>Loftslagssjóður.</name>
+            <art nr="29">
+              <nr-title>29. gr.</nr-title>
+              <name>Hlutverk.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Loftslagssjóður er sérstakur sjóður sem heyrir undir ráðherra.</sen>
+                  <sen nr="2">Hlutverk sjóðsins er að styðja við nýsköpunarverkefni á sviði loftslagsmála og verkefni sem lúta að kynningu og fræðslu um áhrif loftslagsbreytinga.</sen>
+                  <sen nr="3">Styrkir til nýsköpunarverkefna eru ætlaðir m.a. til þess að styrkja rannsóknir og þróunarstarf í tengslum við aðlögun og innleiðingu á nýjum loftslagsvænum tæknilausnum og hönnun.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.086.html" law-nr="86" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 86/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="390">
+                    <start xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='29']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='29']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="30">
+              <nr-title>30. gr.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.086.html" law-nr="86" law-year="2019" law-art="6" nr="1">
+                  <footnote-sen>L. 86/2019, 6. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='30']/nr-title[1]" before-mark="^30. gr." after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="31">
+              <nr-title>31. gr.</nr-title>
+              <name>Stjórn.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra skipar fimm fulltrúa í stjórn loftslagssjóðs til tveggja ára í senn.</sen>
+                  <sen nr="2">Formaður skal skipaður án tilnefningar og honum til viðbótar skipar ráðherra einn fulltrúa án tilnefningar, einn fulltrúa, sem hefur þekkingu á loftslagsmálum, samkvæmt tilnefningu háskólasamfélagsins, einn fulltrúa samkvæmt tilnefningu Samtaka atvinnulífsins og einn fulltrúa samkvæmt tilnefningu umhverfisverndarsamtaka.</sen>
+                  <sen nr="3">Stjórnin tekur ákvarðanir um úthlutanir úr sjóðnum í samræmi við reglur sjóðsins.</sen>
+                  <sen nr="4">Stjórninni er heimilt að framselja óháðum aðila fjárhagslega umsýslu sjóðsins samkvæmt samningi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvarðanir sem teknar eru um að veita styrki úr loftslagssjóði eru endanlegar á stjórnsýslustigi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.086.html" law-nr="86" law-year="2019" law-art="7" nr="1">
+                  <footnote-sen>L. 86/2019, 7. gr.</footnote-sen>
+                  <location type="range" string-length="400">
+                    <start xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                  <location type="deletion" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='31']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" before-mark="^Stjórnin tekur ákvarðanir um úthlutanir úr sjóðnum í samræmi við reglur sjóðsins." after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="32">
+              <nr-title>32. gr.</nr-title>
+              <name>Úthlutunarreglur.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra skal setja loftslagssjóði reglur þar sem m.a. skal kveðið á um umsóknir, mat þeirra og málsmeðferð.</sen>
+                  <sen nr="2">Þar skulu koma fram skilyrði umsókna og áherslur sjóðsins.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote nr="1">
+                  <footnote-sen>Rgl. 694/2019.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='32']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra skal setja loftslagssjóði reglur" after-mark="þar sem m.a. skal kveðið á um umsóknir, mat þeirra og málsmeðferð.$"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='LXXVII']" action-law-nr="90" action-law-year="2003">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',LXXVII,')]">ákvæði til bráðabirgða LXXVII</address>
+        <existing>
+          <art nr="LXXVII" roman-nr="77" number-type="roman">
+            <nr-title>LXXVII.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir ákvæði 2. tölul. A-liðar 7. gr. teljast ekki til skattskyldra tekna styrkir sem einstaklingar utan rekstrar hljóta til kaupa á hreinorkubifreiðum og veittir eru úr Orkusjóði á tímabilinu 1. janúar 2024 til og með 31. desember 2024, sbr. lög nr. 76/2020.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2023.102.html" law-nr="102" law-year="2023" law-art="13" nr="1">
+                <footnote-sen>L. 102/2023, 13. gr.</footnote-sen>
+                <location type="range" string-length="273">
+                  <start xpath="chapter[@nr='t']/art[@nr='LXXVII']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='LXXVII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <text-from>Orkusjóði</text-from>
+        <text-to>Loftslags- og orkusjóði.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 28. júní 2024.</signed-when>
 </advert>

@@ -16,6 +16,28 @@
           <li style="text-align: justify;">Í stað „40%“ í 1. málsl. 2. tölul. kemur: 20%.</li>
         </ol>
       </original>
+      <intents common-address="4. gr.">
+        <intent action="replace_text" action-xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//sen[@nr='1']">inngangsmálslið 4. gr.</address>
+          <existing>
+            <sen nr="1">Aðili sem fellur undir gildissvið laga þessara og uppfyllir öll eftirtalin skilyrði á rétt á tímabundnum rekstrarstuðningi úr ríkissjóði vegna hvers almanaksmánaðar frá nóvember 2023 til og með júní 2024:</sen>
+            <sen nr="1">Hann ber ótakmarkaða skattskyldu hér á landi skv. 1. eða 2. gr. laga um tekjuskatt, nr. 90/2003.</sen>
+            <sen nr="1">Tekjur hans í þeim almanaksmánuði sem umsókn varðar voru a.m.k. 40% lægri en í sama almanaksmánuði ári áður og tekjufallið má rekja til náttúruhamfara í Grindavíkurbæ.</sen>
+            <sen nr="1">Hann er ekki í vanskilum með opinber gjöld, skatta og skattsektir sem komnar voru á eindaga fyrir 10. nóvember 2023 og álagðir skattar og gjöld byggjast ekki á áætlunum vegna vanskila á skattframtölum og skýrslum, þ.m.t. staðgreiðsluskilagreinum og virðisaukaskattsskýrslum, til Skattsins síðustu þrjú ár áður en umsókn barst eða síðan hann hóf starfsemi ef það var síðar.</sen>
+            <sen nr="1">Bú hans hefur ekki verið tekið til gjaldþrotaskipta.</sen>
+          </existing>
+          <text-from>júní</text-from>
+          <text-to>desember.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="art[@nr='4']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//numart[@nr='2']//sen[@nr='1']">1. málsl. 2. tölul. 4. gr.</address>
+          <existing>
+            <sen nr="1">Tekjur hans í þeim almanaksmánuði sem umsókn varðar voru a.m.k. 40% lægri en í sama almanaksmánuði ári áður og tekjufallið má rekja til náttúruhamfara í Grindavíkurbæ.</sen>
+          </existing>
+          <text-from>40%</text-from>
+          <text-to>20%.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="15" affected-law-year="2024">
@@ -25,11 +47,59 @@
           <li style="text-align: justify;">Við c-lið bætist nýr málsliður, svohljóðandi: Ef tekjufall skv. 2. tölul. 4. gr. var á bilinu 50–100% skal tekjufall samkvæmt þessum staflið reiknast 100%.</li>
         </ol>
       </original>
+      <intents common-address="2. tölul. 1. mgr. 5. gr.">
+        <intent action="replace_text" action-xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//numart[@nr='2']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 2. tölul. 1. mgr. 5. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Fjöldi stöðugilda hjá umsækjanda í þeim almanaksmánuði sem umsókn varðar, þó að hámarki tíu stöðugildi.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>þeim almanaksmánuði sem umsókn varðar</text-from>
+          <text-to>nóvember 2023.</text-to>
+        </intent>
+        <intent action="add" action-xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//numart[@nr='2']//*[self::numart or self::art-chapter][@nr='c' or @nr='C']">c-lið 2. tölul. 1. mgr. 5. gr.</address>
+          <existing>
+            <numart nr="c" nr-type="alphabet">
+              <nr-title>c.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Tekjufall skv. 2. tölul. 4. gr.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <sen nr="2">Ef tekjufall skv. 2. tölul. 4. gr. var á bilinu 50–100% skal tekjufall samkvæmt þessum staflið reiknast 100%.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="15" affected-law-year="2024">
         <p style="text-align: justify;">Í stað orðanna „30. september 2024“ í 6. gr. laganna kemur: 31. mars 2025.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="art[@nr='6']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]">6. gr.</address>
+          <existing>
+            <art nr="6">
+              <nr-title>6. gr.</nr-title>
+              <name>Umsókn.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Umsókn um rekstrarstuðning skal beint til Skattsins fyrir hvern almanaksmánuð og eigi síðar en 30. september 2024.</sen>
+                  <sen nr="2">Umsókn skal vera á því formi sem Skatturinn ákveður og henni skulu fylgja þau gögn sem Skatturinn áskilur.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <text-from>30. september 2024</text-from>
+          <text-to>31. mars 2025.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="15" affected-law-year="2024">
@@ -39,12 +109,55 @@
           <li style="text-align: justify;">Við bætist nýr málsliður, svohljóðandi: Ef aðili sem fengið hefur rekstrarstuðning samkvæmt lögum þessum vegna almanaksmánaðar frá júlí til og með desember 2024 greiðir út arð, kaupir eigin hlutabréf eða ráðstafar með öðrum hætti fé til eigenda sinna, öðruvísi en í formi launa eða til samræmis við skuldbindingu sem stofnað var til fyrir 5. júní 2024, fyrir 1. janúar 2026 skal hann endurgreiða þann rekstrarstuðning sem hann hefur fengið.</li>
         </ol>
       </original>
+      <intents common-address="2. mgr. 9. gr.">
+        <intent action="append_text" action-xpath="art[@nr='9']/subart[@nr='2']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='2']">2. mgr. 9. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ef aðili sem fengið hefur rekstrarstuðning samkvæmt lögum þessum greiðir út arð, kaupir eigin hlutabréf eða ráðstafar með öðrum hætti fé til eigenda sinna, öðruvísi en í formi launa eða til samræmis við skuldbindingu sem stofnað var til fyrir 7. febrúar 2024, fyrir 1. júlí 2025 skal hann endurgreiða þann rekstrarstuðning sem hann hefur fengið.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>lögum þessum</text-from>
+          <text-to>vegna almanaksmánaðar frá nóvember 2023 til og með júní 2024.</text-to>
+        </intent>
+        <intent action="add" action-xpath="art[@nr='9']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="15" action-law-year="2024">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='2']">2. mgr. 9. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ef aðili sem fengið hefur rekstrarstuðning samkvæmt lögum þessum greiðir út arð, kaupir eigin hlutabréf eða ráðstafar með öðrum hætti fé til eigenda sinna, öðruvísi en í formi launa eða til samræmis við skuldbindingu sem stofnað var til fyrir 7. febrúar 2024, fyrir 1. júlí 2025 skal hann endurgreiða þann rekstrarstuðning sem hann hefur fengið.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="2">Ef aðili sem fengið hefur rekstrarstuðning samkvæmt lögum þessum vegna almanaksmánaðar frá júlí til og með desember 2024 greiðir út arð, kaupir eigin hlutabréf eða ráðstafar með öðrum hætti fé til eigenda sinna, öðruvísi en í formi launa eða til samræmis við skuldbindingu sem stofnað var til fyrir 5. júní 2024, fyrir 1. janúar 2026 skal hann endurgreiða þann rekstrarstuðning sem hann hefur fengið.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="15" affected-law-year="2024">
         <p style="text-align: justify;">Við lögin bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
         <p style="text-align: justify;">Skatturinn skal endurákvarða þegar ákvarðaðan rekstrarstuðning samkvæmt lögum nr. 15/2024 fyrir almanaksmánuðina nóvember 2023 til og með júní 2024 ef lög þessi leiða til þess að rekstrar­aðili hafi átt rétt á meiri stuðningi en honum var ákvarðaður.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="" action-law-nr="15" action-law-year="2024">
+          <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+          <existing/>
+          <inner>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Skatturinn skal endurákvarða þegar ákvarðaðan rekstrarstuðning samkvæmt lögum nr. 15/2024 fyrir almanaksmánuðina nóvember 2023 til og með júní 2024 ef lög þessi leiða til þess að rekstraraðili hafi átt rétt á meiri stuðningi en honum var ákvarðaður.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -53,11 +166,35 @@
       <original affected-law-nr="94" affected-law-year="2023">
         <p style="text-align: justify;">Í stað dagsetningarinnar „30. september 2024“ í 1. málsl. 4. mgr. 10. gr. laganna kemur: 31. mars 2025.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="94" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 10. gr.</address>
+          <existing>
+            <sen nr="1">Umsóknir um stuðning samkvæmt lögum þessum skulu berast Húsnæðis- og mannvirkjastofnun í síðasta lagi 30. september 2024.</sen>
+          </existing>
+          <text-from>30. september 2024</text-from>
+          <text-to>31. mars 2025.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="94" affected-law-year="2023">
         <p style="text-align: justify;">Í stað dagsetningarinnar „31. ágúst 2024“ í 4. mgr. 15. gr. laganna kemur: 31. desember 2024.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']" action-law-nr="94" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='4']">4. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Heimilt er að greiða sértækan húsnæðisstuðning samkvæmt lögum þessum vegna húsnæðiskostnaðar sem fellur til vegna leigu húsnæðis á tímabilinu 10. nóvember 2023 til og með 31. ágúst 2024.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>31. ágúst 2024</text-from>
+          <text-to>31. desember 2024.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -66,21 +203,58 @@
       <original affected-law-nr="87" affected-law-year="2023">
         <p style="text-align: justify;">Í stað dagsetningarinnar „30. júní“ í 1. málsl. 1. gr. laganna kemur: 31. ágúst.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="87" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]//sen[@nr='1']">1. málsl. 1. gr.</address>
+          <existing>
+            <sen nr="1">Lög þessi gilda um tímabundinn stuðning til greiðslu launa starfsfólks á almennum vinnumarkaði, sem vegna náttúruhamfara í Grindavíkurbæ getur ekki gegnt störfum sínum þar sem starfsstöð þess er staðsett í sveitarfélaginu, á tímabilinu frá og með 11. nóvember 2023 til og með 30. júní 2024.</sen>
+          </existing>
+          <text-from>30. júní</text-from>
+          <text-to>31. ágúst.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="87" affected-law-year="2023">
         <p style="text-align: justify;">Í stað dagsetningarinnar „30. september“ í 1. málsl. 3. mgr. 9. gr. laganna kemur: 30. nóv­ember.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="art[@nr='9']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="87" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 9. gr.</address>
+          <existing>
+            <sen nr="1">Umsóknir um stuðning samkvæmt lögum þessum skulu berast Vinnumálastofnun í síðasta lagi 30. september 2024.</sen>
+          </existing>
+          <text-from>30. september</text-from>
+          <text-to>30. nóvember.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="10">
       <original affected-law-nr="87" affected-law-year="2023">
         <p style="text-align: justify;">Í stað dagsetningarinnar „30. júní“ í 3. mgr. 12. gr. laganna kemur: 31. ágúst.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="art[@nr='12']/subart[@nr='3']" action-law-nr="87" action-law-year="2023">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='3']">3. mgr. 12. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Komi til úthlutunar arðs hjá atvinnurekanda sem fengið hefur stuðning til greiðslu launa á grundvelli laga þessara, á tímabilinu 1. mars 2024 til og með 30. júní 2025, ber hlutaðeigandi atvinnurekanda að endurgreiða Vinnumálastofnun þann stuðning sem hann hefur fengið á grundvelli laga þessara áður en til úthlutunar arðs kemur.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>30. júní</text-from>
+          <text-to>31. ágúst.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="87" affected-law-year="2023">
         <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-06-28" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört í Reykjavík, 28. júní 2024.</signed-when>

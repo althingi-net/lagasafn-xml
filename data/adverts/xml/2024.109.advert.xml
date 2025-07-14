@@ -13,6 +13,14 @@
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">2. málsl. 1. mgr. 3. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 3. gr.</address>
+          <existing>
+            <sen nr="2">), samvinnufélag (skammstafað svf.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="22" affected-law-year="1991">
@@ -22,21 +30,83 @@
           <li style="text-align: justify;">4. málsl. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="5. mgr. 4. gr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='5']//sen[@nr='2']">2. málsl. 5. mgr. 4. gr.</address>
+          <existing>
+            <sen nr="2">Ef 15 aðilar eða fleiri koma sér saman um félagsstofnun og bindast samtökum og gerast félagsmenn setja þeir félaginu samþykktir í samræmi við lög þessi.</sen>
+          </existing>
+          <text-from>15</text-from>
+          <text-to>þrír.</text-to>
+        </intent>
+        <intent action="delete" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='5']//sen[@nr='4']">4. málsl. 5. mgr. 4. gr.</address>
+          <existing>
+            <sen nr="4">Ráðherra eða sá sem hann framselur vald sitt getur heimilað frávik frá lágmarksfjölda stofnenda samkvæmt þessari málsgrein.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Við 8. tölul. 5. gr. laganna bætist nýr málsliður, svohljóðandi: Fjárhæð aðildargjalds skal ekki vera hærri en 10.000 kr. í samvinnufélögum þar sem félagsmenn eru fleiri en 100, en breyta má fjárhæðinni miðað við 1. júní ár hvert í samræmi við vísitölu neysluverðs.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='8']/paragraph[@nr='1']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//numart[@nr='8']">8. tölul. 5. gr.</address>
+          <existing>
+            <numart nr="8" nr-type="numeric">
+              <nr-title>8.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Fjárhæð aðildargjalds, sem breyta má til samræmis við almennar verðlagsbreytingar, gjalddaga þess og greiðsluform.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <sen nr="2">Fjárhæð aðildargjalds skal ekki vera hærri en 10.000 kr. í samvinnufélögum þar sem félagsmenn eru fleiri en 100, en breyta má fjárhæðinni miðað við 1. júní ár hvert í samræmi við vísitölu neysluverðs.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „hluthafafundi“ í 3. málsl. 1. mgr. 36. gr. laganna kemur: félagsfundi.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='36']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',36,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 36. gr.</address>
+          <existing>
+            <sen nr="3">Í samþykktunum má ákveða að einn eða fleiri fulltrúanefndarmenn skuli tilnefndir með öðrum hætti, en meiri hluti nefndarinnar skal þó ætíð kjörinn af hluthafafundi.</sen>
+          </existing>
+          <text-from>hluthafafundi</text-from>
+          <text-to>félagsfundi.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Við 1. mgr. 37. gr. laganna bætast tveir nýir málsliðir, svohljóðandi: Í samvinnufélögum þar sem félagsmenn eru fleiri en 100 skal óheimilt að ráðstafa hærra hlutfalli en 1% af hagnaði hvers árs til greiðslu í stofnsjóð eða, þar sem við á, A-deild stofnsjóðs, sbr. 4. málsl., þó þannig að fjárhæðin verði aldrei hærri en 50.000 kr. á hvern félagsmann. Fjárhæðin breytist miðað við 1. júní ár hvert í samræmi við vísitölu neysluverðs.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='1']">1. mgr. 37. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Stofnsjóður samvinnufélags er myndaður af séreignarhlutum félagsaðila.</sen>
+                <sen nr="2">Í hann skal leggja aðildargjald félagsaðila, sbr. 8. tölul. 5. gr.</sen>
+                <sen nr="3">Í stofnsjóð skal enn fremur leggja þann hluta hagnaðar, sem aðalfundur ákveður, eftir að dregið hefur verið frá tap, sem ekki hefur verið jafnað, og fé lagt í sjóði félagsins samkvæmt lögum eða félagssamþykktum.</sen>
+                <sen nr="4">Með ákvæðum í samþykktum samvinnufélags má nefna stofnsjóð samkvæmt framanskráðu A-deild stofnsjóðs og jafnframt mynda sérstaka B-deild með sölu hluta samkvæmt nánari ákvæðum í þessum kafla.</sen>
+                <sen nr="5">Einungis félagsaðilar geta átt séreignarhluta í A-deild stofnsjóðs, en í B-deild þeir sem keypt hafa hlutana og fengið í hendur samvinnuhlutabréf í samræmi við það.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="6">Í samvinnufélögum þar sem félagsmenn eru fleiri en 100 skal óheimilt að ráðstafa hærra hlutfalli en 1% af hagnaði hvers árs til greiðslu í stofnsjóð eða, þar sem við á, A-deild stofnsjóðs, sbr. 4. málsl., þó þannig að fjárhæðin verði aldrei hærri en 50.000 kr. á hvern félagsmann.</sen>
+            <sen nr="7">Fjárhæðin breytist miðað við 1. júní ár hvert í samræmi við vísitölu neysluverðs.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="22" affected-law-year="1991">
@@ -45,11 +115,252 @@
         <p style="text-align: justify;">Hluthafar í B-deild félags, er verið hafa á móti breytingartillögu, eiga kröfu á að hlutir þeirra verði innleystir ef skrifleg krafa er gerð um það innan mánaðar frá því að fundurinn var haldinn. Ef þess hefur verið farið á leit við hluthafa fyrir ákvarðanatöku að þeir sem vilja nota innlausnarréttinn gefi til kynna vilja sinn í því efni er innlausnarrétturinn bundinn því skilyrði að hlutaðeigendur hafi gefið yfirlýsingu þar um á fundinum. Félagið skal kaupa hlutina af þeim á verði sem svarar til verðmætis hlutanna. Sé ekki um samkomulag að ræða skal verðið ákveðið af matsmönnum, dómkvöddum á heimilisvarnarþingi félagsins. Hvor aðili um sig getur borið ákvörðun matsmanna undir dómstóla. Mál verður að höfða innan þriggja mánaða frá því að mat hefur farið fram.</p>
         <p style="text-align: justify;">Félagsmenn og hluthafar í B-deild stofnsjóðs geta krafist skaðabóta af viðkomandi félagi ef þeir hafa gert fyrirvara um það á fundi sem fjallar um breytingartillöguna enda sé skiptahlutfall á milli félagsmanna og hluthafa hvorki sanngjarnt né efnislega rökstutt.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='38']/subart[@nr='6']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',38,')]//subart[@nr='6']">6. mgr. 38. gr.</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Ákvæði 7. mgr. 61. gr. og 2. og 3. mgr. 61. gr. a gilda um ákvörðun samkvæmt þessari grein.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Gerð skal sérfræðiskýrsla skv. 6. og 7. gr. laga um hlutafélög, nr. 2/1995, þar sem fram kemur rökstutt álit á því hvort hækkun séreignarhluta félagsaðila í A-deild stofnsjóðs félagsins og skiptahlutfall á milli hluta í A-deild og B-deild sé eðlilegt og sanngjarnt.</sen>
+                <sen nr="2">Sérfræðiskýrslunni skulu fylgja ársreikningar félagsins fyrir síðustu tvö reikningsár og efnahags- og rekstrarreikningur fyrir liðinn hluta yfirstandandi reikningsárs.</sen>
+                <sen nr="3">Um hæfi og störf sérfræðinganna gilda að öðru leyti ákvæði laga um hlutafélög.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">Hluthafar í B-deild félags, er verið hafa á móti breytingartillögu, eiga kröfu á að hlutir þeirra verði innleystir ef skrifleg krafa er gerð um það innan mánaðar frá því að fundurinn var haldinn.</sen>
+                <sen nr="2">Ef þess hefur verið farið á leit við hluthafa fyrir ákvarðanatöku að þeir sem vilja nota innlausnarréttinn gefi til kynna vilja sinn í því efni er innlausnarrétturinn bundinn því skilyrði að hlutaðeigendur hafi gefið yfirlýsingu þar um á fundinum.</sen>
+                <sen nr="3">Félagið skal kaupa hlutina af þeim á verði sem svarar til verðmætis hlutanna.</sen>
+                <sen nr="4">Sé ekki um samkomulag að ræða skal verðið ákveðið af matsmönnum, dómkvöddum á heimilisvarnarþingi félagsins.</sen>
+                <sen nr="5">Hvor aðili um sig getur borið ákvörðun matsmanna undir dómstóla.</sen>
+                <sen nr="6">Mál verður að höfða innan þriggja mánaða frá því að mat hefur farið fram.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="8">
+              <paragraph nr="1">
+                <sen nr="1">Félagsmenn og hluthafar í B-deild stofnsjóðs geta krafist skaðabóta af viðkomandi félagi ef þeir hafa gert fyrirvara um það á fundi sem fjallar um breytingartillöguna enda sé skiptahlutfall á milli félagsmanna og hluthafa hvorki sanngjarnt né efnislega rökstutt.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">61., 61. gr. a og 61. gr. b laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61'] | chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61a'] | chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61b']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',61b,') or contains(concat(',', @nr, ','), ',61a,') or contains(concat(',', @nr, ','), ',61,')]">61., 61. gr. a og 61. gr. b</address>
+          <existing>
+            <art nr="61">
+              <nr-title>61. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Að tillögu félagsstjórnar getur félagsfundur með 2/3 hlutum greiddra atkvæða samþykkt að breyta samvinnufélagi í hlutafélag.</sen>
+                  <sen nr="2">Boða skal til fundarins með minnst tveggja vikna fyrirvara og viku fyrir félagsfund skulu tillaga, áætlun um breytingu og fylgiskjöl liggja frammi á skrifstofu félagsins og send sérhverjum félagsmanni sem þess óskar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar stjórn hefur samþykkt tillögu um breytinguna er óheimilt að veita nýjum félagsmönnum inngöngu í félagið og að greiða úr stofnsjóði til félagsmanna frá dagsetningu tillögunnar þar til hlutafélagið hefur verið skráð eða tillaga felld.</sen>
+                  <sen nr="2">Félagsfund skal halda innan mánaðar frá því að stjórn hefur tekið ákvörðun.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Á fundinum skal lögð fram áætlun um breytingu samvinnufélags.</sen>
+                  <sen nr="2">Í áætluninni skal koma skýrlega fram hvort hlutafélagið skuli hafa einhver einkenni samvinnufélags að því er varðar rétt manna til inngöngu, atkvæðisrétt, arðgreiðslur og tengsl þeirra við viðskiptaþátttöku félagsmanns í félaginu, skilgreiningu á tilgangi og viðskiptaþátttöku í félaginu, rétt sem fylgi búsetu á félagssvæði eða öðrum skilgreiningum, réttindi við slit o.fl.</sen>
+                  <sen nr="3">Í áætluninni skal ávallt fjallað um neðangreind atriði:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Greinargerð stjórnar þar sem gerð er grein fyrir röksemdum og ástæðum fyrir breytingu á rekstrarformi.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Við hvaða tímamark skuli miða stofnun hlutafélagsins og slit samvinnufélagsins en það tímamark skal ekki vera síðar en mánuði eftir samþykkt tillögu.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Fjárhæð hlutafjár sem verði gagngjald fyrir endurmetinn stofnsjóð A-deildar og samvinnuhlutabréf B-deildar og reglu um skiptingu þess á milli félagsmanna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvort í félaginu skuli vera mismunandi flokkar hlutafjár.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvort eða hversu mikill atkvæðisréttur skuli fylgja hlutum í hverjum flokki og jafnframt hvort önnur réttindi, svo sem réttur til arðgreiðslna eða úthlutun eigna við slit, skuli vera mismunandi á milli flokka eða ekki.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvort einhverjir félagsmenn njóti sérstakra réttinda í hlutafélaginu.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="g" nr-type="alphabet">
+                    <nr-title>g.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Reglur um hækkun séreignarhluta félagsaðila í A-deild stofnsjóðs, sbr. 38. gr.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="h" nr-type="alphabet">
+                    <nr-title>h.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvenær hlutabréf skuli afhent í skiptum fyrir stofnsjóðsinneign eða samvinnuhlutabréf.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="i" nr-type="alphabet">
+                    <nr-title>i.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvort einhverjir stjórnarmenn, framkvæmdastjórar og fulltrúanefndarmenn, matsmenn eða eftirlitsaðilar njóti einhverra réttinda í hlutafélaginu.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Staðfest félagaskrá félagsins þar sem séreignarhlutur hvers félagsmanns er skilgreindur, drög að samþykktum hlutafélagsins í samræmi við lög um hlutafélög og sérfræðiskýrsla ásamt gögnum skulu einnig fylgja áætluninni sem fylgiskjöl.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi verið gefin út samvinnuhlutabréf í félaginu sem ætlunin er að breyta í hlutafélag skal á fundinum enn fremur tekin afstaða til eftirfarandi:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Réttinda hluthafa í B-deild félagsins í hinu nýja hlutafélagi.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Hvernig hlutafé hins nýja félags skal skiptast á milli félagsmanna í A-deild og hluthafa í B-deild.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Ef félagsfundur samþykkir tillögu um breytingu skulu eigendur hluta í B-deild stofnsjóðs boðaðir til sérstaks fundar til ákvörðunar um tillöguna.</sen>
+                  <sen nr="2">Hluthafar sem ráða yfir meiri hluta í B-deild geta þar hafnað ákvörðun félagsfundar í A-deild.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="7">
+                <paragraph nr="1">
+                  <sen nr="1">Gerð skal sérfræðiskýrsla skv. 6. og 7. gr. laga nr. 2/1995, um hlutafélög, þar sem fram kemur mat á fjárhæð hlutafjár samkvæmt áætluninni og eftir atvikum rökstutt álit á því hvort hækkun séreignarhluta félagsaðila í A-deild stofnsjóðs félagsins og skiptahlutfall á milli félagsmanna og hluthafa sé eðlilegt og sanngjarnt, svo og innbyrðis milli félaganna.</sen>
+                  <sen nr="2">Þegar skiptahlutfall milli A-deildar og B-deildar er metið skal taka mið af þeim réttindum, sem aðilar hafa í samvinnufélagi, og hvaða réttindi þeir fá í hinu nýstofnaða hlutafélagi.</sen>
+                  <sen nr="3">Sérfræðiskýrslunni skulu fylgja ársreikningar félagsins fyrir síðustu tvö reikningsár, efnahags- og rekstrarreikningur fyrir liðinn hluta yfirstandandi reikningsárs og að auki upphafsefnahagsreikningur hins nýja félags.</sen>
+                  <sen nr="4">Um hæfi og störf sérfræðinganna gilda að öðru leyti ákvæði laga um hlutafélög.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2001.022.html" law-nr="22" law-year="2001" law-art="6" nr="1">
+                  <footnote-sen>L. 22/2001, 6. gr.</footnote-sen>
+                  <location type="range" string-length="3843">
+                    <start xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="61a">
+              <nr-title>61. gr. a.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ef félagsmenn gera grein fyrir því á félagsfundi, áður en gengið er til atkvæða um tillögu, að þeir vilji ekki gerast hluthafar í hinu nýja hlutafélagi, og ef þeir greiða atkvæði gegn tillögunni, geta þeir krafist þess að greidd verði út fjárhæð séreignarhlutar í stofnsjóði félagsins eins og hann stendur fyrir breytinguna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Hluthafar í B-deild félags, er verið hafa á móti breytingartillögu, eiga kröfu á að hlutabréf þeirra verði innleyst ef skrifleg krafa er gerð um það innan mánaðar frá því að fundurinn var haldinn.</sen>
+                  <sen nr="2">Ef þess hefur verið farið á leit við hluthafa fyrir ákvarðanatöku að þeir sem vilja nota innlausnarréttinn gefi til kynna vilja sinn í því efni er innlausnarrétturinn bundinn því skilyrði að hlutaðeigendur hafi gefið yfirlýsingu þar um á fundinum.</sen>
+                  <sen nr="3">Félagið skal kaupa hlutina af þeim á verði sem svarar til verðmætis hlutanna.</sen>
+                  <sen nr="4">Sé ekki um samkomulag að ræða skal verðið ákveðið af matsmönnum, dómkvöddum á heimilisvarnarþingi félagsins.</sen>
+                  <sen nr="5">Hvor aðili um sig getur borið ákvörðun matsmanna undir dómstóla.</sen>
+                  <sen nr="6">Mál verður að höfða innan þriggja mánaða frá því að mat hefur farið fram.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Félagsmenn og hluthafar í B-deild stofnsjóðs geta krafist skaðabóta af viðkomandi félagi ef þeir hafa gert fyrirvara um það á fundi sem fjallar um breytingartillöguna enda sé skiptahlutfall á milli félagsmanna og hluthafa hvorki sanngjarnt né efnislega rökstutt.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2001.022.html" law-nr="22" law-year="2001" law-art="6" nr="1">
+                  <footnote-sen>L. 22/2001, 6. gr.</footnote-sen>
+                  <location type="range" string-length="1362">
+                    <start xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61a']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61a']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="61b">
+              <nr-title>61. gr. b.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Samvinnufélagi telst slitið og hlutafélagið stofnað þegar öll neðangreind skilyrði eru uppfyllt:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Breytingaráætlun hefur verið samþykkt.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Ný stjórn og endurskoðendur hafa verið kjörnir fyrir hið nýja félag nema ráð sé fyrir því gert í áætluninni að sömu aðilar og áður skipi þessar trúnaðarstöður til næsta aðalfundar.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Kröfur skv. 61. gr. a hafa verið útkljáðar eða fullnægjandi trygging sett fyrir þeim.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Við breytingu á samvinnufélagi í hlutafélag renna öll réttindi samvinnufélagsins og skyldur til hlutafélagsins.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynna skal samvinnufélagaskrá um félagsslitin og hlutafélagaskrá um stofnun hlutafélags innan mánaðar frá því að framangreind skilyrði eru uppfyllt.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2001.022.html" law-nr="22" law-year="2001" law-art="6" nr="1">
+                  <footnote-sen>L. 22/2001, 6. gr.</footnote-sen>
+                  <location type="range" string-length="678">
+                    <start xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61b']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='61b']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="22" affected-law-year="1991">
@@ -60,22 +371,126 @@
           <li style="text-align: justify;">6. tölul. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="62. gr. a">
+        <intent action="add" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='62a']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',62a,')]//numart[@nr='1']">1. tölul. 62. gr. a</address>
+          <existing>
+            <numart nr="1" nr-type="numeric">
+              <nr-title>1.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Ályktun þar að lútandi er samþykkt af tveimur lögmætum félagsfundum í röð og henni eru fylgjandi eigi færri en 2/3 atkvæðisbærra fundarmanna.</sen>
+                <sen nr="2">Í félagi, sem skiptist í deildir, skal bera ályktunina undir deildarfundi milli félagsfunda og þarf hún að hljóta þar samþykkt með einföldum meiri hluta greiddra atkvæða.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <sen nr="3">Í samvinnufélögum þar sem félagsmenn eru fleiri en 100 skal ályktun um slit samþykkt með ¾ atkvæðisbærra fundarmanna á tveimur félagsfundum með a.m.k. tólf mánaða millibili.</sen>
+            <sen nr="4">Í félagi, sem skiptist í deildir, skulu deildarfundir fjalla um og samþykkja ályktun um slit með ¾ atkvæðisbærra fundarmanna áður en til félagsfundar kemur.</sen>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='62a']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='2']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',62a,')]//numart[@nr='2']">2. tölul. 62. gr. a</address>
+          <existing>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Félagsaðilar verða færri en fimmtán eða færri en þrír ef um samvinnusamband er að ræða eða ef félagið fullnægir ekki ákvæðum laga þessara.</sen>
+                <sen nr="2">Þetta gildir þó ekki ef ráðherra hefur veitt undanþágu frá lágmarkstölu félagsaðila, sbr. lokamálslið 5. mgr. 4. gr.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <inner>
+            <numart nr="2" nr-type="numeric">
+              <nr-title>2.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Félagsaðilar samvinnufélags eða samvinnusambands verða færri en þrír eða ef félagið fullnægir ekki ákvæðum laga þessara.</sen>
+              </paragraph>
+            </numart>
+          </inner>
+        </intent>
+        <intent action="delete" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='62a']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='6']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',62a,')]//numart[@nr='6']">6. tölul. 62. gr. a</address>
+          <existing>
+            <numart nr="6" nr-type="numeric">
+              <nr-title>6.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">Endurskoðaðir og samþykktir ársreikningar hafa ekki verið sendir ársreikningaskrá fyrir þrjú síðustu reikningsár, sbr. ákvæði laga um ársreikninga um skil á ársreikningum.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Í stað 4. málsl. 3. mgr. 65. gr. laganna koma tveir nýir málsliðir, svohljóðandi: Í samvinnu­félögum þar sem félagsmenn eru fleiri en 100 og eigið fé er að lágmarki 750.000.000 kr. skulu félags­aðilar sem eiga hlut í stofnsjóði eða, þar sem við á, A-deild stofnsjóðs, sbr. 4. málsl. 1. mgr. 37. gr., aldrei fá greidda til sín hærri fjárhæð en sem nemur eign þeirra í sjóðnum, með að hámarki 15% álagi. Jafnframt skal í tillögunni um slit félagsins kveðið á um stofnun sjálfseignar­stofnunar sem til skulu falla allar óráðstafaðar eftirstöðvar af eigin fé félagsins, sem skal hafa það að verkefni að styðja við samfélagsverkefni til almannaheilla á fyrrum félagssvæði hins slitna félags samkvæmt nánari ákvæðum í hinni samþykktu tillögu um slitin.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='65']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',65,')]//subart[@nr='3']//sen[@nr='4']">4. málsl. 3. mgr. 65. gr.</address>
+          <existing>
+            <sen nr="4">Í samþykktunum má einnig ákveða að fé í óskiptum stofnsjóði eða í A-deild skuli renna til annarra en félagsaðila við félagsslit.</sen>
+          </existing>
+          <inner>
+            <sen nr="4">Í samvinnufélögum þar sem félagsmenn eru fleiri en 100 og eigið fé er að lágmarki 750.000.000 kr. skulu félagsaðilar sem eiga hlut í stofnsjóði eða, þar sem við á, A-deild stofnsjóðs, sbr. 4. málsl. 1. mgr. 37. gr., aldrei fá greidda til sín hærri fjárhæð en sem nemur eign þeirra í sjóðnum, með að hámarki 15% álagi.</sen>
+            <sen nr="5">Jafnframt skal í tillögunni um slit félagsins kveðið á um stofnun sjálfseignarstofnunar sem til skulu falla allar óráðstafaðar eftirstöðvar af eigin fé félagsins, sem skal hafa það að verkefni að styðja við samfélagsverkefni til almannaheilla á fyrrum félagssvæði hins slitna félags samkvæmt nánari ákvæðum í hinni samþykktu tillögu um slitin.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="10">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Fyrirsögn XII. kafla laganna verður:<strong>Slit samvinnufélaga.</strong>
         </p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/name[1]" action-law-nr="22" action-law-year="1991">
+          <address xpath="//chapter[@nr='12']/name">Fyrirsögn XII. kafla</address>
+          <existing>
+            <name>Breyting á rekstrarformi samvinnufélaga og slit samvinnufélaga.</name>
+          </existing>
+          <inner>
+            <name>Slit samvinnufélaga.</name>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="22" affected-law-year="1991">
         <p style="text-align: justify;">Ákvæði til bráðabirgða II í lögunum fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='t']/art[@nr='II']" action-law-nr="22" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',II,')]">Ákvæði til bráðabirgða II</address>
+          <existing>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <name>Sértækt endurmat.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Samvinnufélagi er heimilt að endurmeta séreignarhluti félagsaðila í A-deild stofnsjóðs þess fyrir árslok 2004.</sen>
+                  <sen nr="2">Endurmat þetta skal byggt á verðmæti hreinnar eignar félags í árslok 1996, samkvæmt lögum um ársreikninga, að teknu tilliti til opinberra gjalda, sem tengd eru því ári, og varasjóðs eða fjárfestingarsjóðs sem myndaður hefur verið samkvæmt eldri skattalögum og ekki verið leystur upp og tekjufærður fyrir þann tíma.</sen>
+                  <sen nr="3">Ákvæði 7. mgr. 61. gr. gildir um innbyrðis skiptingu félagsmanna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði 4.–6. mgr. 38. gr. gilda um ákvörðun samkvæmt þessari grein.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2001.022.html" nr="1">
+                  <footnote-sen>L. 22/2001, brbákv.</footnote-sen>
+                  <location type="range" string-length="577">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -89,6 +504,33 @@
         </p>
         <p style="text-align: justify;">Ráðherra getur með reglugerð sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 8. gr.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='28']" action-law-nr="26" action-law-year="2004">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',28,')]">28. gr.</address>
+          <existing>
+            <art nr="28">
+              <nr-title>28. gr.</nr-title>
+              <name>Viðurlög.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði XVIII. kafla laga nr. 2/1995, um hlutafélög, varðandi refsingar og o.fl. gilda með samsvarandi hætti um m.a. stjórnendur Evrópufélaga sem skráð eru hér á landi, t.d. ákvæði um viðurlög við vanrækslu tilkynninga til hlutafélagaskrár.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="28a">
+              <nr-title>28. gr. a</nr-title>
+              <name>Reglugerðarheimild.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 8. gr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -102,6 +544,33 @@
         </p>
         <p style="text-align: justify;">Ráðherra getur með reglugerð sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 9. gr.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='29']" action-law-nr="92" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',29,')]">29. gr.</address>
+          <existing>
+            <art nr="29">
+              <nr-title>29. gr.</nr-title>
+              <name>Viðurlög.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ákvæði XIV. kafla laga nr. 22/1991, um samvinnufélög, varðandi refsingar o.fl. gilda m.a. um stjórnendur evrópskra samvinnufélaga sem skráð eru hér á landi.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="29a">
+              <nr-title>29. gr. a</nr-title>
+              <name>Reglugerðarheimild.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur með reglugerð sett nánari ákvæði um framkvæmd laga þessara, sbr. þó 2. mgr. 9. gr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="4" nr-type="roman" roman-nr="IV">
@@ -111,11 +580,43 @@
         <p style="text-align: justify;">3. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Ef 15 aðilar eða fleiri koma sér saman um stofnun húsnæðissamvinnufélags og bindast sam­tökum og gerast félagsmenn setja þeir félaginu samþykktir í samræmi við lög þessi. Kjósa skal félaginu stjórn og endurskoðendur eða skoðunarmenn. Er þá félagið löglega stofnað. Ráðherra eða sá sem hann framselur vald sitt getur heimilað frávik frá lágmarksfjölda stofnenda samkvæmt þessari grein.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']" action-law-nr="66" action-law-year="2003">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]">3. gr.</address>
+          <existing>
+            <art nr="3">
+              <nr-title>3. gr.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.029.html" law-nr="29" law-year="2016" law-art="3" nr="1">
+                  <footnote-sen>L. 29/2016, 3. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='3']/nr-title[1]" before-mark="^3. gr." after-mark="$"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="3">
+              <nr-title>3. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ef 15 aðilar eða fleiri koma sér saman um stofnun húsnæðissamvinnufélags og bindast samtökum og gerast félagsmenn setja þeir félaginu samþykktir í samræmi við lög þessi.</sen>
+                  <sen nr="2">Kjósa skal félaginu stjórn og endurskoðendur eða skoðunarmenn.</sen>
+                  <sen nr="3">Er þá félagið löglega stofnað.</sen>
+                  <sen nr="4">Ráðherra eða sá sem hann framselur vald sitt getur heimilað frávik frá lágmarksfjölda stofnenda samkvæmt þessari grein.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="15">
       <original affected-law-nr="66" affected-law-year="2003">
         <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-07-12" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 5. júlí 2024.</signed-when>

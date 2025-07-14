@@ -16,6 +16,54 @@
         <li style="text-align: justify;">Í stað orðanna „og varaformanns“ í 1. málsl. 5. mgr. kemur: varaformanns og nefndar­manns.</li>
       </ol>
     </original>
+    <intents common-address="6. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="1">Ráðherra skipar sjö nefndarmenn í kærunefnd útlendingamála.</sen>
+        </existing>
+        <text-from>sjö</text-from>
+        <text-to>þrjá.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="2">Formaður nefndarinnar og varaformaður skulu skipaðir í fullt starf til fimm ára að undangenginni auglýsingu samkvæmt ákvæðum laga um réttindi og skyldur starfsmanna ríkisins og að fenginni umsögn nefndar skv. 5. mgr.</sen>
+        </existing>
+        <text-from>Formaður nefndarinnar og varaformaður skulu skipaðir í fullt starf</text-from>
+        <text-to>Nefndin er skipuð formanni, varaformanni og nefndarmanni sem skulu skipaðir í fullt starf.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='4']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='4']">4. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra skipar fimm aðra nefndarmenn og jafnmarga til vara til fimm ára í senn.</sen>
+              <sen nr="2">Þeir skulu hafa lokið embættis- eða meistaraprófi í lögfræði.</sen>
+              <sen nr="3">Tveir skulu tilnefndir af Mannréttindaskrifstofu Íslands, einn af Mannréttindastofnun Háskóla Íslands og tveir skipaðir án tilnefningar.</sen>
+              <sen nr="4">Þess skal gætt að innan nefndarinnar sé jafnan til staðar nauðsynleg sérþekking á þeim sviðum sem fjallað er um í nefndinni.</sen>
+              <sen nr="5">Varamenn skulu skipaðir með sama hætti og skulu uppfylla sömu hæfisskilyrði og aðalmenn.</sen>
+              <sen nr="6">Ráðherra ákveður þóknun þeirra.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Þess skal gætt að innan nefndarinnar sé nauðsynleg sérþekking á þeim sviðum sem fjallað er um í nefndinni, þar á meðal mannréttindum og stjórnsýslurétti.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="1">Ráðherra skipar þrjá menn í nefnd sem meta skal hæfni umsækjenda um embætti formanns og varaformanns kærunefndar útlendingamála.</sen>
+        </existing>
+        <text-from>og varaformanns</text-from>
+        <text-to>varaformanns og nefndarmanns.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -39,6 +87,139 @@
         <li style="text-align: justify;">4., 5. og 6. málsl. 7. mgr. falla brott.</li>
       </ol>
     </original>
+    <intents common-address="8. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="1">Að jafnaði skulu þrír nefndarmenn sitja fundi kærunefndar útlendingamála til að fjalla um hvert mál sem nefndinni berst.</sen>
+        </existing>
+        <inner>
+          <sen nr="1">Að jafnaði skulu tveir nefndarmenn úrskurða í hverju máli sem nefndinni berst.</sen>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3'] | chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']//sen[@nr='4' or @nr='3' or @nr='2']">2., 3. og 4. málsl. 1. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="2">Formaður ákvarðar hvernig nefndin er skipuð í hverju máli og skal hann gæta þess að í nefndinni eigi sæti þeir sem besta þekkingu hafa til úrlausnar málsins.</sen>
+          <sen nr="3">Formaður eða varaformaður eiga sæti í nefndinni í öllum málum.</sen>
+          <sen nr="4">Varaformaður hefur sömu heimildir og formaður, sbr. 2. og 3. mgr., til að úrskurða í málum.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Þegar nefndarmenn eru ekki sammála um niðurstöðu máls skal kalla til þriðja nefndarmann og ræður þá meiri hluti.</sen>
+          <sen nr="3">Formanni er heimilt að ákveða að nefndin skuli vera fullskipuð við afgreiðslu máls telji hann mál viðamikið eða fordæmisgefandi.</sen>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']">2. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Þrátt fyrir ákvæði 1. mgr. er formanni nefndarinnar heimilt að úrskurða í þeim málum sem nefndin hefur til meðferðar og varða vegabréfsáritanir, ákvarðanir er snerta málsmeðferð hjá Útlendingastofnun og frestun réttaráhrifa ákvarðana stofnunarinnar og kærunefndarinnar.</sen>
+              <sen nr="2">Formanni er jafnframt heimilt að úrskurða einn í málum er varða umsókn um alþjóðlega vernd ef:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">kærandi er ríkisborgari ríkis sem er á lista Útlendingastofnunar yfir örugg upprunaríki og</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Útlendingastofnun hefur afgreitt málið á grundvelli b–f-liðar 1. mgr. 29. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">um er að ræða endurtekna umsókn skv. 35. gr. a.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Þrátt fyrir ákvæði 1. mgr. er nefndarmönnum heimilt að úrskurða einir þegar:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">um er að ræða mál er varða vegabréfsáritanir,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">um er að ræða beiðni um frestun réttaráhrifa,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">kærandi er ríkisborgari ríkis sem er á lista Útlendingastofnunar yfir örugg uppruna­ríki,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Útlendingastofnun hefur afgreitt málið í forgangsmeðferð skv. 29. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">um er að ræða endurtekna umsókn skv. 35. gr. a.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='3']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='3']">3. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Meiri hluta fullskipaðrar nefndar er einnig heimilt að fela formanni að úrskurða einum í öðrum tegundum mála þar sem nefndin telur að framkvæmd og fordæmi séu svo skýr að ekki sé nauðsynlegt að afgreiða slík mál í deild.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Fullskipaðri nefnd er einnig heimilt að fela einum nefndarmanni að úrskurða í öðrum tegundum mála þar sem nefndin telur að framkvæmd og fordæmi séu svo skýr að ekki sé nauðsynlegt að afgreiða slík mál skv. 1. mgr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='5']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='5']">5. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Nefndinni er heimilt að kveðja sérfróða aðila sér til ráðgjafar og aðstoðar við úrskurði í einstökum málum.</sen>
+              <sen nr="2">Skulu þeir starfa með nefndinni við undirbúning og meðferð máls samkvæmt ákvörðun formanns.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='7']//sen[@nr='2']">2. málsl. 7. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="2">Í málum skv. IV. kafla og 74. gr. getur nefndin, telji hún ástæðu til, gefið kæranda kost á að koma fyrir nefndina og tjá sig um efni máls eða einstök atriði þess eftir atvikum.</sen>
+        </existing>
+        <text-from>Í málum skv. IV. kafla og 74. gr. getur nefndin</text-from>
+        <text-to>Nefndin getur.</text-to>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='4'] | chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='5'] | chapter[@nr='1' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='6']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='7']//sen[@nr='6' or @nr='5' or @nr='4']">4., 5. og 6. málsl. 7. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="4">Við undirbúning máls er formanni eða varaformanni heimilt að ákveða að kæranda sé gefinn kostur á að koma fyrir nefndina.</sen>
+          <sen nr="5">Formaður eða varaformaður stýrir störfum nefndarinnar við umfjöllun máls.</sen>
+          <sen nr="6">Þegar nefndarmenn eru ekki sammála ræður meiri hluti niðurstöðu máls.</sen>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -46,6 +227,17 @@
           <span style="color: #000000;">laganna</span>
         </a>orðast svo: Þó skal umsóknum skv. 37. og 39. gr. svarað innan 18 mánaða.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',23,')]//subart[@nr='4']//sen[@nr='2']">2. málsl. 4. mgr. 23. gr.</address>
+        <existing>
+          <sen nr="2">Umsóknum skv. 1. og 2. mgr. 36. gr. um það hvort taka skuli umsókn til efnismeðferðar skal svarað innan 12 mánaða og umsóknum skv. 37. og 39. gr. skal svarað innan 18 mánaða.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Þó skal umsóknum skv. 37. og 39. gr. svarað innan 18 mánaða.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -53,6 +245,15 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='35a']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',35a,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 35. gr. a</address>
+        <existing>
+          <sen nr="2">Endurtekin umsókn telst ekki framhald fyrri umsóknar í skilningi 2. mgr. 36. gr. og 2. mgr. 74. gr.</sen>
+        </existing>
+        <text-from>2. mgr. 36. gr. og</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -60,6 +261,21 @@
           <span style="color: #000000;">laganna</span>
         </a>fellur brott.</p>
     </original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='36']/subart[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',36,')]//subart[@nr='2']">2. mgr. 36. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ef svo stendur á sem greinir í 1. mgr. skal þó taka umsókn um alþjóðlega vernd til efnismeðferðar ef útlendingurinn hefur slík sérstök tengsl við landið að nærtækast sé að hann fái hér vernd eða ef sérstakar ástæður mæla annars með því.</sen>
+              <sen nr="2">Þá skal einnig taka umsókn til efnismeðferðar hafi umsækjandi ekki fengið endanlega niðurstöðu í máli sínu á stjórnsýslustigi innan 12 mánaða frá því að umsókn var lögð fram, enda hafi umsækjandi sjálfur, maki eða sambúðarmaki hans eða annar sem kemur fram gagnvart stjórnvöldum fyrir hans eða þeirra hönd ekki átt þátt í því að niðurstaða hafi ekki fengist innan tímamarka.</sen>
+              <sen nr="3">Við mat á því hvort viðkomandi hafi borið ábyrgð á töfum á afgreiðslu máls skal m.a. líta til þess hvort viðkomandi hafi dvalist á ókunnum stað um tíma, framvísað fölsuðum skjölum við málsmeðferð umsóknar eða gefið misvísandi upplýsingar um auðkenni sitt, ekki mætt í boðað viðtal eða læknisskoðun eða að öðru leyti vanrækt eða ekki uppfyllt skyldur sínar við málsmeðferðina.</sen>
+              <sen nr="4">Teljist umsækjandi á einhverjum tíma hafa tafið mál sitt samkvæmt framangreindu á hann ekki rétt á efnismeðferð á grundvelli tímafrestsins í þessari málsgrein.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -72,6 +288,40 @@
         <li style="text-align: justify;">Á eftir skammstöfuninni „þ.m.t.“ í 7. mgr. kemur: um hvað fellur undir ríkar sanngirnis­ástæður vegna aðkallandi umönnunarsjónarmiða og um.</li>
       </ol>
     </original>
+    <intents common-address="45. gr.">
+      <intent action="append_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 45. gr.</address>
+        <existing>
+          <sen nr="1">Maki eða sambúðarmaki útlendings sem nýtur alþjóðlegrar verndar skv. 37. eða 39. gr. og börn hans yngri en 18 ára, án maka eða sambúðarmaka, eiga einnig rétt á alþjóðlegri vernd nema sérstakar ástæður mæli því í mót og skal þeim veitt dvalarleyfi skv. 73. gr.</sen>
+        </existing>
+        <text-from>börn hans</text-from>
+        <text-to>þ.m.t. kjörbörn.</text-to>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 45. gr.</address>
+        <existing>
+          <sen nr="2">Það sama á við um stjúpbörn hans að því gefnu að þau séu í forsjá og fylgd maka hans.</sen>
+        </existing>
+        <inner>
+          <sen nr="3">Byggist umsókn fjölskyldumeðlims samkvæmt þessari málsgrein á tengslum við útlending sem nýtur alþjóðlegrar verndar skv. 2. mgr. 37. gr. þarf sá fjölskyldumeðlimur sem umsókn er byggð á að hafa fengið dvalarleyfi sitt endurnýjað fyrir framlagningu umsóknar.</sen>
+          <sen nr="4">Heimilt er að veita undanþágu frá kröfu um endurnýjun ef ríkar sanngirnisástæður mæla með því vegna aðkallandi umönnunarsjónarmiða.</sen>
+          <sen nr="5">Einnig er heimilt að veita undanþágu frá kröfu um endurnýjun ef útlendingur hefur haft dvalarleyfi á grundvelli 2. mgr. 37. gr. í a.m.k. eitt ár og fullnægir eftirfarandi skilyrðum: hefur verið virkur þátttakandi á vinnumarkaði í átta mánuði og uppfyllir skilyrði um trygga framfærslu skv. a-lið 1. mgr. 55. gr., uppfyllir skilyrði um íslenskukunnáttu og hefur til umráða íbúðarhúsnæði fyrir aðstandendur sem sótt er um fjölskyldusameiningarleyfi fyrir.</sen>
+          <sen nr="6">Ráðherra er skylt að útfæra í reglugerð nánari ákvæði um framkvæmd þessarar málsgreinar, þ.m.t. hvaða skilyrði eru sett um íslenskukunnáttu og íbúðarhúsnæði.</sen>
+        </inner>
+      </intent>
+      <intent action="append_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='45']/subart[@nr='7']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',45,')]//subart[@nr='7']">7. mgr. 45. gr.</address>
+        <existing>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að kveða í reglugerð nánar á um skilyrði fyrir fjölskyldusameiningu á grundvelli 2. mgr., þ.m.t. hvaða skilyrðum 55. gr. skuli vera fullnægt.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>þ.m.t.</text-from>
+        <text-to>um hvað fellur undir ríkar sanngirnisástæður vegna aðkallandi umönnunarsjónarmiða og um.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -88,6 +338,53 @@
         <li style="text-align: justify;">Á eftir 1. mgr. kemur ný málsgrein, svohljóðandi:<br/>Nánasti aðstandandi útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 3. mgr. 73. gr. getur með umsókn fengið dvalarleyfi vegna fjölskyldusameiningar að full­nægðum skilyrðum 55. gr. og VIII. kafla hafi sá sem umsóknin er byggð á fengið dvalar­leyfi sitt endurnýjað fyrir framlagningu umsóknar. Heimilt er að veita undanþágu frá kröfu um endurnýjun ef ríkar sanngirnisástæður mæla með því vegna aðkallandi umönn­unar­sjónarmiða. Sama gildir um nánustu aðstandendur útlendings sem dvelst hér á landi á grund­velli dvalarleyfis skv. 74. gr. hafi dvalarleyfið verið endurnýjað tvívegis.</li>
       </ol>
     </original>
+    <intents common-address="69. gr.">
+      <intents common-address="1. mgr.">
+        <intent action="replace_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 69. gr.</address>
+          <existing>
+            <sen nr="1">Nánasti aðstandandi íslensks eða annars norræns ríkisborgara sem er með fasta búsetu hér á landi eða útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 61., 62., 63., 64., 65., 70., 73., 74. og 78. gr. eða ótímabundins dvalarleyfis skv. 58. gr. getur með umsókn fengið dvalarleyfi á grundvelli fjölskyldusameiningar að fullnægðum skilyrðum 55. gr. og VIII. kafla.</sen>
+          </existing>
+          <text-from>73.</text-from>
+          <text-to>2. mgr. 73.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 69. gr.</address>
+          <existing>
+            <sen nr="1">Nánasti aðstandandi íslensks eða annars norræns ríkisborgara sem er með fasta búsetu hér á landi eða útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 61., 62., 63., 64., 65., 70., 73., 74. og 78. gr. eða ótímabundins dvalarleyfis skv. 58. gr. getur með umsókn fengið dvalarleyfi á grundvelli fjölskyldusameiningar að fullnægðum skilyrðum 55. gr. og VIII. kafla.</sen>
+          </existing>
+          <text-from>74.</text-from>
+        </intent>
+        <intent action="delete" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="80" action-law-year="2016">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 69. gr.</address>
+          <existing>
+            <sen nr="4">Sama gildir um maka, sambúðarmaka og börn þeirra sem stunda framhaldsnám á háskólastigi, doktorsnám og rannsóknir hér á landi á grundvelli 65. gr.</sen>
+          </existing>
+        </intent>
+      </intents>
+      <intent action="append" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='1']">1. mgr. 69. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Nánasti aðstandandi íslensks eða annars norræns ríkisborgara sem er með fasta búsetu hér á landi eða útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 61., 62., 63., 64., 65., 70., 73., 74. og 78. gr. eða ótímabundins dvalarleyfis skv. 58. gr. getur með umsókn fengið dvalarleyfi á grundvelli fjölskyldusameiningar að fullnægðum skilyrðum 55. gr. og VIII. kafla.</sen>
+              <sen nr="2">Hið sama gildir um nánasta aðstandanda bresks ríkisborgara sem hefur dvalarleyfi á grundvelli ákvæðis til bráðabirgða XI.</sen>
+              <sen nr="3">Til nánustu aðstandenda teljast maki, sambúðarmaki, börn viðkomandi yngri en 18 ára í forsjá hans og á framfæri og foreldrar 67 ára og eldri.</sen>
+              <sen nr="4">Sama gildir um maka, sambúðarmaka og börn þeirra sem stunda framhaldsnám á háskólastigi, doktorsnám og rannsóknir hér á landi á grundvelli 65. gr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Nánasti aðstandandi útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 3. mgr. 73. gr. getur með umsókn fengið dvalarleyfi vegna fjölskyldusameiningar að fullnægðum skilyrðum 55. gr. og VIII. kafla hafi sá sem umsóknin er byggð á fengið dvalarleyfi sitt endurnýjað fyrir framlagningu umsóknar.</sen>
+              <sen nr="2">Heimilt er að veita undanþágu frá kröfu um endurnýjun ef ríkar sanngirnisástæður mæla með því vegna aðkallandi umönnunarsjónarmiða.</sen>
+              <sen nr="3">Sama gildir um nánustu aðstandendur útlendings sem dvelst hér á landi á grundvelli dvalarleyfis skv. 74. gr. hafi dvalarleyfið verið endurnýjað tvívegis.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -100,6 +397,44 @@
         <li style="text-align: justify;">Í stað orðanna „í boði stjórnvalda skv. 43. gr.“ í a-lið 4. mgr. kemur: skv. 2. mgr. 37., 43. og 74. gr.</li>
       </ol>
     </original>
+    <intents common-address="70. gr.">
+      <intent action="prepend_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='70']/subart[@nr='3']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',70,')]//subart[@nr='3']">3. mgr. 70. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Byggi umsækjandi rétt sinn á útlendingi sem er með dvalarleyfi hér á landi á grundvelli alþjóðlegrar verndar skv. 73. gr., mannúðarsjónarmiða skv. 74. gr., sérstakra tengsla við landið skv. 78. gr. eða fjölskyldusameiningar skv. 72. gr. þarf sá aðili að hafa starfað eða stundað nám hér á landi í löglegri dvöl síðustu fjögur ár fyrir framlagningu umsóknar.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>sérstakra tengsla við landið skv. 78. gr.</text-from>
+        <text-to>eða.</text-to>
+      </intent>
+      <intent action="delete_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='70']/subart[@nr='3']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',70,')]//subart[@nr='3']">3. mgr. 70. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Byggi umsækjandi rétt sinn á útlendingi sem er með dvalarleyfi hér á landi á grundvelli alþjóðlegrar verndar skv. 73. gr., mannúðarsjónarmiða skv. 74. gr., sérstakra tengsla við landið skv. 78. gr. eða fjölskyldusameiningar skv. 72. gr. þarf sá aðili að hafa starfað eða stundað nám hér á landi í löglegri dvöl síðustu fjögur ár fyrir framlagningu umsóknar.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>eða fjölskyldusameiningar skv. 72. gr.</text-from>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='70']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',70,')]//subart[@nr='4']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']">a-lið 4. mgr. 70. gr.</address>
+        <existing>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">aðilar voru í hjúskap áður en maki búsettur á Íslandi fluttist hingað til lands á öðrum grundvelli en í boði stjórnvalda skv. 43. gr. eða</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>í boði stjórnvalda skv. 43. gr.</text-from>
+        <text-to>skv. 2. mgr. 37., 43. og 74. gr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -112,6 +447,52 @@
         <li style="text-align: justify;">Á eftir 2. mgr. koma tvær nýjar málsgreinar, svohljóðandi:<br/>Dvalarleyfi útlendings sem nýtur verndar skv. 2. mgr. 37. gr. skal veitt til tveggja ára og er aðeins heimilt að endurnýja ef skilyrðum ákvæðisins er enn fullnægt. Heimilt er að synja útlendingi um endurnýjun leyfis sé það nauðsynlegt vegna öryggis ríkisins eða almanna­hagsmuna. Endurnýja má leyfið þótt ekki sé fullnægt öllum skilyrðum 55. gr.<br/>Dvalarleyfi sem veitt er á grundvelli 2. eða 3. mgr. 45. gr. getur aldrei gilt lengur en leyfi þess fjölskyldumeðlims sem viðkomandi leiðir rétt sinn af.</li>
       </ol>
     </original>
+    <intents common-address="73. gr.">
+      <intent action="delete_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='73']/subart[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',73,')]//subart[@nr='1']">1. mgr. 73. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þegar umsækjanda er veitt alþjóðleg vernd skv. 37., 39., 43. eða 45. gr. gefur Útlendingastofnun út dvalarleyfi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>skv. 37., 39., 43. eða 45. gr.</text-from>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='73']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',73,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 73. gr.</address>
+        <existing>
+          <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu skal veitt til fjögurra ára og er heimilt að endurnýja það að þeim tíma liðnum, nema skilyrði séu til að afturkalla veitingu skv. 48. gr. eða synjun á endurnýjun dvalarleyfis sé nauðsynleg vegna öryggis ríkisins eða almannahagsmuna.</sen>
+        </existing>
+        <text-from>samkvæmt ákvæði þessu skal veitt til fjögurra</text-from>
+        <text-to>útlendings sem nýtur verndar skv. 1. mgr. 37., 39., 43. eða 45. gr. skal veitt til þriggja.</text-to>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='73']/subart[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',73,')]//subart[@nr='2']">2. mgr. 73. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu skal veitt til fjögurra ára og er heimilt að endurnýja það að þeim tíma liðnum, nema skilyrði séu til að afturkalla veitingu skv. 48. gr. eða synjun á endurnýjun dvalarleyfis sé nauðsynleg vegna öryggis ríkisins eða almannahagsmuna.</sen>
+              <sen nr="2">Endurnýja má dvalarleyfi þótt ekki sé fullnægt öllum skilyrðum 55. gr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Dvalarleyfi útlendings sem nýtur verndar skv. 2. mgr. 37. gr. skal veitt til tveggja ára og er aðeins heimilt að endurnýja ef skilyrðum ákvæðisins er enn fullnægt.</sen>
+              <sen nr="2">Heimilt er að synja útlendingi um endurnýjun leyfis sé það nauðsynlegt vegna öryggis ríkisins eða almannahagsmuna.</sen>
+              <sen nr="3">Endurnýja má leyfið þótt ekki sé fullnægt öllum skilyrðum 55. gr.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Dvalarleyfi sem veitt er á grundvelli 2. eða 3. mgr. 45. gr. getur aldrei gilt lengur en leyfi þess fjölskyldumeðlims sem viðkomandi leiðir rétt sinn af.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -120,6 +501,26 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Dvalarleyfi samkvæmt ákvæði þessu skal ekki veitt til lengri tíma en eins árs og er heimilt að endurnýja það að þeim tíma liðnum, enda hafi forsendur fyrir veitingu leyfisins í upphafi ekki breyst.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='74']/subart[@nr='5']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',74,')]//subart[@nr='5']">5. mgr. 74. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu skal ekki veitt til lengri tíma en eins árs.</sen>
+              <sen nr="2">Heimilt er að endurnýja dvalarleyfi samkvæmt ákvæði þessu í allt að tvö ár í senn enda hafi forsendur fyrir veitingu leyfisins í upphafi ekki breyst.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu skal ekki veitt til lengri tíma en eins árs og er heimilt að endurnýja það að þeim tíma liðnum, enda hafi forsendur fyrir veitingu leyfisins í upphafi ekki breyst.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -131,6 +532,27 @@
         <li style="text-align: justify;">2. málsl. fellur brott.</li>
       </ol>
     </original>
+    <intents common-address="1. mgr. 77. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',77,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 77. gr.</address>
+        <existing>
+          <sen nr="1">Heimilt er eftir umsókn útlendings sem sótt hefur um alþjóðlega vernd að veita honum bráðabirgðadvalarleyfi þar til ákvörðun hefur verið tekin um umsóknina.</sen>
+          <sen nr="1">tekin hafi verið skýrsla af umsækjanda um alþjóðlega vernd,</sen>
+          <sen nr="1">ekki leiki vafi á því hver umsækjandi er,</sen>
+          <sen nr="1">ekki liggi fyrir ástæður sem geta leitt til brottvísunar umsækjanda,</sen>
+          <sen nr="1">ekki liggi fyrir beiðni um að annað ríki taki við umsækjanda á ný, sbr. 1. mgr. 36. gr.,</sen>
+          <sen nr="1">útlendingur hafi veitt upplýsingar og aðstoðað við úrlausn máls.</sen>
+        </existing>
+        <text-from>ákvörðun hefur verið tekin um umsóknina</text-from>
+        <text-to>Útlendingastofnun hefur tekið ákvörðun um umsóknina.</text-to>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='77']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',77,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 77. gr.</address>
+        <existing>
+          <sen nr="2">Einnig er heimilt að beiðni útlendings sem hefur fengið endanlega synjun um alþjóðlega vernd eða dvalarleyfi, sem kemur ekki til framkvæmda að svo stöddu, að veita honum bráðabirgðadvalarleyfi þar til synjunin kemur til framkvæmda.</sen>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -138,6 +560,15 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='104']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',104,')]//subart[@nr='7']//sen[@nr='2']">2. málsl. 7. mgr. 104. gr.</address>
+        <existing>
+          <sen nr="2">Útlendingastofnun er heimilt að fela viðurkenndum alþjóðastofnunum að annast aðstoð og fylgd útlendings, sem sótt hefur um alþjóðlega vernd, til heimaríkis óski hann þess sjálfur.</sen>
+        </existing>
+        <text-from>sem sótt hefur um alþjóðlega vernd</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="13">
     <original affected-law-nr="80" affected-law-year="2016">
@@ -146,12 +577,415 @@
         </a>bætist nýtt ákvæði til bráðabirgða, svohljóðandi:</p>
       <p style="text-align: justify;">Þrátt fyrir ákvæði 1. málsl. 3. mgr. 6. gr. laganna er ráðherra heimilt í allt að eitt ár frá 1. janúar 2025 að setja í kærunefnd útlendingamála einn eða tvo nefndarmenn í hlutastarf eða fullt starf. Þeir skulu uppfylla skilyrði um embættisgengi héraðsdómara.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="80" action-law-year="2016">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir 2. málsl. 2. mgr. 36. gr. skal miða við 9 mánuði í stað 12 mánaða ef um barn er að ræða og umsókn þess um alþjóðlega vernd barst fyrst íslenskum stjórnvöldum fyrir gildistöku laga þessara, enda hafi umsækjandi ekki þegar yfirgefið landið.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Umsækjandi sem öðlast rétt samkvæmt ákvæði þessu getur innan fjórtán daga frá gildistöku laga þessara farið fram á endurupptöku á úrskurði kærunefndar útlendingamála um að umsókn skuli ekki tekin til efnismeðferðar.</sen>
+                  <sen nr="2">Fari umsækjandi ekki fram á endurupptöku innan þess frests skal úrskurðurinn standa.</sen>
+                  <sen nr="3">Umsækjanda skal ekki gert að yfirgefa landið innan þess frests eða á meðan á meðferð endurupptökumáls stendur.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2017.081.html" law-nr="81" law-year="2017" law-art="1" nr="1">
+                  <footnote-sen>L. 81/2017, 1. gr.</footnote-sen>
+                  <location type="range" string-length="685">
+                    <start xpath="chapter[@nr='t']/name[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir 1. málsl. 2. mgr. 74. gr. skal miða við 15 mánuði í stað 18 mánaða ef um barn er að ræða og umsókn þess um alþjóðlega vernd barst fyrst íslenskum stjórnvöldum fyrir gildistöku laga þessara, enda hafi umsækjandi ekki þegar yfirgefið landið.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Umsækjandi sem öðlast rétt samkvæmt ákvæði þessu getur innan fjórtán daga frá gildistöku laga þessara farið fram á endurupptöku á úrskurði kærunefndar útlendingamála um að umsókn skuli synjað.</sen>
+                  <sen nr="2">Fari umsækjandi ekki fram á endurupptöku innan þess frests skal úrskurðurinn standa.</sen>
+                  <sen nr="3">Umsækjanda skal ekki gert að yfirgefa landið innan þess frests eða á meðan á meðferð endurupptökumáls stendur.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2017.081.html" law-nr="81" law-year="2017" law-art="1" nr="1">
+                  <footnote-sen>L. 81/2017, 1. gr.</footnote-sen>
+                  <location type="range" string-length="641">
+                    <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Breskur ríkisborgari sem skráð hefur dvöl sína hér á landi í samræmi við 84. gr. skal eiga rétt til dvalar hér á landi skv. 84. gr. eftir útgöngu Bretlands úr Evrópusambandinu.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="181">
+                    <start xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Aðstandandi bresks ríkisborgara skv. 84. gr. skal eiga rétt til dvalar hér á landi skv. 85. og 86. gr. ef:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">viðkomandi aðstandandi hefur skráð dvöl sína hér á landi skv. 85. eða 86. gr. áður en Bretland gekk úr Evrópusambandinu,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">viðkomandi telst aðstandandi skv. 2. mgr. 82. gr. og hefur komið til landsins eftir útgöngudag ef hann hyggst dveljast með breskum ríkisborgara sem hefur rétt til dvalar skv. 84. gr. hér á landi, enda hafi fjölskyldutengsl orðið til fyrir útgöngudag eða</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">viðkomandi er barn bresks ríkisborgara skv. 84. gr., fæðist eftir útgöngudag, fullnægir skilyrðum 2. mgr. 82. gr. og:</sen>
+                      <numart nr="1" nr-type="numeric">
+                        <nr-title>1.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">báðir foreldrar barnsins hafa rétt til dvalar skv. 84. gr.,</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="2" nr-type="numeric">
+                        <nr-title>2.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">annað foreldri hefur rétt til dvalar skv. 84. gr. og hitt foreldrið er íslenskur ríkisborgari eða</sen>
+                        </paragraph>
+                      </numart>
+                      <numart nr="3" nr-type="numeric">
+                        <nr-title>3.</nr-title>
+                        <paragraph nr="1">
+                          <sen nr="1">annað foreldri hefur rétt til dvalar skv. 84. gr. og fer eitt með forsjá barnsins eða sameiginlega forsjá yfir barninu í samræmi við landslög.</sen>
+                        </paragraph>
+                      </numart>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="910">
+                    <start xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="V" roman-nr="5" number-type="roman">
+              <nr-title>V.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Breskur ríkisborgari og aðstandendur hans sem skráð hafa dvöl sína skv. 84., 85. og 86. gr. áður en Bretland gekk úr Evrópusambandinu skulu öðlast rétt til ótímabundinnar dvalar hér á landi skv. 87. og 88. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Réttur bresks ríkisborgara og aðstandenda hans sem öðlast hafa rétt til ótímabundinnar dvalar skv. 87. og 88. gr. fellur niður þegar viðkomandi hefur dvalist utan landsins í fimm ár samfellt.</sen>
+                  <sen nr="2">Réttur bresks ríkisborgara og aðstandenda hans sem hafa öðlast rétt til tímabundinnar dvalar skv. 84., 85. og 86. gr. fellur niður þegar viðkomandi hefur dvalist utan landsins í tvö ár samfellt.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.056.html" law-nr="56" law-year="2023" law-art="17" nr="1">
+                  <footnote-sen>L. 56/2023, 17. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="Réttur bresks ríkisborgara og aðstandenda hans sem hafa öðlast rétt til tímabundinnar dvalar skv. 84., 85. og 86. gr. fellur niður þegar viðkomandi hefur dvalist utan landsins í tvö ár samfellt." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="2">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="597">
+                    <start xpath="chapter[@nr='t']/art[@nr='V']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að vísa breskum ríkisborgara og aðstandanda hans úr landi skv. 95. gr. vegna háttsemi sem átti sér stað fyrir útgöngu Bretlands úr Evrópusambandinu.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="163">
+                    <start xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VII" roman-nr="7" number-type="roman">
+              <nr-title>VII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Brottvísun skv. 2. tölul. 3. gr. felur í sér bann við endurkomu síðar skv. 96. gr. við ákvörðun endurkomubanns.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="116">
+                    <start xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VIII" roman-nr="8" number-type="roman">
+              <nr-title>VIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að vísa úr landi skv. 99. gr. breskum ríkisborgara og aðstandendum hans, sem rétt hafa til dvalar hér á landi skv. 84., 85. og 86. gr., fyrir háttsemi sem átti sér stað eftir að Bretland gekk úr Evrópusambandinu hafi viðkomandi verið búsettur hér á landi skemur en í þrjú ár.</sen>
+                  <sen nr="2">Slík ákvörðun skal hafa sömu réttaráhrif og brottvísun útlendings sem hefur dvalarleyfi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="380">
+                    <start xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VIII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="IX" roman-nr="9" number-type="roman">
+              <nr-title>IX.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er skv. 100. gr. að vísa úr landi breskum ríkisborgara og aðstandendum hans, sem rétt hafa til dvalar hér á landi skv. 84., 85., 86., 87. eða 88. gr., fyrir háttsemi sem átti sér stað eftir að Bretland gekk úr Evrópusambandinu hafi viðkomandi verið búsettur hér á landi lengur en í þrjú ár.</sen>
+                  <sen nr="2">Slík ákvörðun skal hafa sömu réttaráhrif og brottvísun útlendings sem hefur ótímabundið dvalarleyfi.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="402">
+                    <start xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IX']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="X" roman-nr="10" number-type="roman">
+              <nr-title>X.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Breskur ríkisborgari sem hefur rétt til dvalar skv. 84. og 87. gr. hefur samkvæmt umsókn rétt til að fá útgefið dvalarskírteini skv. 90. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari fyrirmæli um útgáfu dvalarskírteina, þar á meðal um gjald sem heimilt er að taka fyrir útgáfu þeirra, og skal við ákvörðun gjalda leggja til grundvallar kostnað sem almennt hlýst af útgáfu leyfa.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="386">
+                    <start xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='X']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XI" roman-nr="11" number-type="roman">
+              <nr-title>XI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Breskir ríkisborgarar og aðstandendur þeirra sem koma hingað til lands eftir að Bretland gengur úr Evrópusambandinu og eiga ekki rétt á skráningu skv. XI. kafla og hyggjast dveljast hér á landi lengur en heimilt er skv. 49. gr. þurfa að hafa dvalarleyfi.</sen>
+                  <sen nr="2">Unnt er að sækja um leyfi samkvæmt ákvæði þessu til 31. desember 2020.</sen>
+                  <sen nr="3">Verði leyfið veitt gildir það til 31. desember 2023.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að veita breskum ríkisborgara eldri en 18 ára dvalarleyfi hér á landi fullnægi hann skilyrðum 1. og 2. mgr. 55. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að veita aðstandanda bresks ríkisborgara sem hefur dvalarleyfi samkvæmt ákvæði þessu dvalarleyfi hér á landi í samræmi við 69. gr., sbr. 70. og 71. gr., fullnægi hann skilyrðum 1. og 2. mgr. 55. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Breskir ríkisborgarar sem sækja um dvalarleyfi samkvæmt ákvæði þessu eru undanþegnir því að sækja um dvalarleyfi fyrir komu til landsins og þrátt fyrir ákvæði 2. mgr. 51. gr. er umsækjanda heimilt að dveljast á landinu meðan umsókn er í vinnslu.</sen>
+                  <sen nr="2">Hið sama á við um aðstandendur sem eiga rétt á dvalarleyfi samkvæmt ákvæði þessu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Um umsókn um dvalarleyfi samkvæmt ákvæði þessu og útgáfu slíks dvalarleyfis gilda reglur 52. og 54. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Útlendingastofnun er heimilt að afturkalla dvalarleyfi samkvæmt ákvæði þessu á grundvelli 59. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="7">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að fella niður dvalarleyfi í samræmi við 7. mgr. 57. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="8">
+                <paragraph nr="1">
+                  <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu getur orðið grundvöllur ótímabundins dvalarleyfis.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="9">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt að setja í reglugerð nánari fyrirmæli og undanþágur frá skilyrðum 1. og 2. mgr. 55. gr.</sen>
+                  <sen nr="2">Ráðherra er heimilt að setja í reglugerð frekari afturköllunarheimildir, svo sem þegar leyfishafi samkvæmt ákvæði þessu er orðinn ósanngjörn byrði á kerfi félagslegrar aðstoðar.</sen>
+                  <sen nr="3">Jafnframt er ráðherra heimilt að setja í reglugerð viðmið um hvenær leyfishafi telst vera orðinn ósanngjörn byrði á kerfi félagslegrar aðstoðar.</sen>
+                  <sen nr="4">Þá er ráðherra heimilt að gera undanþágur frá ákvæði 7. mgr. 57. gr. og kveða á um það í reglugerð að leyfishafar samkvæmt ákvæði þessu geti dvalist lengur erlendis en þrjá mánuði.</sen>
+                  <sen nr="5">Ráðherra er jafnframt heimilt að veita undanþágur í reglugerð um hverjir teljast til aðstandenda í skilningi þessa ákvæðis.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.121.html#G5" law-nr="121" law-year="2019" law-art="5" nr="1">
+                  <footnote-sen>L. 121/2019, 5. gr.</footnote-sen>
+                  <footnote-sen>Um ákvæðið segir í 5. mgr. 4. gr. s.l. að það komi til framkvæmda við úrsögn Bretlands úr Evrópusambandinu án samningsins á grundvelli 50. gr. stofnsáttmála Evrópusambandsins og ef fyrir liggi staðfest pólitískt samkomulag milli Íslands og Bretlands um tímabundið fyrirkomulag varðandi fólksflutninga sem mælir fyrir um gagnkvæm réttindi.</footnote-sen>
+                  <location type="range" string-length="2123">
+                    <start xpath="chapter[@nr='t']/art[@nr='XI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XI']/subart[@nr='9']/paragraph[@nr='1']/sen[@nr='5']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XII" roman-nr="12" number-type="roman">
+              <nr-title>XII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt, á tímabilinu 22. apríl til og með 30. júní 2021, með reglugerð, að fenginni tillögu sóttvarnalæknis, að kveða á um að útlendingum sem koma frá eða dvalið hafa á hááhættusvæði, sbr. ákvæði til bráðabirgða í sóttvarnalögum, nr. 19/1997, eða svæði sem fullnægjandi upplýsingar liggja ekki fyrir um, sé óheimilt að koma til landsins þrátt fyrir að þeir uppfylli almenn komuskilyrði laga þessara og reglugerðar um för yfir landamæri.</sen>
+                  <sen nr="2">Í reglugerðinni er heimilt að kveða á um undanþágur frá banni við komu til landsins, m.a. vegna búsetu hér á landi og brýnna erindagjörða.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote nr="1">
+                  <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/521-2021"&gt;Rg. 521/2021&lt;/a&gt;.</footnote-sen>
+                  <location type="pointer" xpath="chapter[@nr='t']/art[@nr='XII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er heimilt, á tímabilinu 22. apríl til og með 30. júní 2021, með reglugerð," after-mark="að fenginni tillögu sóttvarnalæknis, að kveða á um að útlendingum sem koma frá eða dvalið hafa á hááhættusvæði, sbr. ákvæði til bráðabirgða í sóttvarnalögum, nr. 19/1997, eða svæði sem fullnægjandi upplýsingar liggja ekki fyrir um, sé óheimilt að koma til landsins þrátt fyrir að þeir uppfylli almenn komuskilyrði laga þessara og reglugerðar um för yfir landamæri.$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2021.023.html" law-nr="23" law-year="2021" law-art="2" nr="2">
+                  <footnote-sen>L. 23/2021, 2. gr.</footnote-sen>
+                  <location type="range" string-length="592">
+                    <start xpath="chapter[@nr='t']/art[@nr='XII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XII']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="XIII" roman-nr="13" number-type="roman">
+              <nr-title>XIII.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Hafi barn sótt um alþjóðlega vernd hér á landi fyrir 1. ágúst 2021 og er enn á landinu skal Útlendingastofnun gefa út dvalarleyfi til handa forsjáraðila þess enda hafi slík umsókn borist innan þriggja mánaða frá gildistöku laga þessara.</sen>
+                  <sen nr="2">Hið sama gildir ef barn fæddist hér á landi á meðan umsókn forsjáraðila um alþjóðlega vernd var í vinnslu enda hafi umsóknin borist fyrir 1. ágúst 2021.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að víkja frá skilyrðum a-liðar 1. mgr. 55. gr. um framfærslu.</sen>
+                  <sen nr="2">Umsækjandi skal þó hvorki sæta endurkomubanni né eiga ólokin mál í refsivörslukerfinu þar sem hann er grunaður eða sakaður um refsiverða háttsemi.</sen>
+                  <sen nr="3">Hið sama á við ef útlendingur afplánar fangelsisrefsingu eða bíður afplánunar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Nánasti aðstandandi útlendings sem fær útgefið dvalarleyfi skv. 1. mgr. getur með umsókn fengið dvalarleyfi á grundvelli fjölskyldusameiningar skv. 70. og 71. gr.</sen>
+                  <sen nr="2">Það sama á við um börn viðkomandi eldri en 18 ára sem ekki hafa gengið í hjúskap hafi þau einnig sótt um alþjóðlega vernd fyrir 1. ágúst 2021 og eru enn á landinu, enda samanstandi fjölskyldan af að minnsta kosti einu barni undir 18 ára aldri.</sen>
+                  <sen nr="3">Við veitingu fyrsta leyfis samkvæmt málsgrein þessari er heimilt að víkja frá skilyrðum 55. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu skal veitt til eins árs og er heimilt að endurnýja það.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Dvalarleyfi skv. 3. mgr. skal aðeins endurnýjað hafi dvalarleyfi skv. 1. mgr. verið endurnýjað.</sen>
+                  <sen nr="2">Við endurnýjun gilda almennar reglur laganna, þar á meðal grunnskilyrði 55. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Við útgáfu dvalarleyfis samkvæmt ákvæði þessu falla niður réttindi útlendings skv. 33. gr.</sen>
+                  <sen nr="2">Viðkomandi skal þó áfram tryggður réttur skv. a- og b-lið 1. mgr. 33. gr. í þrjá mánuði eftir útgáfu dvalarleyfis.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="7">
+                <paragraph nr="1">
+                  <sen nr="1">Dvalarleyfi samkvæmt ákvæði þessu getur orðið grundvöllur ótímabundins dvalarleyfis.</sen>
+                  <sen nr="2">Ekki skal tekið gjald fyrir afgreiðslu fyrstu umsóknar um dvalarleyfi samkvæmt ákvæði þessu þrátt fyrir ákvæði 32. tölul. 14. gr. laga um aukatekjur ríkissjóðs, nr. 88/1991.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2023.014.html" law-nr="14" law-year="2023" law-art="22" nr="1">
+                  <footnote-sen>L. 14/2023, 22. gr.</footnote-sen>
+                  <location type="range" string-length="1914">
+                    <start xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='XIII']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="XIV" roman-nr="14" number-type="roman">
+            <nr-title>XIV.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir ákvæði 1. málsl. 3. mgr. 6. gr. laganna er ráðherra heimilt í allt að eitt ár frá 1. janúar 2025 að setja í kærunefnd útlendingamála einn eða tvo nefndarmenn í hlutastarf eða fullt starf.</sen>
+                <sen nr="2">Þeir skulu uppfylla skilyrði um embættisgengi héraðsdómara.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="14">
     <original affected-law-nr="80" affected-law-year="2016">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       <p style="text-align: justify;">Þrátt fyrir ákvæði 1. mgr. koma 1. og 2. gr. ekki til framkvæmda fyrr en sex mánuðir eru liðnir frá gildistöku laga þessara. Þá gilda 5. gr., sbr. 3. og 4. gr., og 6. og 7. gr. ekki um meðferð umsókna sem bárust fyrir gildistöku laga þessara.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 26. júní 2024.</signed-when>
 </advert>

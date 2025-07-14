@@ -10,6 +10,25 @@
           <span style="color: #000000;">lögunum</span>
         </a>kemur: 1. júlí 2027.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='4'] | chapter[@nr='t']/art[@nr='IV']/subart[@nr='5']" action-law-nr="15" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',IV,')]//subart[@nr='5' or @nr='4']">4. og 5. mgr. ákvæðis til bráðabirgða IV</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ákvæði þetta nær til allra þeirra dóma sem kveðnir hafa verið upp fyrir gildistöku laga þessara og þegar eru komnir til fullnustu til Fangelsismálastofnunar sem og allra dóma sem stofnuninni berast fyrir 1. júlí 2024.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Ákvæði þetta fellur úr gildi 1. júlí 2024.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>1. júlí 2024</text-from>
+        <text-to>1. júlí 2027.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="15" affected-law-year="2016">
@@ -17,11 +36,33 @@
           <span style="color: #000000;">lögunum</span>
         </a>kemur: 1. júlí 2027.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='2'] | chapter[@nr='t']/art[@nr='V']/subart[@nr='3']" action-law-nr="15" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',V,')]//subart[@nr='3' or @nr='2']">2. og 3. mgr. ákvæðis til bráðabirgða V</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ákvæði þetta nær til allra þeirra dóma sem kveðnir hafa verið upp fyrir gildistöku laga þessara og þegar eru komnir til fullnustu til Fangelsismálastofnunar sem og allra dóma sem stofnuninni berast fyrir 1. júlí 2024.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Ákvæði þetta fellur úr gildi 1. júlí 2024.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>1. júlí 2024</text-from>
+        <text-to>1. júlí 2027.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="15" affected-law-year="2016">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 27. júní 2024.</signed-when>
 </advert>

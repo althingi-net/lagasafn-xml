@@ -23,6 +23,115 @@
         <li style="text-align: justify;">Vegsemd, sjóði fyrir listamenn 67 ára og eldri.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="art[@nr='2']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='1']">1. mgr. 2. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Starfslaun listamanna skulu veitt úr sex sjóðum:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði hönnuða,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði myndlistarmanna,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði rithöfunda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði sviðslistafólks,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði tónlistarflytjenda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" nr-type="alphabet">
+                <nr-title>f.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði tónskálda.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Starfslaun listamanna skulu veitt úr eftirtöldum sjóðum:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði hönnuða og arkitekta,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði myndlistarmanna,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði rithöfunda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði sviðslistafólks,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði tónlistarflytjenda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" nr-type="alphabet">
+                <nr-title>f.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði tónskálda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="g" nr-type="alphabet">
+                <nr-title>g.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">launasjóði kvikmyndahöfunda,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="h" nr-type="alphabet">
+                <nr-title>h.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Vexti, sjóði fyrir listamenn undir 35 ára,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="i" nr-type="alphabet">
+                <nr-title>i.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Vegsemd, sjóði fyrir listamenn 67 ára og eldri.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -30,6 +139,24 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 2.490 mánaðarlaun.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='5']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]">5. gr.</address>
+        <existing>
+          <art nr="5">
+            <nr-title>5. gr.</nr-title>
+            <name>Fjöldi starfslauna.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Samanlögð starfslaun miðast við 1.600 mánaðarlaun eða 133,33 árslaun.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <text-from>1.600 mánaðarlaun eða 133,33 árslaun</text-from>
+        <text-to>2.490 mánaðarlaun.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -42,6 +169,47 @@
       <p style="text-align: justify;">Launasjóður hönnuða og arkitekta veitir árlega starfslaun og styrki sem svara til 100 mánaðar­launa.</p>
       <p style="text-align: justify;">Þriggja manna nefnd, sem ráðherra skipar árlega samkvæmt tillögum samtaka hönnuða og arkitekta, úthlutar fé úr launasjóði hönnuða og arkitekta. Varamenn skulu skipaðir með sama hætti. Úthlutunarnefndin skiptir með sér verkum.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="art[@nr='6']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]">6. gr.</address>
+        <existing>
+          <art nr="6">
+            <nr-title>6. gr.</nr-title>
+            <name>Launasjóður hönnuða.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Launasjóður hönnuða veitir árlega starfslaun og styrki sem svara til 50 mánaðarlauna.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þriggja manna nefnd, sem ráðherra skipar árlega samkvæmt tillögum samtaka hönnuða og arkitekta, úthlutar fé úr launasjóði hönnuða.</sen>
+                <sen nr="2">Varamenn skulu skipaðir með sama hætti.</sen>
+                <sen nr="3">Úthlutunarnefndin skiptir með sér verkum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="6">
+            <nr-title>6. gr.</nr-title>
+            <name>Launasjóður hönnuða og arkitekta.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Launasjóður hönnuða og arkitekta veitir árlega starfslaun og styrki sem svara til 100 mánaðarlauna.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þriggja manna nefnd, sem ráðherra skipar árlega samkvæmt tillögum samtaka hönnuða og arkitekta, úthlutar fé úr launasjóði hönnuða og arkitekta.</sen>
+                <sen nr="2">Varamenn skulu skipaðir með sama hætti.</sen>
+                <sen nr="3">Úthlutunarnefndin skiptir með sér verkum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -49,6 +217,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 630.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='7']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='1']">1. mgr. 7. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Launasjóður myndlistarmanna veitir árlega starfslaun og styrki sem svara til 435 mánaðarlauna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>435</text-from>
+        <text-to>630.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -56,6 +238,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 685.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='8']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='1']">1. mgr. 8. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Launasjóður rithöfunda veitir árlega starfslaun og styrki sem svara til 555 mánaðarlauna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>555</text-from>
+        <text-to>685.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -63,6 +259,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 280.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='9']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='1']">1. mgr. 9. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Launasjóður sviðslistafólks veitir árlega starfslaun og styrki sem svara til 190 mánaðarlauna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>190</text-from>
+        <text-to>280.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -70,6 +280,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 255.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='10']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='1']">1. mgr. 10. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Launasjóður tónlistarflytjenda veitir árlega starfslaun og styrki sem svara til 180 mánaðarlauna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>180</text-from>
+        <text-to>255.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -77,6 +301,20 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 260.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='11']/subart[@nr='1']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='1']">1. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Launasjóður tónskálda veitir árlega starfslaun og styrki sem svara til 190 mánaðarlauna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>190</text-from>
+        <text-to>260.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -99,6 +337,70 @@
       <p style="text-align: justify;">Úthlutunarnefndir launasjóða skv. 6.–11. gr. og 11. gr. a úthluta fé úr Vegsemd í samræmi við skiptingu milli listgreina sem stjórn listamannalauna ákveður að höfðu samráði við formenn úthlutunarnefnda. Úthlutunarnefnd sérgreinds launasjóðs getur ákveðið, með samþykki stjórnar listamannalauna, að styrkir sem svara til tiltekins fjölda mánaðarlauna færist frá viðkomandi sjóði og úthlutist úr Vegsemd.</p>
       <p style="text-align: justify;">Þrátt fyrir 1. og 4. mgr. 12. gr. er heimilt að veita starfslaun úr Vegsemd til allt að fimm ára í senn. Ákvæði 3. mgr. 4. gr. gildir ekki um starfslaunaþega í Vegsemd.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="art[@nr='11']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]">11. gr.</address>
+        <existing>
+          <art nr="11">
+            <nr-title>11. gr.</nr-title>
+            <name>Launasjóður tónskálda.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Launasjóður tónskálda veitir árlega starfslaun og styrki sem svara til 190 mánaðarlauna.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra skipar árlega þriggja manna nefnd sem úthlutar fé úr launasjóði tónskálda.</sen>
+                <sen nr="2">Tónskáldafélag Íslands tilnefnir tvo fulltrúa og Félag tónskálda og textahöfunda tilnefnir einn fulltrúa.</sen>
+                <sen nr="3">Varamenn skulu skipaðir með sama hætti.</sen>
+                <sen nr="4">Úthlutunarnefndin skiptir með sér verkum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="11a">
+            <nr-title>11. gr. a.</nr-title>
+            <name>Launasjóður kvikmyndahöfunda.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Launasjóður kvikmyndahöfunda veitir árlega starfslaun og styrki sem svara til 100 mánaðarlauna.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þriggja manna nefnd sem ráðherra skipar árlega úthlutar fé úr launasjóði kvikmyndahöfunda.</sen>
+                <sen nr="2">Samtök kvikmyndaleikstjóra og Félag leikskálda og handritshöfunda skulu hvort um sig tilnefna þrjá nefndarmenn.</sen>
+                <sen nr="3">Ráðherra skipar þrjá aðalmenn og þrjá varamenn út frá tilnefningunum.</sen>
+                <sen nr="4">Úthlutunarnefndin skiptir með sér verkum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="11b">
+            <nr-title>11. gr. b.</nr-title>
+            <name>Vegsemd.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Vegsemd er launasjóður sem veitir árlega starfslaun og styrki sem svara til 180 mánaðarlauna til listamanna 67 ára og eldri sem starfa við þær listgreinar sem launasjóðir skv. a–g-lið 1. mgr. 2. gr. taka til.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Úthlutunarnefndir launasjóða skv. 6.–11. gr. og 11. gr. a úthluta fé úr Vegsemd í samræmi við skiptingu milli listgreina sem stjórn listamannalauna ákveður að höfðu samráði við formenn úthlutunarnefnda.</sen>
+                <sen nr="2">Úthlutunarnefnd sérgreinds launasjóðs getur ákveðið, með samþykki stjórnar listamannalauna, að styrkir sem svara til tiltekins fjölda mánaðarlauna færist frá viðkomandi sjóði og úthlutist úr Vegsemd.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. og 4. mgr. 12. gr. er heimilt að veita starfslaun úr Vegsemd til allt að fimm ára í senn.</sen>
+                <sen nr="2">Ákvæði 3. mgr. 4. gr. gildir ekki um starfslaunaþega í Vegsemd.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -106,6 +408,25 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 6.–11. gr. og 11. gr. a og 11. gr. b.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='14']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',14,')] | //art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 13. gr. og 14. gr.</address>
+        <existing>
+          <sen nr="1">Ráðherra er heimilt að setja með reglugerð nánari ákvæði um framkvæmd laganna í heild eða einstakar greinar þeirra, þar á meðal um skilgreiningu á því hvað teljist fullt starf, sbr. 2. mgr. 4. gr., og um tilhögun tilnefninga af hálfu tilnefningaraðila í úthlutunarnefndir, sbr. 6.–11. gr.</sen>
+          <art nr="14">
+            <nr-title>14. gr.</nr-title>
+            <name>Málsmeðferð.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ákvarðanir skv. 6.–11. gr. eru endanlegar á stjórnsýslustigi og sæta ekki kæru til ráðherra.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <text-from>6.–11. gr.</text-from>
+        <text-to>6.–11. gr. og 11. gr. a og 11. gr. b.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
     <original affected-law-nr="57" affected-law-year="2009">
@@ -125,12 +446,290 @@
         <li style="text-align: justify;">Vegsemd skal veita starfslaun og styrki sem svara til 60 mánaðarlauna á árinu 2025, 100 mánaðarlauna á árinu 2026 og 140 mánaðarlauna á árinu 2027.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="57" action-law-year="2009">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 5. gr. skulu samanlögð starfslaun árið 2010 miðast við 1.325 mánaðarlaun og árið 2011 við 1.465 mánaðarlaun.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 6.–11. gr. skulu starfslaun og styrkir til listamanna árin 2010 og 2011 vera sem hér segir:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir hönnuða árið 2010 skulu miðast við 20 mánaðarlaun og árið 2011 við 35 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir myndlistarmanna árið 2010 skulu miðast við 360 mánaðarlaun og árið 2011 við 400 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir rithöfunda árið 2010 skulu miðast við 505 mánaðarlaun og árið 2011 við 530 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir sviðslistafólks árið 2010 skulu miðast við 160 mánaðarlaun og árið 2011 við 175 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónlistarflytjenda árið 2010 skulu miðast við 150 mánaðarlaun og árið 2011 við 165 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónskálda árið 2010 skulu miðast við 130 mánaðarlaun og árið 2011 við 160 mánaðarlaun.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="III" roman-nr="3" number-type="roman">
+              <nr-title>III.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Listamenn sem notið höfðu listamannalauna í nokkur ár fyrir 31. desember 1991 og höfðu þá náð 60 ára aldri skulu njóta sérstakra framlaga samkvæmt ákvörðun stjórnar listamannalauna.</sen>
+                </paragraph>
+              </subart>
+            </art>
+            <art nr="IV" roman-nr="4" number-type="roman">
+              <nr-title>IV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir 5. gr. skulu samanlögð starfslaun árið 2020 miðast við 2.200 mánaðarlaun.</sen>
+                  <sen nr="2">Þrátt fyrir ákvæði 6.–11. gr. skulu starfslaun og styrkir til listamanna árið 2020 vera sem hér segir:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir hönnuða árið 2020 skulu svara til 69 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir myndlistarmanna árið 2020 skulu svara til 598 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir rithöfunda árið 2020 skulu svara til 763 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir sviðslistafólks árið 2020 skulu svara til 261 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónlistarflytjenda árið 2020 skulu svara til 248 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónskálda árið 2020 skulu svara til 261 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.037.html" law-nr="37" law-year="2020" law-art="10" nr="1">
+                  <footnote-sen>L. 37/2020, 10. gr.</footnote-sen>
+                  <location type="range" string-length="672">
+                    <start xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="V" roman-nr="5" number-type="roman">
+              <nr-title>V.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 5. gr. skulu samanlögð starfslaun árið 2021 miðast við 2.150 mánaðarlaun.</sen>
+                  <sen nr="2">Þrátt fyrir ákvæði 6.–11. gr. skulu starfslaun og styrkir til listamanna árið 2021 vera sem hér segir:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir hönnuða árið 2021 skulu svara til 75 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir myndlistarmanna árið 2021 skulu svara til 526 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir rithöfunda árið 2021 skulu svara til 646 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir sviðslistafólks árið 2021 skulu svara til 307 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónlistarflytjenda árið 2021 skulu svara til 315 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="f" nr-type="alphabet">
+                    <nr-title>f.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónskálda árið 2021 skulu svara til 281 mánaðarlauna.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.143.html" law-nr="143" law-year="2020" law-art="1" nr="1">
+                  <footnote-sen>L. 143/2020, 1. gr.</footnote-sen>
+                  <location type="range" string-length="678">
+                    <start xpath="chapter[@nr='t']/art[@nr='V']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="VI" roman-nr="6" number-type="roman">
+              <nr-title>VI.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 5. gr. skulu samanlögð starfslaun árið 2022 miðast við 1.800 mánaðarlaun.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir ákvæði 9. og 10. gr. skulu starfslaun og styrkir til sviðslistafólks og tónlistarflytjenda árið 2022 vera sem hér segir:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir sviðslistafólks árið 2022 skulu svara til 240 mánaðarlauna, af þeim skulu minnst 50 mánaðarlaun ætluð sviðslistafólki undir 35 ára aldri.</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">Starfslaun og styrkir tónlistarflytjenda árið 2022 skulu svara til 330 mánaðarlauna, af þeim skulu minnst 50 mánaðarlaun ætluð tónlistarflytjendum undir 35 ára aldri.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.025.html" law-nr="25" law-year="2022" law-art="1" nr="1">
+                  <footnote-sen>L. 25/2022, 1. gr.</footnote-sen>
+                  <location type="range" string-length="557">
+                    <start xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='VI']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="VII" roman-nr="7" number-type="roman">
+            <nr-title>VII.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir ákvæði 5. gr. skulu samanlögð starfslaun miðast við 1.720 mánaðarlaun á árinu 2025, 1.970 mánaðarlaun á árinu 2026 og 2.230 mánaðarlaun á árinu 2027.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 6.–11. gr. og 11. gr. a og 11. gr. b skal á árunum 2025, 2026 og 2027, eftir því sem við á, veita starfslaun úr launasjóðum sem svara til fjölda mánaðarlauna eins og hér segir:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður hönnuða og arkitekta skal veita starfslaun og styrki sem svara til 50 mán­aðar­launa á árinu 2025 og 75 mánaðarlauna á árinu 2026.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður myndlistarmanna skal veita starfslaun og styrki sem svara til 435 mánaðar­launa á árinu 2025, 490 mánaðarlauna á árinu 2026 og 540 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður rithöfunda skal veita starfslaun og styrki sem svara til 555 mánaðarlauna á árinu 2025, 600 mánaðarlauna á árinu 2026 og 640 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður sviðslistafólks skal veita starfslaun og styrki sem svara til 190 mánaðarlauna á árinu 2025, 205 mánaðarlauna á árinu 2026 og 240 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður tónlistarflytjenda skal veita starfslaun og styrki sem svara til 180 mánaðarlauna á árinu 2025, 195 mánaðarlauna á árinu 2026 og 230 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður tónskálda skal veita starfslaun og styrki sem svara til 190 mánaðar­launa á árinu 2025, 205 mánaðarlauna á árinu 2026 og 240 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="g" nr-type="alphabet">
+                  <nr-title>g.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Launasjóður kvikmyndahöfunda skal veita starfslaun og styrki sem svara til 60 mánaðar­launa á árinu 2025.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="h" nr-type="alphabet">
+                  <nr-title>h.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Vegsemd skal veita starfslaun og styrki sem svara til 60 mánaðarlauna á árinu 2025, 100 mánaðarlauna á árinu 2026 og 140 mánaðarlauna á árinu 2027.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
     <original affected-law-nr="57" affected-law-year="2009">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
       <p style="text-align: justify;">Þrátt fyrir ákvæði 1. mgr. koma breytingar á úthlutun listamannalauna fyrst til framkvæmda á árinu 2025 og eftir því sem fram kemur í 11. gr.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-12" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 5. júlí 2024.</signed-when>
 </advert>

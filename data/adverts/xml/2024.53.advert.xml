@@ -16,11 +16,70 @@
         <p style="text-align: justify;">Gagn sem miðlað er á stafrænu eða rafrænu formi telst komið til viðtakanda þegar það er aðgengilegt þannig að unnt sé að kynna sér efni þess. Gagn þarf ekki jafnframt að afhenda á pappírsformi.</p>
         <p style="text-align: justify;">Gögn sem birt eru eftir fyrirmælum 156. gr. eða 156. gr. a skulu, þrátt fyrir þessa grein, birt á því formi og á þann hátt sem þar er lýst.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="superchapter[@nr='1']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]">2. gr.</address>
+          <existing>
+            <art nr="2">
+              <nr-title>2. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Einnig skulu sæta meðferð samkvæmt lögum þessum mál til úrlausnar kröfu um framsal sakamanns og fullnustu erlends refsidóms hér á landi og meðferð erinda frá erlendum dómstólum og yfirvöldum um aðgerðir hér á landi í tengslum við sakamál.</sen>
+                  <sen nr="2">Þar að auki þau mál sem sæta skulu meðferð sakamála samkvæmt öðrum lögum.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Einkaréttarkröfur má hafa uppi og dæma í sakamáli samkvæmt ákvæðum XXVI. kafla laga þessara.</sen>
+                  <sen nr="2">Sama gildir um kröfur allsherjarréttar eðlis, svo sem kröfur um skatta, brottnám ólögmæts ástands eða bann við ólögmætri starfsemi.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="2a">
+              <nr-title>2. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynningu eða gagni sem á grundvelli laga þessara er afhent eða sent á milli þeirra sem aðkomu eiga að máli er heimilt að miðla á rafrænu eða stafrænu formi, enda leiki ekki vafi á uppruna þess eða frá hverjum það stafar.</sen>
+                  <sen nr="2">Dómari getur ákveðið að frumrit gagns verði lagt fram í dómi telji hann það nauðsynlegt, svo sem fyrir sönnunarfærslu málsins.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar lög þessi eða venja áskilja áritun, undirritun, staðfestingu eða vottun telst slíkum áskilnaði fullnægt með rafrænni staðfestingu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Gagn sem miðlað er á stafrænu eða rafrænu formi telst komið til viðtakanda þegar það er aðgengilegt þannig að unnt sé að kynna sér efni þess.</sen>
+                  <sen nr="2">Gagn þarf ekki jafnframt að afhenda á pappírsformi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Gögn sem birt eru eftir fyrirmælum 156. gr. eða 156. gr. a skulu, þrátt fyrir þessa grein, birt á því formi og á þann hátt sem þar er lýst.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af málskjölum“ í 2. málsl. 3. mgr. 7. gr. laganna kemur: eintak málskjala.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 7. gr.</address>
+          <existing>
+            <sen nr="2">Á þeim tíma getur hann einnig látið af hendi afrit af málskjölum og staðfest dómsgerðir.</sen>
+          </existing>
+          <text-from>afrit af málskjölum</text-from>
+          <text-to>eintak málskjala.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="3">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -29,11 +88,71 @@
         <p style="text-align: justify;">Ákærða eða sakborningi verður þó ekki gert, gegn vilja sínum, að taka þátt í þinghaldi í gegnum fjarfundarbúnað nema ríkar ástæður séu fyrir hendi. Sá sem sættir sig ekki við ákvörðun dómara getur krafist úrskurðar þar um.</p>
         <p style="text-align: justify;">Dómstólasýslan setur leiðbeinandi reglur um fjarþinghöld, þar á meðal um skýrslugjöf fyrir dómi.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]">9. gr.</address>
+          <existing>
+            <art nr="9">
+              <nr-title>9. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Dómþing skulu haldin á föstum þingstöðum.</sen>
+                  <sen nr="2">Rétt er þó að heyja dómþing á öðrum stað ef það þykir heppilegra, svo sem í fangelsi eða á sjúkrahúsi, ef taka þarf skýrslu af manni sem þar er staddur.</sen>
+                  <sen nr="3">Nú þarf að taka skýrslu af brotaþola, yngri en 15 ára, og skal það þá gert í sérútbúnu húsnæði fyrir skýrslutöku af börnum nema hagsmunir brotaþolans krefjist þess að annar háttur verði á hafður.</sen>
+                  <sen nr="4">Enn fremur getur dómari ákveðið að skýrsla skuli tekin af vitni, yngra en 15 ára, og brotaþola eða vitni með geðræna eða vitsmunalega skerðingu eða skerta skynjun, í sérútbúnu húsnæði.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2022.061.html" law-nr="61" law-year="2022" law-art="1" nr="1">
+                  <footnote-sen>L. 61/2022, 1. gr.</footnote-sen>
+                  <location type="range" xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" words="og brotaþola eða vitni með geðræna eða vitsmunalega skerðingu eða skerta skynjun, í sérútbúnu húsnæði" middle-punctuation="." instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2015.078.html" law-nr="78" law-year="2015" law-art="18" nr="2">
+                  <footnote-sen>L. 78/2015, 18. gr.</footnote-sen>
+                  <location type="range" string-length="380">
+                    <start xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                    <end xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Dómari getur heimilað þátttöku í þinghaldi í gegnum fjarfundarbúnað, enda verði því háttað þannig að allir sem viðstaddir eru geti fylgst með því sem fram fer.</sen>
+                <sen nr="2">Telst það fullnægjandi mæting af hálfu málsaðila.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ákærða eða sakborningi verður þó ekki gert, gegn vilja sínum, að taka þátt í þinghaldi í gegnum fjarfundarbúnað nema ríkar ástæður séu fyrir hendi.</sen>
+                <sen nr="2">Sá sem sættir sig ekki við ákvörðun dómara getur krafist úrskurðar þar um.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Dómstólasýslan setur leiðbeinandi reglur um fjarþinghöld, þar á meðal um skýrslugjöf fyrir dómi.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „undirrita heit í þingbók“ í 2. málsl. 2. mgr. 12. gr. laganna kemur: staðfesta heit.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 12. gr.</address>
+          <existing>
+            <sen nr="2">Sé ekki kostur á löggiltum dómtúlki er dómara rétt að samþykkja að annar hæfur maður annist þýðingu, en sá skal þá undirrita heit í þingbók um að hann muni rækja starfann eftir bestu getu og ber honum að staðfesta þýðingu sína fyrir dómi ef hún er vefengd.</sen>
+          </existing>
+          <text-from>undirrita heit í þingbók</text-from>
+          <text-to>staðfesta heit.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -45,12 +164,78 @@
           <li style="text-align: justify;">Í stað orðsins „undirrita“ í 6. málsl. 2. mgr. kemur: staðfesta.</li>
         </ol>
       </original>
+      <intents common-address="13. gr.">
+        <intent action="append_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="1">Við Landsrétt og hvern héraðsdómstól skulu vera þingbækur til afnota í sakamálum.</sen>
+          </existing>
+          <text-from>Við</text-from>
+          <text-to>Hæstarétt.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="2">Dómara er rétt að rita á tölvu það sem væri ella fært í slíka bók, en það sem skráð er með þeim hætti skal þá varðveita á rafrænu formi þannig að það sé öruggt og aðgengilegt.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Það sem skráð er í þingbók skal varðveita þannig að það sé öruggt og aðgengilegt.</sen>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='2']//sen[@nr='4']">4. málsl. 2. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="4">Ef önnur ákvæði þessara laga mæla ekki fyrir um að bókað verði um tiltekin atriði ákveður dómari hvað verði annars skráð í þingbók og undirritar það sem hefur verið bókað að loknu þinghaldi.</sen>
+          </existing>
+          <text-from>undirritar</text-from>
+          <text-to>staðfestir.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='6']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='2']//sen[@nr='6']">6. málsl. 2. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="6">Ef dómari telur ástæðu til er honum rétt að kynna þeim sem mæta í þinghald efni bókunar í heild eða að hluta og gefa hlutaðeigendum kost á að undirrita hana.</sen>
+          </existing>
+          <text-from>undirrita</text-from>
+          <text-to>staðfesta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">14. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Við Hæstarétt, Landsrétt og hvern héraðsdómstól skal haldin dómabók sem hefur að geyma dóma, svo og úrskurði eftir því sem við á, sem fela í sér niðurstöðu máls, staðfesta af dómara.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]">14. gr.</address>
+          <existing>
+            <art nr="14">
+              <nr-title>14. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Við Landsrétt og hvern héraðsdómstól skal haldin dómabók sem hefur að geyma dóma, svo og úrskurði sem fela í sér niðurstöðu máls, undirritaða af dómara.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2016.049.html" law-nr="49" law-year="2016" law-art="39" nr="1">
+                  <footnote-sen>L. 49/2016, 39. gr.</footnote-sen>
+                  <location type="range" xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="Landsrétt og" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="14">
+              <nr-title>14. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Við Hæstarétt, Landsrétt og hvern héraðsdómstól skal haldin dómabók sem hefur að geyma dóma, svo og úrskurði eftir því sem við á, sem fela í sér niðurstöðu máls, staðfesta af dómara.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -61,6 +246,39 @@
           <li>Í stað orðsins „afrit“ í 2. málsl. 3. mgr. kemur: annað eintak.</li>
         </ol>
       </original>
+      <intents common-address="15. gr.">
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='1']//sen[@nr='3' or @nr='2']">2. og 3. málsl. 1. mgr. 15. gr.</address>
+          <existing>
+            <sen nr="2">Þau skulu merkt í áframhaldandi töluröð og vottuð um framlagningu.</sen>
+            <sen nr="3">Sá sem leggur fram skjal skal láta í té þann fjölda eftirrita af því sem dómari mælir fyrir um og afhendir jafnframt öðrum aðilum máls eftirrit, svo og brotaþola ef mætt er af hans hálfu í málinu.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Þau skulu staðfest af dómstól um framlagningu.</sen>
+            <sen nr="3">Sá sem leggur fram skjal skal afhenda það dómara og aðilum máls eintak þess, svo og brotaþola ef mætt er af hans hálfu í málinu.</sen>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']">2. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Dómabækur, þingbækur, framlögð skjöl og hljóð- og myndupptökur skal varðveita í skjalasafni hlutaðeigandi dómstóls þar til þau verða afhent Þjóðskjalasafni.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>varðveita í skjalasafni hlutaðeigandi dómstóls</text-from>
+          <text-to>hlutaðeigandi dómstóll varðveita.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 15. gr.</address>
+          <existing>
+            <sen nr="2">Meðan máli er ólokið verður frumrit skjals þó ekki afhent nema brýn nauðsyn krefji og dómari telji að láta megi það af hendi gegn því að afrit komi í stað þess.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+          <text-to>annað eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -79,6 +297,103 @@
           <li style="text-align: justify;">Orðið „afrits“ í 1. málsl. 7. mgr. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="16. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="1">Ákærði og brotaþoli eiga rétt á að fá afrit af málskjölum án endurgjalds um leið og mál hefur verið þingfest, sbr. þó 3. mgr. 47. gr.</sen>
+          </existing>
+          <text-from>afrit af málskjölum</text-from>
+          <text-to>eintak málskjala.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="2">Eftir þingfestingu er dómara skylt gegn greiðslu gjalds að láta öðrum þeim, sem þess óskar, í té staðfest afrit af ákæru og greinargerð ákærða, ef hún hefur verið lögð fram, svo fljótt sem við verður komið.</sen>
+          </existing>
+          <text-from>afrit af ákæru og greinargerð</text-from>
+          <text-to>eintak ákæru og greinargerðar.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="3">Þó skal synja um að láta í té afrit af þeim hlutum þessara skjala sem hafa að geyma upplýsingar um einka-, fjárhags- eða viðskiptahagsmuni einstaklinga ellegar lögpersóna sem sanngjarnt er og eðlilegt að leynt fari nema sá samþykki sem í hlut á.</sen>
+          </existing>
+          <text-from>afrit af þeim hlutum</text-from>
+          <text-to>þá hluta.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='2']">2. mgr. 16. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Aðilar máls og brotaþoli eiga rétt á að fá staðfest endurrit úr þingbók eða dómabók endurgjaldslaust.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>endurrit úr þingbók eða dómabók</text-from>
+          <text-to>eintak þingbókar eða dómabókar.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="1">Dómara er enn fremur skylt gegn greiðslu gjalds að láta öðrum þeim, sem þess óskar, í té staðfest endurrit úr dómabók og af úrskurðum og ákvörðunum sem færðar hafa verið í þingbók.</sen>
+          </existing>
+          <text-from>endurrit</text-from>
+          <text-to>eintök.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="2">Áður en þau endurrit eru afhent skal, ef sérstök ástæða er til, afmá úr þeim atriði sem eðlilegt er að leynt fari með tilliti til almanna- eða einkahagsmuna, þar á meðal atriði úr endurritum af úrskurðum og ákvörðunum ef það hefði í för með sér hættu á sakarspjöllum að þau kæmust til vitundar almennings.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Áður en þau eru afhent skal, ef sérstök ástæða er til, afmá úr þeim atriði sem eðlilegt er að fari leynt með tilliti til almanna- eða einkahagsmuna, þar á meðal ef það hefði í för með sér hættu á sakarspjöllum að þau kæmust til vitundar almennings.</sen>
+          </inner>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="1">Meðan mál er rekið fyrir Landsrétti eða í héraði, unnt er að skjóta því til æðra dóms eða mál er rekið þar fyrir dómi er dómara skylt endurgjaldslaust að afhenda aðilum máls afrit hljóðupptöku skv. 3. mgr. 13. gr. eða leyfa þeim að hlýða á slíkar upptökur eða horfa á myndupptökur, svo fljótt sem við verður komið eftir að þess er óskað.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='4']//sen[@nr='3']">3. málsl. 4. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="3">Dómara er skylt gegn greiðslu gjalds að láta brotaþola í té eftirgerð af hljóð- eða myndupptökum eða leyfa honum að hlýða á slíkar upptökur ef honum er þörf á því til þess að geta gætt hagsmuna sinna.</sen>
+          </existing>
+          <text-from>eftirgerð af hljóð- eða myndupptökum</text-from>
+          <text-to>hljóð- eða myndupptökur.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='4']//sen[@nr='4']">4. málsl. 4. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="4">Dómstólasýslan setur nánari reglur um afhendingu afrita af hljóðupptökum og um aðgang að myndupptökum.</sen>
+          </existing>
+          <text-from>afrita af hljóðupptökum</text-from>
+          <text-to>hljóðupptaka.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='6']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='6']">6. mgr. 16. gr.</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Telji dómari óheimilt eða óskylt að verða við ósk um afrit eða eftirrit ellegar leyfi til að hlýða á upptöku kveður hann upp úrskurð um það ef þess er krafist.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>afrit eða eftirrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='16']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',16,')]//subart[@nr='7']//sen[@nr='1']">1. málsl. 7. mgr. 16. gr.</address>
+          <existing>
+            <sen nr="1">Nú er meðferð máls endanlega lokið fyrir héraðsdómi og tekur þá dómstjóri ákvörðun um afhendingu afrits skv. 1. og 3. mgr. eða kveður upp úrskurð skv. 6. mgr.</sen>
+          </existing>
+          <text-from>afrits</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -91,6 +406,112 @@
           <li style="text-align: justify;">Á undan orðunum „form og frágang“ í g-lið 2. mgr. kemur: rafræna staðfestingu, sem og afhendingarmáta.</li>
         </ol>
       </original>
+      <intents common-address="17. gr.">
+        <intent action="append_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]//subart[@nr='1']">1. mgr. 17. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Við Landsrétt og hvern héraðsdómstól skal haldin skrá yfir þau mál sem koma þar til úrlausnar samkvæmt lögum þessum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Við</text-from>
+          <text-to>Hæstarétt.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]//subart[@nr='2']">2. mgr. 17. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Dómstólasýslan setur nánari reglur um eftirfarandi atriði fyrir Landsrétt og héraðsdómstóla:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">málaskrár,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">þingbækur, þar á meðal rafræna færslu þeirra,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">búnað til hljóðritunar og myndupptöku í þinghöldum,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">dómabækur,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">varðveislu málskjala, hljóðritana og myndupptaka,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">aðgang almennings að endurritum af dómum og úr þingbók, svo og að framlögðum skjölum, þ.m.t. um brottnám upplýsinga úr þeim, eftir að máli hefur verið endanlega lokið,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="g" nr-type="alphabet">
+                  <nr-title>g.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">form og frágang dómskjala, þar á meðal hámarkslengd ákæru og greinargerðar ákærða.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Dómstólasýslan setur nánari reglur um eftirfarandi atriði fyrir</text-from>
+          <text-to>Að höfðu samráði við hlutaðeigandi dómstig setur dómstólasýslan nánari reglur um eftirfarandi atriði fyrir Hæstarétt.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 2. mgr. 17. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">þingbækur, þar á meðal rafræna færslu þeirra,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>þar á meðal rafræna færslu þeirra</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='f']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='f' or @nr='F']">f-lið 2. mgr. 17. gr.</address>
+          <existing>
+            <numart nr="f" nr-type="alphabet">
+              <nr-title>f.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">aðgang almennings að endurritum af dómum og úr þingbók, svo og að framlögðum skjölum, þ.m.t. um brottnám upplýsinga úr þeim, eftir að máli hefur verið endanlega lokið,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>endurritum af dómum og úr þingbók</text-from>
+          <text-to>dómum og þingbókum.</text-to>
+        </intent>
+        <intent action="prepend_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='17']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='g']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='g' or @nr='G']">g-lið 2. mgr. 17. gr.</address>
+          <existing>
+            <numart nr="g" nr-type="alphabet">
+              <nr-title>g.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">form og frágang dómskjala, þar á meðal hámarkslengd ákæru og greinargerðar ákærða.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>form og frágang</text-from>
+          <text-to>rafræna staðfestingu, sem og afhendingarmáta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="10">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -100,6 +521,24 @@
           <li style="text-align: justify;">Í stað orðanna „afrit af einstökum skjölum“ í 3. málsl. kemur: eintak tiltekinna skjala.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 37. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='4' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 37. gr.</address>
+          <existing>
+            <sen nr="1">Verjandi skal jafnskjótt og unnt er fá afrit af öllum skjölum máls sem varða skjólstæðing hans, svo og aðstöðu til að kynna sér önnur gögn í málinu.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='4' and @chapter-type='kafli']/art[@nr='37']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',37,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 37. gr.</address>
+          <existing>
+            <sen nr="3">Af sömu ástæðu er lögreglu heimilt að neita verjanda um afrit af einstökum skjölum meðan á rannsókn máls stendur.</sen>
+          </existing>
+          <text-from>afrit af einstökum skjölum</text-from>
+          <text-to>eintak tiltekinna skjala.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="11">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -110,16 +549,68 @@
           <li style="text-align: justify;">Í stað orðanna „afrit af einstökum skjölum“ í 4. málsl. kemur: eintak tiltekinna skjala.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 47. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='5' and @chapter-type='kafli']/art[@nr='47']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',47,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 47. gr.</address>
+          <existing>
+            <sen nr="1">Réttargæslumaður skal jafnskjótt og unnt er fá afrit af öllum skjölum máls sem varða skjólstæðing hans, svo og aðstöðu til að kynna sér önnur gögn í málinu.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='5' and @chapter-type='kafli']/art[@nr='47']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',47,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 47. gr.</address>
+          <existing>
+            <sen nr="2">Þó er óheimilt að afhenda réttargæslumanni afrit af skjölum eða veita honum aðgang að gögnum ef verjanda hefur verið synjað um það.</sen>
+          </existing>
+          <text-from>afrit af skjölum</text-from>
+          <text-to>eintak skjala.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='5' and @chapter-type='kafli']/art[@nr='47']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',47,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 47. gr.</address>
+          <existing>
+            <sen nr="4">Af sömu ástæðu er lögreglu heimilt að neita réttargæslumanni um afrit af einstökum skjölum meðan á rannsókn máls stendur.</sen>
+          </existing>
+          <text-from>afrit af einstökum skjölum</text-from>
+          <text-to>eintak tiltekinna skjala.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="12">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „skjalfest“ í 2. málsl. 2. mgr. 56. gr. laganna kemur: skráð.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='7' and @chapter-type='kafli']/art[@nr='56']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',56,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 56. gr.</address>
+          <existing>
+            <sen nr="2">Skal þá um leið skjalfest hvaða lögreglumaður á hlut að máli, en aðrir skulu ekki hafa aðgang að upplýsingum um það en sá sem rannsókn stýrir og ákærandi, svo og dómari ef upplýsingarnar eru síðar lagðar fyrir dóm.</sen>
+          </existing>
+          <text-from>skjalfest</text-from>
+          <text-to>skráð.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="13">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Við 1. mgr. 62. gr. laganna bætist nýr málsliður, svohljóðandi: Lögregla getur ákveðið að skýrslugjöf fari fram í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki ekki vafi á auðkenni skýrslugjafa og tryggt þykir að hann geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="superchapter[@nr='2']/chapter[@nr='8' and @chapter-type='kafli']/art[@nr='62']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',62,')]//subart[@nr='1']">1. mgr. 62. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Skýrslutaka af sakborningi og vitnum skv. 61. gr. fer fram fyrir luktum dyrum.</sen>
+                <sen nr="2">Sé þess kostur skal hún fara fram á lögreglustöð eða í öðru sérútbúnu húsnæði.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="3">Lögregla getur ákveðið að skýrslugjöf fari fram í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki ekki vafi á auðkenni skýrslugjafa og tryggt þykir að hann geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="14">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -129,62 +620,224 @@
           <li style="text-align: justify;">Á eftir orðunum „nöfn sín“ í 1. málsl. 3. mgr. kemur: lögreglunúmer eða auðkennisnúmer starfsmanns lögreglu.</li>
         </ol>
       </original>
+      <intents common-address="66. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='8' and @chapter-type='kafli']/art[@nr='66']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',66,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 66. gr.</address>
+          <existing>
+            <sen nr="1">Þegar tekin er skýrsla af sakborningi eða vitni skv. 61.–65. gr. skal skráð á þar til gert eyðublað hvar skýrslutakan fer fram, hver tekur skýrsluna, hver gefur hana og hverjir aðrir eru viðstaddir.</sen>
+          </existing>
+          <text-from>hver tekur skýrsluna, hver gefur hana</text-from>
+          <text-to>lögreglunúmer þess sem tekur skýrsluna, hver gefur hana, lögreglunúmer og auðkennisnúmer starfsmanna lögreglu sem viðstaddir eru.</text-to>
+        </intent>
+        <intent action="append_text" action-xpath="superchapter[@nr='2']/chapter[@nr='8' and @chapter-type='kafli']/art[@nr='66']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',66,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 66. gr.</address>
+          <existing>
+            <sen nr="1">Að lokinni skýrslutöku ritar sá sem skýrslu tekur, skýrslugjafi og aðrir sem viðstaddir eru nöfn sín undir eyðublað skv. 1. mgr.</sen>
+          </existing>
+          <text-from>nöfn sín</text-from>
+          <text-to>lögreglunúmer eða auðkennisnúmer starfsmanns lögreglu.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="15">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af skjali eða annars konar upplýsingum“ í 2. mgr. 68. gr. laganna kemur: annað eintak skjals eða annars konar upplýsingar.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='9' and @chapter-type='kafli']/art[@nr='68']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',68,')]//subart[@nr='2']">2. mgr. 68. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Nú er þess kostur að tryggja sönnun í því skyni sem í 1. mgr. segir án þess að leggja þurfi hald á mun og skal þá þess í stað beina því til eiganda eða vörsluhafa munarins að veita aðgang að honum eða láta í té upplýsingar, sem hann hefur að geyma, svo sem með því að afhenda afrit af skjali eða annars konar upplýsingum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>afrit af skjali eða annars konar upplýsingum</text-from>
+          <text-to>annað eintak skjals eða annars konar upplýsingar.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="16">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af skránni“ í 2. málsl. 71. gr. laganna kemur: eintak skrárinnar.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='9' and @chapter-type='kafli']/art[@nr='71']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',71,')]//sen[@nr='2']">2. málsl. 71. gr.</address>
+          <existing>
+            <sen nr="2">Eftir kröfu eiganda eða þess sem lætur muni af hendi skal láta honum í té afrit af skránni.</sen>
+          </existing>
+          <text-from>afrit af skránni</text-from>
+          <text-to>eintak skrárinnar.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="17">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „undirrita“ í 2. málsl. 2. mgr. 84. gr. laganna kemur: staðfesta.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='84']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',84,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 84. gr.</address>
+          <existing>
+            <sen nr="2">Áður en skipunin tekur gildi skal lögmaðurinn undirrita drengskaparheit um að hann muni gæta þagmælsku um allt það sem hann kemst að við rækslu starfans, þar á meðal gagnvart þeim sem hann gætir hagsmuna fyrir.</sen>
+          </existing>
+          <text-from>undirrita</text-from>
+          <text-to>staðfesta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="18">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „afrit“ í 3. málsl. 1. mgr. 85. gr. laganna kemur: önnur eintök.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='85']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',85,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 85. gr.</address>
+          <existing>
+            <sen nr="3">Sama gildir um afrit eða endurrit af þessum upplýsingum.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+          <text-to>önnur eintök.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="19">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af“ í 2. málsl. 2. mgr. 104. gr. laganna kemur: eintak.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='15' and @chapter-type='kafli']/art[@nr='104']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',104,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 104. gr.</address>
+          <existing>
+            <sen nr="2">Ef tilkynning um þinghald er skrifleg skal henni að jafnaði fylgja afrit af kröfu sem þar á að taka fyrir.</sen>
+          </existing>
+          <text-from>afrit af</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="20">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Við 1. mgr. 113. gr. laganna bætast tveir nýir málsliðir, svohljóðandi: Dómari getur ákveðið að skýrslugjöf ákærða fari fram í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni ákærða og tryggt þykir að hann geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar. Ákærða verður þó ekki gert, gegn vilja sínum, að gefa skýrslu á þann hátt nema ríkar ástæður séu fyrir hendi.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="superchapter[@nr='3']/chapter[@nr='17' and @chapter-type='kafli']/art[@nr='113']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',113,')]//subart[@nr='1']">1. mgr. 113. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ákærða er jafnan rétt og skylt að koma fyrir dóm til skýrslugjafar eftir að mál hefur verið höfðað gegn honum.</sen>
+                <sen nr="2">Sakborningi er enn fremur rétt og skylt að koma fyrir dóm til skýrslugjafar meðan á rannsókn stendur ef tilefni gefst, sbr. b-lið 1. mgr. 59. og 2. mgr. 106. gr.</sen>
+                <sen nr="3">Bjóða skal fötluðum sakborningi að hafa með sér hæfan stuðningsaðila við skýrslutöku.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="4">Dómari getur ákveðið að skýrslugjöf ákærða fari fram í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni ákærða og tryggt þykir að hann geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar.</sen>
+            <sen nr="5">Ákærða verður þó ekki gert, gegn vilja sínum, að gefa skýrslu á þann hátt nema ríkar ástæður séu fyrir hendi.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="21">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">4. mgr. 116. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">Nú er vitni statt fjarri þingstað eða það hefði annars sérstakt óhagræði af því að koma fyrir dóm og getur þá dómari ákveðið að skýrsla verði tekin af því á dómþingi í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni vitnis og tryggt þykir að það geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar. Ef sérstaklega stendur á getur dómari þó ákveðið að skýrslutaka fari einungis fram með hljóði enda megi ekki ætla að úrslit máls geti ráðist af framburði vitnis og skýrslutöku verði hagað þannig að viðstaddir heyri orðaskipti við vitnið.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='3']/chapter[@nr='18' and @chapter-type='kafli']/art[@nr='116']/subart[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',116,')]//subart[@nr='4']">4. mgr. 116. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Nú er vitni statt fjarri þingstað eða það hefði annars sérstakt óhagræði af því að koma fyrir dóm og getur þá dómari ákveðið að skýrsla verði tekin af því á dómþingi gegnum síma eða annað fjarskiptatæki, enda verði skýrslutöku hagað þannig að allir sem eru staddir á dómþingi heyri orðaskipti við vitnið.</sen>
+                <sen nr="2">Þessari heimild verður þó ekki beitt ef ætla má að úrslit máls geti ráðist af framburði vitnisins.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Nú er vitni statt fjarri þingstað eða það hefði annars sérstakt óhagræði af því að koma fyrir dóm og getur þá dómari ákveðið að skýrsla verði tekin af því á dómþingi í gegnum fjarfundarbúnað með hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni vitnis og tryggt þykir að það geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar.</sen>
+                <sen nr="2">Ef sérstaklega stendur á getur dómari þó ákveðið að skýrslutaka fari einungis fram með hljóði enda megi ekki ætla að úrslit máls geti ráðist af framburði vitnis og skýrslutöku verði hagað þannig að viðstaddir heyri orðaskipti við vitnið.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="22">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Við 2. mgr. 120. gr. laganna bætist: eða 156. gr. a.</p>
       </original>
+      <intents>
+        <intent action="add_text" action-xpath="superchapter[@nr='3']/chapter[@nr='18' and @chapter-type='kafli']/art[@nr='120']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',120,')]//subart[@nr='2']">2. mgr. 120. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ef ástæða er til boðar dómari vitni á dómþing með skriflegri kvaðningu sem hann gefur út að eigin frumkvæði eða ósk annars hvors aðila.</sen>
+                <sen nr="2">Í kvaðningu skal greint nafn og heimili vitnis, tilefni boðunar í aðalatriðum, nafn dómstóls, hvar og hvenær vitnaleiðslan fer fram og hverjar afleiðingar það geti haft að vitni mæti ekki eða sinni ekki skyldu sinni að öðru leyti.</sen>
+                <sen nr="3">Ákærandi skal sjá um að kvaðning sé birt og skal það gert með sama hætti og birting ákæru skv. 156. gr.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-to>eða 156. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="23">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Við 2. málsl. 1. mgr. 122. gr. laganna bætist: og starfsmann lögreglu aðeins gera grein fyrir auðkennisnúmeri sínu.</p>
       </original>
+      <intents>
+        <intent action="add_text" action-xpath="superchapter[@nr='3']/chapter[@nr='18' and @chapter-type='kafli']/art[@nr='122']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',122,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 122. gr.</address>
+          <existing>
+            <sen nr="2">Dómari lætur lögreglumann þó aðeins gera grein fyrir lögreglunúmeri.</sen>
+          </existing>
+          <text-to>og starfsmann lögreglu aðeins gera grein fyrir auðkennisnúmeri sínu.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="24">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Orðin „endurrit af“ í 1. mgr. 129. gr. laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete_text" action-xpath="superchapter[@nr='3']/chapter[@nr='19' and @chapter-type='kafli']/art[@nr='129']/subart[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',129,')]//subart[@nr='1']">1. mgr. 129. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Matsbeiðandi tilkynnir matsmanni um dómkvaðningu og lætur honum í té endurrit af bókun um hana.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>endurrit af</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="25">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „frumritum eða afritum nauðsynlegra gagna og endurritum úr þingbók“ í 1. mgr. 139. gr. laganna kemur: nauðsynlegum gögnum og þingbók.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='21' and @chapter-type='kafli']/art[@nr='139']/subart[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',139,')]//subart[@nr='1']">1. mgr. 139. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ef gagnaöflun á að fara fram fyrir öðrum dómi hér á landi sendir dómari í málinu hlutaðeigandi dómi skriflegt erindi ásamt beiðni aðila, frumritum eða afritum nauðsynlegra gagna og endurritum úr þingbók.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>frumritum eða afritum nauðsynlegra gagna og endurritum úr þingbók</text-from>
+          <text-to>nauðsynlegum gögnum og þingbók.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="26">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -194,26 +847,90 @@
           <li style="text-align: justify;">8., 9. og 10. málsl. falla brott.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 148. gr.">
+        <intent action="replace" action-xpath="superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',148,')]//subart[@nr='1']//sen[@nr='5']">5. málsl. 1. mgr. 148. gr.</address>
+          <existing>
+            <sen nr="5">Sakborningur undirritar skýrsluna og fær afhent afrit hennar.</sen>
+          </existing>
+          <inner>
+            <sen nr="5">Sakborningur staðfestir skýrsluna og fær afhent eintak hennar.</sen>
+          </inner>
+        </intent>
+        <intent action="delete" action-xpath="superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='8'] | superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='9'] | superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='10']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',148,')]//subart[@nr='1']//sen[@nr='10' or @nr='9' or @nr='8']">8., 9. og 10. málsl. 1. mgr. 148. gr.</address>
+          <existing>
+            <sen nr="8">Rafræn undirritun sakbornings telst fullgild undirritun samkvæmt þessari grein.</sen>
+            <sen nr="9">Hafi skýrsla verið undirrituð rafrænt er lögreglu heimilt að afhenda hana sakborningi með rafrænum hætti.</sen>
+            <sen nr="10">Ráðherra skal kveða nánar á um framkvæmd rafrænnar undirritunar og afhendingar skýrslu í reglugerð.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="27">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „bréflega“ í 2. málsl. 1. mgr. 149. gr. laganna kemur: skriflega.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='149']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',149,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 149. gr.</address>
+          <existing>
+            <sen nr="2">Getur lögreglustjóri þá bréflega, innan mánaðar frá því að honum barst kæran, gefið sakborningi kost á að ljúka málinu með því að gangast undir hæfileg viðurlög ásamt greiðslu sakarkostnaðar.</sen>
+          </existing>
+          <text-from>bréflega</text-from>
+          <text-to>skriflega.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="28">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Á eftir tilvísuninni „156. gr.“ í 1. málsl. 3. mgr. 150. gr. laganna kemur: eða 156. gr. a.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="superchapter[@nr='4']/chapter[@nr='23' and @chapter-type='kafli']/art[@nr='150']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',150,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 150. gr.</address>
+          <existing>
+            <sen nr="1">Sinni sakborningur ekki sektarboði skv. 1. mgr. innan 30 daga eftir að það hefur sannanlega borist honum eða verið birt skv. 156. gr. getur héraðssaksóknari eða lögreglustjóri sent málið héraðsdómara til ákvörðunar sektar og vararefsingar.</sen>
+          </existing>
+          <text-from>156. gr.</text-from>
+          <text-to>eða 156. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="29">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað 2. og 3. málsl. 154. gr. laganna kemur einn nýr málsliður, svohljóðandi: Ákæru á að fylgja skrá yfir gögnin og tilkynning um það hver fari með málið fyrir ákæruvaldið, hvaða vitni það óskar eftir að verði leidd í málinu og hvaða sönnunargagna það telji nauðsynlegt að afla að öðru leyti.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='154']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='154']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',154,')]//sen[@nr='3' or @nr='2']">2. og 3. málsl. 154. gr.</address>
+          <existing>
+            <sen nr="2">Ákæru á að fylgja skrá yfir gögnin og skulu þau vera í nægilega mörgum eintökum.</sen>
+            <sen nr="3">Jafnframt á að fylgja tilkynning um það hver fari með málið fyrir ákæruvaldið, hvaða vitni það óskar eftir að verði leidd í málinu og hvaða sönnunargagna það telji nauðsynlegt að afla að öðru leyti.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Ákæru á að fylgja skrá yfir gögnin og tilkynning um það hver fari með málið fyrir ákæruvaldið, hvaða vitni það óskar eftir að verði leidd í málinu og hvaða sönnunargagna það telji nauðsynlegt að afla að öðru leyti.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="30">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Við 3. mgr. 155. gr. laganna bætist: eða 156. gr. a.</p>
       </original>
+      <intents>
+        <intent action="add_text" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',155,')]//subart[@nr='3']">3. mgr. 155. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Þegar dómari hefur gefið út fyrirkall skv. 1. mgr. sendir hann það ásamt ákæru til ákæranda sem hlutast til um birtingu skv. 156. gr.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-to>eða 156. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="31">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -224,6 +941,34 @@
           <li style="text-align: justify;">1. málsl. 5. mgr. orðast svo: Að birtingu lokinni afhendir ákærandi dómara ákæru ásamt birtingarvottorði eða annarri staðfestingu á birtingu.</li>
         </ol>
       </original>
+      <intents common-address="156. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3'] | superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='5']//sen[@nr='2'] | //art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. og 2. málsl. 5. mgr. 156. gr.</address>
+          <existing>
+            <sen nr="3">Þeim sem ákæra er birt skal afhent afrit af henni.</sen>
+            <sen nr="2">Að þremur sólarhringum liðnum frá birtingu ákæru er ákæranda skylt að láta þeim sem þess óskar í té afrit af henni með þeim takmörkunum sem greindar eru í 1. mgr. 16. gr.</sen>
+          </existing>
+          <text-from>afrit af henni</text-from>
+          <text-to>eintak hennar.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='2']//sen[@nr='4']">4. málsl. 2. mgr. 156. gr.</address>
+          <existing>
+            <sen nr="4">Sé hún birt fyrir öðrum en ákærða sjálfum ber þeim, að viðlagðri sekt, að koma afriti ákæru í hendur hans, en sé þess ekki kostur þá í hendur þess sem telja má líklegastan til að koma afriti til skila í tæka tíð.</sen>
+          </existing>
+          <text-from>afriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 156. gr.</address>
+          <existing>
+            <sen nr="1">Ákærandi skal endursenda dómara ákæru ásamt birtingarvottorði að birtingu lokinni.</sen>
+          </existing>
+          <inner>
+            <sen nr="1">Að birtingu lokinni afhendir ákærandi dómara ákæru ásamt birtingarvottorði eða annarri staðfestingu á birtingu.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="32">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -233,21 +978,119 @@
         <p style="text-align: justify;">Um birtingu ákæra í stafrænu pósthólfi fer að öðru leyti eftir lögum um stafrænt pósthólf í miðlægri þjónustugátt stjórnvalda.</p>
         <p style="text-align: justify;">Ríkissaksóknari setur nánari fyrirmæli um birtingu gagna eftir þessari grein í stafrænu pósthólfi.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='156']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]">156. gr.</address>
+          <existing>
+            <art nr="156">
+              <nr-title>156. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ákæra ásamt fyrirkalli, hér eftir nefnd í einu lagi ákæra, skal birt fyrir ákærða sjálfum, sé þess kostur, en annars fyrir lögmanni hans eða öðrum lögráða manni sem fengið hefur skriflegt umboð frá honum til að taka við birtingu ellegar fyrir heimilismanni eða öðrum sem dvelur eða hittist fyrir á skráðu lögheimili hans.</sen>
+                  <sen nr="2">Þeim sem birt er fyrir er skylt að segja á sér deili.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ákæra skal birt af einum lögreglumanni, fangaverði eða öðrum starfsmanni Fangelsismálastofnunar ellegar stefnuvotti nema hún sé birt á dómþingi af dómara.</sen>
+                  <sen nr="2">Skal sá sem birtingu annast votta hana með áritun á ákæru eða sérstöku vottorði.</sen>
+                  <sen nr="3">Þeim sem ákæra er birt skal afhent afrit af henni.</sen>
+                  <sen nr="4">Sé hún birt fyrir öðrum en ákærða sjálfum ber þeim, að viðlagðri sekt, að koma afriti ákæru í hendur hans, en sé þess ekki kostur þá í hendur þess sem telja má líklegastan til að koma afriti til skila í tæka tíð.</sen>
+                  <sen nr="5">Skal sá sem birtingu annast benda þeim sem birt er fyrir á þessa skyldu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ef óvíst er um dvalarstað ákærða má birta ákæru í Lögbirtingablaði með hæfilegum fyrirvara áður en mál verður þingfest og má sá fyrirvari ekki vera skemmri en einn mánuður.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Við birtingu ákæru skal ákærði spurður hvort hann óski eftir verjanda og þá hverjum ef því er að skipta.</sen>
+                  <sen nr="2">Skal afstöðu ákærða getið í vottorði um birtinguna.</sen>
+                  <sen nr="3">Ákærði getur þó frestað að taka ákvörðun um verjanda þar til mál er þingfest.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Ákærandi skal endursenda dómara ákæru ásamt birtingarvottorði að birtingu lokinni.</sen>
+                  <sen nr="2">Að þremur sólarhringum liðnum frá birtingu ákæru er ákæranda skylt að láta þeim sem þess óskar í té afrit af henni með þeim takmörkunum sem greindar eru í 1. mgr. 16. gr.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="156a">
+              <nr-title>156. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Heimilt er að birta ákæru fyrir ákærða í stafrænu pósthólfi í miðlægri þjónustugátt stjórnvalda og telst hún þá réttilega birt þegar ákærði hefur staðfest móttöku hennar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Við birtingu ákæru í stafrænu pósthólfi skal þess gætt að gefa ákærða kost á að óska eftir verjanda, sbr. 4. mgr. 156. gr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Um birtingu ákæra í stafrænu pósthólfi fer að öðru leyti eftir lögum um stafrænt pósthólf í miðlægri þjónustugátt stjórnvalda.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ríkissaksóknari setur nánari fyrirmæli um birtingu gagna eftir þessari grein í stafrænu pósthólfi.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="33">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af gögnum“ í 2. málsl. 157. gr. laganna kemur: eintak gagna.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='157']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',157,')]//sen[@nr='2']">2. málsl. 157. gr.</address>
+          <existing>
+            <sen nr="2">Dómari sendir verjanda jafnskjótt afrit af gögnum máls og tilkynnir honum hvenær það verði þingfest.</sen>
+          </existing>
+          <text-from>afrit af gögnum</text-from>
+          <text-to>eintak gagna.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="34">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af greinargerð“ í 1. málsl. 1. mgr. 174. gr. laganna kemur: eintak greinargerðar.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='174']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',174,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 174. gr.</address>
+          <existing>
+            <sen nr="1">Ef krafa skv. 1. eða 2. mgr. 172. gr. er höfð uppi í sakamáli skal dómari láta afrit af greinargerð um hana fylgja ákæru ásamt fyrirkalli til birtingar fyrir ákærða.</sen>
+          </existing>
+          <text-from>afrit af greinargerð</text-from>
+          <text-to>eintak greinargerðar.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="35">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af skjölum“ í 1. málsl. 3. mgr. 179. gr. laganna kemur: eintök skjala.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='179']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',179,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 179. gr.</address>
+          <existing>
+            <sen nr="1">Ef varnaraðili sækir þing við þingfestingu máls skulu honum fengin afrit af skjölum þess.</sen>
+          </existing>
+          <text-from>afrit af skjölum</text-from>
+          <text-to>eintök skjala.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="36">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -258,11 +1101,51 @@
           <li style="text-align: justify;">Við 4. málsl. 3. mgr. bætist: eða 156. gr. a.</li>
         </ol>
       </original>
+      <intents common-address="185. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='28' and @chapter-type='kafli']/art[@nr='185']/subart[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',185,')]//subart[@nr='2']">2. mgr. 185. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Endurrit af dómi eða úrskurði skal að öðru jöfnu vera til reiðu við uppkvaðningu hans.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Endurrit af dómi eða úrskurði</text-from>
+          <text-to>Eintak dóms eða úrskurðar.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='28' and @chapter-type='kafli']/art[@nr='185']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='4']/chapter[@nr='28' and @chapter-type='kafli']/art[@nr='185']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',185,')]//subart[@nr='3']//sen[@nr='2' or @nr='1']">1. og 2. málsl. 3. mgr. 185. gr.</address>
+          <existing>
+            <sen nr="1">Ef ákærði sækir þing við uppkvaðningu dóms telst dómurinn birtur fyrir honum, enda standi honum þegar til boða endurrit dómsins.</sen>
+            <sen nr="2">Þó nægir að lesa upp dómsorð ef mál hefur verið dæmt skv. 1. mgr. 164. gr. en þá skal endurrit dómsins liggja fyrir innan viku frá uppkvaðningu hans.</sen>
+          </existing>
+          <text-from>endurrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+        <intent action="add_text" action-xpath="superchapter[@nr='4']/chapter[@nr='28' and @chapter-type='kafli']/art[@nr='185']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',185,')]//subart[@nr='3']//sen[@nr='4']">4. málsl. 3. mgr. 185. gr.</address>
+          <existing>
+            <sen nr="4">Fer þá um birtingu dóms eftir því sem segir í 156. gr.</sen>
+          </existing>
+          <text-to>eða 156. gr. a.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="37">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „endurrit“ tvívegis í 2. málsl. 3. mgr. 186. gr. laganna kemur: eintak.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='28' and @chapter-type='kafli']/art[@nr='186']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',186,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 186. gr.</address>
+          <existing>
+            <sen nr="2">Dómara er þó heimilt að leiðrétta ritvillur, reikningsskekkjur, nafnskekkjur og aðrar bersýnilegar villur í dómi, enda láti hann aðilum sem hafa fengið endurrit af dómi í té nýtt endurrit án tafar.</sen>
+          </existing>
+          <text-from>endurrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="38">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -272,6 +1155,34 @@
           <li style="text-align: justify;">Í stað orðanna „afrit af gögnum“ í c-lið kemur: gögn.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 192. gr.">
+        <intent action="prepend_text" action-xpath="superchapter[@nr='5']/chapter[@nr='30' and @chapter-type='kafli']/art[@nr='192']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',192,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 1. mgr. 192. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">hvort loka eigi þinghaldi, synja brotaþola eða fyrirsvarsmanni hans um að vera viðstaddur eða fylgjast með lokuðu þinghaldi eftir að brotaþoli hefur gefið skýrslu eða leggja bann við opinberri frásögn af því sem þar fer fram,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>hvort loka eigi</text-from>
+          <text-to>hvort ákærði eða sakborningur taki þátt í þinghaldi í gegnum fjarfundarbúnað.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='30' and @chapter-type='kafli']/art[@nr='192']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',192,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='c' or @nr='C']">c-lið 1. mgr. 192. gr.</address>
+          <existing>
+            <numart nr="c" nr-type="alphabet">
+              <nr-title>c.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">synjun um að láta af hendi afrit af gögnum eða veita leyfi til að hlýða á upptöku úr þinghaldi,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>afrit af gögnum</text-from>
+          <text-to>gögn.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="39">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -282,16 +1193,62 @@
           <li style="text-align: justify;">Í stað orðanna „afrit af greinargerðinni og nýjum gögnum“ í 2. málsl. 3. mgr. kemur: eintak greinargerðarinnar og nýrra gagna.</li>
         </ol>
       </original>
+      <intents common-address="194. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='30' and @chapter-type='kafli']/art[@nr='194']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',194,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 194. gr.</address>
+          <existing>
+            <sen nr="3">Að öðrum kosti sendir héraðsdómari kæruna til Landsréttar svo fljótt sem verða má ásamt endurritum úr þingbók og öðrum gögnum málsins sem varða kæruefnið nema hann telji rétt að fella sjálfur úrskurð sinn úr gildi.</sen>
+          </existing>
+          <text-from>endurritum úr þingbók</text-from>
+          <text-to>þingbók.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='30' and @chapter-type='kafli']/art[@nr='194']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',194,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 194. gr.</address>
+          <existing>
+            <sen nr="4">Gögnin sendir héraðsdómari á því formi eða í þeim fjölda eintaka sem Landsréttur ákveður ásamt athugasemdum sínum ef hann vill.</sen>
+          </existing>
+          <text-from>á því formi eða í þeim fjölda eintaka sem Landsréttur ákveður</text-from>
+          <text-to>Landsrétti.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='30' and @chapter-type='kafli']/art[@nr='194']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',194,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 194. gr.</address>
+          <existing>
+            <sen nr="2">Aðili skal samhliða því senda gagnaðila sínum afrit af greinargerðinni og nýjum gögnum, enda hafi ekki verið farið með málið fyrir héraðsdómi án þess að honum væri kunngert það.</sen>
+          </existing>
+          <text-from>afrit af greinargerðinni og nýjum gögnum</text-from>
+          <text-to>eintak greinargerðarinnar og nýrra gagna.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="40">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðsins „bréflegri“ í 1. málsl. 2. mgr. 199. gr. laganna kemur: skriflegri.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='199']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',199,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 199. gr.</address>
+          <existing>
+            <sen nr="1">Ákærði skal lýsa yfir áfrýjun héraðsdóms í bréflegri tilkynningu sem berast verður ríkissaksóknara innan fjögurra vikna frá birtingu dómsins, hafi birtingar verið þörf skv. 3. mgr. 185. gr., en ella innan fjögurra vikna frá uppkvaðningu hans.</sen>
+          </existing>
+          <text-from>bréflegri</text-from>
+          <text-to>skriflegri.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="41">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „endurriti af héraðsdómi “ í 1. málsl. 5. mgr. 201. gr. laganna kemur: eintaki héraðsdóms.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='201']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',201,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 201. gr.</address>
+          <existing>
+            <sen nr="1">Að því búnu sem að framan greinir sendir ríkissaksóknari Landsrétti áfrýjunarstefnuna með sönnun fyrir birtingu hennar ásamt endurriti af héraðsdómi og tilkynningu ákærða um áfrýjun ef því er að skipta.</sen>
+          </existing>
+          <text-from>endurriti af héraðsdómi</text-from>
+          <text-to>eintaki héraðsdóms.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="42">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -302,11 +1259,50 @@
           <li style="text-align: justify;">Í stað orðanna „Landsréttur setur“ í 3. mgr. kemur: Landsrétti er heimilt að setja.</li>
         </ol>
       </original>
+      <intents common-address="202. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='202']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',202,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 202. gr.</address>
+          <existing>
+            <sen nr="1">Þegar ríkissaksóknara hafa borist dómsgerðir skv. 1. mgr. og verjandi hefur verið skipaður skal ríkissaksóknari í samráði við verjanda búa til málsgögn en til þeirra teljast endurrit, sem og hljóðupptökur af munnlegum framburði fyrir héraðsdómi og afrit þeirra málsskjala sem aðilarnir telja þörf á við úrlausn málsins eins og áfrýjun er háttað.</sen>
+          </existing>
+          <text-from>endurrit, sem og hljóðupptökur af munnlegum framburði fyrir héraðsdómi og afrit þeirra málsskjala</text-from>
+          <text-to>dómur, úrskurðir og þingbók sem og hljóðupptökur og uppritun af munnlegum framburði fyrir héraðsdómi og þau málskjöl.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='202']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',202,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 202. gr.</address>
+          <existing>
+            <sen nr="3">Landsrétti skulu síðan afhent málsgögn í þeim fjölda eintaka sem hann telur þörf á, svo og dómsgerðir.</sen>
+          </existing>
+          <text-from>í þeim fjölda eintaka sem hann telur þörf á</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='202']/subart[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',202,')]//subart[@nr='3']">3. mgr. 202. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Landsréttur setur nánari reglur um frágang málsgagna og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Landsréttur setur</text-from>
+          <text-to>Landsrétti er heimilt að setja.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="43">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af henni, svo og af gögnum sem fylgja henni“ í 4. málsl. 1. mgr. 203. gr. laganna kemur: eintak hennar, sem og eintak af gögnum sem fylgja henni.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='31' and @chapter-type='kafli']/art[@nr='203']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',203,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 203. gr.</address>
+          <existing>
+            <sen nr="4">Þegar greinargerð er skilað til Landsréttar skal sá sem það gerir senda öðrum þeim sem að framan er getið afrit af henni, svo og af gögnum sem fylgja henni.</sen>
+          </existing>
+          <text-from>afrit af henni, svo og af gögnum sem fylgja henni</text-from>
+          <text-to>eintak hennar, sem og eintak af gögnum sem fylgja henni.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="44">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -317,21 +1313,78 @@
           <li style="text-align: justify;">Í stað orðanna „afrit af greinargerðinni“ í 2. málsl. 3. mgr. kemur: eintak greinar­gerðarinnar.</li>
         </ol>
       </original>
+      <intents common-address="213. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='32' and @chapter-type='kafli']/art[@nr='213']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',213,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 213. gr.</address>
+          <existing>
+            <sen nr="2">Að öðrum kosti sendir dómsformaður kæruna til Hæstaréttar svo fljótt sem verða má ásamt endurritum úr þingbók og öðrum gögnum málsins sem varða kæruefnið nema Landsréttur telji rétt að fella sjálfur úrskurð sinn úr gildi.</sen>
+          </existing>
+          <text-from>endurritum úr þingbók</text-from>
+          <text-to>þingbók.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='5']/chapter[@nr='32' and @chapter-type='kafli']/art[@nr='213']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',213,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 213. gr.</address>
+          <existing>
+            <sen nr="3">Gögnin sendir Landsréttur, ásamt athugasemdum ef Landsréttur svo kýs, í þeim fjölda eintaka sem Hæstiréttur mælir fyrir um.</sen>
+          </existing>
+          <inner>
+            <sen nr="3">Gögnin sendir Landsréttur til Hæstaréttar, ásamt athugasemdum ef Landsréttur svo kýs.</sen>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='32' and @chapter-type='kafli']/art[@nr='213']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',213,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 213. gr.</address>
+          <existing>
+            <sen nr="2">Aðili skal samhliða því senda gagnaðila sínum afrit af greinargerðinni, enda hafi ekki verið farið með málið fyrir héraðsdómi án þess að honum væri kunngert það.</sen>
+          </existing>
+          <text-from>afrit af greinargerðinni</text-from>
+          <text-to>eintak greinargerðarinnar.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="45">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „endurrit dóms“ í 1. málsl. 3. mgr. 214. gr. laganna kemur: eintak dómsins.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='32' and @chapter-type='kafli']/art[@nr='214']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',214,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 214. gr.</address>
+          <existing>
+            <sen nr="1">Að gengnum dómi sendir Hæstiréttur Landsrétti og eftir atvikum héraðsdómara endurrit dóms.</sen>
+          </existing>
+          <text-from>endurrit dóms</text-from>
+          <text-to>eintak dómsins.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="46">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „endurrit af dómi“ í 3. málsl. 3. mgr. 217. gr. laganna kemur: eintak dóms.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='217']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',217,')]//subart[@nr='3']//sen[@nr='3']">3. málsl. 3. mgr. 217. gr.</address>
+          <existing>
+            <sen nr="3">Umsóknin verður að berast réttinum innan fjögurra vikna frá uppkvaðningu landsréttardóms, svo og endurrit af dómi Landsréttar.</sen>
+          </existing>
+          <text-from>endurrit af dómi</text-from>
+          <text-to>eintak dóms.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="47">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „endurriti af dómi“ í 1. málsl. 5. mgr. 218. gr. laganna kemur: eintaki dóms.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='218']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',218,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 218. gr.</address>
+          <existing>
+            <sen nr="1">Að því búnu sem að framan greinir sendir ríkissaksóknari Hæstarétti áfrýjunarstefnuna með sönnun fyrir birtingu hennar ásamt endurriti af dómi á fyrra dómstigi og tilkynningu ákærða um áfrýjun ef því er að skipta.</sen>
+          </existing>
+          <text-from>endurriti af dómi</text-from>
+          <text-to>eintaki dóms.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="48">
       <original affected-law-nr="88" affected-law-year="2008">
@@ -342,11 +1395,50 @@
           <li style="text-align: justify;">Í stað orðanna „Hæstiréttur setur“ í 3. mgr. kemur: Hæstarétti er heimilt að setja.</li>
         </ol>
       </original>
+      <intents common-address="219. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='219']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',219,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 219. gr.</address>
+          <existing>
+            <sen nr="1">Þegar ríkissaksóknara hafa borist dómsgerðir skv. 1. mgr. og verjandi hefur verið skipaður skal ríkissaksóknari í samráði við verjanda annast frágang málsgagna en til þeirra teljast afrit þeirra málsskjala og endurrita sem aðilarnir telja þörf á við úrlausn málsins eins og áfrýjun er háttað.</sen>
+          </existing>
+          <text-from>afrit þeirra málsskjala og endurrita</text-from>
+          <text-to>þau málskjöl, dómur, úrskurðir, þingbók og uppritanir.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='219']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',219,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 219. gr.</address>
+          <existing>
+            <sen nr="2">Hæstarétti skulu síðan afhent málsgögn í þeim fjölda eintaka sem hann telur þörf á, svo og dómsgerðir.</sen>
+          </existing>
+          <text-from>í þeim fjölda eintaka sem hann telur þörf á</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='219']/subart[@nr='3']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',219,')]//subart[@nr='3']">3. mgr. 219. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Hæstiréttur setur nánari reglur um frágang málsgagna og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Hæstiréttur setur</text-from>
+          <text-to>Hæstarétti er heimilt að setja.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="49">
       <original affected-law-nr="88" affected-law-year="2008">
         <p style="text-align: justify;">Í stað orðanna „afrit af henni, svo og af gögnum sem fylgja henni“ í 4. málsl. 1. mgr. 220. gr. laganna kemur: eintak hennar, sem og eintak af gögnum sem fylgja henni.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='5']/chapter[@nr='33' and @chapter-type='kafli']/art[@nr='220']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2008">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',220,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 220. gr.</address>
+          <existing>
+            <sen nr="4">Þegar greinargerð er skilað til Hæstaréttar skal sá sem það gerir senda öðrum þeim sem að framan er getið afrit af henni, svo og af gögnum sem fylgja henni.</sen>
+          </existing>
+          <text-from>afrit af henni, svo og af gögnum sem fylgja henni</text-from>
+          <text-to>eintak hennar, sem og eintak af gögnum sem fylgja henni.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -359,11 +1451,74 @@
         <p style="text-align: justify;">3. Gagn sem miðlað er á stafrænu eða rafrænu formi telst komið til viðtakanda þegar það er aðgengilegt þannig að unnt sé að kynna sér efni þess. Gagn þarf ekki jafnframt að afhenda á pappírs­formi.</p>
         <p style="text-align: justify;">4. Gögn sem birta skal eftir fyrirmælum XIII. kafla skulu, þrátt fyrir þessa grein, birt á því formi og á þann hátt sem þar er lýst.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="superchapter[@nr='1']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]">1. gr.</address>
+          <existing>
+            <art nr="1">
+              <nr-title>1. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">1.</sen>
+                  <sen nr="2">Lög þessi taka til dómsmála sem hvorki sæta sérstakri meðferð eftir fyrirmælum annarra laga né eiga undir sérdómstóla lögum samkvæmt.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">2.</sen>
+                  <sen nr="2">Í héraði eiga mál samkvæmt lögum þessum undir hina reglulegu héraðsdómstóla eftir löggjöf um skipan dómsvalds í héraði.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <art nr="1a">
+              <nr-title>1. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">1.</sen>
+                  <sen nr="2">Tilkynningu eða gagni sem á grundvelli laga þessara er afhent eða sent á milli þeirra sem aðkomu eiga að máli er heimilt að miðla á rafrænu eða stafrænu formi, enda leiki ekki vafi á uppruna þess eða frá hverjum það stafar.</sen>
+                  <sen nr="3">Dómari getur ákveðið að frumrit gagns verði lagt fram í dómi telji hann það nauðsynlegt, svo sem fyrir sönnunarfærslu málsins.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">2.</sen>
+                  <sen nr="2">Þegar lög þessi eða venja áskilja áritun, undirritun, staðfestingu eða vottun telst slíkum áskilnaði fullnægt með rafrænni staðfestingu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">3.</sen>
+                  <sen nr="2">Gagn sem miðlað er á stafrænu eða rafrænu formi telst komið til viðtakanda þegar það er aðgengilegt þannig að unnt sé að kynna sér efni þess.</sen>
+                  <sen nr="3">Gagn þarf ekki jafnframt að afhenda á pappírsformi.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">4.</sen>
+                  <sen nr="2">Gögn sem birta skal eftir fyrirmælum XIII. kafla skulu, þrátt fyrir þessa grein, birt á því formi og á þann hátt sem þar er lýst.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="51">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „endurrit af málsskjölum“ í 2. málsl. 4. mgr. 6. gr. laganna kemur: eintak málsskjala.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='4']//sen[@nr='2']">2. málsl. 4. mgr. 6. gr.</address>
+          <existing>
+            <sen nr="2">Þótt dómari hafi vikið sæti ber honum að gera ráðstafanir sem eru nauðsynlegar til að halda máli í réttu horfi þar til annar dómari tekur við því.</sen>
+          </existing>
+          <text-from>endurrit af málsskjölum</text-from>
+          <text-to>eintak málsskjala.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="52">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -371,11 +1526,96 @@
         <p style="text-align: justify;">4. Dómari getur heimilað þátttöku í þinghaldi í gegnum fjarfundarbúnað, enda verði því háttað þannig að allir sem viðstaddir eru geti fylgst með því sem fram fer. Telst það fullnægjandi mæting af hálfu málsaðila.</p>
         <p style="text-align: justify;">5. Dómstólasýslan setur leiðbeinandi reglur um fjarþinghöld, þar á meðal um skýrslugjöf fyrir dómi.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]">8. gr.</address>
+          <existing>
+            <art nr="8">
+              <nr-title>8. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">1.</sen>
+                  <sen nr="2">Þinghöld skulu háð í heyranda hljóði.</sen>
+                  <sen nr="3">Hvort sem aðili krefst þess eða ekki getur dómari þó ákveðið að þinghald fari fram fyrir luktum dyrum ef það er háð utan reglulegs þingstaðar eða hann telur það nauðsynlegt:</sen>
+                  <numart nr="a" nr-type="alphabet">
+                    <nr-title>a.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">til hlífðar aðila, vandamanni aðila, vitni eða öðrum sem málið varðar,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="b" nr-type="alphabet">
+                    <nr-title>b.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">vegna nauðsynjar aðila, vitnis eða annars sem málið varðar á því að halda leyndum atriðum varðandi hagsmuni í viðskiptum eða samsvarandi aðstöðu,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="c" nr-type="alphabet">
+                    <nr-title>c.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">vegna hagsmuna almennings eða ríkisins,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="d" nr-type="alphabet">
+                    <nr-title>d.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">af velsæmisástæðum,</sen>
+                    </paragraph>
+                  </numart>
+                  <numart nr="e" nr-type="alphabet">
+                    <nr-title>e.</nr-title>
+                    <paragraph nr="1">
+                      <sen nr="1">til að halda uppi þingfriði.</sen>
+                    </paragraph>
+                  </numart>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">2.</sen>
+                  <sen nr="2">Bókað skal um ákvörðun dómara um lokun þinghalds og greint frá því af hverri ástæðu hún hafi verið tekin.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">3.</sen>
+                  <sen nr="2">Þótt þinghald sé háð í heyranda hljóði er dómara rétt að takmarka fjölda áheyrenda við þá sem rúmast á þingstað með góðu móti.</sen>
+                  <sen nr="3">Dómari getur einnig meinað þeim aðgang sem eru yngri en 15 ára eða þannig á sig komnir að návist þeirra samræmist ekki góðri reglu við þinghald.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Dómari getur heimilað þátttöku í þinghaldi í gegnum fjarfundarbúnað, enda verði því háttað þannig að allir sem viðstaddir eru geti fylgst með því sem fram fer.</sen>
+                <sen nr="3">Telst það fullnægjandi mæting af hálfu málsaðila.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Dómstólasýslan setur leiðbeinandi reglur um fjarþinghöld, þar á meðal um skýrslugjöf fyrir dómi.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="53">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „undirrita heit í þingbók“ í 3. málsl. 2. mgr. 10. gr. laganna kemur: staðfesta heit.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 10. gr.</address>
+          <existing>
+            <sen nr="3">Dómari kveður þó til löggiltan dómtúlk ef það leiðir af samningi við erlent ríki.</sen>
+          </existing>
+          <text-from>undirrita heit í þingbók</text-from>
+          <text-to>staðfesta heit.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="54">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -387,6 +1627,41 @@
           <li style="text-align: justify;">Í stað orðsins „undirrita“ í 5. málsl. 2. mgr. kemur: staðfesta.</li>
         </ol>
       </original>
+      <intents common-address="11. gr.">
+        <intent action="append_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 11. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>Við</text-from>
+          <text-to>Hæstarétt.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 11. gr.</address>
+          <existing>
+            <sen nr="2">Við Landsrétt og hvern héraðsdómstól skulu vera þingbækur til afnota í einkamálum.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Það sem skráð er í þingbók skal varðveita þannig að það sé öruggt og aðgengilegt.</sen>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='2']//sen[@nr='4']">4. málsl. 2. mgr. 11. gr.</address>
+          <existing>
+            <sen nr="4">Einnig er rétt að bóka um yfirlýsingar af hendi aðila sem hafa ekki komið fram skriflega.</sen>
+          </existing>
+          <text-from>undirritar</text-from>
+          <text-to>staðfestir.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='2']//sen[@nr='5']">5. málsl. 2. mgr. 11. gr.</address>
+          <existing>
+            <sen nr="5">Ef önnur ákvæði þessara laga mæla ekki fyrir um að bókað verði um tiltekin atriði ákveður dómari að öðru leyti hvað verði skráð í þingbók og undirritar það sem hefur verið bókað að loknu þinghaldi.</sen>
+          </existing>
+          <text-from>undirrita</text-from>
+          <text-to>staðfesta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="55">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -396,6 +1671,40 @@
           <li style="text-align: justify;">Á eftir orðunum „skrá við“ í 2. mgr. kemur: Hæstarétt.</li>
         </ol>
       </original>
+      <intents common-address="12. gr.">
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='1']">1. mgr. 12. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Við Landsrétt og hvern héraðsdómstól skal haldin dómabók sem hefur að geyma dóma, svo og úrskurði sem fela í sér niðurstöðu máls, undirritaða af dómara.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Við Hæstarétt, Landsrétt og hvern héraðsdómstól skal haldin dómabók sem hefur að geyma dóma, svo og úrskurði eftir því sem við á, sem fela í sér niðurstöðu máls, staðfesta af dómara.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="append_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='2']">2. mgr. 12. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Enn fremur skal halda skrá við Landsrétt og hvern héraðsdómstól yfir þau mál sem koma til úrlausnar eftir þessum lögum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>skrá við</text-from>
+          <text-to>Hæstarétt.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="56">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -405,6 +1714,38 @@
           <li style="text-align: justify;">Í stað orðins „myndrit“ tvívegis í 2. málsl. og einu sinni í 3. málsl. 2. mgr. kemur: annað eintak.</li>
         </ol>
       </original>
+      <intents common-address="13. gr.">
+        <intent action="replace" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//sen[@nr='3' or @nr='2']">2. og 3. málsl. 1. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="2">Skjöl, sem eru lögð fram í dómi, skulu vera í frumriti séu þau tiltæk.</sen>
+            <sen nr="3">Þau skulu merkt í áframhaldandi töluröð og vottuð um framlagningu.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Þau skulu staðfest af dómstól um framlagningu.</sen>
+            <sen nr="3">Sá sem leggur fram skjal skal afhenda dómara og aðilum máls eintak þess.</sen>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2'] | superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//sen[@nr='2']">2. málsl. 13. gr.</address>
+          <existing>
+            <sen nr="2">Skjöl, sem eru lögð fram í dómi, skulu vera í frumriti séu þau tiltæk.</sen>
+            <sen nr="2">Framlögð skjöl skulu varðveitt í skjalasafni hlutaðeigandi dómstóls þar til þau verða afhent Þjóðskjalasafni.</sen>
+            <sen nr="2">Öðrum en aðila máls verður ekki afhent frumrit skjals nema með samþykki þess sem lagði það fram, sbr. þó 3. mgr. 69. gr.</sen>
+            <sen nr="2">Dómabækur, þingbækur, framlögð skjöl og hljóð- og myndupptökur skal varðveita í skjalasafni hlutaðeigandi dómstóls þar til þau verða afhent Þjóðskjalasafni.</sen>
+          </existing>
+          <text-from>myndrit</text-from>
+          <text-to>annað eintak.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 13. gr.</address>
+          <existing>
+            <sen nr="3">Ef aðili, sem hefur lagt fram skjal, þarf á því að halda þegar máli er lokið skal afhenda honum frumrit þess eða myndrit, en sé frumrit látið af hendi skal myndrit varðveitt í þess stað.</sen>
+          </existing>
+          <text-from>myndrit</text-from>
+          <text-to>annað eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="57">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -418,6 +1759,69 @@
           <li style="text-align: justify;">Orðið „eftirrits“ í 1. málsl. 6. mgr. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="14. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='1']">1. mgr. 14. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Meðan mál er rekið fyrir æðra dómi eða héraðsdómi er dómara eða eftir atvikum dómsformanni skylt gegn greiðslu gjalds að láta þeim sem hafa lögvarinna hagsmuna að gæta í té staðfest eftirrit af málsskjölum og úr þingbók eða dómabók, svo fljótt sem við verður komið og ekki síðar en innan mánaðar frá því þess er óskað.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>eftirrit af málsskjölum og úr þingbók eða dómabók</text-from>
+          <text-to>eintak málsskjala og eintök úr þingbók eða dómabók.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='2']">2. mgr. 14. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Áður en endurrit úr þingbókum og dómabókum eða eftirrit málsskjala eru afhent öðrum en aðilum máls skal ef sérstök ástæða er til afmá úr þeim atriði sem eðlilegt er að leynt fari með tilliti til almanna- eða einkahagsmuna.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>endurrit“ og „eftirrit</text-from>
+          <text-to>eintök.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 14. gr.</address>
+          <existing>
+            <sen nr="1">3.</sen>
+          </existing>
+          <text-from>afrit</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='3']//sen[@nr='3']">3. málsl. 3. mgr. 14. gr.</address>
+          <existing>
+            <sen nr="3">Eftir þann tíma má verða við ósk þess efnis ef sérstakar ástæður mæla með því.</sen>
+          </existing>
+          <text-from>afrita af hljóðupptökum</text-from>
+          <text-to>hljóðupptaka.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='5']">5. mgr. 14. gr.</address>
+          <existing>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Telji dómari óheimilt eða óskylt að verða við ósk um eftirrit eða leyfi til að hlýða eða horfa á upptöku kveður hann upp úrskurð um það ef þess er krafist.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>eftirrit</text-from>
+          <text-to>afhendingu.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='14']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]//subart[@nr='6']//sen[@nr='1']">1. málsl. 6. mgr. 14. gr.</address>
+          <existing>
+            <sen nr="1">6.</sen>
+          </existing>
+          <text-from>eftirrits</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="58">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -429,37 +1833,222 @@
           <li style="text-align: justify;">Á undan orðunum „form og frágang“ í g-lið kemur: rafræna staðfestingu, sem og afhend­ingar­máta.</li>
         </ol>
       </original>
+      <intents common-address="2. mgr. 15. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']">2. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Dómstólasýslan setur nánari reglur um eftirfarandi atriði fyrir Landsrétt og héraðsdómstóla:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">málaskrár,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">þingbækur, þar á meðal rafræna færslu þeirra,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">búnað til hljóð- og myndupptöku í þinghöldum,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">dómabækur,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">varðveislu málsskjala og hljóð- og myndupptaka,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">aðgang almennings að endurritum af dómum og úr þingbók, svo og að framlögðum skjölum, þ.m.t. um brottnám upplýsinga úr þeim, eftir að máli hefur verið endanlega lokið,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="g" nr-type="alphabet">
+                  <nr-title>g.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">form og frágang dómskjala, þar á meðal hámarkslengd stefnu og greinargerðar stefnda.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>Dómstólasýslan setur nánari reglur um eftirfarandi atriði fyrir</text-from>
+          <text-to>Að höfðu samráði við hlutaðeigandi dómstig setur dómstólasýslan nánari reglur um eftirfarandi atriði fyrir Hæstarétt.</text-to>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 2. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">þingbækur, þar á meðal rafræna færslu þeirra,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>þar á meðal rafræna færslu þeirra</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='f']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='f' or @nr='F']">f-lið 2. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="f" nr-type="alphabet">
+              <nr-title>f.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">aðgang almennings að endurritum af dómum og úr þingbók, svo og að framlögðum skjölum, þ.m.t. um brottnám upplýsinga úr þeim, eftir að máli hefur verið endanlega lokið,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>endurritum af dómum og úr þingbók</text-from>
+          <text-to>dómum og þingbókum.</text-to>
+        </intent>
+        <intent action="prepend_text" action-xpath="superchapter[@nr='1']/chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='g']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='g' or @nr='G']">g-lið 2. mgr. 15. gr.</address>
+          <existing>
+            <numart nr="g" nr-type="alphabet">
+              <nr-title>g.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">form og frágang dómskjala, þar á meðal hámarkslengd stefnu og greinargerðar stefnda.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>form og frágang</text-from>
+          <text-to>rafræna staðfestingu, sem og afhendingarmáta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="59">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">4. mgr. 51. gr. laganna orðast svo:</p>
         <p style="text-align: justify;">4. Ef vitni er statt fjarri þingstað, það hefði sérstakt óhagræði af því að koma fyrir dóm eða það er til þess fallið að greiða fyrir meðferð málsins að öðru leyti, getur dómari ákveðið að skýrsla verði tekin af því á dómþingi gegnum síma eða annað fjarskiptatæki, eftir atvikum í hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni vitnis og tryggt þykir að það geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar. Skýrslutöku í gegnum fjarfundarbúnað skal hagað þannig að allir sem eru staddir á dómþingi heyri orðaskipti við vitnið.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='2']/chapter[@nr='8' and @chapter-type='kafli']/art[@nr='51']/subart[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',51,')]//subart[@nr='4']">4. mgr. 51. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Nú er vitni statt fjarri þingstað eða það hefði annars sérstakt óhagræði af því að koma fyrir dóm, og getur þá dómari ákveðið að skýrsla verði tekin af því á dómþingi gegnum síma eða annað fjarskiptatæki, enda verði skýrslutöku hagað þannig að allir sem eru staddir á dómþingi heyri orðaskipti við vitnið.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Ef vitni er statt fjarri þingstað, það hefði sérstakt óhagræði af því að koma fyrir dóm eða það er til þess fallið að greiða fyrir meðferð málsins að öðru leyti, getur dómari ákveðið að skýrsla verði tekin af því á dómþingi gegnum síma eða annað fjarskiptatæki, eftir atvikum í hljóði og mynd, enda leiki að mati dómara ekki vafi á auðkenni vitnis og tryggt þykir að það geti gefið skýrslu án utanaðkomandi þrýstings eða truflunar.</sen>
+                <sen nr="3">Skýrslutöku í gegnum fjarfundarbúnað skal hagað þannig að allir sem eru staddir á dómþingi heyri orðaskipti við vitnið.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="60">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Orðin „endurrit af“ í 1. mgr. 62. gr. laganna falla brott.</p>
       </original>
+      <intents>
+        <intent action="delete_text" action-xpath="superchapter[@nr='2']/chapter[@nr='9' and @chapter-type='kafli']/art[@nr='62']/subart[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',62,')]//subart[@nr='1']">1. mgr. 62. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Matsbeiðandi tilkynnir matsmanni um dómkvaðningu og lætur honum í té endurrit af bókun um hana.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>endurrit af</text-from>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="61">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „eftirrit af skjalinu“ í 2. málsl. 4. mgr. 67. gr. laganna kemur: eintak skjalsins.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='10' and @chapter-type='kafli']/art[@nr='67']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',67,')]//subart[@nr='4']//sen[@nr='2']">2. málsl. 4. mgr. 67. gr.</address>
+          <existing>
+            <sen nr="2">Aðili, sem krefst skjals skv. 2. eða 3. mgr., ber sönnunarbyrði fyrir því að skjalið sé til og í vörslum þess sem hann heldur fram.</sen>
+          </existing>
+          <text-from>eftirrit af skjalinu</text-from>
+          <text-to>eintak skjalsins.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="62">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „frumritum eða myndritum nauðsynlegra gagna og endurritum úr“ í 1. mgr. 74. gr. laganna kemur: nauðsynlegum gögnum og.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='2']/chapter[@nr='11' and @chapter-type='kafli']/art[@nr='74']/subart[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',74,')]//subart[@nr='1']">1. mgr. 74. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Ef gagnaöflun á að fara fram fyrir öðrum dómi hér á landi sendir dómari í málinu hlutaðeigandi dómi skriflegt erindi ásamt beiðni aðila, frumritum eða myndritum nauðsynlegra gagna og endurritum úr þingbók.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>frumritum eða myndritum nauðsynlegra gagna og endurritum úr</text-from>
+          <text-to>nauðsynlegum gögnum og.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="63">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">2. mgr. 80. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='80']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',80,')]//subart[@nr='2']">2. mgr. 80. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Ef stefnandi hefur aðeins uppi kröfur í máli sem er unnt að fullnægja með aðför skal eitt eintak stefnu ritað á löggiltan skjalapappír í stærðinni A4 með a.m.k. 4 sm spássíu vinstra megin á framhlið blaðs og hægra megin á bakhlið.</sen>
+                <sen nr="3">Skal þetta eintak afhent dómara aukalega við þingfestingu máls nema sátt sé þá þegar gerð í því eða stefndi samþykkir kröfur stefnanda eða leggur fram greinargerð.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="64">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „undirrita“ í 3. mgr. 81. gr. laganna kemur: staðfesta.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='81']/subart[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',81,')]//subart[@nr='3']">3. mgr. 81. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Áður en stefnuvottur tekur til starfa skal hann undirrita drengskaparheit, sem sýslumaður varðveitir, um að hann muni rækja starfann af trúmennsku og samviskusemi.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>undirrita</text-from>
+          <text-to>staðfesta.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="65">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -470,6 +2059,47 @@
           <li style="text-align: justify;">Í stað orðsins „samrit“ í a-lið 3. mgr. kemur: eintak.</li>
         </ol>
       </original>
+      <intents common-address="83. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='83']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',83,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']">a-lið 1. mgr. 83. gr.</address>
+          <existing>
+            <numart nr="a" nr-type="alphabet">
+              <nr-title>a.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">stefnuvottur eða lögbókandi vottar að hann hafi birt hana fyrir stefnda eða einhverjum sem er bær um að taka við henni í hans stað,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>vottar</text-from>
+          <text-to>staðfestir.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='83']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',83,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">b-lið 1. mgr. 83. gr.</address>
+          <existing>
+            <numart nr="b" nr-type="alphabet">
+              <nr-title>b.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">samrit hennar er sent í ábyrgðarbréfi sem er borið út og póstmaður vottar að hann hafi afhent bréfið stefnda eða öðrum sem er bær um að taka við stefnu í hans stað.</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>samrit hennar er sent í ábyrgðarbréfi sem er borið út og póstmaður vottar</text-from>
+          <text-to>eintak hennar er sent í ábyrgðarbréfi sem er borið út og póstmaður staðfestir.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='83']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',83,')]//subart[@nr='3']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']">a-lið 3. mgr. 83. gr.</address>
+          <existing>
+            <numart nr="a" nr-type="alphabet">
+              <nr-title>a.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">stefndi riti sjálfur undir yfirlýsingu á stefnu um að samrit hennar hafi verið afhent sér,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>samrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="66">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -479,6 +2109,25 @@
           <li style="text-align: justify;">Í stað orðsins „samrit“ tvívegis í 3. málsl. kemur: eintakið.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 84. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='84']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='84']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',84,')]//subart[@nr='1']//sen[@nr='2' or @nr='1']">1. og 2. málsl. 1. mgr. 84. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+            <sen nr="2">Þegar birta á stefnu skv. 1. mgr. 83. gr. afhendir stefnandi þeim sem annast birtingu frumrit hennar ásamt samriti handa hverjum sem á að birta fyrir.</sen>
+          </existing>
+          <text-from>samriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='84']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',84,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 84. gr.</address>
+          <existing>
+            <sen nr="3">Hverju samriti skal fylgja opið umslag merkt með nafni og heimili stefnda og áritað um að það hafi að geyma stefnu í tilteknu máli og hvenær birting megi síðast fara fram til þess að stefnufresti verði náð.</sen>
+          </existing>
+          <text-from>samrit</text-from>
+          <text-to>eintakið.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="67">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -488,41 +2137,146 @@
           <li style="text-align: justify;">Í stað orðsins „samriti“ tvívegis í 3. mgr. kemur: eintaki.</li>
         </ol>
       </original>
+      <intents common-address="86. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 86. gr.</address>
+          <existing>
+            <sen nr="1">2.</sen>
+          </existing>
+          <text-from>samrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='13' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='3']">3. mgr. 86. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Ef stefna er birt fyrir öðrum en stefnda ber þeim manni að viðlagðri sekt að koma samriti stefnu í hendur stefnda, en sé þess ekki kostur þá í hendur þess sem má telja líklegastan til að koma samriti til skila í tæka tíð.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>samriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="68">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „samrits“ og „samrit“ í 93. gr. laganna kemur: eintaks; og: eintak.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='14' and @chapter-type='kafli']/art[@nr='93']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',93,')]">93. gr.</address>
+          <existing>
+            <art nr="93">
+              <nr-title>93. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Mál telst höfðað þegar stefna er birt eða árituð um viðtöku samrits hennar, sbr. 3. mgr. 83. gr., eða stefndi mætir að öðrum kosti fyrir dómi þar sem stefnandi afhendir honum samrit stefnu og þingfestir mál.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </existing>
+          <text-from>samrits“ og „samrit</text-from>
+          <text-to>eintaks; og: eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="69">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „undirrituð“ í 2. málsl. 109. gr. laganna kemur: staðfest.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='15' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',109,')]//sen[@nr='2']">2. málsl. 109. gr.</address>
+          <existing>
+            <sen nr="2">Dómsáttin skal gerð skriflega og undirrituð af aðilum.</sen>
+          </existing>
+          <text-from>undirrituð</text-from>
+          <text-to>staðfest.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="70">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „Endurrit af dómi eða úrskurði“ í 3. málsl. 3. mgr. 115. gr. laganna kemur: Eintak dóms eða úrskurðar.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='16' and @chapter-type='kafli']/art[@nr='115']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',115,')]//subart[@nr='3']//sen[@nr='3']">3. málsl. 3. mgr. 115. gr.</address>
+          <existing>
+            <sen nr="3">Við uppkvaðningu skal lesa upp dómsorð eða úrskurðarorð á dómþingi í heyranda hljóði.</sen>
+          </existing>
+          <text-from>Endurrit af dómi eða úrskurði</text-from>
+          <text-to>Eintak dóms eða úrskurðar.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="71">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „endurrit af dómi þá í té nýtt endurrit“ í 2. málsl. 3. mgr. 116. gr. laganna kemur: eintak dóms þá í té nýtt eintak.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='3']/chapter[@nr='16' and @chapter-type='kafli']/art[@nr='116']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',116,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 116. gr.</address>
+          <existing>
+            <sen nr="2">Dómur er bindandi fyrir dómara þegar hann hefur verið kveðinn upp.</sen>
+          </existing>
+          <text-from>endurrit af dómi þá í té nýtt endurrit</text-from>
+          <text-to>eintak dóms þá í té nýtt eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="72">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „endurrit af skjalinu“ í 1. málsl. 1. mgr. 121. gr. laganna kemur: eintak skjalsins.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='4']/chapter[@nr='18' and @chapter-type='kafli']/art[@nr='121']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',121,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 121. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>endurrit af skjalinu</text-from>
+          <text-to>eintak skjalsins.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="73">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Á eftir orðunum „af endurritum“ í f-lið 1. mgr. 129. gr. laganna kemur: og eintakagerð.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="superchapter[@nr='5']/chapter[@nr='21' and @chapter-type='kafli']/art[@nr='129']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',129,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='f' or @nr='F']">f-lið 1. mgr. 129. gr.</address>
+          <existing>
+            <numart nr="f" nr-type="alphabet">
+              <nr-title>f.</nr-title>
+              <paragraph nr="1">
+                <sen nr="1">kostnaður af endurritum, dómsgerðum og ágripi dómsgerða,</sen>
+              </paragraph>
+            </numart>
+          </existing>
+          <text-from>af endurritum</text-from>
+          <text-to>og eintakagerð.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="74">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „eftirriti“ í 3. málsl. 2. mgr. 145. gr. laganna kemur: eintaki.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='145']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',145,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 145. gr.</address>
+          <existing>
+            <sen nr="3">Vilji kærandi bera ný gögn fyrir sig skal hann greina frá þeim í kæru, svo og því hvað hann hyggst sanna með þeim.</sen>
+          </existing>
+          <text-from>eftirriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="75">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -534,6 +2288,48 @@
           <li>6. mgr. orðast svo:<br/>6. Landsrétti er heimilt að setja reglur um frágang málsgagna aðila í kærumálum.</li>
         </ol>
       </original>
+      <intents common-address="147. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',147,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 147. gr.</address>
+          <existing>
+            <sen nr="1">3.</sen>
+          </existing>
+          <text-from>og í þeim fjölda eintaka sem Landsréttur ákveður</text-from>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',147,')]//subart[@nr='3']//sen[@nr='3']">3. málsl. 3. mgr. 147. gr.</address>
+          <existing>
+            <sen nr="3">Hann skal þá einnig, ef hann kýs, afhenda Landsrétti skriflega greinargerð sem geymi kröfur hans og málsástæður sem byggt er á.</sen>
+          </existing>
+          <text-from>eitt</text-from>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',147,')]//subart[@nr='3']//sen[@nr='4']">4. málsl. 3. mgr. 147. gr.</address>
+          <existing>
+            <sen nr="4">Hann skal samtímis afhenda gagnaðila eitt eintak kærumálsgagna og greinargerðar.</sen>
+          </existing>
+          <text-from>og skulu þau vera í því horfi sem Landsréttur mælir fyrir um</text-from>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='147']/subart[@nr='6']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',147,')]//subart[@nr='6']">6. mgr. 147. gr.</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Landsréttur setur nánari reglur um frágang málsgagna í kærumálum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Landsrétti er heimilt að setja reglur um frágang málsgagna aðila í kærumálum.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="76">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -543,11 +2339,36 @@
           <li style="text-align: justify;">5. málsl. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="148. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',148,')]//sen[@nr='4']">4. málsl. 148. gr.</address>
+          <existing>
+            <sen nr="4">Hann skal samtímis afhenda þeim sem kærði eitt eintak greinargerðar og málsgagna sem henni fylgja.</sen>
+          </existing>
+          <text-from>eitt</text-from>
+        </intent>
+        <intent action="delete" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='148']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',148,')]//sen[@nr='5']">5. málsl. 148. gr.</address>
+          <existing>
+            <sen nr="5">Kjósi gagnaðili að afhenda gögn af sinni hálfu skal það gert í því horfi sem Landsréttur mælir fyrir um.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="77">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „endurrit“ í 1. málsl. 3. mgr. 150. gr. laganna kemur: eintak.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='24' and @chapter-type='kafli']/art[@nr='150']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',150,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. 150. gr.</address>
+          <existing>
+            <sen nr="1">3.</sen>
+          </existing>
+          <text-from>endurrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="78">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -557,6 +2378,24 @@
           <li style="text-align: justify;">Í stað orðsins „bréflega“ í 1. málsl. 5. mgr. kemur: skriflega.</li>
         </ol>
       </original>
+      <intents common-address="154. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='154']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',154,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 154. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>endurriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='154']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',154,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 154. gr.</address>
+          <existing>
+            <sen nr="1">5.</sen>
+          </existing>
+          <text-from>bréflega</text-from>
+          <text-to>skriflega.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="79">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -566,6 +2405,43 @@
           <li style="text-align: justify;">2. mgr. orðast svo:<br/>2. Landsréttur skal halda eftir eintaki áfrýjunarstefnu skv. 1. mgr.</li>
         </ol>
       </original>
+      <intents common-address="155. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='g']/paragraph[@nr='1']/sen[@nr='1'] | superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='h']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',155,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 155. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+            <sen nr="1">heiti og númer sem málið bar fyrir héraðsdómi, fyrir hverjum héraðsdómstóli var leyst úr málinu og hvenær dómur var kveðinn upp í því,</sen>
+            <sen nr="1">nöfn aðila, kennitölu og heimili eða dvalarstað, svo og nöfn fyrirsvarsmanna þeirra, ef því er að skipta, stöðu þeirra og heimili eða dvalarstað,</sen>
+            <sen nr="1">hver eða hverjir flytji málið fyrir áfrýjanda,</sen>
+            <sen nr="1">í hverju skyni áfrýjað er og hverjar dómkröfur áfrýjandi gerir,</sen>
+            <sen nr="1">,</sen>
+            <sen nr="1">hvenær stefndi verði í síðasta lagi að tilkynna Landsrétti að hann hafi í hyggju að halda uppi vörnum í málinu, en skrifstofa Landsréttar ákveður dagsetningu í þessu skyni við útgáfu stefnu; slík dagsetning skal þó ekki ákveðin að sinni ef áfrýjandi óskar eftir leyfi Hæstaréttar til að áfrýja máli beint til Hæstaréttar, sbr. 175. gr.,</sen>
+            <sen nr="1">hverju það varði að stefndi komi ekki fram tilkynningu skv. f-lið,</sen>
+            <sen nr="1">að áfrýjandi óski eftir leyfi Hæstaréttar til að áfrýja máli beint til Hæstaréttar.</sen>
+          </existing>
+          <text-from>endurriti af dóminum</text-from>
+          <text-to>eintaki dómsins.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='155']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',155,')]//subart[@nr='2']">2. mgr. 155. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Afhenda skal skrifstofu Landsréttar tvö eintök af áfrýjunarstefnu sem Landsréttur fær haldið eftir.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Landsréttur skal halda eftir eintaki áfrýjunarstefnu skv. 1. mgr.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="80">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -575,11 +2451,50 @@
           <li style="text-align: justify;">4. mgr. orðast svo:<br/>4. Landsrétti er heimilt að setja nánari reglur um frágang málsgagna aðila og dómsgerða.</li>
         </ol>
       </original>
+      <intents common-address="156. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 156. gr.</address>
+          <existing>
+            <sen nr="2">Eftir birtingu áfrýjunarstefnu en áður en fresti stefnda skv. f-lið 1. mgr. 155. gr. lýkur skal áfrýjandi afhenda Landsrétti stefnuna ásamt sönnun fyrir birtingu hennar, svo og greinargerð af sinni hálfu.</sen>
+          </existing>
+          <text-from>í þeim fjölda eintaka sem Landsréttur ákveður en til þeirra teljast endurrit, þar á meðal</text-from>
+          <text-to>en til þeirra teljast dómur, úrskurðir og þingbók, uppritun.</text-to>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='156']/subart[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',156,')]//subart[@nr='4']">4. mgr. 156. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Landsréttur setur nánari reglur um frágang málsgagna og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Landsrétti er heimilt að setja nánari reglur um frágang málsgagna aðila og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="81">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „bréfleg“ í 1. málsl. 1. mgr. 158. gr. laganna kemur: skrifleg.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='158']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',158,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 158. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>bréfleg</text-from>
+          <text-to>skrifleg.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="82">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -589,6 +2504,31 @@
           <li style="text-align: justify;">3. mgr. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="159. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='159']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',159,')]//subart[@nr='2']">2. mgr. 159. gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Með greinargerð skal stefndi afhenda málsgögn í þeim fjölda eintaka sem Landsréttur ákveður, en til þeirra teljast þau málsskjöl og hljóð- og myndupptökur af munnlegum framburði fyrir héraðsdómi sem hann hyggst byggja mál sitt á fyrir Landsrétti og liggja þegar fyrir, enda hafi áfrýjandi ekki þegar afhent þessi gögn.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>í þeim fjölda eintaka sem Landsréttur ákveður</text-from>
+        </intent>
+        <intent action="delete" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='159']/subart[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',159,')]//subart[@nr='3']">3. mgr. 159. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Ákvæði 4. mgr. 156. gr. gilda um málsgögn stefnda.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="83">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -598,11 +2538,38 @@
           <li style="text-align: justify;">Í stað orðsins „eftirrit“ í 5. málsl. kemur: eintak.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 160. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='160']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',160,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 160. gr.</address>
+          <existing>
+            <sen nr="4">Sá frestur skal að jafnaði ekki vera lengri en einn mánuður.</sen>
+          </existing>
+          <text-from>í frumriti og ljósrit eða eftirrit þeirra</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='25' and @chapter-type='kafli']/art[@nr='160']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',160,')]//subart[@nr='1']//sen[@nr='5']">5. málsl. 1. mgr. 160. gr.</address>
+          <existing>
+            <sen nr="5">Hvor aðili um sig skal afhenda í einu lagi ný gögn sín í frumriti og ljósrit eða eftirrit þeirra í sama búningi og segir í 156. gr. og 159. gr.</sen>
+          </existing>
+          <text-from>eftirrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="84">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „endurriti“ í 3. málsl. 2. mgr. 169. gr. laganna kemur: eintaki.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='169']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',169,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 169. gr.</address>
+          <existing>
+            <sen nr="3">Vilji kærandi bera ný gögn fyrir sig skal hann greina frá þeim í kæru, svo og hvað hann hyggst sanna með þeim.</sen>
+          </existing>
+          <text-from>endurriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="85">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -614,6 +2581,48 @@
           <li>4. mgr. orðast svo:<br/>4. Hæstarétti er heimilt að setja nánari reglur um frágang málsgagna aðila í kærumálum.</li>
         </ol>
       </original>
+      <intents common-address="171. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='171']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',171,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 171. gr.</address>
+          <existing>
+            <sen nr="1">2.</sen>
+          </existing>
+          <text-from>og í þeim fjölda eintaka sem Hæstiréttur ákveður</text-from>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='171']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',171,')]//subart[@nr='2']//sen[@nr='4']">4. málsl. 2. mgr. 171. gr.</address>
+          <existing>
+            <sen nr="4">Hann skal þá einnig afhenda Hæstarétti skriflega greinargerð sem geymi kröfur hans og málsástæður sem byggt er á, svo og rökstuðning fyrir því að taka skuli kæru til meðferðar.</sen>
+          </existing>
+          <text-from>eitt</text-from>
+        </intent>
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='171']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',171,')]//subart[@nr='2']//sen[@nr='5']">5. málsl. 2. mgr. 171. gr.</address>
+          <existing>
+            <sen nr="5">Hann skal samtímis afhenda gagnaðila eða gagnaðilum eitt eintak kærumálsgagna og greinargerðar.</sen>
+          </existing>
+          <text-from>og skulu þau vera í því horfi sem Hæstiréttur mælir fyrir um</text-from>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='171']/subart[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',171,')]//subart[@nr='4']">4. mgr. 171. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Hæstiréttur setur nánari reglur um frágang málsgagna í kærumálum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Hæstarétti er heimilt að setja nánari reglur um frágang málsgagna aðila í kærumálum.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="86">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -623,11 +2632,36 @@
           <li style="text-align: justify;">5. málsl. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="172. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='172']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',172,')]//sen[@nr='4']">4. málsl. 172. gr.</address>
+          <existing>
+            <sen nr="4">Hann skal samtímis afhenda kæranda eitt eintak kærumálsgagna og greinargerðar.</sen>
+          </existing>
+          <text-from>eitt</text-from>
+        </intent>
+        <intent action="delete" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='172']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='5']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',172,')]//sen[@nr='5']">5. málsl. 172. gr.</address>
+          <existing>
+            <sen nr="5">Kjósi gagnaðili að afhenda gögn af sinni hálfu skal það gert í því horfi sem Hæstiréttur mælir fyrir um.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="87">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðanna „endurrit dóms“ í 1. málsl. 4. mgr. 174. gr. laganna kemur: eintak dómsins.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='26' and @chapter-type='kafli']/art[@nr='174']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',174,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 174. gr.</address>
+          <existing>
+            <sen nr="1">4.</sen>
+          </existing>
+          <text-from>endurrit dóms</text-from>
+          <text-to>eintak dómsins.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="88">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -637,12 +2671,51 @@
           <li style="text-align: justify;">Í stað orðsins „bréflega“ í 1. málsl. 5. mgr. kemur: skriflega.</li>
         </ol>
       </original>
+      <intents common-address="178. gr.">
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='178']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',178,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 178. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>endurriti</text-from>
+          <text-to>eintaki.</text-to>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='178']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',178,')]//subart[@nr='5']//sen[@nr='1']">1. málsl. 5. mgr. 178. gr.</address>
+          <existing>
+            <sen nr="1">5.</sen>
+          </existing>
+          <text-from>bréflega</text-from>
+          <text-to>skriflega.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="89">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">2. mgr. 179 gr. laganna orðast svo:</p>
         <p style="text-align: justify;">2. Hæstiréttur skal halda eftir eintaki áfrýjunarstefnu skv. 1. mgr.</p>
       </original>
+      <intents>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='179']/subart[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',179,')]//subart[@nr='2']">2. mgr. 179 gr.</address>
+          <existing>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Afhenda skal skrifstofu Hæstaréttar tvö eintök af áfrýjunarstefnu sem Hæstiréttur fær haldið eftir.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Hæstiréttur skal halda eftir eintaki áfrýjunarstefnu skv. 1. mgr.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="90">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -652,11 +2725,51 @@
           <li style="text-align: justify;">4. mgr. orðast svo:<br/>4. Hæstarétti er heimilt að setja nánari reglur um frágang málsgagna aðila og dóms­gerða.</li>
         </ol>
       </original>
+      <intents common-address="180. gr.">
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='180']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',180,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 180. gr.</address>
+          <existing>
+            <sen nr="2">Eftir birtingu áfrýjunarstefnu, en áður en fresti stefnda skv. e-lið 1. mgr. 179. gr. lýkur, skal áfrýjandi afhenda Hæstarétti stefnuna ásamt sönnun fyrir birtingu hennar, svo og greinargerð af sinni hálfu.</sen>
+          </existing>
+          <inner>
+            <sen nr="2">Einnig skal hann þá skila málsgögnum en til þeirra teljast málsskjöl, dómur, úrskurðir, þingbók og uppritanir sem áfrýjandi hyggst byggja mál sitt á fyrir Hæstarétti og liggja þegar fyrir.</sen>
+          </inner>
+        </intent>
+        <intent action="replace" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='180']/subart[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',180,')]//subart[@nr='4']">4. mgr. 180. gr.</address>
+          <existing>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Hæstiréttur setur nánari reglur um frágang málsgagna og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Hæstarétti er heimilt að setja nánari reglur um frágang málsgagna aðila og dómsgerða.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="91">
       <original affected-law-nr="91" affected-law-year="1991">
         <p style="text-align: justify;">Í stað orðsins „bréfleg“ í 1. málsl. 1. mgr. 182. gr. laganna kemur: skrifleg.</p>
       </original>
+      <intents>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='182']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',182,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 182. gr.</address>
+          <existing>
+            <sen nr="1">1.</sen>
+          </existing>
+          <text-from>bréfleg</text-from>
+          <text-to>skrifleg.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="92">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -667,6 +2780,34 @@
           <li style="text-align: justify;">3. mgr. fellur brott.</li>
         </ol>
       </original>
+      <intents common-address="183. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='183']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',183,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 183. gr.</address>
+          <existing>
+            <sen nr="1">2.</sen>
+          </existing>
+          <text-from>í þeim fjölda eintaka sem Hæstiréttur ákveður</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='183']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',183,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 183. gr.</address>
+          <existing>
+            <sen nr="1">2.</sen>
+          </existing>
+          <text-from>þau málsskjöl og endurrit</text-from>
+          <text-to>málsskjöl, dómur, úrskurðir, þingbók og uppritanir.</text-to>
+        </intent>
+        <intent action="delete" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='183']/subart[@nr='3']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',183,')]//subart[@nr='3']">3. mgr. 183. gr.</address>
+          <existing>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Ákvæði 4. mgr. 180. gr. gilda um málsgögn stefnda.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="93">
       <original affected-law-nr="91" affected-law-year="1991">
@@ -676,6 +2817,23 @@
           <li style="text-align: justify;">Í stað orðsins „eftirrit“ í 7. málsl. kemur: eintak.</li>
         </ol>
       </original>
+      <intents common-address="1. mgr. 184. gr.">
+        <intent action="delete_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='184']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',184,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 184. gr.</address>
+          <existing>
+            <sen nr="4">Sá frestur skal að jafnaði ekki vera lengri en einn mánuður.</sen>
+          </existing>
+          <text-from>í frumriti og ljósrit eða eftirrit þeirra</text-from>
+        </intent>
+        <intent action="replace_text" action-xpath="superchapter[@nr='6']/chapter[@nr='27' and @chapter-type='kafli']/art[@nr='184']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='7']" action-law-nr="91" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',184,')]//subart[@nr='1']//sen[@nr='7']">7. málsl. 1. mgr. 184. gr.</address>
+          <existing>
+            <sen nr="7">Hæstiréttur getur þó heimilað aðila að leggja fram ný gögn eftir lok gagnaöflunar ef ekki var unnt að afla þeirra fyrr eða atvik hafa breyst svo að máli skiptir eftir þann tíma.</sen>
+          </existing>
+          <text-from>eftirrit</text-from>
+          <text-to>eintak.</text-to>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="3" nr-type="roman" roman-nr="III">
@@ -684,11 +2842,24 @@
       <original affected-law-nr="21" affected-law-year="1991">
         <p style="text-align: justify;">Á eftir orðunum „vera skrifleg“ í 1. málsl. 2. mgr. 117. gr. laganna kemur: ýmist stafræn, rafræn eða bréfleg.</p>
       </original>
+      <intents>
+        <intent action="append_text" action-xpath="superchapter[@nr='4']/chapter[@nr='18' and @chapter-type='kafli']/art[@nr='117']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="21" action-law-year="1991">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',117,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 117. gr.</address>
+          <existing>
+            <sen nr="1">Kröfulýsing skal vera skrifleg og tekið fram í hvers þágu hún sé gerð, svo ekki verði um villst.</sen>
+          </existing>
+          <text-from>vera skrifleg</text-from>
+          <text-to>ýmist stafræn, rafræn eða bréfleg.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="95">
       <original affected-law-nr="21" affected-law-year="1991">
         <p>Lög þessi öðlast gildi 1. júlí 2024.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-07-01" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 28. maí 2024.</signed-when>

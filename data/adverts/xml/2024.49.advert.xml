@@ -9,6 +9,80 @@
       <p style="text-align: justify;">Við 8. gr. laganna bætist ný málsgrein, svohljóðandi:</p>
       <p style="text-align: justify;">Ráðherra er heimilt að kveða nánar á um stoðþjónustu í reglugerð, svo sem um aðstoðar­manna­kort fatlaðs fólks og fæðisfé starfsfólks sem matast með notanda.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']" action-law-nr="38" action-law-year="2018">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]">8. gr.</address>
+        <existing>
+          <art nr="8">
+            <nr-title>8. gr.</nr-title>
+            <name>Stoðþjónusta.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fötluðu fólki skal standa til boða stoðþjónusta sem er nauðsynleg þátttöku þess í samfélaginu án aðgreiningar þannig að það standi til jafns við aðra og komið verði í veg fyrir félagslega einangrun þess.</sen>
+                <sen nr="2">Stoðþjónustu þessa skal veita í hverju sveitarfélagi með þeim hætti sem best hentar á hverjum stað.</sen>
+                <sen nr="3">Skal hún miðast við eftirtaldar þarfir:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þarfir fatlaðra einstaklinga fyrir þjónustu sem felst í því að treysta möguleika þeirra til sjálfstæðs heimilishalds og samfélagslegrar þátttöku.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þarfir fatlaðra einstaklinga til hæfingar, endurhæfingar, menntunar og atvinnu, m.a. á grundvelli viðeigandi aðlögunar, svo að þeir geti séð sér farborða og tekið virkan þátt í samfélaginu til jafns við aðra.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þarfir fatlaðra einstaklinga fyrir sérhæfða ráðgjöf, félagslegan stuðning og félagslegt samneyti, þ.m.t. ástundun tómstunda og menningarlífs.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þarfir fatlaðra barna fyrir umönnun og þjálfun ásamt nauðsynlegri þjónustu við fjölskyldur þeirra svo að þær geti búið börnunum örugg og þroskavænleg uppeldisskilyrði.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þarfir fatlaðra foreldra vegna umönnunar og uppeldis barna sinna.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Sveitarfélag eða sveitarfélög sem starfa saman á þjónustusvæði skulu reka þjónustustofnanir til að veita þjónustu samkvæmt lögum þessum ef ekki er mögulegt að veita þjónustuna í almennum úrræðum með viðeigandi aðlögun.</sen>
+                <sen nr="2">Þeim er heimilt að bæta við þjónustustofnunum, sameina þær eða leggja niður starfsemi þeirra.</sen>
+                <sen nr="3">Sé það mat sveitarfélags að ekki sé þörf fyrir þjónustustofnun eða sérúrræði er heimilt að leggja starfsemina niður að fenginni umsögn ráðherra.</sen>
+                <sen nr="4">Sveitarfélag skal afla umsagnar hagsmunasamtaka fatlaðs fólks og eftir atvikum notendaráðs í viðkomandi sveitarfélagi áður en ákvörðun er kynnt ráðherra sem skal innan fjögurra vikna meta hvort hann leggist gegn lokun.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Félagasamtök, sjálfseignarstofnun eða annar einkaaðili sem vill hefja eða taka við þjónustuþætti samkvæmt þessari grein skal áður afla rekstrarleyfis skv. 7. gr.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.088.html#G25" law-nr="88" law-year="2021" law-art="25" nr="1">
+                <footnote-sen>L. 88/2021, 25. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="rekstrarleyfis" instance-num="1"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að kveða nánar á um stoðþjónustu í reglugerð, svo sem um aðstoðarmannakort fatlaðs fólks og fæðisfé starfsfólks sem matast með notanda.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="38" affected-law-year="2018">
@@ -21,11 +95,95 @@
         <li style="text-align: justify;">framkvæmd styrkveitinga, sbr. 25. gr.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='40']/subart[@nr='1']" action-law-nr="38" action-law-year="2018">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',40,')]//subart[@nr='1']">1. mgr. 40. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra setur reglugerðir um nánari framkvæmd laga þessara, þar á meðal um:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1"/>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1"/>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">sérstök húsnæðisúrræði, sbr. 9. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="4" nr-type="numeric">
+                <nr-title>4.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">notendastýrða persónulega aðstoð, sbr. 11. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="5" nr-type="numeric">
+                <nr-title>5.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">starfsemi og aðbúnað á skammtímadvalarstöðum, sbr. 17. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="6" nr-type="numeric">
+                <nr-title>6.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">vistun barna utan heimilis, sbr. 21. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="7" nr-type="numeric">
+                <nr-title>7.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">biðlista, forgangsröðun og úrræði á biðtíma, sbr. 34. gr.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að setja reglugerðir um nánari framkvæmd laga þessara, þar á meðal um:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">stoðþjónustu, sbr. 8. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">stuðningsfjölskyldur, sbr. 15. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">frístundaþjónustu, sbr. 16. gr.,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="4" nr-type="numeric">
+                <nr-title>4.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">framkvæmd styrkveitinga, sbr. 25. gr.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="38" affected-law-year="2018">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-05-29" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 21. maí 2024.</signed-when>
 </advert>

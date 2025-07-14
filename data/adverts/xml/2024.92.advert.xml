@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="fa202b69-5d84-4dd3-a497-d2261c6bf261" year="2024" nr="92" published-date="2024-07-10" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="77" year="2019">77/2019</affected-law>
+  </affected-laws>
   <description>um breytingu á umferðarlögum, nr. 77/2019 (smáfarartæki o.fl.).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 1. mgr. 3. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -11,9 +14,45 @@
         <li style="text-align: justify;">Á eftir 32. tölul. kemur nýr töluliður, svohljóðandi, og breytist röð annarra töluliða sam­kvæmt því:<em>Smáfarartæki:</em>Lítið ökutæki sem er vélknúið og án sætis, telst hvorki létt bif­hjól né reiðhjól og er hannað til aksturs á hraða frá 6 km á klst. upp í 25 km á klst. Undir þessa skilgreiningu fellur t.d. vélknúið hlaupahjól og tvíhjóla ökutæki á einum öxli.</li>
       </ol>
     </original>
+    <intents common-address="1. mgr. 3. gr.">
+      <intent action="delete" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='30']/paragraph[@nr='1']/numart[@nr='c']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='30']//*[self::numart or self::art-chapter][@nr='c' or @nr='C']">C-liður 30. tölul. 1. mgr. 3. gr.</address>
+        <existing>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Annað lítið vélknúið ökutæki sem ekki telst til létts bifhjóls og er hannað til aksturs á hraða frá 6 km á klst. upp í 25 km á klst.</sen>
+              <sen nr="2">Undir þessa skilgreiningu fellur m.a. vélknúið hlaupahjól og tvíhjóla ökutæki á einum öxli.</sen>
+              <sen nr="3">Slíkum farartækjum má ekki aka á akbraut.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='3']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='32']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='1']//numart[@nr='32']">32. tölul. 1. mgr. 3. gr.</address>
+        <existing>
+          <numart nr="32" nr-type="numeric">
+            <nr-title>32.</nr-title>
+            <name>Sérrein:</name>
+            <paragraph nr="1">
+              <sen nr="1">Akrein sem einungis er ætluð ákveðinni tegund umferðar, einni eða fleiri, svo sem akstri hópbifreiða í almenningsakstri, leigubifreiða, ökutækja með ákveðinn lágmarksfjölda farþega, reiðhjóla og léttra bifhjóla í flokki I, sem umferðarmerki gefa til kynna.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="33" nr-type="numeric">
+            <nr-title>33.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Smáfarartæki: Lítið ökutæki sem er vélknúið og án sætis, telst hvorki létt bifhjól né reiðhjól og er hannað til aksturs á hraða frá 6 km á klst. upp í 25 km á klst.</sen>
+              <sen nr="2">Undir þessa skilgreiningu fellur t.d. vélknúið hlaupahjól og tvíhjóla ökutæki á einum öxli.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 42. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -24,9 +63,114 @@
         </li>
       </ol>
     </original>
+    <intents common-address="42. gr.">
+      <intent action="add_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='42']/subart[@nr='5']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',42,')]//subart[@nr='5']">5. mgr. 42. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Í reglugerð sem ráðherra setur skv. 80. gr. skal kveðið á um flutning farþega og farms á reiðhjóli.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-to>og smáfarartæki.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='42']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',42,')]">42. gr.</address>
+        <existing>
+          <art nr="42">
+            <nr-title>42. gr.</nr-title>
+            <name>Sérreglur fyrir reiðhjól.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður skal að jafnaði hjóla í akstursstefnu á hjólastíg eða hjólarein eða hægra megin á akrein þeirri sem lengst er til hægri á akbraut sem er ætluð almennri umferð.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamenn skulu hjóla í einfaldri röð.</sen>
+                <sen nr="2">Þar sem nægilegt rými er mega tveir þó hjóla samhliða ef það er unnt án hættu eða óþæginda fyrir aðra vegfarendur.</sen>
+                <sen nr="3">Ef gefið er merki um framúrakstur mega hjólreiðamenn eigi hjóla samhliða nema aðstæður leyfi eða nauðsyn krefji.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður skal sýna sérstaka aðgát við vegamót og þar sem akbraut og stígar skerast.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður má ekki hanga í öðru ökutæki á ferð eða halda sér í ökumann eða farþega annars ökutækis.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Í reglugerð sem ráðherra setur skv. 80. gr. skal kveðið á um flutning farþega og farms á reiðhjóli.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Ganga skal þannig frá reiðhjóli sem er lagt að eigi stafi hætta eða truflun af.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Ákvæði laga þessara um reiðhjól og hjólreiðamann eiga einnig við um smáfarartæki og ökumann þess, og fer um þau sem slík, nema annað sé tekið fram.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='42']/name[1]" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',42,')]">42. gr.</address>
+        <existing>
+          <art nr="42">
+            <nr-title>42. gr.</nr-title>
+            <name>Sérreglur fyrir reiðhjól.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður skal að jafnaði hjóla í akstursstefnu á hjólastíg eða hjólarein eða hægra megin á akrein þeirri sem lengst er til hægri á akbraut sem er ætluð almennri umferð.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamenn skulu hjóla í einfaldri röð.</sen>
+                <sen nr="2">Þar sem nægilegt rými er mega tveir þó hjóla samhliða ef það er unnt án hættu eða óþæginda fyrir aðra vegfarendur.</sen>
+                <sen nr="3">Ef gefið er merki um framúrakstur mega hjólreiðamenn eigi hjóla samhliða nema aðstæður leyfi eða nauðsyn krefji.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður skal sýna sérstaka aðgát við vegamót og þar sem akbraut og stígar skerast.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður má ekki hanga í öðru ökutæki á ferð eða halda sér í ökumann eða farþega annars ökutækis.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Í reglugerð sem ráðherra setur skv. 80. gr. skal kveðið á um flutning farþega og farms á reiðhjóli.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Ganga skal þannig frá reiðhjóli sem er lagt að eigi stafi hætta eða truflun af.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <name>Sérreglur fyrir reiðhjól og smáfarartæki.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 43. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -36,9 +180,99 @@
         </li>
       </ol>
     </original>
+    <intents common-address="43. gr.">
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='43']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',43,')]">43. gr.</address>
+        <existing>
+          <art nr="43">
+            <nr-title>43. gr.</nr-title>
+            <name>Undanþáguheimildir fyrir hjólreiðamenn.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Heimilt er að hjóla á gangstétt, göngustíg eða göngugötu, enda valdi það ekki gangandi vegfarendum hættu eða óþægindum eða sveitarstjórn hefur ekki sérstaklega lagt bann við því.</sen>
+                <sen nr="2">Ef hjólastígur er samhliða gangstétt eða göngustíg skal að jafnaði notast við hjólastíginn.</sen>
+                <sen nr="3">Þó er í slíkum tilvikum heimilt að hjóla á gangstétt eða göngustíg ef fyllsta öryggis er gætt og ekki er hjólað hraðar en sem nemur eðlilegum gönguhraða.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður á gangstétt, göngustíg eða göngugötu skal víkja fyrir gangandi vegfarendum.</sen>
+                <sen nr="2">Hann skal gæta ýtrustu varkárni og ekki hjóla hraðar en svo að hann geti vikið úr vegi fyrir gangandi vegfarendum sem eiga leið um.</sen>
+                <sen nr="3">Hann skal gefa hljóðmerki þegar hann nálgast gangandi vegfarendur ef ætla má að þeir verði hans ekki varir.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ef hjólreiðamaður á gangstétt þverar akbraut skal hann gæta að því að hjóla eigi hraðar en sem nemur venjulegum gönguhraða.</sen>
+                <sen nr="2">Sama á við um hjólreiðamann sem þverar akbraut á gangbraut.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Á vegi þar sem leyfður hámarkshraði er ekki meiri en 30 km á klst. er hjólreiðamanni heimilt að hjóla á miðri akrein, enda gæti hann fyllsta öryggis og haldi hæfilegum hraða.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður á vegi má til framúraksturs nota akreinina við hlið akreinar lengst til hægri ef eigi er unnt að fara fram úr hægra megin.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">Á vegi þar sem leyfður hámarkshraði er ekki meiri en 30 km á klst. er ökumanni heimilt að aka smáfarartæki.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='43']/name[1]" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',43,')]">43. gr.</address>
+        <existing>
+          <art nr="43">
+            <nr-title>43. gr.</nr-title>
+            <name>Undanþáguheimildir fyrir hjólreiðamenn.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Heimilt er að hjóla á gangstétt, göngustíg eða göngugötu, enda valdi það ekki gangandi vegfarendum hættu eða óþægindum eða sveitarstjórn hefur ekki sérstaklega lagt bann við því.</sen>
+                <sen nr="2">Ef hjólastígur er samhliða gangstétt eða göngustíg skal að jafnaði notast við hjólastíginn.</sen>
+                <sen nr="3">Þó er í slíkum tilvikum heimilt að hjóla á gangstétt eða göngustíg ef fyllsta öryggis er gætt og ekki er hjólað hraðar en sem nemur eðlilegum gönguhraða.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður á gangstétt, göngustíg eða göngugötu skal víkja fyrir gangandi vegfarendum.</sen>
+                <sen nr="2">Hann skal gæta ýtrustu varkárni og ekki hjóla hraðar en svo að hann geti vikið úr vegi fyrir gangandi vegfarendum sem eiga leið um.</sen>
+                <sen nr="3">Hann skal gefa hljóðmerki þegar hann nálgast gangandi vegfarendur ef ætla má að þeir verði hans ekki varir.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ef hjólreiðamaður á gangstétt þverar akbraut skal hann gæta að því að hjóla eigi hraðar en sem nemur venjulegum gönguhraða.</sen>
+                <sen nr="2">Sama á við um hjólreiðamann sem þverar akbraut á gangbraut.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Á vegi þar sem leyfður hámarkshraði er ekki meiri en 30 km á klst. er hjólreiðamanni heimilt að hjóla á miðri akrein, enda gæti hann fyllsta öryggis og haldi hæfilegum hraða.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður á vegi má til framúraksturs nota akreinina við hlið akreinar lengst til hægri ef eigi er unnt að fara fram úr hægra megin.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <name>Undanþáguheimildir fyrir hjólreiðamenn og ökumenn smáfarartækja.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 44. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -49,17 +283,91 @@
         </li>
       </ol>
     </original>
+    <intents common-address="44. gr.">
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]//subart[@nr='2']">2. mgr. 44. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Hjólreiðamaður sem náð hefur 15 ára aldri má reiða börn yngri en sjö ára, enda séu þeim ætluð sérstök sæti og þannig um búið að ekki stafi hætta af hjólteinunum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Um flutning barna á smáfarartæki fer eftir reglum sem ráðherra setur skv. 80. gr.</sen>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='44']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]">44. gr.</address>
+        <existing>
+          <art nr="44">
+            <nr-title>44. gr.</nr-title>
+            <name>Börn og reiðhjól.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Barn yngra en níu ára má ekki hjóla á akbraut nema undir leiðsögn og eftirliti manns sem náð hefur 15 ára aldri.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður sem náð hefur 15 ára aldri má reiða börn yngri en sjö ára, enda séu þeim ætluð sérstök sæti og þannig um búið að ekki stafi hætta af hjólteinunum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Barn yngra en 13 ára má ekki aka smáfarartæki.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='44']/name[1]" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]">44. gr.</address>
+        <existing>
+          <art nr="44">
+            <nr-title>44. gr.</nr-title>
+            <name>Börn og reiðhjól.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Barn yngra en níu ára má ekki hjóla á akbraut nema undir leiðsögn og eftirliti manns sem náð hefur 15 ára aldri.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hjólreiðamaður sem náð hefur 15 ára aldri má reiða börn yngri en sjö ára, enda séu þeim ætluð sérstök sæti og þannig um búið að ekki stafi hætta af hjólteinunum.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <name>Börn, reiðhjól og smáfarartæki.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Fyrirsögn VII. kafla<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>verður:<strong>Sérreglur fyrir reiðhjól og smáfarartæki.</strong>
       </p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/name[1]" action-law-nr="77" action-law-year="2019">
+        <address xpath="//chapter[@nr='7']/name">Fyrirsögn VII. kafla</address>
+        <existing>
+          <name>Sérreglur fyrir reiðhjól.</name>
+        </existing>
+        <inner>
+          <name>Sérreglur fyrir reiðhjól og smáfarartæki.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 49. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -68,24 +376,88 @@
         <li style="text-align: justify;">Á eftir 6. mgr. kemur ný málsgrein, svohljóðandi:<br/>Enginn má stjórna eða reyna að stjórna smáfarartæki ef hann er undir áhrifum áfengis og ef vínandamagn í blóði ökumanns smáfarartækis nemur meira en 0,50‰, magn vínanda í lofti sem hann andar frá sér er umfram 0,25 milligrömm í lítra lofts eða niðurstaða öndunarprófs er að vínandamagn í blóði sé umfram 0,50‰ telst hann ekki geta stjórnað ökutækinu örugglega.</li>
       </ol>
     </original>
+    <intents common-address="49. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='49']/subart[@nr='5']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',49,')]//subart[@nr='5']">5. mgr. 49. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Það leysir ökumann ekki undan sök þótt hann ætli vínandamagn minna en um ræðir í 2. og 3. mgr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>2. og 3. mgr.</text-from>
+        <text-to>2., 3. eða 7. mgr.</text-to>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='49']/subart[@nr='6']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',49,')]//subart[@nr='6']">6. mgr. 49. gr.</address>
+        <existing>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">Enginn má hjóla eða reyna að hjóla eða stjórna eða reyna að stjórna hesti ef hann er undir svo miklum áhrifum áfengis eða annarra örvandi eða deyfandi efna að hann getur ekki stjórnað hjólinu eða hestinum örugglega.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Enginn má stjórna eða reyna að stjórna smáfarartæki ef hann er undir áhrifum áfengis og ef vínandamagn í blóði ökumanns smáfarartækis nemur meira en 0,50‰, magn vínanda í lofti sem hann andar frá sér er umfram 0,25 milligrömm í lítra lofts eða niðurstaða öndunarprófs er að vínandamagn í blóði sé umfram 0,50‰ telst hann ekki geta stjórnað ökutækinu örugglega.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Á eftir 2. mgr. 50. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný málsgrein, svohljóðandi:</p>
       <p style="text-align: justify;">Enginn má stjórna eða reyna að stjórna smáfarartæki ef hann er undir áhrifum ávana- og fíkniefna eða lyfja skv. 1. mgr.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='50']/subart[@nr='2']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',50,')]//subart[@nr='2']">2. mgr. 50. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Mælist ávana- og fíkniefni eða lyf skv. 1. mgr., sbr. 6. mgr. 48. gr., í blóði ökumanns telst hann vera undir áhrifum ávana- og fíkniefna eða lyfja og óhæfur til að stjórna ökutæki örugglega.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Enginn má stjórna eða reyna að stjórna smáfarartæki ef hann er undir áhrifum ávana- og fíkniefna eða lyfja skv. 1. mgr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Á eftir orðinu „ökutækis“ í inngangsmálslið 1. mgr. 52. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: eða smáfarartækis.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='9' and @chapter-type='kafli']/art[@nr='52']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='52']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='52']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='52']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='9' and @chapter-type='kafli']/art[@nr='52']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',52,')]//subart[@nr='1']//sen[@nr='1']">inngangsmálslið 1. mgr. 52. gr.</address>
+        <existing>
+          <sen nr="1">Ökumanni vélknúins ökutækis er skylt að kröfu lögreglu að gangast undir öndunarpróf og láta í té svita- og munnvatnssýni með þeim hætti sem lögregla ákveður ef:</sen>
+          <sen nr="1">ástæða er til að ætla að hann hafi brotið gegn ákvæðum 2. eða 4. mgr. 48. gr., sbr. 49. og 50. gr.,</sen>
+          <sen nr="1">ástæða er til að ætla að hann hafi brotið gegn öðrum ákvæðum þessara laga eða reglna sem settar eru samkvæmt þeim, enda sé þar kveðið á um heimild til töku öndunar-, svita- eða munnvatnssýna,</sen>
+          <sen nr="1">hann hefur átt hlut að umferðarslysi eða óhappi, hvort sem hann á sök á því eða ekki, eða</sen>
+          <sen nr="1">hann hefur verið stöðvaður við umferðareftirlit.</sen>
+        </existing>
+        <text-from>ökutækis</text-from>
+        <text-to>eða smáfarartækis.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 58. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -94,16 +466,68 @@
         <li style="text-align: justify;">Á eftir d-lið 11. mgr. kemur nýr stafliður, svohljóðandi: brot á prófreglum í ökuprófum og viðurlög við þeim.</li>
       </ol>
     </original>
+    <intents common-address="58. gr.">
+      <intent action="append" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='58']/subart[@nr='4']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',58,')]//subart[@nr='4']">4. mgr. 58. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Svipta skal þann sem ekið hefur ökutæki án þess að hafa fengið til þess réttindi réttinum til að öðlast ökuskírteini í fjóra mánuði.</sen>
+              <sen nr="2">Hafi viðkomandi ekki náð tilskildum aldri þegar brotið var framið skal miða sviptinguna við þann dag er hann nær tilskildum aldri, en að öðrum kosti gilda almennar reglur um upphaf sviptingartíma.</sen>
+              <sen nr="3">Framlengja skal sviptingu réttar til að öðlast ökuskírteini um fjóra mánuði fyrir hvert skipti sem ekið er án ökuréttinda.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Brot á prófreglum í ökuprófi varðar brottvísun úr prófi, svo og viðurlögum skv. 95. gr., auk sviptingar réttarins til að þreyta ökupróf að nýju í allt að sex mánuði.</sen>
+              <sen nr="2">Öðrum er þá óheimilt að aðstoða ökunema við brot á prófreglum.</sen>
+              <sen nr="3">Samgöngustofa tekur ákvörðun um tímabundna sviptingu réttar til að þreyta ökupróf.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='58']/subart[@nr='11']/paragraph[@nr='1']/numart[@nr='d']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',58,')]//subart[@nr='11']//*[self::numart or self::art-chapter][@nr='d' or @nr='D']">d-lið 11. mgr. 58. gr.</address>
+        <existing>
+          <numart nr="d" nr-type="alphabet">
+            <nr-title>d.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">nánari kröfur skv. b–d-lið 2. mgr.,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="e" nr-type="alphabet">
+            <nr-title>e.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">brot á prófreglum í ökuprófum og viðurlög við þeim.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Í stað tilvísunarinnar „7. mgr.“ í 2. málsl. 4. mgr. 67. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: 8. mgr.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='67']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',67,')]//subart[@nr='4']//sen[@nr='2']">2. málsl. 4. mgr. 67. gr.</address>
+        <existing>
+          <sen nr="2">Skal nemandi þá fullnægja skilyrðum b-liðar 2. mgr. 58. gr. og má ekki vera svo ástatt um hann að 7. mgr. 58. gr. eigi við.</sen>
+        </existing>
+        <text-from>7. mgr.</text-from>
+        <text-to>8. mgr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 69. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -112,9 +536,68 @@
         <li style="text-align: justify;">Á eftir 1. málsl. lokamálsgreinar kemur nýr málsliður, svohljóðandi: Vinnueftirlitið annast þó markaðseftirlit með smáfarartækjum.</li>
       </ol>
     </original>
+    <intents common-address="69. gr.">
+      <intent action="append" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='4']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[@nr='4']">4. mgr. 69. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Í reglugerð sem ráðherra setur skulu m.a. koma fram eftirfarandi atriði:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">kröfur á grundvelli heildargerðarviðurkenningar ökutækis varðandi gerð, búnað og íhluti þess til að tryggja að einungis séu sett á markað ökutæki hér á landi sem uppfylla kröfur um öryggi og um verndun umhverfis,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">flokkun ökutækja og skilgreiningar á þeim,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">áletranir og merki sem setja skal á ökutæki vegna skráningar eða eftirlits,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">heimild til að kveða á um bann við viðskiptum með tiltekna hluti eða búnað í ökutæki til verndar ökumanni eða farþegum ef þeir uppfylla ekki skilyrði reglna sem settar eru eða ef notkun þeirra mundi leiða til hættu eða verulegra óþæginda fyrir ökumann eða aðra vegfarendur og</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">undanþágur frá kröfum enda sé nægjanlegt öryggi tryggt með öðrum hætti.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Óheimilt er að breyta reiðhjóli búnu rafknúinni hjálparvél, smáfarartæki eða léttu bifhjóli í flokki I svo að mögulegur hámarkshraði þess undir vélarafli verði meiri en 25 km á klst. og er notkun þess þá óheimil.</sen>
+              <sen nr="2">Einnig er óheimilt að breyta léttu bifhjóli í flokki II svo að mögulegur hámarkshraði þess undir vélarafli verði meiri en 45 km á klst. og er notkun þess þá óheimil.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='69']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',69,')]//subart[last()]//sen[@nr='1']">1. málsl. lokamálsgreinar 69. gr.</address>
+        <existing>
+          <sen nr="1">Eftirlitsstofnun EFTA er heimilt að leggja umframlosunargjald á framleiðanda ökutækja þegar vegið meðaltal útblásturs skaðlegra lofttegunda nýskráðra ökutækja framleiðandans á Evrópska efnahagssvæðinu er hærra en viðmið sem kveðið er á um í reglugerð sem ráðherra setur.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Vinnueftirlitið annast þó markaðseftirlit með smáfarartækjum.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 72. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -123,50 +606,245 @@
         <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>Ráðherra er heimilt með reglugerð að kveða á um aðgengi og miðlun upplýsinga úr ökutækjaskrá, þar á meðal miðlun upplýsinga um eigendur og umráðamenn ökutækja, að uppfylltum skilyrðum laga um persónuvernd og vinnslu persónuupplýsinga.</li>
       </ol>
     </original>
+    <intents common-address="72. gr.">
+      <intent action="add_text" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',72,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 72. gr.</address>
+        <existing>
+          <sen nr="4">Undanþegin skráningarskyldu eru létt bifhjól í flokki I.</sen>
+        </existing>
+        <text-to>og smáfarartæki.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',72,')]">72. gr.</address>
+        <existing>
+          <art nr="72">
+            <nr-title>72. gr.</nr-title>
+            <name>Skráning.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Eigandi (umráðamaður) vélknúins ökutækis ber ábyrgð á skráningu þess í ökutækjaskrá og að skráningarmerki sé sett á það áður en það er tekið í notkun.</sen>
+                <sen nr="2">Sama á við um eftirvagn vélknúins ökutækis sem gerður er fyrir meira en 750 kg heildarþyngd, svo og hjólhýsi, fellihýsi og tjaldvagn óháð heildarþyngd.</sen>
+                <sen nr="3">Ráðherra getur þó í reglugerð kveðið á um skráningarskyldu eftirvagns vélknúins ökutækis sem gerður er fyrir 750 kg heildarþyngd eða minna.</sen>
+                <sen nr="4">Undanþegin skráningarskyldu eru létt bifhjól í flokki I.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Í reglugerð sem ráðherra setur skal kveðið á um undanþágu frá skráningu ökutækis sem ætlað er til aksturs á afmörkuðum, skilgreindum svæðum, svo og ökutækis sem ætlað er til aksturs utan almennrar umferðar, og hvar nota megi ökutækið.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur enn fremur í reglugerð nánari ákvæði um skráningu ökutækis í ökutækjaskrá, svo sem um:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">tilkynningu eigendaskipta,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">skráningarmerki, m.a. um útlit, gerð og framleiðslu,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">skráningarskírteini,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">tímabundinn akstur skráningarskylds ökutækis án skráningar,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">afskráningu ökutækis og heimild Samgöngustofu til afskráningar þess,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">tímabundna notkun ökutækis, sem skráð er erlendis, hér á landi,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="g" nr-type="alphabet">
+                  <nr-title>g.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">skráningu ökutækis í eigu erlends ríkis,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="h" nr-type="alphabet">
+                  <nr-title>h.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">umráðamann ökutækis, réttindi hans og skyldur, og</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="i" nr-type="alphabet">
+                  <nr-title>i.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">skráningu ökutækis sem ætlað er til aksturs á afmörkuðum, skilgreindum svæðum.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Heimilt er að skrá breytingalás á ökutæki í ökutækjaskrá.</sen>
+                <sen nr="2">Breytingalás takmarkar heimildir til nýskráningar, skráningar eigendaskipta og/eða skráningar ökutækis í umferð.</sen>
+                <sen nr="3">Ráðherra setur í reglugerð nánari reglur um framkvæmd skráningar breytingalása, þar á meðal um það hvers konar breytingalása heimilt er að skrá, hvaða áhrif þeir hafa á skráningar, hverjir geta farið fram á skráningu breytingaláss og að hvaða skilyrðum uppfylltum megi aflétta slíkum skráningum.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.039.html" law-nr="39" law-year="2021" law-art="9" nr="1">
+                <footnote-sen>L. 39/2021, 9. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="sem gerður er fyrir meira en 750 kg heildarþyngd, svo og hjólhýsi, fellihýsi og tjaldvagn óháð heildarþyngd" middle-punctuation="." instance-num="1"/>
+                <location type="range" string-length="196">
+                  <start xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  <end xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']"/>
+                </location>
+              </footnote>
+              <footnote nr="2">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/751-2003"&gt;Rg. 751/2003&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/299-2004"&gt;299/2004&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/506-2005"&gt;506/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/656-2005"&gt;656/2005&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/158-2006"&gt;158/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/307-2006"&gt;307/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/691-2006"&gt;691/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/756-2006"&gt;756/2006&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1231-2007"&gt;1231/2007&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/669-2008"&gt;669/2008&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/408-2009"&gt;408/2009&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/448-2011"&gt;448/2011&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/169-2016"&gt;169/2016&lt;/a&gt;, &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1086-2018"&gt;1086/2018&lt;/a&gt;og &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1515-2020"&gt;1515/2020&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Í reglugerð" after-mark="sem ráðherra setur skal kveðið á um undanþágu frá skráningu ökutækis sem ætlað er til aksturs á afmörkuðum, skilgreindum svæðum, svo og ökutækis sem ætlað er til aksturs utan almennrar umferðar, og hvar nota megi ökutækið.$"/>
+                <location type="pointer" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='72']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra setur enn fremur í reglugerð" after-mark="nánari ákvæði um skráningu ökutækis í ökutækjaskrá, svo sem um:$"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt með reglugerð að kveða á um aðgengi og miðlun upplýsinga úr ökutækjaskrá, þar á meðal miðlun upplýsinga um eigendur og umráðamenn ökutækja, að uppfylltum skilyrðum laga um persónuvernd og vinnslu persónuupplýsinga.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="13">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Á eftir orðinu „skoðun“ í c-lið 3. mgr. 74. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: menntun þeirra og endurmenntun.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='74']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='c']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',74,')]//subart[@nr='3']//*[self::numart or self::art-chapter][@nr='c' or @nr='C']">c-lið 3. mgr. 74. gr.</address>
+        <existing>
+          <numart nr="c" nr-type="alphabet">
+            <nr-title>c.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hverjir annast skoðun og verklag við framkvæmd skoðunar,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>skoðun</text-from>
+        <text-to>menntun þeirra og endurmenntun.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="14">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Við 1. mgr. 79. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist: og akstur smáfarartækis.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="chapter[@nr='14' and @chapter-type='kafli']/art[@nr='79']/subart[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',79,')]//subart[@nr='1']">1. mgr. 79. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Barn yngra en 16 ára skal nota reiðhjólahjálm við hjólreiðar.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-to>og akstur smáfarartækis.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="15">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">4. mgr. 81. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo:</p>
       <p style="text-align: justify;">Ráðherra setur í reglugerð nánari ákvæði um flutning á hættulegum farmi skv. 1. mgr., þar á meðal um hlutverk stjórnvalda, flokkun hættulegs farms, öryggisbúnað, ábyrgð og skyldur, öryggisráðgjafa, réttindi (ADR-réttindi), þjálfun, eftirlit og upplýsingar og miðlun þeirra. Ráðherra er í reglugerð heimilt að mæla fyrir um bann við flutningi tiltekins farms eða í ákveðnum tilvikum að veita undanþágu frá reglum um flutning hættulegs farms.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='15' and @chapter-type='kafli']/art[@nr='81']/subart[@nr='4']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',81,')]//subart[@nr='4']">4. mgr. 81. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra setur í reglugerð nánari ákvæði um flutning á hættulegum farmi skv. 1. mgr., þar á meðal um flokkun hættulegs farms, öryggisbúnað, ábyrgð og skyldur, öryggisráðgjafa, réttindi (ADR-réttindi) sem ökumaður skal hafa til að annast flutning á hættulegum farmi og eftirlit.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra setur í reglugerð nánari ákvæði um flutning á hættulegum farmi skv. 1. mgr., þar á meðal um hlutverk stjórnvalda, flokkun hættulegs farms, öryggisbúnað, ábyrgð og skyldur, öryggisráðgjafa, réttindi (ADR-réttindi), þjálfun, eftirlit og upplýsingar og miðlun þeirra.</sen>
+              <sen nr="2">Ráðherra er í reglugerð heimilt að mæla fyrir um bann við flutningi tiltekins farms eða í ákveðnum tilvikum að veita undanþágu frá reglum um flutning hættulegs farms.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="16">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Við 4. mgr. 86. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist nýr málsliður, svohljóðandi: Ríkisaðila er, með samþykki ráð­herra, heimilt að setja reglur um notkun stöðureita og gjaldtöku fyrir hana á landi í eigin umráðum.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='16' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='4']/paragraph[@nr='1']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='4']">4. mgr. 86. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Að fengnu samþykki ráðherra sem fer með málefni ríkisjarða og lands í eigu ríkisins er ráðherra heimilt að setja reglugerð um notkun stöðureita og gjaldtöku fyrir hana á landi í umráðum ríkisins, öðru en þjóðlendum og náttúruverndarsvæðum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Ríkisaðila er, með samþykki ráðherra, heimilt að setja reglur um notkun stöðureita og gjaldtöku fyrir hana á landi í eigin umráðum.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="17">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Í stað orðanna „1.–5. mgr. og 7. mgr.“ í 2. málsl. 1. mgr. 95. gr.<a href="https://www.althingi.is/lagas/154b/2019077.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur: 1.–5., 7. og 8. mgr.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='18' and @chapter-type='kafli']/art[@nr='95']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="77" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',95,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 95. gr.</address>
+        <existing>
+          <sen nr="2">Þá skal varða sömu refsingu brot gegn 1.–5. mgr. og 7. mgr. 49. gr. ef vínandamagn í blóði ökumanns er yfir 0,5‰ eða vínandamagn í lofti sem hann andar frá sér er meira en 0,25 milligrömm í lítra lofts.</sen>
+        </existing>
+        <text-from>1.–5. mgr. og 7. mgr.</text-from>
+        <text-to>1.–5., 7. og 8. mgr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="18">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <advert-art nr="19">
-    <original>
+    <original affected-law-nr="77" affected-law-year="2019">
       <p style="text-align: justify;">Við gildistöku laga þessara verða eftirfarandi breytingar á ákvæði til bráðabirgða XXIV í lögum um virðisaukaskatt, nr.<a href="https://www.althingi.is/lagas/154b/1988050.html" target="_blank">
           <span style="color: #000000;">50/1988</span>
         </a>:</p>
@@ -187,6 +865,141 @@
           </a>, og vörulið 8711 í tollskrá.</li>
       </ol>
     </original>
+    <intents common-address="ákvæði til bráðabirgða XXIV">
+      <intent action="append_text" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='9']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='9']//sen[@nr='1']">1. málsl. 9. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <sen nr="1">Við innflutning og skattskylda sölu nýs rafmagns- eða vetnisbifhjóls, létts bifhjóls sem knúið er rafmagni eða reiðhjóls er heimilt á tímabilinu 1. janúar 2020 til og með 31. desember 2024 að fella niður virðisaukaskatt eða telja til undanþeginnar veltu fjárhæð að ákveðnu hámarki eins og nánar er kveðið á um í ákvæði þessu.</sen>
+        </existing>
+        <text-from>létts bifhjóls</text-from>
+        <text-to>eða smáfarartækis.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='10']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='10']//numart[@nr='3']">3. tölul. 10. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði og öðrum tegundum reiðhjóla að hámarki 48.000 kr. Reiðhjól skal falla undir a- eða c-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vöruliði 8711 eða 8712 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði að hámarki 48.000 kr. Reiðhjól skal falla undir a-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019 , og vörulið 8712 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='10']/paragraph[@nr='1']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='10']">10. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <subart nr="10">
+            <paragraph nr="1">
+              <sen nr="1">Tollyfirvöldum er heimilt við tollafgreiðslu að fella niður virðisaukaskatt:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af rafmagns- eða vetnisbifhjóli að hámarki 1.440.000 kr. frá 1. janúar 2020 til og með 30. júní 2020, að hámarki 1.560.000 kr. frá 1. júlí 2020 til og með 31. desember 2022 og að hámarki 1.320.000 kr. frá 1. janúar 2023 til og með 31. desember 2024.</sen>
+                  <sen nr="2">Bifhjólið skal skráð sem bifhjól í ökutækjaskrá, sbr. 8. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, vera eingöngu knúið rafmagni eða vetni og falla undir vöruliði 8703, 8704 eða 8711 í tollskrá.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af léttu bifhjóli eða reiðhjóli sem knúið er rafmagni að hámarki 96.000 kr. Létt bifhjól eða reiðhjól skal falla undir b-lið 28. tölul. eða b-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vörulið 8711 í tollskrá.</sen>
+                  <sen nr="2">Létt bifhjól í flokki II skal vera skráð sem létt bifhjól í ökutækjaskrá, sbr. 28. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði og öðrum tegundum reiðhjóla að hámarki 48.000 kr. Reiðhjól skal falla undir a- eða c-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vöruliði 8711 eða 8712 í tollskrá.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af smáfarartæki sem knúið er rafmagni að hámarki 48.000 kr. Smáfarartæki skal falla undir 33. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019 , og vörulið 8711 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="append_text" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']/numart[@nr='1']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']/numart[@nr='2']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']/numart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='11']//sen[@nr='1']">inngangsmálslið 11. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <sen nr="1">Við skattskylda sölu bifhjóls, létts bifhjóls og reiðhjóls er skattaðila heimilt að undanþiggja frá skattskyldri veltu:</sen>
+          <sen nr="1">Af rafmagns- eða vetnisbifhjóli að hámarki 6.000.000 kr. frá 1. janúar 2020 til og með 30. júní 2020, að hámarki 6.500.000 kr. frá 1. júlí 2020 til og með 31. desember 2022 og að hámarki 5.500.000 kr. frá 1. janúar 2023 til og með 31. desember 2024.</sen>
+          <sen nr="1">Af léttu bifhjóli eða reiðhjóli sem knúið er rafmagni að hámarki 400.000 kr. Létt bifhjól eða reiðhjól skal falla undir b-lið 28. tölul. eða b-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vörulið 8711 í tollskrá.</sen>
+          <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði og öðrum tegundum reiðhjóla að hámarki 200.000 kr. Reiðhjól skal falla undir a- eða c-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vöruliði 8711 eða 8712 í tollskrá.</sen>
+        </existing>
+        <text-from>létts bifhjóls</text-from>
+        <text-to>smáfarartækis.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']/numart[@nr='3']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='11']//numart[@nr='3']">3. tölul. 11. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði og öðrum tegundum reiðhjóla að hámarki 200.000 kr. Reiðhjól skal falla undir a- eða c-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vöruliði 8711 eða 8712 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="3" nr-type="numeric">
+            <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði að hámarki 200.000 kr. Reiðhjól skal falla undir a-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019 , og vörulið 8712 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='11']/paragraph[@nr='1']" action-law-nr="50" action-law-year="1988">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',XXIV,')]//subart[@nr='11']">11. mgr. ákvæði til bráðabirgða XXIV</address>
+        <existing>
+          <subart nr="11">
+            <paragraph nr="1">
+              <sen nr="1">Við skattskylda sölu bifhjóls, létts bifhjóls og reiðhjóls er skattaðila heimilt að undanþiggja frá skattskyldri veltu:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af rafmagns- eða vetnisbifhjóli að hámarki 6.000.000 kr. frá 1. janúar 2020 til og með 30. júní 2020, að hámarki 6.500.000 kr. frá 1. júlí 2020 til og með 31. desember 2022 og að hámarki 5.500.000 kr. frá 1. janúar 2023 til og með 31. desember 2024.</sen>
+                  <sen nr="2">Bifhjólið skal skráð sem bifhjól í ökutækjaskrá, sbr. 8. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, vera eingöngu knúið rafmagni eða vetni og falla undir vöruliði 8703, 8704 eða 8711 í tollskrá.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af léttu bifhjóli eða reiðhjóli sem knúið er rafmagni að hámarki 400.000 kr. Létt bifhjól eða reiðhjól skal falla undir b-lið 28. tölul. eða b-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vörulið 8711 í tollskrá.</sen>
+                  <sen nr="2">Létt bifhjól í flokki II skal vera skráð sem létt bifhjól í ökutækjaskrá, sbr. 28. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Af reiðhjóli með stig- eða sveifarbúnaði og öðrum tegundum reiðhjóla að hámarki 200.000 kr. Reiðhjól skal falla undir a- eða c-lið 30. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019, og vöruliði 8711 eða 8712 í tollskrá.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Af smáfarartæki sem knúið er rafmagni að hámarki 200.000 kr. Smáfarartæki skal falla undir 33. tölul. 1. mgr. 3. gr. umferðarlaga, nr. 77/2019 , og vörulið 8711 í tollskrá.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

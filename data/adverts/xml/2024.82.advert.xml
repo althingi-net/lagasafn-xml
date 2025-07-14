@@ -10,6 +10,17 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur nýr málsliður, svohljóðandi: Ráðherra er einnig heimilt að fela forstöðumanni annarrar ríkisstofnunar jafnframt forstöðu Verðlagsstofu skiptaverðs með skipun til allt að fimm ára í senn.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="13" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//sen[@nr='1']">1. málsl. 2. gr.</address>
+        <existing>
+          <sen nr="1">Ráðherra skipar forstöðumann Verðlagsstofu skiptaverðs til fimm ára í senn.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Ráðherra er einnig heimilt að fela forstöðumanni annarrar ríkisstofnunar jafnframt forstöðu Verðlagsstofu skiptaverðs með skipun til allt að fimm ára í senn.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="13" affected-law-year="1998">
@@ -17,6 +28,18 @@
           <span style="color: #000000;">laganna</span>
         </a>koma tveir nýir málsliðir, svohljóðandi: Fulltrúar Félags skipstjórnarmanna, Sjómannasambands Íslands, Félags vélstjóra og málmtæknimanna og Samtaka fyrirtækja í sjávarútvegi skulu hafa aðgang að álitinu. Ef uppgjör við áhöfn fylgir kjarasamningi um kaup og kjör á smábátum skal Landssamband smábátaeigenda einnig hafa aðgang að álitinu.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="13" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//sen[@nr='4']">4. málsl. 6. gr.</address>
+        <existing>
+          <sen nr="4">Fulltrúar Farmanna- og fiskimannasambands Íslands, Sjómannasambands Íslands, Vélstjórafélags Íslands og Landssambands íslenskra útvegsmanna skulu hafa aðgang að álitinu.</sen>
+        </existing>
+        <inner>
+          <sen nr="4">Fulltrúar Félags skipstjórnarmanna, Sjómannasambands Íslands, Félags vélstjóra og málmtæknimanna og Samtaka fyrirtækja í sjávarútvegi skulu hafa aðgang að álitinu.</sen>
+          <sen nr="5">Ef uppgjör við áhöfn fylgir kjarasamningi um kaup og kjör á smábátum skal Landssamband smábátaeigenda einnig hafa aðgang að álitinu.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="13" affected-law-year="1998">
@@ -28,6 +51,24 @@
         <li style="text-align: justify;">Í stað orðanna „skal Landssamband íslenskra útvegsmanna“ í 3. málsl. kemur: skulu Samtök fyrirtækja í sjávarútvegi.</li>
       </ol>
     </original>
+    <intents common-address="2. mgr. 8. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="13" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="2">Af þeim skulu Farmanna- og fiskimannasamband Íslands, Sjómannasamband Íslands og Félag vélstjóra og málmtæknimanna tilnefna einn fulltrúa hvert og einn fulltrúa sameiginlega.</sen>
+        </existing>
+        <text-from>Farmanna- og fiskimannasamband Íslands</text-from>
+        <text-to>Félag skipstjórnarmanna.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="13" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. 8. gr.</address>
+        <existing>
+          <sen nr="3">Þá skal Landssamband íslenskra útvegsmanna tilnefna þrjá fulltrúa og Landssamband smábátaeigenda einn fulltrúa.</sen>
+        </existing>
+        <text-from>skal Landssamband íslenskra útvegsmanna</text-from>
+        <text-to>skulu Samtök fyrirtækja í sjávarútvegi.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="13" affected-law-year="1998">
@@ -35,11 +76,28 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: skiptaverðs.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11']/subart[@nr='1']" action-law-nr="13" action-law-year="1998">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11,')]//subart[@nr='1']">1. mgr. 11. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Úrskurðarnefnd skal við ákvörðun sína taka mið af upplýsingum sem Verðlagsstofa fiskverðs hefur safnað.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>fiskverðs</text-from>
+        <text-to>skiptaverðs.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="13" affected-law-year="1998">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-09" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 3. júlí 2024.</signed-when>
 </advert>

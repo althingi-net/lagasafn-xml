@@ -10,6 +10,16 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 30. júní 2025.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="94" action-law-year="2023">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 10. gr.</address>
+        <existing>
+          <sen nr="1">Umsóknir um stuðning samkvæmt lögum þessum skulu berast Húsnæðis- og mannvirkjastofnun í síðasta lagi 31. mars 2025.</sen>
+        </existing>
+        <text-from>31. mars 2025</text-from>
+        <text-to>30. júní 2025.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="94" affected-law-year="2023">
@@ -17,11 +27,28 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: 31. mars 2025.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']" action-law-nr="94" action-law-year="2023">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='4']">4. mgr. 15. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Heimilt er að greiða sértækan húsnæðisstuðning samkvæmt lögum þessum vegna húsnæðiskostnaðar sem fellur til vegna leigu húsnæðis á tímabilinu 10. nóvember 2023 til og með 31. desember 2024.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>31. desember 2024</text-from>
+        <text-to>31. mars 2025.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="94" affected-law-year="2023">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-12-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 26. nóvember 2024.</signed-when>
 </advert>

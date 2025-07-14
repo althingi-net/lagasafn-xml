@@ -10,11 +10,23 @@
           <span style="color: #000000;">laganna</span>
         </a>bætist: og þá er heimilt að víkja frá skilyrði um lögheimili ef þinglýstur eigandi festi kaup á húsnæðinu í þeim tilgangi að aðstoða nána fjölskyldumeðlimi við að eignast heimili.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="art[@nr='1']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="16" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 1. gr.</address>
+        <existing>
+          <sen nr="2">Heimilt er að víkja frá skilyrði um lögheimili ef tímabundnar aðstæður skýra að viðkomandi hafi ekki verið með skráð lögheimili í íbúðarhúsnæðinu.</sen>
+        </existing>
+        <text-to>og þá er heimilt að víkja frá skilyrði um lögheimili ef þinglýstur eigandi festi kaup á húsnæðinu í þeim tilgangi að aðstoða nána fjölskyldumeðlimi við að eignast heimili.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="16" affected-law-year="2024">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-12-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 26. nóvember 2024.</signed-when>
 </advert>

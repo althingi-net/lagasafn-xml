@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="5325fca4-07a8-4592-a917-a29f98f97f20" year="2024" nr="95" published-date="2024-07-10" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="90" year="1996">90/1996</affected-law>
+  </affected-laws>
   <description>um breytingu á lögreglulögum, nr. 90/1996 (afbrotavarnir, vopnaburður og eftirlit með lögreglu).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 5. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -11,25 +14,259 @@
         <li style="text-align: justify;">Við 2. mgr. bætist nýr stafliður, svohljóðandi: að starfrækja innra gæðaeftirlit með störfum lögreglu. Hlutverk þess er að stuðla að bættri löggæslu og hafa eftirlit með að lögregla starfi í samræmi við lög og verklagsreglur. Héraðssaksóknara og lögreglustjórum, þ.m.t. ríkis­lögreglu­stjóra, er skylt að afhenda innra gæðaeftirliti þær upplýsingar sem það þarf til að sinna starfsskyldum sínum. Gæðastjóri lögreglu, sbr. 1. mgr. 28. gr., fer með forstöðu eftirlitsins og skal vera sjálfstæður í störfum sínum.</li>
       </ol>
     </original>
+    <intents common-address="5. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='2']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">B-liður 2. mgr. 5. gr.</address>
+        <existing>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að starfrækja lögreglurannsóknardeild og greiningardeild sem rannsakar landráð og brot gegn stjórnskipan ríkisins og æðstu stjórnvöldum þess og leggur mat á hættu á hryðjuverkum og skipulagðri glæpastarfsemi,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að starfrækja lögreglurannsóknar- og greiningardeild sem hefur það hlutverk að koma í veg fyrir og rannsaka landráð og brot gegn stjórnskipan ríkisins og æðstu stjórnvöldum, leggja mat á hættu á hryðjuverkum og skipulagðri brotastarfsemi og sinna upplýsingaöflun og greiningum í þágu afbrotavarna á landsvísu, m.a. með rekstri miðlægs gagnagrunns.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='5']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='2']">2. mgr. 5. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">2.</sen>
+              <sen nr="2">Sérstök verkefni sem ríkislögreglustjóra ber að hafa með höndum eru:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1"/>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja lögreglurannsóknardeild og greiningardeild sem rannsakar landráð og brot gegn stjórnskipan ríkisins og æðstu stjórnvöldum þess og leggur mat á hættu á hryðjuverkum og skipulagðri glæpastarfsemi,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja almenna deild er annist kerfisbundna skráningu upplýsinga um lögreglumálefni, hafi umsjón með kaupum á ökutækjum, búnaði og fatnaði lögreglu og hafi reglulegt eftirlit með lögreglustöðvum, tækjum þeirra og búnaði,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="d" nr-type="alphabet">
+                <nr-title>d.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja alþjóðadeild er annist alþjóðleg boðskipti,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="e" nr-type="alphabet">
+                <nr-title>e.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja rannsóknastofu sem hafi eftirlit með framkvæmd tæknirannsókna lögreglu, þar með rekstri miðlægra gagnagrunna lögreglu á sviði tæknirannsókna, annist erlend samskipti vegna tæknirannsókna og samstarf, haldi skrá um horfið fólk og hafi umsjón með störfum kennslanefndar og útgáfu leiðbeininga og verklagsreglna um tæknirannsóknir sem ríkislögreglustjóri setur,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="f" nr-type="alphabet">
+                <nr-title>f.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="g" nr-type="alphabet">
+                <nr-title>g.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja almannavarnadeild sem annist verkefni á sviði almannavarna,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="h" nr-type="alphabet">
+                <nr-title>h.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja mennta- og starfsþróunarsetur lögreglu, sbr. VIII. kafla,</sen>
+                </paragraph>
+              </numart>
+              <numart nr="i" nr-type="alphabet">
+                <nr-title>i.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">að starfrækja stoðdeild sem annast m.a. framkvæmd ákvarðana um brottvísanir og frávísanir samkvæmt lögum um útlendinga.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <numart nr="j" nr-type="alphabet">
+            <nr-title>j.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">að starfrækja innra gæðaeftirlit með störfum lögreglu.</sen>
+              <sen nr="2">Hlutverk þess er að stuðla að bættri löggæslu og hafa eftirlit með að lögregla starfi í samræmi við lög og verklagsreglur.</sen>
+              <sen nr="3">Héraðssaksóknara og lögreglustjórum, þ.m.t. ríkislögreglustjóra, er skylt að afhenda innra gæðaeftirliti þær upplýsingar sem það þarf til að sinna starfsskyldum sínum.</sen>
+              <sen nr="4">Gæðastjóri lögreglu, sbr. 1. mgr. 28. gr., fer með forstöðu eftirlitsins og skal vera sjálfstæður í störfum sínum.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Við 8. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætast tvær nýjar málsgreinar, svohljóðandi:</p>
       <p style="text-align: justify;">9. Starfræktur skal stýrihópur sem hefur það hlutverk að tryggja samræmingu lögreglu á lands­vísu til að sporna gegn skipulagðri brotastarfsemi og efla samvinnu og upplýsingaskipti á milli lögregluembætta. Stýrihópurinn skal skipaður fulltrúum frá embætti héraðssaksóknara, ríkis­lögreglu­stjóra, lögreglustjóranum á höfuðborgarsvæðinu, lögreglustjóranum á Suðurnesjum, lögreglu­stjóranum á Suðurlandi og lögreglustjóranum á Norðurlandi eystra, tengslafulltrúa Íslands hjá Europol og Eurojust, ef við á, sem og fulltrúum frá öðrum embættum eða stofnunum sem ríkissaksóknari kann að mæla fyrir um í verklagsreglum skv. 10. mgr.</p>
       <p style="text-align: justify;">10. Ríkissaksóknari setur verklagsreglur um aðgerðir gegn skipulagðri brotastarfsemi, þar á meðal um starfsemi og skipan stýrihóps skv. 9. mgr.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]">8. gr.</address>
+        <existing>
+          <art nr="8">
+            <nr-title>8. gr.</nr-title>
+            <name>Lögreglurannsóknir.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Lögreglan annast rannsókn brota undir stjórn héraðssaksóknara eða lögreglustjóra.</sen>
+                <sen nr="3">Brot skal rannsaka í því umdæmi þar sem þau eru framin, sbr. þó ákvæði 2. mgr. þessarar greinar, b-liðar 2. mgr. 5. gr. og 35. gr.</sen>
+                <sen nr="4">Ráðherra setur nánari reglur samkvæmt tillögu ríkissaksóknara um hvernig stjórn rannsóknar skuli háttað, hvenær brot skuli rannsakað undir stjórn ríkislögreglustjóra skv. b-lið 2. mgr. 5. gr. og um rannsóknaraðstoð.</sen>
+                <sen nr="5">Ráðherra setur samkvæmt tillögu ríkissaksóknara nánari reglur um stjórn lögreglurannsókna og samvinnu héraðssaksóknara og lögreglustjóra við rannsókn sakamála.</sen>
+                <sen nr="6">Mæli sérstakar ástæður með því er ráðherra heimilt að tillögu ríkissaksóknara að kveða á um að rannsókn tiltekinna brotaflokka í umdæmi lögreglustjórans á Norðurlandi vestra og í Vestmannaeyjum fari fram í öðru umdæmi.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Héraðssaksóknari annast rannsókn brota gegn XII. kafla, alvarlegra brota gegn 128.–129. gr., 179. gr., 247.–251. gr., 253.–254. gr., 262. gr., 264. gr. og 264. gr. a almennra hegningarlaga, alvarlegra brota gegn skatta- og tollalögum, brota gegn lögum sem varða gjaldeyrismál, samkeppni, verðbréf, lánsviðskipti og aðra fjármálastarfsemi, umhverfisvernd, vinnuvernd, stjórn fiskveiða og annarra alvarlegra, óvenjulegra eða skipulagðra fjármunabrota sem tengjast atvinnurekstri eða verslun og viðskiptum sem og brota gegn lögum um refsingar fyrir hópmorð, glæpi gegn mannúð, stríðsglæpi og glæpi gegn friði og brota gegn kosningalögum.</sen>
+                <sen nr="3">Einnig er honum heimilt að annast rannsókn brota sem tengjast framangreindum brotum.</sen>
+                <sen nr="4">Ríkissaksóknari getur falið héraðssaksóknara rannsókn annarra brota.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Héraðssaksóknari annast móttöku tilkynninga á grundvelli laga um aðgerðir gegn peningaþvætti og fjármögnun hryðjuverka.</sen>
+                <sen nr="3">Héraðssaksóknari annast einnig greiningu á tilkynningum og miðlun upplýsinga sem fengnar eru með þeim hætti til annarra stjórnvalda að því marki sem nauðsynlegt er.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Héraðssaksóknari skal vinna að endurheimt og upptöku ólögmæts ávinnings af hvers kyns refsiverðri háttsemi í tengslum við lögreglurannsóknir við embætti hans og önnur lögreglustjóraembætti.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Við embætti lögreglustjórans á höfuðborgarsvæðinu skal starfrækt tæknideild sem sinni vettvangsrannsóknum, samanburðarrannsóknum og öðrum slíkum rannsóknum og varðveiti fingrafarasafn lögreglu og ljósmyndasafn og haldi því við.</sen>
+                <sen nr="3">Tæknideildin skal þjóna öllum lögregluumdæmum landsins og setur ríkislögreglustjóri nánari reglur um starfrækslu hennar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">7.</sen>
+                <sen nr="2">Lögreglustjórar og aðrir þeir sem fara með lögregluvald mega ekki rannsaka brot ef þeir eru vanhæfir til þess samkvæmt stjórnsýslulögum, sbr. þó 5. mgr. 5. gr.</sen>
+                <sen nr="3">Starfsmenn þess lögreglustjóra, sem vanhæfur er, geta þó rannsakað mál undir stjórn annars lögreglustjóra nema þeir séu sjálfir vanhæfir til að fara með málið samkvæmt stjórnsýslulögum.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="8">
+              <paragraph nr="1">
+                <sen nr="1">8.</sen>
+                <sen nr="2">Ríkissaksóknari sker úr um valdsvið héraðssaksóknara gagnvart lögreglustjórum og milli lögreglustjóra innbyrðis, varðandi rannsóknir brota, ef vafi rís um það.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote nr="1">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/804-2007"&gt;Rg. 804/2007&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/660-2017"&gt;Rg. 660/2017&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" before-mark="^Ráðherra setur nánari reglur" after-mark="samkvæmt tillögu ríkissaksóknara um hvernig stjórn rannsóknar skuli háttað, hvenær brot skuli rannsakað undir stjórn ríkislögreglustjóra skv. b-lið 2. mgr. 5. gr. og um rannsóknaraðstoð.$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2018.144.html#G11" law-nr="144" law-year="2018" law-art="11" nr="2">
+                <footnote-sen>L. 144/2018, 11. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="sem og brota gegn lögum um refsingar fyrir hópmorð, glæpi gegn mannúð, stríðsglæpi og glæpi gegn friði" instance-num="1"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.112.html#G144" law-nr="112" law-year="2021" law-art="144" nr="3">
+                <footnote-sen>L. 112/2021, 144. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="og brota gegn kosningalögum" middle-punctuation="." instance-num="1"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2015.047.html" law-nr="47" law-year="2015" law-art="25" nr="4">
+                <footnote-sen>L. 47/2015, 25. gr.</footnote-sen>
+                <location type="range" string-length="2070">
+                  <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+                <location type="range" string-length="162">
+                  <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2014.051.html" law-nr="51" law-year="2014" law-art="4" nr="5">
+                <footnote-sen>L. 51/2014, 4. gr.</footnote-sen>
+                <location type="deletion" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^5." after-mark="$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2008.088.html#G234" law-nr="88" law-year="2008" law-art="234" nr="6">
+                <footnote-sen>L. 88/2008, 234. gr.</footnote-sen>
+                <location type="range" string-length="347">
+                  <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='3']"/>
+                </location>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2006.046.html" law-nr="46" law-year="2006" law-art="3" nr="7">
+                <footnote-sen>L. 46/2006, 3. gr.</footnote-sen>
+                <location type="range" string-length="2947">
+                  <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/name[1]"/>
+                  <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="9">
+            <paragraph nr="1">
+              <sen nr="1">9.</sen>
+              <sen nr="2">Starfræktur skal stýrihópur sem hefur það hlutverk að tryggja samræmingu lögreglu á landsvísu til að sporna gegn skipulagðri brotastarfsemi og efla samvinnu og upplýsingaskipti á milli lögregluembætta.</sen>
+              <sen nr="3">Stýrihópurinn skal skipaður fulltrúum frá embætti héraðssaksóknara, ríkislögreglustjóra, lögreglustjóranum á höfuðborgarsvæðinu, lögreglustjóranum á Suðurnesjum, lögreglustjóranum á Suðurlandi og lögreglustjóranum á Norðurlandi eystra, tengslafulltrúa Íslands hjá Europol og Eurojust, ef við á, sem og fulltrúum frá öðrum embættum eða stofnunum sem ríkissaksóknari kann að mæla fyrir um í verklagsreglum skv. 10. mgr.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="10">
+            <paragraph nr="1">
+              <sen nr="1">10.</sen>
+              <sen nr="2">Ríkissaksóknari setur verklagsreglur um aðgerðir gegn skipulagðri brotastarfsemi, þar á meðal um starfsemi og skipan stýrihóps skv. 9. mgr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Við 1. mgr. 10. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætist: að því undanskildu að þeir skulu vera 20 ára eða eldri.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='1']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='1']">1. mgr. 10. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">1.</sen>
+              <sen nr="2">Lögreglustjóra er heimilt að fengnu samþykki ríkislögreglustjóra að ráða héraðslögreglumenn til starfa í umdæmi sínu, enda fullnægi þeir skilyrðum í a-, b-, c-, d- og e-lið 1. mgr. 38. gr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-to>að því undanskildu að þeir skulu vera 20 ára eða eldri.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 3. mgr. 11. gr. a<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -39,9 +276,50 @@
         <li style="text-align: justify;">Í stað orðanna „erlendra lögreglumanna“ kemur: þeirra.</li>
       </ol>
     </original>
+    <intents common-address="3. mgr. 11. gr. a">
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11a']/subart[@nr='3']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11a,')]//subart[@nr='3']">3. mgr. 11. gr. a</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">3.</sen>
+              <sen nr="2">Ráðherra er heimilt að setja nánari reglur um samstarf lögreglu við erlend lögregluyfirvöld og alþjóðastofnanir, þar á meðal um vopnaburð erlendra lögreglumanna og upplýsingaskipti skv. 2. mgr., einkum að því er varðar gagnkvæma notkun gagnagrunna og aðgang að þeim.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>er heimilt að</text-from>
+        <text-to>skal.</text-to>
+      </intent>
+      <intent action="append_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11a']/subart[@nr='3']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11a,')]//subart[@nr='3']">3. mgr. 11. gr. a</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">3.</sen>
+              <sen nr="2">Ráðherra er heimilt að setja nánari reglur um samstarf lögreglu við erlend lögregluyfirvöld og alþjóðastofnanir, þar á meðal um vopnaburð erlendra lögreglumanna og upplýsingaskipti skv. 2. mgr., einkum að því er varðar gagnkvæma notkun gagnagrunna og aðgang að þeim.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>þar á meðal um</text-from>
+        <text-to>löggæsluverkefni sem erlendum lögreglumönnum er heimilt að sinna hér á landi, m.a. öryggisgæslu vegna alþjóðlegra viðburða.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='11a']/subart[@nr='3']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',11a,')]//subart[@nr='3']">3. mgr. 11. gr. a</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">3.</sen>
+              <sen nr="2">Ráðherra er heimilt að setja nánari reglur um samstarf lögreglu við erlend lögregluyfirvöld og alþjóðastofnanir, þar á meðal um vopnaburð erlendra lögreglumanna og upplýsingaskipti skv. 2. mgr., einkum að því er varðar gagnkvæma notkun gagnagrunna og aðgang að þeim.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>erlendra lögreglumanna</text-from>
+        <text-to>þeirra.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Við 14. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>bætast þrjár nýjar málsgreinar, svohljóðandi:</p>
@@ -49,9 +327,46 @@
       <p style="text-align: justify;">3. Ráðherra setur nánari reglur um valdbeitingu lögreglumanna og meðferð og notkun valdbeit­ingar­tækja og vopna hjá lögreglu.</p>
       <p style="text-align: justify;">4. Ríkislögreglustjóri setur verklagsreglur og leiðbeiningar um nauðsynlegar áætlanir lögregluliða varðandi viðbúnað með vopnum.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='14']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',14,')]">14. gr.</address>
+        <existing>
+          <art nr="14">
+            <nr-title>14. gr.</nr-title>
+            <name>Valdbeiting.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Handhöfum lögregluvalds er heimilt að beita valdi við framkvæmd skyldustarfa sinna.</sen>
+                <sen nr="2">Aldrei mega þeir þó ganga lengra í beitingu valds en þörf er á hverju sinni.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">2.</sen>
+              <sen nr="2">Ríkislögreglustjóri og aðrir lögreglustjórar geta gefið fyrirmæli um að lögreglumenn skuli vopnast í samræmi við reglur sem settar eru skv. 3. mgr.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">3.</sen>
+              <sen nr="2">Ráðherra setur nánari reglur um valdbeitingu lögreglumanna og meðferð og notkun valdbeitingartækja og vopna hjá lögreglu.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">4.</sen>
+              <sen nr="2">Ríkislögreglustjóri setur verklagsreglur og leiðbeiningar um nauðsynlegar áætlanir lögregluliða varðandi viðbúnað með vopnum.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Á eftir 15. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>koma fjórar nýjar greinar, 15. gr. a – 15. gr. d, ásamt fyrirsögnum, svohljóðandi:</p>
@@ -91,9 +406,196 @@
       </p>
       <p style="text-align: justify;">Ríkissaksóknari hefur eftirlit með framkvæmd lögreglu á aðgerðum á grundvelli 15. gr. b og 15. gr. c, þar á meðal að lögregla tilkynni þeim sem aðgerðir beindust að um aðgerðirnar þegar það á við.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='15']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]">15. gr.</address>
+        <existing>
+          <art nr="15">
+            <nr-title>15. gr.</nr-title>
+            <name>Aðgerðir í þágu almannafriðar, allsherjarreglu o.fl.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Lögreglu er heimilt að hafa afskipti af borgurunum til að halda uppi almannafriði og allsherjarreglu eða koma í veg fyrir yfirvofandi röskun til að gæta öryggis einstaklinga eða almennings eða til að afstýra afbrotum eða stöðva þau.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Í þessu skyni er lögreglu m.a. heimilt að taka í sínar hendur umferðarstjórn, banna dvöl á ákveðnum svæðum, svo sem með því að girða af eða hindra umferð um þau, taka í sínar vörslur hættulega muni, vísa á brott eða fjarlægja fólk, fyrirskipa stöðvun eða breytingu á aðgerðum eða starfsemi, fara inn á svæði í einkaeign og fyrirskipa brottflutning fólks af þeim.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Ef uggvænt þykir að óspektir verði á mótmælafundi, í kröfugöngu eða á annarri slíkri samkomu á opinberum stað er lögreglu heimilt að banna að maður breyti andliti sínu eða hylji það eða hluta þess með grímu, hettu, málningu eða öðru þess háttar sem er til þess fallið að koma í veg fyrir að kennsl verði borin á hann.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Óhlýðnist maður fyrirmælum lögreglu skv. 2. og 3. mgr. getur hún gripið til nauðsynlegra ráðstafana á hans kostnað til að koma í veg fyrir að óhlýðni hans valdi tjóni eða stofni almenningi í hættu.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Lögreglu er heimilt að krefjast þess að maður segi til nafns síns, kennitölu og heimilisfangs og sýni skilríki því til sönnunar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Lögreglu er heimilt að hafa afskipti af málefnum sem samkvæmt lögum heyra undir önnur stjórnvöld ef það er talið nauðsynlegt til að stöðva eða koma í veg fyrir alvarlega röskun á almannafriði og allsherjarreglu og ekki næst til viðkomandi stjórnvalds eða aðgerðir af þess hálfu eru útilokaðar, þýðingarlausar eða fyrirsjáanlegt er að þær muni hefjast of seint.</sen>
+                <sen nr="3">Tilkynna skal hlutaðeigandi stjórnvaldi um aðgerðir lögreglu svo fljótt sem auðið er.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2002.056.html" law-nr="56" law-year="2002" law-art="2" nr="1">
+                <footnote-sen>L. 56/2002, 2. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                <location type="range" xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" words="skv. 2. og 3. mgr." instance-num="1"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <art nr="15a">
+            <nr-title>15. gr. a.</nr-title>
+            <name>Aðgerðir í þágu afbrotavarna.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Lögreglu er heimilt, í því skyni að stemma stigu við afbrotum, að nýta, svo sem til greiningar, allar þær upplýsingar sem hún býr yfir eða aflar við framkvæmd almennra löggæslustarfa og frumkvæðisverkefna, þar á meðal samskipti við uppljóstrara, eftirlit á almannafæri og vöktun vefsíðna sem opnar eru almenningi.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Um vinnslu persónuupplýsinga skv. 1. mgr. gilda ákvæði laga um vinnslu persónuupplýsinga í löggæslutilgangi.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Ráðherra skal, að höfðu samráði við lögregluráð, setja nánari reglur um aðgerðir í þágu afbrotavarna, þar á meðal um tilhögun þeirra og framkvæmd.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="15b">
+            <nr-title>15. gr. b.</nr-title>
+            <name>Aðgerðir til að sporna gegn skipulagðri brotastarfsemi.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Hafi lögregla áreiðanlegar upplýsingar um að tiltekinn einstaklingur taki virkan þátt í skipulögðum brotasamtökum eða hafi annars konar bein tengsl við slík samtök er henni heimilt að afla upplýsinga um viðkomandi skv. 15. gr. a auk þess að fylgjast með ferðum hans á almannafæri eða öðrum stöðum sem almenningur hefur aðgang að.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Ákvörðun um að hafa eftirlit með einstaklingi verður aðeins tekin af lögreglustjóra og skal bera hana undir stýrihóp um skipulagða brotastarfsemi til staðfestingar svo fljótt sem auðið er og eigi síðar en þremur sólarhringum eftir að ákvörðun er tekin.</sen>
+                <sen nr="3">Sá lögreglustjóri sem ber ákvörðun um eftirlit með einstaklingi undir stýrihópinn skal ekki taka þátt í afgreiðslu málsins á vettvangi stýrihópsins.</sen>
+                <sen nr="4">Ákvörðun skal skráð í kerfi lögreglu og tilkynnt til ríkissaksóknara eins fljótt og kostur er.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Eftirlit skal ekki viðhaft lengur en nauðsynlegt er.</sen>
+                <sen nr="3">Eigi síðar en að fjórum vikum liðnum skal lögreglustjóri taka ákvörðun um framlengingu eftirlits og bera hana að nýju undir stýrihópinn.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Sé einstaklingur undir eftirliti lengur en fjóra mánuði í senn skal bera ákvörðun lögreglustjóra um áframhaldandi eftirlit undir héraðsdóm til staðfestingar.</sen>
+                <sen nr="3">Um þá málsmeðferð fer skv. XV. kafla laga um meðferð sakamála eftir því sem við á.</sen>
+                <sen nr="4">Málsmeðferð fyrir dómi frestar ekki réttaráhrifum ákvörðunar nema lögreglustjóri ákveði annað.</sen>
+                <sen nr="5">Kæra má úrskurð dómara til Landsréttar ef hann getur sætt kæru eftir almennum reglum 1. mgr. 192. gr. laga um meðferð sakamála.</sen>
+                <sen nr="6">Aðrir úrskurðir en mælt er fyrir um í 1. mgr. 211. gr. laga um meðferð sakamála verða ekki kærðir til Hæstaréttar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Leiði eftirlit með einstaklingi á grundvelli ákvæðis þessa til gruns um afbrot skal rannsókn fara fram samkvæmt lögum um meðferð sakamála.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Þegar eftirliti með einstaklingi er lokið skal lögregla tilkynna þeim sem eftirlitið beindist að um það án tafar nema ríkir hagsmunir standi því í vegi er varða afbrotavarnir, rannsókn sakamála, öryggi ríkisins eða samskipti við erlend ríki.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="15c">
+            <nr-title>15. gr. c.</nr-title>
+            <name>Afbrotavarnir í þágu öryggis ríkisins.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Lögreglu er heimilt í samræmi við 15. gr. b að taka ákvörðun, eftir því sem við á, um eftirlit með einstaklingi sem lögregla hefur áreiðanlegar upplýsingar um að kunni að stafa sérgreind hætta af fyrir öryggi ríkisins eða almennings.</sen>
+                <sen nr="3">Skilyrði er að hætta sé á að framið verði brot sem varðað getur a.m.k. fimm ára hámarksfangelsisrefsingu skv. X. eða XI. kafla almennra hegningarlaga, nr. 19/1940.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Sé einstaklingur undir eftirliti lengur en fjóra mánuði í senn skal bera ákvörðun lögreglustjóra um áframhaldandi eftirlit undir héraðsdóm til staðfestingar.</sen>
+                <sen nr="3">Um þá málsmeðferð fer skv. XV. kafla laga um meðferð sakamála eftir því sem við á.</sen>
+                <sen nr="4">Málsmeðferð fyrir dómi frestar ekki réttaráhrifum ákvörðunar nema lögreglustjóri ákveði annað.</sen>
+                <sen nr="5">Kæra má úrskurð héraðsdómara til Landsréttar ef hann getur sætt kæru eftir almennum reglum 1. mgr. 192. gr. laga um meðferð sakamála.</sen>
+                <sen nr="6">Aðrir úrskurðir en mælt er fyrir um í 1. mgr. 211. gr. laga um meðferð sakamála verða ekki kærðir til Hæstaréttar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Leiði eftirlit með einstaklingi á grundvelli ákvæðis þessa til gruns um afbrot skal rannsókn fara fram samkvæmt lögum um meðferð sakamála.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Þegar eftirliti með einstaklingi er lokið skal lögregla tilkynna þeim sem eftirlitið beindist að um það án tafar nema ríkir hagsmunir standi því í vegi er varða afbrotavarnir, rannsókn sakamála, öryggi ríkisins eða samskipti við erlend ríki.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Lögreglu er heimilt að afla upplýsinga, þar á meðal persónuupplýsinga, hjá öðrum stjórnvöldum og stofnunum ef það er nauðsynlegt og til þess fallið að hafa verulega þýðingu fyrir störf hennar í tengslum við rannsókn alvarlegra brota gegn X. og XI. kafla almennra hegningarlaga, nr. 19/1940, eða til að afstýra slíkum brotum.</sen>
+                <sen nr="3">Viðkomandi stjórnvaldi eða stofnun er skylt að verða við beiðni samkvæmt ákvæði þessu.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">6.</sen>
+                <sen nr="2">Lögreglu er heimilt að leggja hald á muni í eigu eða vörslum annars aðila en sætir eftirliti eða beina því til eiganda eða vörsluhafa að veita aðgang að munum eða láta í té upplýsingar sem hann hefur að geyma, svo sem með því að afhenda afrit af skjali eða annars konar upplýsingum.</sen>
+                <sen nr="3">Skilyrði fyrir haldlagningu eru að hún sé nauðsynleg og líkleg til að veita lögreglu upplýsingar sem hafa verulega þýðingu fyrir aðgerðir til að koma í veg fyrir brot gegn X. eða XI. kafla almennra hegningarlaga, nr. 19/1940, og að ríkir almannahagsmunir eða einkahagsmunir krefjist þess.</sen>
+                <sen nr="4">Haldlagning skal ákveðin með úrskurði dómara.</sen>
+                <sen nr="5">Um þá málsmeðferð fer skv. 68. og 69. gr. auk ákvæða XV. kafla laga um meðferð sakamála eftir því sem við á.</sen>
+                <sen nr="6">Kæra má úrskurð dómara til Landsréttar ef hann getur sætt kæru eftir almennum reglum 1. mgr. 192. gr. laga um meðferð sakamála.</sen>
+                <sen nr="7">Aðrir úrskurðir en mælt er fyrir um í 1. mgr. 211. gr. laga um meðferð sakamála verða ekki kærðir til Hæstaréttar.</sen>
+                <sen nr="8">Aflétta skal haldi þegar þess er ekki lengur þörf og hlutast til um að skila munum til þess sem rétt á til þeirra.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="15d">
+            <nr-title>15. gr. d.</nr-title>
+            <name>Eftirlit með aðgerðum í þágu afbrotavarna.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ríkissaksóknari hefur eftirlit með framkvæmd lögreglu á aðgerðum á grundvelli 15. gr. b og 15. gr. c, þar á meðal að lögregla tilkynni þeim sem aðgerðir beindust að um aðgerðirnar þegar það á við.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 28. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -102,9 +604,165 @@
         <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>6. Gæðastjóri lögreglu skal fullnægja skilyrðum b–e-liðar 2. mgr. og 3. mgr.</li>
       </ol>
     </original>
+    <intents common-address="28. gr.">
+      <intent action="add" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='1']/paragraph[@nr='1']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',28,')]//subart[@nr='1']">1. mgr. 28. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">1.</sen>
+              <sen nr="2">Ráðherra skipar ríkislögreglustjóra og lögreglustjóra til fimm ára í senn.</sen>
+              <sen nr="3">Ráðherra er heimilt að skipa aðstoðarríkislögreglustjóra, sbr. 4. mgr. 5. gr., og aðstoðarlögreglustjóra á höfuðborgarsvæðinu og Suðurnesjum til fimm ára í senn, sbr. 5. mgr. 6. gr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="4">Ráðherra skipar gæðastjóra lögreglu til fimm ára í senn.</sen>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',28,')]">28. gr.</address>
+        <existing>
+          <art nr="28">
+            <nr-title>28. gr.</nr-title>
+            <name>Veiting starfa í lögreglu.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">1.</sen>
+                <sen nr="2">Ráðherra skipar ríkislögreglustjóra og lögreglustjóra til fimm ára í senn.</sen>
+                <sen nr="3">Ráðherra er heimilt að skipa aðstoðarríkislögreglustjóra, sbr. 4. mgr. 5. gr., og aðstoðarlögreglustjóra á höfuðborgarsvæðinu og Suðurnesjum til fimm ára í senn, sbr. 5. mgr. 6. gr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">2.</sen>
+                <sen nr="2">Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, lögreglustjórar og aðstoðarlögreglustjórar sem eru staðgenglar lögreglustjóra skulu auk almennra hæfisskilyrða til þess að hljóta skipun í embætti á vegum ríkisins jafnframt fullnægja eftirtöldum skilyrðum:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafa íslenskan ríkisborgararétt,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="c" nr-type="alphabet">
+                  <nr-title>c.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">vera svo á sig komnir andlega og líkamlega að þeir geti gegnt embættinu,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="d" nr-type="alphabet">
+                  <nr-title>d.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">vera lögráða og hafa aldrei misst forræði á búi sínu,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="e" nr-type="alphabet">
+                  <nr-title>e.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafa hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að þeir urðu fullra 18 ára né sýnt af sér háttsemi sem getur rýrt það traust sem lögreglustjórar verða almennt að njóta,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="f" nr-type="alphabet">
+                  <nr-title>f.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafa lokið embættisprófi eða grunnnámi ásamt meistaraprófi í lögum.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">3.</sen>
+                <sen nr="2">Nú eru fleiri en einn aðstoðarlögreglustjóri við embætti og skal þá einn þeirra vera staðgengill lögreglustjóra.</sen>
+                <sen nr="3">Þeir aðstoðarlögreglustjórar sem ekki eru staðgenglar lögreglustjóra skulu fullnægja skilyrðum b–e-liða 2. mgr. til skipunar í embætti, auk eftirtalinna skilyrða um menntun og starfsreynslu:</sen>
+                <numart nr="a" nr-type="alphabet">
+                  <nr-title>a.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafa lokið embættisprófi eða grunnnámi ásamt meistaraprófi í lögum, eða lokið námi frá Lögregluskóla ríkisins eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, sbr. ákvæði laga um háskóla, nr. 63/2006, þ.m.t. starfsnám á vegum lögreglunnar, svo og stjórnunarnámi eða öðru sambærilegu námi,</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="b" nr-type="alphabet">
+                  <nr-title>b.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">hafa í þrjú ár gegnt lögfræðistörfum að aðalstarfi eða verið stjórnandi innan lögreglunnar, en leggja má saman starfstíma í þessum greinum.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">4.</sen>
+                <sen nr="2">Lögreglustjóri skipar yfirlögregluþjóna og aðstoðaryfirlögregluþjóna til fimm ára í senn og aðra lögreglumenn til starfa innan embættis síns með sama hætti til fimm ára í senn.</sen>
+                <sen nr="3">Hver sá sem er skipaður lögreglumaður skal hafa lokið prófi frá Lögregluskóla ríkisins eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar.</sen>
+                <sen nr="4">Til að staðreyna hvort viðkomandi uppfyllir skilyrði e-liðar 2. mgr. er lögreglu heimilt að afla upplýsinga úr sakaskrá og málaskrám lögreglu.</sen>
+                <sen nr="5">Ráðherra setur í reglugerð nánari fyrirmæli um starfsstig innan lögreglunnar.</sen>
+                <sen nr="6">Um öflun málaskrárupplýsinga, þar á meðal umfang upplýsingaöflunarinnar, fræðslu til umsækjenda og starfsmanna í aðdraganda uppflettingar og andmælarétt þeirra, skal nánar mælt fyrir í reglugerð.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">5.</sen>
+                <sen nr="2">Ríkislögreglustjóri getur heimilað lögreglustjórum að ráða mann tímabundið til lögreglustarfa vegna orlofstöku, veikinda- eða slysaforfalla eða tímabundinna leyfa lögreglumanna þó að hann hafi ekki lokið prófi frá Lögregluskóla ríkisins eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar, enda fullnægi hann skilyrðum í a-, b-, c-, d- og e-lið 1. mgr. 38. gr. og enginn með próf frá Lögregluskóla ríkisins eða diplómapróf í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar, er tiltækur í stöðuna.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2016.061.html" law-nr="61" law-year="2016" law-art="4" nr="1">
+                <footnote-sen>L. 61/2016, 4. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" words="og" instance-num="1"/>
+                <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Ríkislögreglustjóri, aðstoðarríkislögreglustjóri, lögreglustjórar (\[??)?og:? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?1\) ?&lt;/sup&gt;)?,? ?aðstoðarlögreglustjórar sem eru staðgenglar lögreglustjóra" after-mark="skulu auk almennra hæfisskilyrða til þess að hljóta skipun í embætti á vegum ríkisins jafnframt fullnægja eftirtöldum skilyrðum:$"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1']" words="eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, sbr. ákvæði laga um háskóla, nr. 63/2006, þ.m.t. starfsnám á vegum lögreglunnar" middle-punctuation="," instance-num="1"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='3']" words="eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar" middle-punctuation="." instance-num="1"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']" words="prófi frá Lögregluskóla ríkisins eða diplómaprófi í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar, enda fullnægi hann skilyrðum í a-, b-, c-, d- og e-lið 1. mgr. 38. gr. og enginn með próf frá Lögregluskóla ríkisins eða diplómapróf í lögreglufræðum sem jafngildir a.m.k. 120 stöðluðum námseiningum, þ.m.t. starfsnám á vegum lögreglunnar, er tiltækur í stöðuna" middle-punctuation="." instance-num="1"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2021.050.html" law-nr="50" law-year="2021" law-art="7" nr="2">
+                <footnote-sen>L. 50/2021, 7. gr.</footnote-sen>
+                <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='a']/nr-title[1]" before-mark="^a." after-mark="$"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']" words="hafa lokið embættisprófi eða grunnnámi ásamt meistaraprófi í lögum" middle-punctuation="." instance-num="1"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" words="b–e-liða 2. mgr." instance-num="1"/>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1']" words="embættisprófi eða grunnnámi ásamt meistaraprófi í lögum" middle-punctuation="," instance-num="1"/>
+                <location type="deletion" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" before-mark="^Lögreglustjóri skipar yfirlögregluþjóna og aðstoðaryfirlögregluþjóna til fimm ára í senn og aðra lögreglumenn til starfa innan embættis síns með sama hætti til fimm ára í senn" after-mark=".$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2018.141.html" law-nr="141" law-year="2018" law-art="17" nr="3">
+                <footnote-sen>L. 141/2018, 17. gr.</footnote-sen>
+                <location type="range" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='2']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1']" words="hafa hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að þeir urðu fullra 18 ára" instance-num="1"/>
+              </footnote>
+              <footnote nr="4">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1051-2006"&gt;Rg. 1051/2006&lt;/a&gt;, sbr. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1043-2013"&gt;1043/2013&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='5']" before-mark="^Ráðherra setur í reglugerð" after-mark="nánari fyrirmæli um starfsstig innan lögreglunnar.$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2014.051.html" law-nr="51" law-year="2014" law-art="7" nr="5">
+                <footnote-sen>L. 51/2014, 7. gr.</footnote-sen>
+                <location type="range" string-length="2521">
+                  <start xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                  <end xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='6']"/>
+                </location>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2006.046.html" law-nr="46" law-year="2006" law-art="5" nr="6">
+                <footnote-sen>L. 46/2006, 5. gr.</footnote-sen>
+                <location type="range" string-length="3172">
+                  <start xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/name[1]"/>
+                  <end xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='28']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">6.</sen>
+              <sen nr="2">Gæðastjóri lögreglu skal fullnægja skilyrðum b–e-liðar 2. mgr. og 3. mgr.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 1. mgr. 38. gr.<a href="https://www.althingi.is/lagas/154b/1996090.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -113,20 +771,72 @@
         <li style="text-align: justify;">B-liður orðast svo: hafa hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að viðkomandi varð fullra 18 ára né sýnt af sér háttsemi sem getur rýrt það traust sem starfsmenn lögreglu verða almennt að njóta.</li>
       </ol>
     </original>
+    <intents common-address="1. mgr. 38. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='38']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',38,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']">a-lið 1. mgr. 38. gr.</address>
+        <existing>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">vera íslenskir ríkisborgarar, 20 ára eða eldri,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>20 ára eða eldri</text-from>
+        <text-to>19 ára á inntökuári eða eldri.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='38']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']" action-law-nr="90" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',38,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']">B-liður 1. mgr. 38. gr.</address>
+        <existing>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hafa ekki gerst brotlegir við refsilög, þetta gildir þó ekki ef brot er smávægilegt eða langt er um liðið frá því að það var framið, né hafa sýnt af sér háttsemi sem getur rýrt það traust sem lögreglumenn verða almennt að njóta,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="b" nr-type="alphabet">
+            <nr-title>b.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">hafa hvorki hlotið fangelsisdóm fyrir refsiverðan verknað sem framinn var eftir að viðkomandi varð fullra 18 ára né sýnt af sér háttsemi sem getur rýrt það traust sem starfsmenn lögreglu verða almennt að njóta.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi að undanskilinni 7. gr. sem öðlast gildi 1. janúar 2025.</p>
       <p style="text-align: justify;">Ákvæði b-, c- og d-liðar 6. gr. (15. gr. b – 15. gr. d), þ.m.t. varðandi dómsúrskurð, skulu endur­skoðuð innan þriggja ára frá gildistöku. Eigi síðar en 1. júlí 2026 skal ráðherra sem fer með dóms­mál skipa nefnd til að leggja mat á reynslu af beitingu ákvæðanna. Nefndin skal skipuð fulltrúum frá dómsmálaráðuneyti, ríkissaksóknara, nefnd um eftirlit með lögreglu, Lögmannafélagi Íslands, Dómarafélagi Íslands, samstarfsnefnd háskólastigsins og Mannréttindastofnun Íslands.</p>
       <p style="text-align: justify;">Nefndin skal skila ráðherra niðurstöðum sínum eigi síðar en 1. janúar 2027.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="undetermined"/>
+    </intents>
   </advert-art>
   <advert-art nr="10">
-    <original>
+    <original affected-law-nr="90" affected-law-year="1996">
       <p style="text-align: justify;">Við gildistöku laga þessara verður eftirfarandi breyting á lögum um réttindi og skyldur starfs­manna ríkisins, nr.<a href="https://www.althingi.is/lagas/154b/1996070.html" target="_blank">
           <span style="color: #000000;">70/1996</span>
         </a>: Á eftir orðinu „aðstoðarlögreglustjórar“ í 7. tölul. 1. mgr. 22. gr. laganna kemur: gæðastjóri lögreglu.</p>
     </original>
+    <intents>
+      <intent action="append_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='22']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='7']" action-law-nr="70" action-law-year="1996">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',22,')]//subart[@nr='1']//numart[@nr='7']">7. tölul. 1. mgr. 22. gr.</address>
+        <existing>
+          <numart nr="7" nr-type="numeric">
+            <nr-title>7.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Sýslumenn, ríkislögreglustjóri, aðstoðarríkislögreglustjórar, lögreglustjórar og aðstoðarlögreglustjórar, forstjóri Útlendingastofnunar og lögreglumenn.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>aðstoðarlögreglustjórar</text-from>
+        <text-to>gæðastjóri lögreglu.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 4. júlí 2024.</signed-when>
 </advert>

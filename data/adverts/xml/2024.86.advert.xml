@@ -12,6 +12,41 @@
         </em>
       </p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='17']" action-law-nr="92" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]">17. gr.</address>
+        <existing>
+          <art nr="17">
+            <nr-title>17. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands hefur einkarétt til þess að gefa út peningaseðla og láta slá og gefa út mynt eða annan gjaldmiðil sem getur gengið manna á milli í stað peningaseðla eða löglegrar myntar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Seðlar og mynt sem Seðlabankinn gefur út skulu vera lögeyrir til allra greiðslna með fullu ákvæðisverði.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Tilefnismynt sem Seðlabankinn gefur út skal vera lögeyrir til allra greiðslna með fullu ákvæðisverði.</sen>
+                <sen nr="2">Seðlabankanum er heimilt að ákveða að tilefnismynt sé seld með álagi á ákvæðisverð hennar.</sen>
+                <sen nr="3">Ágóða af sölu tilefnismyntar skal varið til lista, menningar eða vísinda samkvæmt ákvörðun ráðherra.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra ákveður að fengnum tillögum Seðlabankans lögun, útlit og fjárhæð seðla þeirra og myntar sem bankinn gefur út og lætur birta auglýsingu um það efni.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <name>Útgáfa seðla og myntar.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="92" affected-law-year="2019">
@@ -24,6 +59,51 @@
       </p>
       <p style="text-align: justify;">Seðlabankanum er heimilt í þágu aukins viðnámsþróttar, öryggis og virkni greiðslumiðlunar og að fengnu samþykki fjármálastöðugleikanefndar að setja reglur um rekstraröryggi greiðslumiðlunar. Reglurnar geta tekið til innviða rafrænnar smágreiðslumiðlunar, innviða greiðslumiðlunar við útlönd og seðla og myntar. Í reglunum er heimilt að mæla fyrir um nauðsynlegar ráðstafanir eins og fyrirkomulag innviða greiðslumiðlunar, netöryggi, tilhögun greiðslufyrirmæla, sannvottun, ábyrgð og uppgjör greiðslna, aðgang að slíkum innviðum og skyldu lánastofnana hér á landi til þátttöku.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='17']" action-law-nr="92" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',17,')]">17. gr.</address>
+        <existing>
+          <art nr="17">
+            <nr-title>17. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabanki Íslands hefur einkarétt til þess að gefa út peningaseðla og láta slá og gefa út mynt eða annan gjaldmiðil sem getur gengið manna á milli í stað peningaseðla eða löglegrar myntar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Seðlar og mynt sem Seðlabankinn gefur út skulu vera lögeyrir til allra greiðslna með fullu ákvæðisverði.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Tilefnismynt sem Seðlabankinn gefur út skal vera lögeyrir til allra greiðslna með fullu ákvæðisverði.</sen>
+                <sen nr="2">Seðlabankanum er heimilt að ákveða að tilefnismynt sé seld með álagi á ákvæðisverð hennar.</sen>
+                <sen nr="3">Ágóða af sölu tilefnismyntar skal varið til lista, menningar eða vísinda samkvæmt ákvörðun ráðherra.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra ákveður að fengnum tillögum Seðlabankans lögun, útlit og fjárhæð seðla þeirra og myntar sem bankinn gefur út og lætur birta auglýsingu um það efni.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="17a">
+            <nr-title>17. gr. a</nr-title>
+            <name>Rekstraröryggi greiðslumiðlunar.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Seðlabankanum er heimilt í þágu aukins viðnámsþróttar, öryggis og virkni greiðslumiðlunar og að fengnu samþykki fjármálastöðugleikanefndar að setja reglur um rekstraröryggi greiðslumiðlunar.</sen>
+                <sen nr="2">Reglurnar geta tekið til innviða rafrænnar smágreiðslumiðlunar, innviða greiðslumiðlunar við útlönd og seðla og myntar.</sen>
+                <sen nr="3">Í reglunum er heimilt að mæla fyrir um nauðsynlegar ráðstafanir eins og fyrirkomulag innviða greiðslumiðlunar, netöryggi, tilhögun greiðslufyrirmæla, sannvottun, ábyrgð og uppgjör greiðslna, aðgang að slíkum innviðum og skyldu lánastofnana hér á landi til þátttöku.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="92" affected-law-year="2019">
@@ -33,19 +113,52 @@
         </strong>
       </p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/name[1]" action-law-nr="92" action-law-year="2019">
+        <address xpath="//chapter[@nr='6']/name">Fyrirsögn VI. kafla</address>
+        <existing>
+          <name>Útgáfa seðla og myntar.</name>
+        </existing>
+        <inner>
+          <name>Greiðslumiðlun.</name>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="92" affected-law-year="2019">
       <p>Eftirfarandi breytingar verða á 1. málsl. 1. mgr. 44. gr.<a href="https://www.althingi.is/lagas/154b/2019092.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
-      <p>a.      Í stað orðanna „lánastofnanir og verðbréfasjóði“ kemur: lögaðila.<br/>b.      Í stað orðanna „lán tengd erlendum gjaldmiðlum“ kemur: rekstraröryggi greiðslumiðlunar.</p>
+      <p>a.      Í stað orðanna „lánastofnanir og verðbréfasjóði“ kemur: lögaðila.</p>
+      <p>b.      Í stað orðanna „lán tengd erlendum gjaldmiðlum“ kemur: rekstraröryggi greiðslumiðlunar.</p>
     </original>
+    <intents common-address="1. málsl. 1. mgr. 44. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="92" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 44. gr.</address>
+        <existing>
+          <sen nr="1">Seðlabanki Íslands getur lagt dagsektir á lánastofnanir og verðbréfasjóði sem hlíta ekki reglum bankans um bindiskyldu, gjaldeyrisjöfnuð og lán tengd erlendum gjaldmiðlum.</sen>
+        </existing>
+        <text-from>lánastofnanir og verðbréfasjóði</text-from>
+        <text-to>lögaðila.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="92" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 44. gr.</address>
+        <existing>
+          <sen nr="1">Seðlabanki Íslands getur lagt dagsektir á lánastofnanir og verðbréfasjóði sem hlíta ekki reglum bankans um bindiskyldu, gjaldeyrisjöfnuð og lán tengd erlendum gjaldmiðlum.</sen>
+        </existing>
+        <text-from>lán tengd erlendum gjaldmiðlum</text-from>
+        <text-to>rekstraröryggi greiðslumiðlunar.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="92" affected-law-year="2019">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-10" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 3. júlí 2024.</signed-when>
 </advert>

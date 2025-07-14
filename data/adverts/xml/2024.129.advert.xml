@@ -5,11 +5,17 @@
     <original>
       <p style="text-align: justify;">Lög um Bankasýslu ríkisins, nr. 88/2009, falla úr gildi 1. janúar 2025.</p>
     </original>
+    <intents>
+      <intent action="repeal" action-identifier="88/2009"/>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original>
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-12-03" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original>
@@ -31,6 +37,67 @@
         <br/>
       </p>
     </original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='t']/art[@nr='V']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="92" action-law-year="2019">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',V,')]//subart[@nr='2']//sen[@nr='3']">3. málsl. 2. mgr. ákvæðis til bráðabirgða V</address>
+        <existing>
+          <sen nr="3">Bankasýsla ríkisins fer með eignarhlut ríkisins í Íslandsbanka.</sen>
+        </existing>
+      </intent>
+      <intent action="delete" action-xpath="" action-law-nr="75" action-law-year="2009">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='3']//sen[@nr='2']">2. málsl. 3. mgr. 2. gr.</address>
+        <existing/>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='53']/subart[@nr='7']" action-law-nr="161" action-law-year="2002">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',53,')]//subart[@nr='7']">7. mgr. 53. gr.</address>
+        <existing>
+          <subart nr="7">
+            <paragraph nr="1">
+              <sen nr="1">Grein þessi gildir ekki ef tilnefningar allra stjórnarmanna falla undir ákvæði 7. gr. laga um Bankasýslu ríkisins, nr. 88/2009.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>7. gr. laga um Bankasýslu ríkisins, nr. 88/2009</text-from>
+        <text-to>44. gr. a laga um opinber fjármál, nr. 123/2015.</text-to>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='44']" action-law-nr="123" action-law-year="2015">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]">44. gr.</address>
+        <existing>
+          <art nr="44">
+            <nr-title>44. gr.</nr-title>
+            <name>Eigandastefna ríkisins í félögum.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra mótar almenna eigandastefnu fyrir öll félög í eigu ríkisins.</sen>
+                <sen nr="2">Í almennri eigandastefnu skal gera grein fyrir markmiðum og áherslum ríkisins með eignarhaldinu, ásamt þeim grunngildum sem skulu gilda um samskipti og upplýsingagjöf milli eiganda og félags.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Heimilt er ráðherra að setja sérstaka eigandastefnu fyrir einstök félög eða starfsemi á afmörkuðum sviðum ef sérstaða þeirra kallar á ítarlegri stefnu eða markmið eiganda en finna má í hinni almennu stefnu.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra, eða hlutaðeigandi ráðherra eða ríkisaðili sem fer með fyrirsvar eignarhlutar ríkisins í félagi, skal hafa eftirlit með að eigandastefnu sé framfylgt í starfsemi félaga í eigu ríkisins.</sen>
+                <sen nr="2">Ef félag er í eigu fleiri aðila en ríkisins skulu þeir sem kjörnir eru í stjórn þess fyrir hönd ríkisins taka mið af þeim meginsjónarmiðum sem fram koma í þeirri eigandastefnu sem sett hefur verið fyrir viðkomandi svið eða félag.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra tilnefnir í stjórnir félaga sem ríkið á eignarhlut í á grundvelli hæfni og menntunar eða reynslu.</sen>
+                <sen nr="2">Ráðherra setur reglur um almenn og hlutlæg skilyrði fyrir vali til setu í slíkum stjórnum og birtir þær opinberlega sem hluta af eigandastefnu.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="44a">
+            <nr-title>44. gr. a</nr-title>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <temp-clause temp-clause-type="advert-art" processed="false">
     <p style="text-align: justify;">Embætti forstjóra og önnur störf hjá Bankasýslu ríkisins skulu lögð niður frá og með 1. janúar 2025. Um réttindi og skyldur starfsmanna, þ.m.t. um biðlaunarétt, fer samkvæmt lögum um réttindi og skyldur starfsmanna ríkisins, nr. 70/1996.</p>

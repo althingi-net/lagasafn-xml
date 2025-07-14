@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <advert type="law" record-id="d1e7cacc-5637-465a-87c4-0cb41a831ed4" year="2024" nr="83" published-date="2024-07-09" applied-to-codex-version="154b">
+  <affected-laws>
+    <affected-law nr="88" year="2011">88/2011</affected-law>
+  </affected-laws>
   <description>um breytingar á lögum um réttindagæslu fyrir fatlað fólk, nr. 88/2011 (réttindagæslumenn og persónulegir talsmenn).</description>
   <advert-art nr="1">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2011">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 6. gr.<a href="https://www.althingi.is/lagas/154b/2011088.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -14,9 +17,75 @@
         <li style="text-align: justify;">Á eftir 3. mgr. koma tvær nýjar málsgreinar, svohljóðandi:<br/>Réttindagæslumaður tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.<br/>Réttindagæslumaður endurskoðar ekki ákvarðanir stjórnvalda í einstökum málum.</li>
       </ol>
     </original>
+    <intents common-address="6. gr.">
+      <intent action="delete_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="3">Fatlaður einstaklingur, sem telur að réttur hans sé fyrir borð borinn, getur tilkynnt það réttindagæslumanni á viðkomandi svæði.</sen>
+        </existing>
+        <text-from>á viðkomandi svæði</text-from>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']//sen[@nr='4']">4. málsl. 1. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="4">Réttindagæslumaður skal veita hinum fatlaða einstaklingi nauðsynlegan stuðning og kanna málið að höfðu samráði við hann.</sen>
+        </existing>
+        <text-from>veita hinum fatlaða einstaklingi nauðsynlegan stuðning</text-from>
+        <text-to>leiðbeina hinum fatlaða einstaklingi, veita honum nauðsynlegan stuðning eftir þörfum.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='6']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']//sen[@nr='6']">6. málsl. 1. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="6">Komist réttindagæslumaður að þeirri niðurstöðu að réttur fatlaðs einstaklings hafi verið fyrir borð borinn aðstoðar réttindagæslumaður hinn fatlaða einstakling við að leita réttar síns miðað við atvik máls hverju sinni og óskir hins fatlaða einstaklings.</sen>
+        </existing>
+        <text-from>aðstoðar réttindagæslumaður hinn fatlaða einstakling við að leita réttar síns miðað við atvik máls hverju sinni og</text-from>
+        <text-to>veitir réttindagæslumaður hinum fatlaða einstaklingi leiðbeiningar og aðstoðar hann eftir þörfum miðað við.</text-to>
+      </intent>
+      <intent action="replace" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='2']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='2']">2. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður getur, telji hann málið þess eðlis og að fengnu samþykki hins fatlaða einstaklings, komið ábendingum um úrbætur á framfæri við hlutaðeigandi aðila og gefið honum frest til að verða við ábendingunum.</sen>
+              <sen nr="2">Verði ekki orðið við ábendingum réttindagæslumanns skal hann eftir atvikum aðstoða hinn fatlaða við að kæra málið til úrskurðarnefndar velferðarmála eða beina kvörtun til Gæða- og eftirlitsstofnunar velferðarmála og vera honum innan handar varðandi rekstur málsins sé þess óskað.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður getur, telji hann málið þess eðlis, komið ábendingum um úrbætur á framfæri við hlutaðeigandi aðila og gefið honum frest til að verða við ábendingunum.</sen>
+              <sen nr="2">Verði ekki orðið við ábendingum réttindagæslumanns skal hann eftir atvikum leiðbeina hinum fatlaða einstaklingi um innlendar og alþjóðlegar kvörtunar- og kæruleiðir og veita viðeigandi stuðning eftir þörfum.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='3']">3. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður skal meta í hverju tilviki fyrir sig, í samráði við hinn fatlaða einstakling, hvort rétt sé að beina ábendingu til Gæða- og eftirlitsstofnunar velferðarmála.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður endurskoðar ekki ákvarðanir stjórnvalda í einstökum málum.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2011">
       <p style="text-align: justify;">Eftirfarandi breytingar verða á 7. gr.<a href="https://www.althingi.is/lagas/154b/2011088.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>:</p>
@@ -27,9 +96,59 @@
         <li style="text-align: justify;">Í stað orðanna „með hagsmuni hans að leiðarljósi“ í 3. mgr. kemur: í samræmi við vilja og óskir viðkomandi.</li>
       </ol>
     </original>
+    <intents common-address="7. gr.">
+      <intent action="append" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 7. gr.</address>
+        <existing>
+          <sen nr="1">Persónulegur talsmaður skal búa yfir þekkingu á persónulegum þörfum og áhugamálum þess einstaklings sem hann aðstoðar.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Persónulegur talsmaður skal vera lögráða og varði samkomulag ráðstöfun fjármuna skal hann einnig vera fjár síns ráðandi.</sen>
+          <sen nr="3">Hafi hann hlotið refsidóm fyrir brot á ákvæðum XXII. kafla, XXVI. kafla, 211. eða 218. gr. almennra hegningarlaga skal sýslumaður meta hvort hann sé hæfur til að verða persónulegur talsmaður.</sen>
+          <sen nr="4">Við undirritun samkomulags skal liggja fyrir sakavottorð eða heimild sýslumanns til að afla upplýsinga úr sakaskrá.</sen>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='4']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='2']//sen[@nr='4']">4. málsl. 2. mgr. 7. gr.</address>
+        <existing>
+          <sen nr="4">Starf persónulegra talsmanna er ólaunað en persónulegur talsmaður skal fá endurgreiddan kostnað sem sannanlega fellur til vegna starfa hans í þágu hins fatlaða einstaklings.</sen>
+        </existing>
+        <text-from>persónulegur talsmaður skal fá endurgreiddan</text-from>
+        <text-to>heimilt er að endurgreiða persónulegum talsmanni nauðsynlegan.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='2']">2. mgr. 7. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Persónulegur talsmaður skal búa yfir þekkingu á persónulegum þörfum og áhugamálum þess einstaklings sem hann aðstoðar.</sen>
+              <sen nr="2">Persónulegur talsmaður skal fá fræðslu um innihald og áherslur í starfi sínu.</sen>
+              <sen nr="3">Ráðuneytinu er heimilt að gera samning við hagsmunasamtök fatlaðs fólks um milligöngu um að útvega persónulega talsmenn og annast fræðslu þeirra.</sen>
+              <sen nr="4">Starf persónulegra talsmanna er ólaunað en persónulegur talsmaður skal fá endurgreiddan kostnað sem sannanlega fellur til vegna starfa hans í þágu hins fatlaða einstaklings.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="5">Útlagður kostnaður skal að jafnaði greiddur af hinum fatlaða einstaklingi.</sen>
+          <sen nr="6">Sýslumaður getur þó ákveðið að hann skuli greiddur úr ríkissjóði ef eignir hins fatlaða einstaklings eru litlar eða aðrar sérstakar ástæður mæla með því.</sen>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='3']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='3']">3. mgr. 7. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Allar ráðstafanir persónulegs talsmanns skulu gerðar í samráði við og með samþykki hins fatlaða einstaklings og einvörðungu með hagsmuni hans að leiðarljósi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>með hagsmuni hans að leiðarljósi</text-from>
+        <text-to>í samræmi við vilja og óskir viðkomandi.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2011">
       <p style="text-align: justify;">Á eftir 8. gr.<a href="https://www.althingi.is/lagas/154b/2011088.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>kemur ný grein, 8. gr. a, svohljóðandi:</p>
@@ -40,18 +159,110 @@
       <p style="text-align: justify;">Þjóðskjalavörður tekur ákvörðun um förgun þeirra gagna sem verða til við eftirlit sýslumanns skv. 1.–4. mgr. í samræmi við lög um opinber skjalasöfn.</p>
       <p style="text-align: justify;">Ráðherra setur nánari reglur um skýrslugjöf samkvæmt þessari grein í reglugerð.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='8']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]">8. gr.</address>
+        <existing>
+          <art nr="8">
+            <nr-title>8. gr.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Réttindagæslumenn skulu halda skrá um persónulega talsmenn á sínu svæði og hafa eftirlit með störfum þeirra.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Hinn fatlaði einstaklingur getur hvenær sem er afturkallað umboð persónulegs talsmanns og skal réttindagæslumaður aðstoða hann við það óski hann eftir því.</sen>
+                <sen nr="2">Réttindagæslumaður getur með samþykki hins fatlaða einstaklings afturkallað umboð persónulegs talsmanns, í samráði við réttindavakt ráðuneytisins, telji hann viðkomandi ekki gegna skyldum sínum gagnvart hinum fatlaða einstaklingi.</sen>
+                <sen nr="3">Þá getur persónulegur talsmaður hvenær sem er sagt sig frá umboðinu.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+        <inner>
+          <art nr="8a">
+            <nr-title>8. gr. a</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Persónulegur talsmaður skal ár hvert gefa sýslumanni skýrslu, á eyðublaði sem hann leggur til, um framkvæmd samkomulags skv. 1. mgr. 7. gr. og 9. gr.</sen>
+                <sen nr="2">Skal þar gerð grein fyrir þeirri aðstoð sem persónulegur talsmaður veitti hinum fatlaða einstaklingi á fyrra ári.</sen>
+                <sen nr="3">Nái samkomulag til aðstoðar við ráðstöfun fjármuna vegna daglegra útgjalda skv. 4. tölul. 1. mgr. 9. gr. skal sérstaklega gerð grein fyrir þeirri aðstoð með gögnum og skýringum um útgjöld.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Sýslumaður hefur heimild til að krefja persónulegan talsmann um frekari skýringar og/eða gögn um aðstoð sem persónulegur talsmaður hefur veitt á grundvelli samkomulags og eru sýslumanni nauðsynleg vegna eftirlits með samkomulaginu og er persónulegum talsmanni skylt að verða við því.</sen>
+                <sen nr="2">Sýslumaður hefur heimild til að kalla eftir upplýsingum og gögnum frá hinum fatlaða einstaklingi og þjónustuveitendum, svo sem félagsþjónustu sveitarfélaga, réttindagæslumönnum fatlaðs fólks og fjármálafyrirtækjum ef samkomulag tekur til ráðstöfunar fjármuna, sem varða framkvæmd samkomulags skv. 1. mgr. 7. gr. og 9. gr. og nauðsynlegar eru til að hann geti sinnt eftirliti sínu.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="3">
+              <paragraph nr="1">
+                <sen nr="1">Persónulegur talsmaður skal gera sýslumanni grein fyrir aðstoð sinni hvenær sem hann krefst þess.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="4">
+              <paragraph nr="1">
+                <sen nr="1">Þegar persónulegur talsmaður lætur af hlutverki sínu skal hann gefa sýslumanni skýrslu, á eyðublaði sem hann leggur til, um framkvæmd samkomulagsins, sbr. 1. mgr.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="5">
+              <paragraph nr="1">
+                <sen nr="1">Þjóðskjalavörður tekur ákvörðun um förgun þeirra gagna sem verða til við eftirlit sýslumanns skv. 1.–4. mgr. í samræmi við lög um opinber skjalasöfn.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur nánari reglur um skýrslugjöf samkvæmt þessari grein í reglugerð.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2011">
       <p style="text-align: justify;">4. tölul. 1. mgr. 9. gr.<a href="https://www.althingi.is/lagas/154b/2011088.html" target="_blank">
           <span style="color: #000000;">laganna</span>
         </a>orðast svo: Aðstoð við ráðstöfun fjármuna vegna daglegra útgjalda. Persónulegum talsmanni er heimilt, á grundvelli samkomulags skv. 1. mgr. 7. gr., að sjá um greiðslu daglegra útgjalda fyrir einstakling sem hann aðstoðar enda sé greiðslum ráðstafað af sérgreindum reikningum fyrir þess háttar útgjöld. Með viðauka við samkomulagið má veita persónulegum talsmanni heimild til þess að fá nauðsynlegan skoðunaraðgang að sérgreindum reikningum og greiða tilteknar, reglulegar kröfur í heimabanka þess einstaklings sem nýtur aðstoðar. Heimild til handa persónulegum talsmanni getur einnig tekið til þess að stofna til greiðsluþjónustu fyrir hönd einstaklings hjá viðskiptabanka hans um sömu reikninga. Persónulegum talsmanni er hins vegar óheimilt að stofna til fjárhagsskuldbindinga fyrir hönd þess sem hann aðstoðar nema sá einstaklingur hafi veitt honum skriflegt umboð til þess. Hafi fötluðum einstaklingi verið skipaður ráðsmaður á grundvelli lögræðislaga tekur umboð persónulegs talsmanns ekki til þeirra eigna og fjármuna sem ráðsmaður hefur umsjón með.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='4']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='1']//numart[@nr='4']">4. tölul. 1. mgr. 9. gr.</address>
+        <existing>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Aðstoð við ráðstöfun fjármuna vegna daglegra útgjalda.</sen>
+              <sen nr="2">Persónulegum talsmanni er heimilt, á grundvelli samkomulags skv. 1. mgr. 7. gr., að sjá um greiðslu daglegra útgjalda fyrir fatlaðan einstakling enda fari greiðslur fram með reiðufé sem ráðstafað er af sérgreindum reikningi fyrir þess háttar útgjöld.</sen>
+              <sen nr="3">Persónulegum talsmanni er hins vegar óheimilt að stofna til fjárhagsskuldbindinga fyrir hönd þess sem hann aðstoðar nema sá einstaklingur hafi veitt honum skriflegt umboð til þess.</sen>
+              <sen nr="4">Hafi fötluðum einstaklingi verið skipaður ráðsmaður á grundvelli lögræðislaga tekur umboð persónulegs talsmanns ekki til þeirra eigna og fjármuna sem ráðsmaður hefur umsjón með.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Aðstoð við ráðstöfun fjármuna vegna daglegra útgjalda.</sen>
+              <sen nr="2">Persónulegum talsmanni er heimilt, á grundvelli samkomulags skv. 1. mgr. 7. gr., að sjá um greiðslu daglegra útgjalda fyrir einstakling sem hann aðstoðar enda sé greiðslum ráðstafað af sérgreindum reikningum fyrir þess háttar útgjöld.</sen>
+              <sen nr="3">Með viðauka við samkomulagið má veita persónulegum talsmanni heimild til þess að fá nauðsynlegan skoðunaraðgang að sérgreindum reikningum og greiða tilteknar, reglulegar kröfur í heimabanka þess einstaklings sem nýtur aðstoðar.</sen>
+              <sen nr="4">Heimild til handa persónulegum talsmanni getur einnig tekið til þess að stofna til greiðsluþjónustu fyrir hönd einstaklings hjá viðskiptabanka hans um sömu reikninga.</sen>
+              <sen nr="5">Persónulegum talsmanni er hins vegar óheimilt að stofna til fjárhagsskuldbindinga fyrir hönd þess sem hann aðstoðar nema sá einstaklingur hafi veitt honum skriflegt umboð til þess.</sen>
+              <sen nr="6">Hafi fötluðum einstaklingi verið skipaður ráðsmaður á grundvelli lögræðislaga tekur umboð persónulegs talsmanns ekki til þeirra eigna og fjármuna sem ráðsmaður hefur umsjón með.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
-    <original>
+    <original affected-law-nr="88" affected-law-year="2011">
       <p style="text-align: justify;">Lög þessi öðlast gildi 1. janúar 2025.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-01-01" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 3. júlí 2024.</signed-when>
 </advert>

@@ -14,11 +14,40 @@
         <li>Í stað orðanna „láns úr Lánasjóði íslenskra námsmanna“ í 2. mgr. kemur: námslána og/eða styrkja úr Menntasjóði námsmanna.</li>
       </ol>
     </original>
+    <intents common-address="2. gr.">
+      <intent action="add_text" action-xpath="art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='1']" action-law-nr="79" action-law-year="2003">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='1']//numart[@nr='1']">1. tölul. 1. mgr. 2. gr.</address>
+        <existing>
+          <numart nr="1" nr-type="numeric">
+            <nr-title>1.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">eru íslenskir ríkisborgarar eða erlendir ríkisborgarar sem eiga rétt til námsstyrks samkvæmt samningi íslenska ríkisins við önnur ríki,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-to>eða nemendur sem hafa hlotið alþjóðlega vernd eða dvalarleyfi á grundvelli mannúðarsjónarmiða.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="art[@nr='2']/subart[@nr='2']" action-law-nr="79" action-law-year="2003">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//subart[@nr='2']">2. mgr. 2. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Eigi skulu þeir njóta styrks sem eiga rétt til láns úr Lánasjóði íslenskra námsmanna eða njóta hliðstæðrar fyrirgreiðslu.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>láns úr Lánasjóði íslenskra námsmanna</text-from>
+        <text-to>námslána og/eða styrkja úr Menntasjóði námsmanna.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="79" affected-law-year="2003">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-07-09" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 3. júlí 2024.</signed-when>
 </advert>

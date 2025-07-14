@@ -10,6 +10,22 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: miðlæg innkaupastofnun eða sérstök starfseining á vegum hins opinbera veitir.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='2']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='7']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2,')]//numart[@nr='7']">7. tölul. 2. gr.</address>
+        <existing>
+          <numart nr="7" nr-type="numeric">
+            <nr-title>7.</nr-title>
+            <name>Innkaupaþjónusta:</name>
+            <paragraph nr="1">
+              <sen nr="1">Þjónusta sem Ríkiskaup veita öðrum opinberum aðilum til að ná fram gagnsæjum, hagkvæmum og markvissum innkaupum á grundvelli laganna, t.d. með því að afla vöru eða þjónustu fyrir aðra kaupendur eða gera opinbera samninga eða rammasamninga um verk, vöru eða þjónustu ætlaða öðrum kaupendum.</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <text-from>Ríkiskaup veita</text-from>
+        <text-to>miðlæg innkaupastofnun eða sérstök starfseining á vegum hins opinbera veitir.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -18,6 +34,26 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Til verksamninga teljast samningar sem hafa að markmiði framkvæmd, eða framkvæmd og hönnun, verka sem tengjast einhverri starfsemi sem um getur í II. viðauka tilskipunarinnar eða framkvæmd, eða framkvæmd og hönnun, verks, eða hvers konar framkvæmd á verki sem svarar til krafna sem settar eru fram af kaupanda sem hefur afgerandi áhrif á gerð eða hönnun verksins.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='2']">2. mgr. 4. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Til verksamninga teljast samningar sem hafa að markmiði framkvæmd, eða framkvæmd og hönnun, á tilteknu verki eða framkvæmd verks, með hvers konar aðferðum sem svara eiga til krafna sem kaupandi hefur sett fram.</sen>
+              <sen nr="2">Með verki í þessum skilningi er átt við afrakstur mannvirkjagerðar eða verkfræðilegra aðferða sem getur þjónað efnahagslegu eða tæknilegu hlutverki.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Til verksamninga teljast samningar sem hafa að markmiði framkvæmd, eða framkvæmd og hönnun, verka sem tengjast einhverri starfsemi sem um getur í II. viðauka tilskipunarinnar eða framkvæmd, eða framkvæmd og hönnun, verks, eða hvers konar framkvæmd á verki sem svarar til krafna sem settar eru fram af kaupanda sem hefur afgerandi áhrif á gerð eða hönnun verksins.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -29,6 +65,24 @@
         <li style="text-align: justify;">Í stað orðsins „Ríkiskaupa“ í 2. málsl. 2. mgr. kemur: sem eru unnar á vegum ráðherra.</li>
       </ol>
     </original>
+    <intents common-address="20. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='20']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 20. gr.</address>
+        <existing>
+          <sen nr="2">Ríkiskaupum er einnig heimilt að bjóða út innkaup, sem falla undir lög þessi, í öðru ríki Evrópska efnahagssvæðisins, í samstarfi við erlenda kaupendur, samtök þeirra eða fulltrúa, eða miðlægar innkaupastofnanir.</sen>
+        </existing>
+        <text-from>Ríkiskaupum er einnig</text-from>
+        <text-to>Einnig er.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='20']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',20,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 20. gr.</address>
+        <existing>
+          <sen nr="2">Með rökstuðningnum skal fylgja samkeppnismat í samræmi við leiðbeiningar Ríkiskaupa.</sen>
+        </existing>
+        <text-from>Ríkiskaupa</text-from>
+        <text-to>sem eru unnar á vegum ráðherra.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="4">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -36,6 +90,15 @@
           <span style="color: #000000;">laganna</span>
         </a>bætist: í útboðskerfum.</p>
     </original>
+    <intents>
+      <intent action="add_text" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='22']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',22,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 22. gr.</address>
+        <existing>
+          <sen nr="1">Öll samskipti og miðlun upplýsinga sem vísað er til í þessari grein skulu að jafnaði fara fram með rafrænum aðferðum.</sen>
+        </existing>
+        <text-to>í útboðskerfum.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="5">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -43,6 +106,16 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: viðmiðunar­fjárhæðum skv. 4. mgr.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='23']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',23,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 23. gr.</address>
+        <existing>
+          <sen nr="1">Öll innkaup opinberra aðila á vörum og þjónustu yfir 15.500.000 kr. og verkum yfir 49.000.000 kr. skal bjóða út og gera í samræmi við þau innkaupaferli sem nánar er kveðið á um í IV. kafla.</sen>
+        </existing>
+        <text-from>15.500.000 kr.</text-from>
+        <text-to>viðmiðunarfjárhæðum skv. 4. mgr.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="6">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -50,6 +123,16 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: undirbún­ings­tíma tilboðs.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='40']/subart[@nr='5']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',40,')]//subart[@nr='5']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']//sen[@nr='2']">2. málsl. b-liðar 5. mgr. 40. gr.</address>
+        <existing>
+          <sen nr="2">Við mat á lengd frests skal taka tillit til hversu flókið efni samningsins er, svo og sendingartíma.</sen>
+        </existing>
+        <text-from>sendingartíma</text-from>
+        <text-to>undirbúningstíma tilboðs.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="7">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -61,6 +144,24 @@
         <li style="text-align: justify;">Í stað orðsins „valforsendur“ í 2. málsl. 2. mgr. kemur: hæfiskröfur.</li>
       </ol>
     </original>
+    <intents common-address="41. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='41']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',41,')]//subart[@nr='1']//sen[@nr='3']">3. málsl. 1. mgr. 41. gr.</address>
+        <existing>
+          <sen nr="3">Allir bjóðendur sem fullnægt hafa skilyrðum skv. VII. kafla skulu eiga rétt á aðild að gagnvirku innkaupakerfi.</sen>
+        </existing>
+        <text-from>VII. kafla</text-from>
+        <text-to>69.–72. gr.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='41']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',41,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 41. gr.</address>
+        <existing>
+          <sen nr="2">Ef innkaupakerfinu er skipt niður í flokka skal tilgreina gildandi valforsendur fyrir hvern flokk.</sen>
+        </existing>
+        <text-from>valforsendur</text-from>
+        <text-to>hæfiskröfur.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="8">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -72,6 +173,24 @@
         <li style="text-align: justify;">Í stað orðanna „heldur skal haldinn opnunarfundur og“ í 2. málsl. kemur: og skal þá.</li>
       </ol>
     </original>
+    <intents common-address="63. gr.">
+      <intent action="append_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='63']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',63,')]//sen[@nr='1']">1. málsl. 63. gr.</address>
+        <existing>
+          <sen nr="1">Þurfi að fresta opnun tilboða skal það gert með a.m.k. fjögurra almanaksdaga fyrirvara.</sen>
+        </existing>
+        <text-from>tilboða</text-from>
+        <text-to>sem lögð eru fram með öðrum hætti en rafrænum aðferðum.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='63']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',63,')]//sen[@nr='2']">2. málsl. 63. gr.</address>
+        <existing>
+          <sen nr="2">Séu færri en fjórir dagar fram að opnun er óheimilt að boða frestun heldur skal haldinn opnunarfundur og skráð hverjir skila inn tilboði, án þess að opna tilboðin.</sen>
+        </existing>
+        <text-from>heldur skal haldinn opnunarfundur og</text-from>
+        <text-to>og skal þá.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="9">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -80,6 +199,43 @@
         </a>kemur ný málsgrein, svohljóðandi:</p>
       <p style="text-align: justify;">Tilkynna skal bjóðendum um þau atriði sem talin eru upp í 1. mgr., þegar notast er við samkeppnisviðræður, samkeppnisútboð eða nýsköpunarsamstarf, eftir lok frests til að leggja fram endanleg tilboð.</p>
     </original>
+    <intents>
+      <intent action="append" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='65']/subart[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',65,')]//subart[@nr='1']">1. mgr. 65. gr.</address>
+        <existing>
+          <subart nr="1">
+            <paragraph nr="1">
+              <sen nr="1">Þegar tilboð eru lögð fram með rafrænum aðferðum skal tilkynna bjóðendum eftir lok tilboðsfrests um eftirfarandi atriði:</sen>
+              <numart nr="a" nr-type="alphabet">
+                <nr-title>a.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Nafn bjóðanda.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="b" nr-type="alphabet">
+                <nr-title>b.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Heildartilboðsupphæð.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="c" nr-type="alphabet">
+                <nr-title>c.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Hvort tilboð sé sett fram sem frávikstilboð.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Tilkynna skal bjóðendum um þau atriði sem talin eru upp í 1. mgr., þegar notast er við samkeppnisviðræður, samkeppnisútboð eða nýsköpunarsamstarf, eftir lok frests til að leggja fram endanleg tilboð.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="10">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -87,6 +243,16 @@
           <span style="color: #000000;">laganna</span>
         </a>kemur: ákvörðun er tekin um val tilboðs.</p>
     </original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='66']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',66,')]//subart[@nr='4']//sen[@nr='2']">2. málsl. 4. mgr. 66. gr.</address>
+        <existing>
+          <sen nr="2">Fullnægjandi mat á hæfiskröfum skal þó fara fram áður en samningur er gerður við bjóðanda.</sen>
+        </existing>
+        <text-from>samningur er gerður við bjóðanda</text-from>
+        <text-to>ákvörðun er tekin um val tilboðs.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="11">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -94,6 +260,15 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='82']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',82,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 82. gr.</address>
+        <existing>
+          <sen nr="1">Tilboð telst óaðgengilegt og ekki uppfylla skilmála innkaupaferlis ef það er lagt fram af bjóðanda sem skortir nauðsynlegt hæfi eða dugir bersýnilega ekki, án verulegra breytinga, til að mæta þörfum kaupanda, eins og tilgreint er í útboðsgögnum.</sen>
+        </existing>
+        <text-from>eða dugir bersýnilega ekki, án verulegra breytinga, til að mæta þörfum kaupanda, eins og tilgreint er í útboðsgögnum</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="12">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -105,6 +280,50 @@
         <li style="text-align: justify;">Í stað orðanna „skriflegum hætti“ í 3. mgr. kemur: tilkynningu um töku tilboðs.</li>
       </ol>
     </original>
+    <intents common-address="86. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='2']">2. mgr. 86. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Biðtími skv. 1. mgr. gildir ekki í eftirfarandi tilvikum:</sen>
+              <numart nr="1" nr-type="numeric">
+                <nr-title>1.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Við gerð samnings sem heimilt er að gera án undangenginnar útboðsauglýsingar.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="2" nr-type="numeric">
+                <nr-title>2.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Við gerð samnings þar sem endanlega liggur fyrir að aðeins einn bjóðandi eða þátttakandi er fyrir hendi.</sen>
+                </paragraph>
+              </numart>
+              <numart nr="3" nr-type="numeric">
+                <nr-title>3.</nr-title>
+                <paragraph nr="1">
+                  <sen nr="1">Við gerð samnings á grundvelli rammasamnings skv. 40. gr. eða gagnvirks innkaupakerfis skv. 41. gr.</sen>
+                </paragraph>
+              </numart>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>Biðtími skv. 1. mgr. gildir ekki</text-from>
+        <text-to>Heimilt er að sleppa biðtíma skv. 1. mgr.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='86']/subart[@nr='3']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',86,')]//subart[@nr='3']">3. mgr. 86. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Tilboð skal samþykkja endanlega með skriflegum hætti innan gildistíma þess og er þá kominn á bindandi samningur á grundvelli útboðsgagna og tilboðs bjóðanda.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>skriflegum hætti</text-from>
+        <text-to>tilkynningu um töku tilboðs.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="13">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -116,6 +335,29 @@
         <li style="text-align: justify;">Í stað orðsins „verksamningi“ í 3. mgr. kemur: samningi.</li>
       </ol>
     </original>
+    <intents common-address="88. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='88']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',88,')]//subart[@nr='2']//sen[@nr='1']">1. málsl. 2. mgr. 88. gr.</address>
+        <existing>
+          <sen nr="1">Bjóðandi skal upplýsa verkkaupa um hvaða undirverktaka hann hyggst nota og leita samþykkis verkkaupa áður en undirverktaki hefur störf.</sen>
+        </existing>
+        <text-from>verkkaupa</text-from>
+        <text-to>kaupanda.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='88']/subart[@nr='3']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',88,')]//subart[@nr='3']">3. mgr. 88. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Upplýsingar bjóðanda um undirverktaka hafa ekki áhrif á ábyrgð bjóðanda gagnvart kaupanda.</sen>
+              <sen nr="2">Undirverktaka skal í öllum tilvikum byggjast á skriflegum verksamningi.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>verksamningi</text-from>
+        <text-to>samningi.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="14">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -128,6 +370,42 @@
         <li style="text-align: justify;">Í stað orðsins „verkkaupa“ í 3. mgr. kemur: kaupanda.</li>
       </ol>
     </original>
+    <intents common-address="88. gr. a">
+      <intent action="append" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='88a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',88a,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 88. gr. a</address>
+        <existing>
+          <sen nr="1">Aðalverktaki skal tryggja og bera ábyrgð á að allir starfsmenn, hvort sem um ræðir starfsmenn hans, undirverktaka eða starfsmannaleiga, fái laun, starfskjör, sjúkra- og slysatryggingar og önnur réttindi í samræmi við gildandi kjarasamninga og lög hverju sinni.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Til að uppfylla þá skyldu er aðalverktaka heimilt að kalla eftir launaseðlum, tímaskýrslum og yfirliti yfir gildandi sjúkra- og slysatryggingar frá undirverktaka og starfsmannaleigum.</sen>
+        </inner>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='88a']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',88a,')]//subart[@nr='2']">2. mgr. 88. gr. a</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Kaupanda er heimilt að greiða vangoldnar verktakagreiðslur til undirverktaka og annarra starfsmanna, sem svara til launatengdra greiðslna, á kostnað aðalverktaka standi hann ekki í skilum með slíkar greiðslur.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Kaupanda er í því skyni heimilt að kalla eftir launaseðlum, tímaskýrslum og yfirliti yfir gildandi sjúkra- og slysatryggingar frá undirverktaka og starfsmannaleigum.</sen>
+        </inner>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='88a']/subart[@nr='3']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',88a,')]//subart[@nr='3']">3. mgr. 88. gr. a</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Skilyrði fyrir greiðslum skv. 2. mgr. er að heimild þar að lútandi sé tilgreind í útboðsgögnum, að verk sé í nánu og eðlilegu samhengi við opinberan samning sem undirverktaka er ætlað að framkvæma fyrir aðalverktaka og að kröfum sé beint til verkkaupa innan fjögurra mánaða frá því að þær gjaldféllu.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>verkkaupa</text-from>
+        <text-to>kaupanda.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="15">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -139,6 +417,24 @@
         <li style="text-align: justify;">Í stað orðsins „eða“ í 1. málsl. f-liðar 1. mgr. kemur: og.</li>
       </ol>
     </original>
+    <intents common-address="90. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='90']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',90,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='b' or @nr='B']//sen[@nr='1']">1. málsl. b-liðar 1. mgr. 90. gr.</address>
+        <existing>
+          <sen nr="1">Þegar um er að ræða viðbótarverk, -þjónustu eða -vörur sem ekki var gert ráð fyrir í umsömdum innkaupum og nauðsynlegt er, vegna ófyrirsjáanlegra atvika, að sami aðili sjái um, enda sé ekki unnt að skilja slíkt frá upphaflegum innkaupum án stórfelldra vandkvæða fyrir kaupanda vegna tæknilegra eða fjárhagslegra ástæðna.</sen>
+        </existing>
+        <text-from>ekki var gert ráð fyrir í umsömdum innkaupum og nauðsynlegt er, vegna ófyrirsjáanlegra atvika, að sami aðili sjái um, enda sé ekki unnt að skilja slíkt frá upphaflegum innkaupum án stórfelldra vandkvæða fyrir kaupanda vegna tæknilegra eða fjárhagslegra ástæðna</text-from>
+        <text-to>talin eru nauðsynleg og voru ekki hluti af upphaflegum innkaupum enda mundi breyting á fyrirtæki valda kaupanda verulegu óhagræði eða talsverðum viðbótarkostnaði vegna tæknilegra eða fjárhagslegra ástæðna.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="chapter[@nr='7' and @chapter-type='kafli']/art[@nr='90']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',90,')]//subart[@nr='1']//*[self::numart or self::art-chapter][@nr='f' or @nr='F']//sen[@nr='1']">1. málsl. f-liðar 1. mgr. 90. gr.</address>
+        <existing>
+          <sen nr="1">Þegar verðmæti breytinga er minna en nemur viðmiðunarfjárhæðum skv. 1. mgr. 23. gr. eða þegar verðmæti breytinga er minna en 10% af upphaflegu verðmæti þjónustu- og vörusamnings og 15% af upphaflegu verðmæti verksamnings.</sen>
+        </existing>
+        <text-from>eða</text-from>
+        <text-to>og.</text-to>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="16">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -149,6 +445,61 @@
       <p style="text-align: justify;">Ráðherra er enn fremur heimilt með reglugerð að fela öðrum opinberum aðilum sem falla undir gildissvið laganna að annast innkaupaþjónustu í ákveðnum innkaupaflokkum enda falli það vel að sérþekkingu viðkomandi aðila og kjarnastarfsemi hans.</p>
       <p style="text-align: justify;">Ráðherra er heimilt að setja sérstaka gjaldskrá fyrir innkaupaþjónustu sem veitt er á grundvelli laganna.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='99']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',99,')]">99. gr.</address>
+        <existing>
+          <art nr="99">
+            <nr-title>99. gr.</nr-title>
+            <name>Markviss innkaup og skipulag innkaupaþjónustu.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra skal stuðla að því að innkaup ríkisins í þágu ríkisstofnana séu gagnsæ, hagkvæm og markviss, að sameiginlegar þarfir fyrir vöru og þjónustu séu rannsakaðar, að sameiginleg innkaup séu nýtt til þarfa ríkisins og að unnið sé að þróun skilvirkra innkaupakerfa.</sen>
+                <sen nr="2">Veita skal aðstoð og leiðbeiningar um útboð og innkaup eftir því sem þörf krefur.</sen>
+                <sen nr="3">Gerðir skulu samningar um sameiginleg innkaup fyrir hönd ríkisins eftir því sem talið er hagkvæmt og skal í því sambandi m.a. horft til hæfis, verðs, gæða og eftir atvikum magns innkaupa.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra setur í reglugerð ákvæði um fyrirkomulag útboða og annarra innkaupaferla sem fram fara á vegum ríkisstofnana vegna innkaupa, hvort heldur er yfir innlendum viðmiðunarfjárhæðum eða viðmiðunarfjárhæðum fyrir Evrópska efnahagssvæðið skv. 23. gr.</sen>
+                <sen nr="2">Í reglugerðinni skal einnig ákvarðað hvernig kaupandi telst hafa fullnægt skyldum sínum samkvæmt lögum þessum.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote nr="1">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/755-2019"&gt;Rg. 755/2019&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='99']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra setur í reglugerð" after-mark="ákvæði um fyrirkomulag útboða og annarra innkaupaferla sem fram fara á vegum ríkisstofnana vegna innkaupa, hvort heldur er yfir innlendum viðmiðunarfjárhæðum eða viðmiðunarfjárhæðum fyrir Evrópska efnahagssvæðið skv. 23. gr.$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2019.037.html" law-nr="37" law-year="2019" law-art="10" nr="2">
+                <footnote-sen>L. 37/2019, 10. gr.</footnote-sen>
+                <location type="range" string-length="942">
+                  <start xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='99']/name[1]"/>
+                  <end xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='99']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra skal með reglugerð fela sérstakri starfseiningu eða ríkisaðila, sem starfar á hans ábyrgð, að fara með hlutverk miðlægrar innkaupastofnunar og veita innkaupaþjónustu í skilningi laga þessara.</sen>
+              <sen nr="2">Heimilt er ráðherra að fela starfseiningunni eða ríkisaðilanum önnur verkefni, t.d. verkefni sem ætlað er að stuðla að árangursríkri stjórnun og þróun mannauðs ásamt bættum rekstri og árangri í starfsemi ríkisins.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er enn fremur heimilt með reglugerð að fela öðrum opinberum aðilum sem falla undir gildissvið laganna að annast innkaupaþjónustu í ákveðnum innkaupaflokkum enda falli það vel að sérþekkingu viðkomandi aðila og kjarnastarfsemi hans.</sen>
+            </paragraph>
+          </subart>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Ráðherra er heimilt að setja sérstaka gjaldskrá fyrir innkaupaþjónustu sem veitt er á grundvelli laganna.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="17">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -156,11 +507,62 @@
           <span style="color: #000000;">laganna</span>
         </a>, ásamt fyrirsögnum, falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='10' and @chapter-type='kafli']/art[@nr='100'] | chapter[@nr='10' and @chapter-type='kafli']/art[@nr='101']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',101,') or contains(concat(',', @nr, ','), ',100,')]">100. og 101. gr.</address>
+        <existing>
+          <art nr="100">
+            <nr-title>100. gr.</nr-title>
+            <name>Lögmæti innkaupa og ábyrgð á innkaupum sem fram fara á vegum Ríkiskaupa.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Kaupandi sem aflað hefur verks, vöru eða þjónustu í gegnum Ríkiskaup telst hafa fullnægt skyldum sínum samkvæmt lögum þessum að svo miklu leyti sem Ríkiskaup hafa gert það.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Áður en innkaupaferli hefst á vegum Ríkiskaupa er stofnuninni heimilt að krefjast þess að fyrir liggi samningur þar sem m.a. er kveðið á um ákvörðunartöku og skaðabótaábyrgð vegna innkaupaferlis.</sen>
+              </paragraph>
+            </subart>
+          </art>
+          <art nr="101">
+            <nr-title>101. gr.</nr-title>
+            <name>Gjaldskrá Ríkiskaupa.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ríkiskaup selja ríkisstofnunum og öðrum opinberum aðilum þjónustu sína samkvæmt gjaldskrá sem ráðherra setur, að fengnum tillögum forstjóra Ríkiskaupa.</sen>
+                <sen nr="2">Gjaldskráin skal miðast við að tekjur standi undir rekstri stofnunarinnar.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt að gera samning við Ríkiskaup um framkvæmd og fjármögnun verkefna, m.a. vegna sameiginlegra innkaupa og rammasamninga.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="18">
     <original affected-law-nr="120" affected-law-year="2016">
       <p style="text-align: justify;">Við 2. mgr. 103. gr. laganna bætist nýr málsliður, svohljóðandi: Málsmeðferð kærunefndar tak­markast við það kæruefni sem lagt er fyrir hana.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='103']/subart[@nr='2']/paragraph[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',103,')]//subart[@nr='2']">2. mgr. 103. gr.</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Hlutverk kærunefndar útboðsmála er að leysa með skjótum og óhlutdrægum hætti úr kærum fyrirtækja vegna ætlaðra brota á lögum þessum og reglum settum samkvæmt þeim, þar á meðal um almenn innkaup opinberra aðila, innkaup á sviði varnar- og öryggismála, innkaup opinberra aðila sem annast vatnsveitu, orkuveitu, flutninga og póstþjónustu og gerð sérleyfissamninga.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Málsmeðferð kærunefndar takmarkast við það kæruefni sem lagt er fyrir hana.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="19">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -172,6 +574,33 @@
         <li style="text-align: justify;">Við bætist nýr málsliður, svohljóðandi: Heimilt er að breyta fjárhæð kærugjaldsins annað hvert ár í samræmi við breytingar á vísitölu neysluverðs, í fyrsta sinn 1. janúar 2026.</li>
       </ol>
     </original>
+    <intents common-address="5. mgr. 106. gr.">
+      <intent action="replace_text" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='106']/subart[@nr='5']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',106,')]//subart[@nr='5']">5. mgr. 106. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Fyrir hverja kæru skal greiða kærugjald að fjárhæð 150.000 kr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>150.000 kr.</text-from>
+        <text-to>210.000 kr.</text-to>
+      </intent>
+      <intent action="add" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='106']/subart[@nr='5']/paragraph[@nr='1']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',106,')]//subart[@nr='5']">5. mgr. 106. gr.</address>
+        <existing>
+          <subart nr="5">
+            <paragraph nr="1">
+              <sen nr="1">Fyrir hverja kæru skal greiða kærugjald að fjárhæð 150.000 kr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <sen nr="2">Heimilt er að breyta fjárhæð kærugjaldsins annað hvert ár í samræmi við breytingar á vísitölu neysluverðs, í fyrsta sinn 1. janúar 2026.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="20">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -179,6 +608,14 @@
           <span style="color: #000000;">laganna</span>
         </a>fellur brott.</p>
     </original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='11' and @chapter-type='kafli']/art[@nr='109']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',109,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 109. gr.</address>
+        <existing>
+          <sen nr="2">Ef Ríkiskaup eða önnur miðlæg innkaupastofnun í skilningi laga þessara hefur annast innkaup telst sú stofnun einnig varnaraðili máls fyrir nefndinni.</sen>
+        </existing>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="21">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -186,6 +623,15 @@
           <span style="color: #000000;">laganna</span>
         </a>falla brott.</p>
     </original>
+    <intents>
+      <intent action="delete_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='118']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',118,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 118. gr.</address>
+        <existing>
+          <sen nr="2">Sama á við ef Ríkiskaup eða önnur miðlæg innkaupastofnun hefur annast innkaup.</sen>
+        </existing>
+        <text-from>Ríkiskaup eða önnur</text-from>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="22">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -197,6 +643,163 @@
         <li style="text-align: justify;">Hvernig beri að reikna tímabil, dagsetningar og fresti á grundvelli laganna.</li>
       </ol>
     </original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='122']" action-law-nr="120" action-law-year="2016">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',122,')]">122. gr.</address>
+        <existing>
+          <art nr="122">
+            <nr-title>122. gr.</nr-title>
+            <name>Reglugerðarheimild.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er í reglugerð heimilt að mæla fyrir um nánari framkvæmd laga þessara, þar á meðal um:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Sameiginleg innkaup ríkisstofnana, sbr. 19. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Framkvæmd innkaupa í öðru ríki Evrópska efnahagssvæðisins, sbr. 20. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglur til innleiðingar samnings Alþjóðaviðskiptastofnunarinnar um opinber innkaup og annarra milliríkjasamninga um opinber innkaup sem íslenska ríkið er skuldbundið af.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Sameiginlegt innkaupaorðasafn, sbr. 21. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Kröfur um tæki og búnað fyrir rafræna móttöku tilboða og þátttökutilkynninga, sbr. 22. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="6" nr-type="numeric">
+                  <nr-title>6.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Hámarksverðgildi einstakra samningshluta sem heimilt er að gera án útboðs þegar innkaupum er skipt upp, sbr. 2. mgr. 29. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="7" nr-type="numeric">
+                  <nr-title>7.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem skulu koma fram í útboðsgögnum við rafræn uppboð, sbr. 42. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="8" nr-type="numeric">
+                  <nr-title>8.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem skulu koma fram í auglýsingu og tilkynningu um úrslit hönnunarsamkeppni, sbr. 44. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="9" nr-type="numeric">
+                  <nr-title>9.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Reglur um gerð og frágang útboðsgagna og tilboðsblaða, sbr. 47. og 48. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="10" nr-type="numeric">
+                  <nr-title>10.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem skulu koma fram í forauglýsingu og auglýsingu útboða og birtingu slíkra auglýsinga, sbr. 54., 55. og 56. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="11" nr-type="numeric">
+                  <nr-title>11.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Innihald boðs um að leggja fram tilboð, taka þátt í viðræðum eða staðfesta áhuga, sbr. 61. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="12" nr-type="numeric">
+                  <nr-title>12.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Opnun tilboða með rafrænum aðferðum, sbr. 65. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="13" nr-type="numeric">
+                  <nr-title>13.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Viðeigandi vottorð um starfsréttindi fyrirtækja frá öðrum ríkjum Evrópska efnahagssvæðisins, sbr. 70. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="14" nr-type="numeric">
+                  <nr-title>14.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Kröfur sem gerðar eru til sönnunar á fjárhagslegri stöðu og tæknilegri getu fyrirtækis, sbr. 74. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="15" nr-type="numeric">
+                  <nr-title>15.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar um form og efni tilkynninga um samningsgerð yfir viðmiðunarfjárhæðum Evrópska efnahagssvæðisins, sbr. 84. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="16" nr-type="numeric">
+                  <nr-title>16.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem skulu koma fram í tilkynningum um breytingar á samningi á gildistíma hans, sbr. 90. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="17" nr-type="numeric">
+                  <nr-title>17.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Þjónustu sem fellur undir félagsþjónustu og aðra sértæka þjónustu, sbr. 92. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="18" nr-type="numeric">
+                  <nr-title>18.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Upplýsingar sem koma skulu fram í forauglýsingu, útboðstilkynningu, tilkynningu um gerð samnings um félagsþjónustu og aðra sértæka þjónustu, sbr. 93. gr.</sen>
+                  </paragraph>
+                </numart>
+                <numart nr="19" nr-type="numeric">
+                  <nr-title>19.</nr-title>
+                  <paragraph nr="1">
+                    <sen nr="1">Rafræna reikningagerð í opinberum innkaupum til samræmis við skuldbindingar íslenska ríkisins á sviði opinberra innkaupa samkvæmt samningnum um Evrópska efnahagssvæðið.</sen>
+                  </paragraph>
+                </numart>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote nr="1">
+                <footnote-sen>&lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/955-2016"&gt;Rg. 955/2016&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1000-2016"&gt;Rg. 1000/2016&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/044-2019"&gt;Rg. 44/2019&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/1210-2021"&gt;Rg. 1210/2021&lt;/a&gt;. &lt;a href="https://www.reglugerd.is/reglugerdir/allar/nr/360-2022"&gt;Rg. 360/2022&lt;/a&gt;.</footnote-sen>
+                <location type="pointer" xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='122']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" before-mark="^Ráðherra er í reglugerð" after-mark="heimilt að mæla fyrir um nánari framkvæmd laga þessara, þar á meðal um:$"/>
+              </footnote>
+              <footnote href="https://www.althingi.is/altext/stjt/2019.037.html" law-nr="37" law-year="2019" law-art="13" nr="2">
+                <footnote-sen>L. 37/2019, 13. gr.</footnote-sen>
+                <location type="range" string-length="172">
+                  <start xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='122']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='19']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='13' and @chapter-type='kafli']/art[@nr='122']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='19']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <inner>
+          <numart nr="20" nr-type="numeric">
+            <nr-title>20.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Markviss innkaup, hlutverk miðlægrar innkaupastofnunar og skipulag innkaupaþjónustu hins opinbera, sbr. 99. gr.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="21" nr-type="numeric">
+            <nr-title>21.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Hvernig beri að reikna tímabil, dagsetningar og fresti á grundvelli laganna.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="23">
     <original affected-law-nr="120" affected-law-year="2016">
@@ -204,11 +807,38 @@
       <p style="text-align: justify;">Þegar ráðherra hefur falið sérstakri starfseiningu eða ríkisaðila skv. 99. gr. að fara með hlutverk miðlægrar innkaupastofnunar og veita innkaupaþjónustu eru öll störf hjá Ríkiskaupum lögð niður. Þeim aðila sem ráðherra felur að fara með það hlutverk sem mælt er fyrir um í 99. gr. er heimilt að bjóða þeim starfsmönnum Ríkiskaupa sem sinnt hafa verkefnum sem munu heyra undir sérstaka starfseiningu eða ríkisaðila starf. Um rétt starfsmanna til starfa hjá starfseiningunni eða ríkis­aðilanum fer eftir ákvæðum laga um réttindi og skyldur starfsmanna ríkisins, nr. 70/1996. Ákvæði um auglýsingaskyldu í 7. gr. laga nr. 70/1996 gilda ekki við ráðstöfun starfa samkvæmt þessu ákvæði.</p>
       <p style="text-align: justify;">Þegar ráðherra hefur skv. 99. gr. falið sérstakri starfseiningu eða ríkisaðila að fara með hlutverk miðlægrar innkaupastofnunar og veita innkaupaþjónustu verður embætti forstöðumanns Ríkiskaupa lagt niður.</p>
     </original>
+    <intents>
+      <intent action="add" action-xpath="" action-law-nr="120" action-law-year="2016">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing/>
+        <inner>
+          <art nr="I" roman-nr="1" number-type="roman">
+            <nr-title>I.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þegar ráðherra hefur falið sérstakri starfseiningu eða ríkisaðila skv. 99. gr. að fara með hlutverk miðlægrar innkaupastofnunar og veita innkaupaþjónustu eru öll störf hjá Ríkiskaupum lögð niður.</sen>
+                <sen nr="2">Þeim aðila sem ráðherra felur að fara með það hlutverk sem mælt er fyrir um í 99. gr. er heimilt að bjóða þeim starfsmönnum Ríkiskaupa sem sinnt hafa verkefnum sem munu heyra undir sérstaka starfseiningu eða ríkisaðila starf.</sen>
+                <sen nr="3">Um rétt starfsmanna til starfa hjá starfseiningunni eða ríkisaðilanum fer eftir ákvæðum laga um réttindi og skyldur starfsmanna ríkisins, nr. 70/1996.</sen>
+                <sen nr="4">Ákvæði um auglýsingaskyldu í 7. gr. laga nr. 70/1996 gilda ekki við ráðstöfun starfa samkvæmt þessu ákvæði.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Þegar ráðherra hefur skv. 99. gr. falið sérstakri starfseiningu eða ríkisaðila að fara með hlutverk miðlægrar innkaupastofnunar og veita innkaupaþjónustu verður embætti forstöðumanns Ríkiskaupa lagt niður.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="24">
     <original affected-law-nr="120" affected-law-year="2016">
       <p style="text-align: justify;">Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-06-28" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört í Reykjavík, 28. júní 2024.</signed-when>
 </advert>

@@ -28,11 +28,89 @@
           <li style="text-align: justify;">Í stað tilvísunarinnar „7. gr. laga nr. 38 15. maí 1990, með síðari breytingum“ í 2. málsl. 2. mgr. kemur: 8. gr. laga um stjórn fiskveiða, nr. 116/2006.</li>
         </ol>
       </original>
+      <intents common-address="7. gr.">
+        <intent action="replace" action-xpath="art[@nr='7']/subart[@nr='1']" action-law-nr="79" action-law-year="1997">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='1']">1. mgr. 7. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Grásleppuveiðar skulu háðar sérstöku leyfi Fiskistofu og eiga þeir bátar einir kost á slíku leyfi sem rétt áttu til leyfis á grásleppuvertíðinni 1997 samkvæmt reglum þar um.</sen>
+                <sen nr="2">Ráðherra skal í reglugerð kveða nánar á um skipulag grásleppuveiða og veiðitíma samkvæmt þessari málsgrein.</sen>
+                <sen nr="3">Getur ráðherra m.a. ákveðið að leyfin séu bundin við ákveðið svæði og að aðeins hljóti leyfi til veiða á tilteknu svæði skip sem skráð eru á því svæði.</sen>
+                <sen nr="4">Þá getur ráðherra sett reglur um heimildir til flutnings leyfa til grásleppuveiða milli báta.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Staðbundin veiðisvæði grásleppu eru:</sen>
+                <numart nr="1" nr-type="numeric">
+                  <nr-title>1.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="2" nr-type="numeric">
+                  <nr-title>2.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="3" nr-type="numeric">
+                  <nr-title>3.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="4" nr-type="numeric">
+                  <nr-title>4.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+                <numart nr="5" nr-type="numeric">
+                  <nr-title>5.</nr-title>
+                  <paragraph nr="1"/>
+                </numart>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="append" action-xpath="art[@nr='7']/subart[@nr='1']" action-law-nr="79" action-law-year="1997">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='1']">1. mgr. 7. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Grásleppuveiðar skulu háðar sérstöku leyfi Fiskistofu og eiga þeir bátar einir kost á slíku leyfi sem rétt áttu til leyfis á grásleppuvertíðinni 1997 samkvæmt reglum þar um.</sen>
+                <sen nr="2">Ráðherra skal í reglugerð kveða nánar á um skipulag grásleppuveiða og veiðitíma samkvæmt þessari málsgrein.</sen>
+                <sen nr="3">Getur ráðherra m.a. ákveðið að leyfin séu bundin við ákveðið svæði og að aðeins hljóti leyfi til veiða á tilteknu svæði skip sem skráð eru á því svæði.</sen>
+                <sen nr="4">Þá getur ráðherra sett reglur um heimildir til flutnings leyfa til grásleppuveiða milli báta.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Ráðherra er heimilt með reglugerð að banna og takmarka veiðar tímabundið innan staðbundinna veiðisvæða, að hluta eða að öllu leyti, vegna hættu á meðafla sjávarspendýra og fugla.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+        <intent action="replace_text" action-xpath="art[@nr='7']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="79" action-law-year="1997">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 7. gr.</address>
+          <existing>
+            <sen nr="2">Sama á við ef þörf er á að skipuleggja veiðar úr stofnum sem ekki er stjórnað með skiptingu heildarafla milli einstakra skipa, sbr. 7. gr. laga nr. 38 15. maí 1990, með síðari breytingum, t.d. vegna óvissu um veiðiþol viðkomandi stofns.</sen>
+          </existing>
+          <text-from>7. gr. laga nr. 38 15. maí 1990, með síðari breytingum</text-from>
+          <text-to>8. gr. laga um stjórn fiskveiða, nr. 116/2006.</text-to>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="2">
       <original affected-law-nr="79" affected-law-year="1997">
         <p style="text-align: justify;">2. málsl. 2. mgr. 21. gr. laganna fellur brott.</p>
       </original>
+      <intents>
+        <intent action="delete" action-xpath="art[@nr='21']/subart[@nr='2']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="79" action-law-year="1997">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',21,')]//subart[@nr='2']//sen[@nr='2']">2. málsl. 2. mgr. 21. gr.</address>
+          <existing>
+            <sen nr="2">Þar til réttaráhrifum leyfissviptingar lýkur er hvorki heimilt að flytja réttindi grásleppuveiðileyfis af bát né réttindi grásleppuveiðileyfis til viðkomandi báts.</sen>
+          </existing>
+        </intent>
+      </intents>
     </advert-art>
   </advert-chapter>
   <advert-chapter nr="2" nr-type="roman" roman-nr="II">
@@ -45,17 +123,95 @@
           <br/>
         </p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',7,')]">7. gr.</address>
+          <existing>
+            <art nr="7">
+              <nr-title>7. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Bátum sem veiðileyfi hafa með krókaaflamarki er heimilt að stunda veiðar úr þeim tegundum sem þeir hafa krókaaflamark í og enn fremur tegundum sem ekki sæta takmörkunum á leyfilegum heildarafla.</sen>
+                  <sen nr="2">Ráðherra skal þó setja reglur um leyfðan meðafla.</sen>
+                  <sen nr="3">Krókaaflamark er óheimilt að nýta á annan hátt en við línu- og handfæraveiðar.</sen>
+                  <sen nr="4">Þó er ráðherra heimilt að veita krókaaflamarksbátum heimild til þess með reglugerð að stunda veiðar á botndýrum með þeim veiðarfærum sem til þarf, svo sem plógum og gildrum, svo og til hrognkelsaveiða í net.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="4" nr="1">
+                  <footnote-sen>L. 88/2020, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='7']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='4']" words="heimild til þess með reglugerð" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="7a">
+              <nr-title>7. gr. a</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra er heimilt að úthluta aflamarki til fiskiskipa til veiða á grásleppu á grundvelli aflahlutdeildar skips á hverju staðbundnu veiðisvæði skv. 1. mgr. 7. gr. laga um veiðar í fiskveiðilandhelgi Íslands, nr. 79/1997.</sen>
+                  <sen nr="2">Grásleppuveiðar eru heimilar innan staðbundinna veiðisvæða, en þar geta aðeins veitt fiskiskip með aflahlutdeild í grásleppu og aflamark á staðbundnu veiðisvæði.</sen>
+                  <sen nr="3">Fiskiskip skal skráð innan veiðisvæðis og landa í löndunarhöfn innan staðbundins veiðisvæðis.</sen>
+                  <sen nr="4">Ef fiskiskip er flutt af staðbundnu veiðisvæði fellur aflahlutdeild skipsins í grásleppu niður.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra skal í reglugerð kveða nánar á um skipulag grásleppuveiða, veiðitíma og meðafla grásleppu við aðrar veiðar.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="4">
       <original affected-law-nr="116" affected-law-year="2006">
         <p style="text-align: justify;">Á eftir 6. mgr. 8. gr. laganna kemur ný málsgrein, svohljóðandi:</p>
         <p style="text-align: justify;">Því aflamarki sem dregið er frá heildarafla grásleppu skv. 3. mgr. er ráðherra heimilt að úthluta gjaldfrjálst til þeirra sem eru að hefja grásleppuveiðar í fyrsta skipti. Fiskistofa annast framkvæmd við úthlutun aflamarks til nýliða. Ráðherra skal mæla nánar fyrir um úthlutun aflamarks til nýliða í reglugerð, m.a. um skilyrði til að teljast vera nýliði, skilyrði til úthlutunar, hámarksafla og ráðstöfun aflamarks sem ekki er úthlutað til nýliða innan hvers fiskveiðiárs. Fyrir úthlutun aflamarks til nýliða skal nýliði greiða þjónustugjald samkvæmt gjaldskrá Fiskistofu, sbr. 5. gr. laga um Fiskistofu, nr. 36/1992.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='8']/subart[@nr='6']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',8,')]//subart[@nr='6']">6. mgr. 8. gr.</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Því aflamagni sem dregið er frá heildarafla skv. 3. mgr. er ráðherra heimilt að skipta í aðrar tegundir til að leitast við að tryggja tegundarsamsetningu aflamagns til ráðstafana skv. 5. mgr.</sen>
+                <sen nr="2">Ráðherra skal mæla nánar fyrir um þessa framkvæmd í reglugerð, m.a. um gerð tilboða, tímafresti, magn í skiptum og að Fiskistofa annist framkvæmdina.</sen>
+                <sen nr="3">Aflamagn samkvæmt þessu ákvæði er heimilt að flytja milli fiskveiðiára.</sen>
+                <sen nr="4">Fyrir úthlutun aflamarks samkvæmt þessari málsgrein skal útgerð skips greiða gjald samkvæmt gjaldskrá Fiskistofu, sbr. 5. gr. laga nr. 36/1992, um Fiskistofu, með síðari breytingum.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <subart nr="7">
+              <paragraph nr="1">
+                <sen nr="1">Því aflamarki sem dregið er frá heildarafla grásleppu skv. 3. mgr. er ráðherra heimilt að úthluta gjaldfrjálst til þeirra sem eru að hefja grásleppuveiðar í fyrsta skipti.</sen>
+                <sen nr="2">Fiskistofa annast framkvæmd við úthlutun aflamarks til nýliða.</sen>
+                <sen nr="3">Ráðherra skal mæla nánar fyrir um úthlutun aflamarks til nýliða í reglugerð, m.a. um skilyrði til að teljast vera nýliði, skilyrði til úthlutunar, hámarksafla og ráðstöfun aflamarks sem ekki er úthlutað til nýliða innan hvers fiskveiðiárs.</sen>
+                <sen nr="4">Fyrir úthlutun aflamarks til nýliða skal nýliði greiða þjónustugjald samkvæmt gjaldskrá Fiskistofu, sbr. 5. gr. laga um Fiskistofu, nr. 36/1992.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="5">
       <original affected-law-nr="116" affected-law-year="2006">
         <p style="text-align: justify;">Á eftir 6. málsl. 6. mgr. 12. gr. laganna kemur nýr málsliður, svohljóðandi: Óheimilt er að fram­selja aflahlutdeild í grásleppu á skip sem ekki er skráð á sama staðbundna veiðisvæði grásleppu skv. 1. mgr. 7. gr. laga um veiðar í fiskveiðilandhelgi Íslands, nr. 79/1997.</p>
       </original>
+      <intents>
+        <intent action="append" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='6']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//subart[@nr='6']//sen[@nr='6']">6. málsl. 6. mgr. 12. gr.</address>
+          <existing>
+            <sen nr="6">Óheimilt er að framselja aflahlutdeild skips nema fyrir liggi samþykki þeirra aðila sem samningsveð áttu í skipinu 1. janúar 1991.</sen>
+          </existing>
+          <inner>
+            <sen nr="7">Óheimilt er að framselja aflahlutdeild í grásleppu á skip sem ekki er skráð á sama staðbundna veiðisvæði grásleppu skv. 1. mgr. 7. gr. laga um veiðar í fiskveiðilandhelgi Íslands, nr. 79/1997.</sen>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="6">
       <original affected-law-nr="116" affected-law-year="2006">
@@ -69,6 +225,139 @@
           </tbody>
         </table>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='13']/subart[@nr='1']/table[1]" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',13,')]//subart[@nr='1']//table">töflu í 1. mgr. 13. gr.</address>
+          <existing>
+            <table>
+              <tbody>
+                <tr>
+                  <td header-style="b">
+                    <table-title>Tegund</table-title>
+                  </td>
+                  <td header-style="b">
+                    <table-title>Hámarksaflahlutdeild</table-title>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Þorskur</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">12%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Ýsa</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Ufsi</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Karfi</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">35%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Grálúða</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Síld</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Loðna</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Úthafsrækja</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">20%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </existing>
+          <inner>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">Grásleppa</sen>
+                    </paragraph>
+                  </td>
+                  <td>
+                    <paragraph nr="1">
+                      <sen nr="1">1,5%</sen>
+                    </paragraph>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="7">
       <original affected-law-nr="116" affected-law-year="2006">
@@ -78,6 +367,138 @@
           <li style="text-align: justify;">Við bætist ný málsgrein, svohljóðandi:<br/>Óheimilt er að flytja aflamark í grásleppu á milli skipa sem ekki eru skráð á sama stað­bundna veiðisvæði grásleppu skv. 1. mgr. 7. gr. laga um veiðar í fiskveiðilandhelgi Íslands, nr. 79/1997. Ráðherra er heimilt í reglugerð að kveða á um flutning á aflamarki milli veiði­svæða á yfirstandandi veiðitímabili ef náttúrulegar aðstæður breytast verulega innan veiði­svæðis.</li>
         </ol>
       </original>
+      <intents common-address="15. gr.">
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='6']/paragraph[@nr='1']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='6']">6. mgr. 15. gr.</address>
+          <existing>
+            <subart nr="6">
+              <paragraph nr="1">
+                <sen nr="1">Veiði fiskiskip minna en 50% á fiskveiðiári af úthlutuðu aflamarki sínu og aflamarki sem flutt hefur verið frá fyrra fiskveiðiári, í þorskígildum talið, fellur aflahlutdeild þess niður og skal aflahlutdeild annarra skipa í viðkomandi tegundum hækka sem því nemur.</sen>
+                <sen nr="2">Skal við mat á þessu hlutfalli miðað við verðmæti einstakra tegunda í aflamarki skips í samræmi við verðmætahlutföll þeirra, sbr. 19. gr.</sen>
+                <sen nr="3">Viðmiðunarhlutfall, sem ákveðið er í þessari málsgrein, lækkar þó um 5% fyrir hverja fulla 30 daga sem skipi er haldið til veiða utan fiskveiðilandhelgi Íslands á fiskveiðiárinu á þeim tegundum sem ekki hefur verið samið um veiðistjórn á.</sen>
+                <sen nr="4">Hið sama á við þegar skipi er haldið til veiða utan lögsögu á tegundum sem samið hefur verið um veiðistjórn á og ekki teljast til deilistofna.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <inner>
+            <sen nr="5">Ráðherra er heimilt með reglugerð að undanskilja grásleppu frá ákvæði þessu ef aðstæður á markaði leiða til þess að afli verður óvenjulítill.</sen>
+          </inner>
+        </intent>
+        <intent action="add" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]">15. gr.</address>
+          <existing>
+            <art nr="15">
+              <nr-title>15. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Þegar fiskiskipi hefur verið úthlutað aflamarki er heimilt að flytja aflamarkið milli skipa enda leiði flutningurinn ekki til þess að veiðiheimildir skipsins verði bersýnilega umfram veiðigetu þess.</sen>
+                  <sen nr="2">Tilkynning um flutning aflamarks skal hafa borist Fiskistofu eigi síðar en 15 dögum eftir að veiðitímabili lýkur.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Tilkynna skal Fiskistofu um flutning aflamarks og öðlast hann ekki gildi fyrr en stofnunin hefur staðfest flutninginn.</sen>
+                  <sen nr="2">Í tilkynningu skulu m.a. koma fram upplýsingar um magn aflamarks sem flytja skal, auk upplýsinga um verð, nema þegar aflamark er flutt á milli skipa í eigu sama aðila, einstaklings eða lögaðila.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Áður en Fiskistofa staðfestir flutning aflamarks skal stofnunin skrá upplýsingar um flutning aflamarksins samkvæmt tilkynningu þar að lútandi.</sen>
+                  <sen nr="2">Ráðherra skal með reglugerð ákveða í hvaða formi tilkynningar til Fiskistofu um flutning aflamarks skuli vera.</sen>
+                  <sen nr="3">Sá sem tilkynnir um flutning aflamarks skal greiða Fiskistofu gjald með hverri tilkynningu samkvæmt gjaldskrá Fiskistofu, sbr. 5. gr. laga nr. 36/1992, um Fiskistofu, með síðari breytingum.</sen>
+                  <sen nr="4">Áður en Fiskistofa staðfestir flutning aflamarks til fiskiskips skal stofnunin fá staðfestingu Verðlagsstofu skiptaverðs um að fyrir liggi samningur útgerðar og áhafnar um fiskverð til viðmiðunar hlutaskiptum.</sen>
+                  <sen nr="5">Heimilt er Fiskistofu að gera þjónustusamninga um rafrænar tilkynningar um flutning aflamarks milli fiskiskipa og skal greiða gjald til Fiskistofu fyrir slíka samninga fyrir hvert fiskveiðiár samkvæmt gjaldskrá Fiskistofu, sbr. 5. gr. laga nr. 36/1992, um Fiskistofu, með síðari breytingum.</sen>
+                  <sen nr="6">Ráðherra er heimilt að setja nánari reglur um skilyrði fyrir gerð þjónustusamninga og víkja frá ákvæðum 1.–3. mgr. að því leyti sem þau lúta að framkvæmd flutnings aflamarks og greiðslu gjalds vegna hans.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Óheimilt er að flytja aflamark skips í makríl úr B-flokki, nema í jöfnum skiptum í þorskígildum talið fyrir aflamark í þorski, ýsu, ufsa og steinbít.</sen>
+                  <sen nr="2">Ráðherra er heimilt að flytja ónýtt aflamark í makríl úr B-flokki yfir í A-flokk eftir 15. september ár hvert, að teknu tilliti til tegundartilfærslna og flutningsréttar milli veiðitímabila, sem ráðstafað skal á skip í samræmi við hlutdeild og eftirspurn, gegn gjaldi sem á hverjum tíma skal nema sömu fjárhæð og veiðigjald fyrir makríl.</sen>
+                  <sen nr="3">Ef aflabrögð á grunnslóð mæla með því að flýta eða seinka flutningi úr B-flokki í A-flokk er ráðherra heimilt að miða við annað tímamark.</sen>
+                  <sen nr="4">Ráðherra er heimilt að setja nánari reglur um framkvæmd þessa ákvæðis með reglugerð.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="5">
+                <paragraph nr="1">
+                  <sen nr="1">Fiskistofa skal daglega birta aðgengilegar upplýsingar um flutning aflamarks, þar á meðal um magn eftir tegundum, auk upplýsinga um verð, þar sem við á.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="6">
+                <paragraph nr="1">
+                  <sen nr="1">Veiði fiskiskip minna en 50% á fiskveiðiári af úthlutuðu aflamarki sínu og aflamarki sem flutt hefur verið frá fyrra fiskveiðiári, í þorskígildum talið, fellur aflahlutdeild þess niður og skal aflahlutdeild annarra skipa í viðkomandi tegundum hækka sem því nemur.</sen>
+                  <sen nr="2">Skal við mat á þessu hlutfalli miðað við verðmæti einstakra tegunda í aflamarki skips í samræmi við verðmætahlutföll þeirra, sbr. 19. gr.</sen>
+                  <sen nr="3">Viðmiðunarhlutfall, sem ákveðið er í þessari málsgrein, lækkar þó um 5% fyrir hverja fulla 30 daga sem skipi er haldið til veiða utan fiskveiðilandhelgi Íslands á fiskveiðiárinu á þeim tegundum sem ekki hefur verið samið um veiðistjórn á.</sen>
+                  <sen nr="4">Hið sama á við þegar skipi er haldið til veiða utan lögsögu á tegundum sem samið hefur verið um veiðistjórn á og ekki teljast til deilistofna.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="7">
+                <paragraph nr="1">
+                  <sen nr="1">Tefjist skip frá veiðum í a.m.k. fjóra mánuði vegna tjóns, meiri háttar bilana eða endurbóta hefur afli þess fiskveiðiárs ekki áhrif til niðurfellingar aflahlutdeildar samkvæmt þessari grein.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="8">
+                <paragraph nr="1">
+                  <sen nr="1">Á hverju fiskveiðiári er heimilt að flytja af fiskiskipi 50% þess aflamarks sem skipi var úthlutað í þorskígildum talið á grundvelli verðmætahlutfalla einstakra tegunda, sbr. 19. gr.</sen>
+                  <sen nr="2">Auk þess er heimilt að flytja frá skipi það aflamark í einstökum tegundum sem flutt hefur verið til skips.</sen>
+                  <sen nr="3">Heimilt er Fiskistofu að víkja frá þessari takmörkun á heimild til flutnings á aflamarki vegna varanlegra breytinga á skipakosti útgerða eða þegar skip hverfur úr rekstri um lengri tíma vegna alvarlegra bilana eða sjótjóns, samkvæmt nánari reglum sem ráðherra setur.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="9">
+                <paragraph nr="1">
+                  <sen nr="1">Krókaaflamark verður aðeins flutt til báts sem er undir þeim stærðarmörkum sem kveðið er á um í 2. mgr. 4. gr., enda hafi hann veiðileyfi með krókaaflamarki.</sen>
+                  <sen nr="2">Ráðherra getur þó heimilað með reglugerð flutning á aflamarki tiltekinna tegunda frá krókaaflamarksbátum til skipa sem hafa veiðileyfi með aflamark, enda séu skiptin jöfn í þorskígildum talið.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2015.067.html" law-nr="67" law-year="2015" law-art="5" nr="1">
+                  <footnote-sen>L. 67/2015, 5. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='3']" string-length="0"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='5']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2007.063.html" law-nr="63" law-year="2007" law-art="5" nr="2">
+                  <footnote-sen>L. 63/2007, 5. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='4']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2019.046.html" law-nr="46" law-year="2019" law-art="5" nr="3">
+                  <footnote-sen>L. 46/2019, 5. gr.</footnote-sen>
+                  <location type="range" string-length="708">
+                    <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='4']"/>
+                  </location>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='7']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2010.022.html" law-nr="22" law-year="2010" law-art="3" nr="4">
+                  <footnote-sen>L. 22/2010, 3. gr.</footnote-sen>
+                  <footnote-sen>, sbr. brbákv. III í s.l.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='1']" string-length="0"/>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='6']/paragraph[@nr='1']/sen[@nr='4']" string-length="0"/>
+                  <location type="range" string-length="555">
+                    <start xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    <end xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='8']/paragraph[@nr='1']/sen[@nr='3']"/>
+                  </location>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2013.082.html" law-nr="82" law-year="2013" law-art="4" nr="5">
+                  <footnote-sen>L. 82/2013, 4. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='9']/paragraph[@nr='1']/sen[@nr='1']" words="þeim stærðarmörkum sem kveðið er á um í 2. mgr. 4. gr." middle-punctuation="," instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="6" nr="6">
+                  <footnote-sen>L. 48/2014, 6. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='9']/paragraph[@nr='1']/sen[@nr='2']" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <subart nr="10">
+              <paragraph nr="1">
+                <sen nr="1">Óheimilt er að flytja aflamark í grásleppu á milli skipa sem ekki eru skráð á sama staðbundna veiðisvæði grásleppu skv. 1. mgr. 7. gr. laga um veiðar í fiskveiðilandhelgi Íslands, nr. 79/1997.</sen>
+                <sen nr="2">Ráðherra er heimilt í reglugerð að kveða á um flutning á aflamarki milli veiðisvæða á yfirstandandi veiðitímabili ef náttúrulegar aðstæður breytast verulega innan veiðisvæðis.</sen>
+              </paragraph>
+            </subart>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="8">
       <original affected-law-nr="116" affected-law-year="2006">
@@ -85,11 +506,370 @@
         <p style="text-align: justify;">Fiskistofa skal fyrir 1. mars 2025 úthluta fiskiskipum aflahlutdeild í grásleppu. Aflahlutdeild einstakra skipa skal ákveðin með tilliti til veiðireynslu sem fengin hefur verið á grundvelli réttar til grásleppuveiða og leyfis frá Fiskistofu sem skráð er á viðkomandi skip og nýtt innan viðmið­unar­tímabilsins. Við mat á veiðireynslu skal miða við þrjú bestu veiðitímabil leyfisins sem skráð er á skipið frá og með árinu 2018 til og með árinu 2022 að undanskildu árinu 2020.</p>
         <p style="text-align: justify;">Þrátt fyrir 6. mgr. 12. gr. og 10. mgr. 15. gr. er framsal aflahlutdeilda í grásleppu óheimilt til 31. ágúst 2026.</p>
       </original>
+      <intents>
+        <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="116" action-law-year="2006">
+          <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+          <existing>
+            <chapter nr-type="temporary-clauses" nr="t">
+              <name>Ákvæði til bráðabirgða.</name>
+              <art nr="I" roman-nr="1" number-type="roman">
+                <nr-title>I.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2017.047.html" law-nr="47" law-year="2017" law-art="1" nr="1">
+                    <footnote-sen>L. 47/2017, 1. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='I']/nr-title[1]" before-mark="^I." after-mark="$"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="II" roman-nr="2" number-type="roman">
+                <nr-title>II.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]" before-mark="^II." after-mark="$"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="III" roman-nr="3" number-type="roman">
+                <nr-title>III.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]" before-mark="^III." after-mark="$"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="IV" roman-nr="4" number-type="roman">
+                <nr-title>IV.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]" before-mark="^IV." after-mark="$"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="V" roman-nr="5" number-type="roman">
+                <nr-title>V.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2016.072.html" law-nr="72" law-year="2016" law-art="5" nr="1">
+                    <footnote-sen>L. 72/2016, 5. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='V']/nr-title[1]" before-mark="^V." after-mark="$"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="VI" roman-nr="6" number-type="roman">
+                <nr-title>VI.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]" before-mark="^(\[??)?VI." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2007.021.html" law-nr="21" law-year="2007" law-art="2" nr="2">
+                    <footnote-sen>L. 21/2007, 2. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='VI']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="VII" roman-nr="7" number-type="roman">
+                <nr-title>VII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="6" nr="1">
+                    <footnote-sen>L. 88/2020, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]" before-mark="^(\[??)?VII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2010.074.html" law-nr="74" law-year="2010" law-art="2" nr="2">
+                    <footnote-sen>L. 74/2010, 2. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='VII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="VIII" roman-nr="8" number-type="roman">
+                <nr-title>VIII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="6" nr="1">
+                    <footnote-sen>L. 88/2020, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]" before-mark="^(\[??)?VIII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2011.070.html" law-nr="70" law-year="2011" law-art="8" nr="2">
+                    <footnote-sen>L. 70/2011, 8. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='VIII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="IX" roman-nr="9" number-type="roman">
+                <nr-title>IX.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]" before-mark="^(\[??)?IX." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2011.070.html" law-nr="70" law-year="2011" law-art="8" nr="2">
+                    <footnote-sen>L. 70/2011, 8. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='IX']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="X" roman-nr="10" number-type="roman">
+                <nr-title>X.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]" before-mark="^(\[??)?X." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2011.070.html" law-nr="70" law-year="2011" law-art="8" nr="2">
+                    <footnote-sen>L. 70/2011, 8. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='X']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XI" roman-nr="11" number-type="roman">
+                <nr-title>XI.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="8" nr="1">
+                    <footnote-sen>L. 48/2014, 8. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XI']/nr-title[1]" before-mark="^(\[??)?XI." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2011.164.html" law-nr="164" law-year="2011" law-art="37" nr="2">
+                    <footnote-sen>L. 164/2011, 37. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XI']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XII" roman-nr="12" number-type="roman">
+                <nr-title>XII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="6" nr="1">
+                    <footnote-sen>L. 88/2020, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XII']/nr-title[1]" before-mark="^(\[??)?XII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2013.082.html" law-nr="82" law-year="2013" law-art="6" nr="2">
+                    <footnote-sen>L. 82/2013, 6. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XIII" roman-nr="13" number-type="roman">
+                <nr-title>XIII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2016.072.html" law-nr="72" law-year="2016" law-art="5" nr="1">
+                    <footnote-sen>L. 72/2016, 5. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]" before-mark="^(\[??)?XIII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2013.082.html" law-nr="82" law-year="2013" law-art="6" nr="2">
+                    <footnote-sen>L. 82/2013, 6. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XIII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XIV" roman-nr="14" number-type="roman">
+                <nr-title>XIV.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2016.072.html" law-nr="72" law-year="2016" law-art="5" nr="1">
+                    <footnote-sen>L. 72/2016, 5. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIV']/nr-title[1]" before-mark="^(\[??)?XIV." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="13" nr="2">
+                    <footnote-sen>L. 48/2014, 13. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XIV']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XV" roman-nr="15" number-type="roman">
+                <nr-title>XV.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2016.072.html" law-nr="72" law-year="2016" law-art="5" nr="1">
+                    <footnote-sen>L. 72/2016, 5. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XV']/nr-title[1]" before-mark="^(\[??)?XV." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2014.048.html" law-nr="48" law-year="2014" law-art="13" nr="2">
+                    <footnote-sen>L. 48/2014, 13. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XV']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XVI" roman-nr="16" number-type="roman">
+                <nr-title>XVI.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2020.088.html" law-nr="88" law-year="2020" law-art="6" nr="1">
+                    <footnote-sen>L. 88/2020, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XVI']/nr-title[1]" before-mark="^(\[??)?XVI." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2016.072.html" law-nr="72" law-year="2016" law-art="8" nr="2">
+                    <footnote-sen>L. 72/2016, 8. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XVI']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XVII" roman-nr="17" number-type="roman">
+                <nr-title>XVII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.065.html" law-nr="65" law-year="2022" law-art="6" nr="1">
+                    <footnote-sen>L. 65/2022, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XVII']/nr-title[1]" before-mark="^(\[??)?XVII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjtnr.html#2017069?g7" law-nr="69" law-year="2017" law-art="7" nr="2">
+                    <footnote-sen>L. 69/2017, 7. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XVII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XVIII" roman-nr="18" number-type="roman">
+                <nr-title>XVIII.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.065.html" law-nr="65" law-year="2022" law-art="6" nr="1">
+                    <footnote-sen>L. 65/2022, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XVIII']/nr-title[1]" before-mark="^(\[??)?XVIII." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjtnr.html#2017069?g7" law-nr="69" law-year="2017" law-art="7" nr="2">
+                    <footnote-sen>L. 69/2017, 7. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XVIII']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XIX" roman-nr="19" number-type="roman">
+                <nr-title>XIX.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.065.html" law-nr="65" law-year="2022" law-art="6" nr="1">
+                    <footnote-sen>L. 65/2022, 6. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XIX']/nr-title[1]" before-mark="^(\[??)?XIX." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjtnr.html#2017069?g7" law-nr="69" law-year="2017" law-art="7" nr="2">
+                    <footnote-sen>L. 69/2017, 7. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XIX']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XX" roman-nr="20" number-type="roman">
+                <nr-title>XX.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2018.019.html" law-nr="19" law-year="2018" law-art="2" nr="1">
+                    <footnote-sen>L. 19/2018, 2. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XX']/nr-title[1]" before-mark="^(\[??)?XX." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2018.019.html" law-nr="19" law-year="2018" law-art="1" nr="2">
+                    <footnote-sen>L. 19/2018, 1. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XX']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XXI" roman-nr="21" number-type="roman">
+                <nr-title>XXI.</nr-title>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2018.019.html" law-nr="19" law-year="2018" law-art="2" nr="1">
+                    <footnote-sen>L. 19/2018, 2. gr.</footnote-sen>
+                    <location type="deletion" xpath="chapter[@nr='t']/art[@nr='XXI']/nr-title[1]" before-mark="^(\[??)?XXI." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                  </footnote>
+                  <footnote href="https://www.althingi.is/altext/stjt/2018.019.html" law-nr="19" law-year="2018" law-art="1" nr="2">
+                    <footnote-sen>L. 19/2018, 1. gr.</footnote-sen>
+                    <location type="range" xpath="chapter[@nr='t']/art[@nr='XXI']/nr-title[1]" string-length="0"/>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XXII" roman-nr="22" number-type="roman">
+                <nr-title>XXII.</nr-title>
+                <subart nr="1">
+                  <paragraph nr="1">
+                    <sen nr="1">Endurreikna skal aflahlutdeild í sandkola við upphaf fiskveiðiársins 2022/2023 með þeim hætti sem hér segir:</sen>
+                    <numart nr="a" nr-type="alphabet">
+                      <nr-title>a.</nr-title>
+                      <paragraph nr="1">
+                        <sen nr="1">Að 85/100 hlutum samkvæmt skráðum aflahlutdeildum hvers fiskiskips í sandkola við upphaf fiskveiðiársins 2022/2023.</sen>
+                      </paragraph>
+                    </numart>
+                    <numart nr="b" nr-type="alphabet">
+                      <nr-title>b.</nr-title>
+                      <paragraph nr="1">
+                        <sen nr="1">Að 15/100 hlutum samkvæmt veiðireynslu hvers fiskiskips í sandkola á fiskveiðiárunum 2017/2018, 2018/2019 og 2019/2020 á svæðinu norðan skilgreinds aflamarkssvæðis fyrir sandkola sem afmarkast af Snæfellsnesi suður um að Stokksnesi.</sen>
+                      </paragraph>
+                    </numart>
+                  </paragraph>
+                </subart>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.064.html" law-nr="64" law-year="2022" law-art="2" nr="1">
+                    <footnote-sen>L. 64/2022, 2. gr.</footnote-sen>
+                    <location type="range" string-length="465">
+                      <start xpath="chapter[@nr='t']/art[@nr='XXII']/nr-title[1]"/>
+                      <end xpath="chapter[@nr='t']/art[@nr='XXII']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    </location>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XXIII" roman-nr="23" number-type="roman">
+                <nr-title>XXIII.</nr-title>
+                <subart nr="1">
+                  <paragraph nr="1">
+                    <sen nr="1">Við upphaf fiskveiðiársins 2022/2023 skal setja skipum sjálfstæða aflahlutdeild skv. 2. mgr. 9. gr. í sæbjúgum á hverju veiðisvæði samkvæmt reglugerð nr. 741/2019 um veiðar á sæbjúgum á eftirfarandi hátt:</sen>
+                    <numart nr="a" nr-type="alphabet">
+                      <nr-title>a.</nr-title>
+                      <paragraph nr="1">
+                        <sen nr="1">Svæði A–E: Samkvæmt aflareynslu skips á fiskveiðiárunum 2018/2019, 2019/2020 og 2020/2021 vestan 20°V.</sen>
+                      </paragraph>
+                    </numart>
+                    <numart nr="b" nr-type="alphabet">
+                      <nr-title>b.</nr-title>
+                      <paragraph nr="1">
+                        <sen nr="1">Svæði F–H: Samkvæmt aflareynslu skips á fiskveiðiárunum 2018/2019, 2019/2020 og 2020/2021 austan 20°V.</sen>
+                      </paragraph>
+                    </numart>
+                  </paragraph>
+                </subart>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.064.html" law-nr="64" law-year="2022" law-art="2" nr="1">
+                    <footnote-sen>L. 64/2022, 2. gr.</footnote-sen>
+                    <location type="range" string-length="419">
+                      <start xpath="chapter[@nr='t']/art[@nr='XXIII']/nr-title[1]"/>
+                      <end xpath="chapter[@nr='t']/art[@nr='XXIII']/subart[@nr='1']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1']"/>
+                    </location>
+                  </footnote>
+                </footnotes>
+              </art>
+              <art nr="XXIV" roman-nr="24" number-type="roman">
+                <nr-title>XXIV.</nr-title>
+                <subart nr="1">
+                  <paragraph nr="1">
+                    <sen nr="1">Þrátt fyrir ákvæði 1. mgr. 4. gr. og 1. málsl. 5. gr. er aðilum sem uppfylla skilyrði 2. málsl. 5. gr. heimilt að taka á leigu erlent skip, til allt að sex mánaða hvert almanaksár, til veiða og vinnslu samkvæmt veiðiheimildum Íslands á austur-atlantshafsbláuggatúnfiski innan og utan íslenskrar fiskveiðilandhelgi.</sen>
+                    <sen nr="2">Heimild þessi gildir til og með 31. desember 2028.</sen>
+                  </paragraph>
+                </subart>
+                <footnotes>
+                  <footnote href="https://www.althingi.is/altext/stjt/2022.066.html" law-nr="66" law-year="2022" law-art="1" nr="1">
+                    <footnote-sen>L. 66/2022, 1. gr.</footnote-sen>
+                    <location type="range" string-length="370">
+                      <start xpath="chapter[@nr='t']/art[@nr='XXIV']/nr-title[1]"/>
+                      <end xpath="chapter[@nr='t']/art[@nr='XXIV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']"/>
+                    </location>
+                  </footnote>
+                </footnotes>
+              </art>
+            </chapter>
+          </existing>
+          <inner>
+            <art nr="XXV" roman-nr="25" number-type="roman">
+              <nr-title>XXV.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Fiskistofa skal fyrir 1. mars 2025 úthluta fiskiskipum aflahlutdeild í grásleppu.</sen>
+                  <sen nr="2">Aflahlutdeild einstakra skipa skal ákveðin með tilliti til veiðireynslu sem fengin hefur verið á grundvelli réttar til grásleppuveiða og leyfis frá Fiskistofu sem skráð er á viðkomandi skip og nýtt innan viðmiðunartímabilsins.</sen>
+                  <sen nr="3">Við mat á veiðireynslu skal miða við þrjú bestu veiðitímabil leyfisins sem skráð er á skipið frá og með árinu 2018 til og með árinu 2022 að undanskildu árinu 2020.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Þrátt fyrir 6. mgr. 12. gr. og 10. mgr. 15. gr. er framsal aflahlutdeilda í grásleppu óheimilt til 31. ágúst 2026.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
     </advert-art>
     <advert-art nr="9">
       <original affected-law-nr="116" affected-law-year="2006">
         <p style="text-align: justify;">Lög þessi öðlast gildi 1. september 2024.</p>
       </original>
+      <intents>
+        <intent action="enact" action-xpath="" timing="2024-09-01" timing-type="immediate"/>
+      </intents>
     </advert-art>
   </advert-chapter>
   <signed-when>Gjört á Bessastöðum, 5. júlí 2024.</signed-when>

@@ -11,6 +11,32 @@
         </a>orðast svo:</p>
       <p style="text-align: justify;">Eigi síðar en þegar landskjörstjórn hefur lagt fyrir Alþingi rökstudda umsögn um alþingis­kosningar skv. 2. mgr. 132. gr. kosningalaga og áður en Alþingi kemur saman skal starfandi forseti, sbr. 3. mgr. 6. gr., kveðja saman nefnd níu kjörinna alþingismanna til að undirbúa þá rannsókn sem fer fram á þingsetningarfundi skv. 2. mgr. Við val í nefndina skal fylgja hlutfallsreglu 82. gr. Þingflokkar sem þannig fá ekki fulltrúa í nefndina mega tilnefna áheyrnarfulltrúa. Undir­búnings­nefndin skal haga málsmeðferð sinni í samræmi við meginreglur um óhlutdrægni og málefna­leg sjónarmið. Við rannsóknina er undirbúningsnefndinni m.a. heimilt að kalla eftir upplýs­ingum frá stjórnvöldum, óska eftir að þau taki saman upplýsingar og boða þau á fund sinn, enn fremur að boða aðra aðila á sinn fund, leita sér sérfræðiaðstoðar, fara í vettvangsrannsóknir, rannsaka kjörgögn til að sannreyna úrslit kosninga, þ.m.t. telja atkvæði, eða óska eftir að kjörstjórnir geri það. Forseti skal setja undirbúningsnefndinni reglur þar sem m.a. skal kveðið á um val þing­manna í nefndina, málsmeðferð og rannsóknir nefndar, meðferð kosningakæra, rétt kærenda til að koma á framfæri sjónarmiðum sínum, tímafresti, fyrirkomulag funda og aðgengi að gögnum nefndarinnar.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='1']/art[@nr='1']/subart[@nr='3']" action-law-nr="55" action-law-year="1991">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]//subart[@nr='3']">3. mgr. 1. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Þegar kjörbréf hafa verið gefin út að loknum alþingiskosningum og áður en Alþingi kemur saman er starfandi forseta, sbr. 2. mgr. 6. gr., heimilt að kveðja saman nefnd níu kjörinna alþingismanna til að undirbúa þá rannsókn kjörbréfa sem fer fram á þingsetningarfundi skv. 2. mgr.</sen>
+              <sen nr="2">Við val í nefndina skal fylgja hlutfallsreglu 82. gr.</sen>
+              <sen nr="3">Þingflokkar sem þannig fá ekki fulltrúa í nefndina mega tilnefna áheyrnarfulltrúa.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Eigi síðar en þegar landskjörstjórn hefur lagt fyrir Alþingi rökstudda umsögn um alþingiskosningar skv. 2. mgr. 132. gr. kosningalaga og áður en Alþingi kemur saman skal starfandi forseti, sbr. 3. mgr. 6. gr., kveðja saman nefnd níu kjörinna alþingismanna til að undirbúa þá rannsókn sem fer fram á þingsetningarfundi skv. 2. mgr.</sen>
+              <sen nr="2">Við val í nefndina skal fylgja hlutfallsreglu 82. gr.</sen>
+              <sen nr="3">Þingflokkar sem þannig fá ekki fulltrúa í nefndina mega tilnefna áheyrnarfulltrúa.</sen>
+              <sen nr="4">Undirbúningsnefndin skal haga málsmeðferð sinni í samræmi við meginreglur um óhlutdrægni og málefnaleg sjónarmið.</sen>
+              <sen nr="5">Við rannsóknina er undirbúningsnefndinni m.a. heimilt að kalla eftir upplýsingum frá stjórnvöldum, óska eftir að þau taki saman upplýsingar og boða þau á fund sinn, enn fremur að boða aðra aðila á sinn fund, leita sér sérfræðiaðstoðar, fara í vettvangsrannsóknir, rannsaka kjörgögn til að sannreyna úrslit kosninga, þ.m.t. telja atkvæði, eða óska eftir að kjörstjórnir geri það.</sen>
+              <sen nr="6">Forseti skal setja undirbúningsnefndinni reglur þar sem m.a. skal kveðið á um val þingmanna í nefndina, málsmeðferð og rannsóknir nefndar, meðferð kosningakæra, rétt kærenda til að koma á framfæri sjónarmiðum sínum, tímafresti, fyrirkomulag funda og aðgengi að gögnum nefndarinnar.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="2">
     <original affected-law-nr="55" affected-law-year="1991">
@@ -18,11 +44,25 @@
           <span style="color: #000000;">lögunum</span>
         </a>orðast svo: Að loknum alþingiskosningum 30. nóvember 2024 skal kjósa framtíðarnefnd sem starfar til 31. desember 2025.</p>
     </original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="55" action-law-year="1991">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',IV,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. ákvæðis til bráðabirgða IV</address>
+        <existing>
+          <sen nr="1">Við upphaf næsta kjörtímabils skal kjósa framtíðarnefnd sem starfar til loka kjörtímabilsins.</sen>
+        </existing>
+        <inner>
+          <sen nr="1">Að loknum alþingiskosningum 30. nóvember 2024 skal kjósa framtíðarnefnd sem starfar til 31. desember 2025.</sen>
+        </inner>
+      </intent>
+    </intents>
   </advert-art>
   <advert-art nr="3">
     <original affected-law-nr="55" affected-law-year="1991">
       <p>Lög þessi öðlast þegar gildi.</p>
     </original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2024-11-28" timing-type="immediate"/>
+    </intents>
   </advert-art>
   <signed-when>Gjört á Bessastöðum, 28. nóvember 2024.</signed-when>
 </advert>
