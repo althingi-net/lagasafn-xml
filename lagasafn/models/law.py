@@ -20,6 +20,7 @@ from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
 from lagasafn.exceptions import LawException
+from lagasafn.exceptions import NoSuchLawException
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
@@ -265,7 +266,7 @@ class Law(LawEntry):
             raise LawException("Year must be an integer in '%s'" % self.identifier)
 
         if not os.path.isfile(self.path()):
-            raise LawException("Could not find law '%s'" % self.identifier)
+            raise NoSuchLawException("Could not find law '%s'" % self.identifier)
 
     @staticmethod
     def toc_name(text):

@@ -27,6 +27,7 @@ from lagasafn.contenthandlers import analyze_art_name
 from lagasafn.contenthandlers import analyze_chapter_nr_title
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.exceptions import IntentParsingException
+from lagasafn.exceptions import NoSuchLawException
 from lagasafn.models.intent import IntentModelList
 from lagasafn.references import get_law_name_permutations
 from lagasafn.utils import generate_legal_reference
@@ -177,7 +178,22 @@ def parse_x_laganna_fellur_brott(tracker: IntentTracker):
 
     address = match.groups()[0]
 
-    intent = tracker.make_intent("delete", address)
+    try:
+        intent = tracker.make_intent("delete", address)
+    except NoSuchLawException:
+        # FIXME: This is a temporary measure to deal with lög nr. 140/2024,
+        # which removes content from a change-law that isn't a part of the
+        # codex. For now, we will force this to error out here, not recognizing
+        # the intent"A-liður 11. gr. laganna fellur brott.".
+        #
+        # This is exceedingly rare and may be dangerous in terms of tracing
+        # legislative changes.
+        #
+        # It is unclear how we will deal with this permanently, but we'll be
+        # better equipped to deal with this once we are able to parse changes
+        # to bills and change proposals, since this will need to effectively do
+        # the same thing.
+        return False
 
     tracker.intents.append(intent)
 
@@ -2124,6 +2140,63 @@ def parse_a_eftir_x_laganna_kemur_grein_x_svohljodandi(tracker: IntentTracker):
     return True
 
 
+def parse_vid_x_laganna_baetist_grein_x_svohljodandi(tracker: IntentTracker):
+    match = re.match(r"Við (.+) laganna bæt[ia]st (ný grein|(tvær|þrjár|fjórar) nýjar greinar), (.+?)?(, ásamt fyrirsögn(um)?)?, svohljóðandi(, og breytist (greinatala|röð annarra greina) samkvæmt því)?:", tracker.current_text)
+    if match is None:
+        return False
+
+    address, amount, _, nr_title, _, _, _, _ = match.groups()
+
+    intent = tracker.make_intent("add", address)
+    existing = deepcopy(list(intent.find("existing")))
+
+    tracker.intents.append(intent)
+    tracker.targets.inner = E("inner")
+    intent.append(tracker.targets.inner)
+
+    if len(existing) == 1 and existing[0].tag == "chapter":
+
+        # FIXME: This is broken.
+        # This seems to tentatively work for 140/2024.
+        # However, it's changing a change-law, 102/2023, which
+        # isn't in the codex.
+        #
+        # If we download all of the adverts, we can determine
+        # whether this is the case, but Stjornartidindi.is has
+        # changed its website, so we'll need to upgrade the
+        # code to use that, before we can fetch 102/2023.
+
+        if amount == "ný grein":
+            # When only one article is added, the `nr_title` is only given in
+            # the prologue, not in the parsed content.
+
+            # FIXME: This may break when parsing gets more complicated.
+            # A bit of a hack to deal with rare occurrences of an article being
+            # added without its new `nr_title` being specified. In these cases,
+            # the string following the assumed `nr_title` in the matching regex
+            # above will be caught instead of a legit `nr_title`.
+            # Examples:
+            # - 63/2024
+            # - 91/2024
+            if nr_title == "ásamt fyrirsögn":
+                nr = str(int(existing[0].attrib["nr"]) + 1)
+                nr_title = "%s. gr." % nr
+
+            parse_inner_art(tracker, { "nr_title": nr_title })
+
+        else:
+            # Not `nr_title` needed from prologue because it will be inside the
+            # parsed content.
+            while parse_inner_art(tracker):
+                pass
+    else:
+        raise IntentParsingException("Don't know how to append article at address: %s" % address)
+
+    tracker.targets.inner = None
+
+    return True
+
+
 def parse_i_stad_x_laganna_koma_fimm_nyjar_greinar_x_svohljodandi_asamt_fyrirsognum(tracker: IntentTracker):
     # NOTE: Usually, the phrasing is "ásamt fyrirsögnum, svohljóðandi:" when
     # both of those parts appear, but at least once, it's in the wrong order,
@@ -2774,6 +2847,8 @@ def parse_intents_by_text_analysis(advert_tracker: AdvertTracker, original: _Ele
     elif parse_vid_x_laganna_baetist_nyr_tolulidur_x_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist(tracker):
+        pass
+    elif parse_vid_x_laganna_baetist_grein_x_svohljodandi(tracker):
         pass
     elif parse_vid_x_laganna_baetist_malsgrein_svohljodandi(tracker):
         pass
