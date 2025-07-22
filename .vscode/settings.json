@@ -1,9 +1,10 @@
 {
-    "jest.disabledWorkspaceFolders": [
-        "root"
-    ],
     "eslint.workingDirectories": [
         "codex-api-server",
         "codex-ui"
-    ]
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    }
 }

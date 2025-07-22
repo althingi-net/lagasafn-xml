@@ -8,6 +8,7 @@ dependencies = [
     "django-ninja>=1.4.3",
     "django-stubs[compatible-mypy]>=5.2.1",
     "mypy>=1.16.1",
+    "pylint>=3.3.7",
 ]
 
 [tool.mypy]
