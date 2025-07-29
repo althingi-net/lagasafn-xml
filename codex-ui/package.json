@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "generate-client-sdk": "npx openapi-typescript-codegen --input http://localhost:8000/api/openapi.json --output ./src/api/ --client fetch"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.0",

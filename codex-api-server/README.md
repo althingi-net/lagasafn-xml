@@ -38,7 +38,7 @@ uv sync --dev
 
 ```bash
 # Activate the virtual environment and run Django
-uv run python manage.py runserver
+uv run manage.py runserver
 ```
 
 The API will be available at:
