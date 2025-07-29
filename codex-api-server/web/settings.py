@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b3^)6k*l$o+!b+2)i1kf@n$pfb3c8cr10h!s3_q_+2pcfc(m$f
 DEBUG = True
 
 # APP Settings
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR.parent / "data"
 CURRENT_PARLIAMENT_VERSION = "156a"
 
 ALLOWED_HOSTS: list[str] = []

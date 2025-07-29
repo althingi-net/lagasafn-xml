@@ -1,4 +1,5 @@
 import { createSignal, createResource, createMemo } from "solid-js";
+import { DefaultService } from "~/api";
 import Header from "~/components/Header";
 import LawStats from "~/components/LawStats";
 import LawTable from "~/components/LawTable";
@@ -76,8 +77,8 @@ const DUMMY_LAWS: Law[] = [
 export default function Home() {
   const [searchQuery, setSearchQuery] = createSignal("");
   
-  // Using dummy data
-  const [laws] = createResource(async () => DUMMY_LAWS);
+  // TODO: return type should come from the API
+  const [laws] = createResource<Law[]>(DefaultService.webApiListXmlFiles);
   const [stats] = createResource(async () => ({
     totalCount: 1699,
     emptyCount: 915,

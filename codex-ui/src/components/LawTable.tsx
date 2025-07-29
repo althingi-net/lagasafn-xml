@@ -18,7 +18,7 @@ export default function LawTable(props: LawTableProps) {
     const [number, year] = nr.split('/');
     return `/law/${number}/${year}`;
   };
-
+  
   return (
     <div class="overflow-x-auto">
       <table class="w-full">
