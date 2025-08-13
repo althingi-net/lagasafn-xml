@@ -3,12 +3,12 @@ import requests
 from bs4 import BeautifulSoup
 from bs4 import Comment
 from datetime import datetime
+from lagasafn.island_is import island_is_query
 from lagasafn.utils import write_xml
 from lxml import etree
 from os.path import isfile
 
-ADVERT_LIST_URL = "https://www.stjornartidindi.is/AdvertList.aspx?advertTypeName=A%%20deild&load=true&posStart=%d"
-ADVERT_URL = "https://www.stjornartidindi.is/Advert.aspx?RecordID=%s"
+ADVERT_URL = "https://island.is/stjornartidindi/nr/%s"
 
 
 class AdvertRow:
@@ -26,43 +26,58 @@ class AdvertRow:
         self.date = None
 
 
-def get_advert_rows(from_date, to_date):
+def get_advert_rows(from_date: datetime, to_date: datetime):
     """
     Retrieves advert rows from remote XML filtered by `from_date` and
     `to_date`, taking care of paging and massaging of data.
     """
 
+    def get_journal(from_date: datetime, to_date: datetime, page: int):
+        return island_is_query(
+            "Adverts",
+            {
+                "department": ["a-deild"],
+                "category": [""],
+                "involvedParty": [""],
+                "type": [""],
+                "search": "",
+                "dateFrom": from_date.isoformat(),
+                "dateTo": to_date.isoformat(),
+                "page": page,
+            }
+        )["officialJournalOfIcelandAdverts"]
+
     advert_rows = []
     done = False
-    start_pos = 0
+    page = 1
+
+    # Starts at 1, because there's always a minimum of 1 page. Gets updated
+    # upon learning that there are more.
+    total_pages = 1
 
     print("Looking up advert list...", end="", flush=True)
 
-    while not done:
-        response = requests.get(ADVERT_LIST_URL % start_pos)
-        xml_advert_list = etree.fromstring(response.content)
+    # I was here. Need to modify this so that it uses `island_is_query` which can be found in `graphqltest.py`.
+    # Should be easy to convert so that it uses the GraphQL-ish data instead.
+    # Then I need to modify `save_advert_originals` below and see just how
+    # much updating of parsing code is needed.
 
-        remote_rows = xml_advert_list.xpath("/rows/row")
-        for remote_row in remote_rows:
-            cells = remote_row.findall("cell")
+    # Temp for testing.
+    from_date = datetime(2024, 1, 1)
 
-            # Get the info as it appears in the remote XML.
-            record_id = remote_row.attrib["recordId"]
-            law_id = cells[1].text
-            name = cells[2].text
-            date = cells[3].text
+    while page <= total_pages:
+        journal = get_journal(from_date, to_date, page)
+        total_pages = journal["paging"]["totalPages"]
+        for remote_row in journal["adverts"]:
+            record_id = remote_row["id"]
+            law_id = remote_row["publicationNumber"]["full"]
+            name = remote_row["title"]
+            date = datetime.fromisoformat(remote_row["publicationDate"])
 
             # Massage the info for our purposes as needed.
-            nr, year = re.findall(r">(\d{1,3})\/(\d{4})<", law_id)[0]
+            nr, year = law_id.split("/")
             nr = int(nr)
             year = int(year)
-            date = datetime.strptime(date, "%d.%m.%Y")
-
-            if date > to_date:
-                continue
-            elif date < from_date:
-                done = True
-                break
 
             advert_row = AdvertRow()
             advert_row.record_id = record_id
@@ -73,10 +88,8 @@ def get_advert_rows(from_date, to_date):
 
             advert_rows.append(advert_row)
 
-        if len(remote_rows) == 0:
-            done = True
-
-        start_pos += len(remote_rows)
+            # Turn to the next page.
+            page += 1
 
         print(".", end="", flush=True)
 
@@ -120,6 +133,8 @@ def save_advert_originals(advert_rows):
 
         xml_doc = etree.HTML(soup_advert.__str__())
 
+        # I was here. The content seems to have completely changed. Not sure how, when, or even if to proceed.
+        import ipdb; ipdb.set_trace()
         orig_advert = xml_doc.xpath("//div[@type='STJT']")[0]
         orig_advert.attrib["record-id"] = advert_row.record_id
 
