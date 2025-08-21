@@ -158,8 +158,8 @@ class SearchEngine:
 
 
         print(f"Indexing complete in {(time_end - time_start).total_seconds()} seconds. Indexed:")
-        print(f"{len(self._index["metadata"]):>10} files")
-        print(f"{len(self._index["tokens"]):>10} tokens")
+        print(f"{len(self._index['metadata']):>10} files")
+        print(f"{len(self._index['tokens']):>10} tokens")
         locs = sum([len(x) for y,x in self._index["tokens"].items()])
         print(f"{locs:>10} locations")
         refs = sum([len(x) for y,x in self._index["refs"].items()])
