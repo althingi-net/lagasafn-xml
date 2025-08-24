@@ -7,19 +7,26 @@ from lagasafn.references import parse_reference_string
 from lagasafn.utils import write_xml
 from lxml import etree
 from ninja import File
-from ninja import NinjaAPI
+from ninja import Router
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
 from .searchengine import SearchEngine
 from datetime import datetime
 
-api = NinjaAPI(urls_namespace="law")
+router = Router(tags=["Law"])
 
 # Initialize the global search engine
 searchengine = SearchEngine("search_index.pkl")
 
-@api.get("search/")
+@router.get(
+    "search/",
+    summary="Search legal codex by content."
+)
 def api_search(request, q: str):
+    """
+    Returns search-specific results explaining what was found given a provided
+    content query.
+    """
     start_time = datetime.now()
     results = searchengine.search(q)
     end_time = datetime.now()
@@ -32,10 +39,14 @@ def api_search(request, q: str):
     }
 
 
-@api.get("parse-reference/")
+@router.get(
+    "parse-reference/",
+    summary="Parse human-readable legal reference.",
+)
 def api_parse_reference_string(request, reference):
     """
-    An API version of `parse_reference_string`.
+    Parse a human-readable legal reference and return path and content
+    information.
     """
     try:
         xpath, law_nr, law_year = parse_reference_string(reference)
@@ -53,10 +64,14 @@ def api_parse_reference_string(request, reference):
         raise HttpError(500, "Confused by: %s" % ex.args[0])
 
 
-@api.get("get-segment/")
+@router.get(
+    "get-segment/",
+    summary="Get segment from a law in the legal codex.",
+)
 def api_get_segment(request, law_nr: str, law_year: int, xpath: str):
     """
-    An API version of `get_segment`.
+    Takes identity information (nr/year) and an XPath string, and returns the
+    XML content found in the corresponding legal codex."
     """
     try:
         law_year = int(law_year)
@@ -67,7 +82,7 @@ def api_get_segment(request, law_nr: str, law_year: int, xpath: str):
         raise HttpError(404, "Could not find requested element.")
 
 
-@api.post("normalize/")
+@router.post("normalize/")
 def api_normalize(request, input_file: UploadedFile = File(...)):
     """
     Takes an uploaded XML law and makes sure that it is formatted in the same

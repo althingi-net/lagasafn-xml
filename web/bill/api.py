@@ -5,26 +5,13 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION, BASE_DIR
 from lagasafn.utils import write_xml
 from web.core.authentication import APIAuthentication
 from lxml import etree
-from ninja import NinjaAPI
-from ninja.parser import Parser
+from ninja import Router
 from git import Repo
 from time import sleep
 
-api = NinjaAPI(urls_namespace="bill", parser=None)
+router = Router(tags=["Bill"])
 
-@api.exception_handler(BillException)
-def service_unavailable(request, exc):
-    """
-    Handle exceptions gracefully. Specify custom HTTP error code and return with message intended.
-    """
-
-    return api.create_response(
-        request,
-        { "message": exc.__str__() },
-        status=400,
-    )
-
-@api.post("meta", auth=APIAuthentication())
+@router.post("meta", auth=APIAuthentication())
 def bill_meta(request: HttpRequest):
     """
        Publish bill meta XML data as POST body.
@@ -56,7 +43,7 @@ def bill_meta(request: HttpRequest):
         }
     }
 
-@api.post("document/validate", auth=APIAuthentication())
+@router.post("document/validate", auth=APIAuthentication())
 def bill_validate(request: HttpRequest):
     """
        Validate bill XML provided as POST body.
@@ -83,7 +70,7 @@ def bill_validate(request: HttpRequest):
         }
     }
 
-@api.post("{bill_id}/document/publish", auth=APIAuthentication())
+@router.post("{bill_id}/document/publish", auth=APIAuthentication())
 def bill_publish(request: HttpRequest, bill_id):
     """
        Publish bill XML provided as POST body.
