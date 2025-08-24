@@ -616,6 +616,9 @@ def make_xpath_from_inner_reference(address: str):
 
 
 def get_segment(law_nr: str, law_year: int, xpath: str):
+    # FIXME: This should return XML only, not both XML and text versions. If we
+    # want a plaintext version, it should be a different API call. However,
+    # we're not using plaintext anywhere at the moment, so it can be removed.
     try:
         xml = etree.parse(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)).getroot()
     except:
