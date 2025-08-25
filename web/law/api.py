@@ -20,7 +20,8 @@ searchengine = SearchEngine("search_index.pkl")
 
 @router.get(
     "search/",
-    summary="Search legal codex by content."
+    summary="Search legal codex by content.",
+    operation_id="search",
 )
 def api_search(request, q: str):
     """
@@ -42,6 +43,7 @@ def api_search(request, q: str):
 @router.get(
     "parse-reference/",
     summary="Parse human-readable legal reference.",
+    operation_id="parseReferenceString",
 )
 def api_parse_reference_string(request, reference):
     """
@@ -67,6 +69,7 @@ def api_parse_reference_string(request, reference):
 @router.get(
     "get-segment/",
     summary="Get segment from a law in the legal codex.",
+    operation_id="getSegment",
 )
 def api_get_segment(request, law_nr: str, law_year: int, xpath: str):
     """
@@ -82,7 +85,11 @@ def api_get_segment(request, law_nr: str, law_year: int, xpath: str):
         raise HttpError(404, "Could not find requested element.")
 
 
-@router.post("normalize/")
+@router.post(
+    "normalize/",
+    summary="Normalize a law XML document.",
+    operation_id="normalize",
+)
 def api_normalize(request, input_file: UploadedFile = File(...)):
     """
     Takes an uploaded XML law and makes sure that it is formatted in the same
