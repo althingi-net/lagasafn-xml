@@ -1,4 +1,7 @@
+from django.http import HttpRequest
 from django.http import HttpResponse
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.settings import DATA_DIR
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
@@ -10,8 +13,11 @@ from ninja import File
 from ninja import Router
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
+from os.path import join
 from .searchengine import SearchEngine
 from datetime import datetime
+from typing import Dict
+from typing import List
 
 router = Router(tags=["Law"])
 
@@ -120,3 +126,52 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     xml_string = write_xml(xml_doc)
 
     return HttpResponse(xml_string, content_type="text/xml")
+
+
+@router.get("/xml-files", operation_id="listLaws")
+def list_xml_files(request: HttpRequest) -> List[Dict[str, str]]:
+    index_file = join(
+        DATA_DIR,
+        "xml",
+        CURRENT_PARLIAMENT_VERSION,
+        "index.xml"
+    )
+
+    try:
+        tree = etree.parse(index_file)
+        root = tree.getroot()
+
+        laws = []
+        for law_entry in root.findall(".//law-entry"):
+            identifier = law_entry.get("identifier", "")
+            name_elem = law_entry.find("name")
+            name = name_elem.text if name_elem is not None else ""
+
+            meta = law_entry.find("meta")
+            if meta is not None:
+                chapter_count_elem = meta.find("chapter-count")
+                art_count_elem = meta.find("art-count")
+                is_empty_elem = meta.find("is-empty")
+
+                chapter_count = chapter_count_elem.text if chapter_count_elem is not None else "0"
+                art_count = art_count_elem.text if art_count_elem is not None else "0"
+                is_empty = is_empty_elem.text if is_empty_elem is not None else "true"
+
+                status = "OK" if is_empty.lower() == "false" else "Empty"
+            else:
+                chapter_count = "0"
+                art_count = "0"
+                status = "Empty"
+
+            laws.append({
+                "nr": identifier,
+                "name": name,
+                "ch": chapter_count,
+                "art": art_count,
+                "status": status
+            })
+
+        return laws
+
+    except (FileNotFoundError, etree.ParseError):
+        return []
