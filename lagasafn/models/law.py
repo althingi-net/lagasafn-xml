@@ -31,24 +31,87 @@ from lxml import html
 from math import floor
 from os import listdir
 from os.path import isfile
+from pydantic import BaseModel
 from typing import List
 
 # FIXME: We do this to avoid feedback loops in importing, since advert-stuff required law-stuff and vice versa. The downside to this is that we lose type hinting. This should be solved using better module schemes instead.
 AdvertManager = getattr(import_module("lagasafn.models.advert"), "AdvertManager")
 
 
-class LawIndexInfo:
-    codex_version: str
-    date_from: datetime
-    date_to: datetime
-    total_count: int
-    empty_count: int
-    non_empty_count: int
+class LawIndexInfo(BaseModel):
+    codex_version: str = CURRENT_PARLIAMENT_VERSION
+    date_from: datetime = datetime(1970, 1, 1, 0, 0, 0)
+    date_to: datetime = datetime(1970, 1, 1, 0, 0, 0)
+    total_count: int = 0
+    empty_count: int = 0
+    non_empty_count: int = 0
 
 
-class LawIndex:
+class LawEntry(BaseModel):
+    """
+    Intermediary model for a legal entry in the index.
+    """
+    codex_version: str = CURRENT_PARLIAMENT_VERSION
+    identifier: str = ""
+    name: str = ""
+    chapter_count: int = 0
+    art_count: int = 0
+    nr: int = 0
+    year: int = 0
+    problems: dict = {}
+
+    def __init__(self, node_law_entry, codex_version: str, problems):
+        super().__init__()
+
+        self.codex_version = codex_version
+        self.identifier = node_law_entry.attrib["identifier"]
+        self.name = node_law_entry.find("name").text
+        self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
+        self.art_count = int(node_law_entry.find("meta/art-count").text)
+
+        self.nr, self.year = [int(p) for p in self.identifier.split("/")]
+
+        self.problems = problems
+
+    def original_url(self):
+        """
+        Reconstructs the URL to the original HTML on Althingi's website.
+        """
+        original_law_filename = "%s%s.html" % (
+            str(self.year),
+            traditionalize_law_nr(self.nr),
+        )
+
+        return "https://www.althingi.is/lagas/%s/%s" % (
+            CURRENT_PARLIAMENT_VERSION,
+            original_law_filename,
+        )
+
+    def display_content_success(self):
+        """
+        Displays the content success as percentage.
+        """
+
+        if "content" not in self.problems:
+            return "unknown"
+
+        content_success = self.problems["content"]["success"]
+        return "%.2f%%" % float(floor(content_success * 10000) / 100)
+
+    def content_success(self):
+        """
+        Determines the status of the law, judging by known problem types.
+        """
+
+        return self.problems["content"]["success"]
+
+    def __str__(self):
+        return self.identifier
+
+
+class LawIndex(BaseModel):
     info: LawIndexInfo = LawIndexInfo()
-    laws: list
+    laws: list[LawEntry] = []
 
 
 class LawManager:
@@ -186,58 +249,6 @@ class LawManager:
                 })
 
         return results
-
-
-class LawEntry:
-    """
-    Intermediary model for a legal entry in the index.
-    """
-
-    def __init__(self, node_law_entry, codex_version: str, problems):
-        self.codex_version = codex_version
-        self.identifier = node_law_entry.attrib["identifier"]
-        self.name = node_law_entry.find("name").text
-        self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
-        self.art_count = node_law_entry.find("meta/art-count").text
-
-        self.nr, self.year = self.identifier.split("/")
-
-        self.problems = problems
-
-    def original_url(self):
-        """
-        Reconstructs the URL to the original HTML on Althingi's website.
-        """
-        original_law_filename = "%s%s.html" % (
-            str(self.year),
-            traditionalize_law_nr(self.nr),
-        )
-
-        return "https://www.althingi.is/lagas/%s/%s" % (
-            CURRENT_PARLIAMENT_VERSION,
-            original_law_filename,
-        )
-
-    def display_content_success(self):
-        """
-        Displays the content success as percentage.
-        """
-
-        if "content" not in self.problems:
-            return "unknown"
-
-        content_success = self.problems["content"]["success"]
-        return "%.2f%%" % float(floor(content_success * 10000) / 100)
-
-    def content_success(self):
-        """
-        Determines the status of the law, judging by known problem types.
-        """
-
-        return self.problems["content"]["success"]
-
-    def __str__(self):
-        return self.identifier
 
 
 class Law(LawEntry):

@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { LawIndex } from '../models/LawIndex';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -91,10 +92,10 @@ export class LawService {
     }
     /**
      * List Xml Files
-     * @returns any OK
+     * @returns LawIndex OK
      * @throws ApiError
      */
-    public static listLaws(): CancelablePromise<any> {
+    public static listLaws(): CancelablePromise<LawIndex> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/law/xml-files',
