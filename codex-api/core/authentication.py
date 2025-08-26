@@ -1,5 +1,5 @@
 from ninja.security import HttpBearer
-from web.mechlaw.settings import API_ACCESS_TOKEN
+from mechlaw.settings import API_ACCESS_TOKEN
 
 class APIAuthentication(HttpBearer):
     """

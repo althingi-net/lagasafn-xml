@@ -3,7 +3,7 @@ from lagasafn.constants import BILLMETA_FILENAME, BILL_FILENAME
 from lagasafn.exceptions import BillException
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION, BASE_DIR
 from lagasafn.utils import write_xml
-from web.core.authentication import APIAuthentication
+from core.authentication import APIAuthentication
 from lxml import etree
 from ninja import Router
 from git import Repo
