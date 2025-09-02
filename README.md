@@ -97,6 +97,53 @@ Now if we want to document what the error was about we can open the `patches/151
 
 and you're done. You can push the new patch file to the repo, or create a pull request.
 
+## Testing
+
+This project includes both unit tests for the core parsing logic and Django integration tests for the web API.
+
+### Running All Tests
+
+To run the complete test suite:
+
+```bash
+./test.sh
+```
+
+### Running Specific Tests
+
+**Unit tests only** (for `lagasafn` parsing logic):
+```bash
+PYTHONPATH=. ./venv/bin/pytest lagasafn/law/tests/ -v
+```
+
+**Django tests only** (for the web API):
+```bash
+cd codex-api && ../venv/bin/python manage.py test --verbosity=2
+```
+
+**With coverage reporting**:
+```bash
+PYTHONPATH=. ./venv/bin/pytest lagasafn/law/tests/ --cov=lagasafn.law
+```
+
+**Run specific test file**:
+```bash
+PYTHONPATH=. ./venv/bin/pytest lagasafn/law/tests/models/test_law_entry.py -v
+```
+
+### Test Dependencies
+
+Install test dependencies:
+```bash
+pip install -r requirements-dev.txt
+```
+
+The testing setup uses:
+- **pytest** for unit tests and test discovery
+- **Django's test runner** for integration tests  
+- **pytest-django** for unified test management
+- **pytest-cov** for coverage reporting
+
 # License
 
 See the document `LICENSE.md`. (It's MIT.)

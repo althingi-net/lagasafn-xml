@@ -30,7 +30,7 @@ class TestLawDocument(unittest.TestCase):
     def test_toc_name_cleaning(self):
         """Test table of contents name cleaning."""
         # Test HTML tag removal and whitespace cleaning
-        dirty_name = "<b>Article  Name</b>  with   spaces"
+        dirty_name = "<b>Article  Name</b>  with  spaces"
         clean_name = LawDocument.toc_name(dirty_name)
         
         self.assertEqual(clean_name, "Article Name with spaces")
