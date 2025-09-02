@@ -1,5 +1,5 @@
 from datetime import datetime
-from lagasafn.models.law import Law
+from lagasafn.models import Law
 from lagasafn.pathing import make_xpath_from_inner_reference
 from lagasafn.pathing import make_xpath_from_node
 from lagasafn.utils import get_all_text

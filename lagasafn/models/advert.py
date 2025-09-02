@@ -111,7 +111,7 @@ class AdvertManager:
     @staticmethod
     @cache
     def index(codex_version: str) -> AdvertIndex:
-        LawManager = getattr(import_module("lagasafn.models.law"), "LawManager")
+        LawManager = getattr(import_module("lagasafn.models"), "LawManager")
         law_index = LawManager.index(codex_version)
 
         info = AdvertIndexInfo()

@@ -4,7 +4,7 @@ from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.exceptions import IntentParsingException
-from lagasafn.models.law import LawManager
+from lagasafn.models import LawManager
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter

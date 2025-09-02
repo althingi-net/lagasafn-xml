@@ -5,8 +5,7 @@ from lagasafn.settings import DATA_DIR
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
-from lagasafn.models.law import LawIndex
-from lagasafn.models.law import LawManager
+from lagasafn.models import LawIndex, LawManager
 from lagasafn.pathing import get_segment
 from lagasafn.references import parse_reference_string
 from lagasafn.utils import write_xml
