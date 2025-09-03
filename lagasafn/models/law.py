@@ -28,10 +28,14 @@ from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
 from lxml import etree
 from lxml import html
+from lxml.etree import _Element
+from lxml.etree import _ElementTree
 from math import floor
 from os import listdir
 from os.path import isfile
 from pydantic import BaseModel
+from pydantic import Field
+from pydantic import computed_field
 from typing import List
 
 # FIXME: We do this to avoid feedback loops in importing, since advert-stuff required law-stuff and vice versa. The downside to this is that we lose type hinting. This should be solved using better module schemes instead.
@@ -53,25 +57,42 @@ class LawEntry(BaseModel):
     """
     codex_version: str = CURRENT_PARLIAMENT_VERSION
     identifier: str = ""
-    name: str = ""
-    chapter_count: int = 0
-    art_count: int = 0
+    _name: str = ""  # Retrieved using property `name`.
     nr: int = 0
     year: int = 0
+    chapter_count: int = -1
+    art_count: int = -1
     problems: dict = {}
 
-    def __init__(self, node_law_entry, codex_version: str, problems):
+    def __init__(
+        self,
+        identifier: str,
+        name: str,
+        codex_version: str = CURRENT_PARLIAMENT_VERSION,
+        chapter_count: int = -1,
+        art_count: int = -1,
+        problems: dict = {}
+    ):
         super().__init__()
 
+        self.identifier = identifier
+        self._name = name
+        self.chapter_count = chapter_count
+        self.art_count = art_count
         self.codex_version = codex_version
-        self.identifier = node_law_entry.attrib["identifier"]
-        self.name = node_law_entry.find("name").text
-        self.chapter_count = int(node_law_entry.find("meta/chapter-count").text)
-        self.art_count = int(node_law_entry.find("meta/art-count").text)
 
-        self.nr, self.year = [int(p) for p in self.identifier.split("/")]
+        try:
+            self.nr, self.year = [int(v) for v in self.identifier.split("/")]
+        except (ValueError, TypeError):
+            raise LawException("Year must be an integer in '%s'" % self.identifier)
 
         self.problems = problems
+
+    # Is function because it gets overridden by sub-class.
+    @computed_field
+    @property
+    def name(self) -> str:
+        return self._name
 
     def original_url(self):
         """
@@ -169,7 +190,18 @@ class LawManager:
             if node_law_entry.attrib["identifier"] in problem_map:
                 problems = problem_map[node_law_entry.attrib["identifier"]]
 
-            laws.append(LawEntry(node_law_entry, info.codex_version, problems))
+            identifier = node_law_entry.attrib["identifier"]
+            name = node_law_entry.find("name").text
+            chapter_count = int(node_law_entry.find("meta/chapter-count").text)
+            art_count = int(node_law_entry.find("meta/art-count").text)
+            laws.append(LawEntry(
+                identifier,
+                name,
+                info.codex_version,
+                chapter_count,
+                art_count,
+                problems
+            ))
 
         index = LawIndex()
         index.info = info
@@ -253,31 +285,44 @@ class LawManager:
 
 class Law(LawEntry):
 
+    # Only used in `LawEntry`, at least for now.
+    chapter_count: int = Field(default=-1, exclude=True)
+    art_count: int = Field(default=-1, exclude=True)
+    problems: dict = Field(default={}, exclude=True)
+
     def __init__(self, identifier: str, codex_version: str):
-        self.identifier = identifier
-        self.codex_version = codex_version
+
+        # Name starts empty, so that the `name()` property below can lazy-fetch
+        # it when it is needed.
+        name = ""
+
+        super().__init__(identifier, name, codex_version)
 
         # Private containers, essentially for caching.
         self._xml = None
         self._xml_references = None
-        self._name = ""
         self._xml_text = ""
         self._html_text = ""
         self._superchapters = []
         self._chapters = []
         self._articles = []
         self._remote_contents = {}
-        self.codex_version = codex_version
-
-        self.nr, self.year = self.identifier.split("/")
-
-        try:
-            self.year = int(self.year)
-        except (ValueError, TypeError):
-            raise LawException("Year must be an integer in '%s'" % self.identifier)
 
         if not os.path.isfile(self.path()):
             raise NoSuchLawException("Could not find law '%s'" % self.identifier)
+
+    @computed_field
+    @property
+    def name(self) -> str:
+        if len(self._name):
+            return self._name
+
+        # Has its own cache mechanism, so this is fast.
+        xml = self.xml()
+
+        self._name = xml.find("name").text or ""
+
+        return self._name
 
     @staticmethod
     def toc_name(text):
@@ -303,17 +348,6 @@ class Law(LawEntry):
             _art["name"] = Law.toc_name(art_name.text)
 
         return _art
-
-    def name(self):
-        if len(self._name):
-            return self._name
-
-        # Has its own cache mechanism, so this is fast.
-        xml = self.xml()
-
-        self._name = xml.find("name").text
-
-        return self._name
 
     def superchapters(self):
         if len(self._superchapters):
@@ -406,7 +440,7 @@ class Law(LawEntry):
 
         return self._xml
 
-    def xml_text(self):
+    def xml_text(self) -> str:
         """
         Returns the law in XML text form.
         """

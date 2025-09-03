@@ -4,6 +4,7 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.models.law import Law
 from lagasafn.models.law import LawIndex
 from lagasafn.models.law import LawManager
 from lagasafn.pathing import get_segment
@@ -136,3 +137,14 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
 def api_list(request: HttpRequest):
     index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
     return index
+
+
+@router.get(
+    "/get",
+    summary="Returns a single requested law.",
+    operation_id="getLaw",
+    response=Law,
+)
+def api_get(request: HttpRequest, identifier: str):
+    law = Law(identifier, CURRENT_PARLIAMENT_VERSION)
+    return law
