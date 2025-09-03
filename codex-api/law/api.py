@@ -1,7 +1,6 @@
 from django.http import HttpRequest
 from django.http import HttpResponse
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
-from lagasafn.settings import DATA_DIR
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
@@ -15,11 +14,8 @@ from ninja import File
 from ninja import Router
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
-from os.path import join
 from .searchengine import SearchEngine
 from datetime import datetime
-from typing import Dict
-from typing import List
 
 
 router = Router(tags=["Law"])
@@ -131,7 +127,12 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     return HttpResponse(xml_string, content_type="text/xml")
 
 
-@router.get("/xml-files", operation_id="listLaws", response=LawIndex)
-def list_xml_files(request: HttpRequest):
+@router.get(
+    "/list",
+    summary="Returns a list of all laws.",
+    operation_id="listLaws",
+    response=LawIndex,
+)
+def api_list(request: HttpRequest):
     index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
     return index

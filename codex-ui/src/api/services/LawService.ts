@@ -91,14 +91,14 @@ export class LawService {
         });
     }
     /**
-     * List Xml Files
+     * Returns a list of all laws.
      * @returns LawIndex OK
      * @throws ApiError
      */
     public static listLaws(): CancelablePromise<LawIndex> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/api/law/xml-files',
+            url: '/api/law/list',
         });
     }
 }
