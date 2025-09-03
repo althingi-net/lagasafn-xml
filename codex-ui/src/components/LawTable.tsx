@@ -7,9 +7,9 @@ interface LawTableProps {
 }
 
 export default function LawTable(props: LawTableProps) {
-    const getLawUrl = (nr: string) => {
-        const [number, year] = nr.split('/');
-        return `/law/${number}/${year}`;
+    const getLawUrl = (identifier: string) => {
+        const [nr, year] = identifier.split('/');
+        return `/law/${nr}/${year}`;
     };
 
     return (
@@ -26,11 +26,11 @@ export default function LawTable(props: LawTableProps) {
                 </thead>
                 <tbody>
                     <For each={props.laws}>
-                        {law => (
+                        {(law: LawEntry) => (
                             <tr class="border-b hover:bg-gray-50/50">
                                 <td class="py-2 px-4">
                                     <A
-                                        href={getLawUrl(law.nr?.toString() ?? '')}
+                                        href={getLawUrl(law.identifier?.toString() ?? '')}
                                         class="text-blue-600 hover:text-blue-800"
                                     >
                                         {law.identifier}
@@ -38,7 +38,7 @@ export default function LawTable(props: LawTableProps) {
                                 </td>
                                 <td class="py-2 px-4">
                                     <A
-                                        href={getLawUrl(law.nr?.toString() ?? '')}
+                                        href={getLawUrl(law.identifier?.toString() ?? '')}
                                         class="hover:text-blue-600"
                                     >
                                         {law.name}
