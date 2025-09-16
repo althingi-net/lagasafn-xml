@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Law } from '../models/Law';
 import type { LawIndex } from '../models/LawIndex';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -99,6 +100,23 @@ export class LawService {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/law/list',
+        });
+    }
+    /**
+     * Returns a single requested law.
+     * @param identifier
+     * @returns Law OK
+     * @throws ApiError
+     */
+    public static getLaw(
+        identifier: string,
+    ): CancelablePromise<Law> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/law/get',
+            query: {
+                'identifier': identifier,
+            },
         });
     }
 }

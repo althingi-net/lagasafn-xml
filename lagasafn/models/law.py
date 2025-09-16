@@ -455,7 +455,9 @@ class Law(LawEntry):
 
         return self._xml_text
 
-    def html_text(self):
+    @computed_field
+    @property
+    def html_text(self) -> str:
         """
         Returns the law in HTML text form.
         """
@@ -473,6 +475,7 @@ class Law(LawEntry):
         e = re.compile(r"<([a-z\-]+)( ?)([^>]*)\/>")
         result = e.sub(r"<\1\2\3></\1>", xml_text)
         result = result.replace('<?xml version="1.0" encoding="utf-8"?>', "").strip()
+        result = result.replace("<?xml version='1.0' encoding='utf-8'?>", "").strip()
 
         # Assigned separately so that we never have half-completed conversion
         # stored. More principle than practice.

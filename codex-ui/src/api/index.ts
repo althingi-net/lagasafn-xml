@@ -7,6 +7,7 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
+export type { Law } from './models/Law';
 export type { LawEntry } from './models/LawEntry';
 export type { LawIndex } from './models/LawIndex';
 export type { LawIndexInfo } from './models/LawIndexInfo';

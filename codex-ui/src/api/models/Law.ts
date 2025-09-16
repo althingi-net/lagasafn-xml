@@ -2,10 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-/**
- * Intermediary model for a legal entry in the index.
- */
-export type LawEntry = {
+export type Law = {
     codex_version?: string;
     identifier?: string;
     nr?: number;
