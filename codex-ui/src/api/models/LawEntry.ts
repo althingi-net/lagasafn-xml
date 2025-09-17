@@ -8,6 +8,7 @@
 export type LawEntry = {
     codex_version?: string;
     identifier?: string;
+    name?: string;
     nr?: number;
     year?: number;
     chapter_count?: number;

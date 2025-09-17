@@ -5,10 +5,12 @@
 export type Law = {
     codex_version?: string;
     identifier?: string;
+    name?: string;
     nr?: number;
     year?: number;
     chapter_count?: number;
     art_count?: number;
     problems?: Record<string, any>;
+    html_text?: string;
 };
 

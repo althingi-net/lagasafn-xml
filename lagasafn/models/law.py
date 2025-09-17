@@ -57,7 +57,7 @@ class LawEntry(BaseModel):
     """
     codex_version: str = CURRENT_PARLIAMENT_VERSION
     identifier: str = ""
-    _name: str = ""  # Retrieved using property `name`.
+    name: str = ""  # Retrieved using property `name`.
     nr: int = 0
     year: int = 0
     chapter_count: int = -1
@@ -76,7 +76,7 @@ class LawEntry(BaseModel):
         super().__init__()
 
         self.identifier = identifier
-        self._name = name
+        self.name = name
         self.chapter_count = chapter_count
         self.art_count = art_count
         self.codex_version = codex_version
@@ -87,12 +87,6 @@ class LawEntry(BaseModel):
             raise LawException("Year must be an integer in '%s'" % self.identifier)
 
         self.problems = problems
-
-    # Is function because it gets overridden by sub-class.
-    @computed_field
-    @property
-    def name(self) -> str:
-        return self._name
 
     def original_url(self):
         """
@@ -290,39 +284,34 @@ class Law(LawEntry):
     art_count: int = Field(default=-1, exclude=True)
     problems: dict = Field(default={}, exclude=True)
 
+    html_text: str = ""
+
     def __init__(self, identifier: str, codex_version: str):
-
-        # Name starts empty, so that the `name()` property below can lazy-fetch
-        # it when it is needed.
-        name = ""
-
-        super().__init__(identifier, name, codex_version)
+        # NOTE: The `name` is temporarily set first here, because in order to
+        # load the XML, the parent class needs the `identifier`, but the `Law`
+        # class determines the name from the XML while the parent class
+        # receives it during creation. The name gets updated immediately after
+        # the parent class's constructor has been called.
+        super().__init__(identifier, "[not-ready]", codex_version)
 
         # Private containers, essentially for caching.
         self._xml = None
         self._xml_references = None
         self._xml_text = ""
-        self._html_text = ""
         self._superchapters = []
         self._chapters = []
         self._articles = []
         self._remote_contents = {}
 
+        # NOTE: This used to be lazy-fetched. If this turns out to be too slow
+        # because we're constantly creating these objects without needing to
+        # load their content, we should create another constructor, or a
+        # chaining `load()` function or something of the sort.
+        self.name = self.xml().find("name").text or ""
+        self.html_text = self.get_html_text()
+
         if not os.path.isfile(self.path()):
             raise NoSuchLawException("Could not find law '%s'" % self.identifier)
-
-    @computed_field
-    @property
-    def name(self) -> str:
-        if len(self._name):
-            return self._name
-
-        # Has its own cache mechanism, so this is fast.
-        xml = self.xml()
-
-        self._name = xml.find("name").text or ""
-
-        return self._name
 
     @staticmethod
     def toc_name(text):
@@ -455,16 +444,14 @@ class Law(LawEntry):
 
         return self._xml_text
 
-    @computed_field
-    @property
-    def html_text(self) -> str:
+    def get_html_text(self):
         """
-        Returns the law in HTML text form.
+        Generates the law in HTML text form.
         """
 
         # Just return the content if we already have it.
-        if len(self._html_text) > 0:
-            return self._html_text
+        if len(self.html_text) > 0:
+            return self.html_text
 
         # Make sure we have the XML.
         xml_text = self.xml_text()
@@ -473,15 +460,11 @@ class Law(LawEntry):
         # FIXME: This could use some explaining. There is a difference between
         # XML and HTML, but it's not obvious from reading this.
         e = re.compile(r"<([a-z\-]+)( ?)([^>]*)\/>")
-        result = e.sub(r"<\1\2\3></\1>", xml_text)
-        result = result.replace('<?xml version="1.0" encoding="utf-8"?>', "").strip()
-        result = result.replace("<?xml version='1.0' encoding='utf-8'?>", "").strip()
+        html_text = e.sub(r"<\1\2\3></\1>", xml_text)
+        html_text = html_text.replace('<?xml version="1.0" encoding="utf-8"?>', "").strip()
+        html_text = html_text.replace("<?xml version='1.0' encoding='utf-8'?>", "").strip()
 
-        # Assigned separately so that we never have half-completed conversion
-        # stored. More principle than practice.
-        self._html_text = result
-
-        return self._html_text
+        return html_text
 
     def iter_structure(self):
         """
