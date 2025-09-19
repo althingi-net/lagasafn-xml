@@ -2,15 +2,17 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Chapter } from './Chapter';
 export type Law = {
-    codex_version?: string;
-    identifier?: string;
-    name?: string;
-    nr?: number;
-    year?: number;
-    chapter_count?: number;
-    art_count?: number;
-    problems?: Record<string, any>;
-    html_text?: string;
+    identifier: string;
+    name: string;
+    codex_version: string;
+    chapter_count: number;
+    art_count: number;
+    problems: Record<string, any>;
+    nr: number;
+    year: number;
+    chapters: Array<Chapter>;
+    html_text: string;
 };
 

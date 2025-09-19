@@ -6,13 +6,13 @@
  * Intermediary model for a legal entry in the index.
  */
 export type LawEntry = {
-    codex_version?: string;
-    identifier?: string;
-    name?: string;
-    nr?: number;
-    year?: number;
-    chapter_count?: number;
-    art_count?: number;
-    problems?: Record<string, any>;
+    identifier: string;
+    name: string;
+    codex_version: string;
+    chapter_count: number;
+    art_count: number;
+    problems: Record<string, any>;
+    nr: number;
+    year: number;
 };
 

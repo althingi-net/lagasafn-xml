@@ -55,14 +55,14 @@ class LawEntry(BaseModel):
     """
     Intermediary model for a legal entry in the index.
     """
-    codex_version: str = CURRENT_PARLIAMENT_VERSION
-    identifier: str = ""
-    name: str = ""  # Retrieved using property `name`.
-    nr: int = 0
-    year: int = 0
-    chapter_count: int = -1
-    art_count: int = -1
-    problems: dict = {}
+    identifier: str
+    name: str
+    codex_version: str
+    chapter_count: int
+    art_count: int
+    problems: dict
+    nr: int
+    year: int
 
     def __init__(
         self,
@@ -73,20 +73,21 @@ class LawEntry(BaseModel):
         art_count: int = -1,
         problems: dict = {}
     ):
-        super().__init__()
-
-        self.identifier = identifier
-        self.name = name
-        self.chapter_count = chapter_count
-        self.art_count = art_count
-        self.codex_version = codex_version
-
         try:
-            self.nr, self.year = [int(v) for v in self.identifier.split("/")]
+            nr, year = [int(v) for v in identifier.split("/")]
         except (ValueError, TypeError):
-            raise LawException("Year must be an integer in '%s'" % self.identifier)
+            raise LawException("Year must be an integer in '%s'" % identifier)
 
-        self.problems = problems
+        super().__init__(
+            identifier=identifier,
+            name=name,
+            codex_version=codex_version,
+            chapter_count=chapter_count,
+            art_count=art_count,
+            problems=problems,
+            nr=nr,
+            year=year,
+        )
 
     def original_url(self):
         """
@@ -277,16 +278,40 @@ class LawManager:
         return results
 
 
+class Article(BaseModel):
+    nr: str
+    nr_title: str
+    name: str
+
+    def __init__(self, nr: str, nr_title: str, name: str = ""):
+        super().__init__(nr=nr, nr_title=nr_title, name=name)
+
+
+class Chapter(BaseModel):
+    nr: str
+    nr_title: str
+    name: str
+    articles: list[Article]
+
+    def __init__(self, nr: str, nr_title: str, name: str = "", articles: list[Article] = []):
+        super().__init__(nr=nr, nr_title=nr_title, name=name, articles=articles)
+
+
 class Law(LawEntry):
 
-    # Only used in `LawEntry`, at least for now.
-    chapter_count: int = Field(default=-1, exclude=True)
-    art_count: int = Field(default=-1, exclude=True)
-    problems: dict = Field(default={}, exclude=True)
+    # Only used in `LawEntry`, at least for now, so excluded here.
+    chapter_count: int = Field(exclude=True)
+    art_count: int = Field(exclude=True)
+    problems: dict = Field(exclude=True)
 
-    html_text: str = ""
+    chapters: list[Chapter] = Field(default_factory=list, required=True)
+
+    # HTML that should be displayable in a browser, assuming CSS for styling
+    # and hiding elements that are irrelevant to a human reader.
+    html_text: str = Field(default="", required=True)
 
     def __init__(self, identifier: str, codex_version: str):
+
         # NOTE: The `name` is temporarily set first here, because in order to
         # load the XML, the parent class needs the `identifier`, but the `Law`
         # class determines the name from the XML while the parent class
@@ -299,7 +324,6 @@ class Law(LawEntry):
         self._xml_references = None
         self._xml_text = ""
         self._superchapters = []
-        self._chapters = []
         self._articles = []
         self._remote_contents = {}
 
@@ -309,10 +333,15 @@ class Law(LawEntry):
         # chaining `load()` function or something of the sort.
         self.name = self.xml().find("name").text or ""
         self.html_text = self.get_html_text()
+        self.chapters = self.get_chapters()
 
         if not os.path.isfile(self.path()):
             raise NoSuchLawException("Could not find law '%s'" % self.identifier)
 
+    # FIXME: It's unclear why this function exists. If there's a reason for it,
+    # that reason should be given. If there's no reason, it should be removed
+    # in favor of better data. It makes names fancy for a table of contents,
+    # but doesn't explain why they're not already fancy enough.
     @staticmethod
     def toc_name(text):
         """
@@ -321,22 +350,22 @@ class Law(LawEntry):
         return strip_tags(text).replace("  ", " ").strip()
 
     @staticmethod
-    def _make_art(art):
+    def _make_art(xml_art):
         """
         Centralized function for making an `art` in the specific context of
         this model, from XML data.
         """
-        _art = {
-            "nr": art.attrib["nr"],
-            "nr_title": Law.toc_name(art.find("nr-title").text),
-        }
+        art = Article(
+            nr=xml_art.attrib["nr"],
+            nr_title=Law.toc_name(xml_art.find("nr-title").text),
+        )
 
         # Add name if it exists.
-        art_name = art.find("name")
+        art_name = xml_art.find("name")
         if art_name is not None:
-            _art["name"] = Law.toc_name(art_name.text)
+            art.name = Law.toc_name(art_name.text)
 
-        return _art
+        return art
 
     def superchapters(self):
         if len(self._superchapters):
@@ -370,40 +399,34 @@ class Law(LawEntry):
         return self._superchapters
 
     @staticmethod
-    def _make_chapter(chapter):
-        _chapter = {
-            "nr": chapter.attrib["nr"],
-            "articles": [],
-        }
+    def _make_chapter(xml_chapter: _Element) -> Chapter:
+        chapter = Chapter(
+            nr=xml_chapter.attrib["nr"],
+            nr_title=xml_chapter.find("nr-title").text,
+        )
 
         # Add nr-title if it exists.
-        nr_title = chapter.find("nr-title")
-        if nr_title is not None:
-            _chapter["nr_title"] = nr_title.text
+        xml_nr_title = xml_chapter.find("nr-title")
+        if xml_nr_title is not None:
+            chapter.nr_title = xml_nr_title.text
 
         # Add name if it exists.
-        name = chapter.find("name")
-        if name is not None:
-            _chapter["name"] = name.text
+        xml_name = xml_chapter.find("name")
+        if xml_name is not None:
+            chapter.name = xml_name.text
 
         # Add articles.name
-        for art in chapter.findall("art"):
-            _art = Law._make_art(art)
-            _chapter["articles"].append(_art)
+        for xml_art in xml_chapter.findall("art"):
+            art = Law._make_art(xml_art)
+            chapter.articles.append(art)
 
-        return _chapter
+        return chapter
 
-    def chapters(self):
-        if len(self._chapters):
-            return self._chapters
+    def get_chapters(self) -> list[Chapter]:
+        if len(self.chapters):
+            return self.chapters
 
-        xml = self.xml()
-
-        for chapter in xml.findall("chapter"):
-            _chapter = self._make_chapter(chapter)
-            self._chapters.append(_chapter)
-
-        return self._chapters
+        return [Law._make_chapter(c) for c in self.xml().findall("chapter")]
 
     def articles(self):
         if len(self._articles):
