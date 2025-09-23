@@ -2,6 +2,7 @@ import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
 import { Suspense } from 'solid-js';
 import './app.css';
+import './law.css';
 import { OpenAPI } from './api';
 
 // Configure the API base URL

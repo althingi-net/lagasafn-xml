@@ -1,6 +1,7 @@
 import { useParams, A } from '@solidjs/router';
 import { createSignal, createResource, onMount, createMemo } from 'solid-js';
 import { LawService } from '~/api';
+import Header from '~/components/Header';
 
 export default function LawView() {
     const { year, number } = useParams();
@@ -32,40 +33,13 @@ export default function LawView() {
         }
     };
 
-    // Format content with section IDs
-    const formattedContent = () => {
-        if (!law()?.content) return '';
-
-        // Split content into sections and wrap each with an ID
-        return law().content.split('■').map((section, index) => {
-            if (index === 0) return section; // First split is preamble
-
-            // Extract section number from the content
-            const match = /(\d+)\. gr\./.exec(section);
-            if (!match) return section;
-
-            const sectionId = match[1];
-            const isActive = activeSection() === sectionId;
-            return `<div id="section-${sectionId}" class="section-content ${isActive ? 'section-highlight' : ''} transition-colors duration-500">■${section}</div>`;
-        }).join('');
-    };
-
     return (
         <div class="min-h-screen bg-[#111]">
-            <div class="fixed top-0 left-0 right-0 bg-black text-white w-full z-10">
-                <div class="container mx-auto px-4 py-4">
-                    <div class="flex items-center gap-8">
-                        <h1 class="text-xl font-medium">
-                            <a href="/" class="hover:text-gray-300">Legal Codex (30. apríl 2025)</a>
-                        </h1>
-                        <a href="/" class="text-base text-gray-300 hover:text-white">Content Search</a>
-                    </div>
-                </div>
-            </div>
+            <Header />
 
-            <div class="container mx-auto px-4 pt-[60px]">
+            <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between py-4">
-                    <h2 class="text-xl text-white">{law()?.name}</h2>
+                    <h2 class="text-xl text-white">&nbsp;</h2>
                     <div class="flex gap-2">
                         <a
                             href={`https://www.althingi.is/lagas/156a/${year}${number.padStart(3, '0')}.html`}
@@ -116,7 +90,7 @@ export default function LawView() {
                                 <p class="text-gray-600">2025 nr. 5 14. mars</p>
                             </div>
 
-                            <div class="prose max-w-none">
+                            <div class="prose max-w-none legal-document">
                                 <div innerHTML={law()?.html_text} />
                             </div>
                         </div>
