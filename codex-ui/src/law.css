@@ -85,6 +85,7 @@ ambiguous-bold-text[ambiguous-style="i"] { font-style: italic; }
 
 /* article */
 art { display: block; margin-top: 0px; }
+art::before { content: url('/static/law/img/box-black.png'); }
 art > nr-title { display: inline; font-weight: bold; }
 art > nr-title .art-deletion { font-weight: normal; }
 art > name { font-style: italic; }
@@ -98,6 +99,7 @@ art-chapter > sen:first-of-type { margin-left: 1.04em; } /* Only in 7. gr. laga 
 
 /* subarticle */
 subart { display: block; }
+subart::before { content: url('/static/law/img/box-white.png'); }
 subart .mgr { font-weight: bold; }
 subart > definition { font-style: italic; }
 
