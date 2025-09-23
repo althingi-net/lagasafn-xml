@@ -16,3 +16,17 @@ body {
   background: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
 }
+
+/* Toggle styles for law documents */
+.toggle-button[data-state="open"] {
+  cursor: pointer;
+}
+
+.toggle-button[data-state="closed"] {
+  color: #808080;
+  cursor: pointer;
+}
+
+.toggle-hidden {
+  display: none;
+}

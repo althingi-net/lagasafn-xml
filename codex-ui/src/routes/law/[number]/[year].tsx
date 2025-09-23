@@ -1,5 +1,5 @@
-import { useParams, A } from '@solidjs/router';
-import { createSignal, createResource, onMount, createMemo } from 'solid-js';
+import { useParams } from '@solidjs/router';
+import { createSignal, createResource, createEffect } from 'solid-js';
 import { LawService } from '~/api';
 import Header from '~/components/Header';
 
@@ -33,6 +33,113 @@ export default function LawView() {
         }
     };
 
+    // Make sections togglable
+    const makeTogglable = (element: Element) => {
+        // Find a handle to control toggling. If element has no name, try nr-title.
+        let toggleButton = element.querySelector('name');
+        if (!toggleButton) {
+            toggleButton = element.querySelector('nr-title');
+        }
+
+        if (toggleButton) {
+            // Add toggle button class and attributes
+            (toggleButton as HTMLElement).classList.add('toggle-button');
+            toggleButton.setAttribute('data-state', 'open');
+            toggleButton.setAttribute('data-toggle-id', element.getAttribute('nr') || '');
+
+            // Add click handler
+            toggleButton.addEventListener('click', () => {
+                const state = toggleButton?.getAttribute('data-state');
+                const subject = element;
+
+                if (state === 'closed') {
+                    // Show all children
+                    const children = subject.children;
+                    for (let i = 0; i < children.length; i++) {
+                        children[i].classList.remove('toggle-hidden');
+                    }
+                    toggleButton?.setAttribute('data-state', 'open');
+                } else {
+                    // Hide all children except toggle button, img, nr-title, and name
+                    const children = subject.children;
+                    for (let i = 0; i < children.length; i++) {
+                        const child = children[i];
+                        if (!child.classList.contains('toggle-button') &&
+                            child.tagName.toLowerCase() !== 'img' &&
+                            child.tagName.toLowerCase() !== 'nr-title' &&
+                            child.tagName.toLowerCase() !== 'name') {
+                            child.classList.add('toggle-hidden');
+                        }
+                    }
+                    toggleButton?.setAttribute('data-state', 'closed');
+                }
+            });
+        }
+    };
+
+    // Apply toggle functionality after content is loaded
+    const applyToggleFunctionality = () => {
+        // Wait for the next tick to ensure content is rendered
+        setTimeout(() => {
+            const contentContainer = document.querySelector('.legal-document');
+            if (contentContainer) {
+                // Make superchapters togglable
+                const superchapters = contentContainer.querySelectorAll('superchapter');
+                superchapters.forEach(makeTogglable);
+
+                // Make chapters togglable
+                const chapters = contentContainer.querySelectorAll('chapter');
+                chapters.forEach(makeTogglable);
+
+                // Make articles togglable
+                const articles = contentContainer.querySelectorAll('art');
+                articles.forEach(makeTogglable);
+            }
+        }, 0);
+    };
+
+    // Close all sections
+    const closeAllSections = () => {
+        const contentContainer = document.querySelector('.legal-document');
+        if (contentContainer) {
+            const toggleButtons = contentContainer.querySelectorAll('.toggle-button[data-state="open"]');
+            toggleButtons.forEach(button => {
+                const event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                button.dispatchEvent(event);
+            });
+        }
+    };
+
+    // Open all sections
+    const openAllSections = () => {
+        const contentContainer = document.querySelector('.legal-document');
+        if (contentContainer) {
+            const toggleButtons = contentContainer.querySelectorAll('.toggle-button[data-state="closed"]');
+            toggleButtons.forEach(button => {
+                const event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                button.dispatchEvent(event);
+            });
+        }
+    };
+
+    // Apply toggle functionality when law content is loaded
+    createEffect(() => {
+        if (law() && law()?.html_text) {
+            // Wait for the next tick to ensure content is rendered
+            setTimeout(() => {
+                applyToggleFunctionality();
+            }, 0);
+        }
+    });
+
     return (
         <div class="min-h-screen bg-[#111]">
             <Header />
@@ -59,8 +166,8 @@ export default function LawView() {
                         </a>
                         <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Hide subart numbers</button>
                         <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Show subart numbers</button>
-                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Close all</button>
-                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Open all</button>
+                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={closeAllSections}>Close all</button>
+                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={openAllSections}>Open all</button>
                     </div>
                 </div>
 
