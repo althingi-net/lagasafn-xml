@@ -3,16 +3,28 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   ssr: false,
-  vite: {
-    plugins: [tailwindcss()],
-    server: {
-      port: 3000,
-      strictPort: true,
-      hmr: {
-        clientPort: 3000,
-        host: "localhost",
-        protocol: "ws"
-      }
+  vite({ router }) {
+    const base = {
+      plugins: [tailwindcss()],
+    };
+
+    if (router === "client") {
+      return {
+        ...base,
+        server: {
+          port: 3000,
+          strictPort: true,
+          hmr: {
+            port: 3500,
+            clientPort: 3000,
+            host: "localhost",
+            protocol: "ws",
+          },
+        },
+      };
     }
-  }
+
+    return base;
+  },
+
 });
