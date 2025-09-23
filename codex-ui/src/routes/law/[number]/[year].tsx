@@ -2,6 +2,7 @@ import { useParams } from '@solidjs/router';
 import { createSignal, createResource, createEffect } from 'solid-js';
 import { LawService } from '~/api';
 import Header from '~/components/Header';
+import '~/law.css';
 
 export default function LawView() {
     const { year, number } = useParams();
@@ -45,33 +46,36 @@ export default function LawView() {
             // Add toggle button class and attributes
             (toggleButton as HTMLElement).classList.add('toggle-button');
             toggleButton.setAttribute('data-state', 'open');
-            toggleButton.setAttribute('data-toggle-id', element.getAttribute('nr') || '');
+            const nr = element.getAttribute('nr');
+            if (nr) {
+                toggleButton.setAttribute('data-toggle-id', nr);
+            }
 
             // Add click handler
             toggleButton.addEventListener('click', () => {
-                const state = toggleButton?.getAttribute('data-state');
+                const state = toggleButton.getAttribute('data-state');
                 const subject = element;
 
                 if (state === 'closed') {
                     // Show all children
                     const children = subject.children;
-                    for (let i = 0; i < children.length; i++) {
-                        children[i].classList.remove('toggle-hidden');
+                    for (const child of children) {
+                        child.classList.remove('toggle-hidden');
                     }
-                    toggleButton?.setAttribute('data-state', 'open');
-                } else {
+                    toggleButton.setAttribute('data-state', 'open');
+                }
+                else {
                     // Hide all children except toggle button, img, nr-title, and name
                     const children = subject.children;
-                    for (let i = 0; i < children.length; i++) {
-                        const child = children[i];
-                        if (!child.classList.contains('toggle-button') &&
-                            child.tagName.toLowerCase() !== 'img' &&
-                            child.tagName.toLowerCase() !== 'nr-title' &&
-                            child.tagName.toLowerCase() !== 'name') {
+                    for (const child of children) {
+                        if (!child.classList.contains('toggle-button')
+                          && child.tagName.toLowerCase() !== 'img'
+                          && child.tagName.toLowerCase() !== 'nr-title'
+                          && child.tagName.toLowerCase() !== 'name') {
                             child.classList.add('toggle-hidden');
                         }
                     }
-                    toggleButton?.setAttribute('data-state', 'closed');
+                    toggleButton.setAttribute('data-state', 'closed');
                 }
             });
         }
@@ -103,11 +107,11 @@ export default function LawView() {
         const contentContainer = document.querySelector('.legal-document');
         if (contentContainer) {
             const toggleButtons = contentContainer.querySelectorAll('.toggle-button[data-state="open"]');
-            toggleButtons.forEach(button => {
+            toggleButtons.forEach((button) => {
                 const event = new MouseEvent('click', {
                     view: window,
                     bubbles: true,
-                    cancelable: true
+                    cancelable: true,
                 });
                 button.dispatchEvent(event);
             });
@@ -119,20 +123,47 @@ export default function LawView() {
         const contentContainer = document.querySelector('.legal-document');
         if (contentContainer) {
             const toggleButtons = contentContainer.querySelectorAll('.toggle-button[data-state="closed"]');
-            toggleButtons.forEach(button => {
+            toggleButtons.forEach((button) => {
                 const event = new MouseEvent('click', {
                     view: window,
                     bubbles: true,
-                    cancelable: true
+                    cancelable: true,
                 });
                 button.dispatchEvent(event);
             });
         }
     };
 
+    // Show sub-article numbers
+    const showSubartNumbers = () => {
+        const subarts = document.querySelectorAll('subart');
+        subarts.forEach((subart) => {
+            const subartElement = subart as HTMLElement;
+            const firstSen = subartElement.querySelector('sen');
+            if (firstSen) {
+                const firstSenElement = firstSen as HTMLElement;
+                const mgrSpan = firstSenElement.querySelector('span.mgr');
+                if (!mgrSpan) {
+                    const nr = subartElement.getAttribute('nr');
+                    if (nr) {
+                        firstSenElement.insertAdjacentHTML('afterbegin', `<span class="mgr">${nr}. mgr.</span> `);
+                    }
+                }
+            }
+        });
+    };
+
+    // Hide sub-article numbers
+    const hideSubartNumbers = () => {
+        const mgrSpans = document.querySelectorAll('subart .mgr');
+        mgrSpans.forEach((span) => {
+            span.remove();
+        });
+    };
+
     // Apply toggle functionality when law content is loaded
     createEffect(() => {
-        if (law() && law()?.html_text) {
+        if (law()?.html_text) {
             // Wait for the next tick to ensure content is rendered
             setTimeout(() => {
                 applyToggleFunctionality();
@@ -164,8 +195,8 @@ export default function LawView() {
                         >
                             Open in editor
                         </a>
-                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Hide subart numbers</button>
-                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20">Show subart numbers</button>
+                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={hideSubartNumbers}>Hide subart numbers</button>
+                        <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={showSubartNumbers}>Show subart numbers</button>
                         <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={closeAllSections}>Close all</button>
                         <button class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20" onClick={openAllSections}>Open all</button>
                     </div>
