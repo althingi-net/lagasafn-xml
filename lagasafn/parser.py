@@ -2060,9 +2060,14 @@ def parse_numerical_article(parser):
     # alphabetic one, into something easier to work with
     # programmatically. Example: "9. a" becomes "9a" in law nr.
     # 20/2003.
-    numart_nr = strip_markers(parser.peeks().strip("(").strip(")").strip(".")).replace(
+    numart_nr = strip_markers(
+        parser.peeks().strip("(").strip(")").strip(".")
+    ).replace(
         ". ", ""
-    )
+    # NOTE: This became necessary around 2024-2025, presumably because
+    # Parliament's norms changed ever so slightly due to staff changes. It's
+    # unclear what exactly changed (and it hopefully doesn't matter).
+    ).strip(".")
 
     if parser.matcher.check(numart_nr, r"(\d+)\.[–-](\d+)"):
         # Support for numart ranges, which are only known to occur when many
