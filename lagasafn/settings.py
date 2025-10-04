@@ -22,6 +22,9 @@ FEATURES = {
 
 OPENAI_API_KEY = environ.get("OPENAI_API_KEY", "")
 
+CHAOSTEMPLE_URL = environ.get("CHAOSTEMPLE_URL")
+CHAOSTEMPLE_API_URL = environ.get("CHAOSTEMPLE_API_URL", "%s/api" % CHAOSTEMPLE_URL)
+
 # Contains user-selected options by command line, so that they are available
 # to different parts of the program.
 options = {}

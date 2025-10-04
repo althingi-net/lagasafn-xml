@@ -293,7 +293,7 @@ class Chapter(BaseModel):
     name: str
     articles: list[Article]
 
-    def __init__(self, nr: str, nr_title: str, name: str = "", articles: list[Article] = []):
+    def __init__(self, nr: str, nr_title: str = "", name: str = "", articles: list[Article] = []):
         super().__init__(nr=nr, nr_title=nr_title, name=name, articles=articles)
 
 
@@ -400,15 +400,12 @@ class Law(LawEntry):
 
     @staticmethod
     def _make_chapter(xml_chapter: _Element) -> Chapter:
-        chapter = Chapter(
-            nr=xml_chapter.attrib["nr"],
-            nr_title=xml_chapter.find("nr-title").text,
-        )
+        chapter = Chapter(nr=xml_chapter.attrib["nr"])
 
         # Add nr-title if it exists.
         xml_nr_title = xml_chapter.find("nr-title")
         if xml_nr_title is not None:
-            chapter.nr_title = xml_nr_title.text
+            chapter.nr_title = xml_nr_title.text or ""
 
         # Add name if it exists.
         xml_name = xml_chapter.find("name")

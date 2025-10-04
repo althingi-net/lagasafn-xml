@@ -96,7 +96,14 @@ class IntentTracker:
         )
 
         self.lines_trace = []
-        self.lines = super_iter(original.getchildren())
+
+        # Create lines from child nodes.
+        # If the `original` node itself contains a tail, it gets added as a
+        # special tag `text` so that it can be more easily iterated through.
+        children = original.getchildren()
+        if len(original.text.strip()) > 0:
+            children.insert(0, E("text", original.text))
+        self.lines = super_iter(children)
 
         self.intents = E("intents")
 

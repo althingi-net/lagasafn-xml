@@ -42,6 +42,9 @@ ADVERT_FIXED_FILENAME = join(ADVERT_FIXED_DIR, "%d.%d.fixed.xml")  # (advert_yea
 ADVERT_DIR = join(DATA_DIR, "adverts", "xml")
 ADVERT_FILENAME = join(ADVERT_DIR, "%d.%d.advert.xml")  # % (year, nr)
 
+ADVERT_ORIGINAL_DIR = join(DATA_DIR, "adverts", "original")
+ADVERT_ORIGINAL_FILENAME = join(ADVERT_ORIGINAL_DIR, "%d.%d.original.xml")  # % (year, nr)
+
 ADVERT_INDEX_FILENAME = join(DATA_DIR, "adverts", "index.xml")
 
 XML_FILENAME_DIR = join(XML_BASE_DIR, "%s")  # % codex_version

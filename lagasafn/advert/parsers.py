@@ -1,3 +1,4 @@
+import dateparser
 from datetime import datetime
 from lagasafn.advert.intent.parsers import parse_intents_by_text_analysis
 from lagasafn.advert.intent.parsers import parse_intents_by_ai
@@ -11,8 +12,24 @@ from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
 from lagasafn.settings import FEATURES
 from lxml.builder import E
+from lxml.etree import _Element
 import re
 import roman
+
+
+def parse_description(tracker: AdvertTracker):
+    if tracker.nodes.current.tag != "h1":
+        return False
+
+    description = get_all_text(tracker.nodes.current)
+
+    tracker.xml.append(E("description", description))
+
+    tracker.detect_affected_law(description, tracker.xml)
+
+    next(tracker.nodes)
+
+    return True
 
 
 def parse_break(tracker: AdvertTracker):
@@ -44,7 +61,7 @@ def parse_empty(tracker: AdvertTracker, non_empty_if_next: str = r""):
     # Ignored.
     node = tracker.current_node()
     if not (
-        node.text.strip() == ""
+        (node.text is None or node.text.strip() == "")
         and node.tail.strip() == ""
         and len(node.getchildren()) == 0
     ):
@@ -94,7 +111,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
 
     # We'll start by gathering all the content of the article into the node for
     # later handling.
-    original = E("original")
+    original = E("original", node.tail)
     art.append(original)
 
     # Declare what the article supposedly affects. Note that there are articles
@@ -269,50 +286,49 @@ def parse_signature_confirmation(tracker: AdvertTracker):
     return True
 
 
-def parse_advert(xml_remote):
+def parse_parliamentary_approval(tracker: AdvertTracker):
+    text = get_all_text(tracker.current_node())
+    if not text.startswith("Samþykkt á Alþingi "):
+        return False
 
-    record_id = xml_remote.attrib["record-id"]
+    tracker.xml.append(E("approved-by-parliament-when", text))
+
+    # NOTE: No need for `next(tracker.nodes)` since there is no more content.
+
+    return True
+
+
+def parse_advert(doc_info: dict, xml_remote: _Element):
+
+    # Vestigial attribute, retained to make diffing easier during development.
+    # Should be removed at some point.
+    record_id = "00000000-0000-4000-0000-000000000000"
 
     tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id }))
 
-    # Figure out nr/year from content.
-    raw_nr_year = xml_remote.xpath(
-        "/div/table/tbody/tr[@class='advertText']/td[@align='left']"
-    )[0].text.strip()
-    nr, year = re.findall(r"Nr\. (\d{1,3})\/(\d{4})", raw_nr_year)[0]
-    del raw_nr_year
+    nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
 
-    # Find description.
-    description_node = xml_remote.xpath("/div/table/tbody/tr[@class='advertType2']/td")[0]
-    description = get_all_text(description_node)
-
-    # Figure out the date that this document wash published.
-    raw_publishing_date = xml_remote.xpath("//*[starts-with(normalize-space(text()), 'A deild')]")[0].text
-    pub_day, pub_month, pub_year = re.search(r"Útgáfud\.: (\d+)\. (.+) (\d{4})", raw_publishing_date).groups()
-    published_date = datetime(
-        int(pub_year),
-        determine_month(pub_month),
-        int(pub_day)
+    # Figure out the date that this document wash published. We remove the
+    # timezone info because other parts of the program assume timezone-naive
+    # variables, but everything we do here is in UTC.
+    published_date = dateparser.parse(
+        doc_info["law_time_published"]
+    ).replace(
+        tzinfo=None
     )
-    del raw_publishing_date, pub_day, pub_month, pub_year
-
-    tracker.detect_affected_law(description, tracker.xml)
 
     # Fill gathered information into XML.
-    tracker.xml.attrib["year"] = year
-    tracker.xml.attrib["nr"] = nr
+    tracker.xml.attrib["year"] = str(year)
+    tracker.xml.attrib["nr"] = str(nr)
     tracker.xml.attrib["published-date"] = published_date.strftime("%Y-%m-%d")
     tracker.xml.attrib["applied-to-codex-version"] = LawManager.codex_version_at_date(published_date)
-    tracker.xml.append(E("description", description))
 
-    nodes = xml_remote.xpath(
-        "/div/table[position() = 2]/tbody/tr[@class='advertText']/td[@class='advertTD']"
-    )[0].getchildren()
-
-    tracker.nodes = super_iter(nodes)
-
+    tracker.nodes = super_iter(xml_remote.getchildren())
     next(tracker.nodes)
+
     while True:
+        if parse_description(tracker):
+            continue
         if parse_break(tracker):
             continue
         if parse_president_declaration(tracker):
@@ -325,6 +341,12 @@ def parse_advert(xml_remote):
             continue
         if parse_temporary_clause(tracker):
             continue
+
+        # These two are siblings but mutually exclusive, depending on whether
+        # the document is from Parliament or the Gazette. The Gazette version
+        # should probably be removed (`parse_signature_confirmation`).
+        if parse_parliamentary_approval(tracker):
+            break
         if parse_signature_confirmation(tracker):
             break
 

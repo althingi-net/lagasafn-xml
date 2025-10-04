@@ -69,7 +69,8 @@ class AdvertTracker:
         # First hurdle. We must detect some string that dictates that this
         # refers to affected law.
         text = text.lower()
-        if re.match(r"(um )?breyting(u|ar)? á (\w+)?lögum", text) is None:
+
+        if re.match(r"(lög um )?breyting(u|ar)? á (\w+)?lögum", text) is None:
             return False
 
         # Figure out which laws are being changed according to the given text.

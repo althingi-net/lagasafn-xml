@@ -1,16 +1,21 @@
+import requests
+from lagasafn.chaostemple.service import law_documents
 from lagasafn.constants import ADVERT_DIR
+from lagasafn.constants import ADVERT_FILENAME
+from lagasafn.constants import ADVERT_ORIGINAL_DIR
+from lagasafn.constants import ADVERT_ORIGINAL_FILENAME
 from lagasafn.constants import ADVERT_INDEX_FILENAME
-from lagasafn.advert.filesystem import get_original_advert_identifiers
-from lagasafn.advert.filesystem import get_original_advert_xml
 from lagasafn.advert.parsers import parse_advert
 from lagasafn.exceptions import AdvertException
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.settings import CHAOSTEMPLE_URL
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
+from os import makedirs
 from os import unlink
 from os import path
 
@@ -20,58 +25,56 @@ def convert_adverts(requested_identifiers: list[str] = []):
     Converts all remote adverts into proper XML.
     """
 
-    # Identifiers that will end up being converted.
-    identifiers = []
+    doc_infos = []
 
-    # Identifiers for which there is original data.
-    original_identifiers = get_original_advert_identifiers()
+    # Map identifiers to documents for selection.
+    r_docs = law_documents()
+    for r_doc in r_docs:
+        if r_doc["law_identifier"] == "not-found":
+            continue
+
+        if (
+            len(requested_identifiers) == 0
+            or (
+                len(requested_identifiers) > 0
+                and r_doc["law_identifier"] in requested_identifiers
+            )
+        ):
+            doc_infos.append(r_doc)
+            if r_doc["law_identifier"] in requested_identifiers:
+                requested_identifiers.remove(r_doc["law_identifier"])
 
     if len(requested_identifiers) > 0:
-        # Check if all the requested adverts exist.
-        for requested_identifier in requested_identifiers:
-            if not requested_identifier in original_identifiers:
-                raise AdvertException("Advert %s not found." % requested_identifier)
+        raise AdvertException("Adverts %s not found: %s" % ",".join(requested_identifiers))
 
-        identifiers = requested_identifiers
-    else:
-        identifiers = original_identifiers
-
-    # An ordered list of "year"/"nr" combinations to process.
-    # We are basically doing this to sort this easily.
-    convertibles = []
-    for identifier in identifiers:
-        nr, year = [int(part) for part in identifier.split("/")]
-        convertibles.append(
-            {
-                "year": year,
-                "nr": nr,
-            }
-        )
-    convertibles = sorted(convertibles, key=lambda c: (c["year"], c["nr"]))
-
-    for convertible in convertibles:
-        convert_advert(convertible["year"], convertible["nr"])
+    for doc_info in doc_infos:
+        convert_advert(doc_info)
 
 
-def convert_advert(year, nr):
+def convert_advert(doc_info: dict):
     """
     Converts a single remote advert XML to a proper advert XML.
     """
 
-    print("Converting %d/%d..." % (nr, year), end="", flush=True)
+    nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
 
-    xml_remote = get_original_advert_xml(year, nr)
+    print("Converting %s" % doc_info["law_identifier"])
 
-    advert_type = xml_remote.xpath("//tr[@class='advertType']/td/br")[0].tail.lower()
+    # Get the HTML content and convert into XML.
+    response = requests.get("%s%s" % (
+        CHAOSTEMPLE_URL,
+        doc_info["html_content_path"]
+    ))
+    response.raise_for_status()
+    xml_remote = etree.fromstring(response.text)
 
-    if advert_type != "lög":
-        print(" skipping (unsupported type '%s')" % advert_type)
-        return
+    # Write down the original for easier diffing and such during development.
+    makedirs(ADVERT_ORIGINAL_DIR, exist_ok=True)
+    write_xml(xml_remote, ADVERT_ORIGINAL_FILENAME % (year, nr), skip_strip=True)
 
-    out_filename = path.join(ADVERT_DIR, "%d.%d.advert.xml" % (year, nr))
-
+    out_filename = ADVERT_FILENAME % (year, nr)
     try:
-        xml_advert = parse_advert(xml_remote)
+        xml_advert = parse_advert(doc_info, xml_remote)
         write_xml(xml_advert, out_filename)
         print(" done")
     except (IntentParsingException, ReferenceParsingException) as ex:
