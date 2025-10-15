@@ -1076,21 +1076,47 @@ def convert_to_text(elements: List[_Element]):
     return result.strip()
 
 
-def get_all_text(node: _Element):
+def get_all_text(node: _Element) -> str:
     """
     A function for retrieving the text content of an element and all of its
     descendants. Some special regex needed because of content peculiarities.
 
     FIXME: This concatenates strings with a `<br/>` between them. It's not a
     problem yet, but it will become one. Probably requires rewriting from
-    scratch to fix that.
+    scratch to fix that. <- Update: This may no longer be the case.
 
     FIXME: There is another function, `lagasafn.utils.convert_to_text` which
     was designed for a different purpose. These two should be merged and fixed
     so that they work with anything in the entire project.
     """
-    # Get the text
-    result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
+
+    result: str = ""
+
+    # When dealing with `<br/>` tags, we need to do some special tricks. We'll
+    # need the `tail` that follows, and we'll also have to check if there are
+    # links inside the text.
+    if node.tag == "br":
+        result = node.tail or ""
+        result = result.replace("\n", "")
+
+        next_node = node.getnext()
+        while next_node is not None:
+            if next_node.tag == "a":
+                text: str = next_node.text or ""
+                tail: str = next_node.tail or ""
+                result += text + tail.replace("\n", "")
+            elif next_node.tag in ["br", "p", "center", "ol"]:
+                break
+            else:
+                raise Exception(
+                    "Don't know how to handle next tag: %s" % next_node.tag
+                )
+
+            next_node = next_node.getnext()
+
+    else:
+        # Get the text conventionally.
+        result = "".join([re.sub(r"^\n *", " ", t) for t in node.itertext()])
 
     result = remove_garbage(result)
 

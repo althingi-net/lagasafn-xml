@@ -22,6 +22,9 @@ def help():
 @click.argument("advert_identifiers", nargs=-1)
 def main(full: bool, retrieve: bool, convert: bool, make_index: bool, advert_identifiers: tuple):
 
+    # We don't like tuples around here.
+    identifiers: list[str] = [i for i in advert_identifiers]
+
     # Make sure that the parameters make sense.
     if not any([full, retrieve,  convert, make_index]):
         help()
@@ -41,7 +44,7 @@ def main(full: bool, retrieve: bool, convert: bool, make_index: bool, advert_ide
     if retrieve:
         update_local_adverts(from_date, to_date)
     if convert:
-        convert_adverts(advert_identifiers)
+        convert_adverts(identifiers)
     if make_index:
         create_index()
 

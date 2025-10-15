@@ -25,30 +25,14 @@ def convert_adverts(requested_identifiers: list[str] = []):
     Converts all remote adverts into proper XML.
     """
 
-    doc_infos = []
-
     # Map identifiers to documents for selection.
     r_docs = law_documents()
-    for r_doc in r_docs:
-        if r_doc["law_identifier"] == "not-found":
-            continue
-
-        if (
-            len(requested_identifiers) == 0
-            or (
-                len(requested_identifiers) > 0
-                and r_doc["law_identifier"] in requested_identifiers
-            )
-        ):
-            doc_infos.append(r_doc)
-            if r_doc["law_identifier"] in requested_identifiers:
-                requested_identifiers.remove(r_doc["law_identifier"])
 
     if len(requested_identifiers) > 0:
-        raise AdvertException("Adverts %s not found: %s" % ",".join(requested_identifiers))
+        r_docs = [d for d in r_docs if d["law_identifier"] in requested_identifiers]
 
-    for doc_info in doc_infos:
-        convert_advert(doc_info)
+    for r_doc in r_docs:
+        convert_advert(r_doc)
 
 
 def convert_advert(doc_info: dict):
@@ -58,7 +42,7 @@ def convert_advert(doc_info: dict):
 
     nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
 
-    print("Converting %s" % doc_info["law_identifier"])
+    print("Converting %s" % doc_info["law_identifier"], end="", flush=True)
 
     # Get the HTML content and convert into XML.
     response = requests.get("%s%s" % (

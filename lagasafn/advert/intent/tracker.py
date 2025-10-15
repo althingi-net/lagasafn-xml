@@ -1,3 +1,4 @@
+from copy import deepcopy
 from datetime import datetime
 from lagasafn.models.law import Law
 from lagasafn.pathing import make_xpath_from_inner_reference
@@ -98,11 +99,32 @@ class IntentTracker:
         self.lines_trace = []
 
         # Create lines from child nodes.
+        #
+        # This is a bit of a mess, because the data changed on us, so we're
+        # trying to make up for previous assumptions that are no longer true,
+        # namely that everything is inside a node.
+        #
         # If the `original` node itself contains a tail, it gets added as a
         # special tag `text` so that it can be more easily iterated through.
+        #
+        # However, then `a` tags or other content tags may follow, which must
+        # then be inserted into the `text` tag to get picked up by
+        # `get_all_text` as it is applied to that new `text` node.
+        #
+        # This hasn't spiralled out of control yet, but if it does, then we may
+        # need to entirely re-think how we iterate through this data.
         children = original.getchildren()
+        to_remove = []
         if len(original.text.strip()) > 0:
-            children.insert(0, E("text", original.text))
+            elem_text = E("text", original.text.rstrip("\n"))
+            children.insert(0, elem_text)
+            for child in children[1:]:
+                if child.tag == "a":
+                    elem_text.append(deepcopy(child))
+                    to_remove.append(child)
+        for child in to_remove:
+            children.remove(child)
+
         self.lines = super_iter(children)
 
         self.intents = E("intents")

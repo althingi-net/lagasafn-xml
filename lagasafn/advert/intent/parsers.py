@@ -402,15 +402,21 @@ def parse_inner_art_address(tracker: IntentTracker, only_check: bool = False):
     # Preliminary test to try and make sure that we're truly dealing with a new
     # article's `nr-title` and not something like a weird `numart`.
     if not (
-        tracker.lines.current.tag == "p"
-        and (
-            "style" not in tracker.lines.current.attrib
-            or tracker.lines.current.attrib["style"] == "text-align: justify;"
+        tracker.lines.current.tag == "br"
+        or (
+            # FIXME: May be outdated (from Stjornartidindi.is previous version).
+            # Check and remove if never used.
+            tracker.lines.current.tag == "p"
+            and (
+                "style" not in tracker.lines.current.attrib
+                or tracker.lines.current.attrib["style"] == "text-align: justify;"
+            )
         )
     ):
         return False
 
-    match = re.match(r"([a-z]\. )?\((.+)\)", tracker.lines.current.text.strip())
+    match = re.match(r"([a-z]\. )?\((.+)\)", tracker.current_text)
+
     if match is None:
         return False
 
@@ -2741,13 +2747,15 @@ def parse_outer_article(tracker: IntentTracker):
     # Occurs in:
     # - 2. gr. laga nr. 126/2024
     #   https://www.stjornartidindi.is/Advert.aspx?RecordID=bc93a573-99a3-48ad-8c05-04b8233c8078
+    #   http://localhost:8001/althingi/parliament/155/document/348/
     name_free_indicators = [
         "Ríkisstjórninni er heimilt ",
     ]
 
     if not (
-        tracker.lines.current.tag == "p"
+        tracker.lines.current.tag == "text"
         and (
+            # FIXME: Explain why this `em` search is here.
             tracker.lines.current.find("em") is not None
             or any([tracker.current_text.startswith(s) for s in name_free_indicators])
         )
