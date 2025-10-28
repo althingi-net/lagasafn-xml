@@ -181,9 +181,12 @@
 
 <div class="legal-document {{ view_type }}-view">
 
+    {% comment %}
+    FIXME: This should always work, but currently doesn't.
     {% if law.interim_adverts %}
         {% include "law/interim_advert_box.html" %}
     {% endif %}
+    {% endcomment %}
 
     {% if ongoing_issues %}
         <div class="container">
