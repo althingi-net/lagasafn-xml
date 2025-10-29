@@ -108,6 +108,7 @@ class XMLStructureInfo:
         # This should return TypeScript type definitions for each of the data structures
         pass
 
+
 @click.command()
 @click.argument("dir", type=click.Path(exists=True))
 @click.option("--format", type=click.Choice(["json", "yaml", "ts"]), default="yaml")

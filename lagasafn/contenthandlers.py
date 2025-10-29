@@ -90,7 +90,10 @@ def regexify_markers(text):
     # parentheses-escaping code above. We're looking for "\)" instead of ")".
     # NOTE: We actually contain content from the given text in the new regex,
     # so that it doesn't over-match.
-    matches = re.findall(r'((\.?) ?\[?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)', text)
+    matches = re.findall(
+        r'((\.?) ?\[?\]?…?,?(\.?):? ?<sup style="font-size:60%"> ?(\d+)\\\) ?</sup>,? ?)',
+        text,
+    )
     for match in matches:
         # The replacement string needs a little bit of adjusting depending on
         # the input, to a greater extent than possible with simple regex
@@ -109,13 +112,14 @@ def regexify_markers(text):
             # regex, despite being detected in two separate locations in the
             # input. This is because it is moved passed the closing marker
             # under certain conditions.
-            replacement_string += r'\.?'
-        replacement_string += r':? ?(\[?\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?' + match[3] + r'\) ?</sup>)?,? ?'
-
-        text = text.replace(
-            match[0],
-            replacement_string
+            replacement_string += r"\.?"
+        replacement_string += (
+            r':? ?(\[?\]?…?,?\.?:? ?<sup( style="font-size:60%")?> ?'
+            + match[3]
+            + r"\) ?</sup>)?,? ?"
         )
+
+        text = text.replace(match[0], replacement_string)
 
     # Make stray deletion markers optional, i.e. those that aren't already.
     text = re.sub(r"…[^?]", r"(… ?)?", text)
@@ -349,7 +353,7 @@ def check_chapter(lines, law):
         #
         # This is only known to occur in appendices, and currently the only
         # example is "I. viðauki laga nr. 7/1998.
-        line_type = 'numart-chapter'
+        line_type = "numart-chapter"
     elif law.getchildren()[-1].tag == "appendix":
         line_type = "appendix-chapter"
     elif lines.peek().strip()[-1] == ":":
@@ -519,15 +523,9 @@ def separate_sentences(content):
             # reference to something. This is only allowed in very narrow cases
             # though, where it follows an article, an extra document or the like.
             # Occurs in 3. mgr. 107. gr. laga nr. 88/2005 (154b).
-            if (
-                (
-                    chunk.endswith("gr")
-                    or chunk.endswith("fskj")
-                )
-                and (
-                    re.match(r" ?[A-Z][ .]", next_chunk) is not None
-                    or re.match(r" ?[A-Z]$", next_chunk)
-                )
+            if (chunk.endswith("gr") or chunk.endswith("fskj")) and (
+                re.match(r" ?[A-Z][ .]", next_chunk) is not None
+                or re.match(r" ?[A-Z]$", next_chunk)
             ):
                 split = False
 
@@ -556,20 +554,17 @@ def separate_sentences(content):
             last_word = chunk[chunk.rfind(" ") + 1 :]
             if last_word in reference_shorthands:
                 next_chunk2 = chunks.peek(2)
-                if (
-                    next_chunk.strip().isdigit()
-                    and (
-                        next_chunk2.strip() in reference_shorthands
-                        # Support for connecting words such as "1. tölul. 2. og
-                        # 3. mgr." in 1. mgr. 3. gr. laga nr. 88/1991.
-                        or next_chunk2.strip().split(" ")[0] in ["og", "eða"]
-                        # Support for connecting via comma, such as
-                        # "2. mgr. 37., 43. og 74. gr." in a-stafl. 4. mgr.
-                        # 70. gr. laga nr. 80/2016 (154c).
-                        or (
-                            next_chunk2.startswith(", ")
-                            and next_chunk2.lstrip(", ").isdigit()
-                        )
+                if next_chunk.strip().isdigit() and (
+                    next_chunk2.strip() in reference_shorthands
+                    # Support for connecting words such as "1. tölul. 2. og
+                    # 3. mgr." in 1. mgr. 3. gr. laga nr. 88/1991.
+                    or next_chunk2.strip().split(" ")[0] in ["og", "eða"]
+                    # Support for connecting via comma, such as
+                    # "2. mgr. 37., 43. og 74. gr." in a-stafl. 4. mgr.
+                    # 70. gr. laga nr. 80/2016 (154c).
+                    or (
+                        next_chunk2.startswith(", ")
+                        and next_chunk2.lstrip(", ").isdigit()
                     )
                 ):
                     split = False
@@ -825,7 +820,9 @@ def add_sentences(target_node, sens):
             definitions = E("definitions")
             for definition_found in definitions_found:
                 definitions.append(E("definition", definition_found.strip()))
-                sen = sen.replace("<i>%s</i>" % definition_found, definition_found.strip())
+                sen = sen.replace(
+                    "<i>%s</i>" % definition_found, definition_found.strip()
+                )
 
         # Bold definitions are an anomaly in how definitions are presented.
         # Seems to happen only in 1. gr. laga nr. 58/1998 (153c).
@@ -833,8 +830,12 @@ def add_sentences(target_node, sens):
         if len(bold_definitions_found) > 0:
             definitions = E("definitions")
             for definition_found in bold_definitions_found:
-                definitions.append(E("definition", { "style": "bold" }, definition_found.strip()))
-                sen = sen.replace("<b> %s </b>" % definition_found, definition_found.strip())
+                definitions.append(
+                    E("definition", {"style": "bold"}, definition_found.strip())
+                )
+                sen = sen.replace(
+                    "<b> %s </b>" % definition_found, definition_found.strip()
+                )
 
         sen_elem = E.sen(sen, nr=str(sen_nr))
 
@@ -1163,7 +1164,7 @@ def analyze_art_name(art_nr_title: str) -> tuple[str, str]:
             # Turn "12-14" into "12,13,14" so that things in between can
             # reasonably be found using XPath or regex.
             art_nr = ",".join(
-                [str(nr) for nr in range(int(from_art_nr), int(to_art_nr)+1)]
+                [str(nr) for nr in range(int(from_art_nr), int(to_art_nr) + 1)]
             )
 
         # Check if there is an extra part to the name which we'll want

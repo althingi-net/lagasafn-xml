@@ -96,10 +96,7 @@ def make_xpath_from_inner_reference(address: str):
     # Replace semantic (although consistent) descriptions with more systemic
     # language for easier parsing.
     inner_reference = re.sub(
-        r"inngangsmálslið(ur)?",
-        "1 málsl",
-        inner_reference,
-        flags=re.IGNORECASE
+        r"inngangsmálslið(ur)?", "1 málsl", inner_reference, flags=re.IGNORECASE
     )
 
     if inner_reference.lower() == "heiti":
@@ -133,12 +130,12 @@ def make_xpath_from_inner_reference(address: str):
         try:
             if start.isdigit() and end.isdigit():
                 # Start by trying conventional numbers.
-                letters = range(int(start), int(end)+1)
+                letters = range(int(start), int(end) + 1)
             elif is_roman(start) and is_roman(end):
                 # Then try Roman numerals.
                 start = roman.fromRoman(start)
                 end = roman.fromRoman(end)
-                latin_range = range(start, end+1)
+                latin_range = range(start, end + 1)
                 letters = [roman.toRoman(n) for n in latin_range]
             else:
                 # Finally, try letters.
@@ -266,10 +263,10 @@ def make_xpath_from_inner_reference(address: str):
 
             # If we run into temporary clause designation at this point, we
             # have already dealt with it.
-            if re.match(
-                r"ákvæði(s)? til bráðabirgða",
-                " ".join(words[-3:]).lower()
-            ) is not None:
+            if (
+                re.match(r"ákvæði(s)? til bráðabirgða", " ".join(words[-3:]).lower())
+                is not None
+            ):
                 words.pop()
                 words.pop()
                 words.pop()
@@ -315,7 +312,7 @@ def make_xpath_from_inner_reference(address: str):
             ent_separator = "/"
             ent_type = "name"
 
-        elif ' '.join(words) == "skilgreiningu á hugtakinu":
+        elif " ".join(words) == "skilgreiningu á hugtakinu":
             lookup_definition = word.capitalize() + ":"
             ent_type = "paragraph"
             ent_special = "definitions/definition = '%s'" % lookup_definition
@@ -348,10 +345,7 @@ def make_xpath_from_inner_reference(address: str):
 
         elif (
             word == "bráðabirgða"
-            and re.match(
-                r"ákvæði(s)? til",
-                " ".join(words[-2:]).lower()
-            ) is not None
+            and re.match(r"ákvæði(s)? til", " ".join(words[-2:]).lower()) is not None
         ):
             # Whether it's a single temporary article, or a a chapter of
             # temporary articles, it will have the attribute `nr` as "t".
@@ -365,11 +359,14 @@ def make_xpath_from_inner_reference(address: str):
             words.pop()
         elif (
             word == "lögin"
-            and (match := re.match(
-                r"viðauk[ia] (.+) við",
-                " ".join(words[-3:]),
-                re.IGNORECASE,
-            )) is not None
+            and (
+                match := re.match(
+                    r"viðauk[ia] (.+) við",
+                    " ".join(words[-3:]),
+                    re.IGNORECASE,
+                )
+            )
+            is not None
         ):
             ent_type = "appendix"
             ent_numbers.append(match.groups()[0])
@@ -381,10 +378,8 @@ def make_xpath_from_inner_reference(address: str):
         else:
             # Oh no! We don't know what to do!
             raise ReferenceParsingException(
-                "Don't know how to parse word: '%s' - whole string: %s" % (
-                    word,
-                    address
-                )
+                "Don't know how to parse word: '%s' - whole string: %s"
+                % (word, address)
             )
 
         # The alpha component should be irrelevant at this point.
@@ -397,7 +392,11 @@ def make_xpath_from_inner_reference(address: str):
 
             # See comment to where `branch_at_tag` is initialized.
             peek = last_or_blank(words)
-            if re.match(r"[a-z]$", peek) is not None and words[-2] in translations and translations[words[-2]] != ent_type:
+            if (
+                re.match(r"[a-z]$", peek) is not None
+                and words[-2] in translations
+                and translations[words[-2]] != ent_type
+            ):
                 branch_at_tag = translations[words[-2]]
             elif peek in translations:
                 branch_at_tag = translations[peek]
@@ -414,7 +413,8 @@ def make_xpath_from_inner_reference(address: str):
                     word = words.pop()
                     if translations[word] != ent_type:
                         raise ReferenceParsingException(
-                            "Don't know how to figure out concatenation in: %s" % address
+                            "Don't know how to figure out concatenation in: %s"
+                            % address
                         )
 
                     word = words.pop() + alpha_component
@@ -437,7 +437,11 @@ def make_xpath_from_inner_reference(address: str):
                     # This example can be found in:
                     # - b-stafl. 3. gr. laga nr. 105/2024:
                     #   https://www.stjornartidindi.is/Advert.aspx?RecordID=807f6e79-d283-491d-ae35-34e729daabd5
-                    if re.match(r"[a-z]$", peek) is not None and words[-2] in translations and translations[words[-2]] != ent_type:
+                    if (
+                        re.match(r"[a-z]$", peek) is not None
+                        and words[-2] in translations
+                        and translations[words[-2]] != ent_type
+                    ):
                         branch_at_tag = translations[words[-2]]
                         break
 
@@ -446,10 +450,12 @@ def make_xpath_from_inner_reference(address: str):
 
                 # If we run into temporary clause designation at this point, we
                 # have already dealt with it.
-                if re.match(
-                    r"ákvæði(s)? til bráðabirgða",
-                    " ".join(words[-3:]).lower()
-                ) is not None:
+                if (
+                    re.match(
+                        r"ákvæði(s)? til bráðabirgða", " ".join(words[-3:]).lower()
+                    )
+                    is not None
+                ):
                     words.pop()
                     words.pop()
                     words.pop()
@@ -476,7 +482,9 @@ def make_xpath_from_inner_reference(address: str):
                 # last entity to determine at which tag to branch the XPath.
                 branch_at_tag = translations[words[-2]]
             else:
-                raise ReferenceParsingException("Don't know how to parse concatenated: %s" % peek)
+                raise ReferenceParsingException(
+                    "Don't know how to parse concatenated: %s" % peek
+                )
             del peek
 
         # Assuming something came of this...
@@ -549,7 +557,8 @@ def make_xpath_from_inner_reference(address: str):
                         if type(it) is int:
                             sub_it_length = len(str(it)) + 1
                             parts.append(
-                                "(starts-with(@nr, '%s') and string-length(@nr) = %d and string(number(@nr)) != @nr)" % (
+                                "(starts-with(@nr, '%s') and string-length(@nr) = %d and string(number(@nr)) != @nr)"
+                                % (
                                     it,
                                     sub_it_length,
                                 )
@@ -598,7 +607,9 @@ def make_xpath_from_inner_reference(address: str):
                     # particularly complicated to implement it, we just don't
                     # believe that we'll need it, at this point.
                     if ent_type == "art":
-                        xpath_number = "contains(concat(',', @nr, ','), ',%s,')" % ent_number
+                        xpath_number = (
+                            "contains(concat(',', @nr, ','), ',%s,')" % ent_number
+                        )
                     else:
                         xpath_number = "@nr='%s'" % ent_number
 
@@ -620,7 +631,9 @@ def get_segment(law_nr: str, law_year: int, xpath: str):
     # want a plaintext version, it should be a different API call. However,
     # we're not using plaintext anywhere at the moment, so it can be removed.
     try:
-        xml = etree.parse(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)).getroot()
+        xml = etree.parse(
+            XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)
+        ).getroot()
     except:
         raise NoSuchLawException()
 

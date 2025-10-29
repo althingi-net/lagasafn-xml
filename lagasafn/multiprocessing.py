@@ -34,6 +34,7 @@ Usage, where `process_law` takes a single argument `law_id`:
                 break
 """
 
+
 def init_pool():
     # Start ignoring the KeyboardInterrupt signal in the main thread. The
     # result is that it gets caught by the sub-processes, which **don't**
@@ -60,7 +61,15 @@ class CustomPool(Pool):
     """
     A custom `Pool` class that works accordig to project-specific expectations.
     """
-    def __init__(self, processes=None, initializer=None, initargs=(), maxtasksperchild=None, context=None):
+
+    def __init__(
+        self,
+        processes=None,
+        initializer=None,
+        initargs=(),
+        maxtasksperchild=None,
+        context=None,
+    ):
 
         if processes is None:
             # This is apparently safer than `multiprocessing.cpu_count()`,
@@ -83,7 +92,10 @@ class CustomPool(Pool):
         super().__init__(processes, initializer, initargs, maxtasksperchild, context)
 
     def run(self, function, arguments):
-        if "--single-thread" in settings.options and settings.options["--single-thread"] == True:
+        if (
+            "--single-thread" in settings.options
+            and settings.options["--single-thread"] == True
+        ):
             return yieldify_function(function, arguments)
         else:
             return self.imap_unordered(function, arguments)

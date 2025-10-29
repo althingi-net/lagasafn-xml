@@ -17,7 +17,9 @@ from subprocess import run
 
 def patch_law(law_num, law_year) -> bool:
 
-    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
+    patch_path = os.path.join(
+        PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+    )
     if not isfile(patch_path):
 
         # Auto-patch if requested.
@@ -30,7 +32,9 @@ def patch_law(law_num, law_year) -> bool:
         os.mkdir(os.path.dirname(PATCHED_FILENAME))
 
     filename = CLEAN_FILENAME % (law_year, law_num)
-    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
+    patch_path = os.path.join(
+        PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+    )
     patched_content = diff_patch_utils.do_patch(filename, patch_path)
     with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
         patched_file.write(patched_content)
@@ -49,9 +53,11 @@ def get_other_parliament(iteration: int):
     # We rely on sorting to properly locating previous and next parliaments.
     patched_parliaments.sort()
 
-    # This is a list because when we start iterating backwards, we'll want to try both patches 
+    # This is a list because when we start iterating backwards, we'll want to try both patches
     try:
-        other_parliament = patched_parliaments[patched_parliaments.index(settings.CURRENT_PARLIAMENT_VERSION) + iteration]
+        other_parliament = patched_parliaments[
+            patched_parliaments.index(settings.CURRENT_PARLIAMENT_VERSION) + iteration
+        ]
         return other_parliament
     except IndexError:
         return None
@@ -59,7 +65,9 @@ def get_other_parliament(iteration: int):
 
 def auto_patch(law_num, law_year):
     # Nevermind if the patch already exists.
-    patch_path = os.path.join(PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
+    patch_path = os.path.join(
+        PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+    )
     if isfile(patch_path):
         return
 
@@ -77,7 +85,9 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
     # NOTE: This rewquires GNU `diff` and `patch`, which should be
     # available on any modern operating systems, except Windows.
     filename = CLEAN_FILENAME % (law_year, law_num)
-    attempted_patch = os.path.join(PATCHES_BASE_DIR, previous_parliament, "%d-%d.html.patch" % (law_year, law_num))
+    attempted_patch = os.path.join(
+        PATCHES_BASE_DIR, previous_parliament, "%d-%d.html.patch" % (law_year, law_num)
+    )
     target_patch = PATCHED_FILENAME % (law_year, law_num)
     patch_filename = PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
 

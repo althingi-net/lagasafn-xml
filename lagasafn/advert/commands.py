@@ -45,10 +45,7 @@ def convert_advert(doc_info: dict):
     print("Converting %s" % doc_info["law_identifier"], end="", flush=True)
 
     # Get the HTML content and convert into XML.
-    response = requests.get("%s%s" % (
-        CHAOSTEMPLE_URL,
-        doc_info["html_content_path"]
-    ))
+    response = requests.get("%s%s" % (CHAOSTEMPLE_URL, doc_info["html_content_path"]))
     response.raise_for_status()
     xml_remote = etree.fromstring(response.text)
 
@@ -73,6 +70,7 @@ def convert_advert(doc_info: dict):
         print(ex)
         print()
 
+
 def create_index():
     """
     Creates an index of adverts that exist in XML form.
@@ -86,16 +84,19 @@ def create_index():
         fullpath = path.join(ADVERT_DIR, advert_filename)
         advert = etree.parse(fullpath).getroot()
 
-        advert_entry = E("advert-entry", {
-            "type": advert.attrib["type"],
-            "year": advert.attrib["year"],
-            "nr": advert.attrib["nr"],
-            "published-date": advert.attrib["published-date"],
-            "record-id": advert.attrib["record-id"],
-            "description": advert.find("description").text,
-            "applied-to-codex-version": advert.attrib["applied-to-codex-version"],
-            "article-count": str(len(advert.xpath("//advert-art"))),
-        })
+        advert_entry = E(
+            "advert-entry",
+            {
+                "type": advert.attrib["type"],
+                "year": advert.attrib["year"],
+                "nr": advert.attrib["nr"],
+                "published-date": advert.attrib["published-date"],
+                "record-id": advert.attrib["record-id"],
+                "description": advert.find("description").text,
+                "applied-to-codex-version": advert.attrib["applied-to-codex-version"],
+                "article-count": str(len(advert.xpath("//advert-art"))),
+            },
+        )
 
         affected_laws = advert.find("affected-laws")
         if affected_laws is not None:
@@ -109,7 +110,7 @@ def create_index():
     advert_index[:] = sorted(
         advert_index,
         key=lambda n: (int(n.attrib["year"]), int(n.attrib["nr"])),
-        reverse=True
+        reverse=True,
     )
 
     write_xml(advert_index, ADVERT_INDEX_FILENAME)
