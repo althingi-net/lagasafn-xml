@@ -19,7 +19,7 @@ from lagasafn.pathing import make_xpath_from_node
 def parse_footnotes(parser):
     if not (parser.line == "<i>" and parser.peeks() == "<small>"):
         return False
-    
+
     parser.consume("<i>")
     parser.consume("<small>")
 
@@ -42,7 +42,9 @@ def parse_footnotes(parser):
         parser.note("Appending footnotes to chapter after finding chapter.")
         parser.chapter.append(parser.footnotes)
     elif parser.trail_last().tag == "ambiguous-section":
-        parser.note("Appending footnotes to ambiguous section after finding ambiguous section.")
+        parser.note(
+            "Appending footnotes to ambiguous section after finding ambiguous section."
+        )
         parser.ambiguous_section.append(parser.footnotes)
     elif parser.mark_container is not None:
         parser.mark_container.append(parser.footnotes)
@@ -64,7 +66,7 @@ def parse_footnotes(parser):
 
     # This function is misnamed; it actually parses each footnote available for this footnotes block.
     parse_footnote(parser)
-    while parser.line == "<sup style=\"font-size:60%\">":
+    while parser.line == '<sup style="font-size:60%">':
         parse_footnote(parser)
 
     # TODO: This should be mandatory. We should throw an error if it's not found.
@@ -80,10 +82,14 @@ def parse_footnotes(parser):
 
 
 def parse_footnote(parser):
-    if not (parser.line == '<sup style="font-size:60%">' and parser.trail_last().tag in [
-        "footnotes",
-        "footnote",
-    ]):
+    if not (
+        parser.line == '<sup style="font-size:60%">'
+        and parser.trail_last().tag
+        in [
+            "footnotes",
+            "footnote",
+        ]
+    ):
         return
 
     parser.enter("footnote")
@@ -127,7 +133,7 @@ def parse_footnote(parser):
         parser.scroll_until(r'<a href="(\/altext\/.*)">')
         parser.next()
         footnote_sen = parser.collect_until("</a>")
-        parser.next()   # Eat the </a> tag.
+        parser.next()  # Eat the </a> tag.
 
         # Update the footnote with the content discovered so far.
         footnote.attrib["href"] = href
@@ -142,9 +148,11 @@ def parse_footnote(parser):
             footnote.attrib["law-nr"] = fn_law_nr
             footnote.attrib["law-year"] = fn_law_year
             footnote.attrib["law-art"] = fn_art_nr
-            parser.note("Footnote law: %s/%s, %s. gr." % (fn_law_nr, fn_law_year, fn_art_nr))
+            parser.note(
+                "Footnote law: %s/%s, %s. gr." % (fn_law_nr, fn_law_year, fn_art_nr)
+            )
             parser.leave("footnote-law")
-        
+
         parser.leave("footnote-link")
 
     if parser.line == "</sup>":
@@ -185,16 +193,13 @@ def parse_footnote(parser):
         gathered = re.sub(r'<!--.*?"-->', "", gathered)
 
         # Get rid of remaining unwanted whitespace (see above).
-        gathered = (
-            gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
-        )
+        gathered = gathered.replace("  ", " ").replace("> ", ">").replace(" </", "</")
 
         try:
             line = next(parser.lines)
         except:
             parser.dump_remaining(10)
             return
-
 
     # If extra content was found, we'll put that in a separate
     # sentence inside the footnote. If there already was a
@@ -228,7 +233,11 @@ def parse_footnote(parser):
         # The parent is the uppermost node above the footnotes but
         # below the document root node.
         parent = parser.footnotes.getparent()
-        while parent is not None and parent.getparent() is not None and parent.getparent() != parser.law:
+        while (
+            parent is not None
+            and parent.getparent() is not None
+            and parent.getparent() != parser.law
+        ):
             parent = parent.getparent()
 
         # Closing markers have a tendency to appear after the sentence
@@ -259,7 +268,9 @@ def parse_footnote(parser):
         nodes_to_kill = []
 
         if parent is None:
-            parser.note("We think this should never happen; if you see this note, please investigate.")
+            parser.note(
+                "We think this should never happen; if you see this note, please investigate."
+            )
             parser.leave("footnote-end")
             parser.leave("footnote")
             return
@@ -301,7 +312,10 @@ def parse_footnote(parser):
             # ("peek") to the current one ("desc"), until there are no
             # closing markers in the next node. (Probably there is
             # only one, but you never know.)
-            while parser.matcher.check(peek.text.strip(), close_mark_re) and peek.tag != "mark-container":
+            while (
+                parser.matcher.check(peek.text.strip(), close_mark_re)
+                and peek.tag != "mark-container"
+            ):
                 # Get the actual closing marker from the next node.
                 stuff_to_move = parser.matcher.result()[0]
 
@@ -310,7 +324,10 @@ def parse_footnote(parser):
 
                 # Remove the closing marker from the next node.
                 peek.text = re.sub(close_mark_re, "", peek.text, 1)
-            while parser.matcher.check(peek.text.strip(), deletion_mark_re) and peek.tag != "mark-container":
+            while (
+                parser.matcher.check(peek.text.strip(), deletion_mark_re)
+                and peek.tag != "mark-container"
+            ):
                 # FIXME: This loop and the one above are virtually identical.
                 # Could use some code fancification.
 
@@ -389,14 +406,16 @@ def parse_footnote(parser):
                     # enclose in square brackets.
                     use_words = True
                     if opening_found == 0:
-                        unmatched_closing = find_unmatched_closing_bracket(desc.text[1:])
+                        unmatched_closing = find_unmatched_closing_bracket(
+                            desc.text[1:]
+                        )
                         if unmatched_closing > -1:
                             # An unmatched closing bracket was found, but we
                             # need to make sure that it's truly at the end of
                             # the node's content.
                             closing_at_end = re.search(
                                 r'\] <sup style="font-size:60%"> \d+\) </sup>$',
-                                desc.text
+                                desc.text,
                             )
                             # -1 because we're searching for the unmatched
                             # closing bracket from index 1, not index 0.
@@ -440,8 +459,15 @@ def parse_footnote(parser):
                         if closing_index > -1:
                             words = words[:closing_index].strip()
 
-                        if desc.text[opening_found + 1 + closing_index + 1] in [".", ",", ":", ";"]:
-                            middle_punctuation = desc.text[opening_found + 1 + closing_index + 1]
+                        if desc.text[opening_found + 1 + closing_index + 1] in [
+                            ".",
+                            ",",
+                            ":",
+                            ";",
+                        ]:
+                            middle_punctuation = desc.text[
+                                opening_found + 1 + closing_index + 1
+                            ]
 
                         words = regexify_markers(words)
 
@@ -471,16 +497,26 @@ def parse_footnote(parser):
                             word_search = words
                             if len(word_search) > 0 and word_search[0].isdigit():
                                 word_search = r"[^0-9]" + word_search
-                            instance_num = len(re.findall(word_search, strip_markers(desc.text[:opening_found]))) + 1
+                            instance_num = (
+                                len(
+                                    re.findall(
+                                        word_search,
+                                        strip_markers(desc.text[:opening_found]),
+                                    )
+                                )
+                                + 1
+                            )
 
                     # We'll "pop" this list when we find the closing
                     # marker, as per below.
-                    opening_locations.append({
-                        "xpath": make_xpath_from_node(desc),
-                        "words": words,
-                        "middle_punctuation": middle_punctuation,
-                        "instance_num": instance_num,
-                    })
+                    opening_locations.append(
+                        {
+                            "xpath": make_xpath_from_node(desc),
+                            "words": words,
+                            "middle_punctuation": middle_punctuation,
+                            "instance_num": instance_num,
+                        }
+                    )
 
                 elif closing_found > -1 and (
                     closing_found < opening_found or opening_found == -1
@@ -550,17 +586,19 @@ def parse_footnote(parser):
                     # We'll express this oddity in the XML with an attribute in
                     # the range, indicating that a hellip should be placed
                     # before the closing marker by the rendering mechanism.
-                    if desc.text[:cursor-1].strip().endswith("…"):
+                    if desc.text[: cursor - 1].strip().endswith("…"):
                         ended_at["combined_with_closing"] = "…"
 
                     # We trigger the `words` mechanism also is there is a
                     # deletion marker in the end. Otherwise this can screw up
                     # the order of markers.
                     # Occurs at the end of 1. mgr. 12. gr. laga nr. 78/2002 (153c).
-                    ends_with_deletion = re.search(
-                        r'… <sup style="font-size:60%"> \d+\) <\/sup>$',
-                        desc.text
-                    ) is not None
+                    ends_with_deletion = (
+                        re.search(
+                            r'… <sup style="font-size:60%"> \d+\) <\/sup>$', desc.text
+                        )
+                        is not None
+                    )
 
                     # Decide whether to use `words` or not.
                     use_words = started_at["words"] is not None or ends_with_deletion
@@ -591,17 +629,21 @@ def parse_footnote(parser):
                         # contained in their respective sentences.
 
                         if parser.law.xpath(started_at["xpath"])[0] != desc:
-                            unmatched_closing = find_unmatched_closing_bracket(desc.text)
-                            words = regexify_markers(desc.text[: unmatched_closing])
-                            if desc.text[unmatched_closing+1] in [".", ",", ":", ";"]:
-                                middle_punctuation = desc.text[unmatched_closing+1]
+                            unmatched_closing = find_unmatched_closing_bracket(
+                                desc.text
+                            )
+                            words = regexify_markers(desc.text[:unmatched_closing])
+                            if desc.text[unmatched_closing + 1] in [".", ",", ":", ";"]:
+                                middle_punctuation = desc.text[unmatched_closing + 1]
 
                             # Not adding 1 here because it will always find the
                             # text once, if it's the first instance, because
                             # this is the closing marker. When dealing with the
                             # opening marker, we don't expect the content to
                             # arrive before `words`.
-                            instance_num = len(re.findall(words, desc.text[:closing_found]))
+                            instance_num = len(
+                                re.findall(words, desc.text[:closing_found])
+                            )
 
                         else:
                             words = started_at["words"]
@@ -616,11 +658,14 @@ def parse_footnote(parser):
                         # marker, when there are no `words`, and we know that
                         # the markers encompass the entire element.
                         middle_punctuation_search = re.search(
-                            r'([,.:;]) ?<sup style="font-size:60%%"> %s\) <\/sup>' % num,
-                            desc.text
+                            r'([,.:;]) ?<sup style="font-size:60%%"> %s\) <\/sup>'
+                            % num,
+                            desc.text,
                         )
                         if middle_punctuation_search is not None:
-                            ended_at["middle_punctuation"] = middle_punctuation_search[1]
+                            ended_at["middle_punctuation"] = middle_punctuation_search[
+                                1
+                            ]
 
                         # Calculate the distance in characters between the
                         # opening marker and the closing marker. This will be
@@ -685,7 +730,7 @@ def parse_footnote(parser):
             # "<sup" occurs in 2. mgr. 63. gr. laga nr. 8/1962 (153c). Probably
             # also occurs elsewhere.
             deletion_found = -1
-            deletion_search = re.search(r'… ?[,.;:]?\]? ?<sup', desc.text[cursor:])
+            deletion_search = re.search(r"… ?[,.;:]?\]? ?<sup", desc.text[cursor:])
             if deletion_search is not None:
                 deletion_found = deletion_search.start()
 
@@ -739,7 +784,9 @@ def parse_footnote(parser):
                 # comma as the value and expect the marker renderer to
                 # use that directly instead of assuming a comma.
                 middle_punctuation = None
-                potential_middle_punctuation = desc.text[deletion_found + 1 : deletion_found + 2]
+                potential_middle_punctuation = desc.text[
+                    deletion_found + 1 : deletion_found + 2
+                ]
                 if potential_middle_punctuation in [",", ";", ":"]:
                     middle_punctuation = potential_middle_punctuation
 
@@ -751,8 +798,8 @@ def parse_footnote(parser):
                             "xpath": make_xpath_from_node(desc),
                             "middle_punctuation": middle_punctuation,
                             "before_mark": before_mark,
-                            "after_mark": after_mark
-                        }
+                            "after_mark": after_mark,
+                        },
                     }
                 )
 
@@ -832,9 +879,7 @@ def parse_footnote(parser):
                     }
                 )
 
-                pointer_found = desc.text.find(
-                    '<sup style="font-size:60%">', cursor
-                )
+                pointer_found = desc.text.find('<sup style="font-size:60%">', cursor)
 
             parser.leave_if_last("detect-pointer")
 
@@ -851,7 +896,7 @@ def parse_footnote(parser):
             # which we'll remove as well.
             desc.text = strip_markers(desc.text).strip()
 
-        parser.leave('footnote-end')
+        parser.leave("footnote-end")
 
         # If no marker locations have been defined, we have nothing
         # more to do here.
@@ -908,8 +953,13 @@ def parse_footnote(parser):
                 location.attrib["xpath"] = ml["started_at"]["xpath"]
                 location.attrib["before-mark"] = ml["started_at"]["before_mark"]
                 location.attrib["after-mark"] = ml["started_at"]["after_mark"]
-                if "middle_punctuation" in ml["started_at"] and ml["started_at"]["middle_punctuation"] is not None:
-                    location.attrib["middle-punctuation"] = ml["started_at"]["middle_punctuation"]
+                if (
+                    "middle_punctuation" in ml["started_at"]
+                    and ml["started_at"]["middle_punctuation"] is not None
+                ):
+                    location.attrib["middle-punctuation"] = ml["started_at"][
+                        "middle_punctuation"
+                    ]
 
                 location_target.append(location)
 
@@ -930,11 +980,15 @@ def parse_footnote(parser):
                     if ended_at["words"] is not None:
                         location.attrib["words"] = ended_at["words"]
                     if ended_at["middle_punctuation"] is not None:
-                        location.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
+                        location.attrib["middle-punctuation"] = ended_at[
+                            "middle_punctuation"
+                        ]
                     if ended_at["instance_num"] is not None:
                         location.attrib["instance-num"] = str(ended_at["instance_num"])
                     if ended_at["combined_with_closing"] is not None:
-                        location.attrib["combined-with-closing"] = ended_at["combined_with_closing"]
+                        location.attrib["combined-with-closing"] = ended_at[
+                            "combined_with_closing"
+                        ]
                 else:
                     start = E("start")
                     end = E("end")
@@ -948,9 +1002,13 @@ def parse_footnote(parser):
                         end.attrib["words"] = ended_at["words"]
 
                     if started_at["middle_punctuation"] is not None:
-                        start.attrib["middle-punctuation"] = started_at["middle_punctuation"]
+                        start.attrib["middle-punctuation"] = started_at[
+                            "middle_punctuation"
+                        ]
                     if ended_at["middle_punctuation"] is not None:
-                        end.attrib["middle-punctuation"] = ended_at["middle_punctuation"]
+                        end.attrib["middle-punctuation"] = ended_at[
+                            "middle_punctuation"
+                        ]
 
                     if started_at["instance_num"] is not None:
                         start.attrib["instance-num"] = str(started_at["instance_num"])
@@ -958,7 +1016,9 @@ def parse_footnote(parser):
                         end.attrib["instance-num"] = str(ended_at["instance_num"])
 
                     if ended_at["combined_with_closing"] is not None:
-                        end.attrib["combined-with-closing"] = ended_at["combined_with_closing"]
+                        end.attrib["combined-with-closing"] = ended_at[
+                            "combined_with_closing"
+                        ]
 
                     location.append(start)
                     location.append(end)

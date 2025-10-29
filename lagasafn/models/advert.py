@@ -51,7 +51,9 @@ class Advert(AdvertEntry):
         super().__init__(identifier)
 
         if not isfile(self.path()):
-            raise AdvertException("Could not find XML file for advert '%s'" % self.identifier)
+            raise AdvertException(
+                "Could not find XML file for advert '%s'" % self.identifier
+            )
 
         # Will load the data from XML to object.
         self.xml()
@@ -121,7 +123,9 @@ class AdvertManager:
 
         adverts = []
         advert_index_xml = etree.parse(ADVERT_INDEX_FILENAME).getroot()
-        for entry_xml in advert_index_xml.xpath("advert-entry[@applied-to-codex-version='%s']" % codex_version):
+        for entry_xml in advert_index_xml.xpath(
+            "advert-entry[@applied-to-codex-version='%s']" % codex_version
+        ):
 
             identifier = "%s/%s" % (entry_xml.attrib["nr"], entry_xml.attrib["year"])
 

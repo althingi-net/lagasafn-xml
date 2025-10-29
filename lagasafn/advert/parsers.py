@@ -101,7 +101,7 @@ def parse_article_nr_title(tracker: AdvertTracker):
     # This requires a bit of refactoring, so that instead of files being
     # created every time that processing takes place, they are read and
     # modified if they already exist.
-    art = E("advert-art", {"nr": art_nr })
+    art = E("advert-art", {"nr": art_nr})
 
     if tracker.targets.chapter is not None:
         tracker.targets.chapter.append(art)
@@ -126,14 +126,9 @@ def parse_article_nr_title(tracker: AdvertTracker):
         not parse_empty(tracker, non_empty_if_next=r"[a-z]\. \(.*\)$")
         # On occasion, articles aren't properly ended with an empty node, so we
         # need to check here if an article or chapter immediately follows.
-        and re.match(
-            r"(\d+)\. gr\.$",
-            get_all_text(tracker.current_node())
-        ) is None
-        and re.match(
-            r"([IVXLCDM]+)\. KAFLI",
-            get_all_text(tracker.current_node())
-        ) is None
+        and re.match(r"(\d+)\. gr\.$", get_all_text(tracker.current_node())) is None
+        and re.match(r"([IVXLCDM]+)\. KAFLI", get_all_text(tracker.current_node()))
+        is None
     ):
         original.append(tracker.current_node())
         next(tracker.nodes)
@@ -177,7 +172,9 @@ def parse_chapter_nr_title(tracker):
 
     nr = roman.fromRoman(roman_nr)
 
-    chapter = E("advert-chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr})
+    chapter = E(
+        "advert-chapter", {"nr": str(nr), "nr-type": "roman", "roman-nr": roman_nr}
+    )
 
     next(tracker.nodes)
 
@@ -244,7 +241,9 @@ def parse_temporary_clause(tracker: AdvertTracker):
     # The default type is `art` because we will only find out later if this
     # temporary clause contains several articles, and is in fact a chapter, or
     # if it only contains direct content, in which case it's an article.
-    temp_clause = E("temp-clause", {"temp-clause-type": "advert-art", "processed": "false"})
+    temp_clause = E(
+        "temp-clause", {"temp-clause-type": "advert-art", "processed": "false"}
+    )
 
     tracker.targets.temp_clause = temp_clause
     tracker.xml.append(temp_clause)
@@ -304,16 +303,14 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
     # Should be removed at some point.
     record_id = "00000000-0000-4000-0000-000000000000"
 
-    tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id }))
+    tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id}))
 
     nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
 
     # Figure out the date that this document wash published. We remove the
     # timezone info because other parts of the program assume timezone-naive
     # variables, but everything we do here is in UTC.
-    published_date = dateparser.parse(
-        doc_info["law_time_published"]
-    ).replace(
+    published_date = dateparser.parse(doc_info["law_time_published"]).replace(
         tzinfo=None
     )
 
@@ -321,7 +318,9 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
     tracker.xml.attrib["year"] = str(year)
     tracker.xml.attrib["nr"] = str(nr)
     tracker.xml.attrib["published-date"] = published_date.strftime("%Y-%m-%d")
-    tracker.xml.attrib["applied-to-codex-version"] = LawManager.codex_version_at_date(published_date)
+    tracker.xml.attrib["applied-to-codex-version"] = LawManager.codex_version_at_date(
+        published_date
+    )
 
     tracker.nodes = super_iter(xml_remote.getchildren())
     next(tracker.nodes)
@@ -355,7 +354,9 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
         text = get_all_text(node)
         print()
         print("Text: %s" % text)
-        import ipdb; ipdb.set_trace()
+        import ipdb
+
+        ipdb.set_trace()
 
         raise AdvertParsingException("Can't parse element: %s" % node)
 

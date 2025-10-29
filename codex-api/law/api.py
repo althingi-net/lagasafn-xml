@@ -24,6 +24,7 @@ router = Router(tags=["Law"])
 # Initialize the global search engine
 searchengine = SearchEngine("search_index.pkl")
 
+
 @router.get(
     "search/",
     summary="Search legal codex by content.",
@@ -37,8 +38,8 @@ def api_search(request, q: str):
     start_time = datetime.now()
     results = searchengine.search(q)
     end_time = datetime.now()
-    return { 
-        "query": q, 
+    return {
+        "query": q,
         "time": (end_time - start_time).total_seconds(),
         "metadata": results.metadata,
         "refs": results.refs,
@@ -112,16 +113,16 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     # FIXME: Disabled for now because it's screwing things up rather than
     # fixing them. Remove comment or fix code depending on what kind of problem
     # this becomes later.
-    #minister_clause = xml_doc.find("minister-clause")
-    #encoded_clause = ""
-    #for child in minister_clause:
+    # minister_clause = xml_doc.find("minister-clause")
+    # encoded_clause = ""
+    # for child in minister_clause:
     #    encoded_clause += etree.tostring(child, encoding="unicode")
-    #encoded_clause = encoded_clause.replace(">", "> ")
-    #encoded_clause = encoded_clause.replace("<", " <")
-    #encoded_clause = encoded_clause.replace("  ", " ").strip()
-    #for child in list(minister_clause):
+    # encoded_clause = encoded_clause.replace(">", "> ")
+    # encoded_clause = encoded_clause.replace("<", " <")
+    # encoded_clause = encoded_clause.replace("  ", " ").strip()
+    # for child in list(minister_clause):
     #    minister_clause.remove(child)
-    #minister_clause.text = encoded_clause
+    # minister_clause.text = encoded_clause
 
     xml_string = write_xml(xml_doc)
 

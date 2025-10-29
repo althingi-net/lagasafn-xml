@@ -18,7 +18,7 @@ def globals(request):
         "LEGAL_FRAMEWORK": settings.LEGAL_FRAMEWORK,
         "FEATURES": settings.FEATURES,
         "CURRENT_PARLIAMENT_VERSION": CURRENT_PARLIAMENT_VERSION,
-        "index": cache.get("index")
+        "index": cache.get("index"),
     }
 
     return ctx

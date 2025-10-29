@@ -106,8 +106,12 @@ class AdvertTracker:
             self.xml.insert(0, affected_laws)
 
         # Insert information about the affected laws into the container.
-        affected_law_exists = len(affected_laws.xpath("*[@nr='%s' and @year='%s']" % (nr, year))) > 0
+        affected_law_exists = (
+            len(affected_laws.xpath("*[@nr='%s' and @year='%s']" % (nr, year))) > 0
+        )
         if not affected_law_exists:
-            affected_laws.append(E("affected-law", {"nr": nr, "year": year }, "%s/%s" % (nr, year)))
+            affected_laws.append(
+                E("affected-law", {"nr": nr, "year": year}, "%s/%s" % (nr, year))
+            )
 
         return True
