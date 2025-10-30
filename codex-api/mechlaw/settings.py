@@ -118,13 +118,13 @@ EDITOR_URL = "https://frumvarp.althingi.net/law/%s.%s"
 
 # Cache.
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, '.data-cache'),  # Set an appropriate directory
-        'TIMEOUT': 300,  # Default timeout (in seconds)
-        'OPTIONS': {
-            'MAX_ENTRIES': 1000  # Limit number of cached items
-        }
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": os.path.join(
+            BASE_DIR, ".data-cache"
+        ),  # Set an appropriate directory
+        "TIMEOUT": 300,  # Default timeout (in seconds)
+        "OPTIONS": {"MAX_ENTRIES": 1000},  # Limit number of cached items
     }
 }
 

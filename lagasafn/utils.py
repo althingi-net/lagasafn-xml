@@ -152,9 +152,9 @@ def numart_next_nrs(prev_numart):
         # Go through each place and figure out what can be expected from any of
         # them being incremented.
         for place, value in enumerate(values):
-            dealing_with = values[:place+1]
+            dealing_with = values[: place + 1]
             expected_numart_nrs.append(
-                ".".join(dealing_with[:-1] + [str(int(dealing_with[-1])+1)])
+                ".".join(dealing_with[:-1] + [str(int(dealing_with[-1]) + 1)])
             )
 
             # A tree-scheme `numart` list may look like this:
@@ -179,9 +179,7 @@ def numart_next_nrs(prev_numart):
             # If we're handling the second-last place, we'll add another copy
             # of what was created above, except with ".1" appended to it.
             if place == len(values) - 2:
-                expected_numart_nrs.append(
-                    expected_numart_nrs[-1] + ".1"
-                )
+                expected_numart_nrs.append(expected_numart_nrs[-1] + ".1")
 
     elif prev_numart.attrib["nr-type"] == "en-dash":
         expected_numart_nrs += ["—", "–"]
@@ -450,14 +448,34 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
     # case), regardless of whether `skip_law` was true or not, since
     # otherwise we return nothing and that's not useful.
     if node.tag == "law":
-        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])    
+        return "lög nr. %s/%s" % (node.attrib["nr"], node.attrib["year"])
 
     while node.tag != "law":
         # A few tags are part of the law definition; we don't want to handle it specially
-        if node.tag in ["name", "date", "num-and-date", "nr-title", "sen", "footnote-sen", 
-                        "footnote", "footnotes", "location", "date", "num", "original", 
-                        "minister-clause", "ambiguous-section", "ambiguous-bold-text", "sen-title",
-                        "table", "tr", "td", "th", "thead", "tbody"]:
+        if node.tag in [
+            "name",
+            "date",
+            "num-and-date",
+            "nr-title",
+            "sen",
+            "footnote-sen",
+            "footnote",
+            "footnotes",
+            "location",
+            "date",
+            "num",
+            "original",
+            "minister-clause",
+            "ambiguous-section",
+            "ambiguous-bold-text",
+            "sen-title",
+            "table",
+            "tr",
+            "td",
+            "th",
+            "thead",
+            "tbody",
+        ]:
             node = node.getparent()
             continue
 
@@ -504,10 +522,16 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
                     else:
                         # But maybe not always.
                         result += "%s. gr. " % node.attrib["nr"]
-                elif node.getparent().tag == "chapter" and node.getparent().attrib["nr"] == "t":
-                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]                    
+                elif (
+                    node.getparent().tag == "chapter"
+                    and node.getparent().attrib["nr"] == "t"
+                ):
+                    result += "ákvæði til bráðabirgða %s " % node.attrib["nr"]
                 else:
-                    raise Exception("Parsing of node '%s' (xpath %s) not implemented" % (node.tag, node.getroottree().getpath(node)))
+                    raise Exception(
+                        "Parsing of node '%s' (xpath %s) not implemented"
+                        % (node.tag, node.getroottree().getpath(node))
+                    )
         elif node.tag == "paragraph":
             # This is a bit out of the ordinary. This type of paragraphs is
             # typically not denoted in references.
@@ -584,7 +608,7 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
         # Until either is done, the following line remains commented but
         # retained for future generations to deal with.
 
-        #result = result.strip()
+        # result = result.strip()
         pass
 
     return result
@@ -593,7 +617,9 @@ def generate_legal_reference(input_node, skip_law=False, force_inner_paragraph=F
 # We are given some extra sentences, that we don't know where to locate
 # because it cannot be determined by the input text alone.
 def ask_user_about_location(extra_sens, numart):
-    legal_reference = generate_legal_reference(numart, skip_law=True, force_inner_paragraph=True)
+    legal_reference = generate_legal_reference(
+        numart, skip_law=True, force_inner_paragraph=True
+    )
     url = generate_url(numart)
 
     # Calculated values that we'll have to use more than once.
@@ -628,7 +654,9 @@ def ask_user_about_location(extra_sens, numart):
         # gets moved about, but then the user will simply be asked again.
         destination_node = law.xpath(entry["xpath"])[0]
         if (
-            generate_legal_reference(destination_node, skip_law=True, force_inner_paragraph=True)
+            generate_legal_reference(
+                destination_node, skip_law=True, force_inner_paragraph=True
+            )
             == entry["legal_reference"]
         ):
             return destination_node
@@ -668,7 +696,13 @@ def ask_user_about_location(extra_sens, numart):
     print()
     print("The options are:")
     for i, possible_location in enumerate(possible_locations):
-        print(" - %d: %s" % (i + 1, generate_legal_reference(possible_location, force_inner_paragraph=True)))
+        print(
+            " - %d: %s"
+            % (
+                i + 1,
+                generate_legal_reference(possible_location, force_inner_paragraph=True),
+            )
+        )
     print()
     print(" - 0: Skip (use only when answer cannot be provided)")
 
@@ -738,7 +772,7 @@ class super_iter:
 
     def __iter__(self):
         return self
-    
+
     @property
     def current(self):
         if self.index < 0:
@@ -887,9 +921,7 @@ def write_xml(xml_doc, filename=None, skip_strip=False):
 
     if filename is not None:
         with open(filename, "w") as f:
-            f.write(
-                xml_string
-            )
+            f.write(xml_string)
 
     return xml_string
 
@@ -1108,9 +1140,7 @@ def get_all_text(node: _Element) -> str:
             elif next_node.tag in ["br", "p", "center", "ol"]:
                 break
             else:
-                raise Exception(
-                    "Don't know how to handle next tag: %s" % next_node.tag
-                )
+                raise Exception("Don't know how to handle next tag: %s" % next_node.tag)
 
             next_node = next_node.getnext()
 
@@ -1133,7 +1163,7 @@ def remove_garbage(input_string: str):
     result = input_string.replace("\xa0", " ")
 
     # Remove soft-hyphen.
-    result = result.replace("\u00AD", "")
+    result = result.replace("\u00ad", "")
 
     # Consolidate spaces.
     while result.find("  ") > -1:

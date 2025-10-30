@@ -1,6 +1,6 @@
 # RTED - Robust Tree Edit Distance
 #
-# This module implements the RTED algorithm for computing the tree edit 
+# This module implements the RTED algorithm for computing the tree edit
 # distance between two trees. It is as specified in the paper:
 # "RTED: A Robust Algorithm for the Tree Edit Distance" by Pawlik & Augsten
 #  https://www.vldb.org/pvldb/vol5/p334_mateuszpawlik_vldb2012.pdf
@@ -8,7 +8,7 @@
 # The algorithm is optimized by using a heavy path decomposition of the tree.
 # The heavy path is the path from the root to the child with the largest subtree.
 # The algorithm recursively compares the heavy paths and the remaining children.
-# The tree edit distance is the minimum cost of transforming the source tree into 
+# The tree edit distance is the minimum cost of transforming the source tree into
 # the target tree.
 #
 # For our specific use case, we will modify the algorithm to generate a bill
@@ -30,6 +30,7 @@ from enum import Enum
 from dataclasses import dataclass
 from lagasafn.pathing import make_xpath_from_node
 
+
 class EditType(Enum):
     # Represents the type of edit operation in the tree edit script.
     # The edit operation is one of:
@@ -37,45 +38,47 @@ class EditType(Enum):
     #   - Delete: Delete a node from the tree.
     #   - Update: Update the value of a node in the tree.
     #
-    insert          = 1
-    delete          = 2
-    change          = 3
-    change_attrib   = 4
-    AddAttrib       = 5
-    RemoveAttrib    = 6
-    ChangeText      = 7
-    ChangeTagType   = 8
-    insert_b        = 10
-    delete_b        = 20
+    insert = 1
+    delete = 2
+    change = 3
+    change_attrib = 4
+    AddAttrib = 5
+    RemoveAttrib = 6
+    ChangeText = 7
+    ChangeTagType = 8
+    insert_b = 10
+    delete_b = 20
 
 
 @dataclass
 class EditOperation:
     # Represents an edit operation in the tree edit script.
-    # 
+    #
     # The source is the source node.
     # The target is the target node.
     #
-    edit_type:  EditType
-    cost:       int
-    source:     etree.Element
-    target:     etree.Element
-    xpath:      str = ""
+    edit_type: EditType
+    cost: int
+    source: etree.Element
+    target: etree.Element
+    xpath: str = ""
     insertmode: Literal["explicit", "child", "after", "before"] = "explicit"
-    metadata:   Mapping[str, str] = None
+    metadata: Mapping[str, str] = None
 
     def __str__(self):
         return f"[{self.edit_type}@{self.xpath}] {self.source} -> {self.target}"
+
 
 SubtreeSizeMap = Mapping[etree.Element, int]
 PathTable = Mapping[etree.Element, etree.Element]
 TreeEditScript = List[EditOperation]
 
+
 def compute_subtree_size(node: etree.Element, size_map: SubtreeSizeMap) -> int:
     # Computes the size of the subtree rooted at the given node.
-    # The size is the number of nodes in the subtree, including the 
+    # The size is the number of nodes in the subtree, including the
     # root and all children.
-    # 
+    #
     # The computed sizes are stored in the size_map.
     #
 
@@ -86,12 +89,13 @@ def compute_subtree_size(node: etree.Element, size_map: SubtreeSizeMap) -> int:
     size_map[node] = size
     return size
 
+
 def compute_heavy_path(node: etree.Element, sizes: SubtreeSizeMap, paths: PathTable):
     # Computes the heavy path of the subtree rooted at the given node.
     # The heavy path is the child with the largest subtree.
     #
     # E.g., for the tree:
-    # 
+    #
     #       A
     #      / \
     #     B   C
@@ -100,7 +104,7 @@ def compute_heavy_path(node: etree.Element, sizes: SubtreeSizeMap, paths: PathTa
     #      / \
     #     F   G
     #
-    # The heavy path for A is C, for B is B, for C is D, for D is G, 
+    # The heavy path for A is C, for B is B, for C is D, for D is G,
     #   for E is E, for F is F, and for G is G.
     # That is to say, the heaviest path in the tree is A-C-D-G.
     #
@@ -113,7 +117,7 @@ def compute_heavy_path(node: etree.Element, sizes: SubtreeSizeMap, paths: PathTa
         if sizes[child] > max_size:
             heavy_child = child
             max_size = sizes[child]
-        
+
     paths[node] = heavy_child
     for child in node:
         compute_heavy_path(child, sizes, paths)
@@ -122,12 +126,13 @@ def compute_heavy_path(node: etree.Element, sizes: SubtreeSizeMap, paths: PathTa
 COMPARISONS = 0
 MAX_DEPTH = 0
 
+
 def compute_tree_edit_distance(
-    source: Optional[etree.Element], 
+    source: Optional[etree.Element],
     target: Optional[etree.Element],
     heavy: PathTable,
     depth: int = 0,
-    verbose: bool = False
+    verbose: bool = False,
 ) -> (int, TreeEditScript):
 
     global COMPARISONS
@@ -137,29 +142,48 @@ def compute_tree_edit_distance(
     MAX_DEPTH = max(MAX_DEPTH, depth)
 
     if verbose:
-        print(f"Comparing {make_xpath_from_node(source)} -> {make_xpath_from_node(target)}")
-        
+        print(
+            f"Comparing {make_xpath_from_node(source)} -> {make_xpath_from_node(target)}"
+        )
+
     #
     # FIRST: We handle the situation where either source or target is None.
     #        These are cases where there is no alternative but to insert or delete nodes.
     #
     if source == None and target == None:
-        return 0, [] # No cost if both nodes are none.
+        return 0, []  # No cost if both nodes are none.
 
     # Source is empty, insert all nodes from target.
     if source == None:
         cost = 10
         for child in target.iter():
             cost += 1
-        return cost, [EditOperation(EditType.insert, cost, None, target, make_xpath_from_node(target), metadata={"new": True})]
-    
+        return cost, [
+            EditOperation(
+                EditType.insert,
+                cost,
+                None,
+                target,
+                make_xpath_from_node(target),
+                metadata={"new": True},
+            )
+        ]
+
     # Target is empty, delete all nodes from source.
     if target == None:
         cost = 10
         for child in source.iter():
             cost += 1
-        return 1 + cost, [EditOperation(EditType.delete, cost, source, None, make_xpath_from_node(source), metadata={"deleted": True})]
-
+        return 1 + cost, [
+            EditOperation(
+                EditType.delete,
+                cost,
+                source,
+                None,
+                make_xpath_from_node(source),
+                metadata={"deleted": True},
+            )
+        ]
 
     #
     # Both source and target are non-empty, so now we compute the cost of transforming source into target.
@@ -178,31 +202,35 @@ def compute_tree_edit_distance(
     remove_cost = 20 + len(source.getchildren())
     for child in source.iter():
         remove_cost += 3
-    remove_ops : List[EditOperation] = [
-        EditOperation(EditType.delete, remove_cost, source, None, make_xpath_from_node(source))
+    remove_ops: List[EditOperation] = [
+        EditOperation(
+            EditType.delete, remove_cost, source, None, make_xpath_from_node(source)
+        )
     ]
 
     insert_cost = 20 + len(target.getchildren())
     for child in target.iter():
         insert_cost += 3
-    insert_ops : List[EditOperation] = [
-        EditOperation(EditType.insert, insert_cost, None, target, make_xpath_from_node(target))
+    insert_ops: List[EditOperation] = [
+        EditOperation(
+            EditType.insert, insert_cost, None, target, make_xpath_from_node(target)
+        )
     ]
 
-    strategies["remove_insert"] = (remove_cost+insert_cost, remove_ops+insert_ops)
+    strategies["remove_insert"] = (remove_cost + insert_cost, remove_ops + insert_ops)
 
     #
     # CASE 2: Change scenario
     #
-    change_ops : List[EditOperation] = []
+    change_ops: List[EditOperation] = []
     change_cost = 0
 
     if source.tag != target.tag:
         change_cost += 1
-        
+
     if source.text != target.text:
         change_cost += 1
-        
+
     # Each attrib change (add, remove, change) costs 1.
     source_attribs = set(source.attrib.keys())
     target_attribs = set(target.attrib.keys())
@@ -213,7 +241,15 @@ def compute_tree_edit_distance(
 
     # If we have tag, text or attribute changes, one of the things that will have to change is the node itself.
     if change_cost > 0:
-        change_ops.append(EditOperation(EditType.change, change_cost, source, target, make_xpath_from_node(source)))
+        change_ops.append(
+            EditOperation(
+                EditType.change,
+                change_cost,
+                source,
+                target,
+                make_xpath_from_node(source),
+            )
+        )
 
     # Process remaining children (non-heavy paths). We do this by aggregating the remaining
     # children into two arrays, and then recursively comparing them. We sum these as "other_cost".
@@ -221,22 +257,24 @@ def compute_tree_edit_distance(
     #       but we may want to revisit this. The original RTED algorithm uses heavy paths, and so
     #       disabling this technically makes this not be RTED anymore. :-)
 
-    other_source : List[etree.Element] = []
+    other_source: List[etree.Element] = []
     for it in source.getchildren():
-        #if it != heavy_source:
+        # if it != heavy_source:
         other_source.append(it)
 
-    other_target : List[etree.Element] = []
+    other_target: List[etree.Element] = []
     for it in target.getchildren():
         # if it != heavy_target:
         other_target.append(it)
 
     # This works but isn't ideal.
-    other_cost : int = 0
+    other_cost: int = 0
     for i in range(max(len(other_source), len(other_target))):
         s_child = other_source[i] if i < len(other_source) else None
         t_child = other_target[i] if i < len(other_target) else None
-        subcost, subscript = compute_tree_edit_distance(s_child, t_child, heavy, depth+1)
+        subcost, subscript = compute_tree_edit_distance(
+            s_child, t_child, heavy, depth + 1
+        )
         other_cost += subcost
         change_ops += subscript
 
@@ -258,11 +296,11 @@ def rted(source: etree.Element, target: etree.Element) -> Tuple[int, TreeEditScr
     #
     # The function uses the RTED algorithm to compute the tree edit distance.
     #
-    size_map : SubtreeSizeMap = {}
+    size_map: SubtreeSizeMap = {}
     compute_subtree_size(source, size_map)
     compute_subtree_size(target, size_map)
 
-    heavy_paths : PathTable = {}
+    heavy_paths: PathTable = {}
     compute_heavy_path(source, size_map, heavy_paths)
     compute_heavy_path(target, size_map, heavy_paths)
 
@@ -275,7 +313,14 @@ def make_bill(tree1, tree2) -> etree.Element:
     cost, script = rted(tree1.getroot(), tree2.getroot())
 
     bill = etree.Element("bill", generator=RTED_VERSION)
-    law = etree.Element("law", codex="154a", nr=tree1.getroot().attrib["nr"], year=tree1.getroot().attrib["year"], changes=str(len(script)), cost=str(cost))
+    law = etree.Element(
+        "law",
+        codex="154a",
+        nr=tree1.getroot().attrib["nr"],
+        year=tree1.getroot().attrib["year"],
+        changes=str(len(script)),
+        cost=str(cost),
+    )
     bill.append(law)
 
     for op in script:

@@ -163,6 +163,7 @@ for disqualifier in law_pattern_disqualifiers:
 
 law_permutations = {}
 
+
 def get_law_name_permutations(codex_version: str = ""):
     """
     Provides a dictionary with law ID as key, containing every known
@@ -420,12 +421,12 @@ def process_law_references(law_id: str):
                 # FIXME: Disabled for refactoring. Probably better handled
                 # differently, and possibly not at all, since this information
                 # has not been actually used for anything so far.
-                #problems["does-not-exist"].append(
+                # problems["does-not-exist"].append(
                 #    {
                 #        "nr_and_year": nr_and_year,
                 #        "sen": sen,
                 #    }
-                #)
+                # )
                 continue
 
             # Possible permutations of how the outer part of reference
@@ -490,8 +491,7 @@ def process_law_references(law_id: str):
                 return potentials_outer_start, potentials_outer_end
 
             potentials_outer_start, potentials_outer_end = next_outer_reference(
-                chunk,
-                potential_start_guesses
+                chunk, potential_start_guesses
             )
 
             # The outer and inner references we will build.
@@ -512,7 +512,7 @@ def process_law_references(law_id: str):
 
                 # FIXME: Disabled for refactoring. Should probably just throw
                 # an exception and be handled by the calling function.
-                #if loop_found:
+                # if loop_found:
                 #    stat_loop_count += 1
 
             # The visible part of the text that would normally be
@@ -661,7 +661,6 @@ def process_law_references(law_id: str):
     return etree.tostring(law_ref_entry)
 
 
-
 def parse_references(law_ids):
     print("Parsing references...", end="", flush=True)
 
@@ -693,21 +692,26 @@ def parse_references(law_ids):
 
     # Sort entries for consistency.
     entries.sort(
-        key=lambda e: (
-            e.attrib["law-year"],
-            number_sorter(e.attrib["law-nr"])
-        ),
-        reverse=True
+        key=lambda e: (e.attrib["law-year"], number_sorter(e.attrib["law-nr"])),
+        reverse=True,
     )
 
     for entry in entries:
         xml_ref_doc.append(entry)
 
     # Apply statistics to XML.
-    xml_ref_doc.attrib["stat-conclusive-count"] = str(len(xml_ref_doc.xpath("//reference")))
-    xml_ref_doc.attrib["stat-xpath-successes"] = str(len(xml_ref_doc.xpath("//reference[@xpath]")))
-    xml_ref_doc.attrib["stat-xpath-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-failure='true']")))
-    xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(len(xml_ref_doc.xpath("//reference[@xpath-resolution-failure='true']")))
+    xml_ref_doc.attrib["stat-conclusive-count"] = str(
+        len(xml_ref_doc.xpath("//reference"))
+    )
+    xml_ref_doc.attrib["stat-xpath-successes"] = str(
+        len(xml_ref_doc.xpath("//reference[@xpath]"))
+    )
+    xml_ref_doc.attrib["stat-xpath-failures"] = str(
+        len(xml_ref_doc.xpath("//reference[@xpath-failure='true']"))
+    )
+    xml_ref_doc.attrib["stat-xpath-resolution-failures"] = str(
+        len(xml_ref_doc.xpath("//reference[@xpath-resolution-failure='true']"))
+    )
 
     write_xml(xml_ref_doc, XML_REFERENCES_FILENAME % CURRENT_PARLIAMENT_VERSION)
 

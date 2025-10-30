@@ -9,7 +9,9 @@ from roman import fromRoman
 from roman import toRoman
 
 
-def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_change: int = 1) -> _Element:
+def construct_node(
+    base_node: _Element, text_to: str = "", name: str = "", nr_change: int = 1
+) -> _Element:
     """
     Constructs a Lagasafn-XML node from an already existing node.
     """
@@ -53,9 +55,13 @@ def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_ch
             node.attrib["roman-nr"] = str(int(node.attrib["roman-nr"]) + nr_change)
         else:
             node.attrib["nr"] = str(int(node.attrib["nr"]) + nr_change)
-            node.attrib["roman-nr"] = toRoman(fromRoman(node.attrib["roman-nr"]) + nr_change)
+            node.attrib["roman-nr"] = toRoman(
+                fromRoman(node.attrib["roman-nr"]) + nr_change
+            )
     else:
-        raise LawException("Can't figure out 'nr-type' of node with tag: %s" % base_node.tag)
+        raise LawException(
+            "Can't figure out 'nr-type' of node with tag: %s" % base_node.tag
+        )
 
     # Add nr-title, if appropriate.
     # NOTE: There are occasional examples of `subart`s with a `nr-title` but
@@ -69,7 +75,12 @@ def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_ch
             nr_title_text = "%s. gr." % node.attrib["nr"]
         node.append(E("nr-title", nr_title_text))
     elif node.tag == "chapter":
-        node.append(E("nr-title", "%s. %s" % (node.attrib["roman-nr"], node.attrib["chapter-type"])))
+        node.append(
+            E(
+                "nr-title",
+                "%s. %s" % (node.attrib["roman-nr"], node.attrib["chapter-type"]),
+            )
+        )
     else:
         raise Exception("Don't know how to construct nr-title for tag: %s" % node.tag)
 
@@ -87,7 +98,9 @@ def construct_node(base_node: _Element, text_to: str = "", name: str = "", nr_ch
 
 def construct_sens(base_node: _Element, text_to, nr_change: int = 0) -> list[_Element]:
     if base_node.tag != "sen":
-        raise LawException("Function 'construct_sens' requires 'base_node' to be a 'sen' node.")
+        raise LawException(
+            "Function 'construct_sens' requires 'base_node' to be a 'sen' node."
+        )
 
     # Result value.
     sens = []
@@ -95,7 +108,7 @@ def construct_sens(base_node: _Element, text_to, nr_change: int = 0) -> list[_El
     nr_start = int(base_node.attrib["nr"])
     sentences = separate_sentences(text_to)
     for i, sentence in enumerate(sentences):
-        sens.append(E("sen", {"nr": str(nr_start+i+nr_change) }, sentence))
+        sens.append(E("sen", {"nr": str(nr_start + i + nr_change)}, sentence))
 
     return sens
 
@@ -120,7 +133,8 @@ def construct_temp_chapter_from_art(base_node: _Element) -> _Element:
     """
     if base_node.tag != "art":
         raise LawException(
-            "Function 'construct_temp_chapter_from_art' expects a tag 'art' but received: %s" % base_node.tag
+            "Function 'construct_temp_chapter_from_art' expects a tag 'art' but received: %s"
+            % base_node.tag
         )
 
     # Basic skeleton of our new article.
@@ -144,7 +158,7 @@ def construct_temp_chapter_from_art(base_node: _Element) -> _Element:
             "nr-type": "temporary-clauses",
             "nr": "t",
         },
-        art
+        art,
     )
 
     return chapter

@@ -11,12 +11,13 @@ from time import sleep
 
 router = Router(tags=["Bill"])
 
+
 @router.post("meta", auth=APIAuthentication())
 def bill_meta(request: HttpRequest):
     """
-       Publish bill meta XML data as POST body.
+    Publish bill meta XML data as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/meta --data '<bill><lagasafnId>1</lagasafnId><title>Skógræktarlög</title><description>Frumvarp um eflingu skógræktar á Íslandi</description></bill>'
+    Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/meta --data '<bill><lagasafnId>1</lagasafnId><title>Skógræktarlög</title><description>Frumvarp um eflingu skógræktar á Íslandi</description></bill>'
     """
 
     bill_xml_string = request.body
@@ -43,12 +44,13 @@ def bill_meta(request: HttpRequest):
         }
     }
 
+
 @router.post("document/validate", auth=APIAuthentication())
 def bill_validate(request: HttpRequest):
     """
-       Validate bill XML provided as POST body.
+    Validate bill XML provided as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/document/validate --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
+    Example: curl -H 'Content-Type: application/xml'  -X POST http://10.110.0.2:9000/api/bill/document/validate --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
     """
 
     bill_xml_string = request.body
@@ -67,15 +69,16 @@ def bill_validate(request: HttpRequest):
         "bill": {
             "nr": nr,
             "year": year,
-        }
+        },
     }
+
 
 @router.post("{bill_id}/document/publish", auth=APIAuthentication())
 def bill_publish(request: HttpRequest, bill_id):
     """
-       Publish bill XML provided as POST body.
+    Publish bill XML provided as POST body.
 
-       Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/document/publish --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
+    Example: curl -H 'Content-Type: application/xml'  -X POST http://127.0.0.1:9000/api/bill/document/publish --data '<bill><title>test</title><law nr="5" year="1995">test</law></bill>'
     """
 
     bill_xml_string = request.body
@@ -94,7 +97,12 @@ def bill_publish(request: HttpRequest, bill_id):
     bill_nr = int(bill_id)
 
     # Determine file name for bill, write XML to data directory.
-    existing_filename = BILL_FILENAME % (CURRENT_PARLIAMENT_VERSION, bill_nr, law_year, law_nr)
+    existing_filename = BILL_FILENAME % (
+        CURRENT_PARLIAMENT_VERSION,
+        bill_nr,
+        law_year,
+        law_nr,
+    )
 
     write_xml(law, existing_filename)
 
@@ -109,19 +117,29 @@ def bill_publish(request: HttpRequest, bill_id):
     failureCnt = 0
 
     while failureCnt < 10:
-       try:
-           repo = Repo.init(BASE_DIR)
-           repo.index.add(existing_filename)
-           repo.index.commit("Publish bill nr. " + str(bill_nr) + "/" + CURRENT_PARLIAMENT_VERSION + ", law " + str(law_nr) + "/" + str(law_year))
-           break; # On success, break out of the loop.
-       except Exception:
-           failureCnt += 1
-           sleep(failureCnt * 1)
+        try:
+            repo = Repo.init(BASE_DIR)
+            repo.index.add(existing_filename)
+            repo.index.commit(
+                "Publish bill nr. "
+                + str(bill_nr)
+                + "/"
+                + CURRENT_PARLIAMENT_VERSION
+                + ", law "
+                + str(law_nr)
+                + "/"
+                + str(law_year)
+            )
+            break
+            # On success, break out of the loop.
+        except Exception:
+            failureCnt += 1
+            sleep(failureCnt * 1)
 
     return {
         "published": True,
         "bill": {
             "nr": law_nr,
             "year": law_year,
-        }
+        },
     }

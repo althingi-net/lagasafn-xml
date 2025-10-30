@@ -142,8 +142,8 @@ def clean_content(content):
     # another footnote.
     content = re.sub(
         r'<sup style="font-size:60%">\*<\/sup>(sbr\. <a href="\/altext\/stjt\/\d{4}.\d{3}.html">\d+\. gr\.<\/a>)?',
-        '',
-        content
+        "",
+        content,
     )
 
     # Find the law content and exit if it does not exist
@@ -190,9 +190,9 @@ def clean_content(content):
 
 def clean_law(law_num, law_year):
     with codecs.open(
-    LAW_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, str(law_num).zfill(3)),
+        LAW_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, str(law_num).zfill(3)),
         "r",
-        "ISO-8859-1"
+        "ISO-8859-1",
     ) as infile:
         raw_content = infile.read()
         infile.close()
@@ -222,7 +222,10 @@ def make_xml(law_num, law_year):
     parse_law(parser)
 
     # Write the XML object to output file.
-    write_xml(parser.law, XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, parser.law_year, parser.law_num))
+    write_xml(
+        parser.law,
+        XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, parser.law_year, parser.law_num),
+    )
 
 
 def process_law(law_id):
@@ -250,7 +253,9 @@ def process_law(law_id):
             # codex. When we fail at parsing a document, the accurate
             # representation is the absence of that document.
             try:
-                os.remove(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num))
+                os.remove(
+                    XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+                )
             except FileNotFoundError:
                 # This does not matter.
                 pass
@@ -414,7 +419,9 @@ def get_parliament_version_dates(codex_version):
     xml = soupparser.fromstring(response.content)
 
     if response.status_code != 200:
-        raise LawException("Failed finding date range of legal codex. This usually happens when Althingi's website denies the necessary HTTP request. Try waiting and trying with `--index-only` again.")
+        raise LawException(
+            "Failed finding date range of legal codex. This usually happens when Althingi's website denies the necessary HTTP request. Try waiting and trying with `--index-only` again."
+        )
 
     # Find the links to the current codex version and the one preceding it.
     link = xml.xpath(
@@ -423,11 +430,15 @@ def get_parliament_version_dates(codex_version):
     prev_link = link.getparent().getnext().find("a")
 
     # Read dates from "to" date.
-    day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", link.text).groups()
+    day, month, year = re.match(
+        r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", link.text
+    ).groups()
     date_to = datetime(int(year), determine_month(month), int(day))
 
     # Read dates from "from" date.
-    day, month, year = re.match(r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", prev_link.text).groups()
+    day, month, year = re.match(
+        r"\d{3}[a-z]?\. Íslensk lög (\d+)\. (.+) (\d{4})", prev_link.text
+    ).groups()
     date_from = datetime(int(year), determine_month(month), int(day))
 
     # The first day of this version is the one following the last day of the
@@ -443,10 +454,13 @@ def update_index():
     date_from, date_to = get_parliament_version_dates(CURRENT_PARLIAMENT_VERSION)
 
     # Index root element.
-    index = E("index", {
-        "date-from": date_from.strftime("%Y-%m-%d"),
-        "date-to": date_to.strftime("%Y-%m-%d"),
-    })
+    index = E(
+        "index",
+        {
+            "date-from": date_from.strftime("%Y-%m-%d"),
+            "date-to": date_to.strftime("%Y-%m-%d"),
+        },
+    )
 
     # A place for statistics and such. These will be turned into XML nodes
     # later on but are consolidated here for clarity.
@@ -477,7 +491,9 @@ def update_index():
 
         # Read the XML file's content, from which we'll get a bunch of
         # information for the index.
-        law = etree.parse(XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)).getroot()
+        law = etree.parse(
+            XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)
+        ).getroot()
 
         # Law-specific info for the index.
         identifier = f"{law_nr}/{law_year}"
@@ -612,12 +628,12 @@ def usage(exec_name, message=None):
     print("    --help                    Display this help message.", file=stderr)
     print(
         "    --verbose                 Show a lot more information about what's going on.",
-        file=stderr
+        file=stderr,
     )
     print(file=stderr)
     print(
         "    --population-game         Run the population game, a fun developer tool.",
-        file=stderr
+        file=stderr,
     )
     print(
         "    --try-broken              Try processing laws known to have failed.",

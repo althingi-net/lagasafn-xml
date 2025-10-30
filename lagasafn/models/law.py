@@ -55,6 +55,7 @@ class LawEntry(BaseModel):
     """
     Intermediary model for a legal entry in the index.
     """
+
     identifier: str
     name: str
     codex_version: str
@@ -71,7 +72,7 @@ class LawEntry(BaseModel):
         codex_version: str = CURRENT_PARLIAMENT_VERSION,
         chapter_count: int = -1,
         art_count: int = -1,
-        problems: dict = {}
+        problems: dict = {},
     ):
         try:
             nr, year = [int(v) for v in identifier.split("/")]
@@ -167,14 +168,18 @@ class LawManager:
             problem_map[problem_law_entry.attrib["identifier"]] = statuses
 
         # Read and parse the index
-        xml_index = etree.parse(os.path.join(XML_INDEX_FILENAME % codex_version)).getroot()
+        xml_index = etree.parse(
+            os.path.join(XML_INDEX_FILENAME % codex_version)
+        ).getroot()
 
         # Gather miscellaneous stuff into `info`.
         info.date_from = datetime.fromisoformat(xml_index.attrib["date-from"])
         info.date_to = datetime.fromisoformat(xml_index.attrib["date-to"])
         info.total_count = int(xml_index.xpath("/index/stats/total-count")[0].text)
         info.empty_count = int(xml_index.xpath("/index/stats/empty-count")[0].text)
-        info.non_empty_count = int(xml_index.xpath("/index/stats/non-empty-count")[0].text)
+        info.non_empty_count = int(
+            xml_index.xpath("/index/stats/non-empty-count")[0].text
+        )
 
         # Gather the laws in the index.
         for node_law_entry in xml_index.findall("law-entries/law-entry"):
@@ -189,14 +194,16 @@ class LawManager:
             name = node_law_entry.find("name").text
             chapter_count = int(node_law_entry.find("meta/chapter-count").text)
             art_count = int(node_law_entry.find("meta/art-count").text)
-            laws.append(LawEntry(
-                identifier,
-                name,
-                info.codex_version,
-                chapter_count,
-                art_count,
-                problems
-            ))
+            laws.append(
+                LawEntry(
+                    identifier,
+                    name,
+                    info.codex_version,
+                    chapter_count,
+                    art_count,
+                    problems,
+                )
+            )
 
         index = LawIndex()
         index.info = info
@@ -260,20 +267,26 @@ class LawManager:
             for node in nodes:
                 legal_reference = ""
                 try:
-                    legal_reference = generate_legal_reference(node.getparent(), skip_law=True)
+                    legal_reference = generate_legal_reference(
+                        node.getparent(), skip_law=True
+                    )
                 except:
                     pass
-                findings.append({
-                    "legal_reference": legal_reference,
-                    "node": node,
-                    "xpath": make_xpath_from_node(node),
-                })
+                findings.append(
+                    {
+                        "legal_reference": legal_reference,
+                        "node": node,
+                        "xpath": make_xpath_from_node(node),
+                    }
+                )
 
             if len(nodes):
-                results.append({
-                    "law_entry": law_entry,
-                    "findings": findings,
-                })
+                results.append(
+                    {
+                        "law_entry": law_entry,
+                        "findings": findings,
+                    }
+                )
 
         return results
 
@@ -293,7 +306,9 @@ class Chapter(BaseModel):
     name: str
     articles: list[Article]
 
-    def __init__(self, nr: str, nr_title: str = "", name: str = "", articles: list[Article] = []):
+    def __init__(
+        self, nr: str, nr_title: str = "", name: str = "", articles: list[Article] = []
+    ):
         super().__init__(nr=nr, nr_title=nr_title, name=name, articles=articles)
 
 
@@ -481,8 +496,12 @@ class Law(LawEntry):
         # XML and HTML, but it's not obvious from reading this.
         e = re.compile(r"<([a-z\-]+)( ?)([^>]*)\/>")
         html_text = e.sub(r"<\1\2\3></\1>", xml_text)
-        html_text = html_text.replace('<?xml version="1.0" encoding="utf-8"?>', "").strip()
-        html_text = html_text.replace("<?xml version='1.0' encoding='utf-8'?>", "").strip()
+        html_text = html_text.replace(
+            '<?xml version="1.0" encoding="utf-8"?>', ""
+        ).strip()
+        html_text = html_text.replace(
+            "<?xml version='1.0' encoding='utf-8'?>", ""
+        ).strip()
 
         return html_text
 
@@ -503,7 +522,9 @@ class Law(LawEntry):
 
     def get_references(self):
         if self._xml_references is None:
-            self._xml_references = etree.parse(XML_REFERENCES_FILENAME % CURRENT_PARLIAMENT_VERSION).getroot()
+            self._xml_references = etree.parse(
+                XML_REFERENCES_FILENAME % CURRENT_PARLIAMENT_VERSION
+            ).getroot()
 
         nodes = self._xml_references.xpath(
             f"/references/law-ref-entry[@law-nr='{self.nr}' and @law-year='{self.year}']/node"
@@ -514,13 +535,15 @@ class Law(LawEntry):
         references = []
         for node in nodes:
             for xml_ref in node.findall("reference"):
-                references.append({
-                    "location": node.attrib["location"],
-                    "link_label": xml_ref.attrib["link-label"],
-                    "inner_reference": xml_ref.attrib["inner-reference"],
-                    "law_nr": xml_ref.attrib["law-nr"],
-                    "law_year": xml_ref.attrib["law-year"],
-                })
+                references.append(
+                    {
+                        "location": node.attrib["location"],
+                        "link_label": xml_ref.attrib["link-label"],
+                        "inner_reference": xml_ref.attrib["inner-reference"],
+                        "law_nr": xml_ref.attrib["law-nr"],
+                        "law_year": xml_ref.attrib["law-year"],
+                    }
+                )
 
         return references
 
@@ -532,7 +555,10 @@ class Law(LawEntry):
 
     def _get_issue_status_from_doc(self, doc_nr, parliament):
         # Get issue.
-        response = requests.get("https://www.althingi.is/altext/xml/thingskjol/thingskjal/?lthing=%d&skjalnr=%d" % (parliament, doc_nr))
+        response = requests.get(
+            "https://www.althingi.is/altext/xml/thingskjol/thingskjal/?lthing=%d&skjalnr=%d"
+            % (parliament, doc_nr)
+        )
         response.encoding = "utf-8"
 
         doc_xml = etree.fromstring(response.content)
@@ -544,17 +570,23 @@ class Law(LawEntry):
 
         # Extract proposer information.
         proposer = None
-        proposer_nodes = doc_xml.xpath("/þingskjal/þingskjal/flutningsmenn/flutningsmaður")
+        proposer_nodes = doc_xml.xpath(
+            "/þingskjal/þingskjal/flutningsmenn/flutningsmaður"
+        )
         if len(proposer_nodes) > 0:
             proposer_node = proposer_nodes[0]
             proposer_nr = int(proposer_node.attrib["id"])
             proposer = {
                 "name": proposer_node.find("nafn").text,
-                "link": "https://www.althingi.is/altext/cv/is/?nfaerslunr=%d" % proposer_nr,
+                "link": "https://www.althingi.is/altext/cv/is/?nfaerslunr=%d"
+                % proposer_nr,
             }
 
         # Get the issue data.
-        response = requests.get("https://www.althingi.is/altext/xml/thingmalalisti/thingmal/?lthing=%d&malnr=%d" % (issue_parliament, issue_nr))
+        response = requests.get(
+            "https://www.althingi.is/altext/xml/thingmalalisti/thingmal/?lthing=%d&malnr=%d"
+            % (issue_parliament, issue_nr)
+        )
         response.encoding = "utf-8"
 
         issue_xml = etree.fromstring(response.content)
@@ -574,7 +606,7 @@ class Law(LawEntry):
 
         url = "https://www.althingi.is/lagas/nuna/%s%s.html" % (
             self.year,
-            traditionalize_law_nr(self.nr)
+            traditionalize_law_nr(self.nr),
         )
 
         if url in self._remote_contents:
@@ -596,23 +628,29 @@ class Law(LawEntry):
             return box_links
 
         ul_element = h5_element[0].getnext()
-        if ul_element.tag != 'ul':
+        if ul_element.tag != "ul":
             return box_links
 
         for li_element in ul_element.xpath("li"):
             a_element = li_element.find("a")
 
-            doc_nr, doc_parliament = self._get_doc_nr_and_parliament(a_element.attrib["href"])
-            issue_status, proposer = self._get_issue_status_from_doc(doc_nr, doc_parliament)
+            doc_nr, doc_parliament = self._get_doc_nr_and_parliament(
+                a_element.attrib["href"]
+            )
+            issue_status, proposer = self._get_issue_status_from_doc(
+                doc_nr, doc_parliament
+            )
 
-            box_links.append({
-                "link": a_element.attrib["href"],
-                "law_name": a_element.attrib["title"],
-                "document_name": a_element.text,
-                "date": a_element.tail.lstrip(", "),
-                "issue_status": issue_status,
-                "proposer": proposer,
-            })
+            box_links.append(
+                {
+                    "link": a_element.attrib["href"],
+                    "law_name": a_element.attrib["title"],
+                    "document_name": a_element.text,
+                    "date": a_element.tail.lstrip(", "),
+                    "issue_status": issue_status,
+                    "proposer": proposer,
+                }
+            )
 
         return box_links
 

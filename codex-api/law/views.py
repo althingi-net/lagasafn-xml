@@ -50,7 +50,7 @@ def law_compare(request):
     #
     # It's possible that law1 will have a chunk that law2 doesn't have, and vice
     # versa. We mustn't miss anything!
-    # 
+    #
     # The output is a list of chunks, each chunk being a dictionary containing
     # "a" from law1, "b" from law2, and "diff" which is a boolean indicating
     # whether the two chunks are different.
@@ -87,7 +87,6 @@ def law_compare(request):
         if c1 is None and c2 is None:
             break
         chunks.append(determine_chunk(c1, c2, script))
-    
 
     ctx = {
         "lawref": lawref,

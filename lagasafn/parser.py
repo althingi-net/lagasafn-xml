@@ -104,7 +104,10 @@ class LawParser:
 
     def enter(self, path):
         if self.verbosity > 0:
-            print("%s>> Entering %s at line index %d" % ("  " * len(self.parse_path), path, self.lines.index))
+            print(
+                "%s>> Entering %s at line index %d"
+                % ("  " * len(self.parse_path), path, self.lines.index)
+            )
         self.parse_path.append(path)
 
     def leave(self, guard=None):
@@ -120,11 +123,21 @@ class LawParser:
             return
 
         if self.verbosity > 0:
-            print("%s<< Leaving %s at line index %d" % ("  " * (len(self.parse_path)-1), self.parse_path[-1], self.lines.index))
+            print(
+                "%s<< Leaving %s at line index %d"
+                % (
+                    "  " * (len(self.parse_path) - 1),
+                    self.parse_path[-1],
+                    self.lines.index,
+                )
+            )
 
         if guard is not None:
             if self.parse_path[-1] != guard:
-                self.error("At %s:%s: trying to leave a path (%s) that doesn't match the guard (%s)." % (filename, line_number, "->".join(self.parse_path), guard))
+                self.error(
+                    "At %s:%s: trying to leave a path (%s) that doesn't match the guard (%s)."
+                    % (filename, line_number, "->".join(self.parse_path), guard)
+                )
                 return
         self.parse_path.pop()
 
@@ -134,7 +147,10 @@ class LawParser:
 
     def note(self, note):
         if self.verbosity > 0:
-            print("%s[ NOTE ][%d] %s" % ("  " * len(self.parse_path), self.lines.index, note))
+            print(
+                "%s[ NOTE ][%d] %s"
+                % ("  " * len(self.parse_path), self.lines.index, note)
+            )
 
     def error(self, error):
         print("%s[ERROR ]: %s" % ("  " * len(self.parse_path), error))
@@ -147,16 +163,16 @@ class LawParser:
 
     def next(self):
         return next(self.lines)
-    
+
     def nexts(self):
         return next(self.lines).strip()
 
     def next_until(self, end_string):
         return self.lines.next_until(end_string)
-    
+
     def next_untils(self, end_string):
         return self.lines.next_until(end_string).strip()
-        
+
     def consume(self, term):
         if self.line != term:
             if self.verbosity > 0:
@@ -169,7 +185,7 @@ class LawParser:
             self.next()
             return True
         return False
-    
+
     def maybe_consume_many(self, term):
         while self.line == term:
             self.next()
@@ -218,7 +234,10 @@ class LawParser:
             try:
                 self.next()
             except StopIteration:
-                raise Exception("ERROR: Unexpected end of file on line index %d while collecting until '%s'. \nLine: '%s'" % (self.lines.index, end_string, self.line))
+                raise Exception(
+                    "ERROR: Unexpected end of file on line index %d while collecting until '%s'. \nLine: '%s'"
+                    % (self.lines.index, end_string, self.line)
+                )
             if self.matcher.check(self.line, end_string):
                 done = True
                 continue
@@ -308,6 +327,7 @@ class LawParser:
 
 ####### Individual section parser functions below:
 
+
 def parse_law(parser):
     parse_intro(parser)
 
@@ -357,14 +377,16 @@ def parse_intro(parser):
     parse_law_title(parser)
     parse_law_number_and_date(parser)
 
-    # We always get a <hr/> after the law number and date.    
+    # We always get a <hr/> after the law number and date.
     parser.consume("<hr/>")
 
     # TODO: Parsing procedural links is unimplemented.
     # parse_procedural_links(parser)
 
     if parser.line == "<i>":
-        parse_footnotes(parser)      # This will eat any footnotes associated with the title.
+        parse_footnotes(
+            parser
+        )  # This will eat any footnotes associated with the title.
 
     parser.maybe_consume_many("<br/>")
     parse_minister_clause_footnotes(parser)
@@ -376,7 +398,9 @@ def parse_intro(parser):
 
 def parse_end_of_law(parser):
     if parser.line != "</body>":
-        parser.note("Trying to parse end of file without having reached the end of the file.")
+        parser.note(
+            "Trying to parse end of file without having reached the end of the file."
+        )
         return
 
     parser.enter("end-of-file")
@@ -657,11 +681,13 @@ def parse_minister_clause_footnotes(parser):
     #   </i>
     #  </a>
     minister_clause = ""
-    if parser.line.startswith("<a href=\"https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/"):
+    if parser.line.startswith(
+        '<a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/'
+    ):
         minister_clause += parser.collect_until("</a>") + " </a> "
         parser.consume("</a>")
 
-    if parser.line.startswith("<a href=\"https://www.althingi.is/altext/"):
+    if parser.line.startswith('<a href="https://www.althingi.is/altext/'):
         minister_clause += parser.collect_until("</a>") + " </a> "
         parser.consume("</a>")
 
@@ -740,7 +766,7 @@ def parse_superchapter(parser):
         name = parser.collect_until("</b>")
         parser.consume("</b>")
 
-    raw_nr = nr_title[:nr_title.find(" þáttur")].strip(".")
+    raw_nr = nr_title[: nr_title.find(" þáttur")].strip(".")
 
     # Turn "8. og 9" into "8-9", in 115/2021.
     raw_nr = raw_nr.replace(". og", "-")
@@ -768,6 +794,7 @@ def parse_superchapter(parser):
     parser.leave("superchapter")
 
     return True
+
 
 def parse_chapter(parser):
     # Chapters are found by finding a <b> tag that comes right after a
@@ -813,16 +840,16 @@ def parse_chapter(parser):
         # cardinal numbers, but their `nr-title`s and `name`s are also not in
         # separate `<b>` clauses.
         t = strip_markers(name_or_nr_title).strip()
-        first_word = t[:t.find(" ")]
+        first_word = t[: t.find(" ")]
         nr = word_to_nr(first_word)
 
-        chapter_nr_title = name_or_nr_title[:name_or_nr_title.find("kapítuli") + 9]
+        chapter_nr_title = name_or_nr_title[: name_or_nr_title.find("kapítuli") + 9]
         chapter_name = ""
         if name_or_nr_title.find("kapítuli. ") > -1:
-            chapter_name = name_or_nr_title[name_or_nr_title.find("kapítuli.") + 10:]
+            chapter_name = name_or_nr_title[name_or_nr_title.find("kapítuli.") + 10 :]
 
         parser.chapter = E.chapter(
-            {"nr": nr, "nr-type": "cardinal" },
+            {"nr": nr, "nr-type": "cardinal"},
             E("nr-title", chapter_nr_title),
         )
 
@@ -843,7 +870,7 @@ def parse_chapter(parser):
             nr = str(roman.fromRoman(maybe_nr))
             nr_type = "roman"
 
-            extra_match = re.match(r"\.([A-Z])\.", t[len(maybe_nr):])
+            extra_match = re.match(r"\.([A-Z])\.", t[len(maybe_nr) :])
             if extra_match is not None:
                 # A special case in lög nr. 41/1979 where a chapter has been
                 # added between "I" and "II", called "I.A".
@@ -1064,7 +1091,7 @@ def parse_chapter(parser):
         if parse_footnotes(parser):
             continue
 
-        #if parse_subchapter(parser):
+        # if parse_subchapter(parser):
         #    continue
         break
 
@@ -1134,7 +1161,7 @@ def parse_appendix(parser):
             # 162/2002 (153c), where there is an appendix numbered "XI A"
             # between "XI" and "XII".
             if len(splitted) == 3:
-                match = re.match(r'([A-Z])\.', splitted[2])
+                match = re.match(r"([A-Z])\.", splitted[2])
                 if match is not None:
                     extra_nr = match.group()
 
@@ -1268,11 +1295,11 @@ def parse_numart_chapter(parser):
     parser.consume("</b>")
 
     nr = nr_and_name.split(".")[0]
-    name = nr_and_name[len(nr) + 2:]
+    name = nr_and_name[len(nr) + 2 :]
 
     parser.numart_chapter.attrib["nr"] = nr
     parser.numart_chapter.append(E("nr-title", nr + "."))
-    parser.numart_chapter.append(E("name",  name))
+    parser.numart_chapter.append(E("name", name))
 
     if parser.appendix is not None:
         parser.appendix.append(parser.numart_chapter)
@@ -1293,10 +1320,7 @@ def parse_paragraph(parser):
     if not (
         begins_with_regular_content(parser.line)
         # In 58/1998 (153c) definitions are presented in bold.
-        or (
-            parser.line == "<b>"
-            and parser.peeks()[-1] == ":"
-        )
+        or (parser.line == "<b>" and parser.peeks()[-1] == ":")
     ):
         return False
 
@@ -1395,11 +1419,8 @@ def parse_appendix_draft(parser):
 def parse_appendix_part(parser):
     # Occurs in lög nr. 98/2019 (153c).
     if not (
-        (
-            parser.line == "<i>"
-            and "-hluti" in parser.peeks()
-        )
-        or re.match(r'.*-hluti\.$', parser.line)
+        (parser.line == "<i>" and "-hluti" in parser.peeks())
+        or re.match(r".*-hluti\.$", parser.line)
     ):
         return False
 
@@ -1414,7 +1435,7 @@ def parse_appendix_part(parser):
     else:
         content = parser.collect_until("<br/>")
 
-    parser.appendix_part = E("appendix-part", { "appendix-style": style })
+    parser.appendix_part = E("appendix-part", {"appendix-style": style})
 
     if ":" in content:
         nr_title, name = content.split(":")
@@ -1455,10 +1476,7 @@ def parse_stray_deletion(parser):
     """
     removed_anchor = r"<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
 
-    if not (
-        parser.line == "…"
-        or re.match(removed_anchor, parser.line)
-    ):
+    if not (parser.line == "…" or re.match(removed_anchor, parser.line)):
         return False
 
     parser.enter("stray-deletion")
@@ -1504,9 +1522,9 @@ def parse_stray_deletion(parser):
 
 def parse_subchapter(parser):
     # Parse a subchapter.
-    if not check_chapter(parser.lines, parser.law) == "subchapter" or not parser.trail_reached(
-        "intro-finished"
-    ):
+    if not check_chapter(
+        parser.lines, parser.law
+    ) == "subchapter" or not parser.trail_reached("intro-finished"):
         return False
 
     parser.enter("subchapter")
@@ -1569,7 +1587,7 @@ def parse_article_chapter(parser):
     space_loc = art_chapter_goo.find(" ")
     if space_loc > -1:
         art_chapter_nr = art_chapter_goo[0:space_loc].strip(".")
-        art_chapter_name = art_chapter_goo[space_loc+1:]
+        art_chapter_name = art_chapter_goo[space_loc + 1 :]
     else:
         art_chapter_nr = art_chapter_goo.strip(".")
         art_chapter_name = ""
@@ -1647,9 +1665,7 @@ def parse_ambiguous_chapter(parser):
     parser.enter("ambiguous-chapter")
 
     parser.next()
-    ambiguous_bold_text = E(
-        "ambiguous-bold-text", parser.collect_until("</b>")
-    )
+    ambiguous_bold_text = E("ambiguous-bold-text", parser.collect_until("</b>"))
     parser.consume("</b>")
 
     italic = re.match(r"<i>\s?(.*)\s?</i>", ambiguous_bold_text.text)
@@ -1679,10 +1695,7 @@ def parse_ambiguous_chapter(parser):
 def parse_sentence_with_title(parser):
     if not (
         (
-            (
-                parser.line in ["[", "[["]
-                and parser.peeks(1) == "<i>"
-            )
+            (parser.line in ["[", "[["] and parser.peeks(1) == "<i>")
             or parser.line == "<i>"
         )
         and parser.peeks() != "<small>"
@@ -1738,11 +1751,13 @@ def parse_sentence_with_title(parser):
 
 def parse_article(parser):
     # Articles have navigation spans on them with "G???" IDs with their number.
-    # We'll skip over them, as long as we are sure that after them we have the 
+    # We'll skip over them, as long as we are sure that after them we have the
     # begining of an article.
-    if parser.line.startswith("<span id=\"G") and parser.matcher.check(parser.peeks(2), r'<img .+ src=".*sk.jpg" .+\/>'):
-        parser.next()   # Consume <span id="G???">
-        parser.next()   # Consume </span>
+    if parser.line.startswith('<span id="G') and parser.matcher.check(
+        parser.peeks(2), r'<img .+ src=".*sk.jpg" .+\/>'
+    ):
+        parser.next()  # Consume <span id="G???">
+        parser.next()  # Consume </span>
     else:
         pass
 
@@ -1861,7 +1876,8 @@ def parse_article(parser):
 def parse_subarticle(parser):
     if not (
         parser.matcher.check(
-            parser.line, r'<img .+ id="F?[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>'
+            parser.line,
+            r'<img .+ id="F?[GB](\d+)([A-Z][A-Z]?)?M(\d+)" src=".*hk.jpg" .+\/>',
         )
         or parser.line == '<img alt="" height="11" src="hk.jpg" width="11"/>'
     ):
@@ -1883,7 +1899,7 @@ def parse_subarticle(parser):
     # Check how far we are from the typical subart end.
     linecount_to_br = parser.occurrence_distance(parser.lines, r"<br/>")
 
-    # Check if there's a table inside the subarticle. 
+    # Check if there's a table inside the subarticle.
     linecount_to_table = parser.occurrence_distance(
         parser.lines, r'<table width="100%">', linecount_to_br
     )
@@ -2038,7 +2054,9 @@ def parse_deletion_marker(parser):
 
 def parse_numerical_article(parser):
     if not (
-        parser.matcher.check(parser.line, r'<span id="(F\d?)?[BG](\d+)([0-9A-Z]*)L(\d+)">')
+        parser.matcher.check(
+            parser.line, r'<span id="(F\d?)?[BG](\d+)([0-9A-Z]*)L(\d+)">'
+        )
         or (parser.line == "<span>" and parser.peeks() != "</span>")
         or is_numart_address(parser.line)
     ):
@@ -2060,14 +2078,17 @@ def parse_numerical_article(parser):
     # alphabetic one, into something easier to work with
     # programmatically. Example: "9. a" becomes "9a" in law nr.
     # 20/2003.
-    numart_nr = strip_markers(
-        parser.peeks().strip("(").strip(")").strip(".")
-    ).replace(
-        ". ", ""
-    # NOTE: This became necessary around 2024-2025, presumably because
-    # Parliament's norms changed ever so slightly due to staff changes. It's
-    # unclear what exactly changed (and it hopefully doesn't matter).
-    ).strip(".")
+    numart_nr = (
+        strip_markers(parser.peeks().strip("(").strip(")").strip("."))
+        .replace(
+            ". ",
+            "",
+            # NOTE: This became necessary around 2024-2025, presumably because
+            # Parliament's norms changed ever so slightly due to staff changes. It's
+            # unclear what exactly changed (and it hopefully doesn't matter).
+        )
+        .strip(".")
+    )
 
     if parser.matcher.check(numart_nr, r"(\d+)\.[–-](\d+)"):
         # Support for numart ranges, which are only known to occur when many
@@ -2228,7 +2249,8 @@ def parse_numerical_article(parser):
             parent = prev_numart.getparent()
         elif (
             numart_nr.lower() in ["a", "i", "—", "–"]
-            or numart_nr.isdigit() and int(numart_nr) == 1
+            or numart_nr.isdigit()
+            and int(numart_nr) == 1
         ):
             # A new list has started within the one we were already processing,
             # which we can tell because there was a `numart` before this one,
@@ -2238,7 +2260,12 @@ def parse_numerical_article(parser):
             # append to the last paragraph of that parent.
             if (
                 prev_numart.getparent().getparent() is not None
-                and prev_numart.getparent().getparent().getchildren()[-1].getchildren()[-1].tag != "numart"
+                and prev_numart.getparent()
+                .getparent()
+                .getchildren()[-1]
+                .getchildren()[-1]
+                .tag
+                != "numart"
             ):
                 # This happens in the rather unfortunate circumstance that a
                 # list of `numart`s is in one `paragraph` and then another list
@@ -2362,7 +2389,11 @@ def parse_numerical_article(parser):
 
         if numart_nr.lower() == "i":
             # See comment for `special_roman` above.
-            if prev_numart is None or prev_numart.attrib["nr"].lower() != "h" or special_roman:
+            if (
+                prev_numart is None
+                or prev_numart.attrib["nr"].lower() != "h"
+                or special_roman
+            ):
                 numart_type = "roman"
             else:
                 numart_type = "alphabet"
@@ -2635,7 +2666,7 @@ def parse_table(parser):
     parser.consume('<table width="100%">')
     parser.consume("<tbody>")
 
-    parent =  None
+    parent = None
     if parser.subart is not None:
         parent = parser.subart
     elif parser.art is not None:
@@ -2715,16 +2746,12 @@ def parse_td(parser):
 
         if parser.line == "<b>":
             parser.consume("<b>")
-            table_nr_title, table_title = get_nr_and_name(
-                parser.collect_until("</b>")
-            )
+            table_nr_title, table_title = get_nr_and_name(parser.collect_until("</b>"))
             parser.consume("</b>")
             parser.td.attrib["header-style"] = "b"
         elif parser.line == "<i>":
             parser.consume("<i>")
-            table_nr_title, table_title = get_nr_and_name(
-                parser.collect_until("</i>")
-            )
+            table_nr_title, table_title = get_nr_and_name(parser.collect_until("</i>"))
             parser.consume("</i>")
             parser.td.attrib["header-style"] = "i"
 
@@ -2745,7 +2772,9 @@ def parse_td(parser):
             # NOTE: The styling gets re-applied in rendering mechanism.
             if parser.line == "<small>":
                 extra_content = parser.collect_until("</small>")
-                extra_content = extra_content.replace("<small> <sub> ", "").replace("</sub>", "")
+                extra_content = extra_content.replace("<small> <sub> ", "").replace(
+                    "</sub>", ""
+                )
                 table_title += extra_content
                 parser.consume("</small>")
 

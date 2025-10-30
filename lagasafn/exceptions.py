@@ -1,6 +1,7 @@
 class LawException(Exception):
     pass
 
+
 class BillException(Exception):
     pass
 

@@ -9,7 +9,7 @@ from lxml.builder import E
 from lxml.etree import _Element
 
 
-class TargetGroup():
+class TargetGroup:
     # The `<inner>` tag that will contain the `<art>` or `<chapter>` or
     # whatever's being added to the actual law.
     inner: _Element | None
@@ -18,7 +18,7 @@ class TargetGroup():
         self.inner = None
 
 
-class InnerTargetGroup():
+class InnerTargetGroup:
     chapter: _Element | None
     art: _Element | None
     subart: _Element | None
@@ -68,6 +68,7 @@ class IntentTracker:
     # running `get_all_text` on the XML over and over again.
     cached_current_index: int
     cached_current_text: str
+
     @property
     def current_text(self) -> str:
         if self.cached_current_index != self.lines.index:
@@ -164,7 +165,9 @@ class IntentTracker:
         return "%s/%d" % (self.affected_law_nr, self.affected_law_year)
 
     def affected_law(self) -> Law:
-        codex_version = self.original.getroottree().getroot().attrib["applied-to-codex-version"]
+        codex_version = (
+            self.original.getroottree().getroot().attrib["applied-to-codex-version"]
+        )
         return Law(self.affected_law_identifier(), codex_version)
 
     def get_codex_version(self):
@@ -236,13 +239,14 @@ class IntentTracker:
             enactment.attrib["extra"] = extra
 
         if implemented_timing is not None:
-            enactment.attrib["implemented-timing"] = implemented_timing.strftime("%Y-%m-%d")
+            enactment.attrib["implemented-timing"] = implemented_timing.strftime(
+                "%Y-%m-%d"
+            )
 
         if len(implemented_timing_custom) > 0:
             enactment.attrib["implemented-timing-custom"] = implemented_timing_custom
 
         return enactment
-
 
     def make_appendix_intent(self, raw_nr) -> _Element:
         """
@@ -259,7 +263,6 @@ class IntentTracker:
         )
 
         return intent
-
 
     def make_intent(self, action: str, address: str, node_hint: str = "") -> _Element:
         law = Law(self.affected_law_identifier(), self.get_codex_version())
@@ -285,10 +288,7 @@ class IntentTracker:
             #  - A-stafl. 7. gr. laga nr. 68/2024:
             #    https://www.stjornartidindi.is/Advert.aspx?RecordID=559fef86-a7a2-4285-afd3-8f94a271e55f
             parent = self.intents.getparent()
-            while (
-                parent is not None
-                and parent.tag == "intents"
-            ):
+            while parent is not None and parent.tag == "intents":
                 if "common-address" in parent.attrib:
                     address = "%s %s" % (address, parent.attrib["common-address"])
                 parent = parent.getparent()
@@ -333,7 +333,7 @@ class IntentTracker:
                 "action-law-nr": self.affected_law_nr,
                 "action-law-year": str(self.affected_law_year),
             },
-            E("address", {"xpath": xpath }, address),
+            E("address", {"xpath": xpath}, address),
             E("existing", *existing),
         )
 
