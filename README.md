@@ -100,3 +100,14 @@ and you're done. You can push the new patch file to the repo, or create a pull r
 # License
 
 See the document `LICENSE.md`. (It's MIT.)
+
+## Development
+
+### Code formatting (Black via pre-commit)
+
+Install dev dependencies and enable the pre-commit hook to auto-format Python files with Black on commit:
+
+```bash
+pip install -r requirements-dev.txt
+pre-commit install
+```
