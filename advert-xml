@@ -13,6 +13,7 @@ from lagasafn.models import LawManager
 from lagasafn.models.advert import AdvertManager
 
 
+
 def help():
     ctx = click.get_current_context()
     click.echo(ctx.get_help())
