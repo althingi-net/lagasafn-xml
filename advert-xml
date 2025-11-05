@@ -2,11 +2,16 @@
 import click
 from datetime import datetime
 from datetime import timedelta
-from lagasafn.advert.commands import convert_adverts
-from lagasafn.advert.commands import create_index
+from lagasafn.advert.commands import (
+    apply_intents_from_advert,
+    convert_adverts,
+    create_index,
+)
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
+from lagasafn.models.advert import AdvertManager
+
 
 
 def help():
@@ -32,12 +37,22 @@ def help():
     help="Converts local adverts into their corresponding XML files.",
 )
 @click.option("--make-index", is_flag=True, help="Create index of adverts.")
+@click.option(
+    "--apply", is_flag=True, help="Apply intents from adverts to their target laws."
+)
+@click.option(
+    "--codex-version",
+    default=None,
+    help="Codex version to use when applying intents or comparing (e.g., '156a'). Defaults to CURRENT_PARLIAMENT_VERSION.",
+)
 @click.argument("advert_identifiers", nargs=-1)
 def main(
     full: bool,
     retrieve: bool,
     convert: bool,
     make_index: bool,
+    apply: bool,
+    codex_version: str | None,
     advert_identifiers: tuple,
 ):
 
@@ -45,7 +60,7 @@ def main(
     identifiers: list[str] = [i for i in advert_identifiers]
 
     # Make sure that the parameters make sense.
-    if not any([full, retrieve, convert, make_index]):
+    if not any([full, retrieve, convert, make_index, apply]):
         help()
 
     # Expand the special "--full" option.
@@ -66,6 +81,17 @@ def main(
         convert_adverts(identifiers)
     if make_index:
         create_index()
+    if apply:
+        if identifiers:
+            # Apply intents from specific adverts
+            for advert_id in identifiers:
+                apply_intents_from_advert(advert_id)
+        else:
+            # Apply intents from all adverts for the selected codex version
+            codex_version = codex_version or CURRENT_PARLIAMENT_VERSION
+            index = AdvertManager.index(codex_version)
+            for advert in index.adverts:
+                apply_intents_from_advert(advert.identifier)
 
 
 if __name__ == "__main__":

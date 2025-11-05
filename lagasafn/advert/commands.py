@@ -6,9 +6,10 @@ from lagasafn.constants import ADVERT_ORIGINAL_DIR
 from lagasafn.constants import ADVERT_ORIGINAL_FILENAME
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.advert.parsers import parse_advert
-from lagasafn.exceptions import AdvertException
-from lagasafn.exceptions import IntentParsingException
+from lagasafn.advert.intent.applier import apply_intents_to_law
+from lagasafn.exceptions import AdvertException, IntentParsingException
 from lagasafn.exceptions import ReferenceParsingException
+from lagasafn.models.advert import Advert
 from lagasafn.settings import CHAOSTEMPLE_URL
 from lagasafn.utils import write_xml
 from lxml import etree
@@ -116,3 +117,67 @@ def create_index():
     write_xml(advert_index, ADVERT_INDEX_FILENAME)
 
     print(" done")
+
+
+def apply_intents_from_advert(advert_identifier: str):
+    """
+    Apply all intents from a specific advert to their target laws.
+
+    Args:
+        advert_identifier: Identifier of the advert to process
+    """
+
+    # Get the advert
+    try:
+        advert = Advert(advert_identifier)
+    except AdvertException:
+        print(f"Advert {advert_identifier} not found")
+        return False
+
+    # Find all intents in the advert
+    xml = advert.xml()
+    intents = xml.findall(".//intent")
+    if not intents:
+        print(f"No intents found in advert {advert_identifier}")
+        return False
+
+    # Get the codex version from the advert XML
+    codex_version = xml.get("applied-to-codex-version")
+
+    # Find enact intent using next()
+    enact_intent = next(
+        (intent for intent in intents if intent.get("action") == "enact"), None
+    )
+
+    # Group intents by target law
+    law_intents = {}
+    for intent in intents:
+        action = intent.get("action")
+        if action == "repeal":
+            # For repeal actions, use action-identifier directly as law identifier
+            law_identifier = intent.get("action-identifier")
+            if law_identifier:
+                if law_identifier not in law_intents:
+                    law_intents[law_identifier] = []
+                law_intents[law_identifier].append(intent)
+        elif action == "enact":
+            # Skip enact intents here - they'll be added to all law lists below
+            pass
+        else:
+            # For other actions, use action-law-nr and action-law-year
+            law_nr = intent.get("action-law-nr")
+            law_year = intent.get("action-law-year")
+            if law_nr and law_year:
+                law_identifier = f"{law_nr}/{law_year}"
+                if law_identifier not in law_intents:
+                    law_intents[law_identifier] = []
+                law_intents[law_identifier].append(intent)
+
+    # Apply all intents for each law, then save once
+    for law_identifier, law_intent_list in law_intents.items():
+        apply_intents_to_law(
+            law_identifier,
+            law_intent_list + [enact_intent],
+            advert_identifier,
+            codex_version,
+        )
