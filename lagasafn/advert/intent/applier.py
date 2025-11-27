@@ -43,7 +43,9 @@ def apply_intents_to_law(
     for intent in intents:
         action = intent.get("action")
         action_xpath = intent.get("action-xpath")
-        print(f"Applying {action} intent to {law_identifier}")
+        print(
+            f"Applying advert art {intent.getparent().getparent().get("nr")}. {action} intent to {law_identifier}"
+        )
         if action == "add":
             _apply_add_intent(intent, law_xml, action_xpath)
         elif action == "add_text":
@@ -63,7 +65,7 @@ def apply_intents_to_law(
         elif action == "replace":
             _apply_replace_intent(intent, law_xml, action_xpath)
         elif action == "replace_text":
-            _apply_replace_text_intent(intent, law_xml, action_xpath, advert_identifier)
+            _apply_replace_text_intent(intent, law_xml, action_xpath)
         elif action == "repeal":
             _apply_repeal_intent(intent, law_xml, advert_identifier)
         else:
@@ -424,25 +426,48 @@ def _apply_delete_text_intent(intent_xml, law_xml, action_xpath):
 
 
 def _apply_replace_intent(intent_xml, law_xml, action_xpath):
-    """Apply a 'replace' intent to the law XML."""
+    """Apply a 'replace' intent to the law XML.
+
+    Replaces the target element(s) with content from the <inner> element.
+    The target element is removed and replaced with the element(s) from <inner>.
+    """
     targets = law_xml.xpath(action_xpath)
     if not targets:
         print(f"No targets found for xpath: {action_xpath}")
         return
 
-    # Get the text to replace and the replacement text
-    text_from_elem = intent_xml.find("text-from")
-    text_to_elem = intent_xml.find("text-to")
+    # Get the replacement content from the intent's <inner> element
+    inner_elem = intent_xml.find("inner")
+    if inner_elem is None:
+        print("No inner element found for replace intent")
+        return
 
-    if text_from_elem is not None and text_to_elem is not None:
-        old_text = text_from_elem.text or ""
-        new_text = text_to_elem.text or ""
+    # Get all child elements from inner
+    inner_content = inner_elem.getchildren()
+    if not inner_content:
+        print("No content found in inner element for replace intent")
+        return
 
-        for target in targets:
-            if target.text and old_text in target.text:
-                target.text = target.text.replace(old_text, new_text)
-            elif target.text is None:
-                target.text = new_text
+    for target in targets:
+        # Get the parent of the target element
+        parent = target.getparent()
+        if parent is None:
+            print(f"Cannot replace: target element has no parent")
+            continue
+
+        # Find the index of the target in its parent
+        target_index = list(parent).index(target)
+
+        # Remove the target element
+        parent.remove(target)
+
+        # Insert each child from inner at the target's position
+        # Insert in reverse order so they end up in the correct order
+        for i, child in enumerate(inner_content):
+            # Create a deep copy to avoid moving the element
+            new_child = deepcopy(child)
+            # Insert at target_index + i to maintain order
+            parent.insert(target_index + i, new_child)
 
 
 def _apply_replace_text_intent(intent_xml, law_xml, action_xpath):
@@ -571,10 +596,6 @@ def _diff_article_with_next_version(
                 diff_element = chapter
                 element_type = "chapter"
                 element_nr = chapter.get("nr")
-
-    print(
-        f"  DEBUG: Diff element = {diff_element}, type = {element_type}, nr = {element_nr}"
-    )
 
     if diff_element is None:
         # No article or chapter found
