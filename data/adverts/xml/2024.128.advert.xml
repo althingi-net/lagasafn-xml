@@ -34,7 +34,8 @@
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="55" affected-law-year="1991">1. málsl. 1. mgr. ákvæðis til bráðabirgða IV í lögunum orðast svo: Að loknum alþingiskosningum 30. nóvember 2024 skal kjósa framtíðarnefnd sem starfar til 31. desember 2025.</original>
+    <original affected-law-nr="55" affected-law-year="1991">1. málsl. 1. mgr. ákvæðis til bráðabirgða IV í lögunum orðast svo: Að loknum alþingiskosningum 30. nóvember 2024 skal kjósa framtíðarnefnd sem starfar til 31. desember 2025.<br/>
+    </original>
     <intents>
       <intent action="replace" action-xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="55" action-law-year="1991">
         <address xpath="//art[contains(concat(',', @nr, ','), ',IV,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. ákvæðis til bráðabirgða IV</address>
@@ -48,7 +49,8 @@
     </intents>
   </advert-art>
   <advert-art nr="3">
-    <original affected-law-nr="55" affected-law-year="1991">Lög þessi öðlast þegar gildi.</original>
+    <original affected-law-nr="55" affected-law-year="1991">Lög þessi öðlast þegar gildi.<br/>
+    </original>
     <intents>
       <intent action="enact" action-xpath="" timing="2024-11-28" timing-type="immediate"/>
     </intents>

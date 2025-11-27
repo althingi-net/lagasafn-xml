@@ -5,7 +5,8 @@
   </affected-laws>
   <description>Lög um breytingu á lögum um útlendinga, nr. 80/2016 (sameiginleg vernd).</description>
   <advert-art nr="1">
-    <original affected-law-nr="80" affected-law-year="2016">Í stað orðsins „þrjú“ í 1. málsl. 3. mgr. og 1. og 2. málsl. 4. mgr. 44. gr. laganna kemur: fimm.</original>
+    <original affected-law-nr="80" affected-law-year="2016">Í stað orðsins „þrjú“ í 1. málsl. 3. mgr. og 1. og 2. málsl. 4. mgr. 44. gr. laganna kemur: fimm.<br/>
+    </original>
     <intents>
       <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='4' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='4' and @chapter-type='kafli']/art[@nr='44']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="80" action-law-year="2016">
         <address xpath="//art[contains(concat(',', @nr, ','), ',44,')]//subart[@nr='4']//sen[@nr='2' or @nr='1'] | //art[contains(concat(',', @nr, ','), ',44,')]//subart[@nr='3']//sen[@nr='1']">1. málsl. 3. mgr. og 1. og 2. málsl. 4. mgr. 44. gr.</address>
@@ -20,7 +21,8 @@
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="80" affected-law-year="2016">Lög þessi öðlast þegar gildi.</original>
+    <original affected-law-nr="80" affected-law-year="2016">Lög þessi öðlast þegar gildi.<br/>
+    </original>
     <intents>
       <intent action="enact" action-xpath="" timing="2024-11-26" timing-type="immediate"/>
     </intents>

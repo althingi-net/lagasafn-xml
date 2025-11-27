@@ -5,7 +5,8 @@
   </affected-laws>
   <description>Lög um breytingu á lögum um vernd mikilvægra innviða á Reykjanesskaga, nr. 84/2023 (framlenging).</description>
   <advert-art nr="1">
-    <original affected-law-nr="84" affected-law-year="2023">Í stað orðanna „Umhverfisstofnun, Náttúrufræðistofnun Íslands“ í 2. mgr. 3. gr. laganna kemur: Umhverfis- og orkustofnun, Náttúruverndarstofnun, Náttúrufræðistofnun.</original>
+    <original affected-law-nr="84" affected-law-year="2023">Í stað orðanna „Umhverfisstofnun, Náttúrufræðistofnun Íslands“ í 2. mgr. 3. gr. laganna kemur: Umhverfis- og orkustofnun, Náttúruverndarstofnun, Náttúrufræðistofnun.<br/>
+    </original>
     <intents>
       <intent action="replace_text" action-xpath="art[@nr='3']/subart[@nr='2']" action-law-nr="84" action-law-year="2023">
         <address xpath="//art[contains(concat(',', @nr, ','), ',3,')]//subart[@nr='2']">2. mgr. 3. gr.</address>
@@ -22,7 +23,8 @@
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="84" affected-law-year="2023">Í stað dagsetningarinnar „1. janúar 2025“ í 2. málsl. 1. mgr. 5. gr. laganna kemur: 1. janúar 2026.</original>
+    <original affected-law-nr="84" affected-law-year="2023">Í stað dagsetningarinnar „1. janúar 2025“ í 2. málsl. 1. mgr. 5. gr. laganna kemur: 1. janúar 2026.<br/>
+    </original>
     <intents>
       <intent action="replace_text" action-xpath="art[@nr='5']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="84" action-law-year="2023">
         <address xpath="//art[contains(concat(',', @nr, ','), ',5,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 5. gr.</address>
@@ -35,7 +37,8 @@
     </intents>
   </advert-art>
   <advert-art nr="3">
-    <original affected-law-nr="84" affected-law-year="2023">Lög þessi öðlast gildi 1. janúar 2025.</original>
+    <original affected-law-nr="84" affected-law-year="2023">Lög þessi öðlast gildi 1. janúar 2025.<br/>
+    </original>
     <intents>
       <intent action="enact" action-xpath="" timing="2025-01-01" timing-type="immediate"/>
     </intents>

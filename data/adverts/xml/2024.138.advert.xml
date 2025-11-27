@@ -36,7 +36,8 @@
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="88" affected-law-year="2024">Við 1. málsl. ákvæðis til bráðabirgða I í lögunum bætist: til fjögurra ára.</original>
+    <original affected-law-nr="88" affected-law-year="2024">Við 1. málsl. ákvæðis til bráðabirgða I í lögunum bætist: til fjögurra ára.<br/>
+    </original>
     <intents>
       <intent action="add_text" action-xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="88" action-law-year="2024">
         <address xpath="//art[contains(concat(',', @nr, ','), ',I,')]//sen[@nr='1']">1. málsl. ákvæðis til bráðabirgða I</address>
@@ -140,7 +141,8 @@
     </intents>
   </advert-art>
   <advert-art nr="5">
-    <original affected-law-nr="88" affected-law-year="2024">Lög þessi öðlast þegar gildi.</original>
+    <original affected-law-nr="88" affected-law-year="2024">Lög þessi öðlast þegar gildi.<br/>
+    </original>
     <intents>
       <intent action="enact" action-xpath="" timing="2024-11-28" timing-type="immediate"/>
     </intents>
