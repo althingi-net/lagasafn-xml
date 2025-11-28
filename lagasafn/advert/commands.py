@@ -173,6 +173,7 @@ def apply_intents_from_advert(advert_identifier: str):
                     law_intents[law_identifier] = []
                 law_intents[law_identifier].append(intent)
 
+    print(f"Applying law {advert_identifier}")
     # Apply all intents for each law, then save once
     for law_identifier, law_intent_list in law_intents.items():
         apply_intents_to_law(
