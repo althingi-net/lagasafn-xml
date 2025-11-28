@@ -252,6 +252,27 @@ class LawManager:
         return result
 
     @staticmethod
+    def get_next_codex_version(codex_version: str) -> str | None:
+        """
+        Get the next codex version after the given one.
+
+        Args:
+            codex_version: The codex version to get the next version for
+
+        Returns:
+            The next codex version, or None if there is no next version
+        """
+        codex_versions = LawManager.codex_versions()
+        try:
+            current_index = codex_versions.index(codex_version)
+            if current_index < len(codex_versions) - 1:
+                return codex_versions[current_index + 1]
+        except ValueError:
+            # codex_version not in list
+            pass
+        return None
+
+    @staticmethod
     def content_search(search_string: str, codex_version: str):
 
         results = []
