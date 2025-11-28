@@ -41,6 +41,17 @@ from lxml.etree import _Element
 from openai import OpenAI
 
 
+def normalize_punctuation(text_from: str, text_to: str) -> tuple[str, str]:
+    """
+    Normalize punctuation between text-from and text-to
+    """
+    if not text_from.endswith(".") and text_to.endswith("."):
+        # text-from doesn't have period but text-to does - remove period from text-to
+        text_to = text_to.rstrip(".")
+
+    return text_from, text_to
+
+
 def parse_intents_by_ai(advert_tracker: AdvertTracker, original: _Element):
     intents = []
 
@@ -796,6 +807,8 @@ def parse_i_stad_ordsins_x_tvivegis_i_x_og_einu_sinni_i_x_kemur(tracker: IntentT
 
     text_from, address_1, address_2, text_to = match.groups()
 
+    text_from, text_to = normalize_punctuation(text_from, text_to)
+
     intent_1 = tracker.make_intent("replace_text", address_1)
     intent_1.append(E("text-from", text_from))
     intent_1.append(E("text-to", text_to))
@@ -883,6 +896,8 @@ def parse_i_stad_x_kemur(tracker: IntentTracker):
 
     address = ""
     _, _, _, text_from, _, instance_num_raw, text_to = match.groups()
+
+    text_from, text_to = normalize_punctuation(text_from, text_to)
 
     intent = tracker.make_intent("replace_text", address)
     intent.append(E("text-from", text_from))
@@ -2188,6 +2203,9 @@ def parse_i_stad_ordanna_x_og_x_i_x_x_thrivegis_i_x_og_tvivegis_i_x_i_logunum_ke
         match.groups()
     )
 
+    text_from_1, text_to = normalize_punctuation(text_from_1, text_to)
+    text_from_2, text_to = normalize_punctuation(text_from_2, text_to)
+
     addresses = [address_1, address_2, address_3, address_4]
     for address in addresses:
         intent = tracker.make_intent("replace_text", address)
@@ -2261,6 +2279,8 @@ def parse_i_stad_x_i_x_kemur(tracker: IntentTracker, text: str = ""):
         match.groups()
     )
 
+    text_from, text_to = normalize_punctuation(text_from, text_to)
+
     intent = tracker.make_intent("replace_text", address)
 
     e_text_from = E("text-from", text_from)
@@ -2287,6 +2307,9 @@ def parse_i_stad_x_i_x_og_x_i_x_kemur(tracker: IntentTracker):
 
     text_from_1, address_1, text_from_2, address_2, text_to = match.groups()
 
+    text_from_1, text_to = normalize_punctuation(text_from_1, text_to)
+    text_from_2, text_to = normalize_punctuation(text_from_2, text_to)
+
     intent_1 = tracker.make_intent("replace_text", address_1)
     intent_1.append(E("text-from", text_from_1))
     intent_1.append(E("text-to", text_to))
@@ -2312,6 +2335,9 @@ def parse_i_stad_hlutfallstolunnar_x_og_artalsins_x_tvivegis_i_x_i_logunum_kemur
         return False
 
     text_from_1, text_from_2, address, text_to_1, text_to_2 = match.groups()
+
+    text_from_1, text_to_1 = normalize_punctuation(text_from_1, text_to_1)
+    text_from_2, text_to_2 = normalize_punctuation(text_from_2, text_to_2)
 
     intent_1 = tracker.make_intent("replace_text", address)
     intent_1.append(E("text-from", text_from_1))
