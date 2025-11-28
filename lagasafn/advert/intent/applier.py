@@ -10,6 +10,7 @@ from lagasafn.exceptions import AdvertException
 from lagasafn.models.law import Law, LawManager
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import write_xml
+import roman
 
 # Initialize colorama for cross-platform color support
 init(autoreset=True)
@@ -39,12 +40,11 @@ def apply_intents_to_law(
 
     law = Law(law_identifier, codex_version)
     law_xml = law.xml().getroot()
-
     for intent in intents:
         action = intent.get("action")
         action_xpath = intent.get("action-xpath")
         print(
-            f"Applying advert art {intent.getparent().getparent().get("nr")}. {action} intent to {law_identifier}"
+            f"Applying advert {intent.getparent().getparent().get("nr")}. {action} from {advert_identifier} to {law_identifier}"
         )
         if action == "add":
             _apply_add_intent(intent, law_xml, action_xpath)
@@ -54,6 +54,8 @@ def apply_intents_to_law(
             _apply_append_intent(intent, law_xml, action_xpath)
         elif action == "append_text":
             _apply_append_text_intent(intent, law_xml, action_xpath)
+        elif action == "prepend":
+            _apply_prepend_intent(intent, law_xml, action_xpath)
         elif action == "prepend_text":
             _apply_prepend_text_intent(intent, law_xml, action_xpath)
         elif action == "edit":
@@ -66,18 +68,25 @@ def apply_intents_to_law(
             _apply_replace_intent(intent, law_xml, action_xpath)
         elif action == "replace_text":
             _apply_replace_text_intent(intent, law_xml, action_xpath)
+        elif action == "insert":
+            _apply_insert_intent(intent, law_xml, action_xpath)
         elif action == "repeal":
             _apply_repeal_intent(intent, law_xml, advert_identifier)
-        else:
+        elif action == "enact":
             print(f"Unknown action: {action}")
             continue
+        else:
+            raise AdvertException(f"Unknown action: {action}")
 
         # Diff the article with the next codex version after applying the intent
         _diff_article_with_next_version(
             law_identifier, law_xml, action_xpath, codex_version
         )
 
-    applied_dir = f"{XML_BASE_DIR}/applied/{codex_version}"
+    # After all intents have been applied we renumber the law
+    renumber_law(law_xml)
+
+    applied_dir = f"{XML_BASE_DIR}/{codex_version}/applied"
     makedirs(applied_dir, exist_ok=True)
 
     applied_filename = (
@@ -102,7 +111,10 @@ def _apply_add_intent(intent_xml, law_xml, action_xpath):
     """
 
     # Find the target location
-    targets = law_xml.xpath(action_xpath)
+    if action_xpath:
+        targets = law_xml.xpath(action_xpath)
+    else:
+        targets = [law_xml]
     if not targets:
         print(f"No targets found for xpath: {action_xpath}")
         return
@@ -131,6 +143,43 @@ def _apply_add_intent(intent_xml, law_xml, action_xpath):
         for child in inner_content:
             # Create a deep copy to avoid moving the element
             new_child = deepcopy(child)
+
+            # If adding an <art> to a <chapter>, and the art has direct <paragraph>
+            # children (not wrapped in <subart> or <numart>), wrap them in <subart nr="1">
+            if (
+                target_tag == "chapter"
+                and new_child.tag == "art"
+                and new_child.find("subart") is None
+                and new_child.find("numart") is None
+                and new_child.find("art-chapter") is None
+            ):
+                # Find all direct paragraph children (not nested in subart/numart)
+                paragraphs_to_wrap = []
+                for elem in list(new_child):
+                    if elem.tag == "paragraph" and elem.getparent() == new_child:
+                        paragraphs_to_wrap.append(elem)
+
+                # If we found paragraphs to wrap, create a subart and move them
+                if paragraphs_to_wrap:
+                    # Find where to insert the subart (after nr-title and name, before footnotes)
+                    # We'll insert it right before the first paragraph we're wrapping
+                    first_para_idx = None
+                    for i, elem in enumerate(new_child):
+                        if elem in paragraphs_to_wrap:
+                            first_para_idx = i
+                            break
+
+                    if first_para_idx is not None:
+                        # Create subart element
+                        subart = E.subart(nr="1")
+                        # Move all paragraphs into subart (in document order)
+                        for para in paragraphs_to_wrap:
+                            new_child.remove(para)
+                            subart.append(para)
+
+                        # Insert subart at the position where the first paragraph was
+                        # Since we removed all paragraphs, the index is still valid
+                        new_child.insert(first_para_idx, subart)
 
             # Find first element that comes after the main content area
             insert_position = None
@@ -323,6 +372,42 @@ def _apply_append_intent(intent_xml, law_xml, action_xpath):
             parent.insert(target_index + 1, new_child)
 
 
+def _apply_prepend_intent(intent_xml, law_xml, action_xpath):
+    """Apply a 'prepend' intent to the law XML."""
+
+    # Find the target location
+    targets = law_xml.xpath(action_xpath)
+    if not targets:
+        print(f"No targets found for xpath: {action_xpath}")
+        return
+
+    # Get the content to prepend from the intent's <inner> element
+    inner_elem = intent_xml.find("inner")
+    if inner_elem is None:
+        print("No inner element found for prepend intent")
+        return
+    # Get all child elements from inner
+    inner_content = inner_elem.getchildren()
+
+    for target in targets:
+        # Get the parent of the target element
+        parent = target.getparent()
+        if parent is None:
+            print(f"Cannot prepend: target element has no parent")
+            continue
+
+        # Find the index of the target in its parent
+        target_index = list(parent).index(target)
+
+        # For each child element in inner, prepend it before the target
+        # Insert in reverse order so they end up in the correct order
+        for child in reversed(inner_content):
+            # Create a deep copy to avoid moving the element
+            new_child = deepcopy(child)
+            # Insert before the target (at target_index)
+            parent.insert(target_index, new_child)
+
+
 def _apply_repeal_intent(intent_xml, law_xml, advert_identifier=None):
     """Apply a 'repeal' intent to the law XML."""
 
@@ -433,41 +518,153 @@ def _apply_replace_intent(intent_xml, law_xml, action_xpath):
     """
     targets = law_xml.xpath(action_xpath)
     if not targets:
-        print(f"No targets found for xpath: {action_xpath}")
-        return
+        raise AdvertException(f"No targets found for xpath: {action_xpath}")
 
-    # Get the replacement content from the intent's <inner> element
     inner_elem = intent_xml.find("inner")
     if inner_elem is None:
-        print("No inner element found for replace intent")
-        return
+        raise AdvertException("No inner element found for replace intent")
 
-    # Get all child elements from inner
     inner_content = inner_elem.getchildren()
     if not inner_content:
-        print("No content found in inner element for replace intent")
+        raise AdvertException("No content found in inner element for replace intent")
+
+    # Try handlers in order - each returns early if it can't handle the case
+    if _replace_art_with_chapter(targets, inner_content, law_xml):
+        return
+    if _replace_multi_target_same_parent(targets, inner_content):
         return
 
+    # Default case: single target or multiple targets with different parents
+    _replace_single_or_multi_target_different_parents(targets, inner_content)
+
+
+def _apply_insert_intent(intent_xml, law_xml, action_xpath):
+    """Apply an 'insert' intent by inserting content before the action target."""
+
+    if not action_xpath:
+        print("No action xpath - nothing to insert")
+        return
+
+    targets = law_xml.xpath(action_xpath)
+    inner_elem = intent_xml.find("inner")
+    inner_content = inner_elem.getchildren()
+
+    insert_tag = inner_content[0].tag
+    anchor_node = _resolve_insert_anchor(targets, insert_tag)
+    if anchor_node is None:
+        raise AdvertException(
+            f"Cannot insert: no ancestor with tag '{insert_tag}' found for xpath '{action_xpath}'"
+        )
+
+    parent = anchor_node.getparent()
+
+    anchor_index = list(parent).index(anchor_node)
+
+    for offset, child in enumerate(inner_content):
+        parent.insert(anchor_index + offset, deepcopy(child))
+
+
+def _resolve_insert_anchor(targets, expected_tag):
+    """Find the first target or ancestor that matches the expected tag."""
     for target in targets:
-        # Get the parent of the target element
+        anchor = _find_ancestor_with_tag(target, expected_tag)
+        if anchor is not None:
+            return anchor
+    return None
+
+
+def _find_ancestor_with_tag(element, tag_name):
+    """Ascend the tree until an ancestor with the requested tag is found."""
+    current = element
+    while current is not None:
+        if current.tag == tag_name:
+            return current
+        current = current.getparent()
+    return None
+
+
+def _replace_art_with_chapter(targets, inner_content, law_xml):
+    """Handle special case: replacing article(s) with chapter at law root level.
+
+    Returns True if handled, False otherwise.
+    """
+    # Check if this is the art-to-chapter replacement case
+    if targets[0].tag != "art" or inner_content[0].tag != "chapter":
+        return False
+
+    # Remove all target articles
+    for target in targets:
         parent = target.getparent()
-        if parent is None:
-            print(f"Cannot replace: target element has no parent")
-            continue
+        if parent is not None:
+            parent.remove(target)
 
-        # Find the index of the target in its parent
-        target_index = list(parent).index(target)
+    # Insert chapter at law root level
+    new_chapter = deepcopy(inner_content[0])
 
-        # Remove the target element
+    # Find the correct position to insert a chapter
+    existing_chapters = law_xml.findall("chapter")
+    if existing_chapters:
+        # Insert after the last chapter
+        last_chapter = existing_chapters[-1]
+        insert_index = list(law_xml).index(last_chapter) + 1
+    else:
+        # No chapters exist, insert after name, num-and-date, minister-clause
+        insert_index = 0
+        for i, child in enumerate(law_xml):
+            if child.tag in ["name", "num-and-date", "minister-clause"]:
+                insert_index = i + 1
+
+    law_xml.insert(insert_index, new_chapter)
+    return True
+
+
+def _replace_multi_target_same_parent(targets, inner_content):
+    """Replace multiple targets that share the same parent.
+
+    Returns True if handled, False otherwise.
+    """
+    # Check if this is the multi-target same parent case
+    if len(targets) <= 1:
+        return False
+
+    first_target = targets[0]
+    parent = first_target.getparent()
+    if parent is None:
+        return False
+
+    if not all(t.getparent() == parent for t in targets):
+        return False
+
+    # Capture index before removing anything
+    first_target_index = list(parent).index(first_target)
+
+    # Remove all targets in reverse order to avoid index shifting
+    target_indices = [(list(parent).index(t), t) for t in targets]
+    target_indices.sort(reverse=True)  # Highest index first
+    for _, target in target_indices:
         parent.remove(target)
 
-        # Insert each child from inner at the target's position
-        # Insert in reverse order so they end up in the correct order
+    # Insert replacement content at the first target's original position
+    for i, child in enumerate(inner_content):
+        new_child = deepcopy(child)
+        parent.insert(first_target_index + i, new_child)
+    return True
+
+
+def _replace_single_or_multi_target_different_parents(targets, inner_content):
+    """Replace single target or multiple targets with different parents."""
+    for target in targets:
+        target_parent = target.getparent()
+        if target_parent is None:
+            raise AdvertException(f"Cannot replace: target element has no parent")
+
+        target_index = list(target_parent).index(target)
+        target_parent.remove(target)
+
+        # Insert replacement content at target's position
         for i, child in enumerate(inner_content):
-            # Create a deep copy to avoid moving the element
             new_child = deepcopy(child)
-            # Insert at target_index + i to maintain order
-            parent.insert(target_index + i, new_child)
+            target_parent.insert(target_index + i, new_child)
 
 
 def _apply_replace_text_intent(intent_xml, law_xml, action_xpath):
@@ -529,6 +726,89 @@ def _find_parent_chapter(target_element):
             return current
         current = current.getparent()
     return None
+
+
+LATIN_ALPHABET = [chr(i) for i in range(ord("a"), ord("z") + 1)]
+
+
+def renumber_law(law_xml):
+    """
+    Renumber elements in a law document.
+    """
+
+    for tag in ["subart", "paragraph", "sen"]:
+        _renumber_numeric_sequences(law_xml, tag)
+    _renumber_all_numarts(law_xml)
+
+
+def _renumber_numeric_sequences(law_xml, tag_name):
+    parents = {
+        elem.getparent()
+        for elem in law_xml.xpath(f".//{tag_name}")
+        if elem.getparent() is not None
+    }
+
+    for parent in parents:
+        _renumber_numeric_children(parent, tag_name)
+
+
+def _renumber_numeric_children(parent, tag_name):
+    children = [child for child in parent if child.tag == tag_name]
+    if not children:
+        return
+
+    for idx, child in enumerate(children, start=1):
+        child.set("nr", str(idx))
+
+
+def _renumber_all_numarts(law_xml):
+    parents = {
+        elem.getparent()
+        for elem in law_xml.xpath(".//numart")
+        if elem.getparent() is not None
+    }
+
+    for parent in parents:
+        _renumber_numart_children(parent)
+
+
+def _renumber_numart_children(parent):
+    children = [child for child in parent if child.tag == "numart"]
+    if not children:
+        return
+
+    nr_type = children[0].get("nr-type", "numeric").lower()
+    lowercase = children[0].get("nr", "").islower()
+
+    for idx, child in enumerate(children, start=1):
+        new_value = _format_nr_value(idx, nr_type, lowercase)
+        child.set("nr", new_value)
+
+        nr_title = child.find("nr-title")
+        if nr_title is not None:
+            nr_title.text = f"{new_value}."
+
+
+def _format_nr_value(index, nr_type, lowercase):
+    if nr_type == "roman":
+        roman_value = roman.toRoman(index)
+        return roman_value.lower() if lowercase else roman_value
+    if nr_type == "alphabet":
+        return _alphabet_value(index, lowercase)
+    return str(index)
+
+
+def _alphabet_value(index, lowercase):
+    base = len(LATIN_ALPHABET)
+    number = index
+    letters = []
+
+    while number > 0:
+        number, remainder = divmod(number - 1, base)
+        letters.append(LATIN_ALPHABET[remainder])
+
+    value = "".join(reversed(letters))
+    return value if lowercase else value.upper()
 
 
 def _extract_element_xml(element):
