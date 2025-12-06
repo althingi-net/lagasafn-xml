@@ -24,4 +24,4 @@ openai
 python-dateutil
 dateparser
 xmlschema
-urllib3==2.5.0  # Temporary. Fixes a dependecy on an insecure version. Remove when version >= 2.5.0 gets installed instead of 2.4.0.
+urllib3==2.6.0  # Temporary. Fixes a dependecy on an insecure version. Remove when version >= 2.5.0 gets installed instead of 2.4.0.
