@@ -141,6 +141,18 @@ def api_list(request: HttpRequest):
 
 
 @router.get(
+    "/codex-versions",
+    summary="Returns a list of available codex versions.",
+    operation_id="listCodexVersions",
+)
+def api_codex_versions(request: HttpRequest):
+    """
+    Returns a list of available codex versions
+    """
+    return LawManager.codex_versions()
+
+
+@router.get(
     "/get",
     summary="Returns a single requested law.",
     operation_id="getLaw",
