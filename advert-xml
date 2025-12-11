@@ -13,7 +13,6 @@ from lagasafn.models import LawManager
 from lagasafn.models.advert import AdvertManager
 
 
-
 def help():
     ctx = click.get_current_context()
     click.echo(ctx.get_help())
@@ -87,11 +86,19 @@ def main(
             for advert_id in identifiers:
                 apply_intents_from_advert(advert_id)
         else:
-            # Apply intents from all adverts for the selected codex version
-            codex_version = codex_version or CURRENT_PARLIAMENT_VERSION
-            index = AdvertManager.index(codex_version)
-            for advert in index.adverts:
-                apply_intents_from_advert(advert.identifier)
+            # Apply intents from all adverts
+            if codex_version:
+                # Apply intents from all adverts for the specified codex version
+                codex_versions = [codex_version]
+            else:
+                # Apply intents from all adverts for all codex versions
+                codex_versions = LawManager.codex_versions()
+
+            for codex_version in codex_versions:
+                print(f"Applying adverts for codex version: {codex_version}")
+                index = AdvertManager.index(codex_version)
+                for advert in index.adverts:
+                    apply_intents_from_advert(advert.identifier)
 
 
 if __name__ == "__main__":
