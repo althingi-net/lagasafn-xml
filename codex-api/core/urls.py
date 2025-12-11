@@ -1,3 +1,4 @@
+from advert.api import router as advert_router
 from bill.api import router as bill_router
 from django.urls import path
 from django.urls import include
@@ -10,6 +11,7 @@ from ninja import NinjaAPI
 api = NinjaAPI(title="Lagasafn-XML API", version="0.1.0")
 api.add_router("/bill", bill_router)
 api.add_router("/law", law_router)
+api.add_router("/advert", advert_router)
 
 # FIXME: We want to implement this but we need to make sure that messages can
 # be displayed to the client, before deciding to display them all. Possibly

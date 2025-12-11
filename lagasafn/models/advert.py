@@ -5,10 +5,16 @@ from importlib import import_module
 from lagasafn.constants import ADVERT_FILENAME
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.exceptions import AdvertException
+from lagasafn.utils import xml_text_to_html_text
 from lxml import etree
 from lxml.etree import _Element
 from os.path import isfile
+from pydantic import BaseModel
+from pydantic import Field
 from typing import List
+from typing import Optional
+
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 
 
 class AdvertArticle:
@@ -16,11 +22,11 @@ class AdvertArticle:
     original: str = ""
 
 
-class AdvertEntry:
+class AdvertEntry(BaseModel):
     identifier: str = ""
     nr: int
     year: int
-    published_date: datetime
+    published_date: Optional[datetime] = None
     record_id: str = ""
     description: str = ""
     article_count: int = 0
@@ -28,15 +34,38 @@ class AdvertEntry:
     # We store these as identifiers ("45/2024") instead of separate `nr` and
     # `year` because these are used for lookup, and we'd rather look up by the
     # whole value rather than look up by two values.
-    affected_law_identifiers: List[str] = []
+    affected_law_identifiers: List[str]
 
-    def __init__(self, identifier: str):
-        nr, year = identifier.split("/")
-        self.nr = int(nr)
-        self.year = int(year)
+    def __init__(
+        self,
+        identifier: str = "",
+        nr: int = 0,
+        year: int = 0,
+        published_date: Optional[datetime] = None,
+        record_id: str = "",
+        description: str = "",
+        article_count: int = 0,
+        affected_law_identifiers: List[str] = None,
+    ):
+        # If only identifier is provided, parse it to get nr and year
+        if identifier and not nr and not year:
+            nr_str, year_str = identifier.split("/")
+            nr = int(nr_str)
+            year = int(year_str)
 
-        self.identifier = identifier
-        self.affected_law_identifiers = []
+        if affected_law_identifiers is None:
+            affected_law_identifiers = []
+
+        super().__init__(
+            identifier=identifier,
+            nr=nr,
+            year=year,
+            published_date=published_date,
+            record_id=record_id,
+            description=description,
+            article_count=article_count,
+            affected_law_identifiers=affected_law_identifiers,
+        )
 
     def original_url(self):
         return "https://www.stjornartidindi.is/Advert.aspx?RecordID=%s" % self.record_id
@@ -46,6 +75,11 @@ class Advert(AdvertEntry):
 
     _xml: _Element | None = None
     _articles: List[AdvertArticle] | None = None
+    _xml_text: str = ""
+
+    # HTML that should be displayable in a browser, assuming CSS for styling
+    # and hiding elements that are irrelevant to a human reader.
+    html_text: str = Field(default="", required=True)
 
     def __init__(self, identifier: str):
         super().__init__(identifier)
@@ -57,6 +91,9 @@ class Advert(AdvertEntry):
 
         # Will load the data from XML to object.
         self.xml()
+
+        # Generate HTML text after loading XML
+        self.html_text = self.get_html_text()
 
     def path(self):
         return ADVERT_FILENAME % (self.year, self.nr)
@@ -96,15 +133,45 @@ class Advert(AdvertEntry):
 
         return self._articles
 
+    def xml_text(self) -> str:
+        """
+        Returns the advert in XML text form.
+        """
 
-class AdvertIndexInfo:
-    codex_version: str
-    date_from: datetime
-    date_to: datetime
-    total_count: int
+        # Just return the content if we already have it.
+        if len(self._xml_text) > 0:
+            return self._xml_text
+
+        # Open and load the XML content.
+        with open(self.path()) as f:
+            self._xml_text = f.read()
+
+        return self._xml_text
+
+    def get_html_text(self):
+        """
+        Generates the advert in HTML text form.
+        """
+
+        # Just return the content if we already have it.
+        if len(self.html_text) > 0:
+            return self.html_text
+
+        # Make sure we have the XML.
+        xml_text = self.xml_text()
+
+        # Convert XML to HTML using shared utility function.
+        return xml_text_to_html_text(xml_text)
 
 
-class AdvertIndex:
+class AdvertIndexInfo(BaseModel):
+    codex_version: str = CURRENT_PARLIAMENT_VERSION
+    date_from: datetime = datetime(1970, 1, 1, 0, 0, 0)
+    date_to: datetime = datetime(1970, 1, 1, 0, 0, 0)
+    total_count: int = 0
+
+
+class AdvertIndex(BaseModel):
     info: AdvertIndexInfo = AdvertIndexInfo()
     adverts: List[AdvertEntry] = []
 
@@ -128,15 +195,21 @@ class AdvertManager:
         ):
 
             identifier = "%s/%s" % (entry_xml.attrib["nr"], entry_xml.attrib["year"])
-
-            entry = AdvertEntry(identifier)
-            entry.published_date = isoparse(entry_xml.attrib["published-date"])
-            entry.record_id = entry_xml.attrib["record-id"]
-            entry.description = entry_xml.attrib["description"]
-            entry.article_count = int(entry_xml.attrib["article-count"])
-            for affected_law in entry_xml.xpath("affected-laws/affected-law"):
-                entry.affected_law_identifiers.append(affected_law.text)
+            affected_law_identifiers = [
+                affected_law.text
+                for affected_law in entry_xml.xpath("affected-laws/affected-law")
+            ]
+            entry = AdvertEntry(
+                identifier=identifier,
+                published_date=isoparse(entry_xml.attrib["published-date"]),
+                record_id=entry_xml.attrib["record-id"],
+                description=entry_xml.attrib["description"],
+                article_count=int(entry_xml.attrib["article-count"]),
+                affected_law_identifiers=affected_law_identifiers,
+            )
             adverts.append(entry)
+
+        info.total_count = len(adverts)
 
         index = AdvertIndex()
         index.info = info

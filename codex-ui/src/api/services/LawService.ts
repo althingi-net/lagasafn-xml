@@ -103,6 +103,18 @@ export class LawService {
         });
     }
     /**
+     * Returns a list of available codex versions.
+     * Returns a list of available codex versions
+     * @returns any OK
+     * @throws ApiError
+     */
+    public static listCodexVersions(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/law/codex-versions',
+        });
+    }
+    /**
      * Returns a single requested law.
      * @param identifier
      * @returns Law OK

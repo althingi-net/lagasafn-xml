@@ -26,6 +26,7 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import generate_legal_reference
 from lagasafn.utils import search_xml_doc
 from lagasafn.utils import traditionalize_law_nr
+from lagasafn.utils import xml_text_to_html_text
 from lxml import etree
 from lxml import html
 from lxml.etree import _Element
@@ -512,19 +513,7 @@ class Law(LawEntry):
         # Make sure we have the XML.
         xml_text = self.xml_text()
 
-        # Turn the XML into HTML.
-        # FIXME: This could use some explaining. There is a difference between
-        # XML and HTML, but it's not obvious from reading this.
-        e = re.compile(r"<([a-z\-]+)( ?)([^>]*)\/>")
-        html_text = e.sub(r"<\1\2\3></\1>", xml_text)
-        html_text = html_text.replace(
-            '<?xml version="1.0" encoding="utf-8"?>', ""
-        ).strip()
-        html_text = html_text.replace(
-            "<?xml version='1.0' encoding='utf-8'?>", ""
-        ).strip()
-
-        return html_text
+        return xml_text_to_html_text(xml_text)
 
     def iter_structure(self):
         """
