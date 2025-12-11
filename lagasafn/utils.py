@@ -1088,6 +1088,26 @@ def regex_find(string_value, regex, start=0):
     return start + match.start() if match else -1
 
 
+def xml_text_to_html_text(xml_text: str) -> str:
+    """
+    Converts XML text to HTML text by:
+    - Converting self-closing tags to proper HTML tags
+    - Removing XML declaration
+
+    This is used for displaying XML content in browsers where the XML
+    structure should be rendered as HTML.
+    """
+    # Turn the XML into HTML.
+    # FIXME: This could use some explaining. There is a difference between
+    # XML and HTML, but it's not obvious from reading this.
+    e = re.compile(r"<([a-z\-]+)( ?)([^>]*)\/>")
+    html_text = e.sub(r"<\1\2\3></\1>", xml_text)
+    html_text = html_text.replace('<?xml version="1.0" encoding="utf-8"?>', "").strip()
+    html_text = html_text.replace("<?xml version='1.0' encoding='utf-8'?>", "").strip()
+
+    return html_text
+
+
 def convert_to_text(elements: List[_Element]):
     """
     FIXME: Should be consolidated with `get_all_text` function below.
