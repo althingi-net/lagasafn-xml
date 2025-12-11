@@ -9,6 +9,8 @@ from django.test import TestCase
 from dotenv import load_dotenv
 from git import Repo
 from lagasafn.constants import XML_BASE_DIR
+from lagasafn.exceptions import AdvertException
+from lagasafn.models.advert import Advert
 from lagasafn.models.law import Law, LawManager
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.problems import AdvertProblemHandler
@@ -356,218 +358,427 @@ class AdvertApplyingTests(TestCase):
         Creates problems.xml in each codex version's applied folder.
         """
         codex_versions = LawManager.codex_versions()
-
         for codex_version in codex_versions:
-            applied_dir = path.join(XML_BASE_DIR, codex_version, "applied")
+            self._process_codex_version(codex_version)
 
-            # Skip if applied directory doesn't exist
-            if not os.path.exists(applied_dir) or not os.path.isdir(applied_dir):
+    def _process_codex_version(self, codex_version):
+        """Process a single codex version."""
+        applied_dir = path.join(XML_BASE_DIR, codex_version, "applied")
+
+        # Skip if applied directory doesn't exist
+        if not os.path.exists(applied_dir) or not os.path.isdir(applied_dir):
+            return
+
+        print(f"\nProcessing codex version: {codex_version}")
+
+        # Parse applied files
+        law_applied_files = self._parse_applied_files(applied_dir)
+        if not law_applied_files:
+            print(f"  No valid applied files found in {codex_version}")
+            return
+
+        # Create AdvertProblemHandler for this codex version's applied folder
+        problems_filename = path.join(applied_dir, "problems.xml")
+        problems = AdvertProblemHandler(problems_filename=problems_filename)
+
+        # Get next codex version
+        next_codex_version = LawManager.get_next_codex_version(codex_version)
+
+        # Process each law
+        for law_identifier, applied_info_list in law_applied_files.items():
+            self._process_law(
+                law_identifier,
+                applied_info_list,
+                problems,
+                next_codex_version,
+            )
+
+        # Save the problems.xml file
+        problems.close()
+        print(f"  Created problems.xml for {codex_version}")
+
+    def _parse_applied_files(self, applied_dir):
+        """
+        Parse applied files and group by law identifier.
+        Returns a dictionary mapping law identifiers to lists of applied file info.
+        """
+        # Find all applied files
+        applied_files = [
+            f
+            for f in os.listdir(applied_dir)
+            if f.endswith(".xml") and f != "problems.xml"
+        ]
+
+        if not applied_files:
+            print(f"  No applied files found")
+            return {}
+
+        # Group applied files by law identifier
+        # Filename format: {year}.{nr}-{advert_nr}.{advert_year}.xml
+        law_applied_files = defaultdict(list)
+
+        for filename in applied_files:
+            # Parse filename: e.g., "1991.88-63.2024.xml"
+            try:
+                # Remove .xml extension
+                base_name = filename[:-4]
+                # Split by '-' to separate law and advert parts
+                parts = base_name.split("-", 1)
+                if len(parts) != 2:
+                    print(f"  Warning: Could not parse filename: {filename}")
+                    continue
+
+                law_part = parts[0]  # e.g., "1991.88"
+                advert_part = parts[1]  # e.g., "63.2024"
+
+                # Parse law identifier
+                law_year, law_nr = law_part.split(".")
+                law_identifier = f"{law_nr}/{law_year}"
+
+                # Parse advert identifier
+                advert_nr, advert_year = advert_part.split(".")
+                advert_identifier = f"{advert_nr}/{advert_year}"
+
+                applied_file_path = path.join(applied_dir, filename)
+                law_applied_files[law_identifier].append(
+                    {
+                        "advert_identifier": advert_identifier,
+                        "file_path": applied_file_path,
+                    }
+                )
+            except ValueError as e:
+                print(f"  Warning: Could not parse filename {filename}: {e}")
                 continue
 
-            print(f"\nProcessing codex version: {codex_version}")
+        return law_applied_files
 
-            # Find all applied files
-            applied_files = [
-                f
-                for f in os.listdir(applied_dir)
-                if f.endswith(".xml") and f != "problems.xml"
-            ]
+    def _extract_intents_from_adverts(self, applied_info_list, law_identifier):
+        """
+        Extract intents from adverts that target a specific law.
+        Returns a dictionary mapping advert identifiers to lists of intent info.
+        """
+        advert_intents = {}
+        for info in applied_info_list:
+            advert_id = info["advert_identifier"]
+            try:
+                advert = Advert(advert_id)
+                advert_xml = advert.xml()
+                # Find all intents for this law in the advert
+                intents = []
+                intent_nr = 1
+                for intent in advert_xml.findall(".//intent"):
+                    # Check if this intent targets the current law
+                    action = intent.get("action")
+                    should_include = False
 
-            if not applied_files:
-                print(f"  No applied files found in {codex_version}")
-                continue
+                    if action == "repeal":
+                        if intent.get("action-identifier") == law_identifier:
+                            should_include = True
+                    elif action == "enact":
+                        # Enact intents apply to all laws in the advert
+                        should_include = True
+                    else:
+                        # Other actions use action-law-nr and action-law-year
+                        law_nr = intent.get("action-law-nr")
+                        law_year = intent.get("action-law-year")
+                        if law_nr and law_year:
+                            intent_law_id = f"{law_nr}/{law_year}"
+                            if intent_law_id == law_identifier:
+                                should_include = True
 
-            # Group applied files by law identifier
-            # Filename format: {year}.{nr}-{advert_nr}.{advert_year}.xml
-            law_applied_files = defaultdict(list)
+                    if should_include:
+                        # Store action, nr, and action-xpath (xpath needed for distance calculation)
+                        intent_info = {
+                            "action": action,
+                            "nr": intent_nr,
+                            "action-xpath": intent.get("action-xpath", ""),
+                        }
+                        intents.append(intent_info)
+                        intent_nr += 1
 
-            for filename in applied_files:
-                # Parse filename: e.g., "1991.88-63.2024.xml"
-                # Extract law identifier and advert identifier
+                if intents:
+                    advert_intents[advert_id] = intents
+            except AdvertException:
+                # Advert not found, skip intents
+                pass
+
+        return advert_intents
+
+    def _process_law(
+        self, law_identifier, applied_info_list, problems, next_codex_version
+    ):
+        """Process a single law: compare with next version and report results."""
+        print(f"  {law_identifier}: {len(applied_info_list)} adverts")
+
+        # Extract intents from adverts
+        advert_intents = self._extract_intents_from_adverts(
+            applied_info_list, law_identifier
+        )
+
+        # Get the most recent applied file for this law
+        applied_info_list.sort(key=lambda x: x["advert_identifier"], reverse=True)
+        latest_applied_file = applied_info_list[0]["file_path"]
+
+        # Load the applied law XML
+        applied_law_xml = self._load_applied_law(latest_applied_file, law_identifier)
+        if applied_law_xml is None:
+            self._handle_error_case(
+                problems, law_identifier, applied_info_list, advert_intents, 0.0, 0
+            )
+            return
+
+        # Compare with next codex version if available
+        if next_codex_version is None:
+            print(f"    No next codex version available")
+            self._handle_error_case(
+                problems, law_identifier, applied_info_list, advert_intents, 1.0, 0
+            )
+            return
+
+        # Load the law from next codex version
+        next_law_xml = self._load_next_law(law_identifier, next_codex_version)
+        if next_law_xml is None:
+            self._handle_error_case(
+                problems, law_identifier, applied_info_list, advert_intents, 0.0, 0
+            )
+            return
+
+        # Compare law with next version
+        comparison_results = self._compare_law_with_next_version(
+            applied_law_xml, next_law_xml
+        )
+
+        # Calculate distances for each intent
+        intent_distances = self._calculate_intent_distances(
+            advert_intents, applied_law_xml, next_law_xml
+        )
+
+        # Report results
+        self._report_law_results(
+            problems,
+            law_identifier,
+            applied_info_list,
+            advert_intents,
+            intent_distances,
+            comparison_results,
+        )
+
+    def _load_applied_law(self, applied_file_path, law_identifier):
+        """Load applied law XML from file."""
+        try:
+            return etree.parse(applied_file_path).getroot()
+        except Exception as e:
+            print(f"    Error loading applied law {law_identifier}: {e}")
+            return None
+
+    def _load_next_law(self, law_identifier, next_codex_version):
+        """Load law from next codex version."""
+        try:
+            next_law = Law(law_identifier, next_codex_version)
+            return next_law.xml().getroot()
+        except Exception as e:
+            print(f"    Error loading next codex version law: {e}")
+            return None
+
+    def _compare_law_with_next_version(self, applied_law_xml, next_law_xml):
+        """
+        Compare applied law with next codex version.
+        Returns a dictionary with comparison results.
+        """
+        # Get text for whole file comparison
+        applied_text = remove_whitespace(get_all_text(applied_law_xml))
+
+        # Get text for content-only comparison (without minister-clause and footnotes)
+        applied_law_xml_stripped = strip_minister_clause_and_footnotes(applied_law_xml)
+        applied_text_content = remove_whitespace(get_all_text(applied_law_xml_stripped))
+
+        # Get text for whole file comparison
+        next_text = remove_whitespace(get_all_text(next_law_xml))
+
+        # Get text for content-only comparison (without minister-clause and footnotes)
+        next_law_xml_stripped = strip_minister_clause_and_footnotes(next_law_xml)
+        next_text_content = remove_whitespace(get_all_text(next_law_xml_stripped))
+
+        # Calculate distance for whole file
+        success = round(Levenshtein.ratio(applied_text, next_text), 8)
+        distance = Levenshtein.distance(applied_text, next_text)
+
+        # Calculate distance for content-only (without minister-clause and footnotes)
+        success_content = round(
+            Levenshtein.ratio(applied_text_content, next_text_content), 8
+        )
+        distance_content = Levenshtein.distance(applied_text_content, next_text_content)
+
+        return {
+            "success": success,
+            "distance": distance,
+            "success_content": success_content,
+            "distance_content": distance_content,
+        }
+
+    def _calculate_intent_distances(
+        self, advert_intents, applied_law_xml, next_law_xml
+    ):
+        """
+        Calculate distances for each intent.
+        Returns a dictionary mapping (advert_id, intent_nr, status_type) to distances.
+        """
+        intent_distances = {}
+        if not advert_intents:
+            return intent_distances
+
+        for advert_id, intents in advert_intents.items():
+            for intent_info in intents:
+                intent_nr = intent_info.get("nr")
+                action_xpath = intent_info.get("action-xpath", "")
+
+                if intent_nr is None or not action_xpath:
+                    # Skip intents without nr or xpath
+                    continue
+
                 try:
-                    # Remove .xml extension
-                    base_name = filename[:-4]
-                    # Split by '-' to separate law and advert parts
-                    parts = base_name.split("-", 1)
-                    if len(parts) != 2:
-                        print(f"  Warning: Could not parse filename: {filename}")
+                    # Find the element in applied law XML
+                    applied_elements = applied_law_xml.xpath(action_xpath)
+                    if not applied_elements:
                         continue
 
-                    law_part = parts[0]  # e.g., "1991.88"
-                    advert_part = parts[1]  # e.g., "63.2024"
+                    applied_element = applied_elements[0]
 
-                    # Parse law identifier
-                    law_year, law_nr = law_part.split(".")
-                    law_identifier = f"{law_nr}/{law_year}"
-
-                    # Parse advert identifier
-                    advert_nr, advert_year = advert_part.split(".")
-                    advert_identifier = f"{advert_nr}/{advert_year}"
-
-                    applied_file_path = path.join(applied_dir, filename)
-                    law_applied_files[law_identifier].append(
-                        {
-                            "advert_identifier": advert_identifier,
-                            "file_path": applied_file_path,
-                        }
+                    # Get text for content comparison (full element)
+                    applied_element_text = remove_whitespace(
+                        get_all_text(applied_element)
                     )
-                except ValueError as e:
-                    print(f"  Warning: Could not parse filename {filename}: {e}")
-                    continue
 
-            if not law_applied_files:
-                print(f"  No valid applied files found in {codex_version}")
-                continue
+                    # Get text for content-stripped comparison (without minister-clause and footnotes)
+                    applied_element_stripped = strip_minister_clause_and_footnotes(
+                        applied_element
+                    )
+                    applied_element_text_stripped = remove_whitespace(
+                        get_all_text(applied_element_stripped)
+                    )
 
-            # Create AdvertProblemHandler for this codex version's applied folder
-            problems_filename = path.join(applied_dir, "problems.xml")
-            problems = AdvertProblemHandler(problems_filename=problems_filename)
+                    # Find the element in next codex version XML
+                    next_elements = next_law_xml.xpath(action_xpath)
+                    if not next_elements:
+                        # Element doesn't exist in next version
+                        intent_distances[(advert_id, intent_nr, "content")] = -1
+                        intent_distances[(advert_id, intent_nr, "content-stripped")] = (
+                            -1
+                        )
+                        continue
 
-            # Get next codex version
-            next_codex_version = LawManager.get_next_codex_version(codex_version)
+                    next_element = next_elements[0]
 
-            # Process each law
-            for law_identifier, applied_info_list in law_applied_files.items():
-                print(f"  {law_identifier}: {len(applied_info_list)} adverts")
+                    # Get text for content comparison (full element)
+                    next_element_text = remove_whitespace(get_all_text(next_element))
 
-                # Get the most recent applied file for this law
-                # Sort by advert identifier to get the latest one
-                # This represents the law with all adverts applied up to that point
-                applied_info_list.sort(
-                    key=lambda x: x["advert_identifier"], reverse=True
-                )
-                latest_applied_file = applied_info_list[0]["file_path"]
+                    # Get text for content-stripped comparison (without minister-clause and footnotes)
+                    next_element_stripped = strip_minister_clause_and_footnotes(
+                        next_element
+                    )
+                    next_element_text_stripped = remove_whitespace(
+                        get_all_text(next_element_stripped)
+                    )
 
-                # Load the applied law XML
-                try:
-                    applied_law_xml = etree.parse(latest_applied_file).getroot()
+                    # Calculate distances and success ratios for both content and content-stripped
+                    intent_distance_content = Levenshtein.distance(
+                        applied_element_text, next_element_text
+                    )
+                    intent_success_content = round(
+                        Levenshtein.ratio(applied_element_text, next_element_text), 8
+                    )
+
+                    intent_distance_stripped = Levenshtein.distance(
+                        applied_element_text_stripped, next_element_text_stripped
+                    )
+                    intent_success_stripped = round(
+                        Levenshtein.ratio(
+                            applied_element_text_stripped, next_element_text_stripped
+                        ),
+                        8,
+                    )
+
+                    intent_distances[(advert_id, intent_nr, "content")] = (
+                        intent_distance_content
+                    )
+                    intent_distances[(advert_id, intent_nr, "content", "success")] = (
+                        intent_success_content
+                    )
+
+                    intent_distances[(advert_id, intent_nr, "content-stripped")] = (
+                        intent_distance_stripped
+                    )
+                    intent_distances[
+                        (advert_id, intent_nr, "content-stripped", "success")
+                    ] = intent_success_stripped
                 except Exception as e:
-                    print(f"    Error loading applied law {law_identifier}: {e}")
-                    advert_list = [
-                        info["advert_identifier"] for info in applied_info_list
-                    ]
-                    problems.set_adverts(law_identifier, advert_list)
-                    problems.report(
-                        law_identifier,
-                        "content",
-                        0.0,
-                        distance=0,
-                    )
-                    problems.report(
-                        law_identifier,
-                        "content-stripped",
-                        0.0,
-                        distance=0,
+                    # Error calculating distance for this intent
+                    print(
+                        f"    Warning: Could not calculate distance for intent {intent_nr} at {action_xpath}: {e}"
                     )
                     continue
 
-                # Get text for whole file comparison
-                applied_text = remove_whitespace(get_all_text(applied_law_xml))
+        return intent_distances
 
-                # Get text for content-only comparison (without minister-clause and footnotes)
-                applied_law_xml_stripped = strip_minister_clause_and_footnotes(
-                    applied_law_xml
-                )
-                applied_text_content = remove_whitespace(
-                    get_all_text(applied_law_xml_stripped)
-                )
+    def _report_law_results(
+        self,
+        problems,
+        law_identifier,
+        applied_info_list,
+        advert_intents,
+        intent_distances,
+        comparison_results,
+    ):
+        """Report comparison results to the problems handler."""
+        # Set adverts for this law entry
+        advert_list = [info["advert_identifier"] for info in applied_info_list]
+        problems.set_adverts(
+            law_identifier,
+            advert_list,
+            advert_intents=advert_intents,
+            intent_distances=intent_distances,
+        )
 
-                # Compare with next codex version if available
-                if next_codex_version is None:
-                    print(f"    No next codex version available")
-                    # Still record the adverts
-                    advert_list = [
-                        info["advert_identifier"] for info in applied_info_list
-                    ]
-                    problems.set_adverts(law_identifier, advert_list)
-                    problems.report(
-                        law_identifier,
-                        "content",
-                        1.0,
-                        distance=0,
-                    )
-                    problems.report(
-                        law_identifier,
-                        "content-stripped",
-                        1.0,
-                        distance=0,
-                    )
-                    continue
+        # Report whole file comparison
+        problems.report(
+            law_identifier,
+            "content",
+            comparison_results["success"],
+            distance=comparison_results["distance"],
+        )
 
-                # Load the law from next codex version
-                try:
-                    next_law = Law(law_identifier, next_codex_version)
-                    next_law_xml = next_law.xml().getroot()
-                except Exception as e:
-                    print(f"    Error loading next codex version law: {e}")
-                    # Law might not exist in next version (e.g., repealed)
-                    advert_list = [
-                        info["advert_identifier"] for info in applied_info_list
-                    ]
-                    problems.set_adverts(law_identifier, advert_list)
-                    problems.report(
-                        law_identifier,
-                        "content",
-                        0.0,
-                        distance=0,
-                    )
-                    problems.report(
-                        law_identifier,
-                        "content-stripped",
-                        0.0,
-                        distance=0,
-                    )
-                    continue
+        # Report content-only comparison
+        problems.report(
+            law_identifier,
+            "content-stripped",
+            comparison_results["success_content"],
+            distance=comparison_results["distance_content"],
+        )
 
-                # Get text for whole file comparison
-                next_text = remove_whitespace(get_all_text(next_law_xml))
+        print(
+            f"    Success (content): {comparison_results['success']:.8f}, "
+            f"Distance: {comparison_results['distance']}, "
+            f"Success (content-stripped): {comparison_results['success_content']:.8f}, "
+            f"Distance: {comparison_results['distance_content']}, "
+            f"Adverts: {len(applied_info_list)}"
+        )
 
-                # Get text for content-only comparison (without minister-clause and footnotes)
-                next_law_xml_stripped = strip_minister_clause_and_footnotes(
-                    next_law_xml
-                )
-                next_text_content = remove_whitespace(
-                    get_all_text(next_law_xml_stripped)
-                )
-
-                # Calculate distance for whole file
-                success = round(Levenshtein.ratio(applied_text, next_text), 8)
-                distance = Levenshtein.distance(applied_text, next_text)
-
-                # Calculate distance for content-only (without minister-clause and footnotes)
-                success_content = round(
-                    Levenshtein.ratio(applied_text_content, next_text_content), 8
-                )
-                distance_content = Levenshtein.distance(
-                    applied_text_content, next_text_content
-                )
-
-                # Set adverts for this law entry
-                advert_list = [info["advert_identifier"] for info in applied_info_list]
-                problems.set_adverts(law_identifier, advert_list)
-
-                # Report whole file comparison
-                problems.report(
-                    law_identifier,
-                    "content",
-                    success,
-                    distance=distance,
-                )
-
-                # Report content-only comparison
-                problems.report(
-                    law_identifier,
-                    "content-stripped",
-                    success_content,
-                    distance=distance_content,
-                )
-
-                print(
-                    f"    Success (content): {success:.8f}, Distance: {distance}, "
-                    f"Success (content-stripped): {success_content:.8f}, Distance: {distance_content}, "
-                    f"Adverts: {len(applied_info_list)}"
-                )
-
-            # Save the problems.xml file
-            problems.close()
-            print(f"  Created problems.xml for {codex_version}")
+    def _handle_error_case(
+        self,
+        problems,
+        law_identifier,
+        applied_info_list,
+        advert_intents,
+        success,
+        distance,
+    ):
+        """Handle error cases with consistent reporting."""
+        advert_list = [info["advert_identifier"] for info in applied_info_list]
+        problems.set_adverts(
+            law_identifier,
+            advert_list,
+            advert_intents=advert_intents,
+            intent_distances={},
+        )
+        problems.report(law_identifier, "content", success, distance=distance)
+        problems.report(law_identifier, "content-stripped", success, distance=distance)

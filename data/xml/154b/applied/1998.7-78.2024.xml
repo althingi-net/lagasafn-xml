@@ -2206,7 +2206,7 @@
           <sen nr="1">Ósamrýmanleg not geymslugeymis eru óheimil á gildistíma könnunarleyfis. og á gildistíma starfsleyfis til geymslu.</sen>
         </paragraph>
       </subart>
-      <subart nr="6">
+      <subart nr="5">
         <paragraph nr="1">
           <sen nr="1">Umhverfisstofnun ber að senda Eftirlitsstofnun EFTA drög að starfsleyfi til geymslu áður en leyfi er veitt.</sen>
         </paragraph>
@@ -2372,16 +2372,19 @@
           </numart>
           <numart nr="2" nr-type="numeric">
             <nr-title>2.</nr-title>
-            <numart nr="2" nr-type="numeric">
-              <nr-title>2.</nr-title>
-              <paragraph nr="1">
-                <sen nr="1">Lágmarkstími sem Umhverfisstofnun ákvarðar er liðinn.</sen>
-                <sen nr="2">Sá lágmarkstími skal ekki vera styttri en 20 ár nema unnt sé að sýna fram á að koldíoxíð sé fullkomlega og varanlega aflokað áður en því tímabili lýkur.</sen>
-              </paragraph>
-            </numart>
+            <paragraph nr="1">
+              <sen nr="1">Lágmarkstími sem Umhverfisstofnun ákvarðar er liðinn.</sen>
+              <sen nr="2">Sá lágmarkstími skal ekki vera styttri en 20 ár nema unnt sé að sýna fram á að koldíoxíð sé fullkomlega og varanlega aflokað áður en því tímabili lýkur.</sen>
+            </paragraph>
           </numart>
           <numart nr="3" nr-type="numeric">
             <nr-title>3.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Fjárhagslegar skyldur skv. 2. mgr. 33. gr. k. eru uppfylltar.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="4" nr-type="numeric">
+            <nr-title>4.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Geymslusvæði hefur verið lokað og öll mannvirki tengd niðurdælingu  fjarlægð eða frá þeim gengið.</sen>
             </paragraph>
@@ -4045,21 +4048,24 @@
           </numart>
           <numart nr="3" nr-type="numeric">
             <nr-title>3.</nr-title>
-            <numart nr="3" nr-type="numeric">
-              <nr-title>3.</nr-title>
-              <paragraph nr="1">
-                <sen nr="1">Könnunarleyfi, sbr. VI. kafla A.</sen>
-              </paragraph>
-            </numart>
+            <paragraph nr="1">
+              <sen nr="1">Könnunarleyfi, sbr. VI. kafla A.</sen>
+            </paragraph>
           </numart>
           <numart nr="4" nr-type="numeric">
             <nr-title>4.</nr-title>
             <paragraph nr="1">
-              <sen nr="1">Eftirfylgni eftirlits og beitingu þvingunarúrræða, sbr. XVII. kafla.</sen>
+              <sen nr="1">Eftirlit, þ.m.t. sýnatöku, sbr. 51. gr.</sen>
             </paragraph>
           </numart>
           <numart nr="5" nr-type="numeric">
             <nr-title>5.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">Eftirfylgni eftirlits og beitingu þvingunarúrræða, sbr. XVII. kafla.</sen>
+            </paragraph>
+          </numart>
+          <numart nr="6" nr-type="numeric">
+            <nr-title>6.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Álagningu stjórnvaldssekta, sbr. 67. gr.</sen>
             </paragraph>
@@ -5053,36 +5059,36 @@
     <numart-chapter nr="1">
       <nr-title>1.</nr-title>
       <name>Orkuiðnaður.</name>
-      <numart nr="1.1" nr-type="tree">
-        <nr-title>1.1</nr-title>
+      <numart nr="1" nr-type="tree">
+        <nr-title>1.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Brennsla eldsneytis í stöðvum með heildarnafnvarmaafl 50 MW eða meira.</sen>
         </paragraph>
       </numart>
-      <numart nr="1.2" nr-type="tree">
-        <nr-title>1.2</nr-title>
+      <numart nr="2" nr-type="tree">
+        <nr-title>2.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Hreinsun á jarðolíu og gasi.</sen>
         </paragraph>
       </numart>
-      <numart nr="1.3" nr-type="tree">
-        <nr-title>1.3</nr-title>
+      <numart nr="3" nr-type="tree">
+        <nr-title>3.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Koksframleiðsla.</sen>
         </paragraph>
       </numart>
-      <numart nr="1.4" nr-type="tree">
-        <nr-title>1.4</nr-title>
+      <numart nr="4" nr-type="tree">
+        <nr-title>4.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Gösun eða þétting á:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">kolum,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">öðru eldsneyti í stöðvum með heildarnafnvarmaafl 20 MW eða meira.</sen>
             </paragraph>
@@ -5093,68 +5099,68 @@
     <numart-chapter nr="2">
       <nr-title>2.</nr-title>
       <name>Framleiðsla og vinnsla málma.</name>
-      <numart nr="2.1" nr-type="tree">
-        <nr-title>2.1</nr-title>
+      <numart nr="1" nr-type="tree">
+        <nr-title>1.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Brennsla eða glæðing málmgrýtis (þ.m.t. brennisteinsgrýtis).</sen>
         </paragraph>
       </numart>
-      <numart nr="2.2" nr-type="tree">
-        <nr-title>2.2</nr-title>
+      <numart nr="2" nr-type="tree">
+        <nr-title>2.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla á hrájárni eða stáli (fyrsta eða önnur bræðsla), þ.m.t. samfelld málmsteypa, þar sem afkastagetan er meiri en 2,5 tonn á klukkustund.</sen>
         </paragraph>
       </numart>
-      <numart nr="2.3" nr-type="tree">
-        <nr-title>2.3</nr-title>
+      <numart nr="3" nr-type="tree">
+        <nr-title>3.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Vinnsla járnríkra málma:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">starfræksla heitvölsunarvéla með vinnslugetu yfir 20 tonnum af hrástáli á klukkustund,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">starfræksla smiðja með hamra þar sem slagkraftur hvers hamars er meiri en 50 kílójúl og þar sem notuð varmaorka er yfir 20 MW,</sen>
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">með því að nota hlífðarlag úr bræddum málmi þar sem ílagið er meira en 2 tonn af hrástáli á klukkustund.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="2.4" nr-type="tree">
-        <nr-title>2.4</nr-title>
+      <numart nr="4" nr-type="tree">
+        <nr-title>4.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Starfræksla málmsteypa fyrir járnríka málma með framleiðslugetu yfir 20 tonnum á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="2.5" nr-type="tree">
-        <nr-title>2.5</nr-title>
+      <numart nr="5" nr-type="tree">
+        <nr-title>5.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Vinnsla járnlausra málma:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">framleiðsla járnlausra hrámálma úr málmgrýti, hreinsuðu málmgrýti eða afleiddu hráefni með málmvinnsluaðferðum, efnafræðilegum aðferðum eða rafgreiningaraðferðum,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">bræðsla, þ.m.t. sambræðsla járnlausra málma, þ.m.t. endurnýttra vara, og starfræksla málmsteypa fyrir járnlausa málma með bræðslugetu yfir 4 tonnum af blýi og kadmíumi á dag eða 20 tonnum af öllum öðrum tegundum málma á dag.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="2.6" nr-type="tree">
-        <nr-title>2.6</nr-title>
+      <numart nr="6" nr-type="tree">
+        <nr-title>6.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Yfirborðsmeðferð málma eða plastefna með rafgreiningaraðferðum eða efnafræðilegum aðferðum þar sem rúmmál meðhöndlunartanka er meira en 30 m3.</sen>
         </paragraph>
@@ -5163,50 +5169,50 @@
     <numart-chapter nr="3">
       <nr-title>3.</nr-title>
       <name>Jarðefnaiðnaður.</name>
-      <numart nr="3.1" nr-type="tree">
-        <nr-title>3.1</nr-title>
+      <numart nr="1" nr-type="tree">
+        <nr-title>1.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla á sementi, kalki og magnesíumoxíði:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">framleiðsla á sementsgjalli í hverfiofnum með afkastagetu sem er yfir 500 tonnum á dag eða í annars konar ofnum þar sem framleiðsluafköstin eru yfir 50 tonnum á dag,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">framleiðsla á kalki í ofnum með framleiðslugetu yfir 50 tonnum á dag,</sen>
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">framleiðsla á magnesíumoxíði í ofnum með framleiðslugetu yfir 50 tonnum á dag.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="3.2" nr-type="tree">
-        <nr-title>3.2</nr-title>
+      <numart nr="2" nr-type="tree">
+        <nr-title>2.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla á asbesti eða framleiðsla vara sem eru að stofni til úr asbesti.</sen>
         </paragraph>
       </numart>
-      <numart nr="3.3" nr-type="tree">
-        <nr-title>3.3</nr-title>
+      <numart nr="3" nr-type="tree">
+        <nr-title>3.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla glers, einnig glertrefja, þar sem bræðsluafköstin eru meiri en 20 tonn á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="3.4" nr-type="tree">
-        <nr-title>3.4</nr-title>
+      <numart nr="4" nr-type="tree">
+        <nr-title>4.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Bræðsla jarðefna, þ.m.t. framleiðsla steinefnatrefja með bræðslugetu yfir 20 tonnum á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="3.5" nr-type="tree">
-        <nr-title>3.5</nr-title>
+      <numart nr="5" nr-type="tree">
+        <nr-title>5.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla leirvara með brennslu, einkum þakflísa, múrsteina, eldfastra múrsteina, flísa, leirmuna eða postulíns með framleiðslugetu yfir 75 tonnum á dag og/eða rúmtak ofns yfir 4 m3 og setþéttleika hvers ofns yfir 300 kg/m3.</sen>
         </paragraph>
@@ -5219,134 +5225,134 @@
     <paragraph nr="2">
       <sen nr="1">Að því er varðar þennan þátt merkir framleiðsla, í skilningi starfsemisflokkanna í þessum þætti, framleiðslu á iðnaðarmælikvarða með efnafræðilegri eða líffræðilegri vinnslu efna eða efnahópa sem eru taldir upp í þessum þætti.</sen>
     </paragraph>
-    <numart nr="4.1" nr-type="tree">
-      <nr-title>4.1</nr-title>
+    <numart nr="1" nr-type="tree">
+      <nr-title>1.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla lífrænna efna, svo sem:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">einföld vetniskolefni (línuleg eða hringlaga, mettuð eða ómettuð, alifatísk eða arómatísk),</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">vetniskolefni sem innihalda súrefni, svo sem alkóhól, aldehýð, ketón, karboxýlsýrur, estrar og blöndur af estrum, asetötum, eterum, peroxíðum og epoxýresínum,</sen>
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">vetniskolefni sem innihalda brennistein,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">vetniskolefni sem innihalda köfnunarefni, svo sem amín, amíð, nitursambönd, nítrósambönd eða nítratsambönd, nítríl, sýanöt og ísósýanöt,</sen>
           </paragraph>
         </numart>
         <numart nr="e" nr-type="alphabet">
-          <nr-title>e)</nr-title>
+          <nr-title>e.</nr-title>
           <paragraph nr="1">
             <sen nr="1">vetniskolefni sem innihalda fosfór,</sen>
           </paragraph>
         </numart>
         <numart nr="f" nr-type="alphabet">
-          <nr-title>f)</nr-title>
+          <nr-title>f.</nr-title>
           <paragraph nr="1">
             <sen nr="1">vetniskolefni sem innihalda halógen,</sen>
           </paragraph>
         </numart>
         <numart nr="g" nr-type="alphabet">
-          <nr-title>g)</nr-title>
+          <nr-title>g.</nr-title>
           <paragraph nr="1">
             <sen nr="1">lífræn málmsambönd,</sen>
           </paragraph>
         </numart>
         <numart nr="h" nr-type="alphabet">
-          <nr-title>h)</nr-title>
+          <nr-title>h.</nr-title>
           <paragraph nr="1">
             <sen nr="1">plastefni (fjölliður, gervitrefjar og trefjar að stofni úr beðmi),</sen>
           </paragraph>
         </numart>
         <numart nr="i" nr-type="alphabet">
-          <nr-title>i)</nr-title>
+          <nr-title>i.</nr-title>
           <paragraph nr="1">
             <sen nr="1">gervigúmmí,</sen>
           </paragraph>
         </numart>
         <numart nr="j" nr-type="alphabet">
-          <nr-title>j)</nr-title>
+          <nr-title>j.</nr-title>
           <paragraph nr="1">
             <sen nr="1">leysilitir og fastlitarefni,</sen>
           </paragraph>
         </numart>
         <numart nr="k" nr-type="alphabet">
-          <nr-title>k)</nr-title>
+          <nr-title>k.</nr-title>
           <paragraph nr="1">
             <sen nr="1">yfirborðsvirk efni.</sen>
           </paragraph>
         </numart>
       </paragraph>
     </numart>
-    <numart nr="4.2" nr-type="tree">
-      <nr-title>4.2</nr-title>
+    <numart nr="2" nr-type="tree">
+      <nr-title>2.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla ólífrænna efna, svo sem:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">lofttegundir, svo sem ammoníak, klór eða vetnisklóríð, flúor eða vetnisflúoríð, koloxíð, brennisteinssambönd, köfnunarefnisoxíð, vetni, brennisteinsdíoxíð, karbónýlklóríð,</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">sýrur, svo sem krómsýra, flússýra, fosfórsýra, saltpéturssýra, saltsýra, brennisteinssýra, rjúkandi brennisteinssýra, brennisteinssýrlingur,</sen>
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">basi, svo sem ammóníumhýdroxíð, kalíumhýdroxíð, natríumhýdroxíð,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">sölt, svo sem ammóníumklóríð, kalíumklórat, kalíumkarbónat, natríumkarbónat, perbórat, silfurnítrat,</sen>
           </paragraph>
         </numart>
         <numart nr="e" nr-type="alphabet">
-          <nr-title>e)</nr-title>
+          <nr-title>e.</nr-title>
           <paragraph nr="1">
             <sen nr="1">málmleysingjar, málmoxíð eða önnur ólífræn efnasambönd, svo sem kalsíumkarbíð, kísill, kísilkarbíð.</sen>
           </paragraph>
         </numart>
       </paragraph>
     </numart>
-    <numart nr="4.3" nr-type="tree">
-      <nr-title>4.3</nr-title>
+    <numart nr="3" nr-type="tree">
+      <nr-title>3.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla á áburði sem inniheldur fosfór, köfnunarefni eða kalíum (eingildum eða fjölgildum áburði).</sen>
       </paragraph>
     </numart>
-    <numart nr="4.4" nr-type="tree">
-      <nr-title>4.4</nr-title>
+    <numart nr="4" nr-type="tree">
+      <nr-title>4.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla á plöntuvarnarvörum eða sæfivörum.</sen>
       </paragraph>
     </numart>
-    <numart nr="4.5" nr-type="tree">
-      <nr-title>4.5</nr-title>
+    <numart nr="5" nr-type="tree">
+      <nr-title>5.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla á lyfjum, þ.m.t. milliefnum.</sen>
       </paragraph>
     </numart>
-    <numart nr="4.6" nr-type="tree">
-      <nr-title>4.6</nr-title>
+    <numart nr="6" nr-type="tree">
+      <nr-title>6.</nr-title>
       <paragraph nr="1">
         <sen nr="1">Framleiðsla á sprengiefnum.</sen>
       </paragraph>
@@ -5354,101 +5360,101 @@
     <numart-chapter nr="5">
       <nr-title>5.</nr-title>
       <name>Meðhöndlun úrgangs.</name>
-      <numart nr="5.1" nr-type="tree">
-        <nr-title>5.1</nr-title>
+      <numart nr="1" nr-type="tree">
+        <nr-title>1.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Förgun eða endurnýting á hættulegum úrgangi með afköstum yfir 10 tonnum á dag sem felur í sér eina eða fleiri eftirfarandi starfsemi:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">líffræðilega meðhöndlun,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">eðlis- og efnafræðilega meðhöndlun,</sen>
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">blöndun áður en einhver tegund starfsemi, sem tilgreind er í liðum 5.1 og 5.2, tekur við,</sen>
             </paragraph>
           </numart>
           <numart nr="d" nr-type="alphabet">
-            <nr-title>d)</nr-title>
+            <nr-title>d.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurpökkun áður en einhver af þeim tegundum af starfsemi, sem taldar eru upp í liðum 5.1 og 5.2, fer fram,</sen>
             </paragraph>
           </numart>
           <numart nr="e" nr-type="alphabet">
-            <nr-title>e)</nr-title>
+            <nr-title>e.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurheimt eða endurmyndun leysa,</sen>
             </paragraph>
           </numart>
           <numart nr="f" nr-type="alphabet">
-            <nr-title>f)</nr-title>
+            <nr-title>f.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurvinnsla/endurheimt ólífrænna efna annarra en málma eða málmsambanda,</sen>
             </paragraph>
           </numart>
           <numart nr="g" nr-type="alphabet">
-            <nr-title>g)</nr-title>
+            <nr-title>g.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurmyndun sýru eða basa,</sen>
             </paragraph>
           </numart>
           <numart nr="h" nr-type="alphabet">
-            <nr-title>h)</nr-title>
+            <nr-title>h.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurnýting efnisþátta sem eru notaðir til að draga úr mengun,</sen>
             </paragraph>
           </numart>
           <numart nr="i" nr-type="alphabet">
-            <nr-title>i)</nr-title>
+            <nr-title>i.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurnýting efnisþátta úr hvötum,</sen>
             </paragraph>
           </numart>
           <numart nr="j" nr-type="alphabet">
-            <nr-title>j)</nr-title>
+            <nr-title>j.</nr-title>
             <paragraph nr="1">
               <sen nr="1">endurhreinsun olíu eða önnur endurnotkun olíu,</sen>
             </paragraph>
           </numart>
           <numart nr="k" nr-type="alphabet">
-            <nr-title>k)</nr-title>
+            <nr-title>k.</nr-title>
             <paragraph nr="1">
               <sen nr="1">losun í yfirborðsvatn.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="5.2" nr-type="tree">
-        <nr-title>5.2</nr-title>
+      <numart nr="2" nr-type="tree">
+        <nr-title>2.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Förgun eða endurnýting á úrgangi í sorpbrennslustöðvum eða í sorpsambrennslustöðvum:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">fyrir hættulausan úrgang í stöðvum með afkastagetu yfir 3 tonnum á klukkustund,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">fyrir hættulegan úrgang í stöðvum með afkastagetu yfir 10 tonnum á dag.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="5.3" nr-type="tree">
-        <nr-title>5.3</nr-title>
+      <numart nr="3" nr-type="tree">
+        <nr-title>3.</nr-title>
         <paragraph nr="1">
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Förgun á hættulausum úrgangi í stöðvum með afkastagetu yfir 50 tonnum á dag sem felur í sér eina eða fleiri eftirfarandi starfsemi og að undanskilinni starfsemi sem fellur undir reglugerð um fráveitur og skólp:</sen>
               <numart nr="i" nr-type="roman">
@@ -5484,7 +5490,7 @@
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Endurheimt eða blanda af endurheimt og förgun á hættulausum úrgangi í stöðvum með afkastagetu yfir 75 tonnum á dag sem felur í sér eina eða fleiri eftirfarandi starfsemi og að undanskilinni starfsemi sem fellur undir reglugerð um fráveitur og skólp:</sen>
               <numart nr="i" nr-type="roman">
@@ -5518,20 +5524,20 @@
           <sen nr="1">Ef starfsemi skv. 1. mgr. felur einungis í sér meðhöndlun úrgangs þar sem fram fer loftfirrð rotnun skulu viðmiðunargildin fyrir starfsemina vera 100 tonn á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="5.4" nr-type="tree">
-        <nr-title>5.4</nr-title>
+      <numart nr="4" nr-type="tree">
+        <nr-title>4.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Urðun, eins og hún er skilgreind í lögum um meðhöndlun úrgangs, sem tekur á móti meira en 10 tonnum af úrgangi á dag eða með heildarafkastagetu yfir 25.000 tonnum, að undanskilinni urðun á óvirkum úrgangi.</sen>
         </paragraph>
       </numart>
-      <numart nr="5.5" nr-type="tree">
-        <nr-title>5.5</nr-title>
+      <numart nr="5" nr-type="tree">
+        <nr-title>5.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Bráðabirgðageymsla hættulegs úrgangs, sem ekki fellur undir lið 5.4, sem bíður einhverra þeirra tegunda af starfsemi sem taldar eru upp í liðum 5.1, 5.2, 5.4 og 5.6, þar sem heildarrúmtak er yfir 50 tonnum, að undanskilinni tímabundinni geymslu meðan söfnunar er beðið á þeim stað þar sem úrgangurinn verður til.</sen>
         </paragraph>
       </numart>
-      <numart nr="5.6" nr-type="tree">
-        <nr-title>5.6</nr-title>
+      <numart nr="6" nr-type="tree">
+        <nr-title>6.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Neðanjarðargeymsla á hættulegum úrgangi með heildarrúmtak yfir 50 tonnum.</sen>
         </paragraph>
@@ -5540,53 +5546,53 @@
     <numart-chapter nr="6">
       <nr-title>6.</nr-title>
       <name>Önnur starfsemi.</name>
-      <numart nr="6.1" nr-type="tree">
-        <nr-title>6.1</nr-title>
+      <numart nr="1" nr-type="tree">
+        <nr-title>1.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla í iðjuverum á:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">deigi úr viði eða öðrum trefjaefnum,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">pappír eða pappa í verum með framleiðslugetu yfir 20 tonnum á dag,</sen>
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">einni eða fleiri gerðum platna sem eru að stofni til úr viði: aspenítplötum, spónaplötum eða trefjaplötum í verum með framleiðslugetu yfir 600 m3 á dag.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="6.2" nr-type="tree">
-        <nr-title>6.2</nr-title>
+      <numart nr="2" nr-type="tree">
+        <nr-title>2.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Formeðferð (aðgerðir eins og þvottur, bleiking, mersivinnsla) eða litun textíltrefja eða textílefna þar sem vinnslugetan er yfir 10 tonnum á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.3" nr-type="tree">
-        <nr-title>6.3</nr-title>
+      <numart nr="3" nr-type="tree">
+        <nr-title>3.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Sútun á húðum og skinnum þar sem vinnslugetan er yfir 12 tonnum af fullunninni vöru á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.4" nr-type="tree">
-        <nr-title>6.4</nr-title>
+      <numart nr="4" nr-type="tree">
+        <nr-title>4.</nr-title>
         <paragraph nr="1">
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Sláturhús í rekstri með framleiðslugetu yfir 50 tonnum af skrokkum á dag.</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Meðferð og vinnsla, önnur en eingöngu pökkun, á eftirfarandi hráefnum, hvort sem er áður unnum eða óunnum, sem ætluð eru fyrir matvæla- eða fóðurframleiðslu úr:</sen>
               <numart nr="i" nr-type="roman">
@@ -5625,69 +5631,69 @@
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">Meðferð og vinnsla mjólkur eingöngu, þar sem tekið er á móti meira en 200 tonnum af mjólk á dag (meðaltal á ársgrundvelli).</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="6.5" nr-type="tree">
-        <nr-title>6.5</nr-title>
+      <numart nr="5" nr-type="tree">
+        <nr-title>5.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Förgun eða endurvinnsla dýraskrokka eða dýraúrgangs þar sem afkastageta er yfir 10 tonnum á dag.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.6" nr-type="tree">
-        <nr-title>6.6</nr-title>
+      <numart nr="6" nr-type="tree">
+        <nr-title>6.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Eldi alifugla eða svína:</sen>
           <numart nr="a" nr-type="alphabet">
-            <nr-title>a)</nr-title>
+            <nr-title>a.</nr-title>
             <paragraph nr="1">
               <sen nr="1">með fleiri en 40.000 stæði fyrir alifugla,</sen>
             </paragraph>
           </numart>
           <numart nr="b" nr-type="alphabet">
-            <nr-title>b)</nr-title>
+            <nr-title>b.</nr-title>
             <paragraph nr="1">
               <sen nr="1">með fleiri en 2.000 stæði fyrir alisvín (yfir 30 kg), eða</sen>
             </paragraph>
           </numart>
           <numart nr="c" nr-type="alphabet">
-            <nr-title>c)</nr-title>
+            <nr-title>c.</nr-title>
             <paragraph nr="1">
               <sen nr="1">með fleiri en 750 stæði fyrir gyltur.</sen>
             </paragraph>
           </numart>
         </paragraph>
       </numart>
-      <numart nr="6.7" nr-type="tree">
-        <nr-title>6.7</nr-title>
+      <numart nr="7" nr-type="tree">
+        <nr-title>7.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Yfirborðsmeðferð efna, hluta eða afurða með lífrænum leysum, einkum fyrir pressun, prentun, húðun, fituhreinsun, vatnsþéttingu, þyngingu, málun, hreinsun eða gegndreypingu, þar sem notuð eru meira en 150 kg af lífrænum leysum á klukkustund eða meira en 200 tonn á ári.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.8" nr-type="tree">
-        <nr-title>6.8</nr-title>
+      <numart nr="8" nr-type="tree">
+        <nr-title>8.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Framleiðsla kolefnis (fullbrenndra kola) eða skautgrafíts (e. electrographite) með brennslu eða umbreytingu í grafít.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.9" nr-type="tree">
-        <nr-title>6.9</nr-title>
+      <numart nr="9" nr-type="tree">
+        <nr-title>9.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Föngun koldíoxíðsstrauma frá atvinnurekstri sem fellur undir lög þessi til geymslu í jörðu.</sen>
         </paragraph>
       </numart>
-      <numart nr="6.10" nr-type="tree">
-        <nr-title>6.10</nr-title>
+      <numart nr="10" nr-type="tree">
+        <nr-title>10.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Timbur og timburafurðir eru varin með efnum, þar sem framleiðslugeta er yfir 75 m3 á dag, að undanskilinni meðhöndlun eingöngu gegn grágeit (e. sapstain).</sen>
         </paragraph>
       </numart>
-      <numart nr="6.11" nr-type="tree">
-        <nr-title>6.11</nr-title>
+      <numart nr="11" nr-type="tree">
+        <nr-title>11.</nr-title>
         <paragraph nr="1">
           <sen nr="1">Einkarekin meðhöndlun á skólpi sem er losað af stöð sem fellur undir þennan viðauka.</sen>
         </paragraph>
@@ -5764,25 +5770,25 @@
       <paragraph nr="1">
         <sen nr="1">Meðferð úrgangs – förgunarstaðir úrgangs:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">urðunarstaðir, sorpbrennslustöðvar og söfnunar- og móttökustöðvar ef þær eru reknar í nánum landfræðilegum tengslum við förgunarstaði þar sem tekið er á móti meira en 5.000 tonnum af úrgangi á ári,</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">urðunarstaðir, sorpbrennslustöðvar og söfnunar- og móttökustöðvar ef þær eru reknar í nánum landfræðilegum tengslum við förgunarstaði þar sem tekið er á móti 500–5.000 tonnum af úrgangi á ári,</sen>
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">urðunarstaðir, sorpbrennslustöðvar og söfnunar- og móttökustöðvar ef þær eru reknar í nánum landfræðilegum tengslum við förgunarstaði þar sem tekið er á móti 50–499 tonnum af úrgangi á ári eða urðunarstaðir þar sem eingöngu er tekið á móti 20.000 tonnum af óvirkum úrgangi á ári eða meira,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">urðunarstaðir þar sem eingöngu er tekið á móti minna en 20.000 tonnum af óvirkum úrgangi á ári.</sen>
           </paragraph>
@@ -5794,30 +5800,30 @@
       <paragraph nr="1">
         <sen nr="1">Meðhöndlun og förgun spilliefna, þ.m.t. námuúrgangsstaðir, sbr. 14. gr. laga um meðhöndlun úrgangs:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">þar sem heimild er til meðhöndlunar á meira en 2.500 tonnum af spilliefnum á ári,</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">þar sem heimild er til meðhöndlunar á 500–2.500 tonnum af spilliefnum á ári eða til að endurmynda og nýta á staðnum 10.000 tonn af úrgangsolíu á ári eða meira,</sen>
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">þar sem heimild er til meðhöndlunar á 50–499 tonnum af spilliefnum á ári eða til að endurmynda og nýta á staðnum minna en 10.000 tonn af úrgangsolíu á ári,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">þar sem heimild er til meðhöndlunar á minna en 50 tonnum af spilliefnum á ári eða þar sem einvörðungu eru meðhöndlaðir rafgeymar.</sen>
           </paragraph>
           <mark-container>
-            <sen/>
+            <sen nr="1"/>
           </mark-container>
         </numart>
       </paragraph>
@@ -5919,7 +5925,7 @@
       <paragraph nr="2">
         <sen nr="1">Öll starfsemi þar sem sett er eitt eða fleiri samfelld lög af yfirborðsmeðferðarefni á:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">eitthvert eftirfarandi farartækja:</sen>
             <numart nr="i" nr-type="roman">
@@ -5955,25 +5961,25 @@
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">málm- og plastyfirborð, þ.m.t. yfirborð á flugvélum, skipum, lestum o.s.frv.,</sen>
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">viðaryfirborð,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">textíl-, vefnaðar-, filmu- og pappírsyfirborð,</sen>
           </paragraph>
         </numart>
         <numart nr="e" nr-type="alphabet">
-          <nr-title>e)</nr-title>
+          <nr-title>e.</nr-title>
           <paragraph nr="1">
             <sen nr="1">leður.</sen>
           </paragraph>
@@ -6040,13 +6046,13 @@
         <sen nr="2">Meðtalin er tengd tækni við lökkun, húðun og plasthúðun.</sen>
         <sen nr="3">Hins vegar falla einungis eftirfarandi undirferlar undir lög þessi:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">flexóprentun – prentun þar sem myndberinn er úr gúmmíi eða fjaðrandi ljósfjölliðum og þar sem prentflöturinn er upphækkaður og notaðir eru fljótandi prentlitir sem þorna við uppgufun,</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">heitþornandi offsetprentun af streng – prentun af streng þar sem notaður er myndberi þar sem bæði prentflötur og óprentaðir fletir eru í sömu hæð, þar sem prentun af streng merkir að efnið, sem prentað er á, er matað í vélina af kefli en ekki sem stakar arkir.</sen>
             <sen nr="2">Óprentaða svæðið er meðhöndlað til að draga að vatn og hrindir því farva frá sér.</sen>
@@ -6055,33 +6061,33 @@
           </paragraph>
         </numart>
         <numart nr="c" nr-type="alphabet">
-          <nr-title>c)</nr-title>
+          <nr-title>c.</nr-title>
           <paragraph nr="1">
             <sen nr="1">plasthúðun sem tengist prentun – samlíming tveggja eða fleiri sveigjanlegra efna til að gera lagskipta afurð,</sen>
           </paragraph>
         </numart>
         <numart nr="d" nr-type="alphabet">
-          <nr-title>d)</nr-title>
+          <nr-title>d.</nr-title>
           <paragraph nr="1">
             <sen nr="1">djúpprentun á gæðapappír – djúpprentun á pappír fyrir tímarit, bæklinga, verðlista eða annað áþekkt, þar sem notaður er farvi sem inniheldur tólúen,</sen>
           </paragraph>
         </numart>
         <numart nr="e" nr-type="alphabet">
-          <nr-title>e)</nr-title>
+          <nr-title>e.</nr-title>
           <paragraph nr="1">
             <sen nr="1">djúpprentun – prentun þar sem myndberinn er sívalur, prentflöturinn er neðar en óprentaðir fletir og notaður er fljótandi farvi sem þornar við uppgufun.</sen>
             <sen nr="2">Hólfin eru fyllt með farva og umframfarvi er þurrkaður af óprentuðu flötunum áður en sá flötur, sem prenta skal á, snertir valsann og lyftir farvanum upp úr hólfunum,</sen>
           </paragraph>
         </numart>
         <numart nr="f" nr-type="alphabet">
-          <nr-title>f)</nr-title>
+          <nr-title>f.</nr-title>
           <paragraph nr="1">
             <sen nr="1">valsasáldprentun – prentun af streng þar sem farvinn er færður á þann flöt sem prenta skal á með því að þrýsta honum í gegnum gropinn myndbera, þar sem prentflöturinn er opinn og aðrir fletir eru lokaðir, og notaður er fljótandi farvi sem þornar eingöngu við uppgufun.</sen>
             <sen nr="2">Prentun af streng merkir að efnið sem prenta skal á er matað í vélina af kefli en ekki sem stakar arkir,</sen>
           </paragraph>
         </numart>
         <numart nr="g" nr-type="alphabet">
-          <nr-title>g)</nr-title>
+          <nr-title>g.</nr-title>
           <paragraph nr="1">
             <sen nr="1">lökkun – starfsemi þar sem lakk eða límlag er borið á þjált efni, ætlað í umbúðir, í því skyni að loka síðar umbúðunum.</sen>
           </paragraph>
@@ -6125,13 +6131,13 @@
       <paragraph nr="2">
         <sen nr="1">Hvers kyns iðnaðar- eða viðskiptastarfsemi sem felst í húðunarstarfsemi og tilheyrandi fituhreinsun þar sem framkvæmd er annaðhvort:</sen>
         <numart nr="a" nr-type="alphabet">
-          <nr-title>a)</nr-title>
+          <nr-title>a.</nr-title>
           <paragraph nr="1">
             <sen nr="1">upphafleg yfirborðsmeðferð ökutækja, eins og skilgreint er í tilskipun 2007/46/EB, eða hluta þeirra með efnum til lakkviðgerða, að því tilskildu að starfsemin fari fram utan upphaflegu framleiðslulínunnar, eða</sen>
           </paragraph>
         </numart>
         <numart nr="b" nr-type="alphabet">
-          <nr-title>b)</nr-title>
+          <nr-title>b.</nr-title>
           <paragraph nr="1">
             <sen nr="1">yfirborðsmeðferð eftirvagna (þ.m.t. festivagna) (O-flokkur í tilskipun 2007/46/EB).</sen>
           </paragraph>
