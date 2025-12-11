@@ -238,13 +238,23 @@ class AdvertProblemHandler:
         else:
             return status_entries[0]
 
-    def set_adverts(self, identifier: str, adverts: list):
+    def set_adverts(
+        self,
+        identifier: str,
+        adverts: list,
+        advert_intents: dict = None,
+        intent_distances: dict = None,
+    ):
         """
-        Set the adverts list for a law entry.
+        Set the adverts list for a law entry with their intents.
 
         Args:
             identifier: Law identifier (e.g., "88/1991")
             adverts: List of advert identifiers (e.g., ["63/2024", "64/2024"])
+            advert_intents: Dictionary mapping advert identifiers to lists of intent info dicts
+                           (e.g., {"63/2024": [{"action": "edit", "nr": 1, "action-xpath": "..."}, ...]})
+            intent_distances: Dictionary mapping (advert_id, intent_nr, status_type) tuples to distances
+                             (e.g., {("63/2024", 1, "content"): 5, ("63/2024", 1, "content-stripped"): 3})
         """
         law_entry = self.get_law_entry(identifier)
 
@@ -253,11 +263,50 @@ class AdvertProblemHandler:
         if existing_adverts is not None:
             law_entry.remove(existing_adverts)
 
-        # Add adverts element with child advert elements
+        # Add adverts element with child advert elements and their intents
         if adverts and len(adverts) > 0:
             adverts_elem = E("adverts")
             for advert_id in adverts:
                 advert_elem = E("advert", {"identifier": advert_id})
+
+                # Add intents
+                if advert_intents and advert_id in advert_intents:
+                    intents_elem = E("intents")
+                    for intent_info in advert_intents[advert_id]:
+                        action = intent_info.get("action")
+                        intent_nr = intent_info.get("nr")
+
+                        # Create simplified intent element with only action and nr
+                        intent_elem = E("intent", {"action": action})
+                        if intent_nr is not None:
+                            intent_elem.set("nr", str(intent_nr))
+
+                        # Add status elements for content and content-stripped
+                        if intent_distances and intent_nr is not None:
+                            for status_type in ["content", "content-stripped"]:
+                                key = (advert_id, intent_nr, status_type)
+                                if key in intent_distances:
+                                    distance = intent_distances[key]
+                                    if distance >= 0:
+                                        status_elem = E("status", {"type": status_type})
+                                        status_elem.set("distance", str(distance))
+
+                                        # Get success ratio if available
+                                        success_key = (
+                                            advert_id,
+                                            intent_nr,
+                                            status_type,
+                                            "success",
+                                        )
+                                        if success_key in intent_distances:
+                                            success = intent_distances[success_key]
+                                            status_elem.set("success", f"{success:.8f}")
+
+                                        intent_elem.append(status_elem)
+
+                        intents_elem.append(intent_elem)
+                    advert_elem.append(intents_elem)
+
                 adverts_elem.append(advert_elem)
             # Insert adverts before status elements
             status_elements = law_entry.findall("status")
