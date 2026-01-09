@@ -41,8 +41,8 @@ def law_compare(request):
     codexa = request.GET.get("codexa", "154a")
     codexb = request.GET.get("codexb", "154b")
     lawref = request.GET.get("lawref", "7/2022")
-    law1 = Law(lawref, codex=codexa)
-    law2 = Law(lawref, codex=codexb)
+    law1 = Law(lawref, codex_version=codexa)
+    law2 = Law(lawref, codex_version=codexb)
 
     # We're going to walk through both laws, and compare them chunk by chunk.
     # If a chunk is missing in one of the laws, we'll leave a blank for that
@@ -69,13 +69,13 @@ def law_compare(request):
 
     def determine_chunk(c1, c2, script):
         if c1 in script_source_map.keys():
-            if script_source_map[c1].edit_type == EditType.Delete:
+            if script_source_map[c1].edit_type == EditType.delete:
                 return {"a": c1, "b": None, "diff": True}
-            if script_source_map[c1].edit_type == EditType.Change:
+            if script_source_map[c1].edit_type == EditType.change:
                 return {"a": c1, "b": script_source_map[c1].target, "diff": True}
 
         if c2 in script_target_map.keys():
-            if script_target_map[c2].edit_type == EditType.Insert:
+            if script_target_map[c2].edit_type == EditType.insert:
                 return {"a": None, "b": c2, "diff": True}
 
         # There's no difference between the two chunks.

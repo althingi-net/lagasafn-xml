@@ -1,3 +1,6 @@
+import re
+from datetime import datetime
+
 from django.http import HttpRequest
 from django.http import HttpResponse
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
@@ -16,7 +19,6 @@ from ninja import Router
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
 from .searchengine import SearchEngine
-from datetime import datetime
 
 
 router = Router(tags=["Law"])
@@ -135,8 +137,25 @@ def api_normalize(request, input_file: UploadedFile = File(...)):
     operation_id="listLaws",
     response=LawIndex,
 )
-def api_list(request: HttpRequest):
-    index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
+def api_list(request: HttpRequest, codex_version: str = None):
+    """
+    Returns a list of all laws in the specified codex version.
+
+    If codex_version is provided, it must be a valid codex version identifier.
+    """
+    # Default behavior: current codex version.
+    if codex_version is None:
+        codex_version = CURRENT_PARLIAMENT_VERSION
+    else:
+        # Validate that the version exists
+        versions = LawManager.codex_versions()
+        if codex_version not in versions:
+            raise HttpError(
+                400,
+                f"Invalid codex version '{codex_version}'. Available versions: {', '.join(versions)}",
+            )
+
+    index = LawManager.index(codex_version)
     return index
 
 
@@ -158,6 +177,40 @@ def api_codex_versions(request: HttpRequest):
     operation_id="getLaw",
     response=Law,
 )
-def api_get(request: HttpRequest, identifier: str):
-    law = Law(identifier, CURRENT_PARLIAMENT_VERSION)
-    return law
+def api_get(request: HttpRequest, identifier: str, version: str = None):
+    """
+    Returns a single requested law.
+
+    - A version identifier (e.g. "154b", "155", "156a") – loads from that codex version.
+    - A version identifier followed by a date (e.g. "154b-2024-07-12") – loads from the
+        applied XML for the advert that affects this law in that codex version with the specified
+        enact timing date (YYYY-MM-DD format).
+    - If version is not provided, defaults to the current parliament version.
+    """
+
+    # Default behavior: current codex version.
+    if version is None:
+        return Law(identifier, CURRENT_PARLIAMENT_VERSION)
+
+    match = re.match(
+        r"^(?P<codex>\d{3}[a-z]?)(?:-(?P<date>\d{4}-\d{2}-\d{2}))?$", version
+    )
+    if not match:
+        raise HttpError(400, f"Invalid version format: {version}")
+
+    codex_version = match.group("codex")
+    date = match.group("date")
+
+    print(codex_version)
+    # Load the law. If a date is provided, it's an applied version from an advert.
+    # Otherwise, it's the base codex version.
+    try:
+        return Law(identifier, codex_version, applied_timing=date)
+    except (NoSuchLawException, OSError):
+        if date:
+            error_msg = f"Applied version for law '{identifier}' and version '{codex_version}-{date}' doesn't exist."
+        else:
+            error_msg = (
+                f"No such law '{identifier}' in codex version '{codex_version}'."
+            )
+        raise HttpError(404, error_msg)

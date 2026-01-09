@@ -1,15 +1,32 @@
-import { useParams } from '@solidjs/router';
-import { createSignal, createResource, createEffect } from 'solid-js';
+import { useParams, useSearchParams, A } from '@solidjs/router';
+import { createSignal, createResource, createEffect, For, createMemo } from 'solid-js';
 import { LawService } from '~/api';
 import Header from '~/components/Header';
+import LawVersionSelect from '~/components/LawVersionSelect';
 import '~/law.css';
 
 export default function LawView() {
     const { year, number } = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const identifier = `${number}/${year}`;
-    const [law] = createResource(() => {
-        return identifier;
-    }, LawService.getLaw);
+
+    // Get version from query params
+    const version = createMemo(() => searchParams.version as string | undefined);
+
+    // Fetch law with version parameter
+    const [law] = createResource(
+        () => [identifier, version()] as const,
+        ([id, v]) => LawService.getLaw(id, v),
+    );
+    // Handle version change
+    const handleVersionChange = (newVersion: string) => {
+        if (newVersion) {
+            setSearchParams({ version: newVersion });
+        }
+        else {
+            setSearchParams({ version: undefined });
+        }
+    };
 
     const [activeSection, setActiveSection] = createSignal<string | null>(null);
 
@@ -37,10 +54,7 @@ export default function LawView() {
     // Make sections togglable
     const makeTogglable = (element: Element) => {
         // Find a handle to control toggling. If element has no name, try nr-title.
-        let toggleButton = element.querySelector('name');
-        if (!toggleButton) {
-            toggleButton = element.querySelector('nr-title');
-        }
+        const toggleButton = element.querySelector('name') ?? element.querySelector('nr-title');
 
         if (toggleButton) {
             // Add toggle button class and attributes
@@ -178,7 +192,22 @@ export default function LawView() {
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between py-4">
                     <h2 class="text-xl text-white">&nbsp;</h2>
-                    <div class="flex gap-2">
+                    <div class="flex gap-2 items-center">
+
+                        <LawVersionSelect
+                            value={version() ?? ''}
+                            onInput={handleVersionChange}
+                            versions={law()?.versions ?? []}
+                            disabled={law.loading}
+                        />
+
+                        <A
+                            href={`/law/${number}/${year}/compare${version() ? `?version=${version()}` : ''}`}
+                            class="px-2 py-1 bg-white/10 text-white text-sm rounded hover:bg-white/20 no-underline inline-block text-center"
+                        >
+                            Compare versions
+                        </A>
+
                         <a
                             href={`https://www.althingi.is/lagas/156a/${year}${number.padStart(3, '0')}.html`}
                             target="_blank"
