@@ -117,17 +117,20 @@ export class LawService {
     /**
      * Returns a single requested law.
      * @param identifier
+     * @param version Optional version parameter ("154b" or "154b-2024-07-12")
      * @returns Law OK
      * @throws ApiError
      */
     public static getLaw(
         identifier: string,
+        version?: string,
     ): CancelablePromise<Law> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/law/get',
             query: {
                 'identifier': identifier,
+                'version': version
             },
         });
     }

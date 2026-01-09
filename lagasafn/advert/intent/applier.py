@@ -21,6 +21,7 @@ def apply_intents_to_law(
     intents: list,
     advert_identifier: str,
     codex_version: str = None,
+    validate_xml=True,
 ):
     """
     Apply multiple intents to a single law and save once at the end.
@@ -40,6 +41,7 @@ def apply_intents_to_law(
 
     law = Law(law_identifier, codex_version)
     law_xml = law.xml().getroot()
+    enact_date = None
     for intent in intents:
         action = intent.get("action")
         action_xpath = intent.get("action-xpath")
@@ -73,7 +75,7 @@ def apply_intents_to_law(
         elif action == "repeal":
             _apply_repeal_intent(intent, law_xml, advert_identifier)
         elif action == "enact":
-            print(f"Unknown action: {action}")
+            enact_date = intent.get("timing")
             continue
         else:
             raise AdvertException(f"Unknown action: {action}")
@@ -89,9 +91,8 @@ def apply_intents_to_law(
     applied_dir = f"{XML_BASE_DIR}/{codex_version}/applied"
     makedirs(applied_dir, exist_ok=True)
 
-    applied_filename = (
-        f"{applied_dir}/{law.year}.{law.nr}-{advert_identifier.replace('/', '.')}.xml"
-    )
+    # FIXME we need enact date per intent
+    applied_filename = f"{applied_dir}/{law.year}.{law.nr}-{enact_date}.xml"
 
     with open(applied_filename, "w", encoding="utf-8") as f:
         f.write(write_xml(law_xml))

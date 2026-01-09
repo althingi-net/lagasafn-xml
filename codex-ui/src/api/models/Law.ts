@@ -13,6 +13,7 @@ export type Law = {
     nr: number;
     year: number;
     chapters: Array<Chapter>;
+    versions: Array<string>;
     html_text: string;
 };
 
