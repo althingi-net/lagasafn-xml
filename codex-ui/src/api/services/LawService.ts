@@ -93,22 +93,31 @@ export class LawService {
     }
     /**
      * Returns a list of all laws.
+     * Returns a list of all laws in the specified codex version.
+     *
+     * If codex_version is provided, it must be a valid codex version identifier.
+     * @param codexVersion
      * @returns LawIndex OK
      * @throws ApiError
      */
-    public static listLaws(): CancelablePromise<LawIndex> {
+    public static listLaws(
+        codexVersion?: string,
+    ): CancelablePromise<LawIndex> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/law/list',
+            query: {
+                'codex_version': codexVersion,
+            },
         });
     }
     /**
      * Returns a list of available codex versions.
      * Returns a list of available codex versions
-     * @returns any OK
+     * @returns string OK
      * @throws ApiError
      */
-    public static listCodexVersions(): CancelablePromise<any> {
+    public static listCodexVersions(): CancelablePromise<Array<string>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/law/codex-versions',
@@ -117,7 +126,7 @@ export class LawService {
     /**
      * Returns a single requested law.
      * @param identifier
-     * @param version Optional version parameter ("154b" or "154b-2024-07-12")
+     * @param version
      * @returns Law OK
      * @throws ApiError
      */
@@ -130,7 +139,7 @@ export class LawService {
             url: '/api/law/get',
             query: {
                 'identifier': identifier,
-                'version': version
+                'version': version,
             },
         });
     }

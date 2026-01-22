@@ -7,7 +7,7 @@ import LawTable from '~/components/LawTable';
 export default function Home() {
     const [searchQuery, setSearchQuery] = createSignal('');
 
-    const [laws] = createResource(LawService.listLaws);
+    const [laws] = createResource(() => LawService.listLaws());
     const [stats] = createResource(async () => ({
         totalCount: 1699,
         emptyCount: 915,

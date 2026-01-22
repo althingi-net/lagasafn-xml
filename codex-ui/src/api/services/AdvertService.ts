@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { Advert } from '../models/Advert';
 import type { AdvertIndex } from '../models/AdvertIndex';
+import type { AdvertIntentDetails } from '../models/AdvertIntentDetails';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
@@ -37,6 +38,23 @@ export class AdvertService {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/advert/get',
+            query: {
+                'identifier': identifier,
+            },
+        });
+    }
+    /**
+     * Returns intent details with comparisons.
+     * @param identifier
+     * @returns AdvertIntentDetails OK
+     * @throws ApiError
+     */
+    public static getAdvertIntents(
+        identifier: string,
+    ): CancelablePromise<AdvertIntentDetails> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/advert/intents',
             query: {
                 'identifier': identifier,
             },
