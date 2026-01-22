@@ -4,7 +4,6 @@ from django.urls import path
 from django.urls import include
 from django.shortcuts import redirect
 from django.urls import reverse
-from lagasafn.exceptions import BillException
 from law.api import router as law_router
 from ninja import NinjaAPI
 
