@@ -1735,7 +1735,10 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
         tracker.intents = lower_intents
 
         tracker.set_lines(ols)
-        next(tracker.lines)
+        try:
+            next(tracker.lines)
+        except StopIteration:
+            raise IntentParsingException("Unexpected end of nodes.")
 
         if parse_sub_intents(tracker):
             pass

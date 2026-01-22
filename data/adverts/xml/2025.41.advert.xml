@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="41" published-date="2025-06-26" applied-to-codex-version="156a">
+  <affected-laws>
+    <affected-law nr="65" year="1974">65/1974</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um ávana- og fíkniefni, nr. 65/1974 (breytingar á neyslurými).</description>
+  <advert-art nr="1">
+    <original affected-law-nr="65" affected-law-year="1974">Eftirfarandi breytingar verða á 2. gr. a laganna:<ol type="a">
+        <li value="1">Á eftir orðinu „sveitarfélagi“ í 1. málsl. 1. mgr. kemur: heilbrigðisstofnun eða frjálsum félagasamtökum.<br/>
+        </li>
+        <li>Í stað orðanna „Sveitarfélagi sem fengið hefur“ í 2. mgr. kemur: Sveitarfélagi, heilbrigðisstofnun eða frjálsum félagasamtökum sem fengið hafa.<br/>
+        </li>
+        <li>3. mgr. orðast svo:<br/>
+        </li>Neyslurými er lagalega verndað umhverfi þar sem fólk sem er 18 ára og eldra getur notað ávana- og fíkniefni undir eftirliti starfsfólks og gætt er fyllsta hreinlætis, öryggis og sýkingarvarna.<br/>
+        <li>Á eftir orðinu „sveitarfélagi“ í 1. málsl. 4. mgr. kemur: heilbrigðisstofnun eða frjálsum félagasamtökum.<br/>
+        </li>
+        <li>Á eftir orðinu „Sveitarfélagi“ í 6. mgr. kemur: eða heilbrigðisstofnun.<br/>
+        </li>
+      </ol>
+    </original>
+    <intents common-address="2. gr. a">
+      <intent action="append_text" action-xpath="art[@nr='2a']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="65" action-law-year="1974">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2a,')]//subart[@nr='1']//sen[@nr='1']">1. málsl. 1. mgr. 2. gr. a</address>
+        <existing>
+          <sen nr="1">Þrátt fyrir ákvæði 1. mgr. 2. gr. getur embætti landlæknis veitt sveitarfélagi leyfi til að stofna og reka neyslurými þar sem varsla og meðferð ávana- og fíkniefna, sbr. 6. gr., er heimil.</sen>
+        </existing>
+        <text-from>sveitarfélagi</text-from>
+        <text-to>heilbrigðisstofnun eða frjálsum félagasamtökum.</text-to>
+      </intent>
+      <intent action="replace_text" action-xpath="art[@nr='2a']/subart[@nr='2']" action-law-nr="65" action-law-year="1974">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2a,')]//subart[@nr='2']">2. mgr. 2. gr. a</address>
+        <existing>
+          <subart nr="2">
+            <paragraph nr="1">
+              <sen nr="1">Sveitarfélagi sem fengið hefur leyfi skv. 1. mgr. og lögreglu er heimilt að gera samkomulag um að lögregla grípi ekki til aðgerða gegn notendum neyslurýmis á tilteknu svæði í kringum húsnæði neyslurýmis.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>Sveitarfélagi sem fengið hefur</text-from>
+        <text-to>Sveitarfélagi, heilbrigðisstofnun eða frjálsum félagasamtökum sem fengið hafa</text-to>
+      </intent>
+      <intent action="replace" action-xpath="art[@nr='2a']/subart[@nr='3']" action-law-nr="65" action-law-year="1974">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2a,')]//subart[@nr='3']">3. mgr. 2. gr. a</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Neyslurými er lagalega verndað umhverfi þar sem neytendur sem eru 18 ára og eldri geta sprautað ávana- og fíkniefnum í æð undir eftirliti starfsfólks og gætt er fyllsta hreinlætis, öryggis og sýkingavarna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1"/>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="append_text" action-xpath="art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='a']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='b']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='c']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='d']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='e']/paragraph[@nr='1']/sen[@nr='1'] | art[@nr='2a']/subart[@nr='4']/paragraph[@nr='1']/numart[@nr='f']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="65" action-law-year="1974">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2a,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 2. gr. a</address>
+        <existing>
+          <sen nr="1">Eingöngu er unnt að veita sveitarfélagi leyfi skv. 1. mgr. ef skilyrði reglugerðar sem ráðherra setur um neyslurými eru uppfyllt.</sen>
+          <sen nr="1">Þjónustu sem veitt skal í neyslurými.</sen>
+          <sen nr="1">Hollustuhætti, svo sem um förgun sprautuúrgangs.</sen>
+          <sen nr="1">Verkefni, öryggi og hæfni starfsfólks.</sen>
+          <sen nr="1">Upplýsingaskyldu rekstraraðila gagnvart embætti landlæknis.</sen>
+          <sen nr="1">Setningu húsreglna.</sen>
+          <sen nr="1">Eftirlit með starfsemi neyslurýmis.</sen>
+        </existing>
+        <text-from>sveitarfélagi</text-from>
+        <text-to>heilbrigðisstofnun eða frjálsum félagasamtökum.</text-to>
+      </intent>
+      <intent action="append_text" action-xpath="art[@nr='2a']/subart[@nr='6']" action-law-nr="65" action-law-year="1974">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',2a,')]//subart[@nr='6']">6. mgr. 2. gr. a</address>
+        <existing>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">Sveitarfélagi er heimilt að fengnu samþykki landlæknis að semja við félagasamtök um rekstur neyslurýmis að uppfylltum skilyrðum 4. mgr.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <text-from>Sveitarfélagi</text-from>
+        <text-to>eða heilbrigðisstofnun.</text-to>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="2">
+    <original affected-law-nr="65" affected-law-year="1974">Lög þessi öðlast þegar gildi.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-06-26" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 16. júní 2025.</approved-by-parliament-when>
+</advert>

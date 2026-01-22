@@ -5,8 +5,7 @@
   </affected-laws>
   <description>Lög um breytingu á lögum um Afurðasjóð Grindavíkurbæjar, nr. 74/2024 (framlenging).</description>
   <advert-art nr="1">
-    <original affected-law-nr="74" affected-law-year="2024">Í stað ártalsins „2024“ í 1. gr. laganna kemur: 2025.<br/>
-    </original>
+    <original affected-law-nr="74" affected-law-year="2024">Í stað ártalsins „2024“ í 1. gr. laganna kemur: 2025.</original>
     <intents>
       <intent action="replace_text" action-xpath="art[@nr='1']" action-law-nr="74" action-law-year="2024">
         <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]">1. gr.</address>
@@ -22,13 +21,12 @@
           </art>
         </existing>
         <text-from>2024</text-from>
-        <text-to>2025.</text-to>
+        <text-to>2025</text-to>
       </intent>
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="74" affected-law-year="2024">Lög þessi öðlast þegar gildi.<br/>
-    </original>
+    <original affected-law-nr="74" affected-law-year="2024">Lög þessi öðlast þegar gildi.</original>
     <intents>
       <intent action="enact" action-xpath="" timing="2024-11-26" timing-type="immediate"/>
     </intents>

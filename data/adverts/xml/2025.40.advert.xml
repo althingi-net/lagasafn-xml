@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="40" published-date="2025-06-26" applied-to-codex-version="156a">
+  <affected-laws>
+    <affected-law nr="40" year="2007">40/2007</affected-law>
+    <affected-law nr="125" year="1999">125/1999</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um heilbrigðisþjónustu og lögum um málefni aldraðra (ábyrgðarskipting á uppbyggingu hjúkrunarheimila).</description>
+  <advert-chapter nr="1" nr-type="roman" roman-nr="I">
+    <description>Breyting á lögum um heilbrigðisþjónustu, nr. 40/2007.</description>
+    <advert-art nr="1">
+      <original affected-law-nr="40" affected-law-year="2007">32. gr. laganna orðast svo:<br/>Kostnaður við öflun húsnæðis vegna sjúkrahúsa, heilsugæslustöðva og hjúkrunarheimila greiðist úr ríkissjóði.<br/>Sveitarfélög láta í té lóðir undir húsnæði skv. 1. mgr., þ.m.t. íbúðarhúsnæði sem ætlað er starfsmönnum, án gjalda og kvaða. Sveitarfélögum er þó heimilt að innheimta gatnagerðargjald af lóðum undir hjúkrunarheimili.<br/>Hvorugur aðili á kröfu á hinn um leigu vegna eignar eða eignarhluta vegna eigna skv. 1. mgr. sem eru í sameiginlegri eigu ríkis og sveitarfélaga.</original>
+      <intents>
+        <intent action="replace" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='32']" action-law-nr="40" action-law-year="2007">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',32,')]">32. gr.</address>
+          <existing>
+            <art nr="32">
+              <nr-title>32. gr.</nr-title>
+              <name>Kostnaðarskipting ríkis og sveitarfélaga.</name>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Kostnaður við byggingu og búnað sjúkrahúsa og heilsugæslustöðva í eigu ríkisins greiðist úr ríkissjóði.</sen>
+                  <sen nr="2">Þátttaka sveitarfélaga í kostnaði við byggingu og búnað hjúkrunarheimila skal vera 15% af stofnkostnaði.</sen>
+                  <sen nr="3">Meiri háttar viðhald og tækjakaup teljast til stofnkostnaðar.</sen>
+                  <sen nr="4">Almennur viðhaldskostnaður fasteigna og tækja telst ekki til stofnkostnaðar.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Sveitarfélög láta í té lóðir undir byggingar skv. 1. mgr., þ.m.t. íbúðarhúsnæði sem ætlað er starfsmönnum, ríkissjóði að kostnaðarlausu og án greiðslu gatnagerðargjalda og lóðarleigu.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Eignarhlutur hvors aðila um sig skal vera í samræmi við kostnaðarhlutdeild skv. 1. mgr.</sen>
+                  <sen nr="2">Hvorugur aðili á kröfu á hinn um leigu vegna eignar eða eignarhluta.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="4">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra getur í reglugerð, að höfðu samráði við Samband íslenskra sveitarfélaga, kveðið nánar á um það hvað telst til meiri háttar viðhalds skv. 1. mgr.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="14" nr="1">
+                  <footnote-sen>L. 91/2020, 14. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='32']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="í eigu ríkisins" instance-num="1"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </existing>
+          <inner>
+            <art nr="32">
+              <nr-title>32. gr.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Kostnaður við öflun húsnæðis vegna sjúkrahúsa, heilsugæslustöðva og hjúkrunarheimila greiðist úr ríkissjóði.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Sveitarfélög láta í té lóðir undir húsnæði skv. 1. mgr., þ.m.t. íbúðarhúsnæði sem ætlað er starfsmönnum, án gjalda og kvaða.</sen>
+                  <sen nr="2">Sveitarfélögum er þó heimilt að innheimta gatnagerðargjald af lóðum undir hjúkrunarheimili.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Hvorugur aðili á kröfu á hinn um leigu vegna eignar eða eignarhluta vegna eigna skv. 1. mgr. sem eru í sameiginlegri eigu ríkis og sveitarfélaga.</sen>
+                </paragraph>
+              </subart>
+            </art>
+          </inner>
+        </intent>
+      </intents>
+    </advert-art>
+  </advert-chapter>
+  <advert-art nr="2">
+    <original affected-law-nr="40" affected-law-year="2007">Við lögin bætist nýtt ákvæði til bráðabirgða, svohljóðandi:<br/>Samhliða breytingum á ábyrgðarskiptingu vegna uppbyggingar hjúkrunarheimila skal afskrifa og yfirfæra eignarhlut sveitarfélaga í fasteignum hjúkrunarheimila til ríkisins sem mun alfarið annast og kosta viðhald og endurbætur á viðkomandi fasteign.<br/>Yfirfærsla á eignarhlut sveitarfélaga skv. 1 mgr. nær aðeins til hjúkrunarheimila sem eru í rekstri og sameiginlegri eigu ríkis og sveitarfélaga og skal lokið eigi síðar en 1. janúar 2026.</original>
+    <intents>
+      <intent action="add" action-xpath="chapter[@nr='t']" action-law-nr="40" action-law-year="2007">
+        <address xpath="//*[@nr='t']">ákvæði til bráðabirgða</address>
+        <existing>
+          <chapter nr-type="temporary-clauses" nr="t">
+            <name>Ákvæði til bráðabirgða.</name>
+            <art nr="I" roman-nr="1" number-type="roman">
+              <nr-title>I.</nr-title>
+              <subart nr="1">
+                <paragraph nr="1">
+                  <sen nr="1">Meðan tímabundnir samningar, sbr. 28. gr., við sveitarfélög um rekstur heilbrigðisþjónustu gilda teljast hlutaðeigandi starfsmenn heilbrigðisstofnana sem reknar eru af ríkinu og eru í starfi þegar samningarnir taka gildi vera í þjónustu viðkomandi sveitarfélags.</sen>
+                  <sen nr="2">Í slíkum samningum er ráðherra heimilt að framselja viðkomandi sveitarfélagi allar þær valdheimildir sem forstjórar heilbrigðisstofnana fara með samkvæmt lögum um réttindi og skyldur starfsmanna ríkisins, svo fremi að starfsmönnum sé tilkynnt hver fari með það vald.</sen>
+                  <sen nr="3">Engin formbreyting verður á ráðningarstöðu starfsmanna, þeir eru áfram ríkisstarfsmenn og um laun þeirra og önnur starfskjör fer eftir sömu kjarasamningum og fyrr.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="2">
+                <paragraph nr="1">
+                  <sen nr="1">Nýir starfsmenn, sem ráðnir verða til verkefna er samningur aðila tekur til, skulu ráðnir sem starfsmenn viðkomandi sveitarfélags.</sen>
+                </paragraph>
+              </subart>
+              <subart nr="3">
+                <paragraph nr="1">
+                  <sen nr="1">Ráðherra og ráðherra er fer með starfsmannamál ríkisins annars vegar og sveitarfélag hins vegar skulu semja um ábyrgðir sínar og greiðslur varðandi réttindi og kjör starfsmanna.</sen>
+                </paragraph>
+              </subart>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2010.162.html" law-nr="162" law-year="2010" law-art="77" nr="1">
+                  <footnote-sen>L. 162/2010, 77. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" words="ráðherra" instance-num="1"/>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="Ráðherra" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2011.126.html" law-nr="126" law-year="2011" law-art="451" nr="2">
+                  <footnote-sen>L. 126/2011, 451. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']" words="ráðherra er fer með starfsmannamál ríkisins" instance-num="1"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2008.112.html" law-nr="112" law-year="2008" law-art="59" nr="3">
+                  <footnote-sen>L. 112/2008, 59. gr.</footnote-sen>
+                  <location type="range" string-length="1024">
+                    <start xpath="chapter[@nr='t']/name[1]"/>
+                    <end xpath="chapter[@nr='t']/art[@nr='I']/subart[@nr='3']/paragraph[@nr='1']/sen[@nr='1']"/>
+                  </location>
+                </footnote>
+              </footnotes>
+            </art>
+            <art nr="II" roman-nr="2" number-type="roman">
+              <nr-title>II.</nr-title>
+              <footnotes>
+                <footnote href="https://www.althingi.is/altext/stjt/2024.048.html" law-nr="48" law-year="2024" law-art="5" nr="1">
+                  <footnote-sen>L. 48/2024, 5. gr.</footnote-sen>
+                  <location type="deletion" xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]" before-mark="^(\[??)?II." after-mark=":? ?(\[?\]?…?,?\.?:? ?&lt;sup( style=&quot;font-size:60%&quot;)?&gt; ?2\) ?&lt;/sup&gt;)?,? ?$"/>
+                </footnote>
+                <footnote href="https://www.althingi.is/altext/stjt/2020.091.html" law-nr="91" law-year="2020" law-art="15" nr="2">
+                  <footnote-sen>L. 91/2020, 15. gr.</footnote-sen>
+                  <location type="range" xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]" string-length="0"/>
+                </footnote>
+              </footnotes>
+            </art>
+          </chapter>
+        </existing>
+        <inner>
+          <art nr="III" roman-nr="3" number-type="roman">
+            <nr-title>III.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Samhliða breytingum á ábyrgðarskiptingu vegna uppbyggingar hjúkrunarheimila skal afskrifa og yfirfæra eignarhlut sveitarfélaga í fasteignum hjúkrunarheimila til ríkisins sem mun alfarið annast og kosta viðhald og endurbætur á viðkomandi fasteign.</sen>
+              </paragraph>
+            </subart>
+            <subart nr="2">
+              <paragraph nr="1">
+                <sen nr="1">Yfirfærsla á eignarhlut sveitarfélaga skv. 1 mgr. nær aðeins til hjúkrunarheimila sem eru í rekstri og sameiginlegri eigu ríkis og sveitarfélaga og skal lokið eigi síðar en 1. janúar 2026.</sen>
+              </paragraph>
+            </subart>
+          </art>
+        </inner>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-chapter nr="2" nr-type="roman" roman-nr="II">
+    <description>Breyting á lögum um málefni aldraðra, nr. 125/1999.</description>
+    <advert-art nr="3">
+      <original affected-law-nr="125" affected-law-year="1999">1.–3. málsl. 5. mgr. 9. gr. laganna falla brott.</original>
+      <intents>
+        <intent action="delete" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='1'] | chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='2'] | chapter[@nr='3' and @chapter-type='kafli']/art[@nr='9']/subart[@nr='5']/paragraph[@nr='1']/sen[@nr='3']" action-law-nr="125" action-law-year="1999">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',9,')]//subart[@nr='5']//sen[(@nr='1' or (starts-with(@nr, '1') and string-length(@nr) = 2 and string(number(@nr)) != @nr) or @nr='2' or (starts-with(@nr, '2') and string-length(@nr) = 2 and string(number(@nr)) != @nr) or @nr='3' or (starts-with(@nr, '3') and string-length(@nr) = 2 and string(number(@nr)) != @nr))]">1.–3. málsl. 5. mgr. 9. gr.</address>
+          <existing>
+            <sen nr="1">Þegar ríki og sveitarfélög standa saman að uppbyggingu hjúkrunarheimila skal þátttaka sveitarfélaga ekki vera minni en sem nemur 15% af stofnkostnaði og skal eignarhlutur vera í sömu hlutföllum og skipting stofnkostnaðar.</sen>
+            <sen nr="2">Þátttaka sveitarfélaga í greiðslu leigu fyrir hjúkrunarheimili skv. 4. mgr. skal ekki vera minni en sem nemur 15% af leigunni.</sen>
+            <sen nr="3">Taki sveitarfélag þátt í stofnkostnaði eða greiðslu leigu vegna byggingar annarra hjúkrunarheimila skal samþykki þess fyrir greiðsluþátttöku liggja fyrir áður en framkvæmda- og rekstrarleyfi er gefið út.</sen>
+          </existing>
+        </intent>
+      </intents>
+    </advert-art>
+  </advert-chapter>
+  <advert-art nr="4">
+    <original affected-law-nr="125" affected-law-year="1999">Lög þessi öðlast gildi 1. júlí 2025.<br/>Þrátt fyrir 1. mgr. fela breytingar á ábyrgðarskiptingu vegna uppbyggingar hjúkrunarheimila skv. 1. gr. ekki í sér yfirtöku ríkisins á kostnaðarþátttöku sveitarfélaga vegna hjúkrunarheimila sem voru í byggingu fyrir gildistöku laga þessara.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-07-01" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 16. júní 2025.</approved-by-parliament-when>
+</advert>

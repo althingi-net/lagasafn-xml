@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="90" published-date="2025-12-18" applied-to-codex-version="156b">
+  <affected-laws>
+    <affected-law nr="74" year="2024">74/2024</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um Afurðasjóð Grindavíkurbæjar, nr. 74/2024 (framlenging).</description>
+  <advert-art nr="1">
+    <original affected-law-nr="74" affected-law-year="2024">Í stað ártalsins „2025“ í 1. gr. laganna kemur: 2026.</original>
+    <intents>
+      <intent action="replace_text" action-xpath="art[@nr='1']" action-law-nr="74" action-law-year="2024">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',1,')]">1. gr.</address>
+        <existing>
+          <art nr="1">
+            <nr-title>1. gr.</nr-title>
+            <name>Gildissvið.</name>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Lög þessi gilda um einstaklinga og lögaðila sem stunda tekjuskattsskyldan atvinnurekstur eða sjálfstæða starfsemi og verða fyrir tjóni skv. 6. gr. á tímabilinu frá og með gildistöku laga þessara til og með 31. desember 2025.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2024.133.html" law-nr="133" law-year="2024" law-art="1" nr="1">
+                <footnote-sen>L. 133/2024, 1. gr.</footnote-sen>
+                <location type="range" xpath="art[@nr='1']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" words="2025" middle-punctuation="." instance-num="1"/>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+        <text-from>2025</text-from>
+        <text-to>2026</text-to>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="2">
+    <original affected-law-nr="74" affected-law-year="2024">Lög þessi öðlast þegar gildi.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-12-18" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 12. desember 2025.</approved-by-parliament-when>
+</advert>
