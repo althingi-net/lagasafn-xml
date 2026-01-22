@@ -349,14 +349,13 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
         if parse_signature_confirmation(tracker):
             break
 
-        # This is a good debugging point.
         node = tracker.current_node()
-        text = get_all_text(node)
-        print()
-        print("Text: %s" % text)
-        import ipdb
 
-        ipdb.set_trace()
+        # This is a good debugging point.
+        #text = get_all_text(node)
+        #print()
+        #print("Text: %s" % text)
+        #import ipdb; ipdb.set_trace()
 
         raise AdvertParsingException("Can't parse element: %s" % node)
 
