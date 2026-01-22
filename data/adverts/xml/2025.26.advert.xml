@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="26" published-date="2025-05-28" applied-to-codex-version="156a">
+  <affected-laws>
+    <affected-law nr="160" year="2011">160/2011</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um svæðisbundna flutningsjöfnun, nr. 160/2011 (leiðrétting, framlenging gildistíma).</description>
+  <advert-art nr="1">
+    <original affected-law-nr="160" affected-law-year="2011">3. mgr. 6. gr. laganna orðast svo:<br/>Heildarfjárhæð flutningsjöfnunarstyrkja skal ákveðin með reglugerð sem ráðherra setur. Flutningsjöfnunarstyrkir til hvers framleiðanda mega ekki fara fram úr fjárhæð þeirri í gjaldmiðli Evrópusambandsins á þriggja ára tímabili sem Evrópusambandið tilgreinir sem minniháttaraðstoð Eftirlitsstofnunar EFTA og er þar af leiðandi ekki tilkynningarskyld til Eftirlitsstofnunar EFTA. Við umreikning í íslenskar krónur skal miða við gengi samkvæmt reglum sem kveðið er á um í reglugerð sem ráðherra setur. Við útreikning hámarksfjárhæðar skal reikna með aðra styrki sem framleiðandi hefur fengið frá opinberum aðilum. Í þessu sambandi eru þó undanskildir sérstakir styrkir sem aðili hefur fengið samkvæmt styrkjareglum sem Eftirlitsstofnun EFTA hefur samþykkt.</original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='2' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='3']" action-law-nr="160" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='3']">3. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Flutningsjöfnunarstyrkir til hvers framleiðanda skulu aldrei vera hærri en sem nemur 200.000 evrum á þriggja ára tímabili.</sen>
+              <sen nr="2">Við umreikning yfir í íslenskar krónur skal miða við gengi sem ESA gefur út og birt er í EES-viðbæti við Stjórnartíðindi Evrópusambandsins og á vef stofnunarinnar.</sen>
+              <sen nr="3">Við útreikning hámarksfjárhæðar skal reikna með aðra styrki sem framleiðandi hefur fengið frá opinberum aðilum.</sen>
+              <sen nr="4">Í þessu sambandi eru þó undanskildir sérstakir styrkir er aðili hefur fengið samkvæmt styrkjareglum sem ESA hefur samþykkt.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="3">
+            <paragraph nr="1">
+              <sen nr="1">Heildarfjárhæð flutningsjöfnunarstyrkja skal ákveðin með reglugerð sem ráðherra setur.</sen>
+              <sen nr="2">Flutningsjöfnunarstyrkir til hvers framleiðanda mega ekki fara fram úr fjárhæð þeirri í gjaldmiðli Evrópusambandsins á þriggja ára tímabili sem Evrópusambandið tilgreinir sem minniháttaraðstoð Eftirlitsstofnunar EFTA og er þar af leiðandi ekki tilkynningarskyld til Eftirlitsstofnunar EFTA.</sen>
+              <sen nr="3">Við umreikning í íslenskar krónur skal miða við gengi samkvæmt reglum sem kveðið er á um í reglugerð sem ráðherra setur.</sen>
+              <sen nr="4">Við útreikning hámarksfjárhæðar skal reikna með aðra styrki sem framleiðandi hefur fengið frá opinberum aðilum.</sen>
+              <sen nr="5">Í þessu sambandi eru þó undanskildir sérstakir styrkir sem aðili hefur fengið samkvæmt styrkjareglum sem Eftirlitsstofnun EFTA hefur samþykkt.</sen>
+            </paragraph>
+          </subart>
+        </inner>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="2">
+    <original affected-law-nr="160" affected-law-year="2011">Í stað dagsetningarinnar „31. desember 2025“ í 1. málsl. 12. gr. laganna kemur: 31. desember 2030.</original>
+    <intents>
+      <intent action="replace_text" action-xpath="chapter[@nr='5' and @chapter-type='kafli']/art[@nr='12']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="160" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',12,')]//sen[@nr='1']">1. málsl. 12. gr.</address>
+        <existing>
+          <sen nr="1">Lög þessi öðlast gildi 1. janúar 2012 og falla úr gildi 31. desember 2025.</sen>
+        </existing>
+        <text-from>31. desember 2025</text-from>
+        <text-to>31. desember 2030</text-to>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="3">
+    <original affected-law-nr="160" affected-law-year="2011">Lög þessi öðlast þegar gildi.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-05-28" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 22. maí 2025.</approved-by-parliament-when>
+</advert>
