@@ -1,27 +1,43 @@
 TAG_BASE := "ghcr.io/althingi-net"
+TAG_VERSION := "latest"
 
 _default:
     @just -u -l
 
+_full_tag app:
+    @echo "{{ TAG_BASE }}/{{ app }}:{{ TAG_VERSION }}"
+
 # Builds all images.
 build-images:
     just build-image lagasafn-base
+    just build-image codex-api
 
-# Build specific app. Options: 'lagasafn-base'
+# Build specific app. Options: 'lagasafn-base', 'codex-api'
 build-image app:
-    #!/bin/bash
-    set -e
-    TAG="{{ TAG_BASE }}/{{ app }}:latest"
-    docker build . --no-cache -t "$TAG"
-    docker push "$TAG"
+    docker build . -t "$(just _full_tag {{ app }})" --target "{{ app }}"
 
 # Pushes all images to registry.
 push-images:
     just push-image lagasafn-base
+    just push-image codex-api
 
 # Pushes specific app. Options: 'lagasafn-base'
 push-image app:
+    docker push "$(just _full_tag {{ app }})"
+
+# Stops and cleans container images for given app.
+clean-image app:
     #!/bin/bash
     set -e
-    TAG="{{ TAG_BASE }}/{{ app }}:latest"
-    docker push "$TAG"
+    TAG="$(just _full_tag {{ app }})"
+    docker container stop "$TAG" 2>/dev/null || true
+    docker container rm "$TAG" 2>/dev/null || true
+    docker image rm "$TAG" 2>/dev/null || true
+
+# Runs image of given app.
+run-image app:
+    docker run -it -p 8000:8000 "$(just _full_tag {{ app }})"
+
+# Runs a shell for the given app.
+run-shell app:
+    docker run -rm -it --entrypoint /bin/bash "$(just _full_tag {{ app }})"
