@@ -3,7 +3,7 @@ from datetime import datetime
 
 from django.http import HttpRequest
 from django.http import HttpResponse
-from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
+from lagasafn.constants import SEARCH_INDEX_FILENAME
 from lagasafn.exceptions import NoSuchElementException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.exceptions import ReferenceParsingException
@@ -12,19 +12,21 @@ from lagasafn.models.law import LawIndex
 from lagasafn.models.law import LawManager
 from lagasafn.pathing import get_segment
 from lagasafn.references import parse_reference_string
+from lagasafn.search import SearchEngine
+from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import write_xml
 from lxml import etree
 from ninja import File
 from ninja import Router
 from ninja.errors import HttpError
 from ninja.files import UploadedFile
-from .searchengine import SearchEngine
+from datetime import datetime
 
 
 router = Router(tags=["Law"])
 
 # Initialize the global search engine
-searchengine = SearchEngine("search_index.pkl")
+searchengine = SearchEngine(SEARCH_INDEX_FILENAME)
 
 
 @router.get(
