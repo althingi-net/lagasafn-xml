@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="48" published-date="2025-07-14" applied-to-codex-version="156a">
+  <affected-laws>
+    <affected-law nr="88" year="2011">88/2011</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um réttindagæslu fyrir fatlað fólk, nr. 88/2011 (leiðrétting).</description>
+  <advert-art nr="1">
+    <original affected-law-nr="88" affected-law-year="2011">Eftirfarandi breytingar verða á 6. gr. laganna:<ol type="a">
+        <li value="1">4. mgr. orðast svo:<br/>
+        </li>Réttindagæslumaður tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.<br/>
+        <li>6. mgr. fellur brott.<br/>
+        </li>
+      </ol>
+    </original>
+    <intents common-address="6. gr.">
+      <intent action="replace" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='4']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='4']">4. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="4">
+            <paragraph nr="1">
+              <sen nr="1">Réttindagæslumaður tekur ekki til meðferðar ágreining milli einstaklinga, en honum ber að leiðbeina þeim sem til hans leita með slík mál um leiðir sem færar eru innan stjórnsýslu og hjá dómstólum.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+        <inner>
+          <subart nr="4">
+            <paragraph nr="1"/>
+          </subart>
+        </inner>
+      </intent>
+      <intent action="delete" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='6']" action-law-nr="88" action-law-year="2011">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='6']">6. mgr. 6. gr.</address>
+        <existing>
+          <subart nr="6">
+            <paragraph nr="1">
+              <sen nr="1">Ef réttindagæslumaður telur að þörfum fatlaðs barns sé ekki mætt með fullnægjandi hætti skal hann veita foreldrum og/eða barni leiðbeiningar um samþættingu þjónustu í þágu farsældar barna.</sen>
+              <sen nr="2">Ef foreldri og/eða barn setur fram beiðni þar að lútandi getur réttindagæslumaður tekið saman upplýsingar um aðstæður barns og miðlað þeim til tengiliðar eða málstjóra þjónustu í þágu farsældar barns.</sen>
+              <sen nr="3">Að öðru leyti teljast réttindagæslumenn ekki til þjónustuveitenda í skilningi laga um samþættingu þjónustu í þágu farsældar barna.</sen>
+            </paragraph>
+          </subart>
+        </existing>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="2">
+    <original affected-law-nr="88" affected-law-year="2011">Lög þessi öðlast þegar gildi.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-07-14" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 5. júlí 2025.</approved-by-parliament-when>
+</advert>

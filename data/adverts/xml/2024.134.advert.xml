@@ -1,15 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<advert type="law" record-id="3c21949a-9359-4cf9-8c85-a605ef161a56" year="2024" nr="134" published-date="2024-12-03" applied-to-codex-version="154c">
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2024" nr="134" published-date="2024-11-26" applied-to-codex-version="154c">
   <affected-laws>
     <affected-law nr="94" year="2023">94/2023</affected-law>
   </affected-laws>
-  <description>um breytingu á lögum um sértækan húsnæðisstuðning vegna náttúruhamfara í Grindavíkurbæ, nr. 94/2023 (framlenging).</description>
+  <description>Lög um breytingu á lögum um sértækan húsnæðisstuðning vegna náttúruhamfara í Grindavíkurbæ, nr. 94/2023 (framlenging).</description>
   <advert-art nr="1">
-    <original affected-law-nr="94" affected-law-year="2023">
-      <p style="text-align: justify;">Í stað dagsetningarinnar „31. mars 2025“ í 1. málsl. 4. mgr. 10. gr.<a href="https://www.althingi.is/lagas/154b/2023094.html" target="_blank">
-          <span style="color: #000000;">laganna</span>
-        </a>kemur: 30. júní 2025.</p>
-    </original>
+    <original affected-law-nr="94" affected-law-year="2023">Í stað dagsetningarinnar „31. mars 2025“ í 1. málsl. 4. mgr. 10. gr. laganna kemur: 30. júní 2025.</original>
     <intents>
       <intent action="replace_text" action-xpath="chapter[@nr='4' and @chapter-type='kafli']/art[@nr='10']/subart[@nr='4']/paragraph[@nr='1']/sen[@nr='1']" action-law-nr="94" action-law-year="2023">
         <address xpath="//art[contains(concat(',', @nr, ','), ',10,')]//subart[@nr='4']//sen[@nr='1']">1. málsl. 4. mgr. 10. gr.</address>
@@ -17,16 +13,12 @@
           <sen nr="1">Umsóknir um stuðning samkvæmt lögum þessum skulu berast Húsnæðis- og mannvirkjastofnun í síðasta lagi 31. mars 2025.</sen>
         </existing>
         <text-from>31. mars 2025</text-from>
-        <text-to>30. júní 2025.</text-to>
+        <text-to>30. júní 2025</text-to>
       </intent>
     </intents>
   </advert-art>
   <advert-art nr="2">
-    <original affected-law-nr="94" affected-law-year="2023">
-      <p>Í stað dagsetningarinnar „31. desember 2024“ í 4. mgr. 15. gr.<a href="https://www.althingi.is/lagas/154b/2023094.html" target="_blank">
-          <span style="color: #000000;">laganna</span>
-        </a>kemur: 31. mars 2025.</p>
-    </original>
+    <original affected-law-nr="94" affected-law-year="2023">Í stað dagsetningarinnar „31. desember 2024“ í 4. mgr. 15. gr. laganna kemur: 31. mars 2025.</original>
     <intents>
       <intent action="replace_text" action-xpath="chapter[@nr='6' and @chapter-type='kafli']/art[@nr='15']/subart[@nr='4']" action-law-nr="94" action-law-year="2023">
         <address xpath="//art[contains(concat(',', @nr, ','), ',15,')]//subart[@nr='4']">4. mgr. 15. gr.</address>
@@ -38,17 +30,15 @@
           </subart>
         </existing>
         <text-from>31. desember 2024</text-from>
-        <text-to>31. mars 2025.</text-to>
+        <text-to>31. mars 2025</text-to>
       </intent>
     </intents>
   </advert-art>
   <advert-art nr="3">
-    <original affected-law-nr="94" affected-law-year="2023">
-      <p>Lög þessi öðlast þegar gildi.</p>
-    </original>
+    <original affected-law-nr="94" affected-law-year="2023">Lög þessi öðlast þegar gildi.</original>
     <intents>
-      <intent action="enact" action-xpath="" timing="2024-12-03" timing-type="immediate"/>
+      <intent action="enact" action-xpath="" timing="2024-11-26" timing-type="immediate"/>
     </intents>
   </advert-art>
-  <signed-when>Gjört í Reykjavík, 26. nóvember 2024.</signed-when>
+  <approved-by-parliament-when>Samþykkt á Alþingi 18. nóvember 2024.</approved-by-parliament-when>
 </advert>

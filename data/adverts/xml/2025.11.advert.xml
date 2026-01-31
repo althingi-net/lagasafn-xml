@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="11" published-date="2025-03-27" applied-to-codex-version="155">
+  <affected-laws>
+    <affected-law nr="50" year="2004">50/2004</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um siglingavernd, nr. 50/2004 (áhættumat hafnaraðstöðu).</description>
+  <advert-art nr="1">
+    <original affected-law-nr="50" affected-law-year="2004">A-liður 3. mgr. 4. gr. laganna orðast svo: staðfesta áhættumat útgerða fyrir íslensk skip og áhættumat hafna og gera áhættumat fyrir hafnaraðstöðu.</original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='1' and @chapter-type='kafli']/art[@nr='4']/subart[@nr='3']/paragraph[@nr='1']/numart[@nr='a']" action-law-nr="50" action-law-year="2004">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',4,')]//subart[@nr='3']//*[self::numart or self::art-chapter][@nr='a' or @nr='A']">A-liður 3. mgr. 4. gr.</address>
+        <existing>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">staðfesta áhættumat útgerða fyrir íslensk skip og áhættumat hafnaraðstöðu fyrir hafnir,</sen>
+            </paragraph>
+          </numart>
+        </existing>
+        <inner>
+          <numart nr="a" nr-type="alphabet">
+            <nr-title>a.</nr-title>
+            <paragraph nr="1">
+              <sen nr="1">staðfesta áhættumat útgerða fyrir íslensk skip og áhættumat hafna og gera áhættumat fyrir hafnaraðstöðu.</sen>
+            </paragraph>
+          </numart>
+        </inner>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="2">
+    <original affected-law-nr="50" affected-law-year="2004">Í stað 2. málsl. 1. mgr. 6. gr. laganna koma tveir nýir málsliðir, svohljóðandi: Samgöngustofa gerir áhættumat fyrir hafnaraðstöðuna og staðfestir áhættumat hafnar. Samgöngustofa staðfestir verndaráætlun hafnaraðstöðu og hafnar.</original>
+    <intents>
+      <intent action="replace" action-xpath="chapter[@nr='3' and @chapter-type='kafli']/art[@nr='6']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='2']" action-law-nr="50" action-law-year="2004">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',6,')]//subart[@nr='1']//sen[@nr='2']">2. málsl. 1. mgr. 6. gr.</address>
+        <existing>
+          <sen nr="2">Útbúa skal áhættumat fyrir hafnaraðstöðuna og verndaráætlun og bera undir Samgöngustofu til staðfestingar.</sen>
+        </existing>
+        <inner>
+          <sen nr="2">Samgöngustofa gerir áhættumat fyrir hafnaraðstöðuna og staðfestir áhættumat hafnar.</sen>
+          <sen nr="3">Samgöngustofa staðfestir verndaráætlun hafnaraðstöðu og hafnar.</sen>
+        </inner>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="3">
+    <original affected-law-nr="50" affected-law-year="2004">Lög þessi öðlast þegar gildi.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2025-03-27" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 19. mars 2025.</approved-by-parliament-when>
+</advert>

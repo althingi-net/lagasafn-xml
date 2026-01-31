@@ -7,7 +7,9 @@ from lagasafn.constants import ADVERT_ORIGINAL_FILENAME
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.advert.parsers import parse_advert
 from lagasafn.advert.intent.applier import apply_intents_to_law
-from lagasafn.exceptions import AdvertException, IntentParsingException
+from lagasafn.exceptions import AdvertException
+from lagasafn.exceptions import AdvertParsingException
+from lagasafn.exceptions import IntentParsingException
 from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.models.advert import Advert
 from lagasafn.settings import CHAOSTEMPLE_URL
@@ -59,7 +61,7 @@ def convert_advert(doc_info: dict):
         xml_advert = parse_advert(doc_info, xml_remote)
         write_xml(xml_advert, out_filename)
         print(" done")
-    except (IntentParsingException, ReferenceParsingException) as ex:
+    except (AdvertParsingException, IntentParsingException, ReferenceParsingException) as ex:
         # Delete the file if it already existed, so that we can tell the
         # difference in `git status` and `git diff`.
         try:

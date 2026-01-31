@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<advert type="law" record-id="00000000-0000-4000-0000-000000000000" year="2025" nr="94" published-date="2025-12-24" applied-to-codex-version="156b">
+  <affected-laws>
+    <affected-law nr="144" year="2020">144/2020</affected-law>
+    <affected-law nr="77" year="2022">77/2022</affected-law>
+  </affected-laws>
+  <description>Lög um breytingu á lögum um fæðingar- og foreldraorlof og lögum um sorgarleyfi (fyrirkomulag greiðslna).</description>
+  <advert-chapter nr="1" nr-type="roman" roman-nr="I">
+    <description>Breyting á lögum um fæðingar- og foreldraorlof, nr. 144/2020.</description>
+    <advert-art nr="1">
+      <original affected-law-nr="144" affected-law-year="2020">Í stað orðanna „skulu koma“ í 1. mgr. 54. gr. laganna kemur: skulu eiga við um alla foreldra sem eiga rétt á greiðslum á grundvelli laga þessara, óháð því hvenær börn þeirra fæðast, eru frumættleidd eða tekin í varanlegt fóstur, og skulu greiðslurnar koma.</original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='12' and @chapter-type='kafli']/art[@nr='54']/subart[@nr='1']" action-law-nr="144" action-law-year="2020">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',54,')]//subart[@nr='1']">1. mgr. 54. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjárhæðir greiðslna til foreldris úr Fæðingarorlofssjóði skv. 1. og 3. mgr. 24. gr. og greiðslna fæðingarstyrks skv. 1. mgr. 38. gr. skulu koma til endurskoðunar við afgreiðslu fjárlaga ár hvert með tilliti til þróunar launa, verðlags og efnahagsmála.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>skulu koma</text-from>
+          <text-to>skulu eiga við um alla foreldra sem eiga rétt á greiðslum á grundvelli laga þessara, óháð því hvenær börn þeirra fæðast, eru frumættleidd eða tekin í varanlegt fóstur, og skulu greiðslurnar koma</text-to>
+        </intent>
+      </intents>
+    </advert-art>
+  </advert-chapter>
+  <advert-art nr="2">
+    <original affected-law-nr="144" affected-law-year="2020">Ákvæði til bráðabirgða III og IV í lögunum falla brott.</original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='t']/art[@nr='III'] | chapter[@nr='t']/art[@nr='IV']" action-law-nr="144" action-law-year="2020">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',IV,') or contains(concat(',', @nr, ','), ',III,')]">Ákvæði til bráðabirgða III og IV</address>
+        <existing>
+          <art nr="III" roman-nr="3" number-type="roman">
+            <nr-title>III.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. mgr. 24. gr. skal mánaðarleg greiðsla Fæðingarorlofssjóðs til foreldris í fæðingarorlofi, eftir 1. apríl 2024, aldrei nema hærri fjárhæð en 700.000 kr. vegna barna sem fæðast, eru frumættleidd eða tekin í varanlegt fóstur fyrir 1. janúar 2025.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2024.073.html" law-nr="73" law-year="2024" law-art="2" nr="1">
+                <footnote-sen>L. 73/2024, 2. gr.</footnote-sen>
+                <location type="range" string-length="263">
+                  <start xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+          <art nr="IV" roman-nr="4" number-type="roman">
+            <nr-title>IV.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. mgr. 24. gr. skal mánaðarleg greiðsla Fæðingarorlofssjóðs til foreldris í fæðingarorlofi aldrei nema hærri fjárhæð en 800.000 kr. vegna barna sem fæðast, eru frumættleidd eða tekin í varanlegt fóstur á tímabilinu 1. janúar 2025 til og með 31. desember 2025.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2024.073.html" law-nr="73" law-year="2024" law-art="2" nr="1">
+                <footnote-sen>L. 73/2024, 2. gr.</footnote-sen>
+                <location type="range" string-length="276">
+                  <start xpath="chapter[@nr='t']/art[@nr='IV']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='IV']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-chapter nr="2" nr-type="roman" roman-nr="II">
+    <description>Breyting á lögum um sorgarleyfi, nr. 77/2022.</description>
+    <advert-art nr="3">
+      <original affected-law-nr="77" affected-law-year="2022">Í stað orðanna „skulu koma“ í 1. mgr. 33. gr. laganna kemur: skulu eiga við um alla foreldra sem eiga rétt á greiðslum á grundvelli laga þessara, óháð því hvenær barnsmissir, andvanafæðing, fósturlát eða makamissir á sér stað, og skulu greiðslurnar koma.</original>
+      <intents>
+        <intent action="replace_text" action-xpath="chapter[@nr='8' and @chapter-type='kafli']/art[@nr='33']/subart[@nr='1']" action-law-nr="77" action-law-year="2022">
+          <address xpath="//art[contains(concat(',', @nr, ','), ',33,')]//subart[@nr='1']">1. mgr. 33. gr.</address>
+          <existing>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Fjárhæðir greiðslna til foreldris í sorgarleyfi skv. 16. gr. og greiðslna sorgarstyrks skv. 25. gr. skulu koma til endurskoðunar við afgreiðslu fjárlaga ár hvert með tilliti til þróunar launa, verðlags og efnahagsmála.</sen>
+              </paragraph>
+            </subart>
+          </existing>
+          <text-from>skulu koma</text-from>
+          <text-to>skulu eiga við um alla foreldra sem eiga rétt á greiðslum á grundvelli laga þessara, óháð því hvenær barnsmissir, andvanafæðing, fósturlát eða makamissir á sér stað, og skulu greiðslurnar koma</text-to>
+        </intent>
+      </intents>
+    </advert-art>
+  </advert-chapter>
+  <advert-art nr="4">
+    <original affected-law-nr="77" affected-law-year="2022">Ákvæði til bráðabirgða II og III í lögunum falla brott.</original>
+    <intents>
+      <intent action="delete" action-xpath="chapter[@nr='t']/art[@nr='II'] | chapter[@nr='t']/art[@nr='III']" action-law-nr="77" action-law-year="2022">
+        <address xpath="//art[contains(concat(',', @nr, ','), ',III,') or contains(concat(',', @nr, ','), ',II,')]">Ákvæði til bráðabirgða II og III</address>
+        <existing>
+          <art nr="II" roman-nr="2" number-type="roman">
+            <nr-title>II.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. mgr. 16. gr. skal mánaðarleg greiðsla til foreldris í sorgarleyfi, eftir 1. apríl 2024, aldrei nema hærri fjárhæð en 700.000 kr. vegna barnsmissis, andvanafæðingar eða fósturláts fyrir 1. janúar 2025.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2024.073.html" law-nr="73" law-year="2024" law-art="4" nr="1">
+                <footnote-sen>L. 73/2024, 4. gr.</footnote-sen>
+                <location type="range" string-length="219">
+                  <start xpath="chapter[@nr='t']/art[@nr='II']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='II']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+          <art nr="III" roman-nr="3" number-type="roman">
+            <nr-title>III.</nr-title>
+            <subart nr="1">
+              <paragraph nr="1">
+                <sen nr="1">Þrátt fyrir 1. mgr. 16. gr. skal mánaðarleg greiðsla til foreldris í sorgarleyfi aldrei nema hærri fjárhæð en 800.000 kr. vegna barnsmissis, andvanafæðingar eða fósturláts frá og með 1. janúar 2025 til og með 31. desember 2025.</sen>
+              </paragraph>
+            </subart>
+            <footnotes>
+              <footnote href="https://www.althingi.is/altext/stjt/2024.073.html" law-nr="73" law-year="2024" law-art="4" nr="1">
+                <footnote-sen>L. 73/2024, 4. gr.</footnote-sen>
+                <location type="range" string-length="232">
+                  <start xpath="chapter[@nr='t']/art[@nr='III']/nr-title[1]"/>
+                  <end xpath="chapter[@nr='t']/art[@nr='III']/subart[@nr='1']/paragraph[@nr='1']/sen[@nr='1']"/>
+                </location>
+              </footnote>
+            </footnotes>
+          </art>
+        </existing>
+      </intent>
+    </intents>
+  </advert-art>
+  <advert-art nr="5">
+    <original affected-law-nr="77" affected-law-year="2022">Lög þessi öðlast gildi 1. janúar 2026.</original>
+    <intents>
+      <intent action="enact" action-xpath="" timing="2026-01-01" timing-type="immediate"/>
+    </intents>
+  </advert-art>
+  <approved-by-parliament-when>Samþykkt á Alþingi 17. desember 2025.</approved-by-parliament-when>
+</advert>

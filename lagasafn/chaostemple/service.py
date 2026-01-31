@@ -7,7 +7,7 @@ from lagasafn.settings import CHAOSTEMPLE_API_URL
 
 # FIXME: Hard-coded, but should be determined from codex index data, either
 # `parliament_num` or timing.
-parliament_num = 155
+parliament_num = 157
 
 
 def _get(url: str):

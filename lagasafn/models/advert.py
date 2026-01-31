@@ -110,6 +110,11 @@ class Advert(AdvertEntry):
             self.record_id = self._xml.attrib["record-id"]
             self.description = self._xml.find("description").text.__str__()
 
+            self.affected_law_identifiers = [
+                affected_law.text
+                for affected_law in self._xml.xpath("affected-laws/affected-law")
+            ]
+
         return self._xml
 
     @staticmethod

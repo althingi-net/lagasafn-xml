@@ -19,6 +19,7 @@ from lagasafn.constants import XML_BASE_DIR
 from lagasafn.constants import XML_INDEX_FILENAME
 from lagasafn.constants import XML_FILENAME
 from lagasafn.constants import XML_REFERENCES_FILENAME
+from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.exceptions import LawException
 from lagasafn.exceptions import NoSuchLawException
 from lagasafn.pathing import make_xpath_from_node
@@ -30,17 +31,17 @@ from lagasafn.utils import xml_text_to_html_text
 from lxml import etree
 from lxml import html
 from lxml.etree import _Element
-from lxml.etree import _ElementTree
 from math import floor
 from os import listdir
 from os.path import isfile
 from pydantic import BaseModel
 from pydantic import Field
-from pydantic import computed_field
 from typing import List
 
 # FIXME: We do this to avoid feedback loops in importing, since advert-stuff required law-stuff and vice versa. The downside to this is that we lose type hinting. This should be solved using better module schemes instead.
-AdvertManager = getattr(import_module("lagasafn.models.advert"), "AdvertManager")
+_advert_module = import_module("lagasafn.models.advert")
+AdvertManager = getattr(_advert_module, "AdvertManager")
+Advert = getattr(_advert_module, "Advert")
 
 
 class LawIndexInfo(BaseModel):
@@ -63,6 +64,7 @@ class LawEntry(BaseModel):
     chapter_count: int
     art_count: int
     problems: dict
+    versions: list[str]
     nr: int
     year: int
 
@@ -74,6 +76,7 @@ class LawEntry(BaseModel):
         chapter_count: int = -1,
         art_count: int = -1,
         problems: dict = {},
+        versions: list[str] = [],
     ):
         try:
             nr, year = [int(v) for v in identifier.split("/")]
@@ -87,6 +90,7 @@ class LawEntry(BaseModel):
             chapter_count=chapter_count,
             art_count=art_count,
             problems=problems,
+            versions=versions,
             nr=nr,
             year=year,
         )
@@ -195,16 +199,21 @@ class LawManager:
             name = node_law_entry.find("name").text
             chapter_count = int(node_law_entry.find("meta/chapter-count").text)
             art_count = int(node_law_entry.find("meta/art-count").text)
-            laws.append(
-                LawEntry(
+            versions = LawManager.versions_for_codex(identifier, info.codex_version)
+            try:
+                entry = LawEntry(
                     identifier,
                     name,
                     info.codex_version,
                     chapter_count,
                     art_count,
                     problems,
+                    versions,
                 )
-            )
+                laws.append(entry)
+            except Exception:
+                # Skip failing entries
+                pass
 
         index = LawIndex()
         index.info = info
@@ -230,6 +239,90 @@ class LawManager:
         codex_versions.sort()
 
         return codex_versions
+
+    @staticmethod
+    @cache
+    def versions_for_codex(identifier: str, codex_version: str) -> list[str]:
+        """
+        Returns all known version identifiers for a law within a given codex version.
+        Uses the applied directory to find applied versions.
+        """
+
+        versions: set[str] = set()
+        versions.add(codex_version)
+
+        # Parse the law identifier (format: "nr/year", e.g., "88/2011")
+        try:
+            nr_str, year_str = identifier.split("/")
+            law_nr = int(nr_str)
+            law_year = int(year_str)
+        except (ValueError, AttributeError):
+            # If we can't parse the identifier, return just the base codex version.
+            return [codex_version]
+
+        # Look in the applied directory for this codex version
+        applied_dir = os.path.join(XML_BASE_DIR, codex_version, "applied")
+        if not os.path.exists(applied_dir) or not os.path.isdir(applied_dir):
+            # If the applied directory doesn't exist, return just the base codex version.
+            return [codex_version]
+
+        # Find all applied files for this law
+        # File format: {year}.{nr}-{enact_date}.xml
+        pattern = f"{law_year}.{law_nr}-"
+        try:
+            for filename in listdir(applied_dir):
+                if not filename.endswith(".xml"):
+                    continue
+                if not filename.startswith(pattern):
+                    continue
+
+                # Extract the enact date from the filename
+                # Format: {year}.{nr}-{enact_date}.xml
+                # Remove .xml extension and split by '-'
+                base_name = filename[:-4]  # Remove .xml
+                parts = base_name.split("-", 1)
+                if len(parts) == 2:
+                    enact_date = parts[1]
+                    versions.add(f"{codex_version}-{enact_date}")
+        except Exception:
+            pass
+
+        other_versions = sorted(v for v in versions if v != codex_version)
+        return [codex_version, *other_versions]
+
+    @staticmethod
+    @cache
+    def all_versions(identifier: str) -> list[str]:
+        """
+        Returns all known versions for a law across all codex versions.
+        Returns a flat list of all version strings (both codex versions and applied versions).
+        """
+        all_versions_list: list[str] = []
+
+        # Parse identifier to get law number and year
+        try:
+            nr, year = identifier.split("/")
+            year = int(year)
+        except (ValueError, TypeError):
+            # Invalid identifier format
+            return all_versions_list
+
+        for codex_version in LawManager.codex_versions():
+            # Check if law file exists in this codex version
+            law_path = XML_FILENAME % (codex_version, year, nr)
+            if not os.path.isfile(law_path):
+                continue
+
+            try:
+                # Get all versions (codex + applied) for this law in this codex version
+                versions = LawManager.versions_for_codex(identifier, codex_version)
+                all_versions_list.extend(versions)
+            except Exception:
+                # If we can't get versions for any reason, skip this codex version
+                continue
+
+        # Remove duplicates and sort for stable ordering
+        return sorted(set(all_versions_list))
 
     @staticmethod
     def codex_version_at_date(timing: datetime) -> str:
@@ -340,14 +433,17 @@ class Law(LawEntry):
     chapter_count: int = Field(exclude=True)
     art_count: int = Field(exclude=True)
     problems: dict = Field(exclude=True)
-
+    applied_timing: str | None = Field(default=None, exclude=True)
     chapters: list[Chapter] = Field(default_factory=list, required=True)
 
     # HTML that should be displayable in a browser, assuming CSS for styling
     # and hiding elements that are irrelevant to a human reader.
+    versions: list[str] = Field(default_factory=list)
     html_text: str = Field(default="", required=True)
 
-    def __init__(self, identifier: str, codex_version: str):
+    def __init__(
+        self, identifier: str, codex_version: str, applied_timing: str | None = None
+    ):
 
         # NOTE: The `name` is temporarily set first here, because in order to
         # load the XML, the parent class needs the `identifier`, but the `Law`
@@ -356,6 +452,7 @@ class Law(LawEntry):
         # the parent class's constructor has been called.
         super().__init__(identifier, "[not-ready]", codex_version)
 
+        self.applied_timing = applied_timing
         # Private containers, essentially for caching.
         self._xml = None
         self._xml_references = None
@@ -371,6 +468,7 @@ class Law(LawEntry):
         self.name = self.xml().find("name").text or ""
         self.html_text = self.get_html_text()
         self.chapters = self.get_chapters()
+        self.versions = LawManager.all_versions(self.identifier)
 
         if not os.path.isfile(self.path()):
             raise NoSuchLawException("Could not find law '%s'" % self.identifier)
@@ -475,6 +573,20 @@ class Law(LawEntry):
         return self._articles
 
     def path(self):
+        """
+        Returns the filesystem path to this law's XML representation.
+        """
+
+        if self.applied_timing:
+            applied_dir = os.path.join(XML_BASE_DIR, self.codex_version, "applied")
+
+            applied_filename = "%d.%d-%s.xml" % (
+                self.year,
+                self.nr,
+                self.applied_timing,
+            )
+            return os.path.join(applied_dir, applied_filename)
+
         return XML_FILENAME % (self.codex_version, self.year, self.nr)
 
     def xml(self):

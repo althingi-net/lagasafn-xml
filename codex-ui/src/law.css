@@ -244,3 +244,18 @@ mark-container sen { margin-left: 0.8em; }
     width: 1px;
     background-color: #1c79c2;
 }
+
+/* HTML Diff styles */
+del {
+    background-color: #fee;
+    color: #c33;
+    text-decoration: line-through;
+    padding: 2px 0;
+}
+
+ins {
+    background-color: #efe;
+    color: #3c3;
+    text-decoration: none;
+    padding: 2px 0;
+}
