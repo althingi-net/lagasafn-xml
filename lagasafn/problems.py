@@ -281,8 +281,8 @@ class AdvertProblemHandler:
                         if intent_nr is not None:
                             intent_elem.set("nr", str(intent_nr))
 
-                        # Add status elements for content and content-stripped
                         if intent_distances and intent_nr is not None:
+                            # Add status elements for content and content-stripped
                             for status_type in ["content", "content-stripped"]:
                                 key = (advert_id, intent_nr, status_type)
                                 if key in intent_distances:
@@ -303,6 +303,122 @@ class AdvertProblemHandler:
                                             status_elem.set("success", f"{success:.8f}")
 
                                         intent_elem.append(status_elem)
+
+                            # Add element existence metrics
+                            exists_applied = intent_distances.get(
+                                (advert_id, intent_nr, "exists-applied")
+                            )
+                            exists_next = intent_distances.get(
+                                (advert_id, intent_nr, "exists-next")
+                            )
+                            if exists_applied is not None:
+                                intent_elem.set(
+                                    "exists-applied", str(exists_applied).lower()
+                                )
+                            if exists_next is not None:
+                                intent_elem.set("exists-next", str(exists_next).lower())
+
+                            # Add element type match
+                            tag_match = intent_distances.get(
+                                (advert_id, intent_nr, "tag-match")
+                            )
+                            if tag_match is not None:
+                                intent_elem.set("tag-match", str(tag_match).lower())
+
+                            # Add structural metrics
+                            children_count_applied = intent_distances.get(
+                                (advert_id, intent_nr, "children-count-applied")
+                            )
+                            children_count_next = intent_distances.get(
+                                (advert_id, intent_nr, "children-count-next")
+                            )
+                            children_count_match = intent_distances.get(
+                                (advert_id, intent_nr, "children-count-match")
+                            )
+                            if children_count_applied is not None:
+                                intent_elem.set(
+                                    "children-count-applied",
+                                    str(children_count_applied),
+                                )
+                            if children_count_next is not None:
+                                intent_elem.set(
+                                    "children-count-next", str(children_count_next)
+                                )
+                            if children_count_match is not None:
+                                intent_elem.set(
+                                    "children-count-match",
+                                    str(children_count_match).lower(),
+                                )
+
+                            # Add attribute match ratio
+                            attribute_match_ratio = intent_distances.get(
+                                (advert_id, intent_nr, "attribute-match-ratio")
+                            )
+                            if attribute_match_ratio is not None:
+                                intent_elem.set(
+                                    "attribute-match-ratio",
+                                    f"{attribute_match_ratio:.8f}",
+                                )
+
+                            # Add position metrics
+                            position_applied = intent_distances.get(
+                                (advert_id, intent_nr, "position-applied")
+                            )
+                            position_next = intent_distances.get(
+                                (advert_id, intent_nr, "position-next")
+                            )
+                            position_match = intent_distances.get(
+                                (advert_id, intent_nr, "position-match")
+                            )
+                            if position_applied is not None:
+                                intent_elem.set(
+                                    "position-applied", str(position_applied)
+                                )
+                            if position_next is not None:
+                                intent_elem.set("position-next", str(position_next))
+                            if position_match is not None:
+                                intent_elem.set(
+                                    "position-match", str(position_match).lower()
+                                )
+
+                            # Add context metrics
+                            parent_tag_match = intent_distances.get(
+                                (advert_id, intent_nr, "parent-tag-match")
+                            )
+                            parent_similarity = intent_distances.get(
+                                (advert_id, intent_nr, "parent-similarity")
+                            )
+                            if parent_tag_match is not None:
+                                intent_elem.set(
+                                    "parent-tag-match", str(parent_tag_match).lower()
+                                )
+                            if parent_similarity is not None:
+                                intent_elem.set(
+                                    "parent-similarity", f"{parent_similarity:.8f}"
+                                )
+
+                            # Add action-specific metrics
+                            delete_success = intent_distances.get(
+                                (advert_id, intent_nr, "delete-success")
+                            )
+                            if delete_success is not None:
+                                intent_elem.set(
+                                    "delete-success", str(delete_success).lower()
+                                )
+
+                            # Add overall success score
+                            overall_success = intent_distances.get(
+                                (advert_id, intent_nr, "overall-success")
+                            )
+                            if overall_success is not None:
+                                intent_elem.set(
+                                    "overall-success", f"{overall_success:.8f}"
+                                )
+
+                            # Add action-xpath if available
+                            action_xpath = intent_info.get("action-xpath")
+                            if action_xpath:
+                                intent_elem.set("action-xpath", action_xpath)
 
                         intents_elem.append(intent_elem)
                     advert_elem.append(intents_elem)

@@ -7,18 +7,9 @@ interface CodexVersionSelectProps {
 }
 
 export default function CodexVersionSelect(props: CodexVersionSelectProps) {
-    const [codexVersionsResponse] = createResource(() =>
+    const [codexVersions] = createResource(() =>
         LawService.listCodexVersions(),
     );
-
-    console.log(props.value);
-    const versions = () => {
-        const response = codexVersionsResponse();
-        if (response) {
-            return (response as string[]) ?? [];
-        }
-        return [];
-    };
 
     return (
         <select
@@ -27,14 +18,18 @@ export default function CodexVersionSelect(props: CodexVersionSelectProps) {
                 const value = e.currentTarget.value;
                 props.onInput(value || undefined);
             }}
-            disabled={codexVersionsResponse.loading}
+            disabled={codexVersions.loading}
             class="px-3 py-1 bg-white/10 text-white border border-white/20 rounded focus:outline-none focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-            {!codexVersionsResponse.loading && !codexVersionsResponse.error && (
+            {!codexVersions.loading && !codexVersions.error && (
                 <>
-                    <For each={versions()}>
+                    <For each={codexVersions() ?? []}>
                         {version => (
-                            <option value={version} class="bg-gray-800 text-white">
+                            <option
+                                value={version}
+                                selected={version === props.value}
+                                class="bg-gray-800 text-white"
+                            >
                                 {version}
                             </option>
                         )}

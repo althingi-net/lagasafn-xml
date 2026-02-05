@@ -9,8 +9,7 @@ from django.test import TestCase
 from dotenv import load_dotenv
 from git import Repo
 from lagasafn.constants import XML_BASE_DIR
-from lagasafn.exceptions import AdvertException
-from lagasafn.models.advert import Advert
+from lagasafn.models.advert import Advert, AdvertManager
 from lagasafn.models.law import Law, LawManager
 from lagasafn.problems import PROBLEM_TYPES
 from lagasafn.problems import AdvertProblemHandler
@@ -372,7 +371,7 @@ class AdvertApplyingTests(TestCase):
         print(f"\nProcessing codex version: {codex_version}")
 
         # Parse applied files
-        law_applied_files = self._parse_applied_files(applied_dir)
+        law_applied_files = self._parse_applied_files(applied_dir, codex_version)
         if not law_applied_files:
             print(f"  No valid applied files found in {codex_version}")
             return
@@ -397,7 +396,7 @@ class AdvertApplyingTests(TestCase):
         problems.close()
         print(f"  Created problems.xml for {codex_version}")
 
-    def _parse_applied_files(self, applied_dir):
+    def _parse_applied_files(self, applied_dir, codex_version):
         """
         Parse applied files and group by law identifier.
         Returns a dictionary mapping law identifiers to lists of applied file info.
@@ -414,43 +413,66 @@ class AdvertApplyingTests(TestCase):
             return {}
 
         # Group applied files by law identifier
-        # Filename format: {year}.{nr}-{advert_nr}.{advert_year}.xml
+        # Filename format: {year}.{nr}-{enact_date}.xml
         law_applied_files = defaultdict(list)
 
         for filename in applied_files:
-            # Parse filename: e.g., "1991.88-63.2024.xml"
-            try:
-                # Remove .xml extension
-                base_name = filename[:-4]
-                # Split by '-' to separate law and advert parts
-                parts = base_name.split("-", 1)
-                if len(parts) != 2:
-                    print(f"  Warning: Could not parse filename: {filename}")
-                    continue
-
-                law_part = parts[0]  # e.g., "1991.88"
-                advert_part = parts[1]  # e.g., "63.2024"
-
-                # Parse law identifier
-                law_year, law_nr = law_part.split(".")
-                law_identifier = f"{law_nr}/{law_year}"
-
-                # Parse advert identifier
-                advert_nr, advert_year = advert_part.split(".")
-                advert_identifier = f"{advert_nr}/{advert_year}"
-
-                applied_file_path = path.join(applied_dir, filename)
-                law_applied_files[law_identifier].append(
-                    {
-                        "advert_identifier": advert_identifier,
-                        "file_path": applied_file_path,
-                    }
-                )
-            except ValueError as e:
-                print(f"  Warning: Could not parse filename {filename}: {e}")
+            # Parse filename: e.g., "1991.88-2024-07-12.xml"
+            # Remove .xml extension
+            base_name = filename[:-4]
+            # Split by '-' to separate law and enact date parts
+            parts = base_name.split("-", 1)
+            if len(parts) != 2:
+                print(f"  Warning: Could not parse filename: {filename}")
                 continue
 
+            law_part = parts[0]  # e.g., "1991.88"
+            enact_date = parts[1]  # e.g., "2024-07-12"
+
+            # Parse law identifier
+            law_year, law_nr = law_part.split(".")
+            law_identifier = f"{law_nr}/{law_year}"
+
+            # Find adverts that match this enact date
+            matching_adverts = self._find_adverts_by_enact_date(
+                law_identifier, codex_version, enact_date
+            )
+
+            applied_file_path = path.join(applied_dir, filename)
+            law_applied_files[law_identifier].append(
+                {
+                    "enact_date": enact_date,
+                    "advert_identifiers": matching_adverts,
+                    "file_path": applied_file_path,
+                }
+            )
+
         return law_applied_files
+
+    def _find_adverts_by_enact_date(self, law_identifier, codex_version, enact_date):
+        """
+        Find adverts that affect a law and have an enact intent with the given timing.
+        Returns a list of advert identifiers.
+        """
+        # Parse law identifier to get nr and year
+        law_nr, law_year = law_identifier.split("/")
+
+        # Get all adverts that affect this law
+        adverts = AdvertManager.by_affected_law(codex_version, law_nr, int(law_year))
+
+        matching_adverts = []
+        for advert_entry in adverts:
+            # Convert AdvertEntry to Advert to access xml() method
+            advert = Advert(advert_entry.identifier)
+            advert_xml = advert.xml()
+            # Find enact intents with matching timing
+            for intent in advert_xml.findall(".//intent"):
+                if intent.get("action") == "enact":
+                    intent_timing = intent.get("timing")
+                    if intent_timing == enact_date:
+                        matching_adverts.append(advert_entry.identifier)
+                        break
+        return matching_adverts
 
     def _extract_intents_from_adverts(self, applied_info_list, law_identifier):
         """
@@ -459,8 +481,7 @@ class AdvertApplyingTests(TestCase):
         """
         advert_intents = {}
         for info in applied_info_list:
-            advert_id = info["advert_identifier"]
-            try:
+            for advert_id in info["advert_identifiers"]:
                 advert = Advert(advert_id)
                 advert_xml = advert.xml()
                 # Find all intents for this law in the advert
@@ -498,9 +519,6 @@ class AdvertApplyingTests(TestCase):
 
                 if intents:
                     advert_intents[advert_id] = intents
-            except AdvertException:
-                # Advert not found, skip intents
-                pass
 
         return advert_intents
 
@@ -508,15 +526,22 @@ class AdvertApplyingTests(TestCase):
         self, law_identifier, applied_info_list, problems, next_codex_version
     ):
         """Process a single law: compare with next version and report results."""
-        print(f"  {law_identifier}: {len(applied_info_list)} adverts")
+        # Collect all advert identifiers
+        all_advert_identifiers = set()
+        for info in applied_info_list:
+            all_advert_identifiers.update(info["advert_identifiers"])
+
+        print(
+            f"  {law_identifier}: {len(applied_info_list)} applied files, {len(all_advert_identifiers)} adverts"
+        )
 
         # Extract intents from adverts
         advert_intents = self._extract_intents_from_adverts(
             applied_info_list, law_identifier
         )
 
-        # Get the most recent applied file for this law
-        applied_info_list.sort(key=lambda x: x["advert_identifier"], reverse=True)
+        # Get the most recent applied file for this law (sort by enact_date)
+        applied_info_list.sort(key=lambda x: x["enact_date"], reverse=True)
         latest_applied_file = applied_info_list[0]["file_path"]
 
         # Load the applied law XML
@@ -620,8 +645,8 @@ class AdvertApplyingTests(TestCase):
         self, advert_intents, applied_law_xml, next_law_xml
     ):
         """
-        Calculate distances for each intent.
-        Returns a dictionary mapping (advert_id, intent_nr, status_type) to distances.
+        Calculate metrics for each intent.
+        Returns a dictionary mapping (advert_id, intent_nr, metric_type) to values.
         """
         intent_distances = {}
         if not advert_intents:
@@ -631,92 +656,205 @@ class AdvertApplyingTests(TestCase):
             for intent_info in intents:
                 intent_nr = intent_info.get("nr")
                 action_xpath = intent_info.get("action-xpath", "")
+                action = intent_info.get("action", "")
 
                 if intent_nr is None or not action_xpath:
                     # Skip intents without nr or xpath
                     continue
 
-                try:
-                    # Find the element in applied law XML
-                    applied_elements = applied_law_xml.xpath(action_xpath)
-                    if not applied_elements:
-                        continue
+                # Find the element in applied law XML
+                applied_elements = applied_law_xml.xpath(action_xpath)
+                exists_applied = len(applied_elements) > 0
+                intent_distances[(advert_id, intent_nr, "exists-applied")] = (
+                    exists_applied
+                )
 
-                    applied_element = applied_elements[0]
+                if not exists_applied:
+                    # Element doesn't exist in applied version
+                    continue
 
-                    # Get text for content comparison (full element)
-                    applied_element_text = remove_whitespace(
-                        get_all_text(applied_element)
-                    )
+                applied_element = applied_elements[0]
 
-                    # Get text for content-stripped comparison (without minister-clause and footnotes)
-                    applied_element_stripped = strip_minister_clause_and_footnotes(
-                        applied_element
-                    )
-                    applied_element_text_stripped = remove_whitespace(
-                        get_all_text(applied_element_stripped)
-                    )
+                # Find the element in next codex version XML
+                next_elements = next_law_xml.xpath(action_xpath)
+                exists_next = len(next_elements) > 0
+                intent_distances[(advert_id, intent_nr, "exists-next")] = exists_next
 
-                    # Find the element in next codex version XML
-                    next_elements = next_law_xml.xpath(action_xpath)
-                    if not next_elements:
-                        # Element doesn't exist in next version
-                        intent_distances[(advert_id, intent_nr, "content")] = -1
-                        intent_distances[(advert_id, intent_nr, "content-stripped")] = (
-                            -1
-                        )
-                        continue
-
-                    next_element = next_elements[0]
-
-                    # Get text for content comparison (full element)
-                    next_element_text = remove_whitespace(get_all_text(next_element))
-
-                    # Get text for content-stripped comparison (without minister-clause and footnotes)
-                    next_element_stripped = strip_minister_clause_and_footnotes(
-                        next_element
-                    )
-                    next_element_text_stripped = remove_whitespace(
-                        get_all_text(next_element_stripped)
-                    )
-
-                    # Calculate distances and success ratios for both content and content-stripped
-                    intent_distance_content = Levenshtein.distance(
-                        applied_element_text, next_element_text
-                    )
-                    intent_success_content = round(
-                        Levenshtein.ratio(applied_element_text, next_element_text), 8
-                    )
-
-                    intent_distance_stripped = Levenshtein.distance(
-                        applied_element_text_stripped, next_element_text_stripped
-                    )
-                    intent_success_stripped = round(
-                        Levenshtein.ratio(
-                            applied_element_text_stripped, next_element_text_stripped
-                        ),
-                        8,
-                    )
-
-                    intent_distances[(advert_id, intent_nr, "content")] = (
-                        intent_distance_content
-                    )
-                    intent_distances[(advert_id, intent_nr, "content", "success")] = (
-                        intent_success_content
-                    )
-
-                    intent_distances[(advert_id, intent_nr, "content-stripped")] = (
-                        intent_distance_stripped
-                    )
-                    intent_distances[
-                        (advert_id, intent_nr, "content-stripped", "success")
-                    ] = intent_success_stripped
-                except Exception as e:
-                    # Error calculating distance for this intent
-                    print(
-                        f"    Warning: Could not calculate distance for intent {intent_nr} at {action_xpath}: {e}"
+                # For delete actions, success means element should NOT exist
+                if action == "delete":
+                    intent_distances[(advert_id, intent_nr, "delete-success")] = (
+                        not exists_next
                     )
                     continue
+
+                if not exists_next:
+                    # Element doesn't exist in next version (but should for non-delete actions)
+                    intent_distances[(advert_id, intent_nr, "content")] = -1
+                    intent_distances[(advert_id, intent_nr, "content-stripped")] = -1
+                    continue
+
+                next_element = next_elements[0]
+
+                # Element Type Match
+                tag_match = applied_element.tag == next_element.tag
+                intent_distances[(advert_id, intent_nr, "tag-match")] = tag_match
+
+                # Content Similarity
+                applied_element_text = remove_whitespace(get_all_text(applied_element))
+                applied_element_stripped = strip_minister_clause_and_footnotes(
+                    applied_element
+                )
+                applied_element_text_stripped = remove_whitespace(
+                    get_all_text(applied_element_stripped)
+                )
+
+                next_element_text = remove_whitespace(get_all_text(next_element))
+                next_element_stripped = strip_minister_clause_and_footnotes(
+                    next_element
+                )
+                next_element_text_stripped = remove_whitespace(
+                    get_all_text(next_element_stripped)
+                )
+
+                # Calculate distances and success ratios for both content and content-stripped
+                intent_distance_content = Levenshtein.distance(
+                    applied_element_text, next_element_text
+                )
+                intent_success_content = round(
+                    Levenshtein.ratio(applied_element_text, next_element_text), 8
+                )
+
+                intent_distance_stripped = Levenshtein.distance(
+                    applied_element_text_stripped, next_element_text_stripped
+                )
+                intent_success_stripped = round(
+                    Levenshtein.ratio(
+                        applied_element_text_stripped, next_element_text_stripped
+                    ),
+                    8,
+                )
+
+                intent_distances[(advert_id, intent_nr, "content")] = (
+                    intent_distance_content
+                )
+                intent_distances[(advert_id, intent_nr, "content", "success")] = (
+                    intent_success_content
+                )
+                intent_distances[(advert_id, intent_nr, "content-stripped")] = (
+                    intent_distance_stripped
+                )
+                intent_distances[
+                    (advert_id, intent_nr, "content-stripped", "success")
+                ] = intent_success_stripped
+
+                # Structural Similarity
+                applied_children = [
+                    c for c in applied_element if isinstance(c.tag, str)
+                ]
+                next_children = [c for c in next_element if isinstance(c.tag, str)]
+                applied_children_count = len(applied_children)
+                next_children_count = len(next_children)
+                intent_distances[(advert_id, intent_nr, "children-count-applied")] = (
+                    applied_children_count
+                )
+                intent_distances[(advert_id, intent_nr, "children-count-next")] = (
+                    next_children_count
+                )
+                intent_distances[(advert_id, intent_nr, "children-count-match")] = (
+                    applied_children_count == next_children_count
+                )
+
+                # Key attribute matching
+                key_attributes = [
+                    "nr",
+                    "ultimate-nr",
+                    "sub-paragraph-nr",
+                    "chapter-type",
+                ]
+                attribute_matches = {}
+                for attr in key_attributes:
+                    applied_val = applied_element.get(attr)
+                    next_val = next_element.get(attr)
+                    if applied_val is not None or next_val is not None:
+                        attribute_matches[attr] = applied_val == next_val
+
+                if attribute_matches:
+                    intent_distances[
+                        (advert_id, intent_nr, "attribute-match-ratio")
+                    ] = round(
+                        sum(attribute_matches.values()) / len(attribute_matches), 8
+                    )
+                else:
+                    intent_distances[
+                        (advert_id, intent_nr, "attribute-match-ratio")
+                    ] = 1.0
+
+                # Position Accuracy
+                applied_parent = applied_element.getparent()
+                next_parent = next_element.getparent()
+                if applied_parent is not None and next_parent is not None:
+                    applied_siblings = [
+                        e for e in applied_parent if e.tag == applied_element.tag
+                    ]
+                    next_siblings = [
+                        e for e in next_parent if e.tag == next_element.tag
+                    ]
+                    applied_position = (
+                        applied_siblings.index(applied_element)
+                        if applied_element in applied_siblings
+                        else -1
+                    )
+                    next_position = (
+                        next_siblings.index(next_element)
+                        if next_element in next_siblings
+                        else -1
+                    )
+                    intent_distances[(advert_id, intent_nr, "position-applied")] = (
+                        applied_position
+                    )
+                    intent_distances[(advert_id, intent_nr, "position-next")] = (
+                        next_position
+                    )
+                    intent_distances[(advert_id, intent_nr, "position-match")] = (
+                        applied_position == next_position and applied_position >= 0
+                    )
+
+                # Context Similarity (Parent Element)
+                if applied_parent is not None and next_parent is not None:
+                    parent_tag_match = applied_parent.tag == next_parent.tag
+                    intent_distances[(advert_id, intent_nr, "parent-tag-match")] = (
+                        parent_tag_match
+                    )
+
+                    # Parent content similarity
+                    applied_parent_text = remove_whitespace(
+                        get_all_text(applied_parent)
+                    )
+                    next_parent_text = remove_whitespace(get_all_text(next_parent))
+                    parent_similarity = round(
+                        Levenshtein.ratio(applied_parent_text, next_parent_text), 8
+                    )
+                    intent_distances[(advert_id, intent_nr, "parent-similarity")] = (
+                        parent_similarity
+                    )
+
+                # Overall Intent Success Score
+                children_count_match = intent_distances.get(
+                    (advert_id, intent_nr, "children-count-match"), False
+                )
+                position_match = intent_distances.get(
+                    (advert_id, intent_nr, "position-match"), False
+                )
+
+                overall_success = (
+                    tag_match
+                    and intent_success_stripped > 0.95
+                    and children_count_match
+                    and position_match
+                )
+                intent_distances[(advert_id, intent_nr, "overall-success")] = (
+                    overall_success
+                )
 
         return intent_distances
 
@@ -730,8 +868,12 @@ class AdvertApplyingTests(TestCase):
         comparison_results,
     ):
         """Report comparison results to the problems handler."""
-        # Set adverts for this law entry
-        advert_list = [info["advert_identifier"] for info in applied_info_list]
+        # Collect advert identifiers from all applied files
+        advert_set = set()
+        for info in applied_info_list:
+            advert_set.update(info["advert_identifiers"])
+        advert_list = list(advert_set)
+
         problems.set_adverts(
             law_identifier,
             advert_list,
@@ -755,12 +897,30 @@ class AdvertApplyingTests(TestCase):
             distance=comparison_results["distance_content"],
         )
 
+        # Calculate intent-level summary statistics
+        intent_count = sum(len(intents) for intents in advert_intents.values())
+        successful_intents = 0
+        failed_intents = 0
+        for advert_id, intents in advert_intents.items():
+            for intent_info in intents:
+                intent_nr = intent_info.get("nr")
+                if intent_nr is None:
+                    continue
+                overall_success = intent_distances.get(
+                    (advert_id, intent_nr, "overall-success"), 0.0
+                )
+                if overall_success >= 0.8:
+                    successful_intents += 1
+                else:
+                    failed_intents += 1
+
         print(
             f"    Success (content): {comparison_results['success']:.8f}, "
             f"Distance: {comparison_results['distance']}, "
             f"Success (content-stripped): {comparison_results['success_content']:.8f}, "
             f"Distance: {comparison_results['distance_content']}, "
-            f"Adverts: {len(applied_info_list)}"
+            f"Adverts: {len(applied_info_list)}, "
+            f"Intents: {intent_count} (successful: {successful_intents} failed: {failed_intents})"
         )
 
     def _handle_error_case(
@@ -773,7 +933,12 @@ class AdvertApplyingTests(TestCase):
         distance,
     ):
         """Handle error cases with consistent reporting."""
-        advert_list = [info["advert_identifier"] for info in applied_info_list]
+        # Collect advert identifiers from all applied files
+        advert_set = set()
+        for info in applied_info_list:
+            advert_set.update(info["advert_identifiers"])
+        advert_list = list(advert_set)
+
         problems.set_adverts(
             law_identifier,
             advert_list,

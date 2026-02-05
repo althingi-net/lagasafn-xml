@@ -12,6 +12,7 @@ export type LawEntry = {
     chapter_count: number;
     art_count: number;
     problems: Record<string, any>;
+    versions: Array<string>;
     nr: number;
     year: number;
 };
