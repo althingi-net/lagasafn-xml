@@ -1,0 +1,15 @@
+# Copy this file to `.env` and customize.
+# This file should work as-is for development.
+
+# Typically host-part of the URL to where it's hosted. Separate by comma if
+# more than one value needed.
+ALLOWED_HOSTS="lagasafn.althingi.net"
+
+# Used by Django apps to generate unique URLs and the like.
+SECRET_KEY="super-secret-string"
+
+# Used by external programs (such as an editor) to authenticate.
+API_ACCESS_TOKEN="super-secret-string"
+
+# Is only boolean `True` when case-insensitive value is literally "true".
+DEBUG="true"

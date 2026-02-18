@@ -36,7 +36,17 @@ clean-image app:
 
 # Runs image of given app.
 run-image app:
-    docker run -it -p 8000:8000 "$(just _full_tag {{ app }})"
+    #!/bin/bash
+    # Note: This value-hunting assumes a strict format in the `.env` file.
+    SECRET_KEY="$(grep '^SECRET_KEY=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+    API_ACCESS_TOKEN="$(grep '^API_ACCESS_TOKEN=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+    ALLOWED_HOSTS="$(grep '^ALLOWED_HOSTS=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+    docker run -it --rm \
+        -e SECRET_KEY="$SECRET_KEY" \
+        -e API_ACCESS_TOKEN="$API_ACCESS_TOKEN" \
+        -e ALLOWED_HOSTS="$ALLOWED_HOSTS" \
+        -p 8000:8000 \
+        "$(just _full_tag {{ app }})"
 
 # Runs a shell for the given app.
 run-shell app:
