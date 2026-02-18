@@ -30,4 +30,4 @@ RUN mkdir -p /app/codex-api
 COPY codex-api/ /app/codex-api
 
 WORKDIR /app/codex-api
-ENTRYPOINT ["/venv/bin/python3", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["/venv/bin/daphne", "-b", "0.0.0.0", "-p", "8000", "mechlaw.asgi:application"]
