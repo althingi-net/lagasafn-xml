@@ -19,14 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Add `lagasafn` to the path.
 sys.path.append("..")
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -80,8 +74,6 @@ WSGI_APPLICATION = "mechlaw.wsgi.application"
 
 
 # Password validation
-# https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -99,15 +91,24 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Locale configuration
-
 LANGUAGES = (("is", "Icelandic"),)
-
 LOCALE_PATHS = ("locale",)
+LANGUAGE_CODE = 'is'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+
+# Options are: ['is']
+LEGAL_FRAMEWORK = 'is'
+
+
+# Where to find the XML data.
+DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'xml')
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
@@ -134,5 +135,9 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
+# Load configurable settings.
 from mechlaw.local_settings import *
+
+
+# Read constants.
 from mechlaw.constants import *
