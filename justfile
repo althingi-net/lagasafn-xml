@@ -14,7 +14,7 @@ build-images:
 
 # Build specific app. Options: 'lagasafn-base', 'codex-api'
 build-image app:
-    docker build . -t "$(just _full_tag {{ app }})" --target "{{ app }}"
+    docker build . --no-cache -t "$(just _full_tag {{ app }})" --target "{{ app }}"
 
 # Pushes all images to registry.
 push-images:
