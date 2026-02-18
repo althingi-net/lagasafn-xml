@@ -50,4 +50,4 @@ run-image app:
 
 # Runs a shell for the given app.
 run-shell app:
-    docker run -rm -it --entrypoint /bin/bash "$(just _full_tag {{ app }})"
+    docker run -it --rm --entrypoint /bin/bash "$(just _full_tag {{ app }})"
