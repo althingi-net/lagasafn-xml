@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codex-api
+  namespace: prod-net-althingi-lagasafn
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: codex-api
+  template:
+    metadata:
+      labels:
+        app: codex-api
+    spec:
+      containers:
+      - name: codex-api
+        image: ghcr.io/althingi-net/codex-api:latest
+        imagePullPolicy: Always
+        env:
+          - name: PYTHONUNBUFFERED
+            value: "1"
+          - name: ALLOWED_HOSTS
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: ALLOWED_HOSTS
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: env-secret
+                key: SECRET_KEY
+          - name: API_ACCESS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: env-secret
+                key: API_ACCESS_TOKEN
