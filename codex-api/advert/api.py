@@ -1,6 +1,7 @@
 from django.http import HttpRequest
 from lagasafn.models.advert import Advert
 from lagasafn.models.advert import AdvertIndex
+from lagasafn.models.advert import AdvertIntentDetails
 from lagasafn.models.advert import AdvertManager
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from ninja import Router
@@ -31,3 +32,14 @@ def api_list(request: HttpRequest, codex_version: str = None):
 def api_get(request: HttpRequest, identifier: str):
     advert = Advert(identifier)
     return advert
+
+
+@router.get(
+    "/intents",
+    summary="Returns intent details with comparisons.",
+    operation_id="getAdvertIntents",
+    response=AdvertIntentDetails,
+)
+def api_get_intents(request: HttpRequest, identifier: str):
+    advert = Advert(identifier)
+    return advert.get_intent_details()

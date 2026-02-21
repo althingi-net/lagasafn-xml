@@ -4,12 +4,16 @@ import {
     createMemo,
     createEffect,
 } from 'solid-js';
-import { AdvertService, AdvertEntry } from '~/api';
+import { useSearchParams } from '@solidjs/router';
+import { AdvertService } from '~/api';
 import AdvertTable from '~/components/AdvertTable';
 import CodexVersionSelect from '~/components/CodexVersionSelect';
 
 export default function AdvertList() {
-    const [codexVersion, setCodexVersion] = createSignal<string | undefined>();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Get codex version from search params
+    const codexVersion = createMemo(() => searchParams.codexVersion as string | undefined);
 
     // Fetch adverts based on codex version (undefined means use API default)
     // Always run the resource - use a computed key that always has a value
@@ -23,15 +27,26 @@ export default function AdvertList() {
     createEffect(() => {
         const index = advertIndex();
         if (index?.info?.codex_version) {
-            setCodexVersion(index.info.codex_version);
+            setSearchParams({ codexVersion: index.info.codex_version });
         }
     });
+
+    const handleCodexVersionChange = (newVersion: string | undefined) => {
+        if (newVersion) {
+            setSearchParams({ codexVersion: newVersion });
+        }
+        else {
+            const rest = { ...searchParams };
+            delete rest.codexVersion;
+            setSearchParams(rest);
+        }
+    };
 
     // Get all adverts
     const adverts = createMemo(() => {
         const index = advertIndex();
         if (!index) return [];
-        return (index.adverts ?? []) as AdvertEntry[];
+        return (index.adverts ?? []);
     });
 
     return (
@@ -43,7 +58,7 @@ export default function AdvertList() {
                     </label>
                     <CodexVersionSelect
                         value={codexVersion()}
-                        onInput={setCodexVersion}
+                        onInput={handleCodexVersionChange}
                     />
                     {advertIndex.loading && <span class="text-white/70">Loading...</span>}
                     {advertIndex.error && (
