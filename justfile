@@ -58,4 +58,7 @@ deploy:
         -f deployment/namespace.yaml \
         -f deployment/configmap.yaml \
         -f deployment/secret.yaml \
-        -f deployment/deployment.yaml
+        -f deployment/deployment.yaml \
+        -f deployment/service.yaml \
+        -f deployment/middleware.yaml \
+        -f deployment/ingress.yaml

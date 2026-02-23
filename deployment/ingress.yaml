@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: codex-api
+  namespace: prod-net-althingi-lagasafn
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: prod-net-althingi-lagasafn-hsts@kubernetescrd
+spec:
+  tls:
+    - hosts:
+        - lagasafn.althingi.net
+      secretName: lagasafn-althingi-net-tls
+  rules:
+    - host: lagasafn.althingi.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: codex-api
+                port:
+                  number: 80

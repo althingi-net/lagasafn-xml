@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: codex-api
+  namespace: prod-net-althingi-lagasafn
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: codex-api
+  type: ClusterIP
+
