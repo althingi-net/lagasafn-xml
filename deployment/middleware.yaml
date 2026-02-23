@@ -8,3 +8,13 @@ spec:
     stsSeconds: 31536000
     stsIncludeSubdomains: true
     stsPreload: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-https
+  namespace: prod-net-althingi-lagasafn
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
