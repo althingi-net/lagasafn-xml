@@ -52,13 +52,54 @@ run-image app:
 run-shell app:
     docker run -it --rm --entrypoint /bin/bash "$(just _full_tag {{ app }})"
 
-# Deploys to a Kubernetes cluster, with a bunch of assumptions.
-deploy:
-    kubectl apply \
-        -f deployment/namespace.yaml \
-        -f deployment/configmap.yaml \
-        -f deployment/secret.yaml \
-        -f deployment/deployment.yaml \
-        -f deployment/service.yaml \
-        -f deployment/middleware.yaml \
-        -f deployment/ingress.yaml
+_sanity_check environment:
+    #!/usr/bin/env bash
+    ENVIRONMENT="{{ environment }}"
+
+    if [ "$ENVIRONMENT" != "prod" ] && [ "$ENVIRONMENT" != "staging" ]; then
+        echo "Error: Unknown environment: $ENVIRONMENT" >&2
+        echo "" >&2
+        echo "Applicable environments are:" >&2
+        echo "" >&2
+        echo "    prod" >&2
+        echo "    staging" >&2
+        echo "" >&2
+        exit 1
+    fi
+
+_establish_secret environment:
+    #!/usr/bin/env bash
+    ENVIRONMENT="{{ environment }}"
+    NAMESPACE="$ENVIRONMENT-althingi-net"
+
+    # We expect to find the string "NotFound" if secrets don't already exist,
+    # because merely relying on the exit code would confuse that situation with
+    # any other error that might possibly come up.
+    NOT_FOUND=$(kubectl -n "$NAMESPACE" get secret env-secret 2>&1 | grep NotFound | wc -l)
+
+    if [ "$NOT_FOUND" != "0" ]; then
+        # There are no secrets. We must create them.
+
+        # It doesn't matter what they are, as long as they are secret and don't
+        # get updated every time the Helm chart is upgraded. We will generate
+        # random ones, which can be updated manually later in K8s if needed.
+        SECRET_KEY="$(openssl rand -hex 20)"
+        API_ACCESS_TOKEN="$(openssl rand -hex 20)"
+
+        kubectl -n "$NAMESPACE" create secret generic env-secret \
+            --from-literal=SECRET_KEY="$SECRET_KEY" \
+            --from-literal=API_ACCESS_TOKEN="$API_ACCESS_TOKEN"
+    fi
+
+# Deploys the Helm chart to a Kubernetes cluster.
+deploy environment: (_sanity_check environment)
+    #!/usr/bin/env bash
+    ENVIRONMENT="{{ environment }}"
+    NAMESPACE="$ENVIRONMENT-althingi-net"
+
+    just _establish_secret "$ENVIRONMENT"
+
+    helm upgrade --install lagasafn deployment/helm \
+        -n "$NAMESPACE" --create-namespace \
+        -f deployment/helm/values-"$ENVIRONMENT".yaml \
+        --force-conflicts
