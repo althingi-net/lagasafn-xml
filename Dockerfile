@@ -4,7 +4,7 @@ FROM debian:trixie AS lagasafn-base
 # Install required Debian packages.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-      git \
+      git gettext \
       python3-venv build-essential python3-dev \
  && rm -rf /var/lib/apt/lists/*
 
@@ -30,4 +30,15 @@ RUN mkdir -p /app/codex-api
 COPY codex-api/ /app/codex-api
 
 WORKDIR /app/codex-api
+
+RUN SECRET_KEY=unused \
+    API_ACCESS_TOKEN=unused \
+    ALLOWED_HOSTS=unused \
+    /venv/bin/python3 manage.py collectstatic --noinput
+
+RUN SECRET_KEY=unused \
+    API_ACCESS_TOKEN=unused \
+    ALLOWED_HOSTS=unused \
+    /venv/bin/python3 manage.py compilemessages
+
 ENTRYPOINT ["/venv/bin/daphne", "-b", "0.0.0.0", "-p", "8000", "mechlaw.asgi:application"]
