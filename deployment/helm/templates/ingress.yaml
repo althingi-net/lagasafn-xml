@@ -2,13 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: codex-api-http
-  namespace: prod-net-althingi-lagasafn
+  namespace: {{ .Release.Namespace }}
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
-    traefik.ingress.kubernetes.io/router.middlewares: prod-net-althingi-lagasafn-redirect-https@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-redirect-https@kubernetescrd
 spec:
   rules:
-    - host: lagasafn.althingi.net
+    - host: {{ .Values.host }}
       http:
         paths:
           - path: /
@@ -23,18 +23,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: codex-api-https
-  namespace: prod-net-althingi-lagasafn
+  namespace: {{ .Release.Namespace }}
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.middlewares: prod-net-althingi-lagasafn-hsts@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-hsts@kubernetescrd
 spec:
   tls:
     - hosts:
-        - lagasafn.althingi.net
-      secretName: lagasafn-althingi-net-tls
+        - {{ .Values.host }}
+      secretName: codex-api-tls
   rules:
-    - host: lagasafn.althingi.net
+    - host: {{ .Values.host }}
       http:
         paths:
           - path: /
