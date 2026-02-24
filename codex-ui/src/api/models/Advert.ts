@@ -11,6 +11,7 @@ export type Advert = {
     description?: string;
     article_count?: number;
     affected_law_identifiers: Array<string>;
-    html_text?: string;
+    original_html_text?: string;
+    intent_html_text?: string;
 };
 

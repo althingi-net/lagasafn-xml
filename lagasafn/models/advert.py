@@ -2,10 +2,14 @@ from datetime import datetime
 from dateutil.parser import isoparse
 from functools import cache
 from importlib import import_module
-from lagasafn.constants import ADVERT_FILENAME
+from lagasafn.constants import (
+    ADVERT_FILENAME,
+    ADVERT_ORIGINAL_FILENAME,
+    ADVERT_REMOTE_FILENAME,
+)
 from lagasafn.constants import ADVERT_INDEX_FILENAME
 from lagasafn.exceptions import AdvertException
-from lagasafn.utils import xml_text_to_html_text
+from lagasafn.utils import get_all_text, xml_text_to_html_text
 from lxml import etree
 from lxml.etree import _Element
 from os.path import isfile
@@ -71,15 +75,44 @@ class AdvertEntry(BaseModel):
         return "https://www.stjornartidindi.is/Advert.aspx?RecordID=%s" % self.record_id
 
 
+class AdvertIntentElement(BaseModel):
+    xml: str
+    text: str
+
+
+class AdvertIntent(BaseModel):
+    nr: int
+    action: str
+    action_xpath: str
+    original: Optional[AdvertIntentElement] = None
+    applied: Optional[AdvertIntentElement] = None
+    next: Optional[AdvertIntentElement] = None
+
+
+class AdvertIntentLaw(BaseModel):
+    identifier: str
+    intents: List[AdvertIntent]
+
+
+class AdvertIntentDetails(BaseModel):
+    codex_version: str
+    next_codex_version: Optional[str] = None
+    enact_date: str
+    laws: List[AdvertIntentLaw]
+
+
 class Advert(AdvertEntry):
 
     _xml: _Element | None = None
     _articles: List[AdvertArticle] | None = None
     _xml_text: str = ""
+    _original_xml_text: str = ""
 
-    # HTML that should be displayable in a browser, assuming CSS for styling
-    # and hiding elements that are irrelevant to a human reader.
-    html_text: str = Field(default="", required=True)
+    # Original XML content of the full advert, converted to HTML text
+    original_html_text: str = Field(default="", required=True)
+
+    # Intent XML containing all <intents> elements extracted from the advert, converted to HTML text
+    intent_html_text: str = Field(default="", required=True)
 
     def __init__(self, identifier: str):
         super().__init__(identifier)
@@ -92,11 +125,18 @@ class Advert(AdvertEntry):
         # Will load the data from XML to object.
         self.xml()
 
-        # Generate HTML text after loading XML
-        self.html_text = self.get_html_text()
+        # Set original HTML text and intent HTML text
+        self.original_html_text = self.get_original_html_text()
+        self.intent_html_text = self.get_intent_html_text()
 
     def path(self):
         return ADVERT_FILENAME % (self.year, self.nr)
+
+    def remote_path(self):
+        return ADVERT_REMOTE_FILENAME % (self.year, self.nr)
+
+    def original_path(self):
+        return ADVERT_ORIGINAL_FILENAME % (self.year, self.nr)
 
     def xml(self):
         """
@@ -153,20 +193,184 @@ class Advert(AdvertEntry):
 
         return self._xml_text
 
-    def get_html_text(self):
+    def original_xml_text(self) -> str:
+        """
+        Returns the original advert in XML text form.
+        """
+
+        # Just return the content if we already have it.
+        if len(self._original_xml_text) > 0:
+            return self._original_xml_text
+
+        # Try original_path first, fall back to remote_path if it doesn't exist
+        if isfile(self.original_path()):
+            with open(self.original_path()) as f:
+                self._original_xml_text = f.read()
+        else:
+            with open(self.remote_path()) as f:
+                self._original_xml_text = f.read()
+
+        return self._original_xml_text
+
+    def get_original_html_text(self):
         """
         Generates the advert in HTML text form.
         """
 
         # Just return the content if we already have it.
-        if len(self.html_text) > 0:
-            return self.html_text
+        if len(self.original_html_text) > 0:
+            return self.original_html_text
+
+        # Make sure we have the XML.
+        xml_text = self.original_xml_text()
+
+        # Convert XML to HTML using shared utility function.
+        return xml_text_to_html_text(xml_text)
+
+    def get_intent_html_text(self):
+        """
+        Generates the advert in HTML text form.
+        """
+
+        # Just return the content if we already have it.
+        if len(self.intent_html_text) > 0:
+            return self.intent_html_text
 
         # Make sure we have the XML.
         xml_text = self.xml_text()
 
         # Convert XML to HTML using shared utility function.
         return xml_text_to_html_text(xml_text)
+
+    def get_intent_details(self) -> Optional[AdvertIntentDetails]:
+        """
+        Returns intent details with element comparisons for each affected law.
+        Returns an AdvertIntentDetails model with intent information.
+        """
+
+        Law = getattr(import_module("lagasafn.models.law"), "Law")
+        LawManager = getattr(import_module("lagasafn.models.law"), "LawManager")
+
+        advert_xml = self.xml()
+        codex_version = advert_xml.get("applied-to-codex-version")
+        if not codex_version:
+            return None
+
+        # Get enact date
+        enact_date = None
+        for intent in advert_xml.findall(".//intent"):
+            if intent.get("action") == "enact":
+                enact_date = intent.get("timing")
+                break
+
+        if not enact_date:
+            return None
+
+        next_codex_version = LawManager.get_next_codex_version(codex_version)
+
+        # Group intents by law
+        law_intents = {}
+        for intent in advert_xml.findall(".//intent"):
+            action = intent.get("action")
+            if action == "enact":
+                continue
+            elif action == "repeal":
+                law_id = intent.get("action-identifier")
+                if law_id:
+                    if law_id not in law_intents:
+                        law_intents[law_id] = []
+                    law_intents[law_id].append(intent)
+            else:
+                law_nr = intent.get("action-law-nr")
+                law_year = intent.get("action-law-year")
+                if law_nr and law_year:
+                    law_id = f"{law_nr}/{law_year}"
+                    if law_id not in law_intents:
+                        law_intents[law_id] = []
+                    law_intents[law_id].append(intent)
+
+        laws = []
+
+        for law_id, intents in law_intents.items():
+            intent_list = []
+
+            # Load original law (before advert was applied) from codex_version
+            original_law = Law(law_id, codex_version)
+            original_xml = original_law.xml().getroot()
+
+            # Load applied law (after advert was applied) from codex_version
+            applied_law = Law(law_id, codex_version, applied_timing=enact_date)
+            applied_xml = applied_law.xml().getroot()
+
+            # Load next law if next codex version exists
+            next_xml = None
+            if next_codex_version:
+                next_law = Law(law_id, next_codex_version)
+                next_xml = next_law.xml().getroot()
+
+            for intent_nr, intent in enumerate(intents, start=1):
+                action_xpath = intent.get("action-xpath", "")
+                original_element = None
+                applied_element = None
+                next_element = None
+
+                if action_xpath:
+                    # Get original element (before advert was applied)
+                    original_elements = original_xml.xpath(action_xpath)
+                    if original_elements:
+                        original_element = AdvertIntentElement(
+                            xml=etree.tostring(
+                                original_elements[0],
+                                pretty_print=True,
+                                encoding="unicode",
+                            ),
+                            text=get_all_text(original_elements[0]),
+                        )
+
+                    # Get applied element (after advert was applied)
+                    applied_elements = applied_xml.xpath(action_xpath)
+                    if applied_elements:
+                        applied_element = AdvertIntentElement(
+                            xml=etree.tostring(
+                                applied_elements[0],
+                                pretty_print=True,
+                                encoding="unicode",
+                            ),
+                            text=get_all_text(applied_elements[0]),
+                        )
+
+                    # Get next element (from next codex version, if available)
+                    if next_xml:
+                        next_elements = next_xml.xpath(action_xpath)
+                        if next_elements:
+                            next_element = AdvertIntentElement(
+                                xml=etree.tostring(
+                                    next_elements[0],
+                                    pretty_print=True,
+                                    encoding="unicode",
+                                ),
+                                text=get_all_text(next_elements[0]),
+                            )
+
+                intent_list.append(
+                    AdvertIntent(
+                        nr=intent_nr,
+                        action=intent.get("action", ""),
+                        action_xpath=action_xpath,
+                        original=original_element,
+                        applied=applied_element,
+                        next=next_element,
+                    )
+                )
+
+            laws.append(AdvertIntentLaw(identifier=law_id, intents=intent_list))
+
+        return AdvertIntentDetails(
+            codex_version=codex_version,
+            next_codex_version=next_codex_version,
+            enact_date=enact_date,
+            laws=laws,
+        )
 
 
 class AdvertIndexInfo(BaseModel):
@@ -224,7 +428,7 @@ class AdvertManager:
 
     @staticmethod
     @cache
-    def by_affected_law(codex_version: str, nr: str, year: int) -> List[Advert]:
+    def by_affected_law(codex_version: str, nr: str, year: int) -> List[AdvertEntry]:
         identifier = "%s/%s" % (nr, year)
         index = AdvertManager.index(codex_version)
 

@@ -1,5 +1,5 @@
 import { useParams } from '@solidjs/router';
-import { createResource, For } from 'solid-js';
+import { createResource, For, Show } from 'solid-js';
 import { AdvertService } from '~/api';
 import Header from '~/components/Header';
 
@@ -9,6 +9,10 @@ export default function AdvertView() {
     const [advert] = createResource(
         () => identifier,
         AdvertService.getAdvert,
+    );
+    const [intentDetails] = createResource(
+        () => identifier,
+        AdvertService.getAdvertIntents,
     );
 
     const formatDate = (dateString?: string | null) => {
@@ -47,13 +51,13 @@ export default function AdvertView() {
 
                 <div class="flex gap-8" style="height: calc(100vh - 140px)">
                     <div class="w-[300px] shrink-0 overflow-y-auto">
-                        {advert()?.affected_law_identifiers.length && (
+                        <Show when={advert()?.affected_law_identifiers && (advert()?.affected_law_identifiers.length ?? 0) > 0}>
                             <div class="">
                                 <h3 class="text-lg font-medium mb-4">
                                     Affected Laws
                                 </h3>
                                 <div class="flex flex-wrap gap-2">
-                                    <For each={advert().affected_law_identifiers}>
+                                    <For each={advert()?.affected_law_identifiers ?? []}>
                                         {(lawId) => {
                                             const [nr, year] = lawId.split('/');
                                             return (
@@ -68,7 +72,88 @@ export default function AdvertView() {
                                     </For>
                                 </div>
                             </div>
-                        )}
+                        </Show>
+                        <Show when={intentDetails()}>
+                            {details => (
+                                <div class="mt-12 border-t pt-8">
+                                    <div class="mb-6">
+                                        <h2 class="text-xl font-medium mb-2">Intent Changes</h2>
+                                        <p class="text-sm text-gray-600">
+                                            Codex Version:
+                                            {' '}
+                                            {details().codex_version}
+                                            {' → '}
+                                            {details().next_codex_version}
+                                            {' '}
+                                            (Enacted:
+                                            {' '}
+                                            {formatDate(details().enact_date)}
+                                            )
+                                        </p>
+                                    </div>
+                                    <For each={details().laws}>
+                                        {law => (
+                                            <div class="mb-8">
+                                                <h3 class="text-lg font-medium mb-4">
+                                                    Law
+                                                    {' '}
+                                                    {law.identifier}
+                                                </h3>
+                                                <For each={law.intents}>
+                                                    {intent => (
+                                                        <div class="mb-6 border-l-4 border-blue-500 pl-4">
+                                                            <div class="mb-2">
+                                                                <span class="font-medium">
+                                                                    Intent
+                                                                    {' '}
+                                                                    {intent.nr}
+                                                                </span>
+                                                                {' '}
+                                                                <span class="text-sm text-gray-600">
+                                                                    (
+                                                                    {intent.action}
+                                                                    )
+                                                                </span>
+                                                            </div>
+                                                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                                                <Show when={intent.applied}>
+                                                                    {applied => (
+                                                                        <div>
+                                                                            <div class="text-sm font-medium mb-2 text-green-700">
+                                                                                Applied Version
+                                                                            </div>
+                                                                            <div class="p-3 rounded text-sm border border-green-200">
+                                                                                <pre class="whitespace-pre-wrap font-mono text-xs">
+                                                                                    {applied().text}
+                                                                                </pre>
+                                                                            </div>
+                                                                        </div>
+                                                                    )}
+                                                                </Show>
+                                                                <Show when={intent.next}>
+                                                                    {next => (
+                                                                        <div>
+                                                                            <div class="text-sm font-medium mb-2 text-blue-700">
+                                                                                Next Codex Version
+                                                                            </div>
+                                                                            <div class="p-3 rounded text-sm border border-blue-200">
+                                                                                <pre class="whitespace-pre-wrap font-mono text-xs">
+                                                                                    {next().text}
+                                                                                </pre>
+                                                                            </div>
+                                                                        </div>
+                                                                    )}
+                                                                </Show>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </For>
+                                            </div>
+                                        )}
+                                    </For>
+                                </div>
+                            )}
+                        </Show>
 
                     </div>
                     <div id="content-container" class="flex-1 overflow-y-auto">
@@ -89,14 +174,13 @@ export default function AdvertView() {
                             </div>
 
                             <div class="prose max-w-none legal-document">
-                                <div innerHTML={advert()?.html_text} />
+                                <div innerHTML={advert()?.original_html_text ?? ''} />
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-            );
         </div>
     );
 }
