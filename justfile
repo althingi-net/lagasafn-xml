@@ -7,56 +7,22 @@ _default:
 _full_tag app:
     @echo "{{ TAG_BASE }}/{{ app }}:{{ TAG_VERSION }}"
 
-# Builds all images.
-build-images:
-    just build-image lagasafn-base
-    just build-image codex-api
+_sanity_check_app app:
+    #!/usr/bin/env bash
+    APP="{{ app }}"
 
-# Build specific app. Options: 'lagasafn-base', 'codex-api'
-build-image app:
-    docker build . -t "$(just _full_tag {{ app }})" --target "{{ app }}"
+    if [ "$APP" != "codex-api" ]; then
+        echo "Error: Unknown app: $APP" >&2
+        echo "" >&2
+        echo "Known apps are:" >&2
+        echo "" >&2
+        echo "    codex-api" >&2
+        # TODO: echo "    codex-ui" >&2
+        echo "" >&2
+        exit 1
+    fi
 
-# Pushes all images to registry.
-push-images:
-    just push-image lagasafn-base
-    just push-image codex-api
-
-# Pushes specific app. Options: 'lagasafn-base'
-push-image app:
-    docker push "$(just _full_tag {{ app }})"
-
-# Stops and cleans container images for given app.
-clean-image app:
-    #!/bin/bash
-    set -e
-    TAG="$(just _full_tag {{ app }})"
-    docker container stop "$TAG" 2>/dev/null || true
-    docker container rm "$TAG" 2>/dev/null || true
-    docker image rm "$TAG" 2>/dev/null || true
-
-# Runs image of given app.
-run-image app:
-    #!/bin/bash
-    # Note: This value-hunting assumes a strict format in the `.env` file.
-    SECRET_KEY="$(grep '^SECRET_KEY=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-    API_ACCESS_TOKEN="$(grep '^API_ACCESS_TOKEN=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-    ALLOWED_HOSTS="$(grep '^ALLOWED_HOSTS=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-
-    # Make sure that 'localhost' is allowed when running in this way.
-    ALLOWED_HOSTS="$ALLOWED_HOSTS,localhost"
-
-    docker run -it --rm \
-        -e SECRET_KEY="$SECRET_KEY" \
-        -e API_ACCESS_TOKEN="$API_ACCESS_TOKEN" \
-        -e ALLOWED_HOSTS="$ALLOWED_HOSTS" \
-        -p 8000:8000 \
-        "$(just _full_tag {{ app }})"
-
-# Runs a shell for the given app.
-run-shell app:
-    docker run -it --rm --entrypoint /bin/bash "$(just _full_tag {{ app }})"
-
-_sanity_check environment:
+_sanity_check_environment environment:
     #!/usr/bin/env bash
     ENVIRONMENT="{{ environment }}"
 
@@ -71,7 +37,7 @@ _sanity_check environment:
         exit 1
     fi
 
-_establish_secret environment:
+_establish_secret environment: (_sanity_check_environment environment)
     #!/usr/bin/env bash
     ENVIRONMENT="{{ environment }}"
     NAMESPACE="$ENVIRONMENT-althingi-net"
@@ -95,8 +61,62 @@ _establish_secret environment:
             --from-literal=API_ACCESS_TOKEN="$API_ACCESS_TOKEN"
     fi
 
+# Builds specific image.
+build app: (_sanity_check_app app)
+    docker build . -t "$(just _full_tag {{ app }})" --target "{{ app }}"
+
+# Builds all images.
+build-all:
+    just build codex-api
+    # TODO: just build codex-ui
+
+# Pushes specific app to container image registry.
+push app: (_sanity_check_app app)
+    docker push "$(just _full_tag {{ app }})"
+
+# Pushes all images to registry.
+push-all:
+    just push codex-api
+    # TODO: just build codex-ui
+
+# Stops and cleans container images for given app.
+clean-image app: (_sanity_check_app app)
+    #!/bin/bash
+    set -e
+    TAG="$(just _full_tag {{ app }})"
+    docker container stop "$TAG" 2>/dev/null || true
+    docker container rm "$TAG" 2>/dev/null || true
+    docker image rm "$TAG" 2>/dev/null || true
+
+# Stops and cleans container images for all apps.
+clean-image-all:
+    just clean-image codex-api
+    # TODO: just clean-image codex-ui
+
+# Runs image of given app.
+run app:
+    #!/bin/bash
+    # Note: This value-hunting assumes a strict format in the `.env` file.
+    SECRET_KEY="$(grep '^SECRET_KEY=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+    API_ACCESS_TOKEN="$(grep '^API_ACCESS_TOKEN=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+    ALLOWED_HOSTS="$(grep '^ALLOWED_HOSTS=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+
+    # Make sure that 'localhost' is allowed when running in this way.
+    ALLOWED_HOSTS="$ALLOWED_HOSTS,localhost"
+
+    docker run -it --rm \
+        -e SECRET_KEY="$SECRET_KEY" \
+        -e API_ACCESS_TOKEN="$API_ACCESS_TOKEN" \
+        -e ALLOWED_HOSTS="$ALLOWED_HOSTS" \
+        -p 8000:8000 \
+        "$(just _full_tag {{ app }})"
+
+# Runs a shell for the given app.
+shell app:
+    docker run -it --rm --entrypoint /bin/bash "$(just _full_tag {{ app }})"
+
 # Deploys the Helm chart to a Kubernetes cluster.
-deploy environment: (_sanity_check environment) (_establish_secret environment)
+deploy environment: (_sanity_check_environment environment) (_establish_secret environment)
     #!/usr/bin/env bash
     ENVIRONMENT="{{ environment }}"
     NAMESPACE="$ENVIRONMENT-althingi-net"
@@ -107,7 +127,7 @@ deploy environment: (_sanity_check environment) (_establish_secret environment)
         --force-conflicts
 
 # Full deployment with building and pushing of images.
-full-deploy environment: (_sanity_check environment)
-    just build-images
-    just push-images
+full-deploy environment: (_sanity_check_environment environment)
+    just build-all
+    just push-all
     just deploy {{ environment }}
