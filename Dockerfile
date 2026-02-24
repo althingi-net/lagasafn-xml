@@ -1,44 +1,32 @@
-# Image 1: The base image containing the library and data.
-FROM debian:trixie AS lagasafn-base
+FROM python:3.12-slim AS codex-api
 
-# Install required Debian packages.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-      git gettext \
-      python3-venv build-essential python3-dev \
+    g++ python3-dev gettext git \
  && rm -rf /var/lib/apt/lists/*
 
-# Copy needed code.
-RUN mkdir -p /app/lagasafn
-COPY lagasafn/ /app/lagasafn
-COPY requirements-freeze.txt /app
-
-# Copy needed data.
-RUN mkdir -p /app/data
-COPY data/ /app/data
-
-# Setup Python environment.
-RUN python3 -m venv /venv
-
-# Install required Python packages.
-RUN /venv/bin/pip install -r /app/requirements-freeze.txt
-
-# Image 2: Build the `codex-api` app.
-FROM lagasafn-base AS codex-api
-
 RUN mkdir -p /app/codex-api
+
+COPY lagasafn/ /app/lagasafn
 COPY codex-api/ /app/codex-api
+COPY data /app/data
+COPY requirements-freeze.txt /app/requirements-freeze.txt
+
+WORKDIR /app
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements-freeze.txt
 
 WORKDIR /app/codex-api
 
 RUN SECRET_KEY=unused \
     API_ACCESS_TOKEN=unused \
     ALLOWED_HOSTS=unused \
-    /venv/bin/python3 manage.py collectstatic --noinput
+    python3 manage.py collectstatic --noinput
 
 RUN SECRET_KEY=unused \
     API_ACCESS_TOKEN=unused \
     ALLOWED_HOSTS=unused \
-    /venv/bin/python3 manage.py compilemessages
+    python3 manage.py compilemessages
 
-ENTRYPOINT ["/venv/bin/daphne", "-b", "0.0.0.0", "-p", "8000", "mechlaw.asgi:application"]
+ENTRYPOINT ["daphne", "-b", "0.0.0.0", "-p", "8000", "mechlaw.asgi:application"]
