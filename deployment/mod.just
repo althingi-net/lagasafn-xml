@@ -96,13 +96,9 @@ clean-image-all:
 # Runs image of given app.
 run app:
     #!/bin/bash
-    # Note: This value-hunting assumes a strict format in the `.env` file.
-    SECRET_KEY="$(grep '^SECRET_KEY=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-    API_ACCESS_TOKEN="$(grep '^API_ACCESS_TOKEN=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-    ALLOWED_HOSTS="$(grep '^ALLOWED_HOSTS=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
-
-    # Make sure that 'localhost' is allowed when running in this way.
-    ALLOWED_HOSTS="$ALLOWED_HOSTS,localhost"
+    SECRET_KEY="secret-string"
+    API_ACCESS_TOKEN="secret-string"
+    ALLOWED_HOSTS="localhost"
 
     docker run -it --rm \
         -e SECRET_KEY="$SECRET_KEY" \
