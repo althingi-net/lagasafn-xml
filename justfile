@@ -41,6 +41,10 @@ run-image app:
     SECRET_KEY="$(grep '^SECRET_KEY=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
     API_ACCESS_TOKEN="$(grep '^API_ACCESS_TOKEN=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
     ALLOWED_HOSTS="$(grep '^ALLOWED_HOSTS=' codex-api/.env | cut -d= -f2 | sed 's/^"//; s/"$//;')"
+
+    # Make sure that 'localhost' is allowed when running in this way.
+    ALLOWED_HOSTS="$ALLOWED_HOSTS,localhost"
+
     docker run -it --rm \
         -e SECRET_KEY="$SECRET_KEY" \
         -e API_ACCESS_TOKEN="$API_ACCESS_TOKEN" \
