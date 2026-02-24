@@ -1,21 +1,28 @@
+FROM python:3.12-slim AS builder
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    g++ python3-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --upgrade pip
+COPY requirements-freeze.txt /requirements-freeze.txt
+RUN pip install --prefix=/install -r /requirements-freeze.txt
+
 FROM python:3.12-slim AS codex-api
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-    g++ python3-dev gettext git \
+    gettext git libstdc++6 \
  && rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /install /usr/local
 
 RUN mkdir -p /app/codex-api
 
 COPY lagasafn/ /app/lagasafn
 COPY codex-api/ /app/codex-api
 COPY data /app/data
-COPY requirements-freeze.txt /app/requirements-freeze.txt
-
-WORKDIR /app
-
-RUN pip install --upgrade pip
-RUN pip install -r requirements-freeze.txt
 
 WORKDIR /app/codex-api
 
