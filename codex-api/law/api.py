@@ -165,6 +165,7 @@ def api_list(request: HttpRequest, codex_version: str = None):
     "/codex-versions",
     summary="Returns a list of available codex versions.",
     operation_id="listCodexVersions",
+    response=list[str],
 )
 def api_codex_versions(request: HttpRequest):
     """

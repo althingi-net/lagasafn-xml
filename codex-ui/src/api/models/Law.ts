@@ -10,10 +10,11 @@ export type Law = {
     chapter_count: number;
     art_count: number;
     problems: Record<string, any>;
+    versions?: Array<string>;
     nr: number;
     year: number;
+    applied_timing?: (string | null);
     chapters: Array<Chapter>;
-    versions: Array<string>;
     html_text: string;
 };
 
