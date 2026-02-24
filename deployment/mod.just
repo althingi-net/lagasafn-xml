@@ -67,8 +67,8 @@ build app: (_sanity_check_app app)
 
 # Builds all images.
 build-all:
-    just build codex-api
-    # TODO: just build codex-ui
+    just deploy build codex-api
+    # TODO: just deploy build codex-ui
 
 # Pushes specific app to container image registry.
 push app: (_sanity_check_app app)
@@ -76,8 +76,8 @@ push app: (_sanity_check_app app)
 
 # Pushes all images to registry.
 push-all:
-    just push codex-api
-    # TODO: just build codex-ui
+    just deploy push codex-api
+    # TODO: just deploy push codex-ui
 
 # Stops and cleans container images for given app.
 clean-image app: (_sanity_check_app app)
@@ -117,13 +117,13 @@ deploy environment: (_sanity_check_environment environment) (_establish_secret e
     ENVIRONMENT="{{ environment }}"
     NAMESPACE="$ENVIRONMENT-althingi-net"
 
-    helm upgrade --install lagasafn deployment/helm \
+    helm upgrade --install lagasafn helm \
         -n "$NAMESPACE" --create-namespace \
-        -f deployment/helm/values-"$ENVIRONMENT".yaml \
+        -f helm/values-"$ENVIRONMENT".yaml \
         --force-conflicts
 
 # Full deployment with building and pushing of images.
 full-deploy environment: (_sanity_check_environment environment)
-    just build-all
-    just push-all
-    just deploy {{ environment }}
+    just deploy build-all
+    just deploy push-all
+    just deploy deploy {{ environment }}
