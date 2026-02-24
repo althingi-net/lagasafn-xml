@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "core",
     "law",
     "advert",
+    "djalthingi",
 ]
 
 MIDDLEWARE = [
@@ -102,6 +103,25 @@ USE_TZ = True
 
 # Options are: ['is']
 LEGAL_FRAMEWORK = 'is'
+
+
+# Database configuration.
+#
+# This is hard-coded here because the only database currently used in the
+# project is for `djalthingi`, and that only requires periodic, single-threaded
+# writes when updating data, and otherwise only reads. There is no user-added
+# data, and no data is modified through the web interface.
+#
+# For this reason, we are confident in SQLite being able to do the job just
+# fine, and there is no need for a proper database.
+#
+# Note that this may very well change in the future.
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "djalthingi.sqlite",
+    }
+}
 
 
 # Where to find the XML data.
