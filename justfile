@@ -105,3 +105,9 @@ deploy environment: (_sanity_check environment) (_establish_secret environment)
         -n "$NAMESPACE" --create-namespace \
         -f deployment/helm/values-"$ENVIRONMENT".yaml \
         --force-conflicts
+
+# Full deployment with building and pushing of images.
+full-deploy environment: (_sanity_check environment)
+    just build-images
+    just push-images
+    just deploy {{ environment }}
