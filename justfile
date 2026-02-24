@@ -96,12 +96,10 @@ _establish_secret environment:
     fi
 
 # Deploys the Helm chart to a Kubernetes cluster.
-deploy environment: (_sanity_check environment)
+deploy environment: (_sanity_check environment) (_establish_secret environment)
     #!/usr/bin/env bash
     ENVIRONMENT="{{ environment }}"
     NAMESPACE="$ENVIRONMENT-althingi-net"
-
-    just _establish_secret "$ENVIRONMENT"
 
     helm upgrade --install lagasafn deployment/helm \
         -n "$NAMESPACE" --create-namespace \
