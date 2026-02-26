@@ -11,10 +11,12 @@ OpenAPI.BASE = (window as any)._env_?.VITE_SERVER_BASE_URL
     ?? import.meta.env.VITE_SERVER_BASE_URL
     ?? 'http://localhost:8000';
 
+const basePath = (window as any)._env_?.BASE_PATH ?? '/';
+
 export default function App() {
     return (
         <Router
-            base="/new"
+            base={basePath}
             root={props => (
                 <ErrorBoundary fallback={(err) => (
                     <div class="p-8 text-white">

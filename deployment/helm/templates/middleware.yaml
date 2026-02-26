@@ -27,4 +27,4 @@ metadata:
 spec:
   stripPrefix:
     prefixes:
-      - /new
+      - {{ .Values.basePath }}

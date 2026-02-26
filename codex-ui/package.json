@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
-    "build": "vinxi build",
+    "build": "NODE_ENV=production vinxi build",
     "start": "vinxi start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

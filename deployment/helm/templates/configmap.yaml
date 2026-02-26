@@ -6,4 +6,5 @@ metadata:
 data:
   ALLOWED_HOSTS: {{ .Values.host }}
   VITE_SERVER_BASE_URL: https://{{ .Values.host }}
+  BASE_PATH: {{ .Values.basePath }}
 

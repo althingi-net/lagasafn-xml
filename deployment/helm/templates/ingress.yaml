@@ -32,7 +32,7 @@ spec:
     - host: {{ .Values.host }}
       http:
         paths:
-          - path: /new
+          - path: {{ .Values.basePath }}
             pathType: Prefix
             backend:
               service:
@@ -84,7 +84,7 @@ spec:
     - host: {{ .Values.host }}
       http:
         paths:
-          - path: /new
+          - path: {{ .Values.basePath }}
             pathType: Prefix
             backend:
               service:

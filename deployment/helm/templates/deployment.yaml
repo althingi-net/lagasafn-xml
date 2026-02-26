@@ -65,6 +65,11 @@ spec:
                 configMapKeyRef:
                   name: env-config
                   key: VITE_SERVER_BASE_URL
+            - name: BASE_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: BASE_PATH
           resources: {}
           readinessProbe:
             httpGet:
