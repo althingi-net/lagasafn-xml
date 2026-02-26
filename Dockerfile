@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM python:3.12-slim AS builder
 ARG NODE_VERSION=24.14.0
 ARG NODE_ARCH=linux-x64
@@ -56,5 +57,17 @@ ENTRYPOINT ["daphne", "-b", "0.0.0.0", "-p", "8000", "mechlaw.asgi:application"]
 
 FROM nginx:stable-alpine AS codex-ui
 COPY --from=builder /build/codex-ui/.output/public/ /usr/share/nginx/html/
+COPY <<'EOF' /etc/nginx/conf.d/default.conf
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+}
+EOF
 COPY entrypoint.codex-ui.sh /docker-entrypoint.d/40-runtime-config.sh
 RUN chmod +x /docker-entrypoint.d/40-runtime-config.sh
