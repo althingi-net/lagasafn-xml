@@ -35,3 +35,52 @@ spec:
               secretKeyRef:
                 name: env-secret
                 key: API_ACCESS_TOKEN
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codex-ui
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: codex-ui
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: codex-ui
+    spec:
+      containers:
+        - name: codex-ui
+          image: {{ index .Values "codex-ui" "image" }}
+          env:
+            - name: VITE_SERVER_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: VITE_SERVER_BASE_URL
+            - name: BASE_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: BASE_PATH
+          resources: {}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 0
+            periodSeconds: 2
+            timeoutSeconds: 1
+            failureThreshold: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"]
+status: {}
