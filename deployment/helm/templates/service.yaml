@@ -11,4 +11,18 @@ spec:
   selector:
     app: codex-api
   type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: codex-ui
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: codex-ui
+  type: ClusterIP
 

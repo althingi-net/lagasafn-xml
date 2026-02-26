@@ -5,6 +5,7 @@ export default defineConfig({
   ssr: false,
   server: {
     preset: "static",
+    baseURL: process.env.NODE_ENV === 'production' ? '/__CODEX_UI_BASE_PATH__/' : '/',
   },
   vite({ router }) {
     const base = {

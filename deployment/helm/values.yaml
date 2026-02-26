@@ -1,4 +1,8 @@
+host: ""
+basePath: "/new"
+
 codex-api:
-  host: ""
   image: ghcr.io/althingi-net/codex-api:latest
 
+codex-ui:
+  image: ghcr.io/althingi-net/codex-ui:latest
