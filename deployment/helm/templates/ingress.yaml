@@ -22,6 +22,27 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: codex-ui-http
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-redirect-https@kubernetescrd,{{ .Release.Namespace }}-strip-new-prefix@kubernetescrd
+spec:
+  rules:
+    - host: {{ .Values.host }}
+      http:
+        paths:
+          - path: /new
+            pathType: Prefix
+            backend:
+              service:
+                name: codex-ui
+                port:
+                  number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
   name: codex-api-https
   namespace: {{ .Release.Namespace }}
   annotations:
@@ -42,5 +63,31 @@ spec:
             backend:
               service:
                 name: codex-api
+                port:
+                  number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: codex-ui-https
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-hsts@kubernetescrd,{{ .Release.Namespace }}-strip-new-prefix@kubernetescrd
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.host }}
+      secretName: codex-api-tls
+  rules:
+    - host: {{ .Values.host }}
+      http:
+        paths:
+          - path: /new
+            pathType: Prefix
+            backend:
+              service:
+                name: codex-ui
                 port:
                   number: 80

@@ -5,12 +5,16 @@ import './app.css';
 import './law.css';
 import { OpenAPI } from './api';
 
-// Configure the API base URL
-OpenAPI.BASE = import.meta.env.VITE_SERVER_BASE_URL ?? 'http://localhost:8000';
+// Configure the API base URL from runtime config (window._env_) with fallback
+// to the build-time env var for local development without a config.js.
+OpenAPI.BASE = (window as any)._env_?.VITE_SERVER_BASE_URL
+    ?? import.meta.env.VITE_SERVER_BASE_URL
+    ?? 'http://localhost:8000';
 
 export default function App() {
     return (
         <Router
+            base="/new"
             root={props => (
                 <ErrorBoundary fallback={(err) => (
                     <div class="p-8 text-white">

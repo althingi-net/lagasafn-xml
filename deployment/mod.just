@@ -11,13 +11,13 @@ _sanity_check_app app:
     #!/usr/bin/env bash
     APP="{{ app }}"
 
-    if [ "$APP" != "codex-api" ]; then
+    if [ "$APP" != "codex-api" ] && [ "$APP" != "codex-ui" ]; then
         echo "Error: Unknown app: $APP" >&2
         echo "" >&2
         echo "Known apps are:" >&2
         echo "" >&2
         echo "    codex-api" >&2
-        # TODO: echo "    codex-ui" >&2
+        echo "    codex-ui" >&2
         echo "" >&2
         exit 1
     fi
@@ -63,12 +63,14 @@ _establish_secret environment: (_sanity_check_environment environment)
 
 # Builds specific image.
 build app: (_sanity_check_app app)
-    docker build .. -t "$(just deploy _full_tag {{ app }})" --target "{{ app }}"
+    #!/usr/bin/env bash
+    APP="{{ app }}"
+    docker build .. -t "$(just deploy _full_tag $APP)" --target "$APP"
 
 # Builds all images.
 build-all:
     just deploy build codex-api
-    # TODO: just deploy build codex-ui
+    just deploy build codex-ui
 
 # Pushes specific app to container image registry.
 push app: (_sanity_check_app app)
@@ -77,7 +79,7 @@ push app: (_sanity_check_app app)
 # Pushes all images to registry.
 push-all:
     just deploy push codex-api
-    # TODO: just deploy push codex-ui
+    just deploy push codex-ui
 
 # Stops and cleans container images for given app.
 clean-image app: (_sanity_check_app app)
@@ -91,7 +93,7 @@ clean-image app: (_sanity_check_app app)
 # Stops and cleans container images for all apps.
 clean-image-all:
     just clean-image codex-api
-    # TODO: just clean-image codex-ui
+    just clean-image codex-ui
 
 # Runs image of given app.
 run app:
@@ -109,7 +111,7 @@ run app:
 
 # Runs a shell for the given app.
 shell app:
-    docker run -it --rm --entrypoint /bin/bash "$(just deploy _full_tag {{ app }})"
+    docker run -it --rm --entrypoint /bin/sh "$(just deploy _full_tag {{ app }})"
 
 # Deploys the Helm chart to a Kubernetes cluster.
 deploy environment: (_sanity_check_environment environment) (_establish_secret environment)

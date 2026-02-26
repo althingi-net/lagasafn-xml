@@ -5,6 +5,7 @@ export default defineConfig({
   ssr: false,
   server: {
     preset: "static",
+    baseURL: "/new/",
   },
   vite({ router }) {
     const base = {
