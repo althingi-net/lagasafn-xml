@@ -559,6 +559,13 @@ var process_footnote = function() {
                     if (after_mark_content[0] == "[" && before_mark_content.slice(-1) == "[") {
                         before_mark_content = before_mark_content.slice(0, -1);
                     }
+
+                    // When a word is deleted following a comma, but the comma
+                    // is retained, it may get duplicated. This happens in
+                    // e-liður 1. mgr. 12. gr. laga nr. 55/2006 (156b).
+                    if (after_mark_content[0] == "," && before_mark_content.slice(-1) == ",") {
+                        after_mark_content = "";
+                    }
                 }
             }
 
