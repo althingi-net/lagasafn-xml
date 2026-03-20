@@ -2715,6 +2715,8 @@ def parse_tr(parser):
 
         break
 
+    parser.maybe_consume("<br/>")
+
     parser.consume("</tr>")
 
     parser.tr = None
@@ -2736,6 +2738,8 @@ def parse_td(parser):
 
     # Consume the "<td>".
     parser.next()
+
+    parser.maybe_consume("<br/>")
 
     # Only add content if the `td` is not empty, otherwise it starts adding
     # everything from the next `td`.
