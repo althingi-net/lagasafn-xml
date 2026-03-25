@@ -1204,3 +1204,21 @@ def number_sorter(number):
     while len(result) < 3:
         result = "0%s" % result
     return result
+
+
+def setup_django():
+    """
+    Utility function for setting up Django knowing the shape of our project.
+    """
+    import django
+    import os
+    import sys
+
+    sys.path.insert(0, "codex-api")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mechlaw.settings")
+    django.setup()
+
+    # We also sneak in this setting here.
+    from djalthingi import althingi_settings
+    althingi_settings.DOWNLOAD_DOCUMENTS = False
+    althingi_settings.DOWNLOAD_REVIEWS = False

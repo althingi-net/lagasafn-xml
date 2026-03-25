@@ -1,5 +1,6 @@
 import dateparser
 from datetime import datetime
+from djalthingi.models import Document
 from lagasafn.advert.intent.parsers import parse_intents_by_text_analysis
 from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
@@ -11,6 +12,7 @@ from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
 from lagasafn.settings import FEATURES
+from lxml import etree
 from lxml.builder import E
 from lxml.etree import _Element
 import re
@@ -297,7 +299,7 @@ def parse_parliamentary_approval(tracker: AdvertTracker):
     return True
 
 
-def parse_advert(doc_info: dict, xml_remote: _Element):
+def parse_advert(doc: Document):
 
     # Vestigial attribute, retained to make diffing easier during development.
     # Should be removed at some point.
@@ -305,12 +307,14 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
 
     tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id}))
 
-    nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
+    xml_remote = etree.fromstring(doc.html_content)
+
+    nr, year = [int(p) for p in doc.law_identifier.split("/")]
 
     # Figure out the date that this document wash published. We remove the
     # timezone info because other parts of the program assume timezone-naive
     # variables, but everything we do here is in UTC.
-    published_date = dateparser.parse(doc_info["law_time_published"]).replace(
+    published_date = doc.law_time_published.replace(
         tzinfo=None
     )
 

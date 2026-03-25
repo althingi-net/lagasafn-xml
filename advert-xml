@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
+from lagasafn.utils import setup_django
+setup_django()
+
 import click
 from datetime import datetime
 from datetime import timedelta
-from lagasafn.advert.commands import (
-    apply_intents_from_advert,
-    convert_adverts,
-    create_index,
-)
+from djalthingi.models import Document
+from lagasafn.advert.commands import apply_intents_from_advert
+from lagasafn.advert.commands import create_index
+from lagasafn.advert.parsers import parse_advert
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
@@ -56,7 +58,7 @@ def main(
 ):
 
     # We don't like tuples around here.
-    identifiers: list[str] = [i for i in advert_identifiers]
+    identifiers = list(advert_identifiers)
 
     # Make sure that the parameters make sense.
     if not any([full, retrieve, convert, make_index, apply]):
@@ -68,16 +70,53 @@ def main(
         convert = True
         make_index = True
 
+    if codex_version is None:
+        codex_version = CURRENT_PARLIAMENT_VERSION
+
+    if codex_version not in LawManager.codex_versions():
+        raise Exception("Unavailable codex version: %s" % codex_version)
+
     # We'll handle adverts that were published after the currently selected
     # codex version was released.
-    law_index = LawManager.index(CURRENT_PARLIAMENT_VERSION)
+    law_index = LawManager.index(codex_version)
     from_date = law_index.info.date_to + timedelta(days=1)
-    to_date = datetime.now()
+
+    next_codex_version = LawManager.get_next_codex_version(codex_version)
+    if next_codex_version is not None:
+        new_law_index = LawManager.index(next_codex_version)
+        to_date = new_law_index.info.date_to
+    else:
+        to_date = datetime.now()
+
+    # Figure out which identifiers we are working with if none are provided.
+    if len(identifiers) == 0:
+        identifiers = [d.law_identifier for d in Document.objects.filter(
+            law_time_published__gte=from_date,
+            law_time_published__lt=to_date
+        )]
+
+    existing_identifiers = [d.law_identifier for d in Document.objects.filter(law_identifier__in=identifiers)]
+    if len(existing_identifiers) != len(identifiers):
+        print("Could not find laws in database with the following identifiers:")
+        for identifier in identifiers:
+            if identifier not in existing_identifiers:
+                print(" - %s" % identifier)
+        quit(1)
+
+    # Make sure that laws according to these identifiers actually exist.
+    if len(identifiers) == 0:
+        raise Exception("Couldn't find law identifiers to work with.")
 
     if retrieve:
         update_local_adverts(from_date, to_date)
     if convert:
-        convert_adverts(identifiers)
+        adverts = Document.objects.filter(law_identifier__in=identifiers)
+        for advert in adverts:
+            advert_xml = parse_advert(advert)
+            nr, year = [int(v) for v in str(advert.law_identifier).split("/")]
+            from lagasafn.constants import ADVERT_FILENAME
+            from lagasafn.utils import write_xml
+            write_xml(advert_xml, ADVERT_FILENAME % (year, nr))
     if make_index:
         create_index()
     if apply:
