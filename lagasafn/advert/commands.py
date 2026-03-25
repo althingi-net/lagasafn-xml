@@ -1,4 +1,5 @@
 import requests
+from djalthingi.models import Document
 from lagasafn.constants import ADVERT_DIR
 from lagasafn.constants import ADVERT_FILENAME
 from lagasafn.constants import ADVERT_ORIGINAL_DIR
@@ -16,9 +17,42 @@ from lxml import etree
 from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
-from os import makedirs
 from os import unlink
 from os import path
+
+
+def convert_adverts(identifiers: list[str] = []):
+    adverts = Document.objects.filter(
+        law_identifier__in=identifiers
+    ).order_by(
+        "law_time_published",
+        "law_identifier"
+    )
+    for advert in adverts:
+        convert_advert(advert)
+
+
+def convert_advert(advert: Document):
+    print("Converting %s..." % advert.law_identifier, end="", flush=True)
+
+    nr, year = [int(p) for p in str(advert.law_identifier).split("/")]
+
+    out_filename = ADVERT_FILENAME % (year, nr)
+    try:
+        xml_advert = parse_advert(advert)
+        write_xml(xml_advert, out_filename)
+        print(" done")
+    except (AdvertParsingException, IntentParsingException, ReferenceParsingException) as ex:
+        # Delete the file if it already existed, so that we can tell the
+        # difference in `git status` and `git diff`.
+        try:
+            unlink(out_filename)
+        except FileNotFoundError:
+            pass
+
+        print(" failed with %s exception:" % type(ex).__name__)
+        print(ex)
+        print()
 
 
 def create_index():

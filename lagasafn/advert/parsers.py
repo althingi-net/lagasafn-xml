@@ -1,20 +1,18 @@
-import dateparser
-from datetime import datetime
 from djalthingi.models import Document
 from lagasafn.advert.intent.parsers import parse_intents_by_text_analysis
 from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
+from lagasafn.constants import ADVERT_FILENAME
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.models.law import LawManager
-from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
 from lagasafn.utils import super_iter
 from lagasafn.utils import is_roman
+from lagasafn.utils import write_xml
 from lagasafn.settings import FEATURES
 from lxml import etree
 from lxml.builder import E
-from lxml.etree import _Element
 import re
 import roman
 
@@ -363,4 +361,5 @@ def parse_advert(doc: Document):
 
         raise AdvertParsingException("Can't parse element: %s" % node)
 
-    return tracker.xml
+    nr, year = [int(v) for v in str(doc.law_identifier).split("/")]
+    write_xml(tracker.xml, ADVERT_FILENAME % (year, nr))

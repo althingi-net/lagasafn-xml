@@ -7,8 +7,8 @@ from datetime import datetime
 from datetime import timedelta
 from djalthingi.models import Document
 from lagasafn.advert.commands import apply_intents_from_advert
+from lagasafn.advert.commands import convert_adverts
 from lagasafn.advert.commands import create_index
-from lagasafn.advert.parsers import parse_advert
 from lagasafn.advert.remote import update_local_adverts
 from lagasafn.constants import CURRENT_PARLIAMENT_VERSION
 from lagasafn.models import LawManager
@@ -110,13 +110,7 @@ def main(
     if retrieve:
         update_local_adverts(from_date, to_date)
     if convert:
-        adverts = Document.objects.filter(law_identifier__in=identifiers)
-        for advert in adverts:
-            advert_xml = parse_advert(advert)
-            nr, year = [int(v) for v in str(advert.law_identifier).split("/")]
-            from lagasafn.constants import ADVERT_FILENAME
-            from lagasafn.utils import write_xml
-            write_xml(advert_xml, ADVERT_FILENAME % (year, nr))
+        convert_adverts(identifiers)
     if make_index:
         create_index()
     if apply:
