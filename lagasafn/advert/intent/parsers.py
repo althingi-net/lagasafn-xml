@@ -1696,8 +1696,6 @@ def parse_eftirfarandi_breytingar_verda_a_x_laganna(tracker: IntentTracker):
     if match is None:
         return False
 
-    import ipdb; ipdb.set_trace()
-
     address = match.groups()[0]
 
     # Because we need to iterate by different means, depending on the nature of
