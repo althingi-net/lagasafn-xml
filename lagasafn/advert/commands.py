@@ -1,5 +1,5 @@
 import requests
-from lagasafn.chaostemple.service import law_documents
+from djalthingi.models import Document
 from lagasafn.constants import ADVERT_DIR
 from lagasafn.constants import ADVERT_FILENAME
 from lagasafn.constants import ADVERT_ORIGINAL_DIR
@@ -12,53 +12,34 @@ from lagasafn.exceptions import AdvertParsingException
 from lagasafn.exceptions import IntentParsingException
 from lagasafn.exceptions import ReferenceParsingException
 from lagasafn.models.advert import Advert
-from lagasafn.settings import CHAOSTEMPLE_URL
 from lagasafn.utils import write_xml
 from lxml import etree
 from lxml.etree import _Element
 from lxml.builder import E
 from os import listdir
-from os import makedirs
 from os import unlink
 from os import path
 
 
-def convert_adverts(requested_identifiers: list[str] = []):
-    """
-    Converts all remote adverts into proper XML.
-    """
-
-    # Map identifiers to documents for selection.
-    r_docs = law_documents()
-
-    if len(requested_identifiers) > 0:
-        r_docs = [d for d in r_docs if d["law_identifier"] in requested_identifiers]
-
-    for r_doc in r_docs:
-        convert_advert(r_doc)
+def convert_adverts(identifiers: list[str] = []):
+    adverts = Document.objects.filter(
+        law_identifier__in=identifiers
+    ).order_by(
+        "law_time_published",
+        "law_identifier"
+    )
+    for advert in adverts:
+        convert_advert(advert)
 
 
-def convert_advert(doc_info: dict):
-    """
-    Converts a single remote advert XML to a proper advert XML.
-    """
+def convert_advert(advert: Document):
+    print("Converting %s..." % advert.law_identifier, end="", flush=True)
 
-    nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
-
-    print("Converting %s" % doc_info["law_identifier"], end="", flush=True)
-
-    # Get the HTML content and convert into XML.
-    response = requests.get("%s%s" % (CHAOSTEMPLE_URL, doc_info["html_content_path"]))
-    response.raise_for_status()
-    xml_remote = etree.fromstring(response.text)
-
-    # Write down the original for easier diffing and such during development.
-    makedirs(ADVERT_ORIGINAL_DIR, exist_ok=True)
-    write_xml(xml_remote, ADVERT_ORIGINAL_FILENAME % (year, nr), skip_strip=True)
+    nr, year = [int(p) for p in str(advert.law_identifier).split("/")]
 
     out_filename = ADVERT_FILENAME % (year, nr)
     try:
-        xml_advert = parse_advert(doc_info, xml_remote)
+        xml_advert = parse_advert(advert)
         write_xml(xml_advert, out_filename)
         print(" done")
     except (AdvertParsingException, IntentParsingException, ReferenceParsingException) as ex:

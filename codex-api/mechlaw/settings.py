@@ -119,7 +119,7 @@ LEGAL_FRAMEWORK = 'is'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "djalthingi.sqlite",
+        "NAME": os.path.join(BASE_DIR, "djalthingi.sqlite"),
     }
 }
 
