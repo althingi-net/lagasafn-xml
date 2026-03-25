@@ -1217,8 +1217,3 @@ def setup_django():
     sys.path.insert(0, "codex-api")
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mechlaw.settings")
     django.setup()
-
-    # We also sneak in this setting here.
-    from djalthingi import althingi_settings
-    althingi_settings.DOWNLOAD_DOCUMENTS = False
-    althingi_settings.DOWNLOAD_REVIEWS = False
