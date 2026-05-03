@@ -90,11 +90,11 @@ def auto_patch(law_num, law_year):
 def attempt_patch_transfer(law_num, law_year, previous_parliament):
     # NOTE: This rewquires GNU `diff` and `patch`, which should be
     # available on any modern operating systems, except Windows.
-    filename = CLEAN_FILENAME % (law_year, law_num)
+    filename = CLEAN_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
     attempted_patch = os.path.join(
         PATCHES_BASE_DIR, previous_parliament, "%d-%d.html.patch" % (law_year, law_num)
     )
-    target_patch = PATCHED_FILENAME % (law_year, law_num)
+    target_patch = PATCHED_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
     patch_filename = PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
 
     if not isfile(attempted_patch):
