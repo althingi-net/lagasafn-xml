@@ -522,6 +522,17 @@ def parse_law_number_and_date(parser):
         month = 0
 
     elif (
+            len(parts) == 2
+            and parts[0].isdigit()
+            and not parts[1].isdigit()
+    ):
+        # Example: "1764 júlí"
+        year = int(parts[0])
+        number = None
+        day = 0
+        month = determine_month(parts[1])
+
+    elif (
         len(parts) == 3
         and parts[0].isdigit()
         and parts[1] == ""
@@ -531,6 +542,18 @@ def parse_law_number_and_date(parser):
         year = int(parts[0])
         number = None
         day = 0
+        month = determine_month(parts[2])
+
+    elif (
+        len(parts) == 3
+        and parts[0].isdigit()
+        and parts[1].rstrip(".").isdigit()
+        and not parts[2].isdigit()
+    ):
+        # Example: "1872 12. febrúar"
+        year = int(parts[0])
+        number = None
+        day = int(parts[1].rstrip("."))
         month = determine_month(parts[2])
 
     elif (
