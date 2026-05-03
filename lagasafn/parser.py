@@ -14,6 +14,7 @@ from lagasafn.contenthandlers import is_numart_address
 from lagasafn.contenthandlers import separate_sentences
 from lagasafn.contenthandlers import check_chapter
 from lagasafn.contenthandlers import word_to_nr
+from lagasafn.exceptions import LawException
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import ask_user_about_location
 from lagasafn.utils import is_roman
@@ -488,38 +489,110 @@ def parse_law_number_and_date(parser):
     parser.next()
 
     # The num-and-date tends to contain excess whitespace.
+    # Keep in mind that this doesn't reduce all spaces. When we see 4-wide
+    # spaces, we atcually actually leave one " " due to the splitting that
+    # takes place below.
     num_and_date = num_and_date.replace("  ", " ")
+    number = None
 
-    # Find the law's number, if it is specified, as well as the
-    # location of the date section within the string.
-    if "nr." in num_and_date:
-        # Note: len('1980 nr. ') == 9
-        number = num_and_date[9 : num_and_date.find(" ", 9)]
-
-        # Note: len(' ') == 1
-        date_start = 9 + len(number) + 1
-    else:
+    # Determine the format of `num_and_date`, which differs between eras and
+    # even codex versions. We'll split the string into parts, separated by
+    # space, and determine the format based on what that looks like.
+    parts = num_and_date.split(" ")
+    if (
+        len(parts) == 1
+        and parts[0].isdigit()
+    ):
+        # Example: "1275"
+        year = int(parts[0])
         number = None
-
-        # Note: len('1980 ') == 5
-        date_start = 5
-
-    # Example: "6. júní"
-    human_date = num_and_date[date_start:]
-
-    # Parse the date in its entirety.
-    year = int(num_and_date[0:4])
-    if human_date.find(".") > -1:
-        day = int(human_date[0 : human_date.find(".")])
-        month = int(determine_month(human_date[len(str(day)) + 2 :]))
-    else:
-        # There is at least one case of a the timing of the
-        # enacted law only being designated by year and month, but
-        # without a day. In these cases, human_date should simply
-        # be the name of the month.
-        # Example: https://www.althingi.is/lagas/148c/1764000.html
         day = 0
-        month = int(determine_month(human_date)) if human_date else 0
+        month = 0
+
+    elif (
+        len(parts) == 2
+        and parts[0].isdigit()
+        and parts[1] == "nr."
+    ):
+        # Example: "1275 nr."
+        year = int(parts[0])
+        number = None
+        day = 0
+        month = 0
+
+    elif (
+        len(parts) == 3
+        and parts[0].isdigit()
+        and parts[1] == ""
+        and not parts[2].isdigit()
+    ):
+        # Example: "1764  júlí"
+        year = int(parts[0])
+        number = None
+        day = 0
+        month = determine_month(parts[2])
+
+    elif (
+        len(parts) == 4
+        and parts[0].isdigit()
+        and parts[1].isdigit()
+    ):
+        # Example: "1940 19 12. febrúar"
+        year = int(parts[0])
+        number = int(parts[1])
+        day = int(parts[2].strip("."))
+        month = determine_month(parts[3])
+
+    elif (
+        len(parts) == 4
+        and parts[0].isdigit()
+        and parts[1] == ""
+        and parts[2].strip(".").isdigit()
+
+    ):
+        # Example: "1872  12. febrúar"
+        year = int(parts[0])
+        number = None
+        day = int(parts[2].strip("."))
+        month = determine_month(parts[3])
+
+    elif (
+        len(parts) == 4
+        and parts[0].isdigit()
+        and parts[1] == "nr."
+        and parts[2] == ""
+    ):
+        year = int(parts[0])
+        number = None
+        day = 0
+        month = determine_month(parts[3])
+
+    elif (
+        len(parts) == 5
+        and parts[0].isdigit()
+        and parts[1] == "nr."
+        and parts[2].isdigit()
+    ):
+        # Example: "2025 nr. 101 24. desember"
+        year = int(parts[0])
+        number = int(parts[2])
+        day = int(parts[3].strip("."))
+        month = determine_month(parts[4])
+
+    elif (
+        len(parts) == 5
+        and parts[0].isdigit()
+        and parts[1] == "nr."
+        and parts[2] == ""
+        and parts[3].strip(".").isdigit()
+    ):
+        year = int(parts[0])
+        number = None
+        day = int(parts[3].strip("."))
+        month = determine_month(parts[4])
+
+    else:
+        raise LawException("Could not determine nr/year and date from: %s" % num_and_date)
 
     # Produce an ISO-formatted date.
     iso_date = "%04d-%02d-%02d" % (year, month, day)
@@ -552,7 +625,7 @@ def parse_law_number_and_date(parser):
         parser.law.attrib["nr"] = parser.law_num
     else:
         # Otherwise, of course, we'll just record the number.
-        xml_num_and_date.append(E("num", number))
+        xml_num_and_date.append(E("num", str(number)))
 
     xml_num_and_date.append(E("original", num_and_date))
 

@@ -270,7 +270,7 @@ def numart_next_nrs(prev_numart):
     return expected_numart_nrs
 
 
-def determine_month(month_string):
+def determine_month(month_string) -> int:
     """
     Takes a human-readable, Icelandic month name and returns its corresponding
     number in the year. January ("janúar") is 1 and December ("desember") is
