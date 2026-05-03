@@ -30,10 +30,31 @@ class ProblemHandler:
 
         def sorter(element):
             content_element = element.find("status[@type='content']")
+
+            # FIXME: Explain this, remove it, or handle errors properly.
             if "distance" not in content_element.attrib:
                 return -1
 
-            return int(content_element.attrib["distance"])
+            distance = int(content_element.attrib["distance"])
+
+            # If there is no distance to sort by, we will fall back on year and
+            # number, so that the order of `problems.xml` remains consistent
+            # across multiple, custom runs.
+            if distance == 0:
+                nr, year = content_element.getparent().attrib["identifier"].split("/")
+
+                # We'll try parsing the `nr` to an integer to properly order by
+                # different digit lengths, but if this fails, it means that the
+                # format of the `nr` is composed of date information, which we
+                # will just order as a string.
+                try:
+                    nr = int(nr)
+                except:
+                    pass
+
+                return (0, year, nr)
+
+            return (distance, 0, 0)
 
         # Sort by reversed distance for `content`.
         sorted_entries = sorted(
