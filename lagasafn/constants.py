@@ -25,6 +25,9 @@ PATCH_FILENAME = join(
     PATCHES_BASE_DIR, "%s", "%d-%d.html.patch"
 )  # % (codex_version, law_year, law_num)
 
+ADVERT_API_DOCS = "https://api.stjornartidindi.is/swagger"  # Unused but here for developers.
+ADVERT_API_ADVERTS = "https://api.stjornartidindi.is/api/v1/adverts?search=%s&department=a-deild"  # % `law_identifier`
+
 ADVERT_REMOTES_DIR = join(DATA_DIR, "adverts", "remote")
 ADVERT_REMOTE_FILENAME = join(
     ADVERT_REMOTES_DIR, "%d.%d.remote.xml"
@@ -41,6 +44,11 @@ ADVERT_FILENAME = join(ADVERT_DIR, "%d.%d.advert.xml")  # % (year, nr)
 ADVERT_ORIGINAL_DIR = join(DATA_DIR, "adverts", "original")
 ADVERT_ORIGINAL_FILENAME = join(
     ADVERT_ORIGINAL_DIR, "%d.%d.original.xml"
+)  # % (year, nr)
+
+ADVERT_GAZETTE_CACHE_DIR = join(DATA_DIR, "adverts", "gazette-cache")
+ADVERT_GAZETTE_CACHE_FILENAME = join(
+    ADVERT_GAZETTE_CACHE_DIR, "%d.%d.gazette-cache.json"
 )  # % (year, nr)
 
 ADVERT_INDEX_FILENAME = join(DATA_DIR, "adverts", "index.xml")

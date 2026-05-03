@@ -1,3 +1,5 @@
+# TODO: This file is probably entirely deprecated, but it must be made sure of
+# before deleting it.
 import re
 import requests
 from bs4 import BeautifulSoup

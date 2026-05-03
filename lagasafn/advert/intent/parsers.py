@@ -136,6 +136,8 @@ def parse_x_laganna_ordast_svo(tracker: IntentTracker):
                 "Unimplemented: Inline subart content at address: %s" % address
             )
 
+        import ipdb; ipdb.set_trace()
+
         next(tracker.lines)
         parse_inner_art_subart(tracker, {"nr": existing[0].attrib["nr"]})
 
@@ -261,10 +263,7 @@ def parse_inner_table(tracker: IntentTracker):
 
 
 def parse_inner_art_name(tracker: IntentTracker):
-    if not (
-        "style" in tracker.lines.current.attrib
-        and tracker.lines.current.attrib["style"] == "text-align: center;"
-    ):
+    if not tracker.lines.current.tag == "center":
         return False
 
     em = tracker.lines.current.find("em")
@@ -328,8 +327,8 @@ def parse_inner_art_numarts(tracker: IntentTracker):
 
         # Check if there is a name.
         name = ""
-        text = li.text.strip()
-        if len(text) == 0 and (em := li.find("em")) is not None:
+        text = li.text.strip() if li.text else ""
+        if len(text) == 0 and (em := li.find("i")) is not None:
             name = em.text
             text = em.tail.strip()
 
@@ -369,8 +368,9 @@ def parse_inner_art_subart(tracker: IntentTracker, prefilled: dict = {}):
 
     There are at least two ways of denoting a `subart` in the original content.
     One is where it's an independent tag, usually a `p`. Another way is by
-    following a `br` tag. This function supports both ways, but note that when
-    it is given a `br`, it actually parses the tail of the node, not its text.
+    following a `br` tag, a `li` tag or some other tag which actually keeps the
+    contain in the element's tail instead of its text. This function supports
+    both ways.
     """
     if not (
         (
@@ -378,7 +378,7 @@ def parse_inner_art_subart(tracker: IntentTracker, prefilled: dict = {}):
             and tracker.lines.current.attrib["style"] == "text-align: justify;"
         )
         # When parsing by `br` tag, the above styling isn't always present.
-        or tracker.lines.current.tag == "br"
+        or tracker.lines.current.tag in ["br", "li"]
     ):
         return False
 
@@ -388,15 +388,19 @@ def parse_inner_art_subart(tracker: IntentTracker, prefilled: dict = {}):
         # Figure out the number from existing `subart`s within the article.
         nr = len(tracker.inner_targets.art.findall("subart")) + 1
 
-    tracker.inner_targets.subart = E("subart", {"nr": str(nr)})
-
     # Add content. This is done differently depending on whether the content
     # begins at `br` or is contained within its own structure.
-    if tracker.lines.current.tag == "br":
+    if tracker.lines.current.tag in ["br", "li"] and tracker.lines.current.tail is not None:
         sens = separate_sentences(remove_garbage(tracker.lines.current.tail))
     else:
         sens = separate_sentences(get_all_text(tracker.lines.current))
 
+    if len(sens) == 0:
+        # We've parsed what appeared to be a `subart` but turned out to be
+        # without content. We'll call it quits and move on.
+        return True
+
+    tracker.inner_targets.subart = E("subart", {"nr": str(nr)})
     add_sentences(tracker.inner_targets.subart, sens)
 
     # Check if the `subart` contains `numart`s.
@@ -1270,7 +1274,11 @@ def parse_vid_baetist_malsgrein_svohljodandi(tracker: IntentTracker):
 
         nr = len(existing[0].findall("subart"))
 
-        if text_to is not None:
+        if tracker.lines.current.tail is not None:
+            parse_inner_art_subart(tracker, {"nr": nr+1})
+        else:
+            # FIXME: Is from Stjornartidindi format and doesn't seem to ever
+            # get called anymore.
             tracker.set_lines(list(tracker.lines.current))
             for _ in tracker.lines:
                 nr += 1
@@ -1412,10 +1420,15 @@ def parse_x_ordast_svo(tracker: IntentTracker):
             "nr": existing[0].attrib["nr"],
         }
 
-        tracker.set_lines(list(tracker.lines.current))
-        for _ in tracker.lines:
+        if tracker.lines.current.tail is not None:
             parse_inner_art_subart(tracker, prefilled=prefilled)
-        tracker.unset_lines()
+        else:
+            # FIXME: This was done for the previous Stjornartidindi format and
+            # doesn't seem to ever run anymore.
+            tracker.set_lines(list(tracker.lines.current))
+            for _ in tracker.lines:
+                parse_inner_art_subart(tracker, prefilled=prefilled)
+            tracker.unset_lines()
 
     elif len(existing) == 1 and existing[0].tag == "numart":
         tracker.targets.inner.append(construct_node(existing[0], text_to, nr_change=0))
@@ -1572,7 +1585,7 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
         for law_li in tracker.lines.current.findall("li"):
 
             # Find the identifier of the affected law.
-            full_law_identifier = get_all_text(law_li.find("em")).strip(":").strip()
+            full_law_identifier = get_all_text(law_li.find("i")).strip(":").strip()
             identifiers = re.search(
                 r"nr\. (\d{1,3}\/\d{4})", full_law_identifier
             ).groups()
@@ -1585,8 +1598,17 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
 
             tracker.set_affected_law_identifier(identifier)
 
-            sub_lis: list = law_li.xpath("ol/li")
+            # In the old Stjornartidindi format, the `ol` elements were inside
+            # this `li` element. On Parliament's website, however, the `ol`
+            # element comes after the `li`.
+            sub_lis = []
+            next_element = law_li.getnext()
+            if next_element is not None and next_element.tag == "ol":
+                sub_lis: list = next_element.xpath("li")
 
+            # TODO: Check if this hack is still actually needed. It was made
+            # for content from the old gazette's website before it was updated.
+            #
             # A bit of a hack here. Sometimes the intent text is described in
             # the tail of an `em` tag instead of being listed in an `ol/li` as
             # shown above. We respond by artificially constructing the same
@@ -1603,7 +1625,8 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
             # - 2. tölul. 8. gr. laga nr. 66/2024
             #   https://www.stjornartidindi.is/Advert.aspx?RecordID=bcea380e-be00-4f16-8603-3b72829e27e3
             #
-            text = law_li.find("em").tail.strip()
+            text = law_li.find("i").tail or ""
+            text = text.strip()
             if len(text) > 0:
                 fake_li = E("li", {"style": "text-align: justify;"}, text)
 
@@ -1619,13 +1642,22 @@ def parse_vid_gildistoku_laga_thessara_verda_eftirfarandi_breytingar_a_odrum_log
                 if len(sub_lis) > 0:
                     fake_li.append(deepcopy(law_li.xpath("ol")[0]))
                 else:
-                    # This can also happen. We are only aware of it occurring
-                    # with a single `br` but we'll iterate through them all
-                    # just in case.
-                    for br in law_li.findall("br"):
-                        # We `deepcopy` to prevent changes to `br` affecting
-                        # the original node.
-                        fake_li.append(deepcopy(br))
+                    tail = "" if law_li.tail is None else law_li.tail.strip()
+                    if len(tail):
+                        # If a tail is found in the current `law_li`, it means
+                        # that the actual text will be found there.
+                        #
+                        # This occurs in 11. gr. laga nr. 40/2024:
+                        # https://www.althingi.is/altext/154/s/1699.html
+                        fake_li.append(E("text", tail))
+                    else:
+                        # This can also happen. We are only aware of it
+                        # occurring with a single `br` but we'll iterate
+                        # through them all just in case.
+                        for br in law_li.findall("br"):
+                            # We `deepcopy` to prevent changes to `br` affecting
+                            # the original node.
+                            fake_li.append(deepcopy(br))
 
                 sub_lis = [fake_li]
 
@@ -2992,6 +3024,7 @@ def parse_title_gildistaka(tracker: IntentTracker):
     if not match:
         return False
 
+    # Consume the `center`.
     next(tracker.lines)
 
     if parse_group_enactments(tracker):
@@ -3000,6 +3033,21 @@ def parse_title_gildistaka(tracker: IntentTracker):
         raise IntentParsingException(
             "Don't know how to parse enactment: %s" % tracker.current_text
         )
+
+    return True
+
+
+def parse_title_other(tracker):
+    if not (
+        tracker.lines.current.tag == "center"
+        and tracker.lines.current.find("em") is not None
+    ):
+        return False
+
+    # We are currently not doing anything with titles that haven't been parsed
+    # more specifically at this point. We'll simply continue.
+    #
+    # See other functions starting with `parse_title_`.
 
     return True
 
@@ -3232,6 +3280,8 @@ def parse_intents_by_text_analysis(
     elif parse_appendix_change(tracker):
         pass
     elif parse_title_gildistaka(tracker):
+        pass
+    elif parse_title_other(tracker):
         pass
     elif parse_group_enactments(tracker):
         pass

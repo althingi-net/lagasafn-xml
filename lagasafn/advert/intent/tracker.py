@@ -118,9 +118,11 @@ class IntentTracker:
         to_remove = []
         if len(original.text.strip()) > 0:
             elem_text = E("text", original.text.rstrip("\n"))
+            #if "5. mgr. 51. gr. laganna orðast svo" in original.text:
+            #    import ipdb; ipdb.set_trace()
             children.insert(0, elem_text)
             for child in children[1:]:
-                if child.tag == "a":
+                if child.tag in ["a", "i", "b"]:
                     elem_text.append(deepcopy(child))
                     to_remove.append(child)
         for child in to_remove:

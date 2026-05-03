@@ -5,6 +5,7 @@ from lagasafn.advert.intent.parsers import parse_intents_by_ai
 from lagasafn.advert.tracker import AdvertTracker
 from lagasafn.exceptions import AdvertParsingException
 from lagasafn.exceptions import IntentParsingException
+from lagasafn.advert.gazette import get_gazette_info
 from lagasafn.models.law import LawManager
 from lagasafn.utils import determine_month
 from lagasafn.utils import get_all_text
@@ -62,7 +63,7 @@ def parse_empty(tracker: AdvertTracker, non_empty_if_next: str = r""):
     node = tracker.current_node()
     if not (
         (node.text is None or node.text.strip() == "")
-        and node.tail.strip() == ""
+        and (node.tail is None or node.tail.strip() == "")
         and len(node.getchildren()) == 0
     ):
         return False
@@ -84,6 +85,7 @@ def parse_empty(tracker: AdvertTracker, non_empty_if_next: str = r""):
     return True
 
 
+# FIXME: Misleading function name. Should be `parse_advert_art` or similar.
 def parse_article_nr_title(tracker: AdvertTracker):
 
     node = tracker.current_node()
@@ -122,6 +124,9 @@ def parse_article_nr_title(tracker: AdvertTracker):
         original.attrib["affected-law-year"] = tracker.affected["law-year"]
 
     next(tracker.nodes)
+    if tracker.current_node().tag == "br":
+        next(tracker.nodes)
+
     while (
         not parse_empty(tracker, non_empty_if_next=r"[a-z]\. \(.*\)$")
         # On occasion, articles aren't properly ended with an empty node, so we
@@ -131,6 +136,24 @@ def parse_article_nr_title(tracker: AdvertTracker):
         is None
     ):
         original.append(tracker.current_node())
+
+        # A `center` tag is assumed here to refer to an article's name. Content
+        # may be contained in its `tail`, so we check that and add it to the
+        # `original` so that it can be picked up by iterating nodes.
+        if tracker.nodes.current.tag == "center":
+            tail = tracker.nodes.current.tail or ""
+            tail = tail.strip()
+            if len(tail) > 0:
+                original.append(E(
+                    "text",
+                    # This is needed for the `subart`-parsing to take place in
+                    # `parse_inner_art_subart`. Messy, but it works.
+                    {
+                        "style": "text-align: justify;"
+                    },
+                    tail
+                ))
+
         next(tracker.nodes)
 
     # TODO: Remove feature knob when functionality is complete.
@@ -154,6 +177,19 @@ def parse_article_nr_title(tracker: AdvertTracker):
                     raise
 
             print(".", end="", flush=True)
+
+    # On occasion, a stray space exists after the article but another one
+    # follows immediately. This may result in an article inside a chapter being
+    # placed outside of it, because the article-parser will run into the stray
+    # space instead of the article. So we check for these conditions here, and
+    # consume the space if it exists.
+    if (
+        tracker.nodes.current.text is None
+        and tracker.nodes.peek() is not None
+        and tracker.nodes.peek().text is not None
+        and re.match(r"(\d+)\. gr\.$", tracker.nodes.peek().text) is not None
+    ):
+        next(tracker.nodes)
 
     return True
 
@@ -299,11 +335,15 @@ def parse_parliamentary_approval(tracker: AdvertTracker):
 
 def parse_advert(doc_info: dict, xml_remote: _Element):
 
-    # Vestigial attribute, retained to make diffing easier during development.
-    # Should be removed at some point.
-    record_id = "00000000-0000-4000-0000-000000000000"
+    gazette_info = get_gazette_info(str(doc.law_identifier))
 
-    tracker = AdvertTracker(E("advert", {"type": "law", "record-id": record_id}))
+    tracker = AdvertTracker(E(
+        "advert",
+        {
+            "type": "law",
+            "record-id": gazette_info.id
+        }
+    ))
 
     nr, year = [int(p) for p in doc_info["law_identifier"].split("/")]
 
@@ -317,7 +357,7 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
     # Fill gathered information into XML.
     tracker.xml.attrib["year"] = str(year)
     tracker.xml.attrib["nr"] = str(nr)
-    tracker.xml.attrib["published-date"] = published_date.strftime("%Y-%m-%d")
+    tracker.xml.attrib["published-date"] = gazette_info.publication_date.strftime("%Y-%m-%d")
     tracker.xml.attrib["applied-to-codex-version"] = LawManager.codex_version_at_date(
         published_date
     )
@@ -352,9 +392,9 @@ def parse_advert(doc_info: dict, xml_remote: _Element):
         node = tracker.current_node()
 
         # This is a good debugging point.
-        #text = get_all_text(node)
-        #print()
-        #print("Text: %s" % text)
+        text = get_all_text(node)
+        print()
+        print("Text: %s" % text)
         #import ipdb; ipdb.set_trace()
 
         raise AdvertParsingException("Can't parse element: %s" % node)
