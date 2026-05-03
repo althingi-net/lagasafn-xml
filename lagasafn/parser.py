@@ -71,13 +71,14 @@ class LawParser:
             os.mkdir(XML_FILENAME_DIR % CURRENT_PARLIAMENT_VERSION)
 
         # Check if we have a patched cleaned HTML version of the law.
-        if os.path.isfile(PATCHED_FILENAME % (law_year, law_num)):
-            with open(PATCHED_FILENAME % (law_year, law_num)) as patched_file:
+        patched_filename = PATCHED_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+        if os.path.isfile(patched_filename):
+            with open(patched_filename) as patched_file:
                 self.lines = super_iter(patched_file.readlines())
                 patched_file.close()
         else:
             # Open and read the cleaned HTML version of the law.
-            with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
+            with open(CLEAN_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)) as clean_file:
                 self.lines = super_iter(clean_file.readlines())
                 clean_file.close()
 

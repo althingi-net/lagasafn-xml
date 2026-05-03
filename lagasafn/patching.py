@@ -28,15 +28,21 @@ def patch_law(law_num, law_year) -> bool:
 
         return False
 
-    if not os.path.isdir(os.path.dirname(PATCHED_FILENAME)):
-        os.mkdir(os.path.dirname(PATCHED_FILENAME))
+    patched_filename = PATCHED_FILENAME % (
+        CURRENT_PARLIAMENT_VERSION,
+        law_year,
+        law_num
+    )
 
-    filename = CLEAN_FILENAME % (law_year, law_num)
+    if not os.path.isdir(os.path.dirname(patched_filename)):
+        os.mkdir(os.path.dirname(patched_filename))
+
+    filename = CLEAN_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
     patch_path = os.path.join(
         PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
     )
     patched_content = diff_patch_utils.do_patch(filename, patch_path)
-    with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
+    with open(patched_filename, "w") as patched_file:
         patched_file.write(patched_content)
 
     return True

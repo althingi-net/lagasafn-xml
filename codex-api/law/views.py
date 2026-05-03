@@ -2,6 +2,8 @@ from django.conf import settings
 from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
+from lagasafn.constants import CLEAN_FILENAME
+from lagasafn.constants import PATCHED_FILENAME
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import traditionalize_law_nr
 from lagasafn.models import Law
@@ -117,13 +119,18 @@ def law_show_patched(request, identifier):
         if len(law_nr) == 0:
             law_nr = "0"
 
-    filename = "%s-%s.html" % (law_year, law_nr)
+    law_year = int(law_year)
+    law_nr = int(law_nr)
 
     # First check if a patched version exists...
-    fullpath = join(settings.DATA_DIR, "..", "patched", filename)
+    fullpath = PATCHED_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_nr)
     if not isfile(fullpath):
         # ...and if not, go for a cleaned one.
-        fullpath = join(settings.DATA_DIR, "..", "cleaned", filename)
+        fullpath = CLEAN_FILENAME % (
+            CURRENT_PARLIAMENT_VERSION,
+            law_year,
+            law_nr
+        )
 
     with open(fullpath, "r") as f:
         content = f.read()
