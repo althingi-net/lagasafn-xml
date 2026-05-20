@@ -752,6 +752,12 @@ def parse_footnote(parser):
                 # that we've found.
                 num = next_footnote_sup(desc, cursor)
 
+                if num is None:
+                    deletion_found = desc.text.find("…", cursor)
+                    if deletion_found == -1:
+                        break
+                    continue
+
                 # len('</sup>') == 6
                 sup_end = desc.text.find("</sup>", deletion_found + 1) + 6
 
