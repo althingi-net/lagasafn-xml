@@ -71,12 +71,12 @@ class LawParser:
 
         # Check if we have a patched cleaned HTML version of the law.
         if os.path.isfile(PATCHED_FILENAME % (law_year, law_num)):
-            with open(PATCHED_FILENAME % (law_year, law_num)) as patched_file:
+            with open(PATCHED_FILENAME % (law_year, law_num), encoding="utf-8") as patched_file:
                 self.lines = super_iter(patched_file.readlines())
                 patched_file.close()
         else:
             # Open and read the cleaned HTML version of the law.
-            with open(CLEAN_FILENAME % (law_year, law_num)) as clean_file:
+            with open(CLEAN_FILENAME % (law_year, law_num), encoding="utf-8") as clean_file:
                 self.lines = super_iter(clean_file.readlines())
                 clean_file.close()
 
@@ -488,7 +488,7 @@ def parse_law_number_and_date(parser):
     parser.next()
 
     # The num-and-date tends to contain excess whitespace.
-    num_and_date = num_and_date.replace("  ", " ")
+    num_and_date = re.sub(r" {2,}", " ", num_and_date)
 
     # Find the law's number, if it is specified, as well as the
     # location of the date section within the string.
@@ -499,10 +499,22 @@ def parse_law_number_and_date(parser):
         # Note: len(' ') == 1
         date_start = 9 + len(number) + 1
     else:
-        number = None
-
         # Note: len('1980 ') == 5
         date_start = 5
+
+        # Some laws have a law number without the "nr." prefix.
+        # e.g. "1997 86 27. maí" instead of "1997 nr. 86 27. maí"
+        remaining = num_and_date[date_start:]
+        space_idx = remaining.find(" ")
+        if (
+            space_idx > -1
+            and remaining[:space_idx].isdigit()
+            and remaining[space_idx + 1 : space_idx + 2].isdigit()
+        ):
+            number = remaining[:space_idx]
+            date_start += len(number) + 1
+        else:
+            number = None
 
     # Example: "6. júní"
     human_date = num_and_date[date_start:]
@@ -2303,7 +2315,7 @@ def parse_numerical_article(parser):
             # we've found the right ancestor.
             found_parent = None
             maybe_sibling = prev_numart.getparent()
-            while found_parent is None:
+            while found_parent is None and maybe_sibling is not None:
                 # We know that the parent is never the first
                 # `maybe_parent`'s parent because that would mean that the
                 # current `numart` is a sibling of the `prev_numart` which
@@ -2311,6 +2323,8 @@ def parse_numerical_article(parser):
                 # safely assume that the first possible `found_parent` is
                 # the `prev_numart`'s parent.
                 maybe_sibling = maybe_sibling.getparent()
+                if maybe_sibling is None:
+                    break
                 if maybe_sibling.tag == "paragraph":
                     maybe_sibling = maybe_sibling.getchildren()[-1]
 
@@ -2418,7 +2432,11 @@ def parse_numerical_article(parser):
             # last child of this numart's parent to find the one
             # immediately before it at the same stage in the tree.
 
-            numart_type = parent.getchildren()[-1].attrib["nr-type"]
+            children = parent.getchildren()
+            if children:
+                numart_type = children[-1].attrib["nr-type"]
+            else:
+                numart_type = "alphabet"
 
         else:
             numart_type = "alphabet"

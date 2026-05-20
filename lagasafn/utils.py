@@ -1,6 +1,7 @@
 import json
 import re
 import roman
+import shutil
 import subprocess
 from lagasafn import settings
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
@@ -83,7 +84,7 @@ def numart_next_nrs(prev_numart):
 
     prev_numart_nr = prev_numart.attrib["nr"]
     expected_numart_nrs = []
-    if prev_numart.attrib["nr-type"] == "numeric":
+    if prev_numart.attrib.get("nr-type") == "numeric":
         if prev_numart_nr.isdigit():
             # If the whole thing is numerical, we may expect either the next
             # numerical number (i.e. a 10 after a 9), or a numart with a
@@ -137,7 +138,7 @@ def numart_next_nrs(prev_numart):
                 str(num_component) + chr(int(ord(alpha_component)) + 1),
             ]
 
-    elif prev_numart.attrib["nr-type"] == "tree":
+    elif prev_numart.attrib.get("nr-type") == "tree":
         # NOTE: This could be generalized to support more permutations of
         # predictable `numart_nr`s, but we haven't run across them yet, and
         # these are exceedingly rare, basically only existing in appendices and
@@ -181,9 +182,9 @@ def numart_next_nrs(prev_numart):
             if place == len(values) - 2:
                 expected_numart_nrs.append(expected_numart_nrs[-1] + ".1")
 
-    elif prev_numart.attrib["nr-type"] == "en-dash":
+    elif prev_numart.attrib.get("nr-type") == "en-dash":
         expected_numart_nrs += ["—", "–"]
-    elif prev_numart.attrib["nr-type"] == "roman":
+    elif prev_numart.attrib.get("nr-type") == "roman":
         new_roman = roman.toRoman(roman.fromRoman(prev_numart_nr.upper()) + 1)
         if prev_numart_nr.islower():
             new_roman = new_roman.lower()
@@ -265,7 +266,8 @@ def numart_next_nrs(prev_numart):
             elif "-" in prev_numart_nr:
                 prev_numart_nr = prev_numart_nr[prev_numart_nr.find("-") + 1 :]
 
-            expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
+            if len(prev_numart_nr) == 1:
+                expected_numart_nrs.append(chr(int(ord(prev_numart_nr)) + 1))
 
     return expected_numart_nrs
 
@@ -337,8 +339,8 @@ def is_roman(goo: str):
 
 
 def terminal_width_and_height():
-    height, width = [int(v) for v in subprocess.check_output(["stty", "size"]).split()]
-    return width, height
+    size = shutil.get_terminal_size()
+    return size.columns, size.lines
 
 
 def strip_links(text, strip_hellip_link=False):
@@ -712,8 +714,12 @@ def ask_user_about_location(extra_sens, numart):
         try:
             response = int(input("Select appropriate option: "))
         except ValueError:
-            # Ignore nonsensical answer and keep asking.
             pass
+        except EOFError:
+            raise EOFError(
+                "Interactive input required (straytextmap entry missing). "
+                "Run with --single-thread or pre-populate straytextmap.json."
+            )
 
     # User opted to skip this one.
     if response == 0:
@@ -920,7 +926,7 @@ def write_xml(xml_doc, filename=None, skip_strip=False):
     xml_string = xml_string.replace("&amp;lt;", "&lt;")
 
     if filename is not None:
-        with open(filename, "w") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(xml_string)
 
     return xml_string

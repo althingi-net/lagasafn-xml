@@ -36,7 +36,7 @@ def patch_law(law_num, law_year) -> bool:
         PATCH_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
     )
     patched_content = diff_patch_utils.do_patch(filename, patch_path)
-    with open(PATCHED_FILENAME % (law_year, law_num), "w") as patched_file:
+    with open(PATCHED_FILENAME % (law_year, law_num), "w", encoding="utf-8") as patched_file:
         patched_file.write(patched_content)
 
     return True
