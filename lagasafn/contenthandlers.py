@@ -672,7 +672,7 @@ def separate_sentences(content):
         # The "splitmap" keeps a record of which combinations of pre_text and
         # post_text classify as split (two sentences) or unsplit (two
         # sentences). Here we read the splitmap to check the current text.
-        with open(SPLITMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
+        with open(SPLITMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r", encoding="utf-8") as f:
             splitmap = json.load(f)
 
         # This is the variable that will be stored in "splitmap.json". It's
@@ -713,8 +713,8 @@ def separate_sentences(content):
 
         # Write the answer.
         splitmap[combined_text] = split
-        with open(SPLITMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w") as f:
-            json.dump(splitmap, f)
+        with open(SPLITMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w", encoding="utf-8") as f:
+            json.dump(splitmap, f, ensure_ascii=False)
 
         return split
 

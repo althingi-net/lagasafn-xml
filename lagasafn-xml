@@ -306,7 +306,7 @@ def get_broken_law_ids():
     law_ids = []
 
     if os.path.isfile(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION):
-        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
+        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r", encoding="utf-8") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
             for law_id in errormap.keys():
                 if errormap[law_id] is not None:
@@ -752,7 +752,7 @@ def main(argv):
         results = pool.run(process_law, law_ids)
 
         # Open the errormap for recording successes and errors.
-        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
+        with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r", encoding="utf-8") as f:
             errormap = json.load(f, object_pairs_hook=OrderedDict)
 
         # Monitor and record return successes and errors. We'll want to record
@@ -784,8 +784,8 @@ def main(argv):
                     break
         finally:
             # Write the errormap.
-            with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w") as f:
-                json.dump(errormap, f)
+            with open(ERRORMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w", encoding="utf-8") as f:
+                json.dump(errormap, f, ensure_ascii=False)
 
     # Update the index (unless skipped).
     if "--skip-index" not in argv:

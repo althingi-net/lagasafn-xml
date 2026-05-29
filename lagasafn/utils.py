@@ -631,7 +631,7 @@ def ask_user_about_location(extra_sens, numart):
     law = numart.getroottree().getroot()
 
     # Open the straytext map.
-    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r") as f:
+    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "r", encoding="utf-8") as f:
         straytextmap = json.load(f)
 
     # Construct the straytext map key. It must be quite detailed because we
@@ -741,8 +741,8 @@ def ask_user_about_location(extra_sens, numart):
         "xpath": selected_node.getroottree().getpath(selected_node),
         "legal_reference": selected_node_legal_reference,
     }
-    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w") as f:
-        json.dump(straytextmap, f)
+    with open(STRAYTEXTMAP_FILENAME % CURRENT_PARLIAMENT_VERSION, "w", encoding="utf-8") as f:
+        json.dump(straytextmap, f, ensure_ascii=False)
 
     return selected_node
 
