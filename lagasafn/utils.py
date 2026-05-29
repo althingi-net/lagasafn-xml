@@ -4,6 +4,7 @@ import roman
 import shutil
 import subprocess
 from lagasafn import settings
+from lagasafn.constants import MAGIC_EXPIRY_TOKEN
 from lagasafn.constants import STRAYTEXTMAP_FILENAME
 from lagasafn.constants import XSD_FILENAME
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
@@ -625,7 +626,7 @@ def ask_user_about_location(extra_sens, numart):
     url = generate_url(numart)
 
     # Calculated values that we'll have to use more than once.
-    joined_extra_sens = " ".join(extra_sens)
+    joined_extra_sens = " ".join(extra_sens).replace(MAGIC_EXPIRY_TOKEN, "…")
     numart_xpath = numart.getroottree().getpath(numart)
     law = numart.getroottree().getroot()
 

@@ -2,6 +2,7 @@ import json
 import re
 import roman
 import string
+from lagasafn.constants import MAGIC_EXPIRY_TOKEN
 from lagasafn.constants import SPLITMAP_FILENAME
 from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from lagasafn.utils import Matcher
@@ -14,7 +15,6 @@ from lagasafn.utils import terminal_width_and_height
 from lxml.builder import E
 from reynir import NounPhrase
 
-MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
 
 
 def is_numart_address(input):

@@ -69,3 +69,5 @@ PROBLEMS_FILENAME = join(XML_BASE_DIR, "%s", "problems.xml")  # % codex_version
 XSD_FILENAME = join(DATA_DIR, "xsd", "%s.xsd")  # % root_tag_name
 
 SEARCH_INDEX_FILENAME = join(DATA_DIR, "search_index.pkl")
+
+MAGIC_EXPIRY_TOKEN = "MAGIC_94291_EXPIRY_TOKEN_A22922"
