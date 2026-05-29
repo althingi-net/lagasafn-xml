@@ -230,6 +230,8 @@ def make_xml(law_num, law_year):
         XML_FILENAME % (CURRENT_PARLIAMENT_VERSION, parser.law_year, parser.law_num),
     )
 
+    return parser
+
 
 def process_law(law_id):
     try:
@@ -249,7 +251,7 @@ def process_law(law_id):
         patch_law(law_num, law_year)
 
         try:
-            make_xml(law_num, law_year)
+            parser = make_xml(law_num, law_year)
 
         except BaseException:
             # Git is used to monitor success of parsing new versions of the legal
@@ -265,6 +267,15 @@ def process_law(law_id):
 
             # Make sure that this ends up being someone's problem.
             raise
+
+        # Check for external/missing appendices. The XML is still written
+        # but the law should not be marked as fully successful.
+        external_appendices = parser.law.findall(".//appendix[@external='true']")
+        if external_appendices:
+            warning = "WARNING: Law has %d external/missing appendix(es)" % len(
+                external_appendices
+            )
+            return [law_id, warning]
 
         # Report back that law was processed without error.
         return [law_id, None]

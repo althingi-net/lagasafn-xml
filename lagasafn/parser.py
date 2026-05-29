@@ -1208,6 +1208,35 @@ def parse_appendix(parser):
         parser.appendix.append(E("name", name))
         parser.consume("</b>")
 
+    # Check if the appendix content is elided (external/missing). This
+    # happens when the content is only available in a separate document
+    # (typically a PDF) and the HTML contains an ellipsis link instead of
+    # inline content.
+    removed_anchor = r"<a href=\"https://www.althingi.is/[^\"]*\" title=\"Hér hefur annaðhvort[^\"]+bráðabirgða\..*\">"
+    if re.match(removed_anchor, parser.line):
+        parser.appendix.attrib["external"] = "true"
+        parser.scroll_until("</a>")
+        parser.next()
+
+        # Skip the superscript footnote reference (e.g. <sup>1)</sup>)
+        # that sits between the ellipsis link and the actual footnote.
+        if re.match(r'<sup style="font-size:60%">', parser.line):
+            parser.scroll_until("</sup>")
+            parser.next()
+
+        parser.law.append(parser.appendix)
+        parser.trail_push(parser.appendix)
+        parse_footnotes(parser)
+
+        print(
+            "WARNING: Appendix content is external/missing for law %s/%s"
+            % (parser.law_num, parser.law_year)
+        )
+
+        parser.appendix = None
+        parser.leave("appendix")
+        return True
+
     parser.consume("<br/>")
 
     parser.law.append(parser.appendix)
