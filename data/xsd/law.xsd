@@ -328,6 +328,7 @@
       <xs:sequence>
         <xs:element ref="paragraph" maxOccurs="unbounded" />
         <xs:element ref="footnotes" minOccurs="0" />
+        <xs:element ref="unspecified-ranges" minOccurs="0" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -466,6 +467,7 @@
       <xs:attribute name="nr" type="xs:string" />
       <xs:attribute name="nr-type" type="xs:string" />
       <xs:attribute name="roman-nr" type="xs:string" />
+      <xs:attribute name="external" type="xs:string" />
     </xs:complexType>
   </xs:element>
 

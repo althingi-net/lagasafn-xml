@@ -938,7 +938,7 @@ def parse_footnote(parser):
             # the footnote that we should find in cases when `num` is
             # an integer (i.e. referring to a numbered footnote).
             if ml["num"] is None:
-                UNSPECIFIED_RANGES_PARENTS = {"art", "numart"}
+                UNSPECIFIED_RANGES_PARENTS = {"art", "numart", "ambiguous-section"}
                 target_parent = parser.footnotes.getparent()
                 while (
                     target_parent is not None
