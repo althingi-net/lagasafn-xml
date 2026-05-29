@@ -88,6 +88,7 @@ conclusives = [
     "skulu",
     "skv.",
     "stað",
+    "sem og",
     "svo og",
     "tilliti til",  # Important; must not be "til" because that has inner-reference meaning.
     "tíð",
@@ -686,6 +687,9 @@ def parse_references(law_ids):
                 entries.append(law_ref_entry)
 
                 print(".", end="", flush=True)
+
+            except NoSuchLawException:
+                print("x", end="", flush=True)
 
             except StopIteration:
                 break
