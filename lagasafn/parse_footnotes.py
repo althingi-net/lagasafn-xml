@@ -938,14 +938,28 @@ def parse_footnote(parser):
             # the footnote that we should find in cases when `num` is
             # an integer (i.e. referring to a numbered footnote).
             if ml["num"] is None:
-                parent = parser.footnotes.getparent()
-                existing = parent.find("unspecified-ranges")
+                UNSPECIFIED_RANGES_PARENTS = {"art", "numart"}
+                target_parent = parser.footnotes.getparent()
+                while (
+                    target_parent is not None
+                    and target_parent.tag not in UNSPECIFIED_RANGES_PARENTS
+                ):
+                    target_parent = target_parent.getparent()
+
+                if target_parent is None:
+                    target_parent = parser.footnotes.getparent()
+
+                existing = target_parent.find("unspecified-ranges")
                 if existing is not None:
                     location_target = existing
                 else:
-                    new_index = parent.index(parser.footnotes) + 1
+                    footnotes_in_target = target_parent.find("footnotes")
+                    if footnotes_in_target is not None:
+                        new_index = target_parent.index(footnotes_in_target) + 1
+                    else:
+                        new_index = len(target_parent)
                     location_target = E("unspecified-ranges")
-                    parent.insert(new_index, location_target)
+                    target_parent.insert(new_index, location_target)
             else:
                 # Get the marker's appropriate footnote XML.
                 location_target = parser.footnotes.getchildren()[ml["num"] - 1]
