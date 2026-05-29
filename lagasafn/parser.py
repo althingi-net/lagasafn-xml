@@ -2357,6 +2357,9 @@ def parse_numerical_article(parser):
                 if maybe_sibling.tag == "paragraph":
                     maybe_sibling = maybe_sibling.getchildren()[-1]
 
+                if maybe_sibling.tag != "numart":
+                    break
+
                 expected = numart_next_nrs(maybe_sibling)
 
                 if numart_nr in expected:
