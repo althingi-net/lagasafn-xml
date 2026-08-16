@@ -138,7 +138,6 @@ class LawIndex(BaseModel):
 
 class LawManager:
     @staticmethod
-    @cache
     def index(codex_version: str) -> LawIndex:
         # Return variables.
         info = LawIndexInfo()

@@ -8,8 +8,9 @@ def globals(request):
 
     # Populate cache for things that are too heavy to run on every page load.
     # Will be cleared on project startup in `core.apps.ready`.
+    # Is also disabled during development.
     cache = caches["default"]
-    if cache.get("index") is None:
+    if settings.DEBUG or cache.get("index") is None:
         cache.set("index", LawManager.index(CURRENT_PARLIAMENT_VERSION))
 
     ctx = {

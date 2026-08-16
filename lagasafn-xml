@@ -204,10 +204,12 @@ def clean_law(law_num, law_year):
         print("Error: Law %d/%d does not seem to exist" % (law_year, law_num))
         quit(1)
 
-    if not os.path.isdir(dirname(CLEAN_FILENAME)):
-        os.mkdir(dirname(CLEAN_FILENAME))
+    clean_filename = CLEAN_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
 
-    with open(CLEAN_FILENAME % (law_year, law_num), "w") as clean_file:
+    if not os.path.isdir(dirname(clean_filename)):
+        os.mkdir(dirname(clean_filename))
+
+    with open(clean_filename, "w") as clean_file:
         clean_file.write(content)
         clean_file.close()
 
@@ -238,7 +240,11 @@ def process_law(law_id):
 
         # Delete existing patch file so we don't accidentally have outdated
         # patched files when for example changing to another parliament version.
-        patched_path = PATCHED_FILENAME % (law_year, law_num)
+        patched_path = PATCHED_FILENAME % (CURRENT_PARLIAMENT_VERSION, law_year, law_num)
+
+        if not os.path.isdir(dirname(patched_path)):
+            os.mkdir(dirname(patched_path))
+
         if os.path.isfile(patched_path):
             os.unlink(patched_path)
 

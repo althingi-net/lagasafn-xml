@@ -17,9 +17,9 @@ LAW_FILENAME = join(
     LAW_FILENAME_DIR, "%d%s.html"
 )  # % (codex_version, law_year, law_num)
 
-CLEAN_FILENAME = join(DATA_DIR, "cleaned", "%d-%d.html")  # % (law_year, law_num)
+CLEAN_FILENAME = join(DATA_DIR, "cleaned", "%s", "%d-%d.html")  # % (codex_version, law_year, law_num)
 
-PATCHED_FILENAME = join(DATA_DIR, "patched", "%d-%d.html")  # % (law_year, law_num)
+PATCHED_FILENAME = join(DATA_DIR, "patched", "%s", "%d-%d.html")  # % (codex_version, law_year, law_num)
 
 PATCH_FILENAME = join(
     PATCHES_BASE_DIR, "%s", "%d-%d.html.patch"
