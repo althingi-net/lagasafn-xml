@@ -697,9 +697,15 @@ def separate_sentences(content):
         print()
         print("Latter chunk: %s" % post_text)
         print()
-        answer = input("Do these two chunks of text constitute 1 sentence or 2? [1/2] ")
-        while answer not in ["1", "2"]:
-            answer = input("Please select either 1 or 2: ")
+        try:
+            answer = input("Do these two chunks of text constitute 1 sentence or 2? [1/2] ")
+            while answer not in ["1", "2"]:
+                answer = input("Please select either 1 or 2: ")
+        except EOFError:
+            raise EOFError(
+                "Interactive input required (splitmap entry missing). "
+                "Run with --single-thread or pre-populate splitmap.json."
+            )
 
         # If the user determines that the text is composed of two sentences,
         # it means that the text should be split (True).
@@ -1053,6 +1059,12 @@ def generate_synonyms(name: str):
         ],
         "Lög um aðför": [
             "Aðfararlög",
+        ],
+        "Lög um vörugjald af ökutækjum": [
+            "Lög um vörugjald af ökutækjum, eldsneyti o.fl.",
+        ],
+        "Lög um útgáfu og meðferð rafeyris": [
+            "Lög um meðferð og útgáfu rafeyris",
         ],
         "Lög um handiðnað": [
             "Handiðnaðarlög",
