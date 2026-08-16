@@ -56,6 +56,10 @@ _establish_secret environment: (_sanity_check_environment environment)
         SECRET_KEY="$(openssl rand -hex 20)"
         API_ACCESS_TOKEN="$(openssl rand -hex 20)"
 
+        # Make sure that namespace exists.
+        kubectl create namespace "$NAMESPACE" --dry-run=client -o yaml | kubectl apply -f -
+
+        # Place secrets in cluster.
         kubectl -n "$NAMESPACE" create secret generic env-secret \
             --from-literal=SECRET_KEY="$SECRET_KEY" \
             --from-literal=API_ACCESS_TOKEN="$API_ACCESS_TOKEN"
