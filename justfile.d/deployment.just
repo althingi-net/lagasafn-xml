@@ -1,8 +1,7 @@
-TAG_BASE := "ghcr.io/althingi-net"
-TAG_VERSION := "latest"
+import 'common.just'
 
 _default:
-    @just -u -l
+    @just -u -l deploy
 
 _full_tag app:
     @echo "{{ TAG_BASE }}/{{ app }}:{{ TAG_VERSION }}"
@@ -66,26 +65,31 @@ _establish_secret environment: (_sanity_check_environment environment)
     fi
 
 # Builds specific image.
+[group('build')]
 build app: (_sanity_check_app app)
     #!/usr/bin/env bash
     APP="{{ app }}"
     docker build .. -t "$(just deploy _full_tag $APP)" --target "$APP"
 
 # Builds all images.
+[group('build')]
 build-all:
     just deploy build codex-api
     just deploy build codex-ui
 
 # Pushes specific app to container image registry.
+[group('push')]
 push app: (_sanity_check_app app)
     docker push "$(just deploy _full_tag {{ app }})"
 
 # Pushes all images to registry.
+[group('push')]
 push-all:
     just deploy push codex-api
     just deploy push codex-ui
 
 # Stops and cleans container images for given app.
+[group('clean')]
 clean-image app: (_sanity_check_app app)
     #!/bin/bash
     set -e
@@ -95,11 +99,13 @@ clean-image app: (_sanity_check_app app)
     docker image rm "$TAG" 2>/dev/null || true
 
 # Stops and cleans container images for all apps.
+[group('clean')]
 clean-image-all:
     just clean-image codex-api
     just clean-image codex-ui
 
 # Runs image of given app.
+[group('run')]
 run app:
     #!/bin/bash
     SECRET_KEY="secret-string"
@@ -114,10 +120,12 @@ run app:
         "$(just deploy _full_tag {{ app }})"
 
 # Runs a shell for the given app.
+[group('run')]
 shell app:
     docker run -it --rm --entrypoint /bin/sh "$(just deploy _full_tag {{ app }})"
 
 # Deploys the Helm chart to a Kubernetes cluster.
+[group('deploy')]
 deploy environment: (_sanity_check_environment environment) (_establish_secret environment)
     #!/usr/bin/env bash
     ENVIRONMENT="{{ environment }}"
@@ -129,6 +137,7 @@ deploy environment: (_sanity_check_environment environment) (_establish_secret e
         --force-conflicts
 
 # Full deployment with building and pushing of images.
+[group('deploy')]
 full-deploy environment: (_sanity_check_environment environment)
     just deploy build-all
     just deploy push-all
