@@ -93,6 +93,21 @@ def auto_patch(law_num, law_year):
             attempt_patch_transfer(law_num, law_year, next_parliament)
 
 
+def get_patch_comments(patch_filename: str) -> bytes:
+    """
+    Returns the comment lines (starting with "#") at the top of a patch file,
+    which by convention explain what the patch fixes. Returned as bytes so
+    that line endings are preserved as they are.
+    """
+    comments = b""
+    with open(patch_filename, "rb") as f:
+        for line in f:
+            if not line.startswith(b"#"):
+                break
+            comments += line
+    return comments
+
+
 def attempt_patch_transfer(law_num, law_year, previous_parliament):
     # NOTE: This rewquires GNU `diff` and `patch`, which should be
     # available on any modern operating systems, except Windows.
@@ -116,7 +131,11 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
         run(["patch", "--binary", target_patch, attempted_patch], stdout=DEVNULL)
 
         # Create a new one, based on the cleaned file from the current parliament.
-        with open(patch_filename, "w") as f:
+        # The explanatory comments at the top of the old patch are carried
+        # over, since `diff` naturally knows nothing about them.
+        with open(patch_filename, "wb") as f:
+            f.write(get_patch_comments(attempted_patch))
+            f.flush()
             result = run(["diff", "-U10", filename, target_patch], stdout=f)
             if result.returncode == 0:
                 return True
