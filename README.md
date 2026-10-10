@@ -45,6 +45,16 @@ Run the script in a terminal with no parameters for usage instructions.
 
     ./lagasafn-xml
 
+### Windows
+
+The script also runs on Windows, with a few differences:
+
+* Run the script through Python, since Windows does not use the shebang line:
+
+      python lagasafn-xml
+
+* The `--auto-patch` option uses the GNU tools `patch` and `diff`. They come with [Git for Windows](https://gitforwindows.org/), in `C:\Program Files\Git\usr\bin`, but that directory is not on PATH by default. Add it to PATH, or run the script from Git Bash where the tools are already available. The script will refuse to auto-patch if the tools cannot be found.
+
 ## Data
 
 If you are only interested in the generated XML files themselves, then feel free to dig around in the `data/xml` directory.

@@ -11,8 +11,20 @@ from lagasafn.settings import CURRENT_PARLIAMENT_VERSION
 from os.path import isfile
 from os.path import join
 from shutil import copy
+from shutil import which
 from subprocess import DEVNULL
 from subprocess import run
+
+# External tools that auto-patching depends on.
+AUTO_PATCH_TOOLS = ["patch", "diff"]
+
+
+def get_missing_auto_patch_tools() -> list[str]:
+    """
+    Returns the names of the external tools required by auto-patching that
+    cannot be found on PATH.
+    """
+    return [tool for tool in AUTO_PATCH_TOOLS if which(tool) is None]
 
 
 def patch_law(law_num, law_year) -> bool:
