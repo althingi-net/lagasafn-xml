@@ -1,0 +1,40 @@
+# L. 62/2026, 35. gr. removed the heading "XI. kafli. Viðurlög." (chapter X was
+# renamed to cover it). The source renders the removed heading as a bold
+# ellipsis followed by an empty <b></b>, which the parser cannot handle.
+# Turned into a plain deletion marker so it is parsed as a stray deletion.
+# See https://www.althingi.is/lagas/157c/2006054.html (after 56. gr.)
+--- data/cleaned/2006-54.html	2026-10-10 15:26:42.402989312 +0000
++++ data/patched/2006-54.html	2026-10-10 15:27:03.903652096 +0000
+@@ -3246,28 +3246,24 @@
+     <sup style="font-size:60%">
+      1)
+     </sup>
+     <a href="/altext/stjt/2026.062.html">
+      L. 62/2026, 28. gr.
+     </a>
+    </small>
+   </i>
+   <br/>
+   <br/>
+-  <b>
+-   …
+-   <sup style="font-size:60%">
+-    1)
+-   </sup>
+-  </b>
+-  <b>
+-  </b>
++  …
++  <sup style="font-size:60%">
++   1)
++  </sup>
+   <br/>
+   <i>
+    <small>
+     <sup style="font-size:60%">
+      1)
+     </sup>
+     <a href="/altext/stjt/2026.062.html">
+      L. 62/2026, 35. gr.
+     </a>
+    </small>
