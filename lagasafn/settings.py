@@ -7,7 +7,7 @@ load_dotenv()
 
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
-CURRENT_PARLIAMENT_VERSION = "157c"
+CURRENT_PARLIAMENT_VERSION = "158a"
 
 DEBUG = True
 
