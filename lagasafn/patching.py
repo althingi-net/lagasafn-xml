@@ -94,11 +94,14 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
     if not isfile(attempted_patch):
         return False
 
-    result = run(["patch", "--dry-run", filename, attempted_patch], stdout=DEVNULL)
+    result = run(
+        ["patch", "--binary", "--dry-run", filename, attempted_patch], stdout=DEVNULL
+    )
     if result.returncode == 0:
         # Apply the patch.
+        os.makedirs(os.path.dirname(target_patch), exist_ok=True)
         copy(filename, target_patch)
-        run(["patch", target_patch, attempted_patch], stdout=DEVNULL)
+        run(["patch", "--binary", target_patch, attempted_patch], stdout=DEVNULL)
 
         # Create a new one, based on the cleaned file from the current parliament.
         with open(patch_filename, "w") as f:
