@@ -137,8 +137,13 @@ def attempt_patch_transfer(law_num, law_year, previous_parliament):
             f.write(get_patch_comments(attempted_patch))
             f.flush()
             result = run(["diff", "-U10", filename, target_patch], stdout=f)
-            if result.returncode == 0:
-                return True
+
+        # `diff` returns 1 when the files differ, which they should after
+        # patching. Otherwise (0 for no difference, 2 for trouble) there is
+        # no usable patch, so we remove the file instead of leaving it behind.
+        if result.returncode == 1:
+            return True
+        os.remove(patch_filename)
 
     return False
 
