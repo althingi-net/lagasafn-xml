@@ -1,0 +1,30 @@
+# L. 62/2026, 49. gr. replaced 1. mgr. 3. gr., and the opening bracket of the
+# change by L. 141/1995 (footnote 12, which spans 1.-3. mgr.) was lost in the
+# process, leaving the closing "]12)" at the end of 3. mgr. unmatched.
+# Restored the opening bracket at the start of 1. mgr.
+# See https://www.althingi.is/lagas/157c/1990113.html#G3
+--- data/cleaned/1990-113.html	2026-10-10 15:27:24.426402304 +0000
++++ data/patched/1990-113.html	2026-10-10 15:27:43.200700904 +0000
+@@ -525,21 +525,21 @@
+   </em>
+   <br/>
+   <span id="G3">
+   </span>
+   <img alt="" height="11" src="sk.jpg" width="11"/>
+   <b>
+    3. gr.
+   </b>
+   <br/>
+   <img alt="" height="11" id="G3M1" src="hk.jpg" width="11"/>
+-  [Tekjur af atvinnutryggingagjaldi skulu renna til ríkissjóðs.]
++  [[Tekjur af atvinnutryggingagjaldi skulu renna til ríkissjóðs.]
+   <sup style="font-size:60%">
+    1)
+   </sup>
+   <br/>
+   <img alt="" height="11" id="G3M2" src="hk.jpg" width="11"/>
+   [Tekjum af almennu tryggingagjaldi skal ráðstafað sem hér segir:
+   <br/>
+   <span id="G3M2L1">
+    1.
+   </span>
