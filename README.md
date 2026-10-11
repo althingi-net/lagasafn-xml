@@ -97,6 +97,41 @@ Now if we want to document what the error was about we can open the `patches/151
 
 and you're done. You can push the new patch file to the repo, or create a pull request.
 
+## Adding a new codex version
+
+Versions must be added in order, since patches and JSON maps are carried
+over from the previous version.
+
+1. Extract the version's zip file from
+   http://www.althingi.is/lagasafn/zip-skra-af-lagasafni/ into
+   `data/original/[version]/`, so that files are named like `1944033.html`.
+
+2. Set `CURRENT_PARLIAMENT_VERSION` in `lagasafn/settings.py`.
+
+3. Process all laws, carrying over the previous version's patches and JSON
+   maps. This requires `patch` and `diff` (see [Windows](#windows)). The
+   maps are only carried over if they don't exist yet, so don't skip
+   `--auto-patch` on the first run.
+
+       ./lagasafn-xml --auto-patch
+
+4. Retry failed laws one at a time, to answer the questions the parser asks
+   about ambiguous text. Answers are stored in `data/json-maps/[version]/`.
+
+       ./lagasafn-xml --try-broken --single-thread
+
+5. Fix the remaining failures with patches, as described in
+   [Patching errors in data](#patching-errors-in-data), rerunning each law
+   with e.g. `./lagasafn-xml 134/1995`. Previous patches that weren't
+   carried over have either been fixed upstream or need recreating, often
+   because their context contains the version number in a link.
+
+6. Rebuild the index and references for all laws, since rerunning
+   individual laws leaves them incomplete.
+
+       ./lagasafn-xml --index-only
+       ./lagasafn-xml --references-only
+
 # License
 
 See the document `LICENSE.md`. (It's MIT.)
