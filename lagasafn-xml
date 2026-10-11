@@ -34,6 +34,7 @@ from lagasafn.contenthandlers import remove_ignorables
 from lagasafn.exceptions import LawException
 from lagasafn.multiprocessing import CustomPool
 from lagasafn.patching import attempt_json_map_transfer
+from lagasafn.patching import get_missing_auto_patch_tools
 from lagasafn.patching import patch_law
 from lagasafn.population import population_game
 from lagasafn.references import parse_references
@@ -80,6 +81,21 @@ def prepare_environment():
         ensure_dir(dir)
 
     if "--auto-patch" in settings.options:
+        # Fail early rather than having every auto-patch attempt fail on its
+        # own with an obscure error from deep within the processing.
+        missing_tools = get_missing_auto_patch_tools()
+        if len(missing_tools) > 0:
+            print(
+                "Error: --auto-patch requires the GNU tools `patch` and `diff`, but the following could not be found on PATH: %s"
+                % ", ".join(missing_tools),
+                file=stderr,
+            )
+            print(
+                'On Windows, these tools come with Git for Windows, typically in "C:\\Program Files\\Git\\usr\\bin". Add that directory to PATH and try again. See the README for details.',
+                file=stderr,
+            )
+            quit(1)
+
         attempt_json_map_transfer()
 
     for json_file in json_files:
