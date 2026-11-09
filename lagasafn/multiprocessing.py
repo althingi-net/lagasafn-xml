@@ -35,7 +35,9 @@ Usage, where `process_law` takes a single argument `law_id`:
 """
 
 
-def init_pool():
+def init_pool(options):
+    settings.options.update(options)
+
     # Start ignoring the KeyboardInterrupt signal in the main thread. The
     # result is that it gets caught by the sub-processes, which **don't**
     # inherit this setting. The exception is then thrown when waiting for
@@ -85,6 +87,7 @@ class CustomPool(Pool):
 
         if initializer is None:
             initializer = init_pool
+            initargs = (dict(settings.options),)
 
         if context is None:
             context = get_context()

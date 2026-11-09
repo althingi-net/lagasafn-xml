@@ -195,7 +195,7 @@ def main(args: typing.Dict) -> None:
         context = 0
     if args["make-patch"] is True:
         diff_content = do_diff(args["file-a"], args["file-b"], context=context)
-        with open(args["output-file"], "w") as output_file:
+        with open(args["output-file"], "w", encoding="utf-8") as output_file:
             output_file.write(diff_content)
 
 
